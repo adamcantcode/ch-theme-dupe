@@ -1,0 +1,11 @@
+/* Base Layer */
+@import 'tailwindcss/base';
+
+/* Components Layer */
+@import 'tailwindcss/components';
+
+@import './_base.css';
+@import './components.css';
+
+/* Utilities Layer */
+@import 'tailwindcss/utilities';

@@ -117,3 +117,7 @@ autoupdater_maintenance_mode_enabled.tmp
 *.asf
 *.wmv
 *.avi
+
+# CUSTOM
+wp-content/db.php
+*node_modules

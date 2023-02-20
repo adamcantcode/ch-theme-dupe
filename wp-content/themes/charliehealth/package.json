@@ -1,0 +1,31 @@
+{
+  "name": "charliehealth",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Charlie Health Team",
+  "license": "GPL-2.0-or-later",
+  "keywords": [
+    "Theme"
+  ],
+  "homepage": "https://www.charliehealth.com",
+  "devDependencies": {
+    "@wordpress/scripts": "^24.0.0",
+    "autoprefixer": "^10.4.8",
+    "postcss": "^8.4.16",
+    "postcss-import": "^15.0.0",
+    "postcss-loader": "^7.0.1",
+    "tailwindcss": "^3.1.8",
+    "browser-sync": "^2.27.10",
+    "glob": "^8.0.3",
+    "npm-run-all": "^4.1.5"
+  },
+  "scripts": {
+    "theme-start": "wp-scripts start src/index.js --output-path=build/theme",
+    "theme-build": "wp-scripts build src/index.js --output-path=build/theme",
+    "blocks-start": "wp-scripts start --webpack-src-dir=blocks --webpack-copy-php --output-path=build/blocks",
+    "blocks-build": "wp-scripts build --webpack-src-dir=blocks --webpack-copy-php --output-path=build/blocks",
+    "dev": "npm-run-all --parallel blocks-start theme-start",
+    "build": "npm-run-all --parallel blocks-build theme-build"
+  },
+  "dependencies": {}
+}
