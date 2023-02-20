@@ -118,20 +118,70 @@ table {
   width: 100%;
 }
 
-/* @layer base {
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-dark-blue;
+  }
+  p,
+  ul li,
+  ol li,
+  blockquote {
+    @apply text-text;
+  }
   h1 {
-    @apply text-5xl text-ch-blue mb-8;
+    @apply text-h1 mb-12;
   }
   h2 {
-    @apply text-2xl;
+    @apply text-h2 mb-10;
   }
-  img {
-    @apply rounded-3xl;
+  h3 {
+    @apply text-h3 font-serif mb-5;
+  }
+  h4 {
+    @apply text-h4 mb-4;
+  }
+  h5 {
+    @apply text-h5 mb-4;
   }
   p {
-    @apply mb-6 text-lg leading-7;
+    @apply text-p mb-10;
+  }
+  ul,
+  ol {
+    @apply pl-10 block mb-5;
+  }
+  ul {
+    @apply list-disc;
+  }
+  ol {
+    @apply list-decimal;
+  }
+  li {
+    @apply list-item my-1 leading-7;
+  }
+  a {
+    @apply text-p text-dark-blue underline hover:text-hover-blue transition-colors duration-300;
+  }
+  blockquote {
+    @apply my-8 py-8 border-y-4 border-solid border-purple-gradient-start font-serif text-4xl leading-10;
+  }
+  blockquote p {
+    @apply mb-0;
+  }
+  img {
+    @apply rounded-3xl mb-10;
   }
 }
+
+.container-small {
+  @apply max-w-[840px] mx-auto;
+}
+/*
 .wp-block-group {
   @apply py-16;
 } */

@@ -9,6 +9,7 @@ module.exports = {
     './blocks/**/*.php',
     './inc/**/*.php',
     './template-parts/**/*.php',
+    './**/*.php',
   ].concat(glob.sync('./*.php')),
   // have to use glob sync because otherwise base folder becomes tw dependency and infinite loop because of index.asset.php
   // glob returns array of actual files and this way build folder is definitively ignored
@@ -50,6 +51,43 @@ module.exports = {
         'light-purple-gradient-start': '#F0EFFC',
         'light-purple-gradient-end': '#FFFFFF',
       },
+      fontSize: {
+        'h1-xl': ['4rem', {
+          lineHeight: '110%',
+          letterSpacing: '-0.04em',
+          fontWeight: '400',
+        }],
+        'h1': ['3rem', {
+          lineHeight: '110%',
+          letterSpacing: '-0.03em',
+          fontWeight: '400',
+        }],
+        'h2': ['2.25rem', {
+          lineHeight: '110%',
+          letterSpacing: '-0.03em',
+          fontWeight: '400',
+        }],
+        'h3': ['1.5rem', {
+          lineHeight: '130%',
+          letterSpacing: '-0.05em',
+          fontWeight: '400',
+        }],
+        'h4': ['1.375rem', {
+          lineHeight: '130%',
+          letterSpacing: '-0.05em',
+          fontWeight: '400',
+        }],
+        'h5': ['1rem', {
+          lineHeight: '140%',
+          letterSpacing: '-0.01em',
+          fontWeight: '500',
+        }],
+        'p': ['1.125rem', {
+          lineHeight: '210%',
+          letterSpacing: '-2%',
+          fontWeight: '400',
+        }],
+      }
     },
   },
   plugins: [],
