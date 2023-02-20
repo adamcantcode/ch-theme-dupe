@@ -118,7 +118,7 @@ table {
   width: 100%;
 }
 
-@layer base {
+/* @layer base {
   h1 {
     @apply text-5xl text-ch-blue mb-8;
   }
@@ -134,7 +134,7 @@ table {
 }
 .wp-block-group {
   @apply py-16;
-}
+} */
 /* EDITOR */
 /* .mce-content-body {
 	a {
