@@ -27,7 +27,7 @@
 
   <img style="float:right" src="http://placehold.it/250x125" alt="CSS | God's Language" />
   <p>Lorem ipsum dolor sit amet, <a href="#" title="test link">test link</a> adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
-  <img src="http://placehold.it/800x1200" alt="CSS | God's Language" />
+  <img src="http://placehold.it/800x400" alt="CSS | God's Language" />
 
   <p>Lorem ipsum dolor sit amet, <em>emphasis</em> consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
 
@@ -35,12 +35,6 @@
   <hr />
 
   <h2 id="list_types">List Types</h2>
-
-  <h3>Definition List</h3>
-  <dl>
-    <dt>Definition List Title</dt>
-    <dd>This is a definition list division.</dd>
-  </dl>
 
   <h3>Ordered List</h3>
   <ol>

@@ -363,6 +363,9 @@ h5 {
   letter-spacing: -0.01em;
   font-weight: 500;
 }
+h6 {
+  margin-bottom: 1rem;
+}
 p {
   margin-bottom: 2.5rem;
   font-size: 1.125rem;
@@ -421,9 +424,16 @@ blockquote {
 blockquote p {
   margin-bottom: 0px;
 }
+hr {
+  margin-bottom: 2.5rem;
+}
 img {
   margin-bottom: 2.5rem;
   border-radius: 1.5rem;
+}
+small {
+  margin-bottom: 2.5rem;
+  display: block;
 }
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
