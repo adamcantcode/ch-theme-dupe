@@ -766,6 +766,12 @@ table {
 .w-full {
   width: 100%;
 }
+.w-64 {
+  width: 16rem;
+}
+.w-80 {
+  width: 20rem;
+}
 .max-w-sm {
   max-width: 24rem;
 }
@@ -783,6 +789,9 @@ table {
 }
 .justify-between {
   justify-content: space-between;
+}
+.rounded {
+  border-radius: 0.25rem;
 }
 .bg-darkest-blue {
   --tw-bg-opacity: 1;
