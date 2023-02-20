@@ -2,18 +2,41 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/modules/example.js":
-/*!********************************!*\
-  !*** ./src/modules/example.js ***!
-  \********************************/
+/***/ "./src/modules/nav-hover.js":
+/*!**********************************!*\
+  !*** ./src/modules/nav-hover.js ***!
+  \**********************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": function() { return /* binding */ exampleModule; }
+/* harmony export */   "default": function() { return /* binding */ navHover; }
 /* harmony export */ });
-function exampleModule() {
-  console.log('site theme js file');
+/**
+ * Man nav hover actions
+ */
+function navHover() {
+  var navItem = document.querySelectorAll('.nav-main-item > .nav-link');
+  var navItemSub = document.querySelectorAll('.nav-main-item > .nav-sub-menu');
+
+  // Set active state for top level nav link on hover
+  navItem.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      item.classList.toggle('active');
+    });
+    item.addEventListener('mouseleave', () => {
+      item.classList.toggle('active');
+    });
+  });
+  // Set active state for top level nav link on hover of sub menu
+  navItemSub.forEach(sub => {
+    sub.addEventListener('mouseenter', () => {
+      sub.previousElementSibling.classList.toggle('active');
+    });
+    sub.addEventListener('mouseleave', () => {
+      sub.previousElementSibling.classList.toggle('active');
+    });
+  });
 }
 
 /***/ }),
@@ -94,10 +117,12 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_main_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./css/main.css */ "./src/css/main.css");
-/* harmony import */ var _modules_example__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/example */ "./src/modules/example.js");
+/* harmony import */ var _modules_nav_hover__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/nav-hover */ "./src/modules/nav-hover.js");
 
 
-(0,_modules_example__WEBPACK_IMPORTED_MODULE_1__["default"])();
+document.addEventListener('DOMContentLoaded', event => {
+  (0,_modules_nav_hover__WEBPACK_IMPORTED_MODULE_1__["default"])();
+});
 }();
 /******/ })()
 ;

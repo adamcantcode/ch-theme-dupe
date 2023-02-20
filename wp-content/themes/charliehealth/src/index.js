@@ -1,5 +1,7 @@
 import './css/main.css';
 
-import exampleModule from './modules/example';
+import navHover from './modules/nav-hover';
 
-exampleModule();
+document.addEventListener('DOMContentLoaded', (event) => {
+  navHover();
+});

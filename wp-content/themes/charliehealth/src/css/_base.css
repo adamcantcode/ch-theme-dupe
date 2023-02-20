@@ -149,7 +149,7 @@ table {
     @apply text-h5 mb-4;
   }
   h6 {
-    @apply mb-4;
+    @apply text-h6 mb-4;
   }
   p {
     @apply text-p mb-10;
@@ -180,13 +180,13 @@ table {
     @apply mb-10;
   }
   img {
-    @apply rounded-3xl mb-10;
-  }
-  small {
-    @apply mb-10 block;
+    /* @apply rounded-3xl mb-10; */
   }
 }
 
+.container {
+  @apply max-w-[1280px] mx-auto;
+}
 .container-small {
   @apply max-w-[840px] mx-auto;
 }

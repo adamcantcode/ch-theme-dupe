@@ -82,9 +82,14 @@ module.exports = {
           letterSpacing: '-0.01em',
           fontWeight: '500',
         }],
+        'h6': ['.875rem', {
+          lineHeight: '140%',
+          letterSpacing: '-0.02em',
+          fontWeight: '400',
+        }],
         'p': ['1.125rem', {
           lineHeight: '210%',
-          letterSpacing: '-2%',
+          letterSpacing: '-0.02em',
           fontWeight: '400',
         }],
       }
