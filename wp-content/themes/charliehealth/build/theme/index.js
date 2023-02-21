@@ -121,7 +121,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 document.addEventListener('DOMContentLoaded', event => {
-  (0,_modules_nav_hover__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  // navHover();
 });
 }();
 /******/ })()

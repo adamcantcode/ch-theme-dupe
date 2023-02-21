@@ -10,14 +10,51 @@
     @apply rounded-[10px] bg-bright-teal hover:bg-lightest-teal hover:text-dark-blue;
   }
 }
-
-.nav-link {
-  @apply text-white no-underline py-5 px-8 hover:bg-light-teal hover:text-dark-blue transition-colors duration-300 text-lg block;
-  &.sub-link {
-    @apply py-3 px-5;
+.nav-parent-menu {
+  &:hover {
+    .nav-sub-menu {
+      .nav-link {
+        &.sub-link {
+          @apply opacity-100 translate-x-0;
+        }
+      }
+      @apply md:opacity-100 md:visible translate-y-0 duration-300;
+      img {
+        @apply opacity-100 translate-x-0;
+      }
+      h6 {
+        @apply opacity-100 translate-x-0;
+      }
+    }
+    svg {
+      @apply rotate-180;
+    }
+  }
+  .nav-sub-menu {
+    .nav-link {
+      &.sub-link {
+        @apply opacity-0 -translate-x-1 transition-all duration-500;
+      }
+    }
+    @apply transition-all duration-150 md:opacity-0 invisible rounded-b-xl -translate-y-1 h-0 md:h-auto shadow-xl;
+    img {
+      @apply opacity-0 -translate-x-1 transition-all duration-150 delay-150;
+    }
+    h6 {
+      @apply opacity-0 -translate-x-1 transition-all duration-300 delay-150;
+    }
+  }
+  svg {
+    @apply rotate-0 transition-transform duration-300;
   }
 }
 .nav-link {
+  @apply text-white no-underline py-5 px-8 hover:bg-lightest-teal hover:text-dark-blue transition-colors duration-150 text-lg block;
+  &.sub-link {
+    @apply py-3 px-5 whitespace-nowrap;
+  }
+}
+/* .nav-link {
   &.active {
     & + .nav-sub-menu {
       @apply opacity-100 visible;
@@ -29,4 +66,4 @@
   &.sub-link {
     @apply whitespace-nowrap;
   }
-}
+} */

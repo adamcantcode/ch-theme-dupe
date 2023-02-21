@@ -11,38 +11,114 @@
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
   <header class="fixed w-full bg-med-blue">
-    <nav class="">
-      <div class="container flex flex-row items-center justify-between">
-        <div class="nav-logo">
-          <a href="#">
-            <img src="https://assets-global.website-files.com/62daf9ae3616b86eec143652/62f68f4ebab2af5c28626d79_wordmark_horizontal_white.svg" alt="" class=" w-[160px]">
+    <nav class="container relative flex items-center justify-between">
+      <div class="nav-logo">
+        <a href="#">
+          <img src="https://assets-global.website-files.com/62daf9ae3616b86eec143652/62f68f4ebab2af5c28626d79_wordmark_horizontal_white.svg" alt="" class=" w-[160px]">
+        </a>
+      </div>
+      <div class="fixed bottom-0 left-0 right-0 md:top-0 top-28 bg-darkest-blue md:bg-transparent md:flex md:relative">
+        <div class="relative nav-parent-menu">
+          <a href="#" class="flex items-center nav-link">Service
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 ml-3 fill-current" viewBox="0 0 24 24">
+              <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path>
+            </svg>
           </a>
-        </div>
-        <div class="flex main-nav-container">
-          <div class="flex">
-            <div class="relative nav-main-item">
-              <a href="" class="nav-link">Our Program</a>
-              <div class="absolute flex nav-sub-menu bg-darkest-blue">
-                <div class="flex flex-col">
-                  <a href="" class="nav-link sub-link">adadsf</a>
-                  <a href="" class="nav-link sub-link">ad</a>
-                  <a href="" class="nav-link sub-link">ad aldjf lj aljds flllsdf</a>
-                  <a href="" class="nav-link sub-link">ad aldjf lj aljds flllsdf</a>
-                  <a href="" class="nav-link sub-link">adadsf</a>
-                  <a href="" class="nav-link sub-link">adadsf</a>
-                  <a href="" class="nav-link sub-link">adadsf</a>
-                </div>
-                <div class="flex flex-col p-8 w-80 sub-menu-info-panel">
-                  <img src="https://assets-global.website-files.com/62daf9ae3616b86eec143652/62fc0dbd27ef532c3740e981_young-boy-blue-shirt-on-beach.webp" alt="" class="rounded">
-                  <h6 class="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. At deserunt quaerat libero modi corrupti! Debitis?</h6>
-                </div>
-              </div>
+          <div class="transition duration-300 nav-sub-menu md:absolute top-full bg-darkest-blue md:flex">
+            <div class="flex flex-col">
+              <a href="#" class="nav-link sub-link">Technology and Online Addiction</a>
+              <a href="#" class="nav-link sub-link">Web Design</a>
+              <a href="#" class="nav-link sub-link">Machine Learning</a>
+            </div>
+            <div class="hidden p-8 md:flex-col w-80 sub-menu-info-panel md:flex">
+              <img src="https://assets-global.website-files.com/62daf9ae3616b86eec143652/62fc0dbd27ef532c3740e981_young-boy-blue-shirt-on-beach.webp" alt="" class="mb-2 rounded">
+              <h6 class="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. At deserunt quaerat libero modi corrupti! Debitis?</h6>
             </div>
           </div>
         </div>
-        <div class="nav-cta">
-          <a href="#" class="ch-button tertiary">Get started</a>
+        <div class="relative nav-parent-menu">
+          <a href="#" class="flex items-center nav-link">Service
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 ml-3 fill-current" viewBox="0 0 24 24">
+              <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path>
+            </svg>
+          </a>
+          <div class="transition duration-300 nav-sub-menu md:absolute top-full bg-darkest-blue md:flex">
+            <div class="flex flex-col">
+              <a href="#" class="nav-link sub-link">Web development</a>
+              <a href="#" class="nav-link sub-link">Web Design</a>
+              <a href="#" class="nav-link sub-link">Machine Learning</a>
+              <a href="#" class="nav-link sub-link">Machine Learning</a>
+              <a href="#" class="nav-link sub-link">Machine Learning</a>
+              <a href="#" class="nav-link sub-link">Machine Learning</a>
+            </div>
+            <div class="hidden p-8 md:flex-col w-80 sub-menu-info-panel md:flex">
+              <img src="https://assets-global.website-files.com/62daf9ae3616b86eec143652/62fc0dbdc5f96dee1834ea7a_son-with-mom-looking-at-phone.webp" alt="" class="mb-2 rounded">
+              <h6 class="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. At deserunt quaerat libero modi corrupti! Debitis?</h6>
+            </div>
+          </div>
         </div>
+        <div class="relative nav-parent-menu">
+          <a href="#" class="flex items-center nav-link">Service
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 ml-3 fill-current" viewBox="0 0 24 24">
+              <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path>
+            </svg>
+          </a>
+          <div class="transition duration-300 nav-sub-menu md:absolute top-full bg-darkest-blue md:flex">
+            <div class="flex flex-col">
+              <a href="#" class="nav-link sub-link">Web development</a>
+              <a href="#" class="nav-link sub-link">Web Design</a>
+              <a href="#" class="nav-link sub-link">Machine Learning</a>
+            </div>
+            <div class="hidden p-8 md:flex-col w-80 sub-menu-info-panel md:flex">
+              <img src="https://assets-global.website-files.com/62daf9ae3616b86eec143652/62fc0dbd27ef532c3740e981_young-boy-blue-shirt-on-beach.webp" alt="" class="mb-2 rounded">
+              <h6 class="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. At deserunt quaerat libero modi corrupti! Debitis?</h6>
+            </div>
+          </div>
+        </div>
+        <div class="relative nav-parent-menu">
+          <a href="#" class="flex items-center nav-link">Service
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 ml-3 fill-current" viewBox="0 0 24 24">
+              <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path>
+            </svg>
+          </a>
+          <div class="transition duration-300 nav-sub-menu md:absolute top-full bg-darkest-blue md:flex">
+            <div class="flex flex-col">
+              <a href="#" class="nav-link sub-link">Web development</a>
+              <a href="#" class="nav-link sub-link">Web Design</a>
+              <a href="#" class="nav-link sub-link">Machine Learning</a>
+            </div>
+            <div class="hidden p-8 md:flex-col w-80 sub-menu-info-panel md:flex">
+              <img src="https://assets-global.website-files.com/62daf9ae3616b86eec143652/62fc0dbd27ef532c3740e981_young-boy-blue-shirt-on-beach.webp" alt="" class="mb-2 rounded">
+              <h6 class="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. At deserunt quaerat libero modi corrupti! Debitis?</h6>
+            </div>
+          </div>
+        </div>
+        <div class="relative nav-parent-menu">
+          <a href="#" class="flex items-center nav-link">Service
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 ml-3 fill-current" viewBox="0 0 24 24">
+              <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path>
+            </svg>
+          </a>
+          <div class="transition duration-300 nav-sub-menu md:absolute top-full bg-darkest-blue md:flex">
+            <div class="flex flex-col">
+              <a href="#" class="nav-link sub-link">Web development</a>
+              <a href="#" class="nav-link sub-link">Web Design</a>
+              <a href="#" class="nav-link sub-link">Machine Learning</a>
+            </div>
+            <div class="hidden p-8 md:flex-col w-80 sub-menu-info-panel md:flex">
+              <img src="https://assets-global.website-files.com/62daf9ae3616b86eec143652/62fc0dbd27ef532c3740e981_young-boy-blue-shirt-on-beach.webp" alt="" class="mb-2 rounded">
+              <h6 class="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. At deserunt quaerat libero modi corrupti! Debitis?</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-cta">
+        <a href="#" class="ch-button tertiary">Get started</a>
+      </div>
+      <div class="ml-auto text-gray-500 cursor-pointer md:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+          <path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"></path>
+        </svg>
       </div>
     </nav>
   </header>
