@@ -54,6 +54,26 @@
     @apply py-3 px-5 whitespace-nowrap;
   }
 }
+.slide-out {
+  @apply right-full md:right-0 md:w-auto transition-all duration-500 w-[85vw];
+  &.active {
+    @apply right-[65vw];
+    .nav-link {
+      /* @apply ml-[15%]; */
+    }
+  }
+}
+
+.site-main {
+  @apply transition-transform duration-500;
+  transform: translate3d(0, 0px, 0px);
+  &.active {
+    position: absolute;
+    transform: translate3d(50vw, 0px, 0px);
+    overflow: hidden;
+  }
+}
+
 /* .nav-link {
   &.active {
     & + .nav-sub-menu {

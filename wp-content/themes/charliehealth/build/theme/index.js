@@ -2,41 +2,48 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/modules/nav-hover.js":
-/*!**********************************!*\
-  !*** ./src/modules/nav-hover.js ***!
-  \**********************************/
+/***/ "./src/modules/mobile-nav.js":
+/*!***********************************!*\
+  !*** ./src/modules/mobile-nav.js ***!
+  \***********************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": function() { return /* binding */ navHover; }
+/* harmony export */   "default": function() { return /* binding */ mobileNav; }
 /* harmony export */ });
 /**
  * Man nav hover actions
  */
-function navHover() {
-  var navItem = document.querySelectorAll('.nav-main-item > .nav-link');
+function mobileNav() {
+  var menu = document.querySelector('.open-close');
+  var slideOut = document.querySelector('.slide-out');
+  var mainContent = document.querySelector('.site-main');
   var navItemSub = document.querySelectorAll('.nav-main-item > .nav-sub-menu');
+  menu.addEventListener('click', () => {
+    menu.classList.toggle('active');
+    slideOut.classList.toggle('active');
+    mainContent.classList.toggle('active');
+  });
 
   // Set active state for top level nav link on hover
-  navItem.forEach(item => {
-    item.addEventListener('mouseenter', () => {
-      item.classList.toggle('active');
-    });
-    item.addEventListener('mouseleave', () => {
-      item.classList.toggle('active');
-    });
-  });
-  // Set active state for top level nav link on hover of sub menu
-  navItemSub.forEach(sub => {
-    sub.addEventListener('mouseenter', () => {
-      sub.previousElementSibling.classList.toggle('active');
-    });
-    sub.addEventListener('mouseleave', () => {
-      sub.previousElementSibling.classList.toggle('active');
-    });
-  });
+  // navItem.forEach((item) => {
+  //   item.addEventListener('mouseenter', () => {
+  //     item.classList.toggle('active');
+  //   });
+  //   item.addEventListener('mouseleave', () => {
+  //     item.classList.toggle('active');
+  //   });
+  // });
+  // // Set active state for top level nav link on hover of sub menu
+  // navItemSub.forEach((sub) => {
+  //   sub.addEventListener('mouseenter', () => {
+  //     sub.previousElementSibling.classList.toggle('active');
+  //   });
+  //   sub.addEventListener('mouseleave', () => {
+  //     sub.previousElementSibling.classList.toggle('active');
+  //   });
+  // });
 }
 
 /***/ }),
@@ -117,11 +124,11 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_main_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./css/main.css */ "./src/css/main.css");
-/* harmony import */ var _modules_nav_hover__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/nav-hover */ "./src/modules/nav-hover.js");
+/* harmony import */ var _modules_mobile_nav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/mobile-nav */ "./src/modules/mobile-nav.js");
 
 
 document.addEventListener('DOMContentLoaded', event => {
-  // navHover();
+  (0,_modules_mobile_nav__WEBPACK_IMPORTED_MODULE_1__["default"])();
 });
 }();
 /******/ })()

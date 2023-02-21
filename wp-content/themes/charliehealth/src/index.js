@@ -1,7 +1,7 @@
 import './css/main.css';
 
-import navHover from './modules/nav-hover';
+import mobileNav from './modules/mobile-nav';
 
 document.addEventListener('DOMContentLoaded', (event) => {
-  // navHover();
+  mobileNav();
 });

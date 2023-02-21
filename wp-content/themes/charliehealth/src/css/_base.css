@@ -182,10 +182,13 @@ table {
   img {
     /* @apply rounded-3xl mb-10; */
   }
+  body {
+    overflow: hidden;
+  }
 }
 
 .container {
-  @apply max-w-[1280px] mx-auto;
+  @apply max-w-[1280px] mx-auto px-5;
 }
 .container-small {
   @apply max-w-[840px] mx-auto;
