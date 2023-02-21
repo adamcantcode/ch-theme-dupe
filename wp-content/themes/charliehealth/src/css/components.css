@@ -13,6 +13,7 @@
 .nav-parent-menu {
   &:hover {
     .nav-sub-menu {
+      @apply transition-all duration-300;
       .nav-link {
         &.sub-link {
           @apply opacity-100 translate-x-0;
@@ -31,6 +32,9 @@
     }
   }
   .nav-sub-menu {
+    &.active {
+      @apply h-auto visible;
+    }
     .nav-link {
       &.sub-link {
         @apply opacity-0 -translate-x-1 transition-all duration-500;

@@ -20,7 +20,7 @@
       <div class="slide-out fixed bottom-0 md:top-0 bg-darkest-blue md:bg-transparent md:flex md:relative <?= is_user_logged_in() ? 'top-[116px]' : 'top-[70px]' ; ?>">
         <div class="relative nav-parent-menu">
           <a href="#" class="flex items-center nav-link">Service
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 ml-3 fill-current" viewBox="0 0 24 24">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 ml-auto fill-current" viewBox="0 0 24 24">
               <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path>
             </svg>
           </a>
@@ -38,7 +38,7 @@
         </div>
         <div class="relative nav-parent-menu">
           <a href="#" class="flex items-center nav-link">Service
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 ml-3 fill-current" viewBox="0 0 24 24">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 ml-auto fill-current" viewBox="0 0 24 24">
               <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path>
             </svg>
           </a>
@@ -63,7 +63,7 @@
         </div>
         <div class="relative nav-parent-menu">
           <a href="#" class="flex items-center nav-link">Service
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 ml-3 fill-current" viewBox="0 0 24 24">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 ml-auto fill-current" viewBox="0 0 24 24">
               <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path>
             </svg>
           </a>
@@ -77,7 +77,7 @@
         </div>
         <div class="relative nav-parent-menu">
           <a href="#" class="flex items-center nav-link">Service
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 ml-3 fill-current" viewBox="0 0 24 24">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 ml-auto fill-current" viewBox="0 0 24 24">
               <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path>
             </svg>
           </a>
@@ -91,7 +91,7 @@
         </div>
         <div class="relative nav-parent-menu">
           <a href="#" class="flex items-center nav-link">Service
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 ml-3 fill-current" viewBox="0 0 24 24">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 ml-auto fill-current" viewBox="0 0 24 24">
               <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path>
             </svg>
           </a>
