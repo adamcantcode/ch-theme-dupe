@@ -432,10 +432,10 @@ hr{
   margin-bottom: 2.5rem;
 }
 img {
-    /* @apply rounded-3xl mb-10; */
+    /* @apply mb-10 rounded-3xl; */
   }
 body {
-    overflow: hidden;
+    overflow-x:hidden
   }
 *, ::before, ::after{
   --tw-border-spacing-x: 0;
@@ -834,22 +834,20 @@ table {
   }
 }
 .slide-out.active{
-  right: 65vw;
+  right: 15vw;
 }
 .slide-out.active .nav-link {
       /* @apply ml-[15%]; */
     }
-.site-main{
-  transition-property: transform;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 500ms;
+/* .site-main {
+  @apply transition-transform duration-500;
   transform: translate3d(0, 0px, 0px);
-}
-.site-main.active {
+  &.active {
     position: absolute;
     transform: translate3d(50vw, 0px, 0px);
     overflow: hidden;
   }
+} */
 /* .nav-link {
   &.active {
     & + .nav-sub-menu {
@@ -863,6 +861,10 @@ table {
     @apply whitespace-nowrap;
   }
 } */
+.resize-animation-stopper * {
+  transition: none !important;
+  animation: none !important;
+}
 /* Utilities Layer */
 .static{
   position: static;
@@ -894,6 +896,9 @@ table {
 .ml-auto{
   margin-left: auto;
 }
+.block{
+  display: block;
+}
 .flex{
   display: flex;
 }
@@ -905,6 +910,15 @@ table {
 }
 .h-5{
   height: 1.25rem;
+}
+.h-52{
+  height: 13rem;
+}
+.h-\[calc\(100vh-116px\)\]{
+  height: calc(100vh - 116px);
+}
+.h-\[calc\(100vh-70px\)\]{
+  height: calc(100vh - 70px);
 }
 .min-h-\[70px\]{
   min-height: 70px;
@@ -920,6 +934,9 @@ table {
 }
 .w-\[160px\]{
   width: 160px;
+}
+.w-full{
+  width: 100%;
 }
 .w-screen{
   width: 100vw;
@@ -949,6 +966,10 @@ table {
 .bg-med-blue{
   --tw-bg-opacity: 1;
   background-color: rgb(38 45 112 / var(--tw-bg-opacity));
+}
+.bg-red-700{
+  --tw-bg-opacity: 1;
+  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
 }
 .fill-current{
   fill: currentColor;
@@ -999,14 +1020,25 @@ table {
   .md\:hidden{
     display: none;
   }
+  .md\:h-auto{
+    height: auto;
+  }
   .md\:min-h-0{
     min-height: 0px;
+  }
+  .md\:w-1\/2{
+    width: 50%;
   }
   .md\:flex-col{
     flex-direction: column;
   }
   .md\:bg-transparent{
     background-color: transparent;
+  }
+}
+@media (min-width: 1024px){
+  .lg\:w-1\/4{
+    width: 25%;
   }
 }
 

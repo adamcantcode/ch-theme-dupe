@@ -134,29 +134,29 @@ table {
     @apply text-text;
   }
   h1 {
-    @apply text-h1 mb-12;
+    @apply mb-12 text-h1;
   }
   h2 {
-    @apply text-h2 mb-10;
+    @apply mb-10 text-h2;
   }
   h3 {
-    @apply text-h3 font-serif mb-5;
+    @apply mb-5 font-serif text-h3;
   }
   h4 {
-    @apply text-h4 mb-4;
+    @apply mb-4 text-h4;
   }
   h5 {
-    @apply text-h5 mb-4;
+    @apply mb-4 text-h5;
   }
   h6 {
-    @apply text-h6 mb-4;
+    @apply mb-4 text-h6;
   }
   p {
-    @apply text-p mb-10;
+    @apply mb-10 text-p;
   }
   ul,
   ol {
-    @apply pl-10 block mb-5;
+    @apply block pl-10 mb-5;
   }
   ul {
     @apply list-disc;
@@ -165,13 +165,13 @@ table {
     @apply list-decimal;
   }
   li {
-    @apply list-item my-1 leading-7;
+    @apply my-1 leading-7 list-item;
   }
   a {
-    @apply text-p text-dark-blue underline hover:text-hover-blue transition-colors duration-300;
+    @apply underline transition-colors duration-300 text-p text-dark-blue hover:text-hover-blue;
   }
   blockquote {
-    @apply my-8 py-8 border-y-4 border-solid border-purple-gradient-start font-serif text-4xl leading-10;
+    @apply py-8 my-8 font-serif text-4xl leading-10 border-solid border-y-4 border-purple-gradient-start;
   }
   blockquote p {
     @apply mb-0;
@@ -180,10 +180,10 @@ table {
     @apply mb-10;
   }
   img {
-    /* @apply rounded-3xl mb-10; */
+    /* @apply mb-10 rounded-3xl; */
   }
   body {
-    overflow: hidden;
+    overflow-x:hidden
   }
 }
 

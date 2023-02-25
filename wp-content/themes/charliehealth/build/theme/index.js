@@ -55,6 +55,29 @@ function mobileNav() {
 
 /***/ }),
 
+/***/ "./src/modules/stop-animations.js":
+/*!****************************************!*\
+  !*** ./src/modules/stop-animations.js ***!
+  \****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ stopAnimations; }
+/* harmony export */ });
+function stopAnimations() {
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    document.body.classList.add('resize-animation-stopper');
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      document.body.classList.remove('resize-animation-stopper');
+    }, 400);
+  });
+}
+
+/***/ }),
+
 /***/ "./src/css/main.css":
 /*!**************************!*\
   !*** ./src/css/main.css ***!
@@ -132,10 +155,13 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_main_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./css/main.css */ "./src/css/main.css");
 /* harmony import */ var _modules_mobile_nav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/mobile-nav */ "./src/modules/mobile-nav.js");
+/* harmony import */ var _modules_stop_animations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/stop-animations */ "./src/modules/stop-animations.js");
+
 
 
 document.addEventListener('DOMContentLoaded', event => {
   (0,_modules_mobile_nav__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  (0,_modules_stop_animations__WEBPACK_IMPORTED_MODULE_2__["default"])();
 });
 }();
 /******/ })()

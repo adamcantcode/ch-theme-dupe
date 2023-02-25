@@ -14,10 +14,10 @@
     <nav class="container relative flex items-center justify-between min-h-[70px] md:min-h-0">
       <div class="nav-logo">
         <a href="#">
-          <img src="https://assets-global.website-files.com/62daf9ae3616b86eec143652/62f68f4ebab2af5c28626d79_wordmark_horizontal_white.svg" alt="" class=" w-[160px]">
+          <img src="https://assets-global.website-files.com/62daf9ae3616b86eec143652/62f68f4ebab2af5c28626d79_wordmark_horizontal_white.svg" alt="ss" class=" w-[160px]">
         </a>
       </div>
-      <div class="slide-out fixed bottom-0 md:top-0 bg-darkest-blue md:bg-transparent md:flex md:relative <?= is_user_logged_in() ? 'top-[116px]' : 'top-[70px]' ; ?>">
+      <div class="slide-out fixed bottom-0 md:top-0 bg-darkest-blue md:bg-transparent md:flex md:relative md:h-auto <?= is_user_logged_in() ? 'top-[116px] h-[calc(100vh-116px)]' : 'top-[70px] h-[calc(100vh-70px)]' ; ?>">
         <div class="relative nav-parent-menu">
           <a href="#" class="flex items-center nav-link">Service
             <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 ml-auto fill-current" viewBox="0 0 24 24">

@@ -1,0 +1,1 @@
+{"version":3,"file":"block1/index.css","mappings":";;;AAAA;EACE,qBAAqB;AACvB,C","sources":["webpack://charliehealth/./blocks/block1/index.css"],"sourcesContent":[".block1 {\n  background-color: red;\n}"],"names":[],"sourceRoot":""}
