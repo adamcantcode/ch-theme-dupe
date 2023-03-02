@@ -24,7 +24,7 @@
               <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path>
             </svg>
           </a>
-          <div class="transition duration-300 nav-sub-menu md:absolute top-full bg-darkest-blue md:flex">
+          <div class="transition-all duration-300 nav-sub-menu md:absolute top-full bg-darkest-blue md:flex">
             <div class="flex flex-col">
               <a href="#" class="nav-link sub-link">Technology and Online Addiction</a>
               <a href="#" class="nav-link sub-link">Web Design</a>
