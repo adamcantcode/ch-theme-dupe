@@ -65,6 +65,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": function() { return /* binding */ stopAnimations; }
 /* harmony export */ });
+/**
+ * Fix glitchiness of animations when screen resized from desltop to mobile and vice versa
+ */
 function stopAnimations() {
   let resizeTimer;
   window.addEventListener('resize', () => {

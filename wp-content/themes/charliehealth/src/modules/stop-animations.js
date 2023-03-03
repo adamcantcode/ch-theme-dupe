@@ -1,3 +1,6 @@
+/**
+ * Fix glitchiness of animations when screen resized from desltop to mobile and vice versa
+ */
 export default function stopAnimations() {
   let resizeTimer;
   window.addEventListener('resize', () => {
