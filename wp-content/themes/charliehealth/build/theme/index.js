@@ -33,24 +33,26 @@ function mobileNav() {
     });
   });
 
-  // Set active state for top level nav link on hover
-  // navItem.forEach((item) => {
-  //   item.addEventListener('mouseenter', () => {
-  //     item.classList.toggle('active');
-  //   });
-  //   item.addEventListener('mouseleave', () => {
-  //     item.classList.toggle('active');
-  //   });
-  // });
-  // // Set active state for top level nav link on hover of sub menu
-  // navItemSub.forEach((sub) => {
-  //   sub.addEventListener('mouseenter', () => {
-  //     sub.previousElementSibling.classList.toggle('active');
-  //   });
-  //   sub.addEventListener('mouseleave', () => {
-  //     sub.previousElementSibling.classList.toggle('active');
-  //   });
-  // });
+  // TODO adjust on mobile
+  // Get all top level links
+  topLevelLinks.forEach(link => {
+    // Create a new timeline for the sub-links of the current top level link
+    const linksTimeLine = gsap.timeline();
+
+    // Add an animation to the timeline to animate the opacity and x position of the sub-links
+    linksTimeLine.to(link.nextElementSibling.querySelectorAll('.nav-link.sub-link'), {
+      opacity: 1,
+      x: 0,
+      stagger: 0.025
+    });
+    // Add a mouseenter event listener to the current top level link
+    link.addEventListener('mouseenter', () => {
+      // If the timeline is not already active, play it from the beginning
+      if (!linksTimeLine.isActive()) {
+        linksTimeLine.play(0);
+      }
+    });
+  });
 }
 
 /***/ }),
