@@ -875,6 +875,9 @@ table {
 .relative{
   position: relative;
 }
+.sticky{
+  position: sticky;
+}
 .bottom-0{
   bottom: 0px;
 }
@@ -887,6 +890,18 @@ table {
 .top-full{
   top: 100%;
 }
+.top-\[0\]{
+  top: 0;
+}
+.top-\[32px\]{
+  top: 32px;
+}
+.top-\[68px\]{
+  top: 68px;
+}
+.top-0{
+  top: 0px;
+}
 .z-50{
   z-index: 50;
 }
@@ -895,6 +910,18 @@ table {
 }
 .ml-auto{
   margin-left: auto;
+}
+.ml-2{
+  margin-left: 0.5rem;
+}
+.mt-\[70px\]{
+  margin-top: 70px;
+}
+.mt-\[68px\]{
+  margin-top: 68px;
+}
+.mt-0{
+  margin-top: 0px;
 }
 .block{
   display: block;
@@ -920,8 +947,17 @@ table {
 .h-\[calc\(100vh-70px\)\]{
   height: calc(100vh - 70px);
 }
+.h-\[calc\(100vh-68px\)\]{
+  height: calc(100vh - 68px);
+}
+.h-screen{
+  height: 100vh;
+}
 .min-h-\[70px\]{
   min-height: 70px;
+}
+.min-h-\[68px\]{
+  min-height: 68px;
 }
 .w-3{
   width: 0.75rem;
@@ -1010,6 +1046,9 @@ table {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 @media (min-width: 480px){
+  .md\:fixed{
+    position: fixed;
+  }
   .md\:absolute{
     position: absolute;
   }
@@ -1018,6 +1057,12 @@ table {
   }
   .md\:top-0{
     top: 0px;
+  }
+  .md\:top-\[68px\]{
+    top: 68px;
+  }
+  .md\:top-\[32px\]{
+    top: 32px;
   }
   .md\:block{
     display: block;
@@ -1030,6 +1075,9 @@ table {
   }
   .md\:h-auto{
     height: auto;
+  }
+  .md\:h-\[calc\(100vh-68px\)\]{
+    height: calc(100vh - 68px);
   }
   .md\:min-h-0{
     min-height: 0px;
