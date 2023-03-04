@@ -60,7 +60,7 @@
                     <?php if($submenuImage) : ?>
                     <img src="<?= $submenuImage; ?>" alt="" class="mb-2 rounded">
                     <?php endif; ?>
-                    <h6 class="text-white"><?= $submenuDetails; ?></h6>
+                    <h6 class="text-white"><?= $submenuDetails; ?> <a href="tel:+18662195070" class="text-white text-h6 hover:text-white">Give us a call</a></h6>
                   </div>
                   <?php endif; ?>
                 </div>
