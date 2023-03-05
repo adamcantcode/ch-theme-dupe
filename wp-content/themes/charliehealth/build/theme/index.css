@@ -1040,6 +1040,9 @@ table {
   .md\:top-\[32px\] {
     top: 32px;
   }
+  .md\:mt-\[68px\] {
+    margin-top: 68px;
+  }
   .md\:block {
     display: block;
   }
