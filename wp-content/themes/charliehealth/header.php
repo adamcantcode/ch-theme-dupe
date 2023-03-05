@@ -14,6 +14,7 @@
 
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
+  <pre class="fixed left-0 right-0 w-full text-xs text-center top-4 -z-10 opacity-30">Made with ❤️ in NY</pre>
 
   <header class="md:fixed sticky z-50 w-screen bg-med-blue <?= is_user_logged_in() ? 'md:top-[32px] top-0' : 'top-[0]'; ?>">
     <nav class="container relative flex items-center justify-between min-h-[68px] md:min-h-0">

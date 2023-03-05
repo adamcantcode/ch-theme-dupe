@@ -38,7 +38,7 @@
     }
     .nav-link {
       &.sub-link {
-        @apply opacity-0 -translate-x-1;
+        @apply opacity-0 -translate-x-2;
       }
     }
     img {
@@ -53,7 +53,7 @@
   }
 }
 .nav-link {
-  @apply text-white no-underline py-5 px-8 hover:bg-lightest-teal hover:text-dark-blue transition-colors duration-150 text-lg block;
+  @apply text-white no-underline py-5 px-8 hover:bg-lightest-teal hover:text-dark-blue transition-colors duration-300 text-lg block;
   &.sub-link {
     @apply py-3 px-5 whitespace-nowrap;
   }

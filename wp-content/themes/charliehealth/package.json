@@ -27,7 +27,6 @@
     "dev": "npm-run-all --parallel blocks-start theme-start",
     "build": "npm-run-all --parallel blocks-build theme-build",
     "sync": "browser-sync start --proxy 'https://wpch.local' --reload-delay 200 --files=['**/*.css', 'wp-content/themes/**/*.php']"
-
   },
   "dependencies": {}
 }
