@@ -38,7 +38,7 @@
     }
     .nav-link {
       &.sub-link {
-        @apply opacity-0 -translate-x-2;
+        @apply opacity-0 translate-y-1;
       }
     }
     img {

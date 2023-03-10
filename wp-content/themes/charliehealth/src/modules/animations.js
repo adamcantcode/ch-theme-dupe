@@ -15,7 +15,7 @@ export default function animations() {
       link.nextElementSibling.querySelectorAll('.nav-link.sub-link'),
       {
         opacity: 1,
-        x: 0,
+        y: 0,
         stagger: 0.025,
       }
     );

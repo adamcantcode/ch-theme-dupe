@@ -27,7 +27,7 @@ function animations() {
     // Add an animation to the timeline to animate the opacity and x position of the sub-links
     linksTimeLine.to(link.nextElementSibling.querySelectorAll('.nav-link.sub-link'), {
       opacity: 1,
-      x: 0,
+      y: 0,
       stagger: 0.025
     });
     // Add a mouseenter event listener to the current top level link
