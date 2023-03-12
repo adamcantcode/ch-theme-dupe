@@ -32,7 +32,7 @@
     }
   }
   .nav-sub-menu {
-    @apply transition-all duration-150 md:opacity-0 invisible rounded-b-xl -translate-y-1 h-0 md:h-auto shadow-xl;
+    @apply transition-transform duration-150 md:opacity-0 invisible rounded-b-xl -translate-y-1 h-0 md:h-auto shadow-xl;
     &.active {
       @apply h-auto visible;
     }

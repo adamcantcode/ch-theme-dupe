@@ -14,8 +14,14 @@ export default function animations() {
     linksTimeLine.to(
       link.nextElementSibling.querySelectorAll('.nav-link.sub-link'),
       {
-        opacity: 1,
         y: 0,
+        stagger: 0.025,
+      }
+    );
+    linksTimeLine.to(
+      link.nextElementSibling.querySelectorAll('.nav-link.sub-link'),
+      {
+        opacity: 1,
         stagger: 0.025,
       }
     );

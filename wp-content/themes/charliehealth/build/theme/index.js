@@ -26,8 +26,11 @@ function animations() {
 
     // Add an animation to the timeline to animate the opacity and x position of the sub-links
     linksTimeLine.to(link.nextElementSibling.querySelectorAll('.nav-link.sub-link'), {
-      opacity: 1,
       y: 0,
+      stagger: 0.025
+    });
+    linksTimeLine.to(link.nextElementSibling.querySelectorAll('.nav-link.sub-link'), {
+      opacity: 1,
       stagger: 0.025
     });
     // Add a mouseenter event listener to the current top level link
@@ -55,25 +58,44 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": function() { return /* binding */ mobileNav; }
 /* harmony export */ });
 /**
- * Man nav hover actions
+ * Main nav hover actions
  */
 function mobileNav() {
   var menu = document.querySelector('.open-close');
   var slideOut = document.querySelector('.slide-out');
   var mainContent = document.querySelector('.site-main');
   var topLevelLinks = document.querySelectorAll('.nav-parent-menu > .nav-link');
+
+  /**
+   * On click, toggle active.
+   */
   menu.addEventListener('click', () => {
     menu.classList.toggle('active');
     slideOut.classList.toggle('active');
     mainContent.classList.toggle('active');
   });
+
+  /**
+   * On click, add active to submenu item.
+   */
   topLevelLinks.forEach(link => {
-    link.addEventListener('click', e => {
-      console.log(link);
-      e.preventDefault();
+    link.addEventListener('click', () => {
+      removeActive(link.nextElementSibling);
       link.nextElementSibling.classList.toggle('active');
     });
   });
+
+  /**
+   * Remove active from all submenus except the current.
+   * @param {string} activeLink 
+   */
+  const removeActive = activeLink => {
+    topLevelLinks.forEach(link => {
+      if (activeLink !== link.nextElementSibling) {
+        link.nextElementSibling.classList.remove('active');
+      }
+    });
+  };
 }
 
 /***/ }),
