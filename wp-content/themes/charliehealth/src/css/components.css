@@ -53,9 +53,9 @@
   }
 }
 .slide-out {
-  @apply right-full md:right-0 md:w-auto transition-right duration-500 w-[85vw] px-4 md:px-0;
+  @apply right-full md:right-0 md:w-auto transition-right duration-500 w-full px-4 md:px-0;
   &.active {
-    @apply right-[15vw];
+    @apply right-0;
   }
 }
 /* .site-main {
