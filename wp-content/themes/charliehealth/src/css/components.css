@@ -47,14 +47,20 @@
   }
 }
 .nav-link {
-  @apply text-white no-underline py-5 px-8 hover:bg-lightest-teal hover:text-dark-blue transition-colors duration-300 text-lg block border-b-2 border-light-blue last:border-0 md:border-0 border-opacity-20;
+  @apply text-white no-underline py-5 px-8 hover:bg-lightest-teal hover:text-dark-blue transition-colors duration-300 text-lg block;
   &.sub-link {
     @apply md:py-3 md:px-5 py-3 px-4 ml-8 md:ml-0 whitespace-nowrap;
   }
 }
 .slide-out {
-  @apply right-full md:right-0 md:w-auto transition-all duration-500 w-[85vw] px-4 md:px-0;
+  @apply right-full md:right-0 md:w-auto transition-right duration-500 w-[85vw] px-4 md:px-0;
   &.active {
     @apply right-[15vw];
   }
 }
+/* .site-main {
+  @apply transition-transform duration-500;
+  &.active {
+    @apply translate-x-1/2;
+  }
+} */

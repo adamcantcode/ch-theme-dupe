@@ -62,7 +62,7 @@ function mobileNav() {
   var menu = document.querySelector('.open-close');
   var slideOut = document.querySelector('.slide-out');
   var mainContent = document.querySelector('.site-main');
-  var topLevelLinks = document.querySelectorAll('.nav-parent-menu > .nav-link');
+  var topLevelLinks = document.querySelectorAll('.nav-parent-menu > .nav-link:not(.static)');
 
   /**
    * On click, toggle active.

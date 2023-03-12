@@ -28,7 +28,7 @@ module.exports = {
         'darkest-teal': '#0B3340',
         'darkest-blue': '#161940',
         'dark-text': '#272A51',
-        'text': '#46496D',
+        text: '#46496D',
         'light-text': '#6A6C85',
         'med-blue-60': '#5F6387',
         'med-blue-40': '#2A2D4F66',
@@ -52,47 +52,74 @@ module.exports = {
         'light-purple-gradient-end': '#FFFFFF',
       },
       fontSize: {
-        'h1-xl': ['4rem', {
-          lineHeight: '110%',
-          letterSpacing: '-0.04em',
-          fontWeight: '400',
-        }],
-        'h1': ['3rem', {
-          lineHeight: '110%',
-          letterSpacing: '-0.03em',
-          fontWeight: '400',
-        }],
-        'h2': ['2.25rem', {
-          lineHeight: '110%',
-          letterSpacing: '-0.03em',
-          fontWeight: '400',
-        }],
-        'h3': ['1.5rem', {
-          lineHeight: '130%',
-          letterSpacing: '-0.05em',
-          fontWeight: '400',
-        }],
-        'h4': ['1.375rem', {
-          lineHeight: '130%',
-          letterSpacing: '-0.05em',
-          fontWeight: '400',
-        }],
-        'h5': ['1rem', {
-          lineHeight: '140%',
-          letterSpacing: '-0.01em',
-          fontWeight: '500',
-        }],
-        'h6': ['.875rem', {
-          lineHeight: '140%',
-          letterSpacing: '-0.02em',
-          fontWeight: '400',
-        }],
-        'p': ['1.125rem', {
-          lineHeight: '210%',
-          letterSpacing: '-0.02em',
-          fontWeight: '400',
-        }],
-      }
+        'h1-xl': [
+          '4rem',
+          {
+            lineHeight: '110%',
+            letterSpacing: '-0.04em',
+            fontWeight: '400',
+          },
+        ],
+        h1: [
+          '3rem',
+          {
+            lineHeight: '110%',
+            letterSpacing: '-0.03em',
+            fontWeight: '400',
+          },
+        ],
+        h2: [
+          '2.25rem',
+          {
+            lineHeight: '110%',
+            letterSpacing: '-0.03em',
+            fontWeight: '400',
+          },
+        ],
+        h3: [
+          '1.5rem',
+          {
+            lineHeight: '130%',
+            letterSpacing: '-0.05em',
+            fontWeight: '400',
+          },
+        ],
+        h4: [
+          '1.375rem',
+          {
+            lineHeight: '130%',
+            letterSpacing: '-0.05em',
+            fontWeight: '400',
+          },
+        ],
+        h5: [
+          '1rem',
+          {
+            lineHeight: '140%',
+            letterSpacing: '-0.01em',
+            fontWeight: '500',
+          },
+        ],
+        h6: [
+          '.875rem',
+          {
+            lineHeight: '140%',
+            letterSpacing: '-0.02em',
+            fontWeight: '400',
+          },
+        ],
+        p: [
+          '1.125rem',
+          {
+            lineHeight: '210%',
+            letterSpacing: '-0.02em',
+            fontWeight: '400',
+          },
+        ],
+      },
+      transitionProperty: {
+        right: 'right',
+      },
     },
   },
   plugins: [],
