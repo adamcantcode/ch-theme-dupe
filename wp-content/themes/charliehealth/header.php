@@ -23,7 +23,7 @@
           <img src="https://assets-global.website-files.com/62daf9ae3616b86eec143652/62f68f4ebab2af5c28626d79_wordmark_horizontal_white.svg" alt="ss" class=" w-[160px]">
         </a>
       </div>
-      <div class="slide-out overflow-y-scroll md:overflow-y-visible fixed bottom-0 md:top-0 bg-darkest-blue md:bg-transparent md:flex md:relative md:h-auto h-[100vh]<?= is_user_logged_in() ? 'top-[116px]' : 'top-[68px]'; ?>">
+      <div class="slide-out overflow-y-scroll md:overflow-y-visible fixed bottom-0 md:top-0 bg-darkest-blue md:bg-transparent md:flex md:relative md:h-auto h-[100vh] <?= is_user_logged_in() ? 'top-[116px]' : 'top-[68px]'; ?>">
         <?php
         if (have_rows('navigation_item', 'option')) :
           while (have_rows('navigation_item', 'option')) : the_row();
@@ -33,7 +33,7 @@
             // TODO Update and remove the placeholder
             $submenuImage = get_sub_field('submenu_image') ?: 'https://assets-global.website-files.com/62daf9ae3616b86eec143652/62fc0dbd27ef532c3740e981_young-boy-blue-shirt-on-beach.webp';
         ?>
-            <div class="relative nav-parent-menu">
+            <div class="relative cursor-default nav-parent-menu">
               <span class="flex items-center nav-link">
                 <?= $topLink; ?>
                 <span>

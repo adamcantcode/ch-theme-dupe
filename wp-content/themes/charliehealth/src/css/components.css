@@ -13,12 +13,6 @@
 .nav-parent-menu {
   &:hover {
     .nav-sub-menu {
-      @apply transition-all duration-300;
-      /* .nav-link {
-        &.sub-link {
-          @apply opacity-100 translate-x-0;
-        }
-      } */
       @apply md:opacity-100 md:visible translate-y-0 duration-300;
       img {
         @apply opacity-100 translate-x-0;
