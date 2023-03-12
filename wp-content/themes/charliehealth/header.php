@@ -23,7 +23,7 @@
           <img src="https://assets-global.website-files.com/62daf9ae3616b86eec143652/62f68f4ebab2af5c28626d79_wordmark_horizontal_white.svg" alt="ss" class=" w-[160px]">
         </a>
       </div>
-      <div class="slide-out overflow-y-scroll md:overflow-y-visible fixed bottom-0 md:top-0 bg-darkest-blue md:bg-transparent md:flex md:relative md:h-auto h-[100vh] <?= is_user_logged_in() ? 'top-[116px]' : 'top-[68px]'; ?>">
+      <div class="slide-out overflow-y-scroll md:overflow-y-visible fixed bottom-0 md:top-0 bg-darkest-blue md:bg-transparent md:flex md:relative md:h-auto h-[calc(100vh-68px)] <?= is_user_logged_in() ? 'top-[116px]' : 'top-[68px]'; ?>">
         <div class="relative block border-b-2 cursor-default md:hidden nav-parent-menu border-light-blue last:border-0 md:border-0 border-opacity-20">
           <span class="static flex items-center nav-link">
             Home
@@ -81,6 +81,17 @@
         else :
         endif;
         ?>
+        <div class="block mobile-ctas md:hidden">
+          <div class="flex justify-center gap-4 px-5 py-8 social">
+            <a href=""><img src="https://placehold.it/25x25" alt="social"></a>
+            <a href=""><img src="https://placehold.it/25x25" alt="social"></a>
+            <a href=""><img src="https://placehold.it/25x25" alt="social"></a>
+            <a href=""><img src="https://placehold.it/25x25" alt="social"></a>
+          </div>
+          <div class="flex justify-center pb-8">
+            <a href="#" class="ch-button tertiary">Get started</a>
+          </div>
+        </div>
       </div>
       <div class="hidden nav-cta md:block">
         <a href="#" class="ch-button tertiary">Get started</a>
