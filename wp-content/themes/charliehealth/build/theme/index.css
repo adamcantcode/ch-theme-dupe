@@ -752,6 +752,7 @@ table {
 .nav-parent-menu .nav-sub-menu .nav-link.sub-link {
   --tw-translate-y: 0.25rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  border-width: 0px;
   opacity: 0;
 }
 .nav-parent-menu .nav-sub-menu img {
@@ -781,6 +782,9 @@ table {
 }
 .nav-link {
   display: block;
+  border-bottom-width: 2px;
+  border-color: rgb(243 244 249 / var(--tw-border-opacity));
+  --tw-border-opacity: 0.2;
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
   padding-left: 2rem;
@@ -794,22 +798,42 @@ table {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
 }
+.nav-link:last-child {
+  border-width: 0px;
+}
 .nav-link:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(236 247 250 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(29 34 95 / var(--tw-text-opacity));
 }
+@media (min-width: 480px) {
+  .nav-link {
+    border-width: 0px;
+  }
+}
 .nav-link.sub-link {
+  margin-left: 2rem;
   white-space: nowrap;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media (min-width: 480px) {
+  .nav-link.sub-link {
+    margin-left: 0px;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
 }
 .slide-out {
   right: 100%;
   width: 85vw;
+  padding-left: 1rem;
+  padding-right: 1rem;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 500ms;
@@ -818,14 +842,13 @@ table {
   .slide-out {
     right: 0px;
     width: auto;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }
 .slide-out.active {
   right: 15vw;
 }
-.slide-out.active .nav-link {
-      /* @apply ml-[15%]; */
-    }
 .resize-animation-stopper * {
   transition: none !important;
   animation: none !important;
@@ -1036,6 +1059,9 @@ table {
   }
   .md\:mt-\[68px\] {
     margin-top: 68px;
+  }
+  .md\:ml-0 {
+    margin-left: 0px;
   }
   .md\:block {
     display: block;

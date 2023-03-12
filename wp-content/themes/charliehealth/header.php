@@ -36,7 +36,7 @@
             <div class="relative cursor-default nav-parent-menu">
               <span class="flex items-center nav-link">
                 <?= $topLink; ?>
-                <span>
+                <span class="ml-auto md:ml-0">
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 ml-2 fill-current" viewBox="0 0 24 24">
                     <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path>
                   </svg>
