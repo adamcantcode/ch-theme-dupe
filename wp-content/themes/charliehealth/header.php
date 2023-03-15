@@ -50,7 +50,7 @@
               <?php
               if (have_rows('submenu_items', 'option')) : ?>
                 <div class="transition-all duration-300 nav-sub-menu md:absolute top-full bg-darkest-blue md:flex">
-                  <div class="flex flex-col">
+                  <div class="flex flex-col menu-container">
                     <?php
                     while (have_rows('submenu_items', 'option')) : the_row();
                       $sublink = get_sub_field('sublink');

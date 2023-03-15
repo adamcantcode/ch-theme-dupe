@@ -27,7 +27,13 @@
   }
   .nav-sub-menu {
     @apply transition-transform duration-150 md:opacity-0 invisible rounded-b-xl -translate-y-1 h-0 md:h-auto shadow-xl;
+    & > .menu-container {
+      @apply md:block hidden
+    }
     &.active {
+      & > .menu-container {
+        @apply md:block block
+      }
       @apply h-auto visible;
     }
     .nav-link {
@@ -47,9 +53,9 @@
   }
 }
 .nav-link {
-  @apply text-white no-underline py-5 px-8 hover:bg-lightest-teal hover:text-dark-blue transition-colors duration-300 text-lg block;
+  @apply text-white no-underline md:py-5 md:px-8 px-0 py-4  md:hover:bg-lightest-teal md:hover:text-dark-blue transition-colors duration-300 text-lg block;
   &.sub-link {
-    @apply md:py-3 md:px-5 py-3 px-4 ml-8 md:ml-0 whitespace-nowrap;
+    @apply md:py-3 md:px-5 py-3 px-4 ml-4 md:ml-0 whitespace-nowrap;
   }
 }
 .slide-out {
