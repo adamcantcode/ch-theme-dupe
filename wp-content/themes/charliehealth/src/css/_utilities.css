@@ -108,14 +108,12 @@
   .container-small {
     @apply max-w-[840px] mx-auto;
   }
-  /*
-.wp-block-group {
-  @apply py-16;
-} */
+  /* .wp-block-group {
+    @apply py-16;
+  } */
   /* EDITOR */
   /* .mce-content-body {
-	a {
-		
-	}
-} */
+    a {
+    }
+  } */
 }
