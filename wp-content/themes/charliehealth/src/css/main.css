@@ -1,12 +1,15 @@
+/* TAILWIND STYLES */
+
 /* Base Layer */
 @import 'tailwindcss/base';
 
 /* Components Layer */
 @import 'tailwindcss/components';
 
-@import './_base.css';
-@import './components.css';
-@import './helpers.css';
-
 /* Utilities Layer */
 @import 'tailwindcss/utilities';
+
+/* CUSTOM STYELS */
+@import './_base.css';
+@import './_components.css';
+@import './_utilities.css';

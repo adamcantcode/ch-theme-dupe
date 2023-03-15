@@ -18,6 +18,11 @@ module.exports = {
       md: '480px',
       lg: '1024px',
     },
+    fontFamily: {
+      'heading': ['"ABC Social"', 'sans-serif'],
+      'heading-serif': ['"ABC Arizona"', 'serif'],
+      'body': ['"GT America"', 'sans-serif'],
+    },
     extend: {
       colors: {
         'lightest-teal': '#ECF7FA',
@@ -52,7 +57,7 @@ module.exports = {
         'light-purple-gradient-end': '#FFFFFF',
       },
       fontSize: {
-        'h1-xl': [
+        'display': [
           '4rem',
           {
             lineHeight: '110%',

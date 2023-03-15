@@ -11,7 +11,7 @@
 
   <h2 id="headings">Headings</h2>
 
-  <h1 class="text-h1-xl">h1-xl The quick brown fox jumps over the lazy dog</h1>
+  <h1 class="text-display">Display The quick brown fox jumps over the lazy dog</h1>
   <h1>h1 The quick brown fox jumps over the lazy dog</h1>
   <h2>h2 The quick brown fox jumps over the lazy dog</h2>
   <h3>h3 The quick brown fox jumps over the lazy dog</h3>

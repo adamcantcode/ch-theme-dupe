@@ -1,137 +1,83 @@
-/* Alignments
---------------------------------------------- */
-.alignleft {
-  /*rtl:ignore*/
-  float: left;
-
-  /*rtl:ignore*/
-  margin-right: 1.5em;
-  margin-bottom: 1.5em;
-}
-
-.alignright {
-  /*rtl:ignore*/
-  float: right;
-
-  /*rtl:ignore*/
-  margin-left: 1.5em;
-  margin-bottom: 1.5em;
-}
-
-.aligncenter {
-  clear: both;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.5em;
-}
-
-/* Captions
---------------------------------------------- */
-.wp-caption {
-  margin-bottom: 1.5em;
-  max-width: 100%;
-}
-
-.wp-caption img[class*='wp-image-'] {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.wp-caption .wp-caption-text {
-  margin: 0.8075em 0;
-}
-
-.wp-caption-text {
-  text-align: center;
-}
-
-/* Galleries
---------------------------------------------- */
-.gallery {
-  margin-bottom: 1.5em;
-  display: grid;
-  grid-gap: 1.5em;
-}
-
-.gallery-item {
-  display: inline-block;
-  text-align: center;
-  width: 100%;
-}
-
-.gallery-columns-2 {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.gallery-columns-3 {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.gallery-columns-4 {
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.gallery-columns-5 {
-  grid-template-columns: repeat(5, 1fr);
-}
-
-.gallery-columns-6 {
-  grid-template-columns: repeat(6, 1fr);
-}
-
-.gallery-columns-7 {
-  grid-template-columns: repeat(7, 1fr);
-}
-
-.gallery-columns-8 {
-  grid-template-columns: repeat(8, 1fr);
-}
-
-.gallery-columns-9 {
-  grid-template-columns: repeat(9, 1fr);
-}
-
-.gallery-caption {
-  display: block;
-}
-
-/* Make sure embeds and iframes fit their containers. */
-embed,
-iframe,
-object {
-  max-width: 100%;
-}
-
-img {
-  height: auto;
-  max-width: 100%;
-}
-
-figure {
-  margin: 1em 0;
-}
-
-table {
-  margin: 0 0 1.5em;
-  width: 100%;
-}
-
 @layer base {
+  @font-face {
+    font-family: 'GT America Medium';
+    font-weight: 500;
+    font-style: normal;
+    src: url('../../fonts/GT America/GT-America-Standard-Medium.woff')
+        format('woff'),
+      url('../../fonts/GT America/GT-America-Standard-Medium.woff2')
+        format('woff2');
+  }
+  @font-face {
+    font-family: 'GT America Medium Italic';
+    font-weight: 500;
+    font-style: italic;
+    src: url('../../fonts/GT America/GT-America-Standard-Medium-Italic.woff')
+        format('woff'),
+      url('../../fonts/GT America/GT-America-Standard-Medium-Italic.woff2')
+        format('woff2');
+  }
+  @font-face {
+    font-family: 'GT America';
+    font-weight: 400;
+    font-style: normal;
+    src: url('../../fonts/GT America/GT-America-Standard-Regular.woff')
+        format('woff'),
+      url('../../fonts/GT America/GT-America-Standard-Regular.woff2')
+        format('woff2');
+  }
+  @font-face {
+    font-family: 'GT America';
+    font-weight: 400;
+    font-style: italic;
+    src: url('../../fonts/GT America/GT-America-Standard-Regular-Italic.woff')
+        format('woff'),
+      url('../../fonts/GT America/GT-America-Standard-Regular-Italic.woff2')
+        format('woff2');
+  }
+  @font-face {
+    font-family: 'ABC Social';
+    font-weight: 400;
+    font-style: regular;
+    src: url('../../fonts/ABC Social/ABCSocial-Regular.woff')
+        format('woff'),
+      url('../../fonts/ABC Social/ABCSocial-Regular.woff2')
+        format('woff2');
+  }
+  @font-face {
+    font-family: 'ABC Arizona';
+    font-weight: 400;
+    font-style: regular;
+    src: url('../../fonts/Arizona/ABCArizonaText-Regular.woff')
+        format('woff'),
+      url('../../fonts/Arizona/ABCArizonaText-Regular.woff2')
+        format('woff2');
+  }
+  @font-face {
+    font-family: 'ABC Arizona Italic';
+    font-weight: 400;
+    font-style: italic;
+    src: url('../../fonts/Arizona/ABCArizonaText-RegularItalic.woff')
+        format('woff'),
+      url('../../fonts/Arizona/ABCArizonaText-RegularItalic.woff2')
+        format('woff2');
+  }
+  html {
+    @apply font-body;
+  }
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    @apply text-dark-blue;
+    @apply text-dark-blue font-heading;
   }
   p,
   ul li,
   ol li,
   blockquote {
-    @apply text-text;
+    @apply text-text font-body;
   }
   h1 {
     @apply mb-12 text-h1;
@@ -140,7 +86,7 @@ table {
     @apply mb-10 text-h2;
   }
   h3 {
-    @apply mb-5 font-serif text-h3;
+    @apply mb-5 font-heading-serif text-h3;
   }
   h4 {
     @apply mb-4 text-h4;
@@ -171,7 +117,7 @@ table {
     @apply underline transition-colors duration-300 text-p text-dark-blue hover:text-hover-blue;
   }
   blockquote {
-    @apply py-8 my-8 font-serif text-4xl leading-10 border-solid border-y-4 border-purple-gradient-start;
+    @apply py-8 my-8 font-heading-serif text-4xl leading-10 border-solid border-y-4 border-purple-gradient-start;
   }
   blockquote p {
     @apply mb-0;
@@ -183,23 +129,26 @@ table {
     /* @apply mb-10 rounded-3xl; */
   }
   body {
-    overflow-x:hidden
+    overflow-x: hidden;
+  }
+  /* Make sure embeds and iframes fit their containers. */
+  embed,
+  iframe,
+  object {
+    max-width: 100%;
+  }
+
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  figure {
+    margin: 1em 0;
+  }
+
+  table {
+    margin: 0 0 1.5em;
+    width: 100%;
   }
 }
-
-.container {
-  @apply max-w-[1280px] mx-auto px-5;
-}
-.container-small {
-  @apply max-w-[840px] mx-auto;
-}
-/*
-.wp-block-group {
-  @apply py-16;
-} */
-/* EDITOR */
-/* .mce-content-body {
-	a {
-		
-	}
-} */
