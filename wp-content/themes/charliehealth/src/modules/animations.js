@@ -4,7 +4,6 @@
 export default function animations() {
   var topLevelLinks = document.querySelectorAll('.nav-parent-menu');
 
-  // TODO adjust on mobile
   // Get all top level links
   topLevelLinks.forEach((link) => {
     // Create a new timeline for the sub-links of the current top level link

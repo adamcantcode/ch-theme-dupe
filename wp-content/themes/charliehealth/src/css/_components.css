@@ -14,7 +14,7 @@
   .nav-parent-menu {
     &:hover {
       .nav-sub-menu {
-        @apply md:opacity-100 md:visible translate-y-0 duration-300;
+        @apply md:opacity-100 md:visible;
         img {
           @apply opacity-100 translate-x-0;
         }
@@ -27,7 +27,7 @@
       }
     }
     .nav-sub-menu {
-      @apply transition-transform duration-150 md:opacity-0 invisible rounded-b-xl -translate-y-1 h-0 md:h-auto shadow-xl;
+      @apply md:opacity-0 invisible rounded-b-xl h-0 md:h-auto shadow-xl min-w-full;
       & > .menu-container {
         @apply md:block hidden;
       }
