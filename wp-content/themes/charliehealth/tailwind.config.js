@@ -49,6 +49,7 @@ module.exports = {
       // 'bright-orange': '#FF9F81',
       // orange: '#E07058',
       // 'purple-gradient-end': '#A698FF',
+      // 'med-blue': '#262D70',
       // 'lightest-purple': '#F8F8FF',
       // 'light-purple': '#F0EFFC',
       // 'lightest-blue': '#F5F6F8',
