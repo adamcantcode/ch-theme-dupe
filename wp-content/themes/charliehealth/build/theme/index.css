@@ -497,15 +497,15 @@ h2{
 h3{
   margin-bottom: 1.25rem;
   font-family: "ABC Arizona", serif;
-  font-size: 1.5rem;
-  line-height: 130%;
-  letter-spacing: -0.05em;
+  font-size: 2.25rem;
+  line-height: 110%;
+  letter-spacing: -0.04em;
   font-weight: 400;
 }
 
 h4{
   margin-bottom: 1rem;
-  font-size: 1.375rem;
+  font-size: 1.75rem;
   line-height: 130%;
   letter-spacing: -0.05em;
   font-weight: 400;
@@ -521,7 +521,7 @@ h5{
 
 h6{
   margin-bottom: 1rem;
-  font-size: .875rem;
+  font-size: 0.875rem;
   line-height: 140%;
   letter-spacing: -0.02em;
   font-weight: 400;
@@ -1149,6 +1149,11 @@ table {
   border-bottom-width: 2px;
 }
 
+.border-light-blue{
+  --tw-border-opacity: 1;
+  border-color: rgb(243 244 249 / var(--tw-border-opacity));
+}
+
 .border-opacity-20{
   --tw-border-opacity: 0.2;
 }
@@ -1202,7 +1207,7 @@ table {
 }
 
 .text-h6{
-  font-size: .875rem;
+  font-size: 0.875rem;
   line-height: 140%;
   letter-spacing: -0.02em;
   font-weight: 400;

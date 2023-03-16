@@ -24,8 +24,8 @@ module.exports = {
       body: ['"GT America"', 'sans-serif'],
     },
     colors: {
-      'transparent': 'rgba(0,0,0,0)',
-      'current': 'currentColor',
+      transparent: 'rgba(0,0,0,0)',
+      current: 'currentColor',
       'lightest-teal': '#ECF7FA',
       'bright-teal': '#B1FCFA',
       'darkest-blue': '#161940',
@@ -34,6 +34,7 @@ module.exports = {
       'hover-blue': '#4331B0',
       'med-blue': '#262D70',
       'dark-blue': '#1D225F',
+      'light-blue': '#F3F4F9',
       white: '#FFFFFF',
       // 'light-teal': '#C8FFFF',
       // 'med-bright-teal': '#3EB7B5',
@@ -53,7 +54,6 @@ module.exports = {
       // 'lightest-purple': '#F8F8FF',
       // 'light-purple': '#F0EFFC',
       // 'lightest-blue': '#F5F6F8',
-      // 'light-blue': '#F3F4F9',
       // cream: '#F8F4F0',
       // 'light-purple-gradient-start': '#F0EFFC',
       // 'light-purple-gradient-end': '#FFFFFF',
@@ -85,15 +85,15 @@ module.exports = {
           },
         ],
         h3: [
-          '1.5rem',
+          '2.25rem',
           {
-            lineHeight: '130%',
-            letterSpacing: '-0.05em',
+            lineHeight: '110%',
+            letterSpacing: '-0.04em',
             fontWeight: '400',
           },
         ],
         h4: [
-          '1.375rem',
+          '1.75rem',
           {
             lineHeight: '130%',
             letterSpacing: '-0.05em',
@@ -109,7 +109,7 @@ module.exports = {
           },
         ],
         h6: [
-          '.875rem',
+          '0.875rem',
           {
             lineHeight: '140%',
             letterSpacing: '-0.02em',
@@ -124,6 +124,21 @@ module.exports = {
             fontWeight: '400',
           },
         ],
+      },
+      spacing: {
+        zero: '0',
+        'sp-1': '0.25rem',
+        'sp-2': '0.5rem',
+        'sp-3': '0.75rem',
+        'sp-4': '1rem',
+        'sp-5': '1.25rem',
+        'sp-6': '1.5rem',
+        'sp-7': '1.75rem',
+        'sp-8': '2rem',
+        'sp-9': '2.5rem',
+        'sp-10': '3rem',
+        'sp-11': '4rem',
+        'sp-12': '6rem',
       },
       transitionProperty: {
         right: 'right',
