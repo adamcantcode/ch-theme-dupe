@@ -964,6 +964,10 @@ table {
   right: 0px;
 }
 
+.test {
+    color: red;
+  }
+
 /* .site-main {
   @apply transition-transform duration-500;
   &.active {
@@ -1288,12 +1292,6 @@ table {
   transition-duration: 300ms;
 }
 
-/* Captions
---------------------------------------------- */
-
-/* Galleries
---------------------------------------------- */
-
 .container{
   margin-left: auto;
   margin-right: auto;
@@ -1302,14 +1300,129 @@ table {
   padding-right: 1.25rem;
 }
 
+/* CUSTOM STYELS */
+
+.wp-block-group{
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.alignleft {
+  /*rtl:ignore*/
+  float: left;
+
+  /*rtl:ignore*/
+  margin-right: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.alignright {
+  /*rtl:ignore*/
+  float: right;
+
+  /*rtl:ignore*/
+  margin-left: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.5em;
+}
+
+/* Captions
+--------------------------------------------- */
+
+.wp-caption {
+  margin-bottom: 1.5em;
+  max-width: 100%;
+}
+
+.wp-caption img[class*='wp-image-'] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+  margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+  text-align: center;
+}
+
+/* Galleries
+--------------------------------------------- */
+
+.gallery {
+  margin-bottom: 1.5em;
+  display: grid;
+  grid-gap: 1.5em;
+}
+
+.gallery-item {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+.gallery-columns-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.gallery-columns-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery-columns-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.gallery-columns-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.gallery-columns-6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.gallery-columns-7 {
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.gallery-columns-8 {
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.gallery-columns-9 {
+  grid-template-columns: repeat(9, 1fr);
+}
+
+.gallery-caption {
+  display: block;
+}
+
+.resize-animation-stopper * {
+  transition: none !important;
+  animation: none !important;
+}
+
+.container-small{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 840px;
+}
+
 /* EDITOR */
 
 /* .mce-content-body {
-    a {
-    }
-  } */
-
-/* CUSTOM STYELS */
+  a {
+  }
+} */
 
 .last\:border-0:last-child{
   border-width: 0px;
@@ -1397,6 +1510,5 @@ table {
     width: 25%;
   }
 }
-
 
 /*# sourceMappingURL=index.css.map*/

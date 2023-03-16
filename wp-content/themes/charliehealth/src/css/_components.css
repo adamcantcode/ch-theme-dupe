@@ -65,6 +65,9 @@
       @apply right-0;
     }
   }
+  .test {
+    color: red;
+  }
   /* .site-main {
   @apply transition-transform duration-500;
   &.active {
