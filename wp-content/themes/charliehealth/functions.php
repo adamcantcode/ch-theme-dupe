@@ -28,3 +28,11 @@ add_editor_style('/build/theme/index.css');
 if (function_exists('acf_add_options_page')) {
   acf_add_options_page();
 }
+
+
+// Register ACF blocks via block.json 
+function register_acf_blocks()
+{
+  register_block_type(__DIR__ . '/build/blocks/hero');
+}
+add_action('init', 'register_acf_blocks', 5);

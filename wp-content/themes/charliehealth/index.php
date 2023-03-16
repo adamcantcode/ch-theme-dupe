@@ -3,7 +3,7 @@
 <main id="primary" class="site-main md:mt-[68px] mt-0">
   <?php the_content(); ?>
   <!-- Sample content to base typograpgy on [http://snipplr.com/view/8121/html-test-page-for-css-style-guide] -->
-  <h1>CSS Basic Elements</h1>
+  <!-- <h1>CSS Basic Elements</h1>
 
   <p>The purpose of this HTML is to help determine what default settings are with CSS and to make sure that all possible HTML Elements are included in this HTML so as to not miss any possible Elements when designing a site.</p>
 
@@ -62,7 +62,7 @@
     "This stylesheet is going to help so freaking much." <cite>Blockquote</cite>
   </blockquote>
 
-  <small><a href="#wrapper">[top]</a></small>
+  <small><a href="#wrapper">[top]</a></small> -->
 </main>
 
 <?php get_footer(); ?>

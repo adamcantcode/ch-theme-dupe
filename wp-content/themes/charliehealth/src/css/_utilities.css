@@ -1,6 +1,7 @@
 @layer utilities {
-  /* Alignments
---------------------------------------------- */
+  .wp-block-group {
+    @apply py-sp-11;
+  }
   .alignleft {
     /*rtl:ignore*/
     float: left;
@@ -108,9 +109,6 @@
   .container-small {
     @apply max-w-[840px] mx-auto;
   }
-  /* .wp-block-group {
-    @apply py-16;
-  } */
   /* EDITOR */
   /* .mce-content-body {
     a {
