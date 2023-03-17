@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main id="primary" class="site-main md:mt-[68px] mt-0">
+<main id="primary" class="site-main container lg:mt-[68px] mt-0">
   <?php the_content(); ?>
   <!-- Sample content to base typograpgy on [http://snipplr.com/view/8121/html-test-page-for-css-style-guide] -->
   <!-- <h1>CSS Basic Elements</h1>

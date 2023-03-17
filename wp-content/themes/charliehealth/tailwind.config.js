@@ -58,16 +58,14 @@ module.exports = {
       // 'light-purple-gradient-start': '#F0EFFC',
       // 'light-purple-gradient-end': '#FFFFFF',
     },
+    borderRadius: {
+      none: '0',
+      sm: '0.625rem',
+      md: '1.25rem',
+      lg: '2.5rem',
+    },
     extend: {
       fontSize: {
-        display: [
-          '4rem',
-          {
-            lineHeight: '110%',
-            letterSpacing: '-0.04em',
-            fontWeight: '400',
-          },
-        ],
         h1: [
           '3rem',
           {
@@ -85,7 +83,7 @@ module.exports = {
           },
         ],
         h3: [
-          '2.25rem',
+          '1.5rem',
           {
             lineHeight: '110%',
             letterSpacing: '-0.04em',
@@ -135,10 +133,10 @@ module.exports = {
         'sp-6': '1.5rem',
         'sp-7': '1.75rem',
         'sp-8': '2rem',
-        'sp-9': '2.5rem',
-        'sp-10': '3rem',
-        'sp-11': '4rem',
-        'sp-12': '6rem',
+        'sp-10': '2.5rem',
+        'sp-12': '3rem',
+        'sp-14': '4rem',
+        'sp-16': '6rem',
       },
       transitionProperty: {
         right: 'right',

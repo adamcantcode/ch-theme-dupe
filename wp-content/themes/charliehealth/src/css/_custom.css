@@ -1,5 +1,5 @@
 .wp-block-group {
-  @apply py-sp-11;
+  @apply lg:py-sp-14 md:py-sp-12 py-sp-8;
 }
 .alignleft {
   /*rtl:ignore*/
