@@ -475,10 +475,18 @@ p,
 }
 
 h1{
-  font-size: 3rem;
-  line-height: 110%;
-  letter-spacing: -0.03em;
-  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.06rem;
+}
+
+@media (min-width: 1024px){
+
+  h1{
+    font-size: 3rem;
+    line-height: 110%;
+    letter-spacing: -0.03em;
+    font-weight: 400;
+  }
 }
 
 h1.text-display{
@@ -1096,6 +1104,14 @@ table {
   margin-top: 0px;
 }
 
+.mb-sp-4{
+  margin-bottom: 1rem;
+}
+
+.mb-sp-2{
+  margin-bottom: 0.5rem;
+}
+
 .block{
   display: block;
 }
@@ -1176,16 +1192,16 @@ table {
   cursor: pointer;
 }
 
-.grid-cols-2{
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
 .grid-cols-\[1fr_3fr_3fr\]{
   grid-template-columns: 1fr 3fr 3fr;
 }
 
 .flex-col{
   flex-direction: column;
+}
+
+.items-start{
+  align-items: flex-start;
 }
 
 .items-center{
@@ -1307,6 +1323,10 @@ table {
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.leading-\[1\.8rem\]{
+  line-height: 1.8rem;
 }
 
 .text-white{
@@ -1548,10 +1568,6 @@ table {
 
   .lg\:h-auto{
     height: auto;
-  }
-
-  .lg\:max-h-none{
-    max-height: none;
   }
 
   .lg\:min-h-0{

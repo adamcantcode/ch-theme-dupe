@@ -76,7 +76,7 @@
     @apply text-text font-body;
   }
   h1 {
-    @apply text-h1;
+    @apply lg:text-h1 text-[2rem] leading-[2.06rem];
     &.text-display {
       @apply md:text-[4rem] text-[2.25rem];
     }
