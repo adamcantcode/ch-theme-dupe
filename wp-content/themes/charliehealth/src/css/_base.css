@@ -97,7 +97,7 @@
     @apply text-h6;
   }
   p {
-    @apply text-p;
+    @apply text-p leading-[1.5rem] lg:text-p;
   }
   ul,
   ol {

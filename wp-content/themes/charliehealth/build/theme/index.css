@@ -453,7 +453,7 @@ video {
 body{
   font-family: "GT America", sans-serif;
   font-size: 1.125rem;
-  line-height: 210%;
+  line-height: 1.8rem;
   letter-spacing: -0.02em;
   font-weight: 400;
 }
@@ -549,9 +549,19 @@ h6{
 
 p{
   font-size: 1.125rem;
-  line-height: 210%;
   letter-spacing: -0.02em;
   font-weight: 400;
+  line-height: 1.5rem;
+}
+
+@media (min-width: 1024px){
+
+  p{
+    font-size: 1.125rem;
+    line-height: 1.8rem;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+  }
 }
 
 ul,
@@ -577,7 +587,7 @@ li{
 
 a{
   font-size: 1.125rem;
-  line-height: 210%;
+  line-height: 1.8rem;
   letter-spacing: -0.02em;
   font-weight: 400;
   --tw-text-opacity: 1;
@@ -1020,7 +1030,7 @@ table {
 
   .breadcrumbs> *{
     font-size: 1.125rem;
-    line-height: 210%;
+    line-height: 1.8rem;
     letter-spacing: -0.02em;
     font-weight: 400;
   }
@@ -1247,6 +1257,10 @@ table {
   justify-content: space-between;
 }
 
+.gap-3{
+  gap: 0.75rem;
+}
+
 .gap-4{
   gap: 1rem;
 }
@@ -1290,6 +1304,11 @@ table {
   background-color: rgb(22 25 64 / var(--tw-bg-opacity));
 }
 
+.bg-light-purple{
+  --tw-bg-opacity: 1;
+  background-color: rgb(240 239 252 / var(--tw-bg-opacity));
+}
+
 .bg-med-blue{
   --tw-bg-opacity: 1;
   background-color: rgb(38 45 112 / var(--tw-bg-opacity));
@@ -1298,6 +1317,20 @@ table {
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-gradient-to-r{
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+.from-purple-gradient-start{
+  --tw-gradient-from: #EADAFF;
+  --tw-gradient-to: rgb(234 218 255 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-purple-gradient-end{
+  --tw-gradient-to: #A698FF;
 }
 
 .fill-current{
@@ -1320,6 +1353,14 @@ table {
 
 .p-8{
   padding: 2rem;
+}
+
+.p-\[1px\]{
+  padding: 1px;
+}
+
+.p-sp-4{
+  padding: 1rem;
 }
 
 .px-5{
@@ -1572,8 +1613,20 @@ table {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .md\:grid-cols-3{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .md\:gap-32{
     gap: 8rem;
+  }
+
+  .md\:gap-6{
+    gap: 1.5rem;
+  }
+
+  .md\:p-sp-6{
+    padding: 1.5rem;
   }
 }
 
@@ -1657,6 +1710,10 @@ table {
 
   .lg\:bg-transparent{
     background-color: rgba(0,0,0,0);
+  }
+
+  .lg\:p-sp-8{
+    padding: 2rem;
   }
 }
 
