@@ -9,23 +9,8 @@
   "icon": "list-view",
   "apiVersion": 2,
   "acf": {
-    "mode": "edit",
+    "mode": "preview",
     "renderTemplate": "hero.php"
   },
-  "supports": {},
-  "styles": [
-    {
-      "isDefault": true,
-      "name": "image",
-      "label": "Image"
-    },
-    {
-      "name": "details",
-      "label": "Details"
-    },
-    {
-      "name": "cta",
-      "label": "CTA"
-    }
-  ]
+  "supports": {}
 }

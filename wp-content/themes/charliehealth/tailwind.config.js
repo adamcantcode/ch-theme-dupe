@@ -146,6 +146,10 @@ module.exports = {
   plugins: [],
   corePlugins: {
     container: false,
+    // container: {
+    //   center: true,
+    //   padding: '1.25rem',
+    // },
     //  preflight: false,
   },
 };

@@ -4,7 +4,24 @@
   "settings": {
     "layout": {
       "contentSize": "1280px"
+    },
+    "blocks": {
+      "core/group": {
+        "color": {
+          "palette": [
+            {
+              "slug": "light-purple",
+              "color": "#f0effc",
+              "name": "Light Purple"
+            },
+            {
+              "slug": "white",
+              "color": "#ffffff",
+              "name": "White"
+            }
+          ]
+        }
+      }
     }
-  },
-  "styles": {}
+  }
 }

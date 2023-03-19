@@ -3,6 +3,47 @@
     "title": "Hero",
     "fields": [
         {
+            "key": "field_64163ded907da",
+            "label": "Style",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 1,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_641639ffb2d96",
+            "label": "Style",
+            "name": "hero_style",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "image": "Hero Image",
+                "details": "Details"
+            },
+            "default_value": "image",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
             "key": "field_63dff09021f5a",
             "label": "Details",
             "name": "",
@@ -26,7 +67,7 @@
             "name": "hero_title",
             "aria-label": "",
             "type": "text",
-            "instructions": "",
+            "instructions": "Override the default title of the block. Otherwise, use the page title.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -36,7 +77,7 @@
             },
             "default_value": "",
             "maxlength": "",
-            "placeholder": "",
+            "placeholder": "New title...",
             "prepend": "",
             "append": ""
         },
@@ -68,7 +109,15 @@
             "type": "true_false",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_641639ffb2d96",
+                        "operator": "==",
+                        "value": "image"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -106,7 +155,22 @@
             "type": "image",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_641639ffb2d96",
+                        "operator": "==",
+                        "value": "image"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_641639ffb2d96",
+                        "operator": "==",
+                        "value": "cta"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -200,5 +264,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1679086655
+    "modified": 1679181298
 }

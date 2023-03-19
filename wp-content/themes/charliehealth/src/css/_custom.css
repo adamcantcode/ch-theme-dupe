@@ -1,5 +1,8 @@
 .wp-block-group {
   @apply lg:py-sp-14 md:py-sp-12 py-sp-8;
+  &:not(.alignfull) {
+    @apply container
+  }
 }
 .alignleft {
   /*rtl:ignore*/
