@@ -745,10 +745,10 @@ table {
 .ch-button{
   display: inline-block;
   flex: 1 1 0%;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   text-align: center;
   font-size: 4vw;
   line-height: 1;
@@ -758,15 +758,16 @@ table {
   transition-duration: 300ms;
 }
 
-@media (min-width: 1024px){
+@media (min-width: 480px){
 
   .ch-button{
     flex: none;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     font-size: 1.25rem;
-    line-height: 1.75rem;
-    line-height: inherit;
+    line-height: 1.8rem;
   }
 }
 
@@ -815,12 +816,15 @@ table {
   color: rgb(29 34 95 / var(--tw-text-opacity));
 }
 
-@media (min-width: 1024px){
+@media (min-width: 480px){
 
   .ch-button.button-tertiary{
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
   }
+}
+
+@media (min-width: 1024px){
 
   .nav-parent-menu:hover .nav-sub-menu{
     visibility: visible;
@@ -1103,6 +1107,10 @@ table {
   margin-bottom: 0.5rem;
 }
 
+.mb-sp-12{
+  margin-bottom: 3rem;
+}
+
 .mb-sp-4{
   margin-bottom: 1rem;
 }
@@ -1125,10 +1133,6 @@ table {
 
 .mt-0{
   margin-top: 0px;
-}
-
-.mb-sp-12{
-  margin-bottom: 3rem;
 }
 
 .block{
@@ -1159,10 +1163,6 @@ table {
   height: 13rem;
 }
 
-.h-\[500px\]{
-  height: 500px;
-}
-
 .h-\[calc\(100vh-68px\)\]{
   height: calc(100vh - 68px);
 }
@@ -1177,10 +1177,6 @@ table {
 
 .min-h-\[68px\]{
   min-height: 68px;
-}
-
-.min-h-\[500px\]{
-  min-height: 500px;
 }
 
 .w-10{
@@ -1211,10 +1207,6 @@ table {
   width: 100vw;
 }
 
-.flex-1{
-  flex: 1 1 0%;
-}
-
 .flex-grow{
   flex-grow: 1;
 }
@@ -1229,14 +1221,6 @@ table {
 
 .cursor-pointer{
   cursor: pointer;
-}
-
-.grid-cols-12{
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-}
-
-.grid-cols-2{
-  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .grid-cols-1{
@@ -1265,18 +1249,6 @@ table {
 
 .gap-4{
   gap: 1rem;
-}
-
-.gap-8{
-  gap: 2rem;
-}
-
-.gap-16{
-  gap: 4rem;
-}
-
-.gap-32{
-  gap: 8rem;
 }
 
 .gap-x-4{

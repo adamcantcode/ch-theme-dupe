@@ -1,6 +1,6 @@
 @layer components {
   .ch-button {
-    @apply lg:text-xl text-[4vw] inline-block lg:px-sp-6 px-sp-2 py-sp-4 no-underline transition-all duration-300 flex-1 lg:flex-none text-center leading-none lg:leading-[inherit];
+    @apply md:text-xl text-[4vw] inline-block md:px-[25px] md:py-[15px] px-[10px] py-[10px] no-underline transition-all duration-300 flex-1 md:flex-none text-center leading-none md:leading-[1.8rem];
     &.button-primary {
       @apply shadow-[inset-0_0_0_2px_transparent] text-white rounded-sm bg-med-blue hover:bg-darkest-blue;
     }
@@ -8,7 +8,7 @@
       @apply rounded-sm bg-transparent shadow-[inset_0_0_0_1px_#d4d5dc] text-dark-blue hover:shadow-[inset_0_0_0_2px_#4331B0];
     }
     &.button-tertiary {
-      @apply rounded-sm bg-bright-teal hover:bg-lightest-teal hover:text-dark-blue lg:py-sp-3;
+      @apply rounded-sm bg-bright-teal hover:bg-lightest-teal hover:text-dark-blue md:py-sp-3;
     }
   }
   .nav-parent-menu {
