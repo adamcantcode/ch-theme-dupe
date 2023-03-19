@@ -34,5 +34,6 @@ if (function_exists('acf_add_options_page')) {
 function register_acf_blocks()
 {
   register_block_type(__DIR__ . '/build/blocks/hero');
+  register_block_type(__DIR__ . '/build/blocks/fifty-fifty');
 }
 add_action('init', 'register_acf_blocks', 5);

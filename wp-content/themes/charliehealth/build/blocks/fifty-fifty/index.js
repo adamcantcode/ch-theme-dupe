@@ -2,10 +2,10 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./blocks/hero/index.css":
-/*!*******************************!*\
-  !*** ./blocks/hero/index.css ***!
-  \*******************************/
+/***/ "./blocks/fifty-fifty/index.css":
+/*!**************************************!*\
+  !*** ./blocks/fifty-fifty/index.css ***!
+  \**************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -56,11 +56,11 @@ __webpack_require__.r(__webpack_exports__);
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/*!******************************!*\
-  !*** ./blocks/hero/index.js ***!
-  \******************************/
+/*!*************************************!*\
+  !*** ./blocks/fifty-fifty/index.js ***!
+  \*************************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ "./blocks/hero/index.css");
+/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ "./blocks/fifty-fifty/index.css");
 
 
 // console.log('block1')

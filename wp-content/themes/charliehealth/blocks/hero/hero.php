@@ -43,7 +43,7 @@ if ($style === 'image') {
       </div>
     <?php endif; ?>
     <?php if ($style === 'image') : ?>
-      <?php include_once('includes/button-group.php'); ?>
+      <?php include('includes/button-group.php'); ?>
     <?php endif; ?>
   </div>
   <?php if ($style === 'image') : ?>
@@ -56,7 +56,7 @@ if ($style === 'image') {
         <img src="https://assets-global.website-files.com/62daf9ae3616b86eec143652/63657e4ca50eb97be513e62d_Homepageherp.webp" alt="x" class="object-cover object-top rounded-lg max-h-52 md:max-h-none">
       <?php endif; ?>
       <?php if ($style === 'details') : ?>
-        <?php include_once('includes/details.php');
+        <?php include('includes/details.php');
         ?>
       <?php endif; ?>
     </div>
