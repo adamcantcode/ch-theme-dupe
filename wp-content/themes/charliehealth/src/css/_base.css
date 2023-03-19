@@ -58,8 +58,8 @@
       url('../../fonts/Arizona/ABCArizonaText-RegularItalic.woff2')
         format('woff2');
   }
-  html {
-    @apply font-body;
+  body {
+    @apply font-body text-p;
   }
   h1,
   h2,

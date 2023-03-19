@@ -1,5 +1,6 @@
 <?php
 $style = get_field('hero_style');
+$breadcrumbs = get_field('hero_breadcrumbs');
 $title = get_field('hero_title') ?: get_the_title();
 $subtitle = get_field('hero_subtitle');
 $icon = get_field('hero_icon');
@@ -26,6 +27,9 @@ if ($style === 'image') {
 // var_dump($style);
 ?>
 
+<?php if ($breadcrumbs) : ?>
+  <?php include_once('includes/breadcrumbs.php'); ?>
+<?php endif; ?>
 <div class="hero-cta <?= $gridClass ?: ''; ?>">
   <div class="<?= $orderClass ?: ''; ?>">
     <h1 class="<?= $titleClass ?: ''; ?>"><?= $title; ?></h1>

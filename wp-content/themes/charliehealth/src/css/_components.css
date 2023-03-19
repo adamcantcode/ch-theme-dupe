@@ -65,8 +65,10 @@
       @apply right-0;
     }
   }
-  .test {
-    color: red;
+  .breadcrumbs {
+    &> * {
+      @apply text-[0.875rem] md:text-p leading-none;
+    }
   }
   /* .site-main {
   @apply transition-transform duration-500;

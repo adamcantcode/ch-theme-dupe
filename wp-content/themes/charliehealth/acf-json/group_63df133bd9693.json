@@ -44,6 +44,44 @@
             "layout": "horizontal"
         },
         {
+            "key": "field_64165805feaf0",
+            "label": "Options",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_6416581dfeaf1",
+            "label": "Breadcrumbs",
+            "name": "hero_breadcrumbs",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Add breadcrumbs. Breadcrumbs are automatically generated based on the page's parents.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "Yes",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
             "key": "field_63dff09021f5a",
             "label": "Details",
             "name": "",
@@ -103,7 +141,7 @@
         },
         {
             "key": "field_63df147f0e496",
-            "label": "Icon",
+            "label": "Subtitle Icon",
             "name": "hero_icon",
             "aria-label": "",
             "type": "true_false",
@@ -115,6 +153,10 @@
                         "field": "field_641639ffb2d96",
                         "operator": "==",
                         "value": "image"
+                    },
+                    {
+                        "field": "field_63df133c0e495",
+                        "operator": "!=empty"
                     }
                 ]
             ],
@@ -264,5 +306,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1679181298
+    "modified": 1679188187
 }

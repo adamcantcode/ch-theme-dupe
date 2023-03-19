@@ -450,8 +450,12 @@ video {
         format('woff2');
   }
 
-html{
+body{
   font-family: "GT America", sans-serif;
+  font-size: 1.125rem;
+  line-height: 210%;
+  letter-spacing: -0.02em;
+  font-weight: 400;
 }
 
 h1,
@@ -1003,9 +1007,20 @@ table {
   right: 0px;
 }
 
-.test {
-    color: red;
+.breadcrumbs> *{
+  font-size: 0.875rem;
+  line-height: 1;
+}
+
+@media (min-width: 480px){
+
+  .breadcrumbs> *{
+    font-size: 1.125rem;
+    line-height: 210%;
+    letter-spacing: -0.02em;
+    font-weight: 400;
   }
+}
 
 /* .site-main {
   @apply transition-transform duration-500;
@@ -1088,8 +1103,12 @@ table {
   margin-bottom: 0.5rem;
 }
 
-.mb-sp-2{
-  margin-bottom: 0.5rem;
+.mb-sp-4{
+  margin-bottom: 1rem;
+}
+
+.mb-sp-5{
+  margin-bottom: 1.25rem;
 }
 
 .mb-sp-8{
@@ -1534,6 +1553,10 @@ table {
 
   .lg\:order-2{
     order: 2;
+  }
+
+  .lg\:mb-sp-6{
+    margin-bottom: 1.5rem;
   }
 
   .lg\:ml-0{
