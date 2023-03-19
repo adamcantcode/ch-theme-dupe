@@ -17,7 +17,7 @@
   <pre class="fixed left-0 right-0 w-full text-xs text-center text-white top-4 -z-10 opacity-30">Made with ❤️ in Denver</pre>
 
   <header class="lg:fixed sticky z-50 w-screen bg-med-blue <?= is_user_logged_in() ? 'lg:top-[32px] top-0' : 'top-0'; ?>">
-    <nav class="container relative flex items-center justify-between min-h-[68px] lg:min-h-0">
+    <nav class="container px-5 relative flex items-center justify-between min-h-[68px]">
       <div class="nav-logo">
         <a href="#">
           <img src="https://assets-global.website-files.com/62daf9ae3616b86eec143652/62f68f4ebab2af5c28626d79_wordmark_horizontal_white.svg" alt="ss" class=" w-[160px]">

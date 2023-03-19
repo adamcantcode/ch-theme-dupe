@@ -943,8 +943,8 @@ table {
   .nav-link{
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .nav-link:hover{
@@ -1336,8 +1336,6 @@ table {
   margin-left: auto;
   margin-right: auto;
   max-width: 1280px;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
 }
 
 /* CUSTOM STYELS */
@@ -1345,6 +1343,8 @@ table {
 .wp-block-group{
   padding-top: 2rem;
   padding-bottom: 2rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
 @media (min-width: 480px){
@@ -1367,8 +1367,6 @@ table {
   margin-left: auto;
   margin-right: auto;
   max-width: 1280px;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
 }
 
 .alignleft {
@@ -1560,10 +1558,6 @@ table {
 
   .lg\:h-auto{
     height: auto;
-  }
-
-  .lg\:min-h-0{
-    min-height: 0px;
   }
 
   .lg\:w-1\/4{
