@@ -62,8 +62,6 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ "./blocks/card-grid/index.css");
 
-
-// console.log('block1')
 }();
 /******/ })()
 ;

@@ -11,13 +11,13 @@
   "devDependencies": {
     "@wordpress/scripts": "^24.0.0",
     "autoprefixer": "^10.4.8",
+    "browser-sync": "^2.27.10",
+    "glob": "^8.0.3",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.4.16",
     "postcss-import": "^15.0.0",
     "postcss-loader": "^7.0.1",
-    "tailwindcss": "^3.1.8",
-    "browser-sync": "^2.27.10",
-    "glob": "^8.0.3",
-    "npm-run-all": "^4.1.5"
+    "tailwindcss": "^3.1.8"
   },
   "scripts": {
     "theme-start": "wp-scripts start src/index.js --output-path=build/theme",
@@ -28,5 +28,7 @@
     "build": "npm-run-all --parallel blocks-build theme-build",
     "sync": "browser-sync start --proxy 'https://wpch.local' --reload-delay 200 --files=['**/*.css', 'wp-content/themes/**/*.php']"
   },
-  "dependencies": {}
+  "dependencies": {
+    "swiper": "^9.1.1"
+  }
 }

@@ -1,4 +1,1 @@
-import './index.css'
-
-
-// console.log('block1')
+import './index.css';

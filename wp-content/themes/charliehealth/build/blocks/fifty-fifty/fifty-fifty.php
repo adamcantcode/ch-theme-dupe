@@ -12,3 +12,19 @@
     </div>
   </div>
 </div>
+<!-- Slider main container -->
+<div class="swiper">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide">
+      <img src="https://assets-global.website-files.com/62daf9ae3616b86eec143652/6365883c7de493c35933d23d_CarouselA.webp" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="https://assets-global.website-files.com/62daf9ae3616b86eec143652/63658833967aef5624fa5417_CarouselB.webp" alt="">
+    </div>
+    <div class="swiper-slide">
+      <img src="https://assets-global.website-files.com/62daf9ae3616b86eec143652/63658828d304f9138c975d41_CarouselC.webp" alt="">
+    </div>
+  </div>
+</div>
