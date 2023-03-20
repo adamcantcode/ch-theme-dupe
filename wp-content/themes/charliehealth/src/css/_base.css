@@ -76,22 +76,37 @@
     @apply text-text font-body;
   }
   h1 {
-    @apply lg:text-h1 text-[2rem] leading-[2.06rem];
+    @apply text-h1;
+    @screen md {
+      @apply mb-sp-6 text-h1;
+    }
+    @screen lg {
+      @apply text-h1-lg;
+    }
     &.text-display {
-      @apply md:text-[4rem] text-[2.25rem];
+      @apply text-h1-display;
+      @screen lg {
+        @apply text-h1-display-lg;
+      }
     }
   }
   h2 {
-    @apply text-h2 mb-sp-5;
-    @screen lg {
-      @apply mb-sp-6
+    @apply text-h2-lg mb-sp-5;
+    @screen md {
+      @apply mb-sp-6;
     }
     @screen lg {
-      @apply mb-sp-8
+      @apply mb-sp-8;
     }
   }
   h3 {
-    @apply font-heading-serif lg:text-h3 text-[1.20rem];
+    @apply font-heading-serif text-h3;
+    /* @screen md {
+      @apply mb-sp-6
+    } */
+    @screen lg {
+      @apply mb-sp-8 text-h3-lg;
+    }
   }
   h4 {
     @apply text-h4;
@@ -103,7 +118,10 @@
     @apply text-h6;
   }
   p {
-    @apply text-[1rem] leading-[1.5rem] lg:text-p;
+    @apply text-p;
+    @screen lg {
+      @apply text-p-lg;
+    }
   }
   ul,
   ol {

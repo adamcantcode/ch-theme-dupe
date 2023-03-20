@@ -67,26 +67,90 @@ module.exports = {
     extend: {
       fontSize: {
         h1: [
-          '3rem',
+          '2rem',
           {
-            lineHeight: '110%',
-            letterSpacing: '-0.03em',
+            lineHeight: '2rem',
+            letterSpacing: '0',
             fontWeight: '400',
           },
         ],
-        h2: [
+        // 'h1-md': [
+        //   '3rem',
+        //   {
+        //     lineHeight: '110%',
+        //     letterSpacing: '-0.03em',
+        //     fontWeight: '400',
+        //   },
+        // ],
+        'h1-lg': [
+          '3rem',
+          {
+            lineHeight: '3rem',
+            letterSpacing: '0',
+            fontWeight: '400',
+          },
+        ],
+        'h1-display': [
           '2.25rem',
           {
-            lineHeight: '110%',
-            letterSpacing: '-0.03em',
+            lineHeight: '2.4rem',
+            letterSpacing: '0',
+            fontWeight: '400',
+          },
+        ],
+        'h1-display-lg': [
+          '4rem',
+          {
+            lineHeight: '4.2rem',
+            letterSpacing: '0',
+            fontWeight: '400',
+          },
+        ],
+        // h2: [
+        //   '2.25rem',
+        //   {
+        //     lineHeight: '110%',
+        //     letterSpacing: '-0.03em',
+        //     fontWeight: '400',
+        //   },
+        // ],
+        // 'h2-md': [
+        //   '2.25rem',
+        //   {
+        //     lineHeight: '110%',
+        //     letterSpacing: '-0.03em',
+        //     fontWeight: '400',
+        //   },
+        // ],
+        'h2-lg': [
+          '1.75rem',
+          {
+            lineHeight: '2.3rem',
+            letterSpacing: '0',
             fontWeight: '400',
           },
         ],
         h3: [
+          '1.25rem',
+          {
+            lineHeight: '1.625rem',
+            letterSpacing: '0',
+            fontWeight: '400',
+          },
+        ],
+        // 'h3-md': [
+        //   '1.5rem',
+        //   {
+        //     lineHeight: '110%',
+        //     letterSpacing: '-0.04em',
+        //     fontWeight: '400',
+        //   },
+        // ],
+        'h3-lg': [
           '1.5rem',
           {
-            lineHeight: '110%',
-            letterSpacing: '-0.04em',
+            lineHeight: '1.8rem',
+            letterSpacing: '0',
             fontWeight: '400',
           },
         ],
@@ -115,10 +179,18 @@ module.exports = {
           },
         ],
         p: [
+          '1rem',
+          {
+            lineHeight: '1.5rem',
+            letterSpacing: '0',
+            fontWeight: '400',
+          },
+        ],
+        'p-lg': [
           '1.125rem',
           {
             lineHeight: '1.8rem',
-            letterSpacing: '-0.02em',
+            letterSpacing: '0',
             fontWeight: '400',
           },
         ],

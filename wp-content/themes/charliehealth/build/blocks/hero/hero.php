@@ -47,7 +47,7 @@ if ($style === 'image') {
     <?php endif; ?>
   </div>
   <?php if ($style === 'image') : ?>
-    <h1 class="block lg:hidden"><?php the_title(); ?></h1>
+    <h1 class="block text-display lg:hidden"><?php the_title(); ?></h1>
   <?php endif; ?>
   <?php if ($style === 'image' || $style === 'details') : ?>
     <div class="flex flex-col justify-between <?= $orderClassTwo ?: ''; ?>">

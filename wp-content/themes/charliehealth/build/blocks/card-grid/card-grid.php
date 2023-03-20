@@ -28,7 +28,7 @@ if ($horizontalScroll === true) {
             <div class="rounded-md bg-light-purple<?= $borderStyle === 'gradient' ? '' : ' border'; ?>">
               <div class="p-sp-4 md:p-sp-6 lg:p-sp-8">
                 <?php if ($numbers) : ?>
-                  <h4 class="text-h2 mb-sp-5"><?= get_row_index(); ?></h4>
+                  <h2 class="text-h2-lg mb-sp-5"><?= get_row_index(); ?></h2>
                 <?php endif; ?>
                 <?php if ($title) : ?>
                   <h3 class="mb-sp-5 last:mb-0"><?= $title; ?></h3>
