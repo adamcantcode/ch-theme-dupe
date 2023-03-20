@@ -82,7 +82,13 @@
     }
   }
   h2 {
-    @apply text-h2;
+    @apply text-h2 mb-sp-5;
+    @screen lg {
+      @apply mb-sp-6
+    }
+    @screen lg {
+      @apply mb-sp-8
+    }
   }
   h3 {
     @apply font-heading-serif lg:text-h3 text-[1.20rem];

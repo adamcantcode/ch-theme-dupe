@@ -3,6 +3,105 @@
     "title": "Card Grid",
     "fields": [
         {
+            "key": "field_64179ee78bda9",
+            "label": "Options",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_641780d37884e",
+            "label": "Numbers",
+            "name": "card_grid_numbers",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_6417819978851",
+            "label": "Border Style",
+            "name": "card_grid_border_style",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "gradient": "Gradient",
+                "solid": "Solid"
+            },
+            "default_value": "gradient",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_641781ce78852",
+            "label": "Horizontal Scroll",
+            "name": "card_grid_horizontal_scroll",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_64179ef58bdaa",
+            "label": "Cards",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
             "key": "field_64178807b65ba",
             "label": "Cards",
             "name": "card_grid_cards",
@@ -24,27 +123,6 @@
             "button_label": "Add Row",
             "rows_per_page": 20,
             "sub_fields": [
-                {
-                    "key": "field_641780d37884e",
-                    "label": "Numbers",
-                    "name": "card_grid_numbers",
-                    "aria-label": "",
-                    "type": "true_false",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "message": "",
-                    "default_value": 0,
-                    "ui_on_text": "",
-                    "ui_off_text": "",
-                    "ui": 1,
-                    "parent_repeater": "field_64178807b65ba"
-                },
                 {
                     "key": "field_6417816b7884f",
                     "label": "Title",
@@ -86,53 +164,26 @@
                     "placeholder": "",
                     "new_lines": "",
                     "parent_repeater": "field_64178807b65ba"
-                },
-                {
-                    "key": "field_6417819978851",
-                    "label": "Border Style",
-                    "name": "card_grid_border_style",
-                    "aria-label": "",
-                    "type": "button_group",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "gradient": "Gradient",
-                        "solid": "Solid"
-                    },
-                    "default_value": "gradient",
-                    "return_format": "value",
-                    "allow_null": 0,
-                    "layout": "horizontal",
-                    "parent_repeater": "field_64178807b65ba"
-                },
-                {
-                    "key": "field_641781ce78852",
-                    "label": "Horizontal Scroll",
-                    "name": "card_grid_horizontal_scroll",
-                    "aria-label": "",
-                    "type": "true_false",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "message": "",
-                    "default_value": 1,
-                    "ui_on_text": "",
-                    "ui_off_text": "",
-                    "ui": 1,
-                    "parent_repeater": "field_64178807b65ba"
                 }
             ]
+        },
+        {
+            "key": "field_64179ed98bda8",
+            "label": "",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 1
         }
     ],
     "location": [
@@ -153,5 +204,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1679264092
+    "modified": 1679269638
 }
