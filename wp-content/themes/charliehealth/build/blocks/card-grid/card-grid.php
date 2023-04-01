@@ -14,7 +14,7 @@ if ($horizontalScroll === true) {
 }
 ?>
 <?php if (have_rows('card_grid_cards')) : ?>
-  <div class="<?= $scrollClasses; ?>">
+  <div id="<?= $block['id']; ?>" class="<?= $scrollClasses; ?>">
     <div class="<?= $gridClasses; ?>">
       <?php while (have_rows('card_grid_cards')) : the_row();
         $title = get_sub_field('card_grid_title');
@@ -25,7 +25,7 @@ if ($horizontalScroll === true) {
             <div class="bg-gradient-to-r from-purple-gradient-start to-purple-gradient-end p-[1px] rounded-md">
             <?php endif; ?>
             <!-- TODO Update border color -->
-            <div class="rounded-md bg-light-purple<?= $borderStyle === 'gradient' ? '' : ' border'; ?>">
+            <div class="card-background rounded-md<?= $borderStyle === 'gradient' ? '' : ' border'; ?>">
               <div class="p-sp-4 md:p-sp-6 lg:p-sp-8">
                 <?php if ($numbers) : ?>
                   <h2 class="text-h2-lg mb-sp-5"><?= get_row_index(); ?></h2>
@@ -46,3 +46,20 @@ if ($horizontalScroll === true) {
     </div>
   </div>
 <?php endif; ?>
+<script>
+  // TODO this is probably not great.
+
+  /**
+   * Modify bg color of card based on parent container because the borders are weird.
+   */
+  var currentBlock = <?= $block['id']; ?>;
+  var parent = currentBlock.parentNode;
+  var backgroundColor = getComputedStyle(parent).backgroundColor;
+  var cards = document.querySelectorAll('#<?= $block['id']; ?> .card-background');
+  cards.forEach(card => {
+    if (backgroundColor === 'rgba(0, 0, 0, 0)') {
+      backgroundColor = '#FFFFFF';
+    }
+    card.style.backgroundColor = backgroundColor;
+  });
+</script>
