@@ -3,6 +3,24 @@
     "title": "Button Group",
     "fields": [
         {
+            "key": "field_6428a57b4c908",
+            "label": "Style",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
             "key": "field_64134bca14848",
             "label": "Buttons",
             "name": "button_group_buttons",
@@ -29,8 +47,26 @@
             "placeholder": ""
         },
         {
+            "key": "field_6428a55b4c907",
+            "label": "Custom Links",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
             "key": "field_64134c4f14849",
-            "label": "Link",
+            "label": "Button #1 Link",
             "name": "button_group_link",
             "aria-label": "",
             "type": "link",
@@ -43,14 +79,88 @@
                 "id": ""
             },
             "return_format": "array"
+        },
+        {
+            "key": "field_6428982dd558c",
+            "label": "Button #2 Link",
+            "name": "button_group_link_two",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_6428a5a64c90a",
+            "label": "Spacing",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_6428a5b74c90b",
+            "label": "Spacing",
+            "name": "spacing",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_6428a49bd4c2c"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
+            "key": "field_6428a58e4c909",
+            "label": "",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 1
         }
     ],
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "block",
                 "operator": "==",
-                "value": "post"
+                "value": "acf\/buttons-block"
             }
         ]
     ],
@@ -63,5 +173,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1678986389
+    "modified": 1680385527
 }

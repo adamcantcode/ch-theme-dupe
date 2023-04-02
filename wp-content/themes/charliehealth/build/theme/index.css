@@ -1202,10 +1202,6 @@ table {
   height: 1.25rem;
 }
 
-.h-52{
-  height: 13rem;
-}
-
 .h-\[calc\(100vh-68px\)\]{
   height: calc(100vh - 68px);
 }
@@ -1355,11 +1351,6 @@ table {
 .bg-darkest-blue{
   --tw-bg-opacity: 1;
   background-color: rgb(22 25 64 / var(--tw-bg-opacity));
-}
-
-.bg-light-purple{
-  --tw-bg-opacity: 1;
-  background-color: rgb(240 239 252 / var(--tw-bg-opacity));
 }
 
 .bg-med-blue{
@@ -1661,10 +1652,6 @@ table {
     max-height: none;
   }
 
-  .md\:w-1\/2{
-    width: 50%;
-  }
-
   .md\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1734,10 +1721,6 @@ table {
 
   .lg\:h-auto{
     height: auto;
-  }
-
-  .lg\:w-1\/4{
-    width: 25%;
   }
 
   .lg\:w-full{

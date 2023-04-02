@@ -36,5 +36,6 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/hero');
   register_block_type(__DIR__ . '/build/blocks/fifty-fifty');
   register_block_type(__DIR__ . '/build/blocks/card-grid');
+  register_block_type(__DIR__ . '/build/blocks/buttons');
 }
 add_action('init', 'register_acf_blocks', 5);
