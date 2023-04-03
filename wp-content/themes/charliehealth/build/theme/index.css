@@ -1290,6 +1290,14 @@ table {
   align-items: center;
 }
 
+.justify-start{
+  justify-content: flex-start;
+}
+
+.justify-end{
+  justify-content: flex-end;
+}
+
 .justify-center{
   justify-content: center;
 }
@@ -1482,21 +1490,23 @@ table {
   padding-right: 1.25rem;
 }
 
-@media (min-width: 480px){
+@media (min-width: 480px) {
 
-  .wp-block-group{
+.wp-block-group{
     padding-top: 3rem;
     padding-bottom: 3rem;
   }
-}
-
-@media (min-width: 1024px){
-
-  .wp-block-group{
-    padding-top: 4rem;
-    padding-bottom: 4rem;
   }
-}
+
+@media (min-width: 1024px) {
+
+.wp-block-group{
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+  }
 
 .wp-block-group:not(.alignfull){
   margin-left: auto;
@@ -1619,6 +1629,10 @@ table {
 /* .mce-content-body {
   a {
   }
+} */
+
+/* .fallback {
+  @apply justify-end;
 } */
 
 .last\:mb-0:last-child{

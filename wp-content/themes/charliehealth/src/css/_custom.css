@@ -1,7 +1,13 @@
 .wp-block-group {
-  @apply lg:py-sp-14 md:py-sp-12 py-sp-8 px-5;
+  @apply py-sp-8 px-sp-5;
+  @screen md {
+    @apply py-sp-12;
+  }
+  @screen lg {
+    @apply py-sp-16 px-sp-10;
+  }
   &:not(.alignfull) {
-    @apply container
+    @apply container;
   }
 }
 .alignleft {
@@ -111,4 +117,8 @@
 /* .mce-content-body {
   a {
   }
+} */
+
+/* .fallback {
+  @apply justify-end;
 } */

@@ -8,16 +8,21 @@
     "blocks": {
       "core/group": {
         "color": {
+          "custom": false,
+          "defaultPalette": false,
+          "text": false,
+          "customGradient": false,
+          "background": true,
           "palette": [
-            {
-              "slug": "light-purple",
-              "color": "#f0effc",
-              "name": "Light Purple"
-            },
             {
               "slug": "white",
               "color": "#ffffff",
               "name": "White"
+            },
+            {
+              "slug": "light-purple",
+              "color": "#f0effc",
+              "name": "Light Purple"
             }
           ]
         }

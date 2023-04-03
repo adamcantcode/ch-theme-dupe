@@ -21,9 +21,20 @@ if ($linkTwo) {
   $linkTwoTitle = '1 (555) 555-5555';
   $linkTwoTarget = '_self';
 }
+
+$align = '';
+if ($block['align']) {
+  if ($block['align'] === 'left') {
+    $align = 'justify-start';
+  } elseif ($block['align'] === 'right') {
+    $align = 'justify-end';
+  } else {
+    $align = 'justify-center';
+  }
+}
 ?>
 
-<div class="flex gap-x-4">
+<div class="flex gap-x-4<?= ' ' . $align ?>">
   <a href="<?= $linkOneUrl; ?>" target="<?= $linkOneTarget; ?>" class="ch-button button-primary"><?= $linkOneTitle; ?></a>
   <?php if ($style === 'double') : ?>
     <a href="<?= $linkTwoUrl; ?>" target="<?= $linkTwoTarget; ?>" class="ch-button button-secondary"><?= $linkTwoTitle; ?></a>

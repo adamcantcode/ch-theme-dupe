@@ -97,47 +97,7 @@
             "return_format": "array"
         },
         {
-            "key": "field_6428a5a64c90a",
-            "label": "Spacing",
-            "name": "",
-            "aria-label": "",
-            "type": "accordion",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "open": 0,
-            "multi_expand": 0,
-            "endpoint": 0
-        },
-        {
-            "key": "field_6428a5b74c90b",
-            "label": "Spacing",
-            "name": "spacing",
-            "aria-label": "",
-            "type": "clone",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "clone": [
-                "group_6428a49bd4c2c"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 0
-        },
-        {
-            "key": "field_6428a58e4c909",
+            "key": "field_6429f798fad90",
             "label": "",
             "name": "",
             "aria-label": "",
@@ -173,5 +133,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1680385527
+    "modified": 1680472012
 }

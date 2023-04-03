@@ -12,5 +12,7 @@
     "mode": "preview",
     "renderTemplate": "buttons.php"
   },
-  "supports": {}
+  "supports": {
+    "align": ["center", "left", "right"]
+  }
 }
