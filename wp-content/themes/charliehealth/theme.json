@@ -23,6 +23,11 @@
               "slug": "light-purple",
               "color": "#f0effc",
               "name": "Light Purple"
+            },
+            {
+              "slug": "cream",
+              "color": "#F8F4F0",
+              "name": "Cream"
             }
           ]
         }

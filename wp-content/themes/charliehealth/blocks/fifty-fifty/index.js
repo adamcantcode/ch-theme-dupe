@@ -7,7 +7,7 @@ import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 
 window.addEventListener('DOMContentLoaded', () => {
-  var swiper = new Swiper('.swiper', {
+  var swiper = new Swiper('.swiper.swiper-fifty-fifty', {
     slidesPerView: 1,
     loop: true,
     autoplay: {

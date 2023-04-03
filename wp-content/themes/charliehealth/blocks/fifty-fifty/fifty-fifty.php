@@ -9,7 +9,7 @@ $cta = get_field('fifty_fifty_cta');
   <?php if ($style === 'slider') : ?>
     <?php if (have_rows('fifty_fifty_slides')) : ?>
       <div>
-        <div class="swiper">
+        <div class="swiper swiper-fifty-fifty">
           <div class="swiper-wrapper">
             <?php while (have_rows('fifty_fifty_slides')) : the_row();
               $imageUrl = get_sub_field('fifty_fifty_slide_image');

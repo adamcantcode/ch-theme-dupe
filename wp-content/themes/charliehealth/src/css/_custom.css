@@ -10,6 +10,15 @@
     @apply container;
   }
 }
+.testimonial-padding {
+  @apply py-sp-8;
+  @screen md {
+    @apply py-sp-12;
+  }
+  @screen lg {
+    @apply py-sp-16;
+  }
+}
 .alignleft {
   /*rtl:ignore*/
   float: left;
@@ -122,3 +131,38 @@
 /* .fallback {
   @apply justify-end;
 } */
+
+/* Testimonial Block */
+.swiper {
+  &.swiper-testimonial {
+    .swiper-wrapper {
+      .swiper-slide {
+        @apply opacity-30;
+        &.swiper-slide-active {
+          @apply opacity-100;
+        }
+      }
+    }
+    .swiper-button-next-arrow, .swiper-button-prev-arrow {
+      svg {
+        rect {
+          @apply transition-all duration-300;
+        }
+      }
+      &:hover {
+        svg {
+          rect {
+            @apply stroke-med-blue;
+            stroke-opacity: 100;
+          }
+        }
+      }
+    }
+    .swiper-pagination {
+      @apply bg-card-border h-[2px];
+      .swiper-pagination-progressbar-fill {
+        @apply bg-med-blue;
+      }
+    }
+  }
+}

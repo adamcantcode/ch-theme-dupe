@@ -2,9 +2,9 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./blocks/fifty-fifty/index.css":
+/***/ "./blocks/testimonial/index.css":
 /*!**************************************!*\
-  !*** ./blocks/fifty-fifty/index.css ***!
+  !*** ./blocks/testimonial/index.css ***!
   \**************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
@@ -10409,10 +10409,10 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
 /*!*************************************!*\
-  !*** ./blocks/fifty-fifty/index.js ***!
+  !*** ./blocks/testimonial/index.js ***!
   \*************************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ "./blocks/fifty-fifty/index.css");
+/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ "./blocks/testimonial/index.css");
 /* harmony import */ var swiper_bundle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/bundle */ "./node_modules/swiper/swiper-bundle.esm.js");
 /* harmony import */ var swiper_css_bundle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper/css/bundle */ "./node_modules/swiper/swiper-bundle.min.css");
 
@@ -10423,25 +10423,29 @@ __webpack_require__.r(__webpack_exports__);
 // import styles bundle
 
 window.addEventListener('DOMContentLoaded', () => {
-  var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper.swiper-fifty-fifty', {
-    slidesPerView: 1,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-      pauseOnMouseEnter: true
-    },
-    effect: 'fade',
-    fadeEffect: {
-      crossFade: true
-    },
+  var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper.swiper-testimonial', {
+    slidesPerView: 1.75,
+    spaceBetween: 64,
     speed: 1000,
-    // If we need pagination
-    pagination: false,
-    // Navigation arrows
-    navigation: false,
-    // And if we need scrollbar
-    scrollbar: false
+    loop: false,
+    autoplay: false,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'progressbar'
+    },
+    navigation: {
+      nextEl: '.swiper-button-next-arrow',
+      prevEl: '.swiper-button-prev-arrow'
+    },
+    on: {
+      reachEnd: function () {
+        this.snapGrid = [...this.slidesGrid];
+        setTimeout(() => {
+          document.querySelector('.swiper-button-next-arrow').click();
+          clearTimeout();
+        }, 1);
+      }
+    }
   });
 });
 }();
