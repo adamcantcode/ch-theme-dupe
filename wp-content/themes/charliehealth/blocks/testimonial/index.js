@@ -8,11 +8,17 @@ import 'swiper/css/bundle';
 
 window.addEventListener('DOMContentLoaded', () => {
   var swiper = new Swiper('.swiper.swiper-testimonial', {
-    slidesPerView: 1.75,
-    spaceBetween: 64,
+    slidesPerView: 1,
+    spaceBetween: 20,
     speed: 1000,
     loop: false,
     autoplay: false,
+    breakpoints: {
+      1024: {
+        slidesPerView: 1.75,
+        spaceBetween: 64,
+      },
+    },
     pagination: {
       el: '.swiper-pagination',
       type: 'progressbar',

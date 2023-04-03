@@ -10424,11 +10424,17 @@ __webpack_require__.r(__webpack_exports__);
 
 window.addEventListener('DOMContentLoaded', () => {
   var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper.swiper-testimonial', {
-    slidesPerView: 1.75,
-    spaceBetween: 64,
+    slidesPerView: 1,
+    spaceBetween: 20,
     speed: 1000,
     loop: false,
     autoplay: false,
+    breakpoints: {
+      1024: {
+        slidesPerView: 1.75,
+        spaceBetween: 64
+      }
+    },
     pagination: {
       el: '.swiper-pagination',
       type: 'progressbar'
