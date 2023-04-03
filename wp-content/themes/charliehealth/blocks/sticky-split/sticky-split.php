@@ -20,29 +20,26 @@ if (!empty($block['align'])) {
 }
 
 // Get fields
-$padding = get_field('padding');
-$margin = get_field('margin');
-
+$image = get_field('sticky_split_image');
 ?>
-<div <?= $anchor ?: ''; ?>class="<?= $className . ' ' . $padding ?: '' . ' ' . $margin ?: ''; ?> relative grid lg:grid-cols-2 lg:gap-sp-16 gap-sp-8" style="<?= $style; ?>">
+<div <?= $anchor ?: ''; ?>class="<?= $className; ?> relative grid lg:grid-cols-2 lg:gap-sp-16 gap-sp-8" style="<?= $style; ?>">
   <div class="lg:sticky self-start top-[8rem] stick-split-image">
-    <img src="https://assets-global.website-files.com/62daf9ae3616b86eec143652/63093458711e96d6fe900115_new%20hp.webp" alt="#" class="rounded-md lg:max-h-full max-h-[300px] w-full object-cover">
+    <img src="<?= $image['url'] ?>" alt="<?= $image['alt'] ?>" class="rounded-md lg:max-h-full max-h-[300px] w-full object-cover">
   </div>
   <div class="sticky-split-info">
-    <div class="sticky-split-info_content lg:mb-[12rem]">
-      <img src="https://placehold.it/40x40" alt="#" class="sticky-split-icon">
-      <h3 class="text text-h1-display">Lorem, ipsum dolor.</h3>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam, voluptas quis iusto suscipit, accusantium dolorum beatae quaerat alias quam obcaecati, quas distinctio. Unde, aliquam amet.</p>
-    </div>
-    <div class="sticky-split-info_content lg:mb-[12rem]">
-      <img src="https://placehold.it/40x40" alt="#" class="sticky-split-icon">
-      <h3 class="text text-h1-display">Lorem, ipsum dolor.</h3>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam, voluptas quis iusto suscipit, accusantium dolorum beatae quaerat alias quam obcaecati, quas distinctio. Unde, aliquam amet.</p>
-    </div>
-    <div class="sticky-split-info_content lg:mb-[12rem]">
-      <img src="https://placehold.it/40x40" alt="#" class="sticky-split-icon">
-      <h3 class="text text-h1-display">Lorem, ipsum dolor.</h3>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam, voluptas quis iusto suscipit, accusantium dolorum beatae quaerat alias quam obcaecati, quas distinctio. Unde, aliquam amet.</p>
-    </div>
+    <?php if (have_rows('sticky_split_content')) : ?>
+      <?php while (have_rows('sticky_split_content')) : the_row(); ?>
+        <?php
+        $icon = get_sub_field('sticky_split_icon');
+        $heading = get_sub_field('sticky_split_heading');
+        $details = get_sub_field('sticky_split_details');
+        ?>
+        <div class="sticky-split-info_content lg:mb-[12rem]">
+          <img src="<?= $icon; ?>" alt="#" class="sticky-split-icon">
+          <h3 class="text text-h1-display"><?= $heading; ?></h3>
+          <p><?= $details; ?></p>
+        </div>
+      <?php endwhile; ?>
+    <?php endif; ?>
   </div>
 </div>
