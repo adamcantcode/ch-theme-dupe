@@ -1134,6 +1134,18 @@ table {
   top: 100%;
 }
 
+.top-sp-16{
+  top: 6rem;
+}
+
+.top-\[12rem\]{
+  top: 12rem;
+}
+
+.top-\[8rem\]{
+  top: 8rem;
+}
+
 .-z-10{
   z-index: -10;
 }
@@ -1150,9 +1162,9 @@ table {
   order: 2;
 }
 
-.mx-auto{
-  margin-left: auto;
-  margin-right: auto;
+.mx-sp-5{
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
 }
 
 .my-sp-8{
@@ -1160,13 +1172,12 @@ table {
   margin-bottom: 2rem;
 }
 
-.mx-sp-5{
-  margin-left: 1.25rem;
-  margin-right: 1.25rem;
-}
-
 .mb-2{
   margin-bottom: 0.5rem;
+}
+
+.mb-\[12rem\]{
+  margin-bottom: 12rem;
 }
 
 .mb-sp-12{
@@ -1237,6 +1248,10 @@ table {
   max-height: 500px;
 }
 
+.max-h-\[300px\]{
+  max-height: 300px;
+}
+
 .min-h-\[68px\]{
   min-height: 68px;
 }
@@ -1305,8 +1320,8 @@ table {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
-.grid-cols-\[1fr\2c _2fr\]{
-  grid-template-columns: 1fr 2fr;
+.grid-cols-2{
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .flex-col{
@@ -1345,9 +1360,21 @@ table {
   gap: 1rem;
 }
 
+.gap-sp-16{
+  gap: 6rem;
+}
+
+.gap-sp-8{
+  gap: 2rem;
+}
+
 .gap-x-4{
   -moz-column-gap: 1rem;
        column-gap: 1rem;
+}
+
+.self-start{
+  align-self: flex-start;
 }
 
 .overflow-auto{
@@ -1456,14 +1483,14 @@ table {
   padding-right: 1.25rem;
 }
 
-.py-8{
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
 .px-sp-5{
   padding-left: 1.25rem;
   padding-right: 1.25rem;
+}
+
+.py-8{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .pb-8{
@@ -1472,6 +1499,13 @@ table {
 
 .text-center{
   text-align: center;
+}
+
+.text-h1-display{
+  font-size: 2.25rem;
+  line-height: 2.4rem;
+  letter-spacing: 0;
+  font-weight: 400;
 }
 
 .text-h2-lg{
@@ -1790,6 +1824,10 @@ table {
     position: relative;
   }
 
+  .lg\:sticky{
+    position: sticky;
+  }
+
   .lg\:top-0{
     top: 0px;
   }
@@ -1823,6 +1861,10 @@ table {
     margin-top: 68px;
   }
 
+  .lg\:mb-\[12rem\]{
+    margin-bottom: 12rem;
+  }
+
   .lg\:block{
     display: block;
   }
@@ -1837,6 +1879,10 @@ table {
 
   .lg\:h-auto{
     height: auto;
+  }
+
+  .lg\:max-h-full{
+    max-height: 100%;
   }
 
   .lg\:w-full{
@@ -1863,6 +1909,10 @@ table {
     gap: 1.5rem;
   }
 
+  .lg\:gap-sp-16{
+    gap: 6rem;
+  }
+
   .lg\:overflow-y-visible{
     overflow-y: visible;
   }
@@ -1887,11 +1937,6 @@ table {
   .lg\:px-zero{
     padding-left: 0;
     padding-right: 0;
-  }
-  .lg\:container{
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1280px;
   }
 }
 

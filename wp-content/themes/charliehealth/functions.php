@@ -38,5 +38,6 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/card-grid');
   register_block_type(__DIR__ . '/build/blocks/buttons');
   register_block_type(__DIR__ . '/build/blocks/testimonial');
+  register_block_type(__DIR__ . '/build/blocks/sticky-split');
 }
 add_action('init', 'register_acf_blocks', 5);
