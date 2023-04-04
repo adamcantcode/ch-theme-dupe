@@ -4,6 +4,8 @@ window.addEventListener('DOMContentLoaded', () => {
   const accordionItems = document.querySelectorAll('.accordion-item');
 
   function toggleAccordion() {
+    console.log(this);
+    this.classList.toggle('active');
     const accordionContent = this.nextElementSibling;
     if (accordionContent.style.maxHeight) {
       accordionContent.style.maxHeight = null;

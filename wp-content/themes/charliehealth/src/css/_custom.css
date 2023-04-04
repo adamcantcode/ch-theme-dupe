@@ -143,7 +143,8 @@
         }
       }
     }
-    .swiper-button-next-arrow, .swiper-button-prev-arrow {
+    .swiper-button-next-arrow,
+    .swiper-button-prev-arrow {
       svg {
         rect {
           @apply transition-all duration-300;
@@ -162,6 +163,28 @@
       @apply bg-card-border h-[2px];
       .swiper-pagination-progressbar-fill {
         @apply bg-med-blue;
+      }
+    }
+  }
+}
+
+/* FAQ Accordion */
+.faq-block {
+  .accordion {
+    .accordion-item {
+      .accordion-header {
+        .toggle {
+          svg {
+            @apply transition-transform duration-300;
+          }
+        }
+        &.active {
+          .toggle {
+            svg {
+              @apply rotate-45;
+            }
+          }
+        }
       }
     }
   }
