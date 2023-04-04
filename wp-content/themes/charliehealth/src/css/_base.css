@@ -118,7 +118,7 @@
     @apply text-h6;
   }
   p {
-    @apply text-p;
+    @apply text-p mb-sp-6;
     @screen lg {
       @apply text-p-lg;
     }
@@ -138,6 +138,9 @@
   }
   a {
     @apply underline transition-colors duration-300 text-p text-dark-blue hover:text-hover-blue;
+    @screen lg {
+      @apply text-p-lg;
+    }
   }
   blockquote {
     @apply py-8 my-8 font-heading-serif text-4xl leading-10 border-solid border-y-4 border-purple-gradient-start;

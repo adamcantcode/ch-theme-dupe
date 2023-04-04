@@ -23,7 +23,7 @@ $columnCount = get_field('faq_column_count');
 
 ?>
 <div <?= $anchor ?: ''; ?>class="<?= $className; ?> ">
-  <div class="grid grid-cols-2 accordion ">
+  <div class="accordion<?= $columnCount !== 'one' ? ' grid grid-cols-2' : '';  ?>">
     <div class="wrapper">
       <?php if (have_rows('faq_items')) : ?>
         <?php while (have_rows('faq_items')) : the_row(); ?>
@@ -32,7 +32,7 @@ $columnCount = get_field('faq_column_count');
           $content = get_sub_field('faq_content');
           ?>
           <div class="border-b accordion-item border-b-card-border">
-            <div class="flex accordion-header py-sp-5">
+            <div class="flex cursor-pointer accordion-header py-sp-5">
               <h3 class="mb-0"><?= $headline; ?></h3>
               <div class="ml-auto toggle">x</div>
             </div>
@@ -51,14 +51,14 @@ $columnCount = get_field('faq_column_count');
           }
           ?>
         <?php endwhile; ?>
-          <?php
-          if ($columnCount !== 'one') {
-            $last = end(get_field('faq_items'));
-            if ($last) {
-              echo '</div><!-- END WRAPPER -->';
-            }
+        <?php
+        if ($columnCount !== 'one') {
+          $last = end(get_field('faq_items'));
+          if ($last) {
+            echo '</div><!-- END WRAPPER -->';
           }
-          ?>
+        }
+        ?>
       <?php endif; ?>
     </div>
   </div>

@@ -584,6 +584,7 @@ h6{
 }
 
 p{
+  margin-bottom: 1.5rem;
   font-size: 1rem;
   line-height: 1.5rem;
   letter-spacing: 0;
@@ -637,6 +638,15 @@ a:hover{
   --tw-text-opacity: 1;
   color: rgb(67 49 176 / var(--tw-text-opacity));
 }
+
+@media (min-width: 1024px) {
+  a{
+    font-size: 1.125rem;
+    line-height: 1.8rem;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+    }
 
 blockquote{
   margin-top: 2rem;
@@ -1164,6 +1174,10 @@ table {
   margin-bottom: 2rem;
 }
 
+.mb-0{
+  margin-bottom: 0px;
+}
+
 .mb-2{
   margin-bottom: 0.5rem;
 }
@@ -1194,10 +1208,6 @@ table {
 
 .mt-0{
   margin-top: 0px;
-}
-
-.mb-0{
-  margin-bottom: 0px;
 }
 
 .block{
@@ -1232,6 +1242,10 @@ table {
   height: calc(100vh - 68px);
 }
 
+.max-h-0{
+  max-height: 0px;
+}
+
 .max-h-52{
   max-height: 13rem;
 }
@@ -1242,10 +1256,6 @@ table {
 
 .max-h-\[500px\]{
   max-height: 500px;
-}
-
-.max-h-0{
-  max-height: 0px;
 }
 
 .min-h-\[68px\]{
@@ -1306,11 +1316,6 @@ table {
 
 .cursor-pointer{
   cursor: pointer;
-}
-
-.columns-2{
-  -moz-columns: 2;
-       columns: 2;
 }
 
 .grid-flow-col{
@@ -1402,12 +1407,12 @@ table {
   border-width: 1px;
 }
 
-.border-b-2{
-  border-bottom-width: 2px;
-}
-
 .border-b{
   border-bottom-width: 1px;
+}
+
+.border-b-2{
+  border-bottom-width: 2px;
 }
 
 .border-light-blue{
