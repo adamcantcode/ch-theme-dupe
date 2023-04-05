@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_6428a57b4c908",
-            "label": "Style",
+            "label": "Button Style",
             "name": "",
             "aria-label": "",
             "type": "accordion",
@@ -133,5 +133,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1680472012
+    "modified": 1680708056
 }
