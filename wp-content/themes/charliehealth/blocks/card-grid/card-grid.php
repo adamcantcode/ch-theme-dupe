@@ -21,45 +21,21 @@ if ($horizontalScroll === true) {
         $details = get_sub_field('card_grid_details');
       ?>
         <div class="w-[calc(100vw-2.5rem)] lg:w-full">
-          <?php if ($borderStyle === 'gradient') : ?>
-            <div class="bg-gradient-to-r from-purple-gradient-start to-purple-gradient-end p-[1px] rounded-md">
-            <?php endif; ?>
-            <!-- TODO Update border color -->
-            <div class="card-background rounded-md<?= $borderStyle === 'gradient' ? '' : ' border'; ?>">
-              <div class="p-sp-4 md:p-sp-6 lg:p-sp-8">
-                <?php if ($numbers) : ?>
-                  <h2 class="text-h2-lg mb-sp-5"><?= get_row_index(); ?></h2>
-                <?php endif; ?>
-                <?php if ($title) : ?>
-                  <h3 class="mb-sp-5 last:mb-0"><?= $title; ?></h3>
-                <?php endif; ?>
-                <?php if ($details) : ?>
-                  <p class="last:mb-0"><?= $details; ?></p>
-                <?php endif; ?>
-              </div>
+          <div class="<?= $borderStyle === 'gradient' ? 'card-grid-card' : ' border rounded-md'; ?>">
+            <div class="p-sp-4 md:p-sp-6 lg:p-sp-8">
+              <?php if ($numbers) : ?>
+                <h2 class="text-h2-lg mb-sp-5"><?= get_row_index(); ?></h2>
+              <?php endif; ?>
+              <?php if ($title) : ?>
+                <h3 class="mb-sp-5 last:mb-0"><?= $title; ?></h3>
+              <?php endif; ?>
+              <?php if ($details) : ?>
+                <p class="last:mb-0"><?= $details; ?></p>
+              <?php endif; ?>
             </div>
-            <?php if ($borderStyle === 'gradient') : ?>
-            </div>
-          <?php endif; ?>
+          </div>
         </div>
       <?php endwhile; ?>
     </div>
   </div>
 <?php endif; ?>
-<script>
-  // TODO this is probably not great.
-
-  /**
-   * Modify bg color of card based on parent container because the borders are weird.
-   */
-  var currentBlock = <?= $block['id']; ?>;
-  var parent = currentBlock.parentNode;
-  var backgroundColor = getComputedStyle(parent).backgroundColor;
-  var cards = document.querySelectorAll('#<?= $block['id']; ?> .card-background');
-  cards.forEach(card => {
-    if (backgroundColor === 'rgba(0, 0, 0, 0)') {
-      backgroundColor = '#FFFFFF';
-    }
-    card.style.backgroundColor = backgroundColor;
-  });
-</script>
