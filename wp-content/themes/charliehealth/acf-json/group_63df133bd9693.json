@@ -230,24 +230,6 @@
             "preview_size": "medium"
         },
         {
-            "key": "field_63dff1871bb16",
-            "label": "Buttons",
-            "name": "",
-            "aria-label": "",
-            "type": "accordion",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "open": 0,
-            "multi_expand": 0,
-            "endpoint": 0
-        },
-        {
             "key": "field_63df1a2605245",
             "label": "Buttons",
             "name": "hero_buttons",
@@ -306,5 +288,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1679188187
+    "modified": 1680708067
 }

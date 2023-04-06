@@ -1445,20 +1445,6 @@ table {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-gradient-to-r{
-  background-image: linear-gradient(to right, var(--tw-gradient-stops));
-}
-
-.from-purple-gradient-start{
-  --tw-gradient-from: #EADAFF;
-  --tw-gradient-to: rgb(234 218 255 / 0);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
-.to-purple-gradient-end{
-  --tw-gradient-to: #A698FF;
-}
-
 .fill-current{
   fill: currentColor;
 }
@@ -1479,10 +1465,6 @@ table {
 
 .p-8{
   padding: 2rem;
-}
-
-.p-\[1px\]{
-  padding: 1px;
 }
 
 .p-sp-4{
@@ -1805,6 +1787,32 @@ table {
 .faq-block .accordion .accordion-item .accordion-header.active .toggle svg{
   --tw-rotate: 45deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+/* Card Grid */
+
+.card-grid-card {
+  /* @apply before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0 before:border before:border-transparent before:box-border; */
+  /* mask-composite: exclude; */
+  position: relative;
+  display: flow-root;
+}
+
+.card-grid-card:before{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  border-radius: 1.25rem;
+  border-width: 1px;
+  border-color: rgba(0,0,0,0);
+    content: '';
+    background: linear-gradient(90deg, #EADAFF, #A698FF) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
 }
 
 .last\:mb-0:last-child{
