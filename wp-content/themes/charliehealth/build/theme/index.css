@@ -1568,6 +1568,18 @@ table {
 
 /* CUSTOM STYELS */
 
+body --wp--custom--spacing--sm {
+    padding: 2rem;
+  }
+
+body --wp--custom--spacing--md {
+    padding: 3rem;
+  }
+
+body --wp--custom--spacing--lg {
+    padding: 6rem;
+  }
+
 .wp-block-group{
   padding-top: 2rem;
   padding-bottom: 2rem;

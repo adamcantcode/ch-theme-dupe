@@ -1,3 +1,14 @@
+body {
+  --wp--custom--spacing--sm {
+    padding: 2rem;
+  }
+  --wp--custom--spacing--md {
+    padding: 3rem;
+  }
+  --wp--custom--spacing--lg {
+    padding: 6rem;
+  }
+}
 .wp-block-group {
   @apply py-sp-8 px-sp-5;
   @screen md {
