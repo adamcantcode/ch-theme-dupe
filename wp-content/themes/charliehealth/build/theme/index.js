@@ -210,6 +210,11 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_modules_mobile_nav__WEBPACK_IMPORTED_MODULE_1__["default"])();
   (0,_modules_stop_animations__WEBPACK_IMPORTED_MODULE_2__["default"])();
   (0,_modules_animations__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  wp.domReady(() => {
+    wp.blocks.unregisterBlockVariation('core/group', 'group');
+    wp.blocks.unregisterBlockVariation('core/group', 'group-row');
+    wp.blocks.unregisterBlockVariation('core/group', 'group-stack');
+  });
 });
 }();
 /******/ })()

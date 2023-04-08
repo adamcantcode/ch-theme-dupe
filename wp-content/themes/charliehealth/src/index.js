@@ -8,4 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
   mobileNav();
   stopAnimations();
   animations();
+  wp.domReady( () => {
+    wp.blocks.unregisterBlockVariation( 'core/group', 'group' );
+    wp.blocks.unregisterBlockVariation( 'core/group', 'group-row' );
+    wp.blocks.unregisterBlockVariation( 'core/group', 'group-stack' );
+  } );
 });

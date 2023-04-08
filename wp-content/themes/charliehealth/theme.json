@@ -2,34 +2,38 @@
   "$schema": "https://schemas.wp.org/trunk/theme.json",
   "version": 2,
   "settings": {
+    "color": {
+      "custom": false,
+      "defaultPalette": false,
+      "text": false,
+      "customGradient": false,
+      "background": true,
+      "palette": [
+        {
+          "slug": "white",
+          "color": "#ffffff",
+          "name": "White"
+        },
+        {
+          "slug": "light-purple",
+          "color": "#f0effc",
+          "name": "Light Purple"
+        },
+        {
+          "slug": "cream",
+          "color": "#F8F4F0",
+          "name": "Cream"
+        }
+      ]
+    },
     "layout": {
       "contentSize": "1280px"
     },
     "blocks": {
       "core/group": {
-        "color": {
-          "custom": false,
-          "defaultPalette": false,
-          "text": false,
-          "customGradient": false,
-          "background": true,
-          "palette": [
-            {
-              "slug": "white",
-              "color": "#ffffff",
-              "name": "White"
-            },
-            {
-              "slug": "light-purple",
-              "color": "#f0effc",
-              "name": "Light Purple"
-            },
-            {
-              "slug": "cream",
-              "color": "#F8F4F0",
-              "name": "Cream"
-            }
-          ]
+        "layout": {
+          "contentSize": "768px",
+          "wideSize": "1000px"
         }
       }
     }

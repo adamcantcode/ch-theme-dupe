@@ -120,7 +120,7 @@
   animation: none !important;
 }
 .container-small {
-  @apply max-w-[840px] mx-auto;
+  @apply max-w-[48rem] mx-auto;
 }
 /* EDITOR */
 /* .mce-content-body {
