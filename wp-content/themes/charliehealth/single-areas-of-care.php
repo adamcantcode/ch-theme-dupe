@@ -1,9 +1,9 @@
 <?php get_header(); ?>
 
 <main id="primary" class="site-main lg:mt-[68px] mt-0">
-  <div id="mainContent" class="relative">
-    <div class="sticky back-top-top top-sp-16 left-sp-10 w-fit">
-      <a href="#mainContent">Back to top</a>
+  <div id="mainArticleContent" class="relative">
+    <div class="sticky back-to-top top-sp-16 left-sp-10 w-fit">
+      <a href="#mainArticleContent">Back to top</a>
     </div>
     <?php the_content(); ?>
   </div>
