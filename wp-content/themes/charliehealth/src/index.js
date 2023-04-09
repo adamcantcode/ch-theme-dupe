@@ -3,14 +3,11 @@ import './css/main.css';
 import mobileNav from './modules/mobile-nav';
 import stopAnimations from "./modules/stop-animations";
 import animations from "./modules/animations";
+import anchorScroll from "./modules/anchor-scroll";
 
 document.addEventListener('DOMContentLoaded', () => {
   mobileNav();
   stopAnimations();
   animations();
-  wp.domReady( () => {
-    wp.blocks.unregisterBlockVariation( 'core/group', 'group' );
-    wp.blocks.unregisterBlockVariation( 'core/group', 'group-row' );
-    wp.blocks.unregisterBlockVariation( 'core/group', 'group-stack' );
-  } );
+  anchorScroll();
 });

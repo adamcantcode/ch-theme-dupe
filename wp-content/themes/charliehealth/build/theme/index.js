@@ -2,6 +2,37 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/modules/anchor-scroll.js":
+/*!**************************************!*\
+  !*** ./src/modules/anchor-scroll.js ***!
+  \**************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ anchorScroll; }
+/* harmony export */ });
+function anchorScroll() {
+  jQuery(document).ready(function () {
+    // Add smooth scrolling to all links with hash anchors
+    jQuery('a[href^="#"]').on('click', function (event) {
+      // Make sure this.hash has a value before overriding default behavior
+      if (this.hash !== '') {
+        // Prevent default anchor click behavior
+        event.preventDefault();
+        // Store hash
+        var hash = this.hash;
+        // Using jQuery's animate() method to add smooth page scroll
+        jQuery('html, body').animate({
+          scrollTop: jQuery(hash).offset().top - 96
+        }, 800);
+      }
+    });
+  });
+}
+
+/***/ }),
+
 /***/ "./src/modules/animations.js":
 /*!***********************************!*\
   !*** ./src/modules/animations.js ***!
@@ -202,6 +233,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_mobile_nav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/mobile-nav */ "./src/modules/mobile-nav.js");
 /* harmony import */ var _modules_stop_animations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/stop-animations */ "./src/modules/stop-animations.js");
 /* harmony import */ var _modules_animations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/animations */ "./src/modules/animations.js");
+/* harmony import */ var _modules_anchor_scroll__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/anchor-scroll */ "./src/modules/anchor-scroll.js");
+
 
 
 
@@ -210,11 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_modules_mobile_nav__WEBPACK_IMPORTED_MODULE_1__["default"])();
   (0,_modules_stop_animations__WEBPACK_IMPORTED_MODULE_2__["default"])();
   (0,_modules_animations__WEBPACK_IMPORTED_MODULE_3__["default"])();
-  wp.domReady(() => {
-    wp.blocks.unregisterBlockVariation('core/group', 'group');
-    wp.blocks.unregisterBlockVariation('core/group', 'group-row');
-    wp.blocks.unregisterBlockVariation('core/group', 'group-stack');
-  });
+  (0,_modules_anchor_scroll__WEBPACK_IMPORTED_MODULE_4__["default"])();
 });
 }();
 /******/ })()
