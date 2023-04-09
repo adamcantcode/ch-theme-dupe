@@ -1417,6 +1417,10 @@ table {
   overflow-y: scroll;
 }
 
+.whitespace-nowrap{
+  white-space: nowrap;
+}
+
 .rounded-lg{
   border-radius: 2.5rem;
 }
@@ -1614,6 +1618,19 @@ table {
   margin-right: auto;
   max-width: 1280px;
 }
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+/* Hide scrollbar for IE, Edge and Firefox */
+
+.no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 
 /* CUSTOM STYELS */
 
@@ -1900,7 +1917,7 @@ table {
   border-width: 1px;
   border-color: rgba(0,0,0,0);
     content: '';
-    background: linear-gradient(90deg, #EADAFF, #A698FF) border-box;
+    background: linear-gradient(90deg, #eadaff, #a698ff) border-box;
     -webkit-mask: linear-gradient(#fff 0 0) padding-box,
       linear-gradient(#fff 0 0);
     -webkit-mask-composite: destination-out;

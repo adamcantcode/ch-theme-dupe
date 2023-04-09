@@ -215,7 +215,7 @@
   &:before {
     @apply absolute top-0 left-0 right-0 bottom-0 rounded-md border border-transparent;
     content: '';
-    background: linear-gradient(90deg, #EADAFF, #A698FF) border-box;
+    background: linear-gradient(90deg, #eadaff, #a698ff) border-box;
     -webkit-mask: linear-gradient(#fff 0 0) padding-box,
       linear-gradient(#fff 0 0);
     -webkit-mask-composite: destination-out;
