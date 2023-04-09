@@ -71,8 +71,7 @@
   }
   p,
   ul li,
-  ol li,
-  blockquote {
+  ol li {
     @apply text-text font-body;
   }
   h1 {
@@ -143,7 +142,10 @@
     }
   }
   blockquote {
-    @apply py-8 my-8 font-heading-serif text-4xl leading-10 border-solid border-y-4 border-purple-gradient-start;
+    @apply py-8 my-8 border-solid border-y-4 border-purple-gradient-start;
+  }
+  blockquote > p {
+    @apply font-heading-serif text-4xl leading-10 text-dark-blue;
   }
   blockquote p {
     @apply mb-0;

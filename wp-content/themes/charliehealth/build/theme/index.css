@@ -471,8 +471,7 @@ h1,
 
 p,
   ul li,
-  ol li,
-  blockquote{
+  ol li{
   font-family: "GT America", sans-serif;
   --tw-text-opacity: 1;
   color: rgb(70 73 109 / var(--tw-text-opacity));
@@ -658,9 +657,14 @@ blockquote{
   border-color: rgb(234 218 255 / var(--tw-border-opacity));
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+blockquote > p{
   font-family: "ABC Arizona", serif;
   font-size: 2.25rem;
   line-height: 2.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(29 34 95 / var(--tw-text-opacity));
 }
 
 blockquote p{
@@ -1246,16 +1250,16 @@ table {
   height: 1.25rem;
 }
 
+.h-\[1px\]{
+  height: 1px;
+}
+
 .h-\[50px\]{
   height: 50px;
 }
 
 .h-\[calc\(100vh-68px\)\]{
   height: calc(100vh - 68px);
-}
-
-.h-\[1px\]{
-  height: 1px;
 }
 
 .max-h-0{
@@ -1383,12 +1387,12 @@ table {
   gap: 1rem;
 }
 
-.gap-sp-8{
-  gap: 2rem;
-}
-
 .gap-sp-5{
   gap: 1.25rem;
+}
+
+.gap-sp-8{
+  gap: 2rem;
 }
 
 .gap-x-4{
@@ -1458,6 +1462,11 @@ table {
 .bg-darkest-blue{
   --tw-bg-opacity: 1;
   background-color: rgb(22 25 64 / var(--tw-bg-opacity));
+}
+
+.bg-light-purple{
+  --tw-bg-opacity: 1;
+  background-color: rgb(240 239 252 / var(--tw-bg-opacity));
 }
 
 .bg-med-blue{
@@ -1637,6 +1646,49 @@ table {
   margin-right: auto;
   max-width: 1280px;
 }
+
+.single-areas-of-care .main-article-content section{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 480px) {
+
+.single-areas-of-care .main-article-content section{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  }
+
+@media (min-width: 1024px) {
+
+.single-areas-of-care .main-article-content section{
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+  }
+
+.single-areas-of-care .main-article-content section:nth-of-type(1){
+  padding-top: 0px;
+}
+
+@media (min-width: 480px) {
+
+.single-areas-of-care .main-article-content section:nth-of-type(1){
+    padding-top: 0px;
+  }
+  }
+
+@media (min-width: 1024px) {
+
+.single-areas-of-care .main-article-content section:nth-of-type(1){
+    padding-top: 0px;
+  }
+  }
 
 .testimonial-padding{
   padding-top: 2rem;

@@ -10,6 +10,24 @@
     @apply container;
   }
 }
+.single-areas-of-care .main-article-content section {
+  @apply py-sp-8 px-sp-5;
+  @screen md {
+    @apply py-sp-12;
+  }
+  @screen lg {
+    @apply py-sp-16 px-sp-10;
+  }
+}
+.single-areas-of-care .main-article-content section:nth-of-type(1) {
+  @apply pt-0;
+  @screen md {
+    @apply pt-0;
+  }
+  @screen lg {
+    @apply pt-0;
+  }
+}
 .testimonial-padding {
   @apply py-sp-8;
   @screen md {
