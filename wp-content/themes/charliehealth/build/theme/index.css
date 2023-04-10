@@ -1263,6 +1263,22 @@ table {
   height: calc(100vh - 68px);
 }
 
+.h-\[100vh\]{
+  height: 100vh;
+}
+
+.h-\[50vh\]{
+  height: 50vh;
+}
+
+.h-\[200ch\]{
+  height: 200ch;
+}
+
+.h-\[200vh\]{
+  height: 200vh;
+}
+
 .max-h-0{
   max-height: 0px;
 }
@@ -1593,6 +1609,10 @@ table {
 
 .opacity-30{
   opacity: 0.3;
+}
+
+.opacity-0{
+  opacity: 0;
 }
 
 .transition-all{

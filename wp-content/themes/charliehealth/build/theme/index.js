@@ -86,15 +86,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": function() { return /* binding */ revealBackToTop; }
 /* harmony export */ });
 function revealBackToTop() {
-  document.addEventListener('DOMContentLoaded', () => {
-    // gsap.to('.back-to-top', {
-    //   scrollTrigger: {
-    //     trigger: '#mainArticleContent > section:nth-of-type(2)',
-    //     start: 'top top',
-    //     markers: true
-    //   },
-    //   opacity: 100,
-    // });
+  gsap.to('.back-to-top', {
+    scrollTrigger: {
+      trigger: '#mainArticleContent > section:nth-of-type(2)',
+      start: 'top top',
+      // markers: true,
+      toggleActions: 'play pause reset reset'
+    },
+    opacity: 100,
+    duration: 50
   });
 }
 
