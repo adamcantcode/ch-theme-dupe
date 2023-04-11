@@ -222,3 +222,10 @@
     mask-composite: exclude;
   }
 }
+
+/* Remove bottom margin from last element in sections */
+.acf-innerblocks-container {
+  & > *:last-child {
+   @apply mb-0;
+  }
+}
