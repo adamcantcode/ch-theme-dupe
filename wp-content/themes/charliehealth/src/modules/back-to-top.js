@@ -4,9 +4,9 @@ export default function revealBackToTop() {
       trigger: '#mainArticleContent > section:nth-of-type(2)',
       start: 'top top',
       // markers: true,
-      toggleActions: 'play pause reset reset'
+      toggleActions: 'play complete complete reverse'
     },
-    opacity: 100,
-    duration: 50,
+    opacity: 1,
+    duration: 0.3,
   });
 }

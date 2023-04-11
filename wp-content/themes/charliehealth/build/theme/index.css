@@ -1161,6 +1161,10 @@ table {
   top: 6rem;
 }
 
+.bottom-sp-16{
+  bottom: 6rem;
+}
+
 .-z-10{
   z-index: -10;
 }
@@ -1227,6 +1231,10 @@ table {
   margin-top: 6rem;
 }
 
+.mb-sp-16{
+  margin-bottom: 6rem;
+}
+
 .block{
   display: block;
 }
@@ -1265,18 +1273,6 @@ table {
 
 .h-\[100vh\]{
   height: 100vh;
-}
-
-.h-\[50vh\]{
-  height: 50vh;
-}
-
-.h-\[200ch\]{
-  height: 200ch;
-}
-
-.h-\[200vh\]{
-  height: 200vh;
 }
 
 .max-h-0{
@@ -1607,12 +1603,12 @@ table {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.opacity-30{
-  opacity: 0.3;
-}
-
 .opacity-0{
   opacity: 0;
+}
+
+.opacity-30{
+  opacity: 0.3;
 }
 
 .transition-all{
