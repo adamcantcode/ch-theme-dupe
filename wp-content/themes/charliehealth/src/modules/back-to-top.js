@@ -10,5 +10,6 @@ export default function revealBackToTop() {
     duration: 0.3,
     position: 'sticky',
     autoAlpha: '1',
+    display: 'block',
   });
 }

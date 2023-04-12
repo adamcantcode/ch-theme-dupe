@@ -96,7 +96,8 @@ function revealBackToTop() {
     opacity: 1,
     duration: 0.3,
     position: 'sticky',
-    autoAlpha: '1'
+    autoAlpha: '1',
+    display: 'block'
   });
 }
 
