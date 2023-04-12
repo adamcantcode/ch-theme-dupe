@@ -252,6 +252,28 @@
             "prefix_name": 1
         },
         {
+            "key": "field_6435f5225f6c5",
+            "label": "Jump Buttons",
+            "name": "hero_jump_buttons",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_64331e61b6161"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
+        },
+        {
             "key": "field_63dff1ac8425d",
             "label": "End",
             "name": "",
@@ -288,5 +310,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1680708067
+    "modified": 1681258216
 }

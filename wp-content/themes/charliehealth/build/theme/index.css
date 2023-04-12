@@ -1093,6 +1093,10 @@ table {
 
 /* Utilities Layer */
 
+.invisible{
+  visibility: hidden;
+}
+
 .static{
   position: static;
 }
@@ -1229,6 +1233,14 @@ table {
 
 .mt-sp-16{
   margin-top: 6rem;
+}
+
+.mt-sp-8{
+  margin-top: 2rem;
+}
+
+.mt-sp-6{
+  margin-top: 1.5rem;
 }
 
 .block{
@@ -1981,6 +1993,18 @@ body --wp--custom--spacing--lg {
     margin-bottom: 4rem;
   }
 
+  .md\:mb-sp-12{
+    margin-bottom: 3rem;
+  }
+
+  .md\:mt-sp-12{
+    margin-top: 3rem;
+  }
+
+  .md\:mt-sp-10{
+    margin-top: 2.5rem;
+  }
+
   .md\:max-h-none{
     max-height: none;
   }
@@ -2055,6 +2079,22 @@ body --wp--custom--spacing--lg {
 
   .lg\:mt-\[68px\]{
     margin-top: 68px;
+  }
+
+  .lg\:mb-sp-16{
+    margin-bottom: 6rem;
+  }
+
+  .lg\:mt-sp-16{
+    margin-top: 6rem;
+  }
+
+  .lg\:mt-sp-12{
+    margin-top: 3rem;
+  }
+
+  .lg\:mt-sp-14{
+    margin-top: 4rem;
   }
 
   .lg\:block{

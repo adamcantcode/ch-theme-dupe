@@ -94,7 +94,9 @@ function revealBackToTop() {
       toggleActions: 'play complete complete reverse'
     },
     opacity: 1,
-    duration: 0.3
+    duration: 0.3,
+    position: 'sticky',
+    autoAlpha: '1'
   });
 }
 

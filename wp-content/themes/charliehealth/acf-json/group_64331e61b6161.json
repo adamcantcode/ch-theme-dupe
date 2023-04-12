@@ -3,6 +3,24 @@
     "title": "Jump Buttons",
     "fields": [
         {
+            "key": "field_6435f76ed45b5",
+            "label": "Jump Buttons",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
             "key": "field_64331ea1409e4",
             "label": "Buttons",
             "name": "jump_buttons",
@@ -67,6 +85,24 @@
                     "parent_repeater": "field_64331ea1409e4"
                 }
             ]
+        },
+        {
+            "key": "field_6435f78ad45b6",
+            "label": "",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 1
         }
     ],
     "location": [
@@ -87,5 +123,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1681072288
+    "modified": 1681258405
 }
