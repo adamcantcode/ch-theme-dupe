@@ -1235,10 +1235,6 @@ table {
   margin-top: 6rem;
 }
 
-.mt-sp-8{
-  margin-top: 2rem;
-}
-
 .mt-sp-6{
   margin-top: 1.5rem;
 }
@@ -1701,7 +1697,7 @@ body --wp--custom--spacing--lg {
   max-width: 1280px;
 }
 
-.single-areas-of-care .main-article-content section{
+.single-areas-of-care .main-article-content section, .single-treatment-modalities .main-article-content section{
   padding-top: 2rem;
   padding-bottom: 2rem;
   padding-left: 1.25rem;
@@ -1710,39 +1706,57 @@ body --wp--custom--spacing--lg {
 
 @media (min-width: 480px) {
 
-.single-areas-of-care .main-article-content section{
+.single-areas-of-care .main-article-content section, .single-treatment-modalities .main-article-content section{
     padding-top: 3rem;
     padding-bottom: 3rem;
   }
-  }
+      }
 
 @media (min-width: 1024px) {
 
-.single-areas-of-care .main-article-content section{
+.single-areas-of-care .main-article-content section, .single-treatment-modalities .main-article-content section{
     padding-top: 6rem;
     padding-bottom: 6rem;
     padding-left: 2.5rem;
     padding-right: 2.5rem;
   }
-  }
+      }
 
-.single-areas-of-care .main-article-content section:nth-of-type(1){
+.single-areas-of-care .main-article-content section:nth-of-type(1), .single-treatment-modalities .main-article-content section:nth-of-type(1){
   padding-top: 0px;
 }
 
 @media (min-width: 480px) {
 
-.single-areas-of-care .main-article-content section:nth-of-type(1){
+.single-areas-of-care .main-article-content section:nth-of-type(1), .single-treatment-modalities .main-article-content section:nth-of-type(1){
     padding-top: 0px;
   }
-  }
+        }
 
 @media (min-width: 1024px) {
 
-.single-areas-of-care .main-article-content section:nth-of-type(1){
+.single-areas-of-care .main-article-content section:nth-of-type(1), .single-treatment-modalities .main-article-content section:nth-of-type(1){
     padding-top: 0px;
   }
+        }
+
+.single-areas-of-care .main-article-content section img, .single-treatment-modalities .main-article-content section img{
+  border-radius: 1.25rem;
+}
+
+.single-areas-of-care .main-article-content section figure, .single-treatment-modalities .main-article-content section figure{
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+
+.single-areas-of-care .main-article-content section figure, .single-treatment-modalities .main-article-content section figure{
+    font-size: 1.125rem;
+    line-height: 1.8rem;
+    letter-spacing: 0;
+    font-weight: 400;
   }
+        }
 
 .testimonial-padding{
   padding-top: 2rem;
@@ -1993,14 +2007,6 @@ body --wp--custom--spacing--lg {
     margin-bottom: 4rem;
   }
 
-  .md\:mb-sp-12{
-    margin-bottom: 3rem;
-  }
-
-  .md\:mt-sp-12{
-    margin-top: 3rem;
-  }
-
   .md\:mt-sp-10{
     margin-top: 2.5rem;
   }
@@ -2079,18 +2085,6 @@ body --wp--custom--spacing--lg {
 
   .lg\:mt-\[68px\]{
     margin-top: 68px;
-  }
-
-  .lg\:mb-sp-16{
-    margin-bottom: 6rem;
-  }
-
-  .lg\:mt-sp-16{
-    margin-top: 6rem;
-  }
-
-  .lg\:mt-sp-12{
-    margin-top: 3rem;
   }
 
   .lg\:mt-sp-14{
