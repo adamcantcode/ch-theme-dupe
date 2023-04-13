@@ -1315,10 +1315,6 @@ table {
   width: 20rem;
 }
 
-.w-\[160px\]{
-  width: 160px;
-}
-
 .w-\[calc\(100vw-2\.5rem\)\]{
   width: calc(100vw - 2.5rem);
 }

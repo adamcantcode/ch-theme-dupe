@@ -20,7 +20,7 @@
     <nav class="container px-5 relative flex items-center justify-between min-h-[68px]">
       <div class="nav-logo">
         <a href="#">
-          <img src="https://assets-global.website-files.com/62daf9ae3616b86eec143652/62f68f4ebab2af5c28626d79_wordmark_horizontal_white.svg" alt="ss" class=" w-[160px]">
+          <?php include('resources/images/ch-logo.php') ?>
         </a>
       </div>
       <div class="slide-out overflow-y-scroll lg:overflow-y-visible fixed bottom-0 lg:top-0 bg-darkest-blue lg:bg-transparent lg:flex lg:relative lg:h-auto h-[calc(100vh-68px)] <?= is_user_logged_in() ? 'top-[116px]' : 'top-[68px]'; ?>">
