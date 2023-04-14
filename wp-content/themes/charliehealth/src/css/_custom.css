@@ -238,3 +238,12 @@ body {
     @apply mb-0;
   }
 }
+
+/* Footer badges */
+.badges {
+  a {
+    img {
+      @apply aspect-square object-contain w-[100px];
+    }
+  }
+}

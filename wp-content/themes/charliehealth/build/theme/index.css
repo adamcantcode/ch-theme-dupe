@@ -1181,6 +1181,14 @@ table {
   order: 2;
 }
 
+.col-span-2{
+  grid-column: span 2 / span 2;
+}
+
+.col-span-3{
+  grid-column: span 3 / span 3;
+}
+
 .mx-sp-5{
   margin-left: 1.25rem;
   margin-right: 1.25rem;
@@ -2012,6 +2020,15 @@ body --wp--custom--spacing--lg {
 
 .acf-innerblocks-container > *:last-child{
   margin-bottom: 0px;
+}
+
+/* Footer badges */
+
+.badges a img{
+  aspect-ratio: 1 / 1;
+  width: 100px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .last\:mb-0:last-child{
