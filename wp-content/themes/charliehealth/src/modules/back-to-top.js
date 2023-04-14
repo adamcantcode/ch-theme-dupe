@@ -1,15 +1,19 @@
 export default function revealBackToTop() {
-  gsap.to('.back-to-top', {
-    scrollTrigger: {
-      trigger: '#mainArticleContent > section:nth-of-type(2)',
-      start: 'top top',
-      // markers: true,
-      toggleActions: 'play complete complete reverse'
-    },
-    opacity: 1,
-    duration: 0.15,
-    position: 'sticky',
-    autoAlpha: '1',
-    display: 'block',
+  let breakpoints = gsap.matchMedia();
+
+  breakpoints.add('(min-width: 1024px)', () => {
+    gsap.to('.back-to-top', {
+      scrollTrigger: {
+        trigger: '#mainArticleContent > section:nth-of-type(2)',
+        start: 'top top',
+        // markers: true,
+        toggleActions: 'play complete complete reverse',
+      },
+      opacity: 1,
+      duration: 0.15,
+      position: 'sticky',
+      autoAlpha: '1',
+      display: 'block',
+    });
   });
 }

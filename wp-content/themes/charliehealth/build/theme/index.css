@@ -1239,6 +1239,10 @@ table {
   margin-top: 1.5rem;
 }
 
+.mt-sp-8{
+  margin-top: 2rem;
+}
+
 .block{
   display: block;
 }
@@ -2007,6 +2011,10 @@ body --wp--custom--spacing--lg {
     margin-top: 2.5rem;
   }
 
+  .md\:mt-sp-12{
+    margin-top: 3rem;
+  }
+
   .md\:max-h-none{
     max-height: none;
   }
@@ -2085,6 +2093,10 @@ body --wp--custom--spacing--lg {
 
   .lg\:mt-sp-14{
     margin-top: 4rem;
+  }
+
+  .lg\:mt-sp-16{
+    margin-top: 6rem;
   }
 
   .lg\:block{

@@ -80,6 +80,6 @@ if ($style === 'image') {
         <a href="#<?= $sectionID; ?>" class="ch-button button-secondary whitespace-nowrap"><?= $label; ?></a>
       <?php endwhile; ?>
     </div>
-    <div class="h-[1px] bg-gradient-to-r from-purple-gradient-start to-purple-gradient-end mt-sp-16"></div>
+    <div class="h-[1px] bg-gradient-to-r from-purple-gradient-start to-purple-gradient-end lg:mt-sp-16 md:mt-sp-12 mt-sp-8"></div>
   </div>
 <?php endif; ?>
