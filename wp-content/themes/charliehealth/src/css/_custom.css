@@ -32,15 +32,6 @@ body {
       @screen lg {
         @apply py-sp-16 px-sp-10;
       }
-      &:nth-of-type(1) {
-        @apply pt-0;
-        @screen md {
-          @apply pt-0;
-        }
-        @screen lg {
-          @apply pt-0;
-        }
-      }
       img {
         @apply rounded-md;
       }
@@ -50,6 +41,10 @@ body {
           @apply text-p-lg;
         }
       }
+    }
+    /* TODO Fix this to select only the first */
+    .wp-block-group {
+      @apply pb-0;
     }
   }
 }
