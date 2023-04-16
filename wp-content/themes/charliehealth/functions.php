@@ -22,6 +22,7 @@ add_action('wp_enqueue_scripts', 'custom_scripts_and_styles');
 
 // Add custom css to Gutenberg Editor
 add_theme_support('editor-styles');
+add_theme_support('post-thumbnails');
 add_editor_style('/build/theme/index.css');
 
 // ACF options page
