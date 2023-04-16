@@ -4,10 +4,10 @@
     "fields": [
         {
             "key": "field_643c4bec37b73",
-            "label": "Bio",
+            "label": "Biography",
             "name": "bio",
             "aria-label": "",
-            "type": "textarea",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -17,10 +17,10 @@
                 "id": ""
             },
             "default_value": "",
-            "maxlength": "",
-            "rows": "",
-            "placeholder": "",
-            "new_lines": ""
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
         },
         {
             "key": "field_643c4ea637b76",
@@ -98,7 +98,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "post_author"
+                "value": "authors"
             }
         ],
         [
@@ -120,5 +120,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1681675745
+    "modified": 1681678527
 }

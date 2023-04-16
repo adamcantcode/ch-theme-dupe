@@ -2,6 +2,15 @@
   .container {
     @apply max-w-[1280px] mx-auto;
   }
+  .section {
+    @apply py-sp-8 px-sp-5;
+    @screen md {
+      @apply py-sp-12;
+    }
+    @screen lg {
+      @apply py-sp-16 px-sp-10;
+    }
+  }
   /* Hide scrollbar for Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
     display: none;

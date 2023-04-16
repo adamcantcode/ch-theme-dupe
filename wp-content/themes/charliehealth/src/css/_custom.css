@@ -10,13 +10,7 @@ body {
   }
 }
 .wp-block-group {
-  @apply py-sp-8 px-sp-5;
-  @screen md {
-    @apply py-sp-12;
-  }
-  @screen lg {
-    @apply py-sp-16 px-sp-10;
-  }
+  @apply section;
   &:not(.alignfull) {
     @apply container;
   }
@@ -25,13 +19,7 @@ body {
 .single-treatment-modalities {
   .main-article-content {
     section {
-      @apply py-sp-8 px-sp-5;
-      @screen md {
-        @apply py-sp-12;
-      }
-      @screen lg {
-        @apply py-sp-16 px-sp-10;
-      }
+      @apply section;
       img {
         @apply rounded-md;
       }
@@ -249,4 +237,8 @@ body {
   & > *:last-child {
     @apply mb-0;
   }
+}
+
+.divider {
+  @apply h-[1px] bg-gradient-to-r from-purple-gradient-start to-purple-gradient-end lg:mt-sp-16 md:mt-sp-12 mt-sp-8;
 }
