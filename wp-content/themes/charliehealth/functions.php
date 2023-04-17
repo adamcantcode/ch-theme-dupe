@@ -45,3 +45,5 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/jump-buttons');
 }
 add_action('init', 'register_acf_blocks', 5);
+
+include_once('helpers/helper-functions.php');

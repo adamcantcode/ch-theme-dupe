@@ -68,6 +68,11 @@
   h5,
   h6 {
     @apply text-dark-blue font-heading;
+    & > {
+      a {
+        @apply no-underline;
+      }
+    }
   }
   p,
   ul li,
@@ -114,7 +119,10 @@
     @apply text-h5;
   }
   h6 {
-    @apply text-h6;
+    @apply text-h6 mb-sp-1;
+    @screen lg {
+      @apply mb-sp-2;
+    }
   }
   p {
     @apply text-p mb-sp-6;
