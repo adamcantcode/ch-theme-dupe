@@ -1,6 +1,6 @@
 @layer utilities {
   .container {
-    @apply max-w-[1280px] mx-auto;
+    @apply max-w-[1280px] mx-auto w-full;
   }
   .section {
     @apply py-sp-8 px-sp-5;

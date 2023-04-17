@@ -132,7 +132,7 @@
   }
   ul,
   ol {
-    @apply block pl-10;
+    @apply block pl-10 mb-sp-6;
   }
   ul {
     @apply list-disc;
@@ -150,7 +150,7 @@
     }
   }
   blockquote {
-    @apply py-8 my-8 border-solid border-y-4 border-purple-gradient-start;
+    @apply py-8 my-8 border-solid border-y-4 border-purple-gradient-start mb-sp-6;
   }
   blockquote > p {
     @apply font-heading-serif text-4xl leading-10 text-dark-blue;
