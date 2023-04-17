@@ -1,15 +1,31 @@
-<footer class="grid bg-darkest-blue gap-y-sp-16 container-padding">
+<footer class="grid bg-darkest-blue gap-y-sp-16 section relatve">
 	<!-- menu -->
-	<div class="container grid lg:grid-cols-5 gap-sp-16">
-		<div class="flex flex-col">
+	<div class="container grid lg:grid-cols-5 lg:gap-sp-16 gap-sp-8">
+		<div class="flex flex-col footer-links">
 			<h4 class="text-white">Our Program</h4>
-			<a href="#" class="text-white text-h5">Intensive Outpatient Program (IOP)</a>
-			<a href="#" class="text-white text-h5">Intensive Outpatient Program (IOP)</a>
-			<a href="#" class="text-white text-h5">Intensive Outpatient Program (IOP)</a>
-			<a href="#" class="text-white text-h5">Intensive Outpatient Program (IOP)</a>
+			<a href="#">Intensive Outpatient Program (IOP)</a>
+			<a href="#">Intensive Outpatient Program (IOP)</a>
+			<a href="#">Intensive Outpatient Program (IOP)</a>
+			<a href="#">Intensive Outpatient Program (IOP)</a>
 		</div>
-		<div></div>
-		<div></div>
+		<div class="flex flex-col footer-links">
+			<h4 class="text-white">Our Program</h4>
+			<a href="#">Intensive Outpatient</a>
+			<a href="#">Intensive Outpatient</a>
+			<a href="#">Intensive Outpatient</a>
+		</div>
+		<div class="flex flex-col footer-links">
+			<h4 class="text-white">Our Program</h4>
+			<a href="#">Intensive Outpatient</a>
+			<a href="#">Intensive Outpatient</a>
+			<a href="#">Intensive Outpatient</a>
+			<a href="#">Intensive Outpatient</a>
+			<a href="#">Intensive Outpatient</a>
+			<a href="#">Intensive Outpatient</a>
+			<a href="#">Intensive Outpatient</a>
+			<a href="#">Intensive Outpatient</a>
+			<a href="#">Intensive Outpatient</a>
+		</div>
 	</div>
 	<div class="container order-first md:order-none">
 		<div class="flex flex-col justify-between rounded-md lg:flex-row bg-lightest-teal py-sp-5 px-sp-8">
@@ -30,6 +46,20 @@
 			<p class="text-white text-h6">If you are located in California, the below applies to you, subject to applicable law:</p>
 			<p class="text-white text-h6"><em>Your health plan’s contracted network providers may also offer in-office appointments. Health plan’s telehealth and in-person services are subject to the same timely access to care standards. If you have out-of-network benefits, and utilize out-of-network services, you are subject to the plan’s cost-sharing obligation and balance billing protections. Contact your health plan to learn more.</em></p>
 			<p class="text-white text-h6"><em>You have a right to access your medical records. Records of the care you receive from Charlie Health will be shared with your primary care provider (PCP) via an electronic patient record system or provided in a different manner unless you opt out.</em></p>
+		</div>
+	</div>
+	<div class="container relative">
+		<div class="lg:w-[225px] w-2/3 lg:absolute lg:bottom-0 lg:right-0 opacity-10 mx-auto lg:mb-0 mb-sp-16">
+			<?= file_get_contents('wp-content/themes/charliehealth/resources/images/logos/shield.svg'); ?>
+		</div>
+		<div class="flex flex-col lg:flex-row footer-links lg:gap-sp-8 gap-sp-2">
+			<a href="#">Privacy Policy</a>
+			<a href="#">Privacy Policy</a>
+			<a href="#">Privacy Policy</a>
+			<a href="#">Privacy Policy</a>
+		</div>
+		<div class="flex flex-row footer-links gap-sp-8">
+			<span class="text-white text-h5">©<?= date('Y'); ?> Charlie Health, Inc. All rights reserved.</span>
 		</div>
 	</div>
 </footer>

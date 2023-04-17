@@ -567,11 +567,22 @@ h3{
     }
 
 h4{
-  font-size: 1.75rem;
-  line-height: 130%;
-  letter-spacing: -0.05em;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.625;
+  letter-spacing: 0;
   font-weight: 400;
 }
+
+@media (min-width: 1024px) {
+  h4{
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+    }
 
 h5{
   font-size: 1rem;
@@ -1205,6 +1216,10 @@ table {
   grid-column: span 3 / span 3;
 }
 
+.col-span-full{
+  grid-column: 1 / -1;
+}
+
 .mx-sp-5{
   margin-left: 1.25rem;
   margin-right: 1.25rem;
@@ -1213,6 +1228,11 @@ table {
 .my-sp-8{
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+.mx-auto{
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .mb-0{
@@ -1364,6 +1384,10 @@ table {
   width: 100vw;
 }
 
+.w-2\/3{
+  width: 66.666667%;
+}
+
 .max-w-\[1280px\]{
   max-width: 1280px;
 }
@@ -1374,6 +1398,16 @@ table {
 
 .flex-grow{
   flex-grow: 1;
+}
+
+.-translate-x-1\/2{
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.-translate-y-1\/2{
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .transform{
@@ -1394,6 +1428,10 @@ table {
 
 .grid-cols-1{
   grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.flex-row{
+  flex-direction: row;
 }
 
 .flex-col{
@@ -1446,6 +1484,10 @@ table {
 
 .gap-sp-8{
   gap: 2rem;
+}
+
+.gap-sp-2{
+  gap: 0.5rem;
 }
 
 .gap-x-4{
@@ -1631,17 +1673,10 @@ table {
 }
 
 .text-h4{
-  font-size: 1.75rem;
-  line-height: 130%;
-  letter-spacing: -0.05em;
+  font-size: 1.25rem;
+  line-height: 1.625;
+  letter-spacing: 0;
   font-weight: 400;
-}
-
-.text-h5{
-  font-size: 1rem;
-  line-height: 140%;
-  letter-spacing: -0.01em;
-  font-weight: 500;
 }
 
 .text-h6{
@@ -1654,6 +1689,13 @@ table {
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-h5{
+  font-size: 1rem;
+  line-height: 140%;
+  letter-spacing: -0.01em;
+  font-weight: 500;
 }
 
 .leading-\[1\.8rem\]{
@@ -1671,6 +1713,10 @@ table {
 
 .opacity-30{
   opacity: 0.3;
+}
+
+.opacity-10{
+  opacity: 0.1;
 }
 
 .transition-all{
@@ -2080,6 +2126,17 @@ body --wp--custom--spacing--lg {
      object-fit: contain;
 }
 
+.footer-links > a{
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  line-height: 140%;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  text-decoration-line: none;
+}
+
 .last\:mb-0:last-child{
   margin-bottom: 0px;
 }
@@ -2158,6 +2215,14 @@ body --wp--custom--spacing--lg {
     top: 32px;
   }
 
+  .lg\:bottom-0{
+    bottom: 0px;
+  }
+
+  .lg\:right-0{
+    right: 0px;
+  }
+
   .lg\:order-1{
     order: 1;
   }
@@ -2195,6 +2260,10 @@ body --wp--custom--spacing--lg {
     margin-top: 4rem;
   }
 
+  .lg\:mb-0{
+    margin-bottom: 0px;
+  }
+
   .lg\:block{
     display: block;
   }
@@ -2221,6 +2290,10 @@ body --wp--custom--spacing--lg {
 
   .lg\:w-full{
     width: 100%;
+  }
+
+  .lg\:w-\[225px\]{
+    width: 225px;
   }
 
   .lg\:grid-cols-2{
@@ -2261,6 +2334,10 @@ body --wp--custom--spacing--lg {
 
   .lg\:gap-sp-16{
     gap: 6rem;
+  }
+
+  .lg\:gap-sp-8{
+    gap: 2rem;
   }
 
   .lg\:gap-x-32{

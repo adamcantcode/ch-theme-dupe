@@ -156,10 +156,18 @@ module.exports = {
           },
         ],
         h4: [
-          '1.75rem',
+          '1.25rem',
           {
-            lineHeight: '130%',
-            letterSpacing: '-0.05em',
+            lineHeight: '1.625',
+            letterSpacing: '0',
+            fontWeight: '400',
+          },
+        ],
+        'h4-lg': [
+          '1.5rem',
+          {
+            lineHeight: '1.8rem',
+            letterSpacing: '0',
             fontWeight: '400',
           },
         ],

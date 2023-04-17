@@ -250,3 +250,11 @@ body {
     }
   }
 }
+
+.footer-links {
+  & > {
+    a {
+      @apply text-white text-h5 no-underline mb-sp-3;
+    }
+  }
+}
