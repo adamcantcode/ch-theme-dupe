@@ -258,3 +258,9 @@ body {
     }
   }
 }
+
+.nav-logo {
+  svg {
+    @apply max-w-full;
+  }
+}

@@ -11,6 +11,21 @@
       @apply py-sp-16 px-sp-10;
     }
   }
+  .padding-horizontal { 
+    @apply px-sp-5;
+    @screen lg {
+      @apply px-sp-10;
+    }
+  }
+  .padding-vertical { 
+    @apply py-sp-8;
+    @screen md {
+      @apply py-sp-12;
+    }
+    @screen lg {
+      @apply py-sp-16;
+    }
+  }
   /* Hide scrollbar for Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
     display: none;
@@ -20,5 +35,8 @@
   .no-scrollbar {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
+  }
+  .filter-white {
+    filter: contrast(0) brightness(2);
   }
 }
