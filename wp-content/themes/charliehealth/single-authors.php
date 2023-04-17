@@ -79,6 +79,32 @@ if ($image) {
           <p>The United States is facing a shortage in mental health professional at the same time that it faces a rise in youth suicide rates and rates of adolescent mental illness.</p>
           <a href="#">Read more</a>
         </div>
+        <div>
+          <img src="<?= placeHolderImage() ?>" class="object-cover w-full rounded-md aspect-[4/3]">
+        </div>
+        <div class="flex flex-col">
+          <h6>November 23, 2022</h6>
+          <h3>
+            <a href="#" class="text-h4">
+              Our Country is Facing a Shortage of Mental Health Professionals. Here’s How it Impacts Youth.
+            </a>
+          </h3>
+          <p>The United States is facing a shortage in mental health professional at the same time that it faces a rise in youth suicide rates and rates of adolescent mental illness.</p>
+          <a href="#">Read more</a>
+        </div>
+        <div>
+          <img src="<?= placeHolderImage() ?>" class="object-cover w-full rounded-md aspect-[4/3]">
+        </div>
+        <div class="flex flex-col">
+          <h6 class="mb-sp-8">November 23, 2022</h6>
+          <h3>
+            <a href="#" class="text-h4">
+              Our Country is Facing a Shortage of Mental Health Professionals. Here’s How it Impacts Youth.
+            </a>
+          </h3>
+          <p>The United States is facing a shortage in mental health professional at the same time that it faces a rise in youth suicide rates and rates of adolescent mental illness.</p>
+          <a href="#">Read more</a>
+        </div>
       </div>
     </div>
   </section>
