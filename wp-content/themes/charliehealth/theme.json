@@ -76,20 +76,6 @@
           "defaultGradients": false,
           "customGradient": false
         },
-        "typography": {
-          "customFontSize": false,
-          "dropCap": false,
-          "fluid": false,
-          "fontFamilies": [],
-          "fontSizes": [],
-          "fontStyle": false,
-          "fontWeight": false,
-          "letterSpacing": false,
-          "lineHeight": false,
-          "textColumns": false,
-          "textDecoration": false,
-          "textTransform": false
-        },
         "layout": {
           "contentSize": "768px",
           "wideSize": "1000px"
