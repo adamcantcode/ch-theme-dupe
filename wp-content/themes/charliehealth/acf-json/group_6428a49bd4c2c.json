@@ -25,7 +25,7 @@
             "label": "Padding",
             "name": "padding",
             "aria-label": "",
-            "type": "select",
+            "type": "range",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -34,25 +34,19 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "small": "Small",
-                "medium": "Medium",
-                "large": "Large"
-            },
-            "default_value": false,
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 1,
-            "ui": 1,
-            "ajax": 0,
-            "placeholder": ""
+            "default_value": 3,
+            "min": 0,
+            "max": 5,
+            "step": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_6428a52e7e52f",
             "label": "Margin",
             "name": "margin",
             "aria-label": "",
-            "type": "select",
+            "type": "range",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -61,18 +55,12 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "small": "Small",
-                "medium": "Medium",
-                "large": "Large"
-            },
-            "default_value": false,
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 1,
-            "ui": 1,
-            "ajax": 0,
-            "placeholder": ""
+            "default_value": 0,
+            "min": 0,
+            "max": 5,
+            "step": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_6429f7fb98625",
@@ -108,8 +96,8 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": true,
+    "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1680484170
+    "modified": 1682034649
 }

@@ -205,7 +205,7 @@ module.exports = {
         ],
       },
       spacing: {
-        zero: '0',
+        'sp-0': '0',
         'sp-1': '0.25rem',
         'sp-2': '0.5rem',
         'sp-3': '0.75rem',

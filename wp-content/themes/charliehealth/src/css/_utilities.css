@@ -1,7 +1,14 @@
 @layer utilities {
   .container {
     @apply max-w-[1280px] mx-auto w-full;
+    &-sm {
+      @apply max-w-[768px] mx-auto;
+    }
+    &-md {
+      @apply max-w-[1024px] mx-auto;
+    }
   }
+  /* Default Section padding */
   .section {
     @apply py-sp-8 px-sp-5;
     @screen md {
@@ -10,14 +17,142 @@
     @screen lg {
       @apply py-sp-16 px-sp-10;
     }
+    &-top {
+      @apply pt-sp-8 px-sp-5;
+      @screen md {
+        @apply pt-sp-12;
+      }
+      @screen lg {
+        @apply pt-sp-16 px-sp-10;
+      }
+    }
+    &-bottom {
+      @apply pb-sp-8 px-sp-5;
+      @screen md {
+        @apply pb-sp-12;
+      }
+      @screen lg {
+        @apply pb-sp-16 px-sp-10;
+      }
+    }
+
+    /* Section Y padding sizes */
+    &-sm {
+      @apply py-sp-6 px-sp-5;
+      @screen md {
+        @apply py-sp-10;
+      }
+      @screen lg {
+        @apply py-sp-14 px-sp-10;
+      }
+      &-top {
+        @apply pt-sp-6 px-sp-5;
+        @screen md {
+          @apply pt-sp-10;
+        }
+        @screen lg {
+          @apply pt-sp-14 px-sp-10;
+        }
+      }
+      &-bottom {
+        @apply pb-sp-6 px-sp-5;
+        @screen md {
+          @apply pb-sp-10;
+        }
+        @screen lg {
+          @apply pb-sp-14 px-sp-10;
+        }
+      }
+    }
+    &-xs {
+      @apply py-sp-4 px-sp-5;
+      @screen md {
+        @apply py-sp-6;
+      }
+      @screen lg {
+        @apply py-sp-10 px-sp-10;
+      }
+      &-top {
+        @apply pt-sp-4 px-sp-5;
+        @screen md {
+          @apply pt-sp-6;
+        }
+        @screen lg {
+          @apply pt-sp-10 px-sp-10;
+        }
+      }
+      &-bottom {
+        @apply pb-sp-4 px-sp-5;
+        @screen md {
+          @apply pb-sp-6;
+        }
+        @screen lg {
+          @apply pb-sp-10 px-sp-10;
+        }
+      }
+    }
+    &-lg {
+      @apply py-sp-10 px-sp-5;
+      @screen md {
+        @apply py-sp-14;
+      }
+      @screen lg {
+        @apply py-sp-16 px-sp-10;
+      }
+      &-top {
+        @apply pt-sp-10 px-sp-5;
+        @screen md {
+          @apply pt-sp-14;
+        }
+        @screen lg {
+          @apply pt-sp-16 px-sp-10;
+        }
+      }
+      &-bottom {
+        @apply pb-sp-10 px-sp-5;
+        @screen md {
+          @apply pb-sp-14;
+        }
+        @screen lg {
+          @apply pb-sp-16 px-sp-10;
+        }
+      }
+    }
+    &-xl {
+      @apply py-sp-12 px-sp-5;
+      @screen md {
+        @apply py-sp-16;
+      }
+      @screen lg {
+        @apply py-sp-16 px-sp-10;
+      }
+      &-top {
+        @apply pt-sp-12 px-sp-5;
+        @screen md {
+          @apply pt-sp-16;
+        }
+        @screen lg {
+          @apply pt-sp-16 px-sp-10;
+        }
+      }
+      &-bottom {
+        @apply pb-sp-12 px-sp-5;
+        @screen md {
+          @apply pb-sp-16;
+        }
+        @screen lg {
+          @apply pb-sp-16 px-sp-10;
+        }
+      }
+    }
   }
-  .padding-horizontal { 
+  .padding-horizontal {
     @apply px-sp-5;
     @screen lg {
       @apply px-sp-10;
     }
   }
-  .padding-vertical { 
+  .padding-vertical {
     @apply py-sp-8;
     @screen md {
       @apply py-sp-12;
