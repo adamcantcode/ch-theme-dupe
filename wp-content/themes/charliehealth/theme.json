@@ -26,8 +26,43 @@
         }
       ]
     },
+    "spacing": {
+      "blockGap": false,
+      "customSpacingSize": false,
+      "margin": false,
+      "padding": true,
+      "units": ["rem"],
+      "spacingSizes": [
+        {
+          "slug": "xs",
+          "name": "XS",
+          "size": "xs"
+        },
+        {
+          "slug": "sm",
+          "name": "SM",
+          "size": "sm"
+        },
+        {
+          "slug": "md",
+          "name": "Regular",
+          "size": "md"
+        },
+        {
+          "slug": "lg",
+          "name": "LG",
+          "size": "lg"
+        },
+        {
+          "slug": "xl",
+          "name": "XL",
+          "size": "xl"
+        }
+      ]
+    },
+
     "layout": {
-      
+      "contentSize": "1280px"
     },
     "blocks": {
       "core/group": {
@@ -49,9 +84,25 @@
           "blockGap": false,
           "customSpacingSize": false,
           "margin": false,
-          "padding": false,
-          "units": [],
-          "spacingSizes": []
+          "padding": true,
+          "units": ["rem"],
+          "spacingSizes": [
+            {
+              "slug": "sm",
+              "name": "SM",
+              "size": "var(--wp--custom--spacing--sm)"
+            },
+            {
+              "slug": "md",
+              "name": "MD",
+              "size": "var(--wp--custom--spacing--md)"
+            },
+            {
+              "slug": "lg",
+              "name": "LG",
+              "size": "var(--wp--custom--spacing--lg)"
+            }
+          ]
         },
         "color": {
           "gradients": [],

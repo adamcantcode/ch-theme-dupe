@@ -1,7 +1,7 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 2,
-  "name": "acf/section-block",
+  "name": "acf/section-container-block",
   "title": "Section/Container",
   "description": "A test block for new compilation.",
   "category": "design",
@@ -13,8 +13,7 @@
     "renderTemplate": "section-container.php"
   },
   "supports": {
-    "alignWide": false,
-    "align": false,
+    "align": ["full"],
     "anchor": true,
     "color": {
       "background": true,
@@ -23,8 +22,18 @@
       "gradients": false,
       "link": false
     },
+    "html": true,
     "spacing": {
-      "padding": true 
+      "padding": [
+        "top",
+        "bottom"
+      ]
+    }
+  },
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
     }
   }
 }

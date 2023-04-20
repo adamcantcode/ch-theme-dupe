@@ -1744,7 +1744,7 @@ table {
   max-width: 1280px;
 }
 
-.container-small{
+.container-sm{
   margin-left: auto;
   margin-right: auto;
   max-width: 768px;

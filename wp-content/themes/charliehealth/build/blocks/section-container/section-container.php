@@ -3,11 +3,10 @@
 
 include(get_template_directory().'/helpers/spacing.php');
 
-// var_dump($padding);
-// var_dump($margin);
+// var_dump($block['style']['spacing']['padding']);
 ?>
 
-<section <?= $block['anchor'] ? 'id="' . $block['anchor'] . '"' : ''; ?> class="<?= $block['backgroundColor'] ? 'bg-' . $block['backgroundColor'] : '' ?> <?= $paddingClass; ?>">
+<section <?= $anchor; ?>class="<?= $blockClasses; ?>">
   <div class="container">
     <InnerBlocks />
   </div>
