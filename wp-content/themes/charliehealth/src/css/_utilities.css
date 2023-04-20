@@ -17,6 +17,24 @@
     @screen lg {
       @apply py-sp-16 px-sp-10;
     }
+    &-top {
+      @apply pt-sp-8 px-sp-5;
+      @screen md {
+        @apply pt-sp-12;
+      }
+      @screen lg {
+        @apply pt-sp-16 px-sp-10;
+      }
+    }
+    &-bottom {
+      @apply pb-sp-8 px-sp-5;
+      @screen md {
+        @apply pb-sp-12;
+      }
+      @screen lg {
+        @apply pb-sp-16 px-sp-10;
+      }
+    }
 
     /* Section Y padding sizes */
     &-sm {
@@ -27,6 +45,24 @@
       @screen lg {
         @apply py-sp-14 px-sp-10;
       }
+      &-top {
+        @apply pt-sp-6 px-sp-5;
+        @screen md {
+          @apply pt-sp-10;
+        }
+        @screen lg {
+          @apply pt-sp-14 px-sp-10;
+        }
+      }
+      &-bottom {
+        @apply pb-sp-6 px-sp-5;
+        @screen md {
+          @apply pb-sp-10;
+        }
+        @screen lg {
+          @apply pb-sp-14 px-sp-10;
+        }
+      }
     }
     &-xs {
       @apply py-sp-4 px-sp-5;
@@ -35,6 +71,24 @@
       }
       @screen lg {
         @apply py-sp-10 px-sp-10;
+      }
+      &-top {
+        @apply pt-sp-4 px-sp-5;
+        @screen md {
+          @apply pt-sp-6;
+        }
+        @screen lg {
+          @apply pt-sp-10 px-sp-10;
+        }
+      }
+      &-top {
+        @apply pb-sp-4 px-sp-5;
+        @screen md {
+          @apply pb-sp-6;
+        }
+        @screen lg {
+          @apply pb-sp-10 px-sp-10;
+        }
       }
     }
     &-lg {
@@ -45,6 +99,24 @@
       @screen lg {
         @apply py-sp-16 px-sp-10;
       }
+      &-top {
+        @apply pt-sp-10 px-sp-5;
+        @screen md {
+          @apply pt-sp-14;
+        }
+        @screen lg {
+          @apply pt-sp-16 px-sp-10;
+        }
+      }
+      &-bottom {
+        @apply pb-sp-10 px-sp-5;
+        @screen md {
+          @apply pb-sp-14;
+        }
+        @screen lg {
+          @apply pb-sp-16 px-sp-10;
+        }
+      }
     }
     &-xl {
       @apply py-sp-12 px-sp-5;
@@ -53,6 +125,24 @@
       }
       @screen lg {
         @apply py-sp-16 px-sp-10;
+      }
+      &-top {
+        @apply pt-sp-12 px-sp-5;
+        @screen md {
+          @apply pt-sp-16;
+        }
+        @screen lg {
+          @apply pt-sp-16 px-sp-10;
+        }
+      }
+      &-bottom {
+        @apply pb-sp-12 px-sp-5;
+        @screen md {
+          @apply pb-sp-16;
+        }
+        @screen lg {
+          @apply pb-sp-16 px-sp-10;
+        }
       }
     }
   }

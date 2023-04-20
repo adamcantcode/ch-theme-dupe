@@ -1650,8 +1650,16 @@ table {
   padding-bottom: 2rem;
 }
 
+.pb-sp-0{
+  padding-bottom: 0;
+}
+
 .pr-sp-6{
   padding-right: 1.5rem;
+}
+
+.pt-sp-0{
+  padding-top: 0;
 }
 
 .text-center{
@@ -1775,6 +1783,46 @@ table {
   }
     }
 
+.section-top{
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 2rem;
+}
+
+@media (min-width: 480px) {
+    .section-top{
+    padding-top: 3rem;
+  }
+      }
+
+@media (min-width: 1024px) {
+    .section-top{
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-top: 6rem;
+  }
+      }
+
+.section-bottom{
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-bottom: 2rem;
+}
+
+@media (min-width: 480px) {
+    .section-bottom{
+    padding-bottom: 3rem;
+  }
+      }
+
+@media (min-width: 1024px) {
+    .section-bottom{
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-bottom: 6rem;
+  }
+      }
+
 /* Section Y padding sizes */
 
 .section-sm{
@@ -1800,6 +1848,46 @@ table {
   }
       }
 
+.section-sm-top{
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 1.5rem;
+}
+
+@media (min-width: 480px) {
+      .section-sm-top{
+    padding-top: 2.5rem;
+  }
+        }
+
+@media (min-width: 1024px) {
+      .section-sm-top{
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-top: 4rem;
+  }
+        }
+
+.section-sm-bottom{
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-bottom: 1.5rem;
+}
+
+@media (min-width: 480px) {
+      .section-sm-bottom{
+    padding-bottom: 2.5rem;
+  }
+        }
+
+@media (min-width: 1024px) {
+      .section-sm-bottom{
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-bottom: 4rem;
+  }
+        }
+
 .section-xs{
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -1822,6 +1910,46 @@ table {
     padding-right: 2.5rem;
   }
       }
+
+.section-xs-top{
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 1rem;
+}
+
+@media (min-width: 480px) {
+      .section-xs-top{
+    padding-top: 1.5rem;
+  }
+        }
+
+@media (min-width: 1024px) {
+      .section-xs-top{
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-top: 2.5rem;
+  }
+        }
+
+.section-xs-top{
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-bottom: 1rem;
+}
+
+@media (min-width: 480px) {
+      .section-xs-top{
+    padding-bottom: 1.5rem;
+  }
+        }
+
+@media (min-width: 1024px) {
+      .section-xs-top{
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+        }
 
 .section-lg{
   padding-top: 2.5rem;
@@ -1846,6 +1974,46 @@ table {
   }
       }
 
+.section-lg-top{
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 2.5rem;
+}
+
+@media (min-width: 480px) {
+      .section-lg-top{
+    padding-top: 4rem;
+  }
+        }
+
+@media (min-width: 1024px) {
+      .section-lg-top{
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-top: 6rem;
+  }
+        }
+
+.section-lg-bottom{
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-bottom: 2.5rem;
+}
+
+@media (min-width: 480px) {
+      .section-lg-bottom{
+    padding-bottom: 4rem;
+  }
+        }
+
+@media (min-width: 1024px) {
+      .section-lg-bottom{
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-bottom: 6rem;
+  }
+        }
+
 .section-xl{
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -1868,6 +2036,46 @@ table {
     padding-right: 2.5rem;
   }
       }
+
+.section-xl-top{
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 3rem;
+}
+
+@media (min-width: 480px) {
+      .section-xl-top{
+    padding-top: 6rem;
+  }
+        }
+
+@media (min-width: 1024px) {
+      .section-xl-top{
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-top: 6rem;
+  }
+        }
+
+.section-xl-bottom{
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 480px) {
+      .section-xl-bottom{
+    padding-bottom: 6rem;
+  }
+        }
+
+@media (min-width: 1024px) {
+      .section-xl-bottom{
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-bottom: 6rem;
+  }
+        }
 
 .padding-horizontal{
   padding-left: 1.25rem;
