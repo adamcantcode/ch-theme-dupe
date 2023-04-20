@@ -84,6 +84,8 @@ if (!empty($blockPadding)) {
     }
     $paddingClass = $paddingTop . $paddingBottom;
   }
+} else {
+  $paddingClass = 'section';
 }
 
 

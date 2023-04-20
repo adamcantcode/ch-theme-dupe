@@ -81,7 +81,7 @@
           @apply pt-sp-10 px-sp-10;
         }
       }
-      &-top {
+      &-bottom {
         @apply pb-sp-4 px-sp-5;
         @screen md {
           @apply pb-sp-6;
