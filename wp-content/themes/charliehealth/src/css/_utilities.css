@@ -1,7 +1,11 @@
 @layer utilities {
   .container {
     @apply max-w-[1280px] mx-auto w-full;
+    &-small {
+      @apply max-w-[768px] mx-auto;
+    }
   }
+  /* Default Section padding */
   .section {
     @apply py-sp-8 px-sp-5;
     @screen md {
@@ -10,14 +14,52 @@
     @screen lg {
       @apply py-sp-16 px-sp-10;
     }
+
+    /* Section Y padding sizes */
+    &-sm {
+      @apply py-sp-6 px-sp-5;
+      @screen md {
+        @apply py-sp-10;
+      }
+      @screen lg {
+        @apply py-sp-14 px-sp-10;
+      }
+    }
+    &-xs {
+      @apply py-sp-4 px-sp-5;
+      @screen md {
+        @apply py-sp-6;
+      }
+      @screen lg {
+        @apply py-sp-10 px-sp-10;
+      }
+    }
+    &-lg {
+      @apply py-sp-10 px-sp-5;
+      @screen md {
+        @apply py-sp-14;
+      }
+      @screen lg {
+        @apply py-sp-16 px-sp-10;
+      }
+    }
+    &-xl {
+      @apply py-sp-12 px-sp-5;
+      @screen md {
+        @apply py-sp-16;
+      }
+      @screen lg {
+        @apply py-sp-16 px-sp-10;
+      }
+    }
   }
-  .padding-horizontal { 
+  .padding-horizontal {
     @apply px-sp-5;
     @screen lg {
       @apply px-sp-10;
     }
   }
-  .padding-vertical { 
+  .padding-vertical {
     @apply py-sp-8;
     @screen md {
       @apply py-sp-12;

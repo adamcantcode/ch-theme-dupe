@@ -27,7 +27,7 @@
       ]
     },
     "layout": {
-      "contentSize": "1280px"
+      
     },
     "blocks": {
       "core/group": {
@@ -49,50 +49,14 @@
           "blockGap": false,
           "customSpacingSize": false,
           "margin": false,
-          "padding": true,
-          "units": [
-            "rem"
-          ],
-          "spacingSizes": [
-            {
-              "slug": "sm",
-              "name": "SM",
-              "size": "var(--wp--custom--spacing--sm)"
-            },
-            {
-              "slug": "md",
-              "name": "MD",
-              "size": "var(--wp--custom--spacing--md)"
-            },
-            {
-              "slug": "lg",
-              "name": "LG",
-              "size": "var(--wp--custom--spacing--lg)"
-            }
-          ]
+          "padding": false,
+          "units": [],
+          "spacingSizes": []
         },
         "color": {
           "gradients": [],
           "defaultGradients": false,
           "customGradient": false
-        },
-        "typography": {
-          "customFontSize": false,
-          "dropCap": false,
-          "fluid": false,
-          "fontFamilies": [],
-          "fontSizes": [],
-          "fontStyle": false,
-          "fontWeight": false,
-          "letterSpacing": false,
-          "lineHeight": false,
-          "textColumns": false,
-          "textDecoration": false,
-          "textTransform": false
-        },
-        "layout": {
-          "contentSize": "768px",
-          "wideSize": "1000px"
         }
       }
     }

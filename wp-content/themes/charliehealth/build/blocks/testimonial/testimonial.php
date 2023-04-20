@@ -25,7 +25,7 @@ if (!empty($block['align'])) {
   <h2 class="container px-sp-5">Hear from the Charlie Health Community</h2>
   <div class="swiper swiper-testimonial">
     <div class="container lg:px-sp-5 swiper-wrapper">
-      <div class="swiper-slide grid lg:grid-cols-[1fr,_2fr] px-sp-5 lg:px-zero">
+      <div class="swiper-slide grid lg:grid-cols-[1fr,_2fr] px-sp-5 lg:px-0">
         <div class="quote lg:order-2">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat rerum quo adipisci id ea? Sed omnis ea dolore id deserunt voluptates ut molestiae, quidem enim nam dolores quaerat ab minus saepe sequi dicta quibusdam adipisci optio! Numquam hic inventore aut. Deserunt magnam a officia fugiat.</p>
         </div>
@@ -35,7 +35,7 @@ if (!empty($block['align'])) {
           <p class="title">title</p>
         </div>
       </div>
-      <div class="swiper-slide grid lg:grid-cols-[1fr,_2fr] px-sp-5 lg:px-zero">
+      <div class="swiper-slide grid lg:grid-cols-[1fr,_2fr] px-sp-5 lg:px-0">
         <div class="quote lg:order-2">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat rerum quo adipisci id ea? Sed omnis ea dolore id deserunt voluptates ut molestiae, quidem enim nam dolores quaerat ab minus saepe sequi dicta quibusdam adipisci optio! Numquam hic inventore aut. Deserunt magnam a officia fugiat.</p>
         </div>
@@ -45,7 +45,7 @@ if (!empty($block['align'])) {
           <p class="title">title</p>
         </div>
       </div>
-      <div class="swiper-slide grid lg:grid-cols-[1fr,_2fr] px-sp-5 lg:px-zero">
+      <div class="swiper-slide grid lg:grid-cols-[1fr,_2fr] px-sp-5 lg:px-0">
         <div class="quote lg:order-2">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat rerum quo adipisci id ea? Sed omnis ea dolore id deserunt voluptates ut molestiae, quidem enim nam dolores quaerat ab minus saepe sequi dicta quibusdam adipisci optio! Numquam hic inventore aut. Deserunt magnam a officia fugiat.</p>
         </div>

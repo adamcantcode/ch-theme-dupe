@@ -1632,6 +1632,11 @@ table {
   padding-bottom: 2rem;
 }
 
+.py-sp-0{
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 .py-sp-5{
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
@@ -1739,6 +1744,14 @@ table {
   max-width: 1280px;
 }
 
+.container-small{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 768px;
+}
+
+/* Default Section padding */
+
 .section{
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -1761,6 +1774,100 @@ table {
     padding-right: 2.5rem;
   }
     }
+
+/* Section Y padding sizes */
+
+.section-sm{
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 480px) {
+    .section-sm{
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+      }
+
+@media (min-width: 1024px) {
+    .section-sm{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+      }
+
+.section-xs{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 480px) {
+    .section-xs{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+      }
+
+@media (min-width: 1024px) {
+    .section-xs{
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+      }
+
+.section-lg{
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 480px) {
+    .section-lg{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+      }
+
+@media (min-width: 1024px) {
+    .section-lg{
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+      }
+
+.section-xl{
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 480px) {
+    .section-xl{
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+      }
+
+@media (min-width: 1024px) {
+    .section-xl{
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+      }
 
 .padding-horizontal{
   padding-left: 1.25rem;
@@ -2005,12 +2112,6 @@ body --wp--custom--spacing--lg {
 .resize-animation-stopper * {
   transition: none !important;
   animation: none !important;
-}
-
-.container-small{
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 48rem;
 }
 
 /* EDITOR */
@@ -2376,14 +2477,14 @@ body --wp--custom--spacing--lg {
     padding: 2rem;
   }
 
+  .lg\:px-0{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
   .lg\:px-sp-5{
     padding-left: 1.25rem;
     padding-right: 1.25rem;
-  }
-
-  .lg\:px-zero{
-    padding-left: 0;
-    padding-right: 0;
   }
 
   .lg\:pr-sp-14{
