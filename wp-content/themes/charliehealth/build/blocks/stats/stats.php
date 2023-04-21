@@ -10,8 +10,10 @@ $source = get_field('source');
       $label = get_sub_field('label');
       ?>
       <div class="lg:w-full">
-        <h3 class="text-center text-h1-lg"><?= $number; ?></h3>
-        <div class="divider"></div>
+        <h3 class="text-center text-h1-lg counter" id="<?= get_row_index(); ?>"><?= $number; ?></h3>
+        <div class="relative divider preserve-3d">
+          <div class="absolute top-0 w-full h-full bg-white lg:py-sp-8 py-sp-4 divider-cover left-1/2 translate-z"></div>
+        </div>
         <p class="text-center lg:mt-sp-8 mt-sp-4"><?= $label; ?></p>
       </div>
     <?php endwhile; ?>

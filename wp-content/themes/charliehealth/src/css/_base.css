@@ -104,7 +104,7 @@
     }
   }
   h3 {
-    @apply font-heading-serif text-h3 mb-sp-2;
+    @apply font-heading-serif text-h3 mb-sp-4;
     /* @screen md {
       @apply mb-sp-6
     } */
