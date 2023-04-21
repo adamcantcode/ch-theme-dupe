@@ -44,6 +44,7 @@ function register_acf_blocks()
   // register_block_type(__DIR__ . '/build/blocks/section');
   register_block_type(__DIR__ . '/build/blocks/jump-buttons');
   register_block_type(__DIR__ . '/build/blocks/section-container');
+  register_block_type(__DIR__ . '/build/blocks/stats');
 }
 add_action('init', 'register_acf_blocks', 5);
 

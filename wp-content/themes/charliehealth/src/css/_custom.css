@@ -216,7 +216,7 @@
 }
 
 .divider {
-  @apply h-[1px] bg-gradient-to-r from-purple-gradient-start to-purple-gradient-end lg:mt-sp-16 md:mt-sp-12 mt-sp-8;
+  @apply h-[1px] bg-gradient-to-r from-purple-gradient-start to-purple-gradient-end;
 }
 /* Footer badges */
 .badges {
