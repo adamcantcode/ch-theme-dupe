@@ -4,6 +4,22 @@ $image = get_field('fifty_fifty_image');
 $title = get_field('fifty_fifty_title');
 $details = get_field('fifty_fifty_details');
 $cta = get_field('fifty_fifty_cta');
+$order = get_field('order');
+
+switch ($order) {
+  case 'LR':
+    $imageOrder = 'md:order-1';
+    $detailsOrder = 'md:order-2';
+    break;
+  case 'RL':
+    $imageOrder = 'md:order-2';
+    $detailsOrder = 'md:order-1';
+    break;
+  default:
+    $imageOrder = 'md:order-1';
+    $detailsOrder = 'md:order-2';
+    break;
+}
 ?>
 <div class="grid items-center grid-cols-1 gap-4 md:gap-32 md:grid-cols-2 last:mb-0 md:mb-sp-14 mb-sp-12">
   <?php if ($style === 'slider') : ?>
@@ -24,9 +40,9 @@ $cta = get_field('fifty_fifty_cta');
     <?php endif; ?>
   <?php else : ?>
     <!-- TODO Update image -->
-    <img src="https://assets-global.website-files.com/62daf9ae3616b86eec143652/63657e4ca50eb97be513e62d_Homepageherp.webp" alt="x" class="object-cover object-top rounded-md max-h-[500px] flex-grow md:order-1 order-2">
+    <img src="https://assets-global.website-files.com/62daf9ae3616b86eec143652/63657e4ca50eb97be513e62d_Homepageherp.webp" alt="x" class="object-cover object-top rounded-md max-h-[500px] flex-grow <?= $imageOrder; ?>">
   <?php endif; ?>
-  <div class="flex-grow order-1 md:order-2">
+  <div class="flex-grow <?= $detailsOrder; ?>">
     <h2><?= $title; ?></h2>
     <?php if ($details) : ?>
       <p class="mb-sp-4"><?= $details; ?></p>
