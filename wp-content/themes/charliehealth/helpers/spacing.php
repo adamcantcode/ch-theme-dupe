@@ -11,8 +11,12 @@ if (!empty($block['style']['spacing'])) {
 }
 
 if (!empty($blockPadding)) {
-  $paddingTop = !empty($blockPadding['top']) ? $blockPadding['top'] : '';
-  $paddingBottom = !empty($blockPadding['bottom']) ? $blockPadding['bottom'] : '';
+  if (!is_null($blockPadding['top'])) {
+    $paddingTop = $blockPadding['top'];
+  }
+  if (!is_null($blockPadding['bottom'])) {
+    $paddingBottom = $blockPadding['bottom'];
+  }
   if ($paddingTop === $paddingBottom) {
     $padding = $paddingTop;
     switch ($padding) {
@@ -90,8 +94,6 @@ if (!empty($blockPadding)) {
 } else {
   $paddingClass = 'section';
 }
-
-
 
 if (!empty($block['anchor'])) {
   $anchor = 'id="' . $block['anchor'] . '" ';
