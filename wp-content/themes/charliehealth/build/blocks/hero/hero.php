@@ -80,6 +80,5 @@ if ($style === 'image') {
         <a href="#<?= $sectionID; ?>" class="ch-button button-secondary whitespace-nowrap"><?= $label; ?></a>
       <?php endwhile; ?>
     </div>
-    <div class="divider"></div>
   </div>
 <?php endif; ?>

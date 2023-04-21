@@ -21,7 +21,7 @@ if (!empty($blockPadding)) {
     $padding = $paddingTop;
     switch ($padding) {
       case '0':
-        $paddingClass = 'py-sp-0 ';
+        $paddingClass = 'section-horizontal ';
         break;
       case 'var:preset|spacing|xs':
         $paddingClass = 'section-xs ';

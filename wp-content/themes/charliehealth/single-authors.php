@@ -46,7 +46,7 @@ if ($image) {
           </div>
         </div>
       </div>
-      <div class="divider"></div>
+      <div class="divider lg:mt-sp-16 md:mt-sp-12 mt-sp-8"></div>
     </div>
   </section>
   <section class="section">

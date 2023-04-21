@@ -183,7 +183,13 @@
   }
 
   figure {
-    margin: 1em 0;
+    @apply mb-sp-6;
+    @screen lg {
+      @apply text-p-lg;
+    }
+    img {
+      @apply rounded-md;
+    }
   }
 
   table {

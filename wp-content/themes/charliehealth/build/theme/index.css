@@ -720,9 +720,23 @@ img {
     max-width: 100%;
   }
 
-figure {
-    margin: 1em 0;
+figure{
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+
+  figure{
+    font-size: 1.125rem;
+    line-height: 1.8rem;
+    letter-spacing: 0;
+    font-weight: 400;
   }
+    }
+
+figure img{
+  border-radius: 1.25rem;
+}
 
 table {
     margin: 0 0 1.5em;
@@ -1284,16 +1298,16 @@ table {
   margin-top: 0px;
 }
 
+.mt-sp-4{
+  margin-top: 1rem;
+}
+
 .mt-sp-6{
   margin-top: 1.5rem;
 }
 
 .mt-sp-8{
   margin-top: 2rem;
-}
-
-.mt-sp-4{
-  margin-top: 1rem;
 }
 
 .block{
@@ -1642,11 +1656,6 @@ table {
 .py-8{
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-
-.py-sp-0{
-  padding-top: 0;
-  padding-bottom: 0;
 }
 
 .py-sp-5{
@@ -2102,17 +2111,17 @@ table {
   }
         }
 
-.padding-horizontal{
+.section-horizontal{
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
 
 @media (min-width: 1024px) {
-  .padding-horizontal{
+    .section-horizontal{
     padding-left: 2.5rem;
     padding-right: 2.5rem;
   }
-    }
+      }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 
@@ -2437,6 +2446,10 @@ table {
     margin-top: 2.5rem;
   }
 
+  .md\:mt-sp-12{
+    margin-top: 3rem;
+  }
+
   .md\:max-h-none{
     max-height: none;
   }
@@ -2527,6 +2540,10 @@ table {
 
   .lg\:mt-sp-14{
     margin-top: 4rem;
+  }
+
+  .lg\:mt-sp-16{
+    margin-top: 6rem;
   }
 
   .lg\:mt-sp-8{
