@@ -41,7 +41,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/testimonial');
   register_block_type(__DIR__ . '/build/blocks/sticky-split');
   register_block_type(__DIR__ . '/build/blocks/faq');
-  register_block_type(__DIR__ . '/build/blocks/section');
+  // register_block_type(__DIR__ . '/build/blocks/section');
   register_block_type(__DIR__ . '/build/blocks/jump-buttons');
   register_block_type(__DIR__ . '/build/blocks/section-container');
 }
