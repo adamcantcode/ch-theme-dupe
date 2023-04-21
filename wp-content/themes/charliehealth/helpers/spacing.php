@@ -3,13 +3,16 @@ $blockClasses = '';
 $paddingClass = '';
 $anchor = '';
 
+// TODO find a different way to initialize this class
+$temp = 'container-md';
+
 if (!empty($block['style']['spacing'])) {
   $blockPadding = $block['style']['spacing']['padding'];
 }
 
 if (!empty($blockPadding)) {
-  $paddingTop = $blockPadding['top'];
-  $paddingBottom = $blockPadding['bottom'];
+  $paddingTop = !empty($blockPadding['top']) ? $blockPadding['top'] : '';
+  $paddingBottom = !empty($blockPadding['bottom']) ? $blockPadding['bottom'] : '';
   if ($paddingTop === $paddingBottom) {
     $padding = $paddingTop;
     switch ($padding) {
