@@ -1,13 +1,14 @@
 <?php
 // var_dump($block);
 
-include(get_template_directory().'/helpers/spacing.php');
+include(get_template_directory() . '/helpers/spacing.php');
 
-// var_dump($block['style']['spacing']['padding']);
+$containerWidth = get_field('container_width') ? '-' . get_field('container_width') : '';
+
 ?>
 
 <section <?= $anchor; ?>class="<?= $blockClasses; ?>">
-  <div class="container">
+  <div class="container<?= $containerWidth; ?>">
     <InnerBlocks />
   </div>
 </section>

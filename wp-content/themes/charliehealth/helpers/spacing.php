@@ -79,7 +79,7 @@ if (!empty($blockPadding)) {
         $paddingBottom = 'section-xl-bottom ';
         break;
       default:
-        $paddingBottom = 'section ';
+        $paddingBottom = 'section-bottom ';
         break;
     }
     $paddingClass = $paddingTop . $paddingBottom;

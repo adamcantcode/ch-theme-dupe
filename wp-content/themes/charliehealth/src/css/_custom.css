@@ -1,25 +1,8 @@
-body {
-  --wp--custom--spacing--sm {
-    padding: 2rem;
-  }
-  --wp--custom--spacing--md {
-    padding: 3rem;
-  }
-  --wp--custom--spacing--lg {
-    padding: 6rem;
-  }
-}
-.wp-block-group {
-  @apply section;
-  &:not(.alignfull) {
-    @apply container;
-  }
-}
 .single-areas-of-care,
 .single-treatment-modalities {
   .main-article-content {
     section {
-      @apply section;
+      /* @apply section; */
       img {
         @apply rounded-md;
       }
@@ -29,10 +12,6 @@ body {
           @apply text-p-lg;
         }
       }
-    }
-    /* TODO Fix this to select only the first */
-    .wp-block-group {
-      @apply pb-0;
     }
   }
 }
