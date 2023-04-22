@@ -92,12 +92,14 @@ function revealBackToTop() {
         scrollTrigger: {
           trigger: '#mainArticleContent > section:nth-of-type(2)',
           start: 'top top',
+          endTrigger: '#mainArticleContent > section:last-of-type',
+          end: 'bottom 33%',
           // markers: true,
-          toggleActions: 'play complete complete reverse'
+          toggleActions: 'play reverse complete reverse'
         },
         opacity: 1,
         duration: 0.15,
-        position: 'sticky',
+        position: 'fixed',
         autoAlpha: '1',
         display: 'block'
       });

@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
       scrollTrigger: {
         trigger: `.animate-container-${index}`,
         start: 'top 98%',
-        markers: true,
+        // markers: true,
         // onEnter: ({progress, direction, isActive}) => console.log('onEnter ' + progress, direction, isActive),
         // onLeave: ({progress, direction, isActive}) => console.log('onLeave ' + progress, direction, isActive),
         // onEnterBack: ({progress, direction, isActive}) => console.log('onEnterBack ' + progress, direction, isActive),
