@@ -240,3 +240,10 @@
     @apply max-w-full;
   }
 }
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+.translate-z {
+  transform: translate3d(-50%, -50%, -1px);
+}

@@ -93,7 +93,7 @@ function revealBackToTop() {
           trigger: '#mainArticleContent > section:nth-of-type(2)',
           start: 'top top',
           endTrigger: '#mainArticleContent > section:last-of-type',
-          end: 'bottom 33%',
+          end: 'bottom 20%',
           // markers: true,
           toggleActions: 'play reverse complete reverse'
         },

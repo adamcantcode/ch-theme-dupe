@@ -11,7 +11,7 @@
       @apply rounded-sm bg-bright-teal hover:bg-lightest-teal hover:text-dark-blue md:py-sp-3;
     }
     &.button-nav {
-      @apply rounded-sm bg-transparent border border-bright-teal text-bright-teal px-sp-4 leading-none
+      @apply rounded-sm bg-transparent border border-bright-teal text-bright-teal px-sp-4 leading-none;
     }
   }
   .nav-parent-menu {
@@ -69,10 +69,11 @@
     }
   }
   .breadcrumbs {
-    &> * {
+    & > * {
       @apply text-[0.875rem] md:text-p leading-none;
     }
   }
+
   /* .site-main {
   @apply transition-transform duration-500;
   &.active {

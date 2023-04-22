@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     console.log(`.animate-container-${index}`);
 
-    // if (index > 0) {
+    if (index > 0) {
     gsap.from(`.animate-container-${index}`, {
       scrollTrigger: {
         trigger: `.animate-container-${index}`,
@@ -18,13 +18,13 @@ window.addEventListener('DOMContentLoaded', () => {
         // onEnterBack: ({progress, direction, isActive}) => console.log('onEnterBack ' + progress, direction, isActive),
         // onLeaveBack: ({progress, direction, isActive}) => console.log('onLeaveBack ' + progress, direction, isActive),
 
-        toggleActions: 'play complete complete reverse',
+        toggleActions: 'play reverse play reverse',
       },
       yPercent: 2,
       scaleX: 0.98,
       opacity: 0,
       duration: 0.5, 
     });
-    // }
+    }
   });
 });

@@ -1119,14 +1119,14 @@ table {
   right: 0px;
 }
 
-.breadcrumbs> *{
+.breadcrumbs > *{
   font-size: 0.875rem;
   line-height: 1;
 }
 
 @media (min-width: 480px){
 
-  .breadcrumbs> *{
+  .breadcrumbs > *{
     font-size: 1rem;
     line-height: 1.5rem;
     letter-spacing: 0;
@@ -2142,14 +2142,6 @@ table {
 
 /* CUSTOM STYELS */
 
-.preserve-3d {
-  transform-style: preserve-3d;
-}
-
-.translate-z {
-  transform: translate3d(-50%, -50%, -1px)
-}
-
 /* @apply section; */
 
 .single-areas-of-care .main-article-content section img, .single-treatment-modalities .main-article-content section img{
@@ -2417,6 +2409,14 @@ table {
 
 .nav-logo svg{
   max-width: 100%;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.translate-z {
+  transform: translate3d(-50%, -50%, -1px);
 }
 
 .last\:mb-0:last-child{
