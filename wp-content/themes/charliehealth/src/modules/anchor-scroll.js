@@ -1,3 +1,8 @@
+import { gsap } from 'gsap';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+
+gsap.registerPlugin(ScrollToPlugin);
+
 export default function anchorScroll() {
   // Scroll to anchor links with GSAP ScrollToPlugin
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -6,7 +11,7 @@ export default function anchorScroll() {
       gsap.to(window, {
         scrollTo: {
           y: this.getAttribute('href'),
-          offsetY: self => document.querySelector('header').offsetHeight,
+          offsetY: (self) => document.querySelector('header').offsetHeight,
         },
         duration: 1,
         ease: 'Power2.easeInOut',

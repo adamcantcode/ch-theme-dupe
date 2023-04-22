@@ -50,3 +50,5 @@ function register_acf_blocks()
 add_action('init', 'register_acf_blocks', 5);
 
 include_once('helpers/helper-functions.php');
+
+add_theme_support('title-tag');

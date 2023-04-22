@@ -1,15 +1,21 @@
 <!doctype html>
-<html <?php language_attributes(); ?> class="bg-med-blue">
+<html <?php language_attributes(); ?> dir="ltr" class="bg-med-blue">
 
 <head>
   <meta charset="<?php bloginfo('charset'); ?>">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="profile" href="https://gmpg.org/xfn/11">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" type="image/x-icon" href="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/logos/charlie-health-favicon.ico'; ?>">
+  <link rel="icon" type="image/png" href=<?= site_url() . '/wp-content/themes/charliehealth/resources/images/logos/charlie-health-favicon.png'; ?>">
+  <!-- Apple Touch Icon (at least 200x200px) -->
+  <link rel="apple-touch-icon" href="/custom-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#272D6C">
   <?php wp_head(); ?>
   <!-- GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollToPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollToPlugin.min.js"></script> -->
 </head>
 
 <body <?php body_class('bg-white'); ?>>

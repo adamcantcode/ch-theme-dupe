@@ -9,8 +9,10 @@ $parentPages = array_reverse($parentPages);
 // For areas of care and treatment modalities
 if(is_single()) {
   $postTypeDetails = get_post_type_object(get_post_type());
-  $name = $postTypeDetails->labels->name;
+  $name = $postTypeDetails->labels->menu_name;
 }
+
+// var_dump($postTypeDetails);
 
 if (!empty($parentPages)) : ?>
   <div class="breadcrumbs mb-sp-5 lg:mb-sp-6">

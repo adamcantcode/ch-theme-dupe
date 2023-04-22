@@ -1,6 +1,8 @@
 /**
  * Man nav hover actions
  */
+import { gsap } from "gsap";
+
 export default function animations() {
   var topLevelLinks = document.querySelectorAll('.nav-parent-menu');
 
