@@ -1179,10 +1179,6 @@ table {
   left: 0px;
 }
 
-.left-1\/2{
-  left: 50%;
-}
-
 .left-sp-10{
   left: 2.5rem;
 }
@@ -1356,10 +1352,6 @@ table {
 
 .h-\[calc\(100vh-68px\)\]{
   height: calc(100vh - 68px);
-}
-
-.h-full{
-  height: 100%;
 }
 
 .max-h-0{
@@ -1664,11 +1656,6 @@ table {
 .py-8{
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-
-.py-sp-4{
-  padding-top: 1rem;
-  padding-bottom: 1rem;
 }
 
 .py-sp-5{
@@ -2680,11 +2667,6 @@ table {
   .lg\:px-sp-5{
     padding-left: 1.25rem;
     padding-right: 1.25rem;
-  }
-
-  .lg\:py-sp-8{
-    padding-top: 2rem;
-    padding-bottom: 2rem;
   }
 
   .lg\:pr-sp-14{

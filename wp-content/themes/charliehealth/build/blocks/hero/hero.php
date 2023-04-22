@@ -17,12 +17,14 @@ $test = get_fields();
 
 if ($style === 'image') {
   $titleClass = 'text-display mb-sp-8 hidden lg:block';
+  $gridClass = 'grid lg:grid-cols-2 gap-4 items-center';
   $orderClass = 'order-2 lg:order-1';
   $orderClassTwo = 'order-1 lg:order-2';
-  $gridClass = 'grid lg:grid-cols-2 gap-4 items-center';
 } elseif ($style === 'details') {
   $gridClass = 'grid lg:grid-cols-2 gap-4 items-start';
   $titleClass = '';
+  $orderClass = 'order-2 lg:order-1';
+  $orderClassTwo = 'order-1 lg:order-2';
 }
 // var_dump($style);
 ?>
@@ -30,9 +32,9 @@ if ($style === 'image') {
 <?php if ($breadcrumbs) : ?>
   <?php include_once('includes/breadcrumbs.php'); ?>
 <?php endif; ?>
-<div class="hero-cta <?= $gridClass ?: ''; ?>">
-  <div class="<?= $orderClass ?: ''; ?>">
-    <h1 class="<?= $titleClass ?: ''; ?>"><?= $title; ?></h1>
+<div class="hero-cta <?= $gridClass; ?>">
+  <div class="<?= $orderClass; ?>">
+    <h1 class="<?= $titleClass; ?>"><?= $title; ?></h1>
     <?php if ($style === 'image') : ?>
       <div class="flex items-center gap-4 mb-sp-8">
         <?php if ($icon) : ?>
