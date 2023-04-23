@@ -23,7 +23,7 @@ if ($style === 'image') {
 } elseif ($style === 'details') {
   $gridClass = 'grid lg:grid-cols-2 gap-4 items-start';
   $titleClass = '';
-  $orderClass = 'order-2 lg:order-1';
+  $orderClass = 'order-1';
   $orderClassTwo = 'order-1 lg:order-2';
 }
 // var_dump($style);
