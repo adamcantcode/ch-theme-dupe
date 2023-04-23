@@ -9,7 +9,7 @@ $source = get_field('source');
       $number = get_sub_field('number');
       $label = get_sub_field('label');
       ?>
-      <div class="lg:w-full">
+      <div>
         <div class="overflow-hidden">
           <h3 class="text-center text-h1-lg counter" id="<?= get_row_index(); ?>"><?= $number; ?></h3>
         </div>
