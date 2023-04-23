@@ -22,7 +22,7 @@ if (!empty($blockPadding)) {
   if ($paddingTop === $paddingBottom) {
     $padding = $paddingTop;
     switch ($padding) {
-      case '0':
+      case '':
         $paddingClass = 'section-horizontal ';
         break;
       case 'var:preset|spacing|xs':
@@ -46,7 +46,7 @@ if (!empty($blockPadding)) {
     }
   } else {
     switch ($paddingTop) {
-      case '0':
+      case '':
         $paddingTop = 'pt-sp-0 ';
         break;
       case 'var:preset|spacing|xs':
@@ -69,7 +69,7 @@ if (!empty($blockPadding)) {
         break;
     }
     switch ($paddingBottom) {
-      case '0':
+      case '':
         $paddingBottom = 'pb-sp-0 ';
         break;
       case 'var:preset|spacing|xs':
@@ -120,7 +120,6 @@ if (!empty($block['backgroundColor'])) {
 //   }
 //   $blockClasses .= $container;
 // }
-
 
 // Final classes
 $blockClasses .= rtrim($paddingClass);
