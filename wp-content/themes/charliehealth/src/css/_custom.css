@@ -2,14 +2,17 @@
 .single-treatment-modalities {
   .main-article-content {
     section {
-      /* @apply section; */
-      img {
-        @apply rounded-md;
-      }
-      figure {
-        @apply mb-sp-6;
-        @screen lg {
-          @apply text-p-lg;
+      .acf-innerblocks-container {
+        & > {
+          img {
+            @apply rounded-md;
+          }
+          figure {
+            @apply mb-sp-6;
+            @screen lg {
+              @apply text-p-lg;
+            }
+          }
         }
       }
     }

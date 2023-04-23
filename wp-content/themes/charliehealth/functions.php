@@ -46,6 +46,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/section-container');
   register_block_type(__DIR__ . '/build/blocks/stats');
   register_block_type(__DIR__ . '/build/blocks/divider');
+  register_block_type(__DIR__ . '/build/blocks/cta');
 }
 add_action('init', 'register_acf_blocks', 5);
 
