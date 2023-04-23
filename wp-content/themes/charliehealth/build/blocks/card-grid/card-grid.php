@@ -21,7 +21,7 @@ if ($horizontalScroll === true) {
         $details = get_sub_field('card_grid_details');
       ?>
         <div class="w-[calc(100vw-2.5rem)] lg:w-full">
-          <div class="<?= $borderStyle === 'gradient' ? 'card-grid-card' : ' border rounded-md'; ?>">
+          <div class="<?= $borderStyle === 'gradient' ? 'border-gradient' : ' border rounded-md'; ?>">
             <div class="p-sp-4 md:p-sp-6 lg:p-sp-8">
               <?php if ($numbers) : ?>
                 <h2 class="text-h2-lg mb-sp-5"><?= get_row_index(); ?></h2>

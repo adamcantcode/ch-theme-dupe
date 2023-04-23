@@ -196,7 +196,7 @@
   }
 }
 /* Card Grid */
-.card-grid-card {
+.border-gradient {
   /* @apply before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0 before:border before:border-transparent before:box-border; */
   /* mask-composite: exclude; */
   @apply flow-root relative;
