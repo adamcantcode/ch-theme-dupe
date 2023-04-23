@@ -20,9 +20,10 @@ add_action('wp_enqueue_scripts', 'custom_scripts_and_styles');
 // }
 // add_action('wp_enqueue_scripts', 'remove_wp_block_library_css', 100);
 
-// Add custom css to Gutenberg Editor
 add_theme_support('editor-styles');
 add_theme_support('post-thumbnails');
+add_theme_support('title-tag');
+
 add_editor_style('/build/theme/index.css');
 
 // ACF options page
@@ -47,9 +48,13 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/stats');
   register_block_type(__DIR__ . '/build/blocks/divider');
   register_block_type(__DIR__ . '/build/blocks/cta');
+  register_block_type(__DIR__ . '/build/blocks/pre-footer-cta');
 }
 add_action('init', 'register_acf_blocks', 5);
 
 include_once('helpers/helper-functions.php');
 
-add_theme_support('title-tag');
+/**
+ * Only load block js/css if actually on page.
+ */
+add_filter( 'should_load_separate_core_block_assets', '__return_true' );
