@@ -5,7 +5,4 @@
     </div>
     <?php the_content(); ?>
   </div>
-  <div class="h-[100vh]"></div>
-  <div>CTA</div>
-  <div>OTHER</div>
 </main>
