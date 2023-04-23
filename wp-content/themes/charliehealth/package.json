@@ -29,7 +29,6 @@
     "sync": "browser-sync start --proxy 'https://wpch.local' --reload-delay 200 --files=['**/*.css', 'wp-content/themes/**/*.php']"
   },
   "dependencies": {
-    "countup.js": "^2.6.0",
     "gsap": "^3.11.5",
     "swiper": "^9.1.1"
   }
