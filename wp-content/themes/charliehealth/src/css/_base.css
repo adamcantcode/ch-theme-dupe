@@ -80,12 +80,12 @@
     @apply text-text font-body;
   }
   h1 {
-    @apply text-h1;
+    @apply mb-sp-6 text-h1;
     @screen md {
-      @apply mb-sp-6 text-h1;
+      @apply mb-sp-8 text-h1;
     }
     @screen lg {
-      @apply text-h1-lg;
+      @apply mb-sp-10 text-h1-lg;
     }
     &.text-display {
       @apply text-h1-display;

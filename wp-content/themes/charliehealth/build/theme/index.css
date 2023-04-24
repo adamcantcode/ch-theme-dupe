@@ -482,6 +482,7 @@ p,
 }
 
 h1{
+  margin-bottom: 1.5rem;
   font-size: 2rem;
   line-height: 2rem;
   letter-spacing: 0;
@@ -490,7 +491,7 @@ h1{
 
 @media (min-width: 480px) {
   h1{
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     font-size: 2rem;
     line-height: 2rem;
     letter-spacing: 0;
@@ -500,6 +501,7 @@ h1{
 
 @media (min-width: 1024px) {
   h1{
+    margin-bottom: 2.5rem;
     font-size: 3rem;
     line-height: 3rem;
     letter-spacing: 0;
@@ -1330,8 +1332,16 @@ table {
   margin-top: 2rem;
 }
 
+.mb-5{
+  margin-bottom: 1.25rem;
+}
+
 .block{
   display: block;
+}
+
+.inline-block{
+  display: inline-block;
 }
 
 .flex{
@@ -1439,16 +1449,16 @@ table {
   max-width: 1280px;
 }
 
+.max-w-\[350px\]{
+  max-width: 350px;
+}
+
 .max-w-\[37\.5rem\]{
   max-width: 37.5rem;
 }
 
 .max-w-\[80rem\]{
   max-width: 80rem;
-}
-
-.max-w-\[350px\]{
-  max-width: 350px;
 }
 
 .flex-none{
@@ -1477,6 +1487,10 @@ table {
 
 .grid-cols-1{
   grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2{
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .flex-row{
@@ -1576,6 +1590,10 @@ table {
   white-space: nowrap;
 }
 
+.break-all{
+  word-break: break-all;
+}
+
 .rounded-lg{
   border-radius: 2.5rem;
 }
@@ -1586,6 +1604,10 @@ table {
 
 .rounded-sm{
   border-radius: 0.625rem;
+}
+
+.rounded-\[50\%\]{
+  border-radius: 50%;
 }
 
 .rounded-t-md{
@@ -2408,6 +2430,7 @@ table {
 }
 
 .border-gradient:before{
+  pointer-events: none;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -2658,6 +2681,10 @@ table {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .lg\:grid-cols-4{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
   .lg\:grid-cols-5{
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
@@ -2699,6 +2726,14 @@ table {
          column-gap: 8rem;
   }
 
+  .lg\:gap-y-sp-14{
+    row-gap: 4rem;
+  }
+
+  .lg\:gap-y-sp-16{
+    row-gap: 6rem;
+  }
+
   .lg\:overflow-y-visible{
     overflow-y: visible;
   }
@@ -2708,12 +2743,20 @@ table {
     border-bottom-left-radius: 1.25rem;
   }
 
+  .lg\:rounded-tr-none{
+    border-top-right-radius: 0;
+  }
+
   .lg\:border-0{
     border-width: 0px;
   }
 
   .lg\:bg-transparent{
     background-color: rgba(0,0,0,0);
+  }
+
+  .lg\:p-sp-12{
+    padding: 3rem;
   }
 
   .lg\:p-sp-14{
