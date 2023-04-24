@@ -2,8 +2,8 @@
 $blockClasses = '';
 $paddingClass = '';
 $anchor = '';
-$paddingTop = '';
-$paddingBottom = '';
+$paddingTop = null;
+$paddingBottom = null;
 
 // TODO find a different way to initialize this class
 $temp = 'container-md';
@@ -13,16 +13,23 @@ if (!empty($block['style']['spacing'])) {
 }
 
 if (!empty($blockPadding)) {
-  if (!empty($blockPadding['top'])) {
+  if (!is_null($blockPadding['top'])) {
     $paddingTop = $blockPadding['top'];
+  } else {
+    $paddingTop = 'section-top ';
   }
-  if (!empty($blockPadding['bottom'])) {
+  if (!is_null($blockPadding['bottom'])) {
     $paddingBottom = $blockPadding['bottom'];
+  } else {
+    $paddingBottom = 'section-bottom ';
   }
   if ($paddingTop === $paddingBottom) {
     $padding = $paddingTop;
     switch ($padding) {
       case '':
+        $paddingClass = 'section-horizontal ';
+        break;
+      case '0':
         $paddingClass = 'section-horizontal ';
         break;
       case 'var:preset|spacing|xs':
@@ -47,6 +54,9 @@ if (!empty($blockPadding)) {
   } else {
     switch ($paddingTop) {
       case '':
+        $paddingTop = 'section-top ';
+        break;
+      case '0':
         $paddingTop = 'pt-sp-0 ';
         break;
       case 'var:preset|spacing|xs':
@@ -70,6 +80,9 @@ if (!empty($blockPadding)) {
     }
     switch ($paddingBottom) {
       case '':
+        $paddingBottom = 'section-bottom ';
+        break;
+      case '0':
         $paddingBottom = 'pb-sp-0 ';
         break;
       case 'var:preset|spacing|xs':

@@ -60,20 +60,19 @@ function animations() {
     const linksTimeLine = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline();
 
     // Add an animation to the timeline to animate the opacity and x position of the sub-links
-    linksTimeLine.to(link.lastElementChild.querySelectorAll('.nav-link.sub-link'), {
-      opacity: 1,
-      y: 0,
-      stagger: 0.025
-    });
+    if (link.lastElementChild.querySelectorAll('.nav-link.sub-link').length > 0) {
+      linksTimeLine.to(link.lastElementChild.querySelectorAll('.nav-link.sub-link'), {
+        opacity: 1,
+        y: 0,
+        stagger: 0.025
+      });
+    }
     // Add a mouseenter event listener to the current top level link
     link.addEventListener('mouseenter', () => {
       // If the timeline is not already active, play it from the beginning
       if (!linksTimeLine.isActive()) {
-        console.log('not active');
         linksTimeLine.play(0);
-      } else {
-        console.log('active');
-      }
+      } else {}
     });
   });
 }
@@ -135,15 +134,17 @@ __webpack_require__.r(__webpack_exports__);
  * Main nav hover actions
  */
 function mobileNav() {
-  var menu = document.querySelector('.open-close');
-  var slideOut = document.querySelector('.slide-out');
-  var mainContent = document.querySelector('.site-main');
-  var topLevelLinks = document.querySelectorAll('.nav-parent-menu > .nav-link:not(.static)');
+  const menu = document.querySelector('.open-close');
+  const slideOut = document.querySelector('.slide-out');
+  const mainContent = document.querySelector('.site-main');
+  const topLevelLinks = document.querySelectorAll('.nav-parent-menu > .nav-link:not(.static)');
 
   /**
    * On click, toggle active.
    */
   menu.addEventListener('click', () => {
+    var menuText = menu.firstChild.nextElementSibling;
+    menuText.innerHTML === 'Menu' ? menuText.innerHTML = 'Close' : menuText.innerHTML = 'Menu';
     menu.classList.toggle('active');
     slideOut.classList.toggle('active');
     mainContent.classList.toggle('active');
@@ -161,7 +162,7 @@ function mobileNav() {
 
   /**
    * Remove active from all submenus except the current.
-   * @param {string} activeLink 
+   * @param {string} activeLink
    */
   const removeActive = activeLink => {
     topLevelLinks.forEach(link => {
