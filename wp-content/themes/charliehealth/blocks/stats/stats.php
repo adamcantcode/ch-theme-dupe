@@ -14,10 +14,15 @@ $source = get_field('source');
           <h3 class="text-center text-h1-lg counter" id="<?= get_row_index(); ?>"><?= $number; ?></h3>
         </div>
         <div class="divider"></div>
-        <div class="overflow-hidden">
+        <div class="overflow-hidden max-w-[350px]">
           <p class="text-center lg:mt-sp-8 mt-sp-4 details"><?= $label; ?></p>
         </div>
       </div>
     <?php endwhile; ?>
   </div>
+  <?php if ($source) : ?>
+    <a href="<?= $source['url']; ?>" target="<?= $source['target']; ?>">
+      <h6 class="mt-sp-8"><?= $source['title']; ?></h6>
+    </a>
+  <?php endif; ?>
 <?php endif; ?>
