@@ -113,8 +113,11 @@ $args = array(
       $why      = get_field('why_statement');
       $fact     = get_field('fun_fact');
   ?>
-      <div class="bg-[rgba(0,0,0,.5)] fixed top-0 left-0 w-full h-full z-50 grid items-center justify-center center">
-        <div class="grid lg:grid-cols-[1.5fr,1fr] bg-cream section container max-h-[80vh] overflow-auto rounded-md items-center justify-items-center">
+      <div class="bg-[rgba(0,0,0,.5)] fixed top-0 left-0 w-full h-full z-50 grid items-center justify-center center" data-modal="<?= get_the_ID(); ?>">
+        <div class="grid lg:grid-cols-[1.5fr,1fr] bg-cream section-xs container max-h-[80vh] overflow-auto rounded-md items-center justify-items-center relative">
+          <div class="absolute top-0 right-0 cursor-pointer p-sp-10">
+            <img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/close-x.svg'; ?>" alt="close button">
+          </div>
           <div class="grid gap-sp-8">
             <div>
               <h4 class="mb-0"><?= get_the_title(); ?></h4>

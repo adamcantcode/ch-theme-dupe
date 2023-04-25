@@ -1233,6 +1233,14 @@ table {
   top: 6rem;
 }
 
+.right-sp-10{
+  right: 2.5rem;
+}
+
+.top-sp-10{
+  top: 2.5rem;
+}
+
 .-z-10{
   z-index: -10;
 }
