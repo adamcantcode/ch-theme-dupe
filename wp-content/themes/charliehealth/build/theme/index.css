@@ -1380,6 +1380,10 @@ table {
   height: calc(100vh - 68px);
 }
 
+.h-full{
+  height: 100%;
+}
+
 .max-h-0{
   max-height: 0px;
 }
@@ -1394,6 +1398,10 @@ table {
 
 .max-h-\[500px\]{
   max-height: 500px;
+}
+
+.max-h-\[80vh\]{
+  max-height: 80vh;
 }
 
 .min-h-\[200px\]{
@@ -1671,6 +1679,14 @@ table {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-\[rgba\(0\2c 0\2c 0\2c \.3\)\]{
+  background-color: rgba(0,0,0,.3);
+}
+
+.bg-\[rgba\(0\2c 0\2c 0\2c \.5\)\]{
+  background-color: rgba(0,0,0,.5);
+}
+
 .fill-current{
   fill: currentColor;
 }
@@ -1817,6 +1833,14 @@ table {
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.underline{
+  text-decoration-line: underline;
+}
+
+.no-underline{
+  text-decoration-line: none;
 }
 
 .opacity-0{
@@ -2695,6 +2719,14 @@ table {
 
   .lg\:grid-cols-\[1fr\2c _2fr\]{
     grid-template-columns: 1fr 2fr;
+  }
+
+  .lg\:grid-cols-\[1\.4fr\2c 1fr\]{
+    grid-template-columns: 1.4fr 1fr;
+  }
+
+  .lg\:grid-cols-\[1\.5fr\2c 1fr\]{
+    grid-template-columns: 1.5fr 1fr;
   }
 
   .lg\:flex-row{
