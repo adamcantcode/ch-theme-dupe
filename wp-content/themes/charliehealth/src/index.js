@@ -5,6 +5,7 @@ import stopAnimations from './modules/stop-animations';
 import animations from './modules/animations';
 import anchorScroll from './modules/anchor-scroll';
 import revealBackToTop from './modules/back-to-top';
+import outreachModals from './modules/outreach-modals';
 
 document.addEventListener('DOMContentLoaded', () => {
   mobileNav();
@@ -12,4 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   animations();
   anchorScroll();
   revealBackToTop();
+  if (document.querySelector('body').classList.contains('single-region')) {
+    outreachModals();
+  }
 });

@@ -140,7 +140,7 @@ $args = array(
                 <p class="mb-0 text-h5"><?= $fact; ?></p>
               </div>
             </div>
-            <div>
+            <div class="order-1 lg:order-2">
               <img src="<?= placeHolderImage(400, 400); ?>" alt="" class="rounded-[50%] mb-5">
             </div>
           </div>
@@ -153,34 +153,6 @@ $args = array(
     echo 'No posts found';
   endif;
   ?>
-
-  <script>
-    const members = document.querySelectorAll('div[data-modal-id]');
-    const modals = document.querySelectorAll('div[data-modal]');
-
-    members.forEach(member => {
-      const id = member.getAttribute('data-modal-id');
-      member.addEventListener('click', () => {
-        let modal = document.querySelector(`div[data-modal="${id}"]`);
-        modal.classList.toggle('hidden');
-      });
-    });
-
-    modals.forEach(modal => {
-      modal.addEventListener('click', (event) => {
-        if (event.target.getAttribute("data-modal")) {
-          modal.classList.toggle('hidden');
-        }
-      });
-
-      const closeButton = modal.querySelector('.modal-close');
-
-      closeButton.addEventListener('click', (event) => {
-        modal.classList.toggle('hidden');
-      });
-    });
-  </script>
-
 </main>
 
 <?php get_footer(); ?>
