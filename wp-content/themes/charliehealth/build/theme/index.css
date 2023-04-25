@@ -1284,6 +1284,10 @@ table {
   margin-bottom: 0.5rem;
 }
 
+.mb-5{
+  margin-bottom: 1.25rem;
+}
+
 .mb-sp-12{
   margin-bottom: 3rem;
 }
@@ -1330,10 +1334,6 @@ table {
 
 .mt-sp-8{
   margin-top: 2rem;
-}
-
-.mb-5{
-  margin-bottom: 1.25rem;
 }
 
 .block{
@@ -1594,6 +1594,10 @@ table {
   word-break: break-all;
 }
 
+.rounded-\[50\%\]{
+  border-radius: 50%;
+}
+
 .rounded-lg{
   border-radius: 2.5rem;
 }
@@ -1604,10 +1608,6 @@ table {
 
 .rounded-sm{
   border-radius: 0.625rem;
-}
-
-.rounded-\[50\%\]{
-  border-radius: 50%;
 }
 
 .rounded-t-md{
@@ -1829,6 +1829,10 @@ table {
 
 .opacity-30{
   opacity: 0.3;
+}
+
+.filter{
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .transition-all{
@@ -2724,10 +2728,6 @@ table {
   .lg\:gap-x-32{
     -moz-column-gap: 8rem;
          column-gap: 8rem;
-  }
-
-  .lg\:gap-y-sp-14{
-    row-gap: 4rem;
   }
 
   .lg\:gap-y-sp-16{
