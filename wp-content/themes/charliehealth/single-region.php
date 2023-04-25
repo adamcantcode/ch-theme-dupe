@@ -113,34 +113,36 @@ $args = array(
       $why      = get_field('why_statement');
       $fact     = get_field('fun_fact');
   ?>
-      <div class="bg-[rgba(0,0,0,.5)] fixed top-0 left-0 w-full h-full z-50 grid items-center justify-center center" data-modal="<?= get_the_ID(); ?>">
-        <div class="grid lg:grid-cols-[1.5fr,1fr] bg-cream section-xs container max-h-[80vh] overflow-auto rounded-md items-center justify-items-center relative">
-          <div class="absolute top-0 right-0 cursor-pointer p-sp-10">
-            <img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/close-x.svg'; ?>" alt="close button">
-          </div>
-          <div class="grid gap-sp-8">
-            <div>
-              <h4 class="mb-0"><?= get_the_title(); ?></h4>
-              <h5><?= $title; ?></h5>
-              <h5><?= $state; ?></h5>
-              <a href="tel:+<?= $phone; ?>" class="no-underline break-all">
-                <h5><?= $phone; ?></h5>
-              </a>
-              <a href="mailto:<?= $email; ?>" class="no-underline break-all">
-                <h5><?= $email; ?></h5>
-              </a>
-              <a href="<?= $calendly; ?>" target="_blank" class="">
-                <h5>Let's chat</h5>
-              </a>
+      <div class="bg-[rgba(0,0,0,.5)] fixed top-0 left-0 w-full h-full z-50 grid items-center justify-center center hidden" data-modal="<?= get_the_ID(); ?>">
+        <div class="section-xs">
+          <div class="grid lg:grid-cols-[1.5fr,1fr] section-xs bg-cream container max-h-[80vh] overflow-auto rounded-md items-center relative">
+            <div class="absolute top-0 right-0 cursor-pointer">
+              <img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/close-x.svg'; ?>" alt="close button" class="modal-close p-sp-10">
             </div>
-            <h3 class="mb-0"><?= $why; ?></h3>
-            <div>
-              <h5>Fun Fact</h5>
-              <p class="mb-0 text-h5"><?= $fact; ?></p>
+            <div class="grid order-2 gap-sp-8 lg:order-1">
+              <div>
+                <h4 class="mb-0"><?= get_the_title(); ?></h4>
+                <h5><?= $title; ?></h5>
+                <h5><?= $state; ?></h5>
+                <a href="tel:+<?= $phone; ?>" class="no-underline break-all">
+                  <h5><?= $phone; ?></h5>
+                </a>
+                <a href="mailto:<?= $email; ?>" class="no-underline break-all">
+                  <h5><?= $email; ?></h5>
+                </a>
+                <a href="<?= $calendly; ?>" target="_blank" class="">
+                  <h5>Let's chat</h5>
+                </a>
+              </div>
+              <h3 class="mb-0"><?= $why; ?></h3>
+              <div>
+                <h5>Fun Fact</h5>
+                <p class="mb-0 text-h5"><?= $fact; ?></p>
+              </div>
             </div>
-          </div>
-          <div>
-            <img src="<?= placeHolderImage(400, 400); ?>" alt="" class="rounded-[50%] mb-5">
+            <div>
+              <img src="<?= placeHolderImage(400, 400); ?>" alt="" class="rounded-[50%] mb-5">
+            </div>
           </div>
         </div>
       </div>
@@ -151,6 +153,33 @@ $args = array(
     echo 'No posts found';
   endif;
   ?>
+
+  <script>
+    const members = document.querySelectorAll('div[data-modal-id]');
+    const modals = document.querySelectorAll('div[data-modal]');
+
+    members.forEach(member => {
+      const id = member.getAttribute('data-modal-id');
+      member.addEventListener('click', () => {
+        let modal = document.querySelector(`div[data-modal="${id}"]`);
+        modal.classList.toggle('hidden');
+      });
+    });
+
+    modals.forEach(modal => {
+      modal.addEventListener('click', (event) => {
+        if (event.target.getAttribute("data-modal")) {
+          modal.classList.toggle('hidden');
+        }
+      });
+
+      const closeButton = modal.querySelector('.modal-close');
+
+      closeButton.addEventListener('click', (event) => {
+        modal.classList.toggle('hidden');
+      });
+    });
+  </script>
 
 </main>
 
