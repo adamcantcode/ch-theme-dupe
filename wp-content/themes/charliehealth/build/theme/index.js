@@ -10004,12 +10004,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  (0,_modules_mobile_nav__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  const body = document.querySelector('body');
   (0,_modules_stop_animations__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  (0,_modules_mobile_nav__WEBPACK_IMPORTED_MODULE_1__["default"])();
   (0,_modules_animations__WEBPACK_IMPORTED_MODULE_3__["default"])();
   (0,_modules_anchor_scroll__WEBPACK_IMPORTED_MODULE_4__["default"])();
-  (0,_modules_back_to_top__WEBPACK_IMPORTED_MODULE_5__["default"])();
-  if (document.querySelector('body').classList.contains('single-region')) {
+  if (body.classList.contains('single-areas-of-care') || body.classList.contains('single-treatment-modalities')) {
+    (0,_modules_back_to_top__WEBPACK_IMPORTED_MODULE_5__["default"])();
+  }
+  if (body.classList.contains('single-region')) {
     (0,_modules_outreach_modals__WEBPACK_IMPORTED_MODULE_6__["default"])();
   }
 });

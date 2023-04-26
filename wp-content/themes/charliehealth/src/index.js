@@ -8,12 +8,19 @@ import revealBackToTop from './modules/back-to-top';
 import outreachModals from './modules/outreach-modals';
 
 document.addEventListener('DOMContentLoaded', () => {
-  mobileNav();
+  const body = document.querySelector('body');
+
   stopAnimations();
+  mobileNav();
   animations();
   anchorScroll();
-  revealBackToTop();
-  if (document.querySelector('body').classList.contains('single-region')) {
+  if (
+    body.classList.contains('single-areas-of-care') ||
+    body.classList.contains('single-treatment-modalities')
+  ) {
+    revealBackToTop();
+  }
+  if (body.classList.contains('single-region')) {
     outreachModals();
   }
 });

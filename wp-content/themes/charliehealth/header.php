@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="icon" type="image/x-icon" href="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/logos/charlie-health-favicon.ico'; ?>">
-  <link rel="icon" type="image/png" href=<?= site_url() . '/wp-content/themes/charliehealth/resources/images/logos/charlie-health-favicon.png'; ?>">
+  <link rel="icon" type="image/png" href="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/logos/charlie-health-favicon.png'; ?>">
   <!-- Apple Touch Icon (at least 200x200px) -->
   <link rel="apple-touch-icon" href="/custom-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
