@@ -107,14 +107,14 @@ module.exports = {
             fontWeight: '400',
           },
         ],
-        // h2: [
-        //   '2.25rem',
-        //   {
-        //     lineHeight: '110%',
-        //     letterSpacing: '-0.03em',
-        //     fontWeight: '400',
-        //   },
-        // ],
+        h2: [
+          '2.25rem',
+          {
+            lineHeight: '110%',
+            letterSpacing: '-0.03em',
+            fontWeight: '400',
+          },
+        ],
         // 'h2-md': [
         //   '2.25rem',
         //   {

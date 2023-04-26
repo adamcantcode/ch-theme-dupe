@@ -1408,6 +1408,10 @@ table {
   max-height: 80vh;
 }
 
+.max-h-\[200px\]{
+  max-height: 200px;
+}
+
 .min-h-\[200px\]{
   min-height: 200px;
 }
@@ -1575,6 +1579,18 @@ table {
 
 .gap-sp-8{
   gap: 2rem;
+}
+
+.gap-\[8rem\]{
+  gap: 8rem;
+}
+
+.gap-\[10rem\]{
+  gap: 10rem;
+}
+
+.gap-\[12rem\]{
+  gap: 12rem;
 }
 
 .gap-x-4{
@@ -1827,6 +1843,24 @@ table {
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-h2{
+  font-size: 2.25rem;
+  line-height: 110%;
+  letter-spacing: -0.03em;
+  font-weight: 400;
+}
+
+.text-h4-lg{
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+.font-bold{
+  font-weight: 700;
 }
 
 .leading-\[1\.8rem\]{
@@ -2264,6 +2298,14 @@ table {
   }
             }
 
+/* TODO figure out what the fuck is going on here
+ * Seems to be because of inline styles overriding.
+*/
+
+.post-type-post.block-editor-page .editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper > :where(:not(.alignleft):not(.alignright):not(.alignfull)), .post-type-post.block-editor-page .editor-styles-wrapper .block-editor-block-list__layout.is-root-container > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+      max-width: 768px!important;
+    }
+
 .testimonial-padding{
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -2696,6 +2738,10 @@ table {
 
   .lg\:max-h-full{
     max-height: 100%;
+  }
+
+  .lg\:max-h-none{
+    max-height: none;
   }
 
   .lg\:min-h-\[300px\]{
