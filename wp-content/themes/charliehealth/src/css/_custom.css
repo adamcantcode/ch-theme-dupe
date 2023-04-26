@@ -250,3 +250,12 @@
 .translate-z {
   transform: translate3d(-50%, -50%, -1px);
 }
+
+.modal-fade {
+  @apply opacity-0 invisible translate-y-sp-2;
+  & > {
+    * {
+      @apply scale-95;
+    }
+  }
+}

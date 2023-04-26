@@ -192,18 +192,18 @@ function outreachModals() {
     const id = member.getAttribute('data-modal-id');
     member.addEventListener('click', () => {
       let modal = document.querySelector(`div[data-modal="${id}"]`);
-      modal.classList.toggle('hidden');
+      modal.classList.toggle('modal-fade');
     });
   });
   modals.forEach(modal => {
     modal.addEventListener('click', event => {
       if (event.target.getAttribute('data-modal')) {
-        modal.classList.toggle('hidden');
+        modal.classList.toggle('modal-fade');
       }
     });
     const closeButton = modal.querySelector('.modal-close');
-    closeButton.addEventListener('click', event => {
-      modal.classList.toggle('hidden');
+    closeButton.addEventListener('click', () => {
+      modal.classList.toggle('modal-fade');
     });
   });
 }
