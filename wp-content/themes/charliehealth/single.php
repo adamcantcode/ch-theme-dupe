@@ -19,6 +19,7 @@
             <p class="font-heading-serif">Share: </p>
             <div>cats</div>
             <div>tags</div>
+            <a href="#ThedifferencesbetweenOCDandanxietydisorders">test</a>
           </div>
         </div>
       </div>
@@ -28,9 +29,27 @@
     </div>
     <section class="section">
       <div class="container-sm">
-        <?php the_content(); ?>
+        <div class="toc-container">
+          <div class="flex cursor-pointer toc-heading">
+            <h3>Table of Contents</h3>
+            <div class="flex items-center ml-auto lg:mr-sp-5 toggle">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="none" viewBox="8 8 8 8" height="12px" width="12px">
+                <path d="M9 12H15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M12 9L12 15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="overflow-hidden transition-all duration-500 ease-in-out toc-content max-h-0">
+            <div id="toc" class="flex flex-col"></div>
+          </div>
+        </div>
       </div>
     </section>
+    <article id="articleContent" class="section">
+      <div class="container-sm">
+        <?php the_content(); ?>
+      </div>
+    </article>
   </div>
 </main>
 

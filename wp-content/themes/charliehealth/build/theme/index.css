@@ -1396,6 +1396,10 @@ table {
   max-height: 13rem;
 }
 
+.max-h-\[200px\]{
+  max-height: 200px;
+}
+
 .max-h-\[300px\]{
   max-height: 300px;
 }
@@ -1406,10 +1410,6 @@ table {
 
 .max-h-\[80vh\]{
   max-height: 80vh;
-}
-
-.max-h-\[200px\]{
-  max-height: 200px;
 }
 
 .min-h-\[200px\]{
@@ -1579,18 +1579,6 @@ table {
 
 .gap-sp-8{
   gap: 2rem;
-}
-
-.gap-\[8rem\]{
-  gap: 8rem;
-}
-
-.gap-\[10rem\]{
-  gap: 10rem;
-}
-
-.gap-\[12rem\]{
-  gap: 12rem;
 }
 
 .gap-x-4{
@@ -1812,6 +1800,13 @@ table {
   font-weight: 400;
 }
 
+.text-h2{
+  font-size: 2.25rem;
+  line-height: 110%;
+  letter-spacing: -0.03em;
+  font-weight: 400;
+}
+
 .text-h2-lg{
   font-size: 1.75rem;
   line-height: 2.3rem;
@@ -1843,20 +1838,6 @@ table {
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-h2{
-  font-size: 2.25rem;
-  line-height: 110%;
-  letter-spacing: -0.03em;
-  font-weight: 400;
-}
-
-.text-h4-lg{
-  font-size: 1.5rem;
-  line-height: 1.8rem;
-  letter-spacing: 0;
-  font-weight: 400;
 }
 
 .font-bold{
@@ -2302,8 +2283,13 @@ table {
  * Seems to be because of inline styles overriding.
 */
 
-.post-type-post.block-editor-page .editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper > :where(:not(.alignleft):not(.alignright):not(.alignfull)), .post-type-post.block-editor-page .editor-styles-wrapper .block-editor-block-list__layout.is-root-container > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
-      max-width: 768px!important;
+.post-type-post.block-editor-page .editor-styles-wrapper
+      .edit-post-visual-editor__post-title-wrapper
+      > :where(:not(.alignleft):not(.alignright):not(.alignfull)),
+    .post-type-post.block-editor-page .editor-styles-wrapper
+      .block-editor-block-list__layout.is-root-container
+      > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+      max-width: 768px !important;
     }
 
 .testimonial-padding{
@@ -2486,6 +2472,17 @@ table {
 }
 
 .faq-block .accordion .accordion-item .accordion-header.active .toggle svg{
+  --tw-rotate: 45deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.toc-container .toc-heading .toggle svg{
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.toc-container .toc-heading.active .toggle svg{
   --tw-rotate: 45deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }

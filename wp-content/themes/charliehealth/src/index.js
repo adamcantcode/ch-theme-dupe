@@ -6,6 +6,7 @@ import animations from './modules/animations';
 import anchorScroll from './modules/anchor-scroll';
 import revealBackToTop from './modules/back-to-top';
 import outreachModals from './modules/outreach-modals';
+import toc from './modules/toc';
 
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
@@ -13,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
   stopAnimations();
   mobileNav();
   animations();
-  anchorScroll();
   if (
     body.classList.contains('single-areas-of-care') ||
     body.classList.contains('single-treatment-modalities')
@@ -23,4 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (body.classList.contains('single-region')) {
     outreachModals();
   }
+  if (body.classList.contains('single-post')) {
+    toc();
+  }
+  // needs to load last (or at least of TOC) in order for all links to be scrollable
+  anchorScroll();
 });

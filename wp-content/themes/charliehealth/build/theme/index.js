@@ -236,6 +236,44 @@ function stopAnimations() {
 
 /***/ }),
 
+/***/ "./src/modules/toc.js":
+/*!****************************!*\
+  !*** ./src/modules/toc.js ***!
+  \****************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ toc; }
+/* harmony export */ });
+function toc() {
+  const content = document.querySelector('#articleContent');
+  const headings = content.querySelectorAll('h2');
+  const toc = document.querySelector('#toc');
+  headings.forEach(heading => {
+    heading.id = heading.innerText.replace(/\s/g, '');
+    const tocHeading = document.createElement('a');
+    const headingText = document.createTextNode(heading.innerText);
+    tocHeading.appendChild(headingText);
+    tocHeading.setAttribute('href', `#${heading.id}`);
+    toc.appendChild(tocHeading);
+  });
+  function toggleAccordion() {
+    console.log(this);
+    this.classList.toggle('active');
+    const accordionContent = this.nextElementSibling;
+    if (accordionContent.style.maxHeight) {
+      accordionContent.style.maxHeight = null;
+    } else {
+      accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+    }
+  }
+  const tocHeading = document.querySelector('.toc-heading');
+  tocHeading.addEventListener('click', toggleAccordion);
+}
+
+/***/ }),
+
 /***/ "./node_modules/gsap/CSSPlugin.js":
 /*!****************************************!*\
   !*** ./node_modules/gsap/CSSPlugin.js ***!
@@ -9996,6 +10034,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_anchor_scroll__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/anchor-scroll */ "./src/modules/anchor-scroll.js");
 /* harmony import */ var _modules_back_to_top__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/back-to-top */ "./src/modules/back-to-top.js");
 /* harmony import */ var _modules_outreach_modals__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/outreach-modals */ "./src/modules/outreach-modals.js");
+/* harmony import */ var _modules_toc__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/toc */ "./src/modules/toc.js");
+
 
 
 
@@ -10008,13 +10048,17 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_modules_stop_animations__WEBPACK_IMPORTED_MODULE_2__["default"])();
   (0,_modules_mobile_nav__WEBPACK_IMPORTED_MODULE_1__["default"])();
   (0,_modules_animations__WEBPACK_IMPORTED_MODULE_3__["default"])();
-  (0,_modules_anchor_scroll__WEBPACK_IMPORTED_MODULE_4__["default"])();
   if (body.classList.contains('single-areas-of-care') || body.classList.contains('single-treatment-modalities')) {
     (0,_modules_back_to_top__WEBPACK_IMPORTED_MODULE_5__["default"])();
   }
   if (body.classList.contains('single-region')) {
     (0,_modules_outreach_modals__WEBPACK_IMPORTED_MODULE_6__["default"])();
   }
+  if (body.classList.contains('single-post')) {
+    (0,_modules_toc__WEBPACK_IMPORTED_MODULE_7__["default"])();
+  }
+  // needs to load last (or at least of TOC) in order for all links to be scrollable
+  (0,_modules_anchor_scroll__WEBPACK_IMPORTED_MODULE_4__["default"])();
 });
 }();
 /******/ })()
