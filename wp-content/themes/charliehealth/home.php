@@ -4,14 +4,13 @@
   <div id="mainArticleContent" class="relative main-article-content">
     <section class="section">
       <div class="container">
-        <div class="mb-sp-4">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+            <path d="M11.9393 26.0607C11.3536 25.4749 11.3536 24.5251 11.9393 23.9393L21.4853 14.3934C22.0711 13.8076 23.0208 13.8076 23.6066 14.3934C24.1924 14.9792 24.1924 15.9289 23.6066 16.5147L15.1213 25L23.6066 33.4853C24.1924 34.0711 24.1924 35.0208 23.6066 35.6066C23.0208 36.1924 22.0711 36.1924 21.4853 35.6066L11.9393 26.0607ZM37 26.5H13V23.5H37V26.5Z" fill="#212984" />
+          </svg>
           <!-- TODO figure out /blog and make dynamic -->
-          <a href="<?= site_url() . '/blog'; ?>" class="flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 50 50" fill="none">
-              <path d="M11.9393 26.0607C11.3536 25.4749 11.3536 24.5251 11.9393 23.9393L21.4853 14.3934C22.0711 13.8076 23.0208 13.8076 23.6066 14.3934C24.1924 14.9792 24.1924 15.9289 23.6066 16.5147L15.1213 25L23.6066 33.4853C24.1924 34.0711 24.1924 35.0208 23.6066 35.6066C23.0208 36.1924 22.0711 36.1924 21.4853 35.6066L11.9393 26.0607ZM37 26.5H13V23.5H37V26.5Z" fill="#212984" />
-            </svg>
-            <p class="mb-0 ml-sp-2">Back to The Library</p>
-          </a>
+          <a href="<?= site_url() . '/blog'; ?>">Back to The Library</a>
+
         </div>
         <div class="grid items-center lg:grid-cols-2 gap-sp-16">
           <div>

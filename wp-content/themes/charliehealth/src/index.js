@@ -16,7 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
   animations();
   if (
     body.classList.contains('single-areas-of-care') ||
-    body.classList.contains('single-treatment-modalities')
+    body.classList.contains('single-treatment-modalities') ||
+    body.classList.contains('single-post')
   ) {
     revealBackToTop();
   }

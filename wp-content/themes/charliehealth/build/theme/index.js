@@ -102,13 +102,20 @@ gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPAC
 function revealBackToTop() {
   let breakpoints = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.matchMedia();
   const backToTop = document.querySelector('.back-to-top');
+  if (!document.querySelector('body').classList.contains('single-post')) {
+    var sectionTrigger = '#mainArticleContent > section:nth-of-type(2)';
+    var endSectionTrigger = '#mainArticleContent > section:last-of-type';
+  } else {
+    var sectionTrigger = '#articleContent';
+    var endSectionTrigger = '#articleContent';
+  }
   if (backToTop) {
     breakpoints.add('(min-width: 1024px)', () => {
       gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to('.back-to-top', {
         scrollTrigger: {
-          trigger: '#mainArticleContent > section:nth-of-type(2)',
+          trigger: sectionTrigger,
           start: 'top top',
-          endTrigger: '#mainArticleContent > section:last-of-type',
+          endTrigger: endSectionTrigger,
           end: 'bottom 20%',
           // markers: true,
           toggleActions: 'play reverse complete reverse'
@@ -10052,7 +10059,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_modules_stop_animations__WEBPACK_IMPORTED_MODULE_2__["default"])();
   (0,_modules_mobile_nav__WEBPACK_IMPORTED_MODULE_1__["default"])();
   (0,_modules_animations__WEBPACK_IMPORTED_MODULE_3__["default"])();
-  if (body.classList.contains('single-areas-of-care') || body.classList.contains('single-treatment-modalities')) {
+  if (body.classList.contains('single-areas-of-care') || body.classList.contains('single-treatment-modalities') || body.classList.contains('single-post')) {
     (0,_modules_back_to_top__WEBPACK_IMPORTED_MODULE_5__["default"])();
   }
   if (body.classList.contains('single-region')) {
