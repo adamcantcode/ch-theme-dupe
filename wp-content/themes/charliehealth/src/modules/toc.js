@@ -16,7 +16,6 @@ export default function toc() {
   });
 
   function toggleAccordion() {
-    console.log(this);
     this.classList.toggle('active');
     const accordionContent = this.nextElementSibling;
     if (accordionContent.style.maxHeight) {

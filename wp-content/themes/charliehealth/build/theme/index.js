@@ -19,13 +19,18 @@ __webpack_require__.r(__webpack_exports__);
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollToPlugin__WEBPACK_IMPORTED_MODULE_1__.ScrollToPlugin);
 function anchorScroll() {
   // Scroll to anchor links with GSAP ScrollToPlugin
+  if (document.querySelector('body').classList.contains('single-post')) {
+    var scrollOffset = document.querySelector('header').offsetHeight + 24;
+  } else {
+    var scrollOffset = document.querySelector('header').offsetHeight;
+  }
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
       gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(window, {
         scrollTo: {
           y: this.getAttribute('href'),
-          offsetY: self => document.querySelector('header').offsetHeight
+          offsetY: self => scrollOffset
         },
         duration: 1,
         ease: 'Power2.easeInOut'
@@ -259,7 +264,6 @@ function toc() {
     toc.appendChild(tocHeading);
   });
   function toggleAccordion() {
-    console.log(this);
     this.classList.toggle('active');
     const accordionContent = this.nextElementSibling;
     if (accordionContent.style.maxHeight) {

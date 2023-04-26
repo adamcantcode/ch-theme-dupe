@@ -19,7 +19,6 @@
             <p class="font-heading-serif">Share: </p>
             <div>cats</div>
             <div>tags</div>
-            <a href="#ThedifferencesbetweenOCDandanxietydisorders">test</a>
           </div>
         </div>
       </div>
@@ -27,11 +26,11 @@
     <div class="invisible hidden opacity-0 back-to-top top-sp-16 left-sp-10 mb-sp-16 w-fit">
       <h3><a href="#mainArticleContent">Back to top</a></h3>
     </div>
-    <section class="section">
+    <section class="section-xs">
       <div class="container-sm">
-        <div class="toc-container">
-          <div class="flex cursor-pointer toc-heading">
-            <h3>Table of Contents</h3>
+        <div class="rounded-md toc-container bg-light-purple">
+          <div class="flex cursor-pointer toc-heading p-sp-4">
+            <h3 class="mb-0">Table of Contents</h3>
             <div class="flex items-center ml-auto lg:mr-sp-5 toggle">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="none" viewBox="8 8 8 8" height="12px" width="12px">
                 <path d="M9 12H15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -40,9 +39,14 @@
             </div>
           </div>
           <div class="overflow-hidden transition-all duration-500 ease-in-out toc-content max-h-0">
-            <div id="toc" class="flex flex-col"></div>
+            <div id="toc" class="flex flex-col p-sp-4"></div>
           </div>
         </div>
+      </div>
+    </section>
+    <section class="section-horizontal">
+      <div class="container">
+        <div class="divider"></div>
       </div>
     </section>
     <article id="articleContent" class="section">
