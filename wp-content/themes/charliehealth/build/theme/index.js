@@ -222,6 +222,84 @@ function outreachModals() {
 
 /***/ }),
 
+/***/ "./src/modules/read-time.js":
+/*!**********************************!*\
+  !*** ./src/modules/read-time.js ***!
+  \**********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ readTime; }
+/* harmony export */ });
+function readTime() {
+  // Get the main container that holds the article content
+  var mainContainer = document.querySelector('#articleContent');
+  const text = mainContainer.innerText;
+  const wpm = 238;
+  const words = text.trim().split(/\s+/).length;
+  const readTime = Math.ceil(words / wpm);
+  document.querySelector('.js-read-time').innerHTML = readTime;
+}
+
+/***/ }),
+
+/***/ "./src/modules/share-button.js":
+/*!*************************************!*\
+  !*** ./src/modules/share-button.js ***!
+  \*************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ shareButton; }
+/* harmony export */ });
+function shareButton() {
+  const buttonShare = document.querySelector('.js-share-button');
+  function showTooltip(e, text) {
+    // Create a new tooltip element
+    var tooltip = document.createElement('h6');
+    tooltip.textContent = text;
+    tooltip.style.position = 'absolute';
+    tooltip.style.top = e.pageY - 32 + 'px';
+    tooltip.style.left = e.pageX + 16 + 'px';
+    tooltip.style.backgroundColor = '#B1FCFA';
+    tooltip.style.color = '#1D225F';
+    tooltip.style.marginBottom = '0';
+    tooltip.style.padding = '8px';
+    tooltip.style.borderRadius = '8px';
+    tooltip.style.opacity = '0';
+    tooltip.style.transition = 'opacity 0.3s ease-in-out';
+
+    // Add the tooltip element to the body
+    document.body.appendChild(tooltip);
+
+    // Remove the tooltip after one second
+    // Fade in the tooltip
+    setTimeout(function () {
+      tooltip.style.opacity = '1';
+    }, 0);
+
+    // Fade out the tooltip after one second
+    setTimeout(function () {
+      tooltip.style.opacity = '0';
+      setTimeout(function () {
+        document.body.removeChild(tooltip);
+      }, 300); // Wait for the fade-out effect to complete before removing the tooltip
+    }, 1000);
+  }
+  buttonShare.addEventListener('click', e => {
+    var currentUrl = window.location.href;
+    // var currentUrl += '?param1=value1&param2=value2';
+    navigator.clipboard.writeText(currentUrl);
+
+    // Example usage: add a click event listener to an element that shows a tooltip
+    showTooltip(e, 'Copied!');
+  });
+}
+
+/***/ }),
+
 /***/ "./src/modules/stop-animations.js":
 /*!****************************************!*\
   !*** ./src/modules/stop-animations.js ***!
@@ -10046,6 +10124,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_back_to_top__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/back-to-top */ "./src/modules/back-to-top.js");
 /* harmony import */ var _modules_outreach_modals__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/outreach-modals */ "./src/modules/outreach-modals.js");
 /* harmony import */ var _modules_toc__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/toc */ "./src/modules/toc.js");
+/* harmony import */ var _modules_share_button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/share-button */ "./src/modules/share-button.js");
+/* harmony import */ var _modules_read_time__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/read-time */ "./src/modules/read-time.js");
+
+
 
 
 
@@ -10066,7 +10148,9 @@ document.addEventListener('DOMContentLoaded', () => {
     (0,_modules_outreach_modals__WEBPACK_IMPORTED_MODULE_6__["default"])();
   }
   if (body.classList.contains('single-post')) {
+    (0,_modules_read_time__WEBPACK_IMPORTED_MODULE_9__["default"])();
     (0,_modules_toc__WEBPACK_IMPORTED_MODULE_7__["default"])();
+    (0,_modules_share_button__WEBPACK_IMPORTED_MODULE_8__["default"])();
   }
   // needs to load last (or at least of TOC) in order for all links to be scrollable
   (0,_modules_anchor_scroll__WEBPACK_IMPORTED_MODULE_4__["default"])();

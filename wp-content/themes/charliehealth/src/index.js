@@ -7,6 +7,8 @@ import anchorScroll from './modules/anchor-scroll';
 import revealBackToTop from './modules/back-to-top';
 import outreachModals from './modules/outreach-modals';
 import toc from './modules/toc';
+import shareButton from './modules/share-button';
+import readTime from './modules/read-time';
 
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
@@ -25,7 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
     outreachModals();
   }
   if (body.classList.contains('single-post')) {
+    readTime();
     toc();
+    shareButton();
   }
   // needs to load last (or at least of TOC) in order for all links to be scrollable
   anchorScroll();

@@ -19,12 +19,15 @@
           </div>
           <div class="">
             <h1 class="text-h2 font-heading-serif"><?= get_the_title(); ?></h1>
-            <p class="font-bold">Est. reading time: 4 min.</p>
+            <p class="font-bold">Est. reading time: <span class="js-read-time"></span> min.</p>
             <p>OCD is characterized by obsessions and compulsions, while anxiety disorders stem from anxious thoughts.</p>
             <p class="mb-0">By: <a href="#">Sarah Fielding</a></p>
             <p class="mb-0">Clinically Reviewed By: <a href="#">Don Gasparini Ph.D., M.A., CASAC</a></p>
             <p>April 20, 2023</p>
-            <p class="font-heading-serif">Share: </p>
+            <div class="flex items-start">
+              <p class="font-heading-serif">Share:</p>
+              <a role="button" class="js-share-button"><img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/social-logos/share.svg'; ?>" alt="share icon"></a>
+            </div>
             <div>cats</div>
             <div>tags</div>
           </div>
@@ -67,17 +70,17 @@
 
 <section class="section-bottom">
   <div class="container">
-    <?= do_blocks('<!-- wp:acf/divider-block {"name":"acf/divider-block"} /-->');?>
+    <?= do_blocks('<!-- wp:acf/divider-block {"name":"acf/divider-block"} /-->'); ?>
   </div>
 </section>
 <section class="section-horizontal">
   <div class="container">
-    <?= do_blocks('<!-- wp:acf/pre-footer-cta-block {"name":"acf/pre-footer-cta-block"} /-->');?>
+    <?= do_blocks('<!-- wp:acf/pre-footer-cta-block {"name":"acf/pre-footer-cta-block"} /-->'); ?>
   </div>
 </section>
 <section class="section">
   <div class="container-sm">
-    <?= do_blocks('<!-- wp:block {"ref":458} /-->');?>
+    <?= do_blocks('<!-- wp:block {"ref":458} /-->'); ?>
   </div>
 </section>
 
