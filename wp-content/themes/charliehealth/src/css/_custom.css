@@ -190,28 +190,17 @@
 }
 
 /* FAQ Accordion */
-.faq-block {
-  .accordion {
-    .accordion-item {
-      .accordion-header {
-        .toggle {
-          svg {
-            @apply transition-transform duration-300;
-          }
-        }
-        &.active {
-          .toggle {
-            svg {
-              @apply rotate-45;
-            }
-          }
+.faq-block,
+.toc-container {
+  .accordion-header,
+  .toc-heading {
+    &:hover {
+      .toggle {
+        svg {
+          @apply -rotate-45;
         }
       }
     }
-  }
-}
-.toc-container {
-  .toc-heading {
     .toggle {
       svg {
         @apply transition-transform duration-300;
@@ -226,6 +215,7 @@
     }
   }
 }
+
 /* Card Grid */
 .border-gradient {
   /* @apply before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0 before:border before:border-transparent before:box-border; */
@@ -243,7 +233,7 @@
 }
 
 /* Remove bottom margin from last element in sections */
-.acf-innerblocks-container {
+.acf-innerblocks-container, #articleContent .container-sm {
   & > *:last-child {
     @apply mb-0;
   }

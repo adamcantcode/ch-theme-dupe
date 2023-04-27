@@ -147,7 +147,7 @@
     @apply my-1 leading-7 list-item;
   }
   a {
-    @apply underline transition-colors duration-300 text-p text-dark-blue hover:text-hover-blue;
+    @apply underline transition-colors duration-300 text-p text-dark-blue hover:text-dark-blue;
     @screen lg {
       @apply text-p-lg;
     }

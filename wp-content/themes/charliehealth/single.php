@@ -37,7 +37,7 @@
     <section class="section-xs">
       <div class="container-sm">
         <div class="rounded-md toc-container bg-light-purple">
-          <div class="flex cursor-pointer toc-heading p-sp-4">
+          <div class="flex cursor-pointer toc-heading p-sp-8">
             <h3 class="mb-0">Table of Contents</h3>
             <div class="flex items-center ml-auto lg:mr-sp-5 toggle">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="none" viewBox="8 8 8 8" height="12px" width="12px">
@@ -47,7 +47,7 @@
             </div>
           </div>
           <div class="overflow-hidden transition-all duration-500 ease-in-out toc-content max-h-0">
-            <div id="toc" class="flex flex-col p-sp-4"></div>
+            <div id="toc" class="flex flex-col items-start pt-0 p-sp-8"></div>
           </div>
         </div>
       </div>
@@ -64,5 +64,21 @@
     </article>
   </div>
 </main>
+
+<section class="section-bottom">
+  <div class="container">
+    <?= do_blocks('<!-- wp:acf/divider-block {"name":"acf/divider-block"} /-->');?>
+  </div>
+</section>
+<section class="section-horizontal">
+  <div class="container">
+    <?= do_blocks('<!-- wp:acf/pre-footer-cta-block {"name":"acf/pre-footer-cta-block"} /-->');?>
+  </div>
+</section>
+<section class="section">
+  <div class="container-sm">
+    <?= do_blocks('<!-- wp:block {"ref":458} /-->');?>
+  </div>
+</section>
 
 <?php get_footer(); ?>

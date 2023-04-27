@@ -661,7 +661,7 @@ a{
 
 a:hover{
   --tw-text-opacity: 1;
-  color: rgb(67 49 176 / var(--tw-text-opacity));
+  color: rgb(29 34 95 / var(--tw-text-opacity));
 }
 
 @media (min-width: 1024px) {
@@ -1324,6 +1324,10 @@ table {
   margin-left: auto;
 }
 
+.ml-sp-2{
+  margin-left: 0.5rem;
+}
+
 .mt-0{
   margin-top: 0px;
 }
@@ -1338,10 +1342,6 @@ table {
 
 .mt-sp-8{
   margin-top: 2rem;
-}
-
-.ml-sp-2{
-  margin-left: 0.5rem;
 }
 
 .block{
@@ -1776,6 +1776,10 @@ table {
 
 .pr-sp-6{
   padding-right: 1.5rem;
+}
+
+.pt-0{
+  padding-top: 0px;
 }
 
 .pt-sp-0{
@@ -2469,24 +2473,18 @@ table {
 
 /* FAQ Accordion */
 
-.faq-block .accordion .accordion-item .accordion-header .toggle svg{
-  transition-property: transform;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
-}
-
-.faq-block .accordion .accordion-item .accordion-header.active .toggle svg{
-  --tw-rotate: 45deg;
+.faq-block .accordion-header:hover .toggle svg, .faq-block .toc-heading:hover .toggle svg, .toc-container .accordion-header:hover .toggle svg, .toc-container .toc-heading:hover .toggle svg{
+  --tw-rotate: -45deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.toc-container .toc-heading .toggle svg{
+.faq-block .accordion-header .toggle svg, .faq-block .toc-heading .toggle svg, .toc-container .accordion-header .toggle svg, .toc-container .toc-heading .toggle svg{
   transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
 }
 
-.toc-container .toc-heading.active .toggle svg{
+.faq-block .accordion-header.active .toggle svg, .faq-block .toc-heading.active .toggle svg, .toc-container .accordion-header.active .toggle svg, .toc-container .toc-heading.active .toggle svg{
   --tw-rotate: 45deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -2520,7 +2518,7 @@ table {
 
 /* Remove bottom margin from last element in sections */
 
-.acf-innerblocks-container > *:last-child{
+.acf-innerblocks-container > *:last-child, #articleContent .container-sm > *:last-child{
   margin-bottom: 0px;
 }
 
