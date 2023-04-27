@@ -1,5 +1,12 @@
 <?php get_header(); ?>
 
+<?php
+$protocol = empty($_SERVER['HTTPS']) ? 'http://' : 'https://';
+$domain = $_SERVER['HTTP_HOST'];
+$path = $_SERVER['REQUEST_URI'];
+$fullUrl = $protocol . $domain . $path;
+?>
+
 <main id="primary" class="site-main lg:mt-[68px] mt-0">
   <div id="mainArticleContent" class="relative main-article-content">
     <section class="section">
@@ -13,7 +20,7 @@
             <p class="mb-0 ml-sp-2">Back to The Library</p>
           </a>
         </div>
-        <div class="grid items-center lg:grid-cols-2 gap-sp-16">
+        <div class="grid items-center lg:grid-cols-2 lg:gap-sp-16 gap-sp-8">
           <div>
             <img src="<?= placeHolderImage(525, 525); ?>" alt="" class="rounded-md max-h-[200px] lg:max-h-none object-cover w-full">
           </div>
@@ -26,10 +33,13 @@
             <p>April 20, 2023</p>
             <div class="flex items-start">
               <p class="font-heading-serif">Share:</p>
-              <a role="button" class="js-share-button"><img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/social-logos/share.svg'; ?>" alt="share icon"></a>
+              <a role="button" class="js-share-button ml-sp-4"><img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/social-logos/share.svg'; ?>" alt="share icon"></a>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=<?= $fullUrl; ?>" onclick="window.open(this.href,'targetWindow','resizable=yes,width=600,height=300'); return false;" class="ml-sp-4"><img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/social-logos/facebook.svg'; ?>" alt="Facebook icon">
+              </a>
+              <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?= $fullUrl; ?>" class="ml-sp-4"><img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/social-logos/linkedin.svg'; ?>" alt="linkedin icon"></a>
             </div>
-            <div>cats</div>
-            <div>tags</div>
+            <div>{cats}</div>
+            <div>{tags}</div>
           </div>
         </div>
       </div>
@@ -40,7 +50,7 @@
     <section class="section-xs">
       <div class="container-sm">
         <div class="rounded-md toc-container bg-light-purple">
-          <div class="flex cursor-pointer toc-heading p-sp-8">
+          <div class="flex cursor-pointer toc-heading lg:p-sp-8 p-sp-4">
             <h3 class="mb-0">Table of Contents</h3>
             <div class="flex items-center ml-auto lg:mr-sp-5 toggle">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="none" viewBox="8 8 8 8" height="12px" width="12px">
@@ -50,7 +60,7 @@
             </div>
           </div>
           <div class="overflow-hidden transition-all duration-500 ease-in-out toc-content max-h-0">
-            <div id="toc" class="flex flex-col items-start pt-0 p-sp-8"></div>
+            <div id="toc" class="flex flex-col items-start pt-0 lg:p-sp-8 p-sp-4 gap-sp-1"></div>
           </div>
         </div>
       </div>

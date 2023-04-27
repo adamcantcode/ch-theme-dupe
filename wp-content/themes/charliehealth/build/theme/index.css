@@ -1344,6 +1344,10 @@ table {
   margin-top: 2rem;
 }
 
+.ml-sp-4{
+  margin-left: 1rem;
+}
+
 .block{
   display: block;
 }
