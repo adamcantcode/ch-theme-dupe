@@ -1328,6 +1328,10 @@ table {
   margin-left: 0.5rem;
 }
 
+.ml-sp-4{
+  margin-left: 1rem;
+}
+
 .mt-0{
   margin-top: 0px;
 }
@@ -1342,10 +1346,6 @@ table {
 
 .mt-sp-8{
   margin-top: 2rem;
-}
-
-.ml-sp-4{
-  margin-left: 1rem;
 }
 
 .block{
