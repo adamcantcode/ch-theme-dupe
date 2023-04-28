@@ -108,3 +108,40 @@ add_filter(
   10,
   5
 );
+
+add_filter('init', function () {
+  global $wp;
+
+  $wp->add_query_var('query');
+  $wp->remove_query_var('s');
+});
+
+
+add_filter('request', function ($request) {
+  if (isset($_REQUEST['query'])) {
+    $request['s'] = $_REQUEST['query'];
+  }
+
+  return $request;
+});
+
+function remove_page_slug_trailing_slash($redirect_url) {
+  if (is_page('search')) {
+      $redirect_url = untrailingslashit($redirect_url);
+  }
+  return $redirect_url;
+}
+add_filter('redirect_canonical', 'remove_page_slug_trailing_slash');
+
+// function change_search_url_rewrite()
+// {
+//   global $wp_rewrite;
+//   if (is_search() && !empty($_GET['query'])) {
+//     wp_redirect(home_url("search?query=" . urlencode(get_query_var('query'))), 301);
+//     exit();
+//   } elseif (is_search() && empty($_GET['query'])) {
+//     $wp_rewrite->add_rewrite_tag('%query%', '([^/]+)');
+//     $wp_rewrite->add_permastruct('search', '/search?query=%query%', false);
+//   }
+// }
+// add_action('template_redirect', 'change_search_url_rewrite');
