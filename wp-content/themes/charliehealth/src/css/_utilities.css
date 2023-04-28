@@ -174,4 +174,10 @@
   .filter-white {
     filter: contrast(0) brightness(2);
   }
+  .stretched-link {
+    &:after {
+      content: '';
+      @apply z-10 absolute inset-0;
+    }
+  }
 }
