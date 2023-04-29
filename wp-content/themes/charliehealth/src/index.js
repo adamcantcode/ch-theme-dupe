@@ -9,6 +9,7 @@ import outreachModals from './modules/outreach-modals';
 import toc from './modules/toc';
 import shareButton from './modules/share-button';
 import readTime from './modules/read-time';
+import featuredBlogSlider from './modules/featured-blog-slider';
 
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
@@ -30,6 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
     readTime();
     toc();
     shareButton();
+  }
+  if (body.classList.contains('blog')) {
+    featuredBlogSlider();
   }
   // needs to load last (or at least of TOC) in order for all links to be scrollable
   anchorScroll();

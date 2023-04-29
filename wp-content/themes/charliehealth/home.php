@@ -24,10 +24,7 @@
           'taxonomy' => 'category',
           'hide_empty' => false,
         ));
-
-        // var_dump($terms);
         foreach ($terms as $term) : ?>
-
           <div class="relative flex flex-col rounded-md gap-sp-4 bg-purple-gradient-end p-sp-5">
             <div>
               <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/person.svg'); ?>" alt="icon of person">
@@ -43,9 +40,84 @@
   </section>
   <section class="section">
     <div class="container">
+      <h2>Featured</h2>
+      <div>
+        <div class="swiper swiper-featured-blog">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide ">
+              <div class="grid content-between bg-purple-gradient-start lg:p-sp-8 p-sp-4">
+                <div>
+                  <div>{grid}</div>
+                  <h3>TITLE</h3>
+                </div>
+                <a href="#" class="stretched-link">Read more</a>
+              </div>
+              <img src="<?= placeHolderImage(800, 600); ?>" alt="alt">
+            </div>
+            <div class="swiper-slide ">
+              <div class="grid content-between bg-purple-gradient-start lg:p-sp-8 p-sp-4">
+                <div>
+                  <div>{grid}</div>
+                  <h3>TITLE</h3>
+                </div>
+                <a href="#" class="stretched-link">Read more</a>
+              </div>
+              <img src="<?= placeHolderImage(800, 600); ?>" alt="alt">
+            </div>
+            <div class="swiper-slide ">
+              <div class="grid content-between bg-purple-gradient-start lg:p-sp-8 p-sp-4">
+                <div>
+                  <div>{grid}</div>
+                  <h3>TITLE</h3>
+                </div>
+                <a href="#" class="stretched-link">Read more</a>
+              </div>
+              <img src="<?= placeHolderImage(800, 600); ?>" alt="alt">
+            </div>
+            <div class="swiper-slide ">
+              <div class="grid content-between bg-purple-gradient-start lg:p-sp-8 p-sp-4">
+                <div>
+                  <div>{grid}</div>
+                  <h3>TITLE</h3>
+                </div>
+                <a href="#" class="stretched-link">Read more</a>
+              </div>
+              <img src="<?= placeHolderImage(800, 600); ?>" alt="alt">
+            </div>
+            <div class="swiper-slide ">
+              <div class="grid content-between bg-purple-gradient-start lg:p-sp-8 p-sp-4">
+                <div>
+                  <div>{grid}</div>
+                  <h3>TITLE</h3>
+                </div>
+                <a href="#" class="stretched-link">Read more</a>
+              </div>
+              <img src="<?= placeHolderImage(800, 600); ?>" alt="alt">
+            </div>
+          </div>
+          <div class="absolute left-0 swiper-button-prev-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+              <path d="M11.9393 26.0607C11.3536 25.4749 11.3536 24.5251 11.9393 23.9393L21.4853 14.3934C22.0711 13.8076 23.0208 13.8076 23.6066 14.3934C24.1924 14.9792 24.1924 15.9289 23.6066 16.5147L15.1213 25L23.6066 33.4853C24.1924 34.0711 24.1924 35.0208 23.6066 35.6066C23.0208 36.1924 22.0711 36.1924 21.4853 35.6066L11.9393 26.0607ZM37 26.5H13V23.5H37V26.5Z" fill="#212984" />
+              <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
+            </svg>
+          </div>
+          <div class="absolute right-0 swiper-button-next-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+              <path d="M38.0607 26.0607C38.6464 25.4749 38.6464 24.5251 38.0607 23.9393L28.5147 14.3934C27.9289 13.8076 26.9792 13.8076 26.3934 14.3934C25.8076 14.9792 25.8076 15.9289 26.3934 16.5147L34.8787 25L26.3934 33.4853C25.8076 34.0711 25.8076 35.0208 26.3934 35.6066C26.9792 36.1924 27.9289 36.1924 28.5147 35.6066L38.0607 26.0607ZM13 26.5H37V23.5H13V26.5Z" fill="#212984" />
+              <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
+            </svg>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
       <?php
       if (have_posts()) :
         while (have_posts()) : the_post(); ?>
+          <?= get_the_title(); ?>
       <?php endwhile;
       else :
         _e('Sorry, no posts were found.', 'textdomain');
