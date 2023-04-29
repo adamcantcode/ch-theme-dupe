@@ -7,12 +7,16 @@ import 'swiper/css/bundle';
 export default function featuredBlogSlider() {
   console.log('test');
   window.addEventListener('DOMContentLoaded', () => {
-    var blogSlider = new Swiper('.swiper.swiper-featued-blog', {
-      slidesPerView: 2,
+    var blogSlider = new Swiper('.swiper.swiper-featured-blog', {
+      slidesPerView: 1,
       spaceBetween: 20,
       speed: 1000,
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
       loop: true,
-      autoplay: true,
+      autoplay: false,
       pagination: {
         el: '.swiper-pagination',
       },

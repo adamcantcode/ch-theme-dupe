@@ -1181,8 +1181,26 @@ table {
   position: relative;
 }
 
+.\!relative{
+  position: relative !important;
+}
+
 .sticky{
   position: sticky;
+}
+
+.inset-auto{
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+}
+
+.\!inset-auto{
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
 }
 
 .bottom-0{
@@ -1239,6 +1257,10 @@ table {
 
 .z-50{
   z-index: 50;
+}
+
+.z-10{
+  z-index: 10;
 }
 
 .order-1{
@@ -1400,10 +1422,6 @@ table {
   height: 100%;
 }
 
-.h-\[400px\]{
-  height: 400px;
-}
-
 .max-h-0{
   max-height: 0px;
 }
@@ -1434,10 +1452,6 @@ table {
 
 .min-h-\[68px\]{
   min-height: 68px;
-}
-
-.min-h-\[400px\]{
-  min-height: 400px;
 }
 
 .w-10{
@@ -1540,6 +1554,10 @@ table {
 
 .grid-cols-\[2fr\2c 1fr\]{
   grid-template-columns: 2fr 1fr;
+}
+
+.grid-cols-3{
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .flex-row{
@@ -1909,6 +1927,13 @@ table {
   line-height: 1rem;
 }
 
+.text-h1{
+  font-size: 2rem;
+  line-height: 2rem;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
 .font-bold{
   font-weight: 700;
 }
@@ -1925,6 +1950,11 @@ table {
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.\!text-white{
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
 }
 
 .no-underline{
@@ -2924,6 +2954,10 @@ table {
     padding: 2rem;
   }
 
+  .lg\:p-sp-16{
+    padding: 6rem;
+  }
+
   .lg\:px-0{
     padding-left: 0px;
     padding-right: 0px;
@@ -2945,6 +2979,13 @@ table {
   .lg\:text-h3-lg{
     font-size: 1.5rem;
     line-height: 1.8rem;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+
+  .lg\:text-h1-lg{
+    font-size: 3rem;
+    line-height: 3rem;
     letter-spacing: 0;
     font-weight: 400;
   }

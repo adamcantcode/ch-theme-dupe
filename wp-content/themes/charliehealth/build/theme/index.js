@@ -152,12 +152,16 @@ __webpack_require__.r(__webpack_exports__);
 function featuredBlogSlider() {
   console.log('test');
   window.addEventListener('DOMContentLoaded', () => {
-    var blogSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.swiper.swiper-featued-blog', {
-      slidesPerView: 2,
+    var blogSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.swiper.swiper-featured-blog', {
+      slidesPerView: 1,
       spaceBetween: 20,
       speed: 1000,
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
       loop: true,
-      autoplay: true,
+      autoplay: false,
       pagination: {
         el: '.swiper-pagination'
       },
