@@ -151,9 +151,8 @@
   </section>
   <section class="section">
     <div class="container">
-      <div class="posts-container">
-        
-      </div>
+      <div class="posts-data-container"></div>
+      <div class="posts-container"></div>
     </div>
   </section>
 </main>

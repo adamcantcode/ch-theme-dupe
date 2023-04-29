@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "gsap": "^3.11.5",
+    "paginationjs": "^2.6.0",
     "swiper": "^9.1.1"
   }
 }
