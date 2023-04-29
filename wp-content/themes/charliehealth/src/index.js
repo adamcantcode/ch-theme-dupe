@@ -10,6 +10,7 @@ import toc from './modules/toc';
 import shareButton from './modules/share-button';
 import readTime from './modules/read-time';
 import featuredBlogSlider from './modules/featured-blog-slider';
+import ajaxPagination from './modules/ajax-pagination';
 
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
@@ -34,7 +35,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   if (body.classList.contains('blog')) {
     featuredBlogSlider();
+    ajaxPagination();
   }
-  // needs to load last (or at least of TOC) in order for all links to be scrollable
+  /**
+   * needs to load last (or at least of TOC) in order for all links to be scrollable
+   */
   anchorScroll();
 });

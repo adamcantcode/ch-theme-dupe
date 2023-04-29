@@ -53,7 +53,7 @@
                   </div>
                   <a href="#" class="text-white stretched-link">Read more</a>
                 </div>
-                <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 lg:order-2">
+                <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 object-cover lg:order-2">
               </div>
             </div>
             <div class="swiper-slide">
@@ -65,7 +65,7 @@
                   </div>
                   <a href="#" class="text-white stretched-link">Read more</a>
                 </div>
-                <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 lg:order-2">
+                <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 object-cover lg:order-2">
               </div>
             </div>
             <div class="swiper-slide">
@@ -77,7 +77,7 @@
                   </div>
                   <a href="#" class="text-white stretched-link">Read more</a>
                 </div>
-                <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 lg:order-2">
+                <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 object-cover lg:order-2">
               </div>
             </div>
             <div class="swiper-slide">
@@ -89,7 +89,7 @@
                   </div>
                   <a href="#" class="text-white stretched-link">Read more</a>
                 </div>
-                <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 lg:order-2">
+                <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 object-cover lg:order-2">
               </div>
             </div>
             <div class="swiper-slide">
@@ -101,7 +101,7 @@
                   </div>
                   <a href="#" class="text-white stretched-link">Read more</a>
                 </div>
-                <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 lg:order-2">
+                <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 object-cover lg:order-2">
               </div>
             </div>
           </div>
@@ -128,15 +128,32 @@
   </section>
   <section class="section">
     <div class="container">
-      <?php
-      if (have_posts()) :
-        while (have_posts()) : the_post(); ?>
-          <?= get_the_title(); ?>
-      <?php endwhile;
-      else :
-        _e('Sorry, no posts were found.', 'textdomain');
-      endif;
-      ?>
+      <h2>Tag Spotlight</h2>
+      [tags]
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <h2>Latest</h2>
+      [tags]
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      [newsletter]
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <h2>Research</h2>
+      [research]
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="posts-container">
+        
+      </div>
     </div>
   </section>
 </main>

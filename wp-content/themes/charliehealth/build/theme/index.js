@@ -2,6 +2,42 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/modules/ajax-pagination.js":
+/*!****************************************!*\
+  !*** ./src/modules/ajax-pagination.js ***!
+  \****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ ajaxPagination; }
+/* harmony export */ });
+function ajaxPagination() {
+  // Set the endpoint for the REST API
+  var endpoint = `${window.location.origin}/wp-json/wp/v2/posts`;
+  const postsContainer = document.querySelector('.posts-container');
+
+  // Make a request to the REST API endpoint
+  fetch(endpoint).then(function (response) {
+    // Convert the response to JSON
+    return response.json();
+  }).then(function (posts) {
+    // Loop through each post and output its title and content
+    posts.forEach(post => {
+      var postItem = document.createElement('h3');
+      console.log(post.title.rendered);
+      postItem.innerHTML = post.title.rendered;
+      postsContainer.appendChild(postItem);
+      console.log(postItem);
+    });
+  }).catch(function (error) {
+    // Handle any errors that occur during the request
+    console.error(error);
+  });
+}
+
+/***/ }),
+
 /***/ "./src/modules/anchor-scroll.js":
 /*!**************************************!*\
   !*** ./src/modules/anchor-scroll.js ***!
@@ -20514,6 +20550,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_share_button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/share-button */ "./src/modules/share-button.js");
 /* harmony import */ var _modules_read_time__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/read-time */ "./src/modules/read-time.js");
 /* harmony import */ var _modules_featured_blog_slider__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/featured-blog-slider */ "./src/modules/featured-blog-slider.js");
+/* harmony import */ var _modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/ajax-pagination */ "./src/modules/ajax-pagination.js");
+
 
 
 
@@ -20543,8 +20581,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   if (body.classList.contains('blog')) {
     (0,_modules_featured_blog_slider__WEBPACK_IMPORTED_MODULE_10__["default"])();
+    (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_11__["default"])();
   }
-  // needs to load last (or at least of TOC) in order for all links to be scrollable
+  /**
+   * needs to load last (or at least of TOC) in order for all links to be scrollable
+   */
   (0,_modules_anchor_scroll__WEBPACK_IMPORTED_MODULE_4__["default"])();
 });
 }();
