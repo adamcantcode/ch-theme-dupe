@@ -233,7 +233,8 @@
 }
 
 /* Remove bottom margin from last element in sections */
-.acf-innerblocks-container, #articleContent .container-sm {
+.acf-innerblocks-container,
+#articleContent .container-sm {
   & > *:last-child {
     @apply mb-0;
   }
@@ -277,6 +278,22 @@
   & > {
     * {
       @apply scale-95;
+    }
+  }
+}
+.paginationjs-pages {
+  ul {
+    @apply flex gap-sp-4 list-none p-0 m-0;
+    li {
+      @apply m-0 leading-none block;
+      &.J-paginationjs-page {
+        &:not(.active) {
+          @apply opacity-60;
+        }
+      }
+      a {
+        @apply cursor-pointer;
+      }
     }
   }
 }

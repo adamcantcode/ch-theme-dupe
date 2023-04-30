@@ -151,7 +151,7 @@
   </section>
   <section class="section">
     <div class="container">
-      <div class="grid grid-cols-3 transition-opacity duration-300 posts-container gap-x-sp-8 gap-y-sp-10">
+      <div class="grid grid-cols-3 transition-opacity duration-300 posts-container gap-x-sp-8 gap-y-sp-10 mb-sp-10">
         <!-- <div class="relative grid overflow-hidden border rounded-sm border-card-border">
           <img src="https://images.placeholders.dev/?width=800&height=600&text=FPO" alt="" class="object-cover lg:h-[220px] h-[150px] w-full">
           <div class="grid">

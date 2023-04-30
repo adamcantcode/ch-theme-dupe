@@ -14,10 +14,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var paginationjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! paginationjs */ "./node_modules/paginationjs/dist/pagination.js");
 /* harmony import */ var paginationjs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(paginationjs__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var paginationjs_dist_pagination_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! paginationjs/dist/pagination.css */ "./node_modules/paginationjs/dist/pagination.css");
 
 
 // import styles bundle
+// import 'paginationjs/dist/pagination.css';
 
 function ajaxPagination() {
   // Set the endpoint for the REST API
@@ -32,7 +32,7 @@ function ajaxPagination() {
   jQuery('.pagination-container').pagination({
     dataSource: function (done) {
       // Get the total number of posts
-      fetch('/wp-json/wp/v2/posts?per_page=1').then(function (response) {
+      fetch('/wp-json/wp/v2/posts').then(function (response) {
         return response.headers.get('X-WP-Total');
       }).then(function (totalPosts) {
         // Calculate the number of pages needed to display all posts
@@ -51,7 +51,19 @@ function ajaxPagination() {
     // We only want to show one page number at a time
     pageRange: 2,
     // We want to show two additional page numbers on either side of the current page
+    ulClassName: 'items-center justify-center',
+    prevText: `<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+    <rect width="50" height="50" rx="25" fill="#ffffff" />
+    <path d="M11.9393 26.0607C11.3536 25.4749 11.3536 24.5251 11.9393 23.9393L21.4853 14.3934C22.0711 13.8076 23.0208 13.8076 23.6066 14.3934C24.1924 14.9792 24.1924 15.9289 23.6066 16.5147L15.1213 25L23.6066 33.4853C24.1924 34.0711 24.1924 35.0208 23.6066 35.6066C23.0208 36.1924 22.0711 36.1924 21.4853 35.6066L11.9393 26.0607ZM37 26.5H13V23.5H37V26.5Z" fill="#212984" />
+    <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
+  </svg>`,
+    nextText: `<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+    <rect width="50" height="50" rx="25" fill="#ffffff" />
+    <path d="M38.0607 26.0607C38.6464 25.4749 38.6464 24.5251 38.0607 23.9393L28.5147 14.3934C27.9289 13.8076 26.9792 13.8076 26.3934 14.3934C25.8076 14.9792 25.8076 15.9289 26.3934 16.5147L34.8787 25L26.3934 33.4853C25.8076 34.0711 25.8076 35.0208 26.3934 35.6066C26.9792 36.1924 27.9289 36.1924 28.5147 35.6066L38.0607 26.0607ZM13 26.5H37V23.5H13V26.5Z" fill="#212984" />
+    <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
+  </svg>`,
     callback: function (pageNumber) {
+      jQuery('.posts-container').addClass('opacity-0');
       // When the user clicks on a page number, fetch the corresponding posts using the REST API
       // var offset = (pageNumber - 1) * postsPerPage;
       fetch(`/wp-json/wp/v2/posts?page=${pageNumber}&per_page=${postsPerPage}`).then(function (response) {
@@ -69,11 +81,8 @@ function ajaxPagination() {
               </div>
             </div>`;
         });
-        jQuery('.posts-container').addClass('opacity-0');
-        setTimeout(function () {
-          jQuery('.posts-container').html(html);
-          jQuery('.posts-container').removeClass('opacity-0');
-        }, 300);
+        jQuery('.posts-container').html(html);
+        jQuery('.posts-container').removeClass('opacity-0');
       });
     }
   });
@@ -10183,19 +10192,6 @@ __webpack_require__.r(__webpack_exports__);
 var gsapWithCSS = _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(_CSSPlugin_js__WEBPACK_IMPORTED_MODULE_1__.CSSPlugin) || _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.gsap,
     // to protect from tree shaking
 TweenMaxWithCSS = gsapWithCSS.core.Tween;
-
-
-/***/ }),
-
-/***/ "./node_modules/paginationjs/dist/pagination.css":
-/*!*******************************************************!*\
-  !*** ./node_modules/paginationjs/dist/pagination.css ***!
-  \*******************************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
 
 
 /***/ }),
