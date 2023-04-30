@@ -5,7 +5,6 @@ import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 
 export default function featuredBlogSlider() {
-  console.log('test');
   window.addEventListener('DOMContentLoaded', () => {
     var blogSlider = new Swiper('.swiper.swiper-featured-blog', {
       slidesPerView: 1,
