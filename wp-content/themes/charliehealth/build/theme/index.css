@@ -3051,6 +3051,13 @@ table {
     font-weight: 400;
   }
 
+  .lg\:text-h1-display-lg{
+    font-size: 4rem;
+    line-height: 4.2rem;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+
   .lg\:leading-tight{
     line-height: 1.25;
   }

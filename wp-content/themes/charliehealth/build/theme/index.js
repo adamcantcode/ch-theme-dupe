@@ -21989,6 +21989,10 @@ document.addEventListener('DOMContentLoaded', () => {
     (0,_modules_featured_blog_slider__WEBPACK_IMPORTED_MODULE_10__["default"])();
     (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_11__["default"])();
   }
+  if (body.classList.contains('category')) {
+    (0,_modules_featured_blog_slider__WEBPACK_IMPORTED_MODULE_10__["default"])();
+    // ajaxPagination();
+  }
   /**
    * needs to load last (or at least of TOC) in order for all links to be scrollable
    */

@@ -3,12 +3,12 @@
 <main id="primary" class="site-main lg:mt-[68px] mt-0">
   <section class="section bg-cream">
     <div class="container">
-      <div class="grid lg:grid-cols-[2fr,1fr] mb-sp-12">
+      <div class="grid lg:grid-cols-2 mb-sp-12 gap-sp-16">
         <div>
-          <h1 class="text-h1-display-lg">The Library</h1>
-          <p>Stay up to date on mental health research, wellness techniques, treatment services, and more.</p>
+          <h1 class="lg:text-h1-display-lg text-h1-display"><?= get_the_title(); ?></h1>
+          <!-- <p>Stay up to date on mental health research, wellness techniques, treatment services, and more.</p> -->
         </div>
-        <div>
+        <div class="grid gap-sp-16">
           <form role="search" method="get" class="search-form" action="<?php echo esc_url(site_url('/search')); ?>">
             <label>
               <span class="screen-reader-text"><?php echo _x('Search for:', 'label'); ?></span>
@@ -16,26 +16,29 @@
             </label>
             <button type="submit" class="search-submit"><?php echo esc_html_x('Search', 'submit button'); ?></button>
           </form>
-        </div>
-      </div>
-      <div class="grid lg:grid-cols-3 gap-sp-4">
-        <?php
-        $terms = get_terms(array(
-          'taxonomy' => 'category',
-          'hide_empty' => false,
-        ));
-        // var_dump($terms);
-        foreach ($terms as $term) : ?>
-          <div class="relative flex flex-col rounded-md gap-sp-4 bg-purple-gradient-end p-sp-5">
-            <div>
-              <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/person.svg'); ?>" alt="icon of person">
-            </div>
-            <div class="flex items-center justify-between">
-              <h3 class="mb-0"><a href="<?= get_term_link($term->term_id); ?>" class="text-white stretched-link"><?= $term->name; ?></a></h3>
-              <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/arrow-left.svg'); ?>" alt="arrow icon" class="h-auto rotate-180 w-sp-6">
-            </div>
+          <div class="grid lg:grid-cols-2 gap-sp-4">
+            <?php
+            $terms = get_terms(array(
+              'taxonomy' => 'category',
+              'hide_empty' => false,
+            ));
+            foreach ($terms as $term) : ?>
+              <?php
+              // Skip term if is equal to current archive
+              if ($term->slug !== get_queried_object()->slug) :  ?>
+                <div class="relative flex flex-col rounded-md gap-sp-4 bg-purple-gradient-end p-sp-5">
+                  <div>
+                    <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/person.svg'); ?>" alt="icon of person">
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <h3 class="mb-0 text-h4"><a href="<?= get_term_link($term->term_id); ?>" class="text-white stretched-link"><?= $term->name; ?></a></h3>
+                    <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/arrow-left.svg'); ?>" alt="arrow icon" class="h-auto rotate-180 w-sp-6">
+                  </div>
+                </div>
+              <?php endif; ?>
+            <?php endforeach; ?>
           </div>
-        <?php endforeach; ?>
+        </div>
       </div>
     </div>
   </section>
