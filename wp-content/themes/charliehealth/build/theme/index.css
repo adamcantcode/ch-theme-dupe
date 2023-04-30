@@ -1406,6 +1406,10 @@ table {
   height: 0.75rem;
 }
 
+.h-\[150px\]{
+  height: 150px;
+}
+
 .h-\[25px\]{
   height: 25px;
 }
@@ -1727,6 +1731,11 @@ table {
 
 .border-b-2{
   border-bottom-width: 2px;
+}
+
+.border-card-border{
+  --tw-border-opacity: 1;
+  border-color: rgb(212 213 220 / var(--tw-border-opacity));
 }
 
 .border-light-blue{
@@ -2872,6 +2881,10 @@ table {
     display: none;
   }
 
+  .lg\:h-\[220px\]{
+    height: 220px;
+  }
+
   .lg\:h-auto{
     height: auto;
   }
@@ -2926,6 +2939,10 @@ table {
 
   .lg\:grid-cols-\[1fr\2c _2fr\]{
     grid-template-columns: 1fr 2fr;
+  }
+
+  .lg\:grid-cols-\[2fr\2c 1fr\]{
+    grid-template-columns: 2fr 1fr;
   }
 
   .lg\:flex-row{

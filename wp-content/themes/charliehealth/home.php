@@ -3,7 +3,7 @@
 <main id="primary" class="site-main lg:mt-[68px] mt-0">
   <section class="section bg-cream">
     <div class="container">
-      <div class="grid grid-cols-[2fr,1fr] mb-sp-12">
+      <div class="grid lg:grid-cols-[2fr,1fr] mb-sp-12">
         <div>
           <h1 class="text-h1-display-lg">The Library</h1>
           <p>Stay up to date on mental health research, wellness techniques, treatment services, and more.</p>
@@ -30,7 +30,7 @@
               <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/person.svg'); ?>" alt="icon of person">
             </div>
             <div class="flex items-center justify-between">
-              <h3 class="mb-0"><a href="<?= site_url($term->slug); ?>" class="text-white stretched-link lg:text-h3-lg text-h3"><?= $term->name; ?></a></h3>
+              <h3 class="mb-0"><a href="<?= site_url($term->slug); ?>" class="text-white stretched-link"><?= $term->name; ?></a></h3>
               <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/arrow-left.svg'); ?>" alt="arrow icon" class="h-auto rotate-180 w-sp-6">
             </div>
           </div>
@@ -143,7 +143,7 @@
   </section>
   <section id="postsContainer" class="section">
     <div class="container">
-      <h2>Latest from the Library</h2>
+      <h2>Latest</h2>
       <div class="grid lg:grid-cols-3 transition-all duration-300 scale-[0.99] opacity-0 posts-container gap-x-sp-8 gap-y-sp-10 mb-sp-10">
       </div>
       <div class="pagination-container"></div>
@@ -158,6 +158,21 @@
     <div class="container">
       <h2>Research</h2>
       [research]
+    </div>
+  </section>
+  <section class="section-bottom">
+    <div class="container">
+      <?= do_blocks('<!-- wp:acf/divider-block {"name":"acf/divider-block"} /-->'); ?>
+    </div>
+  </section>
+  <section class="section-horizontal">
+    <div class="container">
+      <?= do_blocks('<!-- wp:acf/pre-footer-cta-block {"name":"acf/pre-footer-cta-block"} /-->'); ?>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container-sm">
+      <?= do_blocks('<!-- wp:block {"ref":458} /-->'); ?>
     </div>
   </section>
 </main>
