@@ -71,6 +71,9 @@
     & > {
       a {
         @apply no-underline;
+        color: inherit;
+        font-size: inherit;
+        line-height: inherit;
       }
     }
   }

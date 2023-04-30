@@ -471,6 +471,9 @@ h1,
 
 h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a{
   text-decoration-line: none;
+        color: inherit;
+        font-size: inherit;
+        line-height: inherit;
 }
 
 p,
@@ -1276,6 +1279,10 @@ table {
   grid-column: span 3 / span 3;
 }
 
+.m-0{
+  margin: 0px;
+}
+
 .m-sp-4{
   margin: 1rem;
 }
@@ -1399,10 +1406,6 @@ table {
   height: 0.75rem;
 }
 
-.h-\[150px\]{
-  height: 150px;
-}
-
 .h-\[25px\]{
   height: 25px;
 }
@@ -1524,19 +1527,8 @@ table {
   flex-grow: 1;
 }
 
-.translate-x-sp-2{
-  --tw-translate-x: 0.5rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .rotate-180{
   --tw-rotate: 180deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.scale-90{
-  --tw-scale-x: .9;
-  --tw-scale-y: .9;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1642,6 +1634,10 @@ table {
   gap: 0.5rem;
 }
 
+.gap-sp-3{
+  gap: 0.75rem;
+}
+
 .gap-sp-4{
   gap: 1rem;
 }
@@ -1731,11 +1727,6 @@ table {
 
 .border-b-2{
   border-bottom-width: 2px;
-}
-
-.border-card-border{
-  --tw-border-opacity: 1;
-  border-color: rgb(212 213 220 / var(--tw-border-opacity));
 }
 
 .border-light-blue{
@@ -2004,36 +1995,6 @@ table {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
-}
-
-.transition-opacity{
-  transition-property: opacity;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.delay-\[0\]{
-  transition-delay: 0;
-}
-
-.delay-\[100\]{
-  transition-delay: 100;
-}
-
-.delay-\[150\]{
-  transition-delay: 150;
-}
-
-.delay-\[200\]{
-  transition-delay: 200;
-}
-
-.delay-\[250\]{
-  transition-delay: 250;
-}
-
-.delay-\[50\]{
-  transition-delay: 50;
 }
 
 .duration-300{
@@ -2911,10 +2872,6 @@ table {
     display: none;
   }
 
-  .lg\:h-\[220px\]{
-    height: 220px;
-  }
-
   .lg\:h-auto{
     height: auto;
   }
@@ -2941,6 +2898,10 @@ table {
 
   .lg\:grid-flow-col{
     grid-auto-flow: column;
+  }
+
+  .lg\:grid-flow-dense{
+    grid-auto-flow: dense;
   }
 
   .lg\:grid-cols-2{
@@ -2989,6 +2950,10 @@ table {
 
   .lg\:gap-sp-16{
     gap: 6rem;
+  }
+
+  .lg\:gap-sp-6{
+    gap: 1.5rem;
   }
 
   .lg\:gap-sp-8{
