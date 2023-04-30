@@ -1,4 +1,8 @@
-import { pagintion } from 'paginationjs';
+import { pagination } from 'paginationjs';
+import { gsap } from 'gsap';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+
+gsap.registerPlugin(ScrollToPlugin);
 
 // import styles bundle
 // import 'paginationjs/dist/pagination.css';
@@ -10,7 +14,7 @@ export default function ajaxPagination() {
   const postsContainer = document.querySelector('.pagination-container');
 
   // Set the number of posts to display per page
-  var postsPerPage = 3;
+  var postsPerPage = 6;
 
   // Initialize the Pagination.js plugin
   jQuery('.pagination-container').pagination({
@@ -47,7 +51,7 @@ export default function ajaxPagination() {
     <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
   </svg>`,
     callback: function (pageNumber) {
-      jQuery('.posts-container').addClass('opacity-0');
+      jQuery('.posts-container').addClass('opacity-0 scale-[0.99]');
       // When the user clicks on a page number, fetch the corresponding posts using the REST API
       // var offset = (pageNumber - 1) * postsPerPage;
       fetch(`/wp-json/wp/v2/posts?page=${pageNumber}&per_page=${postsPerPage}`)
@@ -68,8 +72,28 @@ export default function ajaxPagination() {
             </div>`;
           });
           jQuery('.posts-container').html(html);
-          jQuery('.posts-container').removeClass('opacity-0');
+          jQuery('.posts-container').removeClass('opacity-0 scale-[0.99]');
         });
     },
+    afterPageOnClick: function () {
+      scollToPostsContainer();
+    },
+    afterNextOnClick: function () {
+      scollToPostsContainer();
+    },
+    afterPreviousOnClick: function () {
+      scollToPostsContainer();
+    },
   });
+  const scollToPostsContainer = () => {
+    gsap.to(window, {
+      duration: 1,
+      ease: 'Power2.easeInOut',
+      scrollTo: '#postsContainer',
+      scrollTo: {
+        y: '#postsContainer',
+        offsetY: (self) => document.querySelector('header').offsetHeight,
+      },
+    });
+  };
 }

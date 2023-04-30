@@ -14,7 +14,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var paginationjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! paginationjs */ "./node_modules/paginationjs/dist/pagination.js");
 /* harmony import */ var paginationjs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(paginationjs__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollToPlugin__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap/ScrollToPlugin */ "./node_modules/gsap/ScrollToPlugin.js");
 
+
+
+gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.registerPlugin(gsap_ScrollToPlugin__WEBPACK_IMPORTED_MODULE_2__.ScrollToPlugin);
 
 // import styles bundle
 // import 'paginationjs/dist/pagination.css';
@@ -26,7 +31,7 @@ function ajaxPagination() {
   const postsContainer = document.querySelector('.pagination-container');
 
   // Set the number of posts to display per page
-  var postsPerPage = 3;
+  var postsPerPage = 6;
 
   // Initialize the Pagination.js plugin
   jQuery('.pagination-container').pagination({
@@ -63,7 +68,7 @@ function ajaxPagination() {
     <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
   </svg>`,
     callback: function (pageNumber) {
-      jQuery('.posts-container').addClass('opacity-0');
+      jQuery('.posts-container').addClass('opacity-0 scale-[0.99]');
       // When the user clicks on a page number, fetch the corresponding posts using the REST API
       // var offset = (pageNumber - 1) * postsPerPage;
       fetch(`/wp-json/wp/v2/posts?page=${pageNumber}&per_page=${postsPerPage}`).then(function (response) {
@@ -82,10 +87,30 @@ function ajaxPagination() {
             </div>`;
         });
         jQuery('.posts-container').html(html);
-        jQuery('.posts-container').removeClass('opacity-0');
+        jQuery('.posts-container').removeClass('opacity-0 scale-[0.99]');
       });
+    },
+    afterPageOnClick: function () {
+      scollToPostsContainer();
+    },
+    afterNextOnClick: function () {
+      scollToPostsContainer();
+    },
+    afterPreviousOnClick: function () {
+      scollToPostsContainer();
     }
   });
+  const scollToPostsContainer = () => {
+    gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.to(window, {
+      duration: 1,
+      ease: 'Power2.easeInOut',
+      scrollTo: '#postsContainer',
+      scrollTo: {
+        y: '#postsContainer',
+        offsetY: self => document.querySelector('header').offsetHeight
+      }
+    });
+  };
 }
 
 /***/ }),
