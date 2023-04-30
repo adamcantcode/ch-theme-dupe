@@ -20,15 +20,21 @@ export default function ajaxPagination() {
       // Loop through each post and output its title and content
       jQuery('.posts-container').pagination({
         dataSource: posts,
-        pageSize: 1,
+        pageSize: 3,
         pageRange: 1,
         callback: function (data, pagination) {
-          var dataHtml = '<ul>';
+          var dataHtml = '';
           jQuery.each(data, function (index, item) {
             console.log(item);
-            dataHtml += '<li>' + item.title.rendered + '</li>';
+            dataHtml += `<div class="relative grid overflow-hidden border rounded-sm border-card-border">
+              <img src="https://images.placeholders.dev/?width=800&height=600&text=FPO" alt="" class="object-cover lg:h-[220px] h-[150px] w-full">
+              <div class="grid p-sp-4">
+                <h3><a href="${item.link}" class="stretched-link lg:text-h3-lg text-h3">${item.title.rendered}</a></h3>
+                <h5>author</h5>
+                <div>tags tags</div>
+              </div>
+            </div>`;
           });
-          dataHtml += '</ul>';
           jQuery('.posts-data-container').html(dataHtml);
         },
       });

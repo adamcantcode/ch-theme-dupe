@@ -1415,6 +1415,10 @@ table {
   height: 100%;
 }
 
+.h-\[150px\]{
+  height: 150px;
+}
+
 .max-h-0{
   max-height: 0px;
 }
@@ -1642,6 +1646,15 @@ table {
   row-gap: 6rem;
 }
 
+.gap-x-sp-8{
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+}
+
+.gap-y-sp-10{
+  row-gap: 2.5rem;
+}
+
 .self-start{
   align-self: flex-start;
 }
@@ -1702,6 +1715,11 @@ table {
 .border-light-blue{
   --tw-border-opacity: 1;
   border-color: rgb(243 244 249 / var(--tw-border-opacity));
+}
+
+.border-card-border{
+  --tw-border-opacity: 1;
+  border-color: rgb(212 213 220 / var(--tw-border-opacity));
 }
 
 .border-b-card-border{
@@ -2822,6 +2840,10 @@ table {
 
   .lg\:h-auto{
     height: auto;
+  }
+
+  .lg\:h-\[220px\]{
+    height: 220px;
   }
 
   .lg\:max-h-full{

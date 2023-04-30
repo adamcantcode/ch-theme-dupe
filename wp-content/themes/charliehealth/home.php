@@ -151,7 +151,16 @@
   </section>
   <section class="section">
     <div class="container">
-      <div class="posts-data-container"></div>
+      <div class="grid grid-cols-3 posts-data-container gap-x-sp-8 gap-y-sp-10">
+        <!-- <div class="relative grid overflow-hidden border rounded-sm border-card-border">
+          <img src="https://images.placeholders.dev/?width=800&height=600&text=FPO" alt="" class="object-cover lg:h-[220px] h-[150px] w-full">
+          <div class="grid">
+            <h3><a href="${item.link}">${item.title.rendered}</a></h3>
+            <h5>author</h5>
+            <div>tags tags</div>
+          </div>
+        </div> -->
+      </div>
       <div class="posts-container"></div>
     </div>
   </section>
