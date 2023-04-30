@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   if (body.classList.contains('category')) {
     featuredBlogSlider();
-    // ajaxPagination();
+    ajaxPagination();
   }
   /**
    * needs to load last (or at least of TOC) in order for all links to be scrollable

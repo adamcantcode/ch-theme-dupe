@@ -8,10 +8,23 @@ gsap.registerPlugin(ScrollToPlugin);
 // import 'paginationjs/dist/pagination.css';
 
 export default function ajaxPagination() {
+  const bodyClasses = Array.from(document.body.classList);
   // Set the endpoint for the REST API
-  var endpoint = `${window.location.origin}/wp-json/wp/v2/posts`;
-  const postsDataContainer = document.querySelector('.posts-container');
-  const postsContainer = document.querySelector('.pagination-container');
+  let endpoint = `${window.location.origin}/wp-json/wp/v2/posts`;
+
+  if (bodyClasses.includes('category')) {
+    var endpointQuery = true;
+    var categories = bodyClasses.map((str) => str.replace('category-', ''));
+
+    categories.forEach(category => {
+      if(!isNaN(category)) {
+        var categoryID = category;
+        console.log(categoryID);
+        endpoint += `?categories=${categoryID}`;
+      }
+    });
+  }
+  console.log(endpoint);
 
   // Set the number of posts to display per page
   var postsPerPage = 6;
@@ -20,7 +33,7 @@ export default function ajaxPagination() {
   jQuery('.pagination-container').pagination({
     dataSource: function (done) {
       // Get the total number of posts
-      fetch('/wp-json/wp/v2/posts')
+      fetch(endpoint)
         .then(function (response) {
           return response.headers.get('X-WP-Total');
         })
@@ -52,9 +65,12 @@ export default function ajaxPagination() {
   </svg>`,
     callback: function (pageNumber) {
       jQuery('.posts-container').addClass('opacity-0 scale-[0.99]');
-      // When the user clicks on a page number, fetch the corresponding posts using the REST API
-      // var offset = (pageNumber - 1) * postsPerPage;
-      fetch(`/wp-json/wp/v2/posts?page=${pageNumber}&per_page=${postsPerPage}`)
+      if (endpointQuery) {
+        endpoint += `&page=${pageNumber}&per_page=${postsPerPage}`;
+      } else {
+        endpoint += `?page=${pageNumber}&per_page=${postsPerPage}`;
+      }
+      fetch(`${endpoint}&page=${pageNumber}&per_page=${postsPerPage}`)
         .then(function (response) {
           return response.json();
         })

@@ -130,38 +130,17 @@
       </div>
     </div>
   </section>
-  <section class="section">
-    <div class="container">
-      <h2>Tag Spotlight</h2>
-      <div class="overflow-auto w-full max-w-[80rem]">
-        <div class="grid items-center grid-flow-col gap-sp-3 lg:gap-sp-6 lg:grid-cols-4 lg:grid-flow-dense">
-          <div class="w-[calc(100vw-2.5rem)] lg:w-full relative">
-            <div class="rounded-md p-sp-4 bg-cream">
-              <h3><a href="#" class="stretched-link">tag</a></h3>
-              <p class="m-0">Lorem ipsum dolor sit amet consectetur.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
   <section id="postsContainer" class="section">
     <div class="container">
       <h2>Latest</h2>
-      <div class="grid lg:grid-cols-3 transition-all duration-300 scale-[0.99] opacity-0 posts-container gap-x-sp-8 gap-y-sp-10 mb-sp-10">
+      <div class="grid lg:grid-cols-3">
+        <div></div>
+        <div class="col-span-2">
+          <div class="grid lg:grid-cols-2 transition-all duration-300 scale-[0.99] opacity-0 posts-container gap-x-sp-8 gap-y-sp-10 mb-sp-10">
+          </div>
+          <div class="pagination-container"></div>
+        </div>
       </div>
-      <div class="pagination-container"></div>
-    </div>
-  </section>
-  <section class="section">
-    <div class="container">
-      [newsletter]
-    </div>
-  </section>
-  <section class="section">
-    <div class="container">
-      <h2>Research</h2>
-      [research]
     </div>
   </section>
   <section class="section-bottom">
