@@ -3,9 +3,16 @@
 <main id="primary" class="site-main lg:mt-[68px] mt-0">
   <section class="section bg-cream">
     <div class="container">
-      <div class="grid lg:grid-cols-2 mb-sp-12 gap-sp-16">
+      <div>
+        <div class="breadcrumbs mb-sp-5 lg:mb-sp-6">
+          <a href="<?= get_post_type_archive_link('post'); ?>">The Library</a>
+          <span>/</span>
+          <span><?= single_term_title(); ?></span>
+        </div>
+      </div>
+      <div class="grid lg:grid-cols-2 mb-sp-12 gap-sp-12">
         <div>
-          <h1 class="lg:text-h1-display-lg text-h1-display"><?= get_the_archive_title(); ?></h1>
+          <h1><?= single_term_title(); ?></h1>
           <!-- <p>Stay up to date on mental health research, wellness techniques, treatment services, and more.</p> -->
         </div>
         <div class="grid gap-sp-16">
@@ -132,7 +139,7 @@
   </section>
   <section id="postsContainer" class="section">
     <div class="container">
-      <h2>Latest posts for <?= get_the_archive_title(); ?></h2>
+      <h2>Latest posts for <?= single_term_title(); ?></h2>
       <div class="grid lg:grid-cols-3 gap-sp-16">
         <div class="relative flex flex-col items-start gap-sp-4">
           <h6 class="absolute top-0 right-0"><a role="button" class="hidden js-reset">Reset all</a></h6>
@@ -144,7 +151,7 @@
           // var_dump($terms);
           foreach ($terms as $term) : ?>
             <h6 data-tag-id="<?= $term->term_id; ?>" class="inline-block mb-0 rounded-lg cursor-pointer js-tag-id bg-tag-gray p-sp-4"><?= $term->name; ?></h5>
-          <?php endforeach; ?>
+            <?php endforeach; ?>
         </div>
         <div class="col-span-2">
           <div class="grid lg:grid-cols-2 transition-all duration-300 scale-[0.99] opacity-0 posts-container gap-x-sp-8 gap-y-sp-10 mb-sp-10">
