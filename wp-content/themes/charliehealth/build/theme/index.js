@@ -23,12 +23,11 @@ gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.registerPlugin(gsap_ScrollToPlugin__WEBPA
 function ajaxPagination() {
   const initPagination = tagID => {
     const bodyClasses = Array.from(document.body.classList);
-    const postsPerPage = 1;
-    var [endpoint, endpointQuery] = getEndpoint(bodyClasses, tagID);
-    renderPagination(postsPerPage, endpoint, endpointQuery, tagID);
+    const postsPerPage = 6;
+    var [endpoint] = getEndpoint(bodyClasses, tagID);
+    renderPagination(postsPerPage, endpoint, tagID);
   };
-  const renderPagination = (postsPerPage, endpoint, endpointQuery, tagID) => {
-    console.log('render:', tagID);
+  const renderPagination = (postsPerPage, endpoint, tagID) => {
     jQuery('.pagination-container').pagination({
       dataSource: function (done) {
         fetch(endpoint).then(function (response) {
@@ -63,9 +62,7 @@ function ajaxPagination() {
         const bodyClasses = Array.from(document.body.classList);
         var [endpoint, endpointQuery] = getEndpoint(bodyClasses, tagID);
         if (endpointQuery) {
-          console.log('befor endpoint:', endpoint);
           endpoint = `${endpoint}&page=${pageNumber}&per_page=${postsPerPage}`;
-          console.log('query endpoint:', endpoint);
         } else {
           endpoint = `${endpoint}?page=${pageNumber}&per_page=${postsPerPage}`;
         }
