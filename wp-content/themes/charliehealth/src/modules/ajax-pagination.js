@@ -4,33 +4,16 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
 gsap.registerPlugin(ScrollToPlugin);
 
-// import styles bundle
-// import 'paginationjs/dist/pagination.css';
-
 export default function ajaxPagination() {
   const initPagination = (tagID) => {
     const bodyClasses = Array.from(document.body.classList);
-    const postsPerPage = 6;
-    let endpoint = `${window.location.origin}/wp-json/wp/v2/posts`;
-
-    if (bodyClasses.includes('category')) {
-      var endpointQuery = true;
-      var categories = bodyClasses.map((str) => str.replace('category-', ''));
-
-      categories.forEach((category) => {
-        if (!isNaN(category)) {
-          var categoryID = category;
-          endpoint += `?categories=${categoryID}`;
-        }
-      });
-      if (tagID) {
-        endpoint += `&tags=${tagID}`;
-      }
-    }
-    renderPagination(postsPerPage, endpoint, endpointQuery);
+    const postsPerPage = 1;
+    var [endpoint, endpointQuery] = getEndpoint(bodyClasses, tagID);
+    renderPagination(postsPerPage, endpoint, endpointQuery, tagID);
   };
 
-  const renderPagination = (postsPerPage, endpoint, endpointQuery) => {
+  const renderPagination = (postsPerPage, endpoint,endpointQuery, tagID) => {
+    console.log('render:',tagID);
     jQuery('.pagination-container').pagination({
       dataSource: function (done) {
         fetch(endpoint)
@@ -64,12 +47,16 @@ export default function ajaxPagination() {
     </svg>`,
       callback: function (pageNumber) {
         jQuery('.posts-container').addClass('opacity-0 scale-[0.99]');
+        const bodyClasses = Array.from(document.body.classList);
+        var [endpoint, endpointQuery] = getEndpoint(bodyClasses, tagID);
         if (endpointQuery) {
-          endpoint += `&page=${pageNumber}&per_page=${postsPerPage}`;
+          console.log('befor endpoint:', endpoint);
+          endpoint = `${endpoint}&page=${pageNumber}&per_page=${postsPerPage}`;
+          console.log('query endpoint:', endpoint);
         } else {
-          endpoint += `?page=${pageNumber}&per_page=${postsPerPage}`;
+          endpoint = `${endpoint}?page=${pageNumber}&per_page=${postsPerPage}`;
         }
-        fetch(`${endpoint}&page=${pageNumber}&per_page=${postsPerPage}`)
+        fetch(endpoint)
           .then(function (response) {
             return response.json();
           })
@@ -125,7 +112,7 @@ export default function ajaxPagination() {
     tags.forEach((tag) => {
       tag.addEventListener('click', (e) => {
         var tagID = e.target.getAttribute('data-tag-id');
-        
+
         removeTagActive();
         e.target.classList.add('active');
         reset.classList.remove('hidden');
@@ -134,7 +121,7 @@ export default function ajaxPagination() {
       });
     });
 
-    if(reset) {
+    if (reset) {
       reset.addEventListener('click', (e) => {
         e.target.classList.add('hidden');
         removeTagActive();
@@ -142,6 +129,26 @@ export default function ajaxPagination() {
         scollToPostsContainer();
       });
     }
+  };
+
+  const getEndpoint = (bodyClasses, tagID) => {
+    let endpoint = `${window.location.origin}/wp-json/wp/v2/posts`;
+
+    if (bodyClasses.includes('category')) {
+      var endpointQuery = true;
+      var categories = bodyClasses.map((str) => str.replace('category-', ''));
+
+      categories.forEach((category) => {
+        if (!isNaN(category)) {
+          var categoryID = category;
+          endpoint += `?categories=${categoryID}`;
+        }
+      });
+      if (tagID) {
+        endpoint += `&tags=${tagID}`;
+      }
+    }
+    return [endpoint, endpointQuery, tagID];
   };
 
   termsClickHandler();
