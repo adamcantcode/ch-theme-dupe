@@ -26,7 +26,7 @@ $fullUrl = $protocol . $domain . $path;
           </div>
           <div class="">
             <h1 class="text-h2 font-heading-serif"><?= get_the_title(); ?></h1>
-            <p class="font-bold">Est. reading time: <span class="js-read-time">#</span> min.</p>
+            <p class="font-bold">Est. reading time: <span class="js-read-time">5</span> min.</p>
             <p>OCD is characterized by obsessions and compulsions, while anxiety disorders stem from anxious thoughts.</p>
             <p class="mb-0">By: <a href="#">Sarah Fielding</a></p>
             <p class="mb-0">Clinically Reviewed By: <a href="#">Don Gasparini Ph.D., M.A., CASAC</a></p>
