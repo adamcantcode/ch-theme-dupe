@@ -121,18 +121,33 @@ function ajaxPagination() {
       }
     });
   };
+  const removeTagActive = function () {
+    let tags = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document.querySelectorAll('.js-tag-id');
+    tags.forEach(tag => {
+      tag.classList.remove('active');
+    });
+  };
   const termsClickHandler = () => {
     var tags = document.querySelectorAll('.js-tag-id');
+    var reset = document.querySelector('.js-reset');
     tags.forEach(tag => {
       tag.addEventListener('click', e => {
-        tags.forEach(tag => {
-          tag.classList.remove('active');
-        });
         var tagID = e.target.getAttribute('data-tag-id');
+        removeTagActive();
         e.target.classList.add('active');
+        reset.classList.remove('hidden');
         initPagination(tagID);
+        scollToPostsContainer();
       });
     });
+    if (reset) {
+      reset.addEventListener('click', e => {
+        e.target.classList.add('hidden');
+        removeTagActive();
+        initPagination();
+        scollToPostsContainer();
+      });
+    }
   };
   termsClickHandler();
   initPagination();
