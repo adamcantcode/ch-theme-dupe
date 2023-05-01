@@ -134,7 +134,7 @@
     <div class="container">
       <h2>Latest</h2>
       <div class="grid lg:grid-cols-3">
-        <div>
+        <div class="flex flex-col items-start">
           <?php
           $terms = get_terms(array(
             'taxonomy' => 'post_tag',
@@ -142,7 +142,7 @@
           ));
           // var_dump($terms);
           foreach ($terms as $term) : ?>
-            <div data-tag-id="<?= $term->term_id; ?>" class="js-tag-id"><?= $term->name; ?></div>
+            <h6 data-tag-id="<?= $term->term_id; ?>" class="inline-block rounded-lg cursor-pointer js-tag-id bg-tag-gray p-sp-4"><?= $term->name; ?></h5>
           <?php endforeach; ?>
         </div>
         <div class="col-span-2">

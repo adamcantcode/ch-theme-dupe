@@ -1787,6 +1787,11 @@ table {
   background-color: rgb(234 218 255 / var(--tw-bg-opacity));
 }
 
+.bg-tag-gray{
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 247 247 / var(--tw-bg-opacity));
+}
+
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -2713,6 +2718,24 @@ table {
 
 .paginationjs-pages ul li a{
   cursor: pointer;
+}
+
+.js-tag-id{
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.js-tag-id:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(177 252 250 / var(--tw-bg-opacity));
+}
+
+.js-tag-id.active{
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 25 64 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .last\:mb-0:last-child{

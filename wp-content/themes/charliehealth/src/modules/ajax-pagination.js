@@ -20,7 +20,6 @@ export default function ajaxPagination() {
       categories.forEach((category) => {
         if (!isNaN(category)) {
           var categoryID = category;
-          console.log(categoryID);
           endpoint += `?categories=${categoryID}`;
         }
       });
@@ -28,14 +27,12 @@ export default function ajaxPagination() {
         endpoint += `&tags=${tagID}`;
       }
     }
-    console.log(endpoint);
     renderPagination(postsPerPage, endpoint, endpointQuery);
   };
 
   const renderPagination = (postsPerPage, endpoint, endpointQuery) => {
     jQuery('.pagination-container').pagination({
       dataSource: function (done) {
-        // Get the total number of posts
         fetch(endpoint)
           .then(function (response) {
             return response.headers.get('X-WP-Total');
@@ -49,12 +46,11 @@ export default function ajaxPagination() {
             for (var i = 1; i <= numPages; i++) {
               data.push(i);
             }
-            console.log(data);
             done(data);
           });
       },
-      pageSize: 1, // We only want to show one page number at a time
-      pageRange: 2, // We want to show two additional page numbers on either side of the current page
+      pageSize: 1,
+      pageRange: 2,
       ulClassName: 'items-center justify-center',
       prevText: `<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
       <rect width="50" height="50" rx="25" fill="#ffffff" />
@@ -78,7 +74,6 @@ export default function ajaxPagination() {
             return response.json();
           })
           .then(function (posts) {
-            // Create a string of HTML for each post, and append them to the posts-list div
             var html = '';
             posts.forEach(function (post) {
               html += `<div class="relative grid overflow-hidden border rounded-sm border-card-border">
@@ -122,14 +117,16 @@ export default function ajaxPagination() {
     var tags = document.querySelectorAll('.js-tag-id');
     tags.forEach((tag) => {
       tag.addEventListener('click', (e) => {
-        console.log(e.target);
+        tags.forEach((tag) => {
+          tag.classList.remove('active');
+        })
         var tagID = e.target.getAttribute('data-tag-id');
+        e.target.classList.add('active');
         initPagination(tagID);
       });
     });
   };
 
   termsClickHandler();
-
   initPagination();
 }
