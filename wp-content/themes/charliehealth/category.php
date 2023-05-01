@@ -134,7 +134,17 @@
     <div class="container">
       <h2>Latest</h2>
       <div class="grid lg:grid-cols-3">
-        <div></div>
+        <div>
+          <?php
+          $terms = get_terms(array(
+            'taxonomy' => 'post_tag',
+            'hide_empty' => false,
+          ));
+          // var_dump($terms);
+          foreach ($terms as $term) : ?>
+            <div data-tag-id="<?= $term->term_id; ?>" class="js-tag-id"><?= $term->name; ?></div>
+          <?php endforeach; ?>
+        </div>
         <div class="col-span-2">
           <div class="grid lg:grid-cols-2 transition-all duration-300 scale-[0.99] opacity-0 posts-container gap-x-sp-8 gap-y-sp-10 mb-sp-10">
           </div>
