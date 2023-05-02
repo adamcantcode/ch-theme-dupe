@@ -14,15 +14,15 @@ if (is_category('families-and-caregivers')) {
   <section class="section <?= $bgColor; ?>">
     <div class="container">
       <div>
-        <div class="breadcrumbs mb-sp-5 lg:mb-sp-6">
-          <a href="<?= get_post_type_archive_link('post'); ?>">The Library</a>
+        <div class="text-white breadcrumbs mb-sp-5 lg:mb-sp-6">
+          <a href="<?= get_post_type_archive_link('post'); ?>" class="text-white">The Library</a>
           <span>/</span>
           <span><?= single_term_title(); ?></span>
         </div>
       </div>
-      <div class="grid lg:grid-cols-2 mb-sp-12 gap-sp-12">
+      <div class="grid lg:grid-cols-2 gap-sp-12">
         <div>
-          <h1><?= single_term_title(); ?></h1>
+          <h1 class="text-white"><?= single_term_title(); ?></h1>
           <!-- <p>Stay up to date on mental health research, wellness techniques, treatment services, and more.</p> -->
         </div>
         <div class="grid gap-sp-16">
@@ -43,7 +43,16 @@ if (is_category('families-and-caregivers')) {
               <?php
               // Skip term if is equal to current archive
               if ($term->slug !== get_queried_object()->slug) :  ?>
-                <div class="relative flex flex-col rounded-md gap-sp-4 bg-purple-gradient-end p-sp-5">
+                <?php
+                if ($term->slug === 'families-and-caregivers') {
+                  $bgColor = 'bg-noise-orange';
+                } elseif ($term->slug === 'teens-and-young-adults') {
+                  $bgColor = 'bg-noise-purple';
+                } elseif ($term->slug === 'providers') {
+                  $bgColor = 'bg-noise-blue';
+                }
+                ?>
+                <div class="relative flex flex-col rounded-md gap-sp-4 p-sp-5 <?= $bgColor; ?>">
                   <div>
                     <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/person.svg'); ?>" alt="icon of person">
                   </div>
