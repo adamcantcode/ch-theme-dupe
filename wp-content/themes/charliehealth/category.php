@@ -1,7 +1,17 @@
 <?php get_header(); ?>
+<?php
+$bgColor = '';
+if (is_category('families-and-caregivers')) {
+  $bgColor = 'bg-noise-orange';
+} elseif (is_category('teens-and-young-adults')) {
+  $bgColor = 'bg-noise-purple';
+} elseif (is_category('providers')) {
+  $bgColor = 'bg-noise-blue';
+}
+?>
 
 <main id="primary" class="site-main lg:mt-[68px] mt-0">
-  <section class="section bg-cream">
+  <section class="section <?= $bgColor; ?>">
     <div class="container">
       <div>
         <div class="breadcrumbs mb-sp-5 lg:mb-sp-6">
