@@ -1626,6 +1626,10 @@ table {
   gap: 0.25rem;
 }
 
+.gap-sp-12{
+  gap: 3rem;
+}
+
 .gap-sp-16{
   gap: 6rem;
 }
@@ -1648,10 +1652,6 @@ table {
 
 .gap-sp-8{
   gap: 2rem;
-}
-
-.gap-sp-12{
-  gap: 3rem;
 }
 
 .gap-x-4{
@@ -3051,13 +3051,6 @@ table {
 
   .lg\:text-\[2\.5rem\]{
     font-size: 2.5rem;
-  }
-
-  .lg\:text-h1-display-lg{
-    font-size: 4rem;
-    line-height: 4.2rem;
-    letter-spacing: 0;
-    font-weight: 400;
   }
 
   .lg\:text-h1-lg{
