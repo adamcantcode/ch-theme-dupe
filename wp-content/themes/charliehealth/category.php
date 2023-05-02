@@ -154,7 +154,7 @@
             <?php endforeach; ?>
         </div>
         <div class="col-span-2">
-          <div class="grid lg:grid-cols-2 transition-all duration-300 scale-[0.99] opacity-0 posts-container gap-x-sp-8 gap-y-sp-10 mb-sp-10">
+          <div class="grid lg:grid-cols-2 posts-container gap-x-sp-8 gap-y-sp-10 mb-sp-10">
           </div>
           <div class="pagination-container"></div>
         </div>

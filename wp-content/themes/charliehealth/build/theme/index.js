@@ -46,7 +46,6 @@ function ajaxPagination() {
       },
       pageSize: 6,
       pageRange: 2,
-      // totalNumber: 9,
       ulClassName: 'items-center justify-center',
       prevText: `<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
       <rect width="50" height="50" rx="25" fill="#ffffff" />
@@ -61,7 +60,7 @@ function ajaxPagination() {
       callback: function (data, pagination) {
         console.log(data);
         console.log(pagination);
-        jQuery('.posts-container').addClass('opacity-0 scale-[0.99]');
+        console.log('remove?');
         var html = '';
         jQuery.each(data, function (index, post) {
           html += `<div class="relative grid overflow-hidden border rounded-sm border-card-border">
@@ -73,11 +72,13 @@ function ajaxPagination() {
                 </div>
               </div>`;
           jQuery('.posts-container').html(html);
-          jQuery('.posts-container').removeClass('opacity-0 scale-[0.99]');
         });
       },
       afterPageOnClick: function () {
         scollToPostsContainer();
+      },
+      beforeNextOnClick: function () {
+        console.log('before');
       },
       afterNextOnClick: function () {
         scollToPostsContainer();
