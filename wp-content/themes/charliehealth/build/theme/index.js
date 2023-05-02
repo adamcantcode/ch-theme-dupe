@@ -62,9 +62,9 @@ function ajaxPagination() {
         const bodyClasses = Array.from(document.body.classList);
         var [endpoint, endpointQuery] = getEndpoint(bodyClasses, tagID);
         if (endpointQuery) {
-          endpoint = `${endpoint}&page=${pageNumber}&per_page=${postsPerPage}`;
+          endpoint += `&page=${pageNumber}&per_page=${postsPerPage}`;
         } else {
-          endpoint = `${endpoint}?page=${pageNumber}&per_page=${postsPerPage}`;
+          endpoint += `?page=${pageNumber}&per_page=${postsPerPage}`;
         }
         fetch(endpoint).then(function (response) {
           return response.json();
@@ -136,8 +136,9 @@ function ajaxPagination() {
   };
   const getEndpoint = (bodyClasses, tagID) => {
     let endpoint = `${window.location.origin}/wp-json/wp/v2/posts`;
+    let endpointQuery = false;
     if (bodyClasses.includes('category')) {
-      var endpointQuery = true;
+      endpointQuery = true;
       var categories = bodyClasses.map(str => str.replace('category-', ''));
       categories.forEach(category => {
         if (!isNaN(category)) {
@@ -148,6 +149,11 @@ function ajaxPagination() {
       if (tagID) {
         endpoint += `&tags=${tagID}`;
       }
+    } else if (bodyClasses.includes('page-template-searchpage')) {
+      const params = new URLSearchParams(window.location.search);
+      const query = params.get('query');
+      endpointQuery = true;
+      endpoint += `?search=${query}`;
     }
     return [endpoint, endpointQuery, tagID];
   };
@@ -22033,6 +22039,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   if (body.classList.contains('category')) {
     (0,_modules_featured_blog_slider__WEBPACK_IMPORTED_MODULE_10__["default"])();
+    (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_11__["default"])();
+  }
+  if (body.classList.contains('page-template-searchpage')) {
     (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_11__["default"])();
   }
   /**

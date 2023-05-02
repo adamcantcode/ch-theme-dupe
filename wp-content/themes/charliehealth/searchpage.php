@@ -6,42 +6,20 @@ Template Name: Search Page
 <?php get_header(); ?>
 
 <main id="primary" class="site-main lg:mt-[68px] mt-0">
-  <section class="section">
+  <section id="postsContainer" class="section">
     <div class="container">
-      <?php
-      // Set the query to get 'query', otherwise it's looking for 's'
-      $search_query = $_GET['query'];
-
-      // Set the arguments for the query
-      $args = array(
-        'post_type' => 'post',
-        'posts_per_page' => 10,
-        's' => $search_query
-      );
-
-      // Run the query
-      $search_results = new WP_Query($args);
-
-      // Check if any posts were found
-      if ($search_results->have_posts()) :
-
-        // Loop through the posts and display them
-        while ($search_results->have_posts()) : $search_results->the_post(); ?>
-          <div class="flex">
-            <a href="<?= get_the_permalink(); ?>"><?= get_the_title(); ?></a>
+      <h2>Latest</h2>
+      <div class="grid lg:grid-cols-3 transition-all duration-300 scale-[0.99] opacity-0 posts-container gap-x-sp-8 gap-y-sp-10 mb-sp-10">
+        <!-- <div class="relative grid overflow-hidden border rounded-sm border-card-border">
+          <img src="https://images.placeholders.dev/? width=800&height=600&text=FPO" alt="" class="object-cover lg:h-[220px] h-[150px] w-full">
+          <div class="grid p-sp-4">
+            <h3><a href="${post.link}" class="stretched-link">${post.title.rendered}</a></h3>
+            <h5>author</h5>
+            <div>tags tags</div>
           </div>
-      <?php endwhile;
-
-      else :
-
-        // If no posts were found, display a message here
-        echo 'No search results found.';
-
-      endif;
-
-      // Reset the query
-      wp_reset_query();
-      ?>
+        </div> -->
+      </div>
+      <div class="pagination-container"></div>
     </div>
   </section>
 </main>

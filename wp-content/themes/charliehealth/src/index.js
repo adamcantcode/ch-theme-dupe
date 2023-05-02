@@ -41,6 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
     featuredBlogSlider();
     ajaxPagination();
   }
+  if (body.classList.contains('page-template-searchpage')) {
+    ajaxPagination();
+  }
   /**
    * needs to load last (or at least of TOC) in order for all links to be scrollable
    */
