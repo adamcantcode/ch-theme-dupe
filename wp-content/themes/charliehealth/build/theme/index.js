@@ -28,6 +28,7 @@ function ajaxPagination() {
     renderPagination(postsPerPage, endpoint, tagID);
   };
   const renderPagination = (postsPerPage, endpoint, tagID) => {
+    console.log(endpoint);
     jQuery('.pagination-container').pagination({
       dataSource: function (done) {
         fetch(endpoint).then(function (response) {
@@ -66,6 +67,7 @@ function ajaxPagination() {
         } else {
           endpoint = `${endpoint}?page=${pageNumber}&per_page=${postsPerPage}`;
         }
+        console.log(endpoint);
         fetch(endpoint).then(function (response) {
           return response.json();
         }).then(function (posts) {
@@ -121,6 +123,7 @@ function ajaxPagination() {
         removeTagActive();
         e.target.classList.add('active');
         reset.classList.remove('opacity-0', 'invisible');
+        // jQuery('.pagination-container').pagination.destroy;
         initPagination(tagID);
         scollToPostsContainer();
       });
@@ -129,6 +132,7 @@ function ajaxPagination() {
       reset.addEventListener('click', e => {
         e.target.classList.add('opacity-0', 'invisible');
         removeTagActive();
+        // jQuery('.pagination-container').pagination.destroy;
         initPagination();
         scollToPostsContainer();
       });

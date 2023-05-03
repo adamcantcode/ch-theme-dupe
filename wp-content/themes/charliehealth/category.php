@@ -167,7 +167,14 @@ if (is_category('families-and-caregivers')) {
   </section>
   <section class="section-horizontal">
     <div class="container">
-      <?= do_blocks('<!-- wp:acf/pre-footer-cta-block {"name":"acf/pre-footer-cta-block"} /-->'); ?>
+      <?php // echo do_blocks('<!-- wp:acf/pre-footer-cta-block {"name":"acf/pre-footer-cta-block"} /-->'); 
+      ?>
+      <div class="rounded-md border-gradient">
+        <div class="items-center justify-between lg:flex p-sp-8">
+          <h4 class="lg:mb-0">Curious about something we haven’t covered?<br>Write to us and let us know.</h4>
+          <p class="mb-0">Write to us at<br><a href="mailto:library@charliehealth.com">library@charliehealth.com</a></p>
+        </div>
+      </div>
     </div>
   </section>
   <section class="section">
