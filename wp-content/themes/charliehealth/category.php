@@ -137,7 +137,11 @@ if (is_category('families-and-caregivers')) {
       <h2>Latest posts for <?= single_term_title(); ?></h2>
       <div class="grid lg:grid-cols-3 gap-sp-16">
         <div class="relative flex flex-col items-start gap-sp-4">
-          <h6 class="absolute top-0 right-0"><a role="button" class="hidden js-reset">Reset all</a></h6>
+          <h6 class="absolute top-0 right-0 group">
+            <a role="button" class="flex items-center invisible transition-all duration-300 opacity-0 js-reset">
+              <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/reset.svg'); ?>" alt="reset filters icon" class="transition-all duration-300 pointer-events-none mr-sp-2 w-sp-5 group-hover:rotate-45"><span class="pointer-events-none">Reset</span>
+            </a>
+          </h6>
           <?php
           $terms = get_terms(array(
             'taxonomy' => 'post_tag',

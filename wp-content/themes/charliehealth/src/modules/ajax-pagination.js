@@ -112,7 +112,7 @@ export default function ajaxPagination() {
 
         removeTagActive();
         e.target.classList.add('active');
-        reset.classList.remove('hidden');
+        reset.classList.remove('opacity-0', 'invisible');
         initPagination(tagID);
         scollToPostsContainer();
       });
@@ -120,7 +120,7 @@ export default function ajaxPagination() {
 
     if (reset) {
       reset.addEventListener('click', (e) => {
-        e.target.classList.add('hidden');
+        e.target.classList.add('opacity-0', 'invisible');
         removeTagActive();
         initPagination();
         scollToPostsContainer();
