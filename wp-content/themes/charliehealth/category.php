@@ -1,27 +1,37 @@
 <?php get_header(); ?>
+<?php
+$bgColor = '';
+if (is_category('families-and-caregivers')) {
+  $bgColor = 'bg-noise-orange';
+} elseif (is_category('teens-and-young-adults')) {
+  $bgColor = 'bg-noise-purple';
+} elseif (is_category('providers')) {
+  $bgColor = 'bg-noise-blue';
+}
+?>
 
 <main id="primary" class="site-main lg:mt-[68px] mt-0">
-  <section class="section bg-cream">
+  <section class="section <?= $bgColor; ?>">
     <div class="container">
       <div>
-        <div class="breadcrumbs mb-sp-5 lg:mb-sp-6">
-          <a href="<?= get_post_type_archive_link('post'); ?>">The Library</a>
+        <div class="text-white breadcrumbs mb-sp-5 lg:mb-sp-6">
+          <a href="<?= get_post_type_archive_link('post'); ?>" class="text-white">The Library</a>
           <span>/</span>
           <span><?= single_term_title(); ?></span>
         </div>
       </div>
-      <div class="grid lg:grid-cols-2 mb-sp-12 gap-sp-12">
+      <div class="grid lg:grid-cols-2 gap-sp-12">
         <div>
-          <h1><?= single_term_title(); ?></h1>
+          <h1 class="text-white"><?= single_term_title(); ?></h1>
           <!-- <p>Stay up to date on mental health research, wellness techniques, treatment services, and more.</p> -->
         </div>
         <div class="grid gap-sp-16">
-          <form role="search" method="get" class="search-form" action="<?php echo esc_url(site_url('/search')); ?>">
+          <form role="search" method="get" class="relative search-form" action="<?php echo esc_url(site_url('/search')); ?>">
             <label>
               <span class="screen-reader-text"><?php echo _x('Search for:', 'label'); ?></span>
-              <input type="search" class="search-field" placeholder="<?php echo esc_attr_x('Search &hellip;', 'placeholder'); ?>" value="<?php echo get_search_query(); ?>" name="query" />
+              <input type="search" class="w-full border-none rounded-sm outline-none search-field h-sp-12 lg:h-sp-14 text-h3 lg:text-h3-lg py-sp-4 px-sp-6 focus-visible:border-none" placeholder="<?php echo esc_attr_x('Search &hellip;', 'placeholder'); ?>" value="<?php echo get_search_query(); ?>" name="query" />
             </label>
-            <button type="submit" class="search-submit"><?php echo esc_html_x('Search', 'submit button'); ?></button>
+            <button type="submit" class="absolute top-0 right-0 flex items-center justify-center h-full transition-colors duration-300 bg-white rounded-sm search-submit aspect-square hover:bg-lightest-purple"><img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/search.svg'); ?>" alt="" srcset=""></button>
           </form>
           <div class="grid lg:grid-cols-2 gap-sp-4">
             <?php
@@ -33,7 +43,16 @@
               <?php
               // Skip term if is equal to current archive
               if ($term->slug !== get_queried_object()->slug) :  ?>
-                <div class="relative flex flex-col rounded-md gap-sp-4 bg-purple-gradient-end p-sp-5">
+                <?php
+                if ($term->slug === 'families-and-caregivers') {
+                  $bgColor = 'bg-noise-orange';
+                } elseif ($term->slug === 'teens-and-young-adults') {
+                  $bgColor = 'bg-noise-purple';
+                } elseif ($term->slug === 'providers') {
+                  $bgColor = 'bg-noise-blue';
+                }
+                ?>
+                <div class="relative flex flex-col rounded-md gap-sp-4 p-sp-5 <?= $bgColor; ?>">
                   <div>
                     <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/person.svg'); ?>" alt="icon of person">
                   </div>
@@ -53,7 +72,7 @@
     <div class="container">
       <h2>Featured</h2>
       <div>
-        <div class="relative swiper swiper-featured-blog">
+        <div class="relative swiper swiper-featured-blog h-[400px]">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <div class="relative grid overflow-hidden rounded-md lg:grid-cols-2">
@@ -64,7 +83,7 @@
                   </div>
                   <a href="#" class="text-white stretched-link">Read more</a>
                 </div>
-                <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 object-cover lg:order-2">
+                <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 object-cover lg:order-2 h-[400px] w-full">
               </div>
             </div>
             <div class="swiper-slide">
@@ -76,7 +95,7 @@
                   </div>
                   <a href="#" class="text-white stretched-link">Read more</a>
                 </div>
-                <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 object-cover lg:order-2">
+                <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 object-cover lg:order-2 h-[400px] w-full">
               </div>
             </div>
             <div class="swiper-slide">
@@ -88,31 +107,7 @@
                   </div>
                   <a href="#" class="text-white stretched-link">Read more</a>
                 </div>
-                <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 object-cover lg:order-2">
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="relative grid overflow-hidden rounded-md lg:grid-cols-2">
-                <div class="grid content-between order-2 bg-purple-gradient-start lg:p-sp-8 p-sp-4 lg:order-1">
-                  <div>
-                    <div>{grid}</div>
-                    <h3 class="text-white text-h1 lg:text-h1-lg">TITLE</h3>
-                  </div>
-                  <a href="#" class="text-white stretched-link">Read more</a>
-                </div>
-                <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 object-cover lg:order-2">
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="relative grid overflow-hidden rounded-md lg:grid-cols-2">
-                <div class="grid content-between order-2 bg-purple-gradient-start lg:p-sp-8 p-sp-4 lg:order-1">
-                  <div>
-                    <div>{grid}</div>
-                    <h3 class="text-white text-h1 lg:text-h1-lg">TITLE</h3>
-                  </div>
-                  <a href="#" class="text-white stretched-link">Read more</a>
-                </div>
-                <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 object-cover lg:order-2">
+                <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 object-cover lg:order-2 h-[400px] w-full">
               </div>
             </div>
           </div>
@@ -142,7 +137,11 @@
       <h2>Latest posts for <?= single_term_title(); ?></h2>
       <div class="grid lg:grid-cols-3 gap-sp-16">
         <div class="relative flex flex-col items-start gap-sp-4">
-          <h6 class="absolute top-0 right-0"><a role="button" class="hidden js-reset">Reset all</a></h6>
+          <h6 class="absolute top-0 right-0 group">
+            <a role="button" class="flex items-center invisible transition-all duration-300 opacity-0 js-reset">
+              <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/reset.svg'); ?>" alt="reset filters icon" class="transition-all duration-300 pointer-events-none mr-sp-2 w-sp-5 group-hover:rotate-45"><span class="pointer-events-none">Reset</span>
+            </a>
+          </h6>
           <?php
           $terms = get_terms(array(
             'taxonomy' => 'post_tag',
@@ -168,7 +167,14 @@
   </section>
   <section class="section-horizontal">
     <div class="container">
-      <?= do_blocks('<!-- wp:acf/pre-footer-cta-block {"name":"acf/pre-footer-cta-block"} /-->'); ?>
+      <?php // echo do_blocks('<!-- wp:acf/pre-footer-cta-block {"name":"acf/pre-footer-cta-block"} /-->'); 
+      ?>
+      <div class="rounded-md border-gradient">
+        <div class="items-center justify-between lg:flex p-sp-8">
+          <h4 class="lg:mb-0">Curious about something we haven’t covered?<br>Write to us and let us know.</h4>
+          <p class="mb-0">Write to us at<br><a href="mailto:library@charliehealth.com">library@charliehealth.com</a></p>
+        </div>
+      </div>
     </div>
   </section>
   <section class="section">
