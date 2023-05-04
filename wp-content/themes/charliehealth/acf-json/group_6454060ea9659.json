@@ -1,6 +1,6 @@
 {
     "key": "group_6454060ea9659",
-    "title": "Blog Posts",
+    "title": "Post Information",
     "fields": [
         {
             "key": "field_6454060ee7dc2",
@@ -161,5 +161,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1683232178
+    "modified": 1683233454
 }
