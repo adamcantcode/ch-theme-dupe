@@ -5,29 +5,30 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 gsap.registerPlugin(ScrollToPlugin);
 
 export default function ajaxPagination() {
-  const initPagination = (tagID) => {
+  const initPagination = () => {
     const bodyClasses = Array.from(document.body.classList);
-    const postsPerPage = 6;
-    var [endpoint] = getEndpoint(bodyClasses, tagID);
-    renderPagination(postsPerPage, endpoint, tagID);
+    var [endpoint] = getEndpoint(bodyClasses);
+    renderPagination(endpoint);
   };
 
-  const renderPagination = (postsPerPage, endpoint, tagID) => {
+  const renderPagination = (endpoint) => {
+    console.log(endpoint);
     jQuery('.pagination-container').pagination({
       dataSource: function (done) {
+        this.totalNumber = 90;
+        console.log(this.totalNumber);
         // Make an AJAX request to the WordPress REST API to get the posts
         jQuery.ajax({
           url: endpoint,
           data: {
-            // per_page: 6, // Change this to the number of posts to display per page
+            per_page: 6, // Change this to the number of posts to display per page
             page: this.pageNumber,
           },
           success: function (data, textStatus, request) {
-            const totalItems = parseInt(
-              request.getResponseHeader('X-WP-Total')
-            );
-            console.log(totalItems);
-            done(data, totalItems);
+            // const totalItems = parseInt(
+            //   request.getResponseHeader('X-WP-Total')
+            // );
+            done(data);
           },
         });
       },
@@ -45,9 +46,6 @@ export default function ajaxPagination() {
       <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
     </svg>`,
       callback: function (data, pagination) {
-        console.log(data);
-        console.log(pagination);
-        console.log('remove?');
         var html = '';
         jQuery.each(data, function (index, post) {
           html += `<div class="relative grid overflow-hidden border rounded-sm border-card-border">
@@ -65,7 +63,7 @@ export default function ajaxPagination() {
         scollToPostsContainer();
       },
       beforeNextOnClick: function () {
-        console.log('before');
+        scollToPostsContainer();
       },
       afterNextOnClick: function () {
         scollToPostsContainer();
@@ -143,7 +141,7 @@ export default function ajaxPagination() {
       endpointQuery = true;
       endpoint += `?search=${query}`;
     }
-    return [endpoint, endpointQuery, tagID];
+    return [endpoint, endpointQuery];
   };
 
   termsClickHandler();
