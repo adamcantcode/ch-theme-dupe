@@ -5,6 +5,11 @@ $protocol = empty($_SERVER['HTTPS']) ? 'http://' : 'https://';
 $domain = $_SERVER['HTTP_HOST'];
 $path = $_SERVER['REQUEST_URI'];
 $fullUrl = $protocol . $domain . $path;
+
+$author = get_field('author') ?: 'The Charlile Health Team';
+var_dump($author);
+$medicalReviewer = get_field('medical_reviewer') ?: '';
+$date = get_field('date') ?: '';
 ?>
 
 <main id="primary" class="site-main lg:mt-[68px] mt-0">
@@ -27,10 +32,12 @@ $fullUrl = $protocol . $domain . $path;
           <div class="">
             <h1 class="text-h2 font-heading-serif"><?= get_the_title(); ?></h1>
             <p class="font-bold">Est. reading time: <span class="js-read-time">5</span> min.</p>
-            <p>OCD is characterized by obsessions and compulsions, while anxiety disorders stem from anxious thoughts.</p>
-            <p class="mb-0">By: <a href="#">Sarah Fielding</a></p>
-            <p class="mb-0">Clinically Reviewed By: <a href="#">Don Gasparini Ph.D., M.A., CASAC</a></p>
-            <p>April 20, 2023</p>
+            <p><?= get_the_excerpt(); ?></p>
+            <p class="mb-0">By: <a href="<?= site_url('/author/') . $author->post_name; ?>"><?= $author->post_title; ?></a></p>
+            <?php if (!empty($medicalReviewer)) : ?>
+              <p class="mb-0">Clinically Reviewed By: <a href="<?= site_url('/medical-reviewer/') . $medicalReviewer->post_name; ?>"><?= $medicalReviewer->post_title; ?></a></p>
+            <?php endif; ?>
+            <p><?= $date ?: get_the_date(); ?></p>
             <div class="flex items-start">
               <p class="font-heading-serif">Share:</p>
               <a role="button" class="js-share-button ml-sp-4"><img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/social-logos/share.svg'; ?>" alt="share icon"></a>
