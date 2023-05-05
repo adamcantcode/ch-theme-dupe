@@ -4,7 +4,7 @@ export default function toc() {
   const toc = document.querySelector('#toc');
 
   headings.forEach((heading) => {
-    heading.id = heading.innerText.replace(/\s/g, '');
+    heading.id = heading.innerText.replace(/[^a-zA-Z0-9-]/g, '');
 
     const tocHeading = document.createElement('a');
     const headingText = document.createTextNode(heading.innerText);

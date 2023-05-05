@@ -561,7 +561,7 @@ function toc() {
   const headings = content.querySelectorAll('h2');
   const toc = document.querySelector('#toc');
   headings.forEach(heading => {
-    heading.id = heading.innerText.replace(/\s/g, '');
+    heading.id = heading.innerText.replace(/[^a-zA-Z0-9-]/g, '');
     const tocHeading = document.createElement('a');
     const headingText = document.createTextNode(heading.innerText);
     tocHeading.appendChild(headingText);
