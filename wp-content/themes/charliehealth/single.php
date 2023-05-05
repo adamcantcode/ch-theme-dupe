@@ -7,9 +7,20 @@ $path = $_SERVER['REQUEST_URI'];
 $fullUrl = $protocol . $domain . $path;
 
 $author = get_field('author') ?: 'The Charlile Health Team';
-var_dump($author);
 $medicalReviewer = get_field('medical_reviewer') ?: '';
 $date = get_field('date') ?: '';
+
+$audiences = get_the_terms(get_the_ID(), 'category');
+$tags = get_the_terms(get_the_ID(), 'post_tag');
+
+// if (!empty($audiences)) {
+//   foreach ($audiences as $audience) {
+//     $term_name = $audience->name;
+//     $term_slug = $audience->slug;
+//     $term_id   = $audience->term_id;
+//   }
+// }
+
 ?>
 
 <main id="primary" class="site-main lg:mt-[68px] mt-0">
@@ -45,8 +56,18 @@ $date = get_field('date') ?: '';
               </a>
               <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?= $fullUrl; ?>" class="ml-sp-4"><img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/social-logos/linkedin.svg'; ?>" alt="linkedin icon"></a>
             </div>
-            <div>{cats}</div>
-            <div>{tags}</div>
+            <div class="grid gap-sp-4">
+              <div class="grid justify-start grid-flow-col gap-sp-4">
+                <?php foreach ($audiences as $audience) : ?>
+                  <a href="<?= get_term_link($audience->slug, 'category'); ?>" class="px-4 py-3 no-underline rounded-lg text-h6 bg-tag-gray"><?= $audience->name; ?></a>
+                <?php endforeach; ?>
+              </div>
+              <div class="grid justify-start grid-flow-col gap-sp-4">
+                <?php foreach ($tags as $tag) : ?>
+                  <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="px-4 py-3 no-underline rounded-lg text-h6 bg-tag-gray"><?= $tag->name; ?></a>
+                <?php endforeach; ?>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -59,7 +80,7 @@ $date = get_field('date') ?: '';
         <div class="rounded-md toc-container bg-light-purple">
           <div class="flex cursor-pointer toc-heading lg:p-sp-8 p-sp-4">
             <h3 class="mb-0">Table of Contents</h3>
-            <div class="flex items-center ml-auto lg:mr-sp-5 toggle">
+            <div class="flex items-center ml-auto">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="none" viewBox="8 8 8 8" height="12px" width="12px">
                 <path d="M9 12H15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                 <path d="M12 9L12 15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -67,7 +88,7 @@ $date = get_field('date') ?: '';
             </div>
           </div>
           <div class="overflow-hidden transition-all duration-500 ease-in-out toc-content max-h-0">
-            <div id="toc" class="flex flex-col items-start pt-0 lg:p-sp-8 p-sp-4 gap-sp-1"></div>
+            <div id="toc" class="flex flex-col items-start pt-0 lg:pt-0 lg:p-sp-8 p-sp-4 gap-sp-1"></div>
           </div>
         </div>
       </div>

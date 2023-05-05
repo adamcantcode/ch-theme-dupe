@@ -1914,6 +1914,16 @@ a.nav-link:hover {
   padding-bottom: 1.25rem;
 }
 
+.px-4{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-3{
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
 .\!pb-0{
   padding-bottom: 0px !important;
 }
@@ -3160,6 +3170,10 @@ a.js-tag-id.active:hover {
 
   .lg\:pr-sp-14{
     padding-right: 4rem;
+  }
+
+  .lg\:pt-0{
+    padding-top: 0px;
   }
 
   .lg\:text-\[2\.5rem\]{
