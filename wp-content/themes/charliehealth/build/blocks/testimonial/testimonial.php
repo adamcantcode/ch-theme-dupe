@@ -22,9 +22,13 @@ if (!empty($block['align'])) {
 ?>
 
 <section <?= $anchor ?: ''; ?>class="<?= $className . ' ' . $padding ?: '' . ' ' . $margin ?: ''; ?> testimonial-padding bg-cream" style="<?= $style; ?>">
-  <h2 class="container px-sp-5">Hear from the Charlie Health Community</h2>
+  <div class="section-horizontal">
+    <div class="container">
+      <h2 class="">Hear from the Charlie Health Community</h2>
+    </div>
+  </div>
   <div class="swiper swiper-testimonial">
-    <div class="container lg:px-sp-5 swiper-wrapper">
+    <div class="container lg:px-sp-10 swiper-wrapper">
       <div class="swiper-slide grid lg:grid-cols-[1fr,_2fr] px-sp-5 lg:px-0">
         <div class="quote lg:order-2">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat rerum quo adipisci id ea? Sed omnis ea dolore id deserunt voluptates ut molestiae, quidem enim nam dolores quaerat ab minus saepe sequi dicta quibusdam adipisci optio! Numquam hic inventore aut. Deserunt magnam a officia fugiat.</p>
@@ -70,7 +74,7 @@ if (!empty($block['align'])) {
         </svg>
       </div>
     </div>
-    <div class="max-w-[1280px] lg:mx-auto mx-sp-5">
+    <div class="max-w-[1280px] lg:mx-auto mx-sp-5 relative h-[2px]">
       <div class="relative swiper-pagination"></div>
     </div>
   </div>
