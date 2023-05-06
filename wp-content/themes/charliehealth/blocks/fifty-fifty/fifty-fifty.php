@@ -26,12 +26,14 @@ switch ($order) {
     <?php if (have_rows('fifty_fifty_slides')) : ?>
       <div>
         <div class="swiper swiper-fifty-fifty">
-          <div class="swiper-wrapper">
+          <div class="items-center swiper-wrapper">
             <?php while (have_rows('fifty_fifty_slides')) : the_row();
               $imageUrl = get_sub_field('fifty_fifty_slide_image');
             ?>
               <div class="swiper-slide">
-                <img src="<?= $imageUrl['url']; ?>" alt="">
+                <div class="grid items-center justify-center">
+                  <img src="<?= $imageUrl['url']; ?>" alt="" class="">
+                </div>
               </div>
             <?php endwhile; ?>
           </div>

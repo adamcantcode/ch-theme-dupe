@@ -41,7 +41,7 @@ if ($style === 'image') {
           <!-- TODO Update image -->
           <img src="https://assets-global.website-files.com/62daf9ae3616b86eec143652/6365881dfdc1335ce5cc9ef8_LogoIcon.webp" alt="" class="w-10">
         <?php endif; ?>
-        <h3><?= $subtitle; ?></h3>
+        <h3 class="mb-0"><?= $subtitle; ?></h3>
       </div>
     <?php endif; ?>
     <?php if ($style === 'image') : ?>

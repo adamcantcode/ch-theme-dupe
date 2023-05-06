@@ -10429,7 +10429,7 @@ window.addEventListener('DOMContentLoaded', () => {
     autoplay: {
       delay: 5000,
       disableOnInteraction: false,
-      pauseOnMouseEnter: true
+      pauseOnMouseEnter: false
     },
     effect: 'fade',
     fadeEffect: {

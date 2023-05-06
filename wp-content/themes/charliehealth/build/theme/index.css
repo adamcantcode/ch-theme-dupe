@@ -1631,6 +1631,10 @@ a.nav-link:hover {
   flex-direction: column;
 }
 
+.content-center{
+  align-content: center;
+}
+
 .content-between{
   align-content: space-between;
 }
