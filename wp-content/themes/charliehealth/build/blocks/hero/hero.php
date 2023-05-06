@@ -17,11 +17,11 @@ $test = get_fields();
 
 if ($style === 'image') {
   $titleClass = 'text-display mb-sp-8 hidden lg:block';
-  $gridClass = 'grid lg:grid-cols-2 gap-4 items-center';
+  $gridClass = 'grid lg:grid-cols-2 gap-sp-4 items-center';
   $orderClass = 'order-2 lg:order-1';
   $orderClassTwo = 'order-1 lg:order-2';
 } elseif ($style === 'details') {
-  $gridClass = 'grid lg:grid-cols-2 gap-4 items-start';
+  $gridClass = 'grid lg:grid-cols-2 gap-sp-4 items-start';
   $titleClass = '';
   $orderClass = 'order-1';
   $orderClassTwo = 'order-1 lg:order-2';
@@ -36,7 +36,7 @@ if ($style === 'image') {
   <div class="<?= $orderClass; ?>">
     <h1 class="<?= $titleClass; ?>"><?= $title; ?></h1>
     <?php if ($style === 'image') : ?>
-      <div class="flex items-center gap-4 mb-sp-8">
+      <div class="flex items-center gap-sp-3 mb-sp-8">
         <?php if ($icon) : ?>
           <!-- TODO Update image -->
           <img src="https://assets-global.website-files.com/62daf9ae3616b86eec143652/6365881dfdc1335ce5cc9ef8_LogoIcon.webp" alt="" class="w-10">
@@ -49,7 +49,7 @@ if ($style === 'image') {
     <?php endif; ?>
   </div>
   <?php if ($style === 'image') : ?>
-    <h1 class="block text-display lg:hidden"><?php the_title(); ?></h1>
+    <h1 class="block text-display lg:hidden"><?= $title; ?></h1>
   <?php endif; ?>
   <?php if ($style === 'image' || $style === 'details') : ?>
     <div class="flex flex-col justify-between <?= $orderClassTwo ?: ''; ?>">
