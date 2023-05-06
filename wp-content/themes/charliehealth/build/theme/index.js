@@ -30,21 +30,14 @@ function ajaxPagination() {
     console.log(endpoint);
     jQuery('.pagination-container').pagination({
       dataSource: function (done) {
-        this.totalNumber = 90;
-        console.log(this.totalNumber);
-        // Make an AJAX request to the WordPress REST API to get the posts
         jQuery.ajax({
           url: endpoint,
           data: {
-            per_page: 6,
-            // Change this to the number of posts to display per page
             page: this.pageNumber
           },
           success: function (data, textStatus, request) {
-            // const totalItems = parseInt(
-            //   request.getResponseHeader('X-WP-Total')
-            // );
-            done(data);
+            const totalItems = parseInt(request.getResponseHeader('X-WP-Total'));
+            done(data, totalItems);
           }
         });
       },
@@ -62,6 +55,7 @@ function ajaxPagination() {
       <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
     </svg>`,
       callback: function (data, pagination) {
+        console.log(pagination);
         var html = '';
         jQuery.each(data, function (index, post) {
           html += `<div class="relative grid overflow-hidden border rounded-sm border-card-border">
