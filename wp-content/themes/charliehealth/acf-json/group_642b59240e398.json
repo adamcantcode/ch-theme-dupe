@@ -41,7 +41,7 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "table",
+            "layout": "block",
             "pagination": 0,
             "min": 0,
             "max": 0,
@@ -64,15 +64,15 @@
                         "id": ""
                     },
                     "choices": {
-                        "folder": "Folder",
-                        "check": "Check",
-                        "bandage": "Bandage"
+                        "band-aid-blue": "Bandage",
+                        "check_dashed-cricle-blue": "Check",
+                        "folder-blue": "Folder"
                     },
                     "default_value": false,
                     "return_format": "value",
                     "multiple": 0,
                     "allow_null": 0,
-                    "ui": 1,
+                    "ui": 0,
                     "ajax": 0,
                     "placeholder": "",
                     "parent_repeater": "field_642b5a8fb1956"
@@ -140,5 +140,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1680562894
+    "modified": 1683396431
 }
