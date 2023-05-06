@@ -21,7 +21,7 @@ if (!empty($block['align'])) {
 }
 ?>
 
-<section <?= $anchor ?: ''; ?>class="<?= $className . ' ' . $padding ?: '' . ' ' . $margin ?: ''; ?> testimonial-padding bg-cream" style="<?= $style; ?>">
+<section <?= $anchor ?: ''; ?>class="<?= $className; ?> testimonial-padding bg-cream">
   <div class="section-horizontal">
     <div class="container">
       <h2 class="">Hear from the Charlie Health Community</h2>
@@ -29,34 +29,43 @@ if (!empty($block['align'])) {
   </div>
   <div class="swiper swiper-testimonial">
     <div class="container lg:px-sp-10 swiper-wrapper">
-      <div class="swiper-slide grid lg:grid-cols-[1fr,_2fr] px-sp-5 lg:px-0">
-        <div class="quote lg:order-2">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat rerum quo adipisci id ea? Sed omnis ea dolore id deserunt voluptates ut molestiae, quidem enim nam dolores quaerat ab minus saepe sequi dicta quibusdam adipisci optio! Numquam hic inventore aut. Deserunt magnam a officia fugiat.</p>
-        </div>
-        <div class="info lg:order-1">
-          <img src="https://placehold.it/130x130" alt="social" class="rounded-md">
-          <p class="name">name</p>
-          <p class="title">title</p>
-        </div>
-      </div>
-      <div class="swiper-slide grid lg:grid-cols-[1fr,_2fr] px-sp-5 lg:px-0">
-        <div class="quote lg:order-2">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat rerum quo adipisci id ea? Sed omnis ea dolore id deserunt voluptates ut molestiae, quidem enim nam dolores quaerat ab minus saepe sequi dicta quibusdam adipisci optio! Numquam hic inventore aut. Deserunt magnam a officia fugiat.</p>
-        </div>
-        <div class="info lg:order-1">
-          <img src="https://placehold.it/130x130" alt="social" class="rounded-md">
-          <p class="name">name</p>
-          <p class="title">title</p>
+      <div class="swiper-slide">
+        <div class="grid lg:grid-cols-[1fr,_2fr] px-sp-5 lg:px-0">
+          <div class="lg:order-2">
+            <p>The Charlie Health team ensures that our clients and families feel heard, affirmed, and confident. It's critical that adolescents and young adults have a safe place to heal and grow. We are here to offer our support to young people, families, and community leaders by filling the gap in the continuum of mental healthcare. </p>
+          </div>
+          <div class="lg:order-1">
+            <img src="https://placehold.it/130x130" alt="social" class="rounded-md mb-sp-8">
+            <p class="mb-sp-1">Laura Sebulsky, MBSR</p>
+            <h5 class="mb-sp-1">Regional Director of Clinical Outreach</h5>
+            <h5 class="mb-sp-1">Pacific Northwest</h5>
+          </div>
         </div>
       </div>
-      <div class="swiper-slide grid lg:grid-cols-[1fr,_2fr] px-sp-5 lg:px-0">
-        <div class="quote lg:order-2">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat rerum quo adipisci id ea? Sed omnis ea dolore id deserunt voluptates ut molestiae, quidem enim nam dolores quaerat ab minus saepe sequi dicta quibusdam adipisci optio! Numquam hic inventore aut. Deserunt magnam a officia fugiat.</p>
+      <div class="swiper-slide">
+        <div class="grid lg:grid-cols-[1fr,_2fr] px-sp-5 lg:px-0">
+          <div class="lg:order-2">
+            <p>As a therapist, I work to foster understanding, growth, and confidence in the clients I work with. Charlie Health continues to allow me to be inspired and thrive in the quality of service I deliver each day.</p>
+          </div>
+          <div class="lg:order-1">
+            <img src="https://placehold.it/130x130" alt="social" class="rounded-md mb-sp-8">
+            <p class="mb-sp-1">Laura Sebulsky, MBSR</p>
+            <h5 class="mb-sp-1">Regional Director of Clinical Outreach</h5>
+            <h5 class="mb-sp-1">Pacific Northwest</h5>
+          </div>
         </div>
-        <div class="info lg:order-1">
-          <img src="https://placehold.it/130x130" alt="social" class="rounded-md">
-          <p class="name">name</p>
-          <p class="title">title</p>
+      </div>
+      <div class="swiper-slide">
+        <div class="grid lg:grid-cols-[1fr,_2fr] px-sp-5 lg:px-0">
+          <div class="lg:order-2">
+            <p>Excellence in clinical programming and personalized treatment is at the core of what we do at Charlie Health. Every client who comes to us has needs that are specific to them, and our clinical team works diligently to ensure that their treatment is tailored to those needs. Our goal is to reach as many families as we can and to be a part of their journeys toward hope and healing.</p>
+          </div>
+          <div class="lg:order-1">
+            <img src="https://placehold.it/130x130" alt="social" class="rounded-md mb-sp-8">
+            <p class="mb-sp-1">Laura Sebulsky, MBSR</p>
+            <h5 class="mb-sp-1">Regional Director of Clinical Outreach</h5>
+            <h5 class="mb-sp-1">Pacific Northwest</h5>
+          </div>
         </div>
       </div>
     </div>

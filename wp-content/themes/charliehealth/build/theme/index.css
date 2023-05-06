@@ -1403,6 +1403,10 @@ a.nav-link:hover {
   margin-top: 2rem;
 }
 
+.mb-sp-1{
+  margin-bottom: 0.25rem;
+}
+
 .block{
   display: block;
 }
@@ -1573,6 +1577,10 @@ a.nav-link:hover {
 }
 
 .flex-grow{
+  flex-grow: 1;
+}
+
+.grow{
   flex-grow: 1;
 }
 

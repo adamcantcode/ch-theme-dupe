@@ -6,6 +6,7 @@
  */
 
 // Support custom "anchor" values.
+$anchor = '';
 if (!empty($block['anchor'])) {
   $anchor = 'id="' . esc_attr($block['anchor']) . '" ';
 }
@@ -15,11 +16,9 @@ $className = 'faq-block';
 if (!empty($block['className'])) {
   $className .= ' ' . esc_attr($block['className']);
 }
-if (!empty($block['align'])) {
-  $className .= ' align' . esc_attr($block['align']);
-}
 
 $columnCount = get_field('faq_column_count');
+$faqItems = get_field('faq_items');
 
 ?>
 <div <?= $anchor ?: ''; ?>class="<?= $className; ?> ">
@@ -47,7 +46,7 @@ $columnCount = get_field('faq_column_count');
           </div>
           <?php
           if ($columnCount !== 'one') {
-            $rows = count(get_field('faq_items'));
+            $rows = count($faqItems);
             $middle = ceil($rows / 2);
             if (get_row_index() == $middle) {
               echo '</div><!-- END WRAPPER -->';
@@ -58,7 +57,7 @@ $columnCount = get_field('faq_column_count');
         <?php endwhile; ?>
         <?php
         if ($columnCount !== 'one') {
-          $last = end(get_field('faq_items'));
+          $last = end($faqItems);
           if ($last) {
             echo '</div><!-- END WRAPPER -->';
           }

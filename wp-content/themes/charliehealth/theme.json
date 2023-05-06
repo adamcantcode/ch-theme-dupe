@@ -26,6 +26,11 @@
           "slug": "cream",
           "color": "#F8F4F0",
           "name": "Cream"
+        },
+        {
+          "slug": "lightest-teal",
+          "color": "#ecf7fa",
+          "name": "Lightest Teal"
         }
       ]
     },

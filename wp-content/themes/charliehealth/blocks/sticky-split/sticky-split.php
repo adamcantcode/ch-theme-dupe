@@ -6,6 +6,7 @@
  */
 
 // Support custom "anchor" values.
+$anchor = '';
 if (!empty($block['anchor'])) {
   $anchor = 'id="' . esc_attr($block['anchor']) . '" ';
 }
@@ -15,14 +16,11 @@ $className = 'sticky-split-block';
 if (!empty($block['className'])) {
   $className .= ' ' . esc_attr($block['className']);
 }
-if (!empty($block['align'])) {
-  $className .= ' align' . esc_attr($block['align']);
-}
 
 // Get fields
 $image = get_field('sticky_split_image');
 ?>
-<div <?= $anchor ?: ''; ?>class="<?= $className; ?> relative grid lg:grid-cols-2 lg:gap-sp-16 gap-sp-8" style="<?= $style; ?>">
+<div <?= $anchor ?: ''; ?>class="<?= $className; ?> relative grid lg:grid-cols-2 lg:gap-sp-16 gap-sp-8">
   <div class="lg:sticky self-start top-[8rem] stick-split-image">
     <img src="<?= $image['url'] ?>" alt="<?= $image['alt'] ?>" class="rounded-md lg:max-h-full max-h-[300px] w-full object-cover">
   </div>

@@ -13,12 +13,12 @@ if (!empty($block['style']['spacing'])) {
 }
 
 if (!empty($blockPadding)) {
-  if (!is_null($blockPadding['top'])) {
+  if (isset($blockPadding['top'])) {
     $paddingTop = $blockPadding['top'];
   } else {
     $paddingTop = 'section-top ';
   }
-  if (!is_null($blockPadding['bottom'])) {
+  if (isset($blockPadding['bottom'])) {
     $paddingBottom = $blockPadding['bottom'];
   } else {
     $paddingBottom = 'section-bottom ';
