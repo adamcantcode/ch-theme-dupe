@@ -1879,6 +1879,11 @@ a.nav-link:hover {
   padding: 2rem;
 }
 
+.px-4{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .px-5{
   padding-left: 1.25rem;
   padding-right: 1.25rem;
@@ -1899,6 +1904,11 @@ a.nav-link:hover {
   padding-right: 2rem;
 }
 
+.py-3{
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
 .py-8{
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -1912,16 +1922,6 @@ a.nav-link:hover {
 .py-sp-5{
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
-}
-
-.px-4{
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-.py-3{
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
 }
 
 .\!pb-0{
