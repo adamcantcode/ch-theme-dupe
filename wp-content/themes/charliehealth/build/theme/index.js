@@ -73,7 +73,7 @@ function ajaxPagination() {
                 <img src="https://images.placeholders.dev/?width=800&height=600&text=FPO" alt="" class="object-cover lg:h-[220px] h-[150px] w-full">
                 <div class="grid p-sp-4">
                   <h3><a href="${post.link}" class="stretched-link">${post.title.rendered}</a></h3>
-                  <h5>author</h5>
+                  <h5 class="mb-sp-4">author</h5>
                   <div class="grid justify-start grid-flow-col gap-sp-4">
                   ${tags.map(tag => `<a href="${tag.link}" class="px-sp-4 py-sp-3 no-underline rounded-lg text-h6 bg-tag-gray z-20 relative inline-block">${tag.name}</a>`).join('')}
                   </div>

@@ -9,6 +9,7 @@ $fullUrl = $protocol . $domain . $path;
 $author = get_field('author') ?: 'The Charlile Health Team';
 $medicalReviewer = get_field('medical_reviewer') ?: '';
 $date = get_field('date') ?: '';
+$relatedPosts = get_field('related_posts') ?: '';
 
 $audiences = get_the_terms(get_the_ID(), 'category');
 $tags = get_the_terms(get_the_ID(), 'post_tag');
@@ -105,6 +106,29 @@ $tags = get_the_terms(get_the_ID(), 'post_tag');
     </article>
   </div>
 </main>
+<?php if ($relatedPosts) : ?>
+  <section class="section">
+    <div class="container">
+      <div class="grid lg:grid-cols-3 posts-container gap-x-sp-8 gap-y-sp-10 mb-sp-10">
+        <?php foreach ($relatedPosts as $post) : ?>
+          <div class="relative grid overflow-hidden border rounded-sm border-card-border">
+            <img src="https://images.placeholders.dev/?width=800&height=600&text=FPO" alt="" class="object-cover lg:h-[220px] h-[150px] w-full">
+            <div class="grid p-sp-4">
+              <h3><a href="<?= get_the_permalink($post->ID); ?>" class="stretched-link"><?= $post->post_title; ?></a></h3>
+              <h5 class="mb-sp-4"><?= get_the_author($post->post_auhtor); ?></h5>
+              <div class="grid justify-start grid-flow-col gap-sp-4">
+                <?php $tags = get_the_terms($post->ID, 'post_tag'); ?>
+                <?php foreach ($tags as $tag) : ?>
+                  <a href="<?= $tag->link; ?>" class="relative z-20 inline-block no-underline rounded-lg px-sp-4 py-sp-3 text-h6 bg-tag-gray"><?= $tag->name; ?></a>
+                <?php endforeach; ?>
+              </div>
+            </div>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </section>
+<?php endif; ?>
 
 <section class="section-bottom">
   <div class="container">

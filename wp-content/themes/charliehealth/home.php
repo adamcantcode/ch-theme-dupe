@@ -161,7 +161,7 @@
     </div>
   </section>
   <section class="section">
-    <div class="container-sm">
+    <div class="container-md">
       <?= do_blocks('<!-- wp:block {"ref":458} /-->'); ?>
     </div>
   </section>
