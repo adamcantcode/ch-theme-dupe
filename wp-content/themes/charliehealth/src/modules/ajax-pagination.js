@@ -13,7 +13,6 @@ export default function ajaxPagination() {
   };
 
   const renderPagination = (postsPerPage, endpoint, tagID) => {
-    console.log(endpoint);
     jQuery('.pagination-container').pagination({
       dataSource: function (done) {
         fetch(endpoint)
@@ -50,8 +49,6 @@ export default function ajaxPagination() {
         const bodyClasses = Array.from(document.body.classList);
         var [endpoint] = getEndpoint(bodyClasses, tagID);
         endpoint += `&page=${pageNumber}&per_page=${postsPerPage}`;
-
-        console.log(endpoint);
         fetch(endpoint)
           .then(function (response) {
             return response.json();
@@ -59,10 +56,8 @@ export default function ajaxPagination() {
           .then(function (posts) {
             var html = '';
             posts.forEach(function (post) {
-              console.log(post);
               var cats = post._embedded['wp:term'][0];
               var tags = post._embedded['wp:term'][1];
-              console.log(tags);
               html += `<div class="relative grid overflow-hidden border rounded-sm border-card-border">
                 <img src="https://images.placeholders.dev/?width=800&height=600&text=FPO" alt="" class="object-cover lg:h-[220px] h-[150px] w-full">
                 <div class="grid p-sp-4">

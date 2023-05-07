@@ -95,7 +95,7 @@
         {
             "key": "field_645407d0e7dc5",
             "label": "Featured on Audience page",
-            "name": "category_featured_copy",
+            "name": "category_featured",
             "aria-label": "",
             "type": "true_false",
             "instructions": "Display post in featured slider on respective <code>\/audience\/{audience-category}<\/code>",
@@ -161,5 +161,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1683245223
+    "modified": 1683491714
 }

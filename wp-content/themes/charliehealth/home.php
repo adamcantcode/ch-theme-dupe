@@ -51,7 +51,7 @@
 
         $query = new WP_Query($args);
         ?>
-        <div class="relative swiper swiper-featured-blog">
+        <div class="relative swiper swiper-featured-blog h-[400px]">
           <div class="swiper-wrapper">
             <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
                 <div class="swiper-slide">
@@ -66,7 +66,7 @@
                       </div>
                       <a href="<?= get_the_permalink(); ?>" class="text-white stretched-link">Read more</a>
                     </div>
-                    <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 object-cover lg:order-2">
+                    <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 object-cover lg:order-2 h-[400px] w-full">
                   </div>
                 </div>
             <?php endwhile;

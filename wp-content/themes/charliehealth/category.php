@@ -72,44 +72,37 @@ if (is_category('families-and-caregivers')) {
     <div class="container">
       <h2>Featured</h2>
       <div>
+        <?php
+        $args = array(
+          'post_type' => 'post',
+          'category_name' => get_queried_object()->slug,
+          'meta_key'      => 'category_featured',
+          'meta_value'    => '1'
+        );
+
+        $query = new WP_Query($args);
+        ?>
         <div class="relative swiper swiper-featured-blog h-[400px]">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="relative grid overflow-hidden rounded-md lg:grid-cols-2">
-                <div class="grid content-between order-2 bg-purple-gradient-start lg:p-sp-8 p-sp-4 lg:order-1">
-                  <div>
-                    <div>{grid}</div>
-                    <h3 class="text-white text-h1 lg:text-h1-lg">TITLE</h3>
+            <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
+                <div class="swiper-slide">
+                  <div class="relative grid overflow-hidden rounded-md lg:grid-cols-2">
+                    <div class="grid content-between order-2 bg-purple-gradient-start lg:p-sp-8 p-sp-4 lg:order-1">
+                      <div>
+                        <?php $audiences = get_the_terms(get_the_ID(), 'category'); ?>
+                        <?php foreach ($audiences as $audience) : ?>
+                          <a href="<?= get_term_link($audience->slug, 'category'); ?>" class="relative z-20 inline-block leading-none text-white no-underline transition-all duration-300 bg-transparent border-2 border-white rounded-lg p-sp-3 hover:bg-white hover:!text-dark-blue mb-sp-4 mr-sp-1"><?= $audience->name; ?></a>
+                        <?php endforeach; ?>
+                        <h3 class="text-white text-h1 lg:text-h1-lg"><?= get_the_title(); ?></h3>
+                      </div>
+                      <a href="<?= get_the_permalink(); ?>" class="text-white stretched-link">Read more</a>
+                    </div>
+                    <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 object-cover lg:order-2 h-[400px] w-full">
                   </div>
-                  <a href="#" class="text-white stretched-link">Read more</a>
                 </div>
-                <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 object-cover lg:order-2 h-[400px] w-full">
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="relative grid overflow-hidden rounded-md lg:grid-cols-2">
-                <div class="grid content-between order-2 bg-purple-gradient-start lg:p-sp-8 p-sp-4 lg:order-1">
-                  <div>
-                    <div>{grid}</div>
-                    <h3 class="text-white text-h1 lg:text-h1-lg">TITLE</h3>
-                  </div>
-                  <a href="#" class="text-white stretched-link">Read more</a>
-                </div>
-                <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 object-cover lg:order-2 h-[400px] w-full">
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="relative grid overflow-hidden rounded-md lg:grid-cols-2">
-                <div class="grid content-between order-2 bg-purple-gradient-start lg:p-sp-8 p-sp-4 lg:order-1">
-                  <div>
-                    <div>{grid}</div>
-                    <h3 class="text-white text-h1 lg:text-h1-lg">TITLE</h3>
-                  </div>
-                  <a href="#" class="text-white stretched-link">Read more</a>
-                </div>
-                <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 object-cover lg:order-2 h-[400px] w-full">
-              </div>
-            </div>
+            <?php endwhile;
+              wp_reset_postdata();
+            endif; ?>
           </div>
           <div class="bottom-0 right-0 z-10 grid items-center grid-cols-3 lg:absolute justify-items-center gap-sp-4 lg:p-sp-8 mt-sp-8">
             <div class="swiper-button-prev-arrow">
