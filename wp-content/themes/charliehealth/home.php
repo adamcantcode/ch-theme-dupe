@@ -9,7 +9,7 @@
           <p>Stay up to date on mental health research, wellness techniques, treatment services, and more.</p>
         </div>
         <div>
-          <form role="search" method="get" class="search-form" action="<?=  site_url('/search'); ?>">
+          <form role="search" method="get" class="search-form" action="<?= site_url('/search'); ?>">
             <label>
               <span class="screen-reader-text"><?php echo _x('Search for:', 'label'); ?></span>
               <input type="search" class="search-field" placeholder="<?php echo esc_attr_x('Search &hellip;', 'placeholder'); ?>" value="<?php echo get_search_query(); ?>" name="query" />
@@ -24,7 +24,6 @@
           'taxonomy' => 'category',
           'hide_empty' => false,
         ));
-        // var_dump($terms);
         foreach ($terms as $term) : ?>
           <div class="relative flex flex-col rounded-md gap-sp-4 bg-purple-gradient-end p-sp-5">
             <div>
@@ -43,68 +42,36 @@
     <div class="container">
       <h2>Featured</h2>
       <div>
+        <?php
+        $args = array(
+          'post_type' => 'post',
+          'meta_key'      => 'main_featured',
+          'meta_value'    => '1'
+        );
+
+        $query = new WP_Query($args);
+        ?>
         <div class="relative swiper swiper-featured-blog">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="relative grid overflow-hidden rounded-md lg:grid-cols-2">
-                <div class="grid content-between order-2 bg-purple-gradient-start lg:p-sp-8 p-sp-4 lg:order-1">
-                  <div>
-                    <div>{grid}</div>
-                    <h3 class="text-white text-h1 lg:text-h1-lg">TITLE</h3>
+            <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
+                <div class="swiper-slide">
+                  <div class="relative grid overflow-hidden rounded-md lg:grid-cols-2">
+                    <div class="grid content-between order-2 bg-purple-gradient-start lg:p-sp-8 p-sp-4 lg:order-1">
+                      <div>
+                        <?php $audiences = get_the_terms(get_the_ID(), 'category'); ?>
+                        <?php foreach ($audiences as $audience) : ?>
+                          <a href="<?= get_term_link($audience->slug, 'category'); ?>" class="relative z-20 inline-block leading-none text-white no-underline transition-all duration-300 bg-transparent border-2 border-white rounded-lg p-sp-3 hover:bg-white hover:!text-dark-blue mb-sp-4 mr-sp-1"><?= $audience->name; ?></a>
+                        <?php endforeach; ?>
+                        <h3 class="text-white text-h1 lg:text-h1-lg"><?= get_the_title(); ?></h3>
+                      </div>
+                      <a href="<?= get_the_permalink(); ?>" class="text-white stretched-link">Read more</a>
+                    </div>
+                    <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 object-cover lg:order-2">
                   </div>
-                  <a href="#" class="text-white stretched-link">Read more</a>
                 </div>
-                <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 object-cover lg:order-2">
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="relative grid overflow-hidden rounded-md lg:grid-cols-2">
-                <div class="grid content-between order-2 bg-purple-gradient-start lg:p-sp-8 p-sp-4 lg:order-1">
-                  <div>
-                    <div>{grid}</div>
-                    <h3 class="text-white text-h1 lg:text-h1-lg">TITLE</h3>
-                  </div>
-                  <a href="#" class="text-white stretched-link">Read more</a>
-                </div>
-                <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 object-cover lg:order-2">
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="relative grid overflow-hidden rounded-md lg:grid-cols-2">
-                <div class="grid content-between order-2 bg-purple-gradient-start lg:p-sp-8 p-sp-4 lg:order-1">
-                  <div>
-                    <div>{grid}</div>
-                    <h3 class="text-white text-h1 lg:text-h1-lg">TITLE</h3>
-                  </div>
-                  <a href="#" class="text-white stretched-link">Read more</a>
-                </div>
-                <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 object-cover lg:order-2">
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="relative grid overflow-hidden rounded-md lg:grid-cols-2">
-                <div class="grid content-between order-2 bg-purple-gradient-start lg:p-sp-8 p-sp-4 lg:order-1">
-                  <div>
-                    <div>{grid}</div>
-                    <h3 class="text-white text-h1 lg:text-h1-lg">TITLE</h3>
-                  </div>
-                  <a href="#" class="text-white stretched-link">Read more</a>
-                </div>
-                <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 object-cover lg:order-2">
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="relative grid overflow-hidden rounded-md lg:grid-cols-2">
-                <div class="grid content-between order-2 bg-purple-gradient-start lg:p-sp-8 p-sp-4 lg:order-1">
-                  <div>
-                    <div>{grid}</div>
-                    <h3 class="text-white text-h1 lg:text-h1-lg">TITLE</h3>
-                  </div>
-                  <a href="#" class="text-white stretched-link">Read more</a>
-                </div>
-                <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 object-cover lg:order-2">
-              </div>
-            </div>
+            <?php endwhile;
+              wp_reset_postdata();
+            endif; ?>
           </div>
           <div class="bottom-0 right-0 z-10 grid items-center grid-cols-3 lg:absolute justify-items-center gap-sp-4 lg:p-sp-8 mt-sp-8">
             <div class="swiper-button-prev-arrow">
@@ -146,14 +113,16 @@
     <div class="container">
       <h2>Latest</h2>
       <div class="grid lg:grid-cols-3 transition-all duration-300 scale-[0.99] opacity-0 posts-container gap-x-sp-8 gap-y-sp-10 mb-sp-10">
-        <!-- <div class="relative grid overflow-hidden border rounded-sm border-card-border">
-          <img src="https://images.placeholders.dev/? width=800&height=600&text=FPO" alt="" class="object-cover lg:h-[220px] h-[150px] w-full">
+        <!-- `<div class="relative grid overflow-hidden border rounded-sm border-card-border">
+          <img src="https://images.placeholders.dev/?width=800&height=600&text=FPO" alt="" class="object-cover lg:h-[220px] h-[150px] w-full">
           <div class="grid p-sp-4">
             <h3><a href="${post.link}" class="stretched-link">${post.title.rendered}</a></h3>
             <h5>author</h5>
-            <div>tags tags</div>
+            <div class="grid justify-start grid-flow-col gap-sp-4">
+              ${tags.map((tag) => `<a href="${tag.link}" class="relative z-20 inline-block no-underline rounded-lg px-sp-4 py-sp-3 text-h6 bg-tag-gray">${tag.name}</a>`).join('')}
+            </div>
           </div>
-        </div> -->
+        </div>` -->
       </div>
       <div class="pagination-container"></div>
     </div>

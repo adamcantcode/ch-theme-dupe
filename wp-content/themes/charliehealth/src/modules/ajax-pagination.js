@@ -48,12 +48,9 @@ export default function ajaxPagination() {
       callback: function (pageNumber) {
         jQuery('.posts-container').addClass('opacity-0 scale-[0.99]');
         const bodyClasses = Array.from(document.body.classList);
-        var [endpoint, endpointQuery] = getEndpoint(bodyClasses, tagID);
-        if (endpointQuery) {
-          endpoint += `&page=${pageNumber}&per_page=${postsPerPage}`;
-        } else {
-          endpoint += `?page=${pageNumber}&per_page=${postsPerPage}`;
-        }
+        var [endpoint] = getEndpoint(bodyClasses, tagID);
+        endpoint += `&page=${pageNumber}&per_page=${postsPerPage}`;
+
         console.log(endpoint);
         fetch(endpoint)
           .then(function (response) {
@@ -62,12 +59,18 @@ export default function ajaxPagination() {
           .then(function (posts) {
             var html = '';
             posts.forEach(function (post) {
+              console.log(post);
+              var cats = post._embedded['wp:term'][0];
+              var tags = post._embedded['wp:term'][1];
+              console.log(tags);
               html += `<div class="relative grid overflow-hidden border rounded-sm border-card-border">
-                <img src="https://images.placeholders.dev/? width=800&height=600&text=FPO" alt="" class="object-cover lg:h-[220px] h-[150px] w-full">
+                <img src="https://images.placeholders.dev/?width=800&height=600&text=FPO" alt="" class="object-cover lg:h-[220px] h-[150px] w-full">
                 <div class="grid p-sp-4">
                   <h3><a href="${post.link}" class="stretched-link">${post.title.rendered}</a></h3>
                   <h5>author</h5>
-                  <div>tags tags</div>
+                  <div class="grid justify-start grid-flow-col gap-sp-4">
+                  ${tags.map((tag) => `<a href="${tag.link}" class="px-sp-4 py-sp-3 no-underline rounded-lg text-h6 bg-tag-gray z-20 relative inline-block">${tag.name}</a>`).join('')}
+                  </div>
                 </div>
               </div>`;
             });
@@ -134,17 +137,15 @@ export default function ajaxPagination() {
   };
 
   const getEndpoint = (bodyClasses, tagID) => {
-    let endpoint = `${window.location.origin}/wp-json/wp/v2/posts`;
-    let endpointQuery = false;
+    let endpoint = `${window.location.origin}/wp-json/wp/v2/posts?_embed=wp:term,wp:category`;
 
     if (bodyClasses.includes('category')) {
-      endpointQuery = true;
       var categories = bodyClasses.map((str) => str.replace('category-', ''));
 
       categories.forEach((category) => {
         if (!isNaN(category)) {
           var categoryID = category;
-          endpoint += `?categories=${categoryID}`;
+          endpoint += `&categories=${categoryID}`;
         }
       });
       if (tagID) {
@@ -154,10 +155,9 @@ export default function ajaxPagination() {
       const params = new URLSearchParams(window.location.search);
       const query = params.get('query');
 
-      endpointQuery = true;
-      endpoint += `?search=${query}`;
+      endpoint += `&search=${query}`;
     }
-    return [endpoint, endpointQuery, tagID];
+    return [endpoint, tagID];
   };
 
   termsClickHandler();

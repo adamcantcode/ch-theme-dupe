@@ -48,7 +48,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "post"
+                "value": "areas-of-care"
             }
         ]
     ],
@@ -61,5 +61,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1683236377
+    "modified": 1683487364
 }
