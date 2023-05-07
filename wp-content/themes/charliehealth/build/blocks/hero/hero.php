@@ -1,19 +1,16 @@
 <?php
+// var_dump($block);
+
 $style = get_field('hero_style');
 $breadcrumbs = get_field('hero_breadcrumbs');
 $title = get_field('hero_title') ?: get_the_title();
 $subtitle = get_field('hero_subtitle');
+$subtitleEditor = get_field('hero_subtitle_editor');
+$heroImage = get_field('hero_image');
 $icon = get_field('hero_icon');
 $buttons = get_field('hero_buttons')['button_group_buttons'];
 $link = get_field('hero_buttons')['button_group_link'];
-$test = get_fields();
-
-// var_dump($subtitle);
-// var_dump($icon);
-// var_dump($buttons);
-// var_dump($link);
-// var_dump($test);
-// var_dump($block);
+// $test = get_fields();
 
 if ($style === 'image') {
   $titleClass = 'text-display mb-sp-8 hidden lg:block';
@@ -30,45 +27,48 @@ if ($style === 'image') {
 ?>
 
 <?php if ($breadcrumbs) : ?>
-  <?php include_once('includes/breadcrumbs.php'); ?>
+  <?php include('includes/breadcrumbs.php'); ?>
 <?php endif; ?>
-<div class="hero-cta <?= $gridClass; ?>">
-  <div class="<?= $orderClass; ?>">
-    <h1 class="<?= $titleClass; ?>"><?= $title; ?></h1>
-    <?php if ($style === 'image') : ?>
+<?php if ($style === 'image') : ?>
+  <div class="grid items-center lg:grid-cols-2 gap-sp-4">
+    <div class="order-2 lg:order-1">
+      <h1 class="hidden text-display mb-sp-8 lg:block"><?= $title; ?></h1>
       <div class="flex items-center gap-sp-3 mb-sp-8">
-        <?php if ($icon) : ?>
-          <!-- TODO Update image -->
-          <img src="https://assets-global.website-files.com/62daf9ae3616b86eec143652/6365881dfdc1335ce5cc9ef8_LogoIcon.webp" alt="" class="w-10">
-        <?php endif; ?>
+        <!-- TODO Update image -->
+        <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="" class="w-10">
         <h3 class="mb-0"><?= $subtitle; ?></h3>
       </div>
-    <?php endif; ?>
-    <?php if ($style === 'image') : ?>
       <?php include('includes/button-group.php'); ?>
-    <?php endif; ?>
-  </div>
-  <?php if ($style === 'image') : ?>
-    <h1 class="block text-display lg:hidden"><?= $title; ?></h1>
-  <?php endif; ?>
-  <?php if ($style === 'image' || $style === 'details') : ?>
-    <div class="flex flex-col justify-between <?= $orderClassTwo ?: ''; ?>">
-      <?php if ($style === 'image') : ?>
-        <!-- TODO Update image -->
-        <img src="https://assets-global.website-files.com/62daf9ae3616b86eec143652/63657e4ca50eb97be513e62d_Homepageherp.webp" alt="x" class="object-cover object-top rounded-lg max-h-52 md:max-h-none">
-      <?php endif; ?>
-      <?php if ($style === 'details') : ?>
-        <?php include('includes/details.php');
-        ?>
-      <?php endif; ?>
     </div>
-  <?php endif; ?>
-  <?php
-  // use inner blocks. can make a TOC button block and inlcude...
-  // $allowed_blocks = array('core/image', 'core/paragraph');
-  // echo '<InnerBlocks allowedBlocks="' . esc_attr(wp_json_encode($allowed_blocks)) . '" />';
-  ?>
-</div>
+    <h1 class="block text-display lg:hidden"><?= $title; ?></h1>
+    <div class="flex flex-col justify-between order-1 lg:order-2">
+      <!-- TODO test image -->
+      <img src="https://assets-global.website-files.com/62daf9ae3616b86eec143652/63657e4ca50eb97be513e62d_Homepageherp.webp" alt="x" class="object-cover object-top rounded-lg max-h-52 md:max-h-none">
+    </div>
+  </div>
+<?php endif; ?>
+<?php if ($style === 'details') : ?>
+  <div class="grid items-start lg:grid-cols-2 gap-sp-4">
+    <div class="order-1">
+      <h1><?= $title; ?></h1>
+    </div>
+    <div class="flex flex-col justify-between order-1 lg:order-2">
+      <?= $subtitleEditor; ?>
+      <?php include('includes/button-group.php'); ?>
+    </div>
+  </div>
+<?php endif; ?>
+<?php if ($style === 'container') : ?>
+  <h1><?= $title; ?></h1>
+  <div class="rounded-md border-gradient">
+    <div class="grid items-center lg:grid-cols-2">
+      <img src="<?= placeHolderImage(600, 600); ?>" alt="" class="object-cover lg:rounded-l-md lg:rounded-tr-none rounded-t-md lg:h-[400px] h-[200px] w-full">
+      <div class="p-sp-8">
+        <InnerBlocks />
+      </div>
+    </div>
+  </div>
+<?php endif; ?>
 <?php if (have_rows('hero_jump_buttons_jump_buttons')) : ?>
   <div class="mt-sp-6 md:mt-sp-10 lg:mt-sp-14">
     <div>

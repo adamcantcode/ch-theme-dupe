@@ -1322,11 +1322,6 @@ a.nav-link:hover {
   margin-bottom: 2rem;
 }
 
-.mx-sp-10{
-  margin-left: 2.5rem;
-  margin-right: 2.5rem;
-}
-
 .mb-0{
   margin-bottom: 0px;
 }
@@ -1337,6 +1332,10 @@ a.nav-link:hover {
 
 .mb-5{
   margin-bottom: 1.25rem;
+}
+
+.mb-sp-1{
+  margin-bottom: 0.25rem;
 }
 
 .mb-sp-10{
@@ -1403,10 +1402,6 @@ a.nav-link:hover {
   margin-top: 2rem;
 }
 
-.mb-sp-1{
-  margin-bottom: 0.25rem;
-}
-
 .block{
   display: block;
 }
@@ -1447,6 +1442,10 @@ a.nav-link:hover {
   height: 25px;
 }
 
+.h-\[2px\]{
+  height: 2px;
+}
+
 .h-\[400px\]{
   height: 400px;
 }
@@ -1471,8 +1470,8 @@ a.nav-link:hover {
   height: 3rem;
 }
 
-.h-\[2px\]{
-  height: 2px;
+.h-\[200px\]{
+  height: 200px;
 }
 
 .max-h-0{
@@ -1629,10 +1628,6 @@ a.nav-link:hover {
 
 .flex-col{
   flex-direction: column;
-}
-
-.content-center{
-  align-content: center;
 }
 
 .content-between{
@@ -3049,6 +3044,10 @@ a.js-tag-id.active:hover {
     height: 4rem;
   }
 
+  .lg\:h-\[400px\]{
+    height: 400px;
+  }
+
   .lg\:max-h-full{
     max-height: 100%;
   }
@@ -3057,8 +3056,16 @@ a.js-tag-id.active:hover {
     max-height: none;
   }
 
+  .lg\:max-h-\[400px\]{
+    max-height: 400px;
+  }
+
   .lg\:min-h-\[300px\]{
     min-height: 300px;
+  }
+
+  .lg\:min-h-\[400px\]{
+    min-height: 400px;
   }
 
   .lg\:w-\[225px\]{
@@ -3182,11 +3189,6 @@ a.js-tag-id.active:hover {
   .lg\:px-0{
     padding-left: 0px;
     padding-right: 0px;
-  }
-
-  .lg\:px-sp-5{
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
   }
 
   .lg\:px-sp-10{

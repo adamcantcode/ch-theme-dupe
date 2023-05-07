@@ -3,24 +3,6 @@
     "title": "Hero",
     "fields": [
         {
-            "key": "field_64163ded907da",
-            "label": "Style",
-            "name": "",
-            "aria-label": "",
-            "type": "accordion",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "open": 1,
-            "multi_expand": 0,
-            "endpoint": 0
-        },
-        {
             "key": "field_641639ffb2d96",
             "label": "Style",
             "name": "hero_style",
@@ -36,50 +18,13 @@
             },
             "choices": {
                 "image": "Hero Image",
-                "details": "Details"
+                "details": "Details",
+                "container": "Container"
             },
             "default_value": "image",
             "return_format": "value",
             "allow_null": 0,
             "layout": "horizontal"
-        },
-        {
-            "key": "field_64165805feaf0",
-            "label": "Options",
-            "name": "",
-            "aria-label": "",
-            "type": "accordion",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "open": 0,
-            "multi_expand": 0,
-            "endpoint": 0
-        },
-        {
-            "key": "field_6416581dfeaf1",
-            "label": "Breadcrumbs",
-            "name": "hero_breadcrumbs",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "Add breadcrumbs. Breadcrumbs are automatically generated based on the page's parents.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "ui_on_text": "Yes",
-            "ui_off_text": "",
-            "ui": 1
         },
         {
             "key": "field_63dff09021f5a",
@@ -127,7 +72,15 @@
             "type": "textarea",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_641639ffb2d96",
+                        "operator": "==",
+                        "value": "image"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -138,6 +91,34 @@
             "rows": "",
             "placeholder": "",
             "new_lines": ""
+        },
+        {
+            "key": "field_6457ea435a4d8",
+            "label": "Subtitle",
+            "name": "hero_subtitle_editor",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_641639ffb2d96",
+                        "operator": "==",
+                        "value": "details"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
         },
         {
             "key": "field_63df147f0e496",
@@ -179,7 +160,15 @@
             "type": "accordion",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_641639ffb2d96",
+                        "operator": "==",
+                        "value": "image"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -274,6 +263,44 @@
             "prefix_name": 1
         },
         {
+            "key": "field_64165805feaf0",
+            "label": "Options",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_6416581dfeaf1",
+            "label": "Breadcrumbs",
+            "name": "hero_breadcrumbs",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Add breadcrumbs. Breadcrumbs are automatically generated based on the page's parents.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "Yes",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
             "key": "field_63dff1ac8425d",
             "label": "End",
             "name": "",
@@ -310,5 +337,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1681258216
+    "modified": 1683484953
 }
