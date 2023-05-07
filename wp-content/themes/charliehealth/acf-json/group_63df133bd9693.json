@@ -107,6 +107,13 @@
                         "operator": "==",
                         "value": "details"
                     }
+                ],
+                [
+                    {
+                        "field": "field_641639ffb2d96",
+                        "operator": "==",
+                        "value": "container"
+                    }
                 ]
             ],
             "wrapper": {
@@ -337,5 +344,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1683484953
+    "modified": 1683485786
 }

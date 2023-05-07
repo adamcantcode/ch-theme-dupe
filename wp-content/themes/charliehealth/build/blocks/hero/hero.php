@@ -62,9 +62,10 @@ if ($style === 'image') {
   <h1><?= $title; ?></h1>
   <div class="rounded-md border-gradient">
     <div class="grid items-center lg:grid-cols-2">
-      <img src="<?= placeHolderImage(600, 600); ?>" alt="" class="object-cover lg:rounded-l-md lg:rounded-tr-none rounded-t-md lg:h-[400px] h-[200px] w-full">
+      <img src="<?= placeHolderImage(600, 600); ?>" alt="" class="object-cover lg:rounded-l-md lg:rounded-tr-none rounded-t-md min-h-full lg:h-[400px] h-[200px] w-full">
       <div class="p-sp-8">
-        <InnerBlocks />
+        <?= $subtitleEditor; ?>
+        <?php include('includes/button-group.php'); ?>
       </div>
     </div>
   </div>
