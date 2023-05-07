@@ -9,12 +9,12 @@
           <p>Stay up to date on mental health research, wellness techniques, treatment services, and more.</p>
         </div>
         <div>
-          <form role="search" method="get" class="search-form" action="<?= site_url('/search'); ?>">
+          <form role="search" method="get" class="relative search-form" action="<?php echo esc_url(site_url('/search')); ?>">
             <label>
               <span class="screen-reader-text"><?php echo _x('Search for:', 'label'); ?></span>
-              <input type="search" class="search-field" placeholder="<?php echo esc_attr_x('Search &hellip;', 'placeholder'); ?>" value="<?php echo get_search_query(); ?>" name="query" />
+              <input type="search" class="w-full border-none rounded-sm outline-none search-field h-sp-12 lg:h-sp-14 text-h3 lg:text-h3-lg py-sp-4 px-sp-6 focus-visible:border-none" placeholder="<?php echo esc_attr_x('Search &hellip;', 'placeholder'); ?>" value="<?php echo get_search_query(); ?>" name="query" />
             </label>
-            <button type="submit" class="search-submit"><?php echo esc_html_x('Search', 'submit button'); ?></button>
+            <button type="submit" class="absolute top-0 right-0 flex items-center justify-center h-full transition-colors duration-300 bg-white rounded-sm search-submit aspect-square hover:bg-lightest-purple"><img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/search.svg'); ?>" alt="" srcset=""></button>
           </form>
         </div>
       </div>
@@ -25,9 +25,21 @@
           'hide_empty' => false,
         ));
         foreach ($terms as $term) : ?>
-          <div class="relative flex flex-col rounded-md gap-sp-4 bg-purple-gradient-end p-sp-5">
+          <?php
+          if ($term->slug === 'families-and-caregivers') {
+            $bgColor = 'bg-noise-orange';
+            $icon = 'families';
+          } elseif ($term->slug === 'teens-and-young-adults') {
+            $bgColor = 'bg-noise-purple';
+            $icon = 'person';
+          } elseif ($term->slug === 'providers') {
+            $bgColor = 'bg-noise-blue';
+            $icon = 'clipboard';
+          }
+          ?>
+          <div class="relative flex flex-col rounded-md gap-sp-4 bg-purple-gradient-end p-sp-5 <?= $bgColor; ?>">
             <div>
-              <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/person.svg'); ?>" alt="icon of person">
+              <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/' . $icon . '.svg'); ?>" alt="icon of person">
             </div>
             <div class="flex items-center justify-between">
               <h3 class="mb-0"><a href="<?= get_term_link($term->term_id); ?>" class="text-white stretched-link"><?= $term->name; ?></a></h3>
@@ -51,7 +63,7 @@
 
         $query = new WP_Query($args);
         ?>
-        <div class="relative swiper swiper-featured-blog h-[400px]">
+        <div class="relative swiper swiper-featured-blog lg:h-[400px]">
           <div class="swiper-wrapper">
             <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
                 <div class="swiper-slide">
@@ -66,7 +78,7 @@
                       </div>
                       <a href="<?= get_the_permalink(); ?>" class="text-white stretched-link">Read more</a>
                     </div>
-                    <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 object-cover lg:order-2 h-[400px] w-full">
+                    <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 object-cover lg:order-2 lg:h-[400px] w-full">
                   </div>
                 </div>
             <?php endwhile;

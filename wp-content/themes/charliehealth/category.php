@@ -46,15 +46,18 @@ if (is_category('families-and-caregivers')) {
                 <?php
                 if ($term->slug === 'families-and-caregivers') {
                   $bgColor = 'bg-noise-orange';
+                  $icon = 'families';
                 } elseif ($term->slug === 'teens-and-young-adults') {
                   $bgColor = 'bg-noise-purple';
+                  $icon = 'person';
                 } elseif ($term->slug === 'providers') {
                   $bgColor = 'bg-noise-blue';
+                  $icon = 'clipboard';
                 }
                 ?>
                 <div class="relative flex flex-col rounded-md gap-sp-4 p-sp-5 <?= $bgColor; ?>">
                   <div>
-                    <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/person.svg'); ?>" alt="icon of person">
+                    <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/' . $icon . '.svg'); ?>" alt="icon of person">
                   </div>
                   <div class="flex items-center justify-between">
                     <h3 class="mb-0 text-h4"><a href="<?= get_term_link($term->term_id); ?>" class="text-white stretched-link"><?= $term->name; ?></a></h3>
@@ -82,7 +85,7 @@ if (is_category('families-and-caregivers')) {
 
         $query = new WP_Query($args);
         ?>
-        <div class="relative swiper swiper-featured-blog h-[400px]">
+        <div class="relative swiper swiper-featured-blog lg:h-[400px]">
           <div class="swiper-wrapper">
             <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
                 <div class="swiper-slide">
@@ -97,7 +100,7 @@ if (is_category('families-and-caregivers')) {
                       </div>
                       <a href="<?= get_the_permalink(); ?>" class="text-white stretched-link">Read more</a>
                     </div>
-                    <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 object-cover lg:order-2 h-[400px] w-full">
+                    <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 object-cover lg:order-2 lg:h-[400px] w-full">
                   </div>
                 </div>
             <?php endwhile;
