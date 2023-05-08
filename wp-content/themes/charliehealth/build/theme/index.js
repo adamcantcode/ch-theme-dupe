@@ -57,11 +57,20 @@ function ajaxPagination() {
       <path d="M38.0607 26.0607C38.6464 25.4749 38.6464 24.5251 38.0607 23.9393L28.5147 14.3934C27.9289 13.8076 26.9792 13.8076 26.3934 14.3934C25.8076 14.9792 25.8076 15.9289 26.3934 16.5147L34.8787 25L26.3934 33.4853C25.8076 34.0711 25.8076 35.0208 26.3934 35.6066C26.9792 36.1924 27.9289 36.1924 28.5147 35.6066L38.0607 26.0607ZM13 26.5H37V23.5H13V26.5Z" fill="#212984" />
       <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
     </svg>`,
-      callback: function (pageNumber) {
+      callback: function (data, pagination) {
+        console.log(data);
+        console.log(pagination);
+
+        // var url = window.location.href.split('?')[0] + '?page=' + data[0];
+        jQuery('.pagination-container .paginationjs-page').each(function (index, element) {
+          var page = jQuery(element).data('num');
+          var link = jQuery(element).find('a');
+          jQuery(link).attr('href', window.location.href + '/page/' + page);
+        });
         const bodyClasses = Array.from(document.body.classList);
         var [endpoint] = getEndpoint(bodyClasses, tagID);
         jQuery('.posts-container').addClass('opacity-0 scale-[0.99]');
-        endpoint += `&page=${pageNumber}&per_page=${postsPerPage}`;
+        endpoint += `&page=${data}&per_page=${postsPerPage}`;
         fetch(endpoint).then(function (response) {
           return response.json();
         }).then(function (posts) {
