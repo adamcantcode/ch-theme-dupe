@@ -10,6 +10,7 @@ $author = get_field('author') ?: 'The Charlile Health Team';
 $medicalReviewer = get_field('medical_reviewer') ?: '';
 $date = get_field('date') ?: '';
 $relatedPosts = get_field('related_posts') ?: '';
+$toc = get_field('toc') ?: '';
 
 $audiences = get_the_terms(get_the_ID(), 'category');
 $tags = get_the_terms(get_the_ID(), 'post_tag');
@@ -76,6 +77,7 @@ $tags = get_the_terms(get_the_ID(), 'post_tag');
     <div class="invisible hidden opacity-0 back-to-top top-sp-16 left-sp-10 mb-sp-16 w-fit">
       <h3><a href="#mainArticleContent">Back to top</a></h3>
     </div>
+    <?php if($toc) : ?>
     <section class="section-xs">
       <div class="container-sm">
         <div class="rounded-md toc-container bg-light-purple">
@@ -94,6 +96,7 @@ $tags = get_the_terms(get_the_ID(), 'post_tag');
         </div>
       </div>
     </section>
+    <?php endif; ?>
     <section class="section-horizontal">
       <div class="container">
         <div class="divider"></div>
