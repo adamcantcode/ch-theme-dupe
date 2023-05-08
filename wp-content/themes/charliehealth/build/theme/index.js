@@ -58,22 +58,29 @@ function ajaxPagination() {
       <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
     </svg>`,
       callback: function (pageNumber) {
-        jQuery('.posts-container').addClass('opacity-0 scale-[0.99]');
         const bodyClasses = Array.from(document.body.classList);
         var [endpoint] = getEndpoint(bodyClasses, tagID);
+        jQuery('.posts-container').addClass('opacity-0 scale-[0.99]');
         endpoint += `&page=${pageNumber}&per_page=${postsPerPage}`;
         fetch(endpoint).then(function (response) {
           return response.json();
         }).then(function (posts) {
           var html = '';
+          var author;
           posts.forEach(function (post) {
+            fetch(`https://wpch.local/wp-json/wp/v2/authors/${post.acf.author}`).then(function (response) {
+              return response.json();
+            }).then(function (author) {
+              console.log(author.title.rendered);
+              author = author.title.rendered;
+            });
             var cats = post._embedded['wp:term'][0];
             var tags = post._embedded['wp:term'][1];
             html += `<div class="relative grid overflow-hidden border rounded-sm border-card-border">
                 <img src="https://images.placeholders.dev/?width=800&height=600&text=FPO" alt="" class="object-cover lg:h-[220px] h-[150px] w-full">
                 <div class="grid p-sp-4">
                   <h3><a href="${post.link}" class="stretched-link">${post.title.rendered}</a></h3>
-                  <h5 class="mb-sp-4">author</h5>
+                  <h5 class="mb-sp-4">${author}</h5>
                   <div class="grid justify-start grid-flow-col gap-sp-4">
                   ${tags.map(tag => `<a href="${tag.link}" class="px-sp-4 py-sp-3 no-underline rounded-lg text-h6 bg-tag-gray z-20 relative inline-block">${tag.name}</a>`).join('')}
                   </div>
