@@ -115,7 +115,7 @@ $tags = get_the_terms(get_the_ID(), 'post_tag');
             <img src="https://images.placeholders.dev/?width=800&height=600&text=FPO" alt="" class="object-cover lg:h-[220px] h-[150px] w-full">
             <div class="grid p-sp-4">
               <h3><a href="<?= get_the_permalink($post->ID); ?>" class="stretched-link"><?= $post->post_title; ?></a></h3>
-              <h5 class="mb-sp-4"><?= get_the_author($post->post_auhtor); ?></h5>
+              <h5 class="mb-sp-4"><?= $author = get_field('author')->post_title ?: 'Charlile Health Editorial Team'; ?></h5>
               <div class="grid justify-start grid-flow-col gap-sp-4">
                 <?php $tags = get_the_terms($post->ID, 'post_tag'); ?>
                 <?php foreach ($tags as $tag) : ?>

@@ -207,3 +207,8 @@ add_action('admin_menu', function () {
 add_action('admin_bar_menu', function () {
   remove_action('admin_bar_menu', 'wp_admin_bar_comments_menu', 60);
 }, 0);
+
+// Get properly formatted acf fields in rest API 🙄
+add_filter( 'acf/settings/rest_api_format', function () {
+  return 'standard';
+} );
