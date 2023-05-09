@@ -21,6 +21,29 @@
             "endpoint": 0
         },
         {
+            "key": "field_645a5b334ba97",
+            "label": "Style",
+            "name": "style",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "default": "Default",
+                "feed": "Feed"
+            },
+            "default_value": "default",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
             "key": "field_641780d37884e",
             "label": "Numbers",
             "name": "card_grid_numbers",
@@ -102,6 +125,43 @@
             "endpoint": 0
         },
         {
+            "key": "field_645a5b974ba98",
+            "label": "Cards",
+            "name": "posts",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_645a5b334ba97",
+                        "operator": "==",
+                        "value": "feed"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "areas-of-care",
+                "treatment-modalities"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "post_type"
+            ],
+            "return_format": "id",
+            "min": "",
+            "max": "",
+            "elements": ""
+        },
+        {
             "key": "field_64178807b65ba",
             "label": "Cards",
             "name": "card_grid_cards",
@@ -109,7 +169,15 @@
             "type": "repeater",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_645a5b334ba97",
+                        "operator": "!=",
+                        "value": "feed"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -204,5 +272,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1679269638
+    "modified": 1683643924
 }
