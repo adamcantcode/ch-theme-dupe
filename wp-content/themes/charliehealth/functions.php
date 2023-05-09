@@ -49,6 +49,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/divider');
   register_block_type(__DIR__ . '/build/blocks/cta');
   register_block_type(__DIR__ . '/build/blocks/pre-footer-cta');
+  register_block_type(__DIR__ . '/build/blocks/large-quote');
 }
 add_action('init', 'register_acf_blocks', 5);
 

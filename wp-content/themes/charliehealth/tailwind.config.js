@@ -95,7 +95,7 @@ module.exports = {
         'h1-display': [
           '2.25rem',
           {
-            lineHeight: '2.4rem',
+            lineHeight: '2.75rem',
             letterSpacing: '0',
             fontWeight: '400',
           },
