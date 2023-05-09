@@ -3,6 +3,29 @@
     "title": "Call to Action",
     "fields": [
         {
+            "key": "field_645abb1af2ab6",
+            "label": "Style",
+            "name": "style",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "value": "Value Prop",
+                "full": "Full Width"
+            },
+            "default_value": "value",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
             "key": "field_64458fc822837",
             "label": "Heading",
             "name": "heading",
@@ -77,5 +100,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1682281700
+    "modified": 1683667798
 }
