@@ -1618,6 +1618,10 @@ a.nav-link:hover {
   cursor: pointer;
 }
 
+.auto-cols-auto{
+  grid-auto-columns: auto;
+}
+
 .grid-flow-col{
   grid-auto-flow: column;
 }

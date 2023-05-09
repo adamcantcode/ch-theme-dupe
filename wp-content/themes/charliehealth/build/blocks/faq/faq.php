@@ -5,13 +5,6 @@
  *
  */
 
-// Support custom "anchor" values.
-$anchor = '';
-if (!empty($block['anchor'])) {
-  $anchor = 'id="' . esc_attr($block['anchor']) . '" ';
-}
-
-// Create class attribute allowing for custom "className" and "align" values.
 $className = 'faq-block';
 if (!empty($block['className'])) {
   $className .= ' ' . esc_attr($block['className']);
