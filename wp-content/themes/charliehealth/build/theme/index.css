@@ -1654,6 +1654,10 @@ a.nav-link:hover {
   flex-direction: column;
 }
 
+.content-center{
+  align-content: center;
+}
+
 .content-between{
   align-content: space-between;
 }
@@ -3223,6 +3227,10 @@ a.js-tag-id.active:hover {
 
   .lg\:gap-y-sp-16{
     row-gap: 6rem;
+  }
+
+  .lg\:overflow-auto{
+    overflow: auto;
   }
 
   .lg\:overflow-y-visible{

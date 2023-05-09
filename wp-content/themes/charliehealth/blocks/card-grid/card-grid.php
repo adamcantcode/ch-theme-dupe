@@ -45,7 +45,7 @@ if ($horizontalScroll === true) {
 <?php endif; ?>
 <?php if ($style === 'feed') : ?>
   <div id="<?= $block['id']; ?>" class="<?= $scrollClasses; ?>">
-    <div class="<?= $gridClasses; ?> card-wrapper relative overflow-hidden transition-all duration-300 max-h-[70vh]">
+    <div class="<?= $gridClasses; ?> card-wrapper relative lg:overflow-auto overflow-hidden transition-all duration-300 lg:max-h-full max-h-[70vh]">
       <?php foreach ($posts as $post) : ?>
         <div class="w-[calc(100vw-2.5rem)] lg:w-full hover:-translate-y-sp-1 transition-transform duration-200 card">
           <div class="<?= $borderStyle === 'gradient' ? 'border-gradient' : ' border rounded-md'; ?>">
@@ -61,8 +61,8 @@ if ($horizontalScroll === true) {
           </div>
         </div>
       <?php endforeach; ?>
-      <div class="absolute bottom-0 flex items-center w-full bg-white lg:hidden">
-        <a role="button" class="ch-button button-secondary toggle-button">Show More</a>
+      <div class="absolute bottom-0 flex justify-center w-full bg-white lg:hidden">
+        <a role="button" class="z-10 ch-button button-secondary toggle-button">Show More</a>
       </div>
     </div>
   </div>
