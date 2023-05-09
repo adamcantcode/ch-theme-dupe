@@ -1295,24 +1295,12 @@ a.nav-link:hover {
   order: -9999;
 }
 
-.col-span-1{
-  grid-column: span 1 / span 1;
-}
-
 .col-span-2{
   grid-column: span 2 / span 2;
 }
 
 .col-span-3{
   grid-column: span 3 / span 3;
-}
-
-.col-span-5{
-  grid-column: span 5 / span 5;
-}
-
-.col-span-7{
-  grid-column: span 7 / span 7;
 }
 
 .m-0{
@@ -1579,10 +1567,6 @@ a.nav-link:hover {
   width: 1.5rem;
 }
 
-.min-w-\[500px\]{
-  min-width: 500px;
-}
-
 .max-w-\[1280px\]{
   max-width: 1280px;
 }
@@ -1634,10 +1618,6 @@ a.nav-link:hover {
   cursor: pointer;
 }
 
-.auto-cols-fr{
-  grid-auto-columns: minmax(0, 1fr);
-}
-
 .grid-flow-col{
   grid-auto-flow: column;
 }
@@ -1652,10 +1632,6 @@ a.nav-link:hover {
 
 .grid-cols-3{
   grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.grid-cols-12{
-  grid-template-columns: repeat(12, minmax(0, 1fr));
 }
 
 .flex-row{
@@ -3196,10 +3172,6 @@ a.js-tag-id.active:hover {
     grid-template-columns: 2fr 1fr;
   }
 
-  .lg\:grid-cols-12{
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-  }
-
   .lg\:flex-row{
     flex-direction: row;
   }
@@ -3243,6 +3215,10 @@ a.js-tag-id.active:hover {
 
   .lg\:overflow-auto{
     overflow: auto;
+  }
+
+  .lg\:overflow-visible{
+    overflow: visible;
   }
 
   .lg\:overflow-y-visible{

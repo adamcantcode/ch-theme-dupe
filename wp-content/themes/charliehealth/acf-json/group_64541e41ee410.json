@@ -4,8 +4,8 @@
     "fields": [
         {
             "key": "field_64541e42c7c4a",
-            "label": "Title",
-            "name": "title",
+            "label": "Job Title",
+            "name": "job_title",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -73,5 +73,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1683234985
+    "modified": 1683662968
 }
