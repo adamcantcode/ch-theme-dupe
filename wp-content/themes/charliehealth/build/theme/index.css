@@ -1979,6 +1979,11 @@ a.nav-link:hover {
   padding-bottom: 1.25rem;
 }
 
+.px-2{
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 .\!pb-0{
   padding-bottom: 0px !important;
 }

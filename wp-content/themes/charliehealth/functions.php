@@ -110,38 +110,6 @@ add_filter(
   5
 );
 
-// add_filter('init', function () {
-//   global $wp;
-
-//   $wp->add_query_var('query');
-//   $wp->remove_query_var('s');
-// });
-
-
-// add_filter('request', function ($request) {
-//   if (isset($_REQUEST['query'])) {
-//     $request['s'] = $_REQUEST['query'];
-//   }
-
-//   return $request;
-// });
-
-// add_filter('request', function ($request) {
-//   if (isset($_REQUEST['query'])) {
-//     $request['query'] = $_REQUEST['query'];
-//   }
-//   return $request;
-// });
-
-// function fb_change_search_url_rewrite()
-// {
-//   if (is_search() && !empty($_GET['query'])) {
-//     wp_redirect(home_url("/search") . urlencode(get_query_var('query')));
-//     exit();
-//   }
-// }
-// add_action('template_redirect', 'fb_change_search_url_rewrite');
-
 /**
  * Rename Category to Theme
  *
