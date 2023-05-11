@@ -15,14 +15,6 @@ $toc = get_field('toc') ?: '';
 $audiences = get_the_terms(get_the_ID(), 'category');
 $tags = get_the_terms(get_the_ID(), 'post_tag');
 
-// if (!empty($audiences)) {
-//   foreach ($audiences as $audience) {
-//     $term_name = $audience->name;
-//     $term_slug = $audience->slug;
-//     $term_id   = $audience->term_id;
-//   }
-// }
-
 ?>
 
 <main id="primary" class="site-main lg:mt-[68px] mt-0">
