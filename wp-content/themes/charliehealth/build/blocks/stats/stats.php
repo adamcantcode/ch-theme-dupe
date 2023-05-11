@@ -26,3 +26,5 @@ $source = get_field('source');
     </a>
   <?php endif; ?>
 <?php endif; ?>
+<?= file_get_contents('wp-content/themes/charliehealth/resources/images/utilities/stats-circle.php'); ?>
+<?php acf_localize_data(array('foo' => 'bar')); ?>

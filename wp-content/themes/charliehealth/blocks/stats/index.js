@@ -51,4 +51,19 @@ window.addEventListener('DOMContentLoaded', () => {
     },
     '-=1'
   );
+
+  // TESTING STATS CIRCLE
+
+  let path1 = document.querySelector('.js-stats-circle svg circle');
+  let length1 = path1.getTotalLength();
+  var offset1 = length1 * 0.1;
+
+  gsap.set(path1, {
+    strokeDasharray: length1,
+    opacity: 0,
+    rotate: '-90deg',
+    transformOrigin: 'center center'
+  });
+
+  gsap.fromTo( path1, {strokeDashoffset: length1, opacity: 1,},{strokeDashoffset: offset1,ease: 'power1.inOut',});
 });
