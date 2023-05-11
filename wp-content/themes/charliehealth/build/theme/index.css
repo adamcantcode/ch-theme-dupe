@@ -1219,6 +1219,13 @@ a.nav-link:hover {
   left: auto !important;
 }
 
+.inset-0{
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
 .bottom-0{
   bottom: 0px;
 }
@@ -1583,6 +1590,18 @@ a.nav-link:hover {
   max-width: 80rem;
 }
 
+.max-w-\[250px\]{
+  max-width: 250px;
+}
+
+.max-w-\[225px\]{
+  max-width: 225px;
+}
+
+.max-w-\[200px\]{
+  max-width: 200px;
+}
+
 .flex-none{
   flex: none;
 }
@@ -1640,6 +1659,10 @@ a.nav-link:hover {
 
 .flex-col{
   flex-direction: column;
+}
+
+.content-center{
+  align-content: center;
 }
 
 .content-between{
@@ -2089,6 +2112,10 @@ a.nav-link:hover {
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-\[2\.5rem\]{
+  font-size: 2.5rem;
 }
 
 .font-bold{

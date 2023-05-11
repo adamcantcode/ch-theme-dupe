@@ -53,17 +53,41 @@ window.addEventListener('DOMContentLoaded', () => {
   );
 
   // TESTING STATS CIRCLE
-
-  let path1 = document.querySelector('.js-stats-circle svg circle');
-  let length1 = path1.getTotalLength();
-  var offset1 = length1 * 0.1;
-
-  gsap.set(path1, {
-    strokeDasharray: length1,
-    opacity: 0,
-    rotate: '-90deg',
-    transformOrigin: 'center center'
+  let statsCirclesTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.stats-block-circles',
+      start: 'top 80%',
+      // markers: true,
+    },
   });
 
-  gsap.fromTo( path1, {strokeDashoffset: length1, opacity: 1,},{strokeDashoffset: offset1,ease: 'power1.inOut',});
+  var circles = document.querySelectorAll('.stats-circles');
+  circles.forEach((circle) => {
+    var path = circle.querySelector('.js-stats-circle svg circle');
+    var circlePercent = parseInt(circle.querySelector('h2').innerText);
+    var pathLength = path.getTotalLength();
+    var offset = pathLength * (1 - circlePercent / 100);
+
+    statsCirclesTimeline.set(path, {
+      strokeDasharray: pathLength,
+      opacity: 0,
+      rotate: '-90deg',
+      transformOrigin: 'center center',
+    });
+
+    statsCirclesTimeline.fromTo(
+      path,
+      {
+        strokeDashoffset: pathLength,
+        opacity: 0,
+      },
+      {
+        strokeDashoffset: offset,
+        ease: 'power1.inOut',
+        opacity: 1,
+        stagger: 0.15,
+        duration: 2,
+      }
+    );
+  });
 });

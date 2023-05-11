@@ -3,6 +3,29 @@
     "title": "Stats",
     "fields": [
         {
+            "key": "field_645d5737df31a",
+            "label": "style",
+            "name": "style",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "divider": "Divider",
+                "circle": "Circles"
+            },
+            "default_value": "divider",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
             "key": "field_6442a90385bee",
             "label": "Statistic",
             "name": "statistic",
@@ -103,5 +126,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1682090650
+    "modified": 1683838868
 }
