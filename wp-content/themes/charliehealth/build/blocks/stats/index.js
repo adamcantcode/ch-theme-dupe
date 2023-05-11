@@ -9505,37 +9505,49 @@ window.addEventListener('DOMContentLoaded', () => {
   }, '-=1');
 
   // TESTING STATS CIRCLE
-  let statsCirclesTimeline = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
-    scrollTrigger: {
-      trigger: '.stats-block-circles',
-      start: 'top 80%'
-      // markers: true,
-    }
-  });
+  // let statsCirclesTimeline = gsap.timeline({
+
+  // });
 
   var circles = document.querySelectorAll('.stats-circles');
-  circles.forEach(circle => {
+  circles.forEach((circle, index) => {
     var path = circle.querySelector('.js-stats-circle svg circle');
     var circlePercent = parseInt(circle.querySelector('h2').innerText);
     var pathLength = path.getTotalLength();
     var offset = pathLength * (1 - circlePercent / 100);
-    statsCirclesTimeline.set(path, {
+    gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.set(path, {
       strokeDasharray: pathLength,
       opacity: 0,
       rotate: '-90deg',
       transformOrigin: 'center center'
     });
-    statsCirclesTimeline.fromTo(path, {
+    gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.fromTo(path, {
       strokeDashoffset: pathLength,
       opacity: 0
     }, {
       strokeDashoffset: offset,
-      ease: 'power1.inOut',
+      ease: 'ease.in',
       opacity: 1,
-      stagger: 0.15,
-      duration: 2
+      duration: 2,
+      delay: () => index / 2,
+      scrollTrigger: {
+        trigger: '.stats-block-circles',
+        start: 'top 80%'
+      }
     });
   });
+  gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from('.stats-block-circles .number', {
+    scrollTrigger: {
+      trigger: '.stats-block-circles',
+      start: 'top 80%'
+    },
+    textContent: 0 + '%',
+    snap: {
+      textContent: 1
+    },
+    duration: 4,
+    ease: 'rough'
+  }, '-=1');
 });
 }();
 /******/ })()

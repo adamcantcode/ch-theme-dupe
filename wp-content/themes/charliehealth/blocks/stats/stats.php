@@ -23,7 +23,7 @@ $style = get_field('style');
       <?php endwhile; ?>
     </div>
   <?php endif; ?>
-  <?php if ($style !== 'circles') : ?>
+  <?php if ($style === 'circle') : ?>
     <div class="grid lg:grid-flow-col justify-items-center gap-sp-8 stats-block-circles">
       <?php while (have_rows('statistic')) : the_row(); ?>
         <?php
@@ -32,10 +32,15 @@ $style = get_field('style');
         ?>
         <div class="relative stats-circles">
           <div class="absolute inset-0 grid content-center justify-items-center w-full max-w-[200px] mx-auto text-center">
-            <h2 class="text-[2.5rem] mb-sp-4" id="<?= get_row_index(); ?>"><?= $number; ?></h3>
-            <p class=""><?= $label; ?></p>
+            <h2 class="text-[2.5rem] mb-sp-4 number" id="<?= get_row_index(); ?>"><?= $number; ?></h3>
+              <p class=""><?= $label; ?></p>
           </div>
-          <?= file_get_contents('wp-content/themes/charliehealth/resources/images/utilities/stats-circle.php'); ?>
+          <div class="js-stats-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" fill="none" viewBox="0 0 300 300">
+              <circle cx="150" cy="150" r="145" stroke="#3A5D66" stroke-width="10" class="opacity-0" />
+              <circle cx="150" cy="150" r="119.274" stroke="#D2E3EB" stroke-width="15" />
+            </svg>
+          </div>
         </div>
       <?php endwhile; ?>
     </div>
