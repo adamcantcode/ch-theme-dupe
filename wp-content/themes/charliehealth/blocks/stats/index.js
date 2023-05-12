@@ -86,6 +86,8 @@ window.addEventListener('DOMContentLoaded', () => {
         scrollTrigger: {
           trigger: '.stats-block-circles',
           start: 'top 80%',
+          end: 'bottom 70%',
+          scrub: 2,
         },
       }
     );
@@ -96,10 +98,13 @@ window.addEventListener('DOMContentLoaded', () => {
       scrollTrigger: {
         trigger: '.stats-block-circles',
         start: 'top 80%',
+        end: 'bottom center',
+        toggleActions: 'play pause resume reverse',
       },
       textContent: 0 + '%',
       snap: { textContent: 1 },
-      duration: 4,
+      duration: 2,
+      opacity: 0,
       ease: 'rough',
     },
     '-=1'

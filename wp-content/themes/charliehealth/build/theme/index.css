@@ -1578,6 +1578,10 @@ a.nav-link:hover {
   max-width: 1280px;
 }
 
+.max-w-\[200px\]{
+  max-width: 200px;
+}
+
 .max-w-\[350px\]{
   max-width: 350px;
 }
@@ -1588,18 +1592,6 @@ a.nav-link:hover {
 
 .max-w-\[80rem\]{
   max-width: 80rem;
-}
-
-.max-w-\[250px\]{
-  max-width: 250px;
-}
-
-.max-w-\[225px\]{
-  max-width: 225px;
-}
-
-.max-w-\[200px\]{
-  max-width: 200px;
 }
 
 .flex-none{
@@ -2039,6 +2031,10 @@ a.nav-link:hover {
   font-family: "ABC Arizona", serif;
 }
 
+.text-\[2\.5rem\]{
+  font-size: 2.5rem;
+}
+
 .text-h1{
   font-size: 2rem;
   line-height: 2rem;
@@ -2112,10 +2108,6 @@ a.nav-link:hover {
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-\[2\.5rem\]{
-  font-size: 2.5rem;
 }
 
 .font-bold{
