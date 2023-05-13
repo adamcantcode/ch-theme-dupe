@@ -318,3 +318,20 @@
       linear-gradient(90deg, #e07058, #ff9f81);
   }
 }
+.tabs {
+  @apply p-sp-4 duration-300 cursor-pointer;
+  &.active {
+    @apply opacity-100;
+  }
+  @apply opacity-30;
+}
+.tab-contents {
+  @apply p-sp-4 duration-300;
+  &:nth-child(1) {
+    @apply opacity-100
+  }
+  &.active {
+    @apply block;
+  }
+  @apply hidden opacity-0;
+}
