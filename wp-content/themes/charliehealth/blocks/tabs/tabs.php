@@ -1,7 +1,7 @@
 <?php if (have_rows('tabs')) : ?>
-  <div id="<?= $block['id']; ?>" class="<?= $scrollClasses; ?>">
+  <div id="<?= $block['id']; ?>">
     <div class="grid lg:grid-cols-[1fr_2fr] grid-cols-1">
-      <div class="overflow-hidden rounded-l-md tab bg-lightest-purple">
+      <div class="overflow-hidden lg:rounded-l-md lg:rounded-r-none rounded-t-md tab bg-lightest-purple">
         <?php while (have_rows('tabs')) : the_row();
           $title = get_sub_field('tab_title');
           $index = get_row_index();
@@ -16,7 +16,7 @@
           <?php endif; ?>
         <?php endwhile; ?>
       </div>
-      <div class="rounded-r-md tab-content bg-tag-gray">
+      <div class="lg:rounded-r-md lg:rounded-l-none rounded-b-md tab-content bg-tag-gray">
         <?php while (have_rows('tabs')) : the_row();
           $content = get_sub_field('tab_content');
           $index = get_row_index();

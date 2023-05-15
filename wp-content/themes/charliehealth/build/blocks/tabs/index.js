@@ -83,7 +83,9 @@ window.addEventListener('DOMContentLoaded', () => {
     });
     tabContents.forEach(contents => {
       contents.classList.remove('active');
-      contents.style.opacity = 0;
+      setTimeout(() => {
+        contents.style.opacity = 0;
+      }, 10);
     });
   };
 });

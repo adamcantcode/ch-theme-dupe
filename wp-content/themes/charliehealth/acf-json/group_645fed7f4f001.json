@@ -63,7 +63,7 @@
                     "tabs": "all",
                     "toolbar": "full",
                     "media_upload": 0,
-                    "delay": 1,
+                    "delay": 0,
                     "parent_repeater": "field_645fed7fd8ee5"
                 }
             ]
@@ -87,5 +87,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1684009604
+    "modified": 1684016628
 }

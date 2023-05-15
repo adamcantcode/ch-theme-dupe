@@ -1650,10 +1650,6 @@ a.nav-link:hover {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.grid-cols-\[1fr_2fr\]{
-  grid-template-columns: 1fr 2fr;
-}
-
 .flex-row{
   flex-direction: row;
 }
@@ -1817,6 +1813,11 @@ a.nav-link:hover {
 .rounded-t-md{
   border-top-left-radius: 1.25rem;
   border-top-right-radius: 1.25rem;
+}
+
+.rounded-b-md{
+  border-bottom-right-radius: 1.25rem;
+  border-bottom-left-radius: 1.25rem;
 }
 
 .border{
@@ -2976,7 +2977,7 @@ a.js-tag-id.active:hover {
 
 .tab-contents{
   padding: 1rem;
-  transition-duration: 300ms;
+  transition-duration: 1000ms;
 }
 
 .tab-contents:nth-child(1){
@@ -3316,6 +3317,21 @@ a.js-tag-id.active:hover {
   .lg\:rounded-l-md{
     border-top-left-radius: 1.25rem;
     border-bottom-left-radius: 1.25rem;
+  }
+
+  .lg\:rounded-r-md{
+    border-top-right-radius: 1.25rem;
+    border-bottom-right-radius: 1.25rem;
+  }
+
+  .lg\:rounded-l-none{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .lg\:rounded-r-none{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
   .lg\:rounded-tr-none{
