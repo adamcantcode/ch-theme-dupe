@@ -1274,6 +1274,10 @@ a.nav-link:hover {
   top: 6rem;
 }
 
+.\!bottom-0{
+  bottom: 0px !important;
+}
+
 .-z-10{
   z-index: -10;
 }
@@ -1321,6 +1325,11 @@ a.nav-link:hover {
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
+}
+
+.mx-sp-4{
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .mx-sp-5{
@@ -1483,6 +1492,10 @@ a.nav-link:hover {
 
 .h-sp-12{
   height: 3rem;
+}
+
+.\!h-auto{
+  height: auto !important;
 }
 
 .max-h-0{
@@ -1795,6 +1808,11 @@ a.nav-link:hover {
   border-radius: 0.625rem;
 }
 
+.rounded-b-md{
+  border-bottom-right-radius: 1.25rem;
+  border-bottom-left-radius: 1.25rem;
+}
+
 .rounded-t-md{
   border-top-left-radius: 1.25rem;
   border-top-right-radius: 1.25rem;
@@ -1830,6 +1848,11 @@ a.nav-link:hover {
   border-color: rgb(243 244 249 / var(--tw-border-opacity));
 }
 
+.border-purple-gradient-end{
+  --tw-border-opacity: 1;
+  border-color: rgb(166 152 255 / var(--tw-border-opacity));
+}
+
 .border-white{
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
@@ -1861,6 +1884,11 @@ a.nav-link:hover {
 .bg-light-purple{
   --tw-bg-opacity: 1;
   background-color: rgb(240 239 252 / var(--tw-bg-opacity));
+}
+
+.bg-lightest-purple{
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 248 255 / var(--tw-bg-opacity));
 }
 
 .bg-lightest-teal{
@@ -2936,6 +2964,46 @@ a.js-tag-id.active:hover {
       linear-gradient(90deg, #e07058, #ff9f81);
   }
 
+.tabs{
+  cursor: pointer;
+  padding: 1rem;
+  transition-duration: 300ms;
+}
+
+.tabs.active{
+  opacity: 1;
+}
+
+.tabs{
+  opacity: 0.3;
+}
+
+.tab-contents{
+  padding: 1rem;
+  transition-duration: 1000ms;
+}
+
+.tab-contents:nth-child(1){
+  opacity: 1;
+}
+
+.tab-contents.active{
+  display: block;
+}
+
+.tab-contents{
+  display: none;
+  opacity: 0;
+}
+
+.tab-contents > *:last-child{
+  margin-bottom: 0px;
+}
+
+.carousel-content > *:last-child{
+  margin-bottom: 0px;
+}
+
 .hover\:text-white:hovera:hover {
         color: #ffffff;
       }
@@ -3260,6 +3328,21 @@ a.js-tag-id.active:hover {
   .lg\:rounded-l-md{
     border-top-left-radius: 1.25rem;
     border-bottom-left-radius: 1.25rem;
+  }
+
+  .lg\:rounded-l-none{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .lg\:rounded-r-md{
+    border-top-right-radius: 1.25rem;
+    border-bottom-right-radius: 1.25rem;
+  }
+
+  .lg\:rounded-r-none{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
   .lg\:rounded-tr-none{

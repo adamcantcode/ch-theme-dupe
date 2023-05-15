@@ -50,6 +50,8 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/cta');
   register_block_type(__DIR__ . '/build/blocks/pre-footer-cta');
   register_block_type(__DIR__ . '/build/blocks/large-quote');
+  register_block_type(__DIR__ . '/build/blocks/tabs');
+  register_block_type(__DIR__ . '/build/blocks/carousel');
 }
 add_action('init', 'register_acf_blocks', 5);
 
