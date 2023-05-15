@@ -328,10 +328,26 @@
 .tab-contents {
   @apply p-sp-4 duration-1000;
   &:nth-child(1) {
-    @apply opacity-100
+    @apply opacity-100;
   }
   &.active {
     @apply block;
   }
   @apply hidden opacity-0;
+  & > {
+    & * {
+      &:last-child {
+        @apply mb-0;
+      }
+    }
+  }
+}
+.carousel-content {
+  & > {
+    & * {
+      &:last-child {
+        @apply mb-0;
+      }
+    }
+  }
 }

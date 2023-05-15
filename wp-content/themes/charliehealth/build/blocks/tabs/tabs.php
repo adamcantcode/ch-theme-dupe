@@ -1,5 +1,5 @@
 <?php if (have_rows('tabs')) : ?>
-  <div id="<?= $block['id']; ?>">
+  <div id="<?= $block['id']; ?>" class="mb-sp-6 last:mb-0">
     <div class="grid lg:grid-cols-[1fr_2fr] grid-cols-1">
       <div class="overflow-hidden lg:rounded-l-md lg:rounded-r-none rounded-t-md tab bg-lightest-purple">
         <?php while (have_rows('tabs')) : the_row();
