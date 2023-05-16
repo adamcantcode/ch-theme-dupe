@@ -3,6 +3,24 @@
     "title": "Research Information",
     "fields": [
         {
+            "key": "field_645429637e57d",
+            "label": "Date",
+            "name": "date",
+            "aria-label": "",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "F j, Y",
+            "return_format": "F j, Y",
+            "first_day": 1
+        },
+        {
             "key": "field_645428d77e57b",
             "label": "Author",
             "name": "author",
@@ -55,24 +73,6 @@
             "ui": 1
         },
         {
-            "key": "field_645429637e57d",
-            "label": "Date",
-            "name": "date",
-            "aria-label": "",
-            "type": "date_picker",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "display_format": "F j, Y",
-            "return_format": "F j, Y",
-            "first_day": 1
-        },
-        {
             "key": "field_645429ca7e57e",
             "label": "Related Posts",
             "name": "related_posts",
@@ -118,8 +118,8 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": true,
+    "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1683237442
+    "modified": 1684197857
 }
