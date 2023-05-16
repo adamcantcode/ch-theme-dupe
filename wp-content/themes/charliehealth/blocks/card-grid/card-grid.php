@@ -14,6 +14,8 @@ if ($horizontalScroll === true) {
   $gridClasses = 'grid items-center grid-cols-1 gap-4 lg:gap-6 lg:grid-cols-3';
   $borderClasses = 'grid items-center grid-cols-1 gap-4 lg:gap-6 lg:grid-cols-3';
 }
+
+// var_dump(get_intermediate_image_sizes());
 ?>
 <?php if ($style !== 'feed') : ?>
   <?php if (have_rows('card_grid_cards')) : ?>
@@ -22,9 +24,13 @@ if ($horizontalScroll === true) {
         <?php while (have_rows('card_grid_cards')) : the_row();
           $title = get_sub_field('card_grid_title');
           $details = get_sub_field('card_grid_details');
+          $image = get_sub_field('image');
         ?>
           <div class="w-[calc(100vw-2.5rem)] lg:w-full">
             <div class="<?= $borderStyle === 'gradient' ? 'border-gradient' : ' border rounded-md'; ?>">
+              <?php if ($image) : ?>
+                <img src="<?= $image['sizes']['large'] ?>" alt="" class="object-cover w-full rounded-t-md lg:h-[250px] h-[200px]">
+              <?php endif; ?>
               <div class="p-sp-4 md:p-sp-6 lg:p-sp-8">
                 <?php if ($numbers) : ?>
                   <h2 class="text-h2-lg mb-sp-5"><?= get_row_index(); ?></h2>
