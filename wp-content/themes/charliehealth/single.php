@@ -11,6 +11,7 @@ $medicalReviewer = get_field('medical_reviewer') ?: '';
 $date = get_field('date') ?: '';
 $relatedPosts = get_field('related_posts') ?: '';
 $toc = get_field('toc') ?: '';
+$references = get_field('references') ?: '';
 
 $audiences = get_the_terms(get_the_ID(), 'category');
 $tags = get_the_terms(get_the_ID(), 'post_tag');
@@ -69,25 +70,25 @@ $tags = get_the_terms(get_the_ID(), 'post_tag');
     <div class="invisible hidden opacity-0 back-to-top top-sp-16 left-sp-10 mb-sp-16 w-fit">
       <h3><a href="#mainArticleContent">Back to top</a></h3>
     </div>
-    <?php if($toc) : ?>
-    <section class="section-xs">
-      <div class="container-sm">
-        <div class="rounded-md toc-container bg-light-purple">
-          <div class="flex cursor-pointer toc-heading lg:p-sp-8 p-sp-4">
-            <h3 class="mb-0">Table of Contents</h3>
-            <div class="flex items-center ml-auto">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="none" viewBox="8 8 8 8" height="12px" width="12px">
-                <path d="M9 12H15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                <path d="M12 9L12 15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
+    <?php if ($toc) : ?>
+      <section class="section-xs">
+        <div class="container-sm">
+          <div class="rounded-md toc-container bg-light-purple">
+            <div class="flex cursor-pointer toc-heading lg:p-sp-8 p-sp-4">
+              <h3 class="mb-0">Table of Contents</h3>
+              <div class="flex items-center ml-auto toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="none" viewBox="8 8 8 8" height="12px" width="12px">
+                  <path d="M9 12H15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M12 9L12 15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="overflow-hidden transition-all duration-500 ease-in-out toc-content max-h-0">
+              <div id="toc" class="flex flex-col items-start pt-0 lg:pt-0 lg:p-sp-8 p-sp-4 gap-sp-1"></div>
             </div>
           </div>
-          <div class="overflow-hidden transition-all duration-500 ease-in-out toc-content max-h-0">
-            <div id="toc" class="flex flex-col items-start pt-0 lg:pt-0 lg:p-sp-8 p-sp-4 gap-sp-1"></div>
-          </div>
         </div>
-      </div>
-    </section>
+      </section>
     <?php endif; ?>
     <section class="section-horizontal">
       <div class="container">
@@ -97,6 +98,25 @@ $tags = get_the_terms(get_the_ID(), 'post_tag');
     <article id="articleContent" class="section">
       <div class="container-sm">
         <?php the_content(); ?>
+        <?php if($references) : ?>
+        <div class="divider mb-sp-4"></div>
+        <div class="rounded-md references-container">
+          <div class="flex duration-300 rounded-md cursor-pointer references-heading lg:p-sp-8 p-sp-4 hover:bg-lightest-purple">
+            <h3 class="mb-0">References</h3>
+            <div class="flex items-center ml-auto toggle">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="none" viewBox="8 8 8 8" height="12px" width="12px">
+                <path d="M9 12H15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M12 9L12 15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="overflow-hidden transition-all duration-500 ease-in-out references-content max-h-0">
+            <div class="pt-0 lg:pt-0 lg:p-sp-8 p-sp-4 gap-sp-1 mt-sp-4">
+              <?= $references; ?>
+            </div>
+          </div>
+        </div>
+        <?php endif; ?>
       </div>
     </article>
   </div>

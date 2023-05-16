@@ -191,9 +191,11 @@
 
 /* FAQ Accordion */
 .faq-block,
-.toc-container {
+.toc-container,
+.references-container  {
   .accordion-header,
-  .toc-heading {
+  .toc-heading,
+  .references-heading {
     &:hover {
       .toggle {
         svg {

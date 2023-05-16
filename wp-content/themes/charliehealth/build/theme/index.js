@@ -473,6 +473,33 @@ function readTime() {
 
 /***/ }),
 
+/***/ "./src/modules/references.js":
+/*!***********************************!*\
+  !*** ./src/modules/references.js ***!
+  \***********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ references; }
+/* harmony export */ });
+function references() {
+  function toggleAccordion() {
+    this.classList.toggle('active');
+    const accordionContent = this.nextElementSibling;
+    if (accordionContent.style.maxHeight) {
+      accordionContent.style.maxHeight = null;
+    } else {
+      accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+    }
+  }
+  const refHeading = document.querySelector('.references-heading');
+  refHeading.addEventListener('click', toggleAccordion);
+}
+
+/***/ }),
+
 /***/ "./src/modules/share-button.js":
 /*!*************************************!*\
   !*** ./src/modules/share-button.js ***!
@@ -22015,6 +22042,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_read_time__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/read-time */ "./src/modules/read-time.js");
 /* harmony import */ var _modules_featured_blog_slider__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/featured-blog-slider */ "./src/modules/featured-blog-slider.js");
 /* harmony import */ var _modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/ajax-pagination */ "./src/modules/ajax-pagination.js");
+/* harmony import */ var _modules_references__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/references */ "./src/modules/references.js");
+
 
 
 
@@ -22041,6 +22070,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (body.classList.contains('single-post')) {
     (0,_modules_read_time__WEBPACK_IMPORTED_MODULE_9__["default"])();
     (0,_modules_toc__WEBPACK_IMPORTED_MODULE_7__["default"])();
+    (0,_modules_references__WEBPACK_IMPORTED_MODULE_12__["default"])();
     (0,_modules_share_button__WEBPACK_IMPORTED_MODULE_8__["default"])();
   }
   if (body.classList.contains('blog')) {

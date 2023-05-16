@@ -2798,18 +2798,18 @@ a.nav-link:hover {
 
 /* FAQ Accordion */
 
-.faq-block .accordion-header:hover .toggle svg, .faq-block .toc-heading:hover .toggle svg, .toc-container .accordion-header:hover .toggle svg, .toc-container .toc-heading:hover .toggle svg{
+.faq-block .accordion-header:hover .toggle svg, .faq-block .toc-heading:hover .toggle svg, .faq-block .references-heading:hover .toggle svg, .toc-container .accordion-header:hover .toggle svg, .toc-container .toc-heading:hover .toggle svg, .toc-container .references-heading:hover .toggle svg, .references-container .accordion-header:hover .toggle svg, .references-container .toc-heading:hover .toggle svg, .references-container .references-heading:hover .toggle svg{
   --tw-rotate: -45deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.faq-block .accordion-header .toggle svg, .faq-block .toc-heading .toggle svg, .toc-container .accordion-header .toggle svg, .toc-container .toc-heading .toggle svg{
+.faq-block .accordion-header .toggle svg, .faq-block .toc-heading .toggle svg, .faq-block .references-heading .toggle svg, .toc-container .accordion-header .toggle svg, .toc-container .toc-heading .toggle svg, .toc-container .references-heading .toggle svg, .references-container .accordion-header .toggle svg, .references-container .toc-heading .toggle svg, .references-container .references-heading .toggle svg{
   transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
 }
 
-.faq-block .accordion-header.active .toggle svg, .faq-block .toc-heading.active .toggle svg, .toc-container .accordion-header.active .toggle svg, .toc-container .toc-heading.active .toggle svg{
+.faq-block .accordion-header.active .toggle svg, .faq-block .toc-heading.active .toggle svg, .faq-block .references-heading.active .toggle svg, .toc-container .accordion-header.active .toggle svg, .toc-container .toc-heading.active .toggle svg, .toc-container .references-heading.active .toggle svg, .references-container .accordion-header.active .toggle svg, .references-container .toc-heading.active .toggle svg, .references-container .references-heading.active .toggle svg{
   --tw-rotate: 45deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }

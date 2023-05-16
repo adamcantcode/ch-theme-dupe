@@ -11,6 +11,7 @@ import shareButton from './modules/share-button';
 import readTime from './modules/read-time';
 import featuredBlogSlider from './modules/featured-blog-slider';
 import ajaxPagination from './modules/ajax-pagination';
+import references from './modules/references';
 
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
@@ -31,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (body.classList.contains('single-post')) {
     readTime();
     toc();
+    references();
     shareButton();
   }
   if (body.classList.contains('blog')) {
