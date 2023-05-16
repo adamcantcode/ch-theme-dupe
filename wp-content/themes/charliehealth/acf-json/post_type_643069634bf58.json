@@ -56,7 +56,7 @@
     "rest_base": "",
     "rest_namespace": "wp\/v2",
     "rest_controller_class": "WP_REST_Posts_Controller",
-    "menu_position": 4,
+    "menu_position": "",
     "menu_icon": "dashicons-businesswoman",
     "rename_capabilities": false,
     "singular_capability_name": "post",
@@ -80,5 +80,5 @@
     "can_export": true,
     "delete_with_user": false,
     "register_meta_box_cb": "",
-    "modified": 1682545570
+    "modified": 1684258170
 }

@@ -98,24 +98,24 @@ $tags = get_the_terms(get_the_ID(), 'post_tag');
     <article id="articleContent" class="section">
       <div class="container-sm">
         <?php the_content(); ?>
-        <?php if($references) : ?>
-        <div class="divider mb-sp-4"></div>
-        <div class="rounded-md references-container">
-          <div class="flex duration-300 rounded-md cursor-pointer references-heading lg:p-sp-8 p-sp-4 hover:bg-lightest-purple">
-            <h3 class="mb-0">References</h3>
-            <div class="flex items-center ml-auto toggle">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="none" viewBox="8 8 8 8" height="12px" width="12px">
-                <path d="M9 12H15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                <path d="M12 9L12 15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
+        <?php if ($references) : ?>
+          <div class="divider mb-sp-4"></div>
+          <div class="rounded-md references-container">
+            <div class="flex duration-300 rounded-md cursor-pointer references-heading lg:p-sp-8 p-sp-4 hover:bg-lightest-purple">
+              <h3 class="mb-0">References</h3>
+              <div class="flex items-center ml-auto toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="none" viewBox="8 8 8 8" height="12px" width="12px">
+                  <path d="M9 12H15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M12 9L12 15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="overflow-hidden transition-all duration-500 ease-in-out references-content max-h-0">
+              <div class="pt-0 lg:pt-0 lg:p-sp-8 p-sp-4 gap-sp-1 mt-sp-4">
+                <?= $references; ?>
+              </div>
             </div>
           </div>
-          <div class="overflow-hidden transition-all duration-500 ease-in-out references-content max-h-0">
-            <div class="pt-0 lg:pt-0 lg:p-sp-8 p-sp-4 gap-sp-1 mt-sp-4">
-              <?= $references; ?>
-            </div>
-          </div>
-        </div>
         <?php endif; ?>
       </div>
     </article>
