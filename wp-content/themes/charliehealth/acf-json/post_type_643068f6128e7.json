@@ -62,9 +62,7 @@
     "singular_capability_name": "post",
     "plural_capability_name": "posts",
     "supports": [
-        "title",
-        "editor",
-        "thumbnail"
+        "title"
     ],
     "taxonomies": "",
     "has_archive": false,
@@ -80,5 +78,5 @@
     "can_export": true,
     "delete_with_user": false,
     "register_meta_box_cb": "",
-    "modified": 1684200534
+    "modified": 1684201275
 }
