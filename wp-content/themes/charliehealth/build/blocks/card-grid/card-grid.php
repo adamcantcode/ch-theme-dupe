@@ -25,6 +25,7 @@ if ($horizontalScroll === true) {
           $title = get_sub_field('card_grid_title');
           $details = get_sub_field('card_grid_details');
           $image = get_sub_field('image');
+          $link = get_sub_field('card_link');
         ?>
           <div class="w-[calc(100vw-2.5rem)] lg:w-full">
             <div class="<?= $borderStyle === 'gradient' ? 'border-gradient' : ' border rounded-md'; ?>">
@@ -36,7 +37,15 @@ if ($horizontalScroll === true) {
                   <h2 class="text-h2-lg mb-sp-5"><?= get_row_index(); ?></h2>
                 <?php endif; ?>
                 <?php if ($title) : ?>
-                  <h3 class="mb-sp-5 last:mb-0"><?= $title; ?></h3>
+                  <h3 class="mb-sp-5 last:mb-0">
+                    <?php if ($link) : ?>
+                      <a href="<?= $link['url']; ?>" class="stretched-link">
+                      <?php endif; ?>
+                      <?= $title; ?>
+                      <?php if ($link) : ?>
+                      </a>
+                    <?php endif; ?>
+                  </h3>
                 <?php endif; ?>
                 <?php if ($details) : ?>
                   <p class="last:mb-0"><?= $details; ?></p>
