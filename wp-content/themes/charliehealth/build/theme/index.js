@@ -76,19 +76,7 @@ function ajaxPagination() {
         }).then(function (posts) {
           var html = '';
           posts.forEach(function (post) {
-            console.log(post);
-            var cats = post._embedded['wp:term'][0];
-            var tags = post._embedded['wp:term'][1];
-            html += `<div class="relative grid overflow-hidden border rounded-sm border-card-border">
-                <img src="https://images.placeholders.dev/?width=800&height=600&text=FPO" alt="" class="object-cover lg:h-[220px] h-[150px] w-full">
-                <div class="grid p-sp-4">
-                  <h3><a href="${post.link}" class="stretched-link">${post.title.rendered}</a></h3>
-                  <h5 class="mb-sp-4">${post.acf.by_author.post_title}</h5>
-                  <div class="grid justify-start grid-flow-col gap-sp-4">
-                  ${tags.map(tag => `<a href="${tag.link}" class="px-sp-4 py-sp-3 no-underline rounded-lg text-h6 bg-tag-gray z-20 relative inline-block">${tag.name}</a>`).join('')}
-                  </div>
-                </div>
-              </div>`;
+            html += renderHTML(post, html);
           });
           jQuery('.posts-container').html(html);
           jQuery('.posts-container').removeClass('opacity-0 scale-[0.99]');
@@ -172,8 +160,37 @@ function ajaxPagination() {
           endpoint += `&by_author=${authorID}`;
         }
       });
+    } else if (bodyClasses.includes('page-template-page-press')) {
+      endpoint = `${window.location.origin}/wp-json/wp/v2/press?_embed=wp:term,wp:category`;
     }
     return [endpoint, tagID];
+  };
+  const renderHTML = (post, html) => {
+    console.log(post);
+    if (!document.querySelector('body').classList.contains('page-template-page-press')) {
+      var cats = post._embedded['wp:term'][0];
+      var tags = post._embedded['wp:term'][1];
+      html = `<div class="relative grid overflow-hidden border rounded-sm border-card-border">
+                  <img src="https://images.placeholders.dev/?width=800&height=600&text=FPO" alt="" class="object-cover lg:h-[220px] h-[150px] w-full">
+                  <div class="grid p-sp-4">
+                    <h3><a href="${post.link}" class="stretched-link">${post.title.rendered}</a></h3>
+                    <h5 class="mb-sp-4">${post.acf.by_author.post_title}</h5>
+                    <div class="grid justify-start grid-flow-col gap-sp-4">
+                    ${tags.map(tag => `<a href="${tag.link}" class="px-sp-4 py-sp-3 no-underline rounded-lg text-h6 bg-tag-gray z-20 relative inline-block">${tag.name}</a>`).join('')}
+                    </div>
+                  </div>
+                </div>`;
+    } else {
+      console.log(post);
+      html = `<div class="relative grid lg:grid-cols-[1fr_4fr] grid-cols-[1fr_2fr] overflow-hidden border rounded-sm border-card-border">
+      <img src="https://images.placeholders.dev/?width=800&height=600&text=FPO" alt="" class="object-contain h-[125px] w-full">
+      <div class="grid p-sp-4">
+        <h5 class="mb-sp-4">${post.acf.date}</h5>
+        <h3 class="mb-0"><a href="${post.acf.link}" target="_blank" class="stretched-link">${post.title.rendered}</a></h3>
+      </div>
+    </div>`;
+    }
+    return html;
   };
   termsClickHandler();
   initPagination();
@@ -22094,6 +22111,9 @@ document.addEventListener('DOMContentLoaded', () => {
     (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_11__["default"])();
   }
   if (body.classList.contains('page-template-searchpage')) {
+    (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_11__["default"])();
+  }
+  if (body.classList.contains('page-template-page-press')) {
     (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_11__["default"])();
   }
   /**

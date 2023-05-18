@@ -50,6 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (body.classList.contains('page-template-searchpage')) {
     ajaxPagination();
   }
+  if (body.classList.contains('page-template-page-press')) {
+    ajaxPagination();
+  }
   /**
    * needs to load last (or at least of TOC) in order for all links to be scrollable
    */
