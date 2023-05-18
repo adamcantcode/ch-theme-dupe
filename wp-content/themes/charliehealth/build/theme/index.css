@@ -1446,10 +1446,6 @@ a.nav-link:hover {
   display: none;
 }
 
-.aspect-\[4\/3\]{
-  aspect-ratio: 4/3;
-}
-
 .aspect-square{
   aspect-ratio: 1 / 1;
 }
@@ -1496,6 +1492,10 @@ a.nav-link:hover {
 
 .h-sp-12{
   height: 3rem;
+}
+
+.h-\[125px\]{
+  height: 125px;
 }
 
 .max-h-0{
@@ -1658,6 +1658,18 @@ a.nav-link:hover {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.grid-cols-\[1fr_4fr\]{
+  grid-template-columns: 1fr 4fr;
+}
+
+.grid-cols-\[1fr_3fr\]{
+  grid-template-columns: 1fr 3fr;
+}
+
+.grid-cols-\[1fr_2fr\]{
+  grid-template-columns: 1fr 2fr;
+}
+
 .flex-row{
   flex-direction: row;
 }
@@ -1758,10 +1770,6 @@ a.nav-link:hover {
 
 .gap-y-sp-10{
   row-gap: 2.5rem;
-}
-
-.gap-y-sp-12{
-  row-gap: 3rem;
 }
 
 .gap-y-sp-16{
@@ -1927,6 +1935,11 @@ a.nav-link:hover {
 
 .fill-current{
   fill: currentColor;
+}
+
+.object-contain{
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .object-cover{
@@ -3280,6 +3293,10 @@ a.js-tag-id.active:hover {
     grid-template-columns: 2fr 1fr;
   }
 
+  .lg\:grid-cols-\[1fr_4fr\]{
+    grid-template-columns: 1fr 4fr;
+  }
+
   .lg\:flex-row{
     flex-direction: row;
   }
@@ -3310,11 +3327,6 @@ a.js-tag-id.active:hover {
 
   .lg\:gap-sp-8{
     gap: 2rem;
-  }
-
-  .lg\:gap-x-32{
-    -moz-column-gap: 8rem;
-         column-gap: 8rem;
   }
 
   .lg\:gap-y-sp-16{
