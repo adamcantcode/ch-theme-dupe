@@ -23,7 +23,7 @@
         {
             "key": "field_6454060ee7dc2",
             "label": "Author",
-            "name": "author",
+            "name": "by_author",
             "aria-label": "",
             "type": "post_object",
             "instructions": "",
@@ -209,5 +209,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1684198498
+    "modified": 1684367376
 }

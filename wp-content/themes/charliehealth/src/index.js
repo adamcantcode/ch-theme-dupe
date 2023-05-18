@@ -43,6 +43,10 @@ document.addEventListener('DOMContentLoaded', () => {
     featuredBlogSlider();
     ajaxPagination();
   }
+  if (body.classList.contains('single-authors')) {
+    // featuredBlogSlider();
+    ajaxPagination();
+  }
   if (body.classList.contains('page-template-searchpage')) {
     ajaxPagination();
   }

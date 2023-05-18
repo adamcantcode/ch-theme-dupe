@@ -52,60 +52,30 @@ if ($image) {
   <section class="section">
     <div class="container">
       <h2 class="mb-sp-12">Articles by <?= get_the_title(); ?></h2>
-      <div class="grid items-center gap-y-sp-12 lg:gap-x-32 gap-sp-8 md:grid-cols-2">
-        <div>
-          <img src="<?= placeHolderImage() ?>" class="object-cover w-full rounded-md aspect-[4/3]">
-        </div>
-        <div class="flex flex-col">
-          <h6>November 23, 2022</h6>
-          <h3>
-            <a href="#" class="text-h4">
-              Our Country is Facing a Shortage of Mental Health Professionals. Here’s How it Impacts Youth.
-            </a>
-          </h3>
-          <p>The United States is facing a shortage in mental health professional at the same time that it faces a rise in youth suicide rates and rates of adolescent mental illness.</p>
-          <a href="#">Read more</a>
-        </div>
-        <div>
-          <img src="<?= placeHolderImage() ?>" class="object-cover w-full rounded-md aspect-[4/3]">
-        </div>
-        <div class="flex flex-col">
-          <h6 class="mb-sp-8">November 23, 2022</h6>
-          <h3>
-            <a href="#" class="text-h4">
-              Our Country is Facing a Shortage of Mental Health Professionals. Here’s How it Impacts Youth.
-            </a>
-          </h3>
-          <p>The United States is facing a shortage in mental health professional at the same time that it faces a rise in youth suicide rates and rates of adolescent mental illness.</p>
-          <a href="#">Read more</a>
-        </div>
-        <div>
-          <img src="<?= placeHolderImage() ?>" class="object-cover w-full rounded-md aspect-[4/3]">
-        </div>
-        <div class="flex flex-col">
-          <h6>November 23, 2022</h6>
-          <h3>
-            <a href="#" class="text-h4">
-              Our Country is Facing a Shortage of Mental Health Professionals. Here’s How it Impacts Youth.
-            </a>
-          </h3>
-          <p>The United States is facing a shortage in mental health professional at the same time that it faces a rise in youth suicide rates and rates of adolescent mental illness.</p>
-          <a href="#">Read more</a>
-        </div>
-        <div>
-          <img src="<?= placeHolderImage() ?>" class="object-cover w-full rounded-md aspect-[4/3]">
-        </div>
-        <div class="flex flex-col">
-          <h6 class="mb-sp-8">November 23, 2022</h6>
-          <h3>
-            <a href="#" class="text-h4">
-              Our Country is Facing a Shortage of Mental Health Professionals. Here’s How it Impacts Youth.
-            </a>
-          </h3>
-          <p>The United States is facing a shortage in mental health professional at the same time that it faces a rise in youth suicide rates and rates of adolescent mental illness.</p>
-          <a href="#">Read more</a>
-        </div>
-      </div>
+      <?php
+      $args = array(
+        'post_type' => 'post',
+        'meta_query' => array(
+          array(
+            'key' => 'by_author', // name of custom field
+            'value' => get_the_ID(), // matches exactly "123", not just 123. This prevents a match for "1234"
+            'compare' => 'LIKE'
+          )
+        )
+      );
+      $query = new WP_Query($args);
+      var_dump($query);
+      if ($query->have_posts()) {
+        while ($query->have_posts()) {
+          $query->the_post();
+          // Display or process the posts here
+          the_title();
+        }
+        wp_reset_postdata();
+      } else {
+        // No posts found
+      }
+      ?>
     </div>
   </section>
 </main>

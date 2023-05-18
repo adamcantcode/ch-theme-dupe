@@ -164,6 +164,8 @@ function ajaxPagination() {
       const params = new URLSearchParams(window.location.search);
       const query = params.get('query');
       endpoint += `&search=${query}`;
+    } else if (bodyClasses.includes('')) {
+      endpoint = `${window.location.origin}/wp-json/wp/v2/posts?_embed=wp:term,wp:category&meta_key=author&meta_value=charlie-health&meta_compare=LIKE`;
     }
     return [endpoint, tagID];
   };
@@ -22079,6 +22081,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   if (body.classList.contains('category')) {
     (0,_modules_featured_blog_slider__WEBPACK_IMPORTED_MODULE_10__["default"])();
+    (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_11__["default"])();
+  }
+  if (body.classList.contains('single-authors')) {
+    // featuredBlogSlider();
     (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_11__["default"])();
   }
   if (body.classList.contains('page-template-searchpage')) {

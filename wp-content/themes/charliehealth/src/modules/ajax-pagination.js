@@ -49,9 +49,12 @@ export default function ajaxPagination() {
         console.log(pagination);
 
         // var url = window.location.href.split('?')[0] + '?page=' + data[0];
-        jQuery('.pagination-container .paginationjs-page').each(function (index, element) {
-          var page = jQuery(element).data('num')
-          var link = jQuery(element).find('a')
+        jQuery('.pagination-container .paginationjs-page').each(function (
+          index,
+          element
+        ) {
+          var page = jQuery(element).data('num');
+          var link = jQuery(element).find('a');
           jQuery(link).attr('href', window.location.href + '/page/' + page);
         });
 
@@ -172,6 +175,8 @@ export default function ajaxPagination() {
       const query = params.get('query');
 
       endpoint += `&search=${query}`;
+    } else if (bodyClasses.includes('')) {
+      endpoint = `${window.location.origin}/wp-json/wp/v2/posts?_embed=wp:term,wp:category&meta_key=author&meta_value=charlie-health&meta_compare=LIKE`;
     }
     return [endpoint, tagID];
   };
