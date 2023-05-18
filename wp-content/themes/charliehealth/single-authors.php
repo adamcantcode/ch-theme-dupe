@@ -49,7 +49,7 @@ if ($image) {
       <div class="divider lg:mt-sp-16 md:mt-sp-12 mt-sp-8"></div>
     </div>
   </section>
-  <section class="section">
+  <section id="postsContainer" class="section">
     <div class="container">
       <h2 class="mb-sp-12">Articles by <?= get_the_title(); ?></h2>
       <div class="grid lg:grid-cols-3 transition-all duration-300 scale-[0.99] opacity-0 posts-container gap-x-sp-8 gap-y-sp-10 mb-sp-10">
