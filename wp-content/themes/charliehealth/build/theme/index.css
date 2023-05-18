@@ -1458,6 +1458,10 @@ a.nav-link:hover {
   height: 0.75rem;
 }
 
+.h-\[125px\]{
+  height: 125px;
+}
+
 .h-\[150px\]{
   height: 150px;
 }
@@ -1492,10 +1496,6 @@ a.nav-link:hover {
 
 .h-sp-12{
   height: 3rem;
-}
-
-.h-\[125px\]{
-  height: 125px;
 }
 
 .max-h-0{
@@ -1656,14 +1656,6 @@ a.nav-link:hover {
 
 .grid-cols-3{
   grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.grid-cols-\[1fr_4fr\]{
-  grid-template-columns: 1fr 4fr;
-}
-
-.grid-cols-\[1fr_3fr\]{
-  grid-template-columns: 1fr 3fr;
 }
 
 .grid-cols-\[1fr_2fr\]{
@@ -3289,12 +3281,12 @@ a.js-tag-id.active:hover {
     grid-template-columns: 1fr 2fr;
   }
 
-  .lg\:grid-cols-\[2fr\2c 1fr\]{
-    grid-template-columns: 2fr 1fr;
-  }
-
   .lg\:grid-cols-\[1fr_4fr\]{
     grid-template-columns: 1fr 4fr;
+  }
+
+  .lg\:grid-cols-\[2fr\2c 1fr\]{
+    grid-template-columns: 2fr 1fr;
   }
 
   .lg\:flex-row{
