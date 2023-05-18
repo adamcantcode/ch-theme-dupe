@@ -83,7 +83,7 @@ function ajaxPagination() {
                 <img src="https://images.placeholders.dev/?width=800&height=600&text=FPO" alt="" class="object-cover lg:h-[220px] h-[150px] w-full">
                 <div class="grid p-sp-4">
                   <h3><a href="${post.link}" class="stretched-link">${post.title.rendered}</a></h3>
-                  <h5 class="mb-sp-4">${post.acf.author.post_title}</h5>
+                  <h5 class="mb-sp-4">${post.acf.by_author.post_title}</h5>
                   <div class="grid justify-start grid-flow-col gap-sp-4">
                   ${tags.map(tag => `<a href="${tag.link}" class="px-sp-4 py-sp-3 no-underline rounded-lg text-h6 bg-tag-gray z-20 relative inline-block">${tag.name}</a>`).join('')}
                   </div>
@@ -164,8 +164,14 @@ function ajaxPagination() {
       const params = new URLSearchParams(window.location.search);
       const query = params.get('query');
       endpoint += `&search=${query}`;
-    } else if (bodyClasses.includes('')) {
-      endpoint = `${window.location.origin}/wp-json/wp/v2/posts?_embed=wp:term,wp:category&meta_key=author&meta_value=charlie-health&meta_compare=LIKE`;
+    } else if (bodyClasses.includes('single-authors')) {
+      var author = bodyClasses.map(str => str.replace('postid-', ''));
+      author.forEach(author => {
+        if (!isNaN(author)) {
+          var authorID = author;
+          endpoint += `&by_author=${authorID}`;
+        }
+      });
     }
     return [endpoint, tagID];
   };

@@ -52,30 +52,19 @@ if ($image) {
   <section class="section">
     <div class="container">
       <h2 class="mb-sp-12">Articles by <?= get_the_title(); ?></h2>
-      <?php
-      $args = array(
-        'post_type' => 'post',
-        'meta_query' => array(
-          array(
-            'key' => 'by_author', // name of custom field
-            'value' => get_the_ID(), // matches exactly "123", not just 123. This prevents a match for "1234"
-            'compare' => 'LIKE'
-          )
-        )
-      );
-      $query = new WP_Query($args);
-      var_dump($query);
-      if ($query->have_posts()) {
-        while ($query->have_posts()) {
-          $query->the_post();
-          // Display or process the posts here
-          the_title();
-        }
-        wp_reset_postdata();
-      } else {
-        // No posts found
-      }
-      ?>
+      <div class="grid lg:grid-cols-3 transition-all duration-300 scale-[0.99] opacity-0 posts-container gap-x-sp-8 gap-y-sp-10 mb-sp-10">
+        <!-- `<div class="relative grid overflow-hidden border rounded-sm border-card-border">
+          <img src="https://images.placeholders.dev/?width=800&height=600&text=FPO" alt="" class="object-cover lg:h-[220px] h-[150px] w-full">
+          <div class="grid p-sp-4">
+            <h3><a href="${post.link}" class="stretched-link">${post.title.rendered}</a></h3>
+            <h5>author</h5>
+            <div class="grid justify-start grid-flow-col gap-sp-4">
+              ${tags.map((tag) => `<a href="${tag.link}" class="relative z-20 inline-block no-underline rounded-lg px-sp-4 py-sp-3 text-h6 bg-tag-gray">${tag.name}</a>`).join('')}
+            </div>
+          </div>
+        </div>` -->
+      </div>
+      <div class="pagination-container"></div>
     </div>
   </section>
 </main>
