@@ -1,0 +1,62 @@
+<?php
+/*
+Template Name: Press page
+*/
+?>
+<?php get_header(); ?>
+
+<main class="site-main lg:mt-[68px] mt-0">
+  <article>
+    <section class="section">
+      <div class="container">
+        <h1><?= get_the_title(); ?></h1>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <h2><?= get_the_title(); ?></h2>
+        <div class="divider"></div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <?php
+        $args = array(
+          'post_type' => 'press',
+          'posts_per_page' => 3,
+          'meta_query' => array(
+            array(
+              'key' => 'featured',
+              'value' => true,
+              'compare' => '=',
+            )
+          )
+        );
+
+        $query = new WP_Query($args);
+
+        if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
+        <?php 
+        $link = get_field('link');
+        $image = get_field('logo');
+        $date = get_field('date');
+        ?>
+            <div class="relative grid overflow-hidden border rounded-sm border-card-border">
+              <img src="https://images.placeholders.dev/?width=800&height=600&text=FPO" alt="" class="object-cover lg:h-[220px] h-[150px] w-full">
+              <div class="grid p-sp-4">
+                <h5 class="mb-sp-4"><?= $date; ?></h5>
+                <h3 class="mb-0"><a href="<?= get_the_ID(); ?>" class="stretched-link"><?= get_the_title(); ?></a></h3>
+              </div>
+            </div>
+        <?php wp_reset_postdata();
+          endwhile;
+        endif
+
+        ?>
+      </div>
+    </section>
+  </article>
+</main>
+
+<?php
+get_footer();
