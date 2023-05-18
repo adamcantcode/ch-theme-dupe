@@ -215,3 +215,17 @@ function ch_menu_order($menu_ord)
     'separator4', // First separator
   );
 }
+
+function filter_posts_by_acf_field($args, $request) {
+  if (isset($request['by_author'])) {
+      $args['meta_query'] = array(
+          array(
+              'key' => 'by_author',
+              'value' => intval($request['by_author']),
+              'compare' => '=',
+          ),
+      );
+  }
+  return $args;
+}
+add_filter('rest_post_query', 'filter_posts_by_acf_field', 10, 2);
