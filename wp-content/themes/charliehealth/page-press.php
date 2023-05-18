@@ -9,12 +9,15 @@ Template Name: Press page
   <article>
     <section class="section">
       <div class="container">
-        <h1><?= get_the_title(); ?></h1>
+        <div class="grid lg:grid-cols-2">
+          <h1><?= get_the_title(); ?></h1>
+          <p>For all media inquiries, please contact us at <a href="mailto:press@charliehealth.com?subject=Press%20inquiry">press@charliehealth.com</a></p>
+        </div>
       </div>
     </section>
     <section class="section-horizontal">
       <div class="container">
-        <h2><?= get_the_title(); ?></h2>
+        <h2>Featured Coverage</h2>
         <div class="divider"></div>
       </div>
     </section>
