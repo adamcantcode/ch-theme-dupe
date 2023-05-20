@@ -1,14 +1,5 @@
 <?php get_header(); ?>
 
-<?php
-$author = get_field('author') ?: 'The Charlile Health Team';
-$medicalReviewer = get_field('medical_reviewer') ?: '';
-$date = get_field('date') ?: '';
-$relatedPosts = get_field('related_posts') ?: '';
-$toc = get_field('toc') ?: '';
-$references = get_field('references') ?: '';
-?>
-
 <main id="primary" class="site-main lg:mt-[68px] mt-0">
   <section class="section">
     <div class="container-md">

@@ -52,6 +52,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/large-quote');
   register_block_type(__DIR__ . '/build/blocks/tabs');
   register_block_type(__DIR__ . '/build/blocks/carousel');
+  register_block_type(__DIR__ . '/build/blocks/posts-list');
 }
 add_action('init', 'register_acf_blocks', 5);
 

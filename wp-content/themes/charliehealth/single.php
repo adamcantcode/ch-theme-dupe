@@ -6,7 +6,7 @@ $domain = $_SERVER['HTTP_HOST'];
 $path = $_SERVER['REQUEST_URI'];
 $fullUrl = $protocol . $domain . $path;
 
-$author = get_field('author') ?: 'The Charlile Health Team';
+$author = get_field('by_author') ?: 'The Charlile Health Team';
 $medicalReviewer = get_field('medical_reviewer') ?: '';
 $date = get_field('date') ?: '';
 $relatedPosts = get_field('related_posts') ?: '';
@@ -130,7 +130,7 @@ $tags = get_the_terms(get_the_ID(), 'post_tag');
             <img src="https://images.placeholders.dev/?width=800&height=600&text=FPO" alt="" class="object-cover lg:h-[220px] h-[150px] w-full">
             <div class="grid p-sp-4">
               <h3><a href="<?= get_the_permalink($post->ID); ?>" class="stretched-link"><?= $post->post_title; ?></a></h3>
-              <h5 class="mb-sp-4"><?= $author = get_field('author')->post_title ?: 'Charlile Health Editorial Team'; ?></h5>
+              <h5 class="mb-sp-4"><?= $author = get_field('by_author')->post_title ?: 'Charlile Health Editorial Team'; ?></h5>
               <div class="grid justify-start grid-flow-col gap-sp-4">
                 <?php $tags = get_the_terms($post->ID, 'post_tag'); ?>
                 <?php foreach ($tags as $tag) : ?>
