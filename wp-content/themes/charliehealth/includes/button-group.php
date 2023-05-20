@@ -45,7 +45,7 @@ if ($block['align']) {
   <?php endif; ?>
   <?php if ($buttons === 'secondary') : ?>
     <div class="flex gap-x-4<?= ' ' . $align ?>">
-      <a href="<?= $linkTwoLink ?: 'tel:+18664848218'; ?>" class="ch-button button-secondary" target="<?= $linkOneTarget ?: '_self'; ?>"><?= $linkTwoTitle ?: '1 (866) 484-8218'; ?></a>
+      <a href="<?= $linkOneLink ?: 'tel:+18664848218'; ?>" class="ch-button button-secondary" target="<?= $linkOneTarget ?: '_self'; ?>"><?= $linkOneTitle ?: '1 (866) 484-8218'; ?></a>
     </div>
   <?php endif; ?>
 <?php endif; ?>
