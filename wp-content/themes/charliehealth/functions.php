@@ -114,6 +114,16 @@ add_filter(
 );
 
 /**
+ * Allow .webp
+ */
+function allow_webp_upload( $mimes ) {
+  $mimes['webp'] = 'image/webp';
+  return $mimes;
+}
+add_filter( 'upload_mimes', 'allow_webp_upload' );
+
+
+/**
  * Rename Category to Theme
  *
  */
