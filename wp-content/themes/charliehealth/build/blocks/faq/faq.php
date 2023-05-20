@@ -35,7 +35,7 @@ $faqButton = get_field('faq_button');
               <div class="border-b accordion-item border-b-card-border">
                 <div class="flex cursor-pointer accordion-header py-sp-5">
                   <h3 class="mb-0"><?= $headline; ?></h3>
-                  <div class="flex items-center ml-auto lg:mr-sp-5 toggle">
+                  <div class="flex items-center justify-between lg:mx-sp-5 toggle">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="none" viewBox="8 8 8 8" height="12px" width="12px">
                       <path d="M9 12H15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                       <path d="M12 9L12 15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
