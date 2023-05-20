@@ -18,8 +18,13 @@
           "name": "White"
         },
         {
+          "slug": "lightest-purple",
+          "color": "#F8F8FF",
+          "name": "Lightest Purple"
+        },
+        {
           "slug": "light-purple",
-          "color": "#f0effc",
+          "color": "#F0EFFC",
           "name": "Light Purple"
         },
         {
