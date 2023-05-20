@@ -1,14 +1,20 @@
 <?php
-// var_dump(get_fields());
 $buttons = get_field('button_group_buttons');
 $linkOne = get_field('button_group_link');
 $linkTwo = get_field('button_group_link_two');
 
+$linkOneLink = '';
+$linkOneTitle = '';
+$linkOneTarget = '';
 if (!empty($linkOne)) {
   $linkOneLink = $linkOne['url'];
   $linkOneTitle = $linkOne['title'];
   $linkOneTarget = $linkOne['target'];
 }
+
+$linkTwoLink = '';
+$linkTwoTitle = '';
+$linkTwoTarget = '';
 if (!empty($linkTwo)) {
   $linkTwoLink = $linkTwo['url'];
   $linkTwoTitle = $linkTwo['title'];
