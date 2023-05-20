@@ -8,8 +8,6 @@ $subtitle = get_field('hero_subtitle');
 $subtitleEditor = get_field('hero_subtitle_editor');
 $heroImage = get_field('hero_image');
 $icon = get_field('hero_icon');
-$buttons = get_field('hero_buttons')['button_group_buttons'];
-$link = get_field('hero_buttons')['button_group_link'];
 // $test = get_fields();
 
 if ($style === 'image') {
