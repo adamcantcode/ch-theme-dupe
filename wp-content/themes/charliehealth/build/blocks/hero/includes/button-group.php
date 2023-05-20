@@ -1,7 +1,7 @@
 <?php
-$buttons = get_field('hero_buttons')['button_group_buttons'];
-$linkOne = get_field('hero_buttons')['button_group_link'];
-$linkTwo = get_field('hero_buttons')['button_group_link_two'];
+$buttons = get_field('button_group_buttons');
+$linkOne = get_field('button_group_link');
+$linkTwo = get_field('button_group_link_two');
 
 if (!empty($linkOne)) {
   $linkOneLink = $linkOne['url'];

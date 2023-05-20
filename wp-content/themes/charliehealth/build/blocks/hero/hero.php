@@ -36,7 +36,7 @@ if ($style === 'image') {
         <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="" class="w-10">
         <h3 class="mb-0"><?= $subtitle; ?></h3>
       </div>
-      <?php include('includes/button-group.php'); ?>
+      <?php include(get_template_directory() . '/includes/button-group.php'); ?>
     </div>
     <h1 class="block text-display lg:hidden"><?= $title; ?></h1>
     <div class="flex flex-col justify-between order-1 lg:order-2">
@@ -52,7 +52,7 @@ if ($style === 'image') {
     </div>
     <div class="flex flex-col justify-between order-1 lg:order-2">
       <?= $subtitleEditor; ?>
-      <?php include('includes/button-group.php'); ?>
+      <?php include(get_template_directory() . '/includes/button-group.php'); ?>
     </div>
   </div>
 <?php endif; ?>
@@ -63,7 +63,7 @@ if ($style === 'image') {
       <img src="<?= placeHolderImage(600, 600); ?>" alt="" class="object-cover lg:rounded-l-md lg:rounded-tr-none rounded-t-md min-h-full lg:h-[400px] h-[200px] w-full">
       <div class="p-sp-8">
         <?= $subtitleEditor; ?>
-        <?php include('includes/button-group.php'); ?>
+        <?php include(get_template_directory() . '/includes/button-group.php'); ?>
       </div>
     </div>
   </div>

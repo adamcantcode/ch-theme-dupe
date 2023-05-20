@@ -25,9 +25,7 @@ if (!empty($block['backgroundColor'])) {
       <img src="<?= site_url(); ?>/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg" alt="Charlie Health shield logo" class="w-[3rem] mb-sp-5">
       <h2 class="text-darkest-blue lg:text-[2.5rem] text-h2-lg lg:leading-tight mb-sp-5 font-heading-serif"><?= $heading; ?></h2>
       <p class="text-darkest-blue"><?= $subhead; ?></p>
-      <div class="flex justify-center w-full">
-        <a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>" class="ch-button button-primary-dark"><?= $link['title']; ?></a>
-      </div>
+      <?php include(get_template_directory() . '/includes/button-group.php'); ?>
     </div>
   </div>
 <?php endif; ?>

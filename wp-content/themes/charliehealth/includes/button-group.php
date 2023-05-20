@@ -1,4 +1,5 @@
 <?php
+// var_dump(get_fields());
 $buttons = get_field('button_group_buttons');
 $linkOne = get_field('button_group_link');
 $linkTwo = get_field('button_group_link_two');
@@ -13,8 +14,6 @@ if (!empty($linkTwo)) {
   $linkTwoTitle = $linkTwo['title'];
   $linkTwoTarget = $linkTwo['target'];
 }
-// var_dump($linkOne['url']);
-// var_dump($linkTwo);
 ?>
 <?php if ($buttons !== 'none') : ?>
   <?php if ($buttons === 'double') : ?>
