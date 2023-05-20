@@ -62,8 +62,8 @@ if ($horizontalScroll === true) {
   <div id="<?= $block['id']; ?>" class="<?= $scrollClasses; ?>">
     <div class="<?= $gridClasses; ?> card-wrapper relative lg:overflow-visible overflow-hidden transition-all duration-300 lg:max-h-full max-h-[70vh]">
       <?php foreach ($posts as $post) : ?>
-        <div class="w-[calc(100vw-2.5rem)] lg:w-full hover:-translate-y-sp-1 transition-transform duration-200">
-          <div class="<?= $borderStyle === 'gradient' ? 'border-gradient' : ' border rounded-md'; ?>">
+        <div class="w-[calc(100vw-2.5rem)] lg:w-full hover:-translate-y-sp-1 transition-transform duration-200 h-full">
+          <div class="<?= $borderStyle === 'gradient' ? 'border-gradient' : ' border rounded-md'; ?> h-full">
             <div class="p-sp-4 md:p-sp-6 lg:p-sp-8">
               <?php if ($numbers) : ?>
                 <h2 class="text-h2-lg mb-sp-5"><?= get_row_index(); ?></h2>
