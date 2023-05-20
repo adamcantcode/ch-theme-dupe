@@ -138,7 +138,10 @@
   }
   ul,
   ol {
-    @apply block pl-10 mb-sp-6;
+    @apply block pl-10 mb-sp-6 text-p;
+    @screen lg {
+      @apply text-p-lg;
+    }
   }
   ul {
     @apply list-disc;

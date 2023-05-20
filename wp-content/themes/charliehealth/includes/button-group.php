@@ -20,21 +20,31 @@ if (!empty($linkTwo)) {
   $linkTwoTitle = $linkTwo['title'];
   $linkTwoTarget = $linkTwo['target'];
 }
+$align = '';
+if ($block['align']) {
+  if ($block['align'] === 'left') {
+    $align = 'justify-start';
+  } elseif ($block['align'] === 'right') {
+    $align = 'justify-end';
+  } else {
+    $align = 'justify-center';
+  }
+}
 ?>
 <?php if ($buttons !== 'none') : ?>
   <?php if ($buttons === 'double') : ?>
-    <div class="flex gap-x-4">
+    <div class="flex gap-x-4<?= ' ' . $align ?>">
       <a href="<?= $linkOneLink ?: '/form'; ?>" class="ch-button button-primary" target="<?= $linkOneTarget ?: '_self'; ?>"><?= $linkOneTitle ?: 'Get Started'; ?></a>
       <a href="<?= $linkTwoLink ?: 'tel:+18664848218'; ?>" class="ch-button button-secondary" target="<?= $linkTwoTarget ?: '_self'; ?>"><?= $linkTwoTitle ?: '1 (866) 484-8218'; ?></a>
     </div>
   <?php endif; ?>
   <?php if ($buttons === 'primary') : ?>
-    <div class="flex gap-x-4">
+    <div class="flex gap-x-4<?= ' ' . $align ?>">
       <a href="<?= $linkOneLink ?: '/form'; ?>" class="ch-button button-primary" target="<?= $linkOneTarget ?: '_self'; ?>"><?= $linkOneTitle ?: 'Get Started'; ?></a>
     </div>
   <?php endif; ?>
   <?php if ($buttons === 'secondary') : ?>
-    <div class="flex gap-x-4">
+    <div class="flex gap-x-4<?= ' ' . $align ?>">
       <a href="<?= $linkTwoLink ?: 'tel:+18664848218'; ?>" class="ch-button button-secondary" target="<?= $linkOneTarget ?: '_self'; ?>"><?= $linkTwoTitle ?: '1 (866) 484-8218'; ?></a>
     </div>
   <?php endif; ?>
