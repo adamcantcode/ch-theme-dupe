@@ -1440,6 +1440,10 @@ a.nav-link:hover {
   margin-top: 2rem;
 }
 
+.ml-sp-5{
+  margin-left: 1.25rem;
+}
+
 .block{
   display: block;
 }
