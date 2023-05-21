@@ -27,8 +27,8 @@ if ($horizontalScroll === true) {
           $image = get_sub_field('image');
           $link = get_sub_field('card_link');
         ?>
-          <div class="w-[calc(100vw-2.5rem)] lg:w-full">
-            <div class="<?= $borderStyle === 'gradient' ? 'border-gradient' : ' border rounded-md'; ?>">
+          <div class="w-[calc(100vw-2.5rem)] lg:w-full h-full">
+            <div class="<?= $borderStyle === 'gradient' ? 'border-gradient' : ' border rounded-md'; ?> h-full">
               <?php if ($image) : ?>
                 <img src="<?= $image['sizes']['large'] ?>" alt="" class="object-cover w-full rounded-t-md lg:h-[250px] h-[200px]">
               <?php endif; ?>
