@@ -34,7 +34,7 @@ if (!empty($block['backgroundColor'])) {
     <h2 class="mb-0"><?= $heading; ?></h2>
     <div class="flex gap-x-4">
       <a href="<?= isset($linkUrl) ?: '#'; ?>" class="ch-button button-primary"><?= isset($linkText) ?: 'Get Started'; ?></a>
-      <a href="tel:+" class="ch-button button-secondary">1 (555) 555-5555</a>
+      <a href="tel:+18669591162" class="ch-button button-secondary">1 (866) 959-1162</a>
     </div>
   </div>
 <?php endif; ?>

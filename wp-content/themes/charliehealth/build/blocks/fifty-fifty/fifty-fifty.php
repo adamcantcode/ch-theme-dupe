@@ -41,8 +41,9 @@ switch ($order) {
       </div>
     <?php endif; ?>
   <?php else : ?>
-    <!-- TODO Update image -->
-    <img src="https://assets-global.website-files.com/62daf9ae3616b86eec143652/63657e4ca50eb97be513e62d_Homepageherp.webp" alt="x" class="object-cover object-top rounded-md max-h-[500px] flex-grow <?= $imageOrder; ?>">
+    <?php if ($image) : ?>
+      <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="object-cover object-top rounded-md max-h-[500px] flex-grow <?= $imageOrder; ?>">
+    <?php endif; ?>
   <?php endif; ?>
   <div class="flex-grow <?= $detailsOrder; ?>">
     <h2><?= $title; ?></h2>
