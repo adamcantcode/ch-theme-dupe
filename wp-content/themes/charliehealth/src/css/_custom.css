@@ -192,7 +192,7 @@
 /* FAQ Accordion */
 .faq-block,
 .toc-container,
-.references-container  {
+.references-container {
   .accordion-header,
   .toc-heading,
   .references-heading {
@@ -351,5 +351,15 @@
         @apply mb-0;
       }
     }
+  }
+}
+
+.wp-block-cover {
+  @apply mb-sp-6 rounded-md;
+  @screen lg {
+    @apply text-p-lg;
+  }
+  img {
+    @apply rounded-md;
   }
 }

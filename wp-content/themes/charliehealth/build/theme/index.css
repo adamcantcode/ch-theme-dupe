@@ -1986,12 +1986,12 @@ a.nav-link:hover {
   padding: 1.25rem;
 }
 
-.p-sp-8{
-  padding: 2rem;
-}
-
 .p-sp-6{
   padding: 1.5rem;
+}
+
+.p-sp-8{
+  padding: 2rem;
 }
 
 .px-2{
@@ -3031,6 +3031,25 @@ a.js-tag-id.active:hover {
   margin-bottom: 0px;
 }
 
+.wp-block-cover{
+  margin-bottom: 1.5rem;
+  border-radius: 1.25rem;
+}
+
+@media (min-width: 1024px) {
+
+.wp-block-cover{
+    font-size: 1.125rem;
+    line-height: 1.8rem;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+  }
+
+.wp-block-cover img{
+  border-radius: 1.25rem;
+}
+
 .hover\:text-white:hovera:hover {
         color: #ffffff;
       }
@@ -3256,12 +3275,12 @@ a.js-tag-id.active:hover {
     width: 225px;
   }
 
-  .lg\:w-full{
-    width: 100%;
-  }
-
   .lg\:w-\[unset\]{
     width: unset;
+  }
+
+  .lg\:w-full{
+    width: 100%;
   }
 
   .lg\:grid-flow-col{
