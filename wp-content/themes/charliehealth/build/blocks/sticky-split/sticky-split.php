@@ -33,7 +33,9 @@ $image = get_field('sticky_split_image');
         $details = get_sub_field('sticky_split_details');
         ?>
         <div class="sticky-split-info_content lg:mb-[12rem]">
-          <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/' . $icon . '.svg'); ?>" alt="icon" class="sticky-split-icon mb-sp-8">
+          <?php if ($icon) : ?>
+            <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/' . $icon . '.svg'); ?>" alt="icon" class="sticky-split-icon mb-sp-8">
+          <?php endif; ?>
           <h3 class="text text-h1-display"><?= $heading; ?></h3>
           <p><?= $details; ?></p>
         </div>

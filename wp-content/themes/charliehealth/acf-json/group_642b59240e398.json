@@ -71,8 +71,8 @@
                     "default_value": false,
                     "return_format": "value",
                     "multiple": 0,
-                    "allow_null": 0,
-                    "ui": 0,
+                    "allow_null": 1,
+                    "ui": 1,
                     "ajax": 0,
                     "placeholder": "",
                     "parent_repeater": "field_642b5a8fb1956"
@@ -103,7 +103,7 @@
                     "label": "Details",
                     "name": "sticky_split_details",
                     "aria-label": "",
-                    "type": "textarea",
+                    "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -113,10 +113,10 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "placeholder": "",
-                    "new_lines": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0,
                     "parent_repeater": "field_642b5a8fb1956"
                 }
             ]
@@ -140,5 +140,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1683396431
+    "modified": 1684698513
 }
