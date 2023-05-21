@@ -240,3 +240,10 @@ function filter_posts_by_acf_field($args, $request) {
   return $args;
 }
 add_filter('rest_post_query', 'filter_posts_by_acf_field', 10, 2);
+
+
+function remove_wp_logo() {
+  global $wp_admin_bar;
+  $wp_admin_bar->remove_menu('wp-logo');
+}
+add_action('wp_before_admin_bar_render', 'remove_wp_logo', 0);
