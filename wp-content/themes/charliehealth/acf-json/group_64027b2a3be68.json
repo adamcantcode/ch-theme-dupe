@@ -20,8 +20,8 @@
             "pagination": 0,
             "min": 0,
             "max": 0,
-            "collapsed": "",
-            "button_label": "Add Row",
+            "collapsed": "field_64027cd178055",
+            "button_label": "Add Menu Item",
             "rows_per_page": 20,
             "sub_fields": [
                 {
@@ -155,5 +155,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1678581544
+    "modified": 1684626704
 }
