@@ -40,8 +40,8 @@ if ($style === 'image') {
     </div>
     <h1 class="block text-display lg:hidden"><?= $title; ?></h1>
     <div class="flex flex-col justify-between order-1 lg:order-2">
-      <!-- TODO test image -->
-      <img src="https://assets-global.website-files.com/62daf9ae3616b86eec143652/63657e4ca50eb97be513e62d_Homepageherp.webp" alt="x" class="object-cover object-top rounded-lg max-h-52 md:max-h-none">
+      <!-- TODO fix image offset bool issue -->
+      <img src="<?= $heroImage['url'] ?: placeHolderImage(600, 400); ?>" alt="<?= $heroImage['alt'] ?: 'Placeholder image'; ?>" class="object-cover object-top rounded-lg max-h-52 md:max-h-none">
     </div>
   </div>
 <?php endif; ?>
@@ -60,7 +60,7 @@ if ($style === 'image') {
   <h1><?= $title; ?></h1>
   <div class="rounded-md border-gradient">
     <div class="grid items-center lg:grid-cols-2">
-      <img src="<?= placeHolderImage(600, 600); ?>" alt="" class="object-cover lg:rounded-l-md lg:rounded-tr-none rounded-t-md min-h-full lg:h-[400px] h-[200px] w-full">
+      <img src="<?= $heroImage['url'] ?: placeHolderImage(600, 600); ?>" alt="<?= $heroImage['url'] ?: 'Placeholder image'; ?>" class="object-cover lg:rounded-l-md lg:rounded-tr-none rounded-t-md min-h-full lg:h-[400px] h-[200px] w-full">
       <div class="p-sp-8">
         <?= $subtitleEditor; ?>
         <?php include(get_template_directory() . '/includes/button-group.php'); ?>

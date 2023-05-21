@@ -94,7 +94,7 @@
         },
         {
             "key": "field_6457ea435a4d8",
-            "label": "Subtitle",
+            "label": "Details",
             "name": "hero_subtitle_editor",
             "aria-label": "",
             "type": "wysiwyg",
@@ -197,15 +197,8 @@
                 [
                     {
                         "field": "field_641639ffb2d96",
-                        "operator": "==",
-                        "value": "image"
-                    }
-                ],
-                [
-                    {
-                        "field": "field_641639ffb2d96",
-                        "operator": "==",
-                        "value": "cta"
+                        "operator": "!=",
+                        "value": "details"
                     }
                 ]
             ],
@@ -344,5 +337,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1684608042
+    "modified": 1684695593
 }
