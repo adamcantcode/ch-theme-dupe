@@ -30,9 +30,9 @@ if (!empty($block['backgroundColor'])) {
   </div>
 <?php endif; ?>
 <?php if ($style === 'full') : ?>
-  <div class="flex items-center justify-between rounded-md  p-sp-8 <?= $blockClasses; ?>">
-    <h2 class="mb-0"><?= $heading; ?></h2>
-    <div class="flex gap-x-4">
+  <div class="grid lg:grid-cols-2 justify-between rounded-md  p-sp-8 items-center <?= $blockClasses; ?>">
+    <h2 class="lg:mb-0"><?= $heading; ?></h2>
+    <div class="flex justify-end gap-x-4">
       <a href="<?= isset($linkUrl) ?: '#'; ?>" class="ch-button button-primary"><?= isset($linkText) ?: 'Get Started'; ?></a>
       <a href="tel:+18669591162" class="ch-button button-secondary">1 (866) 959-1162</a>
     </div>
