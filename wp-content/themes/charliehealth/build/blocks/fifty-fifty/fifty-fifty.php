@@ -46,15 +46,7 @@ switch ($order) {
     <?php endif; ?>
   <?php endif; ?>
   <div class="flex-grow <?= $detailsOrder; ?>">
-    <h2><?= $title; ?></h2>
-    <?php if ($details) : ?>
-      <p class="mb-sp-4"><?= $details; ?></p>
-    <?php endif; ?>
-    <?php if ($cta) : ?>
-      <div class="flex">
-        <a href="<?= $cta['url'] ?: '#'; ?>" class="ch-button button-secondary"><?= $cta['title'] ?: 'Learn More'; ?></a>
-      </div>
-    <?php endif; ?>
+    <InnerBlocks />
   </div>
 </div>
 <!-- Slider main container -->
