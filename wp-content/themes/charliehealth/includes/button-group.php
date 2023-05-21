@@ -33,18 +33,18 @@ if ($block['align']) {
 ?>
 <?php if ($buttons !== 'none') : ?>
   <?php if ($buttons === 'double') : ?>
-    <div class="flex gap-x-4<?= ' ' . $align ?>">
+    <div class="flex gap-x-4 items-center lg:w-[unset] w-full<?= ' ' . $align ?>">
       <a href="<?= $linkOneLink ?: '/form'; ?>" class="ch-button button-primary" target="<?= $linkOneTarget ?: '_self'; ?>"><?= $linkOneTitle ?: 'Get Started'; ?></a>
       <a href="<?= $linkTwoLink ?: 'tel:+18664848218'; ?>" class="ch-button button-secondary" target="<?= $linkTwoTarget ?: '_self'; ?>"><?= $linkTwoTitle ?: '1 (866) 484-8218'; ?></a>
     </div>
   <?php endif; ?>
   <?php if ($buttons === 'primary') : ?>
-    <div class="flex gap-x-4<?= ' ' . $align ?>">
+    <div class="flex gap-x-4 items-center lg:w-[unset] w-full<?= ' ' . $align ?>">
       <a href="<?= $linkOneLink ?: '/form'; ?>" class="ch-button button-primary" target="<?= $linkOneTarget ?: '_self'; ?>"><?= $linkOneTitle ?: 'Get Started'; ?></a>
     </div>
   <?php endif; ?>
   <?php if ($buttons === 'secondary') : ?>
-    <div class="flex gap-x-4<?= ' ' . $align ?>">
+    <div class="flex gap-x-4 items-center lg:w-[unset] w-full<?= ' ' . $align ?>">
       <a href="<?= $linkOneLink ?: 'tel:+18664848218'; ?>" class="ch-button button-secondary" target="<?= $linkOneTarget ?: '_self'; ?>"><?= $linkOneTitle ?: '1 (866) 484-8218'; ?></a>
     </div>
   <?php endif; ?>

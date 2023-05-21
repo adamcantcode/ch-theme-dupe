@@ -1990,6 +1990,10 @@ a.nav-link:hover {
   padding: 2rem;
 }
 
+.p-sp-6{
+  padding: 1.5rem;
+}
+
 .px-2{
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -3254,6 +3258,10 @@ a.js-tag-id.active:hover {
 
   .lg\:w-full{
     width: 100%;
+  }
+
+  .lg\:w-\[unset\]{
+    width: unset;
   }
 
   .lg\:grid-flow-col{
