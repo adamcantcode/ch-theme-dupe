@@ -32,13 +32,14 @@ $image = get_field('sticky_split_image');
         $heading = get_sub_field('sticky_split_heading');
         $details = get_sub_field('sticky_split_details');
         ?>
-        <div class="sticky-split-info_content lg:mb-[12rem]">
+        <div class="sticky-split-info_content">
           <?php if ($icon) : ?>
             <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/' . $icon . '.svg'); ?>" alt="icon" class="sticky-split-icon mb-sp-8">
           <?php endif; ?>
           <h3 class="text text-h1-display"><?= $heading; ?></h3>
-          <p><?= $details; ?></p>
+          <?= $details; ?>
         </div>
+        <div class="divider my-sp-16"></div>
       <?php endwhile; ?>
     <?php endif; ?>
   </div>
