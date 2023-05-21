@@ -871,6 +871,7 @@ table {
   padding-bottom: 15px;
   text-align: center;
   font-size: 4vw;
+  text-transform: capitalize;
   line-height: 1;
   text-decoration-line: none;
   transition-property: all;
