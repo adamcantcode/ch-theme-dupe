@@ -100,12 +100,12 @@
               </a>
             </div>
             <div class="flex justify-center pb-8">
-              <a href="#" class="ch-button button-tertiary">Get started</a>
+              <a href="<?= get_field('cta', 'option')['url']; ?>" class="ch-button button-tertiary"><?= get_field('cta', 'option')['title']; ?></a>
             </div>
           </div>
         </div>
         <div class="flex-none hidden nav-cta lg:block">
-          <a href="#" class="ch-button button-tertiary">Get started</a>
+          <a href="<?= get_field('cta', 'option')['url']; ?>" class="ch-button button-tertiary"><?= get_field('cta', 'option')['title']; ?></a>
         </div>
         <div class="ml-auto text-gray-500 cursor-pointer open-close lg:hidden">
           <button class="ch-button button-nav">Menu</button>

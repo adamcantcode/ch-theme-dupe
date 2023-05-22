@@ -3,6 +3,22 @@
     "title": "Header Navigation",
     "fields": [
         {
+            "key": "field_646ba5fbaa475",
+            "label": "CTA",
+            "name": "cta",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
             "key": "field_64027d2878056",
             "label": "Navigation Item",
             "name": "navigation_item",
@@ -155,5 +171,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1684626704
+    "modified": 1684776508
 }
