@@ -46,7 +46,7 @@ if ($style === 'image') {
   </div>
 <?php endif; ?>
 <?php if ($style === 'details') : ?>
-  <div class="grid items-start lg:grid-cols-2 gap-sp-4">
+  <div class="grid items-start lg:grid-cols-2 gap-sp-8">
     <div class="order-1">
       <h1><?= $title; ?></h1>
     </div>
