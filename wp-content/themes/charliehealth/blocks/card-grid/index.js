@@ -9,7 +9,9 @@ window.addEventListener('DOMContentLoaded', () => {
   function toggleDropdown() {
     const toggleButton = document.querySelector('.toggle-button');
     const cardWrapper = document.querySelector('.card-wrapper');
+
     cardWrapper.style.paddingBottom = toggleButton.clientHeight + 16 + 'px';
+
     toggleButton.addEventListener('click', () => {
       if (cardWrapper.style.maxHeight) {
         cardWrapper.style.maxHeight = null;
@@ -19,7 +21,7 @@ window.addEventListener('DOMContentLoaded', () => {
         toggleButton.classList.add('button-secondary');
       } else {
         cardWrapper.style.maxHeight = cardWrapper.scrollHeight + 'px';
-        toggleButton.textContent = 'Show less'
+        toggleButton.textContent = 'Show less';
         toggleButton.classList.add('button-primary');
         toggleButton.classList.remove('button-secondary');
       }

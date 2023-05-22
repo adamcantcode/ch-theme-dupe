@@ -1352,14 +1352,14 @@ a.nav-link:hover {
   margin-right: 1.25rem;
 }
 
-.my-sp-8{
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
 .my-sp-16{
   margin-top: 6rem;
   margin-bottom: 6rem;
+}
+
+.my-sp-8{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .mb-0{
@@ -3199,10 +3199,6 @@ a.js-tag-id.active:hover {
 
   .lg\:mb-0{
     margin-bottom: 0px;
-  }
-
-  .lg\:mb-\[12rem\]{
-    margin-bottom: 12rem;
   }
 
   .lg\:mb-sp-6{
