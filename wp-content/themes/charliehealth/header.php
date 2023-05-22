@@ -53,7 +53,7 @@
                 </span>
                 <?php
                 if (have_rows('submenu_items', 'option')) : ?>
-                  <div class="transition-all duration-300 nav-sub-menu lg:absolute top-full bg-darkest-blue lg:flex<?= $cols ? ' columns-center' : '' ?><?= is_user_logged_in() ? ' lg:top-[100px]' : ' lg:top-[68px]'; ?>">
+                  <div class="transition-all duration-300 nav-sub-menu lg:absolute top-full bg-darkest-blue lg:flex<?= $cols ? ' columns-center' : '' ?><?= is_user_logged_in() && $cols ? ' lg:top-[100px]' : ' lg:top-[68px]'; ?>">
                     <div class="flex flex-col menu-container <?= $cols ? ' lg:columns-2' : '' ?>">
                       <?php
                       while (have_rows('submenu_items', 'option')) : the_row();
