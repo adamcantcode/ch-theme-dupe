@@ -3245,6 +3245,11 @@ a.js-tag-id.active:hover {
     margin-right: 1.25rem;
   }
 
+  .lg\:my-sp-16{
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+  }
+
   .lg\:mb-0{
     margin-bottom: 0px;
   }

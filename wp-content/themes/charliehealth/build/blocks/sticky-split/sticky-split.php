@@ -43,7 +43,7 @@ $image = get_field('sticky_split_image');
           <?= $details; ?>
         </div>
         <?php if ($index !== $count) : ?>
-          <div class="divider my-sp-16"></div>
+          <div class="divider lg:my-sp-16 my-sp-8"></div>
         <?php endif; ?>
       <?php endwhile; ?>
     <?php endif; ?>
