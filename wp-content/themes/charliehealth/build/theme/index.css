@@ -3060,6 +3060,23 @@ a.js-tag-id.active:hover {
   border-radius: 1.25rem;
 }
 
+.wp-block-image.alignfull {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    box-sizing: border-box;
+    transform: translateX(calc(50vw - 50%));
+    max-width: 1280px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem}
+
+@media (min-width: 1024px){
+
+  .wp-block-image.alignfull{
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
 .hover\:text-white:hovera:hover {
         color: #ffffff;
       }

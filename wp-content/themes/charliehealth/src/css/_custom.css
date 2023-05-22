@@ -363,3 +363,15 @@
     @apply rounded-md;
   }
 }
+
+.wp-block-image {
+  &.alignfull {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    box-sizing: border-box;
+    transform: translateX(calc(50vw - 50%));
+    max-width: 1280px;
+    @apply px-sp-5 lg:px-sp-10
+    /* @apply inset-x-1/2 -mx-[50vw] relative w-[1280px]; */
+  }
+}
