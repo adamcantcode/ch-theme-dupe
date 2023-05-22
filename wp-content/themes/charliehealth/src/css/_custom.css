@@ -21,7 +21,7 @@
 /* TODO figure out what the fuck is going on here
  * Seems to be because of inline styles overriding.
 */
-.post-type-post {
+/* .post-type-post {
   &.block-editor-page {
     .editor-styles-wrapper
       .edit-post-visual-editor__post-title-wrapper
@@ -32,7 +32,7 @@
       max-width: 768px !important;
     }
   }
-}
+} */
 
 .testimonial-padding {
   @apply py-sp-8;

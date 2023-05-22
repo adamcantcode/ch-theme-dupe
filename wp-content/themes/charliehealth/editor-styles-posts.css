@@ -1,0 +1,12 @@
+.edit-post-visual-editor__post-title-wrapper
+  > :where(:not(.alignleft):not(.alignright):not(.alignfull)),
+.block-editor-block-list__layout.is-root-container
+  > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+  max-width: 768px !important;
+}
+.edit-post-visual-editor__post-title-wrapper > .alignfull,
+.block-editor-block-list__layout.is-root-container > .alignfull {
+  max-width: 1280px !important;
+  marign-left: auto !important;
+  marign-right: auto !important;
+}

@@ -26,6 +26,13 @@ add_theme_support('title-tag');
 
 add_editor_style('/build/theme/index.css');
 
+if (
+  false !== stristr($_SERVER['REQUEST_URI'], 'post-new.php') && isset($_GET['post_type']) && 'post' === $_GET['post_type']
+  || false !== stristr($_SERVER['REQUEST_URI'], 'post.php') && 'post' === get_post_type($_GET['post'])
+) {
+  add_editor_style('editor-styles-posts.css');
+}
+
 // ACF options page
 if (function_exists('acf_add_options_page')) {
   acf_add_options_page();
@@ -251,13 +258,14 @@ function remove_wp_logo()
 }
 add_action('wp_before_admin_bar_render', 'remove_wp_logo', 0);
 
-add_filter( 'intermediate_image_sizes', 'remove_default_img_sizes', 10, 1);
+add_filter('intermediate_image_sizes', 'remove_default_img_sizes', 10, 1);
 
-function remove_default_img_sizes( $sizes ) {
-  $targets = ['thumbnail','medium', 'medium_large', 'large', '1536x1536', '2048x2048'];
+function remove_default_img_sizes($sizes)
+{
+  $targets = ['thumbnail', 'medium', 'medium_large', 'large', '1536x1536', '2048x2048'];
 
-  foreach($sizes as $size_index=>$size) {
-    if(in_array($size, $targets)) {
+  foreach ($sizes as $size_index => $size) {
+    if (in_array($size, $targets)) {
       unset($sizes[$size_index]);
     }
   }
@@ -265,8 +273,9 @@ function remove_default_img_sizes( $sizes ) {
   return $sizes;
 }
 
-add_action( 'after_setup_theme', 'wpdocs_theme_setup' );
-function wpdocs_theme_setup() {
-	add_image_size( 'featured-large', 600 );
-	add_image_size( 'card-thumb', 400 );
+add_action('after_setup_theme', 'wpdocs_theme_setup');
+function wpdocs_theme_setup()
+{
+  add_image_size('featured-large', 600);
+  add_image_size('card-thumb', 400);
 }
