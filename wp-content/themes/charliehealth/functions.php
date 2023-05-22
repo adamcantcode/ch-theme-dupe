@@ -116,11 +116,12 @@ add_filter(
 /**
  * Allow .webp
  */
-function allow_webp_upload( $mimes ) {
+function allow_webp_upload($mimes)
+{
   $mimes['webp'] = 'image/webp';
   return $mimes;
 }
-add_filter( 'upload_mimes', 'allow_webp_upload' );
+add_filter('upload_mimes', 'allow_webp_upload');
 
 
 /**
@@ -227,23 +228,45 @@ function ch_menu_order($menu_ord)
   );
 }
 
-function filter_posts_by_acf_field($args, $request) {
+function filter_posts_by_acf_field($args, $request)
+{
   if (isset($request['by_author'])) {
-      $args['meta_query'] = array(
-          array(
-              'key' => 'by_author',
-              'value' => intval($request['by_author']),
-              'compare' => '=',
-          ),
-      );
+    $args['meta_query'] = array(
+      array(
+        'key' => 'by_author',
+        'value' => intval($request['by_author']),
+        'compare' => '=',
+      ),
+    );
   }
   return $args;
 }
 add_filter('rest_post_query', 'filter_posts_by_acf_field', 10, 2);
 
 
-function remove_wp_logo() {
+function remove_wp_logo()
+{
   global $wp_admin_bar;
   $wp_admin_bar->remove_menu('wp-logo');
 }
 add_action('wp_before_admin_bar_render', 'remove_wp_logo', 0);
+
+add_filter( 'intermediate_image_sizes', 'remove_default_img_sizes', 10, 1);
+
+function remove_default_img_sizes( $sizes ) {
+  $targets = ['thumbnail','medium', 'medium_large', 'large', '1536x1536', '2048x2048'];
+
+  foreach($sizes as $size_index=>$size) {
+    if(in_array($size, $targets)) {
+      unset($sizes[$size_index]);
+    }
+  }
+
+  return $sizes;
+}
+
+add_action( 'after_setup_theme', 'wpdocs_theme_setup' );
+function wpdocs_theme_setup() {
+	add_image_size( 'featured-large', 600 );
+	add_image_size( 'card-thumb', 400 );
+}
