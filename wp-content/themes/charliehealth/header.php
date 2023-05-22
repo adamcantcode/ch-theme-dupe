@@ -57,7 +57,7 @@
                       <?php
                       while (have_rows('submenu_items', 'option')) : the_row();
                         $sublink = get_sub_field('sublink');
-                        $sublinkLink = $sublink['url'] ?: '';
+                        $sublinkLink = $sublink['url'];
                         $sublinkTitle = $sublink['title'];
                       ?>
                         <a href="<?= $sublinkLink; ?>" class="nav-link sub-link"><?= $sublinkTitle; ?></a>
