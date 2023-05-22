@@ -37,6 +37,7 @@
             while (have_rows('navigation_item', 'option')) : the_row();
               $topLink = get_sub_field('top_link');
               $submenuDetails = get_sub_field('submenu_details');
+              $cols = get_sub_field('columns');
 
               // TODO Update and remove the placeholder
               $submenuImage = get_sub_field('submenu_image') ?: 'https://assets-global.website-files.com/62daf9ae3616b86eec143652/62fc0dbd27ef532c3740e981_young-boy-blue-shirt-on-beach.webp';
@@ -52,8 +53,8 @@
                 </span>
                 <?php
                 if (have_rows('submenu_items', 'option')) : ?>
-                  <div class="transition-all duration-300 nav-sub-menu lg:absolute top-full bg-darkest-blue lg:flex">
-                    <div class="flex flex-col menu-container">
+                  <div class="transition-all duration-300 nav-sub-menu lg:absolute top-full bg-darkest-blue lg:flex<?= $cols ? ' columns-center' : '' ?><?= is_user_logged_in() ? ' lg:top-[100px]' : ' lg:top-[68px]'; ?>">
+                    <div class="flex flex-col menu-container <?= $cols ? ' lg:columns-2' : '' ?>">
                       <?php
                       while (have_rows('submenu_items', 'option')) : the_row();
                         $sublink = get_sub_field('sublink');

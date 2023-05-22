@@ -1008,7 +1008,6 @@ a.ch-button.button-primary-dark:hover {
 .nav-parent-menu .nav-sub-menu{
   visibility: hidden;
   height: 0px;
-  min-width: 100%;
   border-bottom-right-radius: 0.625rem;
   border-bottom-left-radius: 0.625rem;
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
@@ -1076,6 +1075,16 @@ a.ch-button.button-primary-dark:hover {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-delay: 150ms;
   transition-duration: 300ms;
+}
+
+@media (min-width: 1024px){
+
+  .nav-parent-menu .nav-sub-menu.columns-center{
+    position: fixed;
+    left: 50%;
+    --tw-translate-x: -50%;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
 }
 
 .nav-parent-menu svg{
@@ -1664,6 +1673,11 @@ a.nav-link:hover {
 
 .cursor-pointer{
   cursor: pointer;
+}
+
+.columns-2{
+  -moz-columns: 2;
+       columns: 2;
 }
 
 .grid-flow-col{
@@ -3200,6 +3214,14 @@ a.js-tag-id.active:hover {
     top: 32px;
   }
 
+  .lg\:top-\[100px\]{
+    top: 100px;
+  }
+
+  .lg\:top-\[68px\]{
+    top: 68px;
+  }
+
   .lg\:order-1{
     order: 1;
   }
@@ -3304,6 +3326,11 @@ a.js-tag-id.active:hover {
 
   .lg\:w-full{
     width: 100%;
+  }
+
+  .lg\:columns-2{
+    -moz-columns: 2;
+         columns: 2;
   }
 
   .lg\:grid-flow-col{

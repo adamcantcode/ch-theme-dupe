@@ -33,7 +33,7 @@
       }
     }
     .nav-sub-menu {
-      @apply lg:opacity-0 invisible rounded-b-sm h-0 lg:h-auto shadow-xl min-w-full;
+      @apply lg:opacity-0 invisible rounded-b-sm h-0 lg:h-auto shadow-xl;
       & > .menu-container {
         @apply lg:block hidden;
       }
@@ -53,6 +53,9 @@
       }
       h6 {
         @apply opacity-0 -translate-x-1 transition-all duration-300 delay-150;
+      }
+      &.columns-center {
+        @apply lg:left-1/2 lg:-translate-x-1/2 lg:fixed 
       }
     }
     svg {

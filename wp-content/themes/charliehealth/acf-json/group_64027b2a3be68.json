@@ -149,6 +149,27 @@
                     "placeholder": "",
                     "new_lines": "",
                     "parent_repeater": "field_64027d2878056"
+                },
+                {
+                    "key": "field_646ba88c0fa8e",
+                    "label": "2 Columns",
+                    "name": "columns",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": "",
+                    "ui": 1,
+                    "parent_repeater": "field_64027d2878056"
                 }
             ]
         }
@@ -171,5 +192,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1684776508
+    "modified": 1684777233
 }
