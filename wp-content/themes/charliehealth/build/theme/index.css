@@ -1806,6 +1806,11 @@ a.nav-link:hover {
   row-gap: 6rem;
 }
 
+.gap-x-sp-4{
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+
 .self-start{
   align-self: flex-start;
 }
