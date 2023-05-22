@@ -28,6 +28,9 @@ $image = get_field('sticky_split_image');
     <?php if (have_rows('sticky_split_content')) : ?>
       <?php while (have_rows('sticky_split_content')) : the_row(); ?>
         <?php
+        $count = count(get_field('sticky_split_content'));
+        $index = get_row_index();
+
         $icon = get_sub_field('sticky_split_icon');
         $heading = get_sub_field('sticky_split_heading');
         $details = get_sub_field('sticky_split_details');
@@ -39,7 +42,9 @@ $image = get_field('sticky_split_image');
           <h3 class="text text-h1-display"><?= $heading; ?></h3>
           <?= $details; ?>
         </div>
-        <div class="divider my-sp-16"></div>
+        <?php if ($index !== $count) : ?>
+          <div class="divider my-sp-16"></div>
+        <?php endif; ?>
       <?php endwhile; ?>
     <?php endif; ?>
   </div>
