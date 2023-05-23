@@ -496,9 +496,6 @@ function progressBar() {
     headerHeight += wpadmin.clientHeight;
   }
 
-  // Get the height of the content element
-  const contentHeight = articleContent.scrollHeight + headerHeight;
-
   // Create a progress bar element
   const progressBar = document.querySelector('#progressBar');
   progressBar.style.top = headerHeight + 'px';
@@ -511,6 +508,8 @@ function progressBar() {
   // Update the progress bar as the page is scrolled
   window.addEventListener('scroll', updateProgressBar);
   function updateProgressBar() {
+    // Get the height of the content element
+    const contentHeight = articleContent.scrollHeight + headerHeight;
     const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 
     // Calculate the scrollable height of the content

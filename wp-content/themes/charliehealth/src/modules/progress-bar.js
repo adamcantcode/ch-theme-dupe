@@ -10,9 +10,6 @@ export default function progressBar() {
     headerHeight += wpadmin.clientHeight;
   }
 
-  // Get the height of the content element
-  const contentHeight = articleContent.scrollHeight + headerHeight;
-
   // Create a progress bar element
   const progressBar = document.querySelector('#progressBar');
   progressBar.style.top = headerHeight + 'px';
@@ -26,6 +23,9 @@ export default function progressBar() {
   window.addEventListener('scroll', updateProgressBar);
 
   function updateProgressBar() {
+    // Get the height of the content element
+    const contentHeight = articleContent.scrollHeight + headerHeight;
+
     const scrollTop =
       document.documentElement.scrollTop || document.body.scrollTop;
 
@@ -40,7 +40,7 @@ export default function progressBar() {
       (scrollPosition / scrollableHeight) * 100,
       100
     );
-    if(scrollPercent === 100) {
+    if (scrollPercent === 100) {
       progressBar.style.opacity = '0';
     } else {
       progressBar.style.opacity = '100';
