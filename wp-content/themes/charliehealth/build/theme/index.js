@@ -475,6 +475,60 @@ function outreachModals() {
 
 /***/ }),
 
+/***/ "./src/modules/progress-bar.js":
+/*!*************************************!*\
+  !*** ./src/modules/progress-bar.js ***!
+  \*************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ progressBar; }
+/* harmony export */ });
+function progressBar() {
+  // Get the article content element
+  const articleContent = document.querySelector('#articleContent .container-sm');
+  // Get the header height (adjust as needed)
+  let headerHeight = document.querySelector('header').clientHeight;
+  const wpadmin = document.querySelector('#wpadminbar');
+  if (wpadmin) {
+    headerHeight += wpadmin.clientHeight;
+  }
+
+  // Get the height of the content element
+  const contentHeight = articleContent.scrollHeight + headerHeight;
+
+  // Create a progress bar element
+  const progressBar = document.querySelector('#progressBar');
+  progressBar.style.top = headerHeight + 'px';
+  progressBar.style.left = '0';
+  progressBar.style.width = '0';
+  progressBar.style.height = '4px';
+  progressBar.style.zIndex = '9999';
+  document.body.appendChild(progressBar);
+
+  // Update the progress bar as the page is scrolled
+  window.addEventListener('scroll', updateProgressBar);
+  function updateProgressBar() {
+    console.log('scroll');
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+    // Calculate the scrollable height of the content
+    const scrollableHeight = contentHeight - headerHeight;
+
+    // Calculate the scroll position within the scrollable height
+    const scrollPosition = Math.max(0, scrollTop - headerHeight);
+
+    // Calculate the scroll percentage
+    const scrollPercent = Math.min(scrollPosition / scrollableHeight * 100, 100);
+    console.log(scrollPercent);
+    progressBar.style.width = `${scrollPercent}%`;
+  }
+}
+
+/***/ }),
+
 /***/ "./src/modules/references.js":
 /*!***********************************!*\
   !*** ./src/modules/references.js ***!
@@ -22048,6 +22102,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_featured_blog_slider__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/featured-blog-slider */ "./src/modules/featured-blog-slider.js");
 /* harmony import */ var _modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/ajax-pagination */ "./src/modules/ajax-pagination.js");
 /* harmony import */ var _modules_references__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/references */ "./src/modules/references.js");
+/* harmony import */ var _modules_progress_bar__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/progress-bar */ "./src/modules/progress-bar.js");
+
 
 
 
@@ -22074,6 +22130,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (body.classList.contains('single-post')) {
     (0,_modules_toc__WEBPACK_IMPORTED_MODULE_7__["default"])();
     (0,_modules_references__WEBPACK_IMPORTED_MODULE_11__["default"])();
+    (0,_modules_progress_bar__WEBPACK_IMPORTED_MODULE_12__["default"])();
     (0,_modules_share_button__WEBPACK_IMPORTED_MODULE_8__["default"])();
   }
   if (body.classList.contains('blog')) {
@@ -22095,7 +22152,7 @@ document.addEventListener('DOMContentLoaded', () => {
     (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__["default"])();
   }
   /**
-   * needs to load last (or at least of TOC) in order for all links to be scrollable
+   * needs to load last (or at least after TOC) in order for all links to be scrollable
    */
   (0,_modules_anchor_scroll__WEBPACK_IMPORTED_MODULE_4__["default"])();
 });

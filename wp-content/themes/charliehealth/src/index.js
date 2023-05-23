@@ -11,6 +11,7 @@ import shareButton from './modules/share-button';
 import featuredBlogSlider from './modules/featured-blog-slider';
 import ajaxPagination from './modules/ajax-pagination';
 import references from './modules/references';
+import progressBar from './modules/progress-bar';
 
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
@@ -31,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (body.classList.contains('single-post')) {
     toc();
     references();
+    progressBar();
     shareButton();
   }
   if (body.classList.contains('blog')) {
@@ -52,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ajaxPagination();
   }
   /**
-   * needs to load last (or at least of TOC) in order for all links to be scrollable
+   * needs to load last (or at least after TOC) in order for all links to be scrollable
    */
   anchorScroll();
 });
