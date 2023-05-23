@@ -475,29 +475,6 @@ function outreachModals() {
 
 /***/ }),
 
-/***/ "./src/modules/read-time.js":
-/*!**********************************!*\
-  !*** ./src/modules/read-time.js ***!
-  \**********************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": function() { return /* binding */ readTime; }
-/* harmony export */ });
-function readTime() {
-  // Get the main container that holds the article content
-  var mainContainer = document.querySelector('#articleContent');
-  const text = mainContainer.innerText;
-  const wpm = 238;
-  const words = text.trim().split(/\s+/).length;
-  const readTime = Math.ceil(words / wpm);
-  document.querySelector('.js-read-time').innerHTML = readTime;
-}
-
-/***/ }),
-
 /***/ "./src/modules/references.js":
 /*!***********************************!*\
   !*** ./src/modules/references.js ***!
@@ -22068,11 +22045,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_outreach_modals__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/outreach-modals */ "./src/modules/outreach-modals.js");
 /* harmony import */ var _modules_toc__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/toc */ "./src/modules/toc.js");
 /* harmony import */ var _modules_share_button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/share-button */ "./src/modules/share-button.js");
-/* harmony import */ var _modules_read_time__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/read-time */ "./src/modules/read-time.js");
-/* harmony import */ var _modules_featured_blog_slider__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/featured-blog-slider */ "./src/modules/featured-blog-slider.js");
-/* harmony import */ var _modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/ajax-pagination */ "./src/modules/ajax-pagination.js");
-/* harmony import */ var _modules_references__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/references */ "./src/modules/references.js");
-
+/* harmony import */ var _modules_featured_blog_slider__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/featured-blog-slider */ "./src/modules/featured-blog-slider.js");
+/* harmony import */ var _modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/ajax-pagination */ "./src/modules/ajax-pagination.js");
+/* harmony import */ var _modules_references__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/references */ "./src/modules/references.js");
 
 
 
@@ -22097,28 +22072,27 @@ document.addEventListener('DOMContentLoaded', () => {
     (0,_modules_outreach_modals__WEBPACK_IMPORTED_MODULE_6__["default"])();
   }
   if (body.classList.contains('single-post')) {
-    (0,_modules_read_time__WEBPACK_IMPORTED_MODULE_9__["default"])();
     (0,_modules_toc__WEBPACK_IMPORTED_MODULE_7__["default"])();
-    (0,_modules_references__WEBPACK_IMPORTED_MODULE_12__["default"])();
+    (0,_modules_references__WEBPACK_IMPORTED_MODULE_11__["default"])();
     (0,_modules_share_button__WEBPACK_IMPORTED_MODULE_8__["default"])();
   }
   if (body.classList.contains('blog')) {
-    (0,_modules_featured_blog_slider__WEBPACK_IMPORTED_MODULE_10__["default"])();
-    (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_11__["default"])();
+    (0,_modules_featured_blog_slider__WEBPACK_IMPORTED_MODULE_9__["default"])();
+    (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__["default"])();
   }
   if (body.classList.contains('category')) {
-    (0,_modules_featured_blog_slider__WEBPACK_IMPORTED_MODULE_10__["default"])();
-    (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_11__["default"])();
+    (0,_modules_featured_blog_slider__WEBPACK_IMPORTED_MODULE_9__["default"])();
+    (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__["default"])();
   }
   if (body.classList.contains('single-authors')) {
     // featuredBlogSlider();
-    (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_11__["default"])();
+    (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__["default"])();
   }
   if (body.classList.contains('page-template-searchpage')) {
-    (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_11__["default"])();
+    (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__["default"])();
   }
   if (body.classList.contains('page-template-page-press')) {
-    (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_11__["default"])();
+    (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__["default"])();
   }
   /**
    * needs to load last (or at least of TOC) in order for all links to be scrollable

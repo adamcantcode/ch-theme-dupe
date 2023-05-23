@@ -1361,11 +1361,6 @@ a.nav-link:hover {
   margin-right: 1.25rem;
 }
 
-.my-sp-16{
-  margin-top: 6rem;
-  margin-bottom: 6rem;
-}
-
 .my-sp-8{
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -1675,11 +1670,6 @@ a.nav-link:hover {
   cursor: pointer;
 }
 
-.columns-2{
-  -moz-columns: 2;
-       columns: 2;
-}
-
 .grid-flow-col{
   grid-auto-flow: column;
 }
@@ -1793,6 +1783,11 @@ a.nav-link:hover {
        column-gap: 1rem;
 }
 
+.gap-x-sp-4{
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+
 .gap-x-sp-8{
   -moz-column-gap: 2rem;
        column-gap: 2rem;
@@ -1804,11 +1799,6 @@ a.nav-link:hover {
 
 .gap-y-sp-16{
   row-gap: 6rem;
-}
-
-.gap-x-sp-4{
-  -moz-column-gap: 1rem;
-       column-gap: 1rem;
 }
 
 .self-start{
@@ -3215,12 +3205,12 @@ a.js-tag-id.active:hover {
     top: 0px;
   }
 
-  .lg\:top-\[32px\]{
-    top: 32px;
-  }
-
   .lg\:top-\[100px\]{
     top: 100px;
+  }
+
+  .lg\:top-\[32px\]{
+    top: 32px;
   }
 
   .lg\:top-\[68px\]{

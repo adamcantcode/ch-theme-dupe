@@ -8,7 +8,6 @@ import revealBackToTop from './modules/back-to-top';
 import outreachModals from './modules/outreach-modals';
 import toc from './modules/toc';
 import shareButton from './modules/share-button';
-import readTime from './modules/read-time';
 import featuredBlogSlider from './modules/featured-blog-slider';
 import ajaxPagination from './modules/ajax-pagination';
 import references from './modules/references';
@@ -30,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
     outreachModals();
   }
   if (body.classList.contains('single-post')) {
-    readTime();
     toc();
     references();
     shareButton();

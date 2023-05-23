@@ -16,6 +16,10 @@ $references = get_field('references') ?: '';
 $audiences = get_the_terms(get_the_ID(), 'category');
 $tags = get_the_terms(get_the_ID(), 'post_tag');
 
+$wordCount = str_word_count(strip_tags(get_the_content()));
+$wordsPerMinute = 238;
+$readingTime = ceil($wordCount / $wordsPerMinute);
+
 ?>
 
 <main id="primary" class="site-main lg:mt-[68px] mt-0">
@@ -37,7 +41,7 @@ $tags = get_the_terms(get_the_ID(), 'post_tag');
           </div>
           <div class="">
             <h1 class="text-h2 font-heading-serif"><?= get_the_title(); ?></h1>
-            <p class="font-bold">Est. reading time: <span class="js-read-time">5</span> min.</p>
+            <p class="font-bold">Est. reading time: <?= $readingTime; ?> min.</p>
             <p><?= get_the_excerpt(); ?></p>
             <p class="mb-0">By: <a href="<?= site_url('/author/') . $author->post_name; ?>"><?= $author->post_title; ?></a></p>
             <?php if (!empty($medicalReviewer)) : ?>
