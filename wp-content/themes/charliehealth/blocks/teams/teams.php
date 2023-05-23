@@ -3,10 +3,12 @@ $entireDivision = get_field('entire_division');
 $division = get_field('division')['division'];
 
 $posts = get_field('team_member');
+$heading = get_field('heading');
 // var_dump($posts);
 ?>
 
 <div id="<?= $block['id']; ?>">
+  <h2><?= $heading ?: $division; ?></h2>
   <div class="grid grid-cols-2 lg:grid-cols-4 gap-sp-8 lg:gap-y-sp-16">
     <?php
     if ($entireDivision) {
