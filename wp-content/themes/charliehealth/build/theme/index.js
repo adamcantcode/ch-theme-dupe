@@ -511,7 +511,6 @@ function progressBar() {
   // Update the progress bar as the page is scrolled
   window.addEventListener('scroll', updateProgressBar);
   function updateProgressBar() {
-    console.log('scroll');
     const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 
     // Calculate the scrollable height of the content
@@ -522,7 +521,11 @@ function progressBar() {
 
     // Calculate the scroll percentage
     const scrollPercent = Math.min(scrollPosition / scrollableHeight * 100, 100);
-    console.log(scrollPercent);
+    if (scrollPercent === 100) {
+      progressBar.style.opacity = '0';
+    } else {
+      progressBar.style.opacity = '100';
+    }
     progressBar.style.width = `${scrollPercent}%`;
   }
 }

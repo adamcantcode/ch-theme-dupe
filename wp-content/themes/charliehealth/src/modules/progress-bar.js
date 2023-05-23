@@ -11,8 +11,7 @@ export default function progressBar() {
   }
 
   // Get the height of the content element
-  const contentHeight =
-    articleContent.scrollHeight + headerHeight;
+  const contentHeight = articleContent.scrollHeight + headerHeight;
 
   // Create a progress bar element
   const progressBar = document.querySelector('#progressBar');
@@ -27,7 +26,6 @@ export default function progressBar() {
   window.addEventListener('scroll', updateProgressBar);
 
   function updateProgressBar() {
-    console.log('scroll');
     const scrollTop =
       document.documentElement.scrollTop || document.body.scrollTop;
 
@@ -42,7 +40,11 @@ export default function progressBar() {
       (scrollPosition / scrollableHeight) * 100,
       100
     );
-    console.log(scrollPercent);
+    if(scrollPercent === 100) {
+      progressBar.style.opacity = '0';
+    } else {
+      progressBar.style.opacity = '100';
+    }
 
     progressBar.style.width = `${scrollPercent}%`;
   }
