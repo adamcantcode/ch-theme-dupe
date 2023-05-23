@@ -60,6 +60,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/tabs');
   register_block_type(__DIR__ . '/build/blocks/carousel');
   register_block_type(__DIR__ . '/build/blocks/posts-list');
+  register_block_type(__DIR__ . '/build/blocks/teams');
 }
 add_action('init', 'register_acf_blocks', 5);
 
