@@ -6,6 +6,18 @@ $domain = $_SERVER['HTTP_HOST'];
 $path = $_SERVER['REQUEST_URI'];
 $fullUrl = $protocol . $domain . $path;
 
+if (has_post_thumbnail()) {
+  $featuredImageID = get_post_thumbnail_id();
+  $featuredImage = wp_get_attachment_image_src($featuredImageID, 'featured-large');
+  $featuredImageAltText = get_post_meta($featuredImageID, '_wp_attachment_image_alt', true);
+
+  $featuredImageUrl = $featuredImage[0];
+  $featuredImageAltText = $featuredImageAltText ?: '';
+} else {
+  $featuredImageUrl = placeHolderImage(600, 800);
+  $featuredImageAltText = 'place holder image';
+}
+
 $author = get_field('by_author') ?: 'The Charlile Health Team';
 $medicalReviewer = get_field('medical_reviewer') ?: '';
 $date = get_field('date') ?: '';
@@ -38,7 +50,7 @@ $readingTime = ceil($wordCount / $wordsPerMinute);
         </div>
         <div class="grid items-center lg:grid-cols-2 lg:gap-sp-16 gap-sp-8">
           <div>
-            <img src="<?= placeHolderImage(525, 525); ?>" alt="" class="rounded-md max-h-[200px] lg:max-h-none object-cover w-full">
+            <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="rounded-md max-h-[200px] lg:max-h-none object-cover w-full aspect-square">
           </div>
           <div class="">
             <h1 class="text-h2 font-heading-serif"><?= get_the_title(); ?></h1>
