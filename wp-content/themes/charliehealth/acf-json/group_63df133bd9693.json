@@ -7,7 +7,7 @@
             "label": "Style",
             "name": "hero_style",
             "aria-label": "",
-            "type": "button_group",
+            "type": "select",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -18,13 +18,17 @@
             },
             "choices": {
                 "image": "Hero Image",
+                "cover": "Hero Cover Image",
                 "details": "Details",
                 "container": "Container"
             },
-            "default_value": "image",
+            "default_value": false,
             "return_format": "value",
+            "multiple": 0,
             "allow_null": 0,
-            "layout": "horizontal"
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": ""
         },
         {
             "key": "field_63dff09021f5a",
@@ -79,6 +83,13 @@
                         "operator": "==",
                         "value": "image"
                     }
+                ],
+                [
+                    {
+                        "field": "field_641639ffb2d96",
+                        "operator": "==",
+                        "value": "cover"
+                    }
                 ]
             ],
             "wrapper": {
@@ -104,15 +115,8 @@
                 [
                     {
                         "field": "field_641639ffb2d96",
-                        "operator": "==",
-                        "value": "details"
-                    }
-                ],
-                [
-                    {
-                        "field": "field_641639ffb2d96",
-                        "operator": "==",
-                        "value": "container"
+                        "operator": "!=",
+                        "value": "image"
                     }
                 ]
             ],
@@ -141,6 +145,17 @@
                         "field": "field_641639ffb2d96",
                         "operator": "==",
                         "value": "image"
+                    },
+                    {
+                        "field": "field_63df133c0e495",
+                        "operator": "!=empty"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_641639ffb2d96",
+                        "operator": "==",
+                        "value": "cover"
                     },
                     {
                         "field": "field_63df133c0e495",
@@ -337,5 +352,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1684695593
+    "modified": 1684959751
 }
