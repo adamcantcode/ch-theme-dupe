@@ -305,3 +305,24 @@ function wpdocs_theme_setup()
 //   $wpdb->query($query);
 // }
 // add_action('init', 'replace_text_with_block');
+
+
+add_action('admin_head', 'my_custom_fonts');
+
+function my_custom_fonts() {
+  echo '<style>
+    #adminmenu .wp-menu-image img {
+      opacity: 1;
+      padding: 8px 0;
+      height: 20px;
+      width: 34px;
+    } 
+    #adminmenu div.wp-menu-image {
+      display: flex;
+      justify-content: center;
+    }
+    #adminmenu li.menu-top:hover .wp-menu-image img {
+      filter: invert(62%) sepia(58%) saturate(367%) hue-rotate(169deg) brightness(98%) contrast(84%);
+    }
+  </style>';
+}

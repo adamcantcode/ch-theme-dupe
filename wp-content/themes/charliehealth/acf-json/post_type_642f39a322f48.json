@@ -57,7 +57,7 @@
     "rest_namespace": "wp\/v2",
     "rest_controller_class": "WP_REST_Posts_Controller",
     "menu_position": "",
-    "menu_icon": "dashicons-admin-site-alt2",
+    "menu_icon": "\/wp-content\/themes\/charliehealth\/resources\/dashicons\/research.svg",
     "rename_capabilities": false,
     "singular_capability_name": "post",
     "plural_capability_name": "posts",
@@ -80,5 +80,5 @@
     "can_export": true,
     "delete_with_user": false,
     "register_meta_box_cb": "",
-    "modified": 1684258166
+    "modified": 1684967182
 }
