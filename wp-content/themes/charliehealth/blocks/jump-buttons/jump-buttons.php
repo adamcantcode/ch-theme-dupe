@@ -11,4 +11,4 @@
     <?php endwhile; ?>
   <?php endif; ?>
 </div>
-<div class="divider"></div>
+<!-- <div class="divider"></div> -->
