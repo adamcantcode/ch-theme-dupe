@@ -216,7 +216,6 @@ function ch_menu_order($menu_ord)
   return array(
 
     'index.php', // Dashboard
-    'separator1', // First separator
     'edit.php?post_type=page', // Pages
     'edit.php', // Posts
     'edit.php?post_type=research', // Research
@@ -227,12 +226,11 @@ function ch_menu_order($menu_ord)
     'edit.php?post_type=referral', // Referrals
     'edit.php?post_type=press', // Press
     'edit.php?post_type=team-members', // Team
-    'separator2', // First separator
+    'separator1', // First separator
     'edit.php?post_type=region', // Regions
     'edit.php?post_type=outreach-team-member', // Outreach Members
-    'separator3', // First separator
+    'separator2', // Second separator
     'upload.php', // Media
-    'separator4', // First separator
   );
 }
 
