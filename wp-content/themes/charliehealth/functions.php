@@ -280,3 +280,28 @@ function wpdocs_theme_setup()
   add_image_size('featured-large', 600);
   add_image_size('card-thumb', 400);
 }
+
+/**
+ * SEARCH AND REPLACE FUNCTION FOR IN CONTENT CTAS -> BLOCKS
+ */
+// function replace_text_with_block()
+// {
+//   global $wpdb;
+
+//   $search_string = '{{mid-page-cta="/dev-resources/staging"}}'; // Replace with the text you want to search for
+//   // $block_name = 'acf/pre-footer-cta-block'; // Replace with your custom block name
+
+//   // Get the block's HTML markup
+//   $block_content = '<!-- wp:acf/pre-footer-cta-block {"name":"acf/pre-footer-cta-block","data":{},"mode":"preview"} /-->
+//   ';
+
+//   // Run the SQL query to update post content
+//   $query = $wpdb->prepare(
+//     "UPDATE {$wpdb->posts} SET post_content = REPLACE(post_content, %s, %s) WHERE post_type = %s",
+//     $search_string,
+//     $block_content,
+//     'post'
+//   );
+//   $wpdb->query($query);
+// }
+// add_action('init', 'replace_text_with_block');
