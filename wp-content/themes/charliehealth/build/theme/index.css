@@ -1830,6 +1830,10 @@ a.nav-link:hover {
   overflow: hidden;
 }
 
+.overflow-x-scroll{
+  overflow-x: scroll;
+}
+
 .overflow-y-scroll{
   overflow-y: scroll;
 }
@@ -3046,6 +3050,28 @@ a.js-tag-id.active:hover {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.tag-scroll > a{
+  margin-bottom: 1.5rem;
+}
+
+.tag-scroll::-webkit-scrollbar{
+  height: 0.5rem;
+  cursor: pointer;
+}
+
+.tag-scroll::-webkit-scrollbar-track{
+  margin: 1.25rem;
+  cursor: pointer;
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 247 247 / var(--tw-bg-opacity));
+}
+
+.tag-scroll::-webkit-scrollbar-thumb{
+  cursor: pointer;
+  --tw-bg-opacity: 1;
+  background-color: rgb(67 49 176 / var(--tw-bg-opacity));
+}
+
 .bg-noise-purple {
     background-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 version=%271.1%27 xmlns:xlink=%27http://www.w3.org/1999/xlink%27 xmlns:svgjs=%27http://svgjs.dev/svgjs%27 viewBox=%270 0 1400 1400%27 width=%271400%27 height=%271400%27 opacity=%270.2%27%3E%3Cdefs%3E%3Cfilter id=%27nnnoise-filter%27 x=%27-20%25%27 y=%27-20%25%27 width=%27140%25%27 height=%27140%25%27 filterUnits=%27objectBoundingBox%27 primitiveUnits=%27userSpaceOnUse%27 color-interpolation-filters=%27linearRGB%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.2%27 numOctaves=%274%27 seed=%2715%27 stitchTiles=%27stitch%27 x=%270%25%27 y=%270%25%27 width=%27100%25%27 height=%27100%25%27 result=%27turbulence%27%3E%3C/feTurbulence%3E%3CfeSpecularLighting surfaceScale=%278%27 specularConstant=%271.1%27 specularExponent=%2720%27 lighting-color=%27%23cccccc%27 x=%270%25%27 y=%270%25%27 width=%27100%25%27 height=%27100%25%27 in=%27turbulence%27 result=%27specularLighting%27%3E%3CfeDistantLight azimuth=%273%27 elevation=%2777%27%3E%3C/feDistantLight%3E%3C/feSpecularLighting%3E%3C/filter%3E%3C/defs%3E%3Crect width=%271400%27 height=%271400%27 fill=%27transparent%27%3E%3C/rect%3E%3Crect width=%271400%27 height=%271400%27 fill=%27%23cccccc%27 filter=%27url%28%23nnnoise-filter%29%27%3E%3C/rect%3E%3C/svg%3E"),
       linear-gradient(90deg, #c6aff3, #e2d3ff);
@@ -3127,7 +3153,8 @@ a.js-tag-id.active:hover {
     transform: translateX(calc(50vw - 50%));
     max-width: 1280px;
     padding-left: 1.25rem;
-    padding-right: 1.25rem}
+    padding-right: 1.25rem;
+  }
 
 @media (min-width: 1024px){
 
@@ -3152,6 +3179,11 @@ a.js-tag-id.active:hover {
 .hover\:-translate-y-sp-1:hover{
   --tw-translate-y: -0.25rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.hover\:bg-bright-teal:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(177 252 250 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-lightest-purple:hover{
