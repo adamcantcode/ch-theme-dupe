@@ -168,7 +168,7 @@ export default function ajaxPagination() {
       });
     } else if (bodyClasses.includes('page-template-page-press')) {
       // TODO figure out how to order by date with acf field...
-      endpoint = `${window.location.origin}/wp-json/wp/v2/press?_embed&custom_orderby=date`;
+      endpoint = `${window.location.origin}/wp-json/wp/v2/press?_embed`;
     }
     return [endpoint, tagID];
   };
