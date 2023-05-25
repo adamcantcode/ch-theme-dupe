@@ -199,9 +199,23 @@ export default function ajaxPagination() {
                 </div>`;
     } else {
       console.log(post);
-      // console.log(post._embedded['wp:featuredmedia']);
+      if (post._embedded) {
+        if (
+          post._embedded['wp:featuredmedia'][0].media_details.sizes[
+            'card-thumb'
+          ]
+        ) {
+          var imageUrl =
+            post._embedded['wp:featuredmedia'][0].media_details.sizes[
+              'card-thumb'
+            ].source_url;
+        } else {
+          var imageUrl = post._embedded['wp:featuredmedia'][0].source_url;
+        }
+        var altText = post._embedded['wp:featuredmedia'][0].alt_text;
+      }
       html = `<div class="relative grid lg:grid-cols-[1fr_4fr] grid-cols-[1fr_2fr] overflow-hidden border rounded-sm border-card-border">
-      <img src="https://images.placeholders.dev/?width=800&height=600&text=FPO" alt="" class="object-contain h-[125px] w-full">
+      <img src="${imageUrl}" alt="${altText}" class="object-contain h-[125px] w-full p-sp-6">
       <div class="grid p-sp-4">
         <h5 class="mb-sp-4">${post.acf.date}</h5>
         <h3 class="mb-0"><a href="${post.acf.link}" target="_blank" class="stretched-link">${post.title.rendered}</a></h3>

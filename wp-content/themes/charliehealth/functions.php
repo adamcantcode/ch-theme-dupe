@@ -259,7 +259,7 @@ add_filter('rest_post_query', 'filter_posts_by_acf_field', 10, 2);
 function custom_rest_press_query($args, $request)
 {
   $args['meta_key'] = 'date';
-  $args['orderby'] = 'meta_value';
+  $args['orderby'] = 'meta_value title';
   $args['order'] = 'DESC';
   return $args;
 }
@@ -340,4 +340,16 @@ function my_custom_fonts()
       filter: invert(62%) sepia(58%) saturate(367%) hue-rotate(169deg) brightness(98%) contrast(84%);
     }
   </style>';
+}
+
+
+/** NOTE - WP AL IMPORT ALLOW SVG */
+add_filter('wp_all_import_image_mime_type', 'wpai_image_mime_type', 10, 2);
+
+function wpai_image_mime_type($mime_type, $image_filepath)
+{
+  if (empty($mime_type) and preg_match('%\W(svg)$%i', basename($image_filepath))) {
+    return 'image/svg+xml';
+  }
+  return $mime_type;
 }
