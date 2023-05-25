@@ -234,6 +234,9 @@ function ch_menu_order($menu_ord)
   );
 }
 
+/**
+ * Sort AUTHORS for author pages
+ */
 function filter_posts_by_acf_field($args, $request)
 {
   if (isset($request['by_author'])) {
@@ -248,6 +251,19 @@ function filter_posts_by_acf_field($args, $request)
   return $args;
 }
 add_filter('rest_post_query', 'filter_posts_by_acf_field', 10, 2);
+
+
+/**
+ * Sort PRESS posts by date
+ */
+function custom_rest_press_query($args, $request)
+{
+  $args['meta_key'] = 'date';
+  $args['orderby'] = 'meta_value';
+  $args['order'] = 'DESC';
+  return $args;
+}
+add_filter('rest_press_query', 'custom_rest_press_query', 10, 2);
 
 
 function remove_wp_logo()
@@ -325,21 +341,3 @@ function my_custom_fonts()
     }
   </style>';
 }
-
-// function my_add_meta_vars($current_vars)
-// {
-//   $current_vars = array_merge($current_vars, array('meta_key', 'meta_value', 'custom_orderby'));
-//   return $current_vars;
-// }
-// add_filter('rest_query_vars', 'my_add_meta_vars');
-
-// function custom_rest_api_orderby($args, $request)
-// {
-//   if (isset($args['custom_orderby']) && $args['custom_orderby'] === 'date') {
-//     $args['meta_key'] = 'date';
-//     $args['orderby'] = 'meta_value';
-//     $args['order'] = 'desc';
-//   }
-//   return $args;
-// }
-// add_filter('rest_post_query', 'custom_rest_api_orderby', 10, 2);
