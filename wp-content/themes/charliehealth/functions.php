@@ -265,6 +265,18 @@ function custom_rest_press_query($args, $request)
 }
 add_filter('rest_press_query', 'custom_rest_press_query', 10, 2);
 
+/**
+ * Sort POSTS posts by date
+ */
+function custom_rest_post_query($args, $request)
+{
+  $args['meta_key'] = 'date';
+  $args['orderby'] = 'meta_value title';
+  $args['order'] = 'DESC';
+  return $args;
+}
+add_filter('rest_post_query', 'custom_rest_post_query', 10, 2);
+
 
 function remove_wp_logo()
 {
