@@ -161,12 +161,12 @@ function ajaxPagination() {
         }
       });
     } else if (bodyClasses.includes('page-template-page-press')) {
-      endpoint = `${window.location.origin}/wp-json/wp/v2/press?_embed=wp:term,wp:category`;
+      // TODO figure out how to order by date with acf field...
+      endpoint = `${window.location.origin}/wp-json/wp/v2/press?_embed&custom_orderby=date`;
     }
     return [endpoint, tagID];
   };
   const renderHTML = (post, html) => {
-    console.log(post);
     if (!document.querySelector('body').classList.contains('page-template-page-press')) {
       var cats = post._embedded['wp:term'][0];
       var tags = post._embedded['wp:term'][1];
@@ -182,6 +182,7 @@ function ajaxPagination() {
                 </div>`;
     } else {
       console.log(post);
+      // console.log(post._embedded['wp:featuredmedia']);
       html = `<div class="relative grid lg:grid-cols-[1fr_4fr] grid-cols-[1fr_2fr] overflow-hidden border rounded-sm border-card-border">
       <img src="https://images.placeholders.dev/?width=800&height=600&text=FPO" alt="" class="object-contain h-[125px] w-full">
       <div class="grid p-sp-4">

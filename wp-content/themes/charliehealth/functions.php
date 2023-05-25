@@ -307,7 +307,8 @@ function wpdocs_theme_setup()
 
 add_action('admin_head', 'my_custom_fonts');
 
-function my_custom_fonts() {
+function my_custom_fonts()
+{
   echo '<style>
     #adminmenu .wp-menu-image img {
       opacity: 1;
@@ -324,3 +325,21 @@ function my_custom_fonts() {
     }
   </style>';
 }
+
+// function my_add_meta_vars($current_vars)
+// {
+//   $current_vars = array_merge($current_vars, array('meta_key', 'meta_value', 'custom_orderby'));
+//   return $current_vars;
+// }
+// add_filter('rest_query_vars', 'my_add_meta_vars');
+
+// function custom_rest_api_orderby($args, $request)
+// {
+//   if (isset($args['custom_orderby']) && $args['custom_orderby'] === 'date') {
+//     $args['meta_key'] = 'date';
+//     $args['orderby'] = 'meta_value';
+//     $args['order'] = 'desc';
+//   }
+//   return $args;
+// }
+// add_filter('rest_post_query', 'custom_rest_api_orderby', 10, 2);
