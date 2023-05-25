@@ -152,6 +152,16 @@ export default function ajaxPagination() {
       if (tagID) {
         endpoint += `&tags=${tagID}`;
       }
+    } else if (bodyClasses.includes('tag')) {
+      console.log('test');
+      var categories = bodyClasses.map((str) => str.replace('tag-', ''));
+
+      categories.forEach((tag) => {
+        if (!isNaN(tag)) {
+          var tagID = tag;
+          endpoint += `&tags=${tagID}`;
+        }
+      });
     } else if (bodyClasses.includes('page-template-searchpage')) {
       const params = new URLSearchParams(window.location.search);
       const query = params.get('query');
@@ -167,13 +177,14 @@ export default function ajaxPagination() {
         }
       });
     } else if (bodyClasses.includes('page-template-page-press')) {
-      // TODO figure out how to order by date with acf field...
       endpoint = `${window.location.origin}/wp-json/wp/v2/press?_embed`;
     }
+    console.log(endpoint);
     return [endpoint, tagID];
   };
 
   const renderHTML = (post, html) => {
+    console.log(post);
     if (
       !document
         .querySelector('body')
@@ -199,7 +210,6 @@ export default function ajaxPagination() {
                   </div>
                 </div>`;
     } else {
-      console.log(post);
       if (post._embedded) {
         if (
           post._embedded['wp:featuredmedia'][0].media_details.sizes[
