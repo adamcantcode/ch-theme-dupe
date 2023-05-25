@@ -94,6 +94,7 @@ function ajaxPagination() {
     });
   };
   const scollToPostsContainer = () => {
+    // TODO update scroll to for press, different anchor
     gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.to(window, {
       duration: 1,
       ease: 'Power2.easeInOut',

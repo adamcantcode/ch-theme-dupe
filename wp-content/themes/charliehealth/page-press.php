@@ -64,7 +64,7 @@ Template Name: Press page
                 </div>
                 <div class="grid p-sp-4">
                   <h5 class="mb-sp-4"><?= $date; ?></h5>
-                  <h3 class="mb-0"><a href="<?= get_the_ID(); ?>" class="stretched-link"><?= get_the_title(); ?></a></h3>
+                  <h3 class="mb-0"><a href="<?= $link; ?>" class="stretched-link" target="_blank"><?= get_the_title(); ?></a></h3>
                 </div>
               </div>
           <?php wp_reset_postdata();
