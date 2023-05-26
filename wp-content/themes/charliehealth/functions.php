@@ -32,6 +32,12 @@ if (
 ) {
   add_editor_style('editor-styles-posts.css');
 }
+if (
+  false !== stristr($_SERVER['REQUEST_URI'], 'post-new.php') && isset($_GET['post_type']) && 'research' === $_GET['post_type']
+  || false !== stristr($_SERVER['REQUEST_URI'], 'post.php') && 'research' === get_post_type($_GET['post'])
+) {
+  add_editor_style('editor-styles-posts.css');
+}
 
 // ACF options page
 if (function_exists('acf_add_options_page')) {
