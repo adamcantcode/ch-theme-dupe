@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "acf/region-map-block",
+  "title": "Region Map",
+  "description": "A test block for new compilation.",
+  "style": "file:./index.css",
+  "script": "file:./index.js",
+  "category": "design",
+  "icon": "list-view",
+  "apiVersion": 2,
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "region-map.php"
+  },
+  "supports": {}
+}
