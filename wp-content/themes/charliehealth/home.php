@@ -165,6 +165,21 @@
       <?= do_blocks('<!-- wp:block {"ref":458} /-->'); ?>
     </div>
   </section>
+  <div id="newsletterPopup" class="bg-[rgba(0,0,0,.5)] fixed top-0 left-0 w-full h-full z-50 grid items-center justify-center center transition-all duration-300 modal-fade">
+    <div class="transition-all duration-300 m-sp-4">
+      <div class="grid lg:grid-cols-[1.5fr,1fr] section-xs bg-cream container max-h-[80vh] overflow-auto rounded-md items-center relative">
+        <div class="absolute top-0 right-0 cursor-pointer">
+          <img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/close-x.svg'; ?>" alt="close button" class="modal-close p-sp-10">
+        </div>
+        <div class="grid order-2 gap-sp-8 lg:order-1">
+          <div class="grid justify-items-start gap-sp-1"></div>
+        </div>
+        <div class="order-1 lg:order-2">
+          <img src="<?= placeHolderImage(400, 400); ?>" alt="" class="rounded-[50%] mb-5">
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
 
 <?php get_footer(); ?>

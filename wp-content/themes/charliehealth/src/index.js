@@ -12,6 +12,7 @@ import featuredBlogSlider from './modules/featured-blog-slider';
 import ajaxPagination from './modules/ajax-pagination';
 import references from './modules/references';
 import progressBar from './modules/progress-bar';
+import newsletterPopup from './modules/newsletter-popup';
 
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
@@ -36,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     shareButton();
   }
   if (body.classList.contains('blog')) {
+    newsletterPopup();
     featuredBlogSlider();
     ajaxPagination();
   }

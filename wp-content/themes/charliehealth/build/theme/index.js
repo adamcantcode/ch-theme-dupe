@@ -457,6 +457,81 @@ function mobileNav() {
 
 /***/ }),
 
+/***/ "./src/modules/newsletter-popup.js":
+/*!*****************************************!*\
+  !*** ./src/modules/newsletter-popup.js ***!
+  \*****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ newsletterPopup; }
+/* harmony export */ });
+function newsletterPopup() {
+  // Function to create a cookie
+  function createCookie(name, value, days) {
+    var expires = '';
+    if (days) {
+      var date = new Date();
+      date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+      expires = '; expires=' + date.toUTCString();
+    }
+    document.cookie = name + '=' + value + expires + '; path=/';
+  }
+
+  // Function to check if the cookie exists
+  function getCookie(name) {
+    var nameEQ = name + '=';
+    var cookies = document.cookie.split(';');
+    for (var i = 0; i < cookies.length; i++) {
+      var cookie = cookies[i];
+      while (cookie.charAt(0) === ' ') {
+        cookie = cookie.substring(1, cookie.length);
+      }
+      if (cookie.indexOf(nameEQ) === 0) {
+        return cookie.substring(nameEQ.length, cookie.length);
+      }
+    }
+    return null;
+  }
+
+  // Function to handle the scroll event
+  function handleScroll() {
+    var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    var windowHeight = window.innerHeight;
+    var scrollThreshold = windowHeight * 1.5; // Adjust this value as needed
+
+    // Check if the user has scrolled past the threshold and the cookie doesn't exist
+    if (scrollPosition > scrollThreshold && !getCookie('newsletter_popup')) {
+      // Change the class of an element
+      var modal = document.getElementById('newsletterPopup');
+      modal.classList.toggle('modal-fade');
+
+      // Create the cookie to prevent further pop-ups
+      createCookie('newsletter_popup', 'true', 1);
+      modal.addEventListener('click', event => {
+        console.log(event.target.id === 'newsletterPopup');
+        if (event.target.id === 'newsletterPopup') {
+          modal.classList.toggle('modal-fade');
+        }
+      });
+      const closeButton = modal.querySelector('.modal-close');
+      closeButton.addEventListener('click', () => {
+        modal.classList.toggle('modal-fade');
+      });
+
+      // Remove the scroll event listener
+      window.removeEventListener('scroll', handleScroll);
+    }
+  }
+
+  // Attach the scroll event listener
+  window.addEventListener('scroll', handleScroll);
+}
+
+/***/ }),
+
 /***/ "./src/modules/outreach-modals.js":
 /*!****************************************!*\
   !*** ./src/modules/outreach-modals.js ***!
@@ -22123,6 +22198,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/ajax-pagination */ "./src/modules/ajax-pagination.js");
 /* harmony import */ var _modules_references__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/references */ "./src/modules/references.js");
 /* harmony import */ var _modules_progress_bar__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/progress-bar */ "./src/modules/progress-bar.js");
+/* harmony import */ var _modules_newsletter_popup__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules/newsletter-popup */ "./src/modules/newsletter-popup.js");
+
 
 
 
@@ -22154,6 +22231,7 @@ document.addEventListener('DOMContentLoaded', () => {
     (0,_modules_share_button__WEBPACK_IMPORTED_MODULE_8__["default"])();
   }
   if (body.classList.contains('blog')) {
+    (0,_modules_newsletter_popup__WEBPACK_IMPORTED_MODULE_13__["default"])();
     (0,_modules_featured_blog_slider__WEBPACK_IMPORTED_MODULE_9__["default"])();
     (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__["default"])();
   }
