@@ -236,6 +236,7 @@ function ch_menu_order($menu_ord)
     'separator1', // First separator
     'edit.php?post_type=region', // Regions
     'edit.php?post_type=outreach-team-member', // Outreach Members
+    'edit.php?post_type=event', // Outreach Members
     'separator2', // Second separator
     'upload.php', // Media
   );
@@ -379,15 +380,19 @@ function hide_menus_on_multisite()
   // Check if it's the admin area and site ID is 2
   if (is_admin() && get_current_blog_id() !== 1) {
     // Remove specific menus
-    remove_menu_page('edit.php'); // Example: Remove the "Posts" menu
-    remove_menu_page('edit.php?post_type=areas-of-care'); // Example: Remove the "Pages" menu
-    remove_menu_page('edit.php?post_type=authors'); // Example: Remove the "Pages" menu
-    remove_menu_page('edit.php?post_type=medical-reviewer'); // Example: Remove the "Pages" menu
-    remove_menu_page('edit.php?post_type=press'); // Example: Remove the "Pages" menu
-    remove_menu_page('edit.php?post_type=referral'); // Example: Remove the "Pages" menu
-    remove_menu_page('edit.php?post_type=research'); // Example: Remove the "Pages" menu
-    remove_menu_page('edit.php?post_type=team-members'); // Example: Remove the "Pages" menu
-    remove_menu_page('edit.php?post_type=treatment-modalities'); // Example: Remove the "Pages" menu
+    remove_menu_page('edit.php');
+    remove_menu_page('edit.php?post_type=areas-of-care');
+    remove_menu_page('edit.php?post_type=authors');
+    remove_menu_page('edit.php?post_type=medical-reviewer');
+    remove_menu_page('edit.php?post_type=press');
+    remove_menu_page('edit.php?post_type=referral');
+    remove_menu_page('edit.php?post_type=research');
+    remove_menu_page('edit.php?post_type=team-members');
+    remove_menu_page('edit.php?post_type=treatment-modalities');
+  } else {
+    remove_menu_page('edit.php?post_type=region');
+    remove_menu_page('edit.php?post_type=outreach-team-member');
+    remove_menu_page('edit.php?post_type=event');
   }
 }
 add_action('admin_menu', 'hide_menus_on_multisite', 999);
