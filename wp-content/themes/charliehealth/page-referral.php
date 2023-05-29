@@ -7,10 +7,6 @@ Template Post Type: page
 
 <?php get_header(); ?>
 
-<?php 
-var_dump(is_page_template('page-referral.php') && $post->post_type === 'referral');
-; ?>
-
 <main id="primary" class="site-main lg:mt-[68px] mt-0">
   <section class="section">
     <div class="container-md">
