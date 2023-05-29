@@ -310,8 +310,8 @@
   }
 }
 
-.tag-scroll {
-  & > a {
+.custom-scroll {
+  & > * {
     @apply mb-sp-6;
   }
   &::-webkit-scrollbar {

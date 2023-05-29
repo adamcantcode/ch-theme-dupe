@@ -124,15 +124,25 @@
   <section class="section">
     <div class="container">
       <h2>Tag Spotlight</h2>
-      <div class="overflow-auto w-full max-w-[80rem]">
-        <div class="grid items-center grid-flow-col gap-sp-3 lg:gap-sp-6 lg:grid-cols-4 lg:grid-flow-dense">
-          <div class="w-[calc(100vw-2.5rem)] lg:w-full relative">
-            <div class="rounded-md p-sp-4 bg-cream">
-              <h3><a href="#" class="stretched-link">tag</a></h3>
-              <p class="m-0">Lorem ipsum dolor sit amet consectetur.</p>
-            </div>
-          </div>
-        </div>
+      <div class="grid items-center overflow-auto gap-sp-3 lg:gap-sp-6 lg:flex lg:items-stretch custom-scroll">
+        <?php
+        $tags = get_tags();
+        if ($tags) :  ?>
+          <?php foreach ($tags as $tag) :
+            $spotlight = get_field('spotlight_tag', $tag);
+            if ($spotlight) :
+          ?>
+              <div class="lg:w-[calc(25%-18px)] flex-[0_0_auto] relative">
+                <div class="h-full rounded-md p-sp-4 bg-cream">
+                  <h3><a href="<?= get_term_link($tag->term_id); ?>" class="stretched-link"><?= $tag->name; ?></a></h3>
+                  <p class="m-0"><?= $tag->description; ?></p>
+                </div>
+              </div>
+        <?php
+            endif;
+          endforeach;
+        endif;
+        ?>
       </div>
     </div>
   </section>

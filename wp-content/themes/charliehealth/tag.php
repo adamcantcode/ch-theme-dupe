@@ -25,7 +25,7 @@
           </form>
         </div>
       </div>
-      <div class="flex items-start overflow-x-scroll gap-sp-4 whitespace-nowrap tag-scroll">
+      <div class="flex items-start overflow-x-scroll gap-sp-4 whitespace-nowrap custom-scroll">
         <?php
         $terms = get_terms(array(
           'taxonomy' => 'post_tag',

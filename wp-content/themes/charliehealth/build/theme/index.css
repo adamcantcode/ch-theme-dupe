@@ -1545,10 +1545,6 @@ a.nav-link:hover {
   height: 3rem;
 }
 
-.h-sp-5{
-  height: 1.25rem;
-}
-
 .h-sp-4{
   height: 1rem;
 }
@@ -1660,6 +1656,10 @@ a.nav-link:hover {
 
 .max-w-\[80rem\]{
   max-width: 80rem;
+}
+
+.flex-\[0_0_auto\]{
+  flex: 0 0 auto;
 }
 
 .flex-none{
@@ -3072,23 +3072,23 @@ a.js-tag-id.active:hover {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.tag-scroll > a{
+.custom-scroll > *{
   margin-bottom: 1.5rem;
 }
 
-.tag-scroll::-webkit-scrollbar{
+.custom-scroll::-webkit-scrollbar{
   height: 0.5rem;
   cursor: pointer;
 }
 
-.tag-scroll::-webkit-scrollbar-track{
+.custom-scroll::-webkit-scrollbar-track{
   margin: 1.25rem;
   cursor: pointer;
   --tw-bg-opacity: 1;
   background-color: rgb(248 247 247 / var(--tw-bg-opacity));
 }
 
-.tag-scroll::-webkit-scrollbar-thumb{
+.custom-scroll::-webkit-scrollbar-thumb{
   cursor: pointer;
   --tw-bg-opacity: 1;
   background-color: rgb(67 49 176 / var(--tw-bg-opacity));
@@ -3435,6 +3435,10 @@ a.js-tag-id.active:hover {
     width: 225px;
   }
 
+  .lg\:w-\[calc\(25\%-18px\)\]{
+    width: calc(25% - 18px);
+  }
+
   .lg\:w-\[unset\]{
     width: unset;
   }
@@ -3450,10 +3454,6 @@ a.js-tag-id.active:hover {
 
   .lg\:grid-flow-col{
     grid-auto-flow: column;
-  }
-
-  .lg\:grid-flow-dense{
-    grid-auto-flow: dense;
   }
 
   .lg\:grid-cols-2{
@@ -3506,6 +3506,10 @@ a.js-tag-id.active:hover {
 
   .lg\:flex-col{
     flex-direction: column;
+  }
+
+  .lg\:items-stretch{
+    align-items: stretch;
   }
 
   .lg\:gap-32{
