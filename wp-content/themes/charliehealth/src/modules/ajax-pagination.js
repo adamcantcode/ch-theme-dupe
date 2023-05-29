@@ -138,7 +138,7 @@ export default function ajaxPagination() {
   };
 
   const getEndpoint = (bodyClasses, tagID) => {
-    let endpoint = `${window.location.origin}/wp-json/wp/v2/posts?_embed=wp:term,wp:category`;
+    let endpoint = `${window.location.origin}/wp-json/wp/v2/posts?_embed`;
 
     if (bodyClasses.includes('category')) {
       var categories = bodyClasses.map((str) => str.replace('category-', ''));
@@ -184,7 +184,39 @@ export default function ajaxPagination() {
   };
 
   const renderHTML = (post, html) => {
-    console.log(post);
+    var imageUrl =
+      'https://images.placeholders.dev/?width=800&height=600&text=FPO';
+    var imageAlt = `Featured image for ${post.title.rendered}`;
+
+    /** NOTE Handle images */
+    // Make sure embeded exists
+    if (post._embedded) {
+      // Check for featured image
+      if (post._embedded['wp:featuredmedia']) {
+        // Check for cropped image size
+        if (
+          post._embedded['wp:featuredmedia'][0].media_details.sizes[
+            'card-thumb'
+          ]
+        ) {
+          // Use card-thumb size
+          imageUrl =
+            post._embedded['wp:featuredmedia'][0].media_details.sizes[
+              'card-thumb'
+            ].source_url;
+          // Check for alt text
+          if (post._embedded['wp:featuredmedia'][0].alt_text) {
+            imageAlt = post._embedded['wp:featuredmedia'][0].alt_text;
+          } else {
+            imageAlt = `Featured image for ${post.title.rendered}`;
+          }
+        } else {
+          // Use orignal size
+          imageUrl = post._embedded['wp:featuredmedia'][0].source_url;
+        }
+      }
+    }
+    // If not press page
     if (
       !document
         .querySelector('body')
@@ -193,7 +225,7 @@ export default function ajaxPagination() {
       var cats = post._embedded['wp:term'][0];
       var tags = post._embedded['wp:term'][1];
       html = `<div class="relative grid overflow-hidden border rounded-sm border-card-border">
-                  <img src="https://images.placeholders.dev/?width=800&height=600&text=FPO" alt="" class="object-cover lg:h-[220px] h-[150px] w-full">
+                  <img src="${imageUrl}" alt="${imageAlt}" class="object-cover lg:h-[220px] h-[150px] w-full">
                   <div class="grid p-sp-4">
                     <h3><a href="${post.link}" class="stretched-link">${
         post.title.rendered
@@ -210,23 +242,8 @@ export default function ajaxPagination() {
                   </div>
                 </div>`;
     } else {
-      if (post._embedded) {
-        if (
-          post._embedded['wp:featuredmedia'][0].media_details.sizes[
-            'card-thumb'
-          ]
-        ) {
-          var imageUrl =
-            post._embedded['wp:featuredmedia'][0].media_details.sizes[
-              'card-thumb'
-            ].source_url;
-        } else {
-          var imageUrl = post._embedded['wp:featuredmedia'][0].source_url;
-        }
-        var altText = post._embedded['wp:featuredmedia'][0].alt_text;
-      }
       html = `<div class="relative grid lg:grid-cols-[1fr_4fr] grid-cols-[1fr_2fr] overflow-hidden border rounded-sm border-card-border">
-      <img src="${imageUrl}" alt="${altText}" class="object-contain h-[125px] w-full lg:p-sp-6 p-sp-3">
+      <img src="${imageUrl}" alt="${imageAlt}" class="object-contain h-[125px] w-full lg:p-sp-6 p-sp-3">
       <div class="grid p-sp-4">
         <h5 class="mb-sp-4">${post.acf.date}</h5>
         <h3 class="mb-0"><a href="${post.acf.link}" target="_blank" class="stretched-link">${post.title.rendered}</a></h3>
