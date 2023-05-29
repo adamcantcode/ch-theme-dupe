@@ -198,6 +198,13 @@
                 "operator": "==",
                 "value": "research"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "event"
+            }
         ]
     ],
     "menu_order": 0,
@@ -209,5 +216,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1684367376
+    "modified": 1685381770
 }
