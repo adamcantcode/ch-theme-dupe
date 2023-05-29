@@ -71,12 +71,12 @@
         "permalink_rewrite": "post_type_key",
         "with_front": "0",
         "feeds": "0",
-        "pages": "1"
+        "pages": "0"
     },
     "query_var": "post_type_key",
     "query_var_name": "",
     "can_export": true,
     "delete_with_user": false,
     "register_meta_box_cb": "",
-    "modified": 1684967431
+    "modified": 1685319890
 }

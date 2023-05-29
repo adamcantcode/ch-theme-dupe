@@ -34,6 +34,13 @@
                 "operator": "==",
                 "value": "referral"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-referral.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -59,5 +66,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1684201235
+    "modified": 1685319921
 }
