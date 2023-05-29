@@ -4,7 +4,7 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
 gsap.registerPlugin(ScrollToPlugin);
 
-export default function ajaxPagination() {
+export default function ajaxPaginationResearch() {
   const initPagination = (tagID) => {
     const bodyClasses = Array.from(document.body.classList);
     const postsPerPage = 6;
@@ -13,7 +13,7 @@ export default function ajaxPagination() {
   };
 
   const renderPagination = (postsPerPage, endpoint, tagID) => {
-    jQuery('.pagination-container').pagination({
+    jQuery('.pagination-container-research').pagination({
       dataSource: function (done) {
         fetch(endpoint)
           .then(function (response) {
@@ -45,11 +45,7 @@ export default function ajaxPagination() {
       <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
     </svg>`,
       callback: function (data, pagination) {
-        console.log(data);
-        console.log(pagination);
-
-        // var url = window.location.href.split('?')[0] + '?page=' + data[0];
-        jQuery('.pagination-container .paginationjs-page').each(function (
+        jQuery('.pagination-container-research .paginationjs-page').each(function (
           index,
           element
         ) {
@@ -61,7 +57,7 @@ export default function ajaxPagination() {
         const bodyClasses = Array.from(document.body.classList);
         var [endpoint] = getEndpoint(bodyClasses, tagID);
 
-        jQuery('.posts-container').addClass('opacity-0 scale-[0.99]');
+        jQuery('.posts-container-research').addClass('opacity-0 scale-[0.99]');
 
         endpoint += `&page=${data}&per_page=${postsPerPage}`;
 
@@ -74,8 +70,8 @@ export default function ajaxPagination() {
             posts.forEach(function (post) {
               html += renderHTML(post, html);
             });
-            jQuery('.posts-container').html(html);
-            jQuery('.posts-container').removeClass('opacity-0 scale-[0.99]');
+            jQuery('.posts-container-research').html(html);
+            jQuery('.posts-container-research').removeClass('opacity-0 scale-[0.99]');
           });
       },
       afterPageOnClick: function () {
@@ -136,47 +132,7 @@ export default function ajaxPagination() {
   };
 
   const getEndpoint = (bodyClasses, tagID) => {
-    let endpoint = `${window.location.origin}/wp-json/wp/v2/posts?_embed`;
-
-    if (bodyClasses.includes('category')) {
-      var categories = bodyClasses.map((str) => str.replace('category-', ''));
-
-      categories.forEach((category) => {
-        if (!isNaN(category)) {
-          var categoryID = category;
-          endpoint += `&categories=${categoryID}`;
-        }
-      });
-      if (tagID) {
-        endpoint += `&tags=${tagID}`;
-      }
-    } else if (bodyClasses.includes('tag')) {
-      console.log('test');
-      var categories = bodyClasses.map((str) => str.replace('tag-', ''));
-
-      categories.forEach((tag) => {
-        if (!isNaN(tag)) {
-          var tagID = tag;
-          endpoint += `&tags=${tagID}`;
-        }
-      });
-    } else if (bodyClasses.includes('page-template-searchpage')) {
-      const params = new URLSearchParams(window.location.search);
-      const query = params.get('query');
-
-      endpoint += `&search=${query}`;
-    } else if (bodyClasses.includes('single-authors')) {
-      var author = bodyClasses.map((str) => str.replace('postid-', ''));
-
-      author.forEach((author) => {
-        if (!isNaN(author)) {
-          var authorID = author;
-          endpoint += `&by_author=${authorID}`;
-        }
-      });
-    } else if (bodyClasses.includes('page-template-page-press')) {
-      endpoint = `${window.location.origin}/wp-json/wp/v2/press?_embed`;
-    }
+    let endpoint = `${window.location.origin}/wp-json/wp/v2/research?_embed`;
     console.log(endpoint);
     return [endpoint, tagID];
   };
@@ -220,8 +176,9 @@ export default function ajaxPagination() {
         .querySelector('body')
         .classList.contains('page-template-page-press')
     ) {
-      var cats = post._embedded['wp:term'][0];
-      var tags = post._embedded['wp:term'][1];
+      // var cats = post._embedded['wp:term'][0];
+      var tags = post._embedded['wp:term'][0];
+      console.log(post);
       html = `<div class="relative grid overflow-hidden border rounded-sm border-card-border">
                   <img src="${imageUrl}" alt="${imageAlt}" class="object-cover lg:h-[220px] h-[150px] w-full">
                   <div class="grid p-sp-4">

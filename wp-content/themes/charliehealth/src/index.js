@@ -10,6 +10,7 @@ import toc from './modules/toc';
 import shareButton from './modules/share-button';
 import featuredBlogSlider from './modules/featured-blog-slider';
 import ajaxPagination from './modules/ajax-pagination';
+import ajaxPaginationResearch from './modules/ajax-pagination-research';
 import references from './modules/references';
 import progressBar from './modules/progress-bar';
 import newsletterPopup from './modules/newsletter-popup';
@@ -40,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     newsletterPopup();
     featuredBlogSlider();
     ajaxPagination();
+    ajaxPaginationResearch();
   }
   if (body.classList.contains('category')) {
     featuredBlogSlider();

@@ -18,21 +18,6 @@
     }
   }
 }
-/* TODO figure out what the fuck is going on here
- * Seems to be because of inline styles overriding.
-*/
-/* .post-type-post {
-  &.block-editor-page {
-    .editor-styles-wrapper
-      .edit-post-visual-editor__post-title-wrapper
-      > :where(:not(.alignleft):not(.alignright):not(.alignfull)),
-    .editor-styles-wrapper
-      .block-editor-block-list__layout.is-root-container
-      > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
-      max-width: 768px !important;
-    }
-  }
-} */
 
 .testimonial-padding {
   @apply py-sp-8;

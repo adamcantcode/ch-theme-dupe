@@ -169,10 +169,22 @@
       [newsletter]
     </div>
   </section>
-  <section class="section">
+  <section id="researchContainer" class="section">
     <div class="container">
       <h2>Research</h2>
-      [research]
+      <div class="grid lg:grid-cols-3 transition-all duration-300 scale-[0.99] opacity-0 posts-container-research gap-x-sp-8 gap-y-sp-10 mb-sp-10">
+        <!-- `<div class="relative grid overflow-hidden border rounded-sm border-card-border">
+          <img src="https://images.placeholders.dev/?width=800&height=600&text=FPO" alt="" class="object-cover lg:h-[220px] h-[150px] w-full">
+          <div class="grid p-sp-4">
+            <h3><a href="${post.link}" class="stretched-link">${post.title.rendered}</a></h3>
+            <h5>author</h5>
+            <div class="grid justify-start grid-flow-col gap-sp-4">
+              ${tags.map((tag) => `<a href="${tag.link}" class="relative z-20 inline-block no-underline rounded-lg px-sp-4 py-sp-3 text-h6 bg-tag-gray">${tag.name}</a>`).join('')}
+            </div>
+          </div>
+        </div>` -->
+      </div>
+      <div class="pagination-container-research"></div>
     </div>
   </section>
   <section class="section-bottom">
