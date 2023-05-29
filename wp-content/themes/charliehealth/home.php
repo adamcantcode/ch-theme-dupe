@@ -66,19 +66,34 @@
         <div class="relative swiper swiper-featured-blog lg:h-[400px]">
           <div class="swiper-wrapper">
             <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
+                <?php
+                $audiences = get_the_terms(get_the_ID(), 'category');
+
+                if (has_post_thumbnail()) {
+                  $featuredImageID = get_post_thumbnail_id();
+                  $featuredImage = wp_get_attachment_image_src($featuredImageID, 'featured-large');
+                  $featuredImageAltText = get_post_meta($featuredImageID, '_wp_attachment_image_alt', true);
+
+                  $featuredImageUrl = $featuredImage[0];
+                  $featuredImageAltText = $featuredImageAltText ?: '';
+                } else {
+                  $featuredImageUrl = placeHolderImage(600, 800);
+                  $featuredImageAltText = 'place holder image';
+                }
+                ?>
                 <div class="swiper-slide">
                   <div class="relative grid overflow-hidden rounded-md lg:grid-cols-2">
                     <div class="grid content-between order-2 bg-purple-gradient-start lg:p-sp-8 p-sp-4 lg:order-1">
                       <div>
-                        <?php $audiences = get_the_terms(get_the_ID(), 'category'); ?>
+                        <?php  ?>
                         <?php foreach ($audiences as $audience) : ?>
                           <a href="<?= get_term_link($audience->slug, 'category'); ?>" class="relative z-20 inline-block leading-none text-white no-underline transition-all duration-300 bg-transparent border-2 border-white rounded-lg p-sp-3 hover:bg-white hover:!text-dark-blue mb-sp-4 mr-sp-1"><?= $audience->name; ?></a>
                         <?php endforeach; ?>
-                        <h3 class="text-white text-h1 lg:text-h1-lg"><?= get_the_title(); ?></h3>
+                        <h3 class="text-white text-h2 lg:text-h2-lg"><?= get_the_title(); ?></h3>
                       </div>
                       <a href="<?= get_the_permalink(); ?>" class="text-white stretched-link">Read more</a>
                     </div>
-                    <img src="<?= placeHolderImage(800, 600); ?>" alt="alt" class="order-1 object-cover lg:order-2 lg:h-[400px] w-full">
+                    <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="order-1 object-cover lg:order-2 lg:h-[400px] w-full">
                   </div>
                 </div>
             <?php endwhile;

@@ -3630,6 +3630,13 @@ a.js-tag-id.active:hover {
     font-weight: 400;
   }
 
+  .lg\:text-h2-lg{
+    font-size: 1.75rem;
+    line-height: 2.3rem;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+
   .lg\:leading-tight{
     line-height: 1.25;
   }
