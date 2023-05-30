@@ -381,11 +381,22 @@
 }
 
 /* FORM */
-.page {
+.fsForm {
   .fsRowBody input[type='checkbox']:before,
   .fsRowBody input[type='checkbox']:checked:before,
   .fsRowBody input[type='radio']:before,
   .fsRowBody input[type='radio']:checked:before {
     display: block;
   }
+  .hidden {
+    position: absolute;
+    left: -999em;
+    width: 0.1em;
+    height: 0.1em;
+    overflow: hidden;
+  }
+}
+/* FORMSTACK OVERWRITE */
+.hidden-formstack-fix {
+  display: none;
 }

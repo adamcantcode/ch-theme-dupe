@@ -1034,6 +1034,14 @@ a.ch-button.button-primary-dark:hover {
   display: none;
 }
 
+.fsForm .nav-parent-menu .nav-sub-menu > .menu-container {
+    position: absolute;
+    left: -999em;
+    width: 0.1em;
+    height: 0.1em;
+    overflow: hidden;
+  }
+
 @media (min-width: 1024px){
 
   .nav-parent-menu .nav-sub-menu > .menu-container{
@@ -3124,6 +3132,14 @@ a.js-tag-id.active:hover {
   opacity: 0;
 }
 
+.fsForm .tab-contents {
+    position: absolute;
+    left: -999em;
+    width: 0.1em;
+    height: 0.1em;
+    overflow: hidden;
+  }
+
 .tab-contents > *:last-child{
   margin-bottom: 0px;
 }
@@ -3171,12 +3187,26 @@ a.js-tag-id.active:hover {
 
 /* FORM */
 
-.page .fsRowBody input[type='checkbox']:before,
-  .page .fsRowBody input[type='checkbox']:checked:before,
-  .page .fsRowBody input[type='radio']:before,
-  .page .fsRowBody input[type='radio']:checked:before {
+.fsForm .fsRowBody input[type='checkbox']:before,
+  .fsForm .fsRowBody input[type='checkbox']:checked:before,
+  .fsForm .fsRowBody input[type='radio']:before,
+  .fsForm .fsRowBody input[type='radio']:checked:before {
     display: block;
   }
+
+.fsForm .hidden {
+    position: absolute;
+    left: -999em;
+    width: 0.1em;
+    height: 0.1em;
+    overflow: hidden;
+  }
+
+/* FORMSTACK OVERWRITE */
+
+.hidden-formstack-fix {
+  display: none;
+}
 
 .hover\:text-white:hovera:hover {
         color: #ffffff;

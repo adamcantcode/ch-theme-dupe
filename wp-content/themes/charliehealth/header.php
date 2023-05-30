@@ -105,7 +105,7 @@
             </div>
           </div>
         </div>
-        <div class="flex-none hidden nav-cta lg:block">
+        <div class="flex-none hidden-formstack-fix nav-cta lg:block">
           <a href="<?= get_field('cta', 'option')['url']; ?>" class="ch-button button-tertiary"><?= get_field('cta', 'option')['title']; ?></a>
         </div>
         <div class="ml-auto text-gray-500 cursor-pointer open-close lg:hidden">
