@@ -68,6 +68,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/posts-list');
   register_block_type(__DIR__ . '/build/blocks/teams');
   register_block_type(__DIR__ . '/build/blocks/region-map');
+  register_block_type(__DIR__ . '/build/blocks/iop-chart');
 }
 add_action('init', 'register_acf_blocks', 5);
 
