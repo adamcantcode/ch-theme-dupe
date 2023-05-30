@@ -1,31 +1,27 @@
 <footer class="grid bg-darkest-blue gap-y-sp-16 section relatve">
 	<!-- menu -->
 	<div class="container grid lg:grid-cols-5 lg:gap-sp-16 gap-sp-8">
-		<div class="flex flex-col footer-links">
-			<h4 class="text-white">Our Program</h4>
-			<a href="#">Intensive Outpatient Program (IOP)</a>
-			<a href="#">Intensive Outpatient Program (IOP)</a>
-			<a href="#">Intensive Outpatient Program (IOP)</a>
-			<a href="#">Intensive Outpatient Program (IOP)</a>
-		</div>
-		<div class="flex flex-col footer-links">
-			<h4 class="text-white">Our Program</h4>
-			<a href="#">Intensive Outpatient</a>
-			<a href="#">Intensive Outpatient</a>
-			<a href="#">Intensive Outpatient</a>
-		</div>
-		<div class="flex flex-col footer-links">
-			<h4 class="text-white">Our Program</h4>
-			<a href="#">Intensive Outpatient</a>
-			<a href="#">Intensive Outpatient</a>
-			<a href="#">Intensive Outpatient</a>
-			<a href="#">Intensive Outpatient</a>
-			<a href="#">Intensive Outpatient</a>
-			<a href="#">Intensive Outpatient</a>
-			<a href="#">Intensive Outpatient</a>
-			<a href="#">Intensive Outpatient</a>
-			<a href="#">Intensive Outpatient</a>
-		</div>
+		<?php
+		if (have_rows('footer_navigation_item', 'option')) :
+			while (have_rows('footer_navigation_item', 'option')) : the_row();
+				$heading = get_sub_field('footer_column_heading')
+		?>
+				<div class="flex flex-col footer-links">
+					<h4 class="text-white"><?= $heading; ?></h4>
+					<?php
+					if (have_rows('footer_submenu_items', 'option')) :
+						while (have_rows('footer_submenu_items', 'option')) : the_row();
+							$sublinkUrl = get_sub_field('footer_sublink')['url'];
+							$sublinkTitle = get_sub_field('footer_sublink')['title'];
+					?>
+							<a href="<?= $sublinkUrl; ?>"><?= $sublinkTitle; ?></a>
+					<?php endwhile;
+					endif;
+					?>
+				</div>
+		<?php endwhile;
+		endif;
+		?>
 	</div>
 	<div class="container order-first md:order-none">
 		<div class="flex flex-col justify-between rounded-md lg:flex-row bg-lightest-teal py-sp-5 px-sp-8">
