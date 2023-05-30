@@ -379,3 +379,13 @@
     /* @apply inset-x-1/2 -mx-[50vw] relative w-[1280px]; */;
   }
 }
+
+/* FORM */
+.page {
+  .fsRowBody input[type='checkbox']:before,
+  .fsRowBody input[type='checkbox']:checked:before,
+  .fsRowBody input[type='radio']:before,
+  .fsRowBody input[type='radio']:checked:before {
+    display: block;
+  }
+}

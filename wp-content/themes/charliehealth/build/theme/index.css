@@ -3169,6 +3169,15 @@ a.js-tag-id.active:hover {
   }
 }
 
+/* FORM */
+
+.page .fsRowBody input[type='checkbox']:before,
+  .page .fsRowBody input[type='checkbox']:checked:before,
+  .page .fsRowBody input[type='radio']:before,
+  .page .fsRowBody input[type='radio']:checked:before {
+    display: block;
+  }
+
 .hover\:text-white:hovera:hover {
         color: #ffffff;
       }
