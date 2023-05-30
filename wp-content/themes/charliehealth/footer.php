@@ -31,11 +31,27 @@
 		</div>
 	</div>
 	<div class="container grid lg:grid-cols-5 col gap-sp-16">
-		<div class="flex col-span-2 badges gap-sp-4">
-			<script src="https://static.legitscript.com/seals/7088078.js"></script>
-			<a href="https://www.jointcommission.org/" target="_blank">
-				<img src="<?= site_url(); ?>/wp-content/themes/charliehealth/resources/images/gold-seal.webp" alt="The Joint Commission logo that links to the Joint Commission homepage">
-			</a>
+		<div class="flex flex-col col-span-2">
+			<div class="flex badges gap-sp-4 mb-sp-4">
+				<script src="https://static.legitscript.com/seals/7088078.js"></script>
+				<a href="https://www.jointcommission.org/" target="_blank">
+					<img src="<?= site_url(); ?>/wp-content/themes/charliehealth/resources/images/gold-seal.webp" alt="The Joint Commission logo that links to the Joint Commission homepage">
+				</a>
+			</div>
+			<div class="flex gap-sp-4">
+				<a href="https://www.facebook.com/charliehealth" target="_blank">
+					<img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/social-logos/facebook.svg'; ?>" class="w-[25px] h-[25px] filter-white" />
+				</a>
+				<a href="https://www.linkedin.com/company/charlie-health/" target="_blank">
+					<img src="<?= '/wp-content/themes/charliehealth/resources/images/social-logos/linkedin.svg'; ?>" class="w-[25px] h-[25px] filter-white" />
+				</a>
+				<a href="https://www.instagram.com/charliehealth/" target="_blank">
+					<img src="<?= '/wp-content/themes/charliehealth/resources/images/social-logos/instagram.svg'; ?>" class="w-[25px] h-[25px] filter-white" />
+				</a>
+				<a href="https://www.tiktok.com/@charliehealth" target="_blank">
+					<img src="<?= '/wp-content/themes/charliehealth/resources/images/social-logos/tik-tok.svg'; ?>" class="w-[25px] h-[25px] filter-white" />
+				</a>
+			</div>
 		</div>
 		<div class="col-span-3">
 			<p class="text-white text-h6">All professional medical services are provided by licensed physicians and clinicians affiliated with independently owned and operated professional practices. For patients in California, this is known as “CH Medical CA, P.C.” For patients in North Carolina or New Jersey, this is known as “CH Medical NC NJ, P.C.” For patients in New York, this is known as “CH Medical NY”. For patients in all other states, this is known as “Charlie Health Medical, P.A.” Charlie Health, Inc. provides administrative and technology services to the CH Medical practices it supports, and does not provide any professional medical services itself.
@@ -54,7 +70,7 @@
 				while (have_rows('secondary_navigation_items', 'option')) : the_row();
 					$link = get_sub_field('secondary_menu_item')
 			?>
-					<a href="<?= $link['url']; ?>"><?= $link['title']; ?></a>
+					<a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>"><?= $link['title']; ?></a>
 			<?php endwhile;
 			endif;
 			?>
