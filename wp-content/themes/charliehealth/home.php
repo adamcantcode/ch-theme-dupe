@@ -203,16 +203,30 @@
     </div>
   </section>
   <div id="newsletterPopup" class="bg-[rgba(0,0,0,.5)] fixed top-0 left-0 w-full h-full z-50 grid items-center justify-center center transition-all duration-300 modal-fade">
-    <div class="transition-all duration-300 m-sp-4">
-      <div class="grid lg:grid-cols-[1.5fr,1fr] section-xs bg-cream container max-h-[80vh] overflow-auto rounded-md items-center relative">
+    <div class="transition-all duration-300 section-xs">
+      <div class="grid lg:grid-cols-[1fr,2fr] bg-cream container max-h-[80vh] overflow-auto rounded-md items-center relative">
         <div class="absolute top-0 right-0 cursor-pointer">
-          <img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/close-x.svg'; ?>" alt="close button" class="modal-close p-sp-10">
+          <img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/close-x.svg'; ?>" alt="close button" class="modal-close lg:p-sp-10 p-sp-4">
         </div>
-        <div class="grid order-2 gap-sp-8 lg:order-1">
-          <div class="grid justify-items-start gap-sp-1"></div>
-        </div>
-        <div class="order-1 lg:order-2">
-          <img src="<?= placeHolderImage(400, 400); ?>" alt="" class="rounded-[50%] mb-5">
+        <img src="<?= placeHolderImage(800, 533); ?>" alt="Girls smiling" class="hidden object-cover w-full h-full lg:block">
+        <div class="p-sp-8">
+          <h2 class="lg:text-h1-display-lg text-h1-display">Join the Charlie Health Library</h2>
+          <p class="h-full mb-0 lg:block">Get mental health updates, research, insights, and resources directly to your inbox.</p>
+          <div class="newsletter-revamp">
+            <script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/newsletter_blog_revamp"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/newsletter_blog_revamp" title="Online Form">Online Form - Newsletter - Blog Revamp</a></noscript>
+            <script>
+              // Get references to the elements
+              var elementToCut = document.getElementById("fsSubmitButton5194985");
+              var destinationElement = document.getElementById("fsCell140490700");
+              // Create a clone of the element to cut
+              var clonedElement = elementToCut.cloneNode(true);
+              // Remove the original element from its current parent
+              elementToCut.parentNode.removeChild(elementToCut);
+              // Append the cloned element to the destination element
+              destinationElement.appendChild(clonedElement);
+            </script>
+          </div>
+          <h5>You can unsubscribe anytime.</h5>
         </div>
       </div>
     </div>

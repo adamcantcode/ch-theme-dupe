@@ -1585,6 +1585,10 @@ a.nav-link:hover {
   max-height: 80vh;
 }
 
+.max-h-\[75vh\]{
+  max-height: 75vh;
+}
+
 .min-h-\[200px\]{
   min-height: 200px;
 }
@@ -3202,6 +3206,13 @@ a.js-tag-id.active:hover {
     overflow: hidden;
   }
 
+/* .blog {
+  .fsBody.fsForm {
+    margin: 0;
+    padding: 0
+  }
+} */
+
 /* FORMSTACK OVERWRITE */
 
 .hidden-formstack-fix {
@@ -3522,6 +3533,10 @@ a.js-tag-id.active:hover {
     grid-template-columns: 2fr 1fr;
   }
 
+  .lg\:grid-cols-\[1fr\2c 2fr\]{
+    grid-template-columns: 1fr 2fr;
+  }
+
   .lg\:flex-row{
     flex-direction: row;
   }
@@ -3614,6 +3629,10 @@ a.js-tag-id.active:hover {
     padding: 2rem;
   }
 
+  .lg\:p-sp-10{
+    padding: 2.5rem;
+  }
+
   .lg\:px-0{
     padding-left: 0px;
     padding-right: 0px;
@@ -3653,6 +3672,13 @@ a.js-tag-id.active:hover {
   .lg\:text-h3-lg{
     font-size: 1.5rem;
     line-height: 1.8rem;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+
+  .lg\:text-h1-display-lg{
+    font-size: 4rem;
+    line-height: 4.2rem;
     letter-spacing: 0;
     font-weight: 400;
   }

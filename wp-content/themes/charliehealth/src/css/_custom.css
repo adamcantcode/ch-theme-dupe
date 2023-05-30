@@ -396,6 +396,12 @@
     overflow: hidden;
   }
 }
+/* .blog {
+  .fsBody.fsForm {
+    margin: 0;
+    padding: 0
+  }
+} */
 /* FORMSTACK OVERWRITE */
 .hidden-formstack-fix {
   display: none;
