@@ -49,10 +49,15 @@
 			<?= file_get_contents('wp-content/themes/charliehealth/resources/images/logos/shield.svg'); ?>
 		</div>
 		<div class="flex flex-col lg:flex-row footer-links lg:gap-sp-8 gap-sp-2">
-			<a href="#">Privacy Policy</a>
-			<a href="#">Privacy Policy</a>
-			<a href="#">Privacy Policy</a>
-			<a href="#">Privacy Policy</a>
+			<?php
+			if (have_rows('secondary_navigation_items', 'option')) :
+				while (have_rows('secondary_navigation_items', 'option')) : the_row();
+					$link = get_sub_field('secondary_menu_item')
+			?>
+					<a href="<?= $link['url']; ?>"><?= $link['title']; ?></a>
+			<?php endwhile;
+			endif;
+			?>
 		</div>
 		<div class="flex flex-row footer-links gap-sp-8">
 			<span class="text-white text-h5">©<?= date('Y'); ?> Charlie Health, Inc. All rights reserved.</span>
