@@ -68,12 +68,12 @@ $readingTime = ceil($wordCount / $wordsPerMinute);
               <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?= $fullUrl; ?>" class="ml-sp-4"><img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/social-logos/linkedin.svg'; ?>" alt="linkedin icon"></a>
             </div>
             <div class="grid gap-sp-4">
-              <div class="grid justify-start grid-flow-col gap-sp-4 items-end">
+              <div class="grid items-end justify-start grid-flow-col gap-sp-4">
                 <?php foreach ($audiences as $audience) : ?>
                   <a href="<?= get_term_link($audience->slug, 'category'); ?>" class="px-4 py-3 no-underline rounded-lg text-h6 bg-tag-gray"><?= $audience->name; ?></a>
                 <?php endforeach; ?>
               </div>
-              <div class="grid justify-start grid-flow-col gap-sp-4 items-end">
+              <div class="grid items-end justify-start grid-flow-col gap-sp-4">
                 <?php foreach ($tags as $tag) : ?>
                   <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="px-4 py-3 no-underline rounded-lg text-h6 bg-tag-gray"><?= $tag->name; ?></a>
                 <?php endforeach; ?>
@@ -83,7 +83,7 @@ $readingTime = ceil($wordCount / $wordsPerMinute);
         </div>
       </div>
     </section>
-    <div class="invisible noshow opacity-0 back-to-top top-sp-16 left-sp-10 mb-sp-16 w-fit">
+    <div class="invisible opacity-0 noshow back-to-top top-sp-16 left-sp-10 mb-sp-16 w-fit">
       <h3><a href="#mainArticleContent">Back to top</a></h3>
     </div>
     <?php if ($toc) : ?>
@@ -147,7 +147,7 @@ $readingTime = ceil($wordCount / $wordsPerMinute);
             <div class="grid p-sp-4">
               <h3><a href="<?= get_the_permalink($post->ID); ?>" class="stretched-link"><?= $post->post_title; ?></a></h3>
               <h5 class="mb-sp-4"><?= $author = get_field('by_author')->post_title ?: 'Charlile Health Editorial Team'; ?></h5>
-              <div class="grid justify-start grid-flow-col gap-sp-4 items-end">
+              <div class="grid items-end justify-start grid-flow-col gap-sp-4">
                 <?php $tags = get_the_terms($post->ID, 'post_tag'); ?>
                 <?php foreach ($tags as $tag) : ?>
                   <a href="<?= $tag->link; ?>" class="relative z-20 inline-block no-underline rounded-lg px-sp-4 py-sp-3 text-h6 bg-tag-gray"><?= $tag->name; ?></a>
@@ -173,7 +173,7 @@ $readingTime = ceil($wordCount / $wordsPerMinute);
 </section>
 <section class="section">
   <div class="container-sm">
-    <?= do_blocks('<!-- wp:block {"ref":458} /-->'); ?>
+    <?= do_blocks('<!-- wp:block {"ref":11} /-->'); ?>
   </div>
 </section>
 
