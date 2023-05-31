@@ -76,7 +76,7 @@ if ($horizontalScroll === true) {
           </div>
         </div>
       <?php endforeach; ?>
-      <div class="absolute bottom-0 flex justify-center w-full bg-white lg:hidden">
+      <div class="absolute bottom-0 flex justify-center w-full bg-white lg:noshow">
         <a role="button" class="z-10 ch-button button-secondary toggle-button">Show More</a>
       </div>
     </div>

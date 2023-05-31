@@ -1034,14 +1034,6 @@ a.ch-button.button-primary-dark:hover {
   display: none;
 }
 
-.fsForm .nav-parent-menu .nav-sub-menu > .menu-container {
-    position: absolute;
-    left: -999em;
-    width: 0.1em;
-    height: 0.1em;
-    overflow: hidden;
-  }
-
 @media (min-width: 1024px){
 
   .nav-parent-menu .nav-sub-menu > .menu-container{
@@ -1497,10 +1489,6 @@ a.nav-link:hover {
   display: grid;
 }
 
-.hidden{
-  display: none;
-}
-
 .aspect-square{
   aspect-ratio: 1 / 1;
 }
@@ -1583,10 +1571,6 @@ a.nav-link:hover {
 
 .max-h-\[80vh\]{
   max-height: 80vh;
-}
-
-.max-h-\[75vh\]{
-  max-height: 75vh;
 }
 
 .min-h-\[200px\]{
@@ -2715,6 +2699,10 @@ a.nav-link:hover {
       z-index: 10;
     }
 
+.noshow{
+  display: none;
+}
+
 /* CUSTOM STYELS */
 
 .single-areas-of-care .main-article-content section .acf-innerblocks-container > img, .single-treatment-modalities .main-article-content section .acf-innerblocks-container > img{
@@ -3132,17 +3120,9 @@ a.js-tag-id.active:hover {
 }
 
 .tab-contents{
-  display: none;
   opacity: 0;
+  display: none;
 }
-
-.fsForm .tab-contents {
-    position: absolute;
-    left: -999em;
-    width: 0.1em;
-    height: 0.1em;
-    overflow: hidden;
-  }
 
 .tab-contents > *:last-child{
   margin-bottom: 0px;
@@ -3197,27 +3177,6 @@ a.js-tag-id.active:hover {
   .fsForm .fsRowBody input[type='radio']:checked:before {
     display: block;
   }
-
-.fsForm .hidden {
-    position: absolute;
-    left: -999em;
-    width: 0.1em;
-    height: 0.1em;
-    overflow: hidden;
-  }
-
-/* .blog {
-  .fsBody.fsForm {
-    margin: 0;
-    padding: 0
-  }
-} */
-
-/* FORMSTACK OVERWRITE */
-
-.hidden-formstack-fix {
-  display: none;
-}
 
 .hover\:text-white:hovera:hover {
         color: #ffffff;
@@ -3424,10 +3383,6 @@ a.js-tag-id.active:hover {
     display: grid;
   }
 
-  .lg\:hidden{
-    display: none;
-  }
-
   .lg\:h-\[220px\]{
     height: 220px;
   }
@@ -3513,6 +3468,10 @@ a.js-tag-id.active:hover {
     grid-template-columns: 1.5fr 1fr;
   }
 
+  .lg\:grid-cols-\[1fr\2c 2fr\]{
+    grid-template-columns: 1fr 2fr;
+  }
+
   .lg\:grid-cols-\[1fr\2c _2fr\]{
     grid-template-columns: 1fr 2fr;
   }
@@ -3531,10 +3490,6 @@ a.js-tag-id.active:hover {
 
   .lg\:grid-cols-\[2fr\2c 1fr\]{
     grid-template-columns: 2fr 1fr;
-  }
-
-  .lg\:grid-cols-\[1fr\2c 2fr\]{
-    grid-template-columns: 1fr 2fr;
   }
 
   .lg\:flex-row{
@@ -3617,6 +3572,10 @@ a.js-tag-id.active:hover {
     background-color: rgba(0,0,0,0);
   }
 
+  .lg\:p-sp-10{
+    padding: 2.5rem;
+  }
+
   .lg\:p-sp-12{
     padding: 3rem;
   }
@@ -3627,10 +3586,6 @@ a.js-tag-id.active:hover {
 
   .lg\:p-sp-8{
     padding: 2rem;
-  }
-
-  .lg\:p-sp-10{
-    padding: 2.5rem;
   }
 
   .lg\:px-0{
@@ -3662,6 +3617,13 @@ a.js-tag-id.active:hover {
     font-weight: 400;
   }
 
+  .lg\:text-h1-display-lg{
+    font-size: 4rem;
+    line-height: 4.2rem;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+
   .lg\:text-h2-lg{
     font-size: 1.75rem;
     line-height: 2.3rem;
@@ -3676,15 +3638,11 @@ a.js-tag-id.active:hover {
     font-weight: 400;
   }
 
-  .lg\:text-h1-display-lg{
-    font-size: 4rem;
-    line-height: 4.2rem;
-    letter-spacing: 0;
-    font-weight: 400;
-  }
-
   .lg\:leading-tight{
     line-height: 1.25;
+  }
+  .lg\:noshow{
+    display: none;
   }
 }
 /*!*******************************************************************************************************************************************************************************************************************************!*\

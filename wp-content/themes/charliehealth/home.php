@@ -208,7 +208,7 @@
         <div class="absolute top-0 right-0 cursor-pointer">
           <img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/close-x.svg'; ?>" alt="close button" class="modal-close lg:p-sp-10 p-sp-4">
         </div>
-        <img src="<?= placeHolderImage(800, 533); ?>" alt="Girls smiling" class="hidden object-cover w-full h-full lg:block">
+        <img src="<?= placeHolderImage(800, 533); ?>" alt="Girls smiling" class="noshow object-cover w-full h-full lg:block">
         <div class="p-sp-8">
           <h2 class="lg:text-h1-display-lg text-h1-display">Join the Charlie Health Library</h2>
           <p class="h-full mb-0 lg:block">Get mental health updates, research, insights, and resources directly to your inbox.</p>
@@ -224,6 +224,12 @@
               elementToCut.parentNode.removeChild(elementToCut);
               // Append the cloned element to the destination element
               destinationElement.appendChild(clonedElement);
+              // var head = document.head;
+              // var link = document.querySelector('link[href="//static.formstack.com/forms/css/3/default-v4_29cde3be75.css"]');
+
+              // if (link) {
+              //   head.insertBefore(link, head.firstChild);
+              // }
             </script>
           </div>
           <h5>You can unsubscribe anytime.</h5>

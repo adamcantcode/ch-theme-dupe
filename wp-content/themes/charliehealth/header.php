@@ -27,7 +27,7 @@
           </a>
         </div>
         <div class="slide-out flex-none overflow-y-scroll lg:overflow-y-visible fixed bottom-0 lg:top-0 bg-darkest-blue lg:bg-transparent lg:flex lg:relative lg:h-auto h-[calc(100vh-68px)] <?= is_user_logged_in() ? 'top-[116px]' : 'top-[68px]'; ?>">
-          <div class="relative block border-b-2 cursor-default lg:hidden nav-parent-menu border-light-blue last:border-0 lg:border-0 border-opacity-20">
+          <div class="relative block border-b-2 cursor-default lg:noshow nav-parent-menu border-light-blue last:border-0 lg:border-0 border-opacity-20">
             <span class="static flex items-center nav-link">
               Home
             </span>
@@ -67,7 +67,7 @@
                       ?>
                     </div>
                     <?php if ($submenuDetails) : ?>
-                      <div class="hidden p-8 lg:flex-col w-80 sub-menu-info-panel lg:flex">
+                      <div class="p-8 noshow lg:flex-col w-80 sub-menu-info-panel lg:flex">
                         <?php if ($submenuImage) : ?>
                           <img src="<?= $submenuImage; ?>" alt="" class="mb-2 rounded-sm">
                         <?php endif; ?>
@@ -85,7 +85,7 @@
           else :
           endif;
           ?>
-          <div class="block mobile-ctas lg:hidden">
+          <div class="block mobile-ctas lg:noshow">
             <div class="flex justify-center gap-4 px-5 py-8 social">
               <a href="https://www.facebook.com/charliehealth" target="_blank">
                 <img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/social-logos/facebook.svg'; ?>" class="w-[25px] h-[25px] filter-white" />
@@ -105,10 +105,10 @@
             </div>
           </div>
         </div>
-        <div class="flex-none hidden-formstack-fix nav-cta lg:block">
+        <div class="flex-none noshow nav-cta lg:block">
           <a href="<?= get_field('cta', 'option')['url']; ?>" class="ch-button button-tertiary"><?= get_field('cta', 'option')['title']; ?></a>
         </div>
-        <div class="ml-auto text-gray-500 cursor-pointer open-close lg:hidden">
+        <div class="ml-auto text-gray-500 cursor-pointer open-close lg:noshow">
           <button class="ch-button button-nav">Menu</button>
         </div>
       </div>

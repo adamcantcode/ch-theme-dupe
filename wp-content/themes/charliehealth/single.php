@@ -83,7 +83,7 @@ $readingTime = ceil($wordCount / $wordsPerMinute);
         </div>
       </div>
     </section>
-    <div class="invisible hidden opacity-0 back-to-top top-sp-16 left-sp-10 mb-sp-16 w-fit">
+    <div class="invisible noshow opacity-0 back-to-top top-sp-16 left-sp-10 mb-sp-16 w-fit">
       <h3><a href="#mainArticleContent">Back to top</a></h3>
     </div>
     <?php if ($toc) : ?>

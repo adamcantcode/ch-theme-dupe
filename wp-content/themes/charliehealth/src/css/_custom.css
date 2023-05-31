@@ -339,7 +339,7 @@
   &.active {
     @apply block;
   }
-  @apply hidden opacity-0;
+  @apply noshow opacity-0;
   & > {
     & * {
       &:last-child {
@@ -388,21 +388,4 @@
   .fsRowBody input[type='radio']:checked:before {
     display: block;
   }
-  .hidden {
-    position: absolute;
-    left: -999em;
-    width: 0.1em;
-    height: 0.1em;
-    overflow: hidden;
-  }
-}
-/* .blog {
-  .fsBody.fsForm {
-    margin: 0;
-    padding: 0
-  }
-} */
-/* FORMSTACK OVERWRITE */
-.hidden-formstack-fix {
-  display: none;
 }

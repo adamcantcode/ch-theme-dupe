@@ -10,7 +10,7 @@ $heroImage = get_field('hero_image');
 $icon = get_field('hero_icon');
 
 if ($style === 'image') {
-  $titleClass = 'text-display mb-sp-8 hidden lg:block';
+  $titleClass = 'text-display mb-sp-8 noshow lg:block';
   $gridClass = 'grid lg:grid-cols-2 gap-sp-4 items-center';
   $orderClass = 'order-2 lg:order-1';
   $orderClassTwo = 'order-1 lg:order-2';
@@ -29,7 +29,7 @@ if ($style === 'image') {
 <?php if ($style === 'image') : ?>
   <div class="grid items-center lg:grid-cols-2 gap-sp-4">
     <div class="order-2 lg:order-1">
-      <h1 class="hidden text-display mb-sp-8 lg:block"><?= $title; ?></h1>
+      <h1 class="noshow text-display mb-sp-8 lg:block"><?= $title; ?></h1>
       <div class="flex items-center gap-sp-3 mb-sp-8">
         <!-- TODO Update image -->
         <?php if ($icon) : ?>
@@ -39,7 +39,7 @@ if ($style === 'image') {
       </div>
       <?php include(get_template_directory() . '/includes/button-group.php'); ?>
     </div>
-    <h1 class="block text-display lg:hidden"><?= $title; ?></h1>
+    <h1 class="block text-display lg:noshow"><?= $title; ?></h1>
     <div class="flex flex-col justify-between order-1 lg:order-2">
       <!-- TODO fix image offset bool issue -->
       <img src="<?= $heroImage['url'] ?: placeHolderImage(600, 400); ?>" alt="<?= $heroImage['alt'] ?: 'Placeholder image'; ?>" class="object-cover object-top rounded-lg max-h-52 md:max-h-none">

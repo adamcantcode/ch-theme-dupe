@@ -9,7 +9,7 @@ Template Name: Search Page
   <section class="section bg-cream">
     <div class="container">
       <div class="grid lg:grid-cols-2 gap-sp-12">
-        <h1 class="hidden">Search Results</h1>
+        <h1 class="noshow">Search Results</h1>
         <div class="mb-sp-4">
           <!-- TODO figure out /blog and make dynamic -->
           <a href="<?= get_post_type_archive_link('post'); ?>" class="flex items-center">

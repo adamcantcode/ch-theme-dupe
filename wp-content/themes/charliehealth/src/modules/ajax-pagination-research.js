@@ -122,7 +122,7 @@ export default function ajaxPaginationResearch() {
 
     if (reset) {
       reset.addEventListener('click', (e) => {
-        e.target.classList.add('hidden');
+        e.target.classList.add('noshow');
         reset.classList.add('opacity-0', 'invisible');
         removeTagActive();
         initPagination();
