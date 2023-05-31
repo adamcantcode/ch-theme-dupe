@@ -11,7 +11,8 @@
   <link rel="apple-touch-icon" href="/custom-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="#272D6C">
-  <?php include('wp-content/themes/charliehealth/includes/header-code.php'); ?>
+  <!-- TODO temp disable head code -->
+  <?php // include('wp-content/themes/charliehealth/includes/header-code.php'); ?>
   <?php wp_head(); ?>
 </head>
 
