@@ -45,14 +45,13 @@ export default function ajaxPaginationResearch() {
       <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
     </svg>`,
       callback: function (data, pagination) {
-        jQuery('.pagination-container-research .paginationjs-page').each(function (
-          index,
-          element
-        ) {
-          var page = jQuery(element).data('num');
-          var link = jQuery(element).find('a');
-          jQuery(link).attr('href', window.location.href + '/page/' + page);
-        });
+        jQuery('.pagination-container-research .paginationjs-page').each(
+          function (index, element) {
+            var page = jQuery(element).data('num');
+            var link = jQuery(element).find('a');
+            jQuery(link).attr('href', window.location.href + '/page/' + page);
+          }
+        );
 
         const bodyClasses = Array.from(document.body.classList);
         var [endpoint] = getEndpoint(bodyClasses, tagID);
@@ -71,7 +70,9 @@ export default function ajaxPaginationResearch() {
               html += renderHTML(post, html);
             });
             jQuery('.posts-container-research').html(html);
-            jQuery('.posts-container-research').removeClass('opacity-0 scale-[0.99]');
+            jQuery('.posts-container-research').removeClass(
+              'opacity-0 scale-[0.99]'
+            );
           });
       },
       afterPageOnClick: function () {
@@ -177,25 +178,26 @@ export default function ajaxPaginationResearch() {
         .classList.contains('page-template-page-press')
     ) {
       // var cats = post._embedded['wp:term'][0];
-      var tags = post._embedded['wp:term'][0];
-      console.log(post);
+      if (post._embedded['wp:term']) {
+        var tags = post._embedded['wp:term'][0];
+      }
       html = `<div class="relative grid overflow-hidden border rounded-sm border-card-border">
                   <img src="${imageUrl}" alt="${imageAlt}" class="object-cover lg:h-[220px] h-[150px] w-full">
                   <div class="grid p-sp-4">
-                    <h3><a href="${post.link}" class="stretched-link">${
-        post.title.rendered
-      }</a></h3>
+                    <h3><a href="${post.link}" class="stretched-link">${post.title.rendered}</a></h3>
                     <h5 class="mb-sp-4">${post.acf.by_author.post_title}</h5>
-                    <div class="grid justify-start grid-flow-col gap-sp-4 items-end">
-                    ${tags
-                      .map(
-                        (tag) =>
-                          `<a href="${tag.link}" class="px-sp-4 py-sp-3 no-underline rounded-lg text-h6 bg-tag-gray z-20 relative inline-block">${tag.name}</a>`
-                      )
-                      .join('')}
-                    </div>
-                  </div>
-                </div>`;
+                    <div class="grid justify-start grid-flow-col gap-sp-4 items-end">`;
+      if (tags) {
+        html += `${tags
+          .map(
+            (tag) =>
+              `<a href="${tag.link}" class="px-sp-4 py-sp-3 no-underline rounded-lg text-h6 bg-tag-gray z-20 relative inline-block">${tag.name}</a>`
+          )
+          .join('')}`;
+      }
+      html += `</div>
+                                  </div>
+                                  </div>`;
     } else {
       html = `<div class="relative grid lg:grid-cols-[1fr_4fr] grid-cols-[1fr_2fr] overflow-hidden border rounded-sm border-card-border">
       <img src="${imageUrl}" alt="${imageAlt}" class="object-contain h-[125px] w-full lg:p-sp-6 p-sp-3">

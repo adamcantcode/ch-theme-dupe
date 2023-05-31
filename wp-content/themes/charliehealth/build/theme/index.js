@@ -163,18 +163,21 @@ function ajaxPaginationResearch() {
     // If not press page
     if (!document.querySelector('body').classList.contains('page-template-page-press')) {
       // var cats = post._embedded['wp:term'][0];
-      var tags = post._embedded['wp:term'][0];
-      console.log(post);
+      if (post._embedded['wp:term']) {
+        var tags = post._embedded['wp:term'][0];
+      }
       html = `<div class="relative grid overflow-hidden border rounded-sm border-card-border">
                   <img src="${imageUrl}" alt="${imageAlt}" class="object-cover lg:h-[220px] h-[150px] w-full">
                   <div class="grid p-sp-4">
                     <h3><a href="${post.link}" class="stretched-link">${post.title.rendered}</a></h3>
                     <h5 class="mb-sp-4">${post.acf.by_author.post_title}</h5>
-                    <div class="grid justify-start grid-flow-col gap-sp-4 items-end">
-                    ${tags.map(tag => `<a href="${tag.link}" class="px-sp-4 py-sp-3 no-underline rounded-lg text-h6 bg-tag-gray z-20 relative inline-block">${tag.name}</a>`).join('')}
-                    </div>
-                  </div>
-                </div>`;
+                    <div class="grid justify-start grid-flow-col gap-sp-4 items-end">`;
+      if (tags) {
+        html += `${tags.map(tag => `<a href="${tag.link}" class="px-sp-4 py-sp-3 no-underline rounded-lg text-h6 bg-tag-gray z-20 relative inline-block">${tag.name}</a>`).join('')}`;
+      }
+      html += `</div>
+                                  </div>
+                                  </div>`;
     } else {
       html = `<div class="relative grid lg:grid-cols-[1fr_4fr] grid-cols-[1fr_2fr] overflow-hidden border rounded-sm border-card-border">
       <img src="${imageUrl}" alt="${imageAlt}" class="object-contain h-[125px] w-full lg:p-sp-6 p-sp-3">
@@ -339,7 +342,6 @@ function ajaxPagination() {
         endpoint += `&tags=${tagID}`;
       }
     } else if (bodyClasses.includes('tag')) {
-      console.log('test');
       var categories = bodyClasses.map(str => str.replace('tag-', ''));
       categories.forEach(tag => {
         if (!isNaN(tag)) {
@@ -366,6 +368,7 @@ function ajaxPagination() {
     return [endpoint, tagID];
   };
   const renderHTML = (post, html) => {
+    console.log(post);
     var imageUrl = 'https://images.placeholders.dev/?width=800&height=600&text=FPO';
     var imageAlt = `Featured image for ${post.title.rendered}`;
 
@@ -392,18 +395,24 @@ function ajaxPagination() {
     }
     // If not press page
     if (!document.querySelector('body').classList.contains('page-template-page-press')) {
-      var cats = post._embedded['wp:term'][0];
-      var tags = post._embedded['wp:term'][1];
+      if (post._embedded['wp:term']) {
+        var cats = post._embedded['wp:term'][0];
+      }
+      if (post._embedded['wp:term']) {
+        var tags = post._embedded['wp:term'][1];
+      }
       html = `<div class="relative grid overflow-hidden border rounded-sm border-card-border">
                   <img src="${imageUrl}" alt="${imageAlt}" class="object-cover lg:h-[220px] h-[150px] w-full">
                   <div class="grid p-sp-4">
                     <h3><a href="${post.link}" class="stretched-link">${post.title.rendered}</a></h3>
                     <h5 class="mb-sp-4">${post.acf.by_author.post_title}</h5>
-                    <div class="grid justify-start grid-flow-col gap-sp-4 items-end">
-                    ${tags.map(tag => `<a href="${tag.link}" class="px-sp-4 py-sp-3 no-underline rounded-lg text-h6 bg-tag-gray z-20 relative inline-block">${tag.name}</a>`).join('')}
+                    <div class="grid justify-start grid-flow-col gap-sp-4 items-end">`;
+      if (tags) {
+        html += `${tags.map(tag => `<a href="${tag.link}" class="px-sp-4 py-sp-3 no-underline rounded-lg text-h6 bg-tag-gray z-20 relative inline-block">${tag.name}</a>`).join('')}`;
+      }
+      html += `</div>
                     </div>
-                  </div>
-                </div>`;
+                    </div>`;
     } else {
       html = `<div class="relative grid lg:grid-cols-[1fr_4fr] grid-cols-[1fr_2fr] overflow-hidden border rounded-sm border-card-border">
       <img src="${imageUrl}" alt="${imageAlt}" class="object-contain h-[125px] w-full lg:p-sp-6 p-sp-3">
