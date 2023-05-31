@@ -23,11 +23,11 @@
             "delay": 0
         },
         {
-            "key": "field_6462de59697c8",
-            "label": "Outreach Member",
-            "name": "outreach_member",
+            "key": "field_64776bfa9c0ed",
+            "label": "Contact",
+            "name": "contact",
             "aria-label": "",
-            "type": "post_object",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -36,15 +36,11 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "outreach-team-member"
-            ],
-            "post_status": "",
-            "taxonomy": "",
-            "return_format": "object",
-            "multiple": 0,
-            "allow_null": 0,
-            "ui": 1
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
         }
     ],
     "location": [
@@ -86,5 +82,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1685503026
+    "modified": 1685548053
 }
