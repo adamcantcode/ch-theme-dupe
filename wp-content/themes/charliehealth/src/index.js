@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (body.classList.contains('single-region')) {
     outreachModals();
   }
-  if (body.classList.contains('single-post')) {
+  if (body.classList.contains('single-post') || body.classList.contains('single-research')) {
     toc();
     references();
     progressBar();

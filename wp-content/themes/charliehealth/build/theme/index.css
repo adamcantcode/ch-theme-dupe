@@ -3178,6 +3178,26 @@ a.js-tag-id.active:hover {
     display: block;
   }
 
+/* OSANO */
+
+.osano-cm-widget {
+  display: none;
+}
+
+.osano-cm-window__dialog {
+  border-top: 1px solid #212984;
+}
+
+.osano-cm-link {
+  font-size: 1rem !important;
+}
+
+@media (min-width: 768px) {
+  .osano-cm-window__dialog {
+    padding: 1.5rem 5rem;
+  }
+}
+
 .hover\:text-white:hovera:hover {
         color: #ffffff;
       }

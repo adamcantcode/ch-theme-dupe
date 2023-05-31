@@ -22431,7 +22431,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (body.classList.contains('single-region')) {
     (0,_modules_outreach_modals__WEBPACK_IMPORTED_MODULE_6__["default"])();
   }
-  if (body.classList.contains('single-post')) {
+  if (body.classList.contains('single-post') || body.classList.contains('single-research')) {
     (0,_modules_toc__WEBPACK_IMPORTED_MODULE_7__["default"])();
     (0,_modules_references__WEBPACK_IMPORTED_MODULE_12__["default"])();
     (0,_modules_progress_bar__WEBPACK_IMPORTED_MODULE_13__["default"])();
