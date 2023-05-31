@@ -155,7 +155,7 @@
           <div class="grid p-sp-4">
             <h3><a href="${post.link}" class="stretched-link">${post.title.rendered}</a></h3>
             <h5>author</h5>
-            <div class="grid justify-start grid-flow-col gap-sp-4">
+            <div class="grid items-end justify-start grid-flow-col gap-sp-4">
               ${tags.map((tag) => `<a href="${tag.link}" class="relative z-20 inline-block no-underline rounded-lg px-sp-4 py-sp-3 text-h6 bg-tag-gray">${tag.name}</a>`).join('')}
             </div>
           </div>
@@ -178,7 +178,7 @@
           <div class="grid p-sp-4">
             <h3><a href="${post.link}" class="stretched-link">${post.title.rendered}</a></h3>
             <h5>author</h5>
-            <div class="grid justify-start grid-flow-col gap-sp-4">
+            <div class="grid items-end justify-start grid-flow-col gap-sp-4">
               ${tags.map((tag) => `<a href="${tag.link}" class="relative z-20 inline-block no-underline rounded-lg px-sp-4 py-sp-3 text-h6 bg-tag-gray">${tag.name}</a>`).join('')}
             </div>
           </div>
@@ -208,7 +208,7 @@
         <div class="absolute top-0 right-0 cursor-pointer">
           <img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/close-x.svg'; ?>" alt="close button" class="modal-close lg:p-sp-10 p-sp-4">
         </div>
-        <img src="<?= placeHolderImage(800, 533); ?>" alt="Girls smiling" class="noshow object-cover w-full h-full lg:block">
+        <img src="<?= placeHolderImage(800, 533); ?>" alt="Girls smiling" class="object-cover w-full h-full noshow lg:block">
         <div class="p-sp-8">
           <h2 class="lg:text-h1-display-lg text-h1-display">Join the Charlie Health Library</h2>
           <p class="h-full mb-0 lg:block">Get mental health updates, research, insights, and resources directly to your inbox.</p>

@@ -170,7 +170,7 @@ function ajaxPaginationResearch() {
                   <div class="grid p-sp-4">
                     <h3><a href="${post.link}" class="stretched-link">${post.title.rendered}</a></h3>
                     <h5 class="mb-sp-4">${post.acf.by_author.post_title}</h5>
-                    <div class="grid justify-start grid-flow-col gap-sp-4">
+                    <div class="grid justify-start grid-flow-col gap-sp-4 items-end">
                     ${tags.map(tag => `<a href="${tag.link}" class="px-sp-4 py-sp-3 no-underline rounded-lg text-h6 bg-tag-gray z-20 relative inline-block">${tag.name}</a>`).join('')}
                     </div>
                   </div>
@@ -399,7 +399,7 @@ function ajaxPagination() {
                   <div class="grid p-sp-4">
                     <h3><a href="${post.link}" class="stretched-link">${post.title.rendered}</a></h3>
                     <h5 class="mb-sp-4">${post.acf.by_author.post_title}</h5>
-                    <div class="grid justify-start grid-flow-col gap-sp-4">
+                    <div class="grid justify-start grid-flow-col gap-sp-4 items-end">
                     ${tags.map(tag => `<a href="${tag.link}" class="px-sp-4 py-sp-3 no-underline rounded-lg text-h6 bg-tag-gray z-20 relative inline-block">${tag.name}</a>`).join('')}
                     </div>
                   </div>

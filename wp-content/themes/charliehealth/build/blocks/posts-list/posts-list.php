@@ -25,7 +25,7 @@ $count = get_field('count');
           <div class="grid p-sp-4">
             <h3><a href="<?= get_the_permalink(); ?>" class="stretched-link"><?= get_the_title(); ?></a></h3>
             <h5 class="mb-sp-4"><?= $author; ?></h5>
-            <div class="grid justify-start grid-flow-col gap-sp-4">
+            <div class="grid justify-start grid-flow-col gap-sp-4 items-end">
               <?php
               $tags = get_the_terms(get_the_ID(), 'post_tag');
               ?>

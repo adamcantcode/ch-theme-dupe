@@ -229,7 +229,7 @@ export default function ajaxPagination() {
         post.title.rendered
       }</a></h3>
                     <h5 class="mb-sp-4">${post.acf.by_author.post_title}</h5>
-                    <div class="grid justify-start grid-flow-col gap-sp-4">
+                    <div class="grid justify-start grid-flow-col gap-sp-4 items-end">
                     ${tags
                       .map(
                         (tag) =>
