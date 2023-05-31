@@ -156,7 +156,7 @@
             <h3><a href="${post.link}" class="stretched-link">${post.title.rendered}</a></h3>
             <h5>author</h5>
             <div class="grid items-end justify-start grid-flow-col gap-sp-4">
-              ${tags.map((tag) => `<a href="${tag.link}" class="relative z-20 inline-block no-underline rounded-lg px-sp-4 py-sp-3 text-h6 bg-tag-gray">${tag.name}</a>`).join('')}
+              ${tags.map((tag) => `<a href="${tag.link}" class="relative z-20 inline-block no-underline rounded-lg px-sp-4 py-sp-3 text-h6 bg-tag-gray hover:bg-bright-teal">${tag.name}</a>`).join('')}
             </div>
           </div>
         </div>` -->
@@ -179,7 +179,7 @@
             <h3><a href="${post.link}" class="stretched-link">${post.title.rendered}</a></h3>
             <h5>author</h5>
             <div class="grid items-end justify-start grid-flow-col gap-sp-4">
-              ${tags.map((tag) => `<a href="${tag.link}" class="relative z-20 inline-block no-underline rounded-lg px-sp-4 py-sp-3 text-h6 bg-tag-gray">${tag.name}</a>`).join('')}
+              ${tags.map((tag) => `<a href="${tag.link}" class="relative z-20 inline-block no-underline rounded-lg px-sp-4 py-sp-3 text-h6 bg-tag-gray hover:bg-bright-teal">${tag.name}</a>`).join('')}
             </div>
           </div>
         </div>` -->

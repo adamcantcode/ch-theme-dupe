@@ -236,7 +236,7 @@ export default function ajaxPagination() {
         html += `${tags
           .map(
             (tag) =>
-              `<a href="${tag.link}" class="px-sp-4 py-sp-3 no-underline rounded-lg text-h6 bg-tag-gray z-20 relative inline-block">${tag.name}</a>`
+              `<a href="${tag.link}" class="px-sp-4 py-sp-3 no-underline rounded-lg text-h6 bg-tag-gray z-20 relative inline-block hover:bg-bright-teal">${tag.name}</a>`
           )
           .join('')}`;
       }

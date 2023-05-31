@@ -191,13 +191,13 @@ export default function ajaxPaginationResearch() {
         html += `${tags
           .map(
             (tag) =>
-              `<a href="${tag.link}" class="px-sp-4 py-sp-3 no-underline rounded-lg text-h6 bg-tag-gray z-20 relative inline-block">${tag.name}</a>`
+              `<a href="${tag.link}" class="px-sp-4 py-sp-3 no-underline rounded-lg text-h6 bg-tag-gray z-20 relative inline-block hover:bg-bright-teal">${tag.name}</a>`
           )
           .join('')}`;
       }
       html += `</div>
-                                  </div>
-                                  </div>`;
+      </div>
+      </div>`;
     } else {
       html = `<div class="relative grid lg:grid-cols-[1fr_4fr] grid-cols-[1fr_2fr] overflow-hidden border rounded-sm border-card-border">
       <img src="${imageUrl}" alt="${imageAlt}" class="object-contain h-[125px] w-full lg:p-sp-6 p-sp-3">

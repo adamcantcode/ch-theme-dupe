@@ -404,3 +404,13 @@
     padding: 1.5rem 5rem;
   }
 }
+
+.teens-and-young-adults {
+  @apply bg-[#C6AFF3] hover:brightness-110 duration-300 text-white transition-all;
+}
+.parents-and-caregivers {
+  @apply bg-[#E07058] hover:brightness-110 duration-300 text-white transition-all;
+}
+.providers {
+  @apply bg-[#161A3D] hover:brightness-110 duration-300 text-white transition-all;
+}

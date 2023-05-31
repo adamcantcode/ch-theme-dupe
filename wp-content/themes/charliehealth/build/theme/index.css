@@ -2223,6 +2223,13 @@ a.nav-link:hover {
   line-height: 1rem;
 }
 
+.text-h1{
+  font-size: 2rem;
+  line-height: 2rem;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
 .font-bold{
   font-weight: 700;
 }
@@ -3202,6 +3209,63 @@ a.js-tag-id.active:hover {
   }
 }
 
+a.teens-and-young-adults:hover {
+        color: #ffffff;
+      }
+
+.teens-and-young-adults{
+  --tw-bg-opacity: 1;
+  background-color: rgb(198 175 243 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.teens-and-young-adults:hover{
+  --tw-brightness: brightness(1.1);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+a.parents-and-caregivers:hover {
+        color: #ffffff;
+      }
+
+.parents-and-caregivers{
+  --tw-bg-opacity: 1;
+  background-color: rgb(224 112 88 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.parents-and-caregivers:hover{
+  --tw-brightness: brightness(1.1);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+a.providers:hover {
+        color: #ffffff;
+      }
+
+.providers{
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 26 61 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.providers:hover{
+  --tw-brightness: brightness(1.1);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .hover\:text-white:hovera:hover {
         color: #ffffff;
       }
@@ -3658,6 +3722,13 @@ a.js-tag-id.active:hover {
   .lg\:text-h3-lg{
     font-size: 1.5rem;
     line-height: 1.8rem;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+
+  .lg\:text-h1-lg{
+    font-size: 3rem;
+    line-height: 3rem;
     letter-spacing: 0;
     font-weight: 400;
   }

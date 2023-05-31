@@ -25,14 +25,14 @@ $count = get_field('count');
           <div class="grid p-sp-4">
             <h3><a href="<?= get_the_permalink(); ?>" class="stretched-link"><?= get_the_title(); ?></a></h3>
             <h5 class="mb-sp-4"><?= $author; ?></h5>
-            <div class="grid justify-start grid-flow-col gap-sp-4 items-end">
+            <div class="grid items-end justify-start grid-flow-col gap-sp-4">
               <?php
               $tags = get_the_terms(get_the_ID(), 'post_tag');
               ?>
               <?php // var_dump($tags);; ?>
               <?php if ($tags) :  ?>
                 <?php foreach ($tags as $tag) : ?>
-                  <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="relative z-20 inline-block no-underline rounded-lg px-sp-4 py-sp-3 text-h6 bg-tag-gray"><?= $tag->name; ?></a>
+                  <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="relative z-20 inline-block no-underline rounded-lg px-sp-4 py-sp-3 text-h6 bg-tag-gray hover:bg-bright-teal"><?= $tag->name; ?></a>
                 <?php endforeach; ?>
               <?php endif; ?>
             </div>

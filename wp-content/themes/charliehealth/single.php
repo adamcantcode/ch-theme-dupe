@@ -52,7 +52,7 @@ $readingTime = ceil($wordCount / $wordsPerMinute);
             <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="rounded-md max-h-[200px] lg:max-h-none object-cover w-full aspect-square">
           </div>
           <div class="">
-            <h1 class="text-h2 font-heading-serif"><?= get_the_title(); ?></h1>
+            <h1 class="text-h2 lg:text-h2-lg font-heading-serif"><?= get_the_title(); ?></h1>
             <p class="font-bold">Est. reading time: <?= $readingTime; ?> min.</p>
             <p><?= get_the_excerpt(); ?></p>
             <p class="mb-0">By: <a href="<?= site_url('/author/') . $author->post_name; ?>"><?= $author->post_title; ?></a></p>
@@ -70,12 +70,28 @@ $readingTime = ceil($wordCount / $wordsPerMinute);
             <div class="grid gap-sp-4">
               <div class="grid items-end justify-start grid-flow-col gap-sp-4">
                 <?php foreach ($audiences as $audience) : ?>
-                  <a href="<?= get_term_link($audience->slug, 'category'); ?>" class="px-4 py-3 no-underline rounded-lg text-h6 bg-tag-gray"><?= $audience->name; ?></a>
+                  <?php
+                  switch ($audience->slug) {
+                    case 'teens-and-young-adults':
+                      $audienceClass = 'teens-and-young-adults';
+                      break;
+                    case 'parents-and-caregivers':
+                      $audienceClass = 'parents-and-caregivers';
+                      break;
+                    case 'providers':
+                      $audienceClass = 'providers';
+                      break;
+                    default:
+                      $audienceClass = '';
+                      break;
+                  }
+                  ?>
+                  <a href="<?= get_term_link($audience->slug, 'category'); ?>" class="px-4 py-3 no-underline rounded-lg text-h6 bg-tag-gray <?= $audienceClass; ?>"><?= $audience->name; ?></a>
                 <?php endforeach; ?>
               </div>
               <div class="grid items-end justify-start grid-flow-col gap-sp-4">
                 <?php foreach ($tags as $tag) : ?>
-                  <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="px-4 py-3 no-underline rounded-lg text-h6 bg-tag-gray"><?= $tag->name; ?></a>
+                  <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="px-4 py-3 no-underline rounded-lg text-h6 bg-tag-gray hover:bg-bright-teal"><?= $tag->name; ?></a>
                 <?php endforeach; ?>
               </div>
             </div>
@@ -150,7 +166,7 @@ $readingTime = ceil($wordCount / $wordsPerMinute);
               <div class="grid items-end justify-start grid-flow-col gap-sp-4">
                 <?php $tags = get_the_terms($post->ID, 'post_tag'); ?>
                 <?php foreach ($tags as $tag) : ?>
-                  <a href="<?= $tag->link; ?>" class="relative z-20 inline-block no-underline rounded-lg px-sp-4 py-sp-3 text-h6 bg-tag-gray"><?= $tag->name; ?></a>
+                  <a href="<?= $tag->link; ?>" class="relative z-20 inline-block no-underline rounded-lg px-sp-4 py-sp-3 text-h6 bg-tag-gray hover:bg-bright-teal"><?= $tag->name; ?></a>
                 <?php endforeach; ?>
               </div>
             </div>
