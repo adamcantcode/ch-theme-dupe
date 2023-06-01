@@ -14,7 +14,6 @@ import ajaxPaginationResearch from './modules/ajax-pagination-research';
 import references from './modules/references';
 import progressBar from './modules/progress-bar';
 import newsletterPopup from './modules/newsletter-popup';
-// import imagifyPictureTagClasses from './modules/imagify-fix';
 
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
@@ -22,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
   stopAnimations();
   mobileNav();
   animations();
-  // imagifyPictureTagClasses();
   if (
     body.classList.contains('single-areas-of-care') ||
     body.classList.contains('single-treatment-modalities') ||
@@ -33,7 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (body.classList.contains('single-region')) {
     outreachModals();
   }
-  if (body.classList.contains('single-post') || body.classList.contains('single-research')) {
+  if (
+    body.classList.contains('single-post') ||
+    body.classList.contains('single-research')
+  ) {
     toc();
     references();
     progressBar();

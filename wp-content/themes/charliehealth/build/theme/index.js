@@ -22416,14 +22416,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// import imagifyPictureTagClasses from './modules/imagify-fix';
-
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
   (0,_modules_stop_animations__WEBPACK_IMPORTED_MODULE_2__["default"])();
   (0,_modules_mobile_nav__WEBPACK_IMPORTED_MODULE_1__["default"])();
   (0,_modules_animations__WEBPACK_IMPORTED_MODULE_3__["default"])();
-  // imagifyPictureTagClasses();
   if (body.classList.contains('single-areas-of-care') || body.classList.contains('single-treatment-modalities') || body.classList.contains('single-post')) {
     (0,_modules_back_to_top__WEBPACK_IMPORTED_MODULE_5__["default"])();
   }
