@@ -3581,6 +3581,10 @@ a.providers:hover {
     max-height: none;
   }
 
+  .lg\:max-h-\[300px\]{
+    max-height: 300px;
+  }
+
   .lg\:min-h-\[300px\]{
     min-height: 300px;
   }

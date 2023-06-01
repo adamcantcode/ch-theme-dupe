@@ -35,8 +35,8 @@ $args = array(
     <div class="container">
       <div class="rounded-md border-gradient">
         <div class="grid items-center lg:grid-cols-2">
-          <div class="h-full bg-light-purple lg:p-sp-12 p-sp-4 lg:rounded-l-md lg:rounded-tr-none rounded-t-md">
-            <img src="<?= $regionImage['url']; ?>" alt="illustration of region" class="object-cover w-full lg:rounded-l-md lg:rounded-tr-none rounded-t-md">
+          <div class="flex items-center h-full bg-light-purple lg:p-sp-12 p-sp-4 lg:rounded-l-md lg:rounded-tr-none rounded-t-md">
+            <img src="<?= $regionImage['url']; ?>" alt="illustration of region" class="object-contain w-full lg:rounded-l-md lg:rounded-tr-none rounded-t-md lg:max-h-[300px] max-h-[200px]">
           </div>
           <div class="p-sp-8">
             <?= $regionInformation; ?>
@@ -49,7 +49,7 @@ $args = array(
       </div>
     </div>
   </section>
-  <section id="refForm" class="section">
+  <section id="refForm" class="section-bottom">
     <div class="container">
       <iframe id="JotFormIFrame-220244525122139" title="Charlie Health Professional Referral Form" onload="window.parent.scrollTo(0,0)" allowtransparency="true" allowfullscreen="true" allow="geolocation; microphone; camera" src="https://hipaa.jotform.com/220244525122139" frameborder="0" style="
       min-width: 100%;
@@ -154,7 +154,7 @@ $args = array(
       </script>
     </div>
   </section>
-  <section class="section-horizontal">
+  <section class="section-sm">
     <div class="container">
       <div class="divider"></div>
     </div>
