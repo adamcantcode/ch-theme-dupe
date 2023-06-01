@@ -9500,6 +9500,11 @@ window.addEventListener('DOMContentLoaded', () => {
       gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.refresh(true);
     }, 500);
   });
+  // document.addEventListener('scroll', () => {
+  //   setTimeout(() => {
+  //     ScrollTrigger.refresh(true);
+  //   }, 500);
+  // });
 });
 }();
 /******/ })()

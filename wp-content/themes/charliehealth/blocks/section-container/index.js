@@ -39,4 +39,9 @@ window.addEventListener('DOMContentLoaded', () => {
       ScrollTrigger.refresh(true);
     }, 500);
   });
+  // document.addEventListener('scroll', () => {
+  //   setTimeout(() => {
+  //     ScrollTrigger.refresh(true);
+  //   }, 500);
+  // });
 });

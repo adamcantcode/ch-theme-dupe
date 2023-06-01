@@ -60,7 +60,7 @@ Template Name: Search Page
   </section>
   <section class="section">
     <div class="container-md">
-      <?= do_blocks('<!-- wp:block {"ref":458} /-->'); ?>
+      <?= do_blocks('<!-- wp:block {"ref":11} /-->'); ?>
     </div>
   </section>
 </main>
