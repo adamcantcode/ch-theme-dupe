@@ -58,7 +58,7 @@ if (is_category('families-and-caregivers')) {
                   $icon = 'clipboard';
                 }
                 ?>
-                <div class="relative flex flex-col rounded-md gap-sp-4 p-sp-5 <?= $bgColor; ?>">
+                <div class="relative flex flex-col rounded-md gap-sp-4 p-sp-5 hover:-translate-y-sp-1 duration-200 <?= $bgColor; ?>">
                   <div>
                     <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/' . $icon . '.svg'); ?>" alt="icon of person">
                   </div>
