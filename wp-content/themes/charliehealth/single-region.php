@@ -35,17 +35,21 @@ $args = array(
     <div class="container">
       <div class="rounded-md border-gradient">
         <div class="grid items-center lg:grid-cols-2">
-          <div class="bg-light-purple lg:p-sp-12 p-sp-4 lg:rounded-l-md lg:rounded-tr-none rounded-t-md">
+          <div class="h-full bg-light-purple lg:p-sp-12 p-sp-4 lg:rounded-l-md lg:rounded-tr-none rounded-t-md">
             <img src="<?= $regionImage['url']; ?>" alt="illustration of region" class="object-cover w-full lg:rounded-l-md lg:rounded-tr-none rounded-t-md">
           </div>
           <div class="p-sp-8">
             <?= $regionInformation; ?>
+            <div class="flex gap-x-sp-4 items-center lg:w-[unset] w-full">
+              <a href="#refForm" class="ch-button button-primary" target="<?= $linkOneTarget ?: '_self'; ?>"><?= $linkOneTitle ?: 'Get Started'; ?></a>
+              <a href="#team" class="ch-button button-secondary" target="<?= $linkTwoTarget ?: '_self'; ?>"><?= $linkTwoTitle ?: '1 (866) 484-8218'; ?></a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <section class="section">
+  <section id="refForm" class="section">
     <div class="container">
       <iframe id="JotFormIFrame-220244525122139" title="Charlie Health Professional Referral Form" onload="window.parent.scrollTo(0,0)" allowtransparency="true" allowfullscreen="true" allow="geolocation; microphone; camera" src="https://hipaa.jotform.com/220244525122139" frameborder="0" style="
       min-width: 100%;
@@ -155,7 +159,7 @@ $args = array(
       <div class="divider"></div>
     </div>
   </section>
-  <section class="section">
+  <section id="team" class="section">
     <div class="container">
       <h2>Meet our team</h2>
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-sp-8 lg:gap-y-sp-16">
