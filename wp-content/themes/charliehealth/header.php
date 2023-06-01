@@ -12,7 +12,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="#272D6C">
   <!-- TODO temp disable head code -->
-  <?php // include('wp-content/themes/charliehealth/includes/header-code.php'); ?>
+  <?php // include('wp-content/themes/charliehealth/includes/header-code.php'); 
+  ?>
   <?php wp_head(); ?>
 </head>
 
@@ -30,7 +31,7 @@
         </div>
         <div class="slide-out flex-none overflow-y-scroll lg:overflow-y-visible fixed bottom-0 lg:top-0 bg-darkest-blue lg:bg-transparent lg:flex lg:relative lg:h-auto h-[calc(100vh-68px)] <?= is_user_logged_in() ? 'top-[116px]' : 'top-[68px]'; ?>">
           <div class="relative block border-b-2 cursor-default lg:noshow nav-parent-menu border-light-blue last:border-0 lg:border-0 border-opacity-20">
-            <span class="static flex items-center nav-link">Home</span>
+            <a href="<?= site_url('/'); ?>" class="nav-link sub-link">Home</a>
           </div>
           <?php
           if (have_rows('navigation_item', 'option')) :
