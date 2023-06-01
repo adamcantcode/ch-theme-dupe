@@ -40,7 +40,7 @@ $args = array(
       <div class="rounded-md border-gradient">
         <div class="grid items-center lg:grid-cols-2">
           <div class="flex items-center h-full bg-light-purple lg:p-sp-12 p-sp-4 lg:rounded-l-md lg:rounded-tr-none rounded-t-md">
-            <img src="<?= $regionImage['url']; ?>" alt="illustration of region" class="object-contain w-full lg:rounded-l-md lg:rounded-tr-none rounded-t-md lg:max-h-[300px] max-h-[200px]">
+            <img src="<?= $regionImage['url']; ?>" alt="Illustration of <?= get_the_title(); ?>" class="object-contain w-full lg:rounded-l-md lg:rounded-tr-none rounded-t-md lg:max-h-[300px] max-h-[200px]">
           </div>
           <div class="p-sp-8">
             <?= $regionInformation; ?>
@@ -180,10 +180,11 @@ $args = array(
             }
             $phone = get_field('phone');
             $email = get_field('email');
+            $headshot = get_field('headshot');
         ?>
             <div class="grid justify-items-start gap-sp-1">
               <div class="cursor-pointer" data-modal-id="<?= get_the_ID(); ?>">
-                <img src="<?= placeHolderImage(240, 240); ?>" alt="" class="rounded-[50%] mb-sp-4">
+                <img src="<?= $headshot['url'] ?: placeHolderImage(240, 240); ?>" alt="<?= 'Headshot of ' . get_the_title(); ?>" class="rounded-[50%] mb-sp-4">
                 <h4><?= get_the_title(); ?></h4>
               </div>
               <h5 class="mb-0"><?= $title; ?></h5>
@@ -220,6 +221,7 @@ $args = array(
       $calendly = get_field('calendly_link');
       $why      = get_field('why_statement');
       $fact     = get_field('fun_fact');
+      $headshot    = get_field('headshot');
   ?>
       <div class="bg-[rgba(0,0,0,.5)] fixed top-0 left-0 w-full h-full z-50 grid items-center justify-center center transition-all duration-300 modal-fade" data-modal="<?= get_the_ID(); ?>">
         <div class="transition-all duration-300 m-sp-4">
@@ -249,7 +251,7 @@ $args = array(
               </div>
             </div>
             <div class="grid items-center justify-center order-1 lg:order-2">
-              <img src="<?= placeHolderImage(400, 400); ?>" alt="" class="rounded-[50%]">
+              <img src="<?= $headshot['url'] ?: placeHolderImage(400, 400); ?>" alt="" class="rounded-[50%]">
             </div>
           </div>
         </div>
