@@ -423,3 +423,20 @@
 .providers-slider {
   @apply bg-[linear-gradient(90deg,#161A3D,#262E6C)];
 }
+
+.arrow-slider {
+  .arrow-slider-bg {
+      @apply fill-white duration-300 transition-all;
+    }
+    .arrow-slider-arrow {
+      @apply fill-med-blue duration-300 transition-all;
+    }
+  &:hover {
+    .arrow-slider-bg {
+      @apply fill-med-blue
+    }
+    .arrow-slider-arrow {
+      @apply fill-white
+    }
+  }
+}
