@@ -408,9 +408,18 @@
 .teens-and-young-adults {
   @apply bg-[#C6AFF3] hover:brightness-110 duration-300 text-white transition-all;
 }
-.parents-and-caregivers {
+.families-and-caregivers {
   @apply bg-[#E07058] hover:brightness-110 duration-300 text-white transition-all;
 }
 .providers {
   @apply bg-[#161A3D] hover:brightness-110 duration-300 text-white transition-all;
+}
+.teens-and-young-adults-slider {
+  @apply bg-[linear-gradient(90deg,#C6AFF3,#E2D3FF)];
+}
+.families-and-caregivers-slider {
+  @apply bg-[linear-gradient(90deg,#E07058,#FF9F81)];
+}
+.providers-slider {
+  @apply bg-[linear-gradient(90deg,#161A3D,#262E6C)];
 }

@@ -68,6 +68,20 @@
             <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
                 <?php
                 $audiences = get_the_terms(get_the_ID(), 'category');
+                switch ($audiences[0]->slug) {
+                  case 'teens-and-young-adults':
+                    $audienceClass = 'teens-and-young-adults-slider';
+                    break;
+                  case 'families-and-caregivers':
+                    $audienceClass = 'families-and-caregivers-slider';
+                    break;
+                  case 'providers':
+                    $audienceClass = 'providers-slider';
+                    break;
+                  default:
+                    $audienceClass = '';
+                    break;
+                }
 
                 if (has_post_thumbnail()) {
                   $featuredImageID = get_post_thumbnail_id();
@@ -83,12 +97,10 @@
                 ?>
                 <div class="swiper-slide">
                   <div class="relative grid overflow-hidden rounded-md lg:grid-cols-2">
-                    <div class="grid content-between order-2 bg-purple-gradient-start lg:p-sp-8 p-sp-4 lg:order-1">
+                    <div class="grid content-between order-2 lg:p-sp-8 p-sp-4 lg:order-1 <?= $audienceClass; ?>">
                       <div>
                         <?php  ?>
-                        <?php foreach ($audiences as $audience) : ?>
-                          <a href="<?= get_term_link($audience->slug, 'category'); ?>" class="relative z-20 inline-block leading-none text-white no-underline transition-all duration-300 bg-transparent border-2 border-white rounded-lg p-sp-3 hover:bg-white hover:!text-dark-blue mb-sp-4 mr-sp-1"><?= $audience->name; ?></a>
-                        <?php endforeach; ?>
+                        <a href="<?= get_term_link($audiences[0]->slug, 'category'); ?>" class="relative z-20 inline-block leading-none text-white no-underline transition-all duration-300 bg-transparent border-2 border-white rounded-lg p-sp-3 hover:bg-white hover:!text-dark-blue mb-sp-4 mr-sp-1"><?= $audiences[0]->name; ?></a>
                         <h3 class="text-white text-h2 lg:text-h2-lg"><?= get_the_title(); ?></h3>
                       </div>
                       <a href="<?= get_the_permalink(); ?>" class="text-white stretched-link">Read more</a>

@@ -2223,13 +2223,6 @@ a.nav-link:hover {
   line-height: 1rem;
 }
 
-.text-h1{
-  font-size: 2rem;
-  line-height: 2rem;
-  letter-spacing: 0;
-  font-weight: 400;
-}
-
 .font-bold{
   font-weight: 700;
 }
@@ -3228,11 +3221,11 @@ a.teens-and-young-adults:hover {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-a.parents-and-caregivers:hover {
+a.families-and-caregivers:hover {
         color: #ffffff;
       }
 
-.parents-and-caregivers{
+.families-and-caregivers{
   --tw-bg-opacity: 1;
   background-color: rgb(224 112 88 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
@@ -3242,7 +3235,7 @@ a.parents-and-caregivers:hover {
   transition-duration: 300ms;
 }
 
-.parents-and-caregivers:hover{
+.families-and-caregivers:hover{
   --tw-brightness: brightness(1.1);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
@@ -3264,6 +3257,18 @@ a.providers:hover {
 .providers:hover{
   --tw-brightness: brightness(1.1);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.teens-and-young-adults-slider{
+  background-image: linear-gradient(90deg,#C6AFF3,#E2D3FF);
+}
+
+.families-and-caregivers-slider{
+  background-image: linear-gradient(90deg,#E07058,#FF9F81);
+}
+
+.providers-slider{
+  background-image: linear-gradient(90deg,#161A3D,#262E6C);
 }
 
 .hover\:text-white:hovera:hover {
@@ -3580,22 +3585,6 @@ a.providers:hover {
     grid-template-columns: 2fr 1fr;
   }
 
-  .lg\:grid-cols-\[4fr_5fr\]{
-    grid-template-columns: 4fr 5fr;
-  }
-
-  .lg\:grid-cols-\[7fr_10fr\]{
-    grid-template-columns: 7fr 10fr;
-  }
-
-  .lg\:grid-cols-\[7\.5fr_10fr\]{
-    grid-template-columns: 7.5fr 10fr;
-  }
-
-  .lg\:grid-cols-\[4\.5fr_5fr\]{
-    grid-template-columns: 4.5fr 5fr;
-  }
-
   .lg\:grid-cols-\[4\.25fr_5fr\]{
     grid-template-columns: 4.25fr 5fr;
   }
@@ -3620,6 +3609,10 @@ a.providers:hover {
     gap: 1.5rem;
   }
 
+  .lg\:gap-\[10rem\]{
+    gap: 10rem;
+  }
+
   .lg\:gap-sp-14{
     gap: 4rem;
   }
@@ -3634,14 +3627,6 @@ a.providers:hover {
 
   .lg\:gap-sp-8{
     gap: 2rem;
-  }
-
-  .lg\:gap-\[8rem\]{
-    gap: 8rem;
-  }
-
-  .lg\:gap-\[10rem\]{
-    gap: 10rem;
   }
 
   .lg\:gap-y-sp-16{
@@ -3750,13 +3735,6 @@ a.providers:hover {
   .lg\:text-h3-lg{
     font-size: 1.5rem;
     line-height: 1.8rem;
-    letter-spacing: 0;
-    font-weight: 400;
-  }
-
-  .lg\:text-h1-lg{
-    font-size: 3rem;
-    line-height: 3rem;
     letter-spacing: 0;
     font-weight: 400;
   }

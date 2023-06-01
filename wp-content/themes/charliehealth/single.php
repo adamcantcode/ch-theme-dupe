@@ -75,8 +75,8 @@ $readingTime = ceil($wordCount / $wordsPerMinute);
                     case 'teens-and-young-adults':
                       $audienceClass = 'teens-and-young-adults';
                       break;
-                    case 'parents-and-caregivers':
-                      $audienceClass = 'parents-and-caregivers';
+                    case 'families-and-caregivers':
+                      $audienceClass = 'families-and-caregivers';
                       break;
                     case 'providers':
                       $audienceClass = 'providers';

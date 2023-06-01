@@ -107,7 +107,9 @@ if (is_category('families-and-caregivers')) {
                       <div>
                         <?php $audiences = get_the_terms(get_the_ID(), 'category'); ?>
                         <?php foreach ($audiences as $audience) : ?>
-                          <a href="<?= get_term_link($audience->slug, 'category'); ?>" class="relative z-20 inline-block leading-none text-white no-underline transition-all duration-300 bg-transparent border-2 border-white rounded-lg p-sp-3 hover:bg-white hover:!text-dark-blue mb-sp-4 mr-sp-1"><?= $audience->name; ?></a>
+                          <?php if ($audience->slug === get_queried_object()->slug) : ?>
+                            <a href="<?= get_term_link($audience->slug, 'category'); ?>" class="relative z-20 inline-block leading-none text-white no-underline transition-all duration-300 bg-transparent border-2 border-white rounded-lg p-sp-3 hover:bg-white hover:!text-dark-blue mb-sp-4 mr-sp-1"><?= $audience->name; ?></a>
+                          <?php endif; ?>
                         <?php endforeach; ?>
                         <h3 class="text-white text-h2 lg:text-h2-lg"><?= get_the_title(); ?></h3>
                       </div>
