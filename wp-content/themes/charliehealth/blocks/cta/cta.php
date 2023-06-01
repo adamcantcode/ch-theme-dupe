@@ -30,8 +30,13 @@ if (!empty($block['backgroundColor'])) {
   </div>
 <?php endif; ?>
 <?php if ($style === 'full') : ?>
-  <div class="grid lg:grid-cols-2 justify-between rounded-md  p-sp-6 items-center <?= $blockClasses; ?>">
-    <h2 class="lg:mb-0"><?= $heading; ?></h2>
+  <div class="grid lg:grid-flow-col justify-between rounded-md p-sp-6 items-center gap-sp-8 <?= $blockClasses; ?>">
+    <div>
+      <h2 class="lg:mb-0"><?= $heading; ?></h2>
+      <?php if ($subhead) : ?>
+        <p class="mb-0 mt-sp-4"><?= $subhead; ?></p>
+      <?php endif; ?>
+    </div>
     <?php include(get_template_directory() . '/includes/button-group.php'); ?>
   </div>
 <?php endif; ?>
