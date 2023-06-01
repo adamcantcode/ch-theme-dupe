@@ -2,6 +2,7 @@
  * Main nav hover actions
  */
 export default function mobileNav() {
+  const html = document.querySelector('html');
   const menu = document.querySelector('.open-close');
   const slideOut = document.querySelector('.slide-out');
   const mainContent = document.querySelector('.site-main');
@@ -17,6 +18,7 @@ export default function mobileNav() {
     menuText.innerHTML === 'Menu'
       ? (menuText.innerHTML = 'Close')
       : (menuText.innerHTML = 'Menu');
+    html.classList.toggle('nav-open');
     menu.classList.toggle('active');
     slideOut.classList.toggle('active');
     mainContent.classList.toggle('active');

@@ -68,11 +68,16 @@
       @apply lg:py-3 lg:px-5 py-3 px-4 ml-4 lg:ml-0 lg:whitespace-nowrap last:rounded-bl-sm;
     }
   }
-  .slide-out {
-    @apply right-full lg:right-0 lg:w-auto transition-right duration-500 w-full px-4 lg:px-0;
-    &.active {
+  html.nav-open {
+    .slide-out {
       @apply right-0;
     }
+  }
+  .slide-out {
+    @apply right-full lg:right-0 lg:w-auto transition-right duration-500 w-full px-4 lg:px-0;
+    /* &.active {
+      @apply right-0;
+    } */
   }
   .breadcrumbs {
     & > * {

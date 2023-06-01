@@ -1167,6 +1167,10 @@ a.nav-link:hover {
   }
 }
 
+html.nav-open .slide-out{
+  right: 0px;
+}
+
 .slide-out{
   right: 100%;
   width: 100%;
@@ -1187,9 +1191,11 @@ a.nav-link:hover {
   }
 }
 
-.slide-out.active{
-  right: 0px;
-}
+.slide-out {
+    /* &.active {
+      @apply right-0;
+    } */
+  }
 
 .breadcrumbs > *{
   font-size: 0.875rem;
