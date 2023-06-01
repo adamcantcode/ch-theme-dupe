@@ -11,13 +11,21 @@ if ($lastComma !== false) {
   $statesServedList = substr_replace($statesServedList, ' and', $lastComma, 1);
 }
 
-// var_dump(get_post_types());
+var_dump(get_queried_object());
+$meta_value = get_post_meta(165, 'region', true);
+var_dump($meta_value);
 
 $args = array(
   'post_type' => 'outreach-team-member',
-  'numberposts' => -1, // number of posts to display
-  // 'meta_key'      => 'region',
-  // 'meta_value'    => 'mid-atlantic'
+  'numberposts' => -1,
+  'order' => 'ASC',
+  'meta_query' => array(
+    array(
+      'key' => 'region', // name of custom field
+      'value' => '"' . get_the_ID() . '"', // matches exactly "123", not just 123. This prevents a match for "1234"
+      'compare' => 'LIKE'
+    )
+  )
 );
 
 ?>
@@ -179,7 +187,7 @@ $args = array(
         ?>
             <div class="grid justify-items-start gap-sp-1">
               <div class="cursor-pointer" data-modal-id="<?= get_the_ID(); ?>">
-                <img src="<?= placeHolderImage(240, 240); ?>" alt="" class="rounded-[50%] mb-5">
+                <img src="<?= placeHolderImage(240, 240); ?>" alt="" class="rounded-[50%] mb-sp-4">
                 <h4><?= get_the_title(); ?></h4>
               </div>
               <h5 class="mb-0"><?= $title; ?></h5>
@@ -219,23 +227,23 @@ $args = array(
   ?>
       <div class="bg-[rgba(0,0,0,.5)] fixed top-0 left-0 w-full h-full z-50 grid items-center justify-center center transition-all duration-300 modal-fade" data-modal="<?= get_the_ID(); ?>">
         <div class="transition-all duration-300 m-sp-4">
-          <div class="grid lg:grid-cols-[1.5fr,1fr] section-xs bg-cream container max-h-[80vh] overflow-auto rounded-md items-center relative">
+          <div class="grid lg:grid-cols-[1.5fr,1fr] gap-sp-8 section-xs bg-cream container max-h-[80vh] overflow-auto rounded-md items-center relative">
             <div class="absolute top-0 right-0 cursor-pointer">
               <img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/close-x.svg'; ?>" alt="close button" class="modal-close p-sp-10">
             </div>
             <div class="grid order-2 gap-sp-8 lg:order-1">
               <div class="grid justify-items-start gap-sp-1">
                 <h4 class="mb-0"><?= get_the_title(); ?></h4>
-                <h5><?= $title; ?></h5>
-                <h5><?= $state; ?></h5>
+                <h5 class="mb-0"><?= $title; ?></h5>
+                <h5 class="mb-0"><?= $state; ?></h5>
                 <a href="tel:+<?= $phone; ?>" class="no-underline break-all">
-                  <h5><?= $phone; ?></h5>
+                  <h5 class="mb-0"><?= $phone; ?></h5>
                 </a>
                 <a href="mailto:<?= $email; ?>" class="no-underline break-all">
-                  <h5><?= $email; ?></h5>
+                  <h5 class="mb-0"><?= $email; ?></h5>
                 </a>
                 <a href="<?= $calendly; ?>" target="_blank" class="">
-                  <h5>Let's chat</h5>
+                  <h5 class="mb-0">Let's chat</h5>
                 </a>
               </div>
               <h3 class="mb-0">“<?= $why; ?>”</h3>
@@ -244,8 +252,8 @@ $args = array(
                 <p class="mb-0 text-h5"><?= $fact; ?></p>
               </div>
             </div>
-            <div class="order-1 lg:order-2">
-              <img src="<?= placeHolderImage(400, 400); ?>" alt="" class="rounded-[50%] mb-5">
+            <div class="grid items-center justify-center order-1 lg:order-2">
+              <img src="<?= placeHolderImage(400, 400); ?>" alt="" class="rounded-[50%]">
             </div>
           </div>
         </div>

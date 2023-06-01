@@ -390,7 +390,7 @@ function hide_menus_on_multisite()
     remove_menu_page('edit.php?post_type=team-members');
     remove_menu_page('edit.php?post_type=treatment-modalities');
   } else {
-    remove_menu_page('edit.php?post_type=regions');
+    remove_menu_page('edit.php?post_type=region');
     remove_menu_page('edit.php?post_type=outreach-team-member');
     remove_menu_page('edit.php?post_type=event');
   }
