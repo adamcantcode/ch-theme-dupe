@@ -47,7 +47,7 @@ $readingTime = ceil($wordCount / $wordsPerMinute);
             <p class="mb-0 ml-sp-2">Back to The Library</p>
           </a>
         </div>
-        <div class="grid items-center lg:grid-cols-2 lg:gap-sp-16 gap-sp-8">
+        <div class="grid items-center lg:grid-cols-[4.25fr_5fr] lg:gap-[10rem] gap-sp-8">
           <div>
             <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="rounded-md max-h-[200px] lg:max-h-none object-cover w-full aspect-square">
           </div>

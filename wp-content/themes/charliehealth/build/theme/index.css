@@ -3580,6 +3580,26 @@ a.providers:hover {
     grid-template-columns: 2fr 1fr;
   }
 
+  .lg\:grid-cols-\[4fr_5fr\]{
+    grid-template-columns: 4fr 5fr;
+  }
+
+  .lg\:grid-cols-\[7fr_10fr\]{
+    grid-template-columns: 7fr 10fr;
+  }
+
+  .lg\:grid-cols-\[7\.5fr_10fr\]{
+    grid-template-columns: 7.5fr 10fr;
+  }
+
+  .lg\:grid-cols-\[4\.5fr_5fr\]{
+    grid-template-columns: 4.5fr 5fr;
+  }
+
+  .lg\:grid-cols-\[4\.25fr_5fr\]{
+    grid-template-columns: 4.25fr 5fr;
+  }
+
   .lg\:flex-row{
     flex-direction: row;
   }
@@ -3614,6 +3634,14 @@ a.providers:hover {
 
   .lg\:gap-sp-8{
     gap: 2rem;
+  }
+
+  .lg\:gap-\[8rem\]{
+    gap: 8rem;
+  }
+
+  .lg\:gap-\[10rem\]{
+    gap: 10rem;
   }
 
   .lg\:gap-y-sp-16{
