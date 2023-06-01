@@ -630,7 +630,6 @@ __webpack_require__.r(__webpack_exports__);
  * Main nav hover actions
  */
 function mobileNav() {
-  const html = document.querySelector('html');
   const menu = document.querySelector('.open-close');
   const slideOut = document.querySelector('.slide-out');
   const mainContent = document.querySelector('.site-main');
@@ -642,7 +641,6 @@ function mobileNav() {
   menu.addEventListener('click', () => {
     var menuText = menu.firstChild.nextElementSibling;
     menuText.innerHTML === 'Menu' ? menuText.innerHTML = 'Close' : menuText.innerHTML = 'Menu';
-    html.classList.toggle('nav-open');
     menu.classList.toggle('active');
     slideOut.classList.toggle('active');
     mainContent.classList.toggle('active');

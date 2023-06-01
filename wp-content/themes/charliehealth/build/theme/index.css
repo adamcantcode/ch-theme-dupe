@@ -1167,10 +1167,6 @@ a.nav-link:hover {
   }
 }
 
-html.nav-open .slide-out{
-  right: 0px;
-}
-
 .slide-out{
   right: 100%;
   width: 100%;
@@ -1191,11 +1187,9 @@ html.nav-open .slide-out{
   }
 }
 
-.slide-out {
-    /* &.active {
-      @apply right-0;
-    } */
-  }
+.slide-out.active{
+  right: 0px;
+}
 
 .breadcrumbs > *{
   font-size: 0.875rem;
