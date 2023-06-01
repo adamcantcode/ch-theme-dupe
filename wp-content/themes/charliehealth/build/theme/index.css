@@ -1381,11 +1381,6 @@ a.nav-link:hover {
   margin-bottom: 2rem;
 }
 
-.my-sp-4{
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
 .mb-0{
   margin-bottom: 0px;
 }
@@ -1570,6 +1565,10 @@ a.nav-link:hover {
   max-height: 500px;
 }
 
+.max-h-\[600px\]{
+  max-height: 600px;
+}
+
 .max-h-\[70vh\]{
   max-height: 70vh;
 }
@@ -1590,10 +1589,6 @@ a.nav-link:hover {
   min-height: 100%;
 }
 
-.min-h-screen{
-  min-height: 100vh;
-}
-
 .w-10{
   width: 2.5rem;
 }
@@ -1608,6 +1603,10 @@ a.nav-link:hover {
 
 .w-80{
   width: 20rem;
+}
+
+.w-\[240px\]{
+  width: 240px;
 }
 
 .w-\[25px\]{
@@ -1643,8 +1642,8 @@ a.nav-link:hover {
   width: 1.5rem;
 }
 
-.w-\[240px\]{
-  width: 240px;
+.\!max-w-md{
+  max-width: 28rem !important;
 }
 
 .max-w-\[1280px\]{
@@ -1665,22 +1664,6 @@ a.nav-link:hover {
 
 .max-w-\[80rem\]{
   max-width: 80rem;
-}
-
-.max-w-sm{
-  max-width: 24rem;
-}
-
-.\!max-w-sm{
-  max-width: 24rem !important;
-}
-
-.\!max-w-md{
-  max-width: 28rem !important;
-}
-
-.max-w-\[240px\]{
-  max-width: 240px;
 }
 
 .flex-\[0_0_auto\]{
@@ -2179,6 +2162,13 @@ a.nav-link:hover {
   font-size: 2.5rem;
 }
 
+.text-h1{
+  font-size: 2rem;
+  line-height: 2rem;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
 .text-h1-display{
   font-size: 2.25rem;
   line-height: 2.75rem;
@@ -2245,13 +2235,6 @@ a.nav-link:hover {
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-h1{
-  font-size: 2rem;
-  line-height: 2rem;
-  letter-spacing: 0;
-  font-weight: 400;
 }
 
 .font-bold{
@@ -2365,12 +2348,6 @@ a.nav-link:hover {
 }
 
 .container-sm{
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 768px;
-}
-
-.\!container-sm{
   margin-left: auto;
   margin-right: auto;
   max-width: 768px;
@@ -3118,6 +3095,28 @@ a.js-tag-id.active:hover {
   background-color: rgb(67 49 176 / var(--tw-bg-opacity));
 }
 
+.custom-scroll-vertical > *{
+  margin-right: 1.5rem;
+}
+
+.custom-scroll-vertical::-webkit-scrollbar{
+  width: 0.5rem;
+  cursor: pointer;
+}
+
+.custom-scroll-vertical::-webkit-scrollbar-track{
+  margin-left: 1.25rem;
+  cursor: pointer;
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 247 247 / var(--tw-bg-opacity));
+}
+
+.custom-scroll-vertical::-webkit-scrollbar-thumb{
+  cursor: pointer;
+  --tw-bg-opacity: 1;
+  background-color: rgb(67 49 176 / var(--tw-bg-opacity));
+}
+
 .bg-noise-purple {
     background-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 version=%271.1%27 xmlns:xlink=%27http://www.w3.org/1999/xlink%27 xmlns:svgjs=%27http://svgjs.dev/svgjs%27 viewBox=%270 0 1400 1400%27 width=%271400%27 height=%271400%27 opacity=%270.2%27%3E%3Cdefs%3E%3Cfilter id=%27nnnoise-filter%27 x=%27-20%25%27 y=%27-20%25%27 width=%27140%25%27 height=%27140%25%27 filterUnits=%27objectBoundingBox%27 primitiveUnits=%27userSpaceOnUse%27 color-interpolation-filters=%27linearRGB%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.2%27 numOctaves=%274%27 seed=%2715%27 stitchTiles=%27stitch%27 x=%270%25%27 y=%270%25%27 width=%27100%25%27 height=%27100%25%27 result=%27turbulence%27%3E%3C/feTurbulence%3E%3CfeSpecularLighting surfaceScale=%278%27 specularConstant=%271.1%27 specularExponent=%2720%27 lighting-color=%27%23cccccc%27 x=%270%25%27 y=%270%25%27 width=%27100%25%27 height=%27100%25%27 in=%27turbulence%27 result=%27specularLighting%27%3E%3CfeDistantLight azimuth=%273%27 elevation=%2777%27%3E%3C/feDistantLight%3E%3C/feSpecularLighting%3E%3C/filter%3E%3C/defs%3E%3Crect width=%271400%27 height=%271400%27 fill=%27transparent%27%3E%3C/rect%3E%3Crect width=%271400%27 height=%271400%27 fill=%27%23cccccc%27 filter=%27url%28%23nnnoise-filter%29%27%3E%3C/rect%3E%3C/svg%3E"),
       linear-gradient(90deg, #c6aff3, #e2d3ff);
@@ -3347,16 +3346,6 @@ a.providers:hover {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.hover\:-translate-y-sp-2:hover{
-  --tw-translate-y: -0.5rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.hover\:translate-y-sp-2:hover{
-  --tw-translate-y: 0.5rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .hover\:bg-bright-teal:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(177 252 250 / var(--tw-bg-opacity));
@@ -3391,12 +3380,6 @@ a.providers:hover {
 .hover\:shadow-lg:hover{
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.hover\:shadow-md:hover{
-  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -3581,16 +3564,16 @@ a.providers:hover {
     height: 4rem;
   }
 
+  .lg\:max-h-\[300px\]{
+    max-height: 300px;
+  }
+
   .lg\:max-h-full{
     max-height: 100%;
   }
 
   .lg\:max-h-none{
     max-height: none;
-  }
-
-  .lg\:max-h-\[300px\]{
-    max-height: 300px;
   }
 
   .lg\:min-h-\[300px\]{
@@ -3810,6 +3793,13 @@ a.providers:hover {
     font-weight: 400;
   }
 
+  .lg\:text-h1-lg{
+    font-size: 3rem;
+    line-height: 3rem;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+
   .lg\:text-h2-lg{
     font-size: 2.25rem;
     line-height: 110%;
@@ -3820,13 +3810,6 @@ a.providers:hover {
   .lg\:text-h3-lg{
     font-size: 1.5rem;
     line-height: 1.8rem;
-    letter-spacing: 0;
-    font-weight: 400;
-  }
-
-  .lg\:text-h1-lg{
-    font-size: 3rem;
-    line-height: 3rem;
     letter-spacing: 0;
     font-weight: 400;
   }

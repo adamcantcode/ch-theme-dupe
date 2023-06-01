@@ -309,6 +309,20 @@
     @apply bg-hover-blue cursor-pointer;
   }
 }
+.custom-scroll-vertical {
+  & > * {
+    @apply mr-sp-6;
+  }
+  &::-webkit-scrollbar {
+    @apply w-sp-2 cursor-pointer;
+  }
+  &::-webkit-scrollbar-track {
+    @apply bg-tag-gray ml-sp-5 cursor-pointer;
+  }
+  &::-webkit-scrollbar-thumb {
+    @apply bg-hover-blue cursor-pointer;
+  }
+}
 
 .bg-noise {
   &-purple {
