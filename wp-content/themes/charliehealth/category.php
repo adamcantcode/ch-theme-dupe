@@ -108,42 +108,36 @@ if (is_category('families-and-caregivers')) {
                   <div class="relative grid overflow-hidden rounded-md lg:grid-cols-2">
                     <div class="grid content-between order-2 lg:p-sp-8 p-sp-4 lg:order-1 <?= $audienceClass; ?>"">
                       <div>
-                        <?php $audiences = get_the_terms(get_the_ID(), 'category'); ?>
-                        <?php foreach ($audiences as $audience) : ?>
-                          <?php if ($audience->slug === get_queried_object()->slug) : ?>
-                            <a href="<?= get_term_link($audience->slug, 'category'); ?>" class="relative z-20 inline-block leading-none text-white no-underline transition-all duration-300 bg-transparent border-2 border-white rounded-lg p-sp-3 hover:bg-white hover:!text-dark-blue mb-sp-4 mr-sp-1"><?= $audience->name; ?></a>
-                          <?php endif; ?>
-                        <?php endforeach; ?>
-                        <h3 class="text-white text-h2 lg:text-h2-lg"><?= get_the_title(); ?></h3>
-                      </div>
-                      <a href="<?= get_the_permalink(); ?>" class="text-white stretched-link">Read more</a>
+                        <h3 class="text-white  text-h2 lg:text-h2-lg"><?= get_the_title(); ?></h3>
                     </div>
-                    <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="order-1 object-cover lg:order-2 lg:h-[400px] w-full">
+                    <a href="<?= get_the_permalink(); ?>" class="text-white stretched-link">Read more</a>
                   </div>
+                  <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="order-1 object-cover lg:order-2 lg:h-[400px] w-full">
                 </div>
-            <?php endwhile;
+          </div>
+      <?php endwhile;
               wp_reset_postdata();
             endif; ?>
+        </div>
+        <div class="bottom-0 right-0 z-10 grid items-center grid-cols-3 lg:absolute justify-items-center gap-sp-4 lg:p-sp-8 mt-sp-8">
+          <div class="swiper-button-prev-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none" class="arrow-slider">
+              <rect width="50" height="50" rx="25" fill="#ffffff" class="arrow-slider-bg" />
+              <path d="M11.9393 26.0607C11.3536 25.4749 11.3536 24.5251 11.9393 23.9393L21.4853 14.3934C22.0711 13.8076 23.0208 13.8076 23.6066 14.3934C24.1924 14.9792 24.1924 15.9289 23.6066 16.5147L15.1213 25L23.6066 33.4853C24.1924 34.0711 24.1924 35.0208 23.6066 35.6066C23.0208 36.1924 22.0711 36.1924 21.4853 35.6066L11.9393 26.0607ZM37 26.5H13V23.5H37V26.5Z" fill="#212984" class="arrow-slider-arrow" />
+              <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
+            </svg>
           </div>
-          <div class="bottom-0 right-0 z-10 grid items-center grid-cols-3 lg:absolute justify-items-center gap-sp-4 lg:p-sp-8 mt-sp-8">
-            <div class="swiper-button-prev-arrow">
-              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none" class="arrow-slider">
-                <rect width="50" height="50" rx="25" fill="#ffffff" class="arrow-slider-bg" />
-                <path d="M11.9393 26.0607C11.3536 25.4749 11.3536 24.5251 11.9393 23.9393L21.4853 14.3934C22.0711 13.8076 23.0208 13.8076 23.6066 14.3934C24.1924 14.9792 24.1924 15.9289 23.6066 16.5147L15.1213 25L23.6066 33.4853C24.1924 34.0711 24.1924 35.0208 23.6066 35.6066C23.0208 36.1924 22.0711 36.1924 21.4853 35.6066L11.9393 26.0607ZM37 26.5H13V23.5H37V26.5Z" fill="#212984" class="arrow-slider-arrow"/>
-                <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
-              </svg>
-            </div>
-            <div class="!relative swiper-pagination !inset-auto"></div>
-            <div class="swiper-button-next-arrow">
-              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none" class="arrow-slider">
-                <rect width="50" height="50" rx="25" fill="#ffffff" class="arrow-slider-bg" />
-                <path d="M38.0607 26.0607C38.6464 25.4749 38.6464 24.5251 38.0607 23.9393L28.5147 14.3934C27.9289 13.8076 26.9792 13.8076 26.3934 14.3934C25.8076 14.9792 25.8076 15.9289 26.3934 16.5147L34.8787 25L26.3934 33.4853C25.8076 34.0711 25.8076 35.0208 26.3934 35.6066C26.9792 36.1924 27.9289 36.1924 28.5147 35.6066L38.0607 26.0607ZM13 26.5H37V23.5H13V26.5Z" fill="#212984" class="arrow-slider-arrow"/>
-                <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
-              </svg>
-            </div>
+          <div class="!relative swiper-pagination !inset-auto"></div>
+          <div class="swiper-button-next-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none" class="arrow-slider">
+              <rect width="50" height="50" rx="25" fill="#ffffff" class="arrow-slider-bg" />
+              <path d="M38.0607 26.0607C38.6464 25.4749 38.6464 24.5251 38.0607 23.9393L28.5147 14.3934C27.9289 13.8076 26.9792 13.8076 26.3934 14.3934C25.8076 14.9792 25.8076 15.9289 26.3934 16.5147L34.8787 25L26.3934 33.4853C25.8076 34.0711 25.8076 35.0208 26.3934 35.6066C26.9792 36.1924 27.9289 36.1924 28.5147 35.6066L38.0607 26.0607ZM13 26.5H37V23.5H13V26.5Z" fill="#212984" class="arrow-slider-arrow" />
+              <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
+            </svg>
           </div>
         </div>
       </div>
+    </div>
     </div>
   </section>
   <section id="postsContainer" class="section">
