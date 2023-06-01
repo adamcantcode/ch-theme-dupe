@@ -615,43 +615,6 @@ function featuredBlogSlider() {
 
 /***/ }),
 
-/***/ "./src/modules/imagify-fix.js":
-/*!************************************!*\
-  !*** ./src/modules/imagify-fix.js ***!
-  \************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": function() { return /* binding */ imagifyPictureTagClasses; }
-/* harmony export */ });
-function imagifyPictureTagClasses() {
-  // Get all <picture> tags on the page
-  const pictureTags = document.querySelectorAll('picture');
-  if (pictureTags) {
-    // Loop through each <picture> tag
-    pictureTags.forEach(pictureTag => {
-      // Get the first <img> tag within the <picture> tag
-      const imgTag = pictureTag.querySelector('img');
-
-      // Get the classes on the <picture> tag
-      const classes = pictureTag.classList;
-
-      // Loop through each class on the <picture> tag
-      classes.forEach(className => {
-        // Add the class to the <img> tag
-        imgTag.classList.add(className);
-      });
-
-      // Remove all classes from the <picture> tag
-      pictureTag.className = '';
-    });
-  }
-}
-
-/***/ }),
-
 /***/ "./src/modules/mobile-nav.js":
 /*!***********************************!*\
   !*** ./src/modules/mobile-nav.js ***!
@@ -22438,7 +22401,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_references__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/references */ "./src/modules/references.js");
 /* harmony import */ var _modules_progress_bar__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules/progress-bar */ "./src/modules/progress-bar.js");
 /* harmony import */ var _modules_newsletter_popup__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./modules/newsletter-popup */ "./src/modules/newsletter-popup.js");
-/* harmony import */ var _modules_imagify_fix__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./modules/imagify-fix */ "./src/modules/imagify-fix.js");
 
 
 
@@ -22454,13 +22416,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// import imagifyPictureTagClasses from './modules/imagify-fix';
 
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
   (0,_modules_stop_animations__WEBPACK_IMPORTED_MODULE_2__["default"])();
   (0,_modules_mobile_nav__WEBPACK_IMPORTED_MODULE_1__["default"])();
   (0,_modules_animations__WEBPACK_IMPORTED_MODULE_3__["default"])();
-  (0,_modules_imagify_fix__WEBPACK_IMPORTED_MODULE_15__["default"])();
+  // imagifyPictureTagClasses();
   if (body.classList.contains('single-areas-of-care') || body.classList.contains('single-treatment-modalities') || body.classList.contains('single-post')) {
     (0,_modules_back_to_top__WEBPACK_IMPORTED_MODULE_5__["default"])();
   }
