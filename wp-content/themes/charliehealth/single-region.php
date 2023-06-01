@@ -41,8 +41,8 @@ $args = array(
           <div class="p-sp-8">
             <?= $regionInformation; ?>
             <div class="flex gap-x-sp-4 items-center lg:w-[unset] w-full">
-              <a href="#refForm" class="ch-button button-primary" target="<?= $linkOneTarget ?: '_self'; ?>"><?= $linkOneTitle ?: 'Get Started'; ?></a>
-              <a href="#team" class="ch-button button-secondary" target="<?= $linkTwoTarget ?: '_self'; ?>"><?= $linkTwoTitle ?: '1 (866) 484-8218'; ?></a>
+              <a href="#refForm" class="ch-button button-primary">Refer a Client</a>
+              <a href="#team" class="ch-button button-secondary">View Team</a>
             </div>
           </div>
         </div>
@@ -182,13 +182,13 @@ $args = array(
                 <img src="<?= placeHolderImage(240, 240); ?>" alt="" class="rounded-[50%] mb-5">
                 <h4><?= get_the_title(); ?></h4>
               </div>
-              <h5><?= $title; ?></h5>
-              <h5><?= $state; ?></h5>
+              <h5 class="mb-0"><?= $title; ?></h5>
+              <h5 class="mb-0"><?= $state; ?></h5>
               <a href="tel:+<?= $phone; ?>" class="inline-block no-underline break-all">
-                <h5><?= $phone; ?></h5>
+                <h5 class="mb-0"><?= $phone; ?></h5>
               </a>
               <a href="mailto:<?= $email; ?>" class="inline-block no-underline break-all">
-                <h5><?= $email; ?></h5>
+                <h5 class="mb-0"><?= $email; ?></h5>
               </a>
             </div>
         <?php
