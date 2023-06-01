@@ -184,7 +184,7 @@ $args = array(
         ?>
             <div class="grid justify-items-start gap-sp-1">
               <div class="cursor-pointer" data-modal-id="<?= get_the_ID(); ?>">
-                <img src="<?= $headshot['url'] ?: placeHolderImage(240, 240); ?>" alt="<?= 'Headshot of ' . get_the_title(); ?>" class="rounded-[50%] mb-sp-4">
+                <img src="<?= $headshot['url'] ?: placeHolderImage(240, 240); ?>" alt="<?= 'Headshot of ' . get_the_title(); ?>" class="rounded-[50%] mb-sp-4 w-[240px]">
                 <h4><?= get_the_title(); ?></h4>
               </div>
               <h5 class="mb-0"><?= $title; ?></h5>

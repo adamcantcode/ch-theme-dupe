@@ -1643,6 +1643,10 @@ a.nav-link:hover {
   width: 1.5rem;
 }
 
+.w-\[240px\]{
+  width: 240px;
+}
+
 .max-w-\[1280px\]{
   max-width: 1280px;
 }
@@ -1673,6 +1677,10 @@ a.nav-link:hover {
 
 .\!max-w-md{
   max-width: 28rem !important;
+}
+
+.max-w-\[240px\]{
+  max-width: 240px;
 }
 
 .flex-\[0_0_auto\]{
