@@ -103,7 +103,7 @@
                         <a href="<?= get_term_link($audiences[0]->slug, 'category'); ?>" class="relative z-20 inline-block leading-none text-white no-underline transition-all duration-300 bg-transparent border-2 border-white rounded-lg p-sp-3 hover:bg-white hover:!text-dark-blue mb-sp-4 mr-sp-1"><?= $audiences[0]->name; ?></a>
                         <h3 class="text-white text-h2 lg:text-h2-lg"><?= get_the_title(); ?></h3>
                       </div>
-                      <a href="<?= get_the_permalink(); ?>" class="text-white stretched-link">Read more</a>
+                      <a href="<?= get_the_permalink(); ?>" class="text-white no-underline stretched-link">Read more <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/arrow-left.svg'); ?>" alt="arrow" class="inline-block rotate-180 h-sp-4 ml-sp-2"></a>
                     </div>
                     <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="order-1 object-cover lg:order-2 lg:h-[400px] w-full">
                   </div>
