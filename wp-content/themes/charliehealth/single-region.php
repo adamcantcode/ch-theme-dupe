@@ -11,10 +11,6 @@ if ($lastComma !== false) {
   $statesServedList = substr_replace($statesServedList, ' and', $lastComma, 1);
 }
 
-var_dump(get_queried_object());
-$meta_value = get_post_meta(165, 'region', true);
-var_dump($meta_value);
-
 $args = array(
   'post_type' => 'outreach-team-member',
   'numberposts' => -1,
