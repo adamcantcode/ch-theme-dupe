@@ -40,3 +40,30 @@ if (!empty($block['backgroundColor'])) {
     <?php include(get_template_directory() . '/includes/button-group.php'); ?>
   </div>
 <?php endif; ?>
+<?php if ($style === 'newsletter') : ?>
+  <div class="grid lg:grid-cols-[1fr_2fr] rounded-md p-sp-6 lg:gap-sp-8 <?= $blockClasses; ?>">
+    <div>
+      <h2 class="mb-0"><?= $heading; ?></h2>
+    </div>
+    <div>
+      <?php if ($subhead) : ?>
+        <p class="mb-0 noshow lg:block"><?= $subhead; ?></p>
+      <?php endif; ?>
+      <div class="newsletter-revamp">
+        <script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/newsletter_blog_revamp"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/newsletter_blog_revamp" title="Online Form">Online Form - Newsletter - Blog Revamp</a></noscript>
+        <script>
+          // Get references to the elements
+          var elementToCut = document.getElementById("fsSubmitButton5194985");
+          var destinationElement = document.getElementById("fsCell140490700");
+          // Create a clone of the element to cut
+          var clonedElement = elementToCut.cloneNode(true);
+          // Remove the original element from its current parent
+          elementToCut.parentNode.removeChild(elementToCut);
+          // Append the cloned element to the destination element
+          destinationElement.appendChild(clonedElement);
+        </script>
+      </div>
+      <h5>You can unsubscribe anytime.</h5>
+    </div>
+  </div>
+<?php endif; ?>

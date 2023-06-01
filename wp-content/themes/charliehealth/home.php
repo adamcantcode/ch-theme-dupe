@@ -236,12 +236,6 @@
               elementToCut.parentNode.removeChild(elementToCut);
               // Append the cloned element to the destination element
               destinationElement.appendChild(clonedElement);
-              // var head = document.head;
-              // var link = document.querySelector('link[href="//static.formstack.com/forms/css/3/default-v4_29cde3be75.css"]');
-
-              // if (link) {
-              //   head.insertBefore(link, head.firstChild);
-              // }
             </script>
           </div>
           <h5>You can unsubscribe anytime.</h5>
