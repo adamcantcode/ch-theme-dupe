@@ -3,10 +3,13 @@
 $bgColor = '';
 if (is_category('families-and-caregivers')) {
   $bgColor = 'bg-noise-orange';
+  $audienceClass = 'families-and-caregivers-slider';
 } elseif (is_category('teens-and-young-adults')) {
   $bgColor = 'bg-noise-purple';
+  $audienceClass = 'teens-and-young-adults-slider';
 } elseif (is_category('providers')) {
   $bgColor = 'bg-noise-blue';
+  $audienceClass = 'providers-slider';
 }
 ?>
 
@@ -103,7 +106,7 @@ if (is_category('families-and-caregivers')) {
                 ?>
                 <div class="swiper-slide">
                   <div class="relative grid overflow-hidden rounded-md lg:grid-cols-2">
-                    <div class="grid content-between order-2 bg-purple-gradient-start lg:p-sp-8 p-sp-4 lg:order-1">
+                    <div class="grid content-between order-2 lg:p-sp-8 p-sp-4 lg:order-1 <?= $audienceClass; ?>"">
                       <div>
                         <?php $audiences = get_the_terms(get_the_ID(), 'category'); ?>
                         <?php foreach ($audiences as $audience) : ?>
