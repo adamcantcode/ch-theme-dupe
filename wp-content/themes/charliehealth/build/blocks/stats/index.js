@@ -9467,7 +9467,7 @@ __webpack_require__.r(__webpack_exports__);
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
 window.addEventListener('DOMContentLoaded', () => {
   var statsBlock = document.querySelectorAll('.stats-block');
-  if (circles) {
+  if (statsBlock) {
     let statsTimeline = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
       scrollTrigger: {
         trigger: '.stats-block',

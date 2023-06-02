@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 window.addEventListener('DOMContentLoaded', () => {
   var statsBlock = document.querySelectorAll('.stats-block');
-  if (circles) {
+  if (statsBlock) {
     let statsTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: '.stats-block',
