@@ -635,14 +635,6 @@ function mobileNav() {
   const mainContent = document.querySelector('.site-main');
   const topLevelLinks = document.querySelectorAll('.nav-parent-menu > .nav-link:not(.static)');
 
-  /** Fix for back button bug */
-  window.addEventListener('pageshow', () => {
-    console.log('pageshow');
-    console.log(slideOut.classList);
-    slideOut.classList.remove('active');
-    console.log(slideOut.classList);
-  });
-
   /**
    * On click, toggle active.
    */

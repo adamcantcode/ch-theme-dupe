@@ -20,7 +20,12 @@
 <body <?php body_class('bg-white'); ?>>
   <?php wp_body_open(); ?>
   <pre class="fixed left-0 right-0 w-full text-xs text-center text-white top-4 -z-10 opacity-30">Made with ❤️ in Denver</pre>
-
+  <script>
+    /** Fix for back button bug */
+    window.addEventListener('pageshow', () => {
+      slideOut.classList.remove('active');
+    });
+  </script>
   <header class="lg:fixed sticky z-50 w-screen bg-med-blue <?= is_user_logged_in() ? 'lg:top-[32px] top-0' : 'top-0'; ?>">
     <nav class="section-horizontal">
       <div class="container relative flex items-center justify-between min-h-[68px]">
