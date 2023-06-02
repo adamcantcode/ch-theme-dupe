@@ -29,17 +29,17 @@ if ($image) {
           <div class="social">
             <?php if ($twitter) : ?>
               <a href="<?= $twitter; ?>" target="_blank">
-                <img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/social-logos/twitter.svg'; ?>" class="w-[25px] h-[25px]" />
+                <img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/social-logos/twitter.svg'; ?>" alt="Twitter logo" class="w-[25px] h-[25px]" />
               </a>
             <?php endif; ?>
             <?php if ($facebook) : ?>
               <a href="<?= $facebook; ?>" target="_blank">
-                <img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/social-logos/facebook.svg'; ?>" class="w-[25px] h-[25px]" />
+                <img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/social-logos/facebook.svg'; ?>" alt="Facebook logo" class="w-[25px] h-[25px]" />
               </a>
             <?php endif; ?>
             <?php if ($linkedin) : ?>
               <a href="<?= $linkedin; ?>" target="_blank">
-                <img src="<?= '/wp-content/themes/charliehealth/resources/images/social-logos/linkedin.svg'; ?>" class="w-[25px] h-[25px]" />
+                <img src="<?= '/wp-content/themes/charliehealth/resources/images/social-logos/linkedin.svg'; ?>" alt="LinkedIn logo" class="w-[25px] h-[25px]" />
               </a>
             <?php endif; ?>
             <!-- TODO add email -->

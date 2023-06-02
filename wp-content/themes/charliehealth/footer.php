@@ -40,16 +40,16 @@
 			</div>
 			<div class="flex gap-sp-4">
 				<a href="https://www.facebook.com/charliehealth" target="_blank">
-					<img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/social-logos/facebook.svg'; ?>" class="w-[25px] h-[25px] filter-white" />
+					<img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/social-logos/facebook.svg'; ?>" alt="Facebook logo" class="w-[25px] h-[25px] filter-white" />
 				</a>
 				<a href="https://www.linkedin.com/company/charlie-health/" target="_blank">
-					<img src="<?= '/wp-content/themes/charliehealth/resources/images/social-logos/linkedin.svg'; ?>" class="w-[25px] h-[25px] filter-white" />
+					<img src="<?= '/wp-content/themes/charliehealth/resources/images/social-logos/linkedin.svg'; ?>" alt="LinkedIn logo" class="w-[25px] h-[25px] filter-white" />
 				</a>
 				<a href="https://www.instagram.com/charliehealth/" target="_blank">
-					<img src="<?= '/wp-content/themes/charliehealth/resources/images/social-logos/instagram.svg'; ?>" class="w-[25px] h-[25px] filter-white" />
+					<img src="<?= '/wp-content/themes/charliehealth/resources/images/social-logos/instagram.svg'; ?>" alt="Instagram logo" class="w-[25px] h-[25px] filter-white" />
 				</a>
 				<a href="https://www.tiktok.com/@charliehealth" target="_blank">
-					<img src="<?= '/wp-content/themes/charliehealth/resources/images/social-logos/tik-tok.svg'; ?>" class="w-[25px] h-[25px] filter-white" />
+					<img src="<?= '/wp-content/themes/charliehealth/resources/images/social-logos/tik-tok.svg'; ?>" alt="TikTok logo" class="w-[25px] h-[25px] filter-white" />
 				</a>
 			</div>
 		</div>
@@ -82,7 +82,8 @@
 </footer>
 <!-- </div> -->
 <!-- TODO Temp disable footer code -->
-<?php // include('wp-content/themes/charliehealth/includes/footer-code.php'); ?>
+<?php // include('wp-content/themes/charliehealth/includes/footer-code.php'); 
+?>
 <?php wp_footer(); ?>
 <pre class="fixed left-0 right-0 w-full text-xs text-center text-white bottom-4 -z-10 opacity-30">Made with ❤️ in Denver</pre>
 </body>

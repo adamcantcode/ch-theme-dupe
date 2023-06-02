@@ -90,16 +90,16 @@
           <div class="block mobile-ctas lg:noshow">
             <div class="flex justify-center gap-4 px-5 py-8 social">
               <a href="https://www.facebook.com/charliehealth" target="_blank">
-                <img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/social-logos/facebook.svg'; ?>" class="w-[25px] h-[25px] filter-white" />
+                <img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/social-logos/facebook.svg'; ?>" alt="Facebook logo" class="w-[25px] h-[25px] filter-white" />
               </a>
               <a href="https://www.linkedin.com/company/charlie-health/" target="_blank">
-                <img src="<?= '/wp-content/themes/charliehealth/resources/images/social-logos/linkedin.svg'; ?>" class="w-[25px] h-[25px] filter-white" />
+                <img src="<?= '/wp-content/themes/charliehealth/resources/images/social-logos/linkedin.svg'; ?>" alt="LinkedIn logo" class="w-[25px] h-[25px] filter-white" />
               </a>
               <a href="https://www.instagram.com/charliehealth/" target="_blank">
-                <img src="<?= '/wp-content/themes/charliehealth/resources/images/social-logos/instagram.svg'; ?>" class="w-[25px] h-[25px] filter-white" />
+                <img src="<?= '/wp-content/themes/charliehealth/resources/images/social-logos/instagram.svg'; ?>" alt="Instagram logo" class="w-[25px] h-[25px] filter-white" />
               </a>
               <a href="https://www.tiktok.com/@charliehealth" target="_blank">
-                <img src="<?= '/wp-content/themes/charliehealth/resources/images/social-logos/tik-tok.svg'; ?>" class="w-[25px] h-[25px] filter-white" />
+                <img src="<?= '/wp-content/themes/charliehealth/resources/images/social-logos/tik-tok.svg'; ?>" alt="TikTok logo" class="w-[25px] h-[25px] filter-white" />
               </a>
             </div>
             <div class="flex justify-center pb-8">

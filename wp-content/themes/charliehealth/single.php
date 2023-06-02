@@ -63,9 +63,9 @@ $readingTime = ceil($wordCount / $wordsPerMinute);
             <div class="flex items-start">
               <p class="font-heading-serif">Share:</p>
               <a role="button" class="js-share-button ml-sp-4"><img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/social-logos/share.svg'; ?>" alt="share icon"></a>
-              <a href="https://www.facebook.com/sharer/sharer.php?u=<?= $fullUrl; ?>" onclick="window.open(this.href,'targetWindow','resizable=yes,width=600,height=300'); return false;" class="ml-sp-4"><img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/social-logos/facebook.svg'; ?>" alt="Facebook icon">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=<?= $fullUrl; ?>" onclick="window.open(this.href,'targetWindow','resizable=yes,width=600,height=300'); return false;" class="ml-sp-4"><img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/social-logos/facebook.svg'; ?>" alt="Facebook logo">
               </a>
-              <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?= $fullUrl; ?>" class="ml-sp-4"><img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/social-logos/linkedin.svg'; ?>" alt="linkedin icon"></a>
+              <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?= $fullUrl; ?>" class="ml-sp-4"><img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/social-logos/linkedin.svg'; ?>"  alt="LinkedIn logo"></a>
             </div>
             <div class="grid gap-sp-4">
               <div class="grid items-end justify-start grid-flow-col gap-sp-4">
