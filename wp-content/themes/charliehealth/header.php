@@ -23,7 +23,7 @@
   <script>
     /** Fix for back button bug */
     window.addEventListener('pageshow', () => {
-      slideOut.classList.remove('active');
+      document.querySelector('.slide-out').classList.remove('active');
     });
   </script>
   <header class="lg:fixed sticky z-50 w-screen bg-med-blue <?= is_user_logged_in() ? 'lg:top-[32px] top-0' : 'top-0'; ?>">
