@@ -1585,6 +1585,10 @@ a.nav-link:hover {
   min-height: 200px;
 }
 
+.min-h-\[300px\]{
+  min-height: 300px;
+}
+
 .min-h-\[68px\]{
   min-height: 68px;
 }
@@ -3331,6 +3335,15 @@ a.providers:hover {
 
 .arrow-slider:hover .arrow-slider-arrow{
   fill: #FFFFFF;
+}
+
+/* EDITOR */
+
+.components-button.is-primary {
+  background: var(
+    --wp-components-color-accent,
+    var(--wp-admin-theme-color, #007cba)
+  );
 }
 
 .hover\:text-white:hovera:hover {

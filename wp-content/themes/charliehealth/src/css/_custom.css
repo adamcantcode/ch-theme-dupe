@@ -440,17 +440,24 @@
 
 .arrow-slider {
   .arrow-slider-bg {
-      @apply fill-white duration-300 transition-all;
-    }
-    .arrow-slider-arrow {
-      @apply fill-med-blue duration-300 transition-all;
-    }
+    @apply fill-white duration-300 transition-all;
+  }
+  .arrow-slider-arrow {
+    @apply fill-med-blue duration-300 transition-all;
+  }
   &:hover {
     .arrow-slider-bg {
-      @apply fill-med-blue
+      @apply fill-med-blue;
     }
     .arrow-slider-arrow {
-      @apply fill-white
+      @apply fill-white;
     }
   }
+}
+/* EDITOR */
+.components-button.is-primary {
+  background: var(
+    --wp-components-color-accent,
+    var(--wp-admin-theme-color, #007cba)
+  );
 }
