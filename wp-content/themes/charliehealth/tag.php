@@ -34,7 +34,7 @@
         // var_dump($terms);
         foreach ($terms as $term) : ?>
           <a href="<?= $term->slug; ?>" class="no-underline duration-300 rounded-lg px-sp-4 py-sp-3 text-h5 bg-tag-gray hover:bg-bright-teal"><?= $term->name; ?></a>
-          <?php endforeach; ?>
+        <?php endforeach; ?>
       </div>
     </div>
   </section>
@@ -61,11 +61,7 @@
       <?= do_blocks('<!-- wp:acf/divider-block {"name":"acf/divider-block"} /-->'); ?>
     </div>
   </section>
-  <section class="section">
-    <div class="container-md">
-      <?= do_blocks('<!-- wp:block {"ref":12} /-->'); ?>
-    </div>
-  </section>
+  <?= do_blocks('<!-- wp:block {"ref":12} /-->'); ?>
 </main>
 
 <?php get_footer(); ?>

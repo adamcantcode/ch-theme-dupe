@@ -58,11 +58,7 @@ Template Name: Search Page
       </div>
     </div>
   </section>
-  <section class="section">
-    <div class="container-md">
-      <?= do_blocks('<!-- wp:block {"ref":12} /-->'); ?>
-    </div>
-  </section>
+  <?= do_blocks('<!-- wp:block {"ref":12} /-->'); ?>
 </main>
 
 <?php get_footer(); ?>
