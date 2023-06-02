@@ -20,9 +20,10 @@
 <body <?php body_class('bg-white'); ?>>
   <?php wp_body_open(); ?>
   <pre class="fixed left-0 right-0 w-full text-xs text-center text-white top-4 -z-10 opacity-30">Made with ❤️ in Denver</pre>
-  <script>
+  <script type="text/javascript">
     /** Fix for back button bug */
     window.addEventListener('pageshow', () => {
+      console.log('pageshowevent');
       document.querySelector('.slide-out').classList.remove('active');
     });
   </script>
