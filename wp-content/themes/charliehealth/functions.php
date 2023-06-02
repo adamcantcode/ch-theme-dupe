@@ -27,13 +27,13 @@ add_theme_support('title-tag');
 add_editor_style('/build/theme/index.css');
 
 if (
-  is_admin() && isset($_GET['post_type']) && $_GET['post_type'] === 'post' && basename($_SERVER['PHP_SELF']) === 'post-new.php'
+  false !== stristr($_SERVER['REQUEST_URI'], 'post-new.php') && isset($_GET['post_type']) && 'post' === $_GET['post_type']
   || false !== stristr($_SERVER['REQUEST_URI'], 'post.php') && 'post' === get_post_type($_GET['post'])
 ) {
   add_editor_style('editor-styles-posts.css');
 }
 if (
-  is_admin() && isset($_GET['post_type']) && $_GET['post_type'] === 'research' && basename($_SERVER['PHP_SELF']) === 'post-new.php'
+  false !== stristr($_SERVER['REQUEST_URI'], 'post-new.php') && isset($_GET['post_type']) && 'research' === $_GET['post_type']
   || false !== stristr($_SERVER['REQUEST_URI'], 'post.php') && 'research' === get_post_type($_GET['post'])
 ) {
   add_editor_style('editor-styles-posts.css');
