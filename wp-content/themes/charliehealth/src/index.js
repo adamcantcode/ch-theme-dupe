@@ -54,7 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
     ajaxPagination();
   }
   if (body.classList.contains('single-authors')) {
-    // featuredBlogSlider();
+    ajaxPagination();
+  }
+  if (body.classList.contains('single-medical-reviewer')) {
     ajaxPagination();
   }
   if (body.classList.contains('page-template-searchpage')) {

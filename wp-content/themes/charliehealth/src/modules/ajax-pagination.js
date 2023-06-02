@@ -173,6 +173,16 @@ export default function ajaxPagination() {
           endpoint += `&by_author=${authorID}`;
         }
       });
+    } else if (bodyClasses.includes('single-medical-reviewer')) {
+      var author = bodyClasses.map((str) => str.replace('postid-', ''));
+
+      author.forEach((author) => {
+        if (!isNaN(author)) {
+          var authorID = author;
+          endpoint = `${window.location.origin}/wp-json/wp/v2/posts?_embed`;
+          endpoint += `&by_author=${authorID}`;
+        }
+      });
     } else if (bodyClasses.includes('page-template-page-press')) {
       endpoint = `${window.location.origin}/wp-json/wp/v2/press?_embed`;
     }

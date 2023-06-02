@@ -260,6 +260,24 @@ function filter_posts_by_acf_field($args, $request)
 }
 add_filter('rest_post_query', 'filter_posts_by_acf_field', 10, 2);
 
+/**
+ * Sort MEDICAL REVIEWERS for author pages
+ */
+function filter_posts_by_acf_field_medical($args, $request)
+{
+  if (isset($request['medical_reviewer'])) {
+    $args['meta_query'] = array(
+      array(
+        'key' => 'medical_reviewer',
+        'value' => intval($request['medical_reviewer']),
+        'compare' => '=',
+      ),
+    );
+  }
+  return $args;
+}
+add_filter('rest_research_query', 'filter_posts_by_acf_field_medical', 10, 2);
+
 
 /**
  * Sort PRESS posts by date

@@ -361,6 +361,15 @@ function ajaxPagination() {
           endpoint += `&by_author=${authorID}`;
         }
       });
+    } else if (bodyClasses.includes('single-medical-reviewer')) {
+      var author = bodyClasses.map(str => str.replace('postid-', ''));
+      author.forEach(author => {
+        if (!isNaN(author)) {
+          var authorID = author;
+          endpoint = `${window.location.origin}/wp-json/wp/v2/posts?_embed`;
+          endpoint += `&by_author=${authorID}`;
+        }
+      });
     } else if (bodyClasses.includes('page-template-page-press')) {
       endpoint = `${window.location.origin}/wp-json/wp/v2/press?_embed`;
     }
@@ -22447,7 +22456,9 @@ document.addEventListener('DOMContentLoaded', () => {
     (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__["default"])();
   }
   if (body.classList.contains('single-authors')) {
-    // featuredBlogSlider();
+    (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__["default"])();
+  }
+  if (body.classList.contains('single-medical-reviewer')) {
     (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__["default"])();
   }
   if (body.classList.contains('page-template-searchpage')) {
