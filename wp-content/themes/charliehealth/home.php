@@ -58,7 +58,7 @@
         $args = array(
           'post_type' => 'post',
           'meta_key'      => 'main_featured',
-          'meta_value'    => '1'
+          'meta_value'    => true
         );
 
         $query = new WP_Query($args);
