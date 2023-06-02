@@ -9,6 +9,11 @@ export default function mobileNav() {
     '.nav-parent-menu > .nav-link:not(.static)'
   );
 
+  /** Fix for back button bug */
+  window.addEventListener('pageshow', () => {
+    menu.classList.remove('active');
+  });
+
   /**
    * On click, toggle active.
    */
