@@ -11,7 +11,10 @@ export default function mobileNav() {
 
   /** Fix for back button bug */
   window.addEventListener('pageshow', () => {
+    console.log('pageshow');
+    console.log(slideOut.classList);
     slideOut.classList.remove('active');
+    console.log(slideOut.classList);
   });
 
   /**
