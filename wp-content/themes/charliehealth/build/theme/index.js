@@ -637,7 +637,7 @@ function mobileNav() {
 
   /** Fix for back button bug */
   window.addEventListener('pageshow', () => {
-    menu.classList.remove('active');
+    slideOut.classList.remove('active');
   });
 
   /**
