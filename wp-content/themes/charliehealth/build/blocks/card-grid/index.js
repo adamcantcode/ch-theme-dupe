@@ -64,18 +64,17 @@ __webpack_require__.r(__webpack_exports__);
 
 window.addEventListener('DOMContentLoaded', () => {
   if (window.innerWidth < 1024) {
-    console.log(window.innerWidth);
     toggleDropdown();
   }
   function toggleDropdown() {
     const toggleButton = document.querySelector('.toggle-button');
     const cardWrapper = document.querySelector('.card-wrapper');
     cardWrapper.style.paddingBottom = toggleButton.clientHeight + 16 + 'px';
-    toggleButton.addEventListener('click', () => {
+    toggleButton.addEventListener('click', e => {
+      e.preventDefault();
       if (cardWrapper.style.maxHeight) {
         cardWrapper.style.maxHeight = null;
         toggleButton.textContent = 'Show more';
-        console.log(toggleButton.textContent);
         toggleButton.classList.remove('button-primary');
         toggleButton.classList.add('button-secondary');
       } else {
