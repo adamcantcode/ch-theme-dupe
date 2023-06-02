@@ -205,14 +205,9 @@
       <?= do_blocks('<!-- wp:acf/divider-block {"name":"acf/divider-block"} /-->'); ?>
     </div>
   </section>
-  <section class="section-horizontal">
-    <div class="container">
-      <?= do_blocks('<!-- wp:acf/pre-footer-cta-block {"name":"acf/pre-footer-cta-block"} /-->'); ?>
-    </div>
-  </section>
   <section class="section">
     <div class="container-md">
-      <?= do_blocks('<!-- wp:block {"ref":11} /-->'); ?>
+      <?= do_blocks('<!-- wp:block {"ref":12} /-->'); ?>
     </div>
   </section>
   <div id="newsletterPopup" class="bg-[rgba(0,0,0,.5)] fixed top-0 left-0 w-full h-full z-50 grid items-center justify-center center transition-all duration-300 modal-fade">

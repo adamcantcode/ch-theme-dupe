@@ -183,14 +183,9 @@ $readingTime = ceil($wordCount / $wordsPerMinute);
     <?= do_blocks('<!-- wp:acf/divider-block {"name":"acf/divider-block"} /-->'); ?>
   </div>
 </section>
-<section class="section-horizontal">
-  <div class="container">
-    <?= do_blocks('<!-- wp:acf/pre-footer-cta-block {"name":"acf/pre-footer-cta-block"} /-->'); ?>
-  </div>
-</section>
 <section class="section">
   <div class="container-sm">
-    <?= do_blocks('<!-- wp:block {"ref":11} /-->'); ?>
+    <?= do_blocks('<!-- wp:block {"ref":12} /-->'); ?>
   </div>
 </section>
 

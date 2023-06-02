@@ -188,7 +188,7 @@ if (is_category('families-and-caregivers')) {
   </section>
   <section class="section">
     <div class="container-sm">
-      <?= do_blocks('<!-- wp:block {"ref":11} /-->'); ?>
+      <?= do_blocks('<!-- wp:block {"ref":12} /-->'); ?>
     </div>
   </section>
 </main>
