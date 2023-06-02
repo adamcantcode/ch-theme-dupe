@@ -26,18 +26,20 @@ add_theme_support('title-tag');
 
 add_editor_style('/build/theme/index.css');
 
-if (
-  false !== stristr($_SERVER['REQUEST_URI'], 'post-new.php') && isset($_GET['post_type']) && 'post' === $_GET['post_type']
-  || false !== stristr($_SERVER['REQUEST_URI'], 'post.php') && 'post' === get_post_type($_GET['post'])
-) {
-  add_editor_style('editor-styles-posts.css');
-}
-if (
-  false !== stristr($_SERVER['REQUEST_URI'], 'post-new.php') && isset($_GET['post_type']) && 'research' === $_GET['post_type']
-  || false !== stristr($_SERVER['REQUEST_URI'], 'post.php') && 'research' === get_post_type($_GET['post'])
-) {
-  add_editor_style('editor-styles-posts.css');
-}
+add_action('pre_get_posts', function () {
+  if (
+    false !== stristr($_SERVER['REQUEST_URI'], 'post-new.php') && get_post_type() === 'post'
+    || false !== stristr($_SERVER['REQUEST_URI'], 'post.php') && get_post_type() === 'post'
+  ) {
+    add_editor_style('editor-styles-posts.css');
+  }
+  if (
+    false !== stristr($_SERVER['REQUEST_URI'], 'post-new.php') && get_post_type() === 'research'
+    || false !== stristr($_SERVER['REQUEST_URI'], 'post.php') && get_post_type() === 'research'
+  ) {
+    add_editor_style('editor-styles-posts.css');
+  }
+});
 
 // ACF options page
 if (function_exists('acf_add_options_page')) {
