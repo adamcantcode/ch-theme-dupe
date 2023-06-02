@@ -110,9 +110,6 @@
                   </div>
                 </div>
             <?php endwhile;
-            else : ?>
-            <h3>none</h3>
-            <?
               wp_reset_postdata();
             endif; ?>
           </div>
