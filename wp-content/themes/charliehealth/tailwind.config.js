@@ -42,6 +42,7 @@ module.exports = {
       'tag-gray': '#f8f7f7',
       'card-border': '#d4d5dc',
       'lightest-purple': '#F8F8FF',
+      'dark-teal': '#1f5f68',
       // 'light-teal': '#C8FFFF',
       // 'med-bright-teal': '#3EB7B5',
       // 'med-teal': '#39919D',

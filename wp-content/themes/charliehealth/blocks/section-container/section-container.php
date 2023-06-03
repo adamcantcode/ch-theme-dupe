@@ -4,8 +4,6 @@
 include(get_template_directory() . '/helpers/spacing.php');
 
 $containerWidth = get_field('container_width') ? '-' . get_field('container_width') : '';
-
-// var_dump($containerWidth);
 ?>
 
 <section <?= $anchor; ?>class="<?= $blockClasses; ?>">

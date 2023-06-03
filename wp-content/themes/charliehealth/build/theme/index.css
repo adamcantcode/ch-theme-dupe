@@ -2001,6 +2001,11 @@ a.nav-link:hover {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-dark-teal{
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 95 104 / var(--tw-bg-opacity));
+}
+
 .bg-gradient-to-r{
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
