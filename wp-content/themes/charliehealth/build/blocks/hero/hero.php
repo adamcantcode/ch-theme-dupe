@@ -33,7 +33,7 @@ if ($style === 'image') {
       <div class="flex items-center gap-sp-3 mb-sp-8">
         <!-- TODO Update image -->
         <?php if ($icon) : ?>
-          <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="" class="w-10">
+          <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health Shield" class="w-10">
         <?php endif; ?>
         <h3 class="mb-0"><?= $subtitle; ?></h3>
       </div>
@@ -42,7 +42,7 @@ if ($style === 'image') {
     <h1 class="block text-display lg:noshow"><?= $title; ?></h1>
     <div class="flex flex-col justify-between order-1 lg:order-2">
       <!-- TODO fix image offset bool issue -->
-      <img src="<?= $heroImage['url'] ?: placeHolderImage(600, 400); ?>" alt="<?= $heroImage['alt'] ?: 'Placeholder image'; ?>" class="object-cover object-top rounded-lg max-h-52 md:max-h-none">
+      <img src="<?= $heroImage['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $heroImage['alt'] ?: 'Placeholder image'; ?>" class="object-cover object-top rounded-lg max-h-52 md:max-h-none">
     </div>
   </div>
 <?php endif; ?>
@@ -61,7 +61,7 @@ if ($style === 'image') {
   <h1><?= $title; ?></h1>
   <div class="rounded-md border-gradient">
     <div class="grid items-center lg:grid-cols-2">
-      <img src="<?= $heroImage['url'] ?: placeHolderImage(600, 600); ?>" alt="<?= $heroImage['alt'] ?: 'Placeholder image'; ?>" class="object-cover lg:rounded-l-md lg:rounded-tr-none rounded-t-md min-h-full lg:h-[400px] h-[200px] w-full">
+      <img src="<?= $heroImage['sizes']['featured-large'] ?: placeHolderImage(600, 600); ?>" alt="<?= $heroImage['alt'] ?: 'Placeholder image'; ?>" class="object-cover lg:rounded-l-md lg:rounded-tr-none rounded-t-md min-h-full lg:h-[400px] h-[200px] w-full">
       <div class="p-sp-8">
         <?= $subtitleEditor; ?>
         <?php include(get_template_directory() . '/includes/button-group.php'); ?>
@@ -80,7 +80,7 @@ if ($style === 'image') {
     <div class="grid items-start lg:gap-sp-16 gap-sp-4 lg:grid-cols-2 mt-sp-12">
       <div class="flex items-center gap-sp-3">
         <?php if ($icon) : ?>
-          <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="" class="w-10">
+          <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health Shield" class="w-10">
         <?php endif; ?>
         <h3 class="mb-0"><?= $subtitle; ?></h3>
       </div>

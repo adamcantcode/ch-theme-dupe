@@ -5,6 +5,7 @@ $title = get_field('fifty_fifty_title');
 $details = get_field('fifty_fifty_details');
 $cta = get_field('fifty_fifty_cta');
 $order = get_field('order');
+var_dump($image);
 
 switch ($order) {
   case 'LR':
@@ -42,7 +43,7 @@ switch ($order) {
     <?php endif; ?>
   <?php else : ?>
     <?php if ($image) : ?>
-      <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="object-cover object-top rounded-md max-h-[500px] flex-grow <?= $imageOrder; ?>">
+      <img src="<?= $image['sizes']['featured-large']; ?>" alt="<?= $image['alt']; ?>" class="object-cover object-top rounded-md max-h-[500px] flex-grow <?= $imageOrder; ?>">
     <?php endif; ?>
   <?php endif; ?>
   <div class="flex-grow <?= $detailsOrder; ?>">
