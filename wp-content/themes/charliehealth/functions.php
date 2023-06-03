@@ -381,8 +381,8 @@ function remove_default_img_sizes($sizes)
 add_action('after_setup_theme', 'wpdocs_theme_setup');
 function wpdocs_theme_setup()
 {
-  add_image_size('featured-large', 600);
-  add_image_size('card-thumb', 400);
+  add_image_size('featured-large', 800);
+  add_image_size('card-thumb', 500);
 }
 
 /**
