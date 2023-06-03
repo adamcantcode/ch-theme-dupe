@@ -63,12 +63,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ "./blocks/card-grid/index.css");
 
 window.addEventListener('DOMContentLoaded', () => {
-  if (window.innerWidth < 1024) {
-    toggleDropdown();
-  }
-  function toggleDropdown() {
+  const handleResize = () => {
+    console.log('resize');
     const cardWrapper = document.querySelector('.card-wrapper');
     const toggleButton = document.querySelector('.toggle-button');
+    if (cardWrapper) {
+      if (window.innerWidth < 1024) {
+        toggleDropdown(cardWrapper, toggleButton);
+      } else {
+        removePadding(cardWrapper);
+      }
+    }
+  };
+  const toggleDropdown = (cardWrapper, toggleButton) => {
     if (cardWrapper) {
       cardWrapper.style.paddingBottom = toggleButton.clientHeight + 16 + 'px';
       toggleButton.addEventListener('click', e => {
@@ -86,8 +93,12 @@ window.addEventListener('DOMContentLoaded', () => {
         }
       });
     }
-  }
-  window.addEventListener('resize', toggleDropdown);
+  };
+  const removePadding = cardWrapper => {
+    cardWrapper.style.paddingBottom = 'unset';
+  };
+  handleResize();
+  window.addEventListener('resize', handleResize);
 });
 }();
 /******/ })()

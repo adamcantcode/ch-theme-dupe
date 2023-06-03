@@ -1581,10 +1581,6 @@ a.nav-link:hover {
   max-height: 80vh;
 }
 
-.min-h-\[200px\]{
-  min-height: 200px;
-}
-
 .min-h-\[300px\]{
   min-height: 300px;
 }
@@ -2342,6 +2338,10 @@ a.nav-link:hover {
 
 .duration-500{
   transition-duration: 500ms;
+}
+
+.duration-1000{
+  transition-duration: 1000ms;
 }
 
 .ease-in-out{
@@ -3565,6 +3565,10 @@ a.providers:hover {
     height: 250px;
   }
 
+  .lg\:h-\[300px\]{
+    height: 300px;
+  }
+
   .lg\:h-\[400px\]{
     height: 400px;
   }
@@ -3581,10 +3585,6 @@ a.providers:hover {
     height: 4rem;
   }
 
-  .lg\:h-\[300px\]{
-    height: 300px;
-  }
-
   .lg\:max-h-\[300px\]{
     max-height: 300px;
   }
@@ -3595,10 +3595,6 @@ a.providers:hover {
 
   .lg\:max-h-none{
     max-height: none;
-  }
-
-  .lg\:min-h-\[300px\]{
-    min-height: 300px;
   }
 
   .lg\:w-\[225px\]{
@@ -3688,10 +3684,6 @@ a.providers:hover {
 
   .lg\:items-stretch{
     align-items: stretch;
-  }
-
-  .lg\:gap-32{
-    gap: 8rem;
   }
 
   .lg\:gap-6{
