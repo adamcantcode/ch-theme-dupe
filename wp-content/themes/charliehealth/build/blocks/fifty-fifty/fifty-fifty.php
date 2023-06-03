@@ -5,7 +5,6 @@ $title = get_field('fifty_fifty_title');
 $details = get_field('fifty_fifty_details');
 $cta = get_field('fifty_fifty_cta');
 $order = get_field('order');
-var_dump($image);
 
 switch ($order) {
   case 'LR':
