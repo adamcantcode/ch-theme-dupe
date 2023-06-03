@@ -1171,6 +1171,7 @@ a.nav-link:hover {
   transition-property: right;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 500ms;
+  will-change: transform;
 }
 
 @media (min-width: 1024px){
@@ -1965,6 +1966,11 @@ a.nav-link:hover {
   background-color: rgb(248 244 240 / var(--tw-bg-opacity));
 }
 
+.bg-dark-teal{
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 95 104 / var(--tw-bg-opacity));
+}
+
 .bg-darkest-blue{
   --tw-bg-opacity: 1;
   background-color: rgb(22 25 64 / var(--tw-bg-opacity));
@@ -2007,11 +2013,6 @@ a.nav-link:hover {
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-dark-teal{
-  --tw-bg-opacity: 1;
-  background-color: rgb(31 95 104 / var(--tw-bg-opacity));
 }
 
 .bg-gradient-to-r{
@@ -2355,6 +2356,10 @@ a.nav-link:hover {
 
 .ease-in-out{
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.will-change-transform{
+  will-change: transform;
 }
 
 .container{
