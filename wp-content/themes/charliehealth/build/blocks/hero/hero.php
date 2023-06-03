@@ -61,7 +61,7 @@ if ($style === 'image') {
   <h1><?= $title; ?></h1>
   <div class="rounded-md border-gradient">
     <div class="grid items-center lg:grid-cols-2">
-      <img src="<?= $heroImage['url'] ?: placeHolderImage(600, 600); ?>" alt="<?= $heroImage['url'] ?: 'Placeholder image'; ?>" class="object-cover lg:rounded-l-md lg:rounded-tr-none rounded-t-md min-h-full lg:h-[400px] h-[200px] w-full">
+      <img src="<?= $heroImage['url'] ?: placeHolderImage(600, 600); ?>" alt="<?= $heroImage['alt'] ?: 'Placeholder image'; ?>" class="object-cover lg:rounded-l-md lg:rounded-tr-none rounded-t-md min-h-full lg:h-[400px] h-[200px] w-full">
       <div class="p-sp-8">
         <?= $subtitleEditor; ?>
         <?php include(get_template_directory() . '/includes/button-group.php'); ?>
@@ -73,7 +73,7 @@ if ($style === 'image') {
   <div class="">
     <div class="relative lg:h-[500px] h-[200px]">
       <div class="absolute inset-0">
-        <img src="<?= $heroImage['url'] ?: placeHolderImage(600, 600); ?>" alt="<?= $heroImage['url'] ?: 'Placeholder image'; ?>" class="object-cover w-full h-full rounded-lg">
+        <img src="<?= $heroImage['url'] ?: placeHolderImage(600, 600); ?>" alt="<?= $heroImage['alt'] ?: 'Placeholder image'; ?>" class="object-cover w-full h-full rounded-lg">
       </div>
       <h1 class="absolute text-white -translate-y-1/2 top-1/2 left-sp-8"><?= $title; ?></h1>
     </div>
