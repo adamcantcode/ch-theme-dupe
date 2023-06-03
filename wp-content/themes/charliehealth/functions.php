@@ -76,6 +76,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/posts-list');
   register_block_type(__DIR__ . '/build/blocks/teams');
   register_block_type(__DIR__ . '/build/blocks/region-map');
+  register_block_type(__DIR__ . '/build/blocks/callout');
 }
 add_action('init', 'register_acf_blocks', 5);
 
@@ -495,3 +496,7 @@ function add_alt_text_filter_option()
 }
 add_action('restrict_manage_posts', 'add_alt_text_filter_option');
 */
+
+
+// TEMP COLORS
+// $test = 'bg-dark-teal'

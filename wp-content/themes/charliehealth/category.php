@@ -60,7 +60,7 @@ if (is_category('families-and-caregivers')) {
                 ?>
                 <div class="relative flex flex-col rounded-md gap-sp-4 p-sp-5 hover:-translate-y-sp-1 duration-200 <?= $bgColor; ?>">
                   <div>
-                    <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/' . $icon . '.svg'); ?>" alt="icon of person">
+                    <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/' . $icon . '.svg'); ?>" alt="icon of <?= $icon; ?>">
                   </div>
                   <div class="flex items-center justify-between">
                     <h3 class="mb-0 text-h4"><a href="<?= get_term_link($term->term_id); ?>" class="text-white stretched-link"><?= $term->name; ?></a></h3>

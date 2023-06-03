@@ -1849,6 +1849,14 @@ a.nav-link:hover {
   align-self: flex-start;
 }
 
+.self-center{
+  align-self: center;
+}
+
+.justify-self-center{
+  justify-self: center;
+}
+
 .overflow-auto{
   overflow: auto;
 }
