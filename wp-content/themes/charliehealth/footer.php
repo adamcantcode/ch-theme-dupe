@@ -33,7 +33,6 @@
 	<div class="container grid lg:grid-cols-5 col gap-sp-16">
 		<div class="flex flex-col col-span-2">
 			<div class="flex badges gap-sp-4 mb-sp-4">
-				<script src="https://static.legitscript.com/seals/7088078.js"></script>
 				<a href="https://www.jointcommission.org/" target="_blank">
 					<img src="<?= site_url(); ?>/wp-content/themes/charliehealth/resources/images/gold-seal.webp" alt="The Joint Commission logo that links to the Joint Commission homepage">
 				</a>
