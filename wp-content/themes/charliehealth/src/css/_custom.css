@@ -19,6 +19,14 @@
   }
 }
 
+#articleContent {
+  & > div {
+    & > div {
+      @apply mb-sp-6;
+    }
+  }
+}
+
 .testimonial-padding {
   @apply py-sp-8;
   @screen md {

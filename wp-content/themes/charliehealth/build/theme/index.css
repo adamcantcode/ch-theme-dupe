@@ -2276,6 +2276,11 @@ a.nav-link:hover {
   line-height: 1.5;
 }
 
+.text-dark-blue{
+  --tw-text-opacity: 1;
+  color: rgb(29 34 95 / var(--tw-text-opacity));
+}
+
 .text-darkest-blue{
   --tw-text-opacity: 1;
   color: rgb(22 25 64 / var(--tw-text-opacity));
@@ -2284,11 +2289,6 @@ a.nav-link:hover {
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-dark-blue{
-  --tw-text-opacity: 1;
-  color: rgb(29 34 95 / var(--tw-text-opacity));
 }
 
 .no-underline{
@@ -2776,6 +2776,10 @@ a.nav-link:hover {
     font-weight: 400;
   }
             }
+
+#articleContent > div > div{
+  margin-bottom: 1.5rem;
+}
 
 .testimonial-padding{
   padding-top: 2rem;
