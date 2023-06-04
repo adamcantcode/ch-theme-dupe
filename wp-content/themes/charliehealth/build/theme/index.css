@@ -1478,6 +1478,10 @@ a.nav-link:hover {
   margin-top: 2rem;
 }
 
+.mt-\[68px\]{
+  margin-top: 68px;
+}
+
 .block{
   display: block;
 }
@@ -1882,6 +1886,10 @@ a.nav-link:hover {
   white-space: nowrap;
 }
 
+.whitespace-pre-wrap{
+  white-space: pre-wrap;
+}
+
 .break-all{
   word-break: break-all;
 }
@@ -2142,6 +2150,11 @@ a.nav-link:hover {
 .py-sp-5{
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
+}
+
+.px-3{
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
 .\!pb-0{
@@ -3561,6 +3574,18 @@ a.providers:hover {
 
   .lg\:mt-sp-8{
     margin-top: 2rem;
+  }
+
+  .lg\:mb-sp-16{
+    margin-bottom: 6rem;
+  }
+
+  .lg\:mb-sp-8{
+    margin-bottom: 2rem;
+  }
+
+  .lg\:mb-sp-12{
+    margin-bottom: 3rem;
   }
 
   .lg\:block{

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main id="primary" class="site-main lg:mt-[68px] mt-0">
+<main id="primary" class="site-main mt-[68px]">
   <?= the_content(); ?>
 </main>
 

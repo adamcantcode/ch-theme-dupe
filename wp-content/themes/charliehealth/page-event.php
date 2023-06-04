@@ -5,7 +5,7 @@ Template Name: Event Page
 ?>
 <?php get_header(); ?>
 
-<main class="site-main lg:mt-[68px] mt-0">
+<main class="site-main mt-[68px]">
   <article>
     <section class="section">
       <div class="container">

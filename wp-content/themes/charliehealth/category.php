@@ -13,7 +13,7 @@ if (is_category('families-and-caregivers')) {
 }
 ?>
 
-<main id="primary" class="site-main lg:mt-[68px] mt-0">
+<main id="primary" class="site-main mt-[68px]">
   <section class="section <?= $bgColor; ?>">
     <div class="container">
       <div>
