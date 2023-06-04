@@ -30,8 +30,10 @@ if ($block['align']) {
     $align = 'justify-center';
   }
 }
-if ($style === 'full') {
-  $align = 'justify-end';
+if (isset($style)) {
+  if ($style === 'full') {
+    $align = 'justify-end';
+  }
 }
 ?>
 <?php if ($buttons !== 'none') : ?>
