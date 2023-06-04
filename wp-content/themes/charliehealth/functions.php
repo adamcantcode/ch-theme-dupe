@@ -386,6 +386,8 @@ function wpdocs_theme_setup()
   add_image_size('card-thumb', 500);
 }
 
+add_filter( 'wpseo_primary_term_taxonomies', '__return_empty_array' );
+
 /**
  * SEARCH AND REPLACE FUNCTION FOR IN CONTENT CTAS -> BLOCKS
  */
