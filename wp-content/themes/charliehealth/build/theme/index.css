@@ -2280,6 +2280,10 @@ a.nav-link:hover {
   line-height: 1;
 }
 
+.leading-normal{
+  line-height: 1.5;
+}
+
 .text-darkest-blue{
   --tw-text-opacity: 1;
   color: rgb(22 25 64 / var(--tw-text-opacity));
@@ -3588,6 +3592,10 @@ a.providers:hover {
     margin-bottom: 3rem;
   }
 
+  .lg\:mt-0{
+    margin-top: 0px;
+  }
+
   .lg\:block{
     display: block;
   }
@@ -3751,6 +3759,10 @@ a.providers:hover {
 
   .lg\:gap-sp-8{
     gap: 2rem;
+  }
+
+  .lg\:gap-sp-12{
+    gap: 3rem;
   }
 
   .lg\:gap-y-sp-16{
