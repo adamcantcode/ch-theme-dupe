@@ -1240,10 +1240,6 @@ a.nav-link:hover {
   position: relative;
 }
 
-.sticky{
-  position: sticky;
-}
-
 .\!inset-auto{
   top: auto !important;
   right: auto !important;
@@ -1302,6 +1298,10 @@ a.nav-link:hover {
   top: 116px;
 }
 
+.top-\[46px\]{
+  top: 46px;
+}
+
 .top-\[68px\]{
   top: 68px;
 }
@@ -1316,10 +1316,6 @@ a.nav-link:hover {
 
 .top-sp-16{
   top: 6rem;
-}
-
-.top-\[46px\]{
-  top: 46px;
 }
 
 .-z-10{
@@ -1458,8 +1454,8 @@ a.nav-link:hover {
   margin-right: 0.5rem;
 }
 
-.mt-0{
-  margin-top: 0px;
+.mt-\[68px\]{
+  margin-top: 68px;
 }
 
 .mt-sp-12{
@@ -1476,10 +1472,6 @@ a.nav-link:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
-}
-
-.mt-\[68px\]{
-  margin-top: 68px;
 }
 
 .block{
@@ -2092,9 +2084,9 @@ a.nav-link:hover {
   padding: 2rem;
 }
 
-.px-2{
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+.px-3{
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
 .px-4{
@@ -2150,11 +2142,6 @@ a.nav-link:hover {
 .py-sp-5{
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
-}
-
-.px-3{
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
 }
 
 .\!pb-0{
@@ -3485,10 +3472,6 @@ a.providers:hover {
 
 @media (min-width: 1024px){
 
-  .lg\:fixed{
-    position: fixed;
-  }
-
   .lg\:absolute{
     position: absolute;
   }
@@ -3513,20 +3496,12 @@ a.providers:hover {
     top: 0px;
   }
 
-  .lg\:top-\[100px\]{
-    top: 100px;
-  }
-
   .lg\:top-\[32px\]{
     top: 32px;
   }
 
   .lg\:top-\[68px\]{
     top: 68px;
-  }
-
-  .lg\:top-\[0px\]{
-    top: 0px;
   }
 
   .lg\:order-1{
@@ -3556,6 +3531,10 @@ a.providers:hover {
     margin-bottom: 0px;
   }
 
+  .lg\:mb-sp-16{
+    margin-bottom: 6rem;
+  }
+
   .lg\:mb-sp-6{
     margin-bottom: 1.5rem;
   }
@@ -3564,8 +3543,8 @@ a.providers:hover {
     margin-left: 0px;
   }
 
-  .lg\:mt-\[68px\]{
-    margin-top: 68px;
+  .lg\:mt-0{
+    margin-top: 0px;
   }
 
   .lg\:mt-sp-14{
@@ -3578,22 +3557,6 @@ a.providers:hover {
 
   .lg\:mt-sp-8{
     margin-top: 2rem;
-  }
-
-  .lg\:mb-sp-16{
-    margin-bottom: 6rem;
-  }
-
-  .lg\:mb-sp-8{
-    margin-bottom: 2rem;
-  }
-
-  .lg\:mb-sp-12{
-    margin-bottom: 3rem;
-  }
-
-  .lg\:mt-0{
-    margin-top: 0px;
   }
 
   .lg\:block{
@@ -3745,6 +3708,10 @@ a.providers:hover {
     gap: 10rem;
   }
 
+  .lg\:gap-sp-12{
+    gap: 3rem;
+  }
+
   .lg\:gap-sp-14{
     gap: 4rem;
   }
@@ -3759,10 +3726,6 @@ a.providers:hover {
 
   .lg\:gap-sp-8{
     gap: 2rem;
-  }
-
-  .lg\:gap-sp-12{
-    gap: 3rem;
   }
 
   .lg\:gap-y-sp-16{

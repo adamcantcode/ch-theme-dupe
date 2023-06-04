@@ -81,9 +81,9 @@
 </footer>
 <!-- </div> -->
 <!-- TODO Temp disable footer code -->
-<?php // include('wp-content/themes/charliehealth/includes/footer-code.php'); 
-?>
+<?php // include('wp-content/themes/charliehealth/includes/footer-code.php'); ?>
 <?php if (is_user_logged_in()) : ?>
+	<!-- NOTE Fix wpadmin like nav -->
 	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function() {
 			var adminBar = document.getElementById('wpadminbar');

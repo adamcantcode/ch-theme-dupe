@@ -1,5 +1,7 @@
 <script type="text/javascript">
-  /** Fix for back button bug */
+  /** 
+   * Fix for back button bug 
+   */
   window.addEventListener('pageshow', () => {
     document.querySelector('.slide-out').classList.remove('active');
   });

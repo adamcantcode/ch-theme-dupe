@@ -11,13 +11,15 @@
   <link rel="apple-touch-icon" href="/custom-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="#212984">
-  <!-- TODO temp disable head code -->
-  <?php // include('wp-content/themes/charliehealth/includes/header-code.php'); 
-  ?>
+  <!-- NOTE HEADER CODE -->
+  <?php include('wp-content/themes/charliehealth/includes/header-code.php'); ?>
   <?php wp_head(); ?>
 </head>
 
 <body <?php body_class('bg-white'); ?>>
+  <!-- NOTE Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8BB2ZV&gtm_auth=LA8d6R6jW3Ly6N7_0RFZIQ&gtm_preview=env-402&gtm_cookies_win=x" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- NOTE End Google Tag Manager (noscript) -->
   <?php wp_body_open(); ?>
   <pre class="fixed left-0 right-0 w-full text-xs text-center text-white top-4 -z-10 opacity-30">Made with ❤️ in Denver</pre>
   <!-- NOTE Rocket Excludes Delay JS -->
