@@ -11,7 +11,7 @@ $image = get_the_post_thumbnail_url();
 
 if ($image) {
   $imageID = get_post_thumbnail_id();
-  $imageSrcset = wp_get_attachment_image_srcset($imageID, 'medium');
+  $imageSrcset = wp_get_attachment_image_srcset($imageID, 'featued-large');
   $imageAlt = get_post_meta($imageID, '_wp_attachment_image_alt', true);
 }
 

@@ -85,8 +85,7 @@
 
                 if (has_post_thumbnail()) {
                   $featuredImageID = get_post_thumbnail_id();
-                  // $featuredImage = wp_get_attachment_image_src($featuredImageID, 'featured-large');
-                  $featuredImage = wp_get_attachment_image_src($featuredImageID, 'full');
+                  $featuredImage = wp_get_attachment_image_src($featuredImageID, 'featured-large');
                   $featuredImageAltText = get_post_meta($featuredImageID, '_wp_attachment_image_alt', true);
 
                   $featuredImageUrl = $featuredImage[0];
