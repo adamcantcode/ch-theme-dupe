@@ -52,7 +52,7 @@ $readingTime = ceil($wordCount / $wordsPerMinute);
             <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="rounded-md max-h-[200px] lg:max-h-none object-cover w-full aspect-square">
           </div>
           <div class="">
-            <h1 class="text-h2 lg:text-h2-lg font-heading-serif"><?= get_the_title(); ?></h1>
+            <h1 class="text-h2 lg:text-h1-display font-heading-serif"><?= get_the_title(); ?></h1>
             <p class="font-bold">Est. reading time: <?= $readingTime; ?> min.</p>
             <p><?= get_the_excerpt(); ?></p>
             <p class="mb-0">By: <a href="<?= site_url('/author/') . $author->post_name; ?>"><?= $author->post_title; ?></a></p>
