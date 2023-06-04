@@ -19,9 +19,9 @@ if (has_post_thumbnail()) {
   $featuredImageAltText = 'place holder image';
 }
 
-$author = get_field('by_author') ?: 'The Charlile Health Team';
-$medicalReviewer = get_field('medical_reviewer') ?: '';
-$date = get_field('date') ?: '';
+$author = get_field('by_author');
+$medicalReviewer = get_field('medical_reviewer');
+$date = get_field('date') ?: get_the_date();
 $relatedPosts = get_field('related_posts') ?: '';
 $toc = get_field('toc') ?: '';
 $references = get_field('references') ?: '';
@@ -60,7 +60,7 @@ $readingTime = ceil($wordCount / $wordsPerMinute);
             <?php if (!empty($medicalReviewer)) : ?>
               <p class="mb-0">Clinically Reviewed By: <a href="<?= site_url('/medical-reviewer/') . $medicalReviewer->post_name; ?>"><?= $medicalReviewer->post_title; ?></a></p>
             <?php endif; ?>
-            <p><?= $date ?: get_the_date(); ?></p>
+            <p><?= $date; ?></p>
             <div class="flex items-start">
               <p class="font-heading-serif">Share:</p>
               <a role="button" class="js-share-button ml-sp-4"><img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/social-logos/share.svg'; ?>" alt="share icon"></a>
@@ -70,30 +70,32 @@ $readingTime = ceil($wordCount / $wordsPerMinute);
             </div>
             <div class="grid gap-sp-4">
               <div class="grid items-end justify-start grid-flow-col gap-sp-4">
-                <?php foreach ($audiences as $audience) : ?>
-                  <?php
-                  switch ($audience->slug) {
-                    case 'teens-and-young-adults':
-                      $audienceClass = 'teens-and-young-adults';
-                      break;
-                    case 'families-and-caregivers':
-                      $audienceClass = 'families-and-caregivers';
-                      break;
-                    case 'providers':
-                      $audienceClass = 'providers';
-                      break;
-                    default:
-                      $audienceClass = '';
-                      break;
-                  }
-                  ?>
-                  <a href="<?= get_term_link($audience->slug, 'category'); ?>" class="px-4 py-3 no-underline rounded-lg text-h6 bg-tag-gray <?= $audienceClass; ?>"><?= $audience->name; ?></a>
-                <?php endforeach; ?>
+                <?php if ($audiences) : foreach ($audiences as $audience) : ?>
+                    <?php
+                    switch ($audience->slug) {
+                      case 'teens-and-young-adults':
+                        $audienceClass = 'teens-and-young-adults';
+                        break;
+                      case 'families-and-caregivers':
+                        $audienceClass = 'families-and-caregivers';
+                        break;
+                      case 'providers':
+                        $audienceClass = 'providers';
+                        break;
+                      default:
+                        $audienceClass = '';
+                        break;
+                    }
+                    ?>
+                    <a href="<?= get_term_link($audience->slug, 'category'); ?>" class="px-4 py-3 no-underline rounded-lg text-h6 bg-tag-gray <?= $audienceClass; ?>"><?= $audience->name; ?></a>
+                <?php endforeach;
+                endif; ?>
               </div>
               <div class="grid items-end justify-start grid-flow-col gap-sp-4">
-                <?php foreach ($tags as $tag) : ?>
-                  <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="px-4 py-3 no-underline rounded-lg text-h6 bg-tag-gray hover:bg-bright-teal"><?= $tag->name; ?></a>
-                <?php endforeach; ?>
+                <?php if ($tags) : foreach ($tags as $tag) : ?>
+                    <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="px-4 py-3 no-underline rounded-lg text-h6 bg-tag-gray hover:bg-bright-teal"><?= $tag->name; ?></a>
+                <?php endforeach;
+                endif; ?>
               </div>
             </div>
           </div>
