@@ -21,7 +21,7 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8BB2ZV&gtm_auth=LA8d6R6jW3Ly6N7_0RFZIQ&gtm_preview=env-402&gtm_cookies_win=x" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- NOTE End Google Tag Manager (noscript) -->
   <?php wp_body_open(); ?>
-  <pre class="fixed left-0 right-0 w-full text-xs text-center top-4 -z-10-50 opacity-30">Made with ❤️ in Denver</pre>
+  <pre class="fixed left-0 right-0 w-full text-xs text-center text-dark-blue top-4 -z-10-50 opacity-30">Made with ❤️ in Denver</pre>
   <!-- NOTE Rocket Excludes Delay JS -->
   <?php include('includes/rocket-skip-js.php'); ?>
   <header class="fixed z-50 w-screen bg-med-blue <?= is_user_logged_in() ? 'lg:top-[32px] top-[46px]' : 'top-0'; ?>">

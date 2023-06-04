@@ -9,7 +9,6 @@ export default function mobileNav() {
     '.nav-parent-menu > .nav-link:not(.static)'
   );
 
-
   /**
    * On click, toggle active.
    */
