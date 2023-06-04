@@ -904,7 +904,7 @@ a.ch-button.button-primary:hover {
 .ch-button.button-primary{
   border-radius: 0.625rem;
   --tw-bg-opacity: 1;
-  background-color: rgb(38 45 112 / var(--tw-bg-opacity));
+  background-color: rgb(33 41 132 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
   --tw-shadow: inset-0 0 0 2px transparent;
@@ -934,7 +934,7 @@ a.ch-button.button-primary-dark:hover {
 
 .ch-button.button-primary-dark:hover{
   --tw-bg-opacity: 1;
-  background-color: rgb(38 45 112 / var(--tw-bg-opacity));
+  background-color: rgb(33 41 132 / var(--tw-bg-opacity));
 }
 
 .ch-button.button-secondary{
@@ -1993,7 +1993,7 @@ a.nav-link:hover {
 
 .bg-med-blue{
   --tw-bg-opacity: 1;
-  background-color: rgb(38 45 112 / var(--tw-bg-opacity));
+  background-color: rgb(33 41 132 / var(--tw-bg-opacity));
 }
 
 .bg-purple-gradient-end{
@@ -2356,10 +2356,6 @@ a.nav-link:hover {
 
 .ease-in-out{
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.will-change-transform{
-  will-change: transform;
 }
 
 .container{
@@ -2919,7 +2915,7 @@ a.nav-link:hover {
 }
 
 .swiper.swiper-testimonial .swiper-button-next-arrow:hover svg rect, .swiper.swiper-testimonial .swiper-button-prev-arrow:hover svg rect{
-  stroke: #262D70;
+  stroke: #212984;
             stroke-opacity: 100;
 }
 
@@ -2931,7 +2927,7 @@ a.nav-link:hover {
 
 .swiper.swiper-testimonial .swiper-pagination .swiper-pagination-progressbar-fill{
   --tw-bg-opacity: 1;
-  background-color: rgb(38 45 112 / var(--tw-bg-opacity));
+  background-color: rgb(33 41 132 / var(--tw-bg-opacity));
 }
 
 /* FAQ Accordion */
@@ -3337,14 +3333,14 @@ a.providers:hover {
 }
 
 .arrow-slider .arrow-slider-arrow{
-  fill: #262D70;
+  fill: #212984;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
 }
 
 .arrow-slider:hover .arrow-slider-bg{
-  fill: #262D70;
+  fill: #212984;
 }
 
 .arrow-slider:hover .arrow-slider-arrow{

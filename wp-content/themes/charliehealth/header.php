@@ -10,7 +10,7 @@
   <!-- Apple Touch Icon (at least 200x200px) -->
   <link rel="apple-touch-icon" href="/custom-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="#272D6C">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#212984">
   <!-- TODO temp disable head code -->
   <?php // include('wp-content/themes/charliehealth/includes/header-code.php'); 
   ?>
