@@ -64,7 +64,6 @@ __webpack_require__.r(__webpack_exports__);
 
 window.addEventListener('DOMContentLoaded', () => {
   const handleResize = () => {
-    console.log('resize');
     const cardWrapper = document.querySelector('.card-wrapper');
     const toggleButton = document.querySelector('.toggle-button');
     if (cardWrapper) {
@@ -79,6 +78,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (cardWrapper) {
       cardWrapper.style.paddingBottom = toggleButton.clientHeight + 16 + 'px';
       toggleButton.addEventListener('click', e => {
+        console.log(e);
         e.preventDefault();
         if (cardWrapper.style.maxHeight) {
           cardWrapper.style.maxHeight = null;

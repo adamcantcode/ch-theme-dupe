@@ -83,6 +83,16 @@
 <!-- TODO Temp disable footer code -->
 <?php // include('wp-content/themes/charliehealth/includes/footer-code.php'); 
 ?>
+<?php if (is_user_logged_in()) : ?>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function() {
+			var adminBar = document.getElementById('wpadminbar');
+			if (adminBar) {
+				adminBar.style.position = 'fixed';
+			}
+		});
+	</script>
+<?php endif; ?>
 <?php wp_footer(); ?>
 <pre class="fixed left-0 right-0 w-full text-xs text-center text-white bottom-4 -z-10 opacity-30">Made with ❤️ in Denver</pre>
 </body>

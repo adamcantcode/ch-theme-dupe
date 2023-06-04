@@ -1,5 +1,5 @@
 <!doctype html>
-<html <?php language_attributes(); ?> dir="ltr" class="bg-med-blue">
+<html <?php language_attributes(); ?> dir="ltr">
 
 <head>
   <meta charset="<?php bloginfo('charset'); ?>">
@@ -22,7 +22,7 @@
   <pre class="fixed left-0 right-0 w-full text-xs text-center text-white top-4 -z-10 opacity-30">Made with ❤️ in Denver</pre>
   <!-- NOTE Rocket Excludes Delay JS -->
   <?php include('includes/rocket-skip-js.php'); ?>
-  <header class="lg:fixed sticky z-50 w-screen bg-med-blue <?= is_user_logged_in() ? 'lg:top-[32px] top-0' : 'top-0'; ?>">
+  <header class="fixed z-50 w-screen bg-med-blue <?= is_user_logged_in() ? 'lg:top-[32px] top-[46px]' : 'top-0'; ?>">
     <nav class="section-horizontal">
       <div class="container relative flex items-center justify-between min-h-[68px]">
         <div class="nav-logo">
@@ -55,7 +55,7 @@
                 </span>
                 <?php
                 if (have_rows('submenu_items', 'option')) : ?>
-                  <div class="transition-all duration-300 nav-sub-menu lg:absolute top-full bg-darkest-blue lg:flex<?= $cols ? ' columns-center' : '' ?><?= is_user_logged_in() && $cols ? ' lg:top-[100px]' : ' lg:top-[68px]'; ?>">
+                  <div class="transition-all duration-300 nav-sub-menu lg:absolute top-full bg-darkest-blue lg:flex lg:top-[68px]<?= $cols ? ' columns-center' : '' ?>">
                     <div class="flex flex-col menu-container <?= $cols ? ' lg:columns-2' : '' ?>">
                       <?php
                       while (have_rows('submenu_items', 'option')) : the_row();
