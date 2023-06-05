@@ -164,6 +164,37 @@
             "ui": 1
         },
         {
+            "key": "field_647d6b699d5eb",
+            "label": "Feature on",
+            "name": "feature_on",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_645407d0e7dc5",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "category",
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "object",
+            "field_type": "checkbox",
+            "multiple": 0,
+            "allow_null": 0
+        },
+        {
             "key": "field_6462caf24bf4b",
             "label": "References",
             "name": "references",
@@ -247,5 +278,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1685940875
+    "modified": 1685941287
 }

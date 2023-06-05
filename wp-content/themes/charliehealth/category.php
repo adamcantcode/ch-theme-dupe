@@ -92,30 +92,46 @@ if (is_category('families-and-caregivers')) {
             ?>
             <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
                 <?php
-                if (has_post_thumbnail()) {
-                  $featuredImageID = get_post_thumbnail_id();
-                  $featuredImage = wp_get_attachment_image_src($featuredImageID, 'featured-large');
-                  $featuredImageAltText = get_post_meta($featuredImageID, '_wp_attachment_image_alt', true);
-
-                  $featuredImageUrl = $featuredImage[0];
-                  $featuredImageAltText = $featuredImageAltText ?: '';
-                } else {
-                  $featuredImageUrl = placeHolderImage(600, 800);
-                  $featuredImageAltText = 'place holder image';
+                $featureOn = get_field('feature_on');
+                $display = false;
+                
+                // Handle error
+                if (is_array($featureOn)) {
+                  // Find cat if selected as featured
+                  foreach ($featureOn as $audience) {
+                    // Compare to category page
+                    if ($audience->slug === get_queried_object()->slug) {
+                      $display = true;
+                    }
+                  }
                 }
+                // Display if exists, otherwise skip
+                if ($display === true) {
+                  if (has_post_thumbnail()) {
+                    $featuredImageID = get_post_thumbnail_id();
+                    $featuredImage = wp_get_attachment_image_src($featuredImageID, 'featured-large');
+                    $featuredImageAltText = get_post_meta($featuredImageID, '_wp_attachment_image_alt', true);
+
+                    $featuredImageUrl = $featuredImage[0];
+                    $featuredImageAltText = $featuredImageAltText ?: '';
+                  } else {
+                    $featuredImageUrl = placeHolderImage(600, 800);
+                    $featuredImageAltText = 'place holder image';
+                  }
                 ?>
-                <div class="swiper-slide">
-                  <div class="relative grid overflow-hidden rounded-md lg:grid-cols-2">
-                    <div class="grid content-between order-2 lg:p-sp-8 p-sp-4 lg:order-1 <?= $audienceClass; ?>"">
+                  <div class="swiper-slide">
+                    <div class="relative grid overflow-hidden rounded-md lg:grid-cols-2">
+                      <div class="grid content-between order-2 lg:p-sp-8 p-sp-4 lg:order-1 <?= $audienceClass; ?>"">
                       <div>
                         <h3 class="text-white text-h2 lg:text-h2-lg"><?= get_the_title(); ?></h3>
+                      </div>
+                      <a href="<?= get_the_permalink(); ?>" class="text-white no-underline stretched-link">Read more <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/arrow-left.svg'); ?>" alt="arrow" class="inline-block rotate-180 h-sp-4 ml-sp-2"></a>
                     </div>
-                    <a href="<?= get_the_permalink(); ?>" class="text-white no-underline stretched-link">Read more <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/arrow-left.svg'); ?>" alt="arrow" class="inline-block rotate-180 h-sp-4 ml-sp-2"></a>
+                    <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="order-1 object-cover lg:order-2 lg:h-[400px] w-full">
                   </div>
-                  <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="order-1 object-cover lg:order-2 lg:h-[400px] w-full">
-                </div>
           </div>
-      <?php endwhile;
+    <?php };
+              endwhile;
               wp_reset_postdata();
             endif; ?>
         </div>
