@@ -30,7 +30,7 @@ if ($horizontalScroll === true) {
           <div class="w-[calc(100vw-2.5rem)] lg:w-full h-full<?= $link ? ' hover:shadow-lg duration-300 rounded-md' : ''; ?>">
             <div class="<?= $borderStyle === 'gradient' ? 'border-gradient' : ' border rounded-md'; ?> h-full">
               <?php if ($image) : ?>
-                <img src="<?= $image['sizes']['card-thumb'] ?>" alt="<?= $image['aklt']; ?>" class="object-cover w-full rounded-t-md lg:h-[250px] h-[200px]">
+                <img src="<?= $image['sizes']['card-thumb'] ?>" alt="<?= $image['alt']; ?>" class="object-cover w-full rounded-t-md lg:h-[250px] h-[200px]">
               <?php endif; ?>
               <div class="p-sp-4 md:p-sp-6 lg:p-sp-8">
                 <?php if ($numbers) : ?>
