@@ -160,8 +160,21 @@ $readingTime = ceil($wordCount / $wordsPerMinute);
     <div class="container">
       <div class="grid lg:grid-cols-3 posts-container gap-x-sp-8 gap-y-sp-10 mb-sp-10">
         <?php foreach ($relatedPosts as $post) : ?>
+          <?php
+          if (has_post_thumbnail()) {
+            $featuredImageID = get_post_thumbnail_id();
+            $featuredImage = wp_get_attachment_image_src($featuredImageID, 'card-thumb');
+            $featuredImageAltText = get_post_meta($featuredImageID, '_wp_attachment_image_alt', true);
+
+            $featuredImageUrl = $featuredImage[0];
+            $featuredImageAltText = $featuredImageAltText ?: '';
+          } else {
+            $featuredImageUrl = placeHolderImage(600, 800);
+            $featuredImageAltText = 'place holder image';
+          }
+          ?>
           <div class="relative grid overflow-hidden border rounded-sm border-card-border">
-            <img src="https://images.placeholders.dev/?width=800&height=600&text=FPO" alt="" class="object-cover lg:h-[220px] h-[150px] w-full">
+            <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>"class="object-cover lg:h-[220px] h-[150px] w-full">
             <div class="grid p-sp-4">
               <h3><a href="<?= get_the_permalink($post->ID); ?>" class="stretched-link"><?= $post->post_title; ?></a></h3>
               <h5 class="mb-sp-4"><?= $author = get_field('by_author')->post_title ?: 'Charlile Health Editorial Team'; ?></h5>
