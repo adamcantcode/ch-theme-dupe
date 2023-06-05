@@ -1392,6 +1392,11 @@ a.nav-link:hover {
   margin-bottom: 2rem;
 }
 
+.mx-sp-2{
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
 .mb-0{
   margin-bottom: 0px;
 }
@@ -1482,6 +1487,14 @@ a.nav-link:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
+}
+
+.mt-sp-1{
+  margin-top: 0.25rem;
+}
+
+.-mb-sp-6{
+  margin-bottom: -1.5rem;
 }
 
 .block{
@@ -1719,6 +1732,11 @@ a.nav-link:hover {
 
 .cursor-pointer{
   cursor: pointer;
+}
+
+.columns-1{
+  -moz-columns: 1;
+       columns: 1;
 }
 
 .grid-flow-col{
@@ -2094,6 +2112,10 @@ a.nav-link:hover {
   padding: 2rem;
 }
 
+.p-sp-2{
+  padding: 0.5rem;
+}
+
 .px-3{
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -2152,6 +2174,11 @@ a.nav-link:hover {
 .py-sp-5{
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
+}
+
+.px-sp-2{
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .\!pb-0{
@@ -3546,6 +3573,11 @@ a.providers:hover {
     margin-bottom: 6rem;
   }
 
+  .lg\:mx-sp-6{
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+
   .lg\:mb-0{
     margin-bottom: 0px;
   }
@@ -3759,6 +3791,10 @@ a.providers:hover {
     overflow-y: visible;
   }
 
+  .lg\:rounded-md{
+    border-radius: 1.25rem;
+  }
+
   .lg\:rounded-l-md{
     border-top-left-radius: 1.25rem;
     border-bottom-left-radius: 1.25rem;
@@ -3807,6 +3843,10 @@ a.providers:hover {
     padding: 2rem;
   }
 
+  .lg\:p-sp-6{
+    padding: 1.5rem;
+  }
+
   .lg\:px-0{
     padding-left: 0px;
     padding-right: 0px;
@@ -3815,6 +3855,11 @@ a.providers:hover {
   .lg\:px-sp-10{
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+  }
+
+  .lg\:px-sp-6{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .lg\:pr-sp-14{
