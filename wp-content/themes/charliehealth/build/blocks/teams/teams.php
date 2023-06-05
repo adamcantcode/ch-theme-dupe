@@ -15,6 +15,8 @@ $heading = get_field('heading');
       $args = array(
         'post_type'   => 'team-members',
         'numberposts' => -1,
+        'order'       => 'ASC',
+        'orderby'     => 'title',
         'meta_key'    => 'division',
         'meta_value'  => $division
       );
