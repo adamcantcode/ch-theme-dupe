@@ -158,7 +158,8 @@ $readingTime = ceil($wordCount / $wordsPerMinute);
 <?php if ($relatedPosts) : ?>
   <section class="section">
     <div class="container">
-      <div class="grid lg:grid-cols-3 posts-container gap-x-sp-8 gap-y-sp-10 mb-sp-10">
+      <h2>More like this</h2>
+      <div class="grid lg:grid-cols-3 posts-container gap-x-sp-8 gap-y-sp-10">
         <?php foreach ($relatedPosts as $post) : ?>
           <?php
           if (has_post_thumbnail()) {
@@ -192,9 +193,9 @@ $readingTime = ceil($wordCount / $wordsPerMinute);
   </section>
 <?php endif; ?>
 
-<section class="section-bottom">
+<section class="section-horizontal">
   <div class="container">
-    <?= do_blocks('<!-- wp:acf/divider-block {"name":"acf/divider-block"} /-->'); ?>
+    <div class="divider"></div>
   </div>
 </section>
 <?= do_blocks('<!-- wp:block {"ref":12} /-->'); ?>
