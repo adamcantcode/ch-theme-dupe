@@ -14,6 +14,7 @@ if ($lastComma !== false) {
 $args = array(
   'post_type' => 'outreach-team-member',
   'numberposts' => -1,
+  'numberposts' => -1,
   'order' => 'ASC',
   'meta_query' => array(
     array(
