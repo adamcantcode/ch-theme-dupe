@@ -6,7 +6,7 @@ $horizontalScroll = get_field('card_grid_horizontal_scroll');
 $posts = get_field('posts');
 
 if ($horizontalScroll === true) {
-  $scrollClasses = 'overflow-auto w-full max-w-[80rem]';
+  $scrollClasses = 'overflow-auto w-full max-w-[80rem] custom-scroll';
   $gridClasses = 'grid items-center grid-flow-col gap-3 lg:gap-6 lg:grid-cols-3';
   $borderClasses = 'grid items-center grid-flow-col gap-3 lg:gap-6 lg:grid-cols-3';
 } else {
@@ -62,7 +62,7 @@ if ($horizontalScroll === true) {
   <div id="<?= $block['id']; ?>" class="<?= $scrollClasses; ?>">
     <div class="<?= $gridClasses; ?> card-wrapper relative lg:overflow-visible overflow-hidden transition-all duration-1000 lg:max-h-full max-h-[70vh]">
       <?php foreach ($posts as $post) : ?>
-        <div class="w-[calc(100vw-2.5rem)] lg:w-full hover:shadow-lg transition-all duration-300 h-full">
+        <div class="w-[calc(100vw-2.5rem)] lg:w-full rounded-md hover:shadow-lg transition-all duration-300 h-full">
           <div class="<?= $borderStyle === 'gradient' ? 'border-gradient' : ' border rounded-md'; ?> h-full">
             <div class="p-sp-4 md:p-sp-6 lg:p-sp-8">
               <?php if ($numbers) : ?>
