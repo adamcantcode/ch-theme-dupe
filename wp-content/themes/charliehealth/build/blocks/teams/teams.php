@@ -13,27 +13,21 @@ $heading = get_field('heading');
     <?php
     if ($entireDivision) {
       $args = array(
-        'post_type'       => 'team-members',
-        'numberposts'     => -1,
-        'posts_per_page'  => -1,
-        'order'           => 'ASC',
-        'orderby'         => 'title',
-        'meta_key'        => 'division',
-        'meta_value'      => $division,
-        'meta_query'      => array(
-          'relation'      => 'OR',
+        'post_type'      => 'team-members',
+        'numberposts'    => -1,
+        'posts_per_page' => -1,
+        'order'          => 'ASC',
+        'orderby'        => 'title',
+        'meta_key'       => 'division',
+        'meta_value'     => $division,
+        'meta_query'     => array(
           array(
-            'key'         => '_thumbnail_id', // Checks if post has a featured image
-            'compare'     => 'EXISTS',
-          ),
-          array(
-            'key'         => '_thumbnail_id', // Checks if post does not have a featured image
-            'compare'     => 'NOT EXISTS',
+            'key'     => '_thumbnail_id',
+            'compare' => 'EXISTS', // Checks if the featured image exists
           ),
         ),
       );
       $query = new WP_Query($args);
-
       if ($query->have_posts()) :
         while ($query->have_posts()) :
           $query->the_post();
