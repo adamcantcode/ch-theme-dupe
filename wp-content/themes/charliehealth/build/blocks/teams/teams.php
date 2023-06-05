@@ -9,7 +9,7 @@ $heading = get_field('heading');
 
 <div id="<?= $block['id']; ?>">
   <h2><?= $heading ?: $division; ?></h2>
-  <div class="grid grid-cols-2 lg:grid-cols-4 gap-sp-8 lg:gap-y-sp-16">
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-sp-8 lg:gap-x-sp-16 lg:gap-y-sp-16">
     <?php
     if ($entireDivision) {
       $args = array(

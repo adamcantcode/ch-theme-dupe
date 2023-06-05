@@ -3762,6 +3762,11 @@ a.providers:hover {
     row-gap: 6rem;
   }
 
+  .lg\:gap-x-sp-16{
+    -moz-column-gap: 6rem;
+         column-gap: 6rem;
+  }
+
   .lg\:overflow-visible{
     overflow: visible;
   }
