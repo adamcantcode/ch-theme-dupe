@@ -67,8 +67,9 @@
           <div class="swiper-wrapper">
             <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
                 <?php
-                $audiences = get_the_terms(get_the_ID(), 'category');
-                switch ($audiences[0]->slug) {
+                $featureAs = get_field('feature_as');
+                $audience = get_category($featureAs);
+                switch ($audience->slug) {
                   case 'teens-and-young-adults':
                     $audienceClass = 'teens-and-young-adults-slider';
                     break;
@@ -99,8 +100,7 @@
                   <div class="relative grid overflow-hidden rounded-md lg:grid-cols-2">
                     <div class="grid content-between order-2 lg:p-sp-8 p-sp-4 lg:order-1 <?= $audienceClass; ?>">
                       <div>
-                        <?php  ?>
-                        <a href="<?= get_term_link($audiences[0]->slug, 'category'); ?>" class="relative z-20 inline-block leading-none text-white no-underline transition-all duration-300 bg-transparent border-2 border-white rounded-lg p-sp-3 hover:bg-white hover:!text-dark-blue mb-sp-4 mr-sp-1"><?= $audiences[0]->name; ?></a>
+                        <a href="<?= get_category_link($audience->term_id); ?>" class="relative z-20 inline-block leading-none text-white no-underline transition-all duration-300 bg-transparent border-2 border-white rounded-lg p-sp-3 hover:bg-white hover:!text-dark-blue mb-sp-4 mr-sp-1"><?= $audience->name; ?></a>
                         <h3 class="text-white text-h2 lg:text-h2-lg"><?= get_the_title(); ?></h3>
                       </div>
                       <a href="<?= get_the_permalink(); ?>" class="text-white no-underline stretched-link">Read more <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/arrow-left.svg'); ?>" alt="arrow" class="inline-block rotate-180 h-sp-4 ml-sp-2"></a>

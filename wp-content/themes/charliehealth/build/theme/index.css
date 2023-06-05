@@ -1382,14 +1382,14 @@ a.nav-link:hover {
   margin-right: 1.25rem;
 }
 
-.my-sp-8{
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
 .my-sp-4{
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.my-sp-8{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .mb-0{
