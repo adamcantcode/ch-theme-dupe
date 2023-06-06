@@ -422,7 +422,7 @@ include_once('helpers/helper-functions.php');
  */
 add_filter('should_load_separate_core_block_assets', '__return_true');
 
-/* NOTE FILTER IMAGES BY NO ALT TEXT 
+// NOTE FILTER IMAGES BY NO ALT TEXT 
 
 // Add a custom column for alt text
 function add_alt_text_column($columns)
@@ -496,8 +496,6 @@ function add_alt_text_filter_option()
   }
 }
 add_action('restrict_manage_posts', 'add_alt_text_filter_option');
-*/
-
 
 // TEMP COLORS
 // $test = 'bg-dark-teal'
