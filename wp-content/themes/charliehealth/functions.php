@@ -387,7 +387,7 @@ function wpdocs_theme_setup()
   add_image_size('card-thumb', 500);
 }
 
-add_filter( 'wpseo_primary_term_taxonomies', '__return_empty_array' );
+add_filter('wpseo_primary_term_taxonomies', '__return_empty_array');
 
 /**
  * SEARCH AND REPLACE FUNCTION FOR IN CONTENT CTAS -> BLOCKS
@@ -503,4 +503,20 @@ add_action('restrict_manage_posts', 'add_alt_text_filter_option');
 // $test = 'bg-dark-teal'
 
 // NOTE TEMP disable yoast auto redirect creation
-add_filter('Yoast\WP\SEO\post_redirect_slug_change', '__return_true' );
+add_filter('Yoast\WP\SEO\post_redirect_slug_change', '__return_true');
+
+// Allow editor access to privacy policy page
+add_action('map_meta_cap', 'custom_manage_privacy_options', 1, 4);
+function custom_manage_privacy_options($caps, $cap, $user_id, $args)
+{
+  if (!is_user_logged_in()) return $caps;
+
+  $user_meta = get_userdata($user_id);
+  if (array_intersect(['editor', 'administrator'], $user_meta->roles)) {
+    if ('manage_privacy_options' === $cap) {
+      $manage_name = is_multisite() ? 'manage_network' : 'manage_options';
+      $caps = array_diff($caps, [ $manage_name ]);
+    }
+  }
+  return $caps;
+}
