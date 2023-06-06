@@ -182,7 +182,7 @@ $args = array(
             $phone = get_field('phone');
             $email = get_field('email');
             $headshot = get_field('headshot');
-            $altText = $headshot['alt'] ?: 'Headshot of ' . get_the_title();
+            $altText = array_key_exists('alt', $headshot) ? $headshot['alt'] : 'Headshot of ' . get_the_title();
         ?>
             <div class="grid justify-items-start gap-sp-1">
               <div class="cursor-pointer" data-modal-id="<?= get_the_ID(); ?>">
@@ -253,7 +253,7 @@ $args = array(
               </div>
             </div>
             <div class="grid items-center justify-center order-1 lg:order-2">
-              <img src="<?= $headshot['url'] ?: placeHolderImage(400, 400); ?>" alt="" class="rounded-[50%]">
+              <img src="<?= array_key_exists('url', $headshot) ?  $headshot['url'] : placeHolderImage(400, 400); ?>" alt="" class="rounded-[50%]">
             </div>
           </div>
         </div>

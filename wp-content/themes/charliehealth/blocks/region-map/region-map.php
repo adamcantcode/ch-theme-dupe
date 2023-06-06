@@ -11,8 +11,6 @@
 
   $query = new WP_Query($args);
   ?>
-  <h2>Connect with your Charlie Health Regional Representatives</h2>
-  <p>Looking for more information about Charlie Health’s locations?<br>Use the map to find your region’s representatives and learn more about each area.</p>
   <div class="order-2 lg:order-1 max-h-[600px] overflow-y-scroll custom-scroll-vertical">
     <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
         <?php
