@@ -5,10 +5,14 @@ if ($entireDivision) {
   $postID = $post;
 }
 $title = get_field('job_title', $postID);
+$featuredImageID = get_post_thumbnail_id();
+$featuredImage = wp_get_attachment_image_src($featuredImageID, 'card-thumb');
+$featuredImageAltText = get_post_meta($featuredImageID, '_wp_attachment_image_alt', true);
+$featuredImageAltText = $featuredImageAltText ?: 'Headshot of ' . get_the_title($postID);
 ?>
 <div class="grid justify-items-start gap-sp-1">
   <div>
-    <img src="<?= get_the_post_thumbnail_url($postID); ?>" alt="" class="rounded-[50%] mb-5">
+    <img src="<?= get_the_post_thumbnail_url($postID); ?>" alt="<?= $featuredImageAltText; ?>" class="rounded-[50%] mb-5">
     <h4 class="mb-sp-2"><?= get_the_title($postID); ?></h4>
     <h5><?= $title; ?></h5>
   </div>
