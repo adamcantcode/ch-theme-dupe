@@ -35,8 +35,9 @@ $readingTime = ceil($wordCount / $wordsPerMinute);
 ?>
 
 <main id="primary" class="site-main mt-[68px]">
-  <div id="progressBar" class="fixed transition-opacity duration-300 bg-gradient-to-r from-purple-gradient-start to-purple-gradient-end"></div>
-  <div id="mainArticleContent" class="relative main-article-content">
+  <div id="progressBar" class="fixed z-20 transition-all duration-700 rounded-sm bg-purple-gradient-end h-[5px] left-0"></div>
+  <!-- <div class="fixed h-[5px] left-0 w-full bg-card-border z-[15]"></div> -->
+  <div id="mainArticleContent" class="relative z-10 main-article-content">
     <section class="section">
       <div class="container">
         <div class="mb-sp-4">
@@ -101,7 +102,7 @@ $readingTime = ceil($wordCount / $wordsPerMinute);
         </div>
       </div>
     </section>
-    <div class="invisible opacity-0 noshow back-to-top top-sp-16 left-sp-10 mb-sp-16 w-fit">
+    <div class="invisible opacity-0 noshow back-to-top top-[100px] left-sp-10 mb-sp-16 w-fit">
       <h3><a href="#mainArticleContent">Back to top</a></h3>
     </div>
     <?php if ($toc) : ?>

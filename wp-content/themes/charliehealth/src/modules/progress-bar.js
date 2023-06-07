@@ -1,31 +1,31 @@
 export default function progressBar() {
-  const articleContent = document.querySelector(
-    '#articleContent .container-sm'
-  );
-  let headerHeight = document.querySelector('header').clientHeight;
-  const wpadmin = document.querySelector('#wpadminbar');
-  if (wpadmin) {
-    headerHeight += wpadmin.clientHeight;
+  function calculateHeaderHeight() {
+    var articleContent = document.querySelector(
+      '#articleContent .container-sm'
+    );
+    let headerHeight = document.querySelector('header').clientHeight;
+    var wpadmin = document.querySelector('#wpadminbar');
+
+    if (wpadmin) {
+      headerHeight += wpadmin.clientHeight;
+    }
+
+    var progressBar = document.querySelector('#progressBar');
+    progressBar.style.top = headerHeight + 'px';
+    progressBar.style.left = '0';
+    document.body.appendChild(progressBar);
+
+    updateProgressBar(articleContent, headerHeight, progressBar);
   }
 
-  const progressBar = document.querySelector('#progressBar');
-  progressBar.style.top = headerHeight + 'px';
-  progressBar.style.left = '0';
-  progressBar.style.width = '0';
-  progressBar.style.height = '4px';
-  progressBar.style.zIndex = '9999';
-  document.body.appendChild(progressBar);
+  function updateProgressBar(articleContent, headerHeight, progressBar) {
+    var contentHeight = articleContent.scrollHeight + headerHeight;
 
-  window.addEventListener('scroll', updateProgressBar);
-
-  function updateProgressBar() {
-    const contentHeight = articleContent.scrollHeight + headerHeight;
-
-    const scrollTop =
+    var scrollTop =
       document.documentElement.scrollTop || document.body.scrollTop;
-    const scrollableHeight = contentHeight - headerHeight;
-    const scrollPosition = Math.max(0, scrollTop - headerHeight);
-    const scrollPercent = Math.min(
+    var scrollableHeight = contentHeight - headerHeight;
+    var scrollPosition = Math.max(0, scrollTop - headerHeight);
+    var scrollPercent = Math.min(
       (scrollPosition / scrollableHeight) * 100,
       100
     );
@@ -38,4 +38,11 @@ export default function progressBar() {
 
     progressBar.style.width = `${scrollPercent}%`;
   }
+
+  // window.addEventListener('scroll', updateProgressBar);
+  window.addEventListener('scroll', () => {
+    clearTimeout(window.scrollEndTimer);
+    window.scrollEndTimer = setTimeout(calculateHeaderHeight, 100);
+  });
+  window.addEventListener('resize', calculateHeaderHeight);
 }
