@@ -462,6 +462,31 @@
     }
   }
 }
+
+.toc-underline {
+  @apply no-underline;
+
+  background: linear-gradient(to right, transparent, transparent),
+    linear-gradient(to right, #1d225f, #1d225f);
+  background-size: 100% 2px, 0 2px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 700ms;
+  display: inline;
+  &:hover {
+    background-size: 0 2px, 100% 2px;
+  }
+  /* &:after {
+    content: '';
+    @apply absolute left-0 -bottom-[2px] w-0 h-[2px] bg-dark-blue duration-300 ease-in-out;
+  }
+  &:hover {
+    &:after {
+      @apply w-full;
+    }
+  } */
+}
+
 /* EDITOR */
 .components-button.is-primary {
   background: var(

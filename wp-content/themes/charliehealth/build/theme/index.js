@@ -975,7 +975,10 @@ function toc() {
       const headingText = document.createTextNode(heading.innerText);
       tocHeading.appendChild(headingText);
       tocHeading.setAttribute('href', `#${heading.id}`);
-      toc.appendChild(tocHeading);
+      tocHeading.classList.add('toc-underline');
+      const divWrapper = document.createElement('div');
+      divWrapper.appendChild(tocHeading);
+      toc.appendChild(divWrapper);
     });
     function toggleAccordion() {
       this.classList.toggle('active');
