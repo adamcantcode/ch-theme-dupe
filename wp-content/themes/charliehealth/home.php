@@ -177,7 +177,7 @@
   </section>
   <section class="section">
     <div class="container">
-      [newsletter]
+      <?= do_blocks('<!-- wp:block {"ref":1709} /-->'); ?>
     </div>
   </section>
   <section id="researchContainer" class="section">
@@ -204,7 +204,7 @@
     </div>
   </section>
   <?= do_blocks('<!-- wp:block {"ref":12} /-->'); ?>
-  <?php 
+  <?php
   $newsletterImage = get_field('image', 'option');
   $headline = get_field('headline', 'option');
   $subhead = get_field('subhead', 'option');
