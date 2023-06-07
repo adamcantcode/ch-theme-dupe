@@ -15,7 +15,7 @@ Template Name: Event Page
         </div>
       </div>
     </section>
-    <section class="section">
+    <section class="section-top">
       <div class="container">
         <h2>Upcoming Events</h2>
         <div class="divider"></div>
@@ -105,7 +105,7 @@ Template Name: Event Page
         </div>
       </div>
     </section>
-    <section class="section">
+    <section class="section-top">
       <div class="container">
         <h2>Past Events</h2>
         <div class="divider"></div>
