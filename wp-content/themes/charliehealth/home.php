@@ -222,15 +222,15 @@
           <div class="newsletter-revamp">
             <script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/newsletter_blog_revamp"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/newsletter_blog_revamp" title="Online Form">Online Form - Newsletter - Blog Revamp</a></noscript>
             <script>
-              // Get references to the elements
-              var elementToCut = document.getElementById("fsSubmitButton5194985");
-              var destinationElement = document.getElementById("fsCell140490700");
-              // Create a clone of the element to cut
-              var clonedElement = elementToCut.cloneNode(true);
-              // Remove the original element from its current parent
-              elementToCut.parentNode.removeChild(elementToCut);
-              // Append the cloned element to the destination element
-              destinationElement.appendChild(clonedElement);
+              var container = document.currentScript.parentNode;
+              var elementToCut = container.querySelector("#fsSubmitButton5194985");
+              var destinationElement = container.querySelector("#fsCell140490700");
+
+              if (elementToCut && destinationElement) {
+                var clonedElement = elementToCut.cloneNode(true);
+                elementToCut.parentNode.removeChild(elementToCut);
+                destinationElement.appendChild(clonedElement);
+              }
             </script>
           </div>
           <h5>You can unsubscribe anytime.</h5>
