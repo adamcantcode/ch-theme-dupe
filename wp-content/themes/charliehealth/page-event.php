@@ -19,6 +19,10 @@ Template Name: Event Page
       <div class="container">
         <h2>Upcoming Events</h2>
         <div class="divider"></div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
         <div class="grid lg:grid-cols-3 gap-x-sp-8 gap-y-sp-10 mb-sp-10">
           <?php
           $current_date = date('Ymd');
@@ -101,7 +105,7 @@ Template Name: Event Page
         </div>
       </div>
     </section>
-    <section class="section-horizontal">
+    <section class="section">
       <div class="container">
         <h2>Past Events</h2>
         <div class="divider"></div>
