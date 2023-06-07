@@ -121,15 +121,11 @@ Template Name: Event Page
               $date = get_field('date');
               ?>
               <div class="relative grid overflow-hidden duration-300 border rounded-sm border-card-border hover:shadow-lg">
-                <div class="grid items-center justify-center w-full border-b border-card-border lg:h-[220px] h-[150px] ">
-                  <div class="lg:h-[220px] h-[150px]">
-                    <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-contain w-full h-full p-sp-4 ">
-                  </div>
-                </div>
+                <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover lg:h-[220px] h-[150px] w-full">
                 <div class="grid p-sp-4">
                   <h5 class="mb-sp-4"><?= $date; ?></h5>
-                  <h3><?= get_the_title(); ?></h3>
-                  <h5 class="mb-0"><a href="<?= $link; ?>" class="stretched-link" target="_blank">Register Now</a></h5>
+                  <h3><a href="<?= get_the_permalink(); ?>" class="stretched-link"><?= get_the_title(); ?></a></h3>
+                  <p class="mb-0"><?= get_the_excerpt(); ?></p>
                 </div>
               </div>
           <?php wp_reset_postdata();
