@@ -161,7 +161,7 @@
     <div class="container">
       <h2>Latest</h2>
       <div class="grid lg:grid-cols-3 transition-all duration-300 scale-[0.99] opacity-0 posts-container gap-x-sp-8 gap-y-sp-10 mb-sp-10">
-        <!-- `<div class="relative grid overflow-hidden border rounded-sm border-card-border hover:shadow-lg duration-300">
+        <!-- `<div class="relative grid overflow-hidden duration-300 border rounded-sm border-card-border hover:shadow-lg">
           <img src="https://images.placeholders.dev/?width=800&height=600&text=FPO" alt="" class="object-cover lg:h-[220px] h-[150px] w-full">
           <div class="grid p-sp-4">
             <h3><a href="${post.link}" class="stretched-link">${post.title.rendered}</a></h3>
@@ -184,7 +184,7 @@
     <div class="container">
       <h2>Research</h2>
       <div class="grid lg:grid-cols-3 transition-all duration-300 scale-[0.99] opacity-0 posts-container-research gap-x-sp-8 gap-y-sp-10 mb-sp-10">
-        <!-- `<div class="relative grid overflow-hidden border rounded-sm border-card-border hover:shadow-lg duration-300">
+        <!-- `<div class="relative grid overflow-hidden duration-300 border rounded-sm border-card-border hover:shadow-lg">
           <img src="https://images.placeholders.dev/?width=800&height=600&text=FPO" alt="" class="object-cover lg:h-[220px] h-[150px] w-full">
           <div class="grid p-sp-4">
             <h3><a href="${post.link}" class="stretched-link">${post.title.rendered}</a></h3>
@@ -204,16 +204,21 @@
     </div>
   </section>
   <?= do_blocks('<!-- wp:block {"ref":12} /-->'); ?>
+  <?php 
+  $newsletterImage = get_field('image', 'option');
+  $headline = get_field('headline', 'option');
+  $subhead = get_field('subhead', 'option');
+  ?>
   <div id="newsletterPopup" class="bg-[rgba(0,0,0,.5)] fixed top-0 left-0 w-full h-full z-50 grid items-center justify-center center transition-all duration-300 modal-fade">
     <div class="transition-all duration-300 section-xs">
       <div class="grid lg:grid-cols-[1fr,2fr] bg-cream container max-h-[80vh] overflow-auto rounded-md items-center relative">
         <div class="absolute top-0 right-0 cursor-pointer">
-          <img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/close-x.svg'; ?>" alt="close button" class="modal-close lg:p-sp-10 p-sp-4">
+          <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/close-x.svg'); ?>" alt="close button" class="modal-close lg:p-sp-10 p-sp-4">
         </div>
-        <img src="<?= placeHolderImage(800, 533); ?>" alt="Girls smiling" class="object-cover w-full h-full noshow lg:block">
+        <img src="<?= $newsletterImage['sizes']['featured-large']; ?>" alt="<?= $newsletterImage['alt']; ?>" class="object-cover w-full h-full noshow lg:block">
         <div class="p-sp-8">
-          <h2 class="lg:text-h1-display-lg text-h1-display">Join the Charlie Health Library</h2>
-          <p class="h-full mb-0 lg:block">Get mental health updates, research, insights, and resources directly to your inbox.</p>
+          <h2 class="lg:text-h1-display-lg text-h1-display"><?= $headline; ?></h2>
+          <p class="h-full mb-0 lg:block"><?= $subhead; ?></p>
           <div class="newsletter-revamp">
             <script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/newsletter_blog_revamp"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/newsletter_blog_revamp" title="Online Form">Online Form - Newsletter - Blog Revamp</a></noscript>
             <script>
