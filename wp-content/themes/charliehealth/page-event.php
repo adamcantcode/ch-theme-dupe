@@ -121,7 +121,7 @@ Template Name: Event Page
               $date = get_field('date');
               ?>
               <div class="relative grid lg:grid-cols-[1fr_4fr] grid-cols-[1fr_2fr] overflow-hidden border rounded-sm border-card-border">
-                <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover rounded-md lg:w-full lg:h-full lg:aspect-auto aspect-square lg:p-0 p-sp-2">
+                <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover rounded-md lg:rounded-none lg:w-full lg:h-full lg:aspect-auto aspect-square lg:p-0 p-sp-2">
                 <div class="grid p-sp-4">
                   <h5 class="mb-sp-4"><?= $date; ?></h5>
                   <h3><a href="<?= get_the_permalink(); ?>" class="stretched-link"><?= get_the_title(); ?></a></h3>
