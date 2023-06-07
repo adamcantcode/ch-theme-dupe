@@ -60,12 +60,8 @@ Template Name: Event Page
               $link = get_field('registration_link');
               $date = get_field('date');
               ?>
-              <div class="relative grid overflow-hidden border rounded-sm border-card-border hover:shadow-lg duration-300">
-                <div class="grid items-center justify-center w-full border-b border-card-border lg:h-[220px] h-[150px] ">
-                  <div class="lg:h-[220px] h-[150px]">
-                    <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-contain w-full h-full p-sp-4 ">
-                  </div>
-                </div>
+              <div class="relative grid overflow-hidden duration-300 border rounded-sm border-card-border hover:shadow-lg">
+                <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover lg:h-[220px] h-[150px] w-full">
                 <div class="grid p-sp-4">
                   <h5 class="mb-sp-4"><?= $date; ?></h5>
                   <h3><?= get_the_title(); ?></h3>
@@ -124,7 +120,7 @@ Template Name: Event Page
               $link = get_field('registration_link');
               $date = get_field('date');
               ?>
-              <div class="relative grid overflow-hidden border rounded-sm border-card-border hover:shadow-lg duration-300">
+              <div class="relative grid overflow-hidden duration-300 border rounded-sm border-card-border hover:shadow-lg">
                 <div class="grid items-center justify-center w-full border-b border-card-border lg:h-[220px] h-[150px] ">
                   <div class="lg:h-[220px] h-[150px]">
                     <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-contain w-full h-full p-sp-4 ">
