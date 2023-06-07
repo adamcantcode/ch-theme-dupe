@@ -132,7 +132,7 @@
       </div>
     </div>
   </section>
-  <section class="section">
+  <section class="section-horizontal">
     <div class="container">
       <h2>Tag Spotlight</h2>
       <div class="grid items-center overflow-auto gap-sp-3 lg:gap-sp-6 lg:flex lg:items-stretch custom-scroll">
@@ -175,7 +175,7 @@
       <div class="pagination-container"></div>
     </div>
   </section>
-  <section class="section">
+  <section class="section-horizontal">
     <div class="container-sm">
       <?= do_blocks('<!-- wp:block {"ref":1709} /-->'); ?>
     </div>
