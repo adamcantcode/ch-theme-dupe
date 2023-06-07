@@ -13,6 +13,16 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="#212984">
   <!-- NOTE HEADER CODE -->
   <?php include('wp-content/themes/charliehealth/includes/header-code.php'); ?>
+  <!-- Pagination Meta -->
+  <?php if (is_paged() && $wp_query->max_num_pages > 1) : ?>
+    <?php if (get_previous_posts_link()) : ?>
+      <link rel="prev" href="<?php echo get_previous_posts_page_link(); ?>" />
+    <?php endif; ?>
+
+    <?php if (get_next_posts_link()) : ?>
+      <link rel="next" href="<?php echo get_next_posts_page_link(); ?>" />
+    <?php endif; ?>
+  <?php endif; ?>
   <?php wp_head(); ?>
 </head>
 
