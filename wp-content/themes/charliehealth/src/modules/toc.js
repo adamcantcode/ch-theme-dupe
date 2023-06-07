@@ -25,7 +25,7 @@ export default function toc() {
     function sanitizeForId(text) {
       let sanitizedText = text.trim();
       sanitizedText = sanitizedText.replace(/\s+/g, '_');
-      sanitizedText = sanitizedText.replace(/[^\w-]/g, '');
+      sanitizedText = sanitizedText.replace(/[^\p{L}\p{M}]/gu, '');
       sanitizedText = sanitizedText.toLowerCase();
 
       if (sanitizedText.length === 0) {
