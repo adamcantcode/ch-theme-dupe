@@ -970,7 +970,8 @@ function toc() {
     // const content = document.querySelector('#articleContent > div');
     const headings = document.querySelectorAll('#articleContent > div > h2');
     headings.forEach(heading => {
-      heading.id = heading.innerText.replace(/[^a-zA-Z0-9-]/g, '');
+      var headoingText = sanitizeForId(heading.innerText);
+      heading.id = headoingText;
       const tocHeading = document.createElement('a');
       const headingText = document.createTextNode(heading.innerText);
       tocHeading.appendChild(headingText);
@@ -980,6 +981,16 @@ function toc() {
       divWrapper.appendChild(tocHeading);
       toc.appendChild(divWrapper);
     });
+    function sanitizeForId(text) {
+      let sanitizedText = text.trim();
+      sanitizedText = sanitizedText.replace(/\s+/g, '_');
+      sanitizedText = sanitizedText.replace(/[^\w-]/g, '');
+      sanitizedText = sanitizedText.toLowerCase();
+      if (sanitizedText.length === 0) {
+        sanitizedText = 'default_id';
+      }
+      return sanitizedText;
+    }
     function toggleAccordion() {
       this.classList.toggle('active');
       const accordionContent = this.nextElementSibling;
