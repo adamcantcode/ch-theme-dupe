@@ -83,7 +83,7 @@ Template Name: Event Page
     </section>
     <section class="section">
       <div class="container">
-        <div class="grid lg:grid-cols-3 gap-x-sp-8 gap-y-sp-10 mb-sp-10">
+        <div class="grid gap-x-sp-8 gap-y-sp-10 mb-sp-10">
           <?php
           $current_date = date('Ymd');
           $args = array(
@@ -120,7 +120,7 @@ Template Name: Event Page
               $link = get_field('registration_link');
               $date = get_field('date');
               ?>
-              <div class="relative grid overflow-hidden duration-300 border rounded-sm border-card-border hover:shadow-lg">
+              <div class="relative grid lg:grid-cols-[1fr_4fr] grid-cols-[1fr_2fr] overflow-hidden border rounded-sm border-card-border">
                 <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover lg:h-[220px] h-[150px] w-full">
                 <div class="grid p-sp-4">
                   <h5 class="mb-sp-4"><?= $date; ?></h5>
