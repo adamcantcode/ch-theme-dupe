@@ -52,19 +52,15 @@ if (!empty($block['backgroundColor'])) {
       <div class="newsletter-revamp">
         <script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/newsletter_blog_revamp"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/newsletter_blog_revamp" title="Online Form">Online Form - Newsletter - Blog Revamp</a></noscript>
         <script>
-          var newsLetterContainers = document.querySelectorAll('.newsletter-revamp');
-          newsLetterContainers.forEach(container => {
-            var elementToCut = container.querySelector("#fsSubmitButton5194985");
-            var destinationElement = container.querySelector("#fsCell140490700");
+          var container = document.currentScript.parentNode;
+          var elementToCut = container.querySelector("#fsSubmitButton5194985");
+          var destinationElement = container.querySelector("#fsCell140490700");
 
-            if (elementToCut && destinationElement) {
-              var clonedElement = elementToCut.cloneNode(true);
-              // clonedElement.removeAttribute("id"); // Remove the ID to avoid duplicates
-
-              elementToCut.parentNode.removeChild(elementToCut);
-              destinationElement.appendChild(clonedElement);
-            }
-          });
+          if (elementToCut && destinationElement) {
+            var clonedElement = elementToCut.cloneNode(true);
+            elementToCut.parentNode.removeChild(elementToCut);
+            destinationElement.appendChild(clonedElement);
+          }
         </script>
       </div>
       <h5>You can unsubscribe anytime.</h5>
