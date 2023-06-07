@@ -188,7 +188,7 @@ $readingTime = ceil($wordCount / $wordsPerMinute);
               <div class="grid items-end justify-start grid-flow-col gap-sp-4">
                 <?php $tags = get_the_terms($post->ID, 'post_tag'); ?>
                 <?php foreach ($tags as $tag) : ?>
-                  <a href="<?= $tag->link; ?>" class="relative z-20 inline-block no-underline rounded-lg px-sp-4 py-sp-3 text-h6 bg-tag-gray hover:bg-bright-teal"><?= $tag->name; ?></a>
+                  <a href="<?= get_tag_link($tag->term_id); ?>" class="relative z-20 inline-block no-underline rounded-lg px-sp-4 py-sp-3 text-h6 bg-tag-gray hover:bg-bright-teal"><?= $tag->name; ?></a>
                 <?php endforeach; ?>
               </div>
             </div>
