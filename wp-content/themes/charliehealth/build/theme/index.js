@@ -546,7 +546,7 @@ function revealBackToTop() {
     var endSectionTrigger = '#mainArticleContent > section:last-of-type';
   } else {
     var sectionTrigger = '#articleContent';
-    var endSectionTrigger = '#articleContent';
+    var endSectionTrigger = '#articleContent > div';
   }
   if (backToTop) {
     breakpoints.add('(min-width: 1024px)', () => {
@@ -560,7 +560,8 @@ function revealBackToTop() {
           toggleActions: 'play reverse complete reverse'
         },
         opacity: 1,
-        duration: 0.15,
+        duration: 0.3,
+        y: 0,
         position: 'fixed',
         autoAlpha: '1',
         display: 'block'
