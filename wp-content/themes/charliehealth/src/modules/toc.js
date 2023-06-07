@@ -1,8 +1,8 @@
 export default function toc() {
   const toc = document.querySelector('#toc');
   if (toc) {
-    const content = document.querySelector('#articleContent');
-    const headings = content.querySelectorAll('h2');
+    // const content = document.querySelector('#articleContent > div');
+    const headings = document.querySelectorAll('#articleContent > div > h2');
 
     headings.forEach((heading) => {
       heading.id = heading.innerText.replace(/[^a-zA-Z0-9-]/g, '');
