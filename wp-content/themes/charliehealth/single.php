@@ -52,7 +52,7 @@ $readingTime = ceil($wordCount / $wordsPerMinute);
           <div>
             <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="rounded-md max-h-[200px] lg:max-h-none object-cover w-full aspect-square">
           </div>
-          <div class="">
+          <div>
             <h1 class="text-h2 lg:text-h1-display font-heading-serif mb-sp-6"><?= get_the_title(); ?></h1>
             <div class="flex items-center mb-sp-6">
               <svg xmlns="http://www.w3.org/2000/svg" height="22" viewBox="0 -960 960 960" width="22" fill="#46496D" class="inline-block">
@@ -135,7 +135,7 @@ $readingTime = ceil($wordCount / $wordsPerMinute);
         <div class="divider"></div>
       </div>
     </section>
-    <article id="articleContent" class="section">
+    <article id="articleContent" class="section-xs-top">
       <div class="container-sm">
         <?php the_content(); ?>
         <?php if ($references) : ?>
@@ -199,7 +199,7 @@ $readingTime = ceil($wordCount / $wordsPerMinute);
   </section>
 <?php endif; ?>
 
-<section class="section-horizontal">
+<section class="section-top">
   <div class="container">
     <div class="divider"></div>
   </div>

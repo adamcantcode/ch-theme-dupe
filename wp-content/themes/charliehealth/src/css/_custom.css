@@ -210,7 +210,11 @@
     }
   }
 }
-
+.references-container {
+  > div > div > p:last-child{
+    @apply mb-0;
+  }
+}
 /* Card Grid */
 .border-gradient {
   /* @apply before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0 before:border before:border-transparent before:box-border; */

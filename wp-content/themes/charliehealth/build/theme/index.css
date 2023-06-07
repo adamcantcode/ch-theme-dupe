@@ -1858,12 +1858,12 @@ a.nav-link:hover {
   gap: 1.25rem;
 }
 
-.gap-sp-8{
-  gap: 2rem;
-}
-
 .gap-sp-6{
   gap: 1.5rem;
+}
+
+.gap-sp-8{
+  gap: 2rem;
 }
 
 .gap-x-4{
@@ -2989,6 +2989,10 @@ a.nav-link:hover {
 .faq-block .accordion-header.active .toggle svg, .faq-block .toc-heading.active .toggle svg, .faq-block .references-heading.active .toggle svg, .toc-container .accordion-header.active .toggle svg, .toc-container .toc-heading.active .toggle svg, .toc-container .references-heading.active .toggle svg, .references-container .accordion-header.active .toggle svg, .references-container .toc-heading.active .toggle svg, .references-container .references-heading.active .toggle svg{
   --tw-rotate: 45deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.references-container > div > div > p:last-child{
+  margin-bottom: 0px;
 }
 
 /* Card Grid */
