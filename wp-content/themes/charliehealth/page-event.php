@@ -15,38 +15,10 @@ Template Name: Event Page
         </div>
       </div>
     </section>
-    <section class="section-xs bg-cream">
-      <div class="container-sm">
-        <h2>Upcoming Events</h2>
-        <p>Fill out your information below to know when we put on events that fit what you are looking for.</p>
-        <div class="newsletter-events">
-          <script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/events_signup"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/events_signup" title="Online Form">Online Form - Events Signup</a></noscript>
-          <div style="text-align:right; font-size:x-small;"></div>
-          <script>
-            // Get the input elements by their IDs
-            const firstNameInput = document.getElementById("field143514471-first");
-            const lastNameInput = document.getElementById("field143514471-last");
-
-            // Set the placeholder text for each input element
-            firstNameInput.placeholder = "First Name";
-            lastNameInput.placeholder = "Last Name";
-
-            // Get the select elements by their IDs
-            const firstSelect = document.getElementById("field143514861");
-            const secondSelect = document.getElementById("field143515668");
-
-            // Set the "disabled" and "selected" attributes for the first option of each select element
-            firstSelect.options[0].disabled = true;
-            firstSelect.options[0].selected = true;
-
-            secondSelect.options[0].disabled = true;
-            secondSelect.options[0].selected = true;
-          </script>
-        </div>
-      </div>
-    </section>
     <section class="section">
       <div class="container">
+        <h2>Upcoming Events</h2>
+        <div class="divider"></div>
         <div class="grid lg:grid-cols-3 gap-x-sp-8 gap-y-sp-10 mb-sp-10">
           <?php
           $current_date = date('Ymd');
@@ -99,10 +71,34 @@ Template Name: Event Page
         </div>
       </div>
     </section>
-    <section class="section">
-      <div class="container">
-        <h2>Past Events</h2>
-        <div class="divider"></div>
+    <section class="section-xs bg-cream">
+      <div class="container-sm">
+        <h2>Sign up to keep updated with our events!</h2>
+        <p>Fill out your information below to know when we put on events that fit what you are looking for.</p>
+        <div class="newsletter-events">
+          <script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/events_signup"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/events_signup" title="Online Form">Online Form - Events Signup</a></noscript>
+          <div style="text-align:right; font-size:x-small;"></div>
+          <script>
+            // Get the input elements by their IDs
+            const firstNameInput = document.getElementById("field143514471-first");
+            const lastNameInput = document.getElementById("field143514471-last");
+
+            // Set the placeholder text for each input element
+            firstNameInput.placeholder = "First Name";
+            lastNameInput.placeholder = "Last Name";
+
+            // Get the select elements by their IDs
+            const firstSelect = document.getElementById("field143514861");
+            const secondSelect = document.getElementById("field143515668");
+
+            // Set the "disabled" and "selected" attributes for the first option of each select element
+            firstSelect.options[0].disabled = true;
+            firstSelect.options[0].selected = true;
+
+            secondSelect.options[0].disabled = true;
+            secondSelect.options[0].selected = true;
+          </script>
+        </div>
       </div>
     </section>
     <section class="section-horizontal">
@@ -170,7 +166,7 @@ Template Name: Event Page
       <div class="container">
         <div class="rounded-md border-gradient">
           <div class="grid items-center lg:grid-cols-2">
-              <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/map.svg'); ?>" alt="us map" class="object-cover lg:rounded-l-md lg:rounded-tr-none rounded-t-md min-h-full lg:h-[400px] h-[200px] w-full bg-light-purple p-sp-4">
+            <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/map.svg'); ?>" alt="us map" class="object-cover lg:rounded-l-md lg:rounded-tr-none rounded-t-md min-h-full lg:h-[400px] h-[200px] w-full bg-light-purple p-sp-4">
             <div class="p-sp-8">
               <h2>Find your local Charlie Health outreach contacts</h2>
               <a href="https://outreach.charliehealth.com/#locations">View map</a>
