@@ -60,7 +60,7 @@ Template Name: Event Page
               $link = get_field('registration_link');
               $date = get_field('date');
               ?>
-              <div class="relative grid overflow-hidden border rounded-sm border-card-border">
+              <div class="relative grid overflow-hidden border rounded-sm border-card-border hover:shadow-lg duration-300">
                 <div class="grid items-center justify-center w-full border-b border-card-border lg:h-[220px] h-[150px] ">
                   <div class="lg:h-[220px] h-[150px]">
                     <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-contain w-full h-full p-sp-4 ">
@@ -124,7 +124,7 @@ Template Name: Event Page
               $link = get_field('registration_link');
               $date = get_field('date');
               ?>
-              <div class="relative grid overflow-hidden border rounded-sm border-card-border">
+              <div class="relative grid overflow-hidden border rounded-sm border-card-border hover:shadow-lg duration-300">
                 <div class="grid items-center justify-center w-full border-b border-card-border lg:h-[220px] h-[150px] ">
                   <div class="lg:h-[220px] h-[150px]">
                     <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-contain w-full h-full p-sp-4 ">
