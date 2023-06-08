@@ -4064,6 +4064,10 @@ a.providers:hover {
     border-width: 0px;
   }
 
+  .lg\:border-l{
+    border-left-width: 1px;
+  }
+
   .lg\:bg-transparent{
     background-color: rgba(0,0,0,0);
   }
@@ -4104,6 +4108,11 @@ a.providers:hover {
   .lg\:px-sp-10{
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+  }
+
+  .lg\:px-sp-8{
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .lg\:pr-sp-14{
