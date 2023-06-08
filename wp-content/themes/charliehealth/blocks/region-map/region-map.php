@@ -11,7 +11,7 @@
 
   $query = new WP_Query($args);
   ?>
-  <div class="order-2 lg:order-1">
+  <div class="order-2 lg:order-1 max-h-[600px] overflow-y-scroll custom-scroll-vertical">
     <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
         <?php
         $region = get_field('region', get_the_ID());
@@ -19,8 +19,8 @@
         $email = get_field('email', get_the_ID());
         $phone = get_field('phone', get_the_ID());
         ?>
-        <div class="border rounded-md border-card-border lg:p-sp-8 p-sp-4 hover:shadow-[inset_0_0_0_2px_#1d225f] shadow-[inset_0_0_0_2px_transparent] duration-300 relative">
-          <h4><a href="<?= site_url('region/' . $region[0]->post_name); ?>" class="stretched-link"><?= $region[0]->post_title; ?></a></h4>
+        <div class="border rounded-md border-card-border lg:p-sp-8 p-sp-4 hover:shadow-[inset_0_0_0_2px_#1d225f] shadow-[inset_0_0_0_2px_transparent] duration-300 relative mb-sp-8">
+          <h3><a href="<?= site_url('region/' . $region[0]->post_name); ?>" class="stretched-link"><?= $region[0]->post_title; ?></a></h3>
           <h5><?= get_the_title(); ?></h5>
           <h5><a href="mailto:<?= $email; ?>" class="relative z-10"><?= $email; ?></a></h5>
           <h5 class="mb-0"><a href="tel:+<?= $phone; ?>" class="relative z-10"><?= $phone; ?></a></h5>

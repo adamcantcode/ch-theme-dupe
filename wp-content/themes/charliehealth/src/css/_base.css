@@ -61,6 +61,9 @@
   body {
     @apply font-body text-p;
   }
+  main {
+    @apply bg-white;
+  }
   h1,
   h2,
   h3,
@@ -98,19 +101,16 @@
     }
   }
   h2 {
-    @apply text-h2-lg mb-sp-5;
+    @apply text-h2 mb-sp-5;
     @screen md {
       @apply mb-sp-6;
     }
     @screen lg {
-      @apply mb-sp-8;
+      @apply text-h2-lg mb-sp-8;
     }
   }
   h3 {
     @apply font-heading-serif text-h3 mb-sp-4;
-    /* @screen md {
-      @apply mb-sp-6
-    } */
     @screen lg {
       @apply mb-sp-8 text-h3-lg;
     }

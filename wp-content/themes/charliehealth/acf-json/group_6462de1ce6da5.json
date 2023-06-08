@@ -3,11 +3,11 @@
     "title": "Referrals Info",
     "fields": [
         {
-            "key": "field_6462de59697c8",
-            "label": "Outreach Member",
-            "name": "outreach_member",
+            "key": "field_6476bc07cb6c9",
+            "label": "Form Code",
+            "name": "form_code",
             "aria-label": "",
-            "type": "post_object",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,15 +16,31 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "outreach-team-member"
-            ],
-            "post_status": "",
-            "taxonomy": "",
-            "return_format": "object",
-            "multiple": 0,
-            "allow_null": 0,
-            "ui": 1
+            "default_value": "",
+            "tabs": "text",
+            "media_upload": 0,
+            "toolbar": "full",
+            "delay": 0
+        },
+        {
+            "key": "field_64776bfa9c0ed",
+            "label": "Contact",
+            "name": "contact",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
         }
     ],
     "location": [
@@ -39,7 +55,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-referral.php"
+                "value": "page-referral-no-front.php"
             }
         ]
     ],
@@ -66,5 +82,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1685319921
+    "modified": 1685548053
 }

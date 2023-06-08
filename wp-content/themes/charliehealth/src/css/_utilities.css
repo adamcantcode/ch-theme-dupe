@@ -180,4 +180,7 @@
       @apply z-10 absolute inset-0;
     }
   }
+  .noshow {
+    @apply hidden;
+  }
 }

@@ -1,23 +1,14 @@
 <?php
-$heading = get_field('heading');
-$subhead = get_field('subhead');
-$link = get_field('link');
-
-if (empty($link)) {
-  $link = [
-    'url' => site_url() . '/form',
-    'title' => 'Get started',
-    'target' => '_blank',
-  ];
-}
+$image = get_field('image');
+$imageUrl = $image['url'];
+$imageAlt = $image['alt'];
 ?>
 
 <div class="rounded-md border-gradient">
   <div class="grid items-center lg:grid-cols-2">
-    <img src="<?= placeHolderImage(600, 300); ?>" alt="" class="object-cover lg:rounded-l-md lg:rounded-tr-none rounded-t-md lg:min-h-[300px] min-h-[200px]">
+    <img src="<?= $imageUrl ?: placeHolderImage(600, 300); ?>" alt="<?= $imageAlt; ?>" class="object-cover w-full lg:rounded-l-md lg:rounded-tr-none rounded-t-md lg:h-[300px] h-[200px]">
     <div class="p-sp-8">
-      <h4>We're building care plans as unique as you.</h4>
-      <a href="#">About us</a>
+      <InnerBlocks />
     </div>
   </div>
 </div>

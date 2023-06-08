@@ -9,14 +9,23 @@ $heading = get_field('heading');
 
 <div id="<?= $block['id']; ?>">
   <h2><?= $heading ?: $division; ?></h2>
-  <div class="grid grid-cols-2 lg:grid-cols-4 gap-sp-8 lg:gap-y-sp-16">
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-sp-8 lg:gap-x-sp-16 lg:gap-y-sp-16">
     <?php
     if ($entireDivision) {
       $args = array(
-        'post_type'   => 'team-members',
-        'numberposts' => -1,
-        'meta_key'    => 'division',
-        'meta_value'  => $division
+        'post_type'      => 'team-members',
+        'numberposts'    => -1,
+        'posts_per_page' => -1,
+        'order'          => 'ASC',
+        'orderby'        => 'title',
+        'meta_key'       => 'division',
+        'meta_value'     => $division,
+        'meta_query'     => array(
+          array(
+            'key'     => '_thumbnail_id',
+            'compare' => 'EXISTS', // Checks if the featured image exists
+          ),
+        ),
       );
       $query = new WP_Query($args);
       if ($query->have_posts()) :

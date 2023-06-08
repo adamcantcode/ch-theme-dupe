@@ -14,4 +14,9 @@
       </div>
       <div class="!relative swiper-pagination !bottom-0 p-sp-4"></div>
     </div>
+  <?php else : ?>
+    <div class="min-h-[300px] bg-tag-gray flex items-center justify-center">
+      <code>CAROUSEL</code>
+    </div>
   <?php endif; ?>
+</div>

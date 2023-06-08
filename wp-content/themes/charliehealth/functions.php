@@ -26,26 +26,34 @@ add_theme_support('title-tag');
 
 add_editor_style('/build/theme/index.css');
 
-if (
-  false !== stristr($_SERVER['REQUEST_URI'], 'post-new.php') && isset($_GET['post_type']) && 'post' === $_GET['post_type']
-  || false !== stristr($_SERVER['REQUEST_URI'], 'post.php') && 'post' === get_post_type($_GET['post'])
-) {
-  add_editor_style('editor-styles-posts.css');
-}
-if (
-  false !== stristr($_SERVER['REQUEST_URI'], 'post-new.php') && isset($_GET['post_type']) && 'research' === $_GET['post_type']
-  || false !== stristr($_SERVER['REQUEST_URI'], 'post.php') && 'research' === get_post_type($_GET['post'])
-) {
-  add_editor_style('editor-styles-posts.css');
-}
+/** 
+ *  Add separate editor styles on BlogPosts and Research Posts
+ */
+add_action('pre_get_posts', function () {
+  if (
+    false !== stristr($_SERVER['REQUEST_URI'], 'post-new.php') && get_post_type() === 'post'
+    || false !== stristr($_SERVER['REQUEST_URI'], 'post.php') && get_post_type() === 'post'
+  ) {
+    add_editor_style('editor-styles-posts.css');
+  }
+  if (
+    false !== stristr($_SERVER['REQUEST_URI'], 'post-new.php') && get_post_type() === 'research'
+    || false !== stristr($_SERVER['REQUEST_URI'], 'post.php') && get_post_type() === 'research'
+  ) {
+    add_editor_style('editor-styles-posts.css');
+  }
+});
 
-// ACF options page
+/** 
+ * ACF Settings 
+ */
+
+// Allow Options page
 if (function_exists('acf_add_options_page')) {
   acf_add_options_page();
 }
 
-
-// Register ACF blocks via block.json 
+// Register all ACF blocks via block.json 
 function register_acf_blocks()
 {
   register_block_type(__DIR__ . '/build/blocks/hero');
@@ -69,23 +77,21 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/teams');
   register_block_type(__DIR__ . '/build/blocks/region-map');
   register_block_type(__DIR__ . '/build/blocks/iop-chart');
+  register_block_type(__DIR__ . '/build/blocks/callout');
+  register_block_type(__DIR__ . '/build/blocks/check-list');
 }
 add_action('init', 'register_acf_blocks', 5);
 
-include_once('helpers/helper-functions.php');
+// Reformat acf fields in rest api
+add_filter('acf/settings/rest_api_format', function () {
+  return 'standard';
+});
 
 /**
- * Only load block js/css if actually on page.
+ * Allow file types
  */
-add_filter('should_load_separate_core_block_assets', '__return_true');
 
-/**
- * Allow SVG uploads for administrator users.
- *
- * @param array $upload_mimes Allowed mime types.
- *
- * @return mixed
- */
+// Allow SVG uploads for administrator users.
 add_filter(
   'upload_mimes',
   function ($upload_mimes) {
@@ -100,15 +106,8 @@ add_filter(
     return $upload_mimes;
   }
 );
-/**
- * Add SVG files mime check.
- *
- * @param array        $wp_check_filetype_and_ext Values for the extension, mime type, and corrected filename.
- * @param string       $file Full path to the file.
- * @param string       $filename The name of the file (may differ from $file due to $file being in a tmp directory).
- * @param string[]     $mimes Array of mime types keyed by their file extension regex.
- * @param string|false $real_mime The actual mime type or false if the type cannot be determined.
- */
+
+// Add SVG files mime check.
 add_filter(
   'wp_check_filetype_and_ext',
   function ($wp_check_filetype_and_ext, $file, $filename, $mimes, $real_mime) {
@@ -129,9 +128,7 @@ add_filter(
   5
 );
 
-/**
- * Allow .webp
- */
+// Allow webp
 function allow_webp_upload($mimes)
 {
   $mimes['webp'] = 'image/webp';
@@ -139,14 +136,22 @@ function allow_webp_upload($mimes)
 }
 add_filter('upload_mimes', 'allow_webp_upload');
 
+// WP ALL IMPORT allow SVG
+add_filter('wp_all_import_image_mime_type', 'wpai_image_mime_type', 10, 2);
+
+function wpai_image_mime_type($mime_type, $image_filepath)
+{
+  if (empty($mime_type) and preg_match('%\W(svg)$%i', basename($image_filepath))) {
+    return 'image/svg+xml';
+  }
+  return $mime_type;
+}
 
 /**
- * Rename Category to Theme
- *
+ * Rename Category (taxononomy) to Audience
  */
-function be_rename_category_theme()
+function renamce_categoery_to_audience()
 {
-
   $singular_name = 'Audience';
   $plural_name = 'Audiences';
 
@@ -174,18 +179,78 @@ function be_rename_category_theme()
   global $wp_taxonomies;
   $wp_taxonomies['category']->labels = (object) array_merge((array) $wp_taxonomies['category']->labels, $labels);
 }
-add_action('init', 'be_rename_category_theme');
+add_action('init', 'renamce_categoery_to_audience');
+
+/**
+ * Remove WP Logo in admin bar
+ */
+function remove_wp_logo()
+{
+  global $wp_admin_bar;
+  $wp_admin_bar->remove_menu('wp-logo');
+}
+add_action('wp_before_admin_bar_render', 'remove_wp_logo', 0);
+
+/**
+ * Fix admin sidebar icon styles
+ */
+add_action('admin_head', 'my_custom_fonts');
+
+function my_custom_fonts()
+{
+  echo '<style>
+    #adminmenu .wp-menu-image img[src$=".svg"] {
+      opacity: 1;
+      padding: 8px 0;
+      height: 20px;
+      width: 34px;
+    } 
+    #adminmenu div.wp-menu-image {
+      display: flex;
+      justify-content: center;
+    }
+    #adminmenu li.menu-top:hover .wp-menu-image img {
+      filter: invert(62%) sepia(58%) saturate(367%) hue-rotate(169deg) brightness(98%) contrast(84%);
+    }
+  </style>';
+}
+
+/** 
+ * Remove menus depending on site (Main vs Outreach)
+ */
+function hide_menus_on_multisite()
+{
+  global $pagenow;
+  // Check if it's the admin area and site ID is 2
+  if (is_admin() && get_current_blog_id() !== 1) {
+    // Remove specific menus
+    remove_menu_page('edit.php');
+    remove_menu_page('edit.php?post_type=areas-of-care');
+    remove_menu_page('edit.php?post_type=authors');
+    remove_menu_page('edit.php?post_type=medical-reviewer');
+    remove_menu_page('edit.php?post_type=press');
+    remove_menu_page('edit.php?post_type=referral');
+    remove_menu_page('edit.php?post_type=research');
+    remove_menu_page('edit.php?post_type=team-members');
+    remove_menu_page('edit.php?post_type=treatment-modalities');
+  } else {
+    remove_menu_page('edit.php?post_type=region');
+    remove_menu_page('edit.php?post_type=outreach-team-member');
+    remove_menu_page('edit.php?post_type=event');
+  }
+}
+add_action('admin_menu', 'hide_menus_on_multisite', 999);
+/** 
+ * Remove comments
+ */
 add_action('admin_init', function () {
-  // Redirect any user trying to access comments page
   global $pagenow;
 
   if ($pagenow === 'edit-comments.php') {
     wp_safe_redirect(admin_url());
     exit;
   }
-  // Remove comments metabox from dashboard
   remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal');
-  // Disable support for comments and trackbacks in post types
   foreach (get_post_types() as $post_type) {
     if (post_type_supports($post_type, 'comments')) {
       remove_post_type_support($post_type, 'comments');
@@ -193,36 +258,28 @@ add_action('admin_init', function () {
     }
   }
 });
-// Close comments on the front-end
 add_filter('comments_open', '__return_false', 20, 2);
 add_filter('pings_open', '__return_false', 20, 2);
-// Hide existing comments
 add_filter('comments_array', '__return_empty_array', 10, 2);
-// Remove comments page in menu
 add_action('admin_menu', function () {
   remove_menu_page('edit-comments.php');
 });
-// Remove comments links from admin bar
 add_action('admin_bar_menu', function () {
   remove_action('admin_bar_menu', 'wp_admin_bar_comments_menu', 60);
 }, 0);
 
-// Get properly formatted acf fields in rest API 🙄
-add_filter('acf/settings/rest_api_format', function () {
-  return 'standard';
-});
+add_filter('custom_menu_order', 'custom_menu_order', 10, 1);
 
-add_filter('custom_menu_order', 'ch_menu_order', 10, 1);
+add_filter('menu_order', 'custom_menu_order', 10, 1);
 
-add_filter('menu_order', 'ch_menu_order', 10, 1);
-
-function ch_menu_order($menu_ord)
+/**
+ * Custom menu order for admin sidebar
+ */
+function custom_menu_order($menu_ord)
 {
-
   if (!$menu_ord) return true;
 
   return array(
-
     'index.php', // Dashboard
     'edit.php?post_type=page', // Pages
     'edit.php', // Posts
@@ -261,6 +318,23 @@ function filter_posts_by_acf_field($args, $request)
 }
 add_filter('rest_post_query', 'filter_posts_by_acf_field', 10, 2);
 
+/**
+ * Sort MEDICAL REVIEWERS for author pages
+ */
+function filter_posts_by_acf_field_medical($args, $request)
+{
+  if (isset($request['medical_reviewer'])) {
+    $args['meta_query'] = array(
+      array(
+        'key' => 'medical_reviewer',
+        'value' => intval($request['medical_reviewer']),
+        'compare' => '=',
+      ),
+    );
+  }
+  return $args;
+}
+add_filter('rest_research_query', 'filter_posts_by_acf_field_medical', 10, 2);
 
 /**
  * Sort PRESS posts by date
@@ -286,14 +360,9 @@ function custom_rest_post_query($args, $request)
 }
 add_filter('rest_post_query', 'custom_rest_post_query', 10, 2);
 
-
-function remove_wp_logo()
-{
-  global $wp_admin_bar;
-  $wp_admin_bar->remove_menu('wp-logo');
-}
-add_action('wp_before_admin_bar_render', 'remove_wp_logo', 0);
-
+/**
+ * Remove default image sizes
+ */
 add_filter('intermediate_image_sizes', 'remove_default_img_sizes', 10, 1);
 
 function remove_default_img_sizes($sizes)
@@ -309,12 +378,17 @@ function remove_default_img_sizes($sizes)
   return $sizes;
 }
 
+/** 
+ * Add custom image sizes
+ */
 add_action('after_setup_theme', 'wpdocs_theme_setup');
 function wpdocs_theme_setup()
 {
-  add_image_size('featured-large', 600);
-  add_image_size('card-thumb', 400);
+  add_image_size('featured-large', 800);
+  add_image_size('card-thumb', 500);
 }
+
+add_filter('wpseo_primary_term_taxonomies', '__return_empty_array');
 
 /**
  * SEARCH AND REPLACE FUNCTION FOR IN CONTENT CTAS -> BLOCKS
@@ -323,12 +397,10 @@ function wpdocs_theme_setup()
 // {
 //   global $wpdb;
 
-//   $search_string = '{{mid-page-cta="/dev-resources/staging"}}'; // Replace with the text you want to search for
-//   // $block_name = 'acf/pre-footer-cta-block'; // Replace with your custom block name
+//   $search_string = '{{mid-page-newsletter}}'; // Replace with the text you want to search for
 
 //   // Get the block's HTML markup
-//   $block_content = '<!-- wp:acf/pre-footer-cta-block {"name":"acf/pre-footer-cta-block","data":{},"mode":"preview"} /-->
-//   ';
+//   $block_content = '<!-- wp:block {"ref":1709} /-->';
 
 //   // Run the SQL query to update post content
 //   $query = $wpdb->prepare(
@@ -341,64 +413,17 @@ function wpdocs_theme_setup()
 // }
 // add_action('init', 'replace_text_with_block');
 
+/** NOTE Not needed due to WP Engine Settings */
+// add_filter( 'xmlrpc_enabled', '__return_false' );
 
-add_action('admin_head', 'my_custom_fonts');
+include_once('helpers/helper-functions.php');
 
-function my_custom_fonts()
-{
-  echo '<style>
-    #adminmenu .wp-menu-image img[src$=".svg"] {
-      opacity: 1;
-      padding: 8px 0;
-      height: 20px;
-      width: 34px;
-    } 
-    #adminmenu div.wp-menu-image {
-      display: flex;
-      justify-content: center;
-    }
-    #adminmenu li.menu-top:hover .wp-menu-image img {
-      filter: invert(62%) sepia(58%) saturate(367%) hue-rotate(169deg) brightness(98%) contrast(84%);
-    }
-  </style>';
-}
+/**
+ * Only load block js/css if actually on page.
+ */
+add_filter('should_load_separate_core_block_assets', '__return_true');
 
-
-/** NOTE - WP AL IMPORT ALLOW SVG */
-add_filter('wp_all_import_image_mime_type', 'wpai_image_mime_type', 10, 2);
-
-function wpai_image_mime_type($mime_type, $image_filepath)
-{
-  if (empty($mime_type) and preg_match('%\W(svg)$%i', basename($image_filepath))) {
-    return 'image/svg+xml';
-  }
-  return $mime_type;
-}
-
-function hide_menus_on_multisite()
-{
-  global $pagenow;
-  // Check if it's the admin area and site ID is 2
-  if (is_admin() && get_current_blog_id() !== 1) {
-    // Remove specific menus
-    remove_menu_page('edit.php');
-    remove_menu_page('edit.php?post_type=areas-of-care');
-    remove_menu_page('edit.php?post_type=authors');
-    remove_menu_page('edit.php?post_type=medical-reviewer');
-    remove_menu_page('edit.php?post_type=press');
-    remove_menu_page('edit.php?post_type=referral');
-    remove_menu_page('edit.php?post_type=research');
-    remove_menu_page('edit.php?post_type=team-members');
-    remove_menu_page('edit.php?post_type=treatment-modalities');
-  } else {
-    remove_menu_page('edit.php?post_type=region');
-    remove_menu_page('edit.php?post_type=outreach-team-member');
-    remove_menu_page('edit.php?post_type=event');
-  }
-}
-add_action('admin_menu', 'hide_menus_on_multisite', 999);
-
-/* FILTER IMAGES BY NO ALT TEXT 
+// NOTE FILTER IMAGES BY NO ALT TEXT 
 
 // Add a custom column for alt text
 function add_alt_text_column($columns)
@@ -472,4 +497,25 @@ function add_alt_text_filter_option()
   }
 }
 add_action('restrict_manage_posts', 'add_alt_text_filter_option');
-*/
+
+// TEMP COLORS
+// $test = 'bg-dark-teal'
+
+// NOTE TEMP disable yoast auto redirect creation
+add_filter('Yoast\WP\SEO\post_redirect_slug_change', '__return_true');
+
+// Allow editor access to privacy policy page
+add_action('map_meta_cap', 'custom_manage_privacy_options', 1, 4);
+function custom_manage_privacy_options($caps, $cap, $user_id, $args)
+{
+  if (!is_user_logged_in()) return $caps;
+
+  $user_meta = get_userdata($user_id);
+  if (array_intersect(['editor', 'administrator'], $user_meta->roles)) {
+    if ('manage_privacy_options' === $cap) {
+      $manage_name = is_multisite() ? 'manage_network' : 'manage_options';
+      $caps = array_diff($caps, [ $manage_name ]);
+    }
+  }
+  return $caps;
+}

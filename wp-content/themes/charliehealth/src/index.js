@@ -31,7 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (body.classList.contains('single-region')) {
     outreachModals();
   }
-  if (body.classList.contains('single-post')) {
+  if (
+    body.classList.contains('single-post') ||
+    body.classList.contains('single-research')
+  ) {
     toc();
     references();
     progressBar();
@@ -51,7 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
     ajaxPagination();
   }
   if (body.classList.contains('single-authors')) {
-    // featuredBlogSlider();
+    ajaxPagination();
+  }
+  if (body.classList.contains('single-medical-reviewer')) {
     ajaxPagination();
   }
   if (body.classList.contains('page-template-searchpage')) {

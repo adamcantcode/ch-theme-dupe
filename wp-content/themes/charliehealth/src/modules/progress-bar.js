@@ -1,45 +1,35 @@
 export default function progressBar() {
-  // Get the article content element
-  const articleContent = document.querySelector(
-    '#articleContent .container-sm'
-  );
-  // Get the header height (adjust as needed)
-  let headerHeight = document.querySelector('header').clientHeight;
-  const wpadmin = document.querySelector('#wpadminbar');
-  if (wpadmin) {
-    headerHeight += wpadmin.clientHeight;
+  function calculateHeaderHeight() {
+    var articleContent = document.querySelector(
+      '#articleContent .container-sm'
+    );
+    let headerHeight = document.querySelector('header').clientHeight;
+    var wpadmin = document.querySelector('#wpadminbar');
+
+    if (wpadmin) {
+      headerHeight += wpadmin.clientHeight;
+    }
+
+    var progressBar = document.querySelector('#progressBar');
+    progressBar.style.top = headerHeight + 'px';
+    progressBar.style.left = '0';
+    document.body.appendChild(progressBar);
+
+    updateProgressBar(articleContent, headerHeight, progressBar);
   }
 
-  // Create a progress bar element
-  const progressBar = document.querySelector('#progressBar');
-  progressBar.style.top = headerHeight + 'px';
-  progressBar.style.left = '0';
-  progressBar.style.width = '0';
-  progressBar.style.height = '4px';
-  progressBar.style.zIndex = '9999';
-  document.body.appendChild(progressBar);
+  function updateProgressBar(articleContent, headerHeight, progressBar) {
+    var contentHeight = articleContent.scrollHeight + headerHeight;
 
-  // Update the progress bar as the page is scrolled
-  window.addEventListener('scroll', updateProgressBar);
-
-  function updateProgressBar() {
-    // Get the height of the content element
-    const contentHeight = articleContent.scrollHeight + headerHeight;
-
-    const scrollTop =
+    var scrollTop =
       document.documentElement.scrollTop || document.body.scrollTop;
-
-    // Calculate the scrollable height of the content
-    const scrollableHeight = contentHeight - headerHeight;
-
-    // Calculate the scroll position within the scrollable height
-    const scrollPosition = Math.max(0, scrollTop - headerHeight);
-
-    // Calculate the scroll percentage
-    const scrollPercent = Math.min(
+    var scrollableHeight = contentHeight - headerHeight;
+    var scrollPosition = Math.max(0, scrollTop - headerHeight);
+    var scrollPercent = Math.min(
       (scrollPosition / scrollableHeight) * 100,
       100
     );
+
     if (scrollPercent === 100) {
       progressBar.style.opacity = '0';
     } else {
@@ -48,4 +38,11 @@ export default function progressBar() {
 
     progressBar.style.width = `${scrollPercent}%`;
   }
+
+  // window.addEventListener('scroll', updateProgressBar);
+  window.addEventListener('scroll', () => {
+    clearTimeout(window.scrollEndTimer);
+    window.scrollEndTimer = setTimeout(calculateHeaderHeight, 100);
+  });
+  window.addEventListener('resize', calculateHeaderHeight);
 }

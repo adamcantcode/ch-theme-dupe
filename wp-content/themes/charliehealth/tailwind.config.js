@@ -28,13 +28,13 @@ module.exports = {
       current: 'currentColor',
       'lightest-teal': '#ECF7FA',
       'bright-teal': '#B1FCFA',
-      'darkest-blue': '#161940',
       text: '#46496D',
       'purple-gradient-start': '#EADAFF',
       'purple-gradient-end': '#A698FF',
       'hover-blue': '#4331B0',
-      'med-blue': '#262D70',
+      'med-blue': '#212984',
       'dark-blue': '#1D225F',
+      'darkest-blue': '#161940',
       'light-blue': '#F3F4F9',
       'light-purple': '#F0EFFC',
       cream: '#F8F4F0',
@@ -42,6 +42,7 @@ module.exports = {
       'tag-gray': '#f8f7f7',
       'card-border': '#d4d5dc',
       'lightest-purple': '#F8F8FF',
+      'dark-teal': '#1f5f68',
       // 'light-teal': '#C8FFFF',
       // 'med-bright-teal': '#3EB7B5',
       // 'med-teal': '#39919D',
@@ -109,21 +110,13 @@ module.exports = {
           },
         ],
         h2: [
-          '2.25rem',
+          '1.75rem',
           {
-            lineHeight: '110%',
-            letterSpacing: '-0.03em',
+            lineHeight: '2.3rem',
+            letterSpacing: '0',
             fontWeight: '400',
           },
         ],
-        // 'h2-md': [
-        //   '2.25rem',
-        //   {
-        //     lineHeight: '110%',
-        //     letterSpacing: '-0.03em',
-        //     fontWeight: '400',
-        //   },
-        // ],
         'h2-lg': [
           '1.75rem',
           {
@@ -140,18 +133,10 @@ module.exports = {
             fontWeight: '400',
           },
         ],
-        // 'h3-md': [
-        //   '1.5rem',
-        //   {
-        //     lineHeight: '110%',
-        //     letterSpacing: '-0.04em',
-        //     fontWeight: '400',
-        //   },
-        // ],
         'h3-lg': [
           '1.5rem',
           {
-            lineHeight: '1.8rem',
+            lineHeight: '2rem',
             letterSpacing: '0',
             fontWeight: '400',
           },
@@ -176,7 +161,7 @@ module.exports = {
           '1rem',
           {
             lineHeight: '140%',
-            letterSpacing: '-0.01em',
+            letterSpacing: '0',
             fontWeight: '500',
           },
         ],
@@ -184,7 +169,7 @@ module.exports = {
           '0.875rem',
           {
             lineHeight: '140%',
-            letterSpacing: '-0.02em',
+            letterSpacing: '0',
             fontWeight: '400',
           },
         ],

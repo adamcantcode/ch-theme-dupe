@@ -27,4 +27,8 @@
       </div>
     </div>
   </div>
+<?php else : ?>
+  <div class="min-h-[300px] bg-tag-gray flex items-center justify-center">
+    <code>TABS</code>
+  </div>
 <?php endif; ?>

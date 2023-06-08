@@ -46,7 +46,7 @@
     "public": true,
     "hierarchical": false,
     "exclude_from_search": false,
-    "publicly_queryable": true,
+    "publicly_queryable": false,
     "show_ui": true,
     "show_in_menu": true,
     "admin_menu_parent": "",
@@ -79,5 +79,5 @@
     "can_export": true,
     "delete_with_user": false,
     "register_meta_box_cb": "",
-    "modified": 1684968019
+    "modified": 1685988897
 }

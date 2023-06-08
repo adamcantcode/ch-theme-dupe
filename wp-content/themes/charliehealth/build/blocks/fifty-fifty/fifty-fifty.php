@@ -28,11 +28,11 @@ switch ($order) {
         <div class="swiper swiper-fifty-fifty">
           <div class="items-center swiper-wrapper">
             <?php while (have_rows('fifty_fifty_slides')) : the_row();
-              $imageUrl = get_sub_field('fifty_fifty_slide_image');
+              $sliderImage = get_sub_field('fifty_fifty_slide_image');
             ?>
               <div class="swiper-slide">
                 <div class="grid items-center justify-center">
-                  <img src="<?= $imageUrl['url']; ?>" alt="" class="">
+                  <img src="<?= $sliderImage['sizes']['featured-large']; ?>" alt="<?= $sliderImage['alt']; ?>">
                 </div>
               </div>
             <?php endwhile; ?>
@@ -42,7 +42,7 @@ switch ($order) {
     <?php endif; ?>
   <?php else : ?>
     <?php if ($image) : ?>
-      <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="object-cover object-top rounded-md max-h-[500px] flex-grow <?= $imageOrder; ?>">
+      <img src="<?= $image['sizes']['featured-large']; ?>" alt="<?= $image['alt']; ?>" class="object-cover object-top rounded-md max-h-[500px] flex-grow <?= $imageOrder; ?>">
     <?php endif; ?>
   <?php endif; ?>
   <div class="flex-grow <?= $detailsOrder; ?>">

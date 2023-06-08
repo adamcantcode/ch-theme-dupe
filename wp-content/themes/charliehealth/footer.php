@@ -33,23 +33,22 @@
 	<div class="container grid lg:grid-cols-5 col gap-sp-16">
 		<div class="flex flex-col col-span-2">
 			<div class="flex badges gap-sp-4 mb-sp-4">
-				<script src="https://static.legitscript.com/seals/7088078.js"></script>
 				<a href="https://www.jointcommission.org/" target="_blank">
-					<img src="<?= site_url(); ?>/wp-content/themes/charliehealth/resources/images/gold-seal.webp" alt="The Joint Commission logo that links to the Joint Commission homepage">
+					<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/gold-seal.webp'); ?>" alt="The Joint Commission logo that links to the Joint Commission homepage">
 				</a>
 			</div>
 			<div class="flex gap-sp-4">
 				<a href="https://www.facebook.com/charliehealth" target="_blank">
-					<img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/social-logos/facebook.svg'; ?>" class="w-[25px] h-[25px] filter-white" />
+					<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/facebook.svg'); ?>" alt="Facebook logo" class="w-[25px] h-[25px] filter-white" />
 				</a>
 				<a href="https://www.linkedin.com/company/charlie-health/" target="_blank">
-					<img src="<?= '/wp-content/themes/charliehealth/resources/images/social-logos/linkedin.svg'; ?>" class="w-[25px] h-[25px] filter-white" />
+					<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/linkedin.svg'); ?>" alt="LinkedIn logo" class="w-[25px] h-[25px] filter-white" />
 				</a>
 				<a href="https://www.instagram.com/charliehealth/" target="_blank">
-					<img src="<?= '/wp-content/themes/charliehealth/resources/images/social-logos/instagram.svg'; ?>" class="w-[25px] h-[25px] filter-white" />
+					<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/instagram.svg'); ?>" alt="Instagram logo" class="w-[25px] h-[25px] filter-white" />
 				</a>
 				<a href="https://www.tiktok.com/@charliehealth" target="_blank">
-					<img src="<?= '/wp-content/themes/charliehealth/resources/images/social-logos/tik-tok.svg'; ?>" class="w-[25px] h-[25px] filter-white" />
+					<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/tik-tok.svg'); ?>" alt="TikTok logo" class="w-[25px] h-[25px] filter-white" />
 				</a>
 			</div>
 		</div>
@@ -62,7 +61,7 @@
 	</div>
 	<div class="container relative">
 		<div class="lg:w-[225px] w-2/3 lg:absolute lg:bottom-0 lg:right-0 opacity-10 mx-auto lg:mb-0 mb-sp-16">
-			<?= file_get_contents('wp-content/themes/charliehealth/resources/images/logos/shield.svg'); ?>
+			<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield.svg'); ?>" alt="Charlie health shield logo" />
 		</div>
 		<div class="flex flex-col lg:flex-row footer-links lg:gap-sp-8 gap-sp-2">
 			<?php
@@ -81,9 +80,22 @@
 	</div>
 </footer>
 <!-- </div> -->
-
+<!-- TODO Temp disable footer code -->
+<?php // include('wp-content/themes/charliehealth/includes/footer-code.php'); 
+?>
+<?php if (is_user_logged_in()) : ?>
+	<!-- NOTE Fix wpadmin like nav -->
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function() {
+			var adminBar = document.getElementById('wpadminbar');
+			if (adminBar) {
+				adminBar.style.position = 'fixed';
+			}
+		});
+	</script>
+<?php endif; ?>
 <?php wp_footer(); ?>
-<pre class="fixed left-0 right-0 w-full text-xs text-center text-white bottom-4 -z-10 opacity-30">Made with ❤️ in Denver</pre>
+<!-- <pre class="fixed left-0 right-0 w-full text-xs text-center text-dark-blue bottom-4 -z-50 opacity-30">Made with ❤️ in Denver</pre> -->
 </body>
 
 </html>

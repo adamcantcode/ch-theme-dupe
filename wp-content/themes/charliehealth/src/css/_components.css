@@ -69,7 +69,7 @@
     }
   }
   .slide-out {
-    @apply right-full lg:right-0 lg:w-auto transition-right duration-500 w-full px-4 lg:px-0;
+    @apply right-full lg:right-0 lg:w-auto transition-right duration-500 w-full px-4 lg:px-0 will-change-transform;
     &.active {
       @apply right-0;
     }

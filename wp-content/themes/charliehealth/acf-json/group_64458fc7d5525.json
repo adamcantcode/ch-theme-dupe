@@ -7,7 +7,7 @@
             "label": "Style",
             "name": "style",
             "aria-label": "",
-            "type": "button_group",
+            "type": "select",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -18,12 +18,16 @@
             },
             "choices": {
                 "value": "Value Prop",
-                "full": "Full Width"
+                "full": "Full Width",
+                "newsletter": "Newsletter"
             },
             "default_value": "value",
             "return_format": "value",
+            "multiple": 0,
             "allow_null": 0,
-            "layout": "horizontal"
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
         },
         {
             "key": "field_64458fc822837",
@@ -73,7 +77,15 @@
             "type": "clone",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_645abb1af2ab6",
+                        "operator": "!=",
+                        "value": "newsletter"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -82,7 +94,7 @@
             "clone": [
                 "group_64134bca033e5"
             ],
-            "display": "seamless",
+            "display": "group",
             "layout": "block",
             "prefix_label": 0,
             "prefix_name": 0
@@ -106,5 +118,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1684607589
+    "modified": 1685633334
 }

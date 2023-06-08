@@ -18,7 +18,7 @@ $faqButton = get_field('faq_button');
 <?php if ($faqButton) : ?>
   <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] lg:gap-sp-16 gap-sp-8">
     <div class="grid lg:block">
-      <h2>FAQs</h2>
+      <h2>FAQs for <?= get_the_title(); ?></h2>
       <a href="<?= site_url('/faqs'); ?>" class="ch-button button-secondary">See All FAQs</a>
     </div>
     <div>
