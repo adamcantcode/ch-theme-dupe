@@ -503,6 +503,7 @@ add_action('restrict_manage_posts', 'add_alt_text_filter_option');
 
 // TEMP COLORS
 // $test = 'bg-dark-teal'
+// $test = 'mt-0'
 
 // NOTE TEMP disable yoast auto redirect creation
 add_filter('Yoast\WP\SEO\post_redirect_slug_change', '__return_true');
