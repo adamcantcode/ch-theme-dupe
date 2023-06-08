@@ -77,6 +77,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/teams');
   register_block_type(__DIR__ . '/build/blocks/region-map');
   register_block_type(__DIR__ . '/build/blocks/iop-chart');
+  register_block_type(__DIR__ . '/build/blocks/iop-schedule');
   register_block_type(__DIR__ . '/build/blocks/callout');
   register_block_type(__DIR__ . '/build/blocks/check-list');
 }
