@@ -2150,6 +2150,29 @@ a.nav-link:hover {
   background-color: rgb(53 145 156 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#\#e07058\]{
+  background-color: ##e07058;
+}
+
+.bg-\[\#ff9f81\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 159 129 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#e07058\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(224 112 88 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#\#5f6387\]{
+  background-color: ##5f6387;
+}
+
+.bg-\[\#5f6387\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(95 99 135 / var(--tw-bg-opacity));
+}
+
 .bg-\[linear-gradient\(\#fead80\2c \#e2deca_50\%\2c \#bdc6fc\)\]{
   background-image: linear-gradient(#fead80,#e2deca 50%,#bdc6fc);
 }
@@ -2312,6 +2335,10 @@ a.nav-link:hover {
 
 .font-heading-serif{
   font-family: "ABC Arizona", serif;
+}
+
+.font-heading{
+  font-family: "ABC Social", sans-serif;
 }
 
 .text-\[10px\]{
@@ -3562,6 +3589,29 @@ a.providers:hover {
   border-color: rgb(53 145 156 / var(--tw-border-opacity));
 }
 
+.hover\:border-\[\#\#e07058\]:hover{
+  border-color: ##e07058;
+}
+
+.hover\:border-\[\#ff9f81\]:hover{
+  --tw-border-opacity: 1;
+  border-color: rgb(255 159 129 / var(--tw-border-opacity));
+}
+
+.hover\:border-\[\#e07058\]:hover{
+  --tw-border-opacity: 1;
+  border-color: rgb(224 112 88 / var(--tw-border-opacity));
+}
+
+.hover\:border-\[\#\#5f6387\]:hover{
+  border-color: ##5f6387;
+}
+
+.hover\:border-\[\#5f6387\]:hover{
+  --tw-border-opacity: 1;
+  border-color: rgb(95 99 135 / var(--tw-border-opacity));
+}
+
 .hover\:bg-bright-teal:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(177 252 250 / var(--tw-bg-opacity));
@@ -3609,6 +3659,29 @@ a.providers:hover {
 .hover\:\!text-\[\#35919c\]:hover{
   --tw-text-opacity: 1 !important;
   color: rgb(53 145 156 / var(--tw-text-opacity)) !important;
+}
+
+.hover\:\!text-\[\#\#e07058\]:hover{
+  color: ##e07058 !important;
+}
+
+.hover\:\!text-\[\#ff9f81\]:hover{
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 159 129 / var(--tw-text-opacity)) !important;
+}
+
+.hover\:\!text-\[\#e07058\]:hover{
+  --tw-text-opacity: 1 !important;
+  color: rgb(224 112 88 / var(--tw-text-opacity)) !important;
+}
+
+.hover\:\!text-\[\#\#5f6387\]:hover{
+  color: ##5f6387 !important;
+}
+
+.hover\:\!text-\[\#5f6387\]:hover{
+  --tw-text-opacity: 1 !important;
+  color: rgb(95 99 135 / var(--tw-text-opacity)) !important;
 }
 
 .hover\:shadow-\[inset_0_0_0_2px_\#1d225f\]:hover{
