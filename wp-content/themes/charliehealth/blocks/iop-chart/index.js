@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
     .from('#mainContainer', {
       opacity: 0,
       y: '8px',
-      duration: 3,
+      duration: 2,
       ease: 'expo.inOut',
     })
     .from(
