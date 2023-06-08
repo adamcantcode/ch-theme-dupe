@@ -1524,6 +1524,10 @@ a.nav-link:hover {
   margin-top: 2rem;
 }
 
+.mt-sp-2{
+  margin-top: 0.5rem;
+}
+
 .block{
   display: block;
 }

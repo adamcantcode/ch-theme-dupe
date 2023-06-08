@@ -63,7 +63,7 @@ if (!empty($block['align'])) {
           </svg>
         </div>
       </div>
-      <div class="max-w-[1280px] lg:mx-auto mx-sp-5 relative h-[2px]">
+      <div class="max-w-[1280px] lg:mx-auto mx-sp-5 relative h-[2px] mt-sp-2">
         <div class="relative swiper-pagination"></div>
       </div>
     </div>
