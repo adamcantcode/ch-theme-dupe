@@ -1,7 +1,7 @@
 <div id="mainContainer" class="lg:h-[600px] lg:flex grid">
   <div id="acuity" class="relative flex lg:h-full h-sp-8">
     <div class="lg:w-sp-5 w-full lg:bg-[linear-gradient(#fead80,#e2deca_50%,#bdc6fc)] bg-[linear-gradient(to_right,#fead80,#e2deca_50%,#bdc6fc)]"></div>
-    <div class="absolute flex justify-between w-full lg:flex-col lg:relative h-sp-8 lg:h-[unset] items-center">
+    <div class="absolute flex justify-between lg:w-[80px] w-full lg:flex-col lg:relative h-sp-8 lg:h-[unset] items-center">
       <h6 class="mb-0 ml-sp-2">High Acuity</h6>
       <h6 class="mb-0 ml-sp-2">Low Acuity</h6>
     </div>

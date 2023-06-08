@@ -9469,10 +9469,11 @@ window.addEventListener('DOMContentLoaded', () => {
   let iopMainTimeline = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
     scrollTrigger: {
       trigger: '#mainContainer',
-      start: 'top 80%',
-      markers: true
+      start: 'top 80%'
+      // markers: true,
     }
   });
+
   iopMainTimeline.from('#mainContainer', {
     opacity: 0,
     y: '8px',

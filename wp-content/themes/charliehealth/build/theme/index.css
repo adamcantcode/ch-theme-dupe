@@ -3825,6 +3825,10 @@ a.providers:hover {
     width: 600px;
   }
 
+  .lg\:w-\[80px\]{
+    width: 80px;
+  }
+
   .lg\:columns-2{
     -moz-columns: 2;
          columns: 2;

@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', () => {
     scrollTrigger: {
       trigger: '#mainContainer',
       start: 'top 80%',
-      markers: true,
+      // markers: true,
     },
   });
 
