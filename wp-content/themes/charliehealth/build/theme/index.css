@@ -1544,6 +1544,10 @@ a.nav-link:hover {
   aspect-ratio: 1 / 1;
 }
 
+.aspect-video{
+  aspect-ratio: 16 / 9;
+}
+
 .\!h-auto{
   height: auto !important;
 }
@@ -1618,6 +1622,10 @@ a.nav-link:hover {
 
 .h-sp-8{
   height: 2rem;
+}
+
+.h-sp-16{
+  height: 6rem;
 }
 
 .max-h-0{
@@ -3961,6 +3969,14 @@ a.providers:hover {
 
   .lg\:grid-cols-\[4\.25fr_5fr\]{
     grid-template-columns: 4.25fr 5fr;
+  }
+
+  .lg\:grid-cols-1{
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-\[unset\]{
+    grid-template-columns: unset;
   }
 
   .lg\:flex-row{
