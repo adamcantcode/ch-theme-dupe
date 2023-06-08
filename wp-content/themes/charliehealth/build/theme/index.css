@@ -1343,6 +1343,10 @@ a.nav-link:hover {
   top: 2rem;
 }
 
+.right-sp-10{
+  right: 2.5rem;
+}
+
 .-z-50{
   z-index: -50;
 }
@@ -3673,6 +3677,11 @@ a.providers:hover {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.hover\:brightness-0:hover{
+  --tw-brightness: brightness(0);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .focus-visible\:border:focus-visible{
   border-width: 1px;
 }
@@ -4134,6 +4143,11 @@ a.providers:hover {
   .lg\:px-sp-8{
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .lg\:px-sp-6{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .lg\:pr-sp-14{
