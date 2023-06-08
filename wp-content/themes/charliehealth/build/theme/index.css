@@ -726,6 +726,10 @@ blockquote > p{
   color: rgb(29 34 95 / var(--tw-text-opacity));
 }
 
+blockquote > p a {
+    font-size: inherit
+  }
+
 blockquote p{
   margin-bottom: 0px;
 }
@@ -1504,6 +1508,10 @@ a.nav-link:hover {
   margin-top: 3rem;
 }
 
+.mt-sp-16{
+  margin-top: 6rem;
+}
+
 .mt-sp-4{
   margin-top: 1rem;
 }
@@ -1514,10 +1522,6 @@ a.nav-link:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
-}
-
-.mt-sp-16{
-  margin-top: 6rem;
 }
 
 .block{
@@ -1604,20 +1608,16 @@ a.nav-link:hover {
   height: 3rem;
 }
 
+.h-sp-14{
+  height: 4rem;
+}
+
 .h-sp-4{
   height: 1rem;
 }
 
 .h-sp-8{
   height: 2rem;
-}
-
-.h-sp-16{
-  height: 6rem;
-}
-
-.h-sp-14{
-  height: 4rem;
 }
 
 .max-h-0{
@@ -1715,10 +1715,6 @@ a.nav-link:hover {
 
 .w-sp-6{
   width: 1.5rem;
-}
-
-.w-sp-16{
-  width: 6rem;
 }
 
 .\!max-w-md{
@@ -2080,10 +2076,6 @@ a.nav-link:hover {
   --tw-border-opacity: 0.2;
 }
 
-.border-opacity-50{
-  --tw-border-opacity: 0.5;
-}
-
 .border-opacity-25{
   --tw-border-opacity: 0.25;
 }
@@ -2110,6 +2102,11 @@ a.nav-link:hover {
 
 .bg-\[rgba\(0\2c 0\2c 0\2c \.5\)\]{
   background-color: rgba(0,0,0,.5);
+}
+
+.bg-bright-teal{
+  --tw-bg-opacity: 1;
+  background-color: rgb(177 252 250 / var(--tw-bg-opacity));
 }
 
 .bg-card-border{
@@ -2174,11 +2171,6 @@ a.nav-link:hover {
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-bright-teal{
-  --tw-bg-opacity: 1;
-  background-color: rgb(177 252 250 / var(--tw-bg-opacity));
 }
 
 .bg-\[linear-gradient\(\#fead80\2c \#e2deca_50\%\2c \#bdc6fc\)\]{

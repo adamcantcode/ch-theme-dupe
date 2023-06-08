@@ -81,6 +81,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/callout');
   register_block_type(__DIR__ . '/build/blocks/check-list');
   register_block_type(__DIR__ . '/build/blocks/stats-table');
+  register_block_type(__DIR__ . '/build/blocks/image-grid');
 }
 add_action('init', 'register_acf_blocks', 5);
 

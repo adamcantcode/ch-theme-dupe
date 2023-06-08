@@ -172,6 +172,9 @@
   blockquote > p {
     @apply font-heading-serif text-4xl leading-10 text-dark-blue;
   }
+  blockquote > p a {
+    font-size: inherit
+  }
   blockquote p {
     @apply mb-0;
   }
