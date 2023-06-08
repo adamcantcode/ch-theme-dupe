@@ -10428,10 +10428,10 @@ window.addEventListener('DOMContentLoaded', () => {
     spaceBetween: 20,
     speed: 1000,
     loop: false,
-    autoplay: {
-      disableOnInteraction: false,
-      pauseOnMouseEnter: true
-    },
+    // autoplay: {
+    //   disableOnInteraction: true,
+    //   pauseOnMouseEnter: true,
+    // },
     breakpoints: {
       1024: {
         slidesPerView: 1.75,

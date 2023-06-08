@@ -1628,6 +1628,10 @@ a.nav-link:hover {
   height: 6rem;
 }
 
+.h-\[130px\]{
+  height: 130px;
+}
+
 .max-h-0{
   max-height: 0px;
 }
@@ -2457,6 +2461,11 @@ a.nav-link:hover {
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-text{
+  --tw-text-opacity: 1;
+  color: rgb(70 73 109 / var(--tw-text-opacity));
 }
 
 .no-underline{
