@@ -233,7 +233,7 @@ $args = array(
         <div class="transition-all duration-300 m-sp-4">
           <div class="grid lg:grid-cols-[1.5fr,1fr] gap-sp-8 section-xs bg-cream container max-h-[80vh] overflow-auto rounded-md items-center relative">
             <div class="absolute top-0 right-0 cursor-pointer">
-              <img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/close-x.svg'; ?>" alt="close button" class="modal-close p-sp-10">
+              <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/close-x.svg'); ?>" alt="close button" class="modal-close p-sp-10">
             </div>
             <div class="grid order-2 gap-sp-8 lg:order-1">
               <div class="grid justify-items-start gap-sp-1">

@@ -29,17 +29,17 @@ if ($image) {
           <div class="social">
             <?php if ($twitter) : ?>
               <a href="<?= $twitter; ?>" target="_blank">
-                <img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/social-logos/twitter.svg'; ?>" alt="Twitter logo" class="w-[25px] h-[25px]" />
+                <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/twitter.svg'); ?>" alt="Twitter logo" class="w-[25px] h-[25px]" />
               </a>
             <?php endif; ?>
             <?php if ($facebook) : ?>
               <a href="<?= $facebook; ?>" target="_blank">
-                <img src="<?= site_url() . '/wp-content/themes/charliehealth/resources/images/social-logos/facebook.svg'; ?>" alt="Facebook logo" class="w-[25px] h-[25px]" />
+                <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/facebook.svg'); ?>" alt="Facebook logo" class="w-[25px] h-[25px]" />
               </a>
             <?php endif; ?>
             <?php if ($linkedin) : ?>
               <a href="<?= $linkedin; ?>" target="_blank">
-                <img src="<?= '/wp-content/themes/charliehealth/resources/images/social-logos/linkedin.svg'; ?>" alt="LinkedIn logo" class="w-[25px] h-[25px]" />
+                <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/linkedin.svg'); ?>" alt="LinkedIn logo" class="w-[25px] h-[25px]" />
               </a>
             <?php endif; ?>
             <!-- TODO add email -->
@@ -53,7 +53,7 @@ if ($image) {
     <div class="container">
       <h2 class="mb-sp-12">Articles by <?= get_the_title(); ?></h2>
       <div class="grid lg:grid-cols-3 transition-all duration-300 scale-[0.99] opacity-0 posts-container gap-x-sp-8 gap-y-sp-10 mb-sp-10">
-        <!-- `<div class="relative grid overflow-hidden border rounded-sm border-card-border hover:shadow-lg duration-300">
+        <!-- `<div class="relative grid overflow-hidden duration-300 border rounded-sm border-card-border hover:shadow-lg">
           <img src="https://images.placeholders.dev/?width=800&height=600&text=FPO" alt="" class="object-cover lg:h-[220px] h-[150px] w-full">
           <div class="grid p-sp-4">
             <h3><a href="${post.link}" class="stretched-link">${post.title.rendered}</a></h3>
