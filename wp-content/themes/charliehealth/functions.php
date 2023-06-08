@@ -80,6 +80,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/iop-schedule');
   register_block_type(__DIR__ . '/build/blocks/callout');
   register_block_type(__DIR__ . '/build/blocks/check-list');
+  register_block_type(__DIR__ . '/build/blocks/stats-table');
 }
 add_action('init', 'register_acf_blocks', 5);
 

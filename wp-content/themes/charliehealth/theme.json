@@ -41,6 +41,11 @@
           "slug": "dark-teal",
           "color": "#1f5f68",
           "name": "Lightest Teal"
+        },
+        {
+          "slug": "dark-blue",
+          "color": "#1d225f",
+          "name": "Dark Blue"
         }
       ]
     },
