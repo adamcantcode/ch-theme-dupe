@@ -19,7 +19,7 @@ export default function anchorScroll() {
           y: this.getAttribute('href'),
           offsetY: (self) => scrollOffset,
         },
-        duration: 1,
+        duration: 2,
         ease: 'Expo.easeInOut',
       });
     });
