@@ -446,8 +446,26 @@ function custom_manage_privacy_options($caps, $cap, $user_id, $args)
   if (array_intersect(['editor', 'administrator'], $user_meta->roles)) {
     if ('manage_privacy_options' === $cap) {
       $manage_name = is_multisite() ? 'manage_network' : 'manage_options';
-      $caps = array_diff($caps, [ $manage_name ]);
+      $caps = array_diff($caps, [$manage_name]);
     }
   }
   return $caps;
 }
+
+// Allow Editors and Administrators to add scripts
+function add_custom_capability_to_editors($caps, $cap, $user_id)
+{
+  if ('unfiltered_html' === $cap && user_can($user_id, 'editor')) {
+    $caps = array('unfiltered_html');
+  }
+  return $caps;
+}
+add_filter('map_meta_cap', 'add_custom_capability_to_editors', 1, 3);
+function add_custom_capability_to_admins($caps, $cap, $user_id)
+{
+  if ('unfiltered_html' === $cap && user_can($user_id, 'administrator')) {
+    $caps = array('unfiltered_html');
+  }
+  return $caps;
+}
+add_filter('map_meta_cap', 'add_custom_capability_to_admins', 1, 3);
