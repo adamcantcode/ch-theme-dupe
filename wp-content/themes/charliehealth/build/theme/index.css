@@ -1202,7 +1202,10 @@ a.nav-link:hover {
 }
 
 .breadcrumbs > *{
-  font-size: 0.875rem;
+  font-size: 1rem;
+  line-height: 140%;
+  letter-spacing: 0;
+  font-weight: 500;
   line-height: 1;
 }
 
@@ -1214,6 +1217,11 @@ a.nav-link:hover {
     letter-spacing: 0;
     font-weight: 400;
   }
+}
+
+.breadcrumbs > *:not(a){
+  --tw-text-opacity: 1;
+  color: rgb(70 73 109 / var(--tw-text-opacity));
 }
 
 /* .site-main {
