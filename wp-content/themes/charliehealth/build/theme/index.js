@@ -388,33 +388,29 @@ function ajaxPagination() {
         // Check for cropped image size
         if (post._embedded['wp:featuredmedia'][0].media_details.sizes['card-thumb']) {
           // Use card-thumb size
-          const cardThumbSize = post._embedded['wp:featuredmedia'][0].media_details.sizes['card-thumb'];
-          const cardThumbUrl = cardThumbSize.source_url;
-          const cardThumbWebpUrl = `${cardThumbUrl}.webp`;
-
-          // Create a new Image object to check if the .webp version exists
-          const webpImage = new Image();
-          webpImage.src = cardThumbWebpUrl;
-          webpImage.onload = function () {
-            // .webp version exists, use it
-            console.log('YES .webp');
-            imageUrl = cardThumbWebpUrl;
-            imageAlt = cardThumbSize.alt_text || `Featured image for ${post.title.rendered}`;
-          };
-          webpImage.onerror = function () {
-            console.log('NO .webp');
-            // .webp version does not exist, use the original
-            imageUrl = cardThumbUrl;
-            imageAlt = cardThumbSize.alt_text || `Featured image for ${post.title.rendered}`;
-          };
+          imageUrl = post._embedded['wp:featuredmedia'][0].media_details.sizes['card-thumb'].source_url;
+          // Check for alt text
+          if (post._embedded['wp:featuredmedia'][0].alt_text) {
+            imageAlt = post._embedded['wp:featuredmedia'][0].alt_text;
+          } else {
+            imageAlt = `Featured image for ${post.title.rendered}`;
+          }
         } else {
-          // Use original size
+          // Use orignal size
           imageUrl = post._embedded['wp:featuredmedia'][0].source_url;
-          imageAlt = post._embedded['wp:featuredmedia'][0].alt_text || `Featured image for ${post.title.rendered}`;
         }
+        fetch(`${imageUrl}.webp`, {
+          method: 'HEAD'
+        }).then(response => {
+          if (response.status === 404) {
+            console.log('Resource not found (404)');
+          } else {
+            console.log('Resource found');
+            imageUrl += '.webp';
+          }
+        });
       }
     }
-
     // If not press page
     if (!document.querySelector('body').classList.contains('page-template-page-press')) {
       if (post._embedded['wp:term']) {
@@ -424,7 +420,7 @@ function ajaxPagination() {
         var tags = post._embedded['wp:term'][1];
       }
       html = `<div class="relative grid overflow-hidden border rounded-sm border-card-border hover:shadow-lg duration-300">
-                  <img src="${imageUrl}" alt="${imageAlt}" class="object-cover lg:h-[220px] h-[150px] w-full">
+                  <img src="${imageUrl}.webp" alt="${imageAlt}" class="object-cover lg:h-[220px] h-[150px] w-full">
                   <div class="grid p-sp-4">
                     <h3><a href="${post.link}" class="stretched-link">${post.title.rendered}</a></h3>
                     <h5 class="mb-sp-4">${post.acf.by_author.post_title}</h5>
