@@ -86,7 +86,6 @@ window.addEventListener('DOMContentLoaded', () => {
             trigger: '.stats-block-circles',
             start: 'top 80%',
             end: 'bottom 70%',
-            scrub: 2,
           },
         }
       );

@@ -83,6 +83,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/stats-table');
   register_block_type(__DIR__ . '/build/blocks/image-grid');
   register_block_type(__DIR__ . '/build/blocks/outcomes-chart');
+  register_block_type(__DIR__ . '/build/blocks/outcomes-infographic');
 }
 add_action('init', 'register_acf_blocks', 5);
 

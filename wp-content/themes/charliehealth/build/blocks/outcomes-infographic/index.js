@@ -9456,9 +9456,9 @@ TweenMaxWithCSS = gsapWithCSS.core.Tween;
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/*!*******************************!*\
-  !*** ./blocks/stats/index.js ***!
-  \*******************************/
+/*!**********************************************!*\
+  !*** ./blocks/outcomes-infographic/index.js ***!
+  \**********************************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 /* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
@@ -9466,91 +9466,132 @@ __webpack_require__.r(__webpack_exports__);
 
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
 window.addEventListener('DOMContentLoaded', () => {
-  var statsBlock = document.querySelectorAll('.stats-block');
-  if (statsBlock) {
-    let statsTimeline = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
-      scrollTrigger: {
-        trigger: '.stats-block',
-        start: 'top 80%'
-        // markers: true,
-      }
-    });
-
-    statsTimeline.from('.stats-block .divider', {
-      scaleX: 0,
-      transformOrigin: 'center center',
-      duration: 1.5,
-      ease: 'expo.inOut',
-      stagger: 0.15
-    });
-    statsTimeline.from('.stats-block .counter', {
-      yPercent: 200,
-      opacity: 0,
-      duration: 1.5,
-      ease: 'expo.inOut',
-      stagger: 0.15
-    }, '-=1.25');
-    statsTimeline.from('.stats-block .details', {
-      yPercent: -200,
-      opacity: 0,
-      duration: 1.5,
-      ease: 'expo.inOut',
-      stagger: 0.15
-    }, '<');
-    statsTimeline.from('.stats-block .counter', {
-      textContent: 0 + '%',
-      snap: {
-        textContent: 1
-      },
-      duration: 3,
-      ease: 'rough'
-    }, '-=1');
-  }
-  var circles = document.querySelectorAll('.stats-circles');
-  if (circles) {
-    circles.forEach((circle, index) => {
-      var path = circle.querySelector('.js-stats-circle svg circle');
-      var circlePercent = parseInt(circle.querySelector('h2').innerText);
-      var pathLength = path.getTotalLength();
-      var offset = pathLength * (1 - circlePercent / 100);
-      gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.set(path, {
-        strokeDasharray: pathLength,
-        opacity: 0,
-        rotate: '-90deg',
-        transformOrigin: 'center center'
-      });
-      gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.fromTo(path, {
-        strokeDashoffset: pathLength,
-        opacity: 0
-      }, {
-        strokeDashoffset: offset,
-        ease: 'ease.in',
-        opacity: 1,
-        duration: 2,
-        delay: () => index / 2,
-        scrollTrigger: {
-          trigger: '.stats-block-circles',
-          start: 'top 80%',
-          end: 'bottom 70%'
-        }
-      });
-    });
-    gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from('.stats-block-circles .number', {
-      scrollTrigger: {
-        trigger: '.stats-block-circles',
-        start: 'top 80%',
-        end: 'bottom center',
-        toggleActions: 'play pause resume reverse'
-      },
-      textContent: 0 + '%',
-      snap: {
-        textContent: 1
-      },
-      duration: 2,
-      opacity: 0,
-      ease: 'rough'
-    }, '-=1');
-  }
+  let outcomesInfographic = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
+    scrollTrigger: {
+      trigger: '#outcomesInfographic',
+      start: 'top 50%'
+    }
+  });
+  outcomesInfographic.from('#outcomesInfographic .segment .rectangle', {
+    opacity: 0,
+    duration: '.3',
+    translateX: '-10px',
+    stagger: '.3'
+  });
+  outcomesInfographic.from('#outcomesInfographic .segment .label', {
+    opacity: 0,
+    duration: '.3',
+    stagger: '.3'
+  }, '>-0.5');
+  outcomesInfographic.from('#outcomesInfographic .line', {
+    scaleX: 0,
+    transformOrigin: 'left',
+    ease: 'expo.inOut',
+    duration: '1'
+  }, '>-0.5');
+  outcomesInfographic.from('#outcomesInfographic .segment-dots .dot-pre', {
+    scaleX: 0,
+    scaleY: 0,
+    transformOrigin: 'center',
+    stagger: {
+      each: '0.1'
+    },
+    ease: 'power1.inOut',
+    duration: '.25'
+  });
+  outcomesInfographic.from('#outcomesInfographic .weekly-dots .dot', {
+    scaleX: 0,
+    scaleY: 0,
+    transformOrigin: 'center',
+    stagger: {
+      each: '0.1'
+    },
+    ease: 'power1.inOut',
+    duration: '.125'
+  });
+  outcomesInfographic.from('#outcomesInfographic .segment-dots .dot', {
+    scaleX: 0,
+    scaleY: 0,
+    transformOrigin: 'center',
+    stagger: {
+      each: '0.1'
+    },
+    ease: 'power1.inOut',
+    duration: '.625'
+  });
+  outcomesInfographic.from('#outcomesInfographic .labels .label .label', {
+    opacity: 0,
+    stagger: {
+      each: '0.2'
+    },
+    ease: 'power1.inOut',
+    translateY: '16px',
+    duration: '1'
+  }, '>-2.5');
+});
+window.addEventListener('DOMContentLoaded', () => {
+  let outcomesInfographicMobile = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
+    scrollTrigger: {
+      trigger: '#outcomesInfographicMobile',
+      start: 'top 50%'
+    }
+  });
+  outcomesInfographicMobile.from('#outcomesInfographicMobile .segment .rectangle', {
+    opacity: 0,
+    duration: '.3',
+    translateY: '-10px',
+    stagger: '.3'
+  });
+  outcomesInfographicMobile.from('#outcomesInfographicMobile .segment .label', {
+    opacity: 0,
+    duration: '.3',
+    stagger: '.3'
+  }, '>-0.5');
+  outcomesInfographicMobile.from('#outcomesInfographicMobile .arrow', {
+    scaleY: 0,
+    transformOrigin: 'top',
+    ease: 'expo.inOut',
+    duration: '1'
+  }, '>-0.5');
+  outcomesInfographicMobile.from('#outcomesInfographicMobile .segment-dots .dot-pre', {
+    scaleX: 0,
+    scaleY: 0,
+    transformOrigin: 'center',
+    stagger: {
+      each: '0.1'
+    },
+    ease: 'power1.inOut',
+    duration: '.25'
+  });
+  outcomesInfographicMobile.from('#outcomesInfographicMobile .weekly-dots .dot', {
+    scaleX: 0,
+    scaleY: 0,
+    transformOrigin: 'center',
+    stagger: {
+      each: '0.1'
+    },
+    ease: 'power1.inOut',
+    duration: '.125'
+  });
+  outcomesInfographicMobile.from('#outcomesInfographicMobile .segment-dots .dot', {
+    scaleX: 0,
+    scaleY: 0,
+    transformOrigin: 'center',
+    stagger: {
+      each: '0.1'
+    },
+    ease: 'power1.inOut',
+    duration: '.625'
+  });
+  outcomesInfographicMobile.from('#outcomesInfographicMobile .labels .label .label', {
+    opacity: 0,
+    stagger: {
+      each: '0.2'
+    },
+    ease: 'power1.inOut',
+    translateX: '16px',
+    duration: '1'
+  }, '>-2.5');
 });
 }();
 /******/ })()
