@@ -399,26 +399,24 @@ function ajaxPagination() {
           // Use orignal size
           imageUrl = post._embedded['wp:featuredmedia'][0].source_url;
         }
-        async function checkResource() {
-          try {
-            const response = await fetch(`${imageUrl}.webp`, {
-              method: 'HEAD'
-            });
-            if (response.status === 404) {
-              console.log('Resource not found (404)');
-              // Handle the 404 error case
-            } else {
-              console.log('Resource found');
-              imageUrl += '.webp';
-              // Handle the success case
-            }
-          } catch (error) {
-            console.error('Error occurred:', error);
-            // Handle the error here to prevent it from propagating further
-          }
-        }
+        // async function checkResource() {
+        //   try {
+        //     const response = await fetch(`${imageUrl}.webp`, { method: 'HEAD' });
 
-        checkResource();
+        //     if (response.status === 404) {
+        //       console.log('Resource not found (404)');
+        //       // Handle the 404 error case
+        //     } else {
+        //       console.log('Resource found');
+        //       imageUrl += '.webp';
+        //       // Handle the success case
+        //     }
+        //   } catch (error) {
+        //     console.error('Error occurred:', error);
+        //     // Handle the error here to prevent it from propagating further
+        //   }
+        // }
+        // checkResource();
       }
     }
     // If not press page
