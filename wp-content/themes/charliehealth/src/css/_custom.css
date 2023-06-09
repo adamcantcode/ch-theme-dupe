@@ -405,6 +405,12 @@
     /* @apply inset-x-1/2 -mx-[50vw] relative w-[1280px]; */;
   }
 }
+.wp-block-heading:has(img) {
+  @apply flex lg:items-center items-start;
+  & > img {
+    @apply mr-sp-4 mt-sp-1 lg:mt-0;
+  }
+}
 
 /* FORM */
 .fsForm {
@@ -483,7 +489,6 @@
 }
 
 #scheduleContainer {
-  
 }
 
 /* EDITOR */

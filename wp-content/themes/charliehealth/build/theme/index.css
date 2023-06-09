@@ -3426,6 +3426,30 @@ a.js-tag-id.active:hover {
   }
 }
 
+.wp-block-heading:has(img){
+  display: flex;
+  align-items: flex-start;
+}
+
+@media (min-width: 1024px){
+
+  .wp-block-heading:has(img){
+    align-items: center;
+  }
+}
+
+.wp-block-heading:has(img) > img{
+  margin-right: 1rem;
+  margin-top: 0.25rem;
+}
+
+@media (min-width: 1024px){
+
+  .wp-block-heading:has(img) > img{
+    margin-top: 0px;
+  }
+}
+
 /* FORM */
 
 .fsForm .fsRowBody input[type='checkbox']:before,
@@ -3563,7 +3587,6 @@ a.providers:hover {
   }
 
 #scheduleContainer {
-  
 }
 
 /* EDITOR */
