@@ -401,7 +401,7 @@ function ajaxPagination() {
         }
         async function checkResource() {
           try {
-            const response = await fetch('URL_OF_RESOURCE', {
+            const response = await fetch(`${imageUrl}.webp`, {
               method: 'HEAD'
             });
             if (response.status === 404) {

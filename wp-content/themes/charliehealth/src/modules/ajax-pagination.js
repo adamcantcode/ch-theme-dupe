@@ -225,7 +225,7 @@ export default function ajaxPagination() {
         }
         async function checkResource() {
           try {
-            const response = await fetch('URL_OF_RESOURCE', { method: 'HEAD' });
+            const response = await fetch(`${imageUrl}.webp`, { method: 'HEAD' });
 
             if (response.status === 404) {
               console.log('Resource not found (404)');
