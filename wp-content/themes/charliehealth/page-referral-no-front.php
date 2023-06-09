@@ -9,12 +9,16 @@ Template Post Type: page
 
 <?php
 
+$string = "Referrals - something";
 $title = get_the_title();
-$prefix = "Referrals - ";
 
-if (strpos($title, $prefix) === 0) {
-  $title = str_replace($prefix, '', $title);
-};
+if (strpos($title, "Referrals &#8211; ") === 0) {
+  $title = str_replace("Referrals &#8211; ", "", $title);
+} else {
+  $title = $title;
+}
+
+// var_dump($title);
 ?>
 
 <main id="primary" class="site-main mt-[68px]">
