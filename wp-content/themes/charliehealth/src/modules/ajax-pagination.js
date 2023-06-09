@@ -256,7 +256,7 @@ export default function ajaxPagination() {
                     </div>`;
     } else {
       html = `<div class="relative grid lg:grid-cols-[1fr_4fr] grid-cols-[1fr_2fr] overflow-hidden border rounded-sm border-card-border">
-      <img src="${imageUrl}" alt="${imageAlt}" class="object-contain h-[125px] w-full lg:p-sp-6 p-sp-3">
+      <img src="${imageUrl.webp}" alt="${imageAlt}" class="object-contain h-[125px] w-full lg:p-sp-6 p-sp-3">
       <div class="grid p-sp-4">
         <h5 class="mb-sp-4">${post.acf.date}</h5>
         <h3 class="mb-0"><a href="${post.acf.link}" target="_blank" class="stretched-link">${post.title.rendered}</a></h3>
