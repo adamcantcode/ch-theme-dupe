@@ -428,55 +428,6 @@ include_once('helpers/helper-functions.php');
  */
 add_filter('should_load_separate_core_block_assets', '__return_true');
 
-// NOTE FILTER IMAGES BY NO ALT TEXT 
-
-// Add a custom column for alt text
-function add_alt_text_column($columns)
-{
-  $columns['alt_text'] = 'Alt Text';
-  return $columns;
-}
-add_filter('manage_media_columns', 'add_alt_text_column');
-
-// Display the alt text in the custom column
-function display_alt_text_column($column_name, $attachment_id)
-{
-  if ($column_name === 'alt_text') {
-    $alt_text = get_post_meta($attachment_id, '_wp_attachment_image_alt', true);
-
-    // Output only if alt text is empty
-    if (empty($alt_text)) {
-      echo '<em>No alt text</em>';
-    } else {
-      echo $alt_text;
-    }
-  }
-}
-add_action('manage_media_custom_column', 'display_alt_text_column', 10, 2);
-
-// Add filter option for images without alt text
-function add_alt_text_filter_option()
-{
-  global $pagenow;
-
-  // Check if it's the media library page
-  if ($pagenow === 'upload.php') {
-    $current_url = add_query_arg(array('alt_text_filter' => '1'));
-    $alt_text_filter_url = remove_query_arg('paged', $current_url);
-?>
-    <style>
-      .media-toolbar-secondary .view-switch,
-      .media-toolbar-primary .search-form {
-        margin-right: 10px;
-      }
-    </style>
-    <div class="alignleft actions">
-      <a href="<?php echo esc_url($alt_text_filter_url); ?>" class="button">Images without Alt Text</a>
-    </div>
-<?php
-  }
-}
-add_action('restrict_manage_posts', 'add_alt_text_filter_option');
 
 // TEMP COLORS
 // $test = 'bg-dark-teal'
