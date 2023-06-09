@@ -452,31 +452,6 @@ function display_alt_text_column($column_name, $attachment_id)
 }
 add_action('manage_media_custom_column', 'display_alt_text_column', 10, 2);
 
-// Filter media library to show images without alt text
-function filter_media_library_by_alt_text($query)
-{
-  global $pagenow;
-
-  // Check if it's the media library page
-  if ($pagenow === 'upload.php' && !empty($_GET['alt_text_filter'])) {
-    $meta_query = array(
-      'relation' => 'OR',
-      array(
-        'key'     => '_wp_attachment_image_alt',
-        'compare' => 'NOT EXISTS',
-      ),
-      array(
-        'key'     => '_wp_attachment_image_alt',
-        'value'   => '',
-        'compare' => '=',
-      ),
-    );
-
-    $query->set('meta_query', $meta_query);
-  }
-}
-add_action('pre_get_posts', 'filter_media_library_by_alt_text');
-
 // Add filter option for images without alt text
 function add_alt_text_filter_option()
 {

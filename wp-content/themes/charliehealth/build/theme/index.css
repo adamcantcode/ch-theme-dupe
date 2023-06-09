@@ -481,6 +481,10 @@ h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a{
         line-height: inherit;
 }
 
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img{
+  display: inline-block;
+}
+
 p,
   ul li,
   ol li{
@@ -727,7 +731,7 @@ blockquote > p{
 }
 
 blockquote > p a {
-    font-size: inherit
+    font-size: inherit;
   }
 
 blockquote p{
@@ -1335,16 +1339,8 @@ a.nav-link:hover {
   top: 100%;
 }
 
-.top-sp-16{
-  top: 6rem;
-}
-
 .top-sp-8{
   top: 2rem;
-}
-
-.right-sp-10{
-  right: 2.5rem;
 }
 
 .-z-50{
@@ -1500,6 +1496,10 @@ a.nav-link:hover {
   margin-right: 0.5rem;
 }
 
+.mt-0{
+  margin-top: 0px;
+}
+
 .mt-\[68px\]{
   margin-top: 68px;
 }
@@ -1516,6 +1516,10 @@ a.nav-link:hover {
   margin-top: 6rem;
 }
 
+.mt-sp-2{
+  margin-top: 0.5rem;
+}
+
 .mt-sp-4{
   margin-top: 1rem;
 }
@@ -1526,14 +1530,6 @@ a.nav-link:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
-}
-
-.mt-sp-2{
-  margin-top: 0.5rem;
-}
-
-.mt-0{
-  margin-top: 0px;
 }
 
 .block{
@@ -1578,6 +1574,10 @@ a.nav-link:hover {
 
 .h-\[125px\]{
   height: 125px;
+}
+
+.h-\[130px\]{
+  height: 130px;
 }
 
 .h-\[150px\]{
@@ -1628,20 +1628,16 @@ a.nav-link:hover {
   height: 4rem;
 }
 
+.h-sp-16{
+  height: 6rem;
+}
+
 .h-sp-4{
   height: 1rem;
 }
 
 .h-sp-8{
   height: 2rem;
-}
-
-.h-sp-16{
-  height: 6rem;
-}
-
-.h-\[130px\]{
-  height: 130px;
 }
 
 .max-h-0{
@@ -1774,10 +1770,6 @@ a.nav-link:hover {
 }
 
 .flex-grow{
-  flex-grow: 1;
-}
-
-.grow{
   flex-grow: 1;
 }
 
@@ -2470,14 +2462,14 @@ a.nav-link:hover {
   color: rgb(22 25 64 / var(--tw-text-opacity));
 }
 
-.text-white{
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
 .text-text{
   --tw-text-opacity: 1;
   color: rgb(70 73 109 / var(--tw-text-opacity));
+}
+
+.text-white{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .no-underline{
@@ -3973,10 +3965,6 @@ a.providers:hover {
     grid-template-columns: 1fr 2fr;
   }
 
-  .lg\:grid-cols-\[1fr\2c _2fr\]{
-    grid-template-columns: 1fr 2fr;
-  }
-
   .lg\:grid-cols-\[1fr_1\.33fr\]{
     grid-template-columns: 1fr 1.33fr;
   }
@@ -3995,10 +3983,6 @@ a.providers:hover {
 
   .lg\:grid-cols-\[4\.25fr_5fr\]{
     grid-template-columns: 4.25fr 5fr;
-  }
-
-  .lg\:grid-cols-1{
-    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 
   .lg\:grid-cols-\[unset\]{
@@ -4114,10 +4098,6 @@ a.providers:hover {
     padding: 0px;
   }
 
-  .lg\:p-sp-10{
-    padding: 2.5rem;
-  }
-
   .lg\:p-sp-12{
     padding: 3rem;
   }
@@ -4147,11 +4127,6 @@ a.providers:hover {
   .lg\:px-sp-8{
     padding-left: 2rem;
     padding-right: 2rem;
-  }
-
-  .lg\:px-sp-6{
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
   }
 
   .lg\:pr-sp-14{
