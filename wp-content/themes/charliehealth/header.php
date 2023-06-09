@@ -74,8 +74,9 @@
                         $sublink = get_sub_field('sublink');
                         $sublinkLink = $sublink['url'];
                         $sublinkTitle = $sublink['title'];
+                        $currentPage = $post->post_name;
                       ?>
-                        <a href="<?= $sublinkLink; ?>" class="nav-link sub-link"><?= $sublinkTitle; ?></a>
+                        <a href="<?= $sublinkLink; ?>" class="nav-link sub-link<?= $currentPage === basename($sublinkLink) ? ' active-link' : '' ?>"><?= $sublinkTitle; ?></a>
                       <?php
                       endwhile;
                       ?>

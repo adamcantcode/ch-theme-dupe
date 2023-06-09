@@ -55,7 +55,7 @@
         @apply opacity-0 -translate-x-1 transition-all duration-300 delay-150;
       }
       &.columns-center {
-        @apply lg:left-1/2 lg:-translate-x-1/2 lg:fixed 
+        @apply lg:left-1/2 lg:-translate-x-1/2 lg:fixed;
       }
     }
     svg {
@@ -66,6 +66,9 @@
     @apply text-white no-underline lg:py-5 lg:px-6 px-0 py-4 lg:hover:bg-lightest-teal lg:hover:!text-darkest-blue transition-colors duration-300 text-lg block;
     &.sub-link {
       @apply lg:py-3 lg:px-5 py-3 px-4 ml-4 lg:ml-0 lg:whitespace-nowrap last:rounded-bl-sm;
+      &.active-link {
+        @apply bg-lightest-teal text-dark-blue;
+      }
     }
   }
   .slide-out {
