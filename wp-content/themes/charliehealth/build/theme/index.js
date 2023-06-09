@@ -410,7 +410,7 @@ function ajaxPagination() {
         var tags = post._embedded['wp:term'][1];
       }
       html = `<div class="relative grid overflow-hidden border rounded-sm border-card-border hover:shadow-lg duration-300">
-                  <img src="${imageUrl}" alt="${imageAlt}" class="object-cover lg:h-[220px] h-[150px] w-full">
+                  <img src="${imageUrl}.webp" alt="${imageAlt}" class="object-cover lg:h-[220px] h-[150px] w-full">
                   <div class="grid p-sp-4">
                     <h3><a href="${post.link}" class="stretched-link">${post.title.rendered}</a></h3>
                     <h5 class="mb-sp-4">${post.acf.by_author.post_title}</h5>
