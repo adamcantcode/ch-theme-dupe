@@ -7,11 +7,21 @@ Template Post Type: page
 
 <?php get_header(); ?>
 
+<?php
+
+$title = get_the_title();
+$prefix = "Referrals - ";
+
+if (strpos($title, $prefix) === 0) {
+  $title = str_replace($prefix, '', $title);
+};
+?>
+
 <main id="primary" class="site-main mt-[68px]">
   <section class="section">
     <div class="container">
       <div class="grid lg:grid-cols-2">
-        <h1><?= get_the_title(); ?></h1>
+        <h1><?= $title; ?></h1>
         <p>Charlie Health welcomes the opportunity to partner with you to provide excellent care to your patients.</p>
       </div>
     </div>
