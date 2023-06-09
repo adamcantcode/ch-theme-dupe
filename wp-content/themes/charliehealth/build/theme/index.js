@@ -388,19 +388,33 @@ function ajaxPagination() {
         // Check for cropped image size
         if (post._embedded['wp:featuredmedia'][0].media_details.sizes['card-thumb']) {
           // Use card-thumb size
-          imageUrl = post._embedded['wp:featuredmedia'][0].media_details.sizes['card-thumb'].source_url;
-          // Check for alt text
-          if (post._embedded['wp:featuredmedia'][0].alt_text) {
-            imageAlt = post._embedded['wp:featuredmedia'][0].alt_text;
-          } else {
-            imageAlt = `Featured image for ${post.title.rendered}`;
-          }
+          const cardThumbSize = post._embedded['wp:featuredmedia'][0].media_details.sizes['card-thumb'];
+          const cardThumbUrl = cardThumbSize.source_url;
+          const cardThumbWebpUrl = `${cardThumbUrl}.webp`;
+
+          // Create a new Image object to check if the .webp version exists
+          const webpImage = new Image();
+          webpImage.src = cardThumbWebpUrl;
+          webpImage.onload = function () {
+            // .webp version exists, use it
+            console.log('YES .webp');
+            imageUrl = cardThumbWebpUrl;
+            imageAlt = cardThumbSize.alt_text || `Featured image for ${post.title.rendered}`;
+          };
+          webpImage.onerror = function () {
+            console.log('NO .webp');
+            // .webp version does not exist, use the original
+            imageUrl = cardThumbUrl;
+            imageAlt = cardThumbSize.alt_text || `Featured image for ${post.title.rendered}`;
+          };
         } else {
-          // Use orignal size
+          // Use original size
           imageUrl = post._embedded['wp:featuredmedia'][0].source_url;
+          imageAlt = post._embedded['wp:featuredmedia'][0].alt_text || `Featured image for ${post.title.rendered}`;
         }
       }
     }
+
     // If not press page
     if (!document.querySelector('body').classList.contains('page-template-page-press')) {
       if (post._embedded['wp:term']) {
@@ -410,7 +424,7 @@ function ajaxPagination() {
         var tags = post._embedded['wp:term'][1];
       }
       html = `<div class="relative grid overflow-hidden border rounded-sm border-card-border hover:shadow-lg duration-300">
-                  <img src="${imageUrl}.webp" alt="${imageAlt}" class="object-cover lg:h-[220px] h-[150px] w-full">
+                  <img src="${imageUrl}" alt="${imageAlt}" class="object-cover lg:h-[220px] h-[150px] w-full">
                   <div class="grid p-sp-4">
                     <h3><a href="${post.link}" class="stretched-link">${post.title.rendered}</a></h3>
                     <h5 class="mb-sp-4">${post.acf.by_author.post_title}</h5>
@@ -423,7 +437,7 @@ function ajaxPagination() {
                     </div>`;
     } else {
       html = `<div class="relative grid lg:grid-cols-[1fr_4fr] grid-cols-[1fr_2fr] overflow-hidden border rounded-sm border-card-border">
-      <img src="${imageUrl}.webp" alt="${imageAlt}" class="object-contain h-[125px] w-full lg:p-sp-6 p-sp-3">
+      <img src="${imageUrl}" alt="${imageAlt}" class="object-contain h-[125px] w-full lg:p-sp-6 p-sp-3">
       <div class="grid p-sp-4">
         <h5 class="mb-sp-4">${post.acf.date}</h5>
         <h3 class="mb-0"><a href="${post.acf.link}" target="_blank" class="stretched-link">${post.title.rendered}</a></h3>
