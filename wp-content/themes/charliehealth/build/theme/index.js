@@ -470,7 +470,7 @@ function anchorScroll() {
           offsetY: self => scrollOffset
         },
         duration: 1,
-        ease: 'Power2.easeInOut'
+        ease: 'Expo.easeInOut'
       });
     });
   });
