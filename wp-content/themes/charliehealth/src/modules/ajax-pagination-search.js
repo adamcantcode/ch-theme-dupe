@@ -13,7 +13,6 @@ export default function ajaxPaginationSearch() {
   };
 
   const renderPagination = (postsPerPage, endpoint, tagID) => {
-    console.log(endpoint, 'pagination');
     jQuery('.pagination-container').pagination({
       dataSource: function (done) {
         fetch(`${endpoint}`)
@@ -46,8 +45,8 @@ export default function ajaxPaginationSearch() {
       <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
     </svg>`,
       callback: function (data, pagination) {
-        console.log(data);
-        console.log(pagination);
+        // console.log(data);
+        // console.log(pagination);
 
         // var url = window.location.href.split('?')[0] + '?page=' + data[0];
         jQuery('.pagination-container .paginationjs-page').each(function (
@@ -74,7 +73,7 @@ export default function ajaxPaginationSearch() {
             return response.json();
           })
           .then(function (posts) {
-            console.log(posts);
+            // console.log(posts);
             var html = '';
             posts.results.forEach(function (post) {
               html += renderHTML(post, html);
@@ -148,7 +147,7 @@ export default function ajaxPaginationSearch() {
   };
 
   const renderHTML = (post, html) => {
-    console.log(post);
+    // console.log(post);
     var imageUrl =
       'https://images.placeholders.dev/?width=800&height=600&text=FPO';
     var imageAlt = `Featured image for ${post.title.rendered}`;
@@ -157,9 +156,13 @@ export default function ajaxPaginationSearch() {
       var tags = post.tags;
     }
     html = `<div class="relative grid overflow-hidden border rounded-sm border-card-border hover:shadow-lg duration-300">
-                <img src="${post.featured_media ? post.featured_media : imageUrl}" alt="${imageAlt}" class="object-cover lg:h-[220px] h-[150px] w-full">
+                <img src="${
+                  post.featured_media ? post.featured_media : imageUrl
+                }" alt="${imageAlt}" class="object-cover lg:h-[220px] h-[150px] w-full">
                 <div class="grid p-sp-4">
-                  <h3><a href="${post.link}" class="stretched-link">${post.title}</a></h3>
+                  <h3><a href="${post.link}" class="stretched-link">${
+      post.title
+    }</a></h3>
                   <h5 class="mb-sp-4">${post.acf.by_author.post_title}</h5>
                   <div class="grid justify-start grid-flow-col gap-sp-4 items-end">`;
     if (tags) {

@@ -488,7 +488,7 @@ function custom_api_search_results($request)
 
   // Set default values for page and per_page parameters
   $page = isset($page) ? absint($page) : 1;
-  $per_page = isset($per_page) ? absint($per_page) : 10;
+  $per_page = isset($per_page) ? absint($per_page) : 6;
 
   $args = array(
     'post_type'      => 'post',
@@ -547,10 +547,15 @@ function custom_api_search_results($request)
     'per_page'     => $per_page,
   );
 
+  // Set the X-WP-Total header
+  $response_headers = array(
+    'X-WP-Total' => $query->found_posts,
+  );
+
   // // Add embedded data
   // $response['_embedded'] = array(
   //   'item' => $results,
   // );
 
-  return $response;
+  return new WP_REST_Response( $response, 200, $response_headers );
 }

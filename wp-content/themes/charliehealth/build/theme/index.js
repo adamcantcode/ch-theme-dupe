@@ -221,7 +221,6 @@ function ajaxPaginationSearch() {
     renderPagination(postsPerPage, endpoint, tagID);
   };
   const renderPagination = (postsPerPage, endpoint, tagID) => {
-    console.log(endpoint, 'pagination');
     jQuery('.pagination-container').pagination({
       dataSource: function (done) {
         fetch(`${endpoint}`).then(function (response) {
@@ -252,8 +251,8 @@ function ajaxPaginationSearch() {
       <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
     </svg>`,
       callback: function (data, pagination) {
-        console.log(data);
-        console.log(pagination);
+        // console.log(data);
+        // console.log(pagination);
 
         // var url = window.location.href.split('?')[0] + '?page=' + data[0];
         jQuery('.pagination-container .paginationjs-page').each(function (index, element) {
@@ -269,7 +268,7 @@ function ajaxPaginationSearch() {
         fetch('https://wpch.local/wp-json/search-by-title/v1/search?term=nature&page=1&per_page=6').then(function (response) {
           return response.json();
         }).then(function (posts) {
-          console.log(posts);
+          // console.log(posts);
           var html = '';
           posts.results.forEach(function (post) {
             html += renderHTML(post, html);
@@ -336,7 +335,7 @@ function ajaxPaginationSearch() {
     return [endpoint, tagID];
   };
   const renderHTML = (post, html) => {
-    console.log(post);
+    // console.log(post);
     var imageUrl = 'https://images.placeholders.dev/?width=800&height=600&text=FPO';
     var imageAlt = `Featured image for ${post.title.rendered}`;
     if (post.tags) {
