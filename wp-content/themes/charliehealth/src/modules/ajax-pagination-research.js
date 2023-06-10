@@ -15,7 +15,7 @@ export default function ajaxPaginationResearch() {
   const renderPagination = (postsPerPage, endpoint, tagID) => {
     jQuery('.pagination-container-research').pagination({
       dataSource: function (done) {
-        fetch(endpoint)
+        fetch(`${endpoint}&_fields=id`)
           .then(function (response) {
             return response.headers.get('X-WP-Total');
           })
@@ -134,7 +134,6 @@ export default function ajaxPaginationResearch() {
 
   const getEndpoint = (bodyClasses, tagID) => {
     let endpoint = `${window.location.origin}/wp-json/wp/v2/research?_embed`;
-    console.log(endpoint);
     return [endpoint, tagID];
   };
 

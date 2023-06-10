@@ -30,7 +30,7 @@ function ajaxPaginationResearch() {
   const renderPagination = (postsPerPage, endpoint, tagID) => {
     jQuery('.pagination-container-research').pagination({
       dataSource: function (done) {
-        fetch(endpoint).then(function (response) {
+        fetch(`${endpoint}&_fields=id`).then(function (response) {
           return response.headers.get('X-WP-Total');
         }).then(function (totalPosts) {
           // Calculate the number of pages needed to display all posts
@@ -132,7 +132,6 @@ function ajaxPaginationResearch() {
   };
   const getEndpoint = (bodyClasses, tagID) => {
     let endpoint = `${window.location.origin}/wp-json/wp/v2/research?_embed`;
-    console.log(endpoint);
     return [endpoint, tagID];
   };
   const renderHTML = (post, html) => {
@@ -224,7 +223,7 @@ function ajaxPagination() {
   const renderPagination = (postsPerPage, endpoint, tagID) => {
     jQuery('.pagination-container').pagination({
       dataSource: function (done) {
-        fetch(endpoint).then(function (response) {
+        fetch(`${endpoint}&_fields=id`).then(function (response) {
           return response.headers.get('X-WP-Total');
         }).then(function (totalPosts) {
           // Calculate the number of pages needed to display all posts
@@ -265,6 +264,7 @@ function ajaxPagination() {
         var [endpoint] = getEndpoint(bodyClasses, tagID);
         jQuery('.posts-container').addClass('opacity-0 scale-[0.99]');
         endpoint += `&page=${data}&per_page=${postsPerPage}`;
+        console.log(endpoint);
         fetch(endpoint).then(function (response) {
           return response.json();
         }).then(function (posts) {
@@ -350,7 +350,7 @@ function ajaxPagination() {
       });
     } else if (bodyClasses.includes('page-template-searchpage')) {
       const params = new URLSearchParams(window.location.search);
-      const query = params.get('query');
+      const query = encodeURIComponent(params.get('query'));
       endpoint += `&search=${query}`;
     } else if (bodyClasses.includes('single-authors')) {
       var author = bodyClasses.map(str => str.replace('postid-', ''));
@@ -372,7 +372,6 @@ function ajaxPagination() {
     } else if (bodyClasses.includes('page-template-page-press')) {
       endpoint = `${window.location.origin}/wp-json/wp/v2/press?_embed`;
     }
-    console.log(endpoint);
     return [endpoint, tagID];
   };
   const renderHTML = (post, html) => {

@@ -15,7 +15,7 @@ export default function ajaxPagination() {
   const renderPagination = (postsPerPage, endpoint, tagID) => {
     jQuery('.pagination-container').pagination({
       dataSource: function (done) {
-        fetch(endpoint)
+        fetch(`${endpoint}&_fields=id`)
           .then(function (response) {
             return response.headers.get('X-WP-Total');
           })
@@ -64,6 +64,7 @@ export default function ajaxPagination() {
         jQuery('.posts-container').addClass('opacity-0 scale-[0.99]');
 
         endpoint += `&page=${data}&per_page=${postsPerPage}`;
+        console.log(endpoint);
 
         fetch(endpoint)
           .then(function (response) {
@@ -160,7 +161,7 @@ export default function ajaxPagination() {
       });
     } else if (bodyClasses.includes('page-template-searchpage')) {
       const params = new URLSearchParams(window.location.search);
-      const query = params.get('query');
+      const query = encodeURIComponent(params.get('query'));
 
       endpoint += `&search=${query}`;
     } else if (bodyClasses.includes('single-authors')) {
@@ -187,7 +188,6 @@ export default function ajaxPagination() {
     } else if (bodyClasses.includes('page-template-page-press')) {
       endpoint = `${window.location.origin}/wp-json/wp/v2/press?_embed`;
     }
-    console.log(endpoint);
     return [endpoint, tagID];
   };
 
