@@ -182,7 +182,7 @@ $args = array(
             $phone = get_field('phone');
             $email = get_field('email');
             $headshot = get_field('headshot');
-            if($headshot) {
+            if ($headshot) {
               $altText = $headshot['alt'];
             } else {
               $altText = 'Headshot of ' . get_the_title();
@@ -227,7 +227,12 @@ $args = array(
       $calendly = get_field('calendly_link');
       $why      = get_field('why_statement');
       $fact     = get_field('fun_fact');
-      $headshot    = get_field('headshot');
+      $headshot = get_field('headshot');
+      if ($headshot) {
+        $altText = $headshot['alt'];
+      } else {
+        $altText = 'Headshot of ' . get_the_title();
+      }
   ?>
       <div class="bg-[rgba(0,0,0,.5)] fixed top-0 left-0 w-full h-full z-50 grid items-center justify-center center transition-all duration-300 modal-fade" data-modal="<?= get_the_ID(); ?>">
         <div class="transition-all duration-300 m-sp-4">
@@ -257,7 +262,7 @@ $args = array(
               </div>
             </div>
             <div class="grid items-center justify-center order-1 lg:order-2">
-              <img src="<?= $headshot['url'] ?: placeHolderImage(400, 400); ?>" alt="" class="rounded-[50%]">
+              <img src="<?= $headshot['url'] ?: placeHolderImage(400, 400); ?>" alt="<?= $$altText ?>" class="rounded-[50%]">
             </div>
           </div>
         </div>
