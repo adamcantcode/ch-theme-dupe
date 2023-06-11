@@ -4,7 +4,7 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
 gsap.registerPlugin(ScrollToPlugin);
 
-export default function ajaxPaginationResearch() {
+export default function ajaxPaginationSearch() {
   const initPagination = (tagID) => {
     const bodyClasses = Array.from(document.body.classList);
     const postsPerPage = 6;
@@ -13,9 +13,9 @@ export default function ajaxPaginationResearch() {
   };
 
   const renderPagination = (postsPerPage, endpoint, tagID) => {
-    jQuery('.pagination-container-research').pagination({
+    jQuery('.pagination-container').pagination({
       dataSource: function (done) {
-        fetch(`${endpoint}&_fields=id`)
+        fetch(`${endpoint}`)
           .then(function (response) {
             return response.headers.get('X-WP-Total');
           })
@@ -45,20 +45,22 @@ export default function ajaxPaginationResearch() {
       <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
     </svg>`,
       callback: function (data, pagination) {
-        jQuery('.pagination-container-research .paginationjs-page').each(
-          function (index, element) {
-            var page = jQuery(element).data('num');
-            var link = jQuery(element).find('a');
-            jQuery(link).attr('href', window.location.href + '/page/' + page);
-          }
-        );
+        jQuery('.pagination-container .paginationjs-page').each(function (
+          index,
+          element
+        ) {
+          var page = jQuery(element).data('num');
+          var link = jQuery(element).find('a');
+          jQuery(link).attr('href', window.location.href + '/page/' + page);
+        });
 
         const bodyClasses = Array.from(document.body.classList);
         var [endpoint] = getEndpoint(bodyClasses, tagID);
 
-        jQuery('.posts-container-research').addClass('opacity-0 scale-[0.99]');
+        jQuery('.posts-container').addClass('opacity-0 scale-[0.99]');
 
         endpoint += `&page=${data}&per_page=${postsPerPage}`;
+        console.log(endpoint);
 
         fetch(endpoint)
           .then(function (response) {
@@ -66,13 +68,11 @@ export default function ajaxPaginationResearch() {
           })
           .then(function (posts) {
             var html = '';
-            posts.forEach(function (post) {
+            posts.results.forEach(function (post) {
               html += renderHTML(post, html);
             });
-            jQuery('.posts-container-research').html(html);
-            jQuery('.posts-container-research').removeClass(
-              'opacity-0 scale-[0.99]'
-            );
+            jQuery('.posts-container').html(html);
+            jQuery('.posts-container').removeClass('opacity-0 scale-[0.99]');
           });
       },
       afterPageOnClick: function () {
@@ -123,7 +123,6 @@ export default function ajaxPaginationResearch() {
 
     if (reset) {
       reset.addEventListener('click', (e) => {
-        e.target.classList.add('noshow');
         reset.classList.add('opacity-0', 'invisible');
         removeTagActive();
         initPagination();
@@ -133,7 +132,10 @@ export default function ajaxPaginationResearch() {
   };
 
   const getEndpoint = (bodyClasses, tagID) => {
-    let endpoint = `${window.location.origin}/wp-json/wp/v2/research?_embed`;
+    const params = new URLSearchParams(window.location.search);
+    const query = encodeURIComponent(params.get('query'));
+
+    const endpoint = `${window.location.origin}/wp-json/search-by-title/v1/search?term=${query}`;
     return [endpoint, tagID];
   };
 
@@ -142,70 +144,30 @@ export default function ajaxPaginationResearch() {
       'https://images.placeholders.dev/?width=800&height=600&text=FPO';
     var imageAlt = `Featured image for ${post.title.rendered}`;
 
-    /** NOTE Handle images */
-    // Make sure embeded exists
-    if (post._embedded) {
-      // Check for featured image
-      if (post._embedded['wp:featuredmedia']) {
-        // Check for cropped image size
-        if (
-          post._embedded['wp:featuredmedia'][0].media_details.sizes[
-            'card-thumb'
-          ]
-        ) {
-          // Use card-thumb size
-          imageUrl =
-            post._embedded['wp:featuredmedia'][0].media_details.sizes[
-              'card-thumb'
-            ].source_url;
-          // Check for alt text
-          if (post._embedded['wp:featuredmedia'][0].alt_text) {
-            imageAlt = post._embedded['wp:featuredmedia'][0].alt_text;
-          } else {
-            imageAlt = `Featured image for ${post.title.rendered}`;
-          }
-        } else {
-          // Use orignal size
-          imageUrl = post._embedded['wp:featuredmedia'][0].source_url;
-        }
-      }
+    if (post.tags) {
+      var tags = post.tags;
     }
-    // If not press page
-    if (
-      !document
-        .querySelector('body')
-        .classList.contains('page-template-page-press')
-    ) {
-      // var cats = post._embedded['wp:term'][0];
-      if (post._embedded['wp:term']) {
-        var tags = post._embedded['wp:term'][0];
-      }
-      html = `<div class="relative grid overflow-hidden border rounded-sm border-card-border hover:shadow-lg duration-300">
-                  <img src="${imageUrl}" alt="${imageAlt}" class="object-cover lg:h-[220px] h-[150px] w-full">
-                  <div class="grid p-sp-4">
-                    <h3><a href="${post.link}" class="stretched-link">${post.title.rendered}</a></h3>
-                    <h5 class="mb-sp-4">${post.acf.by_author.post_title}</h5>
-                    <div class="grid justify-start grid-flow-col gap-sp-4 items-end">`;
-      if (tags) {
-        html += `${tags
-          .map(
-            (tag) =>
-              `<a href="${tag.link}" class="px-sp-4 py-sp-3 no-underline rounded-lg text-h6 bg-tag-gray z-20 relative inline-block hover:bg-bright-teal">${tag.name}</a>`
-          )
-          .join('')}`;
-      }
-      html += `</div>
-      </div>
-      </div>`;
-    } else {
-      html = `<div class="relative grid lg:grid-cols-[1fr_4fr] grid-cols-[1fr_2fr] overflow-hidden border rounded-sm border-card-border">
-      <img src="${imageUrl}" alt="${imageAlt}" class="object-contain h-[125px] w-full lg:p-sp-6 p-sp-3">
-      <div class="grid p-sp-4">
-        <h5 class="mb-sp-4">${post.acf.date}</h5>
-        <h3 class="mb-0"><a href="${post.acf.link}" target="_blank" class="stretched-link">${post.title.rendered}</a></h3>
-      </div>
-    </div>`;
+    html = `<div class="relative grid overflow-hidden border rounded-sm border-card-border hover:shadow-lg duration-300">
+                <img src="${
+                  post.featured_media ? post.featured_media : imageUrl
+                }" alt="${imageAlt}" class="object-cover lg:h-[220px] h-[150px] w-full">
+                <div class="grid p-sp-4">
+                  <h3><a href="${post.link}" class="stretched-link">${
+      post.title
+    }</a></h3>
+                  <h5 class="mb-sp-4">${post.acf.by_author.post_title}</h5>
+                  <div class="grid justify-start grid-flow-col gap-sp-4 items-end">`;
+    if (tags) {
+      html += `${tags
+        .map(
+          (tag) =>
+            `<a href="${window.location.origin}/${tag.slug}" class="px-sp-4 py-sp-3 no-underline rounded-lg text-h6 bg-tag-gray z-20 relative inline-block hover:bg-bright-teal">${tag.name}</a>`
+        )
+        .join('')}`;
     }
+    html += `</div>
+                  </div>
+                  </div>`;
     return html;
   };
 

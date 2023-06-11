@@ -11,6 +11,7 @@ import shareButton from './modules/share-button';
 import featuredBlogSlider from './modules/featured-blog-slider';
 import ajaxPagination from './modules/ajax-pagination';
 import ajaxPaginationResearch from './modules/ajax-pagination-research';
+import ajaxPaginationSearch from './modules/ajax-pagination-search';
 import references from './modules/references';
 import progressBar from './modules/progress-bar';
 import newsletterPopup from './modules/newsletter-popup';
@@ -60,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ajaxPagination();
   }
   if (body.classList.contains('page-template-searchpage')) {
-    ajaxPagination();
+    ajaxPaginationSearch();
   }
   if (body.classList.contains('page-template-page-press')) {
     ajaxPagination();

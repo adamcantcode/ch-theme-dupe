@@ -469,3 +469,93 @@ function add_custom_capability_to_admins($caps, $cap, $user_id)
   return $caps;
 }
 add_filter('map_meta_cap', 'add_custom_capability_to_admins', 1, 3);
+
+
+function custom_api_search_register_routes()
+{
+  register_rest_route('search-by-title/v1', '/search', array(
+    'methods'  => 'GET',
+    'callback' => 'custom_api_search_results',
+  ));
+}
+add_action('rest_api_init', 'custom_api_search_register_routes');
+
+function custom_api_search_results($request)
+{
+  $search_term = $request->get_param('term');
+  $page = $request->get_param('page');
+  $per_page = $request->get_param('per_page');
+
+  // Set default values for page and per_page parameters
+  $page = isset($page) ? absint($page) : 1;
+  $per_page = isset($per_page) ? absint($per_page) : 6;
+
+  $args = array(
+    'post_type'      => 'post',
+    'post_status'    => 'publish',
+    's'              => $search_term,
+    'paged'          => $page,
+    'posts_per_page' => $per_page,
+  );
+
+  $query = new WP_Query($args);
+
+  $results = array();
+
+  if ($query->have_posts()) {
+    while ($query->have_posts()) {
+      $query->the_post();
+
+      // Get the featured media (if available)
+      $featured_media = null;
+      $featured_media_id = get_post_thumbnail_id();
+      if ($featured_media_id) {
+        $featured_media = wp_get_attachment_image_src($featured_media_id, 'card-thumb');
+        if ($featured_media) {
+          $featured_media = $featured_media[0];
+        }
+      }
+
+      // Get the tags of the post
+      $tags = wp_get_post_tags(get_the_ID(), array('fields' => 'all'));
+
+      // Get the ACF data of the post
+      $acf_data = get_fields();
+
+      $result = array(
+        'id'               => get_the_ID(),
+        'title'            => get_the_title(),
+        'link'        => get_permalink(),
+        'tags'             => $tags,
+        'acf'              => $acf_data,
+        'featured_media'   => $featured_media,
+        // Add any additional fields you need
+      );
+
+      $results[] = $result;
+    }
+  }
+
+  wp_reset_postdata();
+
+  $total_pages = $query->max_num_pages;
+
+  $response = array(
+    'results'      => $results,
+    'total_pages'  => $total_pages,
+    'current_page' => $page,
+    'per_page'     => $per_page,
+  );
+
+  // Set the X-WP-Total header
+  $response_headers = array(
+    'X-WP-Total' => $query->found_posts,
+  );
+
+  // // Add embedded data
+  // $response['_embedded'] = array(
+  //   'item' => $results,
+  // );
+
+  return new WP_REST_Response( $response, 200, $response_headers );
+}
