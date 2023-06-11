@@ -15,6 +15,7 @@ import ajaxPaginationSearch from './modules/ajax-pagination-search';
 import references from './modules/references';
 import progressBar from './modules/progress-bar';
 import newsletterPopup from './modules/newsletter-popup';
+import mobileCats from './modules/mobile-cats';
 
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
@@ -50,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (body.classList.contains('category')) {
     featuredBlogSlider();
     ajaxPagination();
+    mobileCats()
   }
   if (body.classList.contains('tag')) {
     ajaxPagination();

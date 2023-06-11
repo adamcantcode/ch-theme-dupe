@@ -1689,6 +1689,14 @@ a.nav-link:hover {
   max-height: 80vh;
 }
 
+.max-h-\[30vh\]{
+  max-height: 30vh;
+}
+
+.max-h-\[33vh\]{
+  max-height: 33vh;
+}
+
 .min-h-\[300px\]{
   min-height: 300px;
 }
@@ -2354,6 +2362,16 @@ a.nav-link:hover {
 .py-sp-2{
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+.px-sp-1{
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.px-sp-2{
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .\!pb-0{
