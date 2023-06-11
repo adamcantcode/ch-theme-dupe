@@ -54,7 +54,7 @@
               $cols = get_sub_field('columns');
 
               // TODO Update and remove the placeholder
-              $submenuImage = get_sub_field('submenu_image') ?: placeHolderImage(414,264);
+              $submenuImage = get_sub_field('submenu_image') ?: placeHolderImage(414, 264);
           ?>
               <div class="relative border-b-2 cursor-default nav-parent-menu border-light-blue last:border-0 lg:border-0 border-opacity-20">
                 <span class="flex items-center nav-link">
@@ -101,7 +101,10 @@
           endif;
           ?>
           <div class="block mobile-ctas lg:noshow">
-            <div class="flex justify-center gap-4 px-5 py-8 social">
+            <div class="flex justify-center py-8">
+              <a href="<?= get_field('cta', 'option')['url']; ?>" class="ch-button button-tertiary text-h3-lg"><?= get_field('cta', 'option')['title']; ?></a>
+            </div>
+            <div class="flex justify-center gap-4 px-5 pb-8 social">
               <a href="https://www.facebook.com/charliehealth" target="_blank">
                 <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/facebook.svg'); ?>" alt="Facebook logo" class="w-[25px] h-[25px] filter-white" />
               </a>
@@ -114,9 +117,6 @@
               <a href="https://www.tiktok.com/@charliehealth" target="_blank">
                 <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/tik-tok.svg'); ?>" alt="TikTok logo" class="w-[25px] h-[25px] filter-white" />
               </a>
-            </div>
-            <div class="flex justify-center pb-8">
-              <a href="<?= get_field('cta', 'option')['url']; ?>" class="ch-button button-tertiary"><?= get_field('cta', 'option')['title']; ?></a>
             </div>
           </div>
         </div>
