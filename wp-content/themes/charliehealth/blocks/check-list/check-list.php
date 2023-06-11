@@ -6,9 +6,9 @@ $listItemsChunks = array_chunk($listItems, $itemsHalf);
 ?>
 <?php if (have_rows('check_list')) : ?>
   <div id="<?= $block['id']; ?>">
-    <div class="grid items-start grid-cols-1 lg:grid-cols-2 lg:gap-sp-8">
+    <div class="grid items-start grid-cols-1 lg:grid-cols-2 lg:gap-sp-8 checklist">
       <?php foreach ($listItemsChunks as $items) : ?>
-        <div class="lg:rounded-md <?= $items[1] === current($items) ? 'rounded-t-md' : 'rounded-b-md'; ?> bg-lightest-purple">
+        <div class="lg:rounded-md bg-lightest-purple">
           <?php foreach ($items as $key => $value) : ?>
             <div class="flex items-start lg:p-sp-6 p-sp-4 gap-sp-4">
               <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/check.svg'); ?>" alt="Check mark" class="mt-sp-1">
