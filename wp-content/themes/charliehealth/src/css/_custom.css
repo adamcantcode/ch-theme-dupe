@@ -524,6 +524,7 @@
 
 .checklist {
   & > div {
+    @apply rounded-md;
     &:first-child {
       @apply rounded-b-none;
     }

@@ -3673,6 +3673,10 @@ a.providers:hover {
   margin-bottom: 0px;
 }
 
+.checklist > div{
+  border-radius: 1.25rem;
+}
+
 .checklist > div:first-child{
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
