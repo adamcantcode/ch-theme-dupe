@@ -136,7 +136,7 @@ export default function ajaxPagination() {
   };
 
   const getEndpoint = (bodyClasses, tagID) => {
-    let endpoint = `${window.location.origin}/wp-json/wp/v2/posts?_embed`;
+    let endpoint = `${window.location.origin}/wp-json/wp/v2/posts?_embed&_fields=link,title,acf,_links,_embedded&_embed`;
 
     if (bodyClasses.includes('category')) {
       var categories = bodyClasses.map((str) => str.replace('category-', ''));
@@ -181,12 +181,12 @@ export default function ajaxPagination() {
       medicalReviewer.forEach((medicalReviewer) => {
         if (!isNaN(medicalReviewer)) {
           var medicalReviewerID = medicalReviewer;
-          endpoint = `${window.location.origin}/wp-json/wp/v2/research?_embed`;
+          endpoint = `${window.location.origin}/wp-json/wp/v2/research?_embed&_fields=link,title,acf,_links,_embedded&_embed`;
           endpoint += `&medical_reviewer=${medicalReviewerID}`;
         }
       });
     } else if (bodyClasses.includes('page-template-page-press')) {
-      endpoint = `${window.location.origin}/wp-json/wp/v2/press?_embed`;
+      endpoint = `${window.location.origin}/wp-json/wp/v2/press?_embed&_fields=link,title,acf,_links,_embedded&_embed`;
     }
     return [endpoint, tagID];
   };
