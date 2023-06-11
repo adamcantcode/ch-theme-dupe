@@ -71,12 +71,36 @@ export default function ajaxPagination() {
             return response.json();
           })
           .then(function (posts) {
-            var html = '';
-            posts.forEach(function (post) {
-              html += renderHTML(post, html);
-            });
-            jQuery('.posts-container').html(html);
-            jQuery('.posts-container').removeClass('opacity-0 scale-[0.99]');
+            if(posts.length > 0) {
+              const noPosts = document.querySelector('.no-posts-js');
+              const pagination = document.querySelector('.pagination-container');
+              const postsContainer = document.querySelector('.posts-container');
+              
+              pagination.classList.remove('noshow');
+              postsContainer.classList.remove('noshow');
+
+              noPosts.classList.add('opacity-0');
+              noPosts.classList.add('invisible');
+              noPosts.classList.add('absolute');
+
+              var html = '';
+              posts.forEach(function (post) {
+                html += renderHTML(post, html);
+              });
+              jQuery('.posts-container').html(html);
+              jQuery('.posts-container').removeClass('opacity-0 scale-[0.99]');
+            } else {
+              const noPosts = document.querySelector('.no-posts-js');
+              const pagination = document.querySelector('.pagination-container');
+              const postsContainer = document.querySelector('.posts-container');
+
+              pagination.classList.add('noshow');
+              postsContainer.classList.add('noshow');
+
+              noPosts.classList.remove('opacity-0');
+              noPosts.classList.remove('invisible');
+              noPosts.classList.remove('absolute');
+            }
           });
       },
       afterPageOnClick: function () {

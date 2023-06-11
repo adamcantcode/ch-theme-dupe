@@ -180,6 +180,12 @@ if (is_category('families-and-caregivers')) {
             </div>
         </div>
         <div class="col-span-2">
+          <div class="absolute invisible opacity-0 no-posts-js">
+            <div class="grid items-center grid-cols-1 duration-300 rounded-md justify-items-center bg-cream lg:grid-cols-2 p-sp-4">
+              <h4 class="mb-0">There aren't any posts that match this filter. Try again with another tag or reset to see all posts.</h4>
+              <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/not-found.svg'); ?>" alt="not found icon">
+            </div>
+          </div>
           <div class="grid lg:grid-cols-2 transition-all duration-300 scale-[0.99] opacity-0 posts-container gap-x-sp-8 gap-y-sp-10 mb-sp-10">
           </div>
           <div class="pagination-container"></div>
