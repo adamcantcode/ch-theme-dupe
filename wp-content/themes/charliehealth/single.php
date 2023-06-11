@@ -50,7 +50,7 @@ $readingTime = ceil($wordCount / $wordsPerMinute);
         </div>
         <div class="grid items-center lg:grid-cols-[4.25fr_5fr] lg:gap-[10rem] gap-sp-8">
           <div>
-            <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="rounded-md max-h-[200px] lg:max-h-none object-cover w-full aspect-square">
+            <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="rounded-md max-h-[200px] lg:max-h-none object-cover w-full aspect-square nolazy">
           </div>
           <div>
             <h1 class="text-h2 lg:text-h1-display font-heading-serif mb-sp-6"><?= get_the_title(); ?></h1>
