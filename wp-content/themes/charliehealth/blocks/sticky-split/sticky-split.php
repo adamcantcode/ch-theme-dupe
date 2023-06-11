@@ -39,7 +39,7 @@ $image = get_field('sticky_split_image');
           <?php if ($icon) : ?>
             <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/' . $icon . '.svg'); ?>" alt="icon" class="sticky-split-icon mb-sp-8">
           <?php endif; ?>
-          <h3 class="lg:text-h1-lg text-h1"><?= $heading; ?></h3>
+          <h3 class="lg:text-h2-lg text-h2"><?= $heading; ?></h3>
           <?= $details; ?>
         </div>
         <?php if ($index !== $count) : ?>
