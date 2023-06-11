@@ -557,5 +557,14 @@ function custom_api_search_results($request)
   //   'item' => $results,
   // );
 
-  return new WP_REST_Response( $response, 200, $response_headers );
+  return new WP_REST_Response($response, 200, $response_headers);
 }
+
+function remove_dashicons_if_not_logged_in()
+{
+  if (!is_user_logged_in()) {
+    wp_deregister_style('dashicons');
+    wp_dequeue_style('dashicons');
+  }
+}
+add_action('wp_enqueue_scripts', 'remove_dashicons_if_not_logged_in', 100);
