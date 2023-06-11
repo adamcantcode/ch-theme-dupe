@@ -41,6 +41,12 @@
   <section id="postsContainer" class="section">
     <div class="container">
       <h2>Top posts for <?= ucwords(single_tag_title('', false)); ?></h2>
+      <div class="absolute invisible opacity-0 no-posts-js">
+        <div class="grid items-center grid-cols-1 duration-300 rounded-md justify-items-center bg-cream lg:grid-cols-2 p-sp-4">
+          <h4 class="mb-0">There aren't any posts that match this tag. Try again with another tag</h4>
+          <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/not-found.svg'); ?>" alt="not found icon">
+        </div>
+      </div>
       <div class="grid lg:grid-cols-3 transition-all duration-300 scale-[0.99] opacity-0 posts-container gap-x-sp-8 gap-y-sp-10 mb-sp-10">
         <!-- `<div class="relative grid overflow-hidden duration-300 border rounded-sm border-card-border hover:shadow-lg">
           <img src="https://images.placeholders.dev/?width=800&height=600&text=FPO" alt="" class="object-cover lg:h-[220px] h-[150px] w-full">
