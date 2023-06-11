@@ -81,7 +81,8 @@
     & > * {
       @apply text-h6 lg:text-p-lg leading-none;
     }
-    & > *:not(a) {
+    &
+    &:not(.text-white) > *:not(a) {
       @apply text-text;
     }
   }

@@ -1227,7 +1227,8 @@ a.nav-link:hover {
   }
 }
 
-.breadcrumbs > *:not(a){
+.breadcrumbs
+    .breadcrumbs:not(.text-white) > *:not(a){
   --tw-text-opacity: 1;
   color: rgb(70 73 109 / var(--tw-text-opacity));
 }
