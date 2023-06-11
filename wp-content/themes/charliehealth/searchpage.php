@@ -27,7 +27,7 @@ Template Name: Search Page
           </form>
         </div>
       </div>
-      <h1 class="leading-normal lg:leading-tight mt-sp-4 lg:mt-0">Search results for: <span class="px-3 text-white whitespace-pre-wrap bg-med-blue"><?= sanitize_text_field($_GET['query']); ?></span></h1>
+      <h1 class="leading-normal lg:leading-tight mt-sp-4 lg:mt-0">Search results for: <span class="inline-block px-3 text-white whitespace-pre-wrap rounded-sm bg-med-blue"><?= sanitize_text_field($_GET['query']); ?></span></h1>
     </div>
   </section>
   <section id="postsContainer" class="section">
