@@ -159,8 +159,8 @@ if (is_category('families-and-caregivers')) {
   <section id="postsContainer" class="section">
     <div class="container">
       <h2>Latest posts for <?= single_term_title(); ?></h2>
-      <div class="grid lg:grid-cols-3 gap-sp-16">
-        <div class="relative flex flex-col items-start gap-sp-4">
+      <div class="lg:grid lg:grid-cols-3 lg:gap-sp-16">
+        <div class="relative flex flex-wrap items-start lg:flex-col gap-sp-4">
           <h6 class="absolute top-0 right-0 group">
             <a role="button" class="flex items-center invisible transition-all duration-300 opacity-0 js-reset">
               <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/reset.svg'); ?>" alt="reset filters icon" class="transition-all duration-300 pointer-events-none mr-sp-2 w-sp-5 group-hover:rotate-45"><span class="pointer-events-none">Reset</span>
@@ -173,7 +173,7 @@ if (is_category('families-and-caregivers')) {
           ));
           // var_dump($terms);
           foreach ($terms as $term) : ?>
-            <h6 data-tag-id="<?= $term->term_id; ?>" class="inline-block mb-0 rounded-lg cursor-pointer js-tag-id bg-tag-gray p-sp-4"><?= $term->name; ?></h5>
+            <h6 data-tag-id="<?= $term->term_id; ?>" class="inline-block mb-0 rounded-lg cursor-pointer js-tag-id bg-tag-gray px-sp-4 py-sp-2"><?= $term->name; ?></h5>
             <?php endforeach; ?>
         </div>
         <div class="col-span-2">
