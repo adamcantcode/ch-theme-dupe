@@ -67,27 +67,28 @@ window.addEventListener('DOMContentLoaded', () => {
   const cardWrapper = document.querySelectorAll('.card-wrapper');
 
   // Check window size
-  const handleResize = cardWrapper => {
+  const handleResize = cardWrapperInstance => {
     if (window.innerWidth < 1024) {
-      toggleDropdown(cardWrapper);
+      toggleDropdown(cardWrapperInstance);
     } else {
-      removePadding(cardWrapper);
+      removePadding(cardWrapperInstance);
     }
   };
 
   // Dropdown animation
-  const toggleDropdown = cardWrapper => {
-    const toggleButton = cardWrapper.querySelector('.toggle-button');
-    cardWrapper.style.paddingBottom = toggleButton.clientHeight + 16 + 'px';
+  const toggleDropdown = cardWrapperInstance => {
+    console.log(cardWrapperInstance);
+    const toggleButton = cardWrapperInstance.querySelector('.toggle-button');
+    cardWrapperInstance.style.paddingBottom = toggleButton.clientHeight + 16 + 'px';
     toggleButton.addEventListener('click', e => {
       e.preventDefault();
-      if (cardWrapper.style.maxHeight) {
-        cardWrapper.style.maxHeight = null;
+      if (cardWrapperInstance.style.maxHeight) {
+        cardWrapperInstance.style.maxHeight = null;
         toggleButton.textContent = 'Show more';
         toggleButton.classList.remove('button-primary');
         toggleButton.classList.add('button-secondary');
       } else {
-        cardWrapper.style.maxHeight = cardWrapper.scrollHeight + 'px';
+        cardWrapperInstance.style.maxHeight = cardWrapperInstance.scrollHeight + 'px';
         toggleButton.textContent = 'Show less';
         toggleButton.classList.add('button-primary');
         toggleButton.classList.remove('button-secondary');
@@ -96,14 +97,16 @@ window.addEventListener('DOMContentLoaded', () => {
   };
 
   // Remove padding just in case
-  const removePadding = cardWrapper => {
-    cardWrapper.style.paddingBottom = 'unset';
+  const removePadding = cardWrapperInstance => {
+    if (cardWrapperInstance.style) {
+      cardWrapperInstance.style.paddingBottom = 'unset';
+    }
   };
 
   // Only run if card wrapper exist ($style === 'feed')
   if (cardWrapper) {
-    cardWrapper.forEach(cardWrapper => {
-      handleResize(cardWrapper);
+    cardWrapper.forEach(cardWrapperInstance => {
+      handleResize(cardWrapperInstance);
     });
   }
   window.addEventListener('resize', handleResize);

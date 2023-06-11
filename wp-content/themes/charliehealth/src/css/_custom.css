@@ -488,6 +488,24 @@
   }
 }
 
+.toggle-button:not(.button-primary) {
+  &:before {
+    @apply transition-all duration-300;
+  }
+  &:not(.button-primary) {
+    &:before {
+      content: '';
+      background: rgb(255, 255, 255);
+      background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 1) 33%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      @apply absolute -top-sp-16 left-0 w-full h-sp-16;
+    }
+  }
+}
+
 #scheduleContainer {
 }
 
