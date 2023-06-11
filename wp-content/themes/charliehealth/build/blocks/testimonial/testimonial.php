@@ -38,7 +38,7 @@ if (!empty($block['align'])) {
               </div>
               <div class="lg:order-1">
                 <?php if (get_sub_field('image')) : ?>
-                  <img src="<?= get_sub_field('image')['sizes']['card-thumb']; ?>" alt="<?= get_sub_field('image')['alt']; ?>" class="object-cover rounded-md mb-sp-8 h-[130px] aspect-square">
+                  <img src="<?= get_sub_field('image')['sizes']['card-thumb']; ?>" alt="<?= get_sub_field('image')['alt']; ?>" class="object-cover rounded-md mb-sp-8 lg:w-[130px] w-[80px] aspect-square">
                 <?php endif; ?>
                 <h5 class="mb-sp-1 text-text"><?= get_sub_field('name'); ?></h5>
                 <h5 class="mb-0 text-text"><?= get_sub_field('title'); ?></h5>

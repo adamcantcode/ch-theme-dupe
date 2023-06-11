@@ -1758,6 +1758,14 @@ a.nav-link:hover {
   width: 1.5rem;
 }
 
+.w-\[130px\]{
+  width: 130px;
+}
+
+.w-\[80px\]{
+  width: 80px;
+}
+
 .\!max-w-md{
   max-width: 28rem !important;
 }
@@ -4037,6 +4045,10 @@ a.providers:hover {
 
   .lg\:w-sp-5{
     width: 1.25rem;
+  }
+
+  .lg\:w-\[130px\]{
+    width: 130px;
   }
 
   .lg\:columns-2{

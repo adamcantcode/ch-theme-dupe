@@ -185,7 +185,7 @@
 .swiper {
   &.swiper-featured-blog {
     picture {
-      @apply order-1 lg:order-2
+      @apply order-1 lg:order-2;
     }
   }
 }
@@ -516,8 +516,8 @@
 
 .margin-adjust {
   & > * {
-    &:last-child { 
-      @apply mb-0
+    &:last-child {
+      @apply mb-0;
     }
   }
 }
