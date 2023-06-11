@@ -320,10 +320,10 @@
     @apply mb-sp-6;
   }
   &::-webkit-scrollbar {
-    @apply h-sp-2 cursor-pointer;
+    @apply h-sp-1 cursor-pointer;
   }
   &::-webkit-scrollbar-track {
-    @apply bg-tag-gray m-sp-5 cursor-pointer;
+    @apply bg-[rgba(70,73,109,0.15)] m-sp-5 cursor-pointer;
   }
   &::-webkit-scrollbar-thumb {
     @apply bg-hover-blue cursor-pointer;

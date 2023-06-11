@@ -3357,15 +3357,14 @@ a.js-tag-id.active:hover {
 }
 
 .custom-scroll::-webkit-scrollbar{
-  height: 0.5rem;
+  height: 0.25rem;
   cursor: pointer;
 }
 
 .custom-scroll::-webkit-scrollbar-track{
   margin: 1.25rem;
   cursor: pointer;
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 247 247 / var(--tw-bg-opacity));
+  background-color: rgba(70,73,109,0.15);
 }
 
 .custom-scroll::-webkit-scrollbar-thumb{
