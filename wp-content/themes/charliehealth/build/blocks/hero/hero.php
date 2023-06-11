@@ -61,7 +61,7 @@ if ($style === 'image') {
   <div class="rounded-md border-gradient">
     <div class="grid items-center lg:grid-cols-2">
       <img src="<?= $heroImage['sizes']['featured-large'] ?: placeHolderImage(600, 600); ?>" alt="<?= $heroImage['alt'] ?: 'Placeholder image'; ?>" class="object-cover lg:rounded-l-md lg:rounded-tr-none rounded-t-md min-h-full lg:h-[400px] h-[200px] w-full nolazy">
-      <div class="p-sp-8 margin-adjust">
+      <div class="p-sp-6 lg:p-sp-8 margin-adjust">
         <?= $subtitleEditor; ?>
         <?php include(get_template_directory() . '/includes/button-group.php'); ?>
       </div>
