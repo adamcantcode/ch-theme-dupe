@@ -182,6 +182,14 @@
   }
 }
 
+.swiper {
+  &.swiper-featured-blog {
+    picture {
+      @apply order-1 lg:order-2
+    }
+  }
+}
+
 /* FAQ Accordion */
 .faq-block,
 .toc-container,

@@ -3176,6 +3176,17 @@ a.nav-link:hover {
   background-color: rgb(33 41 132 / var(--tw-bg-opacity));
 }
 
+.swiper.swiper-featured-blog picture{
+  order: 1;
+}
+
+@media (min-width: 1024px){
+
+  .swiper.swiper-featured-blog picture{
+    order: 2;
+  }
+}
+
 /* FAQ Accordion */
 
 .faq-block .accordion-header:hover .toggle svg, .faq-block .toc-heading:hover .toggle svg, .faq-block .references-heading:hover .toggle svg, .toc-container .accordion-header:hover .toggle svg, .toc-container .toc-heading:hover .toggle svg, .toc-container .references-heading:hover .toggle svg, .references-container .accordion-header:hover .toggle svg, .references-container .toc-heading:hover .toggle svg, .references-container .references-heading:hover .toggle svg{
