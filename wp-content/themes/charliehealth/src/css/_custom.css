@@ -506,7 +506,12 @@
   }
 }
 
-#scheduleContainer {
+.margin-adjust {
+  & > * {
+    &:last-child { 
+      @apply mb-0
+    }
+  }
 }
 
 /* EDITOR */
