@@ -1,4 +1,4 @@
-<footer class="grid bg-darkest-blue gap-y-sp-16 section relatve">
+<footer class="grid bg-darkest-blue lg:gap-y-sp-16 gap-y-sp-8 section relatve">
 	<!-- menu -->
 	<div class="container grid lg:grid-cols-5 lg:gap-sp-16 gap-sp-8">
 		<?php
@@ -30,7 +30,7 @@
 			</a>
 		</div>
 	</div>
-	<div class="container grid lg:grid-cols-5 col gap-sp-16">
+	<div class="container grid lg:grid-cols-5 col lg:gap-sp-16 gap-sp-8">
 		<div class="flex flex-col col-span-2">
 			<div class="flex badges gap-sp-4 mb-sp-4">
 				<a href="https://www.jointcommission.org/" target="_blank">
@@ -60,7 +60,7 @@
 		</div>
 	</div>
 	<div class="container relative">
-		<div class="lg:w-[225px] w-2/3 lg:absolute lg:bottom-0 lg:right-0 opacity-10 mx-auto lg:mb-0 mb-sp-16">
+		<div class="lg:w-[225px] w-2/3 lg:absolute lg:bottom-0 lg:right-0 opacity-10 mx-auto lg:mb-0 mb-sp-8">
 			<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield.svg'); ?>" alt="Charlie health shield logo" />
 		</div>
 		<div class="flex flex-col lg:flex-row footer-links lg:gap-sp-8 gap-sp-2">
