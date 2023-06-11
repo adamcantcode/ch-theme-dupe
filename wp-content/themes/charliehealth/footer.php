@@ -25,7 +25,7 @@
 	</div>
 	<div class="container order-first md:order-none">
 		<div class="flex flex-col justify-between rounded-md lg:flex-row bg-lightest-teal py-sp-5 px-sp-8">
-			<p class="lg:mb-0">*If this is a life-threatening emergency, please call 911 or the <a href="https://988lifeline.org/" target="_blank">National Suicide Prevention Lifeline</a></p><a href="tel:+988" class="flex items-center gap-sp-4"><img src="https://assets-global.website-files.com/62daf9ae3616b86eec143652/62fe6bbb2e137b527c8f80d0_phone%20call.svg" width="25" alt="phone call icon">
+			<p class="lg:mb-0">*If this is a life-threatening emergency, please call 911 or the <a href="https://988lifeline.org/" target="_blank">National Suicide Prevention Lifeline</a></p><a href="tel:+988" class="flex items-center gap-sp-4"><img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/phone.svg'); ?>" width="25" alt="phone call icon">
 				<div>988</div>
 			</a>
 		</div>

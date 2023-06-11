@@ -54,7 +54,7 @@
               $cols = get_sub_field('columns');
 
               // TODO Update and remove the placeholder
-              $submenuImage = get_sub_field('submenu_image') ?: 'https://assets-global.website-files.com/62daf9ae3616b86eec143652/62fc0dbd27ef532c3740e981_young-boy-blue-shirt-on-beach.webp';
+              $submenuImage = get_sub_field('submenu_image') ?: placeHolderImage(414,264);
           ?>
               <div class="relative border-b-2 cursor-default nav-parent-menu border-light-blue last:border-0 lg:border-0 border-opacity-20">
                 <span class="flex items-center nav-link">
