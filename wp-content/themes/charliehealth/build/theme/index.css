@@ -1227,8 +1227,7 @@ a.nav-link:hover {
   }
 }
 
-.breadcrumbs
-    .breadcrumbs:not(.text-white) > *:not(a){
+.breadcrumbs:not(.text-white) > *:not(a){
   --tw-text-opacity: 1;
   color: rgb(70 73 109 / var(--tw-text-opacity));
 }
@@ -1916,10 +1915,6 @@ a.nav-link:hover {
 
 .justify-items-center{
   justify-items: center;
-}
-
-.gap-3{
-  gap: 0.75rem;
 }
 
 .gap-4{
@@ -3932,6 +3927,10 @@ a.providers:hover {
     margin-left: 0px;
   }
 
+  .lg\:mr-0{
+    margin-right: 0px;
+  }
+
   .lg\:mt-0{
     margin-top: 0px;
   }
@@ -3946,10 +3945,6 @@ a.providers:hover {
 
   .lg\:mt-sp-8{
     margin-top: 2rem;
-  }
-
-  .lg\:mr-0{
-    margin-right: 0px;
   }
 
   .lg\:block{
@@ -4131,10 +4126,6 @@ a.providers:hover {
 
   .lg\:items-stretch{
     align-items: stretch;
-  }
-
-  .lg\:gap-6{
-    gap: 1.5rem;
   }
 
   .lg\:gap-\[10rem\]{
