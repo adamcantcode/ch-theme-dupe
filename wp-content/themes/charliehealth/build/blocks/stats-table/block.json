@@ -5,7 +5,7 @@
   "title": "Stats Table",
   "description": "Table with list of stats",
   "category": "custom",
-  "icon": "align-pull-left",
+  "icon": "chart-area",
   "style": "file:./index.css",
   "script": "file:./index.js",
   "acf": {

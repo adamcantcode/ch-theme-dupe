@@ -4,7 +4,7 @@
   "name": "acf/outcomes-chart",
   "title": "Outcomes Graph",
   "description": "Animated graph of outcomes study",
-  "category": "design",
+  "category": "custom",
   "icon": "chart-bar",
   "style": "file:./index.css",
   "script": "file:./index.js",

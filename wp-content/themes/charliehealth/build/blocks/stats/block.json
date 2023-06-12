@@ -4,7 +4,7 @@
   "name": "acf/stats-block",
   "title": "Stats",
   "description": "Animated stats with styles",
-  "category": "design",
+  "category": "custom",
   "icon": "analytics",
   "style": "file:./index.css",
   "script": "file:./index.js",
