@@ -7,12 +7,12 @@ $posts = get_field('posts');
 
 if ($horizontalScroll === true) {
   $scrollClasses = 'overflow-auto w-full max-w-[80rem] custom-scroll';
-  $gridClasses = 'grid items-center grid-flow-col gap-3 lg:gap-6 lg:grid-cols-3';
-  $borderClasses = 'grid items-center grid-flow-col gap-3 lg:gap-6 lg:grid-cols-3';
+  $gridClasses = 'grid items-center grid-flow-col gap-sp-3 lg:gap-sp-6 lg:grid-cols-3';
+  $borderClasses = 'grid items-center grid-flow-col gap-sp-3 lg:gap-sp-6 lg:grid-cols-3';
 } else {
   $scrollClasses = '';
-  $gridClasses = 'grid items-center grid-cols-1 gap-4 lg:gap-6 lg:grid-cols-3';
-  $borderClasses = 'grid items-center grid-cols-1 gap-4 lg:gap-6 lg:grid-cols-3';
+  $gridClasses = 'grid items-center grid-cols-1 gap-sp-8 lg:gap-sp-6 lg:grid-cols-3';
+  $borderClasses = 'grid items-center grid-cols-1 gap-sp-8 lg:gap-sp-6 lg:grid-cols-3';
 }
 
 // var_dump(get_intermediate_image_sizes());
