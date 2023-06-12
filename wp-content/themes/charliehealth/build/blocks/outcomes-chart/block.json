@@ -3,9 +3,9 @@
   "apiVersion": 2,
   "name": "acf/outcomes-chart",
   "title": "Outcomes Graph",
-  "description": "Animated graph of outcomes study",
+  "description": "A test block for new compilation.",
   "category": "design",
-  "icon": "chart-bar",
+  "icon": "list-view",
   "style": "file:./index.css",
   "script": "file:./index.js",
   "acf": {
