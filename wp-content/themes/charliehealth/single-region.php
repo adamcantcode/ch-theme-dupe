@@ -262,7 +262,7 @@ $args = array(
               </div>
             </div>
             <div class="grid items-center justify-center order-1 lg:order-2">
-              <img src="<?= $headshot['url'] ?: placeHolderImage(400, 400); ?>" alt="<?= $$altText ?>" class="rounded-[50%]">
+              <img src="<?= $headshot['url'] ?: placeHolderImage(400, 400); ?>" alt="<?= $altText ?>" class="rounded-[50%]">
             </div>
           </div>
         </div>
