@@ -38,7 +38,7 @@
       </div>
     </div>
   </section>
-  <section id="postsContainer" class="section">
+  <section id="postsContainer" class="section-bottom">
     <div class="container">
       <h2>Top posts for <?= ucwords(single_tag_title('', false)); ?></h2>
       <div class="absolute invisible opacity-0 no-posts-js">
