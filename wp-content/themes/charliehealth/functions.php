@@ -87,6 +87,16 @@ function register_acf_blocks()
 }
 add_action('init', 'register_acf_blocks', 5);
 
+add_filter('block_categories_all', function ($categories) {
+
+  $categories[] = array(
+    'slug'  => 'custom',
+    'title' => 'Custom Blocks'
+  );
+
+  return $categories;
+});
+
 // Reformat acf fields in rest api
 add_filter('acf/settings/rest_api_format', function () {
   return 'standard';
