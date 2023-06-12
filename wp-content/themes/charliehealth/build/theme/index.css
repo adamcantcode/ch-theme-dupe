@@ -3891,6 +3891,10 @@ a.providers:hover {
     order: 2;
   }
 
+  .lg\:col-span-2{
+    grid-column: span 2 / span 2;
+  }
+
   .lg\:mx-auto{
     margin-left: auto;
     margin-right: auto;

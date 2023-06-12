@@ -1,4 +1,4 @@
-<footer class="grid bg-darkest-blue lg:gap-y-sp-16 gap-y-sp-8 section relatve">
+<footer id="footer" class="grid bg-darkest-blue lg:gap-y-sp-16 gap-y-sp-8 section relatve">
 	<!-- menu -->
 	<div class="container grid lg:grid-cols-5 lg:gap-sp-16 gap-sp-8">
 		<?php
@@ -22,6 +22,24 @@
 		<?php endwhile;
 		endif;
 		?>
+		<div class="flex flex-col lg:col-span-2">
+			<div class="newsletter-revamp footer-newsletter">
+				<h4 class="text-white">Join Our Newsletter</h4>
+				<p class="mb-0 text-white">Get mental health updates, research, insights, and resources directly to your inbox.</p>
+				<script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/newsletter_blog_revamp"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/newsletter_blog_revamp" title="Online Form">Online Form - Newsletter - Blog Revamp</a></noscript>
+				<script>
+					var container = document.currentScript.parentNode;
+					var elementToCut = container.querySelector("#fsSubmitButton5194985");
+					var destinationElement = container.querySelector("#fsCell140490700");
+
+					if (elementToCut && destinationElement) {
+						var clonedElement = elementToCut.cloneNode(true);
+						elementToCut.parentNode.removeChild(elementToCut);
+						destinationElement.appendChild(clonedElement);
+					}
+				</script>
+			</div>
+		</div>
 	</div>
 	<div class="container order-first md:order-none">
 		<div class="flex flex-col justify-between rounded-md lg:flex-row bg-lightest-teal py-sp-5 px-sp-8">
