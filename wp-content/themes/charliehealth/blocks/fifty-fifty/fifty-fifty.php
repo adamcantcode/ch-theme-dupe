@@ -32,7 +32,7 @@ switch ($order) {
             ?>
               <div class="swiper-slide">
                 <div class="grid items-center justify-center">
-                  <img src="<?= $sliderImage['sizes']['featured-large']; ?>" alt="<?= $sliderImage['alt']; ?>">
+                  <img src="<?= $sliderImage['sizes']['featured-large']; ?>" alt="<?= $sliderImage['alt']; ?>" class="nolazy">
                 </div>
               </div>
             <?php endwhile; ?>
