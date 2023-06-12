@@ -3,9 +3,9 @@
   "apiVersion": 2,
   "name": "acf/cta-block",
   "title": "CTA",
-  "description": "A test block for new compilation.",
-  "category": "design",
-  "icon": "list-view",
+  "description": "CTA block with multiple styles",
+  "category": "custom",
+  "icon": "admin-links",
   "style": "file:./index.css",
   "script": "file:./index.js",
   "acf": {

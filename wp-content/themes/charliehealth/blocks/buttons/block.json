@@ -1,12 +1,12 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "name": "acf/buttons-block",
-  "title": "Buttons",
-  "description": "A test block for new compilation.",
+  "title": "Buttons Block",
+  "description": "Custom buttons for Charlie Health's design system",
   "style": "file:./index.css",
   "script": "file:./index.js",
-  "category": "design",
-  "icon": "list-view",
+  "category": "custom",
+  "icon": "button",
   "apiVersion": 2,
   "acf": {
     "mode": "preview",
