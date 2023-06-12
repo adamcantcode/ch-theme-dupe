@@ -705,7 +705,7 @@ function anchorScroll() {
           offsetY: self => scrollOffset
         },
         duration: 2,
-        ease: 'Expo.easeInOut'
+        ease: 'Power4.easeInOut'
       });
     });
   });
