@@ -48,7 +48,7 @@ if ($style === 'image') {
 <?php if ($style === 'details') : ?>
   <div class="grid items-start lg:grid-cols-2 gap-sp-8">
     <div class="order-1">
-      <h1><?= $title; ?></h1>
+      <h1 class="mb-0"><?= $title; ?></h1>
     </div>
     <div class="flex flex-col justify-between order-1 lg:order-2">
       <?= $subtitleEditor; ?>
