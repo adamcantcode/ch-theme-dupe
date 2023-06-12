@@ -85,6 +85,12 @@ Template Name: Press page
     </section>
     <section class="section">
       <div class="container">
+        <div class="absolute invisible opacity-0 no-posts-js">
+          <div class="grid items-center grid-cols-1 duration-300 rounded-md justify-items-center bg-cream lg:grid-cols-2 p-sp-4">
+            <h4 class="mb-0">There aren't any posts that match this tag. Try again with another tag</h4>
+            <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/not-found.svg'); ?>" alt="not found icon">
+          </div>
+        </div>
         <div class="grid posts-container gap-x-sp-8 gap-y-sp-10 mb-sp-10">
           <!-- <div class="relative grid lg:grid-cols-[1fr_4fr] grid-cols-[1fr_2fr] overflow-hidden border rounded-sm border-card-border">
             <img src="https://images.placeholders.dev/?width=800&height=600&text=FPO" alt="" class="object-contain h-[125px] w-full">
