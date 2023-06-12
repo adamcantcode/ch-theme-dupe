@@ -27,7 +27,7 @@ if ($style === 'image') {
   <?php include('includes/breadcrumbs.php'); ?>
 <?php endif; ?>
 <?php if ($style === 'image') : ?>
-  <div class="grid items-center lg:grid-cols-2 gap-sp-4">
+  <div class="grid items-center lg:grid-cols-2 gap-sp-4 lg:gap-sp-16">
     <div class="order-2 lg:order-1">
       <h1 class="noshow text-display mb-sp-8 lg:block"><?= $title; ?></h1>
       <div class="flex items-center gap-sp-3 mb-sp-8">
