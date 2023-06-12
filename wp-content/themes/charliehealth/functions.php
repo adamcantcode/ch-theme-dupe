@@ -293,7 +293,7 @@ function custom_menu_order($menu_ord)
     'edit.php?post_type=medical-reviewer', // Medical Reviewer
     'edit.php?post_type=areas-of-care', // Areas of Care
     'edit.php?post_type=treatment-modalities', // Treatment Modalities
-    'edit.php?post_type=referral', // Referrals
+    // 'edit.php?post_type=referral', // Referrals
     'edit.php?post_type=press', // Press
     'edit.php?post_type=team-members', // Team
     'separator1', // First separator

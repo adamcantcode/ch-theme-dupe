@@ -2,7 +2,7 @@
     "key": "post_type_643068f6128e7",
     "title": "Referrals",
     "menu_order": 0,
-    "active": true,
+    "active": false,
     "post_type": "referral",
     "advanced_configuration": true,
     "import_source": "",
@@ -78,5 +78,5 @@
     "can_export": true,
     "delete_with_user": false,
     "register_meta_box_cb": "",
-    "modified": 1685319890
+    "modified": 1686582426
 }
