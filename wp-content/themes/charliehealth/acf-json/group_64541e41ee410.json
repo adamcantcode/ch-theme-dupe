@@ -37,7 +37,7 @@
                 "id": ""
             },
             "choices": {
-                "Admissions": "Admissions",
+                "Admissions & Outreach Leadership": "Admissions & Outreach Leadership",
                 "Advisors": "Advisors",
                 "Engagement": "Engagement",
                 "Founding Members": "Founding Members",
@@ -73,5 +73,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1684870659
+    "modified": 1686664218
 }
