@@ -37,6 +37,9 @@
 						elementToCut.parentNode.removeChild(elementToCut);
 						destinationElement.appendChild(clonedElement);
 					}
+
+					// Remove duplicate default formstack stlyes styles
+					document.querySelector('footer style').remove();
 				</script>
 			</div>
 		</div>
