@@ -68,8 +68,16 @@ $faqButton = get_field('faq_button');
           <?php endif; ?>
         </div>
       </div>
+      <?php if ($columnCount === 'one') : ?>
     </div>
+  <?php endif; ?>
+  <?php if ($columnCount === 'two') : ?>
+  <?php endif; ?>
+  <?php if ($faqButton && $columnCount === 'one') : ?>
     </div>
-    <?php if ($faqButton) : ?>
+  </div>
+<?php endif; ?>
+<?php if ($faqButton && $columnCount === 'two') : ?>
+  </div>
   </div>
 <?php endif; ?>
