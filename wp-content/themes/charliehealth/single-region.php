@@ -16,6 +16,7 @@ $args = array(
   'numberposts' => -1,
   'posts_per_page' => -1,
   'order' => 'ASC',
+  'orderby' => 'title',
   'meta_query' => array(
     array(
       'key' => 'region', // name of custom field
