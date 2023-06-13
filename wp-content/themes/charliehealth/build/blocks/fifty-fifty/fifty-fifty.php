@@ -21,7 +21,7 @@ switch ($order) {
     break;
 }
 ?>
-<div class="grid items-center grid-cols-1 gap-4 md:gap-32 md:grid-cols-2 last:mb-0 md:mb-sp-14 mb-sp-12">
+<div class="grid items-center grid-cols-1 gap-4 just md:gap-32 md:grid-cols-2 last:mb-0 md:mb-sp-14 mb-sp-12">
   <?php if ($style === 'slider') : ?>
     <?php if (have_rows('fifty_fifty_slides')) : ?>
       <div>
@@ -42,7 +42,7 @@ switch ($order) {
     <?php endif; ?>
   <?php else : ?>
     <?php if ($image) : ?>
-      <img src="<?= $image['sizes']['featured-large']; ?>" alt="<?= $image['alt']; ?>" class="object-cover object-top rounded-md max-h-[500px] flex-grow <?= $imageOrder; ?>">
+      <img src="<?= $image['sizes']['featured-large']; ?>" alt="<?= $image['alt']; ?>" class="object-cover object-top rounded-md flex-grow <?= $imageOrder; ?>">
     <?php endif; ?>
   <?php endif; ?>
   <div class="flex-grow <?= $detailsOrder; ?>">
