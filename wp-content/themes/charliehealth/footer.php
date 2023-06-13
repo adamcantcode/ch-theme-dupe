@@ -39,7 +39,12 @@
 					}
 
 					// Remove duplicate default formstack stlyes styles
-					document.querySelector('footer style').remove();
+					const styles = document.querySelectorAll('footer style');
+					styles.forEach(style => {
+						const clonedStyle = style.cloneNode(true);
+						document.head.appendChild(clonedStyle);
+						style.parentNode.removeChild(style);
+					});
 				</script>
 			</div>
 		</div>
