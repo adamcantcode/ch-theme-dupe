@@ -40,7 +40,7 @@
     </div>
     <div class="flex items-center gap-sp-4 lg:px-sp-8 py-sp-4">
       <div class="rounded-[50%] bg-bright-teal aspect-square lg:h-sp-16 h-sp-14 p-sp-4 flex items-center justify-center">
-        <h3 class="mb-0">24/7</h3>
+        <h3 class="mb-0">200+</h3>
       </div>
       <p class="mb-0 text-white">The numbers of insurers we work with to ensure the lowest cost for treatment</p>
     </div>
