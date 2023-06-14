@@ -47,9 +47,9 @@ if (!empty($block['backgroundColor'])) {
     </div>
     <div>
       <?php if ($subhead) : ?>
-        <p class="mb-0 noshow lg:block"><?= $subhead; ?></p>
+        <p class="noshow lg:block"><?= $subhead; ?></p>
       <?php endif; ?>
-      <div class="newsletter-revamp">
+      <div id="newsletterInContent" class="newsletter-revamp">
         <script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/newsletter_blog_revamp"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/newsletter_blog_revamp" title="Online Form">Online Form - Newsletter - Blog Revamp</a></noscript>
         <script>
           var container = document.currentScript.parentNode;

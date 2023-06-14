@@ -23,7 +23,7 @@
 		endif;
 		?>
 		<div class="flex flex-col lg:col-span-2">
-			<div class="newsletter-revamp footer-newsletter">
+			<div id="newsletterFooter" class="newsletter-revamp footer-newsletter">
 				<h4 class="text-white">Join Our Newsletter</h4>
 				<p class="text-white">Get mental health updates, research, insights, and resources directly to your inbox.</p>
 				<script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/newsletter_blog_revamp"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/newsletter_blog_revamp" title="Online Form">Online Form - Newsletter - Blog Revamp</a></noscript>
