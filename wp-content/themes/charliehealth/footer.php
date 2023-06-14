@@ -32,8 +32,8 @@
 					var elementToCut = container.querySelector("#fsSubmitButton5194985"); // Submit button
 					var destinationElement = container.querySelector("#fsCell140490700"); // Email container
 					var newsletterID = container.id; // Newlsetter identifier
-					var newsletterLPField = document.querySelector('#field142799721'); // LP URL field
-					var newsletterIDField = document.querySelector('#field146376375'); // Type field
+					var newsletterLPField = container.querySelector('#field142799721'); // LP URL field
+					var newsletterIDField = container.querySelector('#field146376375'); // Type field
 
 					if (elementToCut && destinationElement) {
 						var clonedElement = elementToCut.cloneNode(true);
