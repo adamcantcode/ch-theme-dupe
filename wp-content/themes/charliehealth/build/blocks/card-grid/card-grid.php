@@ -3,6 +3,7 @@ $style = get_field('style');
 $numbers = get_field('card_grid_numbers');
 $borderStyle = get_field('card_grid_border_style');
 $horizontalScroll = get_field('card_grid_horizontal_scroll');
+$useCTA = get_field('card_grid_use_cta');
 $posts = get_field('posts');
 
 if ($horizontalScroll === true) {
@@ -27,28 +28,33 @@ if ($horizontalScroll === true) {
           $image = get_sub_field('image');
           $link = get_sub_field('card_link');
         ?>
-          <div class="w-[calc(100vw-2.5rem)] lg:w-full h-full rounded-md<?= $link ? ' hover:shadow-lg duration-300 rounded-md' : ''; ?>">
-            <div class="<?= $borderStyle === 'gradient' ? 'border-gradient' : ' border rounded-md'; ?> h-full">
+          <div class="w-[calc(100vw-2.5rem)] lg:w-full rounded-md<?= $link && !$useCTA ? ' hover:shadow-lg duration-300 rounded-md' : ''; ?>">
+            <div class="<?= $borderStyle === 'gradient' ? 'border-gradient' : ' border border-card-border rounded-md'; ?> h-full">
               <?php if ($image) : ?>
                 <img src="<?= $image['sizes']['card-thumb'] ?>" alt="<?= $image['alt']; ?>" class="object-cover w-full rounded-t-md lg:h-[250px] h-[200px]">
               <?php endif; ?>
-              <div class="p-sp-4 md:p-sp-6 lg:p-sp-8">
+              <div class="h-full p-sp-4 md:p-sp-6 lg:p-sp-8">
                 <?php if ($numbers) : ?>
                   <h2 class="text-h2-lg mb-sp-5"><?= get_row_index(); ?></h2>
                 <?php endif; ?>
                 <?php if ($title) : ?>
                   <h3 class="mb-sp-5 last:mb-0">
-                    <?php if ($link) : ?>
-                      <a href="<?= $link['url']; ?>" class="stretched-link">
+                    <?php if ($link && !$useCTA) : ?>
+                      <a href="<?= $link['url']; ?>" target="<?= $link['target'] ?: '_self'; ?>" class="stretched-link">
                       <?php endif; ?>
                       <?= $title; ?>
-                      <?php if ($link) : ?>
+                      <?php if ($link && !$useCTA) : ?>
                       </a>
                     <?php endif; ?>
                   </h3>
                 <?php endif; ?>
                 <?php if ($details) : ?>
                   <p class="last:mb-0"><?= $details; ?></p>
+                <?php endif; ?>
+                <?php if ($useCTA && $link) : ?>
+                  <div class="mt-auto flex gap-x-sp-4 items-center lg:w-[unset] w-full<?= ' ' . $align ?>">
+                    <a href="<?= $link['url']; ?>" class="ch-button button-primary" target="<?= $link['target'] ?: '_self'; ?>"><?= $link['title'] ?: 'Learn more'; ?></a>
+                  </div>
                 <?php endif; ?>
               </div>
             </div>
@@ -63,7 +69,7 @@ if ($horizontalScroll === true) {
     <div class="<?= $gridClasses; ?> card-wrapper relative lg:overflow-visible overflow-hidden transition-all duration-1000 lg:max-h-full max-h-[70vh]">
       <?php foreach ($posts as $post) : ?>
         <div class="w-[calc(100vw-2.5rem)] lg:w-full rounded-md hover:shadow-lg transition-all duration-300 h-full">
-          <div class="<?= $borderStyle === 'gradient' ? 'border-gradient' : ' border rounded-md'; ?> h-full">
+          <div class="<?= $borderStyle === 'gradient' ? 'border-gradient' : ' border border-card-border rounded-md'; ?> h-full">
             <div class="p-sp-4 md:p-sp-6 lg:p-sp-8">
               <?php if ($numbers) : ?>
                 <h2 class="text-h2-lg mb-sp-5"><?= get_row_index(); ?></h2>

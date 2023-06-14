@@ -25,7 +25,7 @@
             "label": "Style",
             "name": "style",
             "aria-label": "",
-            "type": "button_group",
+            "type": "select",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -40,8 +40,57 @@
             },
             "default_value": "default",
             "return_format": "value",
+            "multiple": 0,
             "allow_null": 0,
-            "layout": "horizontal"
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_6417819978851",
+            "label": "Border Style",
+            "name": "card_grid_border_style",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "gradient": "Gradient",
+                "solid": "Solid"
+            },
+            "default_value": "gradient",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_648936f0b229c",
+            "label": "Use CTA",
+            "name": "card_grid_use_cta",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
         },
         {
             "key": "field_641780d37884e",
@@ -62,29 +111,6 @@
             "ui_on_text": "",
             "ui_off_text": "",
             "ui": 1
-        },
-        {
-            "key": "field_6417819978851",
-            "label": "Border Style",
-            "name": "card_grid_border_style",
-            "aria-label": "",
-            "type": "button_group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "gradient": "Gradient",
-                "solid": "Solid"
-            },
-            "default_value": "gradient",
-            "return_format": "value",
-            "allow_null": 0,
-            "layout": "horizontal"
         },
         {
             "key": "field_641781ce78852",
@@ -315,5 +341,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1684338792
+    "modified": 1686715613
 }

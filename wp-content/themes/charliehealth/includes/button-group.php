@@ -2,6 +2,7 @@
 $buttons = get_field('button_group_buttons');
 $linkOne = get_field('button_group_link');
 $linkTwo = get_field('button_group_link_two');
+var_dump($linkOne);
 
 $linkOneLink = '';
 $linkOneTitle = '';
