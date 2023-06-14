@@ -2522,6 +2522,10 @@ a.nav-link:hover {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.underline{
+  text-decoration-line: underline;
+}
+
 .no-underline{
   text-decoration-line: none;
 }

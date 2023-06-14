@@ -192,7 +192,7 @@ $args = array(
             <div class="grid justify-items-start gap-sp-1">
               <div class="cursor-pointer" data-modal-id="<?= get_the_ID(); ?>">
                 <img src="<?= $headshot['url'] ?: placeHolderImage(240, 240); ?>" alt="<?= $altText; ?>" class="rounded-[50%] mb-sp-4 w-[240px] hover:shadow-lg duration-300">
-                <h4><?= get_the_title(); ?></h4>
+                <h4 class="underline"><?= get_the_title(); ?></h4>
               </div>
               <h5 class="mb-0"><?= $title; ?></h5>
               <h5 class="mb-0"><?= $state; ?></h5>
