@@ -1520,6 +1520,10 @@ a.nav-link:hover {
   margin-top: 68px;
 }
 
+.mt-auto{
+  margin-top: auto;
+}
+
 .mt-sp-1{
   margin-top: 0.25rem;
 }
@@ -1546,10 +1550,6 @@ a.nav-link:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
-}
-
-.mt-auto{
-  margin-top: auto;
 }
 
 .block{
@@ -1676,10 +1676,6 @@ a.nav-link:hover {
   max-height: 33vh;
 }
 
-.max-h-\[500px\]{
-  max-height: 500px;
-}
-
 .max-h-\[600px\]{
   max-height: 600px;
 }
@@ -1795,6 +1791,10 @@ a.nav-link:hover {
 
 .flex-grow{
   flex-grow: 1;
+}
+
+.flex-grow-0{
+  flex-grow: 0;
 }
 
 .-translate-x-1\/2{
@@ -3214,7 +3214,8 @@ a.nav-link:hover {
   /* @apply before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0 before:border before:border-transparent before:box-border; */
   /* mask-composite: exclude; */
   position: relative;
-  display: flow-root;
+  display: flex;
+  flex-direction: column;
 }
 
 .border-gradient:before{
@@ -3794,11 +3795,6 @@ a.providers:hover {
 
 .hover\:brightness-0:hover{
   --tw-brightness: brightness(0);
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-
-.hover\:brightness-125:hover{
-  --tw-brightness: brightness(1.25);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
