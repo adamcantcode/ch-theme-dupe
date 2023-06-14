@@ -28,12 +28,12 @@ if ($horizontalScroll === true) {
           $image = get_sub_field('image');
           $link = get_sub_field('card_link');
         ?>
-          <div class="w-[calc(100vw-2.5rem)] lg:w-full rounded-md<?= $link && !$useCTA ? ' hover:shadow-lg duration-300 rounded-md' : ''; ?>">
+          <div class="w-[calc(100vw-2.5rem)] lg:w-full h-full rounded-md<?= $link && !$useCTA ? ' hover:shadow-lg duration-300 rounded-md' : ''; ?>">
             <div class="<?= $borderStyle === 'gradient' ? 'border-gradient' : ' border border-card-border rounded-md'; ?> h-full">
               <?php if ($image) : ?>
                 <img src="<?= $image['sizes']['card-thumb'] ?>" alt="<?= $image['alt']; ?>" class="object-cover w-full rounded-t-md lg:h-[250px] h-[200px]">
               <?php endif; ?>
-              <div class="h-full p-sp-4 md:p-sp-6 lg:p-sp-8">
+              <div class="p-sp-4 md:p-sp-6 lg:p-sp-8">
                 <?php if ($numbers) : ?>
                   <h2 class="text-h2-lg mb-sp-5"><?= get_row_index(); ?></h2>
                 <?php endif; ?>
