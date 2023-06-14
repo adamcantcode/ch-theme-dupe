@@ -18,7 +18,7 @@
       <p class="mb-0 border-2 border-transparent py-sp-1">Tuesday</p>
     </div>
     <div class="border-b border-l p-sp-8 border-card-border"><a href="<?= site_url('/treatment-modalities'); ?>" class="w-full text-white no-underline border-2 border-transparent whitespace-nowrap bg-[#35919c] hover:bg-transparent hover:!text-[#35919c] hover:border-[#35919c] rounded-sm block text-center py-sp-1 px-sp-4">MBT Skills Group</a></div>
-    <div class="border-b border-l p-sp-8 border-card-border"><a href="<?= site_url('/treatment-modalities/art-and-music-therapy'); ?>" class="w-full text-white no-underline border-2 border-transparent whitespace-nowrap bg-[#35919c] hover:bg-transparent hover:!text-[#35919c] hover:border-[#35919c] rounded-sm block text-center py-sp-1 px-sp-4">Art Therapay</a></div>
+    <div class="border-b border-l p-sp-8 border-card-border"><a href="<?= site_url('/treatment-modalities/art-and-music-therapy'); ?>" class="w-full text-white no-underline border-2 border-transparent whitespace-nowrap bg-[#35919c] hover:bg-transparent hover:!text-[#35919c] hover:border-[#35919c] rounded-sm block text-center py-sp-1 px-sp-4">Art Therapy</a></div>
     <div class="border-b border-l p-sp-8 border-card-border"><a href="<?= site_url('/treatment-modalities'); ?>" class="w-full text-white no-underline border-2 border-transparent whitespace-nowrap bg-[#35919c] hover:bg-transparent hover:!text-[#35919c] hover:border-[#35919c] rounded-sm block text-center py-sp-1 px-sp-4">Emotional Awareness</a></div>
     <!-- ROW -->
     <div class="border-b p-sp-8 border-card-border">
