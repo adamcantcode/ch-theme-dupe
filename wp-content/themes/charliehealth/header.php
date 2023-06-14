@@ -50,6 +50,7 @@
           if (have_rows('navigation_item', 'option')) :
             while (have_rows('navigation_item', 'option')) : the_row();
               $topLink = get_sub_field('top_link');
+              $topLinkLink = get_sub_field('top_link_link');
               $submenuDetails = get_sub_field('submenu_details');
               $cols = get_sub_field('columns');
 
@@ -57,13 +58,21 @@
               $submenuImage = get_sub_field('submenu_image') ?: placeHolderImage(414, 264);
           ?>
               <div class="relative border-b-2 cursor-default nav-parent-menu border-light-blue last:border-0 lg:border-0 border-opacity-20">
-                <span class="flex items-center nav-link">
-                  <?= $topLink; ?>
-                  <span class="ml-auto lg:ml-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 ml-2 fill-current" viewBox="0 0 24 24">
-                      <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path>
-                    </svg>
-                  </span>
+                <span class="relative flex items-center nav-link">
+                  <?php if ($topLinkLink) : ?>
+                    <a href="<?= $topLinkLink['url']; ?>" target="<?= $topLinkLink['target']; ?>" class="text-white lg:hover:!text-darkest-blue lg:stretched-link no-underline text-lg">
+                    <?php endif; ?>
+                    <?= $topLink; ?>
+                    <?php if ($topLinkLink) : ?>
+                    </a>
+                  <?php endif; ?>
+                  <?php if (have_rows('submenu_items', 'option')) : ?>
+                    <span class="ml-auto lg:ml-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 ml-2 fill-current" viewBox="0 0 24 24">
+                        <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path>
+                      </svg>
+                    </span>
+                  <?php endif; ?>
                 </span>
                 <?php
                 if (have_rows('submenu_items', 'option')) : ?>

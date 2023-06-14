@@ -62,6 +62,23 @@
                     "parent_repeater": "field_64027d2878056"
                 },
                 {
+                    "key": "field_648a05df8030e",
+                    "label": "Top Level Link",
+                    "name": "top_link_link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "parent_repeater": "field_64027d2878056"
+                },
+                {
                     "key": "field_64027d4b78057",
                     "label": "Submenu Items",
                     "name": "submenu_items",
@@ -82,6 +99,7 @@
                     "collapsed": "",
                     "button_label": "Add Row",
                     "rows_per_page": 20,
+                    "parent_repeater": "field_64027d2878056",
                     "sub_fields": [
                         {
                             "key": "field_64027d8378058",
@@ -100,8 +118,7 @@
                             "return_format": "array",
                             "parent_repeater": "field_64027d4b78057"
                         }
-                    ],
-                    "parent_repeater": "field_64027d2878056"
+                    ]
                 },
                 {
                     "key": "field_64027dfb78059",
@@ -192,5 +209,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1685460051
+    "modified": 1686767144
 }

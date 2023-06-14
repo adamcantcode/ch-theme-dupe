@@ -2482,6 +2482,11 @@ a.nav-link:hover {
   line-height: 1rem;
 }
 
+.text-lg{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .font-bold{
   font-weight: 700;
 }
@@ -4322,8 +4327,25 @@ a.providers:hover {
   .lg\:leading-tight{
     line-height: 1.25;
   }
+
+  .lg\:no-underline{
+    text-decoration-line: none;
+  }
+    .lg\:stretched-link:after {
+      content: '';
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      z-index: 10;
+    }
   .lg\:noshow{
     display: none;
+  }
+  .lg\:hover\:\!text-darkest-blue:hover{
+    --tw-text-opacity: 1 !important;
+    color: rgb(22 25 64 / var(--tw-text-opacity)) !important;
   }
 }
 /*!*******************************************************************************************************************************************************************************************************************************!*\
