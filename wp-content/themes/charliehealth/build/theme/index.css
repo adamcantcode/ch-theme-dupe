@@ -1692,6 +1692,14 @@ a.nav-link:hover {
   max-height: 80vh;
 }
 
+.max-h-\[30vh\]{
+  max-height: 30vh;
+}
+
+.max-h-\[50vh\]{
+  max-height: 50vh;
+}
+
 .min-h-\[300px\]{
   min-height: 300px;
 }

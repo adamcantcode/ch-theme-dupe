@@ -84,6 +84,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/outcomes-chart');
   register_block_type(__DIR__ . '/build/blocks/outcomes-infographic');
   register_block_type(__DIR__ . '/build/blocks/card-hiring');
+  register_block_type(__DIR__ . '/build/blocks/collapsible-content');
 }
 add_action('init', 'register_acf_blocks', 5);
 
@@ -107,6 +108,7 @@ function allowed_block_types($allowed_blocks, $editor_context)
     'acf/fifty-fifty-block',
     'acf/card-grid-block',
     'acf/card-hiring-block',
+    'acf/collapsible-content-block',
     'acf/buttons-block',
     'acf/testimonial-block',
     'acf/sticky-split-block',
