@@ -84,9 +84,6 @@
                         $sublinkLink = $sublink['url'];
                         $sublinkTitle = $sublink['title'];
                         $currentPage = $post->post_name;
-
-                        var_dump($currentPage);
-                        var_dump(basename($sublinkLink));
                       ?>
                         <a href="<?= $sublinkLink; ?>" class="nav-link sub-link<?= $currentPage === basename($sublinkLink) ? ' active-link' : '' ?>"><?= $sublinkTitle; ?></a>
                       <?php
