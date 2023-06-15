@@ -95,7 +95,7 @@ if ($style === 'image') {
     <div>
       <h3>Jump to:</h3>
     </div>
-    <div class="flex overflow-auto gap-sp-5 no-scrollbar">
+    <div class="flex overflow-auto gap-sp-5 custom-scroll">
       <?php while (have_rows('hero_jump_buttons_jump_buttons')) : the_row();
         $label = get_sub_field('label');
         $sectionID  = get_sub_field('section_id');
