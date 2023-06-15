@@ -527,9 +527,15 @@
     @apply rounded-md;
     &:first-child {
       @apply rounded-b-none;
+      @screen lg {
+        @apply rounded-b-md;
+      }
     }
     &:last-child {
       @apply rounded-t-none;
+      @screen lg {
+        @apply rounded-t-md;
+      }
     }
   }
 }
