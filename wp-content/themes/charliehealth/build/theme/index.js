@@ -660,7 +660,7 @@ function ajaxPagination() {
       html = `<div class="relative grid lg:grid-cols-[1fr_4fr] grid-cols-[1fr_2fr] overflow-hidden border rounded-sm border-card-border">
       <img src="${imageUrl}" alt="${imageAlt}" class="object-contain h-[125px] w-full lg:p-sp-6 p-sp-3">
       <div class="grid p-sp-4">
-        <h5 class="mb-sp-4">${post.acf.date}</h5>
+        <p class="mb-sp-4">${post.acf.date}</p>
         <h3 class="mb-0"><a href="${post.acf.link}" target="_blank" class="stretched-link">${post.title.rendered}</a></h3>
       </div>
     </div>`;
