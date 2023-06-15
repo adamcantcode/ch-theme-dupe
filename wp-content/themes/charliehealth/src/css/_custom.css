@@ -542,6 +542,10 @@
   }
 }
 
+.tt_name_sm img {
+  @apply inline-block;
+}
+
 /* EDITOR */
 .components-button.is-primary {
   background: var(
