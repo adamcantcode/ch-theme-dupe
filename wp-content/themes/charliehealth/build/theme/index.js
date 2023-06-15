@@ -966,8 +966,10 @@ function mobileNav() {
    */
   const removeActive = activeLink => {
     topLevelLinks.forEach(link => {
-      if (activeLink !== link.nextElementSibling) {
-        link.nextElementSibling.classList.remove('active');
+      if (link.nextElementSibling) {
+        if (activeLink !== link.nextElementSibling) {
+          link.nextElementSibling.classList.remove('active');
+        }
       }
     });
   };
