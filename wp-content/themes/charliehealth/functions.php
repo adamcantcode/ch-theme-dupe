@@ -83,6 +83,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/image-grid');
   register_block_type(__DIR__ . '/build/blocks/outcomes-chart');
   register_block_type(__DIR__ . '/build/blocks/outcomes-infographic');
+  register_block_type(__DIR__ . '/build/blocks/card-hiring');
 }
 add_action('init', 'register_acf_blocks', 5);
 
@@ -105,6 +106,7 @@ function allowed_block_types($allowed_blocks, $editor_context)
     'acf/hero-block',
     'acf/fifty-fifty-block',
     'acf/card-grid-block',
+    'acf/card-hiring-block',
     'acf/buttons-block',
     'acf/testimonial-block',
     'acf/sticky-split-block',

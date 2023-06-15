@@ -1407,6 +1407,10 @@ a.nav-link:hover {
   margin: 1rem;
 }
 
+.m-sp-6{
+  margin: 1.5rem;
+}
+
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
@@ -1781,6 +1785,10 @@ a.nav-link:hover {
   max-width: 80rem;
 }
 
+.max-w-\[72px\]{
+  max-width: 72px;
+}
+
 .flex-\[0_0_auto\]{
   flex: 0 0 auto;
 }
@@ -1859,6 +1867,10 @@ a.nav-link:hover {
 
 .grid-cols-\[1fr_5fr_5fr_5fr\]{
   grid-template-columns: 1fr 5fr 5fr 5fr;
+}
+
+.grid-cols-\[1fr_3fr\]{
+  grid-template-columns: 1fr 3fr;
 }
 
 .flex-row{

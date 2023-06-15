@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "acf/card-hiring-block",
+  "title": "Card Hiring",
+  "description": "List of hiring needs",
+  "style": "file:./index.css",
+  "script": "file:./index.js",
+  "category": "custom",
+  "icon": "grid-view",
+  "apiVersion": 2,
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "card-hiring.php"
+  },
+  "supports": {}
+}
