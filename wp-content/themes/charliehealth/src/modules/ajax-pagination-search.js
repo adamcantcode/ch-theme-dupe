@@ -62,69 +62,45 @@ export default function ajaxPaginationSearch() {
         endpoint += `&page=${data}&per_page=${postsPerPage}`;
         console.log(endpoint);
 
-        var responseClone; // 1
         fetch(endpoint)
           .then(function (response) {
-            responseClone = response.clone(); // 2
             return response.json();
           })
-          .then(
-            function (posts) {
-              if (posts.results.length > 0) {
-                const noPosts = document.querySelector('.no-posts-js');
-                const pagination = document.querySelector(
-                  '.pagination-container'
-                );
-                const postsContainer =
-                  document.querySelector('.posts-container');
+          .then(function (posts) {
+            if (posts.results.length > 0) {
+              const noPosts = document.querySelector('.no-posts-js');
+              const pagination = document.querySelector(
+                '.pagination-container'
+              );
+              const postsContainer = document.querySelector('.posts-container');
 
-                pagination.classList.remove('noshow');
-                postsContainer.classList.remove('noshow');
+              pagination.classList.remove('noshow');
+              postsContainer.classList.remove('noshow');
 
-                noPosts.classList.add('opacity-0');
-                noPosts.classList.add('invisible');
-                noPosts.classList.add('absolute');
-                var html = '';
-                posts.results.forEach(function (post) {
-                  html += renderHTML(post, html);
-                });
-                jQuery('.posts-container').html(html);
-                jQuery('.posts-container').removeClass(
-                  'opacity-0 scale-[0.99]'
-                );
-              } else {
-                const noPosts = document.querySelector('.no-posts-js');
-                const pagination = document.querySelector(
-                  '.pagination-container'
-                );
-                const postsContainer =
-                  document.querySelector('.posts-container');
+              noPosts.classList.add('opacity-0');
+              noPosts.classList.add('invisible');
+              noPosts.classList.add('absolute');
+              var html = '';
+              posts.results.forEach(function (post) {
+                html += renderHTML(post, html);
+              });
+              jQuery('.posts-container').html(html);
+              jQuery('.posts-container').removeClass('opacity-0 scale-[0.99]');
+            } else {
+              const noPosts = document.querySelector('.no-posts-js');
+              const pagination = document.querySelector(
+                '.pagination-container'
+              );
+              const postsContainer = document.querySelector('.posts-container');
 
-                pagination.classList.add('noshow');
-                postsContainer.classList.add('noshow');
+              pagination.classList.add('noshow');
+              postsContainer.classList.add('noshow');
 
-                noPosts.classList.remove('opacity-0');
-                noPosts.classList.remove('invisible');
-                noPosts.classList.remove('absolute');
-              }
-            },
-            function (rejectionReason) {
-              // 3
-              console.log(
-                'Error parsing JSON from response:',
-                rejectionReason,
-                responseClone
-              ); // 4
-              responseClone
-                .text() // 5
-                .then(function (bodyText) {
-                  console.log(
-                    'Received the following instead of valid JSON:',
-                    bodyText
-                  ); // 6
-                });
+              noPosts.classList.remove('opacity-0');
+              noPosts.classList.remove('invisible');
+              noPosts.classList.remove('absolute');
             }
-          );
+          });
       },
       afterPageOnClick: function () {
         scollToPostsContainer();

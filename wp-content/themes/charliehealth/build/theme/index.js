@@ -280,9 +280,7 @@ function ajaxPaginationSearch() {
         jQuery('.posts-container').addClass('opacity-0 scale-[0.99]');
         endpoint += `&page=${data}&per_page=${postsPerPage}`;
         console.log(endpoint);
-        var responseClone; // 1
         fetch(endpoint).then(function (response) {
-          responseClone = response.clone(); // 2
           return response.json();
         }).then(function (posts) {
           if (posts.results.length > 0) {
@@ -310,16 +308,8 @@ function ajaxPaginationSearch() {
             noPosts.classList.remove('invisible');
             noPosts.classList.remove('absolute');
           }
-        }, function (rejectionReason) {
-          // 3
-          console.log('Error parsing JSON from response:', rejectionReason, responseClone); // 4
-          responseClone.text() // 5
-          .then(function (bodyText) {
-            console.log('Received the following instead of valid JSON:', bodyText); // 6
-          });
         });
       },
-
       afterPageOnClick: function () {
         scollToPostsContainer();
       },
