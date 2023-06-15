@@ -3145,7 +3145,7 @@ a.nav-link:hover {
   @apply justify-end;
 } */
 
-/* Testimonial Block */
+/* Swipers  */
 
 .swiper.swiper-testimonial .swiper-wrapper .swiper-slide{
   opacity: 0.3;
@@ -3189,6 +3189,19 @@ a.nav-link:hover {
   .swiper.swiper-featured-blog picture{
     order: 2;
   }
+}
+
+.swiper .swiper-pagination-bullet{
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(33 41 132 / var(--tw-border-opacity));
+  background-color: rgba(0,0,0,0);
+  opacity: 1;
+}
+
+.swiper .swiper-pagination-bullet.swiper-pagination-bullet-active{
+  --tw-bg-opacity: 1;
+  background-color: rgb(33 41 132 / var(--tw-bg-opacity));
 }
 
 /* FAQ Accordion */
