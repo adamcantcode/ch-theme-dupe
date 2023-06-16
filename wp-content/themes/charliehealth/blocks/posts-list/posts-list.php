@@ -56,6 +56,7 @@ $style  = get_field('style');
     <div class="grid lg:grid-cols-3 posts-container gap-x-sp-8 gap-y-sp-10">
       <?php foreach ($customPosts['related_posts'] as $customPost) : ?>
         <?php
+        var_dump($customPost->ID);
         if (has_post_thumbnail($customPost->ID)) {
           $featuredImageID = get_post_thumbnail_id($customPost->ID);
           $featuredImage = wp_get_attachment_image_src($featuredImageID, 'card-thumb');
