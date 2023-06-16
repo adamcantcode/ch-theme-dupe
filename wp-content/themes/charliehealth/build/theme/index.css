@@ -1375,10 +1375,6 @@ a.nav-link:hover {
   z-index: 50;
 }
 
-.z-\[15\]{
-  z-index: 15;
-}
-
 .order-1{
   order: 1;
 }
@@ -1690,14 +1686,6 @@ a.nav-link:hover {
 
 .max-h-\[80vh\]{
   max-height: 80vh;
-}
-
-.max-h-\[30vh\]{
-  max-height: 30vh;
-}
-
-.max-h-\[50vh\]{
-  max-height: 50vh;
 }
 
 .min-h-\[300px\]{
@@ -2168,11 +2156,6 @@ a.nav-link:hover {
 .bg-bright-teal{
   --tw-bg-opacity: 1;
   background-color: rgb(177 252 250 / var(--tw-bg-opacity));
-}
-
-.bg-card-border{
-  --tw-bg-opacity: 1;
-  background-color: rgb(212 213 220 / var(--tw-bg-opacity));
 }
 
 .bg-cream{
