@@ -36,7 +36,6 @@ $readingTime = ceil($wordCount / $wordsPerMinute);
 
 <main id="primary" class="site-main mt-[68px]">
   <div id="progressBar" class="fixed z-20 transition-all duration-700 rounded-r-sm bg-purple-gradient-end h-[5px] left-0"></div>
-  <!-- <div class="fixed h-[5px] left-0 w-full bg-card-border z-[15]"></div> -->
   <div id="mainArticleContent" class="relative z-10 main-article-content">
     <section class="section">
       <div class="container">
