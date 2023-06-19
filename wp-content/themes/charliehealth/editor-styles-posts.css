@@ -1,8 +1,8 @@
-.edit-post-visual-editor__post-title-wrapper
-  > :where(:not(.alignleft):not(.alignright):not(.alignfull)),
-.block-editor-block-list__layout.is-root-container
-  > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+.edit-post-visual-editor__post-title-wrapper,
+.block-editor-block-list__layout.is-root-container {
   max-width: 768px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 .edit-post-visual-editor__post-title-wrapper > .alignfull,
 .block-editor-block-list__layout.is-root-container > .alignfull {
