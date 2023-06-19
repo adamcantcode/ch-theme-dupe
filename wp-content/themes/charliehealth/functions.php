@@ -98,138 +98,92 @@ add_filter('block_categories_all', function ($categories) {
   return $categories;
 });
 
-// add_filter('allowed_block_types_all', 'allowed_block_types', 25, 2);
+/**
+ * Blacklist blocks
+ */
+add_filter('allowed_block_types_all', 'misha_blacklist_blocks');
 
-// function allowed_block_types($allowed_blocks, $editor_context)
-// {
+function misha_blacklist_blocks($allowed_blocks)
+{
+  // get all the registered blocks
+  $blocks = WP_Block_Type_Registry::get_instance()->get_all_registered();
 
-//   return array(
-//     'acf/hero-block',
-//     'acf/fifty-fifty-block',
-//     'acf/card-grid-block',
-//     'acf/card-hiring-block',
-//     'acf/collapsible-content-block',
-//     'acf/buttons-block',
-//     'acf/testimonial-block',
-//     'acf/sticky-split-block',
-//     'acf/faq-block',
-//     'acf/jump-buttons-block',
-//     'acf/section-container-block',
-//     'acf/stats-block',
-//     'acf/divider-block',
-//     'acf/cta-block',
-//     'acf/pre-footer-cta-block',
-//     'acf/large-quote-block',
-//     'acf/tabs-block',
-//     'acf/carousel-block',
-//     'acf/posts-list-block',
-//     'acf/teams-block',
-//     'acf/region-map-block',
-//     'acf/iop-chart',
-//     'acf/iop-schedule',
-//     'acf/callout-block',
-//     'acf/check-list-block',
-//     'acf/stats-table',
-//     'acf/image-grid',
-//     'acf/outcomes-chart',
-//     'acf/outcomes-infographic',
-//     // 'core/legacy-widget',
-//     'core/widget-group',
-//     // 'core/archives',
-//     // 'core/avatar',
-//     'core/block',
-//     // 'core/calendar',
-//     // 'core/categories',
-//     // 'core/comment-author-name',
-//     // 'core/comment-content',
-//     // 'core/comment-date',
-//     // 'core/comment-edit-link',
-//     // 'core/comment-reply-link',
-//     // 'core/comment-template',
-//     // 'core/comments',
-//     // 'core/comments-pagination',
-//     // 'core/comments-pagination-next',
-//     // 'core/comments-pagination-numbers',
-//     // 'core/comments-pagination-previous',
-//     // 'core/comments-title',
-//     'core/cover',
-//     'core/file',
-//     // 'core/gallery',
-//     'core/heading',
-//     // 'core/home-link',
-//     'core/image',
-//     // 'core/latest-comments',
-//     // 'core/latest-posts',
-//     // 'core/loginout',
-//     // 'core/navigation',
-//     // 'core/navigation-link',
-//     // 'core/navigation-submenu',
-//     // 'core/page-list',
-//     // 'core/pattern',
-//     // 'core/post-author',
-//     // 'core/post-author-biography',
-//     // 'core/post-author-name',
-//     // 'core/post-comments-form',
-//     // 'core/post-content',
-//     // 'core/post-date',
-//     // 'core/post-excerpt',
-//     // 'core/post-featured-image',
-//     // 'core/post-navigation-link',
-//     // 'core/post-template',
-//     // 'core/post-terms',
-//     // 'core/post-title',
-//     // 'core/query',
-//     // 'core/query-no-results',
-//     // 'core/query-pagination',
-//     // 'core/query-pagination-next',
-//     // 'core/query-pagination-numbers',
-//     // 'core/query-pagination-previous',
-//     // 'core/query-title',
-//     // 'core/read-more',
-//     // 'core/rss',
-//     // 'core/search',
-//     'core/shortcode',
-//     // 'core/site-logo',
-//     // 'core/site-tagline',
-//     // 'core/site-title',
-//     // 'core/social-link',
-//     // 'core/tag-cloud',
-//     // 'core/template-part',
-//     // 'core/term-description',
-//     'core/audio',
-//     // 'core/button',
-//     // 'core/buttons',
-//     'core/code',
-//     'core/column',
-//     'core/columns',
-//     'core/embed',
-//     'core/freeform',
-//     'core/group',
-//     'core/html',
-//     'core/list',
-//     'core/list-item',
-//     // 'core/media-text',
-//     // 'core/missing',
-//     // 'core/more',
-//     // 'core/nextpage',
-//     'core/page-list-item',
-//     'core/paragraph',
-//     'core/preformatted',
-//     // 'core/pullquote',
-//     'core/quote',
-//     // 'core/separator',
-//     // 'core/social-links',
-//     // 'core/spacer',
-//     'core/table',
-//     'core/text-columns',
-//     // 'core/verse',
-//     'core/video',
-//     // 'yoast/faq-block',
-//     // 'yoast/how-to-block',
-//     // 'yoast-seo/breadcrumbs',
-//     // 'core/post-comments',
-//   );
-// }
+  // then disable some of them
+  unset($blocks['core/legacy-widget']);
+  unset($blocks['core/archives']);
+  unset($blocks['core/avatar']);
+  unset($blocks['core/calendar']);
+  unset($blocks['core/categories']);
+  unset($blocks['core/comment-author-name']);
+  unset($blocks['core/comment-content']);
+  unset($blocks['core/comment-date']);
+  unset($blocks['core/comment-edit-link']);
+  unset($blocks['core/comment-reply-link']);
+  unset($blocks['core/comment-template']);
+  unset($blocks['core/comments']);
+  unset($blocks['core/comments-pagination']);
+  unset($blocks['core/comments-pagination-next']);
+  unset($blocks['core/comments-pagination-numbers']);
+  unset($blocks['core/comments-pagination-previous']);
+  unset($blocks['core/comments-title']);
+  unset($blocks['core/gallery']);
+  unset($blocks['core/home-link']);
+  unset($blocks['core/latest-comments']);
+  unset($blocks['core/latest-posts']);
+  unset($blocks['core/loginout']);
+  unset($blocks['core/navigation']);
+  unset($blocks['core/navigation-link']);
+  unset($blocks['core/navigation-submenu']);
+  unset($blocks['core/page-list']);
+  unset($blocks['core/pattern']);
+  unset($blocks['core/post-author']);
+  unset($blocks['core/post-author-biography']);
+  unset($blocks['core/post-author-name']);
+  unset($blocks['core/post-comments-form']);
+  unset($blocks['core/post-content']);
+  unset($blocks['core/post-date']);
+  unset($blocks['core/post-excerpt']);
+  unset($blocks['core/post-featured-image']);
+  unset($blocks['core/post-navigation-link']);
+  unset($blocks['core/post-template']);
+  unset($blocks['core/post-terms']);
+  unset($blocks['core/post-title']);
+  unset($blocks['core/query']);
+  unset($blocks['core/query-no-results']);
+  unset($blocks['core/query-pagination']);
+  unset($blocks['core/query-pagination-next']);
+  unset($blocks['core/query-pagination-numbers']);
+  unset($blocks['core/query-pagination-previous']);
+  unset($blocks['core/query-title']);
+  unset($blocks['core/read-more']);
+  unset($blocks['core/rss']);
+  unset($blocks['core/search']);
+  unset($blocks['core/site-logo']);
+  unset($blocks['core/site-tagline']);
+  unset($blocks['core/site-title']);
+  unset($blocks['core/social-link']);
+  unset($blocks['core/tag-cloud']);
+  unset($blocks['core/template-part']);
+  unset($blocks['core/term-description']);
+  unset($blocks['core/button']);
+  unset($blocks['core/buttons']);
+  unset($blocks['core/media-text']);
+  unset($blocks['core/missing']);
+  unset($blocks['core/more']);
+  unset($blocks['core/nextpage']);
+  unset($blocks['core/pullquote']);
+  unset($blocks['core/separator']);
+  unset($blocks['core/social-links']);
+  unset($blocks['core/spacer']);
+  unset($blocks['core/verse']);
+  unset($blocks['yoast/faq-block']);
+  unset($blocks['yoast/how-to-block']);
+  unset($blocks['yoast-seo/breadcrumbs']);
+  unset($blocks['core/post-comments']);
+
+  // return the new list of allowed blocks
+  return array_keys($blocks);
+}
 
 // Reformat acf fields in rest api
 add_filter('acf/settings/rest_api_format', function () {
