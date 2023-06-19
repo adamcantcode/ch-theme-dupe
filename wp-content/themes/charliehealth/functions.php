@@ -641,3 +641,5 @@ function remove_dashicons_if_not_logged_in()
   }
 }
 add_action('wp_enqueue_scripts', 'remove_dashicons_if_not_logged_in', 100);
+
+add_filter( 'wpseo_json_ld_output', '__return_false' );
