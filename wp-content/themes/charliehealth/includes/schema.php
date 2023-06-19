@@ -18,7 +18,7 @@ if (has_post_thumbnail($id)) {
 }
 $publisherLogo = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png');
 $date = get_field('date', $id) ?: get_the_date($id);
-$modifiedDate = get_the_modified_date($id) ?: $date;
+$modifiedDate = get_the_modified_date('F j, Y', $id) ?: $date;
 
 if (is_singular('post') || is_singular('research')) : ?>
   <script type="application/ld+json">
