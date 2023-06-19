@@ -577,9 +577,6 @@ add_filter('should_load_separate_core_block_assets', '__return_true');
 // $test = 'bg-dark-teal'
 // $test = 'mt-0'
 
-// NOTE TEMP disable yoast auto redirect creation
-add_filter('Yoast\WP\SEO\post_redirect_slug_change', '__return_true');
-
 // Allow editor access to privacy policy page
 add_action('map_meta_cap', 'custom_manage_privacy_options', 1, 4);
 function custom_manage_privacy_options($caps, $cap, $user_id, $args)
