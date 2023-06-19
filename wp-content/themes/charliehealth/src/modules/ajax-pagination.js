@@ -221,8 +221,7 @@ export default function ajaxPagination() {
 
   const renderHTML = (post, html) => {
     console.log(post);
-    var imageUrl =
-      `${window.location.origin}/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp`;
+    var imageUrl = `${window.location.origin}/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp`;
     var imageAlt = `Featured image for ${post.title.rendered}`;
 
     /** NOTE Handle images */
@@ -252,33 +251,8 @@ export default function ajaxPagination() {
           imageUrl = post._embedded['wp:featuredmedia'][0].source_url;
         }
       }
-      // Check if webp version exists
-      async function checkURL(url) {
-        try {
-          const response = await fetch(url, { method: 'HEAD' });
-          if (response.ok) {
-            return true; // URL exists and does not return 404
-          } else {
-            return false; // URL does not exist or returns 404
-          }
-        } catch (error) {
-          return false;
-        }
-      }
-      checkURL(imageUrl)
-        .then((exists) => {
-          if (exists) {
-            console.log('webp exists');
-            imageUrl += '.webp';
-          } else {
-            console.log('webp DOES NOT exist');
-            return;
-          }
-        })
-        .catch((error) => {
-          console.error('An error occurred while checking the URL:', error);
-        });
     }
+
     // If not press page
     if (
       !document

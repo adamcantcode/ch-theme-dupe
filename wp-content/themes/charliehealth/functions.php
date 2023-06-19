@@ -493,28 +493,6 @@ function wpdocs_theme_setup()
 
 add_filter('wpseo_primary_term_taxonomies', '__return_empty_array');
 
-/**
- * SEARCH AND REPLACE FUNCTION FOR IN CONTENT CTAS -> BLOCKS
- */
-// function replace_text_with_block()
-// {
-//   global $wpdb;
-
-//   $search_string = '{{mid-page-newsletter}}'; // Replace with the text you want to search for
-
-//   // Get the block's HTML markup
-//   $block_content = '<!-- wp:block {"ref":1709} /-->';
-
-//   // Run the SQL query to update post content
-//   $query = $wpdb->prepare(
-//     "UPDATE {$wpdb->posts} SET post_content = REPLACE(post_content, %s, %s) WHERE post_type = %s",
-//     $search_string,
-//     $block_content,
-//     'post'
-//   );
-//   $wpdb->query($query);
-// }
-// add_action('init', 'replace_text_with_block');
 
 /** NOTE Not needed due to WP Engine Settings */
 // add_filter( 'xmlrpc_enabled', '__return_false' );
