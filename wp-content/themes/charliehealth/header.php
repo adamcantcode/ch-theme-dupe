@@ -24,6 +24,9 @@
     <?php endif; ?>
   <?php endif; ?>
   <?php wp_head(); ?>
+  <!-- SCHEMA -->
+  <?php include('wp-content/themes/charliehealth/includes/schema.php'); ?>
+  <!-- END SCHEMA -->
 </head>
 
 <body <?php body_class('bg-white'); ?>>
