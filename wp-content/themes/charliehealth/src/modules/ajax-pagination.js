@@ -71,11 +71,13 @@ export default function ajaxPagination() {
             return response.json();
           })
           .then(function (posts) {
-            if(posts.length > 0) {
+            if (posts.length > 0) {
               const noPosts = document.querySelector('.no-posts-js');
-              const pagination = document.querySelector('.pagination-container');
+              const pagination = document.querySelector(
+                '.pagination-container'
+              );
               const postsContainer = document.querySelector('.posts-container');
-              
+
               pagination.classList.remove('noshow');
               postsContainer.classList.remove('noshow');
 
@@ -91,7 +93,9 @@ export default function ajaxPagination() {
               jQuery('.posts-container').removeClass('opacity-0 scale-[0.99]');
             } else {
               const noPosts = document.querySelector('.no-posts-js');
-              const pagination = document.querySelector('.pagination-container');
+              const pagination = document.querySelector(
+                '.pagination-container'
+              );
               const postsContainer = document.querySelector('.posts-container');
 
               pagination.classList.add('noshow');
@@ -218,7 +222,7 @@ export default function ajaxPagination() {
   const renderHTML = (post, html) => {
     console.log(post);
     var imageUrl =
-      'https://images.placeholders.dev/?width=800&height=600&text=FPO';
+      `${window.location.origin}/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp`;
     var imageAlt = `Featured image for ${post.title.rendered}`;
 
     /** NOTE Handle images */
@@ -247,25 +251,33 @@ export default function ajaxPagination() {
           // Use orignal size
           imageUrl = post._embedded['wp:featuredmedia'][0].source_url;
         }
-        // async function checkResource() {
-        //   try {
-        //     const response = await fetch(`${imageUrl}.webp`, { method: 'HEAD' });
-
-        //     if (response.status === 404) {
-        //       console.log('Resource not found (404)');
-        //       // Handle the 404 error case
-        //     } else {
-        //       console.log('Resource found');
-        //       imageUrl += '.webp';
-        //       // Handle the success case
-        //     }
-        //   } catch (error) {
-        //     console.error('Error occurred:', error);
-        //     // Handle the error here to prevent it from propagating further
-        //   }
-        // }
-        // checkResource();
       }
+      // Check if webp version exists
+      async function checkURL(url) {
+        try {
+          const response = await fetch(url, { method: 'HEAD' });
+          if (response.ok) {
+            return true; // URL exists and does not return 404
+          } else {
+            return false; // URL does not exist or returns 404
+          }
+        } catch (error) {
+          return false;
+        }
+      }
+      checkURL(imageUrl)
+        .then((exists) => {
+          if (exists) {
+            console.log('webp exists');
+            imageUrl += '.webp';
+          } else {
+            console.log('webp DOES NOT exist');
+            return;
+          }
+        })
+        .catch((error) => {
+          console.error('An error occurred while checking the URL:', error);
+        });
     }
     // If not press page
     if (
