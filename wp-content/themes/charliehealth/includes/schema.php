@@ -54,4 +54,27 @@ if (is_singular('post') || is_singular('research')) : ?>
       "dateModified": "<?= $modifiedDate; ?>"
     }
   </script>
+<?php elseif (is_singular('areas-of-care') || is_singular('treatment-modalities')) : ?>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.charliehealth.com/"
+      }, {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Areas of Care",
+        "item": "https://www.charliehealth.com/<?= get_post_type($id); ?>"
+      }, {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "<?= $headline; ?>",
+        "item": "<?= $postLink; ?>"
+      }]
+    }
+  </script>
 <?php endif;
