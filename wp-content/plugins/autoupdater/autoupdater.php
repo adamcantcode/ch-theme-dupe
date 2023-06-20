@@ -4,7 +4,7 @@
  * Plugin Name: WP Engine Smart Plugin Manager
  * Plugin URI:
  * Description: WP Engine Smart Plugin Manager simplifies updates management by automatically updating your plugins and themes every day and ensuring your site continues to work as expected.
- * Version: 5.17.1
+ * Version: 5.17.7
  * Text Domain: autoupdater
  * Author: WP Engine
  * Author URI: https://wpengine.com/smart-plugin-manager/

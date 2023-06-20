@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'f79aa25448f205709e5de81d1c44657901ed606a',
+    'reference' => 'dd61162776461658be42de1848130ceca2e917d2',
     'name' => 'wpengine/autoupdater',
   ),
   'versions' => 
@@ -36,7 +36,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'f79aa25448f205709e5de81d1c44657901ed606a',
+      'reference' => 'dd61162776461658be42de1848130ceca2e917d2',
     ),
   ),
 );
