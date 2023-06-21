@@ -643,20 +643,20 @@ add_action('wp_enqueue_scripts', 'remove_dashicons_if_not_logged_in', 100);
 
 add_filter('wpseo_json_ld_output', '__return_false');
 
-function change_yoast_author_name($author_name)
-{
-  // Check if ACF is active and the custom field exists
-  if (function_exists('get_field') && get_field('by_author', get_the_ID())) {
-    // Get the value of the custom field
-    $custom_author_name = get_field('by_author', get_the_ID());
+// function change_yoast_author_name($author_name)
+// {
+//   // Check if ACF is active and the custom field exists
+//   if (function_exists('get_field') && get_field('by_author', get_the_ID())) {
+//     // Get the value of the custom field
+//     $custom_author_name = get_field('by_author', get_the_ID());
 
-    // Check if the custom author name is not empty
-    if (!empty($custom_author_name)) {
-      // Use the custom author name instead of the default author name
-      $author_name = $custom_author_name;
-    }
-  }
+//     // Check if the custom author name is not empty
+//     if (!empty($custom_author_name)) {
+//       // Use the custom author name instead of the default author name
+//       $author_name = $custom_author_name;
+//     }
+//   }
 
-  return $author_name;
-}
-add_filter('wpseo_meta_author', 'change_yoast_author_name');
+//   return $author_name;
+// }
+// add_filter('wpseo_meta_author', 'change_yoast_author_name');
