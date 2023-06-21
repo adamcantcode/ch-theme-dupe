@@ -7,36 +7,37 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="icon" type="image/x-icon" href="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/charlie-health-favicon.ico'); ?>">
   <link rel="icon" type="image/png" href="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/charlie-health-favicon.png'); ?>">
-  <!-- Apple Touch Icon (at least 200x200px) -->
   <link rel="apple-touch-icon" href="/custom-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="#212984">
-  <!-- NOTE HEADER CODE -->
+  <!-- CUSTOM HEADER CODE -->
   <?php include('wp-content/themes/charliehealth/includes/header-code.php'); ?>
+  <!-- END CUSTOM HEADER CODE -->
   <!-- Pagination Meta -->
   <?php if (is_paged() && $wp_query->max_num_pages > 1) : ?>
     <?php if (get_previous_posts_link()) : ?>
       <link rel="prev" href="<?php echo get_previous_posts_page_link(); ?>" />
     <?php endif; ?>
-
     <?php if (get_next_posts_link()) : ?>
       <link rel="next" href="<?php echo get_next_posts_page_link(); ?>" />
     <?php endif; ?>
   <?php endif; ?>
+  <!-- END PAGINATION META -->
   <?php wp_head(); ?>
-  <!-- SCHEMA -->
+  <!-- CUSTOM SCHEMA -->
   <?php include('wp-content/themes/charliehealth/includes/schema.php'); ?>
-  <!-- END SCHEMA -->
+  <!-- END CUSTOM SCHEMA -->
 </head>
 
 <body <?php body_class('bg-white'); ?>>
-  <!-- NOTE Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8BB2ZV&gtm_auth=LA8d6R6jW3Ly6N7_0RFZIQ&gtm_preview=env-402&gtm_cookies_win=x" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- NOTE End Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8BB2ZV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <?php wp_body_open(); ?>
   <pre class="fixed left-0 right-0 w-full text-xs text-center text-dark-blue top-4 -z-10-50 opacity-30">Made with ❤️ in Denver</pre>
-  <!-- NOTE Rocket Excludes Delay JS -->
+  <!-- Rocket Excludes Delay JS -->
   <?php include('includes/rocket-skip-js.php'); ?>
+  <!-- END Rocket Excludes Delay JS -->
   <header class="fixed z-50 w-screen bg-med-blue <?= is_user_logged_in() ? 'lg:top-[32px] top-[46px]' : 'top-0'; ?>">
     <nav class="section-horizontal">
       <div class="container relative flex items-center justify-between min-h-[68px]">
@@ -141,4 +142,3 @@
       </div>
     </nav>
   </header>
-  <!-- <div id="page" class="site"> -->

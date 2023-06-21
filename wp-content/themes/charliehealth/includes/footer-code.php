@@ -32,7 +32,7 @@
 <noscript>
   <img height="1" width="1" style="display:none;" alt="Linkedin Pixel" src="https://px.ads.linkedin.com/collect/?pid=4524642&fmt=gif" />
 </noscript>
-<!-- LinkedIn Insight Tag END -->
+<!-- END LinkedIn Insight Tag -->
 
 <!-- Userway -->
 <script>
@@ -43,4 +43,4 @@
     document.body.appendChild(s);
   })();
 </script>
-<!-- Userway END -->
+<!-- END Userway -->

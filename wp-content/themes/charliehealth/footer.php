@@ -105,16 +105,14 @@
 			<?php endwhile;
 			endif;
 			?>
+			<a href="#" onclick="Osano.cm.showDrawer('osano-cm-dom-info-dialog-open')">Cookie Preferences</a>
 		</div>
 		<div class="flex flex-row footer-links gap-sp-8">
 			<span class="text-white text-h5">©<?= date('Y'); ?> Charlie Health, Inc. All rights reserved.</span>
 		</div>
 	</div>
 </footer>
-<!-- </div> -->
-<!-- TODO Temp disable footer code -->
-<?php // include('wp-content/themes/charliehealth/includes/footer-code.php'); 
-?>
+<?php include('wp-content/themes/charliehealth/includes/footer-code.php'); ?>
 <?php if (is_user_logged_in()) : ?>
 	<!-- NOTE Fix wpadmin like nav -->
 	<script type="text/javascript">

@@ -101,9 +101,9 @@ add_filter('block_categories_all', function ($categories) {
 /**
  * Blacklist blocks
  */
-add_filter('allowed_block_types_all', 'misha_blacklist_blocks');
+add_filter('allowed_block_types_all', 'ch_blacklist_blocks');
 
-function misha_blacklist_blocks($allowed_blocks)
+function ch_blacklist_blocks($allowed_blocks)
 {
   // get all the registered blocks
   $blocks = WP_Block_Type_Registry::get_instance()->get_all_registered();
@@ -190,6 +190,155 @@ add_filter('acf/settings/rest_api_format', function () {
   return 'standard';
 });
 
+/**
+ * Sort AUTHORS for author pages
+ */
+function filter_posts_by_acf_field($args, $request)
+{
+  if (isset($request['by_author'])) {
+    $args['meta_query'] = array(
+      array(
+        'key' => 'by_author',
+        'value' => intval($request['by_author']),
+        'compare' => '=',
+      ),
+    );
+  }
+  return $args;
+}
+add_filter('rest_post_query', 'filter_posts_by_acf_field', 10, 2);
+
+/**
+ * Sort MEDICAL REVIEWERS for author pages
+ */
+function filter_posts_by_acf_field_medical($args, $request)
+{
+  if (isset($request['medical_reviewer'])) {
+    $args['meta_query'] = array(
+      array(
+        'key' => 'medical_reviewer',
+        'value' => intval($request['medical_reviewer']),
+        'compare' => '=',
+      ),
+    );
+  }
+  return $args;
+}
+add_filter('rest_research_query', 'filter_posts_by_acf_field_medical', 10, 2);
+
+/**
+ * Sort PRESS posts by date
+ */
+function custom_rest_press_query($args, $request)
+{
+  $args['meta_key'] = 'date';
+  $args['orderby'] = 'meta_value title';
+  $args['order'] = 'DESC';
+  return $args;
+}
+add_filter('rest_press_query', 'custom_rest_press_query', 10, 2);
+
+/**
+ * Sort POSTS posts by date
+ */
+function custom_rest_post_query($args, $request)
+{
+  $args['meta_key'] = 'date';
+  $args['orderby'] = 'meta_value title';
+  $args['order'] = 'DESC';
+  return $args;
+}
+
+add_filter('rest_post_query', 'custom_rest_post_query', 10, 2);
+
+function custom_api_search_register_routes()
+{
+  register_rest_route('search-by-title/v1', '/search', array(
+    'methods'  => 'GET',
+    'callback' => 'custom_api_search_results',
+  ));
+}
+add_action('rest_api_init', 'custom_api_search_register_routes');
+
+function custom_api_search_results($request)
+{
+  $search_term = $request->get_param('term');
+  $page = $request->get_param('page');
+  $per_page = $request->get_param('per_page');
+
+  // Set default values for page and per_page parameters
+  $page = isset($page) ? absint($page) : 1;
+  $per_page = isset($per_page) ? absint($per_page) : 6;
+
+  $args = array(
+    'post_type'      => 'post',
+    'post_status'    => 'publish',
+    's'              => $search_term,
+    'paged'          => $page,
+    'posts_per_page' => $per_page,
+  );
+
+  $query = new WP_Query($args);
+
+  $results = array();
+
+  if ($query->have_posts()) {
+    while ($query->have_posts()) {
+      $query->the_post();
+
+      // Get the featured media (if available)
+      $featured_media = null;
+      $featured_media_id = get_post_thumbnail_id();
+      if ($featured_media_id) {
+        $featured_media = wp_get_attachment_image_src($featured_media_id, 'card-thumb');
+        if ($featured_media) {
+          $featured_media = $featured_media[0];
+        }
+      }
+
+      // Get the tags of the post
+      $tags = wp_get_post_tags(get_the_ID(), array('fields' => 'all'));
+
+      // Get the ACF data of the post
+      $acf_data = get_fields();
+
+      $result = array(
+        'id'               => get_the_ID(),
+        'title'            => get_the_title(),
+        'link'        => get_permalink(),
+        'tags'             => $tags,
+        'acf'              => $acf_data,
+        'featured_media'   => $featured_media,
+        // Add any additional fields you need
+      );
+
+      $results[] = $result;
+    }
+  }
+
+  wp_reset_postdata();
+
+  $total_pages = $query->max_num_pages;
+
+  $response = array(
+    'results'      => $results,
+    'total_pages'  => $total_pages,
+    'current_page' => $page,
+    'per_page'     => $per_page,
+  );
+
+  // Set the X-WP-Total header
+  $response_headers = array(
+    'X-WP-Total' => $query->found_posts,
+  );
+
+  // // Add embedded data
+  // $response['_embedded'] = array(
+  //   'item' => $results,
+  // );
+
+  return new WP_REST_Response($response, 200, $response_headers);
+}
 /**
  * Allow file types
  */
@@ -404,66 +553,6 @@ function custom_menu_order($menu_ord)
 }
 
 /**
- * Sort AUTHORS for author pages
- */
-function filter_posts_by_acf_field($args, $request)
-{
-  if (isset($request['by_author'])) {
-    $args['meta_query'] = array(
-      array(
-        'key' => 'by_author',
-        'value' => intval($request['by_author']),
-        'compare' => '=',
-      ),
-    );
-  }
-  return $args;
-}
-add_filter('rest_post_query', 'filter_posts_by_acf_field', 10, 2);
-
-/**
- * Sort MEDICAL REVIEWERS for author pages
- */
-function filter_posts_by_acf_field_medical($args, $request)
-{
-  if (isset($request['medical_reviewer'])) {
-    $args['meta_query'] = array(
-      array(
-        'key' => 'medical_reviewer',
-        'value' => intval($request['medical_reviewer']),
-        'compare' => '=',
-      ),
-    );
-  }
-  return $args;
-}
-add_filter('rest_research_query', 'filter_posts_by_acf_field_medical', 10, 2);
-
-/**
- * Sort PRESS posts by date
- */
-function custom_rest_press_query($args, $request)
-{
-  $args['meta_key'] = 'date';
-  $args['orderby'] = 'meta_value title';
-  $args['order'] = 'DESC';
-  return $args;
-}
-add_filter('rest_press_query', 'custom_rest_press_query', 10, 2);
-
-/**
- * Sort POSTS posts by date
- */
-function custom_rest_post_query($args, $request)
-{
-  $args['meta_key'] = 'date';
-  $args['orderby'] = 'meta_value title';
-  $args['order'] = 'DESC';
-  return $args;
-}
-add_filter('rest_post_query', 'custom_rest_post_query', 10, 2);
-
-/**
  * Remove default image sizes
  */
 add_filter('intermediate_image_sizes', 'remove_default_img_sizes', 10, 1);
@@ -543,96 +632,6 @@ function add_custom_capability_to_admins($caps, $cap, $user_id)
 }
 add_filter('map_meta_cap', 'add_custom_capability_to_admins', 1, 3);
 
-
-function custom_api_search_register_routes()
-{
-  register_rest_route('search-by-title/v1', '/search', array(
-    'methods'  => 'GET',
-    'callback' => 'custom_api_search_results',
-  ));
-}
-add_action('rest_api_init', 'custom_api_search_register_routes');
-
-function custom_api_search_results($request)
-{
-  $search_term = $request->get_param('term');
-  $page = $request->get_param('page');
-  $per_page = $request->get_param('per_page');
-
-  // Set default values for page and per_page parameters
-  $page = isset($page) ? absint($page) : 1;
-  $per_page = isset($per_page) ? absint($per_page) : 6;
-
-  $args = array(
-    'post_type'      => 'post',
-    'post_status'    => 'publish',
-    's'              => $search_term,
-    'paged'          => $page,
-    'posts_per_page' => $per_page,
-  );
-
-  $query = new WP_Query($args);
-
-  $results = array();
-
-  if ($query->have_posts()) {
-    while ($query->have_posts()) {
-      $query->the_post();
-
-      // Get the featured media (if available)
-      $featured_media = null;
-      $featured_media_id = get_post_thumbnail_id();
-      if ($featured_media_id) {
-        $featured_media = wp_get_attachment_image_src($featured_media_id, 'card-thumb');
-        if ($featured_media) {
-          $featured_media = $featured_media[0];
-        }
-      }
-
-      // Get the tags of the post
-      $tags = wp_get_post_tags(get_the_ID(), array('fields' => 'all'));
-
-      // Get the ACF data of the post
-      $acf_data = get_fields();
-
-      $result = array(
-        'id'               => get_the_ID(),
-        'title'            => get_the_title(),
-        'link'        => get_permalink(),
-        'tags'             => $tags,
-        'acf'              => $acf_data,
-        'featured_media'   => $featured_media,
-        // Add any additional fields you need
-      );
-
-      $results[] = $result;
-    }
-  }
-
-  wp_reset_postdata();
-
-  $total_pages = $query->max_num_pages;
-
-  $response = array(
-    'results'      => $results,
-    'total_pages'  => $total_pages,
-    'current_page' => $page,
-    'per_page'     => $per_page,
-  );
-
-  // Set the X-WP-Total header
-  $response_headers = array(
-    'X-WP-Total' => $query->found_posts,
-  );
-
-  // // Add embedded data
-  // $response['_embedded'] = array(
-  //   'item' => $results,
-  // );
-
-  return new WP_REST_Response($response, 200, $response_headers);
-}
-
 function remove_dashicons_if_not_logged_in()
 {
   if (!is_user_logged_in()) {
@@ -642,4 +641,4 @@ function remove_dashicons_if_not_logged_in()
 }
 add_action('wp_enqueue_scripts', 'remove_dashicons_if_not_logged_in', 100);
 
-add_filter( 'wpseo_json_ld_output', '__return_false' );
+add_filter('wpseo_json_ld_output', '__return_false');
