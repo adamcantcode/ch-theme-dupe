@@ -646,9 +646,9 @@ add_filter('wpseo_json_ld_output', '__return_false');
 function change_yoast_author_name($author_name)
 {
   // Check if ACF is active and the custom field exists
-  if (function_exists('get_field') && get_field('by_author')) {
+  if (function_exists('get_field') && get_field('by_author', get_the_ID())) {
     // Get the value of the custom field
-    $custom_author_name = get_field('by_author');
+    $custom_author_name = get_field('by_author', get_the_ID());
 
     // Check if the custom author name is not empty
     if (!empty($custom_author_name)) {
