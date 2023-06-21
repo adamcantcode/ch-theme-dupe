@@ -652,3 +652,11 @@ function change_author_name_yoast_meta($name, $presentation)
 }
 
 add_filter('wpseo_meta_author', 'change_author_name_yoast_meta', 10, 2);
+
+add_filter('wpseo_enhanced_slack_data', function ($data) {
+  global $post;
+
+  $data['Written by'] = get_field('by_author', get_the_ID())->post_title;
+
+  return $data;
+});
