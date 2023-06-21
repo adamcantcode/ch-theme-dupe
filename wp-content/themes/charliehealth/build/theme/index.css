@@ -2252,10 +2252,6 @@ a.nav-link:hover {
   padding: 2rem;
 }
 
-.p-sp-10{
-  padding: 2.5rem;
-}
-
 .p-sp-2{
   padding: 0.5rem;
 }
@@ -3719,6 +3715,24 @@ a.providers:hover {
 
 .tt_name_sm img{
   display: inline-block;
+}
+
+.osano-cm-widget {
+  display: none;
+}
+
+.osano-cm-window__dialog {
+  border-top: 1px solid #212984;
+}
+
+.osano-cm-link {
+  font-size: 1rem !important;
+}
+
+@media (min-width: 768px) {
+  .osano-cm-window__dialog {
+    padding: 1.5rem 5rem;
+  }
 }
 
 /* EDITOR */
