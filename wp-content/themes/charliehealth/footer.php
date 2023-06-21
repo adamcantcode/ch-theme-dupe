@@ -95,7 +95,7 @@
 		<div class="lg:w-[225px] w-2/3 lg:absolute lg:bottom-0 lg:right-0 opacity-10 mx-auto lg:mb-0 mb-sp-8">
 			<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield.svg'); ?>" alt="Charlie health shield logo" />
 		</div>
-		<div class="flex flex-col lg:flex-row footer-links lg:gap-sp-8 gap-sp-2">
+		<div class="relative z-10 flex flex-col lg:flex-row footer-links lg:gap-sp-8 gap-sp-2">
 			<?php
 			if (have_rows('secondary_navigation_items', 'option')) :
 				while (have_rows('secondary_navigation_items', 'option')) : the_row();
