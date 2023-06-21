@@ -105,6 +105,7 @@
 			<?php endwhile;
 			endif;
 			?>
+			<a href="#" onclick="Osano.cm.showDrawer('osano-cm-dom-info-dialog-open')">Cookie Preferences</a>
 		</div>
 		<div class="flex flex-row footer-links gap-sp-8">
 			<span class="text-white text-h5">©<?= date('Y'); ?> Charlie Health, Inc. All rights reserved.</span>
