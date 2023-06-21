@@ -30,7 +30,7 @@ if (!empty($block['backgroundColor'])) {
   </div>
 <?php endif; ?>
 <?php if ($style === 'full') : ?>
-  <div class="grid lg:grid-flow-col justify-between rounded-md p-sp-6 items-center gap-sp-8 <?= $blockClasses; ?>">
+  <div class="grid lg:grid-flow-col justify-between rounded-md lg:p-sp-6 p-sp-4 items-center gap-sp-8 <?= $blockClasses; ?>">
     <div>
       <h2 class="mb-0"><?= $heading; ?></h2>
       <?php if ($subhead) : ?>
