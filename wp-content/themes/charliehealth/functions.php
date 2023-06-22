@@ -645,15 +645,17 @@ add_filter('wpseo_json_ld_output', '__return_false');
 
 function change_author_name_yoast_meta($name, $presentation)
 {
-  $name = get_field('by_author', get_the_ID())->post_title;
-
-  return $name;
+  if (get_field('by_author', get_the_ID())) {
+    $name = get_field('by_author', get_the_ID())->post_title;
+    return $name;
+  }
 }
 
 add_filter('wpseo_meta_author', 'change_author_name_yoast_meta', 10, 2);
 
 add_filter('wpseo_enhanced_slack_data', function ($data) {
-  $data['Written by'] = get_field('by_author', get_the_ID())->post_title;
-
-  return $data;
+  if (get_field('by_author', get_the_ID())) {
+    $data['Written by'] = get_field('by_author', get_the_ID())->post_title;
+    return $data;
+  }
 });
