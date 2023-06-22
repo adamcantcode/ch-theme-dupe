@@ -10432,6 +10432,10 @@ window.addEventListener('DOMContentLoaded', () => {
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets'
+    },
+    navigation: {
+      nextEl: '.swiper-button-next-arrow-carousel',
+      prevEl: '.swiper-button-prev-arrow-carousel'
     }
   });
 });
