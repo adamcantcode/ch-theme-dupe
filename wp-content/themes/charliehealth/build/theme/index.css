@@ -1290,11 +1290,6 @@ a.nav-link:hover {
   left: 0px;
 }
 
-.inset-y-1\/2{
-  top: 50%;
-  bottom: 50%;
-}
-
 .\!bottom-0{
   bottom: 0px !important;
 }
@@ -1363,16 +1358,16 @@ a.nav-link:hover {
   top: 8rem;
 }
 
+.top-\[calc\(50\%-26px\)\]{
+  top: calc(50% - 26px);
+}
+
 .top-full{
   top: 100%;
 }
 
 .top-sp-8{
   top: 2rem;
-}
-
-.top-\[calc\(50\%-26px\)\]{
-  top: calc(50% - 26px);
 }
 
 .-z-50{
@@ -2367,11 +2362,6 @@ a.nav-link:hover {
   padding-bottom: 1.25rem;
 }
 
-.px-sp-16{
-  padding-left: 6rem;
-  padding-right: 6rem;
-}
-
 .\!pb-0{
   padding-bottom: 0px !important;
 }
@@ -3216,6 +3206,19 @@ a.nav-link:hover {
 .swiper .swiper-pagination-bullet.swiper-pagination-bullet-active{
   --tw-bg-opacity: 1;
   background-color: rgb(33 41 132 / var(--tw-bg-opacity));
+}
+
+.swiper.swiper-blog-carousel .swiper-pagination-bullet{
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(166 152 255 / var(--tw-border-opacity));
+  background-color: rgba(0,0,0,0);
+  opacity: 1;
+}
+
+.swiper.swiper-blog-carousel .swiper-pagination-bullet.swiper-pagination-bullet-active{
+  --tw-bg-opacity: 1;
+  background-color: rgb(166 152 255 / var(--tw-bg-opacity));
 }
 
 /* FAQ Accordion */
@@ -4326,14 +4329,14 @@ a.providers:hover {
     padding-right: 2.5rem;
   }
 
-  .lg\:px-sp-8{
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
   .lg\:px-sp-16{
     padding-left: 6rem;
     padding-right: 6rem;
+  }
+
+  .lg\:px-sp-8{
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .lg\:pr-sp-14{

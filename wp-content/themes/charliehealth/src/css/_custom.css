@@ -189,6 +189,14 @@
       @apply bg-med-blue;
     }
   }
+  &.swiper-blog-carousel {
+    .swiper-pagination-bullet {
+      @apply bg-transparent border-2 border-purple-gradient-end opacity-100;
+      &.swiper-pagination-bullet-active {
+        @apply bg-purple-gradient-end;
+      }
+    }
+  }
 }
 /* FAQ Accordion */
 .faq-block,
