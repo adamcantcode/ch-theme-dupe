@@ -52,7 +52,7 @@ if ($horizontalScroll === true) {
                   <p class="last:mb-0"><?= $details; ?></p>
                 <?php endif; ?>
                 <?php if ($useCTA && $link) : ?>
-                  <div class="mt-auto flex gap-x-sp-4 items-center lg:w-[unset] w-full<?= ' ' . $align ?>">
+                  <div class="mt-auto flex gap-x-sp-4 items-center lg:w-[unset] w-full>
                     <a href="<?= $link['url']; ?>" class="ch-button button-primary" target="<?= $link['target'] ?: '_self'; ?>"><?= $link['title'] ?: 'Learn more'; ?></a>
                   </div>
                 <?php endif; ?>
