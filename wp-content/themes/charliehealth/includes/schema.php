@@ -3,12 +3,12 @@ if (is_singular('post') || is_singular('research') || is_singular('areas-of-care
   $id = get_the_ID();
   $postLink = get_the_permalink($id);
   $medicalReviewer = get_field('medical_reviewer', $id);
-  if (!empty($medicalReviewerName)) {
+  if (!is_null($medicalReviewer)) {
     $medicalReviewerName = $medicalReviewer->post_title;
     $medicalReviewerLink = site_url('/medical-reviewer/' . $medicalReviewer->post_name);
   }
   $author = get_field('by_author', $id);
-  if (!empty($author)) {
+  if (!is_null($author)) {
     $authorName = $author->post_title;
     $authorLink = site_url('/medical-reviewer/' . $author->post_name);
   }
@@ -30,7 +30,7 @@ if (is_singular('post') || is_singular('research') || is_singular('areas-of-care
       {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
-        <?php if (isset($medicalReviewer)) : ?> 
+        <?php if (isset($medicalReviewerName)) : ?> 
           "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "<?= $postLink; ?>",
@@ -44,7 +44,7 @@ if (is_singular('post') || is_singular('research') || is_singular('areas-of-care
         "headline": "<?= $headline; ?>",
         "description": "<?= $description; ?>",
         "image": "<?= $featuredImageUrl; ?>",
-        <?php if (isset($author)) : ?> 
+        <?php if (isset($authorName)) : ?> 
         "author": {
           "@type": "Person",
           "name": "<?= $authorName; ?>",
