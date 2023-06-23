@@ -112,7 +112,11 @@
 		</div>
 	</div>
 </footer>
-<?php include('wp-content/themes/charliehealth/includes/footer-code.php'); ?>
+<?php 
+if(wp_get_environment_type() === 'prod') {
+	include('wp-content/themes/charliehealth/includes/footer-code.php'); 
+}
+?>
 <?php if (is_user_logged_in()) : ?>
 	<!-- NOTE Fix wpadmin like nav -->
 	<script type="text/javascript">
