@@ -3,12 +3,12 @@ if (is_singular('post') || is_singular('research') || is_singular('areas-of-care
   $id = get_the_ID();
   $postLink = get_the_permalink($id);
   $medicalReviewer = get_field('medical_reviewer', $id);
-  if(!empty($medicalReviewerName)) {
+  if (!empty($medicalReviewerName)) {
     $medicalReviewerName = $medicalReviewer->post_title;
     $medicalReviewerLink = site_url('/medical-reviewer/' . $medicalReviewer->post_name);
   }
   $author = get_field('by_author', $id);
-  if(!empty($author)) {
+  if (!empty($author)) {
     $authorName = $author->post_title;
     $authorLink = site_url('/medical-reviewer/' . $author->post_name);
   }
@@ -30,23 +30,27 @@ if (is_singular('post') || is_singular('research') || is_singular('areas-of-care
       {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
-        "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": "<?= $postLink; ?>",
-          "reviewedBy": [{
-            "@type": "Person",
-            "name": "<?= $medicalReviewerName; ?>",
-            "url": "<?= $medicalReviewerLink; ?>"
-          }]
-        },
+        <?php if (isset($medicalReviewer)) : ?> 
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "<?= $postLink; ?>",
+            "reviewedBy": [{
+              "@type": "Person",
+              "name": "<?= $medicalReviewerName; ?>",
+              "url": "<?= $medicalReviewerLink; ?>"
+            }]
+          },
+        <?php endif; ?> 
         "headline": "<?= $headline; ?>",
         "description": "<?= $description; ?>",
         "image": "<?= $featuredImageUrl; ?>",
+        <?php if (isset($author)) : ?> 
         "author": {
           "@type": "Person",
           "name": "<?= $authorName; ?>",
           "url": "<?= $authorLink; ?>"
         },
+        <?php endif; ?> 
         "publisher": {
           "@type": "Organization",
           "name": "Charlie Health",
