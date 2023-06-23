@@ -11,11 +11,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="#212984">
   <!-- CUSTOM HEADER CODE -->
-  <?php
-  if (wp_get_environment_type() === 'prd') {
-    include('wp-content/themes/charliehealth/includes/header-code.php');
-  }
-  ?>
+  <?php include('wp-content/themes/charliehealth/includes/header-code.php'); ?>
   <!-- END CUSTOM HEADER CODE -->
   <!-- Pagination Meta -->
   <?php if (is_paged() && $wp_query->max_num_pages > 1) : ?>
