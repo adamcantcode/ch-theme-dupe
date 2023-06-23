@@ -3,11 +3,15 @@ if (is_singular('post') || is_singular('research') || is_singular('areas-of-care
   $id = get_the_ID();
   $postLink = get_the_permalink($id);
   $medicalReviewer = get_field('medical_reviewer', $id);
-  $medicalReviewerName = $medicalReviewer->post_title;
-  $medicalReviewerLink = site_url('/medical-reviewer/' . $medicalReviewer->post_name);
+  if(!empty($medicalReviewerName)) {
+    $medicalReviewerName = $medicalReviewer->post_title;
+    $medicalReviewerLink = site_url('/medical-reviewer/' . $medicalReviewer->post_name);
+  }
   $author = get_field('by_author', $id);
-  $authorName = $author->post_title;
-  $authorLink = site_url('/medical-reviewer/' . $author->post_name);
+  if(!empty($author)) {
+    $authorName = $author->post_title;
+    $authorLink = site_url('/medical-reviewer/' . $author->post_name);
+  }
   $headline = get_the_title($id);
   $description = get_the_excerpt($id);
   if (has_post_thumbnail($id)) {
