@@ -1,8 +1,6 @@
-<!-- <script async src="https://www.googleoptimize.com/optimize.js?id=OPT-5TKR4S2"></script> -->
-
 <script src="https://cmp.osano.com/Azyo1TTVrDWfT1g27/564b39e9-b735-4462-a85b-0b4147347611/osano.js"></script>
 
-<!-- NOTE Google Tag Manager PROD-->
+<!-- Google Tag Manager PROD-->
 <script>
   (function(w, d, s, l, i) {
     w[l] = w[l] || [];
@@ -19,7 +17,7 @@
     f.parentNode.insertBefore(j, f);
   })(window, document, 'script', 'dataLayer', 'GTM-P8BB2ZV');
 </script>
-<!-- NOTE End Google Tag Manager PROD -->
+<!-- End Google Tag Manager PROD -->
 
 <!-- Google Search Console Verification -->
 <!--http(s)//www-->
