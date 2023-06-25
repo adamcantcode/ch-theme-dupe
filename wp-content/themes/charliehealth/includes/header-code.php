@@ -1,4 +1,4 @@
-<script src="https://cmp.osano.com/Azyo1TTVrDWfT1g27/564b39e9-b735-4462-a85b-0b4147347611/osano.js"></script>
+<script src="https://cmp.osano.com/Azyo1TTVrDWfT1g27/506c8e15-9e60-46ac-882d-af2b5f842576/osano.js"></script>
 
 <!-- Google Tag Manager PROD-->
 <script>
