@@ -12,7 +12,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="#212984">
   <!-- CUSTOM HEADER CODE -->
   <?php
-  if (wp_get_environment_type() === 'prd') {
+  if (wp_get_environment_type() === 'production') {
     include('wp-content/themes/charliehealth/includes/header-code.php');
   }
   ?>

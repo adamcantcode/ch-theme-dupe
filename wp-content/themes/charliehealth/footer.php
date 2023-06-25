@@ -113,7 +113,7 @@
 	</div>
 </footer>
 <?php
-if (wp_get_environment_type() === 'prd') {
+if (wp_get_environment_type() === 'production') {
 	include('wp-content/themes/charliehealth/includes/footer-code.php');
 }
 ?>
