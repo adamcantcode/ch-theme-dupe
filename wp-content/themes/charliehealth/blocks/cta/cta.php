@@ -15,13 +15,13 @@ if (empty($link)) {
 // For BG color
 /** Defailt Background */
 if ($style === 'value') {
-  $blockClasses = 'bg-cream';
+  $background = 'bg-cream';
 } elseif ($style === 'full') {
-  $blockClasses = 'bg-lightest-purple';
+  $background = 'bg-lightest-purple';
 } elseif ($style === 'newsletter') {
-  $blockClasses = 'bg-cream';
+  $background = 'bg-cream';
 } else {
-  $blockClasses = 'bg-cream';
+  $background = 'bg-cream';
 }
 if (!empty($block['backgroundColor'])) {
   $background = 'bg-' . $block['backgroundColor'];
