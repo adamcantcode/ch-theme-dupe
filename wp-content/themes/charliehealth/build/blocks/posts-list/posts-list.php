@@ -24,8 +24,8 @@ $style  = get_field('style');
             $featuredImageUrl = $featuredImage[0];
             $featuredImageAltText = $featuredImageAltText ?: '';
           } else {
-            $featuredImageUrl = placeHolderImage(600, 800);
-            $featuredImageAltText = 'place holder image';
+            $featuredImageUrl = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
+            $featuredImageAltText = 'Charlie Health Logo';
           }
       ?>
           <div class="relative grid overflow-hidden duration-300 border rounded-sm border-card-border hover:shadow-lg">
@@ -64,8 +64,8 @@ $style  = get_field('style');
           $featuredImageUrl = $featuredImage[0];
           $featuredImageAltText = $featuredImageAltText ?: '';
         } else {
-          $featuredImageUrl = placeHolderImage(600, 800);
-          $featuredImageAltText = 'place holder image';
+          $featuredImageUrl = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
+          $featuredImageAltText = 'Charlie Health Logo';
         }
         ?>
         <div class="relative grid overflow-hidden duration-300 border rounded-sm border-card-border hover:shadow-lg">

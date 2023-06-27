@@ -243,6 +243,9 @@
 
               newsletterIDField.value = newsletterID;
               newsletterLPField.value = window.location.href;
+
+              console.log(newsletterIDField.value);
+              console.log(newsletterLPField.value);
             </script>
           </div>
           <h5>You can unsubscribe anytime.</h5>

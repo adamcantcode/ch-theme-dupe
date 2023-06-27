@@ -167,8 +167,7 @@ export default function ajaxPaginationSearch() {
   };
 
   const renderHTML = (post, html) => {
-    var imageUrl =
-      'https://images.placeholders.dev/?width=800&height=600&text=FPO';
+    var imageUrl = `${window.location.origin}/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp`;
     var imageAlt = `Featured image for ${post.title.rendered}`;
 
     if (post.tags) {

@@ -44,6 +44,9 @@
 					newsletterIDField.value = newsletterID;
 					newsletterLPField.value = window.location.href;
 
+					console.log(newsletterIDField.value);
+					console.log(newsletterLPField.value);
+
 					// Remove duplicate default formstack stlyes styles
 					const styles = document.querySelectorAll('footer style');
 					styles.forEach(style => {
