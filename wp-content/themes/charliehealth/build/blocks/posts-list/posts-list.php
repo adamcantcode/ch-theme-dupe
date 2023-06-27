@@ -11,6 +11,10 @@ $style  = get_field('style');
       $args = array(
         'post_type' => $type,
         'posts_per_page' => $count,
+        'meta_key'       => 'date',
+        'orderby'        => 'meta_value',
+        'order'          => 'DESC',
+        'meta_type'      => 'DATE',
       );
 
       $query = new WP_Query($args);
