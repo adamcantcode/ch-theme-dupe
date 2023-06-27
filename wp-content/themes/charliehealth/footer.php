@@ -22,41 +22,43 @@
 		<?php endwhile;
 		endif;
 		?>
-		<div class="flex flex-col lg:col-span-2">
-			<div id="newsletterFooter" class="newsletter-revamp footer-newsletter">
-				<h4 class="text-white">Join Our Newsletter</h4>
-				<p class="text-white">Get mental health updates, research, insights, and resources directly to your inbox.</p>
-				<script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/newsletter_blog_revamp"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/newsletter_blog_revamp" title="Online Form">Online Form - Newsletter - Blog Revamp</a></noscript>
-				<script>
-					var container = document.currentScript.parentNode; // Newsletter container
-					var elementToCut = container.querySelector("#fsSubmitButton5194985"); // Submit button
-					var destinationElement = container.querySelector("#fsCell140490700"); // Email container
-					var newsletterID = container.id; // Newlsetter identifier
-					var newsletterLPField = container.querySelector('#field142799721'); // LP URL field
-					var newsletterIDField = container.querySelector('#field146376375'); // Type field
+		<?php if (!is_page('newsletter-thank-you')) : ?>
+			<div class="flex flex-col lg:col-span-2">
+				<div id="newsletterFooter" class="newsletter-revamp footer-newsletter">
+					<h4 class="text-white">Join Our Newsletter</h4>
+					<p class="text-white">Get mental health updates, research, insights, and resources directly to your inbox.</p>
+					<script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/newsletter_blog_revamp"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/newsletter_blog_revamp" title="Online Form">Online Form - Newsletter - Blog Revamp</a></noscript>
+					<script>
+						var container = document.currentScript.parentNode; // Newsletter container
+						var elementToCut = container.querySelector("#fsSubmitButton5194985"); // Submit button
+						var destinationElement = container.querySelector("#fsCell140490700"); // Email container
+						var newsletterID = container.id; // Newlsetter identifier
+						var newsletterLPField = container.querySelector('#field142799721'); // LP URL field
+						var newsletterIDField = container.querySelector('#field146376375'); // Type field
 
-					if (elementToCut && destinationElement) {
-						var clonedElement = elementToCut.cloneNode(true);
-						elementToCut.parentNode.removeChild(elementToCut);
-						destinationElement.appendChild(clonedElement);
-					}
+						if (elementToCut && destinationElement) {
+							var clonedElement = elementToCut.cloneNode(true);
+							elementToCut.parentNode.removeChild(elementToCut);
+							destinationElement.appendChild(clonedElement);
+						}
 
-					newsletterIDField.value = newsletterID;
-					newsletterLPField.value = window.location.href;
+						newsletterIDField.value = newsletterID;
+						newsletterLPField.value = window.location.href;
 
-					console.log(newsletterIDField.value);
-					console.log(newsletterLPField.value);
+						console.log(newsletterIDField.value);
+						console.log(newsletterLPField.value);
 
-					// Remove duplicate default formstack stlyes styles
-					const styles = document.querySelectorAll('footer style');
-					styles.forEach(style => {
-						const clonedStyle = style.cloneNode(true);
-						document.head.appendChild(clonedStyle);
-						style.parentNode.removeChild(style);
-					});
-				</script>
+						// Remove duplicate default formstack stlyes styles
+						const styles = document.querySelectorAll('footer style');
+						styles.forEach(style => {
+							const clonedStyle = style.cloneNode(true);
+							document.head.appendChild(clonedStyle);
+							style.parentNode.removeChild(style);
+						});
+					</script>
+				</div>
 			</div>
-		</div>
+		<?php endif; ?>
 	</div>
 	<div class="container order-first md:order-none">
 		<div class="flex flex-col justify-between rounded-md lg:flex-row bg-lightest-teal py-sp-5 px-sp-8">
