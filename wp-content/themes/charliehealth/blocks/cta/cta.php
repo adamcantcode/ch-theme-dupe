@@ -25,8 +25,9 @@ if ($style === 'value') {
 }
 if (!empty($block['backgroundColor'])) {
   $background = 'bg-' . $block['backgroundColor'];
-  $blockClasses .= $background . ' ';
-} ?>
+} 
+$blockClasses .= $background . ' ';
+?>
 
 <?php if ($style === 'value') : ?>
   <div class="flex justify-center rounded-sm lg:p-sp-14 p-sp-6 mb-sp-6 <?= $blockClasses; ?>">
