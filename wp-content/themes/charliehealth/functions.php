@@ -663,3 +663,15 @@ if (is_singular('post') || is_singular('research')) {
     }
   });
 }
+
+function remove_schema_pro_breadcrumbs($bool, $post_id, $type)
+{
+  if(is_singular('areas-of-care') || is_singular('treatment-modalities')) {
+    if ('breadcrumb' == $type) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+}
+add_filter('wp_schema_pro_global_schema_enabled',  'remove_schema_pro_breadcrumbs', 20, 3);
