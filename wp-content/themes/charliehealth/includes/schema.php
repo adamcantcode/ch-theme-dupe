@@ -3,12 +3,12 @@ if (is_singular('post') || is_singular('research') || is_singular('areas-of-care
   $id = get_the_ID();
   $postLink = get_the_permalink($id);
   $medicalReviewer = get_field('medical_reviewer', $id);
-  if (!is_null($medicalReviewer)) {
+  if ($medicalReviewer !== false && !is_null($medicalReviewer)) {
     $medicalReviewerName = $medicalReviewer->post_title;
     $medicalReviewerLink = site_url('/medical-reviewer/' . $medicalReviewer->post_name);
   }
   $author = get_field('by_author', $id);
-  if (!is_null($author)) {
+  if ($medicalReviewer !== false && !is_null($author)) {
     $authorName = $author->post_title;
     $authorLink = site_url('/medical-reviewer/' . $author->post_name);
   }
