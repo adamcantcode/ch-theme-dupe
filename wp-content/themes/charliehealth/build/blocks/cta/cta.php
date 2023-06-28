@@ -13,6 +13,7 @@ if (empty($link)) {
 }
 
 // For BG color
+$blockClasses = '';
 /** Defailt Background */
 if ($style === 'value') {
   $background = 'bg-cream';
