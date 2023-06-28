@@ -13,8 +13,10 @@ if ($image) {
   $imageID = get_post_thumbnail_id();
   $imageSrcset = wp_get_attachment_image_srcset($imageID, 'featured-large');
   $imageAlt = get_post_meta($imageID, '_wp_attachment_image_alt', true);
+} else {
+  $image = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
+  $imageAlt = 'Charlie Health Logo';
 }
-
 ?>
 
 <main class="site-main mt-[68px]">
