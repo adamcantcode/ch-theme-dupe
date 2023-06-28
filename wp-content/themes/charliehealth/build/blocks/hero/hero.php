@@ -38,7 +38,7 @@ if ($style === 'image') {
       </div>
       <?php include(get_template_directory() . '/includes/button-group.php'); ?>
     </div>
-    <h1 class="block text-display lg:noshow"><?= $title; ?></h1>
+    <h2 class="block text-h1-display lg:noshow"><?= $title; ?></h2>
     <div class="flex flex-col justify-between order-1 lg:order-2">
       <!-- TODO fix image offset bool issue -->
       <img src="<?= $heroImage['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $heroImage['alt'] ?: 'Placeholder image'; ?>" class="object-cover object-top rounded-lg max-h-52 md:max-h-none nolazy">
