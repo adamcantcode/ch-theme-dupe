@@ -79,7 +79,7 @@ if ($image) {
   <section id="postsContainerResearch" class="section">
     <div class="container">
       <h2 class="mb-sp-12">Research Articles by <?= get_the_title(); ?></h2>
-      <div class="absolute invisible opacity-0 no-posts-js">
+      <div class="absolute invisible opacity-0 no-posts-js-research">
         <div class="grid items-center grid-cols-1 duration-300 rounded-md justify-items-center bg-cream lg:grid-cols-2 p-sp-4">
           <h4 class="mb-0">We couldn’t find what you’re looking for.</h4>
           <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/not-found.svg'); ?>" alt="not found icon">
