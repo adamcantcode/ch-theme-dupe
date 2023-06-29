@@ -224,7 +224,7 @@ function filter_posts_by_acf_field_medical($args, $request)
   }
   return $args;
 }
-add_filter('rest_research_query', 'filter_posts_by_acf_field_medical', 10, 2);
+add_filter('rest_post_query', 'filter_posts_by_acf_field_medical', 10, 2);
 
 /**
  * Sort PRESS posts by date

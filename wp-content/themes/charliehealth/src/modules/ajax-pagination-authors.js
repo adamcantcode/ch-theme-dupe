@@ -4,7 +4,7 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
 gsap.registerPlugin(ScrollToPlugin);
 
-export default function ajaxPagination() {
+export default function ajaxPaginationResearchAuthors() {
   const initPagination = (tagID) => {
     const bodyClasses = Array.from(document.body.classList);
     const postsPerPage = 6;
@@ -13,7 +13,7 @@ export default function ajaxPagination() {
   };
 
   const renderPagination = (postsPerPage, endpoint, tagID) => {
-    jQuery('.pagination-container').pagination({
+    jQuery('.pagination-container-research').pagination({
       dataSource: function (done) {
         fetch(`${endpoint}&_fields=id`)
           .then(function (response) {
@@ -49,7 +49,7 @@ export default function ajaxPagination() {
         console.log(pagination);
 
         // var url = window.location.href.split('?')[0] + '?page=' + data[0];
-        jQuery('.pagination-container .paginationjs-page').each(function (
+        jQuery('.pagination-container-research .paginationjs-page').each(function (
           index,
           element
         ) {
@@ -61,7 +61,7 @@ export default function ajaxPagination() {
         const bodyClasses = Array.from(document.body.classList);
         var [endpoint] = getEndpoint(bodyClasses, tagID);
 
-        jQuery('.posts-container').addClass('opacity-0 scale-[0.99]');
+        jQuery('.posts-container-research').addClass('opacity-0 scale-[0.99]');
 
         endpoint += `&page=${data}&per_page=${postsPerPage}`;
         console.log(endpoint);
@@ -74,9 +74,9 @@ export default function ajaxPagination() {
             if (posts.length > 0) {
               const noPosts = document.querySelector('.no-posts-js');
               const pagination = document.querySelector(
-                '.pagination-container'
+                '.pagination-container-research'
               );
-              const postsContainer = document.querySelector('.posts-container');
+              const postsContainer = document.querySelector('.posts-container-research');
 
               pagination.classList.remove('noshow');
               postsContainer.classList.remove('noshow');
@@ -89,14 +89,14 @@ export default function ajaxPagination() {
               posts.forEach(function (post) {
                 html += renderHTML(post, html);
               });
-              jQuery('.posts-container').html(html);
-              jQuery('.posts-container').removeClass('opacity-0 scale-[0.99]');
+              jQuery('.posts-container-research').html(html);
+              jQuery('.posts-container-research').removeClass('opacity-0 scale-[0.99]');
             } else {
               const noPosts = document.querySelector('.no-posts-js');
               const pagination = document.querySelector(
-                '.pagination-container'
+                '.pagination-container-research'
               );
-              const postsContainer = document.querySelector('.posts-container');
+              const postsContainer = document.querySelector('.posts-container-research');
 
               pagination.classList.add('noshow');
               postsContainer.classList.add('noshow');
@@ -164,7 +164,7 @@ export default function ajaxPagination() {
   };
 
   const getEndpoint = (bodyClasses, tagID) => {
-    let endpoint = `${window.location.origin}/wp-json/wp/v2/posts?_embed&_fields=link,title,acf,_links,_embedded&_embed`;
+    let endpoint = `${window.location.origin}/wp-json/wp/v2/research?_embed&_fields=link,title,acf,_links,_embedded&_embed`;
 
     if (bodyClasses.includes('category')) {
       var categories = bodyClasses.map((str) => str.replace('category-', ''));
