@@ -76,7 +76,7 @@ function ajaxPaginationResearchAuthors() {
           return response.json();
         }).then(function (posts) {
           if (posts.length > 0) {
-            const noPosts = document.querySelector('.no-posts-js');
+            const noPosts = document.querySelector('.no-posts-js-research');
             const pagination = document.querySelector('.pagination-container-research');
             const postsContainer = document.querySelector('.posts-container-research');
             pagination.classList.remove('noshow');
@@ -91,7 +91,7 @@ function ajaxPaginationResearchAuthors() {
             jQuery('.posts-container-research').html(html);
             jQuery('.posts-container-research').removeClass('opacity-0 scale-[0.99]');
           } else {
-            const noPosts = document.querySelector('.no-posts-js');
+            const noPosts = document.querySelector('.no-posts-js-research');
             const pagination = document.querySelector('.pagination-container-research');
             const postsContainer = document.querySelector('.posts-container-research');
             pagination.classList.add('noshow');
@@ -191,7 +191,7 @@ function ajaxPaginationResearchAuthors() {
       medicalReviewer.forEach(medicalReviewer => {
         if (!isNaN(medicalReviewer)) {
           var medicalReviewerID = medicalReviewer;
-          endpoint = `${window.location.origin}/wp-json/wp/v2/posts?_embed&_fields=link,title,acf,_links,_embedded&_embed`;
+          endpoint = `${window.location.origin}/wp-json/wp/v2/research?_embed&_fields=link,title,acf,_links,_embedded&_embed`;
           endpoint += `&medical_reviewer=${medicalReviewerID}`;
         }
       });
@@ -23027,11 +23027,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   if (body.classList.contains('single-authors')) {
     (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__["default"])();
-    // ajaxPaginationResearchAuthors();
+    (0,_modules_ajax_pagination_authors__WEBPACK_IMPORTED_MODULE_17__["default"])();
   }
-
   if (body.classList.contains('single-medical-reviewer')) {
     (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__["default"])();
+    (0,_modules_ajax_pagination_authors__WEBPACK_IMPORTED_MODULE_17__["default"])();
   }
   if (body.classList.contains('page-template-searchpage')) {
     (0,_modules_ajax_pagination_search__WEBPACK_IMPORTED_MODULE_12__["default"])();

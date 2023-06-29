@@ -59,10 +59,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   if (body.classList.contains('single-authors')) {
     ajaxPagination();
-    // ajaxPaginationResearchAuthors();
+    ajaxPaginationResearchAuthors();
   }
   if (body.classList.contains('single-medical-reviewer')) {
     ajaxPagination();
+    ajaxPaginationResearchAuthors();
   }
   if (body.classList.contains('page-template-searchpage')) {
     ajaxPaginationSearch();

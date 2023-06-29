@@ -72,7 +72,7 @@ export default function ajaxPaginationResearchAuthors() {
           })
           .then(function (posts) {
             if (posts.length > 0) {
-              const noPosts = document.querySelector('.no-posts-js');
+              const noPosts = document.querySelector('.no-posts-js-research');
               const pagination = document.querySelector(
                 '.pagination-container-research'
               );
@@ -92,7 +92,7 @@ export default function ajaxPaginationResearchAuthors() {
               jQuery('.posts-container-research').html(html);
               jQuery('.posts-container-research').removeClass('opacity-0 scale-[0.99]');
             } else {
-              const noPosts = document.querySelector('.no-posts-js');
+              const noPosts = document.querySelector('.no-posts-js-research');
               const pagination = document.querySelector(
                 '.pagination-container-research'
               );
@@ -209,7 +209,7 @@ export default function ajaxPaginationResearchAuthors() {
       medicalReviewer.forEach((medicalReviewer) => {
         if (!isNaN(medicalReviewer)) {
           var medicalReviewerID = medicalReviewer;
-          endpoint = `${window.location.origin}/wp-json/wp/v2/posts?_embed&_fields=link,title,acf,_links,_embedded&_embed`;
+          endpoint = `${window.location.origin}/wp-json/wp/v2/research?_embed&_fields=link,title,acf,_links,_embedded&_embed`;
           endpoint += `&medical_reviewer=${medicalReviewerID}`;
         }
       });

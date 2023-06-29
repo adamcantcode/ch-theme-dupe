@@ -227,6 +227,42 @@ function filter_posts_by_acf_field_medical($args, $request)
 add_filter('rest_post_query', 'filter_posts_by_acf_field_medical', 10, 2);
 
 /**
+ * Sort AUTHORS for author pages - research
+ */
+function filter_research_by_acf_field($args, $request)
+{
+  if (isset($request['by_author'])) {
+    $args['meta_query'] = array(
+      array(
+        'key' => 'by_author',
+        'value' => intval($request['by_author']),
+        'compare' => '=',
+      ),
+    );
+  }
+  return $args;
+}
+add_filter('rest_research_query', 'filter_research_by_acf_field', 10, 2);
+
+/**
+ * Sort MEDICAL REVIEWERS for author pages - research posts
+ */
+function filter_research_by_acf_field_medical($args, $request)
+{
+  if (isset($request['medical_reviewer'])) {
+    $args['meta_query'] = array(
+      array(
+        'key' => 'medical_reviewer',
+        'value' => intval($request['medical_reviewer']),
+        'compare' => '=',
+      ),
+    );
+  }
+  return $args;
+}
+add_filter('rest_research_query', 'filter_research_by_acf_field_medical', 10, 2);
+
+/**
  * Sort PRESS posts by date
  */
 function custom_rest_press_query($args, $request)
