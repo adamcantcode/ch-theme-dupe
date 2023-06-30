@@ -32,7 +32,7 @@ wp-content/mu-plugins/wpengine-security-auditor.php
 wp-content/mu-plugins/wpe-wp-sign-on-plugin*
 
 # smart plugin manager specific 
-# wp-content/plugins/*
+wp-content/plugins/*
 wp-content/.logs/
 autoupdater_maintenance_mode_enabled.tmp
 
@@ -122,4 +122,3 @@ autoupdater_maintenance_mode_enabled.tmp
 # CUSTOM
 wp-content/db.php
 *node_modules
-wp-content/plugins/query-monitor
