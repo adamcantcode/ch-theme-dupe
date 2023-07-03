@@ -122,3 +122,4 @@ autoupdater_maintenance_mode_enabled.tmp
 # CUSTOM
 wp-content/db.php
 *node_modules
+wp-content/wp-rocket-config/*
