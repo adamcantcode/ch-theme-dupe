@@ -724,3 +724,40 @@ add_filter('rest_endpoints', function ($endpoints) {
   }
   return $endpoints;
 });
+
+function custom_posts_columns($columns)
+{
+  $columns['modified_date'] = 'Last Modified';
+  return $columns;
+}
+add_filter('manage_post_posts_columns', 'custom_posts_columns');
+
+function custom_posts_column_content($column_name, $post_id)
+{
+  if ($column_name === 'modified_date') {
+    $post = get_post($post_id);
+    $modified_date = get_post_modified_time('Y/m/d \a\t h:i a', true, $post);
+    echo $modified_date;
+  }
+}
+add_action('manage_post_posts_custom_column', 'custom_posts_column_content', 10, 2);
+
+function custom_posts_column_sortable($columns)
+{
+  $columns['modified_date'] = 'modified_date';
+  return $columns;
+}
+add_filter('manage_edit-post_sortable_columns', 'custom_posts_column_sortable');
+
+function custom_posts_column_orderby($query)
+{
+  if (!is_admin() || !$query->is_main_query()) {
+    return;
+  }
+
+  $orderby = $query->get('orderby');
+  if ($orderby === 'modified_date') {
+    $query->set('orderby', 'modified');
+  }
+}
+add_action('pre_get_posts', 'custom_posts_column_orderby');
