@@ -8,11 +8,11 @@
             "name": "date",
             "aria-label": "",
             "type": "date_picker",
-            "instructions": "",
+            "instructions": "Include a date for post visibility and ordering on the main <a href=\"\/blog\" target=\"_blank\">\/blog page<\/a>.",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -23,20 +23,22 @@
         {
             "key": "field_64a332247c8b5",
             "label": "Updated Date",
-            "name": "updated_date",
+            "name": "select_updated_date",
             "aria-label": "",
-            "type": "date_picker",
-            "instructions": "",
+            "type": "true_false",
+            "instructions": "Select if the post has been updated. This will display <b>Update: {Date}<\/b> on the post.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
-            "display_format": "F j, Y",
-            "return_format": "F j, Y",
-            "first_day": 0
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "Updated",
+            "ui_off_text": "Original",
+            "ui": 1
         },
         {
             "key": "field_6454060ee7dc2",
@@ -44,11 +46,11 @@
             "name": "by_author",
             "aria-label": "",
             "type": "post_object",
-            "instructions": "",
-            "required": 0,
+            "instructions": "Select an author from <a href=\"\/wp-admin\/edit.php?post_type=authors\" target=\"_blank\">Authors<\/a> or add a new one.",
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -70,11 +72,11 @@
             "name": "medical_reviewer",
             "aria-label": "",
             "type": "post_object",
-            "instructions": "",
+            "instructions": "Select an author from <a href=\"\/wp-admin\/edit.php?post_type=medical-reviewer\" target=\"_blank\">Medical Reviewers<\/a> or add a new one.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -91,24 +93,57 @@
             "ui": 1
         },
         {
-            "key": "field_64583c0da9ff0",
-            "label": "Show TOC",
-            "name": "toc",
+            "key": "field_64540ccafa2f1",
+            "label": "Related posts",
+            "name": "related_posts",
             "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
+            "type": "relationship",
+            "instructions": "Select up to three posts to be shown as related items at the end of the blog.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
-            "message": "",
-            "default_value": 1,
-            "ui_on_text": "",
-            "ui_off_text": "",
-            "ui": 1
+            "post_type": [
+                "post",
+                "research"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "taxonomy"
+            ],
+            "return_format": "object",
+            "min": "",
+            "max": 3,
+            "elements": [
+                "featured_image"
+            ]
+        },
+        {
+            "key": "field_6462caf24bf4b",
+            "label": "References",
+            "name": "references",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "Add references with hyperlinks.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
         },
         {
             "key": "field_64540758e7dc3",
@@ -116,7 +151,7 @@
             "name": "main_featured",
             "aria-label": "",
             "type": "true_false",
-            "instructions": "Display post in featured slider on <code>\/blog<\/code>",
+            "instructions": "Display post in featured slider on <a href=\"\/blog\" target=\"_blank\">\/blog page<\/a>",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -136,7 +171,7 @@
             "name": "feature_as",
             "aria-label": "",
             "type": "taxonomy",
-            "instructions": "",
+            "instructions": "This determines which <i>Audience<\/i> tag is displayed while featured.",
             "required": 0,
             "conditional_logic": [
                 [
@@ -187,7 +222,7 @@
             "name": "feature_on",
             "aria-label": "",
             "type": "taxonomy",
-            "instructions": "",
+            "instructions": "You may select multiple Audience pages for the post to be featured on.",
             "required": 0,
             "conditional_logic": [
                 [
@@ -213,12 +248,12 @@
             "allow_null": 0
         },
         {
-            "key": "field_6462caf24bf4b",
-            "label": "References",
-            "name": "references",
+            "key": "field_64583c0da9ff0",
+            "label": "Show Table of Contents",
+            "name": "toc",
             "aria-label": "",
-            "type": "wysiwyg",
-            "instructions": "",
+            "type": "true_false",
+            "instructions": "Select whether or not the TOC should be show on the blog post.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -226,42 +261,11 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 0,
-            "delay": 0
-        },
-        {
-            "key": "field_64540ccafa2f1",
-            "label": "Related posts",
-            "name": "related_posts",
-            "aria-label": "",
-            "type": "relationship",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "post",
-                "research"
-            ],
-            "post_status": [
-                "publish"
-            ],
-            "taxonomy": "",
-            "filters": [
-                "search",
-                "taxonomy"
-            ],
-            "return_format": "object",
-            "min": "",
-            "max": 3,
-            "elements": ""
+            "message": "",
+            "default_value": 1,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
         }
     ],
     "location": [
@@ -296,5 +300,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1688416866
+    "modified": 1688499638
 }
