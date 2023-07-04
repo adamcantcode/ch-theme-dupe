@@ -20,7 +20,8 @@ if (has_post_thumbnail()) {
 
 $author = get_field('by_author');
 $medicalReviewer = get_field('medical_reviewer');
-$date = get_field('date') ?: get_the_date();
+$date = get_field('date') ?: '';
+$updatedDate = get_field('select_updated_date') ?: '';
 $relatedPosts = get_field('related_posts') ?: '';
 $toc = get_field('toc') ?: '';
 $references = get_field('references') ?: '';
@@ -64,7 +65,11 @@ $readingTime = ceil($wordCount / $wordsPerMinute);
             <?php if (!empty($medicalReviewer)) : ?>
               <p class="mb-0">Clinically Reviewed By: <a href="<?= site_url('/medical-reviewer/') . $medicalReviewer->post_name; ?>"><?= $medicalReviewer->post_title; ?></a></p>
             <?php endif; ?>
-            <p><?= $date; ?></p>
+            <?php if (!$updatedDate) : ?>
+              <p><?= $date; ?></p>
+            <?php elseif ($updatedDate) : ?>
+              <p>Updated: <?= $date; ?></p>
+            <?php endif; ?>
             <div class="flex items-start">
               <p class="font-heading-serif">Share:</p>
               <a role="button" class="js-share-button ml-sp-4"><img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/share.svg'); ?>" alt="share icon"></a>
