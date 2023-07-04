@@ -21,7 +21,7 @@ if (has_post_thumbnail()) {
 $author = get_field('by_author');
 $medicalReviewer = get_field('medical_reviewer');
 $date = get_field('date') ?: '';
-$updatedDate = get_field('updated_date') ?: '';
+$updatedDate = get_field('select_updated_date') ?: '';
 $relatedPosts = get_field('related_posts') ?: '';
 $toc = get_field('toc') ?: '';
 $references = get_field('references') ?: '';
@@ -68,7 +68,7 @@ $readingTime = ceil($wordCount / $wordsPerMinute);
             <?php if (!$updatedDate) : ?>
               <p><?= $date; ?></p>
             <?php elseif ($updatedDate) : ?>
-              <p>Updated: <?= $updatedDate; ?></p>
+              <p>Updated: <?= $date; ?></p>
             <?php endif; ?>
             <div class="flex items-start">
               <p class="font-heading-serif">Share:</p>
