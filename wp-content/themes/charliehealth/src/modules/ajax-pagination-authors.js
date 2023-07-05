@@ -12,6 +12,13 @@ export default function ajaxPaginationResearchAuthors() {
     renderPagination(postsPerPage, endpoint, tagID);
   };
 
+  const checkPagination = () => {
+    var match = window.location.href.match(/\/page\/(\d+)/);
+    if (match) {
+      return match[1];
+    }
+  };
+
   const renderPagination = (postsPerPage, endpoint, tagID) => {
     jQuery('.pagination-container-research').pagination({
       dataSource: function (done) {
@@ -33,6 +40,7 @@ export default function ajaxPaginationResearchAuthors() {
       },
       pageSize: 1,
       pageRange: 2,
+      pageNumber: checkPagination(),
       ulClassName: 'items-center justify-center',
       prevText: `<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none" class="arrow-slider">
       <rect width="50" height="50" rx="25" fill="#ffffff" class="arrow-slider-bg" />
