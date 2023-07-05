@@ -58,20 +58,21 @@ function ajaxPaginationResearchAuthors() {
       <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
     </svg>`,
       callback: function (data, pagination) {
-        console.log(data);
-        console.log(pagination);
-
-        // var url = window.location.href.split('?')[0] + '?page=' + data[0];
-        jQuery('.pagination-container-research .paginationjs-page').each(function (index, element) {
+        // Add hrefs to pagianted links
+        jQuery('.pagination-container .paginationjs-page').each(function (index, element) {
           var page = jQuery(element).data('num');
           var link = jQuery(element).find('a');
-          jQuery(link).attr('href', window.location.href + '/page/' + page);
+          // Check if on paginated pages already
+          if (window.location.href.indexOf('/page/') !== -1) {
+            jQuery(link).attr('href', window.location.origin + '/blog/page/' + page);
+          } else {
+            jQuery(link).attr('href', window.location.href + '/page/' + page);
+          }
         });
         const bodyClasses = Array.from(document.body.classList);
         var [endpoint] = getEndpoint(bodyClasses, tagID);
         jQuery('.posts-container-research').addClass('opacity-0 scale-[0.99]');
         endpoint += `&page=${data}&per_page=${postsPerPage}`;
-        console.log(endpoint);
         fetch(endpoint).then(function (response) {
           return response.json();
         }).then(function (posts) {
@@ -201,7 +202,6 @@ function ajaxPaginationResearchAuthors() {
     return [endpoint, tagID];
   };
   const renderHTML = (post, html) => {
-    console.log(post);
     var imageUrl = `${window.location.origin}/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp`;
     var imageAlt = `Featured image for ${post.title.rendered}`;
 
@@ -321,10 +321,16 @@ function ajaxPaginationResearch() {
       <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
     </svg>`,
       callback: function (data, pagination) {
-        jQuery('.pagination-container-research .paginationjs-page').each(function (index, element) {
+        // Add hrefs to pagianted links
+        jQuery('.pagination-container .paginationjs-page').each(function (index, element) {
           var page = jQuery(element).data('num');
           var link = jQuery(element).find('a');
-          jQuery(link).attr('href', window.location.href + '/page/' + page);
+          // Check if on paginated pages already
+          if (window.location.href.indexOf('/page/') !== -1) {
+            jQuery(link).attr('href', window.location.origin + '/blog/page/' + page);
+          } else {
+            jQuery(link).attr('href', window.location.href + '/page/' + page);
+          }
         });
         const bodyClasses = Array.from(document.body.classList);
         var [endpoint] = getEndpoint(bodyClasses, tagID);
@@ -533,16 +539,21 @@ function ajaxPaginationSearch() {
       <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
     </svg>`,
       callback: function (data, pagination) {
+        // Add hrefs to pagianted links
         jQuery('.pagination-container .paginationjs-page').each(function (index, element) {
           var page = jQuery(element).data('num');
           var link = jQuery(element).find('a');
-          jQuery(link).attr('href', window.location.href + '/page/' + page);
+          // Check if on paginated pages already
+          if (window.location.href.indexOf('/page/') !== -1) {
+            jQuery(link).attr('href', window.location.origin + '/blog/page/' + page);
+          } else {
+            jQuery(link).attr('href', window.location.href + '/page/' + page);
+          }
         });
         const bodyClasses = Array.from(document.body.classList);
         var [endpoint] = getEndpoint(bodyClasses, tagID);
         jQuery('.posts-container').addClass('opacity-0 scale-[0.99]');
         endpoint += `&page=${data}&per_page=${postsPerPage}`;
-        console.log(endpoint);
         fetch(endpoint).then(function (response) {
           return response.json();
         }).then(function (posts) {
@@ -713,20 +724,21 @@ function ajaxPagination() {
       <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
     </svg>`,
       callback: function (data, pagination) {
-        console.log(data);
-        console.log(pagination);
-
-        // var url = window.location.href.split('?')[0] + '?page=' + data[0];
+        // Add hrefs to pagianted links
         jQuery('.pagination-container .paginationjs-page').each(function (index, element) {
           var page = jQuery(element).data('num');
           var link = jQuery(element).find('a');
-          jQuery(link).attr('href', window.location.href + '/page/' + page);
+          // Check if on paginated pages already
+          if (window.location.href.indexOf('/page/') !== -1) {
+            jQuery(link).attr('href', window.location.origin + '/blog/page/' + page);
+          } else {
+            jQuery(link).attr('href', window.location.href + '/page/' + page);
+          }
         });
         const bodyClasses = Array.from(document.body.classList);
         var [endpoint] = getEndpoint(bodyClasses, tagID);
         jQuery('.posts-container').addClass('opacity-0 scale-[0.99]');
         endpoint += `&page=${data}&per_page=${postsPerPage}`;
-        console.log(endpoint);
         fetch(endpoint).then(function (response) {
           return response.json();
         }).then(function (posts) {
@@ -856,7 +868,6 @@ function ajaxPagination() {
     return [endpoint, tagID];
   };
   const renderHTML = (post, html) => {
-    console.log(post);
     var imageUrl = `${window.location.origin}/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp`;
     var imageAlt = `Featured image for ${post.title.rendered}`;
 
@@ -22970,12 +22981,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_featured_blog_slider__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/featured-blog-slider */ "./src/modules/featured-blog-slider.js");
 /* harmony import */ var _modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/ajax-pagination */ "./src/modules/ajax-pagination.js");
 /* harmony import */ var _modules_ajax_pagination_research__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/ajax-pagination-research */ "./src/modules/ajax-pagination-research.js");
-/* harmony import */ var _modules_ajax_pagination_search__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/ajax-pagination-search */ "./src/modules/ajax-pagination-search.js");
-/* harmony import */ var _modules_references__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules/references */ "./src/modules/references.js");
-/* harmony import */ var _modules_progress_bar__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./modules/progress-bar */ "./src/modules/progress-bar.js");
-/* harmony import */ var _modules_newsletter_popup__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./modules/newsletter-popup */ "./src/modules/newsletter-popup.js");
-/* harmony import */ var _modules_mobile_cats__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./modules/mobile-cats */ "./src/modules/mobile-cats.js");
-/* harmony import */ var _modules_ajax_pagination_authors__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./modules/ajax-pagination-authors */ "./src/modules/ajax-pagination-authors.js");
+/* harmony import */ var _modules_ajax_pagination_authors__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/ajax-pagination-authors */ "./src/modules/ajax-pagination-authors.js");
+/* harmony import */ var _modules_ajax_pagination_search__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules/ajax-pagination-search */ "./src/modules/ajax-pagination-search.js");
+/* harmony import */ var _modules_references__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./modules/references */ "./src/modules/references.js");
+/* harmony import */ var _modules_progress_bar__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./modules/progress-bar */ "./src/modules/progress-bar.js");
+/* harmony import */ var _modules_newsletter_popup__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./modules/newsletter-popup */ "./src/modules/newsletter-popup.js");
+/* harmony import */ var _modules_mobile_cats__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./modules/mobile-cats */ "./src/modules/mobile-cats.js");
 
 
 
@@ -23007,12 +23018,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   if (body.classList.contains('single-post') || body.classList.contains('single-research')) {
     (0,_modules_toc__WEBPACK_IMPORTED_MODULE_7__["default"])();
-    (0,_modules_references__WEBPACK_IMPORTED_MODULE_13__["default"])();
-    (0,_modules_progress_bar__WEBPACK_IMPORTED_MODULE_14__["default"])();
+    (0,_modules_references__WEBPACK_IMPORTED_MODULE_14__["default"])();
+    (0,_modules_progress_bar__WEBPACK_IMPORTED_MODULE_15__["default"])();
     (0,_modules_share_button__WEBPACK_IMPORTED_MODULE_8__["default"])();
   }
   if (body.classList.contains('blog')) {
-    (0,_modules_newsletter_popup__WEBPACK_IMPORTED_MODULE_15__["default"])();
+    (0,_modules_newsletter_popup__WEBPACK_IMPORTED_MODULE_16__["default"])();
     (0,_modules_featured_blog_slider__WEBPACK_IMPORTED_MODULE_9__["default"])();
     (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__["default"])();
     (0,_modules_ajax_pagination_research__WEBPACK_IMPORTED_MODULE_11__["default"])();
@@ -23020,21 +23031,21 @@ document.addEventListener('DOMContentLoaded', () => {
   if (body.classList.contains('category')) {
     (0,_modules_featured_blog_slider__WEBPACK_IMPORTED_MODULE_9__["default"])();
     (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__["default"])();
-    (0,_modules_mobile_cats__WEBPACK_IMPORTED_MODULE_16__["default"])();
+    (0,_modules_mobile_cats__WEBPACK_IMPORTED_MODULE_17__["default"])();
   }
   if (body.classList.contains('tag')) {
     (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__["default"])();
   }
   if (body.classList.contains('single-authors')) {
     (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__["default"])();
-    (0,_modules_ajax_pagination_authors__WEBPACK_IMPORTED_MODULE_17__["default"])();
+    (0,_modules_ajax_pagination_authors__WEBPACK_IMPORTED_MODULE_12__["default"])();
   }
   if (body.classList.contains('single-medical-reviewer')) {
     (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__["default"])();
-    (0,_modules_ajax_pagination_authors__WEBPACK_IMPORTED_MODULE_17__["default"])();
+    (0,_modules_ajax_pagination_authors__WEBPACK_IMPORTED_MODULE_12__["default"])();
   }
   if (body.classList.contains('page-template-searchpage')) {
-    (0,_modules_ajax_pagination_search__WEBPACK_IMPORTED_MODULE_12__["default"])();
+    (0,_modules_ajax_pagination_search__WEBPACK_IMPORTED_MODULE_13__["default"])();
   }
   if (body.classList.contains('page-template-page-press')) {
     (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__["default"])();

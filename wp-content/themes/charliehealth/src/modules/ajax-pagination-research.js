@@ -45,13 +45,23 @@ export default function ajaxPaginationResearch() {
       <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
     </svg>`,
       callback: function (data, pagination) {
-        jQuery('.pagination-container-research .paginationjs-page').each(
-          function (index, element) {
-            var page = jQuery(element).data('num');
-            var link = jQuery(element).find('a');
+        // Add hrefs to pagianted links
+        jQuery('.pagination-container .paginationjs-page').each(function (
+          index,
+          element
+        ) {
+          var page = jQuery(element).data('num');
+          var link = jQuery(element).find('a');
+          // Check if on paginated pages already
+          if (window.location.href.indexOf('/page/') !== -1) {
+            jQuery(link).attr(
+              'href',
+              window.location.origin + '/blog/page/' + page
+            );
+          } else {
             jQuery(link).attr('href', window.location.href + '/page/' + page);
           }
-        );
+        });
 
         const bodyClasses = Array.from(document.body.classList);
         var [endpoint] = getEndpoint(bodyClasses, tagID);

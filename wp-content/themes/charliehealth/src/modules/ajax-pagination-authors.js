@@ -45,17 +45,22 @@ export default function ajaxPaginationResearchAuthors() {
       <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
     </svg>`,
       callback: function (data, pagination) {
-        console.log(data);
-        console.log(pagination);
-
-        // var url = window.location.href.split('?')[0] + '?page=' + data[0];
-        jQuery('.pagination-container-research .paginationjs-page').each(function (
+        // Add hrefs to pagianted links
+        jQuery('.pagination-container .paginationjs-page').each(function (
           index,
           element
         ) {
           var page = jQuery(element).data('num');
           var link = jQuery(element).find('a');
-          jQuery(link).attr('href', window.location.href + '/page/' + page);
+          // Check if on paginated pages already
+          if (window.location.href.indexOf('/page/') !== -1) {
+            jQuery(link).attr(
+              'href',
+              window.location.origin + '/blog/page/' + page
+            );
+          } else {
+            jQuery(link).attr('href', window.location.href + '/page/' + page);
+          }
         });
 
         const bodyClasses = Array.from(document.body.classList);
@@ -64,7 +69,6 @@ export default function ajaxPaginationResearchAuthors() {
         jQuery('.posts-container-research').addClass('opacity-0 scale-[0.99]');
 
         endpoint += `&page=${data}&per_page=${postsPerPage}`;
-        console.log(endpoint);
 
         fetch(endpoint)
           .then(function (response) {
@@ -76,7 +80,9 @@ export default function ajaxPaginationResearchAuthors() {
               const pagination = document.querySelector(
                 '.pagination-container-research'
               );
-              const postsContainer = document.querySelector('.posts-container-research');
+              const postsContainer = document.querySelector(
+                '.posts-container-research'
+              );
 
               pagination.classList.remove('noshow');
               postsContainer.classList.remove('noshow');
@@ -90,13 +96,17 @@ export default function ajaxPaginationResearchAuthors() {
                 html += renderHTML(post, html);
               });
               jQuery('.posts-container-research').html(html);
-              jQuery('.posts-container-research').removeClass('opacity-0 scale-[0.99]');
+              jQuery('.posts-container-research').removeClass(
+                'opacity-0 scale-[0.99]'
+              );
             } else {
               const noPosts = document.querySelector('.no-posts-js-research');
               const pagination = document.querySelector(
                 '.pagination-container-research'
               );
-              const postsContainer = document.querySelector('.posts-container-research');
+              const postsContainer = document.querySelector(
+                '.posts-container-research'
+              );
 
               pagination.classList.add('noshow');
               postsContainer.classList.add('noshow');
@@ -220,7 +230,6 @@ export default function ajaxPaginationResearchAuthors() {
   };
 
   const renderHTML = (post, html) => {
-    console.log(post);
     var imageUrl = `${window.location.origin}/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp`;
     var imageAlt = `Featured image for ${post.title.rendered}`;
 

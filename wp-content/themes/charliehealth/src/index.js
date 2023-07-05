@@ -11,12 +11,12 @@ import shareButton from './modules/share-button';
 import featuredBlogSlider from './modules/featured-blog-slider';
 import ajaxPagination from './modules/ajax-pagination';
 import ajaxPaginationResearch from './modules/ajax-pagination-research';
+import ajaxPaginationResearchAuthors from './modules/ajax-pagination-authors';
 import ajaxPaginationSearch from './modules/ajax-pagination-search';
 import references from './modules/references';
 import progressBar from './modules/progress-bar';
 import newsletterPopup from './modules/newsletter-popup';
 import mobileCats from './modules/mobile-cats';
-import ajaxPaginationResearchAuthors from './modules/ajax-pagination-authors';
 
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
