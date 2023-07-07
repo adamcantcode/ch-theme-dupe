@@ -166,7 +166,58 @@
           <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/not-found.svg'); ?>" alt="not found icon">
         </div>
       </div>
-      <div class="grid lg:grid-cols-3 transition-all duration-300 scale-[0.99] opacity-0 posts-container gap-x-sp-8 gap-y-sp-10 mb-sp-10">
+      <div class="grid lg:grid-cols-3 transition-all duration-300 scale-[0.99] posts-container gap-x-sp-8 gap-y-sp-10 mb-sp-10">
+        <?php
+        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
+        $args = array(
+          'post_type'      => 'post',
+          'posts_per_page' => 6,
+          'meta_key'       => 'date',
+          'orderby'        => 'meta_value',
+          'order'          => 'DESC',
+          'meta_type'      => 'DATE',
+          'paged'          => $paged,
+        );
+
+        $query = new WP_Query($args);
+
+        if ($query->have_posts()) {
+          while ($query->have_posts()) {
+            $query->the_post();
+            $author = get_field('by_author', get_the_ID());
+            if (has_post_thumbnail()) {
+              $featuredImageID = get_post_thumbnail_id();
+              $featuredImage = wp_get_attachment_image_src($featuredImageID, 'card-thumb');
+              $featuredImageAltText = get_post_meta($featuredImageID, '_wp_attachment_image_alt', true);
+
+              $featuredImageUrl = $featuredImage[0];
+              $featuredImageAltText = $featuredImageAltText ?: '';
+            } else {
+              $featuredImageUrl = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
+              $featuredImageAltText = 'Charlie Health Logo';
+            }
+        ?>
+            <div class="relative grid overflow-hidden duration-300 border rounded-sm border-card-border hover:shadow-lg">
+              <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover lg:h-[220px] h-[150px] w-full">
+              <div class="grid p-sp-4">
+                <h3><a href="<?= get_the_permalink(); ?>" class="stretched-link"><?= get_the_title(); ?></a></h3>
+                <h5 class="mb-sp-4"><?= $author->post_title; ?></h5>
+                <?php
+                $tags = get_the_terms(get_the_ID(), 'post_tag');
+                ?>
+                <?php if ($tags) :  ?>
+                  <?php foreach ($tags as $tag) : ?>
+                    <div class="grid items-end justify-start grid-flow-col gap-sp-4"><a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="relative z-20 inline-block no-underline rounded-lg px-sp-4 py-sp-3 text-h6 bg-tag-gray hover:bg-bright-teal"><?= $tag->name; ?></a></div>
+                  <?php endforeach; ?>
+                <?php endif; ?>
+              </div>
+            </div>
+        <?php
+          }
+        }
+        wp_reset_postdata();
+        ?>
         <!-- `<div class="relative grid overflow-hidden duration-300 border rounded-sm border-card-border hover:shadow-lg">
           <img src="https://images.placeholders.dev/?width=800&height=600&text=FPO" alt="" class="object-cover lg:h-[220px] h-[150px] w-full">
           <div class="grid p-sp-4">
