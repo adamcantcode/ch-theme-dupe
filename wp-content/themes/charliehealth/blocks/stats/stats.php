@@ -33,7 +33,7 @@ $style = get_field('style');
         <div class="relative stats-circles">
           <div class="absolute inset-0 grid content-center justify-items-center w-full max-w-[200px] mx-auto text-center">
             <h2 class="text-[2.5rem] mb-sp-4 number" id="<?= get_row_index(); ?>"><?= $number; ?></h3>
-              <p class=""><?= $label; ?></p>
+              <p class="mb-0"><?= $label; ?></p>
           </div>
           <div class="js-stats-circle">
             <svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" fill="none" viewBox="0 0 300 300">
