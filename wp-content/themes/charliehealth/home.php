@@ -166,7 +166,7 @@
           <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/not-found.svg'); ?>" alt="not found icon">
         </div>
       </div>
-      <div class="grid lg:grid-cols-3 transition-all duration-300 scale-[0.99] posts-container gap-x-sp-8 gap-y-sp-10 mb-sp-10">
+      <div class="grid transition-all duration-300 lg:grid-cols-3 posts-container gap-x-sp-8 gap-y-sp-10 mb-sp-10">
         <?php
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 

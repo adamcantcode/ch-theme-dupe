@@ -758,7 +758,6 @@ function ajaxPagination() {
         });
         const bodyClasses = Array.from(document.body.classList);
         var [endpoint] = getEndpoint(bodyClasses, tagID);
-        jQuery('.posts-container').addClass('opacity-0 scale-[0.99]');
         endpoint += `&page=${data}&per_page=${postsPerPage}`;
         fetch(endpoint).then(function (response) {
           return response.json();
@@ -788,6 +787,7 @@ function ajaxPagination() {
             noPosts.classList.remove('invisible');
             noPosts.classList.remove('absolute');
           }
+          clickPages();
         });
       },
       afterPageOnClick: function () {
@@ -944,6 +944,11 @@ function ajaxPagination() {
     </div>`;
     }
     return html;
+  };
+  const clickPages = () => {
+    jQuery('.paginationjs-prev, .paginationjs-next, .paginationjs-page').on('click', function () {
+      jQuery('.posts-container').addClass('opacity-0 scale-[0.99]');
+    });
   };
   termsClickHandler();
   initPagination();
