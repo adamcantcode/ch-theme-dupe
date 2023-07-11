@@ -715,15 +715,15 @@ function remove_schema_pro_breadcrumbs($bool, $post_id, $type)
 add_filter('wp_schema_pro_global_schema_enabled',  'remove_schema_pro_breadcrumbs', 20, 3);
 
 // Disable /users rest routes
-add_filter('rest_endpoints', function ($endpoints) {
-  if (isset($endpoints['/wp/v2/users'])) {
-    unset($endpoints['/wp/v2/users']);
-  }
-  if (isset($endpoints['/wp/v2/users/(?P<id>[\d]+)'])) {
-    unset($endpoints['/wp/v2/users/(?P<id>[\d]+)']);
-  }
-  return $endpoints;
-});
+// add_filter('rest_endpoints', function ($endpoints) {
+//   if (isset($endpoints['/wp/v2/users'])) {
+//     unset($endpoints['/wp/v2/users']);
+//   }
+//   if (isset($endpoints['/wp/v2/users/(?P<id>[\d]+)'])) {
+//     unset($endpoints['/wp/v2/users/(?P<id>[\d]+)']);
+//   }
+//   return $endpoints;
+// });
 
 function custom_posts_columns($columns)
 {
