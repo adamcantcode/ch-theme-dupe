@@ -11,19 +11,69 @@ if ($lastComma !== false) {
   $statesServedList = substr_replace($statesServedList, ' and', $lastComma, 1);
 }
 
-$args = array(
+$directorArgs = array(
   'post_type' => 'outreach-team-member',
   'numberposts' => -1,
   'posts_per_page' => -1,
   'order' => 'ASC',
-  'orderby' => 'title',
+  'orderby' => array(
+    'director_check' => 'DESC',
+    'title_check' => 'ASC'
+  ),
   'meta_query' => array(
+    'relation' => 'AND',
+    'director_check' => array(
+      array(
+        'key' => 'is_director',
+        'value' => '1',
+        'compare' => '=',
+        'order' => 'DESC',
+      ),
+    ),
+    'title_check' => array(
+      array(
+        'key' => 'title',
+        'order' => 'ASC',
+      ),
+    ),
+    array(
+      'key' => 'region',
+      'value' => '"' . get_the_ID() . '"',
+      'compare' => 'LIKE'
+    )
+  ),
+);
+$nonDirectorArgs = array(
+  'post_type' => 'outreach-team-member',
+  'numberposts' => -1,
+  'posts_per_page' => -1,
+  'order' => 'ASC',
+  'orderby' => array(
+    'director_check' => 'DESC',
+    'title_check' => 'ASC'
+  ),
+  'meta_query' => array(
+    'relation' => 'AND',
+    'director_check' => array(
+      array(
+        'key' => 'is_director',
+        'value' => '0',
+        'compare' => '=',
+        'order' => 'DESC',
+      ),
+    ),
+    'title_check' => array(
+      array(
+        'key' => 'title',
+        'order' => 'ASC',
+      ),
+    ),
     array(
       'key' => 'region', // name of custom field
       'value' => '"' . get_the_ID() . '"', // matches exactly "123", not just 123. This prevents a match for "1234"
       'compare' => 'LIKE'
     )
-  )
+  ),
 );
 
 ?>
@@ -170,7 +220,46 @@ $args = array(
       <h2>Meet our team</h2>
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-sp-8 lg:gap-y-sp-16">
         <?php
-        $custom_query = new WP_Query($args);
+        $custom_query = new WP_Query($directorArgs);
+
+        if ($custom_query->have_posts()) : while ($custom_query->have_posts()) : $custom_query->the_post();
+            $title = get_field('title');
+            $state = get_field('state');
+            $state = implode(", ", $state);
+            $lastComma = strrpos($state, ',');
+            if ($lastComma !== false) {
+              $state = substr_replace($state, ' and', $lastComma, 1);
+            }
+            $phone = get_field('phone');
+            $email = get_field('email');
+            $headshot = get_field('headshot');
+            if ($headshot) {
+              $altText = $headshot['alt'];
+            } else {
+              $altText = 'Headshot of ' . get_the_title();
+            }
+        ?>
+            <div class="grid justify-items-start gap-sp-1">
+              <div class="cursor-pointer" data-modal-id="<?= get_the_ID(); ?>">
+                <img src="<?= $headshot['url'] ?: placeHolderImage(240, 240); ?>" alt="<?= $altText; ?>" class="rounded-[50%] mb-sp-4 w-[240px] hover:shadow-lg duration-300">
+                <h4 class="underline"><?= get_the_title(); ?></h4>
+              </div>
+              <h5 class="mb-0"><?= $title; ?></h5>
+              <h5 class="mb-0"><?= $state; ?></h5>
+              <a href="tel:+<?= $phone; ?>" class="inline-block no-underline break-all">
+                <h5 class="mb-0"><?= $phone; ?></h5>
+              </a>
+              <a href="mailto:<?= $email; ?>" class="inline-block no-underline break-all">
+                <h5 class="mb-0"><?= $email; ?></h5>
+              </a>
+            </div>
+        <?php
+          endwhile;
+          wp_reset_postdata();
+        endif;
+        ?>
+        <?php
+        $custom_query = new WP_Query($nonDirectorArgs);
 
         if ($custom_query->have_posts()) : while ($custom_query->have_posts()) : $custom_query->the_post();
             $title = get_field('title');
@@ -213,7 +302,68 @@ $args = array(
   </section>
 
   <?php
-  $custom_query = new WP_Query($args);
+  $custom_query = new WP_Query($directorArgs);
+
+  if ($custom_query->have_posts()) : while ($custom_query->have_posts()) : $custom_query->the_post();
+      $title     = get_field('title');
+      $state     = get_field('state');
+      $state     = implode(", ", $state);
+      $lastComma = strrpos($state, ',');
+      if ($lastComma !== false) {
+        $state = substr_replace($state, ' and', $lastComma, 1);
+      }
+      $phone    = get_field('phone');
+      $email    = get_field('email');
+      $calendly = get_field('calendly_link');
+      $why      = get_field('why_statement');
+      $fact     = get_field('fun_fact');
+      $headshot = get_field('headshot');
+      if ($headshot) {
+        $altText = $headshot['alt'];
+      } else {
+        $altText = 'Headshot of ' . get_the_title();
+      }
+  ?>
+      <div class="bg-[rgba(0,0,0,.5)] fixed top-0 left-0 w-full h-full z-50 grid items-center justify-center center transition-all duration-300 modal-fade" data-modal="<?= get_the_ID(); ?>">
+        <div class="transition-all duration-300 m-sp-4">
+          <div class="grid lg:grid-cols-[1.5fr,1fr] gap-sp-8 section-xs bg-cream container max-h-[80vh] overflow-auto rounded-md items-center relative">
+            <div class="absolute top-0 right-0 cursor-pointer">
+              <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/close-x.svg'); ?>" alt="close button" class="w-full duration-300 modal-close p-sp-4 hover:brightness-0">
+            </div>
+            <div class="grid order-2 gap-sp-8 lg:order-1">
+              <div class="grid justify-items-start gap-sp-1">
+                <h4 class="mb-0"><?= get_the_title(); ?></h4>
+                <h5 class="mb-0"><?= $title; ?></h5>
+                <h5 class="mb-0"><?= $state; ?></h5>
+                <a href="tel:+<?= $phone; ?>" class="no-underline break-all">
+                  <h5 class="mb-0"><?= $phone; ?></h5>
+                </a>
+                <a href="mailto:<?= $email; ?>" class="no-underline break-all">
+                  <h5 class="mb-0"><?= $email; ?></h5>
+                </a>
+                <a href="<?= $calendly; ?>" target="_blank" class="">
+                  <h5 class="mb-0">Let's chat</h5>
+                </a>
+              </div>
+              <h3 class="mb-0">“<?= $why; ?>”</h3>
+              <div>
+                <h5>Fun Fact</h5>
+                <p class="mb-0 text-h5"><?= $fact; ?></p>
+              </div>
+            </div>
+            <div class="grid items-center justify-center order-1 lg:order-2">
+              <img src="<?= $headshot['url'] ?: placeHolderImage(400, 400); ?>" alt="<?= $altText ?>" class="rounded-[50%]">
+            </div>
+          </div>
+        </div>
+      </div>
+  <?php
+    endwhile;
+    wp_reset_postdata();
+  endif;
+  ?>
+  <?php
+  $custom_query = new WP_Query($nonDirectorArgs);
 
   if ($custom_query->have_posts()) : while ($custom_query->have_posts()) : $custom_query->the_post();
       $title     = get_field('title');
