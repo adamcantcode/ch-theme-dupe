@@ -292,6 +292,7 @@ function custom_api_search_register_routes()
   register_rest_route('search-by-title/v1', '/search', array(
     'methods'  => 'GET',
     'callback' => 'custom_api_search_results',
+    'permission_callback' => '__return_true'
   ));
 }
 add_action('rest_api_init', 'custom_api_search_register_routes');
