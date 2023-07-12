@@ -21,9 +21,9 @@
 
 <!-- Google Search Console Verification -->
 <!--http(s)//www-->
-<meta name="google-site-verification" content="_GbQR1oO4QpXoIhpOxY_kJfw49FoeqJ4sUgE_wCcxgA" /> 
+<meta name="google-site-verification" content="_GbQR1oO4QpXoIhpOxY_kJfw49FoeqJ4sUgE_wCcxgA" />
 <!--http(s)//-->
-<meta name="google-site-verification" content="9XC0j6PxX-mSZxPrb3tnitAn_LcyZzUnBbank6v39m8" /> 
+<meta name="google-site-verification" content="9XC0j6PxX-mSZxPrb3tnitAn_LcyZzUnBbank6v39m8" />
 <!-- End Google Search Console Verification -->
 
 <!-- Formstack -->
@@ -189,10 +189,21 @@
           document.cookie =
             'organicLP=' + window.location + ';path=/;domain=charliehealth.com';
           return;
-        } else {
-          console.log('Not paid, not direct, not organic with params...so, maybe referral');
         }
       });
+      if (!searchEngines.some(searchEngine => document.referrer.includes(searchEngine))) {
+        console.log('Not paid, not direct, not organic with params...so, maybe referral');
+        var source = document.referrer;
+        var myCookieValue = getCookie('FSAC');
+        var values = myCookieValue.split('utm');
+        document.cookie =
+          'FSAC=' +
+          values[0] +
+          'utmcsr%3D' +
+          source +
+          '%7Cutmccn%3D(not set)%7Cutmcmd%3Dreferral;' +
+          'path=/;domain=charliehealth.com';
+      }
     }
   });
 
