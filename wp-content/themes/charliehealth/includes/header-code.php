@@ -192,17 +192,19 @@
         }
       });
       if (!searchEngines.some(searchEngine => document.referrer.includes(searchEngine))) {
-        console.log('Not paid, not direct, not organic with params...so, maybe referral');
-        var source = document.referrer;
-        var myCookieValue = getCookie('FSAC');
-        var values = myCookieValue.split('utm');
-        document.cookie =
-          'FSAC=' +
-          values[0] +
-          'utmcsr%3D' +
-          source +
-          '%7Cutmccn%3D(not set)%7Cutmcmd%3Dreferral;' +
-          'path=/;domain=charliehealth.com';
+        if(document.referrer !== '') {
+          console.log('Not paid, not direct, not organic with params...so, maybe referral');
+          var source = document.referrer;
+          var myCookieValue = getCookie('FSAC');
+          var values = myCookieValue.split('utm');
+          document.cookie =
+            'FSAC=' +
+            values[0] +
+            'utmcsr%3D' +
+            source +
+            '%7Cutmccn%3D(not set)%7Cutmcmd%3Dreferral;' +
+            'path=/;domain=charliehealth.com';
+        }
       }
     }
   });
