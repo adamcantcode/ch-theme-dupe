@@ -189,6 +189,8 @@
           document.cookie =
             'organicLP=' + window.location + ';path=/;domain=charliehealth.com';
           return;
+        } else {
+          console.log('Not paid, not direct, not organic with params...so, maybe referral');
         }
       });
     }
