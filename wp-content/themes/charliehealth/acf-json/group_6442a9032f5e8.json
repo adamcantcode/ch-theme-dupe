@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_645d5737df31a",
-            "label": "style",
+            "label": "Style",
             "name": "style",
             "aria-label": "",
             "type": "button_group",
@@ -126,5 +126,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1683838868
+    "modified": 1689191425
 }
