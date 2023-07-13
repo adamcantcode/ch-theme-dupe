@@ -192,8 +192,7 @@
         }
       });
       if (!searchEngines.some(searchEngine => document.referrer.includes(searchEngine))) {
-        if(document.referrer !== '') {
-          console.log('Not paid, not direct, not organic with params...so, maybe referral');
+        if (document.referrer !== '' && !document.referrer.includes(window.location)) {
           var source = document.referrer;
           var myCookieValue = getCookie('FSAC');
           var values = myCookieValue.split('utm');
