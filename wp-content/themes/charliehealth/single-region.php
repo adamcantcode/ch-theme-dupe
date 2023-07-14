@@ -241,14 +241,16 @@ $nonDirectorArgs = array(
         ?>
             <div class="grid justify-items-start gap-sp-1">
               <div class="cursor-pointer" data-modal-id="<?= get_the_ID(); ?>">
-                <img src="<?= $headshot['url'] ?: placeHolderImage(240, 240); ?>" alt="<?= $altText; ?>" class="rounded-[50%] mb-sp-4 w-[240px] hover:shadow-lg duration-300">
+                <img src="<?= $headshot['url'] ?: site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="rounded-[50%] mb-sp-4 w-[240px] hover:shadow-lg duration-300">
                 <h4 class="underline"><?= get_the_title(); ?></h4>
               </div>
               <h5 class="mb-0"><?= $title; ?></h5>
               <h5 class="mb-0"><?= $state; ?></h5>
-              <a href="tel:+<?= $phone; ?>" class="inline-block no-underline break-all">
-                <h5 class="mb-0"><?= $phone; ?></h5>
-              </a>
+              <?php if ($phone) : ?>
+                <a href="tel:+<?= $phone; ?>" class="inline-block no-underline break-all">
+                  <h5 class="mb-0"><?= $phone; ?></h5>
+                </a>
+              <?php endif; ?>
               <a href="mailto:<?= $email; ?>" class="inline-block no-underline break-all">
                 <h5 class="mb-0"><?= $email; ?></h5>
               </a>
@@ -280,14 +282,16 @@ $nonDirectorArgs = array(
         ?>
             <div class="grid justify-items-start gap-sp-1">
               <div class="cursor-pointer" data-modal-id="<?= get_the_ID(); ?>">
-                <img src="<?= $headshot['url'] ?: placeHolderImage(240, 240); ?>" alt="<?= $altText; ?>" class="rounded-[50%] mb-sp-4 w-[240px] hover:shadow-lg duration-300">
+                <img src="<?= $headshot['url'] ?: site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="rounded-[50%] mb-sp-4 w-[240px] hover:shadow-lg duration-300">
                 <h4 class="underline"><?= get_the_title(); ?></h4>
               </div>
               <h5 class="mb-0"><?= $title; ?></h5>
               <h5 class="mb-0"><?= $state; ?></h5>
-              <a href="tel:+<?= $phone; ?>" class="inline-block no-underline break-all">
-                <h5 class="mb-0"><?= $phone; ?></h5>
-              </a>
+              <?php if ($phone) : ?>
+                <a href="tel:+<?= $phone; ?>" class="inline-block no-underline break-all">
+                  <h5 class="mb-0"><?= $phone; ?></h5>
+                </a>
+              <?php endif; ?>
               <a href="mailto:<?= $email; ?>" class="inline-block no-underline break-all">
                 <h5 class="mb-0"><?= $email; ?></h5>
               </a>
@@ -335,24 +339,32 @@ $nonDirectorArgs = array(
                 <h4 class="mb-0"><?= get_the_title(); ?></h4>
                 <h5 class="mb-0"><?= $title; ?></h5>
                 <h5 class="mb-0"><?= $state; ?></h5>
-                <a href="tel:+<?= $phone; ?>" class="no-underline break-all">
-                  <h5 class="mb-0"><?= $phone; ?></h5>
-                </a>
+                <?php if ($phone) : ?>
+                  <a href="tel:+<?= $phone; ?>" class="no-underline break-all">
+                    <h5 class="mb-0"><?= $phone; ?></h5>
+                  </a>
+                <?php endif; ?>
                 <a href="mailto:<?= $email; ?>" class="no-underline break-all">
                   <h5 class="mb-0"><?= $email; ?></h5>
                 </a>
-                <a href="<?= $calendly; ?>" target="_blank" class="">
-                  <h5 class="mb-0">Let's chat</h5>
-                </a>
+                <?php if ($calendly) : ?>
+                  <a href="<?= $calendly; ?>" target="_blank" class="">
+                    <h5 class="mb-0">Let's chat</h5>
+                  </a>
+                <?php endif; ?>
               </div>
-              <h3 class="mb-0">“<?= $why; ?>”</h3>
-              <div>
-                <h5>Fun Fact</h5>
-                <p class="mb-0 text-h5"><?= $fact; ?></p>
-              </div>
+              <?php if ($fact) : ?>
+                <h3 class="mb-0">“<?= $why; ?>”</h3>
+              <?php endif; ?>
+              <?php if ($fact) : ?>
+                <div>
+                  <h5>Fun Fact</h5>
+                  <p class="mb-0 text-h5"><?= $fact; ?></p>
+                </div>
+              <?php endif; ?>
             </div>
             <div class="grid items-center justify-center order-1 lg:order-2">
-              <img src="<?= $headshot['url'] ?: placeHolderImage(400, 400); ?>" alt="<?= $altText ?>" class="rounded-[50%]">
+              <img src="<?= $headshot['url'] ?: site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png');; ?>" alt="<?= $altText ?>" class="rounded-[50%]">
             </div>
           </div>
         </div>

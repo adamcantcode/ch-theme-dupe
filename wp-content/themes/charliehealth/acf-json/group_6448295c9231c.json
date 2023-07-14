@@ -9,7 +9,7 @@
             "aria-label": "",
             "type": "image",
             "instructions": "Upload a 400x400 image.",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "50",
@@ -74,7 +74,7 @@
             "aria-label": "",
             "type": "text",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "50",
@@ -113,7 +113,7 @@
             "aria-label": "",
             "type": "url",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "50",
@@ -130,7 +130,7 @@
             "aria-label": "",
             "type": "textarea",
             "instructions": "Note: do not include equation marks, they are automatically added.",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "50",
@@ -150,7 +150,7 @@
             "aria-label": "",
             "type": "textarea",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "50",
@@ -293,5 +293,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1688492659
+    "modified": 1689347715
 }
