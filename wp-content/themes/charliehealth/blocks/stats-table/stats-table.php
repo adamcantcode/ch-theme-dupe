@@ -6,7 +6,7 @@
     <?php if (have_rows('left_column')) : while (have_rows('left_column')) : the_row(); ?>
         <div class="flex items-center gap-sp-4 lg:px-sp-8 py-sp-4">
           <div class="rounded-[50%] bg-white aspect-square lg:h-sp-16 h-sp-14 p-sp-4 flex items-center justify-center">
-            <h3 class="mb-0"><?= get_sub_field('statistic'); ?></h3>
+            <h3 class="mb-0 leading-none text-center"><?= get_sub_field('statistic'); ?></h3>
           </div>
           <p class="mb-0 text-white"><?= get_sub_field('description'); ?></p>
         </div>
