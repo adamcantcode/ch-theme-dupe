@@ -28,6 +28,3 @@
     endif; ?>
   </div>
 </div>
-<div>
-  <h6 class="mb-0 text-white mt-sp-16">*“How affordable is mental healthcare? The long-term impact on financial health,” McKinsey & Company</h6>
-</div>
