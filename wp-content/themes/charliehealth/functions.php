@@ -85,6 +85,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/outcomes-infographic');
   register_block_type(__DIR__ . '/build/blocks/card-hiring');
   register_block_type(__DIR__ . '/build/blocks/collapsible-content');
+  register_block_type(__DIR__ . '/build/blocks/testimonial-review');
 }
 add_action('init', 'register_acf_blocks', 5);
 
