@@ -2071,6 +2071,10 @@ a.nav-link:hover {
   border-radius: 0.625rem;
 }
 
+.rounded-\[1rem\]{
+  border-radius: 1rem;
+}
+
 .rounded-b-md{
   border-bottom-right-radius: 1.25rem;
   border-bottom-left-radius: 1.25rem;
