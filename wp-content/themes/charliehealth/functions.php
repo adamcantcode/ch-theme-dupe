@@ -523,6 +523,7 @@ function hide_menus_on_multisite()
     remove_menu_page('edit.php?post_type=research');
     remove_menu_page('edit.php?post_type=team-members');
     remove_menu_page('edit.php?post_type=treatment-modalities');
+    remove_menu_page('edit.php?post_type=testimonial');
   } else {
     remove_menu_page('edit.php?post_type=region');
     remove_menu_page('edit.php?post_type=outreach-team-member');
@@ -581,6 +582,7 @@ function custom_menu_order($menu_ord)
     // 'edit.php?post_type=referral', // Referrals
     'edit.php?post_type=press', // Press
     'edit.php?post_type=team-members', // Team
+    'edit.php?post_type=testimonial', // Outreach Members
     'separator1', // First separator
     'edit.php?post_type=region', // Regions
     'edit.php?post_type=outreach-team-member', // Outreach Members
