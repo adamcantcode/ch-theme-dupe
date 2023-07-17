@@ -637,6 +637,7 @@ add_filter('should_load_separate_core_block_assets', '__return_true');
 // TEMP COLORS
 // $test = 'bg-dark-teal'
 // $test = 'mt-0'
+// $test = 'bg-off-white'
 
 // Allow editor access to privacy policy page
 add_action('map_meta_cap', 'custom_manage_privacy_options', 1, 4);

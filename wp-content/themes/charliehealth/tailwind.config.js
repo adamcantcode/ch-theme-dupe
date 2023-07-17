@@ -40,6 +40,7 @@ module.exports = {
       'light-purple': '#F0EFFC',
       cream: '#F8F4F0',
       white: '#FFFFFF',
+      'off-white': '#f8f7f7',
       'tag-gray': '#f8f7f7',
       'card-border': '#d4d5dc',
       'lightest-purple': '#F8F8FF',
