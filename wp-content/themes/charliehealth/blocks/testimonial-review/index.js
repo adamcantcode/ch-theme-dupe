@@ -7,7 +7,8 @@ window.addEventListener('DOMContentLoaded', () => {
     columnWidth: '.grid-sizer',
     itemSelector: '.testimonial-item',
     percentPosition: true,
-    horizontalOrder: true,
+    horizontalOrder: false,
+    trueOrder: true,
     gutter: 32,
   });
   // jQuery('.masonry-js').masonry({
