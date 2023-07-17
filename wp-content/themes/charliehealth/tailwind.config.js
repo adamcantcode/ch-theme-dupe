@@ -34,6 +34,7 @@ module.exports = {
       'hover-blue': '#4331B0',
       'med-blue': '#212984',
       'dark-blue': '#1D225F',
+      'darker-blue': '#161A3D',
       'darkest-blue': '#161940',
       'light-blue': '#F3F4F9',
       'light-purple': '#F0EFFC',
