@@ -1406,6 +1406,10 @@ a.nav-link:hover {
   grid-column: span 3 / span 3;
 }
 
+.col-start-2{
+  grid-column-start: 2;
+}
+
 .m-0{
   margin: 0px;
 }
@@ -1557,10 +1561,6 @@ a.nav-link:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
-}
-
-.mb-\[0\.625rem\]{
-  margin-bottom: 0.625rem;
 }
 
 .block{
@@ -1837,6 +1837,16 @@ a.nav-link:hover {
 .scale-\[0\.99\]{
   --tw-scale-x: 0.99;
   --tw-scale-y: 0.99;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.scale-x-95{
+  --tw-scale-x: .95;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.scale-y-95{
+  --tw-scale-y: .95;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -2230,6 +2240,11 @@ a.nav-link:hover {
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-off-white{
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 247 247 / var(--tw-bg-opacity));
 }
 
 .bg-\[linear-gradient\(\#fead80\2c \#e2deca_50\%\2c \#bdc6fc\)\]{
@@ -4411,10 +4426,6 @@ a.providers:hover {
     line-height: 140%;
     letter-spacing: 0;
     font-weight: 500;
-  }
-
-  .lg\:text-\[1\.6rem\]{
-    font-size: 1.6rem;
   }
 
   .lg\:leading-tight{
