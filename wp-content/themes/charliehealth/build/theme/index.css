@@ -1707,10 +1707,6 @@ a.nav-link:hover {
   min-height: 100%;
 }
 
-.w-1\/2{
-  width: 50%;
-}
-
 .w-10{
   width: 2.5rem;
 }
@@ -1747,6 +1743,10 @@ a.nav-link:hover {
   width: calc(100vw - 2.5rem);
 }
 
+.w-\[calc\(50\%-32px\)\]{
+  width: calc(50% - 32px);
+}
+
 .w-fit{
   width: -moz-fit-content;
   width: fit-content;
@@ -1768,12 +1768,8 @@ a.nav-link:hover {
   width: 1.5rem;
 }
 
-.w-\[calc\(50\%-16px\)\]{
-  width: calc(50% - 16px);
-}
-
-.w-\[calc\(50\%-32px\)\]{
-  width: calc(50% - 32px);
+.w-1\/2{
+  width: 50%;
 }
 
 .\!max-w-md{
@@ -1810,6 +1806,10 @@ a.nav-link:hover {
 
 .flex-none{
   flex: none;
+}
+
+.flex-\[0\2c 0\2c 50\%\]{
+  flex: 0,0,50%;
 }
 
 .flex-grow{
@@ -2055,6 +2055,10 @@ a.nav-link:hover {
   border-radius: 100%;
 }
 
+.rounded-\[1rem\]{
+  border-radius: 1rem;
+}
+
 .rounded-\[50\%\]{
   border-radius: 50%;
 }
@@ -2069,10 +2073,6 @@ a.nav-link:hover {
 
 .rounded-sm{
   border-radius: 0.625rem;
-}
-
-.rounded-\[1rem\]{
-  border-radius: 1rem;
 }
 
 .rounded-b-md{
@@ -4151,6 +4151,22 @@ a.providers:hover {
 
   .lg\:w-sp-5{
     width: 1.25rem;
+  }
+
+  .lg\:w-1\/2{
+    width: 50%;
+  }
+
+  .lg\:w-\[calc\(50\%-32px\)\]{
+    width: calc(50% - 32px);
+  }
+
+  .lg\:w-\[calc\(50\%-16px\)\]{
+    width: calc(50% - 16px);
+  }
+
+  .lg\:w-\[calc\(50\%-17px\)\]{
+    width: calc(50% - 17px);
   }
 
   .lg\:columns-2{

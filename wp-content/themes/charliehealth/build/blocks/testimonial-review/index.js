@@ -2540,12 +2540,19 @@ __webpack_require__.r(__webpack_exports__);
 
 window.addEventListener('DOMContentLoaded', () => {
   var masonry = new (masonry_layout_dist_masonry_pkgd__WEBPACK_IMPORTED_MODULE_1___default())('.masonry-js', {
-    itemSelector: '.testimonial-item',
     columnWidth: '.grid-sizer',
+    itemSelector: '.testimonial-item',
     percentPosition: true,
     horizontalOrder: true,
     gutter: 32
   });
+  // jQuery('.masonry-js').masonry({
+  //   itemSelector: '.testimonial-item',
+  //   columnWidth: '.grid-sizer',
+  //   percentPosition: true,
+  //   horizontalOrder: true,
+  //   gutter: 32,
+  // });
 });
 }();
 /******/ })()
