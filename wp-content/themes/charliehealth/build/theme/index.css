@@ -478,7 +478,7 @@ h1,
   h6{
   font-family: "ABC Social", sans-serif;
   --tw-text-opacity: 1;
-  color: rgb(29 34 95 / var(--tw-text-opacity));
+  color: rgb(22 26 61 / var(--tw-text-opacity));
 }
 
 h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a{
@@ -497,7 +497,7 @@ p,
   ol li{
   font-family: "GT America", sans-serif;
   --tw-text-opacity: 1;
-  color: rgb(70 73 109 / var(--tw-text-opacity));
+  color: rgb(22 26 61 / var(--tw-text-opacity));
 }
 
 h1{
@@ -1559,6 +1559,10 @@ a.nav-link:hover {
   margin-top: 2rem;
 }
 
+.mb-\[0\.625rem\]{
+  margin-bottom: 0.625rem;
+}
+
 .block{
   display: block;
 }
@@ -1743,10 +1747,6 @@ a.nav-link:hover {
   width: calc(100vw - 2.5rem);
 }
 
-.w-\[calc\(50\%-32px\)\]{
-  width: calc(50% - 32px);
-}
-
 .w-fit{
   width: -moz-fit-content;
   width: fit-content;
@@ -1766,10 +1766,6 @@ a.nav-link:hover {
 
 .w-sp-6{
   width: 1.5rem;
-}
-
-.w-1\/2{
-  width: 50%;
 }
 
 .\!max-w-md{
@@ -1806,10 +1802,6 @@ a.nav-link:hover {
 
 .flex-none{
   flex: none;
-}
-
-.flex-\[0\2c 0\2c 50\%\]{
-  flex: 0,0,50%;
 }
 
 .flex-grow{
@@ -1874,10 +1866,6 @@ a.nav-link:hover {
 
 .grid-cols-3{
   grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.grid-cols-\[1fr\2c 2fr\]{
-  grid-template-columns: 1fr 2fr;
 }
 
 .grid-cols-\[1fr_2fr\]{
@@ -2523,6 +2511,10 @@ a.nav-link:hover {
 
 .leading-normal{
   line-height: 1.5;
+}
+
+.leading-snug{
+  line-height: 1.375;
 }
 
 .leading-tight{
@@ -4141,6 +4133,10 @@ a.providers:hover {
     width: calc(25% - 18px);
   }
 
+  .lg\:w-\[calc\(50\%-16px\)\]{
+    width: calc(50% - 16px);
+  }
+
   .lg\:w-\[unset\]{
     width: unset;
   }
@@ -4151,22 +4147,6 @@ a.providers:hover {
 
   .lg\:w-sp-5{
     width: 1.25rem;
-  }
-
-  .lg\:w-1\/2{
-    width: 50%;
-  }
-
-  .lg\:w-\[calc\(50\%-32px\)\]{
-    width: calc(50% - 32px);
-  }
-
-  .lg\:w-\[calc\(50\%-16px\)\]{
-    width: calc(50% - 16px);
-  }
-
-  .lg\:w-\[calc\(50\%-17px\)\]{
-    width: calc(50% - 17px);
   }
 
   .lg\:columns-2{
@@ -4383,6 +4363,14 @@ a.providers:hover {
     font-size: 2.5rem;
   }
 
+  .lg\:text-\[2rem\]{
+    font-size: 2rem;
+  }
+
+  .lg\:text-\[9\.5rem\]{
+    font-size: 9.5rem;
+  }
+
   .lg\:text-h1-display{
     font-size: 2.25rem;
     line-height: 2.75rem;
@@ -4423,6 +4411,10 @@ a.providers:hover {
     line-height: 140%;
     letter-spacing: 0;
     font-weight: 500;
+  }
+
+  .lg\:text-\[1\.6rem\]{
+    font-size: 1.6rem;
   }
 
   .lg\:leading-tight{
