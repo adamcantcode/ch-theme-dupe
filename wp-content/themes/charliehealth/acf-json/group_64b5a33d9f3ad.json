@@ -65,11 +65,11 @@
             "append": ""
         },
         {
-            "key": "field_64b5a55016c5f",
-            "label": "Guardian?",
-            "name": "guardian",
+            "key": "field_64b6eaa04d890",
+            "label": "Attribution",
+            "name": "attribution",
             "aria-label": "",
-            "type": "true_false",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -78,11 +78,11 @@
                 "class": "",
                 "id": ""
             },
-            "message": "",
-            "default_value": 0,
-            "ui_on_text": "Is Guardian",
-            "ui_off_text": "Is Client",
-            "ui": 1
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -103,5 +103,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1689626661
+    "modified": 1689709289
 }
