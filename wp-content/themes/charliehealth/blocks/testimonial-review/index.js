@@ -18,13 +18,15 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   ScrollTrigger.batch('.testimonial-item:not(.noshow)', {
-    // interval: 0.1, // time window (in seconds) for batching to occur.
     batchMax: 3,
-    onEnter: (batch) => gsap.to(batch, { opacity: 1, scale: 1, overwrite: true }),
-    onLeave: (batch) => gsap.to(batch, { opacity: 0, scale: .95, overwrite: true }),
-    onEnterBack: (batch) => gsap.to(batch, { opacity: 1, scale: 1, overwrite: true }),
-    onLeaveBack: (batch) => gsap.to(batch, { opacity: 0, scale: .95, overwrite: true }),
-    // markers: true,
+    onEnter: (batch) =>
+      gsap.to(batch, { opacity: 1, scale: 1, overwrite: true }),
+    onLeave: (batch) =>
+      gsap.to(batch, { opacity: 0, scale: 0.95, overwrite: true }),
+    onEnterBack: (batch) =>
+      gsap.to(batch, { opacity: 1, scale: 1, overwrite: true }),
+    onLeaveBack: (batch) =>
+      gsap.to(batch, { opacity: 0, scale: 0.95, overwrite: true }),
     start: 'top 80%',
   });
 
@@ -47,21 +49,29 @@ window.addEventListener('DOMContentLoaded', () => {
       if (childElement.classList.contains('noshow')) {
         childElement.classList.remove('noshow');
         count++;
-        console.log(count);
       }
     }
     masonry.layout();
     ScrollTrigger.refresh();
     ScrollTrigger.batch('.testimonial-item:not(.noshow)', {
-      // interval: 0.1, // time window (in seconds) for batching to occur.
-      batchMax: 6,   // maximum batch size (targets)
-      onEnter: (batch) => gsap.to(batch, { opacity: 1, scale: 1, overwrite: true }),
-      onLeave: (batch) => gsap.to(batch, { opacity: 0, scale: .95, overwrite: true }),
-      onEnterBack: (batch) => gsap.to(batch, { opacity: 1, scale: 1, overwrite: true }),
-      onLeaveBack: (batch) => gsap.to(batch, { opacity: 0, scale: .95, overwrite: true }),
-      // markers: true,
+      batchMax: 6,
+      onEnter: (batch) =>
+        gsap.to(batch, { opacity: 1, scale: 1, overwrite: true }),
+      onLeave: (batch) =>
+        gsap.to(batch, { opacity: 0, scale: 0.95, overwrite: true }),
+      onEnterBack: (batch) =>
+        gsap.to(batch, { opacity: 1, scale: 1, overwrite: true }),
+      onLeaveBack: (batch) =>
+        gsap.to(batch, { opacity: 0, scale: 0.95, overwrite: true }),
       start: 'top 80%',
     });
-    document.querySelector('.masonry-js').click();
+    
+    var hasNoShow = Array.from(childElements).some(function (element) {
+      return element.classList.contains('noshow');
+    });
+
+    if (!hasNoShow) {
+      loadMoreButton.remove();
+    }
   });
 });
