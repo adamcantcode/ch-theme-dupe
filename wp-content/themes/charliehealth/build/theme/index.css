@@ -1406,10 +1406,6 @@ a.nav-link:hover {
   grid-column: span 3 / span 3;
 }
 
-.col-start-2{
-  grid-column-start: 2;
-}
-
 .m-0{
   margin: 0px;
 }
@@ -2235,6 +2231,21 @@ a.nav-link:hover {
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-parent{
+  --tw-bg-opacity: 1;
+  background-color: rgb(253 191 124 / var(--tw-bg-opacity));
+}
+
+.bg-teen{
+  --tw-bg-opacity: 1;
+  background-color: rgb(143 146 205 / var(--tw-bg-opacity));
+}
+
+.bg-young-adult{
+  --tw-bg-opacity: 1;
+  background-color: rgb(218 193 251 / var(--tw-bg-opacity));
 }
 
 .bg-\[linear-gradient\(\#fead80\2c \#e2deca_50\%\2c \#bdc6fc\)\]{
