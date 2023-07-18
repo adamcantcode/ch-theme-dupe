@@ -11955,24 +11955,28 @@ window.addEventListener('DOMContentLoaded', () => {
   });
   gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_3__.ScrollTrigger.batch('.testimonial-item:not(.noshow)', {
     // interval: 0.1, // time window (in seconds) for batching to occur.
-    // batchMax: 3,   // maximum batch size (targets)
+    batchMax: 3,
     onEnter: batch => gsap__WEBPACK_IMPORTED_MODULE_2__.gsap.to(batch, {
       opacity: 1,
+      scale: 1,
       overwrite: true
     }),
     onLeave: batch => gsap__WEBPACK_IMPORTED_MODULE_2__.gsap.to(batch, {
       opacity: 0,
+      scale: .95,
       overwrite: true
     }),
     onEnterBack: batch => gsap__WEBPACK_IMPORTED_MODULE_2__.gsap.to(batch, {
       opacity: 1,
+      scale: 1,
       overwrite: true
     }),
     onLeaveBack: batch => gsap__WEBPACK_IMPORTED_MODULE_2__.gsap.to(batch, {
       opacity: 0,
+      scale: .95,
       overwrite: true
     }),
-    markers: true,
+    // markers: true,
     start: 'top 80%'
   });
   var loadMoreButton = document.querySelector('.load-more-js');
@@ -12001,24 +12005,29 @@ window.addEventListener('DOMContentLoaded', () => {
     gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_3__.ScrollTrigger.refresh();
     gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_3__.ScrollTrigger.batch('.testimonial-item:not(.noshow)', {
       // interval: 0.1, // time window (in seconds) for batching to occur.
-      // batchMax: 3,   // maximum batch size (targets)
+      batchMax: 6,
+      // maximum batch size (targets)
       onEnter: batch => gsap__WEBPACK_IMPORTED_MODULE_2__.gsap.to(batch, {
         opacity: 1,
+        scale: 1,
         overwrite: true
       }),
       onLeave: batch => gsap__WEBPACK_IMPORTED_MODULE_2__.gsap.to(batch, {
         opacity: 0,
+        scale: .95,
         overwrite: true
       }),
       onEnterBack: batch => gsap__WEBPACK_IMPORTED_MODULE_2__.gsap.to(batch, {
         opacity: 1,
+        scale: 1,
         overwrite: true
       }),
       onLeaveBack: batch => gsap__WEBPACK_IMPORTED_MODULE_2__.gsap.to(batch, {
         opacity: 0,
+        scale: .95,
         overwrite: true
       }),
-      markers: true,
+      // markers: true,
       start: 'top 80%'
     });
     document.querySelector('.masonry-js').click();
