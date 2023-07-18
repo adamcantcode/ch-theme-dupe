@@ -22,7 +22,12 @@
         <?php while ($query->have_posts()) : $query->the_post(); ?>
           <?php
           $count++;
-          $attribution = get_field('attribution', get_the_ID());
+          $anonymous = get_field('anonymous', get_the_ID());
+          if ($anonymous === false) {
+            $attribution = get_field('attribution', get_the_ID());
+          } else {
+            $attribution = 'Anonymous';
+          }
           $pullQuote = get_field('pull-quote', get_the_ID());
           $fullQuote = get_field('full_quote', get_the_ID());
           $age = get_field('age', get_the_ID());
@@ -48,8 +53,8 @@
             <?php if ($tagBGColor && $age) : ?>
               <?php if ($group !== 'parent') : ?>
                 <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 php <?= $tagBGColor; ?> "><?= $age; ?> year old</span>
-                <?php else : ?>
-                  <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 php <?= $tagBGColor; ?> ">Parent of a <?= $age; ?>-year-old</span>
+              <?php else : ?>
+                <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 php <?= $tagBGColor; ?> ">Parent of a <?= $age; ?>-year-old</span>
               <?php endif; ?>
             <?php endif; ?>
             <?php if ($pullQuote) : ?>
