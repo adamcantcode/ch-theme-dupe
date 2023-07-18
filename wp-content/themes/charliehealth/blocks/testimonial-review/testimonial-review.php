@@ -1,7 +1,14 @@
-<div>
+  <div class="lg:pb-sp-16 pb-sp-6 noshow lg:grid">
+    <div class="justify-self-end">
+      <p class="inline-block mb-0">Reviews:</p>
+      <span class="relative z-20 self-start no-underline rounded-lg ml-sp-2 px-sp-4 py-sp-3 text-h6 mb-sp-8 bg-teen">Teens</span>
+      <span class="relative z-20 self-start no-underline rounded-lg ml-sp-2 px-sp-4 py-sp-3 text-h6 mb-sp-8 bg-young-adult">Young Adults</span>
+      <span class="relative z-20 self-start no-underline rounded-lg ml-sp-2 px-sp-4 py-sp-3 text-h6 mb-sp-8 bg-parent">Parents</span>
+    </div>
+  </div>
   <div class="grid lg:grid-cols-[1fr,2fr] grid-cols-1 relative gap-sp-8">
     <div class="lg:sticky self-start top-[8rem]">
-      <p class="lg:text-[9.5rem] font-heading-serif leading-tight mb-0">91%</p>
+      <p class="lg:text-[9.5rem] text-[4rem] font-heading-serif leading-tight mb-0">91%</p>
       <p class="leading-tight">of clients would recommend Charlie Health to a friend or loved one.</p>
       <p class="leading-tight">read about it -></p>
     </div>
@@ -49,12 +56,12 @@
           }
 
           ?>
-          <div class="lg:w-[calc(50%-16px)] opacity-0 scale-95 w-full mb-sp-8 rounded-[1rem] p-sp-8 testimonial-item bg-white flex flex-col<?= $count > 6 ? ' noshow' : ''; ?>">
+          <div class="lg:w-[calc(50%-16px)] opacity-0 scale-95 w-full mb-sp-8 rounded-[1rem] lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col<?= $count > 6 ? ' noshow' : ''; ?>">
             <?php if ($tagBGColor && $age) : ?>
               <?php if ($group !== 'parent') : ?>
-                <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 php <?= $tagBGColor; ?> "><?= $age; ?> year old</span>
+                <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>"><?= $age; ?> year old</span>
               <?php else : ?>
-                <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 php <?= $tagBGColor; ?> ">Parent of a <?= $age; ?>-year-old</span>
+                <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>">Parent of a <?= $age; ?>-year-old</span>
               <?php endif; ?>
             <?php endif; ?>
             <?php if ($pullQuote) : ?>
@@ -71,4 +78,3 @@
       <a role="button" class="ch-button button-secondary justify-self-center load-more-js">Load more</a>
     </div>
   </div>
-</div>

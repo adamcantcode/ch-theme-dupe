@@ -1999,8 +1999,16 @@ a.nav-link:hover {
   align-self: flex-start;
 }
 
+.self-end{
+  align-self: flex-end;
+}
+
 .self-center{
   align-self: center;
+}
+
+.justify-self-end{
+  justify-self: end;
 }
 
 .justify-self-center{
@@ -2214,6 +2222,11 @@ a.nav-link:hover {
   background-color: rgb(248 247 247 / var(--tw-bg-opacity));
 }
 
+.bg-parent{
+  --tw-bg-opacity: 1;
+  background-color: rgb(253 191 124 / var(--tw-bg-opacity));
+}
+
 .bg-purple-gradient-end{
   --tw-bg-opacity: 1;
   background-color: rgb(166 152 255 / var(--tw-bg-opacity));
@@ -2224,6 +2237,11 @@ a.nav-link:hover {
   background-color: rgb(248 247 247 / var(--tw-bg-opacity));
 }
 
+.bg-teen{
+  --tw-bg-opacity: 1;
+  background-color: rgb(143 146 205 / var(--tw-bg-opacity));
+}
+
 .bg-transparent{
   background-color: rgba(0,0,0,0);
 }
@@ -2231,16 +2249,6 @@ a.nav-link:hover {
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-parent{
-  --tw-bg-opacity: 1;
-  background-color: rgb(253 191 124 / var(--tw-bg-opacity));
-}
-
-.bg-teen{
-  --tw-bg-opacity: 1;
-  background-color: rgb(143 146 205 / var(--tw-bg-opacity));
 }
 
 .bg-young-adult{
@@ -2394,6 +2402,10 @@ a.nav-link:hover {
   padding-bottom: 0;
 }
 
+.pb-sp-6{
+  padding-bottom: 1.5rem;
+}
+
 .pr-sp-6{
   padding-right: 1.5rem;
 }
@@ -2511,6 +2523,10 @@ a.nav-link:hover {
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-\[4rem\]{
+  font-size: 4rem;
 }
 
 .font-bold{
@@ -4371,12 +4387,20 @@ a.providers:hover {
     padding-right: 2rem;
   }
 
+  .lg\:pb-sp-14{
+    padding-bottom: 4rem;
+  }
+
   .lg\:pr-sp-14{
     padding-right: 4rem;
   }
 
   .lg\:pt-0{
     padding-top: 0px;
+  }
+
+  .lg\:pb-sp-16{
+    padding-bottom: 6rem;
   }
 
   .lg\:text-\[2\.5rem\]{
