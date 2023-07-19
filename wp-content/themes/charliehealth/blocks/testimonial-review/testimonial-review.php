@@ -1,3 +1,9 @@
+  <?php 
+  $stat = get_field('stat');
+  $statDetails = get_field('stat_details');
+  $link = get_field('link');
+  ?>
+  
   <div class="lg:pb-sp-16 pb-sp-6 noshow lg:grid">
     <div class="justify-self-end">
       <p class="inline-block mb-0">Reviews:</p>
@@ -8,9 +14,9 @@
   </div>
   <div class="grid lg:grid-cols-[1fr,2fr] grid-cols-1 relative gap-sp-8">
     <div class="lg:sticky self-start top-[8rem]">
-      <p class="lg:text-[9.5rem] text-[4rem] font-heading-serif leading-tight mb-0">91%</p>
-      <p class="leading-tight">of clients would recommend Charlie Health to a friend or loved one.</p>
-      <p class="leading-tight">read about it -></p>
+      <p class="lg:text-[9.5rem] text-[4rem] font-heading-serif leading-tight mb-0"><?= $stat ?></p>
+      <p class="leading-tight"><?= $statDetails; ?>.</p>
+      <a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>" class="ch-button button-secondary"><?= $link['title']; ?></a>
     </div>
     <div class="masonry-js">
       <div class="lg:w-[calc(50%-16px)] opacity-0 scale-95 w-full grid-sizer"></div>
