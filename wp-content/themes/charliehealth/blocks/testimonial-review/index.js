@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
     gutter: 32,
   });
 
-  ScrollTrigger.batch('.testimonial-item:not(.noshow)', {
+  ScrollTrigger.batch('.masonry-js .testimonial-item:not(.noshow)', {
     batchMax: 3,
     onEnter: (batch) =>
       gsap.to(batch, { opacity: 1, scale: 1, overwrite: true }),
@@ -53,7 +53,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
     masonry.layout();
     ScrollTrigger.refresh();
-    ScrollTrigger.batch('.testimonial-item:not(.noshow)', {
+    ScrollTrigger.batch('.masonry-js .testimonial-item:not(.noshow)', {
       batchMax: 6,
       onEnter: (batch) =>
         gsap.to(batch, { opacity: 1, scale: 1, overwrite: true }),

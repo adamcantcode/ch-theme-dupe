@@ -11953,7 +11953,7 @@ window.addEventListener('DOMContentLoaded', () => {
     trueOrder: true,
     gutter: 32
   });
-  gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_3__.ScrollTrigger.batch('.testimonial-item:not(.noshow)', {
+  gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_3__.ScrollTrigger.batch('.masonry-js .testimonial-item:not(.noshow)', {
     batchMax: 3,
     onEnter: batch => gsap__WEBPACK_IMPORTED_MODULE_2__.gsap.to(batch, {
       opacity: 1,
@@ -12000,7 +12000,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
     masonry.layout();
     gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_3__.ScrollTrigger.refresh();
-    gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_3__.ScrollTrigger.batch('.testimonial-item:not(.noshow)', {
+    gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_3__.ScrollTrigger.batch('.masonry-js .testimonial-item:not(.noshow)', {
       batchMax: 6,
       onEnter: batch => gsap__WEBPACK_IMPORTED_MODULE_2__.gsap.to(batch, {
         opacity: 1,
