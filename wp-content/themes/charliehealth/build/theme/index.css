@@ -924,7 +924,7 @@ a.ch-button.button-primary:hover {
 .ch-button.button-primary{
   border-radius: 0.625rem;
   --tw-bg-opacity: 1;
-  background-color: rgb(33 41 132 / var(--tw-bg-opacity));
+  background-color: rgb(22 26 61 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
   --tw-shadow: inset-0 0 0 2px transparent;
@@ -975,15 +975,15 @@ a.ch-button.button-primary-dark:hover {
   border-radius: 0.625rem;
   background-color: rgba(0,0,0,0);
   --tw-text-opacity: 1;
-  color: rgb(29 34 95 / var(--tw-text-opacity));
-  --tw-shadow: inset 0 0 0 1px #d4d5dc;
-  --tw-shadow-colored: inset 0 0 0 1px var(--tw-shadow-color);
+  color: rgb(22 26 61 / var(--tw-text-opacity));
+  --tw-shadow: inset 0 0 0 1.5px #161A3D;
+  --tw-shadow-colored: inset 0 0 0 1.5px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .ch-button.button-secondary:hover{
-  --tw-shadow: inset 0 0 0 2px #4331B0;
-  --tw-shadow-colored: inset 0 0 0 2px var(--tw-shadow-color);
+  --tw-shadow: inset 0 0 0 3px #161A3D;
+  --tw-shadow-colored: inset 0 0 0 3px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
