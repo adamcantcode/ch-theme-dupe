@@ -51,6 +51,11 @@
           "slug": "dark-blue",
           "color": "#1d225f",
           "name": "Dark Blue"
+        },
+        {
+          "slug": "darker-blue",
+          "color": "#161A3D",
+          "name": "Darker Blue"
         }
       ]
     },

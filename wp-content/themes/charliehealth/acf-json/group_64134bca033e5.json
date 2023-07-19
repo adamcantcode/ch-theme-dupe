@@ -49,6 +49,34 @@
             "placeholder": ""
         },
         {
+            "key": "field_64b847b456508",
+            "label": "Invert",
+            "name": "button_group_invert",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_64134bca14848",
+                        "operator": "!=",
+                        "value": "none"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_646904812cba2",
             "label": "Custom Links",
             "name": "custom_links",
@@ -163,5 +191,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1684961030
+    "modified": 1689798705
 }

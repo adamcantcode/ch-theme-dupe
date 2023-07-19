@@ -18,6 +18,7 @@
             },
             "choices": {
                 "value": "Value Prop",
+                "large": "Large",
                 "full": "Full Width",
                 "newsletter": "Newsletter"
             },
@@ -118,5 +119,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1685633334
+    "modified": 1689796779
 }

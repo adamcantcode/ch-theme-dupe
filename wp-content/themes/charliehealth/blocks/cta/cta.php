@@ -14,13 +14,15 @@ if (empty($link)) {
 
 // For BG color
 $blockClasses = '';
-/** Defailt Background */
+/** Default Background */
 if ($style === 'value') {
   $background = 'bg-cream';
 } elseif ($style === 'full') {
   $background = 'bg-lightest-purple';
 } elseif ($style === 'newsletter') {
   $background = 'bg-cream';
+} elseif ($style === 'large') {
+  $background = '';
 } else {
   $background = 'bg-cream';
 }
@@ -37,6 +39,18 @@ $blockClasses .= $background . ' ';
       <h2 class="text-darkest-blue lg:text-[2.5rem] text-h2-lg lg:leading-tight mb-sp-5 font-heading-serif"><?= $heading; ?></h2>
       <p class="text-darkest-blue"><?= $subhead; ?></p>
       <?php include(get_template_directory() . '/includes/button-group.php'); ?>
+    </div>
+  </div>
+<?php endif; ?>
+<?php if ($style === 'large') : ?>
+  <div class="rounded-sm <?= $blockClasses; ?>">
+    <h2 class="text-white lg:text-[4.5rem] text-h2-lg lg:leading-tight mb-sp-14 font-heading-serif max-w-[1000px]"><?= $heading; ?></h2>
+    <?php if ($subhead) : ?>
+      <p class="text-white"><?= $subhead; ?></p>
+    <?php endif; ?>
+    <div class="flex justify-between">
+      <?php include(get_template_directory() . '/includes/button-group.php'); ?>
+      <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield.svg'); ?>" alt="Charlie Health shield logo" class="w-[3rem] lg:block noshow">
     </div>
   </div>
 <?php endif; ?>
@@ -78,9 +92,6 @@ $blockClasses .= $background . ' ';
 
           newsletterIDField.value = newsletterID;
           newsletterLPField.value = window.location.href;
-
-          console.log(newsletterIDField.value);
-          console.log(newsletterLPField.value);
         </script>
       </div>
       <h5>You can unsubscribe anytime.</h5>
