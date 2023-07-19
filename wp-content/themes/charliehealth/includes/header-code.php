@@ -194,7 +194,7 @@
       // Is not any of the search engines
       if (!searchEngines.some(searchEngine => document.referrer.includes(searchEngine))) {
         // Is not direct and referrer is not same site
-        if (document.referrer !== '' && !document.referrer.includes(window.location.origin)) {
+        if (document.referrer !== '' && !document.referrer.includes('charliehealth.com')) {
           var source = document.referrer;
           var myCookieValue = getCookie('FSAC');
           var values = myCookieValue.split('utm');

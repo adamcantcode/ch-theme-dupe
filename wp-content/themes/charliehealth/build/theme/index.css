@@ -1999,10 +1999,6 @@ a.nav-link:hover {
   align-self: flex-start;
 }
 
-.self-end{
-  align-self: flex-end;
-}
-
 .self-center{
   align-self: center;
 }
@@ -2438,6 +2434,10 @@ a.nav-link:hover {
   font-size: 2.5rem;
 }
 
+.text-\[4rem\]{
+  font-size: 4rem;
+}
+
 .text-h1{
   font-size: 2rem;
   line-height: 2rem;
@@ -2523,10 +2523,6 @@ a.nav-link:hover {
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-\[4rem\]{
-  font-size: 4rem;
 }
 
 .font-bold{
@@ -4387,8 +4383,8 @@ a.providers:hover {
     padding-right: 2rem;
   }
 
-  .lg\:pb-sp-14{
-    padding-bottom: 4rem;
+  .lg\:pb-sp-16{
+    padding-bottom: 6rem;
   }
 
   .lg\:pr-sp-14{
@@ -4397,10 +4393,6 @@ a.providers:hover {
 
   .lg\:pt-0{
     padding-top: 0px;
-  }
-
-  .lg\:pb-sp-16{
-    padding-bottom: 6rem;
   }
 
   .lg\:text-\[2\.5rem\]{
