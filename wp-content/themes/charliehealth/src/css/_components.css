@@ -4,7 +4,7 @@
     &.button-primary {
       @apply shadow-[inset-0_0_0_2px_transparent] text-white rounded-sm bg-darker-blue hover:bg-darkest-blue;
       &.inverted {
-        @apply bg-white text-darker-blue hover:bg-off-white hover:text-darker-blue;
+        @apply bg-white text-darker-blue hover:bg-off-white hover:text-darker-blue no-underline;
       }
     }
     &.button-primary-dark {

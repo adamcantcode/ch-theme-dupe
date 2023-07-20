@@ -942,6 +942,7 @@ a.ch-button.button-primary:hover {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(22 26 61 / var(--tw-text-opacity));
+  text-decoration-line: none;
 }
 
 .ch-button.button-primary.inverted:hover{
@@ -1564,6 +1565,10 @@ a.nav-link:hover {
   margin-top: 0px;
 }
 
+.mt-2{
+  margin-top: 0.5rem;
+}
+
 .mt-\[68px\]{
   margin-top: 68px;
 }
@@ -1594,10 +1599,6 @@ a.nav-link:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
-}
-
-.mt-2{
-  margin-top: 0.5rem;
 }
 
 .block{
