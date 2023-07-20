@@ -15,7 +15,7 @@
   <div class="grid lg:grid-cols-[1fr,2fr] grid-cols-1 relative gap-sp-8">
     <div class="lg:sticky self-start top-[8rem]">
       <p class="lg:text-[9.5rem] text-[4rem] font-heading-serif leading-tight mb-0"><?= $stat ?></p>
-      <p class="leading-tight"><?= $statDetails; ?>.</p>
+      <p class="leading-tight"><?= $statDetails; ?></p>
       <a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>" class="ch-button button-secondary"><?= $link['title']; ?></a>
     </div>
     <?php if (!is_admin()) : ?>
