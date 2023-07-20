@@ -35,7 +35,7 @@ module.exports = {
       'med-blue': '#212984',
       'dark-blue': '#1D225F',
       'darker-blue': '#161A3D',
-      'darkest-blue': '#161940',
+      'darkest-blue': '#161A3D',
       'light-blue': '#F3F4F9',
       'light-purple': '#F0EFFC',
       cream: '#F8F4F0',
