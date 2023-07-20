@@ -75,13 +75,12 @@ $style  = get_field('style');
   </div>
   <?php else :
   $customPosts = get_field('testimonials');
-  // var_dump($customPosts);
   if ($customPosts) : ?>
     <div class="relative grid items-start grid-cols-1 lg:grid-cols-3 gap-sp-8">
       <?php foreach ($customPosts as $customPost) : ?>
         <?php
         $postID = $customPost->ID;
-        
+
         $anonymous = get_field('anonymous', $postID);
         if ($anonymous === false) {
           $attribution = get_field('attribution', $postID);

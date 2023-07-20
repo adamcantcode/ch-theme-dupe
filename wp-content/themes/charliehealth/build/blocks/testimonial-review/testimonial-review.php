@@ -1,9 +1,9 @@
-  <?php 
+  <?php
   $stat = get_field('stat');
   $statDetails = get_field('stat_details');
   $link = get_field('link');
   ?>
-  
+
   <div class="lg:pb-sp-16 pb-sp-6 noshow lg:grid">
     <div class="justify-self-end">
       <p class="inline-block mb-0">Reviews:</p>
@@ -18,68 +18,74 @@
       <p class="leading-tight"><?= $statDetails; ?>.</p>
       <a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>" class="ch-button button-secondary"><?= $link['title']; ?></a>
     </div>
-    <div class="masonry-js">
-      <div class="lg:w-[calc(50%-16px)] opacity-0 scale-95 w-full grid-sizer"></div>
-      <?php
-      $args = array(
-        'numberposts' => -1,
-        'posts_per_page' => -1,
-        'post_type' => 'testimonial',
-      );
-      $query = new WP_Query($args);
-      ?>
-      <?php if ($query->have_posts()) : ?>
+    <?php if (!is_admin()) : ?>
+      <div class="masonry-js">
+        <div class="lg:w-[calc(50%-16px)] opacity-0 scale-95 w-full grid-sizer"></div>
         <?php
-        $count = 0;
+        $args = array(
+          'numberposts' => -1,
+          'posts_per_page' => -1,
+          'post_type' => 'testimonial',
+        );
+        $query = new WP_Query($args);
         ?>
-        <?php while ($query->have_posts()) : $query->the_post(); ?>
+        <?php if ($query->have_posts()) : ?>
           <?php
-          $count++;
-          $anonymous = get_field('anonymous', get_the_ID());
-          if ($anonymous === false) {
-            $attribution = get_field('attribution', get_the_ID());
-          } else {
-            $attribution = 'Anonymous';
-          }
-          $pullQuote = get_field('pull-quote', get_the_ID());
-          $fullQuote = get_field('full_quote', get_the_ID());
-          $age = get_field('age', get_the_ID());
-          $group = get_the_terms(get_the_ID(), 'testimonials-group')[0]->slug;
-
-          switch ($group) {
-            case 'young-adult':
-              $tagBGColor = 'bg-young-adult';
-              break;
-            case 'teen':
-              $tagBGColor = 'bg-teen';
-              break;
-            case 'parent':
-              $tagBGColor = 'bg-parent';
-              break;
-            default:
-              $tagBGColor = '';
-              break;
-          }
-
+          $count = 0;
           ?>
-          <div class="lg:w-[calc(50%-16px)] opacity-0 scale-95 w-full mb-sp-8 rounded-[1rem] lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col<?= $count > 6 ? ' noshow' : ''; ?>">
-            <?php if ($tagBGColor && $age) : ?>
-              <?php if ($group !== 'parent') : ?>
-                <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>"><?= $age; ?> year old</span>
-              <?php else : ?>
-                <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>">Parent of a <?= $age; ?>-year-old</span>
+          <?php while ($query->have_posts()) : $query->the_post(); ?>
+            <?php
+            $count++;
+            $anonymous = get_field('anonymous', get_the_ID());
+            if ($anonymous === false) {
+              $attribution = get_field('attribution', get_the_ID());
+            } else {
+              $attribution = 'Anonymous';
+            }
+            $pullQuote = get_field('pull-quote', get_the_ID());
+            $fullQuote = get_field('full_quote', get_the_ID());
+            $age = get_field('age', get_the_ID());
+            $group = get_the_terms(get_the_ID(), 'testimonials-group')[0]->slug;
+
+            switch ($group) {
+              case 'young-adult':
+                $tagBGColor = 'bg-young-adult';
+                break;
+              case 'teen':
+                $tagBGColor = 'bg-teen';
+                break;
+              case 'parent':
+                $tagBGColor = 'bg-parent';
+                break;
+              default:
+                $tagBGColor = '';
+                break;
+            }
+
+            ?>
+            <div class="lg:w-[calc(50%-16px)] opacity-0 scale-95 w-full mb-sp-8 rounded-[1rem] lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col<?= $count > 6 ? ' noshow' : ''; ?>">
+              <?php if ($tagBGColor && $age) : ?>
+                <?php if ($group !== 'parent') : ?>
+                  <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>"><?= $age; ?> year old</span>
+                <?php else : ?>
+                  <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>">Parent of a <?= $age; ?>-year-old</span>
+                <?php endif; ?>
               <?php endif; ?>
-            <?php endif; ?>
-            <?php if ($pullQuote) : ?>
-              <h3 class="leading-tight mb-sp-2 lg:text-[2rem]">“<?= $pullQuote; ?>”</h3>
-            <?php endif; ?>
-            <p class="leading-snug mb-sp-8"><?= $fullQuote; ?></p>
-            <p class="mb-0">—<?= $attribution; ?></p>
-          </div>
-        <?php endwhile; ?>
-      <?php endif; ?>
-      <?php wp_reset_query(); ?>
-    </div>
+              <?php if ($pullQuote) : ?>
+                <h3 class="leading-tight mb-sp-2 lg:text-[2rem]">“<?= $pullQuote; ?>”</h3>
+              <?php endif; ?>
+              <p class="leading-snug mb-sp-8"><?= $fullQuote; ?></p>
+              <p class="mb-0">—<?= $attribution; ?></p>
+            </div>
+          <?php endwhile; ?>
+        <?php endif; ?>
+        <?php wp_reset_query(); ?>
+      </div>
+    <?php else : ?>
+      <div class="grid items-center justify-center w-full h-full bg-darker-blue">
+        <code class="text-white">NOT VISIBLE IN EDITOR -- CHECK PREVIEW</code>
+      </div>
+    <?php endif; ?>
     <div class="grid lg:col-start-2">
       <a role="button" class="ch-button button-secondary justify-self-center load-more-js">Load more</a>
     </div>
