@@ -2,7 +2,7 @@
   .ch-button {
     @apply md:text-xl text-[4vw] inline-block md:px-[25px] px-[10px] py-[15px] no-underline transition-all duration-300 flex-1 md:flex-none text-center leading-none md:leading-[1.8rem] capitalize;
     &.button-primary {
-      @apply shadow-[inset-0_0_0_2px_transparent] text-white rounded-sm bg-med-blue hover:bg-darkest-blue;
+      @apply shadow-[inset-0_0_0_2px_transparent] text-white rounded-sm bg-darker-blue hover:bg-darkest-blue;
       &.inverted {
         @apply bg-white text-darker-blue hover:bg-off-white hover:text-darker-blue;
       }
@@ -11,7 +11,7 @@
       @apply shadow-[inset-0_0_0_2px_transparent] text-white rounded-sm hover:bg-med-blue bg-darkest-blue;
     }
     &.button-secondary {
-      @apply rounded-sm bg-transparent shadow-[inset_0_0_0_1px_#d4d5dc] text-dark-blue hover:shadow-[inset_0_0_0_2px_#4331B0];
+      @apply rounded-sm bg-transparent shadow-[inset_0_0_0_1.5px_#161A3D] text-darker-blue hover:shadow-[inset_0_0_0_3px_#161A3D];
       &.inverted {
         @apply bg-transparent shadow-[inset_0_0_0_1px_#ffffff] text-white hover:shadow-[inset_0_0_0_2px_#ffffff];
       }

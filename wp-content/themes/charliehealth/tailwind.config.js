@@ -123,9 +123,9 @@ module.exports = {
           },
         ],
         'h2-lg': [
-          '1.75rem',
+          '2.25rem',
           {
-            lineHeight: '2.3rem',
+            lineHeight: '1.21',
             letterSpacing: '0',
             fontWeight: '400',
           },
