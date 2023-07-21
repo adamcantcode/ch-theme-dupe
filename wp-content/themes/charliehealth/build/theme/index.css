@@ -2600,6 +2600,10 @@ a.nav-link:hover {
   line-height: 1.25;
 }
 
+.leading-\[1\.4\]{
+  line-height: 1.4;
+}
+
 .text-dark-blue{
   --tw-text-opacity: 1;
   color: rgb(29 34 95 / var(--tw-text-opacity));
