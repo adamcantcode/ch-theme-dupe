@@ -32,7 +32,7 @@ if ($style === 'image') {
       <h1 class="noshow text-display mb-sp-8 lg:block"><?= $title; ?></h1>
       <div class="flex items-center gap-sp-4 mb-sp-8">
         <?php if ($icon) : ?>
-          <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health Shield" class="w-10 mt-2">
+          <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health Shield" class="w-10">
         <?php endif; ?>
         <h2 class="mb-0 font-heading-serif"><?= $subtitle; ?></h2>
       </div>
@@ -79,7 +79,7 @@ if ($style === 'image') {
     <div class="grid items-start lg:gap-sp-16 gap-sp-4 lg:grid-cols-2 mt-sp-12">
       <div class="flex items-center gap-sp-4">
         <?php if ($icon) : ?>
-          <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health Shield" class="w-10 mt-sp-2">
+          <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health Shield" class="w-10">
         <?php endif; ?>
         <h2 class="mb-0 font-heading-serif"><?= $subtitle; ?></h2>
       </div>
