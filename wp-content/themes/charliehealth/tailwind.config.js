@@ -39,7 +39,7 @@ module.exports = {
       'darkest-blue': '#161A3D',
       'light-blue': '#F3F4F9',
       'light-purple': '#F0EFFC',
-      cream: '#F8F4F0',
+      cream: '#F7F5F1',
       white: '#FFFFFF',
       'white-hover': '#F8F7F7',
       'off-white': '#f8f7f7',
