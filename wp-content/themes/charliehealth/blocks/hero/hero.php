@@ -74,7 +74,7 @@ if ($style === 'image') {
       <div class="absolute inset-0">
         <img src="<?= $heroImage['url'] ?: placeHolderImage(600, 600); ?>" alt="<?= $heroImage['alt'] ?: 'Placeholder image'; ?>" class="object-cover w-full h-full rounded-lg nolazy">
       </div>
-      <h1 class="absolute text-white -translate-y-1/2 top-1/2 left-sp-12"><?= $title; ?></h1>
+      <h1 class="absolute text-white -translate-y-1/2 top-1/2 lg:left-sp-12 left-sp-8"><?= $title; ?></h1>
     </div>
     <div class="grid items-start lg:gap-sp-16 gap-sp-4 lg:grid-cols-2 mt-sp-12">
       <div class="flex flex-col lg:items-center gap-sp-4 lg:flex-row">

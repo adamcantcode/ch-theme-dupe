@@ -1408,6 +1408,10 @@ a.nav-link:hover {
   top: 2rem;
 }
 
+.left-sp-8{
+  left: 2rem;
+}
+
 .-z-50{
   z-index: -50;
 }
@@ -4050,6 +4054,10 @@ a.providers:hover {
 
   .lg\:top-\[68px\]{
     top: 68px;
+  }
+
+  .lg\:left-sp-12{
+    left: 3rem;
   }
 
   .lg\:order-1{
