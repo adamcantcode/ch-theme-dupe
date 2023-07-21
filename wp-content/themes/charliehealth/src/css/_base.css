@@ -77,7 +77,7 @@
   h4,
   h5,
   h6 {
-    @apply text-darker-blue font-heading;
+    @apply text-darker-blue font-heading subpixel-antialiased;
     & > {
       a {
         @apply no-underline;
