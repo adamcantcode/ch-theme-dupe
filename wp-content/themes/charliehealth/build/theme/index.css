@@ -4333,6 +4333,22 @@ a.providers:hover {
     gap: 2rem;
   }
 
+  .lg\:gap-\[120rem\]{
+    gap: 120rem;
+  }
+
+  .lg\:gap-\[100rem\]{
+    gap: 100rem;
+  }
+
+  .lg\:gap-\[120px\]{
+    gap: 120px;
+  }
+
+  .lg\:gap-\[140px\]{
+    gap: 140px;
+  }
+
   .lg\:gap-x-sp-16{
     -moz-column-gap: 6rem;
          column-gap: 6rem;

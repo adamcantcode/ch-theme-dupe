@@ -12,7 +12,7 @@
       <span class="relative z-20 self-start no-underline rounded-lg ml-sp-2 px-sp-4 py-sp-3 text-h6 mb-sp-8 bg-parent">Parents</span>
     </div>
   </div>
-  <div class="grid lg:grid-cols-[1fr,2fr] grid-cols-1 relative gap-sp-8">
+  <div class="grid lg:grid-cols-[1fr,2fr] grid-cols-1 relative lg:gap-[140px]">
     <div class="lg:sticky self-start top-[8rem]">
       <p class="lg:text-[9.5rem] text-[4rem] font-heading-serif leading-tight mb-0"><?= $stat ?></p>
       <p class="leading-tight"><?= $statDetails; ?>.</p>
