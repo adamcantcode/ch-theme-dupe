@@ -479,8 +479,8 @@ h1,
   font-family: "ABC Social", sans-serif;
   --tw-text-opacity: 1;
   color: rgb(22 26 61 / var(--tw-text-opacity));
-  -webkit-font-smoothing: auto;
-  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a{
@@ -1806,10 +1806,6 @@ a.nav-link:hover {
   width: 1.5rem;
 }
 
-.w-auto{
-  width: auto;
-}
-
 .\!max-w-md{
   max-width: 28rem !important;
 }
@@ -2584,6 +2580,10 @@ a.nav-link:hover {
   font-weight: 700;
 }
 
+.leading-\[1\.4\]{
+  line-height: 1.4;
+}
+
 .leading-\[1\.8rem\]{
   line-height: 1.8rem;
 }
@@ -2602,10 +2602,6 @@ a.nav-link:hover {
 
 .leading-tight{
   line-height: 1.25;
-}
-
-.leading-\[1\.4\]{
-  line-height: 1.4;
 }
 
 .text-dark-blue{
@@ -4232,16 +4228,16 @@ a.providers:hover {
     width: unset;
   }
 
+  .lg\:w-auto{
+    width: auto;
+  }
+
   .lg\:w-full{
     width: 100%;
   }
 
   .lg\:w-sp-5{
     width: 1.25rem;
-  }
-
-  .lg\:w-auto{
-    width: auto;
   }
 
   .lg\:columns-2{
@@ -4345,20 +4341,9 @@ a.providers:hover {
     gap: 2rem;
   }
 
-  .lg\:gap-\[120rem\]{
-    gap: 120rem;
-  }
-
-  .lg\:gap-\[100rem\]{
-    gap: 100rem;
-  }
-
-  .lg\:gap-\[120px\]{
-    gap: 120px;
-  }
-
-  .lg\:gap-\[140px\]{
-    gap: 140px;
+  .lg\:gap-x-\[140px\]{
+    -moz-column-gap: 140px;
+         column-gap: 140px;
   }
 
   .lg\:gap-x-sp-16{
@@ -4368,11 +4353,6 @@ a.providers:hover {
 
   .lg\:gap-y-sp-16{
     row-gap: 6rem;
-  }
-
-  .lg\:gap-x-\[140px\]{
-    -moz-column-gap: 140px;
-         column-gap: 140px;
   }
 
   .lg\:overflow-visible{
