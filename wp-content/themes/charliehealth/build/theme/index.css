@@ -4244,6 +4244,10 @@ a.providers:hover {
     width: 1.25rem;
   }
 
+  .lg\:max-w-\[250px\]{
+    max-width: 250px;
+  }
+
   .lg\:columns-2{
     -moz-columns: 2;
          columns: 2;
@@ -4357,6 +4361,11 @@ a.providers:hover {
 
   .lg\:gap-y-sp-16{
     row-gap: 6rem;
+  }
+
+  .lg\:gap-x-sp-8{
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
   }
 
   .lg\:overflow-visible{
