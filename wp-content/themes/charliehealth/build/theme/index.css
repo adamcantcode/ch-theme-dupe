@@ -4349,23 +4349,18 @@ a.providers:hover {
     gap: 2rem;
   }
 
-  .lg\:gap-x-\[140px\]{
-    -moz-column-gap: 140px;
-         column-gap: 140px;
-  }
-
   .lg\:gap-x-sp-16{
     -moz-column-gap: 6rem;
          column-gap: 6rem;
   }
 
-  .lg\:gap-y-sp-16{
-    row-gap: 6rem;
-  }
-
   .lg\:gap-x-sp-8{
     -moz-column-gap: 2rem;
          column-gap: 2rem;
+  }
+
+  .lg\:gap-y-sp-16{
+    row-gap: 6rem;
   }
 
   .lg\:overflow-visible{

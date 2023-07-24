@@ -16,7 +16,7 @@
     <div class="lg:sticky self-start top-[8rem]">
       <p class="lg:text-[9.5rem] text-[4rem] font-heading-serif leading-tight mb-0"><?= $stat ?></p>
       <div class="grid items-start grid-cols-2 gap-4 lg:block">
-        <p class="leading-[1.4] lg:max-w-[250px]"><?= $statDetails; ?>.</p>
+        <p class="leading-[1.4] lg:max-w-[250px]"><?= $statDetails; ?></p>
         <a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>" class="ch-button button-secondary"><?= $link['title']; ?></a>
       </div>
     </div>
