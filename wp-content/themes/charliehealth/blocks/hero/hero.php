@@ -72,7 +72,7 @@ if ($style === 'image') {
   <div class="">
     <div class="relative lg:h-[500px] h-[200px]">
       <div class="absolute inset-0">
-        <img src="<?= $heroImage['url'] ?: placeHolderImage(600, 600); ?>" alt="<?= $heroImage['alt'] ?: 'Placeholder image'; ?>" class="object-cover w-full h-full rounded-lg nolazy">
+        <img src="<?= $heroImage['url'] ?: placeHolderImage(600, 600); ?>" alt="<?= $heroImage['alt'] ?: 'Placeholder image'; ?>" class="object-cover w-full h-full rounded-lg nolazy brightness-75">
       </div>
       <h1 class="absolute text-white -translate-y-1/2 top-1/2 lg:left-sp-12 left-sp-8"><?= $title; ?></h1>
     </div>
