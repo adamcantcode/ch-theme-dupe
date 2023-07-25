@@ -6,7 +6,7 @@
 
   <div class="lg:pb-sp-16 pb-sp-6 noshow lg:grid">
     <div class="flex items-center justify-self-end">
-      <p class="inline-block mb-0">Reviews:</p>
+      <p class="inline-block mb-0">Read reviews from:</p>
       <div class="h-sp-3 w-sp-3 mr-sp-2 ml-sp-8 rounded-[50%] bg-teen"></div><p class="mb-0">Teens</p>
       <div class="h-sp-3 w-sp-3 mr-sp-2 ml-sp-8 rounded-[50%] bg-young-adult"></div><p class="mb-0">Young Adults</p>
       <div class="h-sp-3 w-sp-3 mr-sp-2 ml-sp-8 rounded-[50%] bg-parent"></div><p class="mb-0">Parents</p>
