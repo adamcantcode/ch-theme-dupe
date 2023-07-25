@@ -1,4 +1,4 @@
-<footer id="footer" class="grid bg-darkest-blue lg:gap-y-sp-16 gap-y-sp-8 section relatve">
+<footer id="footer" class="grid bg-[#12142A] lg:gap-y-sp-16 gap-y-sp-8 section relatve">
 	<!-- menu -->
 	<div class="container grid lg:grid-cols-5 lg:gap-sp-16 gap-sp-8">
 		<?php
