@@ -4,14 +4,14 @@
   $link = get_field('link');
   ?>
 
-  <!-- <div class="lg:pb-sp-16 pb-sp-6 noshow lg:grid">
+  <div class="lg:pb-sp-16 pb-sp-6 noshow lg:grid">
     <div class="justify-self-end">
       <p class="inline-block mb-0">Reviews:</p>
       <span class="relative z-20 self-start no-underline rounded-lg ml-sp-2 px-sp-4 py-sp-3 text-h6 mb-sp-8 bg-teen">Teens</span>
       <span class="relative z-20 self-start no-underline rounded-lg ml-sp-2 px-sp-4 py-sp-3 text-h6 mb-sp-8 bg-young-adult">Young Adults</span>
       <span class="relative z-20 self-start no-underline rounded-lg ml-sp-2 px-sp-4 py-sp-3 text-h6 mb-sp-8 bg-parent">Parents</span>
     </div>
-  </div> -->
+  </div>
   <div class="grid lg:grid-cols-[1fr,2fr] grid-cols-1 relative lg:gap-x-sp-8">
     <div class="lg:sticky self-start top-[8rem]">
       <p class="lg:text-[9.5rem] text-[4rem] font-heading-serif leading-tight mb-0"><?= $stat ?></p>
