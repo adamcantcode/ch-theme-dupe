@@ -5,11 +5,11 @@
   ?>
 
   <div class="lg:pb-sp-16 pb-sp-6 noshow lg:grid">
-    <div class="justify-self-end">
+    <div class="flex items-center justify-self-end">
       <p class="inline-block mb-0">Reviews:</p>
-      <span class="relative z-20 self-start no-underline rounded-lg ml-sp-2 px-sp-4 py-sp-3 text-h6 mb-sp-8 bg-teen">Teens</span>
-      <span class="relative z-20 self-start no-underline rounded-lg ml-sp-2 px-sp-4 py-sp-3 text-h6 mb-sp-8 bg-young-adult">Young Adults</span>
-      <span class="relative z-20 self-start no-underline rounded-lg ml-sp-2 px-sp-4 py-sp-3 text-h6 mb-sp-8 bg-parent">Parents</span>
+      <div class="h-sp-3 w-sp-3 mx-sp-2 rounded-[50%] bg-teen"></div><p class="mb-0">Teens</p>
+      <div class="h-sp-3 w-sp-3 mx-sp-2 rounded-[50%] bg-young-adult"></div><p class="mb-0">Young Adults</p>
+      <div class="h-sp-3 w-sp-3 mx-sp-2 rounded-[50%] bg-parent"></div><p class="mb-0">Parents</p>
     </div>
   </div>
   <div class="grid lg:grid-cols-[1fr,2fr] grid-cols-1 relative lg:gap-x-sp-8">

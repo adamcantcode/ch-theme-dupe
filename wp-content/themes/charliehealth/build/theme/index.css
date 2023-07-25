@@ -1481,6 +1481,11 @@ a.nav-link:hover {
   margin-bottom: 2rem;
 }
 
+.mx-sp-2{
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
 .-mb-sp-6{
   margin-bottom: -1.5rem;
 }
@@ -1705,6 +1710,18 @@ a.nav-link:hover {
   height: 2rem;
 }
 
+.h-sp-1{
+  height: 0.25rem;
+}
+
+.h-sp-2{
+  height: 0.5rem;
+}
+
+.h-sp-3{
+  height: 0.75rem;
+}
+
 .max-h-0{
   max-height: 0px;
 }
@@ -1804,6 +1821,18 @@ a.nav-link:hover {
 
 .w-sp-6{
   width: 1.5rem;
+}
+
+.w-sp-1{
+  width: 0.25rem;
+}
+
+.w-sp-2{
+  width: 0.5rem;
+}
+
+.w-sp-3{
+  width: 0.75rem;
 }
 
 .\!max-w-md{
