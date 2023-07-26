@@ -3,12 +3,12 @@ $style = get_field('style');
 $eyebrow = get_field('eyebrow');
 $headline = get_field('headline');
 ?>
-<div class="grid lg:grid-cols-[3fr_4fr] lg:mb-sp-14 mb-sp-8 gap-x-sp-4 lg:items-end lg:justify-items-end">
+<div class="grid lg:grid-cols-[3fr_4fr] lg:mb-sp-14 mb-sp-8 gap-x-sp-4 lg:items-end">
   <div>
     <h5><?= $eyebrow; ?></h5>
     <h2 class="lg:mb-0"><?= $headline; ?></h2>
   </div>
-  <div>
+  <div class="lg:justify-self-end">
     <?php include(get_template_directory() . '/includes/button-group.php'); ?>
   </div>
 </div>
