@@ -74,7 +74,7 @@
                 <?php endif; ?>
               <?php endif; ?>
               <?php if ($pullQuote) : ?>
-                <h3 class="leading-tight mb-sp-2 lg:text-[2rem]">“<?= $pullQuote; ?>”</h3>
+                <h3 class="leading-tight mb-sp-2 lg:text-[2rem]">“<?= $pullQuote; ?>.”</h3>
               <?php endif; ?>
               <p class="leading-[1.4] mb-sp-8"><?= $fullQuote; ?></p>
               <p class="mb-0">—<?= $attribution; ?></p>

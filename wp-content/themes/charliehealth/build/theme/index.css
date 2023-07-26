@@ -1481,11 +1481,6 @@ a.nav-link:hover {
   margin-bottom: 2rem;
 }
 
-.mx-sp-2{
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-
 .-mb-sp-6{
   margin-bottom: -1.5rem;
 }
@@ -1562,6 +1557,10 @@ a.nav-link:hover {
   margin-left: 1.25rem;
 }
 
+.ml-sp-8{
+  margin-left: 2rem;
+}
+
 .mr-sp-1{
   margin-right: 0.25rem;
 }
@@ -1604,10 +1603,6 @@ a.nav-link:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
-}
-
-.ml-sp-8{
-  margin-left: 2rem;
 }
 
 .block{
@@ -1706,24 +1701,16 @@ a.nav-link:hover {
   height: 6rem;
 }
 
+.h-sp-3{
+  height: 0.75rem;
+}
+
 .h-sp-4{
   height: 1rem;
 }
 
 .h-sp-8{
   height: 2rem;
-}
-
-.h-sp-1{
-  height: 0.25rem;
-}
-
-.h-sp-2{
-  height: 0.5rem;
-}
-
-.h-sp-3{
-  height: 0.75rem;
 }
 
 .max-h-0{
@@ -1819,24 +1806,16 @@ a.nav-link:hover {
   width: 100vw;
 }
 
+.w-sp-3{
+  width: 0.75rem;
+}
+
 .w-sp-5{
   width: 1.25rem;
 }
 
 .w-sp-6{
   width: 1.5rem;
-}
-
-.w-sp-1{
-  width: 0.25rem;
-}
-
-.w-sp-2{
-  width: 0.5rem;
-}
-
-.w-sp-3{
-  width: 0.75rem;
 }
 
 .\!max-w-md{
@@ -2223,6 +2202,11 @@ a.nav-link:hover {
   --tw-border-opacity: 0.25;
 }
 
+.bg-\[\#12142A\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(18 20 42 / var(--tw-bg-opacity));
+}
+
 .bg-\[\#35919c\]{
   --tw-bg-opacity: 1;
   background-color: rgb(53 145 156 / var(--tw-bg-opacity));
@@ -2334,11 +2318,6 @@ a.nav-link:hover {
 .bg-young-adult{
   --tw-bg-opacity: 1;
   background-color: rgb(218 193 251 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#12142A\]{
-  --tw-bg-opacity: 1;
-  background-color: rgb(18 20 42 / var(--tw-bg-opacity));
 }
 
 .bg-\[linear-gradient\(\#fead80\2c \#e2deca_50\%\2c \#bdc6fc\)\]{
