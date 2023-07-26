@@ -1969,6 +1969,10 @@ a.nav-link:hover {
   justify-items: start;
 }
 
+.justify-items-end{
+  justify-items: end;
+}
+
 .justify-items-center{
   justify-items: center;
 }
@@ -4115,6 +4119,10 @@ a.providers:hover {
     margin-top: 2rem;
   }
 
+  .lg\:mb-sp-14{
+    margin-bottom: 4rem;
+  }
+
   .lg\:block{
     display: block;
   }
@@ -4288,6 +4296,18 @@ a.providers:hover {
     grid-template-columns: unset;
   }
 
+  .lg\:grid-cols-\[2fr_3fr\]{
+    grid-template-columns: 2fr 3fr;
+  }
+
+  .lg\:grid-cols-\[3fr_5fr\]{
+    grid-template-columns: 3fr 5fr;
+  }
+
+  .lg\:grid-cols-\[3fr_4fr\]{
+    grid-template-columns: 3fr 4fr;
+  }
+
   .lg\:flex-row{
     flex-direction: row;
   }
@@ -4296,8 +4316,16 @@ a.providers:hover {
     flex-direction: column;
   }
 
+  .lg\:items-end{
+    align-items: flex-end;
+  }
+
   .lg\:items-stretch{
     align-items: stretch;
+  }
+
+  .lg\:justify-items-end{
+    justify-items: end;
   }
 
   .lg\:gap-\[10rem\]{
