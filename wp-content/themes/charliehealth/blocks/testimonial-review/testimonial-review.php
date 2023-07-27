@@ -5,18 +5,20 @@
   ?>
 
   <div class="lg:pb-sp-16 pb-sp-6 noshow lg:grid">
-    <div class="justify-self-end">
-      <p class="inline-block mb-0">Reviews:</p>
-      <span class="relative z-20 self-start no-underline rounded-lg ml-sp-2 px-sp-4 py-sp-3 text-h6 mb-sp-8 bg-teen">Teens</span>
-      <span class="relative z-20 self-start no-underline rounded-lg ml-sp-2 px-sp-4 py-sp-3 text-h6 mb-sp-8 bg-young-adult">Young Adults</span>
-      <span class="relative z-20 self-start no-underline rounded-lg ml-sp-2 px-sp-4 py-sp-3 text-h6 mb-sp-8 bg-parent">Parents</span>
+    <div class="flex items-center justify-self-end">
+      <p class="inline-block mb-0">Read reviews from:</p>
+      <div class="h-sp-3 w-sp-3 mr-sp-2 ml-sp-8 rounded-[50%] bg-teen"></div><p class="mb-0">Teens</p>
+      <div class="h-sp-3 w-sp-3 mr-sp-2 ml-sp-8 rounded-[50%] bg-young-adult"></div><p class="mb-0">Young Adults</p>
+      <div class="h-sp-3 w-sp-3 mr-sp-2 ml-sp-8 rounded-[50%] bg-parent"></div><p class="mb-0">Parents</p>
     </div>
   </div>
-  <div class="grid lg:grid-cols-[1fr,2fr] grid-cols-1 relative gap-sp-8">
+  <div class="grid lg:grid-cols-[1fr,2fr] grid-cols-1 relative lg:gap-x-sp-8">
     <div class="lg:sticky self-start top-[8rem]">
       <p class="lg:text-[9.5rem] text-[4rem] font-heading-serif leading-tight mb-0"><?= $stat ?></p>
-      <p class="leading-tight"><?= $statDetails; ?></p>
-      <a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>" class="ch-button button-secondary"><?= $link['title']; ?></a>
+      <div class="grid items-start grid-cols-2 gap-4 lg:block">
+        <p class="leading-[1.4] lg:max-w-[250px]"><?= $statDetails; ?></p>
+        <a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>" class="ch-button button-secondary"><?= $link['title']; ?></a>
+      </div>
     </div>
     <?php if (!is_admin()) : ?>
       <div class="masonry-js">
@@ -66,15 +68,15 @@
             <div class="lg:w-[calc(50%-16px)] opacity-0 scale-95 w-full mb-sp-8 rounded-[1rem] lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col<?= $count > 6 ? ' noshow' : ''; ?>">
               <?php if ($tagBGColor && $age) : ?>
                 <?php if ($group !== 'parent') : ?>
-                  <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>"><?= $age; ?> year old</span>
+                  <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>"><?= $age; ?>-year-old</span>
                 <?php else : ?>
                   <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>">Parent of a <?= $age; ?>-year-old</span>
                 <?php endif; ?>
               <?php endif; ?>
               <?php if ($pullQuote) : ?>
-                <h3 class="leading-tight mb-sp-2 lg:text-[2rem]">“<?= $pullQuote; ?>”</h3>
+                <h3 class="leading-tight mb-sp-2 lg:text-[2rem]">“<?= $pullQuote; ?>.”</h3>
               <?php endif; ?>
-              <p class="leading-snug mb-sp-8"><?= $fullQuote; ?></p>
+              <p class="leading-[1.4] mb-sp-8"><?= $fullQuote; ?></p>
               <p class="mb-0">—<?= $attribution; ?></p>
             </div>
           <?php endwhile; ?>
@@ -87,6 +89,6 @@
       </div>
     <?php endif; ?>
     <div class="grid lg:col-start-2">
-      <a role="button" class="ch-button button-secondary justify-self-center load-more-js">Load more</a>
+      <a role="button" class="w-full ch-button button-secondary justify-self-center lg:w-auto load-more-js">Load more</a>
     </div>
   </div>

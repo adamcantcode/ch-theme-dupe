@@ -77,7 +77,7 @@
   h4,
   h5,
   h6 {
-    @apply text-dark-blue font-heading;
+    @apply text-darker-blue font-heading antialiased;
     & > {
       a {
         @apply no-underline;
@@ -93,7 +93,7 @@
   p,
   ul li,
   ol li {
-    @apply text-text font-body;
+    @apply text-darker-blue font-body;
   }
   h1 {
     @apply mb-sp-6 text-h1;
