@@ -2,6 +2,7 @@
 $style = get_field('style');
 $eyebrow = get_field('eyebrow');
 $headline = get_field('headline');
+$group = get_field('group')
 ?>
 <div class="grid lg:grid-cols-[3fr_4fr] lg:mb-sp-14 mb-sp-8 gap-x-sp-4 lg:items-end">
   <div>
@@ -13,9 +14,6 @@ $headline = get_field('headline');
   </div>
 </div>
 <?php if ($style === 'feed') : ?>
-  <?php
-  $group = get_field('group')
-  ?>
   <div class="relative grid items-start grid-cols-1 lg:grid-cols-3 gap-sp-8">
     <?php
     $args = array(
@@ -68,13 +66,13 @@ $headline = get_field('headline');
         <div class="w-full rounded-[1rem] lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col">
           <?php if ($tagBGColor && $age) : ?>
             <?php if ($group !== 'parent') : ?>
-              <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>"><?= $age; ?> year old</span>
+              <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>"><?= $age; ?>-year-old</span>
             <?php else : ?>
               <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>">Parent of a <?= $age; ?>-year-old</span>
             <?php endif; ?>
           <?php endif; ?>
           <?php if ($pullQuote) : ?>
-            <h3 class="leading-tight mb-sp-2 lg:text-[2rem]">“<?= $pullQuote; ?>”</h3>
+            <h3 class="leading-tight mb-sp-2 lg:text-[2rem]">“<?= $pullQuote; ?>.”</h3>
           <?php endif; ?>
           <p class="leading-snug mb-sp-8"><?= $fullQuote; ?></p>
           <p class="mb-0">—<?= $attribution; ?></p>
@@ -121,13 +119,13 @@ $headline = get_field('headline');
         <div class="w-full rounded-[1rem] lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col">
           <?php if ($tagBGColor && $age) : ?>
             <?php if ($group !== 'parent') : ?>
-              <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>"><?= $age; ?> year old</span>
+              <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>"><?= $age; ?>-year-old</span>
             <?php else : ?>
               <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>">Parent of a <?= $age; ?>-year-old</span>
             <?php endif; ?>
           <?php endif; ?>
           <?php if ($pullQuote) : ?>
-            <h3 class="leading-tight mb-sp-2 lg:text-[2rem]">“<?= $pullQuote; ?>”</h3>
+            <h3 class="leading-tight mb-sp-2 lg:text-[2rem]">“<?= $pullQuote; ?>.”</h3>
           <?php endif; ?>
           <p class="leading-snug mb-sp-8"><?= $fullQuote; ?></p>
           <p class="mb-0">—<?= $attribution; ?></p>
