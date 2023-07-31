@@ -574,3 +574,23 @@
     var(--wp-admin-theme-color, #007cba)
   );
 }
+
+.page-id-5 {
+  .wp-block-embed-youtube {
+    .wp-block-embed__wrapper {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      padding-top: 56.25%;
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
