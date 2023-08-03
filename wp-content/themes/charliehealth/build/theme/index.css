@@ -4154,6 +4154,11 @@ a.providers:hover {
     margin-right: auto;
   }
 
+  .lg\:mx-sp-2{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
   .lg\:mx-sp-5{
     margin-left: 1.25rem;
     margin-right: 1.25rem;
@@ -4167,16 +4172,6 @@ a.providers:hover {
   .lg\:my-sp-16{
     margin-top: 6rem;
     margin-bottom: 6rem;
-  }
-
-  .lg\:mx-sp-1{
-    margin-left: 0.25rem;
-    margin-right: 0.25rem;
-  }
-
-  .lg\:mx-sp-2{
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
   }
 
   .lg\:mb-0{
