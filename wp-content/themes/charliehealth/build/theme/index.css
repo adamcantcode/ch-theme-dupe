@@ -4169,6 +4169,16 @@ a.providers:hover {
     margin-bottom: 6rem;
   }
 
+  .lg\:mx-sp-1{
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+  }
+
+  .lg\:mx-sp-2{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
   .lg\:mb-0{
     margin-bottom: 0px;
   }

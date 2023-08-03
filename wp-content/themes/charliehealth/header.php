@@ -50,7 +50,7 @@
             <?php include('resources/images/logos/ch-logo.php'); ?>
           </a>
         </div>
-        <div class="slide-out flex-none overflow-y-scroll lg:overflow-y-visible fixed bottom-0 lg:top-0 bg-darkest-blue lg:bg-transparent lg:flex lg:relative lg:h-auto h-[calc(100vh-68px)] <?= is_user_logged_in() ? 'top-[116px]' : 'top-[68px]'; ?>">
+        <div class="slide-out lg:mx-sp-2 flex-none overflow-y-scroll lg:overflow-y-visible fixed bottom-0 lg:top-0 bg-darkest-blue lg:bg-transparent lg:flex lg:relative lg:h-auto h-[calc(100vh-68px)] <?= is_user_logged_in() ? 'top-[116px]' : 'top-[68px]'; ?>">
           <div class="relative block border-b-2 cursor-default lg:noshow nav-parent-menu border-light-blue last:border-0 lg:border-0 border-opacity-20">
             <a href="<?= site_url('/'); ?>" class="static flex items-center nav-link">Home</a>
           </div>
@@ -118,7 +118,8 @@
           endif;
           ?>
           <div class="block mobile-ctas lg:noshow">
-            <div class="flex justify-center py-8">
+            <div class="flex justify-center py-8 gap-x-sp-4">
+              <a href="#" class="ch-button button-tertiary inverted text-h3-lg">Client Login</a>
               <a href="<?= get_field('cta', 'option')['url']; ?>" class="ch-button button-tertiary text-h3-lg"><?= get_field('cta', 'option')['title']; ?></a>
             </div>
             <div class="flex justify-center gap-4 px-5 pb-8 social">
