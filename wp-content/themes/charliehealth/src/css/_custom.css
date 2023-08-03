@@ -594,3 +594,16 @@
     }
   }
 }
+
+/* Temp Nav */
+@media only screen and (max-width: 1220px) and (min-width: 1024px) {
+  .nav-parent-menu .nav-link {
+    @apply text-[16px] px-sp-5;
+    svg {
+      @apply noshow;
+    }
+  }
+  .nav-cta a {
+    @apply text-[16px] px-sp-4;
+  }
+}

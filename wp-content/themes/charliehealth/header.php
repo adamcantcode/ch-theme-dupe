@@ -38,7 +38,7 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8BB2ZV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <?php wp_body_open(); ?>
-  <pre class="fixed left-0 right-0 w-full text-xs text-center text-dark-blue top-4 -z-10-50 opacity-30">Made with ❤️ in Denver</pre>
+  <!-- <pre class="fixed left-0 right-0 w-full text-xs text-center text-dark-blue top-4 -z-10-50 opacity-30">Made with ❤️ in Denver</pre> -->
   <!-- Rocket Excludes Delay JS -->
   <?php include('includes/rocket-skip-js.php'); ?>
   <!-- END Rocket Excludes Delay JS -->
@@ -137,7 +137,8 @@
             </div>
           </div>
         </div>
-        <div class="flex-none noshow nav-cta lg:block">
+        <div class="flex-none noshow nav-cta lg:flex gap-x-sp-2">
+          <a href="#" class="ch-button button-tertiary inverted">Client Login</a>
           <a href="<?= get_field('cta', 'option')['url']; ?>" class="ch-button button-tertiary"><?= get_field('cta', 'option')['title']; ?></a>
         </div>
         <div class="ml-auto text-gray-500 cursor-pointer open-close lg:noshow">
