@@ -703,7 +703,8 @@ var simplemaps_usmap_mapdata={
         "IL",
         "MI",
         "IN",
-        "OH"
+        "OH",
+        "WI"
       ],
       name: "Midwest <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
       zoomable: "no",
