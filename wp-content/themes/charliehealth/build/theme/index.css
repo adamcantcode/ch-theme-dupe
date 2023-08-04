@@ -1047,6 +1047,10 @@ a.ch-button.button-tertiary.inverted:hover {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.ch-button.button-tertiary.inverted:hover{
+  background-color: #C1FAF91A;
+}
+
 .ch-button.button-nav{
   border-radius: 0.625rem;
   border-width: 1px;
