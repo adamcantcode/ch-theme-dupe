@@ -21,41 +21,21 @@
             "media_upload": 0,
             "toolbar": "full",
             "delay": 0
-        },
-        {
-            "key": "field_64776bfa9c0ed",
-            "label": "Contact",
-            "name": "contact",
-            "aria-label": "",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 0,
-            "delay": 0
         }
     ],
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "page_template",
                 "operator": "==",
-                "value": "referral"
+                "value": "page-referral-no-front.php"
             }
         ],
         [
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-referral-no-front.php"
+                "value": "page-referral-houston.php"
             }
         ]
     ],
@@ -82,5 +62,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1685548053
+    "modified": 1691594625
 }
