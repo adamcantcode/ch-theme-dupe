@@ -113,13 +113,15 @@ $toc = get_field('toc') ?: '';
         height: 100%;
       }
     </style>
-    <section class="section-bottom">
-      <div class="container">
-        <div class="embed-container">
-          <?= get_field('youtube_video'); ?>
+    <?php if (get_field('youtube_video')) : ?>
+      <section class="section-bottom">
+        <div class="container">
+          <div class="embed-container">
+            <?= get_field('youtube_video'); ?>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    <?php endif; ?>
     <?php if (get_the_content()) : ?>
       <section class="section-horizontal">
         <div class="container">
