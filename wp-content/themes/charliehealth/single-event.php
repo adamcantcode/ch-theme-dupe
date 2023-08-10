@@ -94,20 +94,48 @@ $toc = get_field('toc') ?: '';
         </div>
       </section>
     <?php endif; ?>
-    <section class="section-horizontal">
+    <style>
+      .embed-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        overflow: hidden;
+        max-width: 100%;
+        height: auto;
+      }
+
+      .embed-container iframe,
+      .embed-container object,
+      .embed-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+    <section class="section-bottom">
       <div class="container">
-        <div class="divider"></div>
+        <div class="embed-container">
+          <?= get_field('youtube_video'); ?>
+        </div>
       </div>
     </section>
-    <article id="articleContent" class="section-xs-top">
-      <div class="container-sm">
-        <?php the_content(); ?>
-      </div>
-    </article>
+    <?php if (get_the_content()) : ?>
+      <section class="section-horizontal">
+        <div class="container">
+          <div class="divider"></div>
+        </div>
+      </section>
+      <article id="articleContent" class="section">
+        <div class="container-sm">
+          <?php the_content(); ?>
+        </div>
+      </article>
+    <?php endif; ?>
   </div>
 </main>
 <?php if ($relatedPosts) : ?>
-  <section class="section-top">
+  <section class="section-bottom">
     <div class="container">
       <h2>More like this</h2>
       <div class="grid lg:grid-cols-3 posts-container gap-x-sp-8 gap-y-sp-10">
@@ -146,11 +174,6 @@ $toc = get_field('toc') ?: '';
   </section>
 <?php endif; ?>
 
-<section class="section-top">
-  <div class="container">
-    <div class="divider"></div>
-  </div>
-</section>
 <?= do_blocks('<!-- wp:block {"ref":12} /-->'); ?>
 
 <?php get_footer(); ?>
