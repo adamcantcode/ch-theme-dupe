@@ -7,29 +7,12 @@ Template Post Type: page
 
 <?php get_header(); ?>
 
-<?php
-
-$title = get_the_title();
-
-if (strpos($title, "Referrals &#8211; ") === 0) {
-  $title = str_replace("Referrals &#8211; ", "", $title);
-} else {
-  $title = $title;
-}
-?>
-
 <main id="primary" class="site-main mt-[68px]">
-  <section class="section">
+  <section class="section-top">
     <div class="container">
-      <div class="grid lg:grid-cols-2">
-        <h1><?= $title; ?></h1>
-        <p>Charlie Health welcomes the opportunity to partner with you to provide excellent care to your patients.</p>
+      <div class="text-center">
+        <h1 class="mb-0">Partner Referral Portal</h1>
       </div>
-    </div>
-  </section>
-  <section class="section-horizontal">
-    <div class="container">
-      <div class="divider"></div>
     </div>
   </section>
   <section class="section">
