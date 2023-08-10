@@ -18,6 +18,23 @@
             },
             "default_value": "",
             "placeholder": ""
+        },
+        {
+            "key": "field_64d5597636a34",
+            "label": "YouTube Video",
+            "name": "youtube_video",
+            "aria-label": "",
+            "type": "oembed",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "width": 1280,
+            "height": 780
         }
     ],
     "location": [
@@ -38,5 +55,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1685381856
+    "modified": 1691704106
 }
