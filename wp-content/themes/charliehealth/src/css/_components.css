@@ -18,7 +18,10 @@
       }
     }
     &.button-tertiary {
-      @apply rounded-sm bg-bright-teal hover:bg-lightest-teal hover:text-dark-blue md:py-sp-3;
+      @apply rounded-sm bg-bright-teal hover:bg-lightest-teal hover:text-dark-blue md:py-[8.5px] md:px-sp-4;
+      &.inverted {
+        @apply bg-transparent shadow-[inset_0_0_0_1px_#C1FAF980] text-white hover:bg-[#C1FAF91A];
+      }
     }
     &.button-nav {
       @apply rounded-sm bg-transparent border border-bright-teal text-bright-teal px-sp-4 leading-none;
