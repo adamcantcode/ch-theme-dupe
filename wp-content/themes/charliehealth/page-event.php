@@ -154,8 +154,10 @@ Template Name: Event Page
                 <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover rounded-md lg:rounded-none lg:w-full lg:h-full lg:aspect-auto aspect-square lg:p-0 p-sp-2">
                 <div class="grid p-sp-4">
                   <h5 class="mb-sp-4"><?= $date; ?></h5>
-                  <h3><a href="<?= get_the_permalink(); ?>" class="stretched-link"><?= get_the_title(); ?></a></h3>
-                  <p class="mb-0"><?= get_the_excerpt(); ?></p>
+                  <h3 class="mb-0"><a href="<?= get_the_permalink(); ?>" class="stretched-link"><?= get_the_title(); ?></a></h3>
+                  <?php if (get_the_excerpt()) : ?>
+                    <p class="mt-sp-4"><?= get_the_excerpt(); ?></p>
+                  <?php endif; ?>
                 </div>
               </div>
           <?php wp_reset_postdata();
