@@ -263,6 +263,7 @@
                 "Virgin Islands": "Virgin Islands",
                 "Washington": "Washington",
                 "West Virginia": "West Virginia",
+                "West": "West",
                 "Wisconsin": "Wisconsin",
                 "Wyoming": "Wyoming"
             },
@@ -293,5 +294,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1689347715
+    "modified": 1692039249
 }
