@@ -119,7 +119,7 @@
           ?>
           <div class="block mobile-ctas lg:noshow">
             <div class="flex justify-center py-8 gap-x-sp-4">
-              <a href="http://app.charliehealth.com/" target="_blank" class="ch-button button-tertiary inverted text-h3-lg">Client Login</a>
+              <a href="https://app.charliehealth.com/" target="_blank" class="ch-button button-tertiary inverted text-h3-lg">Client Login</a>
               <a href="<?= get_field('cta', 'option')['url']; ?>" class="ch-button button-tertiary text-h3-lg"><?= get_field('cta', 'option')['title']; ?></a>
             </div>
             <div class="flex justify-center gap-4 px-5 pb-8 social">
@@ -139,7 +139,7 @@
           </div>
         </div>
         <div class="flex-none noshow nav-cta lg:flex gap-x-sp-2">
-          <a href="http://app.charliehealth.com/" target="_blank" class="ch-button button-tertiary inverted">Client Login</a>
+          <a href="https://app.charliehealth.com/" target="_blank" class="ch-button button-tertiary inverted">Client Login</a>
           <a href="<?= get_field('cta', 'option')['url']; ?>" class="ch-button button-tertiary"><?= get_field('cta', 'option')['title']; ?></a>
         </div>
         <div class="ml-auto text-gray-500 cursor-pointer open-close lg:noshow">
