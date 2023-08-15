@@ -119,6 +119,7 @@ $toc = get_field('toc') ?: '';
           <div class="embed-container">
             <?= get_field('youtube_video'); ?>
           </div>
+          <h6 class="mt-sp-4">This CE was eligible for credit if you attended live and completed post-event evaluation surveys and is shared here strictly for informational purposes.</h6>
         </div>
       </section>
     <?php endif; ?>
