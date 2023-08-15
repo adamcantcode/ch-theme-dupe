@@ -768,3 +768,40 @@ function custom_posts_column_orderby($query)
   }
 }
 add_action('pre_get_posts', 'custom_posts_column_orderby');
+
+/**
+ * Customize admin bar colors for staging environments
+ */
+function customize_admin_bar_color_based_on_url()
+{
+  // Get the current URL
+  $current_url = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+
+  // Define colors for specific URLs
+  $url_colors = array(
+    'charliehstg.wpengine.com' => '#6E0000',   // Red color for staging URL
+    'charliehdev.wpengine.com' => '#8B8000',   // Green color for development URL
+    'wpch.local' => '#023020',   // Red color for local
+  );
+
+  // Set default color
+  $default_color = '#000000'; // Black color if the URL is not matched
+
+  // Find the matching color for the current URL
+  $admin_bar_color = $default_color;
+  foreach ($url_colors as $url => $color) {
+    if (strpos($current_url, $url) !== false) {
+      $admin_bar_color = $color;
+      break;
+    }
+  }
+
+  // Add inline CSS to change admin bar color
+  echo '<style type="text/css">
+      #wpadminbar {
+          background-color: ' . esc_attr($admin_bar_color) . ' !important;
+      }
+  </style>';
+}
+add_action('admin_head', 'customize_admin_bar_color_based_on_url');
+add_action('wp_head', 'customize_admin_bar_color_based_on_url');
