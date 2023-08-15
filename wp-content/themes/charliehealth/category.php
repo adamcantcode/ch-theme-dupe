@@ -115,15 +115,15 @@ if (is_category('families-and-caregivers')) {
                     $featuredImageUrl = $featuredImage[0];
                     $featuredImageAltText = $featuredImageAltText ?: '';
                   } else {
-                    $featuredImageUrl = placeHolderImage(600, 800);
-                    $featuredImageAltText = 'place holder image';
+                    $featuredImageUrl = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
+                    $featuredImageAltText = 'Charlie Health Logo';
                   }
                 ?>
                   <div class="swiper-slide">
                     <div class="relative grid overflow-hidden rounded-md lg:grid-cols-2">
                       <div class="grid content-between order-2 lg:p-sp-8 p-sp-4 lg:order-1 <?= $audienceClass; ?>"">
                       <div>
-                        <h3 class="text-white text-h2 lg:text-h2-lg"><?= get_the_title(); ?></h3>
+                        <h3 class=" text-white text-h2 lg:text-h2-lg"><?= get_the_title(); ?></h3>
                       </div>
                       <a href="<?= get_the_permalink(); ?>" class="text-white no-underline stretched-link">Read more <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/arrow-left.svg'); ?>" alt="arrow icon" class="inline-block rotate-180 h-sp-4 ml-sp-2"></a>
                     </div>

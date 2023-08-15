@@ -91,8 +91,8 @@
                   $featuredImageUrl = $featuredImage[0];
                   $featuredImageAltText = $featuredImageAltText ?: '';
                 } else {
-                  $featuredImageUrl = placeHolderImage(600, 800);
-                  $featuredImageAltText = 'place holder image';
+                  $featuredImageUrl = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
+                  $featuredImageAltText = 'Charlie Health Logo';
                 }
                 ?>
                 <div class="swiper-slide">
