@@ -637,7 +637,8 @@ var simplemaps_usmap_mapdata={
       states: [
         "AZ",
         "UT",
-        "NV"
+        "NV",
+        "CO"
       ],
       name: "Southwest <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
       zoomable: "no",
@@ -684,11 +685,8 @@ var simplemaps_usmap_mapdata={
     },
     "6": {
       states: [
-        "WA",
         "OR",
         "ID",
-        "MT",
-        "CO",
         "WY"
       ],
       name: "Pacific Northwest <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
@@ -712,6 +710,19 @@ var simplemaps_usmap_mapdata={
       url: "/regions/midwest",
       description: "Learn more",
       hover_color: "#101334"
+    },
+    "8": {
+      states: [
+        "WA",
+        "MT",
+        "ND"
+      ],
+      name: "Mountain Region <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
+      color: "#1D225F",
+      hover_color: "#101334",
+      description: "Learn more",
+      url: "/regions/mountain-region",
+      zoomable: "no"
     }
   }
 };
