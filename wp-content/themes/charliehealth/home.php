@@ -208,7 +208,7 @@
                 ?>
                 <?php if ($tags) :  ?>
                   <?php foreach ($tags as $tag) : ?>
-                    <div class="grid items-end justify-start grid-flow-col gap-sp-4"><a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="relative z-20 inline-block no-underline rounded-lg px-sp-4 py-sp-3 text-h6 bg-tag-gray hover:bg-bright-teal"><?= $tag->name; ?></a></div>
+                    <div class="grid items-end justify-start grid-flow-col gap-sp-4"><a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="relative z-[6] inline-block no-underline rounded-lg px-sp-4 py-sp-3 text-h6 bg-tag-gray hover:bg-bright-teal"><?= $tag->name; ?></a></div>
                   <?php endforeach; ?>
                 <?php endif; ?>
               </div>
