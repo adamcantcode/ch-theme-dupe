@@ -157,7 +157,7 @@
       </div>
     </div>
   </section>
-  <section id="postsContainer" class="section">
+  <section id="postsContainer" class="section-bottom">
     <div class="container">
       <h2>Latest</h2>
       <div class="absolute invisible opacity-0 no-posts-js">
@@ -232,7 +232,12 @@
       <div class="pagination-container"></div>
     </div>
   </section>
-  <section class="section-horizontal">
+  <section class="bg-off-white section">
+    <div class="container">
+      <?= do_blocks('<!-- wp:block {"ref":4069} /-->'); ?>
+    </div>
+  </section>
+  <section class="section-top">
     <div class="container-sm">
       <?= do_blocks('<!-- wp:block {"ref":1709} /-->'); ?>
     </div>
