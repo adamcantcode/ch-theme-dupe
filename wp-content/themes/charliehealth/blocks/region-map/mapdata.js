@@ -717,11 +717,11 @@ var simplemaps_usmap_mapdata={
         "MT",
         "ND"
       ],
-      name: "Mountain Region <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
+      name: "Mountain <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
       color: "#1D225F",
       hover_color: "#101334",
       description: "Learn more",
-      url: "/regions/mountain-region",
+      url: "/regions/mountain",
       zoomable: "no"
     }
   }
