@@ -177,7 +177,7 @@
   .stretched-link {
     &:after {
       content: '';
-      @apply z-10 absolute inset-0;
+      @apply z-[5] absolute inset-0;
     }
   }
   .noshow {

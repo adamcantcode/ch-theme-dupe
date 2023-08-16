@@ -1445,6 +1445,10 @@ a.nav-link:hover {
   z-index: 50;
 }
 
+.z-\[6\]{
+  z-index: 6;
+}
+
 .order-1{
   order: 1;
 }
@@ -3135,7 +3139,7 @@ a.nav-link:hover {
       right: 0px;
       bottom: 0px;
       left: 0px;
-      z-index: 10;
+      z-index: 5;
     }
 
 .noshow{
@@ -4651,7 +4655,7 @@ a.providers:hover {
       right: 0px;
       bottom: 0px;
       left: 0px;
-      z-index: 10;
+      z-index: 5;
     }
   .lg\:noshow{
     display: none;
