@@ -83,6 +83,7 @@ $group = get_field('group')
   </div>
   <?php else :
   $customPosts = get_field('testimonials');
+  $slideNum = 0;
   if ($customPosts) : ?>
     <div class="relative">
       <?php if (count($customPosts) <= 3) : ?>
@@ -138,10 +139,11 @@ $group = get_field('group')
       <?php if (count($customPosts) > 3) : ?>
         <div class="relative lg:mx-sp-16">
           <div class="swiper swiper-testimonial-carousel">
-            <div class="swiper-wrapper">
+            <div class=" <?= is_admin() ? 'grid items-start grid-cols-1 lg:grid-cols-3 gap-sp-8' : 'swiper-wrapper'; ?>">
               <?php foreach ($customPosts as $customPost) : ?>
                 <?php
                 $postID = $customPost->ID;
+                $slideNum++;
 
                 $anonymous = get_field('anonymous', $postID);
                 if ($anonymous === false) {
@@ -171,7 +173,7 @@ $group = get_field('group')
 
                 ?>
                 <div class="!h-auto swiper-slide">
-                  <div class="w-full rounded-[1rem] lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col">
+                  <div class="w-full rounded-[1rem] lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col <?= is_admin() && $slideNum > 3 ? 'noshow' : ''; ?>">
                     <?php if ($tagBGColor && $age) : ?>
                       <?php if ($group !== 'parent') : ?>
                         <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>"><?= $age; ?>-year-old</span>
