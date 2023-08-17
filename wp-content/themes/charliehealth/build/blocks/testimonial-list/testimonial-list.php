@@ -84,53 +84,130 @@ $group = get_field('group')
   <?php else :
   $customPosts = get_field('testimonials');
   if ($customPosts) : ?>
-    <div class="relative grid items-start grid-cols-1 lg:grid-cols-3 gap-sp-8">
-      <?php foreach ($customPosts as $customPost) : ?>
-        <?php
-        $postID = $customPost->ID;
+    <div class="relative">
+      <?php if (count($customPosts) <= 3) : ?>
+        <div class="relative grid items-start grid-cols-1 lg:grid-cols-3 gap-sp-8">
+          <?php foreach ($customPosts as $customPost) : ?>
+            <?php
+            $postID = $customPost->ID;
 
-        $anonymous = get_field('anonymous', $postID);
-        if ($anonymous === false) {
-          $attribution = get_field('attribution', $postID);
-        } else {
-          $attribution = 'Anonymous';
-        }
-        $pullQuote = get_field('pull-quote', $postID);
-        $fullQuote = get_field('full_quote', $postID);
-        $age = get_field('age', $postID);
-        $group = get_the_terms($postID, 'testimonials-group')[0]->slug;
+            $anonymous = get_field('anonymous', $postID);
+            if ($anonymous === false) {
+              $attribution = get_field('attribution', $postID);
+            } else {
+              $attribution = 'Anonymous';
+            }
+            $pullQuote = get_field('pull-quote', $postID);
+            $fullQuote = get_field('full_quote', $postID);
+            $age = get_field('age', $postID);
+            $group = get_the_terms($postID, 'testimonials-group')[0]->slug;
 
-        switch ($group) {
-          case 'young-adult':
-            $tagBGColor = 'bg-young-adult';
-            break;
-          case 'teen':
-            $tagBGColor = 'bg-teen';
-            break;
-          case 'parent':
-            $tagBGColor = 'bg-parent';
-            break;
-          default:
-            $tagBGColor = '';
-            break;
-        }
+            switch ($group) {
+              case 'young-adult':
+                $tagBGColor = 'bg-young-adult';
+                break;
+              case 'teen':
+                $tagBGColor = 'bg-teen';
+                break;
+              case 'parent':
+                $tagBGColor = 'bg-parent';
+                break;
+              default:
+                $tagBGColor = '';
+                break;
+            }
 
-        ?>
-        <div class="w-full rounded-[1rem] lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col">
-          <?php if ($tagBGColor && $age) : ?>
-            <?php if ($group !== 'parent') : ?>
-              <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>"><?= $age; ?>-year-old</span>
-            <?php else : ?>
-              <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>">Parent of a <?= $age; ?>-year-old</span>
-            <?php endif; ?>
-          <?php endif; ?>
-          <?php if ($pullQuote) : ?>
-            <h3 class="leading-tight mb-sp-2 lg:text-[2rem]">“<?= $pullQuote; ?>.”</h3>
-          <?php endif; ?>
-          <p class="leading-snug mb-sp-8"><?= $fullQuote; ?></p>
-          <p class="mb-0">—<?= $attribution; ?></p>
+            ?>
+            <div class="w-full rounded-[1rem] lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col">
+              <?php if ($tagBGColor && $age) : ?>
+                <?php if ($group !== 'parent') : ?>
+                  <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>"><?= $age; ?>-year-old</span>
+                <?php else : ?>
+                  <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>">Parent of a <?= $age; ?>-year-old</span>
+                <?php endif; ?>
+              <?php endif; ?>
+              <?php if ($pullQuote) : ?>
+                <h3 class="leading-tight mb-sp-2 lg:text-[2rem]">“<?= $pullQuote; ?>.”</h3>
+              <?php endif; ?>
+              <p class="leading-snug mb-sp-8"><?= $fullQuote; ?></p>
+              <p class="mb-0">—<?= $attribution; ?></p>
+            </div>
+          <?php endforeach; ?>
         </div>
-      <?php endforeach; ?>
+      <?php endif; ?>
+      <?php if (count($customPosts) > 3) : ?>
+        <div class="relative lg:mx-sp-16">
+          <div class="swiper swiper-testimonial-carousel">
+            <div class="swiper-wrapper">
+              <?php foreach ($customPosts as $customPost) : ?>
+                <?php
+                $postID = $customPost->ID;
+
+                $anonymous = get_field('anonymous', $postID);
+                if ($anonymous === false) {
+                  $attribution = get_field('attribution', $postID);
+                } else {
+                  $attribution = 'Anonymous';
+                }
+                $pullQuote = get_field('pull-quote', $postID);
+                $fullQuote = get_field('full_quote', $postID);
+                $age = get_field('age', $postID);
+                $group = get_the_terms($postID, 'testimonials-group')[0]->slug;
+
+                switch ($group) {
+                  case 'young-adult':
+                    $tagBGColor = 'bg-young-adult';
+                    break;
+                  case 'teen':
+                    $tagBGColor = 'bg-teen';
+                    break;
+                  case 'parent':
+                    $tagBGColor = 'bg-parent';
+                    break;
+                  default:
+                    $tagBGColor = '';
+                    break;
+                }
+
+                ?>
+                <div class="!h-auto swiper-slide">
+                  <div class="w-full rounded-[1rem] lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col">
+                    <?php if ($tagBGColor && $age) : ?>
+                      <?php if ($group !== 'parent') : ?>
+                        <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>"><?= $age; ?>-year-old</span>
+                      <?php else : ?>
+                        <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>">Parent of a <?= $age; ?>-year-old</span>
+                      <?php endif; ?>
+                    <?php endif; ?>
+                    <?php if ($pullQuote) : ?>
+                      <h3 class="leading-tight mb-sp-2 lg:text-[2rem]">“<?= $pullQuote; ?>.”</h3>
+                    <?php endif; ?>
+                    <p class="leading-snug mb-sp-8"><?= $fullQuote; ?></p>
+                    <p class="mb-0">—<?= $attribution; ?></p>
+                  </div>
+                </div>
+              <?php endforeach; ?>
+            </div>
+            <div class="!relative swiper-pagination !bottom-0 p-sp-4"></div>
+          </div>
+        </div>
+        <div class="absolute inset-0 w-full h-full noshow lg:block">
+          <div class="absolute -translate-y-1/2 swiper-button-prev-arrow-carousel top-[calc(50%-26px)] left-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none" class="arrow-slider">
+              <rect width="50" height="50" rx="25" fill="#ffffff" class="arrow-slider-bg" />
+              <path d="M11.9393 26.0607C11.3536 25.4749 11.3536 24.5251 11.9393 23.9393L21.4853 14.3934C22.0711 13.8076 23.0208 13.8076 23.6066 14.3934C24.1924 14.9792 24.1924 15.9289 23.6066 16.5147L15.1213 25L23.6066 33.4853C24.1924 34.0711 24.1924 35.0208 23.6066 35.6066C23.0208 36.1924 22.0711 36.1924 21.4853 35.6066L11.9393 26.0607ZM37 26.5H13V23.5H37V26.5Z" fill="#212984" class="arrow-slider-arrow" />
+              <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
+            </svg>
+          </div>
+          <div class="absolute -translate-y-1/2 swiper-button-next-arrow-carousel top-[calc(50%-26px)] right-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none" class="arrow-slider">
+              <rect width="50" height="50" rx="25" fill="#ffffff" class="arrow-slider-bg" />
+              <path d="M38.0607 26.0607C38.6464 25.4749 38.6464 24.5251 38.0607 23.9393L28.5147 14.3934C27.9289 13.8076 26.9792 13.8076 26.3934 14.3934C25.8076 14.9792 25.8076 15.9289 26.3934 16.5147L34.8787 25L26.3934 33.4853C25.8076 34.0711 25.8076 35.0208 26.3934 35.6066C26.9792 36.1924 27.9289 36.1924 28.5147 35.6066L38.0607 26.0607ZM13 26.5H37V23.5H13V26.5Z" fill="#212984" class="arrow-slider-arrow" />
+              <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
+            </svg>
+          </div>
+        </div>
+      <?php endif; ?>
     </div>
   <?php endif; ?>
 <?php endif; ?>
