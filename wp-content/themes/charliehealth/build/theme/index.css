@@ -1506,16 +1506,6 @@ a.nav-link:hover {
   margin-bottom: 2rem;
 }
 
-.mx-sp-8{
-  margin-left: 2rem;
-  margin-right: 2rem;
-}
-
-.mx-sp-16{
-  margin-left: 6rem;
-  margin-right: 6rem;
-}
-
 .-mb-sp-6{
   margin-bottom: -1.5rem;
 }
@@ -4182,6 +4172,11 @@ a.providers:hover {
     margin-right: auto;
   }
 
+  .lg\:mx-sp-16{
+    margin-left: 6rem;
+    margin-right: 6rem;
+  }
+
   .lg\:mx-sp-2{
     margin-left: 0.5rem;
     margin-right: 0.5rem;
@@ -4200,16 +4195,6 @@ a.providers:hover {
   .lg\:my-sp-16{
     margin-top: 6rem;
     margin-bottom: 6rem;
-  }
-
-  .lg\:mx-sp-16{
-    margin-left: 6rem;
-    margin-right: 6rem;
-  }
-
-  .lg\:mx-sp-14{
-    margin-left: 4rem;
-    margin-right: 4rem;
   }
 
   .lg\:mb-0{
