@@ -2367,6 +2367,11 @@ a.nav-link:hover {
   background-color: rgb(218 193 251 / var(--tw-bg-opacity));
 }
 
+.bg-purple-gradient-start{
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 218 255 / var(--tw-bg-opacity));
+}
+
 .bg-\[linear-gradient\(\#fead80\2c \#e2deca_50\%\2c \#bdc6fc\)\]{
   background-image: linear-gradient(#fead80,#e2deca 50%,#bdc6fc);
 }
@@ -2706,6 +2711,10 @@ a.nav-link:hover {
 
 .opacity-30{
   opacity: 0.3;
+}
+
+.opacity-100{
+  opacity: 1;
 }
 
 .shadow-\[inset_0_0_0_2px_transparent\]{
