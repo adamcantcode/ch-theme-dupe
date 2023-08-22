@@ -27,15 +27,26 @@ Template Post Type: page
                   const quotes = document.querySelectorAll('.quote');
 
                   if (progressPercentage >= 33) {
+                    quotes.forEach(quote => {
+                      quote.classList.add('opacity-0')
+                      quote.classList.remove('opacity-100')
+                    });
+                    quotes[1].classList.remove('opacity-0');
                     quotes[1].classList.add('opacity-100');
                     quotes[1].classList.remove('opacity-0');
                   }
 
                   if (progressPercentage >= 50) {
+                    quotes.forEach(quote => {
+                      quote.classList.add('opacity-0')
+                    });
                     quotes[2].classList.add('opacity-100');
                     quotes[2].classList.remove('opacity-0');
                   }
                   if (progressPercentage >= 66) {
+                    quotes.forEach(quote => {
+                      quote.classList.add('opacity-0')
+                    });
                     quotes[3].classList.add('opacity-100');
                     quotes[3].classList.remove('opacity-0');
                   }
@@ -49,7 +60,9 @@ Template Post Type: page
                   const quotes = document.querySelectorAll('.quote');
 
                   if (progressPercentage < 33) {
-                    console.log("Progress is less than 33%");
+                    // quotes.forEach(quote => {
+                    //   quote.classList.add('opacity-0')
+                    // });
                     quotes[0].classList.add('opacity-100');
                     quotes[0].classList.remove('opacity-0');
                     quotes[1].classList.add('opacity-0');
@@ -84,7 +97,7 @@ Template Post Type: page
           </div>
         </div>
         <div class="grid">
-          <div class="grid-cols-1 transition-[1000ms] opacity-100 lg:mx-sp-16 lg:mt-sp-16 mt-sp-4 quote" style="grid-area: 1/1;">
+          <div class="grid-cols-1 duration-500 opacity-100 lg:mx-sp-16 lg:mt-sp-16 mt-sp-4 quote" style="grid-area: 1/1;">
             <div class="rounded-md p-sp-8 bg-young-adult">
               <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health shield logo" class="ml-auto w-sp-10 mb-sp-8">
               <h3 class="lg:text-h2-lg text-h2">“My daughter was acting like herself again”</h3>
@@ -92,7 +105,7 @@ Template Post Type: page
               <p class="mb-0">—Tasia, parent of 17-year-old</p>
             </div>
           </div>
-          <div class="grid-cols-1 transition-[1000ms] opacity-0 lg:mx-sp-16 lg:mt-sp-16 mt-sp-4 quote" style="grid-area: 1/1;">
+          <div class="grid-cols-1 duration-500 opacity-0 lg:mx-sp-16 lg:mt-sp-16 mt-sp-4 quote" style="grid-area: 1/1;">
             <div class="rounded-md p-sp-8 bg-parent">
               <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health shield logo" class="ml-auto w-sp-10 mb-sp-8">
               <h3 class="lg:text-h2-lg text-h2">“So supportive”</h3>
@@ -100,7 +113,7 @@ Template Post Type: page
               <p class="mb-0">—Anonymous, 21, young adult</p>
             </div>
           </div>
-          <div class="grid-cols-1 transition-[1000ms] opacity-0 lg:mx-sp-16 lg:mt-sp-16 mt-sp-4 quote" style="grid-area: 1/1;">
+          <div class="grid-cols-1 duration-500 opacity-0 lg:mx-sp-16 lg:mt-sp-16 mt-sp-4 quote" style="grid-area: 1/1;">
             <div class="rounded-md p-sp-8 bg-[#E07058]">
               <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health shield logo" class="ml-auto w-sp-10 mb-sp-8">
               <h3 class="lg:text-h2-lg text-h2">“This program saved my life.”</h3>
@@ -108,7 +121,7 @@ Template Post Type: page
               <p class="mb-0">—Andrew, 25, young adult</p>
             </div>
           </div>
-          <div class="grid-cols-1 transition-[1000ms] opacity-0 lg:mx-sp-16 lg:mt-sp-16 mt-sp-4 quote" style="grid-area: 1/1;">
+          <div class="grid-cols-1 duration-500 opacity-0 lg:mx-sp-16 lg:mt-sp-16 mt-sp-4 quote" style="grid-area: 1/1;">
             <div class="rounded-md p-sp-8 bg-teen">
               <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health shield logo" class="ml-auto w-sp-10 mb-sp-8">
               <h3 class="lg:text-h2-lg text-h2">“This program saved my life.”</h3>
