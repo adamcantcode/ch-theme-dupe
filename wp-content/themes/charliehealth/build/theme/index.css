@@ -1619,6 +1619,10 @@ a.nav-link:hover {
   margin-top: 3rem;
 }
 
+.mt-sp-16{
+  margin-top: 6rem;
+}
+
 .mt-sp-2{
   margin-top: 0.5rem;
 }
@@ -1633,10 +1637,6 @@ a.nav-link:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
-}
-
-.mt-sp-16{
-  margin-top: 6rem;
 }
 
 .block{
@@ -1858,6 +1858,10 @@ a.nav-link:hover {
 
 .w-sp-6{
   width: 1.5rem;
+}
+
+.w-sp-10{
+  width: 2.5rem;
 }
 
 .\!max-w-md{
@@ -2343,6 +2347,11 @@ a.nav-link:hover {
   background-color: rgb(166 152 255 / var(--tw-bg-opacity));
 }
 
+.bg-purple-gradient-start{
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 218 255 / var(--tw-bg-opacity));
+}
+
 .bg-tag-gray{
   --tw-bg-opacity: 1;
   background-color: rgb(248 247 247 / var(--tw-bg-opacity));
@@ -2365,11 +2374,6 @@ a.nav-link:hover {
 .bg-young-adult{
   --tw-bg-opacity: 1;
   background-color: rgb(218 193 251 / var(--tw-bg-opacity));
-}
-
-.bg-purple-gradient-start{
-  --tw-bg-opacity: 1;
-  background-color: rgb(234 218 255 / var(--tw-bg-opacity));
 }
 
 .bg-\[linear-gradient\(\#fead80\2c \#e2deca_50\%\2c \#bdc6fc\)\]{
@@ -2709,12 +2713,12 @@ a.nav-link:hover {
   opacity: 0.1;
 }
 
-.opacity-30{
-  opacity: 0.3;
-}
-
 .opacity-100{
   opacity: 1;
+}
+
+.opacity-30{
+  opacity: 0.3;
 }
 
 .shadow-\[inset_0_0_0_2px_transparent\]{
@@ -2745,6 +2749,12 @@ a.nav-link:hover {
 
 .filter{
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.transition-\[1000ms\]{
+  transition-property: 1000ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .transition-all{

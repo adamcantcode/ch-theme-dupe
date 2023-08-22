@@ -16,54 +16,104 @@ Template Post Type: page
           <script>
             document.addEventListener("DOMContentLoaded", function() {
               const progressBar = document.querySelector(".fsProgressBar");
-              const checkButton = document.querySelector(".fsNextButton");
+              const nextButton = document.querySelector(".fsNextButton");
+              const prevButton = document.querySelector(".fsPreviousButton");
 
-              checkButton.addEventListener("click", function() {
+              nextButton.addEventListener("click", function() {
                 setTimeout(() => {
-                  // Get the width of the progress bar in pixels
                   const progressBarWidth = parseFloat(getComputedStyle(progressBar).width);
-
-                  // Get the width of the parent container in pixels
                   const containerWidth = parseFloat(getComputedStyle(progressBar.parentElement).width);
-
-                  // Calculate the progress percentage
                   const progressPercentage = (progressBarWidth / containerWidth) * 100;
+                  const quotes = document.querySelectorAll('.quote');
 
-                  if (progressPercentage > 33) {
-                    // Do something if progress is greater than 33%
+                  if (progressPercentage >= 33) {
+                    quotes[1].classList.add('opacity-100');
+                    quotes[1].classList.remove('opacity-0');
+                  }
+
+                  if (progressPercentage >= 50) {
+                    quotes[2].classList.add('opacity-100');
+                    quotes[2].classList.remove('opacity-0');
+                  }
+                  if (progressPercentage >= 66) {
+                    quotes[3].classList.add('opacity-100');
+                    quotes[3].classList.remove('opacity-0');
+                  }
+                }, 100);
+              });
+              prevButton.addEventListener("click", function() {
+                setTimeout(() => {
+                  const progressBarWidth = parseFloat(getComputedStyle(progressBar).width);
+                  const containerWidth = parseFloat(getComputedStyle(progressBar.parentElement).width);
+                  const progressPercentage = (progressBarWidth / containerWidth) * 100;
+                  const quotes = document.querySelectorAll('.quote');
+
+                  if (progressPercentage < 33) {
+                    console.log("Progress is less than 33%");
+                    quotes[0].classList.add('opacity-100');
+                    quotes[0].classList.remove('opacity-0');
+                    quotes[1].classList.add('opacity-0');
+                    quotes[1].classList.remove('opacity-100');
+                  }
+
+                  if (progressPercentage >= 33) {
                     console.log("Progress is greater than 33%");
+                    quotes[1].classList.add('opacity-100');
+                    quotes[1].classList.remove('opacity-0');
+                    quotes[2].classList.add('opacity-0');
+                    quotes[2].classList.remove('opacity-100');
                   }
 
-                  if (progressPercentage > 50) {
-                    // Do something if progress is greater than 50%
+                  if (progressPercentage >= 50) {
                     console.log("Progress is greater than 50%");
+                    quotes[2].classList.add('opacity-100');
+                    quotes[2].classList.remove('opacity-0');
+                    quotes[3].classList.add('opacity-0');
+                    quotes[3].classList.remove('opacity-100');
                   }
-                  if (progressPercentage > 66) {
-                    // Do something if progress is greater than 50%
+                  if (progressPercentage >= 66) {
                     console.log("Progress is greater than 66%");
+                    quotes[3].classList.add('opacity-100');
+                    quotes[3].classList.remove('opacity-0');
                   }
-
-                  // You can add more conditions based on your needs
-                }, 1000);
+                }, 100);
               });
             });
           </script>
           <div style="text-align:right; font-size:x-small;">
           </div>
         </div>
-        <div class="relative">
-          <div class="absolute opacity-100 mx-sp-16 mt-sp-16">
+        <div class="grid">
+          <div class="grid-cols-1 transition-[1000ms] opacity-100 mx-sp-16 mt-sp-16 quote" style="grid-area: 1/1;">
             <div class="rounded-md p-sp-8 bg-purple-gradient-end">
-              <h3>This program saved my lufe</h3>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum ipsam dignissimos dolor quibusdam veniam eligendi aliquam amet cupiditate! Sint corrupti enim assumenda corporis, iste magnam quisquam possimus, provident, dolor dolorum doloribus! Itaque alias eum iste fugiat dicta perspiciatis debitis ratione, fugit totam amet! Fugiat, blanditiis!</p>
-              <p>--Elora</p>
+              <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health shield logo" class="ml-auto w-sp-10 mb-sp-8">
+              <h3 class="lg:text-h2-lg text-h2">“This program saved my life.”</h3>
+              <p>I came to CH with so much trauma and undiagnosed mental health issues. I couldn’t see how things could possibly get better for me, but Charlie Health gave me reason to keep going, to keep trying. This program saved my life.</p>
+              <p class="mb-0">—Elora</p>
             </div>
           </div>
-          <div class="absolute opacity-0 mx-sp-16 mt-sp-16">
+          <div class="grid-cols-1 transition-[1000ms] opacity-0 mx-sp-16 mt-sp-16 quote" style="grid-area: 1/1;">
             <div class="rounded-md p-sp-8 bg-purple-gradient-start">
-              <h3>This program saved my lufe</h3>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum ipsam dignissimos dolor quibusdam veniam eligendi aliquam amet cupiditate! Sint corrupti enim assumenda corporis, iste magnam quisquam possimus, provident, dolor dolorum doloribus! Itaque alias eum iste fugiat dicta perspiciatis debitis ratione, fugit totam amet! Fugiat, blanditiis!</p>
-              <p>--Elora</p>
+              <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health shield logo" class="ml-auto w-sp-10 mb-sp-8">
+              <h3 class="lg:text-h2-lg text-h2">“This program saved my life.”</h3>
+              <p>I came to CH with so much trauma and undiagnosed mental health issues. I couldn’t see how things could possibly get better for me, but Charlie Health gave me reason to keep going, to keep trying. This program saved my life.</p>
+              <p class="mb-0">—Elora</p>
+            </div>
+          </div>
+          <div class="grid-cols-1 transition-[1000ms] opacity-0 mx-sp-16 mt-sp-16 quote" style="grid-area: 1/1;">
+            <div class="rounded-md p-sp-8 bg-dark-blue">
+              <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health shield logo" class="ml-auto w-sp-10 mb-sp-8">
+              <h3 class="lg:text-h2-lg text-h2">“This program saved my life.”</h3>
+              <p>I came to CH with so much trauma and undiagnosed mental health issues. I couldn’t see how things could possibly get better for me, but Charlie Health gave me reason to keep going, to keep trying. This program saved my life.</p>
+              <p class="mb-0">—Elora</p>
+            </div>
+          </div>
+          <div class="grid-cols-1 transition-[1000ms] opacity-0 mx-sp-16 mt-sp-16 quote" style="grid-area: 1/1;">
+            <div class="rounded-md p-sp-8 bg-dark-teal">
+              <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health shield logo" class="ml-auto w-sp-10 mb-sp-8">
+              <h3 class="lg:text-h2-lg text-h2">“This program saved my life.”</h3>
+              <p>I came to CH with so much trauma and undiagnosed mental health issues. I couldn’t see how things could possibly get better for me, but Charlie Health gave me reason to keep going, to keep trying. This program saved my life.</p>
+              <p class="mb-0">—Elora</p>
             </div>
           </div>
         </div>
