@@ -84,7 +84,7 @@ Template Post Type: page
           </div>
         </div>
         <div class="grid">
-          <div class="grid-cols-1 transition-[1000ms] opacity-100 mx-sp-16 mt-sp-16 quote" style="grid-area: 1/1;">
+          <div class="grid-cols-1 transition-[1000ms] opacity-100 lg:mx-sp-16 lg:mt-sp-16 mt-sp-4 quote" style="grid-area: 1/1;">
             <div class="rounded-md p-sp-8 bg-purple-gradient-end">
               <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health shield logo" class="ml-auto w-sp-10 mb-sp-8">
               <h3 class="lg:text-h2-lg text-h2">“This program saved my life.”</h3>
@@ -92,7 +92,7 @@ Template Post Type: page
               <p class="mb-0">—Elora</p>
             </div>
           </div>
-          <div class="grid-cols-1 transition-[1000ms] opacity-0 mx-sp-16 mt-sp-16 quote" style="grid-area: 1/1;">
+          <div class="grid-cols-1 transition-[1000ms] opacity-0 lg:mx-sp-16 lg:mt-sp-16 mt-sp-4 quote" style="grid-area: 1/1;">
             <div class="rounded-md p-sp-8 bg-purple-gradient-start">
               <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health shield logo" class="ml-auto w-sp-10 mb-sp-8">
               <h3 class="lg:text-h2-lg text-h2">“This program saved my life.”</h3>
@@ -100,7 +100,7 @@ Template Post Type: page
               <p class="mb-0">—Elora</p>
             </div>
           </div>
-          <div class="grid-cols-1 transition-[1000ms] opacity-0 mx-sp-16 mt-sp-16 quote" style="grid-area: 1/1;">
+          <div class="grid-cols-1 transition-[1000ms] opacity-0 lg:mx-sp-16 lg:mt-sp-16 mt-sp-4 quote" style="grid-area: 1/1;">
             <div class="rounded-md p-sp-8 bg-dark-blue">
               <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health shield logo" class="ml-auto w-sp-10 mb-sp-8">
               <h3 class="lg:text-h2-lg text-h2">“This program saved my life.”</h3>
@@ -108,7 +108,7 @@ Template Post Type: page
               <p class="mb-0">—Elora</p>
             </div>
           </div>
-          <div class="grid-cols-1 transition-[1000ms] opacity-0 mx-sp-16 mt-sp-16 quote" style="grid-area: 1/1;">
+          <div class="grid-cols-1 transition-[1000ms] opacity-0 lg:mx-sp-16 lg:mt-sp-16 mt-sp-4 quote" style="grid-area: 1/1;">
             <div class="rounded-md p-sp-8 bg-dark-teal">
               <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health shield logo" class="ml-auto w-sp-10 mb-sp-8">
               <h3 class="lg:text-h2-lg text-h2">“This program saved my life.”</h3>

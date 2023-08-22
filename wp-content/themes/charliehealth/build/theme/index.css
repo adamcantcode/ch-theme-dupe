@@ -4112,6 +4112,11 @@ a.providers:hover {
     order: 0;
   }
 
+  .md\:mx-sp-8{
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
   .md\:mb-sp-14{
     margin-bottom: 4rem;
   }
