@@ -85,35 +85,35 @@ Template Post Type: page
         </div>
         <div class="grid">
           <div class="grid-cols-1 transition-[1000ms] opacity-100 lg:mx-sp-16 lg:mt-sp-16 mt-sp-4 quote" style="grid-area: 1/1;">
-            <div class="rounded-md p-sp-8 bg-purple-gradient-end">
+            <div class="rounded-md p-sp-8 bg-young-adult">
               <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health shield logo" class="ml-auto w-sp-10 mb-sp-8">
-              <h3 class="lg:text-h2-lg text-h2">“This program saved my life.”</h3>
-              <p>I came to CH with so much trauma and undiagnosed mental health issues. I couldn’t see how things could possibly get better for me, but Charlie Health gave me reason to keep going, to keep trying. This program saved my life.</p>
-              <p class="mb-0">—Elora</p>
+              <h3 class="lg:text-h2-lg text-h2">“My daughter was acting like herself again”</h3>
+              <p>I really didn’t know what to do for my daughter before Charlie Health. I’ve always felt I've been alone in this. I felt so helpless. Within her first week, my daughter was acting like herself again. Charlie Health has given my daughter and me lifelong tools to navigate her anxiety and panic attacks. I’m very impressed and very happy.</p>
+              <p class="mb-0">—Tasia, parent of 17-year-old</p>
             </div>
           </div>
           <div class="grid-cols-1 transition-[1000ms] opacity-0 lg:mx-sp-16 lg:mt-sp-16 mt-sp-4 quote" style="grid-area: 1/1;">
-            <div class="rounded-md p-sp-8 bg-purple-gradient-start">
+            <div class="rounded-md p-sp-8 bg-parent">
               <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health shield logo" class="ml-auto w-sp-10 mb-sp-8">
-              <h3 class="lg:text-h2-lg text-h2">“This program saved my life.”</h3>
-              <p>I came to CH with so much trauma and undiagnosed mental health issues. I couldn’t see how things could possibly get better for me, but Charlie Health gave me reason to keep going, to keep trying. This program saved my life.</p>
-              <p class="mb-0">—Elora</p>
+              <h3 class="lg:text-h2-lg text-h2">“So supportive”</h3>
+              <p>I was unsure about going into something virtual, but it was so helpful! I think being in my own space while talking about difficult things added to the safety I felt. The facilitators and staff really truly care about the well-being of group members and are so supportive.</p>
+              <p class="mb-0">—Anonymous, 21, young adult</p>
             </div>
           </div>
           <div class="grid-cols-1 transition-[1000ms] opacity-0 lg:mx-sp-16 lg:mt-sp-16 mt-sp-4 quote" style="grid-area: 1/1;">
-            <div class="rounded-md p-sp-8 bg-dark-blue">
+            <div class="rounded-md p-sp-8 bg-[#E07058]">
               <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health shield logo" class="ml-auto w-sp-10 mb-sp-8">
               <h3 class="lg:text-h2-lg text-h2">“This program saved my life.”</h3>
-              <p>I came to CH with so much trauma and undiagnosed mental health issues. I couldn’t see how things could possibly get better for me, but Charlie Health gave me reason to keep going, to keep trying. This program saved my life.</p>
-              <p class="mb-0">—Elora</p>
+              <p>Charlie Health has been a very helpful and supportive environment. I really like how much easier it is to get mental healthcare virtually, and the way they tailor your individual experience to your needs and your lived experiences. I would definitely recommend the program to others. It has helped me tremendously as I heal.</p>
+              <p class="mb-0">—Andrew, 25, young adult</p>
             </div>
           </div>
           <div class="grid-cols-1 transition-[1000ms] opacity-0 lg:mx-sp-16 lg:mt-sp-16 mt-sp-4 quote" style="grid-area: 1/1;">
-            <div class="rounded-md p-sp-8 bg-dark-teal">
+            <div class="rounded-md p-sp-8 bg-teen">
               <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health shield logo" class="ml-auto w-sp-10 mb-sp-8">
               <h3 class="lg:text-h2-lg text-h2">“This program saved my life.”</h3>
-              <p>I came to CH with so much trauma and undiagnosed mental health issues. I couldn’t see how things could possibly get better for me, but Charlie Health gave me reason to keep going, to keep trying. This program saved my life.</p>
-              <p class="mb-0">—Elora</p>
+              <p>When I got to Charlie Health, I did not want to accept any more help. But after my first group session, I was smiling again for the first time in 7 months. I connected and shared with people in ways I had been very closed off to. I loved my time here, and I looked forward to group every day. I love Charlie Health and thank them for getting me out of place I never thought I could.</p>
+              <p class="mb-0">—Nia, 15, teen</p>
             </div>
           </div>
         </div>
