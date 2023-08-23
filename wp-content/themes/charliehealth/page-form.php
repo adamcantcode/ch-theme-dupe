@@ -60,9 +60,9 @@ Template Post Type: page
                   const quotes = document.querySelectorAll('.quote');
 
                   if (progressPercentage < 33) {
-                    // quotes.forEach(quote => {
-                    //   quote.classList.add('opacity-0')
-                    // });
+                    quotes.forEach(quote => {
+                      quote.classList.add('opacity-0')
+                    });
                     quotes[0].classList.add('opacity-100');
                     quotes[0].classList.remove('opacity-0');
                     quotes[1].classList.add('opacity-0');
@@ -70,7 +70,9 @@ Template Post Type: page
                   }
 
                   if (progressPercentage >= 33) {
-                    console.log("Progress is greater than 33%");
+                    quotes.forEach(quote => {
+                      quote.classList.add('opacity-0')
+                    });
                     quotes[1].classList.add('opacity-100');
                     quotes[1].classList.remove('opacity-0');
                     quotes[2].classList.add('opacity-0');
@@ -78,14 +80,18 @@ Template Post Type: page
                   }
 
                   if (progressPercentage >= 50) {
-                    console.log("Progress is greater than 50%");
+                    quotes.forEach(quote => {
+                      quote.classList.add('opacity-0')
+                    });
                     quotes[2].classList.add('opacity-100');
                     quotes[2].classList.remove('opacity-0');
                     quotes[3].classList.add('opacity-0');
                     quotes[3].classList.remove('opacity-100');
                   }
                   if (progressPercentage >= 66) {
-                    console.log("Progress is greater than 66%");
+                    quotes.forEach(quote => {
+                      quote.classList.add('opacity-0')
+                    });
                     quotes[3].classList.add('opacity-100');
                     quotes[3].classList.remove('opacity-0');
                   }
