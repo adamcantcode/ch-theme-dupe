@@ -102,8 +102,8 @@ Template Post Type: page
           <div style="text-align:right; font-size:x-small;">
           </div>
         </div>
-        <div class="grid">
-          <div class="grid-cols-1 duration-500 opacity-100 lg:mx-sp-16 lg:mt-sp-16 mt-sp-4 quote" style="grid-area: 1/1;">
+        <div class="grid items-center">
+          <div class="grid-cols-1 duration-500 opacity-100 lg:mx-sp-16 lg:mt-0 mt-sp-4 quote" style="grid-area: 1/1;">
             <div class="rounded-md p-sp-8 bg-young-adult">
               <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health shield logo" class="ml-auto w-sp-10 mb-sp-8">
               <h3 class="lg:text-[41px] text-h2 mb-sp-3 leading-tight">“My daughter was acting like herself again.”</h3>
@@ -111,7 +111,7 @@ Template Post Type: page
               <p class="mb-0">—Tasia, parent of 17-year-old</p>
             </div>
           </div>
-          <div class="grid-cols-1 duration-500 opacity-0 lg:mx-sp-16 lg:mt-sp-16 mt-sp-4 quote" style="grid-area: 1/1;">
+          <div class="grid-cols-1 duration-500 opacity-0 lg:mx-sp-16 lg:mt-0 mt-sp-4 quote" style="grid-area: 1/1;">
             <div class="rounded-md p-sp-8 bg-parent">
               <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health shield logo" class="ml-auto w-sp-10 mb-sp-8">
               <h3 class="lg:text-[41px] text-h2 mb-sp-3 leading-tight">“So supportive.”</h3>
@@ -119,7 +119,7 @@ Template Post Type: page
               <p class="mb-0">—Anonymous, 21, young adult</p>
             </div>
           </div>
-          <div class="grid-cols-1 duration-500 opacity-0 lg:mx-sp-16 lg:mt-sp-16 mt-sp-4 quote" style="grid-area: 1/1;">
+          <div class="grid-cols-1 duration-500 opacity-0 lg:mx-sp-16 lg:mt-0 mt-sp-4 quote" style="grid-area: 1/1;">
             <div class="rounded-md p-sp-8 bg-[#E07058]">
               <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health shield logo" class="ml-auto w-sp-10 mb-sp-8">
               <h3 class="lg:text-[41px] text-h2 mb-sp-3 leading-tight">“This program saved my life.”</h3>
@@ -127,7 +127,7 @@ Template Post Type: page
               <p class="mb-0">—Andrew, 25, young adult</p>
             </div>
           </div>
-          <div class="grid-cols-1 duration-500 opacity-0 lg:mx-sp-16 lg:mt-sp-16 mt-sp-4 quote" style="grid-area: 1/1;">
+          <div class="grid-cols-1 duration-500 opacity-0 lg:mx-sp-16 lg:mt-0 mt-sp-4 quote" style="grid-area: 1/1;">
             <div class="rounded-md p-sp-8 bg-teen">
               <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health shield logo" class="ml-auto w-sp-10 mb-sp-8">
               <h3 class="lg:text-[41px] text-h2 mb-sp-3 leading-tight">“This program saved my life.”</h3>
