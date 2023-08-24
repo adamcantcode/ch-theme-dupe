@@ -1260,6 +1260,37 @@ function mobileNav() {
 
 /***/ }),
 
+/***/ "./src/modules/navigation-menu.js":
+/*!****************************************!*\
+  !*** ./src/modules/navigation-menu.js ***!
+  \****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ navigationMenu; }
+/* harmony export */ });
+/**
+ * Man nav hover actions
+ */
+// import { gsap } from 'gsap';
+
+function navigationMenu() {
+  const topLevelNavItems = document.querySelectorAll('.topLevelNavItem');
+  topLevelNavItems.forEach(topLevelNavItem => {
+    topLevelNavItem.addEventListener('mouseover', e => {
+      const element = e.target;
+      console.log('Hovered over topLevelNavItem:', element);
+      console.log(e.target.querySelector('.secondLevelNav'));
+      const secondLevelNav = element.querySelector('.secondLevelNav');
+      console.log('Found secondLevelNav:', secondLevelNav);
+    });
+  });
+}
+
+/***/ }),
+
 /***/ "./src/modules/newsletter-popup.js":
 /*!*****************************************!*\
   !*** ./src/modules/newsletter-popup.js ***!
@@ -23013,6 +23044,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_progress_bar__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./modules/progress-bar */ "./src/modules/progress-bar.js");
 /* harmony import */ var _modules_newsletter_popup__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./modules/newsletter-popup */ "./src/modules/newsletter-popup.js");
 /* harmony import */ var _modules_mobile_cats__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./modules/mobile-cats */ "./src/modules/mobile-cats.js");
+/* harmony import */ var _modules_navigation_menu__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./modules/navigation-menu */ "./src/modules/navigation-menu.js");
+
 
 
 
@@ -23034,8 +23067,10 @@ __webpack_require__.r(__webpack_exports__);
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
   (0,_modules_stop_animations__WEBPACK_IMPORTED_MODULE_2__["default"])();
-  (0,_modules_mobile_nav__WEBPACK_IMPORTED_MODULE_1__["default"])();
-  (0,_modules_animations__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  // mobileNav();
+  // animations();
+  (0,_modules_navigation_menu__WEBPACK_IMPORTED_MODULE_18__["default"])();
+  console.log('test');
   if (body.classList.contains('single-areas-of-care') || body.classList.contains('single-treatment-modalities') || body.classList.contains('single-post')) {
     (0,_modules_back_to_top__WEBPACK_IMPORTED_MODULE_5__["default"])();
   }

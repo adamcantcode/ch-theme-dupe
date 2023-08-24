@@ -17,13 +17,16 @@ import references from './modules/references';
 import progressBar from './modules/progress-bar';
 import newsletterPopup from './modules/newsletter-popup';
 import mobileCats from './modules/mobile-cats';
+import navigationMenu from './modules/navigation-menu';
 
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
 
   stopAnimations();
-  mobileNav();
-  animations();
+  // mobileNav();
+  // animations();
+  navigationMenu();
+  console.log('test');
   if (
     body.classList.contains('single-areas-of-care') ||
     body.classList.contains('single-treatment-modalities') ||

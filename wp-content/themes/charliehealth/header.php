@@ -158,9 +158,9 @@
               <?php include('resources/images/logos/charlie-health_shield-title.php'); ?>
             </a>
           </div>
-          <div class="relative">
+          <div class="relative topLevelNavItem">
             <a href="#" class="block text-white px-sp-4 py-sp-4 ml-sp-4">Our Program</a>
-            <div class="absolute w-[525px] grid grid-cols-2">
+            <div class="absolute w-[525px] grid grid-cols-2 opacity-0 invisible secondLevelNav">
               <div class="flex flex-col p-sp-8 bg-darker-blue-hover">
                 <div>
                   <span class="text-white">Our Program</span>
@@ -187,9 +187,9 @@
               </div>
             </div>
           </div>
-          <div class="relative">
+          <div class="relative topLevelNavItem">
             <a href="#" class="block text-white px-sp-4 py-sp-4">Our Program</a>
-            <div class="absolute w-[525px] grid grid-cols-2">
+            <div class="absolute w-[525px] grid grid-cols-2 opacity-0 invisible secondLevelNav">
               <div class="flex flex-col p-sp-8 bg-darker-blue-hover">
                 <div>
                   <span class="text-white">Our Program</span>

@@ -1,4 +1,4 @@
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   /** 
    * Fix for back button bug 
    */
@@ -52,4 +52,4 @@
       });
     };
   }
-</script>
+</script> -->
