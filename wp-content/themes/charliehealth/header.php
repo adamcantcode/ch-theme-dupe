@@ -152,30 +152,71 @@
   <?php else : ?>
     <header class="fixed z-50 w-screen bg-darker-blue <?= is_user_logged_in() ? 'lg:top-[32px] top-[46px]' : 'top-0'; ?>">
       <nav class="section-horizontal">
-        <div class="container relative flex items-center justify-between min-h-[58px]">
-          <div>
+        <div class="container flex items-center">
+          <div class="mr-sp-6">
             <a href="<?= site_url(); ?>">
               <?php include('resources/images/logos/charlie-health_shield-title.php'); ?>
             </a>
           </div>
           <div class="relative">
-            <a href="#">Our Program</a>
-            <div class="absolute bottom-0 left-0">
-              <div class="grid grid-cols-1">
+            <a href="#" class="block text-white px-sp-4 py-sp-4 ml-sp-4">Our Program</a>
+            <div class="absolute w-[525px] grid grid-cols-2">
+              <div class="flex flex-col p-sp-8 bg-darker-blue-hover">
                 <div>
-                  <span>Our Program</span>
-                  <p>Charlie Health’s virtual IOP is a personalized combination of supported groups, family therapy, and individual therapy.</p>
+                  <span class="text-white">Our Program</span>
+                  <p class="text-white">Charlie Health’s virtual IOP is a personalized combination of supported groups, family therapy, and individual therapy.</p>
                 </div>
-                <div>
+                <div class="mt-auto">
                   <a href="#" class="ch-button button-tertiary">Learn More</a>
                 </div>
               </div>
-              <div class="grid grid-cols-1">
-                <span></span>
+              <div class="flex flex-col p-sp-8 bg-[#131632]">
+                <span class="text-white">How it Works</span>
+                <span class="text-white">How it Works</span>
+                <span class="text-white">How it Works</span>
+                <span class="text-white">How it Works</span>
+                <span class="text-white">How it Works</span>
+                <span class="text-white">How it Works</span>
+                <span class="text-white">How it Works</span>
+                <span class="text-white">How it Works</span>
+                <span class="text-white">How it Works</span>
+                <span class="text-white">How it Works</span>
+                <span class="text-white">How it Works</span>
+                <span class="text-white">How it Works</span>
+                <span class="text-white">How it Works</span>
               </div>
             </div>
           </div>
-          <div class="flex-none noshow nav-cta lg:flex gap-x-sp-2">
+          <div class="relative">
+            <a href="#" class="block text-white px-sp-4 py-sp-4">Our Program</a>
+            <div class="absolute w-[525px] grid grid-cols-2">
+              <div class="flex flex-col p-sp-8 bg-darker-blue-hover">
+                <div>
+                  <span class="text-white">Our Program</span>
+                  <p class="text-white">Charlie Health’s virtual IOP is a personalized combination of supported groups, family therapy, and individual therapy.</p>
+                </div>
+                <div class="mt-auto">
+                  <a href="#" class="ch-button button-tertiary">Learn More</a>
+                </div>
+              </div>
+              <div class="flex flex-col p-sp-8 bg-[#131632]">
+                <span class="text-white">How it Works</span>
+                <span class="text-white">How it Works</span>
+                <span class="text-white">How it Works</span>
+                <span class="text-white">How it Works</span>
+                <span class="text-white">How it Works</span>
+                <span class="text-white">How it Works</span>
+                <span class="text-white">How it Works</span>
+                <span class="text-white">How it Works</span>
+                <span class="text-white">How it Works</span>
+                <span class="text-white">How it Works</span>
+                <span class="text-white">How it Works</span>
+                <span class="text-white">How it Works</span>
+                <span class="text-white">How it Works</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex ml-auto content gap-x-sp-2">
             <a href="https://app.charliehealth.com/" target="_blank" class="ch-button button-tertiary inverted">Client Login</a>
             <a href="<?= get_field('cta', 'option')['url']; ?>" class="ch-button button-tertiary"><?= get_field('cta', 'option')['title']; ?></a>
           </div>
