@@ -150,5 +150,36 @@
       </nav>
     </header>
   <?php else : ?>
-    
+    <header class="fixed z-50 w-screen bg-darker-blue <?= is_user_logged_in() ? 'lg:top-[32px] top-[46px]' : 'top-0'; ?>">
+      <nav class="section-horizontal">
+        <div class="container relative flex items-center justify-between min-h-[58px]">
+          <div>
+            <a href="<?= site_url(); ?>">
+              <?php include('resources/images/logos/charlie-health_shield-title.php'); ?>
+            </a>
+          </div>
+          <div class="relative">
+            <a href="#">Our Program</a>
+            <div class="absolute bottom-0 left-0">
+              <div class="grid grid-cols-1">
+                <div>
+                  <span>Our Program</span>
+                  <p>Charlie Health’s virtual IOP is a personalized combination of supported groups, family therapy, and individual therapy.</p>
+                </div>
+                <div>
+                  <a href="#" class="ch-button button-tertiary">Learn More</a>
+                </div>
+              </div>
+              <div class="grid grid-cols-1">
+                <span></span>
+              </div>
+            </div>
+          </div>
+          <div class="flex-none noshow nav-cta lg:flex gap-x-sp-2">
+            <a href="https://app.charliehealth.com/" target="_blank" class="ch-button button-tertiary inverted">Client Login</a>
+            <a href="<?= get_field('cta', 'option')['url']; ?>" class="ch-button button-tertiary"><?= get_field('cta', 'option')['title']; ?></a>
+          </div>
+        </div>
+      </nav>
+    </header>
   <?php endif; ?>

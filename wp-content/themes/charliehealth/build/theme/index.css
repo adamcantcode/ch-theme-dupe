@@ -1790,6 +1790,10 @@ a.nav-link:hover {
   min-height: 100%;
 }
 
+.min-h-\[58px\]{
+  min-height: 58px;
+}
+
 .w-10{
   width: 2.5rem;
 }
