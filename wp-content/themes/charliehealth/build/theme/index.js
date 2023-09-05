@@ -1284,6 +1284,11 @@ function navigationMenu() {
       secondLevelNav.classList.remove('opacity-0');
       secondLevelNav.classList.remove('invisible');
     });
+    topLevelNavItem.addEventListener('mouseout', e => {
+      const secondLevelNav = topLevelNavItem.querySelector('.secondLevelNav');
+      secondLevelNav.classList.add('opacity-0');
+      secondLevelNav.classList.add('invisible');
+    });
   });
 }
 

@@ -719,6 +719,11 @@ a.text-white:hover {
         color: #ffffff;
       }
 
+a.text-nav-topLevel:hover{
+  --tw-text-opacity: 1;
+  color: rgb(231 211 255 / var(--tw-text-opacity));
+}
+
 blockquote{
   margin-top: 2rem;
   margin-bottom: 1.5rem;
@@ -2542,6 +2547,10 @@ a.nav-link:hover {
   text-align: center;
 }
 
+.font-heading{
+  font-family: "ABC Social", sans-serif;
+}
+
 .font-heading-serif{
   font-family: "ABC Arizona", serif;
 }
@@ -2642,6 +2651,12 @@ a.nav-link:hover {
 .text-lg{
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+
+.text-nav-topLevel{
+  font-size: 0.875rem;
+  letter-spacing: 0;
+  font-weight: 400;
 }
 
 .text-xs{
@@ -4051,6 +4066,11 @@ a.providers:hover {
 .hover\:\!text-dark-blue:hover{
   --tw-text-opacity: 1 !important;
   color: rgb(29 34 95 / var(--tw-text-opacity)) !important;
+}
+
+.hover\:text-lavender-200:hover{
+  --tw-text-opacity: 1;
+  color: rgb(231 211 255 / var(--tw-text-opacity));
 }
 
 .hover\:text-white:hover{

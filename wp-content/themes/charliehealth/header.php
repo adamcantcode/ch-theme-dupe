@@ -159,8 +159,8 @@
             </a>
           </div>
           <div class="relative topLevelNavItem">
-            <a href="#" class="block text-white px-sp-4 py-sp-4 ml-sp-4">Our Program</a>
-            <div class="absolute w-[525px] grid grid-cols-2 opacity-0 invisible secondLevelNav">
+            <a href="#" class="block text-white no-underline px-sp-4 py-sp-4 ml-sp-4 font-heading hover:text-lavender-200 text-nav-topLevel">Our Program</a>
+            <div class="absolute w-[525px] grid grid-cols-2 opacity-0 invisible secondLevelNav transition-all duration-300">
               <div class="flex flex-col p-sp-8 bg-darker-blue-hover">
                 <div>
                   <span class="text-white">Our Program</span>

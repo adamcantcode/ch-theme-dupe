@@ -47,9 +47,12 @@ module.exports = {
       'card-border': '#d4d5dc',
       'lightest-purple': '#F8F8FF',
       'dark-teal': '#1f5f68',
-      'teen': '#8F92CD',
+      teen: '#8F92CD',
       'young-adult': '#DAC1FB',
-      'parent': '#FDBF7C',
+      parent: '#FDBF7C',
+      lavender: {
+        200: '#E7D3FF',
+      },
       // 'light-teal': '#C8FFFF',
       // 'med-bright-teal': '#3EB7B5',
       // 'med-teal': '#39919D',
@@ -192,6 +195,14 @@ module.exports = {
           '1.125rem',
           {
             lineHeight: '1.8rem',
+            letterSpacing: '0',
+            fontWeight: '400',
+          },
+        ],
+        'nav-topLevel': [
+          '0.875rem',
+          {
+            // lineHeight: 'auto',
             letterSpacing: '0',
             fontWeight: '400',
           },

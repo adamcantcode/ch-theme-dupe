@@ -175,6 +175,11 @@
         color: #ffffff;
       }
     }
+    &.text-nav-topLevel {
+      &:hover {
+        @apply text-lavender-200
+      }
+    }
   }
   blockquote {
     @apply py-8 my-8 border-solid border-y-4 border-purple-gradient-start mb-sp-6;
