@@ -202,7 +202,7 @@ module.exports = {
         'nav-normal': [
           '0.875rem',
           {
-            // lineHeight: 'auto',
+            lineHeight: 'normal',
             letterSpacing: '0',
             fontWeight: '400',
           },
@@ -210,7 +210,7 @@ module.exports = {
         'nav-small': [
           '0.75rem',
           {
-            // lineHeight: 'auto',
+            lineHeight: 'normal',
             letterSpacing: '0',
             fontWeight: '400',
           },

@@ -158,64 +158,56 @@
               <?php include('resources/images/logos/charlie-health_shield-title.php'); ?>
             </a>
           </div>
-          <div class="relative topLevelNavItem">
-            <a href="#" class="block text-white no-underline px-sp-4 py-sp-4 ml-sp-4 font-heading hover:text-lavender-200 text-nav-topLevel">Our Program</a>
-            <div class="absolute w-[525px] grid grid-cols-2 opacity-0 invisible secondLevelNav transition-all duration-300">
-              <div class="flex flex-col p-sp-8 bg-darker-blue-hover">
-                <div>
-                  <span class="text-white">Our Program</span>
-                  <p class="text-white">Charlie Health’s virtual IOP is a personalized combination of supported groups, family therapy, and individual therapy.</p>
-                </div>
-                <div class="mt-auto">
-                  <a href="#" class="ch-button button-tertiary">Learn More</a>
+          <?php if (have_rows('navigation_item_new', 'option')) :
+            while (have_rows('navigation_item_new', 'option')) : the_row(); ?>
+              <?php
+              $topLink = get_sub_field('top_level_item');
+              $url = $topLink['url'];
+              if ($url === '#') {
+                $url = '';
+              }
+              $title = $topLink['title'];
+              $target = $topLink['target'];
+              ?>
+              <div class="relative topLevelNavItem">
+                <a href="<?= $url; ?>" target="<?= $target; ?>" class="block text-white no-underline px-sp-4 py-sp-4 ml-sp-4 font-heading hover:text-lavender-200 text-nav-normal"><?= $title; ?></a>
+                <div class="absolute w-[500px] grid grid-cols-2 opacity-0 invisible secondLevelNav transition-all duration-300">
+                  <div class="flex flex-col p-sp-8 bg-darker-blue-hover">
+                    <?php if (have_rows('secondary_menu', 'option')) :
+                      while (have_rows('secondary_menu', 'option')) : the_row(); ?>
+                        <?php
+                        $secondaryLink = get_sub_field('secondary_menu_item');
+                        $url = $secondaryLink['url'];
+                        if ($url === '#') {
+                          $url = '';
+                        }
+                        $title = $secondaryLink['title'];
+                        $target = $secondaryLink['target'];
+                        ?>
+                        <a href="<?= $url; ?>" target="<?= $target; ?>" class="text-white no-underline font-heading text-nav-normal hover:text-lavender-200 mb-sp-6"><?= $title; ?></a>
+                    <?php endwhile;
+                    endif; ?>
+                  </div>
+                  <div class="flex flex-col p-sp-8 bg-[#131632]">
+                    <?php if (have_rows('tertiary_menu', 'option')) :
+                      while (have_rows('tertiary_menu', 'option')) : the_row(); ?>
+                        <?php
+                        $topLink = get_sub_field('tertiary_menu_item');
+                        $url = $topLink['url'];
+                        if ($url === '#') {
+                          $url = '';
+                        }
+                        $title = $topLink['title'];
+                        $target = $topLink['target'];
+                        ?>
+                        <a href="<?= $url; ?>" target="<?= $target; ?>" class="no-underline font-heading text-nav-small mb-sp-3 <?= $url === '' ? 'text-lavender-200' : 'text-white hover:text-lavender-200'; ?>"><?= $title; ?></a>
+                    <?php endwhile;
+                    endif; ?>
+                  </div>
                 </div>
               </div>
-              <div class="flex flex-col p-sp-8 bg-[#131632]">
-                <span class="text-white">How it Works</span>
-                <span class="text-white">How it Works</span>
-                <span class="text-white">How it Works</span>
-                <span class="text-white">How it Works</span>
-                <span class="text-white">How it Works</span>
-                <span class="text-white">How it Works</span>
-                <span class="text-white">How it Works</span>
-                <span class="text-white">How it Works</span>
-                <span class="text-white">How it Works</span>
-                <span class="text-white">How it Works</span>
-                <span class="text-white">How it Works</span>
-                <span class="text-white">How it Works</span>
-                <span class="text-white">How it Works</span>
-              </div>
-            </div>
-          </div>
-          <div class="relative topLevelNavItem">
-            <a href="#" class="block text-white px-sp-4 py-sp-4">Our Program</a>
-            <div class="absolute w-[525px] grid grid-cols-2 opacity-0 invisible secondLevelNav">
-              <div class="flex flex-col p-sp-8 bg-darker-blue-hover">
-                <div>
-                  <span class="text-white">Our Program</span>
-                  <p class="text-white">Charlie Health’s virtual IOP is a personalized combination of supported groups, family therapy, and individual therapy.</p>
-                </div>
-                <div class="mt-auto">
-                  <a href="#" class="ch-button button-tertiary">Learn More</a>
-                </div>
-              </div>
-              <div class="flex flex-col p-sp-8 bg-[#131632]">
-                <span class="text-white">How it Works</span>
-                <span class="text-white">How it Works</span>
-                <span class="text-white">How it Works</span>
-                <span class="text-white">How it Works</span>
-                <span class="text-white">How it Works</span>
-                <span class="text-white">How it Works</span>
-                <span class="text-white">How it Works</span>
-                <span class="text-white">How it Works</span>
-                <span class="text-white">How it Works</span>
-                <span class="text-white">How it Works</span>
-                <span class="text-white">How it Works</span>
-                <span class="text-white">How it Works</span>
-                <span class="text-white">How it Works</span>
-              </div>
-            </div>
-          </div>
+          <?php endwhile;
+          endif; ?>
           <div class="flex ml-auto content gap-x-sp-2">
             <a href="https://app.charliehealth.com/" target="_blank" class="ch-button button-tertiary inverted">Client Login</a>
             <a href="<?= get_field('cta', 'option')['url']; ?>" class="ch-button button-tertiary"><?= get_field('cta', 'option')['title']; ?></a>

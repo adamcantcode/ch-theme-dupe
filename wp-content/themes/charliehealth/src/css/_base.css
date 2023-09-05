@@ -175,7 +175,12 @@
         color: #ffffff;
       }
     }
-    &.text-nav-topLevel {
+    &.text-nav-normal {
+      &:hover {
+        @apply text-lavender-200
+      }
+    }
+    &.text-nav-small {
       &:hover {
         @apply text-lavender-200
       }
