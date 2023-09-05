@@ -199,8 +199,16 @@ module.exports = {
             fontWeight: '400',
           },
         ],
-        'nav-topLevel': [
+        'nav-normal': [
           '0.875rem',
+          {
+            // lineHeight: 'auto',
+            letterSpacing: '0',
+            fontWeight: '400',
+          },
+        ],
+        'nav-small': [
+          '0.75rem',
           {
             // lineHeight: 'auto',
             letterSpacing: '0',
