@@ -188,9 +188,9 @@
                         <a href="<?= $url; ?>" target="<?= $target; ?>" class="text-white no-underline font-heading text-nav-normal hover:text-lavender-200 mb-sp-6"><?= $title; ?></a>
                       <?php endwhile; ?>
                     </div>
-                    <div class="flex flex-col p-sp-8 bg-[#131632]">
-                      <?php if (have_rows('tertiary_menu', 'option')) :
-                        while (have_rows('tertiary_menu', 'option')) : the_row(); ?>
+                    <?php if (have_rows('tertiary_menu', 'option')) : ?>
+                      <div class="flex flex-col p-sp-8 bg-[#131632]">
+                        <?php while (have_rows('tertiary_menu', 'option')) : the_row(); ?>
                           <?php
                           $topLink = get_sub_field('tertiary_menu_item');
                           $url = $topLink['url'];
@@ -200,10 +200,10 @@
                           $title = $topLink['title'];
                           $target = $topLink['target'];
                           ?>
-                          <a href="<?= $url; ?>" target="<?= $target; ?>" class="no-underline font-heading text-nav-small mb-sp-3 <?= $url === '' ? 'text-lavender-200' : 'text-white hover:text-lavender-200'; ?>"><?= $title; ?></a>
-                      <?php endwhile;
-                      endif; ?>
-                    </div>
+                          <a href="<?= $url; ?>" target="<?= $target; ?>" class="no-underline font-heading text-nav-small mb-sp-3 last:mb-sp-6 <?= $url === '' ? 'text-lavender-200' : 'text-white hover:text-lavender-200'; ?>"><?= $title; ?></a>
+                        <?php endwhile; ?>
+                      </div>
+                    <?php endif; ?>
                   </div>
                 <?php endif; ?>
               </div>

@@ -4017,6 +4017,10 @@ a.providers:hover {
   margin-bottom: 0px;
 }
 
+.last\:mb-sp-6:last-child{
+  margin-bottom: 1.5rem;
+}
+
 .last\:border-0:last-child{
   border-width: 0px;
 }
