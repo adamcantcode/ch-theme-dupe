@@ -53,6 +53,9 @@ module.exports = {
       lavender: {
         200: '#E7D3FF',
       },
+      secondary: {
+        soft: '#1A1F45',
+      },
       // 'light-teal': '#C8FFFF',
       // 'med-bright-teal': '#3EB7B5',
       // 'med-teal': '#39919D',

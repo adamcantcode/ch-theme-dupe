@@ -152,7 +152,7 @@
   <?php else : ?>
     <header class="fixed z-50 w-screen bg-darker-blue <?= is_user_logged_in() ? 'lg:top-[32px] top-[46px]' : 'top-0'; ?>">
       <nav class="section-horizontal">
-        <div class="container flex items-center">
+        <div class="container items-center lg:flex noshow">
           <div class="mr-sp-6">
             <a href="<?= site_url(); ?>">
               <?php include('resources/images/logos/charlie-health_shield-title.php'); ?>
@@ -211,6 +211,29 @@
           <div class="flex ml-auto content gap-x-sp-2">
             <a href="https://app.charliehealth.com/" target="_blank" class="ch-button button-tertiary inverted">Client Login</a>
             <a href="<?= get_field('cta', 'option')['url']; ?>" class="ch-button button-tertiary"><?= get_field('cta', 'option')['title']; ?></a>
+          </div>
+        </div>
+        <div class="container flex justify-between lg:noshow py-sp-5">
+          <div>
+            <a href="<?= site_url(); ?>">
+              <?php include('resources/images/logos/charlie-health_shield-title.php'); ?>
+            </a>
+          </div>
+          <div class="flex flex-col justify-between w-sp-8">
+            <div class="w-full h-[1.5px] bg-white"></div>
+            <div class="w-full h-[1.5px] bg-white"></div>
+            <div class="w-full h-[1.5px] bg-white"></div>
+          </div>
+        </div>
+        <div class="bg-secondary-soft">
+          <div class="container panel">
+            <div>
+              <a href="#">Our Prgram</a>
+              <div class="relative">
+                <div class="bg-white w-sp-4 h-[1.5px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                <div class="bg-white w-sp-4 h-[1.5px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-90"></div>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
