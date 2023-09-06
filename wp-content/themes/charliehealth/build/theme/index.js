@@ -1334,6 +1334,18 @@ function navigationMenu() {
   const closePanel = () => {
     panel.classList.add('opacity-0', 'pointer-events-none', 'invisible');
   };
+  const dropdownItems = document.querySelectorAll('.dropdown-item-js');
+  dropdownItems.forEach(item => {
+    const accordionContent = item.nextElementSibling;
+    console.log(accordionContent);
+    item.addEventListener('click', () => {
+      if (accordionContent.style.maxHeight) {
+        accordionContent.style.maxHeight = null;
+      } else {
+        accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+      }
+    });
+  });
 }
 
 /***/ }),
