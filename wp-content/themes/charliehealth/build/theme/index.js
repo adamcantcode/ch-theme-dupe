@@ -1337,12 +1337,13 @@ function navigationMenu() {
   const dropdownItems = document.querySelectorAll('.dropdown-item-js');
   dropdownItems.forEach(item => {
     const accordionContent = item.nextElementSibling;
-    console.log(accordionContent);
     item.addEventListener('click', () => {
       if (accordionContent.style.maxHeight) {
         accordionContent.style.maxHeight = null;
+        item.querySelector('.open-close-js').classList.remove('rotate-45');
       } else {
         accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+        item.querySelector('.open-close-js').classList.add('rotate-45');
       }
     });
   });

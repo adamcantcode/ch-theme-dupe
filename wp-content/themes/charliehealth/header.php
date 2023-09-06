@@ -229,7 +229,7 @@
           <div class="">
             <div class="relative flex items-center justify-between w-full px-sp-5 dropdown-item-js">
               <a class="w-full leading-snug text-white no-underline py-sp-8 font-heading text-[1.25rem] dropdown-select-js">Our Program</a>
-              <div class="relative mr-2">
+              <div class="relative mr-2 transition-all duration-300 open-close-js">
                 <div class="bg-white w-sp-4 h-[1.5px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
                 <div class="bg-white w-sp-4 h-[1.5px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 origin-center rotate-90"></div>
               </div>
@@ -263,7 +263,7 @@
           <div class="">
             <div class="relative flex items-center justify-between w-full px-sp-5 dropdown-item-js">
               <a class="w-full leading-snug text-white no-underline py-sp-8 font-heading text-[1.25rem] dropdown-select-js">Our Program</a>
-              <div class="relative mr-2">
+              <div class="relative mr-2 transition-all duration-300 open-close-js">
                 <div class="bg-white w-sp-4 h-[1.5px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
                 <div class="bg-white w-sp-4 h-[1.5px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 origin-center rotate-90"></div>
               </div>
