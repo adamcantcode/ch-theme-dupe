@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // mobileNav();
   // animations();
   navigationMenu();
-  console.log('test');
   if (
     body.classList.contains('single-areas-of-care') ||
     body.classList.contains('single-treatment-modalities') ||

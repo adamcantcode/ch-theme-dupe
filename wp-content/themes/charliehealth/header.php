@@ -219,10 +219,10 @@
               <?php include('resources/images/logos/charlie-health_shield-title.php'); ?>
             </a>
           </div>
-          <div class="flex flex-col justify-between w-sp-8">
-            <div class="w-full h-[1.5px] bg-white"></div>
-            <div class="w-full h-[1.5px] bg-white"></div>
-            <div class="w-full h-[1.5px] bg-white"></div>
+          <div class="flex flex-col justify-between w-sp-8 mobile-menu-js">
+            <div class="w-full h-[1.5px] bg-white relative transition-all duration-300 delay-100 top-0 origin-center"></div>
+            <div class="w-full h-[1.5px] bg-white relative transition-all duration-500 origin-center"></div>
+            <div class="w-full h-[1.5px] bg-white relative transition-all duration-300 delay-100 top-0 origin-center"></div>
           </div>
         </div>
         <div class="bg-secondary-soft fixed panel h-[calc(100vh-60px)] w-full left-0 overflow-y-scroll">

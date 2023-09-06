@@ -1296,6 +1296,35 @@ function navigationMenu() {
       }
     });
   });
+  const mobileMenu = document.querySelector('.mobile-menu-js');
+  const mobileMenuX = Array.from(mobileMenu.children);
+  mobileMenu.addEventListener('click', () => {
+    if (!mobileMenu.classList.contains('open')) {
+      mobileMenu.classList.add('open');
+      openAnimation();
+    } else {
+      mobileMenu.classList.remove('open');
+      closeAnimation();
+    }
+  });
+  const openAnimation = () => {
+    mobileMenuX[0].classList.add('top-1/2', '-translate-y-1/2');
+    mobileMenuX[1].classList.add('scale-0');
+    mobileMenuX[2].classList.add('-top-1/2', '-translate-y-1/2');
+    setTimeout(() => {
+      mobileMenuX[0].classList.add('rotate-45');
+      mobileMenuX[2].classList.add('-rotate-45');
+    }, 350);
+  };
+  const closeAnimation = () => {
+    mobileMenuX[0].classList.remove('top-1/2', '-translate-y-1/2', 'rotate-45');
+    mobileMenuX[1].classList.remove('scale-0', 'origin-center');
+    mobileMenuX[2].classList.remove('-top-1/2', '-translate-y-1/2', '-rotate-45');
+    setTimeout(() => {
+      mobileMenuX[0].classList.remove('rotate-45');
+      mobileMenuX[2].classList.remove('-rotate-45');
+    }, 350);
+  };
 }
 
 /***/ }),
@@ -23079,7 +23108,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // mobileNav();
   // animations();
   (0,_modules_navigation_menu__WEBPACK_IMPORTED_MODULE_18__["default"])();
-  console.log('test');
   if (body.classList.contains('single-areas-of-care') || body.classList.contains('single-treatment-modalities') || body.classList.contains('single-post')) {
     (0,_modules_back_to_top__WEBPACK_IMPORTED_MODULE_5__["default"])();
   }

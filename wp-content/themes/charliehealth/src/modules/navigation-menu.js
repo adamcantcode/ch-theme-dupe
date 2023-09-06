@@ -9,7 +9,7 @@ export default function navigationMenu() {
   topLevelNavItems.forEach((topLevelNavItem) => {
     topLevelNavItem.addEventListener('mouseover', (e) => {
       const secondLevelNav = topLevelNavItem.querySelector('.secondLevelNav');
-      if(secondLevelNav) {
+      if (secondLevelNav) {
         secondLevelNav.classList.remove('opacity-0');
         secondLevelNav.classList.remove('invisible');
         secondLevelNav.classList.remove('translate-x-1');
@@ -17,11 +17,46 @@ export default function navigationMenu() {
     });
     topLevelNavItem.addEventListener('mouseout', (e) => {
       const secondLevelNav = topLevelNavItem.querySelector('.secondLevelNav');
-      if(secondLevelNav) {
+      if (secondLevelNav) {
         secondLevelNav.classList.add('opacity-0');
         secondLevelNav.classList.add('invisible');
         secondLevelNav.classList.add('translate-x-1');
       }
     });
   });
+
+  const mobileMenu = document.querySelector('.mobile-menu-js');
+  const mobileMenuX = Array.from(mobileMenu.children);
+
+  mobileMenu.addEventListener('click', () => {
+    if (!mobileMenu.classList.contains('open')) {
+      mobileMenu.classList.add('open');
+      openAnimation();
+    } else {
+      mobileMenu.classList.remove('open');
+      closeAnimation();
+    }
+  });
+  const openAnimation = () => {
+    mobileMenuX[0].classList.add('top-1/2', '-translate-y-1/2');
+    mobileMenuX[1].classList.add('scale-0');
+    mobileMenuX[2].classList.add('-top-1/2', '-translate-y-1/2');
+    setTimeout(() => {
+      mobileMenuX[0].classList.add('rotate-45');
+      mobileMenuX[2].classList.add('-rotate-45');
+    }, 350);
+  };
+  const closeAnimation = () => {
+    mobileMenuX[0].classList.remove('top-1/2', '-translate-y-1/2', 'rotate-45');
+    mobileMenuX[1].classList.remove('scale-0', 'origin-center');
+    mobileMenuX[2].classList.remove(
+      '-top-1/2',
+      '-translate-y-1/2',
+      '-rotate-45'
+    );
+    setTimeout(() => {
+      mobileMenuX[0].classList.remove('rotate-45');
+      mobileMenuX[2].classList.remove('-rotate-45');
+    }, 350);
+  };
 }
