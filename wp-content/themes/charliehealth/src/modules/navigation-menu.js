@@ -12,6 +12,7 @@ export default function navigationMenu() {
       if(secondLevelNav) {
         secondLevelNav.classList.remove('opacity-0');
         secondLevelNav.classList.remove('invisible');
+        secondLevelNav.classList.remove('translate-x-1');
       }
     });
     topLevelNavItem.addEventListener('mouseout', (e) => {
@@ -19,6 +20,7 @@ export default function navigationMenu() {
       if(secondLevelNav) {
         secondLevelNav.classList.add('opacity-0');
         secondLevelNav.classList.add('invisible');
+        secondLevelNav.classList.add('translate-x-1');
       }
     });
   });

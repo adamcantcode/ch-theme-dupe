@@ -170,11 +170,10 @@
               $target = $topLink['target'];
               ?>
               <div class="relative topLevelNavItem">
-                <a href="<?= $url; ?>" target="<?= $target; ?>" class="block text-white no-underline px-sp-4 py-sp-4 ml-sp-4 font-heading hover:text-lavender-200 text-nav-normal"><?= $title; ?></a>
+                <a href="<?= $url; ?>" target="<?= $target; ?>" class="block text-white no-underline px-sp-4 py-sp-4 font-heading hover:text-lavender-200 text-nav-normal"><?= $title; ?></a>
                 <?php if (have_rows('secondary_menu', 'option')) : ?>
-                  <div class="absolute w-[500px] grid grid-cols-2 opacity-0 invisible secondLevelNav transition-all duration-300">
+                  <div class="absolute w-[500px] grid grid-cols-2 opacity-0 invisible secondLevelNav transition-all duration-300 translate-x-1 origin-right">
                     <div class="flex flex-col p-sp-8 bg-darker-blue-hover">
-
                       <?php while (have_rows('secondary_menu', 'option')) : the_row(); ?>
                         <?php
                         $secondaryLink = get_sub_field('secondary_menu_item');
@@ -200,7 +199,7 @@
                           $title = $topLink['title'];
                           $target = $topLink['target'];
                           ?>
-                          <a href="<?= $url; ?>" target="<?= $target; ?>" class="no-underline font-heading text-nav-small mb-sp-3 last:mb-sp-6 <?= $url === '' ? 'text-lavender-200' : 'text-white hover:text-lavender-200'; ?>"><?= $title; ?></a>
+                          <a href="<?= $url; ?>" target="<?= $target; ?>" class="no-underline font-heading text-nav-small mb-sp-3 <?= $url === '' ? 'text-lavender-200 mt-sp-3 first:mt-0' : 'text-white hover:text-lavender-200'; ?>"><?= $title; ?></a>
                         <?php endwhile; ?>
                       </div>
                     <?php endif; ?>
