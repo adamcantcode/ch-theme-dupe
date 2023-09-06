@@ -27,14 +27,17 @@ export default function navigationMenu() {
 
   const mobileMenu = document.querySelector('.mobile-menu-js');
   const mobileMenuX = Array.from(mobileMenu.children);
+  const panel = document.querySelector('.panel-js');
 
   mobileMenu.addEventListener('click', () => {
     if (!mobileMenu.classList.contains('open')) {
       mobileMenu.classList.add('open');
       openAnimation();
+      openPanel();
     } else {
       mobileMenu.classList.remove('open');
       closeAnimation();
+      closePanel();
     }
   });
   const openAnimation = () => {
@@ -58,5 +61,11 @@ export default function navigationMenu() {
       mobileMenuX[0].classList.remove('rotate-45');
       mobileMenuX[2].classList.remove('-rotate-45');
     }, 350);
+  };
+  const openPanel = () => { 
+    panel.classList.remove('opacity-0', 'pointer-events-none', 'invisible');
+  };
+  const closePanel = () => { 
+    panel.classList.add('opacity-0', 'pointer-events-none', 'invisible');
   };
 }

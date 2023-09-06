@@ -225,7 +225,7 @@
             <div class="w-full h-[1.5px] bg-white relative transition-all duration-300 delay-100 top-0 origin-center"></div>
           </div>
         </div>
-        <div class="bg-secondary-soft fixed panel h-[calc(100vh-60px)] w-full left-0 overflow-y-scroll">
+        <div class="bg-secondary-soft fixed panel-js h-[calc(100vh-60px)] w-full left-0 overflow-y-scroll opacity-0 invisible pointer-events-none transition-all duration-300">
           <div class="">
             <div class="relative flex items-center justify-between w-full px-sp-5">
               <a href="#" class="w-full leading-snug text-white no-underline py-sp-8 font-heading text-[1.5rem]">Our Program</a>
