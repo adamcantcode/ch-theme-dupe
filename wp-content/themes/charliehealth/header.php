@@ -225,14 +225,12 @@
             <div class="w-full h-[1.5px] bg-white"></div>
           </div>
         </div>
-        <div class="bg-secondary-soft">
-          <div class="container panel">
-            <div>
-              <a href="#">Our Prgram</a>
-              <div class="relative">
-                <div class="bg-white w-sp-4 h-[1.5px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
-                <div class="bg-white w-sp-4 h-[1.5px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-90"></div>
-              </div>
+        <div class="bg-secondary-soft fixed panel h-[calc(100vh-60px)] w-full left-0 px-sp-5">
+          <div class="flex items-center justify-between w-full">
+            <a href="#" class="leading-snug text-white no-underline py-sp-8 font-heading text-h4">Our Program</a>
+            <div class="relative">
+              <div class="bg-white w-sp-4 h-[1.5px]"></div>
+              <div class="bg-white w-sp-4 h-[1.5px] origin-center rotate-90"></div>
             </div>
           </div>
         </div>

@@ -1772,6 +1772,14 @@ a.nav-link:hover {
   height: 2rem;
 }
 
+.h-\[calc\(100vh-60\)\]{
+  height: calc(100vh - 60);
+}
+
+.h-\[calc\(100vh-60px\)\]{
+  height: calc(100vh - 60px);
+}
+
 .max-h-0{
   max-height: 0px;
 }
@@ -1873,6 +1881,10 @@ a.nav-link:hover {
   width: 0.75rem;
 }
 
+.w-sp-4{
+  width: 1rem;
+}
+
 .w-sp-5{
   width: 1.25rem;
 }
@@ -1883,10 +1895,6 @@ a.nav-link:hover {
 
 .w-sp-8{
   width: 2rem;
-}
-
-.w-sp-4{
-  width: 1rem;
 }
 
 .\!max-w-md{
@@ -1935,6 +1943,10 @@ a.nav-link:hover {
 
 .origin-right{
   transform-origin: right;
+}
+
+.origin-center{
+  transform-origin: center;
 }
 
 .-translate-x-1\/2{
@@ -2396,6 +2408,11 @@ a.nav-link:hover {
   background-color: rgb(166 152 255 / var(--tw-bg-opacity));
 }
 
+.bg-secondary-soft{
+  --tw-bg-opacity: 1;
+  background-color: rgb(26 31 69 / var(--tw-bg-opacity));
+}
+
 .bg-tag-gray{
   --tw-bg-opacity: 1;
   background-color: rgb(248 247 247 / var(--tw-bg-opacity));
@@ -2418,11 +2435,6 @@ a.nav-link:hover {
 .bg-young-adult{
   --tw-bg-opacity: 1;
   background-color: rgb(218 193 251 / var(--tw-bg-opacity));
-}
-
-.bg-secondary-soft{
-  --tw-bg-opacity: 1;
-  background-color: rgb(26 31 69 / var(--tw-bg-opacity));
 }
 
 .bg-\[linear-gradient\(\#fead80\2c \#e2deca_50\%\2c \#bdc6fc\)\]{
@@ -2557,6 +2569,11 @@ a.nav-link:hover {
 .py-sp-5{
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
+}
+
+.py-sp-8{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .\!pb-0{
