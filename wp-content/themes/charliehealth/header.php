@@ -225,12 +225,71 @@
             <div class="w-full h-[1.5px] bg-white"></div>
           </div>
         </div>
-        <div class="bg-secondary-soft fixed panel h-[calc(100vh-60px)] w-full left-0 px-sp-5">
-          <div class="flex items-center justify-between w-full">
-            <a href="#" class="leading-snug text-white no-underline py-sp-8 font-heading text-h4">Our Program</a>
-            <div class="relative">
-              <div class="bg-white w-sp-4 h-[1.5px]"></div>
-              <div class="bg-white w-sp-4 h-[1.5px] origin-center rotate-90"></div>
+        <div class="bg-secondary-soft fixed panel h-[calc(100vh-60px)] w-full left-0 overflow-y-scroll">
+          <div class="">
+            <div class="relative flex items-center justify-between w-full px-sp-5">
+              <a href="#" class="w-full leading-snug text-white no-underline py-sp-8 font-heading text-[1.5rem]">Our Program</a>
+              <div class="relative mr-2">
+                <div class="bg-white w-sp-4 h-[1.5px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                <div class="bg-white w-sp-4 h-[1.5px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 origin-center rotate-90"></div>
+              </div>
+            </div>
+            <div class="px-sp-5 bg-primary py-sp-4">
+              <div class="grid dropdown">
+                <a href="#" class="w-full leading-none text-white text-[1rem] no-underline py-sp-4 font-heading">Intensive Outpatient Program (IOP)</a>
+                <a href="#" class="w-full leading-none text-white text-[1rem] no-underline py-sp-4 font-heading">How It Works</a>
+                <a href="#" class="w-full leading-none text-white text-[1rem] no-underline py-sp-4 font-heading">How It Works</a>
+                <a href="#" class="w-full leading-none text-white text-[1rem] no-underline py-sp-4 font-heading">How It Works</a>
+                <a href="#" class="w-full leading-none text-white text-[1rem] no-underline py-sp-4 font-heading">How It Works</a>
+                <div class="grid grid-cols-2 gap-x-sp-4 tertiary mt-sp-12">
+                  <div class="grid">
+                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
+                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
+                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
+                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
+                  </div>
+                  <div class="grid">
+                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
+                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
+                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
+                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
+                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
+                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="relative flex items-center justify-between w-full px-sp-5">
+              <a href="#" class="w-full leading-snug text-white no-underline py-sp-8 font-heading text-[1.5rem]">Our Program</a>
+              <div class="relative mr-2">
+                <div class="bg-white w-sp-4 h-[1.5px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                <div class="bg-white w-sp-4 h-[1.5px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 origin-center rotate-90"></div>
+              </div>
+            </div>
+            <div class="px-sp-5 bg-primary py-sp-4">
+              <div class="grid dropdown">
+                <a href="#" class="w-full leading-none text-white text-[1rem] no-underline py-sp-4 font-heading">Intensive Outpatient Program (IOP)</a>
+                <a href="#" class="w-full leading-none text-white text-[1rem] no-underline py-sp-4 font-heading">How It Works</a>
+                <a href="#" class="w-full leading-none text-white text-[1rem] no-underline py-sp-4 font-heading">How It Works</a>
+                <a href="#" class="w-full leading-none text-white text-[1rem] no-underline py-sp-4 font-heading">How It Works</a>
+                <a href="#" class="w-full leading-none text-white text-[1rem] no-underline py-sp-4 font-heading">How It Works</a>
+                <div class="grid grid-cols-2 gap-x-sp-4 tertiary mt-sp-12">
+                  <div class="grid">
+                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
+                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
+                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
+                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
+                  </div>
+                  <div class="grid">
+                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
+                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
+                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
+                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
+                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
+                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

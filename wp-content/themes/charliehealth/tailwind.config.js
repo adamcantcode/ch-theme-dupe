@@ -56,6 +56,9 @@ module.exports = {
       secondary: {
         soft: '#1A1F45',
       },
+      primary: {
+        DEFAULT: '#161A3D',
+      },
       // 'light-teal': '#C8FFFF',
       // 'med-bright-teal': '#3EB7B5',
       // 'med-teal': '#39919D',

@@ -1600,6 +1600,10 @@ a.nav-link:hover {
   margin-left: 2rem;
 }
 
+.mr-2{
+  margin-right: 0.5rem;
+}
+
 .mr-sp-1{
   margin-right: 0.25rem;
 }
@@ -1736,6 +1740,10 @@ a.nav-link:hover {
   height: 5px;
 }
 
+.h-\[calc\(100vh-60px\)\]{
+  height: calc(100vh - 60px);
+}
+
 .h-\[calc\(100vh-68px\)\]{
   height: calc(100vh - 68px);
 }
@@ -1770,14 +1778,6 @@ a.nav-link:hover {
 
 .h-sp-8{
   height: 2rem;
-}
-
-.h-\[calc\(100vh-60\)\]{
-  height: calc(100vh - 60);
-}
-
-.h-\[calc\(100vh-60px\)\]{
-  height: calc(100vh - 60px);
 }
 
 .max-h-0{
@@ -1941,12 +1941,12 @@ a.nav-link:hover {
   flex-grow: 1;
 }
 
-.origin-right{
-  transform-origin: right;
-}
-
 .origin-center{
   transform-origin: center;
+}
+
+.origin-right{
+  transform-origin: right;
 }
 
 .-translate-x-1\/2{
@@ -2403,6 +2403,11 @@ a.nav-link:hover {
   background-color: rgb(253 191 124 / var(--tw-bg-opacity));
 }
 
+.bg-primary{
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 26 61 / var(--tw-bg-opacity));
+}
+
 .bg-purple-gradient-end{
   --tw-bg-opacity: 1;
   background-color: rgb(166 152 255 / var(--tw-bg-opacity));
@@ -2616,12 +2621,20 @@ a.nav-link:hover {
   font-family: "ABC Arizona", serif;
 }
 
+.text-\[1\.5rem\]{
+  font-size: 1.5rem;
+}
+
 .text-\[10px\]{
   font-size: 10px;
 }
 
 .text-\[12px\]{
   font-size: 12px;
+}
+
+.text-\[1rem\]{
+  font-size: 1rem;
 }
 
 .text-\[2\.5rem\]{
@@ -2731,6 +2744,10 @@ a.nav-link:hover {
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-\[\.875rem\]{
+  font-size: .875rem;
 }
 
 .font-bold{
