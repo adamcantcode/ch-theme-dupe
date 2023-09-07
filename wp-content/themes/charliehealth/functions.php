@@ -635,11 +635,40 @@ include_once('helpers/helper-functions.php');
 add_filter('should_load_separate_core_block_assets', '__return_true');
 
 
-// TEMP COLORS
+/* TEMP COLORS
 // $test = 'bg-dark-teal'
 // $test = 'bg-darker-blue'
 // $test = 'mt-0'
 // $test = 'bg-off-white'
+// $test = 'bg-off-white'
+// mobileMenuX[0].classList.add('top-1/2', '-translate-y-1/2');
+//     mobileMenuX[1].classList.add('scale-0');
+//     mobileMenuX[2].classList.add('-top-1/2', '-translate-y-1/2');
+//     setTimeout(() => {
+//       mobileMenuX[0].classList.add('rotate-45');
+//       mobileMenuX[2].classList.add('-rotate-45');
+//     }, 350);
+//   };
+//   const closeAnimation = () => {
+//     mobileMenuX[0].classList.remove('top-1/2', '-translate-y-1/2', 'rotate-45');
+//     mobileMenuX[1].classList.remove('scale-0', 'origin-center');
+//     mobileMenuX[2].classList.remove(
+//       '-top-1/2',
+//       '-translate-y-1/2',
+//       '-rotate-45'
+//     );
+//     setTimeout(() => {
+//       mobileMenuX[0].classList.remove('rotate-45');
+//       mobileMenuX[2].classList.remove('-rotate-45');
+//     }, 350);
+//   };
+//   const openPanel = () => {
+//     panel.classList.remove('opacity-0', 'pointer-events-none', 'invisible');
+//   };
+//   const closePanel = () => {
+//     panel.classList.add('opacity-0', 'pointer-events-none', 'invisible');
+//   };
+*/
 
 // Allow editor access to privacy policy page
 add_action('map_meta_cap', 'custom_manage_privacy_options', 1, 4);
