@@ -1506,6 +1506,10 @@ a.nav-link:hover {
   z-index: 6;
 }
 
+.z-\[100\]{
+  z-index: 100;
+}
+
 .order-1{
   order: 1;
 }

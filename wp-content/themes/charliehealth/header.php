@@ -150,7 +150,7 @@
       </nav>
     </header>
   <?php else : ?>
-    <header class="fixed z-50 w-screen bg-darker-blue <?= is_user_logged_in() ? 'lg:top-[32px] top-[46px]' : 'top-0'; ?>">
+    <header class="fixed z-[100] w-screen bg-darker-blue <?= is_user_logged_in() ? 'lg:top-[32px] top-[46px]' : 'top-0'; ?>">
       <nav class="section-horizontal">
         <div class="container items-center lg:flex noshow">
           <div class="mr-sp-6">
