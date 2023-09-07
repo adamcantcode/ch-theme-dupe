@@ -226,74 +226,64 @@
           </div>
         </div>
         <div class="bg-secondary-soft fixed panel-js h-[calc(100vh-60px)] w-full left-0 overflow-y-scroll opacity-0 invisible pointer-events-none transition-all duration-300 flex flex-col">
-          <div class="">
-            <div class="relative flex items-center justify-between w-full px-sp-5 dropdown-item-js">
-              <a class="w-full leading-snug text-white no-underline py-sp-8 font-heading text-[1.25rem] dropdown-select-js">Our Program</a>
-              <div class="relative mr-2 transition-all duration-300 open-close-js">
-                <div class="bg-white w-sp-4 h-[1.5px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
-                <div class="bg-white w-sp-4 h-[1.5px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 origin-center rotate-90"></div>
-              </div>
-            </div>
-            <div class="overflow-hidden transition-all duration-500 px-sp-5 bg-primary max-h-0">
-              <div class="grid dropdown py-sp-4 ">
-                <a href="#" class="w-full leading-none text-white text-[1rem] no-underline py-sp-4 font-heading">Intensive Outpatient Program (IOP)</a>
-                <a href="#" class="w-full leading-none text-white text-[1rem] no-underline py-sp-4 font-heading">How It Works</a>
-                <a href="#" class="w-full leading-none text-white text-[1rem] no-underline py-sp-4 font-heading">How It Works</a>
-                <a href="#" class="w-full leading-none text-white text-[1rem] no-underline py-sp-4 font-heading">How It Works</a>
-                <a href="#" class="w-full leading-none text-white text-[1rem] no-underline py-sp-4 font-heading">How It Works</a>
-                <div class="grid grid-cols-2 gap-x-sp-4 tertiary mt-sp-12">
-                  <div class="grid">
-                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
-                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
-                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
-                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
-                  </div>
-                  <div class="grid">
-                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
-                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
-                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
-                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
-                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
-                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
+          <?php if (have_rows('navigation_item_new', 'option')) :
+            while (have_rows('navigation_item_new', 'option')) : the_row(); ?>
+              <?php
+              $topLink = get_sub_field('top_level_item');
+              $url = $topLink['url'];
+              if ($url === '#') {
+                $url = '';
+              }
+              $title = $topLink['title'];
+              $target = $topLink['target'];
+              ?>
+              <div class="">
+                <div class="relative flex items-center justify-between w-full px-sp-5 dropdown-item-js">
+                  <a class="w-full leading-snug text-white no-underline py-sp-8 font-heading text-[1.25rem] dropdown-select-js"><?= $title; ?></a>
+                  <div class="relative mr-2 transition-all duration-300 open-close-js">
+                    <div class="bg-white w-sp-4 h-[1.5px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                    <div class="bg-white w-sp-4 h-[1.5px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 origin-center rotate-90"></div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="">
-            <div class="relative flex items-center justify-between w-full px-sp-5 dropdown-item-js">
-              <a class="w-full leading-snug text-white no-underline py-sp-8 font-heading text-[1.25rem] dropdown-select-js">Our Program</a>
-              <div class="relative mr-2 transition-all duration-300 open-close-js">
-                <div class="bg-white w-sp-4 h-[1.5px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
-                <div class="bg-white w-sp-4 h-[1.5px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 origin-center rotate-90"></div>
-              </div>
-            </div>
-            <div class="overflow-hidden transition-all duration-500 px-sp-5 bg-primary max-h-0">
-              <div class="grid dropdown py-sp-4 ">
-                <a href="#" class="w-full leading-none text-white text-[1rem] no-underline py-sp-4 font-heading">Intensive Outpatient Program (IOP)</a>
-                <a href="#" class="w-full leading-none text-white text-[1rem] no-underline py-sp-4 font-heading">How It Works</a>
-                <a href="#" class="w-full leading-none text-white text-[1rem] no-underline py-sp-4 font-heading">How It Works</a>
-                <a href="#" class="w-full leading-none text-white text-[1rem] no-underline py-sp-4 font-heading">How It Works</a>
-                <a href="#" class="w-full leading-none text-white text-[1rem] no-underline py-sp-4 font-heading">How It Works</a>
-                <div class="grid grid-cols-2 gap-x-sp-4 tertiary mt-sp-12">
-                  <div class="flex flex-col">
-                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
-                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
-                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
-                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
+                <?php if (have_rows('secondary_menu', 'option')) : ?>
+                  <div class="overflow-hidden transition-all duration-500 px-sp-5 bg-primary max-h-0">
+                    <div class="grid dropdown py-sp-4 ">
+                      <?php while (have_rows('secondary_menu', 'option')) : the_row(); ?>
+                        <?php
+                        $secondaryLink = get_sub_field('secondary_menu_item');
+                        $url = $secondaryLink['url'];
+                        if ($url === '#') {
+                          $url = '';
+                        }
+                        $title = $secondaryLink['title'];
+                        $target = $secondaryLink['target'];
+                        ?>
+                        <a href="<?= $url; ?>" target="<?= $target; ?>" class="w-full leading-none text-white text-[1rem] no-underline py-sp-4 font-heading"><?= $title; ?></a>
+                      <?php endwhile; ?>
+                      <?php if (have_rows('tertiary_menu', 'option')) : ?>
+                        <div class="grid grid-cols-2 gap-x-sp-4 tertiary mt-sp-12">
+                          <div class="flex flex-col">
+                            <?php while (have_rows('tertiary_menu', 'option')) : the_row(); ?>
+                              <?php
+                              $topLink = get_sub_field('tertiary_menu_item');
+                              $url = $topLink['url'];
+                              if ($url === '#') {
+                                $url = '';
+                              }
+                              $title = $topLink['title'];
+                              $target = $topLink['target'];
+                              ?>
+                              <a href="<?= $url; ?>" target="<?= $target; ?>" class="w-full leading-none text-[.875rem] no-underline py-sp-4 font-heading <?= empty($url) ? 'text-lavender-200' : 'text-white'; ?> "><?= $title; ?></a>
+                            <?php endwhile; ?>
+                          </div>
+                        </div>
+                      <?php endif; ?>
+                    </div>
                   </div>
-                  <div class="flex flex-col">
-                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
-                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
-                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
-                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
-                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
-                    <a href="#" class="w-full leading-none text-white text-[.875rem] no-underline py-sp-4 font-heading">How It Works</a>
-                  </div>
-                </div>
+                <?php endif; ?>
               </div>
-            </div>
-          </div>
+          <?php endwhile;
+          endif; ?>
           <div class="mt-auto">
             <div class="flex justify-center py-8 gap-x-sp-4 px-sp-5">
               <a href="https://app.charliehealth.com/" target="_blank" class="ch-button button-tertiary-lavender inverted !text-[1rem]">Client Login</a>
