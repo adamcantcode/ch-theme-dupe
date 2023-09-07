@@ -165,12 +165,14 @@
               $url = $topLink['url'];
               if ($url === '#') {
                 $url = '';
+              } else {
+                $url = "href='$url'";
               }
               $title = $topLink['title'];
               $target = $topLink['target'];
               ?>
               <div class="relative topLevelNavItem">
-                <a href="<?= $url; ?>" target="<?= $target; ?>" class="block text-white no-underline px-sp-4 py-sp-4 font-heading hover:text-lavender-200 text-nav-normal"><?= $title; ?></a>
+                <a <?= $url; ?> target="<?= $target; ?>" class="block text-white no-underline px-sp-4 py-sp-4 font-heading hover:text-lavender-200 text-nav-normal"><?= $title; ?></a>
                 <?php if (have_rows('secondary_menu', 'option')) : ?>
                   <div class="absolute w-[500px] grid grid-cols-2 opacity-0 invisible secondLevelNav transition-all duration-300 translate-x-1 origin-right">
                     <div class="flex flex-col p-sp-8 bg-darker-blue-hover">
@@ -180,11 +182,13 @@
                         $url = $secondaryLink['url'];
                         if ($url === '#') {
                           $url = '';
+                        } else {
+                          $url = "href='$url'";
                         }
                         $title = $secondaryLink['title'];
                         $target = $secondaryLink['target'];
                         ?>
-                        <a href="<?= $url; ?>" target="<?= $target; ?>" class="text-white no-underline font-heading text-nav-normal hover:text-lavender-200 mb-sp-6"><?= $title; ?></a>
+                        <a <?= $url; ?> target="<?= $target; ?>" class="text-white no-underline font-heading text-nav-normal hover:text-lavender-200 mb-sp-6"><?= $title; ?></a>
                       <?php endwhile; ?>
                     </div>
                     <?php if (have_rows('tertiary_menu', 'option')) : ?>
@@ -195,11 +199,13 @@
                           $url = $topLink['url'];
                           if ($url === '#') {
                             $url = '';
+                          } else {
+                            $url = "href='$url'";
                           }
                           $title = $topLink['title'];
                           $target = $topLink['target'];
                           ?>
-                          <a href="<?= $url; ?>" target="<?= $target; ?>" class="no-underline font-heading text-nav-small mb-sp-3 <?= $url === '' ? 'text-lavender-200 mt-sp-3 first:mt-0' : 'text-white hover:text-lavender-200'; ?>"><?= $title; ?></a>
+                          <a <?= $url; ?> target="<?= $target; ?>" class="no-underline font-heading text-nav-small mb-sp-3 <?= $url === '' ? 'text-lavender-200 mt-sp-3 first:mt-0' : 'text-white hover:text-lavender-200'; ?>"><?= $title; ?></a>
                         <?php endwhile; ?>
                       </div>
                     <?php endif; ?>
@@ -233,17 +239,27 @@
               $url = $topLink['url'];
               if ($url === '#') {
                 $url = '';
+              } else {
+                $url = "href='$url'";
               }
               $title = $topLink['title'];
               $target = $topLink['target'];
               ?>
               <div class="">
                 <div class="relative flex items-center justify-between w-full px-sp-5 dropdown-item-js">
-                  <a class="w-full leading-snug text-white no-underline py-sp-8 font-heading text-[1.25rem] dropdown-select-js"><?= $title; ?></a>
-                  <div class="relative mr-2 transition-all duration-300 open-close-js">
-                    <div class="bg-white w-sp-4 h-[1.5px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
-                    <div class="bg-white w-sp-4 h-[1.5px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 origin-center rotate-90"></div>
-                  </div>
+                  <a <?= $url; ?> target="<?= $target; ?>" class="w-full leading-snug text-white no-underline py-sp-8 font-heading text-[1.25rem] dropdown-select-js"><?= $title; ?></a>
+                  <?php if (empty($url)) : ?>
+                    <div class="relative mr-2 transition-all duration-300 open-close-js">
+                      <div class="bg-white w-sp-4 h-[1.5px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                      <div class="bg-white w-sp-4 h-[1.5px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 origin-center rotate-90"></div>
+                    </div>
+                  <?php else : ?>
+                    <div class="relative">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" fill="none" viewBox="0 0 10 18">
+                        <path stroke="#fff" stroke-linejoin="round" stroke-width="1.5" d="m1 17 7.29289-7.29289c.39053-.39053.39053-1.02369 0-1.41422L1 .999999" />
+                      </svg>
+                    </div>
+                  <?php endif; ?>
                 </div>
                 <?php if (have_rows('secondary_menu', 'option')) : ?>
                   <div class="overflow-hidden transition-all duration-500 px-sp-5 bg-primary max-h-0">
@@ -254,11 +270,13 @@
                         $url = $secondaryLink['url'];
                         if ($url === '#') {
                           $url = '';
+                        } else {
+                          $url = "href='$url'";
                         }
                         $title = $secondaryLink['title'];
                         $target = $secondaryLink['target'];
                         ?>
-                        <a href="<?= $url; ?>" target="<?= $target; ?>" class="w-full leading-none text-white text-[1rem] no-underline py-sp-4 font-heading"><?= $title; ?></a>
+                        <a <?= $url; ?> target="<?= $target; ?>" class="w-full leading-none text-white text-[1rem] no-underline py-sp-4 font-heading"><?= $title; ?></a>
                       <?php endwhile; ?>
                       <?php if (have_rows('tertiary_menu', 'option')) : ?>
                         <div class="grid grid-cols-2 gap-x-sp-4 tertiary mt-sp-12">
@@ -269,11 +287,13 @@
                               $url = $topLink['url'];
                               if ($url === '#') {
                                 $url = '';
+                              } else {
+                                $url = "href='$url'";
                               }
                               $title = $topLink['title'];
                               $target = $topLink['target'];
                               ?>
-                              <a href="<?= $url; ?>" target="<?= $target; ?>" class="w-full leading-none text-[.875rem] no-underline py-sp-4 font-heading <?= empty($url) ? 'text-lavender-200' : 'text-white'; ?> "><?= $title; ?></a>
+                              <a <?= $url; ?> target="<?= $target; ?>" class="w-full leading-none text-[.875rem] no-underline py-sp-4 font-heading <?= empty($url) ? 'text-lavender-200' : 'text-white'; ?> "><?= $title; ?></a>
                             <?php endwhile; ?>
                           </div>
                         </div>
