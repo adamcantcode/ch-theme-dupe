@@ -280,22 +280,38 @@
                       <?php endwhile; ?>
                       <?php if (have_rows('tertiary_menu', 'option')) : ?>
                         <div class="grid grid-cols-2 gap-x-sp-4 tertiary mt-sp-12">
-                          <div class="flex flex-col">
-                            <?php while (have_rows('tertiary_menu', 'option')) : the_row(); ?>
-                              <?php
-                              $topLink = get_sub_field('tertiary_menu_item');
-                              $url = $topLink['url'];
-                              if ($url === '#') {
-                                $url = '';
-                              } else {
-                                $url = "href='$url'";
+                          <?php
+                          $isDivOpen = false; // Variable to track if the div is open
+                          while (have_rows('tertiary_menu', 'option')) : the_row();
+                            $topLink = get_sub_field('tertiary_menu_item');
+                            $url = $topLink['url'];
+                            if ($url === '#') {
+                              $url = '';
+                            } else {
+                              $url = "href='$url'";
+                            }
+                            $title = $topLink['title'];
+                            $target = $topLink['target'];
+
+                            // Check if the URL is empty
+                            if (empty($url)) {
+                              if ($isDivOpen) {
+                                echo '</div>'; // Close the div if it's open
+                                $isDivOpen = false; // Reset the flag
                               }
-                              $title = $topLink['title'];
-                              $target = $topLink['target'];
-                              ?>
-                              <a <?= $url; ?> target="<?= $target; ?>" class="w-full leading-none text-[.875rem] no-underline py-sp-4 font-heading <?= empty($url) ? 'text-lavender-200' : 'text-white'; ?> "><?= $title; ?></a>
-                            <?php endwhile; ?>
-                          </div>
+                              echo '<div class="flex flex-col">'; // Open a new div
+                              $isDivOpen = true; // Set the flag to true
+                            }
+                          ?>
+                            <a <?= $url; ?> target="<?= $target; ?>" class="w-full leading-none text-[.875rem] no-underline py-sp-4 font-heading <?= empty($url) ? 'text-lavender-200' : 'text-white'; ?> "><?= $title; ?></a>
+                          <?php endwhile; ?>
+
+                          <?php
+                          if ($isDivOpen) {
+                            echo '</div>'; // Close the div if it's still open
+                          }
+                          ?>
+
                         </div>
                       <?php endif; ?>
                     </div>
