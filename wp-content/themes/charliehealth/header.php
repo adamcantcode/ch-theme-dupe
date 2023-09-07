@@ -209,8 +209,8 @@
           <?php endwhile;
           endif; ?>
           <div class="flex ml-auto content gap-x-sp-2">
-            <a href="https://app.charliehealth.com/" target="_blank" class="ch-button button-tertiary inverted">Client Login</a>
-            <a href="<?= get_field('cta', 'option')['url']; ?>" class="ch-button button-tertiary"><?= get_field('cta', 'option')['title']; ?></a>
+            <a href="https://app.charliehealth.com/" target="_blank" class="ch-button button-tertiary-lavender inverted">Client Login</a>
+            <a href="<?= get_field('cta', 'option')['url']; ?>" class="ch-button button-tertiary-lavender"><?= get_field('cta', 'option')['title']; ?></a>
           </div>
         </div>
         <div class="container flex justify-between lg:noshow py-sp-5">

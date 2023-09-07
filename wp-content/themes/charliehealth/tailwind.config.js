@@ -52,6 +52,7 @@ module.exports = {
       parent: '#FDBF7C',
       lavender: {
         200: '#E7D3FF',
+        300: '#DAC1FB',
       },
       secondary: {
         soft: '#1A1F45',
