@@ -76,10 +76,10 @@ export default function navigationMenu() {
     item.addEventListener('click', () => {
       if (accordionContent.style.maxHeight) {
         accordionContent.style.maxHeight = null;
-        item.querySelector('.open-close-js').classList.remove('rotate-45');
+        item.querySelector('.rotate-90').classList.remove('scale-0');
       } else {
         accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
-        item.querySelector('.open-close-js').classList.add('rotate-45');
+        item.querySelector('.rotate-90').classList.add('scale-0');
       }
     });
   });

@@ -2948,6 +2948,10 @@ a.nav-link:hover {
   transition-delay: 100ms;
 }
 
+.delay-200{
+  transition-delay: 200ms;
+}
+
 .duration-1000{
   transition-duration: 1000ms;
 }
