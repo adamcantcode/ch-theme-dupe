@@ -60,6 +60,7 @@ module.exports = {
       primary: {
         DEFAULT: '#161A3D',
       },
+      salmon: '#F9E1D4',
       // 'light-teal': '#C8FFFF',
       // 'med-bright-teal': '#3EB7B5',
       // 'med-teal': '#39919D',
@@ -72,7 +73,9 @@ module.exports = {
       // 'orange-gradient-start': '#FFDEDA',
       // 'orange-gradient-end': '#FFA776',
       // 'bright-orange': '#FF9F81',
-      // orange: '#E07058',
+      orange: {
+        300: '#E07058',
+      },
       // 'med-blue': '#262D70',
       // 'lightest-blue': '#F5F6F8',
       // 'light-purple-gradient-start': '#F0EFFC',
