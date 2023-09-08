@@ -188,7 +188,7 @@
                         $title = $secondaryLink['title'];
                         $target = $secondaryLink['target'];
                         ?>
-                        <a <?= $url; ?> target="<?= $target; ?>" class="text-white no-underline font-heading text-nav-normal hover:text-lavender-200 mb-sp-6"><?= $title; ?></a>
+                        <a <?= $url; ?> target="<?= $target; ?>" class="text-white no-underline font-heading text-nav-normal hover:text-lavender-200 mb-sp-6 last:mb-0"><?= $title; ?></a>
                       <?php endwhile; ?>
                     </div>
                     <?php if (have_rows('tertiary_menu', 'option')) : ?>
@@ -205,7 +205,7 @@
                           $title = $topLink['title'];
                           $target = $topLink['target'];
                           ?>
-                          <a <?= $url; ?> target="<?= $target; ?>" class="no-underline font-heading text-nav-small mb-sp-3 <?= $url === '' ? 'text-lavender-200 mt-sp-3 first:mt-0' : 'text-white hover:text-lavender-200'; ?>"><?= $title; ?></a>
+                          <a <?= $url; ?> target="<?= $target; ?>" class="no-underline font-heading text-nav-small mb-sp-3 last:mb-0 <?= $url === '' ? 'text-lavender-200 mt-sp-3 first:mt-0' : 'text-white hover:text-lavender-200'; ?>"><?= $title; ?></a>
                         <?php endwhile; ?>
                       </div>
                     <?php endif; ?>
