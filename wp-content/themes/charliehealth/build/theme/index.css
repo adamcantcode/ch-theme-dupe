@@ -1775,6 +1775,10 @@ a.nav-link:hover {
   height: 200px;
 }
 
+.h-\[20px\]{
+  height: 20px;
+}
+
 .h-\[25px\]{
   height: 25px;
 }
@@ -1835,10 +1839,6 @@ a.nav-link:hover {
   height: 2rem;
 }
 
-.h-\[20px\]{
-  height: 20px;
-}
-
 .max-h-0{
   max-height: 0px;
 }
@@ -1883,6 +1883,10 @@ a.nav-link:hover {
   min-height: 100%;
 }
 
+.w-1\/2{
+  width: 50%;
+}
+
 .w-10{
   width: 2.5rem;
 }
@@ -1901,6 +1905,10 @@ a.nav-link:hover {
 
 .w-\[1rem\]{
   width: 1rem;
+}
+
+.w-\[20px\]{
+  width: 20px;
 }
 
 .w-\[240px\]{
@@ -1960,12 +1968,8 @@ a.nav-link:hover {
   width: 2rem;
 }
 
-.w-\[20px\]{
-  width: 20px;
-}
-
-.w-1\/2{
-  width: 50%;
+.w-\[56px\]{
+  width: 56px;
 }
 
 .\!max-w-md{
@@ -2009,6 +2013,10 @@ a.nav-link:hover {
 }
 
 .flex-grow{
+  flex-grow: 1;
+}
+
+.grow{
   flex-grow: 1;
 }
 
@@ -2116,6 +2124,10 @@ a.nav-link:hover {
 
 .grid-cols-\[1fr_5fr_5fr_5fr\]{
   grid-template-columns: 1fr 5fr 5fr 5fr;
+}
+
+.grid-cols-\[2fr_1fr\]{
+  grid-template-columns: 2fr 1fr;
 }
 
 .flex-row{
@@ -2242,6 +2254,11 @@ a.nav-link:hover {
   row-gap: 2rem;
 }
 
+.gap-x-sp-6{
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+}
+
 .self-start{
   align-self: flex-start;
 }
@@ -2315,6 +2332,11 @@ a.nav-link:hover {
   border-bottom-left-radius: 1.25rem;
 }
 
+.rounded-b-sm{
+  border-bottom-right-radius: 0.625rem;
+  border-bottom-left-radius: 0.625rem;
+}
+
 .rounded-r-sm{
   border-top-right-radius: 0.625rem;
   border-bottom-right-radius: 0.625rem;
@@ -2325,19 +2347,9 @@ a.nav-link:hover {
   border-top-right-radius: 1.25rem;
 }
 
-.rounded-l-sm{
-  border-top-left-radius: 0.625rem;
-  border-bottom-left-radius: 0.625rem;
-}
-
 .rounded-t-sm{
   border-top-left-radius: 0.625rem;
   border-top-right-radius: 0.625rem;
-}
-
-.rounded-b-sm{
-  border-bottom-right-radius: 0.625rem;
-  border-bottom-left-radius: 0.625rem;
 }
 
 .border{
@@ -2500,6 +2512,11 @@ a.nav-link:hover {
   background-color: rgb(248 247 247 / var(--tw-bg-opacity));
 }
 
+.bg-orange-300{
+  --tw-bg-opacity: 1;
+  background-color: rgb(224 112 88 / var(--tw-bg-opacity));
+}
+
 .bg-parent{
   --tw-bg-opacity: 1;
   background-color: rgb(253 191 124 / var(--tw-bg-opacity));
@@ -2513,6 +2530,11 @@ a.nav-link:hover {
 .bg-purple-gradient-end{
   --tw-bg-opacity: 1;
   background-color: rgb(166 152 255 / var(--tw-bg-opacity));
+}
+
+.bg-salmon{
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 225 212 / var(--tw-bg-opacity));
 }
 
 .bg-secondary-soft{
@@ -2542,16 +2564,6 @@ a.nav-link:hover {
 .bg-young-adult{
   --tw-bg-opacity: 1;
   background-color: rgb(218 193 251 / var(--tw-bg-opacity));
-}
-
-.bg-salmon{
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 225 212 / var(--tw-bg-opacity));
-}
-
-.bg-orange-300{
-  --tw-bg-opacity: 1;
-  background-color: rgb(224 112 88 / var(--tw-bg-opacity));
 }
 
 .bg-\[linear-gradient\(\#fead80\2c \#e2deca_50\%\2c \#bdc6fc\)\]{
@@ -2666,6 +2678,11 @@ a.nav-link:hover {
 .py-sp-1{
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
+}
+
+.py-sp-12{
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .py-sp-2{
@@ -2861,6 +2878,10 @@ a.nav-link:hover {
   line-height: 1rem;
 }
 
+.text-\[28px\]{
+  font-size: 28px;
+}
+
 .font-bold{
   font-weight: 700;
 }
@@ -2889,6 +2910,11 @@ a.nav-link:hover {
   line-height: 1.25;
 }
 
+.text-\[\#87889A\]{
+  --tw-text-opacity: 1;
+  color: rgb(135 136 154 / var(--tw-text-opacity));
+}
+
 .text-dark-blue{
   --tw-text-opacity: 1;
   color: rgb(29 34 95 / var(--tw-text-opacity));
@@ -2912,11 +2938,6 @@ a.nav-link:hover {
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-\[\#87889A\]{
-  --tw-text-opacity: 1;
-  color: rgb(135 136 154 / var(--tw-text-opacity));
 }
 
 .underline{
@@ -4610,6 +4631,10 @@ a.providers:hover {
     width: 1.25rem;
   }
 
+  .lg\:w-1\/2{
+    width: 50%;
+  }
+
   .lg\:max-w-\[250px\]{
     max-width: 250px;
   }
@@ -4767,6 +4792,11 @@ a.providers:hover {
     border-bottom-left-radius: 0;
   }
 
+  .lg\:rounded-l-sm{
+    border-top-left-radius: 0.625rem;
+    border-bottom-left-radius: 0.625rem;
+  }
+
   .lg\:rounded-r-md{
     border-top-right-radius: 1.25rem;
     border-bottom-right-radius: 1.25rem;
@@ -4775,11 +4805,6 @@ a.providers:hover {
   .lg\:rounded-r-none{
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-  }
-
-  .lg\:rounded-l-sm{
-    border-top-left-radius: 0.625rem;
-    border-bottom-left-radius: 0.625rem;
   }
 
   .lg\:rounded-r-sm{
