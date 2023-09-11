@@ -133,7 +133,7 @@
         {
             "key": "field_64fe681182a55",
             "label": "New Navigation",
-            "name": "new_navigation",
+            "name": "new_navigation_footer",
             "aria-label": "",
             "type": "true_false",
             "instructions": "",
@@ -296,5 +296,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1694394483
+    "modified": 1694395476
 }
