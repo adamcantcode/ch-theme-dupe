@@ -303,7 +303,7 @@
                               $isDivOpen = true; // Set the flag to true
                             }
                           ?>
-                            <a <?= $url; ?> target="<?= $target; ?>" class="w-full leading-snug text-[.875rem] no-underline py-sp-4 font-heading <?= empty($url) ? 'text-lavender-200' : 'text-white'; ?> "><?= $title; ?></a>
+                            <a <?= $url; ?> target="<?= $target; ?>" class="w-full leading-snug text-[.875rem] no-underline py-sp-4 font-heading <?= empty($url) ? 'text-lavender-200 hover:text-lavender-200' : 'text-white'; ?> "><?= $title; ?></a>
                           <?php endwhile; ?>
 
                           <?php
