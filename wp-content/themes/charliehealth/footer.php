@@ -120,7 +120,7 @@
 		<div class="section">
 			<div class="container ">
 				<div class="flex flex-col justify-between lg:flex-row">
-					<div class="w-full rounded-t-sm lg:rounded-l-sm lg:rounded-r-none py-sp-5 px-sp-6 bg-salmon">
+					<div class="w-full rounded-t-sm lg:rounded-l-sm lg:rounded-r-none py-sp-5 px-sp-6 bg-[#ffefe7]">
 						<p class="mb-0">If this is a life-threatening emergency, please call 911 or the <a href="https://988lifeline.org/" target="_blank">National Suicide Prevention Lifeline</a></p>
 					</div>
 					<div class="bg-orange-300 rounded-b-sm lg:rounded-r-sm lg:rounded-l-none py-sp-5 px-sp-6">
@@ -188,19 +188,19 @@
 					<div>
 						<div class="flex gap-sp-4">
 							<a href="https://www.facebook.com/charliehealth" target="_blank">
-								<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/facebook.svg'); ?>" alt="Facebook logo" class="w-[20px] h-[20px] filter-white" />
+								<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/facebook.svg'); ?>" alt="Facebook logo" class="w-[42px] h-[42px] p-sp-2 filter-white" />
 							</a>
 							<a href="https://www.linkedin.com/company/charlie-health/" target="_blank">
-								<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/linkedin.svg'); ?>" alt="LinkedIn logo" class="w-[20px] h-[20px] filter-white" />
+								<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/linkedin.svg'); ?>" alt="LinkedIn logo" class="w-[42px] h-[42px] p-sp-2 filter-white" />
 							</a>
 							<a href="https://www.instagram.com/charliehealth/" target="_blank">
-								<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/instagram.svg'); ?>" alt="Instagram logo" class="w-[20px] h-[20px] filter-white" />
+								<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/instagram.svg'); ?>" alt="Instagram logo" class="w-[42px] h-[42px] p-sp-2 filter-white" />
 							</a>
 							<a href="https://www.tiktok.com/@charliehealth" target="_blank">
-								<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/tik-tok.svg'); ?>" alt="TikTok logo" class="w-[20px] h-[20px] filter-white" />
+								<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/tik-tok.svg'); ?>" alt="TikTok logo" class="w-[42px] h-[42px] p-sp-2 filter-white" />
 							</a>
 							<a href="https://twitter.com/charliehealth" target="_blank">
-								<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/x.svg'); ?>" alt="Twitter (X) logo" class="w-[20px] h-[20px] filter-white" />
+								<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/x.svg'); ?>" alt="Twitter (X) logo" class="w-[42px] h-[42px] p-sp-2 filter-white" />
 							</a>
 						</div>
 					</div>
@@ -209,7 +209,7 @@
 		</div>
 		<div class="section bg-primary">
 			<div class="container mb-sp-8">
-				<div class="flex gap-x-sp-6">
+				<div class="flex flex-wrap lg:flex-nowrap gap-x-sp-6">
 					<?php
 					if (have_rows('secondary_navigation_items', 'option')) :
 						while (have_rows('secondary_navigation_items', 'option')) : the_row();
