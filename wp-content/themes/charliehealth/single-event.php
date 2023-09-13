@@ -122,6 +122,12 @@ $toc = get_field('toc') ?: '';
           <h6 class="mt-sp-4">This CE was eligible for credit if you attended live and completed post-event evaluation surveys and is shared here strictly for informational purposes.</h6>
         </div>
       </section>
+    <?php else : ?>
+      <section class="section-bottom">
+        <div class="container">
+          <h4 class="text-center">Event video coming soon.</h4>
+        </div>
+      </section>
     <?php endif; ?>
     <?php if (get_the_content()) : ?>
       <section class="section-horizontal">
