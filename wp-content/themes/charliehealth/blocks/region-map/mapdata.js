@@ -615,16 +615,17 @@ var simplemaps_usmap_mapdata={
       name: "Texas <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
       zoomable: "no",
       color: "#1D225F",
-      url: "/regions/texas",
       description: "Learn more",
-      hover_color: "#101334"
+      hover_color: "#101334",
+      url: "/regions/texas"
     },
     "1": {
       states: [
         "FL",
         "GA",
         "SC",
-        "TN"
+        "TN",
+        "NC"
       ],
       name: "Southeast <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
       zoomable: "no",
@@ -702,7 +703,8 @@ var simplemaps_usmap_mapdata={
         "MI",
         "IN",
         "OH",
-        "WI"
+        "WI",
+        "MO"
       ],
       name: "Midwest <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
       zoomable: "no",
