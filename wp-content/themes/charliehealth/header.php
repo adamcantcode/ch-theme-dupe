@@ -303,7 +303,7 @@
                               $isDivOpen = true; // Set the flag to true
                             }
                           ?>
-                            <a <?= $url; ?> target="<?= $target; ?>" class="w-full leading-none text-[.875rem] no-underline py-sp-4 font-heading <?= empty($url) ? 'text-lavender-200' : 'text-white'; ?> "><?= $title; ?></a>
+                            <a <?= $url; ?> target="<?= $target; ?>" class="w-full leading-snug text-[.875rem] no-underline py-sp-4 font-heading <?= empty($url) ? 'text-lavender-200' : 'text-white'; ?> "><?= $title; ?></a>
                           <?php endwhile; ?>
 
                           <?php
@@ -325,21 +325,21 @@
               <a href="https://app.charliehealth.com/" target="_blank" class="ch-button button-tertiary-lavender inverted !text-[1rem]">Client Login</a>
               <a href="<?= get_field('cta', 'option')['url']; ?>" class="ch-button button-tertiary-lavender !text-[1rem]"><?= get_field('cta', 'option')['title']; ?></a>
             </div>
-            <div class="flex justify-center gap-4 px-5 pb-8 social">
-              <a href="https://www.facebook.com/charliehealth" target="_blank">
-                <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/facebook.svg'); ?>" alt="Facebook logo" class="w-[1rem] h-[1rem] filter-white" />
+            <div class="flex justify-center gap-6 px-5 pb-sp-8 social">
+              <a href="https://www.facebook.com/charliehealth" target="_blank" class="p-sp-2">
+                <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/facebook.svg'); ?>" alt="Facebook logo" class="w-[1.25rem] h-[1.25rem] filter-white" />
               </a>
-              <a href="https://www.linkedin.com/company/charlie-health/" target="_blank">
-                <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/linkedin.svg'); ?>" alt="LinkedIn logo" class="w-[1rem] h-[1rem] filter-white" />
+              <a href="https://www.linkedin.com/company/charlie-health/" target="_blank"   class="p-sp-2">
+                <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/linkedin.svg'); ?>" alt="LinkedIn logo" class="w-[1.25rem] h-[1.25rem] filter-white" />
               </a>
-              <a href="https://www.instagram.com/charliehealth/" target="_blank">
-                <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/instagram.svg'); ?>" alt="Instagram logo" class="w-[1rem] h-[1rem] filter-white" />
+              <a href="https://www.instagram.com/charliehealth/" target="_blank"  class="p-sp-2">
+                <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/instagram.svg'); ?>" alt="Instagram logo" class="w-[1.25rem] h-[1.25rem] filter-white" />
               </a>
-              <a href="https://www.tiktok.com/@charliehealth" target="_blank">
-                <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/tik-tok.svg'); ?>" alt="TikTok logo" class="w-[1rem] h-[1rem] filter-white" />
+              <a href="https://www.tiktok.com/@charliehealth" target="_blank"  class="p-sp-2">
+                <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/tik-tok.svg'); ?>" alt="TikTok logo" class="w-[1.25rem] h-[1.25rem] filter-white" />
               </a>
-              <a href="https://twitter.com/charliehealth" target="_blank">
-                <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/x.svg'); ?>" alt="Twitter (X) logo" class="w-[1rem] h-[1rem] filter-white" />
+              <a href="https://twitter.com/charliehealth" target="_blank"  class="p-sp-2">
+                <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/x.svg'); ?>" alt="Twitter (X) logo" class="w-[1.25rem] h-[1.25rem] filter-white" />
               </a>
             </div>
           </div>
