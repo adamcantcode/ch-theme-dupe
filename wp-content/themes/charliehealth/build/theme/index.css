@@ -1707,18 +1707,6 @@ a.nav-link:hover {
   margin-top: 2rem;
 }
 
-.mr-sp-8{
-  margin-right: 2rem;
-}
-
-.mr-sp-12{
-  margin-right: 3rem;
-}
-
-.ml-sp-6{
-  margin-left: 1.5rem;
-}
-
 .block{
   display: block;
 }
@@ -1767,6 +1755,10 @@ a.nav-link:hover {
   height: 0.75rem;
 }
 
+.h-\[1\.25rem\]{
+  height: 1.25rem;
+}
+
 .h-\[1\.5px\]{
   height: 1.5px;
 }
@@ -1779,16 +1771,8 @@ a.nav-link:hover {
   height: 150px;
 }
 
-.h-\[1rem\]{
-  height: 1rem;
-}
-
 .h-\[200px\]{
   height: 200px;
-}
-
-.h-\[20px\]{
-  height: 20px;
 }
 
 .h-\[25px\]{
@@ -1801,6 +1785,10 @@ a.nav-link:hover {
 
 .h-\[2px\]{
   height: 2px;
+}
+
+.h-\[42px\]{
+  height: 42px;
 }
 
 .h-\[50px\]{
@@ -1849,30 +1837,6 @@ a.nav-link:hover {
 
 .h-sp-8{
   height: 2rem;
-}
-
-.h-\[32px\]{
-  height: 32px;
-}
-
-.h-\[24px\]{
-  height: 24px;
-}
-
-.h-\[48px\]{
-  height: 48px;
-}
-
-.h-\[42px\]{
-  height: 42px;
-}
-
-.h-\[1\.5rem\]{
-  height: 1.5rem;
-}
-
-.h-\[1\.25rem\]{
-  height: 1.25rem;
 }
 
 .max-h-0{
@@ -1935,12 +1899,8 @@ a.nav-link:hover {
   width: 20rem;
 }
 
-.w-\[1rem\]{
-  width: 1rem;
-}
-
-.w-\[20px\]{
-  width: 20px;
+.w-\[1\.25rem\]{
+  width: 1.25rem;
 }
 
 .w-\[240px\]{
@@ -1953,6 +1913,10 @@ a.nav-link:hover {
 
 .w-\[3rem\]{
   width: 3rem;
+}
+
+.w-\[42px\]{
+  width: 42px;
 }
 
 .w-\[500px\]{
@@ -2002,30 +1966,6 @@ a.nav-link:hover {
 
 .w-sp-8{
   width: 2rem;
-}
-
-.w-\[32px\]{
-  width: 32px;
-}
-
-.w-\[24px\]{
-  width: 24px;
-}
-
-.w-\[48px\]{
-  width: 48px;
-}
-
-.w-\[42px\]{
-  width: 42px;
-}
-
-.w-\[1\.5rem\]{
-  width: 1.5rem;
-}
-
-.w-\[1\.25rem\]{
-  width: 1.25rem;
 }
 
 .\!max-w-md{
@@ -2242,6 +2182,10 @@ a.nav-link:hover {
   gap: 1rem;
 }
 
+.gap-6{
+  gap: 1.5rem;
+}
+
 .gap-sp-1{
   gap: 0.25rem;
 }
@@ -2276,10 +2220,6 @@ a.nav-link:hover {
 
 .gap-sp-8{
   gap: 2rem;
-}
-
-.gap-6{
-  gap: 1.5rem;
 }
 
 .gap-x-4{
@@ -2381,6 +2321,14 @@ a.nav-link:hover {
 
 .rounded-sm{
   border-radius: 0.625rem;
+}
+
+.rounded-\[6px\]{
+  border-radius: 6px;
+}
+
+.\!rounded-\[6px\]{
+  border-radius: 6px !important;
 }
 
 .rounded-b-md{
@@ -2504,6 +2452,11 @@ a.nav-link:hover {
   background-color: rgb(255 159 129 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#ffefe7\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 239 231 / var(--tw-bg-opacity));
+}
+
 .bg-\[rgba\(0\2c 0\2c 0\2c \.5\)\]{
   background-color: rgba(0,0,0,.5);
 }
@@ -2588,11 +2541,6 @@ a.nav-link:hover {
   background-color: rgb(166 152 255 / var(--tw-bg-opacity));
 }
 
-.bg-salmon{
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 225 212 / var(--tw-bg-opacity));
-}
-
 .bg-secondary-soft{
   --tw-bg-opacity: 1;
   background-color: rgb(26 31 69 / var(--tw-bg-opacity));
@@ -2620,11 +2568,6 @@ a.nav-link:hover {
 .bg-young-adult{
   --tw-bg-opacity: 1;
   background-color: rgb(218 193 251 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#ffefe7\]{
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 239 231 / var(--tw-bg-opacity));
 }
 
 .bg-\[linear-gradient\(\#fead80\2c \#e2deca_50\%\2c \#bdc6fc\)\]{
@@ -2706,6 +2649,11 @@ a.nav-link:hover {
   padding-right: 0.5rem;
 }
 
+.px-sp-3{
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
 .px-sp-4{
   padding-left: 1rem;
   padding-right: 1rem;
@@ -2766,11 +2714,6 @@ a.nav-link:hover {
   padding-bottom: 1.25rem;
 }
 
-.px-sp-3{
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-}
-
 .py-sp-6{
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
@@ -2792,6 +2735,10 @@ a.nav-link:hover {
   padding-bottom: 1.5rem;
 }
 
+.pb-sp-8{
+  padding-bottom: 2rem;
+}
+
 .pr-sp-6{
   padding-right: 1.5rem;
 }
@@ -2802,14 +2749,6 @@ a.nav-link:hover {
 
 .pt-sp-0{
   padding-top: 0;
-}
-
-.pb-sp-8{
-  padding-bottom: 2rem;
-}
-
-.pt-sp-2{
-  padding-top: 0.5rem;
 }
 
 .text-center{
@@ -3107,6 +3046,14 @@ a.nav-link:hover {
 
 .duration-700{
   transition-duration: 700ms;
+}
+
+.duration-100{
+  transition-duration: 100ms;
+}
+
+.duration-150{
+  transition-duration: 150ms;
 }
 
 .ease-in-out{
@@ -4308,14 +4255,6 @@ a.providers:hover {
 
 .first\:mt-0:first-child{
   margin-top: 0px;
-}
-
-.first\:ml-sp-4:first-child{
-  margin-left: 1rem;
-}
-
-.first\:ml-sp-6:first-child{
-  margin-left: 1.5rem;
 }
 
 .last\:mb-0:last-child{

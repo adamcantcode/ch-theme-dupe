@@ -172,10 +172,10 @@
               $target = $topLink['target'];
               ?>
               <div class="relative topLevelNavItem">
-                <a <?= $url; ?> target="<?= $target; ?>" class="block text-white no-underline px-sp-3 py-sp-6 font-heading hover:text-lavender-200 text-nav-normal ml-sp-4"><?= $title; ?></a>
+                <a <?= $url; ?> target="<?= $target; ?>" class="block text-white no-underline px-sp-3 py-sp-6 font-heading hover:text-lavender-200 text-nav-normal ml-sp-4<?= empty($url) ? ' cursor-default' : ''; ?>"><?= $title; ?></a>
                 <?php if (have_rows('secondary_menu', 'option')) : ?>
-                  <div class="absolute w-[500px] grid grid-cols-2 opacity-0 invisible secondLevelNav transition-all duration-300 translate-x-1 origin-right">
-                    <div class="flex flex-col p-sp-8 bg-darker-blue-hover">
+                  <div class="absolute w-[500px] grid grid-cols-2 opacity-0 invisible secondLevelNav transition-all duration-150 translate-x-1 origin-right">
+                    <div class="flex flex-col p-sp-8 bg-secondary-soft">
                       <?php while (have_rows('secondary_menu', 'option')) : the_row(); ?>
                         <?php
                         $secondaryLink = get_sub_field('secondary_menu_item');
@@ -215,8 +215,8 @@
           <?php endwhile;
           endif; ?>
           <div class="flex ml-auto content gap-x-sp-2">
-            <a href="https://app.charliehealth.com/" target="_blank" class="ch-button button-tertiary-lavender inverted">Client Login</a>
-            <a href="<?= get_field('cta', 'option')['url']; ?>" class="ch-button button-tertiary-lavender"><?= get_field('cta', 'option')['title']; ?></a>
+            <a href="https://app.charliehealth.com/" target="_blank" class="ch-button button-tertiary-lavender inverted !rounded-[6px]">Client Login</a>
+            <a href="<?= get_field('cta', 'option')['url']; ?>" class="ch-button button-tertiary-lavender !rounded-[6px]"><?= get_field('cta', 'option')['title']; ?></a>
           </div>
         </div>
         <div class="container flex justify-between lg:noshow py-sp-5">
