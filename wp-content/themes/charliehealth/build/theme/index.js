@@ -1311,10 +1311,10 @@ function navigationMenu() {
     }
   });
   const openAnimation = () => {
-    mobileMenuX[1].classList.add('scale-0');
-    mobileMenuX[0].classList.add('top-1/2', '-translate-y-1/2');
-    mobileMenuX[2].classList.add('-top-1/2', '-translate-y-1/2');
+    mobileMenuX[0].classList.add('top-1/2', '-translate-y-1/2', 'w-[18px]');
     mobileMenuX[0].classList.remove('top-0');
+    mobileMenuX[1].classList.add('scale-0');
+    mobileMenuX[2].classList.add('-top-1/2', '-translate-y-1/2', 'w-[18px]');
     mobileMenuX[2].classList.remove('top-0');
     setTimeout(() => {
       mobileMenuX[0].classList.add('rotate-45');
@@ -1322,9 +1322,9 @@ function navigationMenu() {
     }, 50);
   };
   const closeAnimation = () => {
-    mobileMenuX[0].classList.remove('top-1/2', '-translate-y-1/2', 'rotate-45');
+    mobileMenuX[0].classList.remove('top-1/2', '-translate-y-1/2', 'rotate-45', 'w-[18px]');
     mobileMenuX[1].classList.remove('scale-0', 'origin-center');
-    mobileMenuX[2].classList.remove('-top-1/2', '-translate-y-1/2', '-rotate-45');
+    mobileMenuX[2].classList.remove('-top-1/2', '-translate-y-1/2', '-rotate-45', 'w-[18px]');
     mobileMenuX[0].classList.add('top-0');
     mobileMenuX[2].classList.add('top-0');
     setTimeout(() => {
