@@ -49,7 +49,7 @@ export default function navigationMenu() {
     setTimeout(() => {
       mobileMenuX[0].classList.add('rotate-45');
       mobileMenuX[2].classList.add('-rotate-45');
-    }, 350);
+    }, 50);
   };
   const closeAnimation = () => {
     mobileMenuX[0].classList.remove('top-1/2', '-translate-y-1/2', 'rotate-45');
@@ -64,7 +64,7 @@ export default function navigationMenu() {
     setTimeout(() => {
       mobileMenuX[0].classList.remove('rotate-45');
       mobileMenuX[2].classList.remove('-rotate-45');
-    }, 350);
+    }, 50);
   };
   const openPanel = () => {
     panel.classList.remove('opacity-0', 'pointer-events-none', 'invisible');

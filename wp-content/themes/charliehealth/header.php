@@ -226,12 +226,12 @@
             </a>
           </div>
           <div class="flex flex-col justify-between w-sp-8 mobile-menu-js">
-            <div class="w-full h-[1.5px] bg-white relative transition-all duration-300 delay-100 top-0 origin-center"></div>
-            <div class="w-full h-[1.5px] bg-white relative transition-all duration-500 origin-center"></div>
-            <div class="w-full h-[1.5px] bg-white relative transition-all duration-300 delay-100 top-0 origin-center"></div>
+            <div class="w-full h-[1.5px] bg-white relative transition-all duration-100 delay-75 top-0 origin-center"></div>
+            <div class="w-full h-[1.5px] bg-white relative transition-all duration-200 origin-center"></div>
+            <div class="w-full h-[1.5px] bg-white relative transition-all duration-100 delay-75 top-0 origin-center"></div>
           </div>
         </div>
-        <div class="bg-secondary-soft fixed panel-js h-[calc(100vh-60px)] w-full left-0 overflow-y-scroll opacity-0 invisible pointer-events-none transition-all duration-300 flex flex-col">
+        <div class="bg-secondary-soft fixed panel-js h-[calc(100vh-60px)] w-full left-0 overflow-y-scroll opacity-0 invisible pointer-events-none transition-all duration-300 flex flex-col pt-sp-3">
           <?php if (have_rows('navigation_item_new', 'option')) :
             while (have_rows('navigation_item_new', 'option')) : the_row(); ?>
               <?php
@@ -263,7 +263,7 @@
                 </div>
                 <?php if (have_rows('secondary_menu', 'option')) : ?>
                   <div class="overflow-hidden transition-all duration-500 px-sp-5 bg-primary max-h-0">
-                    <div class="grid dropdown py-sp-4 ">
+                    <div class="grid dropdown py-sp-4">
                       <?php while (have_rows('secondary_menu', 'option')) : the_row(); ?>
                         <?php
                         $secondaryLink = get_sub_field('secondary_menu_item');

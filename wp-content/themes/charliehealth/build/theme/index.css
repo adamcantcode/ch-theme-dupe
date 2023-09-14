@@ -2755,6 +2755,10 @@ a.nav-link:hover {
   padding-bottom: 5px;
 }
 
+.pt-sp-3{
+  padding-top: 0.75rem;
+}
+
 .text-center{
   text-align: center;
 }
@@ -3030,6 +3034,10 @@ a.nav-link:hover {
 
 .delay-200{
   transition-delay: 200ms;
+}
+
+.delay-75{
+  transition-delay: 75ms;
 }
 
 .duration-1000{
