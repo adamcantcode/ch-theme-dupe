@@ -193,14 +193,14 @@
 							<a href="https://www.linkedin.com/company/charlie-health/" target="_blank">
 								<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/linkedin.svg'); ?>" alt="LinkedIn logo" class="w-[42px] h-[42px] p-sp-2 filter-white" />
 							</a>
+							<a href="https://twitter.com/charliehealth" target="_blank">
+								<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/x.svg'); ?>" alt="Twitter (X) logo" class="w-[42px] h-[42px] p-sp-2 filter-white" />
+							</a>
 							<a href="https://www.instagram.com/charliehealth/" target="_blank">
 								<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/instagram.svg'); ?>" alt="Instagram logo" class="w-[42px] h-[42px] p-sp-2 filter-white" />
 							</a>
 							<a href="https://www.tiktok.com/@charliehealth" target="_blank">
 								<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/tik-tok.svg'); ?>" alt="TikTok logo" class="w-[42px] h-[42px] p-sp-2 filter-white" />
-							</a>
-							<a href="https://twitter.com/charliehealth" target="_blank">
-								<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/x.svg'); ?>" alt="Twitter (X) logo" class="w-[42px] h-[42px] p-sp-2 filter-white" />
 							</a>
 						</div>
 					</div>
@@ -222,16 +222,16 @@
 				</div>
 			</div>
 			<div class="container mb-sp-8">
-				<p class="text-[#87889A] text-h5">All professional medical services are provided by licensed physicians and clinicians affiliated with independently owned and operated professional practices. For patients in California, this is known as “CH Medical CA, P.C.” For patients in North Carolina or New Jersey, this is known as “CH Medical NC NJ, P.C.” For patients in New York, this is known as “CH Medical NY”. For patients in all other states, this is known as “Charlie Health Medical, P.A.” Charlie Health, Inc. provides administrative and technology services to the CH Medical practices it supports, and does not provide any professional medical services itself.</p>
-				<p class="text-[#87889A] text-h5">If you are located in California, the below applies to you, subject to applicable law:</p>
-				<p class="text-[#87889A] text-h5"><em>Your health plan’s contracted network providers may also offer in-office appointments. Health plan’s telehealth and in-person services are subject to the same timely access to care standards. If you have out-of-network benefits, and utilize out-of-network services, you are subject to the plan’s cost-sharing obligation and balance billing protections. Contact your health plan to learn more.</em></p>
-				<p class="text-[#87889A] text-h5"><em>You have a right to access your medical records. Records of the care you receive from Charlie Health will be shared with your primary care provider (PCP) via an electronic patient record system or provided in a different manner unless you opt out.</em></p>
+				<p class="text-[#87889A] text-[12px]">All professional medical services are provided by licensed physicians and clinicians affiliated with independently owned and operated professional practices. For patients in California, this is known as “CH Medical CA, P.C.” For patients in North Carolina or New Jersey, this is known as “CH Medical NC NJ, P.C.” For patients in New York, this is known as “CH Medical NY”. For patients in all other states, this is known as “Charlie Health Medical, P.A.” Charlie Health, Inc. provides administrative and technology services to the CH Medical practices it supports, and does not provide any professional medical services itself.</p>
+				<p class="text-[#87889A] text-[12px]">If you are located in California, the below applies to you, subject to applicable law:</p>
+				<p class="text-[#87889A] text-[12px]"><em>Your health plan’s contracted network providers may also offer in-office appointments. Health plan’s telehealth and in-person services are subject to the same timely access to care standards. If you have out-of-network benefits, and utilize out-of-network services, you are subject to the plan’s cost-sharing obligation and balance billing protections. Contact your health plan to learn more.</em></p>
+				<p class="text-[#87889A] text-[12px]"><em>You have a right to access your medical records. Records of the care you receive from Charlie Health will be shared with your primary care provider (PCP) via an electronic patient record system or provided in a different manner unless you opt out.</em></p>
 			</div>
 			<div class="container">
 				<div class="grid lg:grid-cols-2 grid-cols-[2fr_1fr]">
 					<div class="flex items-center">
 						<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield.svg'); ?>" alt="Charlie health shield logo" class="w-sp-8" />
-						<span class="text-white text-h5 ml-sp-4">©<?= date('Y'); ?> Charlie Health, Inc. All rights reserved.</span>
+						<span class="text-white text-h5 ml-sp-4">© <?= date('Y'); ?> Charlie Health, Inc. All rights reserved.</span>
 					</div>
 					<a href="https://www.jointcommission.org/" target="_blank">
 						<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/gold-seal.webp'); ?>" alt="The Joint Commission logo that links to the Joint Commission homepage" class="ml-auto w-[56px]">
