@@ -174,7 +174,7 @@
               <div class="relative topLevelNavItem">
                 <a <?= $url; ?> target="<?= $target; ?>" class="block text-white no-underline px-sp-3 py-sp-6 font-heading hover:text-lavender-200 text-nav-normal ml-sp-4<?= empty($url) ? ' cursor-default' : ''; ?>"><?= $title; ?></a>
                 <?php if (have_rows('secondary_menu', 'option')) : ?>
-                  <div class="absolute w-[500px] grid grid-cols-2 opacity-0 invisible secondLevelNav transition-all duration-150 translate-x-1 origin-right">
+                  <div class="absolute w-[500px] grid grid-cols-2 opacity-0 invisible secondLevelNav transition-all duration-150 translate-x-1 origin-right pb-[5px]">
                     <div class="flex flex-col p-sp-8 bg-secondary-soft">
                       <?php while (have_rows('secondary_menu', 'option')) : the_row(); ?>
                         <?php
@@ -324,23 +324,6 @@
             <div class="flex justify-center py-8 gap-x-sp-4 px-sp-5">
               <a href="https://app.charliehealth.com/" target="_blank" class="ch-button button-tertiary-lavender inverted !text-[1rem]">Client Login</a>
               <a href="<?= get_field('cta', 'option')['url']; ?>" class="ch-button button-tertiary-lavender !text-[1rem]"><?= get_field('cta', 'option')['title']; ?></a>
-            </div>
-            <div class="flex justify-center gap-6 px-5 pb-sp-8 social">
-              <a href="https://www.facebook.com/charliehealth" target="_blank" class="p-sp-2">
-                <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/facebook.svg'); ?>" alt="Facebook logo" class="w-[1.25rem] h-[1.25rem] filter-white" />
-              </a>
-              <a href="https://www.linkedin.com/company/charlie-health/" target="_blank"   class="p-sp-2">
-                <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/linkedin.svg'); ?>" alt="LinkedIn logo" class="w-[1.25rem] h-[1.25rem] filter-white" />
-              </a>
-              <a href="https://www.instagram.com/charliehealth/" target="_blank"  class="p-sp-2">
-                <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/instagram.svg'); ?>" alt="Instagram logo" class="w-[1.25rem] h-[1.25rem] filter-white" />
-              </a>
-              <a href="https://www.tiktok.com/@charliehealth" target="_blank"  class="p-sp-2">
-                <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/tik-tok.svg'); ?>" alt="TikTok logo" class="w-[1.25rem] h-[1.25rem] filter-white" />
-              </a>
-              <a href="https://twitter.com/charliehealth" target="_blank"  class="p-sp-2">
-                <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/x.svg'); ?>" alt="Twitter (X) logo" class="w-[1.25rem] h-[1.25rem] filter-white" />
-              </a>
             </div>
           </div>
         </div>

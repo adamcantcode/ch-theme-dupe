@@ -2751,6 +2751,10 @@ a.nav-link:hover {
   padding-top: 0;
 }
 
+.pb-\[5px\]{
+  padding-bottom: 5px;
+}
+
 .text-center{
   text-align: center;
 }
