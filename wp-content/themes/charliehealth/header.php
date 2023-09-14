@@ -322,8 +322,8 @@
           endif; ?>
           <div class="mt-auto">
             <div class="flex justify-center py-8 gap-x-sp-4 px-sp-5">
-              <a href="https://app.charliehealth.com/" target="_blank" class="ch-button button-tertiary-lavender inverted !text-[1rem]">Client Login</a>
-              <a href="<?= get_field('cta', 'option')['url']; ?>" class="ch-button button-tertiary-lavender !text-[1rem]"><?= get_field('cta', 'option')['title']; ?></a>
+              <a href="https://app.charliehealth.com/" target="_blank" class="ch-button button-tertiary-lavender inverted !text-[1rem] !rounded-[6px]">Client Login</a>
+              <a href="<?= get_field('cta', 'option')['url']; ?>" class="ch-button button-tertiary-lavender !text-[1rem] !rounded-[6px]"><?= get_field('cta', 'option')['title']; ?></a>
             </div>
           </div>
         </div>
