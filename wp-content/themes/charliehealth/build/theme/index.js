@@ -1342,6 +1342,16 @@ function navigationMenu() {
   dropdownItems.forEach(item => {
     const accordionContent = item.nextElementSibling;
     item.addEventListener('click', () => {
+      // Close all other dropdowns before opening the clicked one
+      dropdownItems.forEach(otherItem => {
+        if (otherItem !== item) {
+          const otherAccordionContent = otherItem.nextElementSibling;
+          if (otherAccordionContent) {
+            otherAccordionContent.style.maxHeight = null;
+            otherItem.querySelector('.rotate-90').classList.remove('scale-0');
+          }
+        }
+      });
       if (accordionContent.style.maxHeight) {
         accordionContent.style.maxHeight = null;
         item.querySelector('.rotate-90').classList.remove('scale-0');
