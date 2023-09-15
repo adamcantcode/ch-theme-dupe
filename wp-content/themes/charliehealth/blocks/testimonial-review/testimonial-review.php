@@ -7,9 +7,12 @@
   <div class="lg:pb-sp-16 pb-sp-6 noshow lg:grid">
     <div class="flex items-center justify-self-end">
       <p class="inline-block mb-0">Read reviews from:</p>
-      <div class="h-sp-3 w-sp-3 mr-sp-2 ml-sp-8 rounded-[50%] bg-teen"></div><p class="mb-0">Teens</p>
-      <div class="h-sp-3 w-sp-3 mr-sp-2 ml-sp-8 rounded-[50%] bg-young-adult"></div><p class="mb-0">Young Adults</p>
-      <div class="h-sp-3 w-sp-3 mr-sp-2 ml-sp-8 rounded-[50%] bg-parent"></div><p class="mb-0">Parents</p>
+      <div class="h-sp-3 w-sp-3 mr-sp-2 ml-sp-8 rounded-[50%] bg-teen"></div>
+      <p class="mb-0">Teens</p>
+      <div class="h-sp-3 w-sp-3 mr-sp-2 ml-sp-8 rounded-[50%] bg-young-adult"></div>
+      <p class="mb-0">Young Adults</p>
+      <div class="h-sp-3 w-sp-3 mr-sp-2 ml-sp-8 rounded-[50%] bg-parent"></div>
+      <p class="mb-0">Parents</p>
     </div>
   </div>
   <div class="grid lg:grid-cols-[1fr,2fr] grid-cols-1 relative lg:gap-x-sp-8">
@@ -52,26 +55,26 @@
             switch ($group) {
               case 'young-adult':
                 $tagBGColor = 'bg-young-adult';
+                $name = 'Young Adult';
                 break;
               case 'teen':
                 $tagBGColor = 'bg-teen';
+                $name = 'Teen';
                 break;
               case 'parent':
                 $tagBGColor = 'bg-parent';
+                $name = 'Parent';
                 break;
               default:
                 $tagBGColor = '';
+                $name = '';
                 break;
             }
 
             ?>
             <div class="lg:w-[calc(50%-16px)] opacity-0 scale-95 w-full mb-sp-8 rounded-[1rem] lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col<?= $count > 6 ? ' noshow' : ''; ?>">
               <?php if ($tagBGColor && $age) : ?>
-                <?php if ($group !== 'parent') : ?>
-                  <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>"><?= $age; ?>-year-old</span>
-                <?php else : ?>
-                  <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>">Parent of a <?= $age; ?>-year-old</span>
-                <?php endif; ?>
+                <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>"><?= $name; ?></span>
               <?php endif; ?>
               <?php if ($pullQuote) : ?>
                 <h3 class="leading-tight mb-sp-2 lg:text-[2rem]">“<?= $pullQuote; ?>.”</h3>

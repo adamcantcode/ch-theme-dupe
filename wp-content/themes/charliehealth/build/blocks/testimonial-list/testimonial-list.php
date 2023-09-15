@@ -50,26 +50,26 @@ $group = get_field('group')
         switch ($group) {
           case 'young-adult':
             $tagBGColor = 'bg-young-adult';
+            $name = 'Young Adult';
             break;
           case 'teen':
             $tagBGColor = 'bg-teen';
+            $name = 'Teen';
             break;
           case 'parent':
             $tagBGColor = 'bg-parent';
+            $name = 'Parent';
             break;
           default:
             $tagBGColor = '';
+            $name = '';
             break;
         }
 
         ?>
         <div class="w-full rounded-[1rem] lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col">
           <?php if ($tagBGColor && $age) : ?>
-            <?php if ($group !== 'parent') : ?>
-              <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>"><?= $age; ?>-year-old</span>
-            <?php else : ?>
-              <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>">Parent of a <?= $age; ?>-year-old</span>
-            <?php endif; ?>
+            <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>"><?= $name; ?></span>
           <?php endif; ?>
           <?php if ($pullQuote) : ?>
             <h3 class="leading-tight mb-sp-2 lg:text-[2rem]">“<?= $pullQuote; ?>.”</h3>
@@ -106,26 +106,26 @@ $group = get_field('group')
             switch ($group) {
               case 'young-adult':
                 $tagBGColor = 'bg-young-adult';
+                $name = 'Young Adult';
                 break;
               case 'teen':
                 $tagBGColor = 'bg-teen';
+                $name = 'Teen';
                 break;
               case 'parent':
                 $tagBGColor = 'bg-parent';
+                $name = 'Parent';
                 break;
               default:
                 $tagBGColor = '';
+                $name = '';
                 break;
             }
 
             ?>
             <div class="w-full rounded-[1rem] lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col">
               <?php if ($tagBGColor && $age) : ?>
-                <?php if ($group !== 'parent') : ?>
-                  <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>"><?= $age; ?>-year-old</span>
-                <?php else : ?>
-                  <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>">Parent of a <?= $age; ?>-year-old</span>
-                <?php endif; ?>
+                <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>"><?= $name; ?></span>
               <?php endif; ?>
               <?php if ($pullQuote) : ?>
                 <h3 class="leading-tight mb-sp-2 lg:text-[2rem]">“<?= $pullQuote; ?>.”</h3>
@@ -159,15 +159,19 @@ $group = get_field('group')
                 switch ($group) {
                   case 'young-adult':
                     $tagBGColor = 'bg-young-adult';
+                    $name = 'Young Adult';
                     break;
                   case 'teen':
                     $tagBGColor = 'bg-teen';
+                    $name = 'Teen';
                     break;
                   case 'parent':
                     $tagBGColor = 'bg-parent';
+                    $name = 'Parent';
                     break;
                   default:
                     $tagBGColor = '';
+                    $name = '';
                     break;
                 }
 
@@ -175,11 +179,7 @@ $group = get_field('group')
                 <div class="!h-auto swiper-slide">
                   <div class="w-full rounded-[1rem] lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col <?= is_admin() && $slideNum > 3 ? 'noshow' : ''; ?>">
                     <?php if ($tagBGColor && $age) : ?>
-                      <?php if ($group !== 'parent') : ?>
-                        <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>"><?= $age; ?>-year-old</span>
-                      <?php else : ?>
-                        <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>">Parent of a <?= $age; ?>-year-old</span>
-                      <?php endif; ?>
+                      <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>"><?= $name; ?></span>
                     <?php endif; ?>
                     <?php if ($pullQuote) : ?>
                       <h3 class="leading-tight mb-sp-2 lg:text-[2rem]">“<?= $pullQuote; ?>.”</h3>
