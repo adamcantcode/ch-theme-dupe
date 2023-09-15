@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "acf/related-post-block",
+  "title": "In-blog Related Posts",
+  "description": "Displays a selected blog post to be used within a blog post",
+  "style": "file:./index.css",
+  "script": "file:./index.js",
+  "category": "custom",
+  "icon": "admin-post",
+  "apiVersion": 2,
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "posts-list-in-content.php"
+  },
+  "supports": {}
+}
