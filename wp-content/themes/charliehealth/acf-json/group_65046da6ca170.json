@@ -7,7 +7,7 @@
             "label": "Related Post",
             "name": "related_post",
             "aria-label": "",
-            "type": "relationship",
+            "type": "post_object",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -24,14 +24,10 @@
                 "publish"
             ],
             "taxonomy": "",
-            "filters": [
-                "search",
-                "taxonomy"
-            ],
             "return_format": "object",
-            "min": "",
-            "max": 1,
-            "elements": ""
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 1
         }
     ],
     "location": [
@@ -52,5 +48,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1694801500
+    "modified": 1694801835
 }
