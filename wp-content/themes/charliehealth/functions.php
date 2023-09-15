@@ -782,7 +782,7 @@ function customize_admin_bar_color_based_on_url()
   $url_colors = array(
     'charliehstg.wpengine.com' => '#6E0000',   // Red color for staging URL
     'charliehdev.wpengine.com' => '#8B8000',   // Green color for development URL
-    'wpch.local' => '#023020',   // Red color for local
+    'wpch.local' => '#023020',   // Green color for local
   );
 
   // Set default color

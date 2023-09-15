@@ -10,14 +10,7 @@
             "type": "relationship",
             "instructions": "",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "operator": "==",
-                        "value": "custom"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -38,9 +31,7 @@
             "return_format": "object",
             "min": "",
             "max": 1,
-            "elements": [
-                "featured_image"
-            ]
+            "elements": ""
         }
     ],
     "location": [
@@ -61,5 +52,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1694800905
+    "modified": 1694801500
 }
