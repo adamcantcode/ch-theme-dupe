@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
 
   stopAnimations();
-  // mobileNav();
-  // animations();
+  mobileNav();
+  animations();
   navigationMenu();
   if (
     body.classList.contains('single-areas-of-care') ||
