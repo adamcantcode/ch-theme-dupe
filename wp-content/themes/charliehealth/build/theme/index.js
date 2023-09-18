@@ -107,6 +107,7 @@ function ajaxPaginationResearchAuthors() {
             noPosts.classList.remove('opacity-0');
             noPosts.classList.remove('invisible');
             noPosts.classList.remove('absolute');
+            noPosts.parentElement.parentElement.remove();
           }
         });
       },
@@ -786,6 +787,7 @@ function ajaxPagination() {
             noPosts.classList.remove('opacity-0');
             noPosts.classList.remove('invisible');
             noPosts.classList.remove('absolute');
+            noPosts.parentElement.parentElement.remove();
           }
           clickPages();
         });
