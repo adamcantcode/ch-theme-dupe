@@ -23149,7 +23149,8 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_modules_stop_animations__WEBPACK_IMPORTED_MODULE_2__["default"])();
   // mobileNav();
   (0,_modules_animations__WEBPACK_IMPORTED_MODULE_3__["default"])();
-  (0,_modules_navigation_menu__WEBPACK_IMPORTED_MODULE_18__["default"])();
+  // NOTE Placed in rocket-skip-js
+  // navigationMenu();
   if (body.classList.contains('single-areas-of-care') || body.classList.contains('single-treatment-modalities') || body.classList.contains('single-post')) {
     (0,_modules_back_to_top__WEBPACK_IMPORTED_MODULE_5__["default"])();
   }

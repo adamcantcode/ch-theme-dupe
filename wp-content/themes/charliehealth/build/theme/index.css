@@ -1968,6 +1968,10 @@ a.nav-link:hover {
   width: 2rem;
 }
 
+.w-\[18px\]{
+  width: 18px;
+}
+
 .\!max-w-md{
   max-width: 28rem !important;
 }
