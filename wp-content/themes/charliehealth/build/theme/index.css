@@ -1899,6 +1899,10 @@ a.nav-link:hover {
   width: 20rem;
 }
 
+.w-\[18px\]{
+  width: 18px;
+}
+
 .w-\[240px\]{
   width: 240px;
 }
@@ -1966,10 +1970,6 @@ a.nav-link:hover {
 
 .w-sp-8{
   width: 2rem;
-}
-
-.w-\[18px\]{
-  width: 18px;
 }
 
 .\!max-w-md{
@@ -3842,12 +3842,13 @@ a.js-tag-id.active:hover {
 }
 
 .custom-scroll::-webkit-scrollbar{
-  height: 0.25rem;
+  height: 0.5rem;
   cursor: pointer;
 }
 
 .custom-scroll::-webkit-scrollbar-track{
-  margin: 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
   cursor: pointer;
   background-color: rgba(70,73,109,0.15);
 }
