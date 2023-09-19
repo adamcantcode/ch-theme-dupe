@@ -47,12 +47,12 @@
 							newsletterLPField.value = window.location.href;
 
 							// Remove duplicate default formstack stlyes styles
-							const styles = document.querySelectorAll('footer style');
-							styles.forEach(style => {
-								const clonedStyle = style.cloneNode(true);
-								document.head.appendChild(clonedStyle);
-								style.parentNode.removeChild(style);
-							});
+							// const styles = document.querySelectorAll('footer style');
+							// styles.forEach(style => {
+							// 	const clonedStyle = style.cloneNode(true);
+							// 	document.head.appendChild(clonedStyle);
+							// 	style.parentNode.removeChild(style);
+							// });
 						</script>
 					</div>
 				</div>
@@ -155,56 +155,58 @@
 				</div>
 			</div>
 			<div class="container">
-				<div class="rounded-sm lg:flex bg-primary p-sp-8">
-					<div class="flex-grow">
-						<h3 class="text-lavender-200 font-heading mb-sp-2 text-[28px]">Stay connected</h3>
-						<p class="mb-0 text-white">Get mental health updates, research, insights, and resources directly to your inbox.</p>
-						<div id="newsletterFooter" class="w-full lg:w-1/2 newsletter-revamp footer-newsletter">
-							<script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/newsletter_blog_revamp"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/newsletter_blog_revamp" title="Online Form">Online Form - Newsletter - Blog Revamp</a></noscript>
-							<script>
-								var container = document.currentScript.parentNode; // Newsletter container
-								var elementToCut = container.querySelector("#fsSubmitButton5194985"); // Submit button
-								var destinationElement = container.querySelector("#fsCell140490700"); // Email container
-								var newsletterID = container.id; // Newlsetter identifier
-								var newsletterLPField = container.querySelector('#field142799721'); // LP URL field
-								var newsletterIDField = container.querySelector('#field146376375'); // Type field
-								if (elementToCut && destinationElement) {
-									var clonedElement = elementToCut.cloneNode(true);
-									elementToCut.parentNode.removeChild(elementToCut);
-									destinationElement.appendChild(clonedElement);
-								}
-								newsletterIDField.value = newsletterID;
-								newsletterLPField.value = window.location.href;
-								// Remove duplicate default formstack stlyes styles
-								// const styles = document.querySelectorAll('footer style');
-								// styles.forEach(style => {
-								// 	const clonedStyle = style.cloneNode(true);
-								// 	document.head.appendChild(clonedStyle);
-								// 	style.parentNode.removeChild(style);
-								// });
-							</script>
+				<?php if (!is_page('newsletter-thank-you')) : ?>
+					<div class="rounded-sm lg:flex bg-primary p-sp-8">
+						<div class="flex-grow">
+							<h3 class="text-lavender-200 font-heading mb-sp-2 text-[28px]">Stay connected</h3>
+							<p class="mb-0 text-white">Get mental health updates, research, insights, and resources directly to your inbox.</p>
+							<div id="newsletterFooter" class="w-full lg:w-1/2 newsletter-revamp footer-newsletter">
+								<script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/newsletter_blog_revamp"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/newsletter_blog_revamp" title="Online Form">Online Form - Newsletter - Blog Revamp</a></noscript>
+								<script>
+									var container = document.currentScript.parentNode; // Newsletter container
+									var elementToCut = container.querySelector("#fsSubmitButton5194985"); // Submit button
+									var destinationElement = container.querySelector("#fsCell140490700"); // Email container
+									var newsletterID = container.id; // Newlsetter identifier
+									var newsletterLPField = container.querySelector('#field142799721'); // LP URL field
+									var newsletterIDField = container.querySelector('#field146376375'); // Type field
+									if (elementToCut && destinationElement) {
+										var clonedElement = elementToCut.cloneNode(true);
+										elementToCut.parentNode.removeChild(elementToCut);
+										destinationElement.appendChild(clonedElement);
+									}
+									newsletterIDField.value = newsletterID;
+									newsletterLPField.value = window.location.href;
+									// Remove duplicate default formstack stlyes styles
+									const styles = document.querySelectorAll('footer style');
+									styles.forEach(style => {
+										const clonedStyle = style.cloneNode(true);
+										document.head.appendChild(clonedStyle);
+										style.parentNode.removeChild(style);
+									});
+								</script>
+							</div>
+						</div>
+						<div>
+							<div class="flex gap-sp-4">
+								<a href="https://www.facebook.com/charliehealth" target="_blank">
+									<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/facebook.svg'); ?>" alt="Facebook logo" class="w-[42px] h-[42px] p-sp-2 filter-white" />
+								</a>
+								<a href="https://www.linkedin.com/company/charlie-health/" target="_blank">
+									<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/linkedin.svg'); ?>" alt="LinkedIn logo" class="w-[42px] h-[42px] p-sp-2 filter-white" />
+								</a>
+								<a href="https://twitter.com/charliehealth" target="_blank">
+									<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/x.svg'); ?>" alt="Twitter (X) logo" class="w-[42px] h-[42px] p-sp-2 filter-white" />
+								</a>
+								<a href="https://www.instagram.com/charliehealth/" target="_blank">
+									<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/instagram.svg'); ?>" alt="Instagram logo" class="w-[42px] h-[42px] p-sp-2 filter-white" />
+								</a>
+								<a href="https://www.tiktok.com/@charliehealth" target="_blank">
+									<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/tik-tok.svg'); ?>" alt="TikTok logo" class="w-[42px] h-[42px] p-sp-2 filter-white" />
+								</a>
+							</div>
 						</div>
 					</div>
-					<div>
-						<div class="flex gap-sp-4">
-							<a href="https://www.facebook.com/charliehealth" target="_blank">
-								<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/facebook.svg'); ?>" alt="Facebook logo" class="w-[42px] h-[42px] p-sp-2 filter-white" />
-							</a>
-							<a href="https://www.linkedin.com/company/charlie-health/" target="_blank">
-								<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/linkedin.svg'); ?>" alt="LinkedIn logo" class="w-[42px] h-[42px] p-sp-2 filter-white" />
-							</a>
-							<a href="https://twitter.com/charliehealth" target="_blank">
-								<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/x.svg'); ?>" alt="Twitter (X) logo" class="w-[42px] h-[42px] p-sp-2 filter-white" />
-							</a>
-							<a href="https://www.instagram.com/charliehealth/" target="_blank">
-								<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/instagram.svg'); ?>" alt="Instagram logo" class="w-[42px] h-[42px] p-sp-2 filter-white" />
-							</a>
-							<a href="https://www.tiktok.com/@charliehealth" target="_blank">
-								<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/tik-tok.svg'); ?>" alt="TikTok logo" class="w-[42px] h-[42px] p-sp-2 filter-white" />
-							</a>
-						</div>
-					</div>
-				</div>
+				<?php endif; ?>
 			</div>
 		</div>
 		<div class="section bg-primary">
