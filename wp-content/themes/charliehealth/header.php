@@ -39,9 +39,6 @@
   <!-- End Google Tag Manager (noscript) -->
   <?php wp_body_open(); ?>
   <!-- <pre class="fixed left-0 right-0 w-full text-xs text-center text-dark-blue top-4 -z-10-50 opacity-30">Made with ❤️ in Denver</pre> -->
-  <!-- Rocket Excludes Delay JS -->
-  <?php include('includes/rocket-skip-js.php'); ?>
-  <!-- END Rocket Excludes Delay JS -->
   <?php if (!get_field('new_navigation', 'options')) : ?>
     <header class="fixed z-50 w-screen bg-med-blue <?= is_user_logged_in() ? 'lg:top-[32px] top-[46px]' : 'top-0'; ?>">
       <nav class="section-horizontal">

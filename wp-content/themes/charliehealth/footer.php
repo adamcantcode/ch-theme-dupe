@@ -259,6 +259,9 @@ if (wp_get_environment_type() === 'production') {
 		});
 	</script>
 <?php endif; ?>
+<!-- Rocket Excludes Delay JS -->
+<?php include('includes/rocket-skip-js.php'); ?>
+<!-- END Rocket Excludes Delay JS -->
 <?php wp_footer(); ?>
 <!-- <pre class="fixed left-0 right-0 w-full text-xs text-center text-dark-blue bottom-4 -z-50 opacity-30">Made with ❤️ in Denver</pre> -->
 </body>

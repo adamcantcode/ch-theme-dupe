@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // mobileNav();
   animations();
   // NOTE Also placed in rocket-skip-js
-  navigationMenu();
+  // navigationMenu();
   if (
     body.classList.contains('single-areas-of-care') ||
     body.classList.contains('single-treatment-modalities') ||
