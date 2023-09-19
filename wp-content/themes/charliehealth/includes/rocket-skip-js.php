@@ -53,7 +53,7 @@
     };
   }
 </script> -->
-<script>
+<!-- <script>
   if (document.querySelector('.mobile-menu-js')) {
     const topLevelNavItems = document.querySelectorAll('.topLevelNavItem');
 
@@ -157,4 +157,4 @@
       });
     });
   }
-</script>
+</script> -->
