@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
 
   stopAnimations();
-  mobileNav();
+  // mobileNav();
   animations();
   navigationMenu();
   if (

@@ -23147,7 +23147,7 @@ __webpack_require__.r(__webpack_exports__);
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
   (0,_modules_stop_animations__WEBPACK_IMPORTED_MODULE_2__["default"])();
-  (0,_modules_mobile_nav__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  // mobileNav();
   (0,_modules_animations__WEBPACK_IMPORTED_MODULE_3__["default"])();
   (0,_modules_navigation_menu__WEBPACK_IMPORTED_MODULE_18__["default"])();
   if (body.classList.contains('single-areas-of-care') || body.classList.contains('single-treatment-modalities') || body.classList.contains('single-post')) {
