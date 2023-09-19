@@ -189,6 +189,149 @@
                     "parent_repeater": "field_64027d2878056"
                 }
             ]
+        },
+        {
+            "key": "field_64e3c39ece29c",
+            "label": "New Navigation",
+            "name": "new_navigation",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_64f762fe38a03",
+            "label": "Navigation Item",
+            "name": "navigation_item_new",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_64f7640238a05",
+            "button_label": "Add Item",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_64f7640238a05",
+                    "label": "Top Level Item",
+                    "name": "top_level_item",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "Add Items to be shown at the top level of the header navigation.\r\n\r\nFor items that are <b>not<\/b> intended to be links, use a <code>#<\/code> for the url",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "parent_repeater": "field_64f762fe38a03"
+                },
+                {
+                    "key": "field_64f7648838a06",
+                    "label": "Secondary Menu",
+                    "name": "secondary_menu",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "table",
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "field_64f7649f38a07",
+                    "button_label": "Add Item",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_64f7649f38a07",
+                            "label": "Secondary Menu Item",
+                            "name": "secondary_menu_item",
+                            "aria-label": "",
+                            "type": "link",
+                            "instructions": "Add Items to be shown in the dropdown menu.\r\n\r\nFor items that are <b>not<\/b> intended to be links, use a <code>#<\/code> for the url",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "parent_repeater": "field_64f7648838a06"
+                        }
+                    ],
+                    "parent_repeater": "field_64f762fe38a03"
+                },
+                {
+                    "key": "field_64f764cc38a08",
+                    "label": "Tertiary Menu",
+                    "name": "tertiary_menu",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "table",
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "field_64f764fb38a09",
+                    "button_label": "Add Item",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_64f764fb38a09",
+                            "label": "Tertiary Menu Item",
+                            "name": "tertiary_menu_item",
+                            "aria-label": "",
+                            "type": "link",
+                            "instructions": "Add Items to be shown in the dropdown side panel menu.\r\n\r\nFor items that are <b>not<\/b> intended to be links, use a <code>#<\/code> for the url",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "parent_repeater": "field_64f764cc38a08"
+                        }
+                    ],
+                    "parent_repeater": "field_64f762fe38a03"
+                }
+            ]
         }
     ],
     "location": [
@@ -209,5 +352,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1686767144
+    "modified": 1693943210
 }
