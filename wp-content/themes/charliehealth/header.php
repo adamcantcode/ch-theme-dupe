@@ -189,7 +189,7 @@
                       <?php endwhile; ?>
                     </div>
                     <?php if (have_rows('tertiary_menu', 'option')) : ?>
-                      <div class="flex flex-col p-sp-8 bg-[#131632]">
+                      <div class="flex flex-col p-sp-8 pb-[37px] bg-[#131632]">
                         <?php while (have_rows('tertiary_menu', 'option')) : the_row(); ?>
                           <?php
                           $topLink = get_sub_field('tertiary_menu_item');

@@ -55,7 +55,6 @@
 </script> -->
 <script>
   if (document.querySelector('.mobile-menu-js')) {
-    console.log('test');
     const topLevelNavItems = document.querySelectorAll('.topLevelNavItem');
 
     topLevelNavItems.forEach((topLevelNavItem) => {
