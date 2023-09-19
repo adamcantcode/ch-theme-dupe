@@ -71,7 +71,28 @@
     <?= do_blocks('<!-- wp:block {"ref":12} /-->'); ?>
   </main>
 <?php else : ?>
+  <?php
+  $title        = get_field('title') ? get_field('title') : get_the_archive_title() . ' Resources for Teens & Young Adults';
+  $subhead      = get_field('subhead');
+  $sectionOne   = get_field('section_1');
+  $sectionTwo   = get_field('section_2');
+  $sectionThree = get_field('section_3');
+  $sectionFour  = get_field('section_4');
+  $sectionFive  = get_field('section_5');
+  ?>
   <main id="primary" class="site-main mt-[68px]">
+    <section class="section">
+      <div class="container">
+        <div class="grid items-start lg:grid-cols-2 gap-sp-8">
+          <div class="order-1">
+            <h1 class="mb-0"><?= $title; ?></h1>
+          </div>
+          <div class="flex flex-col justify-between order-1 lg:order-2">
+            <?= $subhead; ?>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 <?php endif; ?>
 
