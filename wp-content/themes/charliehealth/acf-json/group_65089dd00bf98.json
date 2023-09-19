@@ -3,6 +3,26 @@
     "title": "Resource Page Options",
     "fields": [
         {
+            "key": "field_650a143c401e2",
+            "label": "Use Resources Template",
+            "name": "use_resources_template_please",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Select to use the new Resources page template instead of the standard tag pages with grid.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
             "key": "field_65089dd01cdf9",
             "label": "Title",
             "name": "title",
@@ -41,6 +61,28 @@
             "toolbar": "full",
             "media_upload": 0,
             "delay": 0
+        },
+        {
+            "key": "field_650a133554ab8",
+            "label": "Jump Buttons",
+            "name": "jump_buttons_tag",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_64331e61b6161"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
         },
         {
             "key": "field_6508a1581cdfb",
@@ -161,5 +203,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1695068659
+    "modified": 1695161134
 }

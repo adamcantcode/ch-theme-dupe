@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<?php if (!get_field('use_resources_template')) : ?>
+<?php if (!get_field('use_resources_template_please', get_queried_object())) : ?>
   <main id="primary" class="site-main mt-[68px]">
     <section class="section">
       <div class="container">
@@ -72,13 +72,15 @@
   </main>
 <?php else : ?>
   <?php
-  $title        = get_field('title') ? get_field('title') : get_the_archive_title() . ' Resources for Teens & Young Adults';
-  $subhead      = get_field('subhead');
-  $sectionOne   = get_field('section_1');
-  $sectionTwo   = get_field('section_2');
-  $sectionThree = get_field('section_3');
-  $sectionFour  = get_field('section_4');
-  $sectionFive  = get_field('section_5');
+
+  // var_dump(single_tag_title());
+  $title        = get_field('title', get_queried_object()) ? get_field('title', get_queried_object()) : single_term_title('', false) . ' Resources for Teens & Young Adults';
+  $subhead      = get_field('subhead', get_queried_object());
+  $sectionOne   = get_field('section_1', get_queried_object());
+  $sectionTwo   = get_field('section_2', get_queried_object());
+  $sectionThree = get_field('section_3', get_queried_object());
+  $sectionFour  = get_field('section_4', get_queried_object());
+  $sectionFive  = get_field('section_5', get_queried_object());
   ?>
   <main id="primary" class="site-main mt-[68px]">
     <section class="section">
@@ -90,6 +92,19 @@
           <div class="flex flex-col justify-between order-1 lg:order-2">
             <?= $subhead; ?>
           </div>
+        </div>
+        <div>
+          <h3>Jump to:</h3>
+        </div>
+        <div class="flex overflow-auto gap-sp-5 no-scrollbar">
+          <?php if (have_rows('jump_buttons')) : ?>
+            <?php while (have_rows('jump_buttons')) : the_row();
+              $label = get_sub_field('label');
+              $sectionID  = get_sub_field('section_id');
+            ?>
+              <a href="#<?= $sectionID; ?>" class="ch-button button-secondary whitespace-nowrap"><?= $label; ?></a>
+            <?php endwhile; ?>
+          <?php endif; ?>
         </div>
       </div>
     </section>
