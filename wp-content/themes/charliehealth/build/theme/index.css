@@ -1883,6 +1883,10 @@ a.nav-link:hover {
   min-height: 100%;
 }
 
+.\!w-\[18px\]{
+  width: 18px !important;
+}
+
 .w-10{
   width: 2.5rem;
 }
@@ -1897,10 +1901,6 @@ a.nav-link:hover {
 
 .w-80{
   width: 20rem;
-}
-
-.w-\[18px\]{
-  width: 18px;
 }
 
 .w-\[240px\]{
@@ -2723,6 +2723,10 @@ a.nav-link:hover {
   padding-bottom: 2rem;
 }
 
+.pb-\[37px\]{
+  padding-bottom: 37px;
+}
+
 .pb-\[5px\]{
   padding-bottom: 5px;
 }
@@ -2749,10 +2753,6 @@ a.nav-link:hover {
 
 .pt-sp-3{
   padding-top: 0.75rem;
-}
-
-.pb-\[37px\]{
-  padding-bottom: 37px;
 }
 
 .text-center{
