@@ -93,19 +93,46 @@
             <?= $subhead; ?>
           </div>
         </div>
-        <div>
-          <h3>Jump to:</h3>
+        <div class="mt-sp-6 md:mt-sp-10 lg:mt-sp-14">
+          <div>
+            <h3>Jump to:</h3>
+          </div>
+          <div class="flex overflow-auto gap-sp-5 no-scrollbar">
+            <?php if (have_rows('jump_buttons')) : ?>
+              <?php while (have_rows('jump_buttons')) : the_row();
+                $label = get_sub_field('label');
+                $sectionID  = get_sub_field('section_id');
+              ?>
+                <a href="#<?= $sectionID; ?>" class="ch-button button-secondary whitespace-nowrap"><?= $label; ?></a>
+              <?php endwhile; ?>
+            <?php endif; ?>
+          </div>
         </div>
-        <div class="flex overflow-auto gap-sp-5 no-scrollbar">
-          <?php if (have_rows('jump_buttons')) : ?>
-            <?php while (have_rows('jump_buttons')) : the_row();
-              $label = get_sub_field('label');
-              $sectionID  = get_sub_field('section_id');
-            ?>
-              <a href="#<?= $sectionID; ?>" class="ch-button button-secondary whitespace-nowrap"><?= $label; ?></a>
-            <?php endwhile; ?>
-          <?php endif; ?>
-        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container-sm">
+        <?= $sectionOne; ?>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container-sm">
+        <?= $sectionTwo; ?>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container-sm">
+        <?= $sectionThree; ?>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container-sm">
+        <?= $sectionFour; ?>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container-sm">
+        <?= $sectionFive; ?>
       </div>
     </section>
   </main>
