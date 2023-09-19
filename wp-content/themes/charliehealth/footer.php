@@ -159,7 +159,7 @@
 					<div class="rounded-sm lg:flex bg-primary p-sp-8">
 						<div class="flex-grow">
 							<h3 class="text-lavender-200 font-heading mb-sp-2 text-[28px]">Stay connected</h3>
-							<p class="mb-0 text-white">Get mental health updates, research, insights, and resources directly to your inbox.</p>
+							<p class="text-white">Get mental health updates, research, insights, and resources directly to your inbox.</p>
 							<div id="newsletterFooter" class="w-full lg:w-1/2 newsletter-revamp footer-newsletter">
 								<script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/newsletter_blog_revamp"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/newsletter_blog_revamp" title="Online Form">Online Form - Newsletter - Blog Revamp</a></noscript>
 								<script>
