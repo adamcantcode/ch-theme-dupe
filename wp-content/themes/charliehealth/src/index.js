@@ -17,14 +17,17 @@ import references from './modules/references';
 import progressBar from './modules/progress-bar';
 import newsletterPopup from './modules/newsletter-popup';
 import mobileCats from './modules/mobile-cats';
-import tagPage from './modules/tag-page';
+// import tagPage from './modules/tag-page';
+import navigationMenu from './modules/navigation-menu';
 
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
 
   stopAnimations();
-  mobileNav();
+  // mobileNav();
   animations();
+  // NOTE Also placed in rocket-skip-js
+  // navigationMenu();
   if (
     body.classList.contains('single-areas-of-care') ||
     body.classList.contains('single-treatment-modalities') ||

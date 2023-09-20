@@ -1,7 +1,7 @@
 <div class="grid items-center grid-cols-1 lg:grid-cols-2 lg:gap-sp-16">
   <div>
     <h2 class="leading-tight text-white lg:w-2/3 lg:text-h1-lg text-h1">Virtual IOP leads to high engagement in treatment</h2>
-    <div class="flex gap-x-sp-4 items-center lg:w-[unset] w-full">
+    <div class="flex gap-x-sp-4 items-center md:w-[unset] w-full">
       <a href="https://formative.jmir.org/2022/11/e41721" class="ch-button button-tertiary" target="_blank">Read the full publication</a>
     </div>
   </div>

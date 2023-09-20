@@ -47,9 +47,20 @@ module.exports = {
       'card-border': '#d4d5dc',
       'lightest-purple': '#F8F8FF',
       'dark-teal': '#1f5f68',
-      'teen': '#8F92CD',
+      teen: '#8F92CD',
       'young-adult': '#DAC1FB',
-      'parent': '#FDBF7C',
+      parent: '#FDBF7C',
+      lavender: {
+        200: '#E7D3FF',
+        300: '#DAC1FB',
+      },
+      secondary: {
+        soft: '#1A1F45',
+      },
+      primary: {
+        DEFAULT: '#161A3D',
+      },
+      salmon: '#F9E1D4',
       // 'light-teal': '#C8FFFF',
       // 'med-bright-teal': '#3EB7B5',
       // 'med-teal': '#39919D',
@@ -62,7 +73,9 @@ module.exports = {
       // 'orange-gradient-start': '#FFDEDA',
       // 'orange-gradient-end': '#FFA776',
       // 'bright-orange': '#FF9F81',
-      // orange: '#E07058',
+      orange: {
+        300: '#E07058',
+      },
       // 'med-blue': '#262D70',
       // 'lightest-blue': '#F5F6F8',
       // 'light-purple-gradient-start': '#F0EFFC',
@@ -192,6 +205,22 @@ module.exports = {
           '1.125rem',
           {
             lineHeight: '1.8rem',
+            letterSpacing: '0',
+            fontWeight: '400',
+          },
+        ],
+        'nav-normal': [
+          '0.875rem',
+          {
+            lineHeight: 'normal',
+            letterSpacing: '0',
+            fontWeight: '400',
+          },
+        ],
+        'nav-small': [
+          '0.75rem',
+          {
+            lineHeight: 'normal',
             letterSpacing: '0',
             fontWeight: '400',
           },

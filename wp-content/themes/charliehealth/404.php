@@ -12,7 +12,7 @@
         <h3 class="mb-0 lg:text-h1-lg text-h1">404 Page Not Found</h3>
         <div class="w-full divider my-sp-8"></div>
         <p>We can't seem to find the page you're looking for.<br> Please visit our Home Page for more information.</p>
-        <div class="flex gap-x-sp-4 items-center lg:w-[unset] w-full">
+        <div class="flex gap-x-sp-4 items-center md:w-[unset] w-full">
           <a href="/" class="ch-button button-secondary">Home</a>
         </div>
       </div>
