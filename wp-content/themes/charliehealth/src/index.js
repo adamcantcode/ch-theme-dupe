@@ -17,6 +17,7 @@ import references from './modules/references';
 import progressBar from './modules/progress-bar';
 import newsletterPopup from './modules/newsletter-popup';
 import mobileCats from './modules/mobile-cats';
+import tagPage from './modules/tag-page';
 
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
@@ -56,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   if (body.classList.contains('tag')) {
     ajaxPagination();
+    tagPage();
   }
   if (body.classList.contains('single-authors')) {
     ajaxPagination();
