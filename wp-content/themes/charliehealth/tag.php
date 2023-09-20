@@ -118,6 +118,52 @@
     <section class="section">
       <div class="container-sm">
         <?= $sectionTwo; ?>
+        <?php
+        $args = array(
+          'tag' => get_queried_object()->slug,
+          'post_type' => 'post',
+          'posts_per_page' => -1,
+          'meta_key'       => 'date',
+          'orderby'        => 'meta_value',
+          'order'          => 'DESC',
+          'meta_type'      => 'DATE',
+        );
+
+        $query = new WP_Query($args);
+        if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
+            $author = get_field('by_author', get_the_ID());
+            if (has_post_thumbnail()) {
+              $featuredImageID = get_post_thumbnail_id();
+              $featuredImage = wp_get_attachment_image_src($featuredImageID, 'card-thumb');
+              $featuredImageAltText = get_post_meta($featuredImageID, '_wp_attachment_image_alt', true);
+
+              $featuredImageUrl = $featuredImage[0];
+              $featuredImageAltText = $featuredImageAltText ?: '';
+            } else {
+              $featuredImageUrl = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
+              $featuredImageAltText = 'Charlie Health Logo';
+            }
+        ?>
+            <div class="relative grid overflow-hidden duration-300 border rounded-sm border-card-border hover:shadow-lg">
+              <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover lg:h-[220px] h-[150px] w-full">
+              <div class="grid p-sp-4">
+                <h3><a href="<?= get_the_permalink(); ?>" class="stretched-link"><?= get_the_title(); ?></a></h3>
+                <h5 class="mb-sp-4"><?= $author->post_title; ?></h5>
+                <div class="grid items-end justify-start grid-flow-col gap-sp-4">
+                  <?php
+                  $tags = get_the_terms(get_the_ID(), 'post_tag');
+                  ?>
+                  <?php if ($tags) :  ?>
+                    <?php foreach ($tags as $tag) : ?>
+                      <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="relative z-[6] inline-block no-underline rounded-lg px-sp-4 py-sp-3 text-h6 bg-tag-gray hover:bg-bright-teal"><?= $tag->name; ?></a>
+                    <?php endforeach; ?>
+                  <?php endif; ?>
+                </div>
+              </div>
+            </div>
+        <?php endwhile;
+          wp_reset_postdata();
+        endif; ?>
       </div>
     </section>
     <section class="section">
