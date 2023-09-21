@@ -1675,8 +1675,8 @@ a.nav-link:hover {
   margin-top: -1px;
 }
 
-.mt-\[68px\]{
-  margin-top: 68px;
+.mt-\[66px\]{
+  margin-top: 66px;
 }
 
 .mt-auto{
@@ -1919,8 +1919,8 @@ a.nav-link:hover {
   width: 42px;
 }
 
-.w-\[500px\]{
-  width: 500px;
+.w-\[555px\]{
+  width: 555px;
 }
 
 .w-\[56px\]{
@@ -1970,14 +1970,6 @@ a.nav-link:hover {
 
 .w-sp-8{
   width: 2rem;
-}
-
-.w-\[525px\]{
-  width: 525px;
-}
-
-.w-\[555px\]{
-  width: 555px;
 }
 
 .\!max-w-md{
@@ -2728,11 +2720,6 @@ a.nav-link:hover {
   padding-bottom: 1.5rem;
 }
 
-.py-\[22px\]{
-  padding-top: 22px;
-  padding-bottom: 22px;
-}
-
 .\!pb-0{
   padding-bottom: 0px !important;
 }
@@ -2765,28 +2752,16 @@ a.nav-link:hover {
   padding-top: 0px;
 }
 
+.pt-\[26px\]{
+  padding-top: 26px;
+}
+
 .pt-sp-0{
   padding-top: 0;
 }
 
 .pt-sp-3{
   padding-top: 0.75rem;
-}
-
-.pt-sp-5{
-  padding-top: 1.25rem;
-}
-
-.pt-sp-6{
-  padding-top: 1.5rem;
-}
-
-.pt-\[22px\]{
-  padding-top: 22px;
-}
-
-.pt-\[26px\]{
-  padding-top: 26px;
 }
 
 .text-center{
@@ -4306,10 +4281,6 @@ a.providers:hover {
 
 .last\:border-0:last-child{
   border-width: 0px;
-}
-
-.last\:pb-0:last-child{
-  padding-bottom: 0px;
 }
 
 .hover\:-translate-y-sp-1:hover{

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main id="primary" class="site-main mt-[68px]">
+<main id="primary" class="site-main mt-[66px]">
   <section class="section">
     <div class="!max-w-md container-sm">
       <div class="flex flex-col items-center justify-center text-center">

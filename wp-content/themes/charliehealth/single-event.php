@@ -35,7 +35,7 @@ $toc = get_field('toc') ?: '';
 
 ?>
 
-<main id="primary" class="site-main mt-[68px]">
+<main id="primary" class="site-main mt-[66px]">
   <div id="progressBar" class="fixed z-20 transition-all duration-700 rounded-r-sm bg-purple-gradient-end h-[5px] left-0"></div>
   <div id="mainArticleContent" class="relative z-10 main-article-content">
     <section class="section">

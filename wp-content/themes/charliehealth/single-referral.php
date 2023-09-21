@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main id="primary" class="site-main mt-[68px]">
+<main id="primary" class="site-main mt-[66px]">
   <section class="section">
     <div class="container-md">
       <div class="text-center">

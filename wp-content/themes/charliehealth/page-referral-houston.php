@@ -18,7 +18,7 @@ if (strpos($title, "Referrals &#8211; ") === 0) {
 }
 ?>
 
-<main id="primary" class="site-main mt-[68px]">
+<main id="primary" class="site-main mt-[66px]">
   <section class="section">
     <div class="container">
       <div><?= get_field('form_code'); ?></div>

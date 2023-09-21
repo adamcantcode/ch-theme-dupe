@@ -7,7 +7,7 @@ Template Post Type: page
 
 <?php get_header(); ?>
 
-<main id="primary" class="site-main mt-[68px]">
+<main id="primary" class="site-main mt-[66px]">
   <div class="section">
     <div class="container">
       <div class="grid grid-cols-1 lg:grid-cols-2">

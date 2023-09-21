@@ -5,7 +5,7 @@ Template Name: Search Page
 ?>
 <?php get_header(); ?>
 
-<main id="primary" class="site-main mt-[68px]">
+<main id="primary" class="site-main mt-[66px]">
   <section class="section bg-cream">
     <div class="container">
       <div class="grid lg:grid-cols-2 lg:gap-sp-12 gap-sp-4">

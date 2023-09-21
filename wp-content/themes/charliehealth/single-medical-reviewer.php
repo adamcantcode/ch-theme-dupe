@@ -20,7 +20,7 @@ if ($image) {
 
 ?>
 
-<main class="site-main mt-[68px]">
+<main class="site-main mt-[66px]">
   <section class="!pb-0 section">
     <div class="container">
       <h1 class="mb-sp-12">Authors</h1>

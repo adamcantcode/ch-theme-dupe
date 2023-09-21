@@ -78,7 +78,7 @@ $nonDirectorArgs = array(
 
 ?>
 
-<main id="primary" class="site-main mt-[68px] relative">
+<main id="primary" class="site-main mt-[66px] relative">
   <section class="section-top">
     <div class="container">
       <h1><?= get_the_title(); ?></h1>
