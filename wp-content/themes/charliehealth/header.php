@@ -172,7 +172,7 @@
                 <a <?= $url; ?> target="<?= $target; ?>" class="block text-white no-underline px-sp-3 py-sp-6 font-heading hover:text-lavender-200 text-nav-normal ml-sp-4<?= empty($url) ? ' cursor-default' : ''; ?>"><?= $title; ?></a>
                 <?php if (have_rows('secondary_menu', 'option')) : ?>
                   <div class="absolute w-[525px] grid grid-cols-2 opacity-0 invisible secondLevelNav transition-all duration-150 translate-x-1 origin-right pb-[5px]">
-                    <div class="flex flex-col p-sp-6 bg-secondary-soft">
+                    <div class="flex flex-col px-sp-8 py-sp-5 bg-secondary-soft">
                       <?php while (have_rows('secondary_menu', 'option')) : the_row(); ?>
                         <?php
                         $secondaryLink = get_sub_field('secondary_menu_item');
@@ -189,7 +189,7 @@
                       <?php endwhile; ?>
                     </div>
                     <?php if (have_rows('tertiary_menu', 'option')) : ?>
-                      <div class="flex flex-col p-sp-8 pb-[37px] bg-[#131632]">
+                      <div class="flex flex-col px-sp-8 pt-[26px] pb-[37px] bg-[#131632]">
                         <?php while (have_rows('tertiary_menu', 'option')) : the_row(); ?>
                           <?php
                           $topLink = get_sub_field('tertiary_menu_item');

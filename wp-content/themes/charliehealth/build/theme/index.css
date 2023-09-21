@@ -2724,6 +2724,11 @@ a.nav-link:hover {
   padding-bottom: 1.5rem;
 }
 
+.py-\[22px\]{
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+
 .\!pb-0{
   padding-bottom: 0px !important;
 }
@@ -2762,6 +2767,22 @@ a.nav-link:hover {
 
 .pt-sp-3{
   padding-top: 0.75rem;
+}
+
+.pt-sp-5{
+  padding-top: 1.25rem;
+}
+
+.pt-sp-6{
+  padding-top: 1.5rem;
+}
+
+.pt-\[22px\]{
+  padding-top: 22px;
+}
+
+.pt-\[26px\]{
+  padding-top: 26px;
 }
 
 .text-center{
