@@ -1644,6 +1644,50 @@ function stopAnimations() {
 
 /***/ }),
 
+/***/ "./src/modules/tag-page.js":
+/*!*********************************!*\
+  !*** ./src/modules/tag-page.js ***!
+  \*********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ tagPage; }
+/* harmony export */ });
+/* harmony import */ var swiper_bundle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper/bundle */ "./node_modules/swiper/swiper-bundle.esm.js");
+/* harmony import */ var swiper_css_bundle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/css/bundle */ "./node_modules/swiper/swiper-bundle.min.css");
+// import Swiper bundle with all modules installed
+
+
+// import styles bundle
+
+function tagPage() {
+  window.addEventListener('DOMContentLoaded', () => {
+    var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.swiper.swiper-top-level', {
+      slidesPerView: 1,
+      spaceBetween: 16,
+      loop: false,
+      autoplay: false,
+      pagination: false,
+      navigation: false,
+      scrollbar: false,
+      breakpoints: {
+        480: {
+          slidesPerView: 2,
+          spaceBetween: 16
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 16
+        }
+      }
+    });
+  });
+}
+
+/***/ }),
+
 /***/ "./src/modules/toc.js":
 /*!****************************!*\
   !*** ./src/modules/toc.js ***!
@@ -23125,6 +23169,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_newsletter_popup__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./modules/newsletter-popup */ "./src/modules/newsletter-popup.js");
 /* harmony import */ var _modules_mobile_cats__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./modules/mobile-cats */ "./src/modules/mobile-cats.js");
 /* harmony import */ var _modules_navigation_menu__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./modules/navigation-menu */ "./src/modules/navigation-menu.js");
+/* harmony import */ var _modules_tag_page__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./modules/tag-page */ "./src/modules/tag-page.js");
 
 
 
@@ -23143,7 +23188,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// import tagPage from './modules/tag-page';
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
@@ -23176,8 +23221,8 @@ document.addEventListener('DOMContentLoaded', () => {
     (0,_modules_mobile_cats__WEBPACK_IMPORTED_MODULE_17__["default"])();
   }
   if (body.classList.contains('tag')) {
-    (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__["default"])();
-    tagPage();
+    // ajaxPagination();
+    (0,_modules_tag_page__WEBPACK_IMPORTED_MODULE_19__["default"])();
   }
   if (body.classList.contains('single-authors')) {
     (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__["default"])();
