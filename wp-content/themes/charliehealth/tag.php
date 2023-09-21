@@ -115,62 +115,80 @@
         <?= $sectionOne; ?>
       </div>
     </section>
-    <section class="section">
+    <section class="bg-off-white section">
       <div class="container-sm">
         <?= $sectionTwo; ?>
       </div>
-      <div class="container">
-        <?php
-        $args = array(
-          'tag' => get_queried_object()->slug,
-          'post_type' => 'post',
-          'posts_per_page' => -1,
-          'meta_key'       => 'date',
-          'orderby'        => 'meta_value',
-          'order'          => 'DESC',
-          'meta_type'      => 'DATE',
-        );
 
-        $query = new WP_Query($args);
-        if ($query->have_posts()) : ?>
-          <div class="swiper swiper-top-level">
-            <div class="swiper-wrapper">
-              <?php while ($query->have_posts()) : $query->the_post();
-                $author = get_field('by_author', get_the_ID());
-                if (has_post_thumbnail()) {
-                  $featuredImageID = get_post_thumbnail_id();
-                  $featuredImage = wp_get_attachment_image_src($featuredImageID, 'card-thumb');
-                  $featuredImageAltText = get_post_meta($featuredImageID, '_wp_attachment_image_alt', true);
+      <?php
+      $args = array(
+        'tag' => get_queried_object()->slug,
+        'post_type' => 'post',
+        'posts_per_page' => -1,
+        'meta_key'       => 'date',
+        'orderby'        => 'meta_value',
+        'order'          => 'DESC',
+        'meta_type'      => 'DATE',
+      );
 
-                  $featuredImageUrl = $featuredImage[0];
-                  $featuredImageAltText = $featuredImageAltText ?: '';
-                } else {
-                  $featuredImageUrl = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
-                  $featuredImageAltText = 'Charlie Health Logo';
-                }
-              ?>
-                <div class="!h-auto swiper-slide">
-                  <div class="relative flex flex-col h-full overflow-hidden duration-300 border rounded-sm border-card-border hover:shadow-lg">
-                    <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover lg:h-[220px] h-[150px] w-full">
-                    <div class="flex flex-col flex-1 p-sp-4">
-                      <h3><a href="<?= get_the_permalink(); ?>" class="stretched-link"><?= get_the_title(); ?></a></h3>
-                      <h5 class="mb-0"><?= $author->post_title; ?></h5>
+      $query = new WP_Query($args);
+      if ($query->have_posts()) : ?>
+        <div class="container lg:mt-sp-16 md:mt-sp-12 mt-sp-8">
+          <div class="relative">
+            <div class="relative md:mx-sp-14">
+              <div class="swiper swiper-top-level">
+                <div class="swiper-wrapper">
+                  <?php while ($query->have_posts()) : $query->the_post();
+                    $author = get_field('by_author', get_the_ID());
+                    if (has_post_thumbnail()) {
+                      $featuredImageID = get_post_thumbnail_id();
+                      $featuredImage = wp_get_attachment_image_src($featuredImageID, 'card-thumb');
+                      $featuredImageAltText = get_post_meta($featuredImageID, '_wp_attachment_image_alt', true);
+                      $featuredImageUrl = $featuredImage[0];
+                      $featuredImageAltText = $featuredImageAltText ?: '';
+                    } else {
+                      $featuredImageUrl = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
+                      $featuredImageAltText = 'Charlie Health Logo';
+                    }
+                  ?>
+                    <div class="!h-auto swiper-slide">
+                      <div class="relative flex flex-col h-full overflow-hidden duration-300 border rounded-sm border-card-border hover:shadow-lg">
+                        <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover lg:h-[220px] h-[150px] w-full">
+                        <div class="flex flex-col flex-1 bg-white p-sp-4">
+                          <h3><a href="<?= get_the_permalink(); ?>" class="stretched-link"><?= get_the_title(); ?></a></h3>
+                          <h5 class="mb-0"><?= $author->post_title; ?></h5>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  <?php endwhile; ?>
                 </div>
-              <?php endwhile; ?>
+              </div>
+            </div>
+            <div class="absolute inset-0 w-full h-full noshow md:block">
+              <div class="absolute -translate-y-1/2 swiper-button-prev-arrow-carousel top-[calc(50%-26px)] left-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none" class="arrow-slider">
+                  <rect width="50" height="50" rx="25" fill="#ffffff" class="arrow-slider-bg" />
+                  <path d="M11.9393 26.0607C11.3536 25.4749 11.3536 24.5251 11.9393 23.9393L21.4853 14.3934C22.0711 13.8076 23.0208 13.8076 23.6066 14.3934C24.1924 14.9792 24.1924 15.9289 23.6066 16.5147L15.1213 25L23.6066 33.4853C24.1924 34.0711 24.1924 35.0208 23.6066 35.6066C23.0208 36.1924 22.0711 36.1924 21.4853 35.6066L11.9393 26.0607ZM37 26.5H13V23.5H37V26.5Z" fill="#212984" class="arrow-slider-arrow" />
+                </svg>
+              </div>
+              <div class="absolute -translate-y-1/2 swiper-button-next-arrow-carousel top-[calc(50%-26px)] right-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none" class="arrow-slider">
+                  <rect width="50" height="50" rx="25" fill="#ffffff" class="arrow-slider-bg" />
+                  <path d="M38.0607 26.0607C38.6464 25.4749 38.6464 24.5251 38.0607 23.9393L28.5147 14.3934C27.9289 13.8076 26.9792 13.8076 26.3934 14.3934C25.8076 14.9792 25.8076 15.9289 26.3934 16.5147L34.8787 25L26.3934 33.4853C25.8076 34.0711 25.8076 35.0208 26.3934 35.6066C26.9792 36.1924 27.9289 36.1924 28.5147 35.6066L38.0607 26.0607ZM13 26.5H37V23.5H13V26.5Z" fill="#212984" class="arrow-slider-arrow" />
+                </svg>
+              </div>
             </div>
           </div>
-        <?php wp_reset_postdata();
-        endif; ?>
-      </div>
+        </div>
+      <?php wp_reset_postdata();
+      endif; ?>
     </section>
     <section class="section">
       <div class="container-sm">
         <?= $sectionThree; ?>
       </div>
     </section>
-    <section class="section">
+    <section class="bg-off-white section">
       <div class="container-sm">
         <?= $sectionFour; ?>
       </div>
