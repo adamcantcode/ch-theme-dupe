@@ -171,8 +171,8 @@
               <div class="relative topLevelNavItem">
                 <a <?= $url; ?> target="<?= $target; ?>" class="block text-white no-underline px-sp-3 py-sp-6 font-heading hover:text-lavender-200 text-nav-normal ml-sp-4<?= empty($url) ? ' cursor-default' : ''; ?>"><?= $title; ?></a>
                 <?php if (have_rows('secondary_menu', 'option')) : ?>
-                  <div class="absolute w-[500px] grid grid-cols-2 opacity-0 invisible secondLevelNav transition-all duration-150 translate-x-1 origin-right pb-[5px]">
-                    <div class="flex flex-col p-sp-8 bg-secondary-soft">
+                  <div class="absolute w-[525px] grid grid-cols-2 opacity-0 invisible secondLevelNav transition-all duration-150 translate-x-1 origin-right pb-[5px]">
+                    <div class="flex flex-col p-sp-6 bg-secondary-soft">
                       <?php while (have_rows('secondary_menu', 'option')) : the_row(); ?>
                         <?php
                         $secondaryLink = get_sub_field('secondary_menu_item');
@@ -185,7 +185,7 @@
                         $title = $secondaryLink['title'];
                         $target = $secondaryLink['target'];
                         ?>
-                        <a <?= $url; ?> target="<?= $target; ?>" class="text-white no-underline font-heading text-nav-normal hover:text-lavender-200 mb-sp-6 last:mb-0"><?= $title; ?></a>
+                        <a <?= $url; ?> target="<?= $target; ?>" class="text-white no-underline font-heading text-nav-normal hover:text-lavender-200 py-sp-3"><?= $title; ?></a>
                       <?php endwhile; ?>
                     </div>
                     <?php if (have_rows('tertiary_menu', 'option')) : ?>
@@ -202,7 +202,7 @@
                           $title = $topLink['title'];
                           $target = $topLink['target'];
                           ?>
-                          <a <?= $url; ?> target="<?= $target; ?>" class="no-underline font-heading text-nav-small mb-sp-3 last:mb-0 <?= $url === '' ? 'text-lavender-200 mt-sp-3 first:mt-0' : 'text-white hover:text-lavender-200'; ?>"><?= $title; ?></a>
+                          <a <?= $url; ?> target="<?= $target; ?>" class="no-underline font-heading text-nav-small py-[6px] <?= $url === '' ? 'text-lavender-200 mt-sp-3 first:mt-0' : 'text-white hover:text-lavender-200'; ?>"><?= $title; ?></a>
                         <?php endwhile; ?>
                       </div>
                     <?php endif; ?>

@@ -1972,6 +1972,10 @@ a.nav-link:hover {
   width: 2rem;
 }
 
+.w-\[525px\]{
+  width: 525px;
+}
+
 .\!max-w-md{
   max-width: 28rem !important;
 }
@@ -2678,6 +2682,11 @@ a.nav-link:hover {
 .py-8{
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.py-\[6px\]{
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .py-sp-1{
@@ -4272,6 +4281,10 @@ a.providers:hover {
 
 .last\:border-0:last-child{
   border-width: 0px;
+}
+
+.last\:pb-0:last-child{
+  padding-bottom: 0px;
 }
 
 .hover\:-translate-y-sp-1:hover{
