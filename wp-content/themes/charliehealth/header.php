@@ -171,7 +171,7 @@
               <div class="relative topLevelNavItem">
                 <a <?= $url; ?> target="<?= $target; ?>" class="block text-white no-underline px-sp-3 py-sp-6 font-heading hover:text-lavender-200 text-nav-normal ml-sp-4<?= empty($url) ? ' cursor-default' : ''; ?>"><?= $title; ?></a>
                 <?php if (have_rows('secondary_menu', 'option')) : ?>
-                  <div class="absolute w-[525px] grid grid-cols-2 opacity-0 invisible secondLevelNav transition-all duration-150 translate-x-1 origin-right pb-[5px]">
+                  <div class="absolute w-[555px] grid grid-cols-2 opacity-0 invisible secondLevelNav transition-all duration-150 translate-x-1 origin-right pb-[5px]">
                     <div class="flex flex-col px-sp-8 py-sp-5 bg-secondary-soft">
                       <?php while (have_rows('secondary_menu', 'option')) : the_row(); ?>
                         <?php

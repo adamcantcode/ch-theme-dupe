@@ -1976,6 +1976,10 @@ a.nav-link:hover {
   width: 525px;
 }
 
+.w-\[555px\]{
+  width: 555px;
+}
+
 .\!max-w-md{
   max-width: 28rem !important;
 }
