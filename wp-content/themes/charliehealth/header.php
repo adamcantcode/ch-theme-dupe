@@ -276,9 +276,8 @@
                         <a <?= $url; ?> target="<?= $target; ?>" class="w-full leading-none text-white text-[1rem] no-underline py-sp-4 font-heading"><?= $title; ?></a>
                       <?php endwhile; ?>
                       <?php if (have_rows('tertiary_menu', 'option')) : ?>
-                        <div class="grid grid-cols-2 gap-x-sp-4 tertiary mt-sp-4">
+                        <div class="grid gap-x-sp-4 tertiary mt-sp-4">
                           <?php
-                          $isDivOpen = false; // Variable to track if the div is open
                           while (have_rows('tertiary_menu', 'option')) : the_row();
                             $topLink = get_sub_field('tertiary_menu_item');
                             $url = $topLink['url'];
@@ -289,26 +288,9 @@
                             }
                             $title = $topLink['title'];
                             $target = $topLink['target'];
-
-                            // Check if the URL is empty
-                            if (empty($url)) {
-                              if ($isDivOpen) {
-                                echo '</div>'; // Close the div if it's open
-                                $isDivOpen = false; // Reset the flag
-                              }
-                              echo '<div class="flex flex-col">'; // Open a new div
-                              $isDivOpen = true; // Set the flag to true
-                            }
                           ?>
                             <a <?= $url; ?> target="<?= $target; ?>" class="w-full leading-snug text-[.875rem] no-underline py-sp-4 font-heading <?= empty($url) ? 'text-lavender-200 hover:text-lavender-200' : 'text-white'; ?> "><?= $title; ?></a>
                           <?php endwhile; ?>
-
-                          <?php
-                          if ($isDivOpen) {
-                            echo '</div>'; // Close the div if it's still open
-                          }
-                          ?>
-
                         </div>
                       <?php endif; ?>
                     </div>
