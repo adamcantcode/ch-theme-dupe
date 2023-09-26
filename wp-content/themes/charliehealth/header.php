@@ -250,7 +250,7 @@
             <div class="w-full h-[1.5px] bg-white relative transition-all duration-100 delay-75 top-0 origin-center"></div>
           </div>
         </div>
-        <div class="bg-secondary-soft fixed panel-js h-[calc(100vh-60px)] w-full left-0 overflow-y-scroll opacity-0 invisible pointer-events-none transition-all duration-300 flex flex-col pt-sp-3">
+        <div class="bg-secondary-soft fixed panel-js <?= $enableBanner && $displayOnPage ? 'h-[calc(100vh-124px)]' : 'h-[calc(100vh-60px)]' ?> w-full left-0 overflow-y-scroll opacity-0 invisible pointer-events-none transition-all duration-300 flex flex-col pt-sp-3">
           <?php if (have_rows('navigation_item_new', 'option')) :
             while (have_rows('navigation_item_new', 'option')) : the_row(); ?>
               <?php
