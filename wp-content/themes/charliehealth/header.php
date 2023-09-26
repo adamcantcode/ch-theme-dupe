@@ -147,7 +147,29 @@
       </nav>
     </header>
   <?php else : ?>
-    <header class="fixed z-[100] w-screen bg-darker-blue <?= is_user_logged_in() ? 'lg:top-[32px] top-[46px]' : 'top-0'; ?>">
+    <?php
+    $enableBanner = get_field('enable_banner', 'options');
+    if ($enableBanner) {
+      $link = get_field('link', 'options');
+      $pages = get_field('pages', 'options');
+      $currentPage = get_queried_object_id();
+      if(in_array($currentPage, $pages)) {
+        $displayOnPage = true;
+      }
+    }
+    ?>
+    <?php if ($enableBanner && $displayOnPage) : ?>
+      <div class="z-[9999] w-full lg:h-sp-8 h-sp-14 bg-secondary-soft flex justify-center items-center fixed<?= is_user_logged_in() ? ' lg:top-[32px] top-[46px]' : ' top-0'; ?>">
+        <div class="w-sp-2 h-sp-2 bg-orange-300 rounded-[50%] ml-sp-5"></div>
+        <a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>" class="inline-block">
+          <p class="text-white px-sp-4 font-heading text-[14px] leading-normal mb-0"><?= $link['title']; ?></p>
+        </a>
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="none" class="mr-sp-5">
+          <path d="M11.4419 5.44194C11.686 5.19787 11.686 4.80214 11.4419 4.55806L7.46447 0.580583C7.22039 0.336506 6.82466 0.336506 6.58058 0.580583C6.33651 0.824661 6.33651 1.22039 6.58058 1.46447L10.1161 5L6.58058 8.53553C6.3365 8.77961 6.3365 9.17534 6.58058 9.41942C6.82466 9.6635 7.22039 9.6635 7.46447 9.41942L11.4419 5.44194ZM-5.46392e-08 5.625L11 5.625L11 4.375L5.46392e-08 4.375L-5.46392e-08 5.625Z" fill="white" />
+        </svg>
+      </div>
+    <?php endif; ?>
+    <header class="fixed z-[100] w-screen bg-darker-blue<?= $enableBanner && $displayOnPage ? ' lg:mt-sp-8 mt-sp-14' : ''; ?> <?= is_user_logged_in() ? ' lg:top-[32px] top-[46px]' : ' top-0'; ?>">
       <nav class="section-horizontal">
         <div class="container items-center lg:flex noshow">
           <div class="mr-sp-6">
