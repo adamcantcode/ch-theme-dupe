@@ -2,11 +2,11 @@
 	<div class="section">
 		<div class="container ">
 			<div class="flex flex-col justify-between lg:flex-row">
-				<div class="w-full rounded-t-sm lg:rounded-l-sm lg:rounded-r-none py-sp-5 px-sp-6 bg-[#ffefe7]">
-					<p class="mb-0">If this is a life-threatening emergency, please call 911 or the <a href="https://988lifeline.org/" target="_blank">National Suicide Prevention Lifeline</a></p>
+				<div class="w-full rounded-t-sm lg:rounded-l-sm lg:rounded-r-none py-sp-5 px-sp-6 bg-lavender-100">
+					<p class="mb-0">If this is a life-threatening emergency, please call 911 or the <a href="https://988lifeline.org/" target="_blank" class="text-darker-blue">National Suicide Prevention Lifeline</a></p>
 				</div>
-				<div class="bg-orange-300 rounded-b-sm lg:rounded-r-sm lg:rounded-l-none py-sp-5 px-sp-6">
-					<a href="tel:+988" class="flex items-center no-underline gap-sp-2">
+				<div class="rounded-b-sm bg-lavender-300 lg:rounded-r-sm lg:rounded-l-none py-sp-5 px-sp-6">
+					<a href="tel:+988" class="flex items-center no-underline gap-sp-2 text-darker-blue">
 						<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/phone.svg'); ?>" width="25" alt="phone call icon">
 						<div>988</div>
 					</a>

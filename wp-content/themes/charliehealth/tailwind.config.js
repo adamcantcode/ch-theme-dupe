@@ -51,6 +51,7 @@ module.exports = {
       'young-adult': '#DAC1FB',
       parent: '#FDBF7C',
       lavender: {
+        100: '#F7EBFF',
         200: '#E7D3FF',
         300: '#DAC1FB',
       },
