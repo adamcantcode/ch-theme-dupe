@@ -3,154 +3,6 @@
     "title": "Footer Navigation",
     "fields": [
         {
-            "key": "field_64761435b252e",
-            "label": "Main Navigation Items",
-            "name": "footer_navigation_item",
-            "aria-label": "",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "row",
-            "pagination": 0,
-            "min": 0,
-            "max": 0,
-            "collapsed": "",
-            "button_label": "Add Row",
-            "rows_per_page": 20,
-            "sub_fields": [
-                {
-                    "key": "field_647614c5b252f",
-                    "label": "Column Heading",
-                    "name": "footer_column_heading",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "parent_repeater": "field_64761435b252e"
-                },
-                {
-                    "key": "field_647614e4b2530",
-                    "label": "Submenu Items",
-                    "name": "footer_submenu_items",
-                    "aria-label": "",
-                    "type": "repeater",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "layout": "table",
-                    "pagination": 0,
-                    "min": 0,
-                    "max": 0,
-                    "collapsed": "",
-                    "button_label": "Add Row",
-                    "rows_per_page": 20,
-                    "parent_repeater": "field_64761435b252e",
-                    "sub_fields": [
-                        {
-                            "key": "field_647614fdb2531",
-                            "label": "Sublink",
-                            "name": "footer_sublink",
-                            "aria-label": "",
-                            "type": "link",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "array",
-                            "parent_repeater": "field_647614e4b2530"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "key": "field_64761de6e7572",
-            "label": "Secondary Navigation Items",
-            "name": "secondary_navigation_items",
-            "aria-label": "",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "row",
-            "pagination": 0,
-            "min": 0,
-            "max": 0,
-            "collapsed": "",
-            "button_label": "Add Row",
-            "rows_per_page": 20,
-            "sub_fields": [
-                {
-                    "key": "field_6476219ce7573",
-                    "label": "Menu Item",
-                    "name": "secondary_menu_item",
-                    "aria-label": "",
-                    "type": "link",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "parent_repeater": "field_64761de6e7572"
-                }
-            ]
-        },
-        {
-            "key": "field_64fe681182a55",
-            "label": "New Navigation",
-            "name": "new_navigation_footer",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
             "key": "field_64fe686382a58",
             "label": "Main Navigation Items",
             "name": "footer_navigation_item_new",
@@ -213,6 +65,7 @@
                     "collapsed": "",
                     "button_label": "Add Row",
                     "rows_per_page": 20,
+                    "parent_repeater": "field_64fe686382a58",
                     "sub_fields": [
                         {
                             "key": "field_64fe686382a5b",
@@ -231,15 +84,14 @@
                             "return_format": "array",
                             "parent_repeater": "field_64fe686382a5a"
                         }
-                    ],
-                    "parent_repeater": "field_64fe686382a58"
+                    ]
                 }
             ]
         },
         {
-            "key": "field_64fe684e82a56",
+            "key": "field_64761de6e7572",
             "label": "Secondary Navigation Items",
-            "name": "secondary_navigation_items_new",
+            "name": "secondary_navigation_items",
             "aria-label": "",
             "type": "repeater",
             "instructions": "",
@@ -250,16 +102,16 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "block",
+            "layout": "row",
             "pagination": 0,
             "min": 0,
             "max": 0,
-            "collapsed": "field_64fe684e82a57",
+            "collapsed": "",
             "button_label": "Add Row",
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_64fe684e82a57",
+                    "key": "field_6476219ce7573",
                     "label": "Menu Item",
                     "name": "secondary_menu_item",
                     "aria-label": "",
@@ -273,7 +125,7 @@
                         "id": ""
                     },
                     "return_format": "array",
-                    "parent_repeater": "field_64fe684e82a56"
+                    "parent_repeater": "field_64761de6e7572"
                 }
             ]
         }
@@ -296,5 +148,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1694395816
+    "modified": 1695758570
 }
