@@ -23143,7 +23143,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// import tagPage from './modules/tag-page';
 
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
@@ -23177,9 +23176,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   if (body.classList.contains('tag')) {
     (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__["default"])();
-    // tagPage();
   }
-
   if (body.classList.contains('single-authors')) {
     (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__["default"])();
     (0,_modules_ajax_pagination_authors__WEBPACK_IMPORTED_MODULE_12__["default"])();
