@@ -379,6 +379,7 @@ function ajaxPaginationResearch() {
             noPosts.classList.remove('invisible');
             noPosts.classList.remove('absolute');
           }
+          clickPages();
         });
       },
       afterPageOnClick: function () {
@@ -489,6 +490,11 @@ function ajaxPaginationResearch() {
     </div>`;
     }
     return html;
+  };
+  const clickPages = () => {
+    jQuery('#researchContainer .paginationjs-prev, #researchContainer .paginationjs-next, #researchContainer .paginationjs-page').on('click', function () {
+      jQuery('.posts-container-reserach').addClass('opacity-0 scale-[0.99]');
+    });
   };
   termsClickHandler();
   initPagination();
@@ -947,7 +953,7 @@ function ajaxPagination() {
     return html;
   };
   const clickPages = () => {
-    jQuery('.paginationjs-prev, .paginationjs-next, .paginationjs-page').on('click', function () {
+    jQuery('#postsContainer .paginationjs-prev, #postsContainer .paginationjs-next, #postsContainer .paginationjs-page').on('click', function () {
       jQuery('.posts-container').addClass('opacity-0 scale-[0.99]');
     });
   };
