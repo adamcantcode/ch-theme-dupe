@@ -331,3 +331,4 @@
       </nav>
     </header>
   <?php endif; ?>
+  <main id="primary" class="site-main <?= $enableBanner && $displayOnPage ? 'lg:mt-[98px] mt-[124px]' : 'mt-[66px]'; ?>">

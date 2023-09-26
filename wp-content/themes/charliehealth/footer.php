@@ -1,3 +1,4 @@
+	</main>
 <?php if (!get_field('new_navigation_footer', 'option')) : ?>
 	<footer id="footer" class="grid bg-[#12142A] lg:gap-y-sp-16 gap-y-sp-8 section relatve">
 		<!-- menu -->
