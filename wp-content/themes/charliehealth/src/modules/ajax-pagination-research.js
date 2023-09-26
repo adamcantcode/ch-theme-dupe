@@ -54,7 +54,7 @@ export default function ajaxPaginationResearch() {
     </svg>`,
       callback: function (data, pagination) {
         // Add hrefs to pagianted links
-        jQuery('.pagination-container .paginationjs-page').each(function (
+        jQuery('.pagination-container-research .paginationjs-page').each(function (
           index,
           element
         ) {
@@ -86,9 +86,9 @@ export default function ajaxPaginationResearch() {
             if (posts.length > 0) {
               const noPosts = document.querySelector('.no-posts-js');
               const pagination = document.querySelector(
-                '.pagination-container'
+                '.pagination-container-research'
               );
-              const postsContainer = document.querySelector('.posts-container');
+              const postsContainer = document.querySelector('.posts-container-research');
 
               pagination.classList.remove('noshow');
               postsContainer.classList.remove('noshow');
@@ -107,9 +107,9 @@ export default function ajaxPaginationResearch() {
             } else {
               const noPosts = document.querySelector('.no-posts-js');
               const pagination = document.querySelector(
-                '.pagination-container'
+                '.pagination-container-research'
               );
-              const postsContainer = document.querySelector('.posts-container');
+              const postsContainer = document.querySelector('.posts-container-research');
 
               pagination.classList.add('noshow');
               postsContainer.classList.add('noshow');
@@ -133,13 +133,12 @@ export default function ajaxPaginationResearch() {
   };
 
   const scollToPostsContainer = () => {
-    // TODO update scroll to for press, different anchor
     gsap.to(window, {
       duration: 1,
       ease: 'Power2.easeInOut',
-      scrollTo: '#postsContainer',
+      scrollTo: '#researchContainer',
       scrollTo: {
-        y: '#postsContainer',
+        y: '#researchContainer',
         offsetY: (self) => document.querySelector('header').offsetHeight,
       },
     });

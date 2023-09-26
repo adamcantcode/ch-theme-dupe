@@ -337,7 +337,7 @@ function ajaxPaginationResearch() {
     </svg>`,
       callback: function (data, pagination) {
         // Add hrefs to pagianted links
-        jQuery('.pagination-container .paginationjs-page').each(function (index, element) {
+        jQuery('.pagination-container-research .paginationjs-page').each(function (index, element) {
           var page = jQuery(element).data('num');
           var link = jQuery(element).find('a');
           // Check if on paginated pages already
@@ -356,8 +356,8 @@ function ajaxPaginationResearch() {
         }).then(function (posts) {
           if (posts.length > 0) {
             const noPosts = document.querySelector('.no-posts-js');
-            const pagination = document.querySelector('.pagination-container');
-            const postsContainer = document.querySelector('.posts-container');
+            const pagination = document.querySelector('.pagination-container-research');
+            const postsContainer = document.querySelector('.posts-container-research');
             pagination.classList.remove('noshow');
             postsContainer.classList.remove('noshow');
             noPosts.classList.add('opacity-0');
@@ -371,8 +371,8 @@ function ajaxPaginationResearch() {
             jQuery('.posts-container-research').removeClass('opacity-0 scale-[0.99]');
           } else {
             const noPosts = document.querySelector('.no-posts-js');
-            const pagination = document.querySelector('.pagination-container');
-            const postsContainer = document.querySelector('.posts-container');
+            const pagination = document.querySelector('.pagination-container-research');
+            const postsContainer = document.querySelector('.posts-container-research');
             pagination.classList.add('noshow');
             postsContainer.classList.add('noshow');
             noPosts.classList.remove('opacity-0');
@@ -393,13 +393,12 @@ function ajaxPaginationResearch() {
     });
   };
   const scollToPostsContainer = () => {
-    // TODO update scroll to for press, different anchor
     gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.to(window, {
       duration: 1,
       ease: 'Power2.easeInOut',
-      scrollTo: '#postsContainer',
+      scrollTo: '#researchContainer',
       scrollTo: {
-        y: '#postsContainer',
+        y: '#researchContainer',
         offsetY: self => document.querySelector('header').offsetHeight
       }
     });
@@ -23143,7 +23142,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// import tagPage from './modules/tag-page';
 
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
@@ -23177,9 +23175,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   if (body.classList.contains('tag')) {
     (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__["default"])();
-    // tagPage();
   }
-
   if (body.classList.contains('single-authors')) {
     (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__["default"])();
     (0,_modules_ajax_pagination_authors__WEBPACK_IMPORTED_MODULE_12__["default"])();
