@@ -144,7 +144,7 @@ if (wp_get_environment_type() === 'production') {
 <?php include('includes/rocket-skip-js.php'); ?>
 <!-- END Rocket Excludes Delay JS -->
 <?php wp_footer(); ?>
-<pre class="fixed left-0 right-0 w-full text-xs text-center text-dark-blue bottom-4 -z-50 opacity-30">Better care, from anywhere ❤️ Carter Barnhart</pre>
+<pre class="fixed left-0 right-0 w-full text-xs text-center text-[#87889A] bottom-4 -z-50 opacity-30">Better care, from anywhere ❤️ Carter Barnhart</pre>
 </body>
 
 </html>
