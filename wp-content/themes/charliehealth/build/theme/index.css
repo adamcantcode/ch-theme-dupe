@@ -2761,11 +2761,6 @@ a.ch-button.button-tertiary.inverted:hover {
   color: rgb(135 136 154 / var(--tw-text-opacity));
 }
 
-.text-dark-blue{
-  --tw-text-opacity: 1;
-  color: rgb(29 34 95 / var(--tw-text-opacity));
-}
-
 .text-darker-blue{
   --tw-text-opacity: 1;
   color: rgb(22 26 61 / var(--tw-text-opacity));
@@ -2791,11 +2786,6 @@ a.ch-button.button-tertiary.inverted:hover {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-tag-gray{
-  --tw-text-opacity: 1;
-  color: rgb(248 247 247 / var(--tw-text-opacity));
-}
-
 .underline{
   text-decoration-line: underline;
 }
@@ -2814,10 +2804,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .opacity-30{
   opacity: 0.3;
-}
-
-.opacity-80{
-  opacity: 0.8;
 }
 
 .shadow-\[inset_0_0_0_2px_transparent\]{
