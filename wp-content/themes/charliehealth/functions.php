@@ -745,7 +745,7 @@ function gb_wpseo_canonical($canonical)
   $paged = get_query_var('paged');
 
   if (isset($paged) && (int) $paged > 0) {
-    return trailingslashit(trailingslashit($canonical) . 'page/' . $paged);
+    return trailingslashit($canonical) . 'page/' . $paged;
 
     return $url;
   }
