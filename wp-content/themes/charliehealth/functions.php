@@ -737,6 +737,24 @@ if (is_singular('post') || is_singular('research')) {
   });
 }
 
+/**
+ * FIX yoast canonical, og:url mismatch
+ */
+function gb_wpseo_canonical($canonical)
+{
+  $paged = get_query_var('paged');
+
+  if (isset($paged) && (int) $paged > 0) {
+    return trailingslashit(trailingslashit($canonical) . 'page/' . $paged);
+
+    return $url;
+  }
+
+  return $canonical;
+}
+
+add_filter('wpseo_opengraph_url', 'gb_wpseo_canonical');
+
 function remove_schema_pro_breadcrumbs($bool, $post_id, $type)
 {
   if ('breadcrumb' == $type) {
