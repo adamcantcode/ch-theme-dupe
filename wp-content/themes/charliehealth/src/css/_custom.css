@@ -189,6 +189,19 @@
       @apply bg-med-blue;
     }
   }
+  &.swiper-testimonial-carousel-big {
+    .swiper-pagination-bullets {
+      left: 0;
+      width: initial;
+      @apply mb-sp-12;
+      .swiper-pagination-bullet {
+        @apply bg-primary opacity-10 transition-all duration-500;
+        &.swiper-pagination-bullet-active {
+          @apply bg-primary opacity-100;
+        }
+      }
+    }
+  }
   &.swiper-blog-carousel {
     .swiper-pagination-bullet {
       @apply bg-transparent border-2 border-purple-gradient-end opacity-100;

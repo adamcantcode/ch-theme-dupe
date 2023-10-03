@@ -1469,6 +1469,11 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-right: 1.25rem;
 }
 
+.my-sp-14{
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
 .my-sp-4{
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -2639,6 +2644,10 @@ a.ch-button.button-tertiary.inverted:hover {
   font-size: 4rem;
 }
 
+.text-\[56px\]{
+  font-size: 56px;
+}
+
 .text-h1{
   font-size: 2rem;
   line-height: 2rem;
@@ -2730,6 +2739,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .font-bold{
   font-weight: 700;
+}
+
+.leading-\[1\.1\]{
+  line-height: 1.1;
 }
 
 .leading-\[1\.4\]{
@@ -3480,6 +3493,27 @@ a.ch-button.button-tertiary.inverted:hover {
 .swiper .swiper-pagination-bullet.swiper-pagination-bullet-active{
   --tw-bg-opacity: 1;
   background-color: rgb(33 41 132 / var(--tw-bg-opacity));
+}
+
+.swiper.swiper-testimonial-carousel-big .swiper-pagination-bullets {
+      left: 0;
+      width: initial;
+      margin-bottom: 3rem;
+    }
+
+.swiper.swiper-testimonial-carousel-big .swiper-pagination-bullets .swiper-pagination-bullet{
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 26 61 / var(--tw-bg-opacity));
+  opacity: 0.1;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
+.swiper.swiper-testimonial-carousel-big .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active{
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 26 61 / var(--tw-bg-opacity));
+  opacity: 1;
 }
 
 .swiper.swiper-blog-carousel .swiper-pagination-bullet{
