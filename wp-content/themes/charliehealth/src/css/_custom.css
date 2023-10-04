@@ -192,6 +192,7 @@
   &.swiper-testimonial-carousel-big {
     .swiper-pagination-bullets {
       left: 0;
+      bottom: 0;
       width: initial;
       @apply mb-sp-12;
       .swiper-pagination-bullet {

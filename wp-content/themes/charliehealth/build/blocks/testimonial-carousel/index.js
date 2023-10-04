@@ -10424,6 +10424,15 @@ __webpack_require__.r(__webpack_exports__);
 
 window.addEventListener('DOMContentLoaded', () => {
   var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper.swiper-testimonial-carousel-big', {
+    breakpoints: {
+      1024: {
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true
+        }
+      }
+    },
     slidesPerView: 2,
     centeredSlides: true,
     loop: true,
@@ -10431,11 +10440,6 @@ window.addEventListener('DOMContentLoaded', () => {
     effect: 'fade',
     fadeEffect: {
       crossFade: true
-    },
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-      pauseOnMouseEnter: true
     },
     speed: 1000,
     pagination: {

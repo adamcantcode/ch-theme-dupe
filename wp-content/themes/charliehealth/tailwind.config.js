@@ -61,6 +61,10 @@ module.exports = {
       primary: {
         DEFAULT: '#161A3D',
       },
+      grey: {
+        warm: '#F7F5F1',
+        cool: '#F8F7F7',
+      },
       salmon: '#F9E1D4',
       // 'light-teal': '#C8FFFF',
       // 'med-bright-teal': '#3EB7B5',

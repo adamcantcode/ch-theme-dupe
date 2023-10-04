@@ -8,6 +8,15 @@ import 'swiper/css/bundle';
 
 window.addEventListener('DOMContentLoaded', () => {
   var swiper = new Swiper('.swiper.swiper-testimonial-carousel-big', {
+    breakpoints: {
+      1024: {
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+      },
+    },
     slidesPerView: 2,
     centeredSlides: true,
     loop: true,
@@ -15,11 +24,6 @@ window.addEventListener('DOMContentLoaded', () => {
     effect: 'fade',
     fadeEffect: {
       crossFade: true,
-    },
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-      pauseOnMouseEnter: true,
     },
     speed: 1000,
     pagination: {
