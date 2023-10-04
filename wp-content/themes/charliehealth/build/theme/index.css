@@ -1599,10 +1599,6 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-top: 4rem;
 }
 
-.mt-sp-16{
-  margin-top: 6rem;
-}
-
 .mt-sp-2{
   margin-top: 0.5rem;
 }
@@ -2641,6 +2637,10 @@ a.ch-button.button-tertiary.inverted:hover {
   font-size: 12px;
 }
 
+.text-\[14px\]{
+  font-size: 14px;
+}
+
 .text-\[1rem\]{
   font-size: 1rem;
 }
@@ -2748,10 +2748,6 @@ a.ch-button.button-tertiary.inverted:hover {
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-\[14px\]{
-  font-size: 14px;
 }
 
 .font-bold{
@@ -3517,12 +3513,20 @@ a.ch-button.button-tertiary.inverted:hover {
   background-color: rgb(33 41 132 / var(--tw-bg-opacity));
 }
 
-.swiper.swiper-testimonial-carousel-big .swiper-pagination-bullets {
-      left: 0;
-      bottom: 0;
-      width: initial;
-      margin-bottom: 3rem;
-    }
+@media (min-width: 1024px) {
+
+.swiper.swiper-testimonial-carousel-big .swiper-pagination-bullets{
+    position: absolute !important;
+    left: 0px;
+    width: initial;
+  }
+      }
+
+.swiper.swiper-testimonial-carousel-big .swiper-pagination-bullets{
+  position: relative;
+  bottom: 0px;
+  margin-bottom: 3rem;
+}
 
 .swiper.swiper-testimonial-carousel-big .swiper-pagination-bullets .swiper-pagination-bullet{
   --tw-bg-opacity: 1;

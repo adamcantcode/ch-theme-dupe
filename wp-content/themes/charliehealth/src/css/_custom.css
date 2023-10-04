@@ -191,9 +191,10 @@
   }
   &.swiper-testimonial-carousel-big {
     .swiper-pagination-bullets {
-      left: 0;
-      bottom: 0;
-      width: initial;
+      @screen lg {
+        @apply left-0 w-[initial] !absolute;
+      }
+      @apply relative bottom-0;
       @apply mb-sp-12;
       .swiper-pagination-bullet {
         @apply bg-primary opacity-10 transition-all duration-500;

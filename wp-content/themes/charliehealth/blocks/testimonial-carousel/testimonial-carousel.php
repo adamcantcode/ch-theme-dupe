@@ -9,52 +9,52 @@
       <div class="!h-auto swiper-slide">
         <div class="grid lg:grid-cols-2">
           <div class="order-2 lg:order-1">
-            <h5 class="mt-sp-14 mb-sp-8">in their words</h5>
+            <h5 class="lg:mt-sp-14 mb-sp-8">In their words</h5>
             <div class="text-[56px] text-primary leading-[1.1] font-heading-serif mb-sp-8">“Everyone thinks something is wrong with me.”</div>
             <p>Mental health stigma is more than calling those with mental health issues “crazy” — it’s an entrenched societal belief that people struggling with their mental health are abnormal, dangerous, or permanently damaged. </p>
-            <p>- Anonymous, Teen</p>
+            <p class="lg:mb-0 mb-sp-14">- Anonymous, Teen</p>
           </div>
-          <div>
-            <img src="https://www.charliehealth.com/wp-content/uploads/2023/09/X-1.png.webp" alt="test" class="grid lg:grid-cols-2" data-swiper-parallax-scale="0.98">
+          <div class="order-1 lg:order-2">
+            <img src="https://www.charliehealth.com/wp-content/uploads/2023/09/X-1.png.webp" alt="test" class="grid lg:grid-cols-2 mt-sp-14 lg:mt-0" data-swiper-parallax-scale="0.98">
           </div>
         </div>
       </div>
       <div class="!h-auto swiper-slide">
         <div class="grid lg:grid-cols-2">
           <div class="order-2 lg:order-1">
-            <h5 class="mt-sp-14 mb-sp-8">in their words</h5>
+            <h5 class="lg:mt-sp-14 mb-sp-8">In their words</h5>
             <div class="text-[56px] text-primary leading-[1.1]  font-heading-serif mb-sp-8">“I've dealt with severe anxiety my whole life.”</div>
             <p>I developed agoraphobia, and I was depressed that I was missing out on everyday teen things. But when I started going to groups at Charlie Health, i gained the confidence to begin my recovery journey. I now have the resources and skills I need to leave my house</p>
-            <p>- Anonymous, Teen</p>
+            <p class="lg:mb-0 mb-sp-14">- Anonymous, Teen</p>
           </div>
-          <div>
-            <img src="https://www.charliehealth.com/wp-content/uploads/2023/09/X-4.png.webp" alt="test" class="grid lg:grid-cols-2" data-swiper-parallax-scale="0.98">
-          </div>
-        </div>
-      </div>
-      <div class="!h-auto swiper-slide">
-        <div class="grid lg:grid-cols-2">
-          <div class="order-2 lg:order-1">
-            <h5 class="mt-sp-14 mb-sp-8 text-[14px]">in their words</h5>
-            <div class="text-[56px] text-primary leading-[1.1]  font-heading-serif mb-sp-8">“Everyone thinks something is wrong with me.”</div>
-            <p>Mental health stigma is more than calling those with mental health issues “crazy” — it’s an entrenched societal belief that people struggling with their mental health are abnormal, dangerous, or permanently damaged. </p>
-            <p>- Anonymous, Teen</p>
-          </div>
-          <div>
-            <img src="https://placehold.co/657x657" alt="test" class="grid lg:grid-cols-2" data-swiper-parallax-scale="0.98">
+          <div class="order-1 lg:order-2">
+            <img src="https://www.charliehealth.com/wp-content/uploads/2023/09/X-4.png.webp" alt="test" class="grid lg:grid-cols-2 mt-sp-14 lg:mt-0" data-swiper-parallax-scale="0.98">
           </div>
         </div>
       </div>
       <div class="!h-auto swiper-slide">
         <div class="grid lg:grid-cols-2">
           <div class="order-2 lg:order-1">
-            <h5 class="mt-sp-14 mb-sp-8">in their words</h5>
+            <h5 class="lg:mt-sp-14 mb-sp-8 text-[14px]">In their words</h5>
             <div class="text-[56px] text-primary leading-[1.1]  font-heading-serif mb-sp-8">“Everyone thinks something is wrong with me.”</div>
             <p>Mental health stigma is more than calling those with mental health issues “crazy” — it’s an entrenched societal belief that people struggling with their mental health are abnormal, dangerous, or permanently damaged. </p>
-            <p>- Anonymous, Teen</p>
+            <p class="lg:mb-0 mb-sp-14">- Anonymous, Teen</p>
           </div>
-          <div>
-            <img src="https://placehold.co/657x657" alt="test" class="grid lg:grid-cols-2" data-swiper-parallax-scale="0.98">
+          <div class="order-1 lg:order-2">
+            <img src="https://placehold.co/657x657" alt="test" class="grid lg:grid-cols-2" data-swiper-parallax-scale="0.98 mt-sp-14 lg:mt-0">
+          </div>
+        </div>
+      </div>
+      <div class="!h-auto swiper-slide">
+        <div class="grid lg:grid-cols-2">
+          <div class="order-2 lg:order-1">
+            <h5 class="lg:mt-sp-14 mb-sp-8">In their words</h5>
+            <div class="text-[56px] text-primary leading-[1.1]  font-heading-serif mb-sp-8">“Everyone thinks something is wrong with me.”</div>
+            <p>Mental health stigma is more than calling those with mental health issues “crazy” — it’s an entrenched societal belief that people struggling with their mental health are abnormal, dangerous, or permanently damaged. </p>
+            <p class="lg:mb-0 mb-sp-14">- Anonymous, Teen</p>
+          </div>
+          <div class="order-1 lg:order-2">
+            <img src="https://placehold.co/657x657" alt="test" class="grid lg:grid-cols-2" data-swiper-parallax-scale="0.98 mt-sp-14 lg:mt-0">
           </div>
         </div>
       </div>
