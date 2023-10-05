@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "acf/research-list-block",
+  "title": "Research List",
+  "description": "A block for listing research articles ",
+  "style": "file:./index.css",
+  "script": "file:./index.js",
+  "category": "custom",
+  "icon": "align-pull-left",
+  "apiVersion": 2,
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "research-list.php"
+  },
+  "supports": {}
+}

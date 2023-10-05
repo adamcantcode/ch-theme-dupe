@@ -89,6 +89,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/testimonial-list');
   register_block_type(__DIR__ . '/build/blocks/posts-list-in-content');
   register_block_type(__DIR__ . '/build/blocks/testimonial-carousel');
+  register_block_type(__DIR__ . '/build/blocks/research-list');
 }
 add_action('init', 'register_acf_blocks', 5);
 

@@ -1675,6 +1675,10 @@ a.ch-button.button-tertiary.inverted:hover {
   height: 150px;
 }
 
+.h-\[1px\]{
+  height: 1px;
+}
+
 .h-\[200px\]{
   height: 200px;
 }
@@ -2609,6 +2613,10 @@ a.ch-button.button-tertiary.inverted:hover {
   text-align: center;
 }
 
+.align-\[initial\]{
+  vertical-align: initial;
+}
+
 .font-heading{
   font-family: "ABC Social", sans-serif;
 }
@@ -2750,8 +2758,16 @@ a.ch-button.button-tertiary.inverted:hover {
   line-height: 1rem;
 }
 
+.text-\[20px\]{
+  font-size: 20px;
+}
+
 .font-bold{
   font-weight: 700;
+}
+
+.font-normal{
+  font-weight: 400;
 }
 
 .leading-\[1\.1\]{
