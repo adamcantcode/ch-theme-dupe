@@ -41,7 +41,7 @@
             <p class="lg:mb-0 mb-sp-14">- Anonymous, Teen</p>
           </div>
           <div class="order-1 lg:order-2">
-            <img src="https://placehold.co/657x657" alt="test" class="grid lg:grid-cols-2" data-swiper-parallax-scale="0.98 mt-sp-14 lg:mt-0">
+            <img src="https://placehold.co/657x657" alt="test" class="grid lg:grid-cols-2 mt-sp-14 lg:mt-0" data-swiper-parallax-scale="0.98 mt-sp-14 lg:mt-0">
           </div>
         </div>
       </div>
@@ -54,7 +54,7 @@
             <p class="lg:mb-0 mb-sp-14">- Anonymous, Teen</p>
           </div>
           <div class="order-1 lg:order-2">
-            <img src="https://placehold.co/657x657" alt="test" class="grid lg:grid-cols-2" data-swiper-parallax-scale="0.98 mt-sp-14 lg:mt-0">
+            <img src="https://placehold.co/657x657" alt="test" class="grid lg:grid-cols-2 mt-sp-14 lg:mt-0" data-swiper-parallax-scale="0.98 mt-sp-14 lg:mt-0">
           </div>
         </div>
       </div>
