@@ -27,7 +27,9 @@ $articles = get_field('articles');
   <div class="lg:sticky self-start top-[8rem]">
     <h2><?= $heading; ?></h2>
     <p><?= $subhead; ?></p>
-    <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>">
+    <?php if ($image) : ?>
+      <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>">
+    <?php endif; ?>
   </div>
   <div class="sticky-split-info">
     <div class="bg-primary w-full h-[1px]"></div>
