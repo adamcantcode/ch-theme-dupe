@@ -2452,6 +2452,11 @@ a.ch-button.button-tertiary.inverted:hover {
   background-color: rgb(218 193 251 / var(--tw-bg-opacity));
 }
 
+.bg-orange-200{
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 168 144 / var(--tw-bg-opacity));
+}
+
 .bg-\[linear-gradient\(\#fead80\2c \#e2deca_50\%\2c \#bdc6fc\)\]{
   background-image: linear-gradient(#fead80,#e2deca 50%,#bdc6fc);
 }
