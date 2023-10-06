@@ -2309,11 +2309,6 @@ a.ch-button.button-tertiary.inverted:hover {
   --tw-border-opacity: 0.25;
 }
 
-.bg-\[\#12142A\]{
-  --tw-bg-opacity: 1;
-  background-color: rgb(18 20 42 / var(--tw-bg-opacity));
-}
-
 .bg-\[\#131632\]{
   --tw-bg-opacity: 1;
   background-color: rgb(19 22 50 / var(--tw-bg-opacity));
@@ -4525,10 +4520,6 @@ a.providers:hover {
 
   .lg\:grid-cols-4{
     grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .lg\:grid-cols-5{
-    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
   .lg\:grid-cols-\[1\.33fr_1fr\]{

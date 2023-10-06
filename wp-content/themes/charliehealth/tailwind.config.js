@@ -75,6 +75,7 @@ module.exports = {
       // 'orange-gradient-end': '#FFA776',
       // 'bright-orange': '#FF9F81',
       orange: {
+        200: '#F5A890',
         300: '#E07058',
       },
       // 'med-blue': '#262D70',

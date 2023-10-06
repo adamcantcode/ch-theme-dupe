@@ -43,6 +43,11 @@
           "name": "Lightest Teal"
         },
         {
+          "slug": "orange-200",
+          "color": "#F5A890",
+          "name": "Orange 200"
+        },
+        {
           "slug": "dark-teal",
           "color": "#1f5f68",
           "name": "Lightest Teal"
