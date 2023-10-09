@@ -1711,10 +1711,6 @@ a.nav-link:hover {
   margin-top: 2rem;
 }
 
-.mt-sp-16{
-  margin-top: 6rem;
-}
-
 .block{
   display: block;
 }
@@ -4326,10 +4322,6 @@ a.providers:hover {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.hover\:fill-current:hover{
-  fill: currentColor;
-}
-
 .hover\:\!text-\[\#35919c\]:hover{
   --tw-text-opacity: 1 !important;
   color: rgb(53 145 156 / var(--tw-text-opacity)) !important;
@@ -4407,16 +4399,6 @@ a.providers:hover {
 
   .md\:order-none{
     order: 0;
-  }
-
-  .md\:mx-sp-16{
-    margin-left: 6rem;
-    margin-right: 6rem;
-  }
-
-  .md\:mx-sp-12{
-    margin-left: 3rem;
-    margin-right: 3rem;
   }
 
   .md\:mx-sp-14{

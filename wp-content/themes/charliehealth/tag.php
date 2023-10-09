@@ -73,7 +73,9 @@
 <?php else : ?>
   <?php
 
-  // var_dump(single_tag_title());
+  // var_dump(get_queried_object());
+  $url          = get_term_link(get_queried_object());
+  $niceTitle    = get_queried_object()->name . ' Resources';
   $title        = get_field('title', get_queried_object()) ? get_field('title', get_queried_object()) : single_term_title('', false) . ' Resources for Teens & Young Adults';
   $subhead      = get_field('subhead', get_queried_object());
   $sectionOne   = get_field('section_1', get_queried_object());
@@ -85,6 +87,11 @@
   <main id="primary" class="site-main mt-[68px]">
     <section class="section">
       <div class="container">
+        <div class="breadcrumbs mb-sp-5 lg:mb-sp-6">
+          <a href="<?= home_url(); ?>">Home</a>
+          <span>/</span>
+          <span><?= $niceTitle; ?></span>
+        </div>
         <div class="grid items-start lg:grid-cols-2 gap-sp-8">
           <div class="order-1">
             <h1 class="mb-0"><?= $title; ?></h1>
