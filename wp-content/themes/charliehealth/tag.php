@@ -117,6 +117,11 @@
         </div>
       </div>
     </section>
+    <section class="section-horizontal">
+      <div class="container">
+        <div class="divider"></div>
+      </div>
+    </section>
     <section class="section" id="section1">
       <div class="container-sm">
         <?= $sectionOne; ?>
