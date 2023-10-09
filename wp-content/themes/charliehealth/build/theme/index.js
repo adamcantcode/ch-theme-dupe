@@ -1664,7 +1664,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function tagPage() {
   window.addEventListener('DOMContentLoaded', () => {
-    var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.swiper.swiper-top-level', {
+    var swipertop = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.swiper.swiper-top-level', {
       slidesPerView: 1,
       slidesPerGroup: 1,
       spaceBetween: 16,
@@ -1672,8 +1672,33 @@ function tagPage() {
       autoplay: false,
       pagination: false,
       navigation: {
-        nextEl: '.swiper-button-next-arrow-carousel',
-        prevEl: '.swiper-button-prev-arrow-carousel'
+        nextEl: '.swiper-top-level.swiper-button-next-arrow-carousel',
+        prevEl: '.swiper-top-level.swiper-button-prev-arrow-carousel'
+      },
+      scrollbar: false,
+      breakpoints: {
+        480: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+          spaceBetween: 16
+        },
+        1024: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+          spaceBetween: 16
+        }
+      }
+    });
+    var swiperBottom = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.swiper.swiper-bottom-level', {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 16,
+      loop: false,
+      autoplay: false,
+      pagination: false,
+      navigation: {
+        nextEl: '.swiper-bottom-level.swiper-button-next-arrow-carousel',
+        prevEl: '.swiper-bottom-level.swiper-button-prev-arrow-carousel'
       },
       scrollbar: false,
       breakpoints: {
