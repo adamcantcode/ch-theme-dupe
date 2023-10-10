@@ -134,7 +134,19 @@
 
       <?php
       $args = array(
-        'tag' => get_queried_object()->slug,
+        'tax_query' => array(
+          'relation' => 'AND',
+          array(
+            'taxonomy' => 'funnel-level',
+            'field' => 'slug',
+            'terms' => 'upper-level', 
+          ),
+          array(
+            'taxonomy' => 'post_tag',
+            'field' => 'slug',
+            'terms' => get_queried_object()->slug,
+          ),
+        ),
         'post_type' => 'post',
         'posts_per_page' => -1,
         'meta_key'       => 'date',
@@ -206,7 +218,19 @@
       </div>
       <?php
       $args = array(
-        'tag' => get_queried_object()->slug,
+        'tax_query' => array(
+          'relation' => 'AND',
+          array(
+            'taxonomy' => 'funnel-level',
+            'field' => 'slug',
+            'terms' => 'lower-level', 
+          ),
+          array(
+            'taxonomy' => 'post_tag',
+            'field' => 'slug',
+            'terms' => get_queried_object()->slug,
+          ),
+        ),
         'post_type' => 'post',
         'posts_per_page' => -1,
         'meta_key'       => 'date',
