@@ -110,21 +110,21 @@ $blockClasses .= $background . ' ';
       <div id="newsletterInContent" class="newsletter-revamp">
         <script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/dbt_skills_book"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/dbt_skills_book" title="Online Form">Online Form - DBT [gated]</a></noscript>
         <script>
-          var container = document.currentScript.parentNode; // Newsletter container
-          var elementToCut = container.querySelector("#fsSubmitButton5462843"); // Submit button
-          var destinationElement = container.querySelector("#fsCell152041959"); // Email container
-          var newsletterID = container.id; // Newlsetter identifier
-          var newsletterLPField = container.querySelector('#field152041960'); // LP URL field
-          var newsletterIDField = container.querySelector('#field152041961'); // Type field
+          var containerDBT = document.currentScript.parentNode; // DBT Guide container
+          var elementToCutDBT = containerDBT.querySelector("#fsSubmitButton5462843"); // Submit button
+          var destinationElementDBT = containerDBT.querySelector("#fsCell152041959"); // Email container
+          var newsletterIDDBT = containerDBT.id; // DBT Guide identifier
+          var newsletterLPFieldDBT = containerDBT.querySelector('#field152041960'); // LP URL field
+          var newsletterIDFieldDBT = containerDBT.querySelector('#field152041961'); // Type field
 
-          if (elementToCut && destinationElement) {
-            var clonedElement = elementToCut.cloneNode(true);
-            elementToCut.parentNode.removeChild(elementToCut);
-            destinationElement.appendChild(clonedElement);
+          if (elementToCutDBT && destinationElementDBT) {
+            var clonedElementDBT = elementToCutDBT.cloneNode(true);
+            elementToCutDBT.parentNode.removeChild(elementToCutDBT);
+            destinationElementDBT.appendChild(clonedElementDBT);
           }
 
-          newsletterIDField.value = newsletterID;
-          newsletterLPField.value = window.location.href;
+          newsletterIDFieldDBT.value = newsletterIDDBT;
+          newsletterLPFieldDBT.value = window.location.href;
         </script>
       </div>
       <h6>By entering your email you agree to receive marketing communications from Charlie Health. You can unsubscribe anytime.</h6>
