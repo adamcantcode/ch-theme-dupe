@@ -18,9 +18,9 @@
             },
             "choices": {
                 "value": "Value Prop",
-                "large": "Large",
                 "full": "Full Width",
-                "newsletter": "Newsletter"
+                "newsletter": "Newsletter",
+                "dbt": "DBT Skills Book"
             },
             "default_value": "value",
             "return_format": "value",
@@ -119,5 +119,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1689796779
+    "modified": 1695735628
 }

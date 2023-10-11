@@ -1430,6 +1430,10 @@ a.ch-button.button-tertiary.inverted:hover {
   z-index: 6;
 }
 
+.z-\[9999\]{
+  z-index: 9999;
+}
+
 .order-1{
   order: 1;
 }
@@ -1567,6 +1571,10 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-right: 0.5rem;
 }
 
+.mr-sp-5{
+  margin-right: 1.25rem;
+}
+
 .mr-sp-6{
   margin-right: 1.5rem;
 }
@@ -1577,6 +1585,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .mt-\[-1px\]{
   margin-top: -1px;
+}
+
+.mt-\[124px\]{
+  margin-top: 124px;
 }
 
 .mt-\[66px\]{
@@ -1707,6 +1719,10 @@ a.ch-button.button-tertiary.inverted:hover {
   height: 5px;
 }
 
+.h-\[calc\(100vh-124px\)\]{
+  height: calc(100vh - 124px);
+}
+
 .h-\[calc\(100vh-60px\)\]{
   height: calc(100vh - 60px);
 }
@@ -1729,6 +1745,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .h-sp-16{
   height: 6rem;
+}
+
+.h-sp-2{
+  height: 0.5rem;
 }
 
 .h-sp-3{
@@ -1840,6 +1860,10 @@ a.ch-button.button-tertiary.inverted:hover {
   width: 2.5rem;
 }
 
+.w-sp-2{
+  width: 0.5rem;
+}
+
 .w-sp-3{
   width: 0.75rem;
 }
@@ -1894,6 +1918,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .flex-\[0_0_auto\]{
   flex: 0 0 auto;
+}
+
+.flex-none{
+  flex: none;
 }
 
 .flex-grow{
@@ -2295,6 +2323,11 @@ a.ch-button.button-tertiary.inverted:hover {
   background-color: rgb(19 22 50 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#1E225B\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 34 91 / var(--tw-bg-opacity));
+}
+
 .bg-\[\#35919c\]{
   --tw-bg-opacity: 1;
   background-color: rgb(53 145 156 / var(--tw-bg-opacity));
@@ -2382,6 +2415,16 @@ a.ch-button.button-tertiary.inverted:hover {
 .bg-off-white{
   --tw-bg-opacity: 1;
   background-color: rgb(248 247 247 / var(--tw-bg-opacity));
+}
+
+.bg-orange-200{
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 168 144 / var(--tw-bg-opacity));
+}
+
+.bg-orange-300{
+  --tw-bg-opacity: 1;
+  background-color: rgb(224 112 88 / var(--tw-bg-opacity));
 }
 
 .bg-parent{
@@ -2657,6 +2700,10 @@ a.ch-button.button-tertiary.inverted:hover {
   font-size: 2.5rem;
 }
 
+.text-\[20px\]{
+  font-size: 20px;
+}
+
 .text-\[28px\]{
   font-size: 28px;
 }
@@ -2756,10 +2803,6 @@ a.ch-button.button-tertiary.inverted:hover {
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-\[20px\]{
-  font-size: 20px;
 }
 
 .font-bold{
@@ -4401,6 +4444,10 @@ a.providers:hover {
     margin-top: 0px;
   }
 
+  .lg\:mt-\[98px\]{
+    margin-top: 98px;
+  }
+
   .lg\:mt-sp-14{
     margin-top: 4rem;
   }
@@ -4467,6 +4514,10 @@ a.providers:hover {
 
   .lg\:h-sp-16{
     height: 6rem;
+  }
+
+  .lg\:h-sp-8{
+    height: 2rem;
   }
 
   .lg\:max-h-\[300px\]{

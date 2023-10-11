@@ -39,7 +39,29 @@
   <!-- End Google Tag Manager (noscript) -->
   <?php wp_body_open(); ?>
   <!-- <pre class="fixed left-0 right-0 w-full text-xs text-center text-white top-4 -z-10-50 opacity-30">Better care, from anywhere ❤️ Carter Barnhart</pre> -->
-  <header class="fixed z-[100] w-screen bg-darker-blue <?= is_user_logged_in() ? 'lg:top-[32px] top-[46px]' : 'top-0'; ?>">
+  <?php
+  $enableBanner = get_field('enable_banner', 'options');
+  if ($enableBanner) {
+    $link = get_field('link', 'options');
+    $pages = get_field('pages', 'options');
+    $currentPage = get_queried_object_id();
+    if (in_array($currentPage, $pages)) {
+      $displayOnPage = true;
+    }
+  }
+  ?>
+  <?php if ($enableBanner && $displayOnPage) : ?>
+    <div class="z-[9999] w-full lg:h-sp-8 h-sp-14 bg-[#1E225B] flex justify-center items-center fixed<?= is_user_logged_in() ? ' lg:top-[32px] top-[46px]' : ' top-0'; ?>">
+      <div class="w-sp-2 h-sp-2 bg-orange-300 rounded-[50%] ml-sp-5 flex-none"></div>
+      <a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>" class="inline-block">
+        <p class="text-white px-sp-2 font-heading text-[14px] leading-normal mb-0"><?= $link['title']; ?></p>
+      </a>
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="none" class="flex-none mr-sp-5">
+        <path d="M11.4419 5.44194C11.686 5.19787 11.686 4.80214 11.4419 4.55806L7.46447 0.580583C7.22039 0.336506 6.82466 0.336506 6.58058 0.580583C6.33651 0.824661 6.33651 1.22039 6.58058 1.46447L10.1161 5L6.58058 8.53553C6.3365 8.77961 6.3365 9.17534 6.58058 9.41942C6.82466 9.6635 7.22039 9.6635 7.46447 9.41942L11.4419 5.44194ZM-5.46392e-08 5.625L11 5.625L11 4.375L5.46392e-08 4.375L-5.46392e-08 5.625Z" fill="white" />
+      </svg>
+    </div>
+  <?php endif; ?>
+  <header class="fixed z-[100] w-screen bg-darker-blue<?= $enableBanner && $displayOnPage ? ' lg:mt-sp-8 mt-sp-14' : ''; ?> <?= is_user_logged_in() ? ' lg:top-[32px] top-[46px]' : ' top-0'; ?>">
     <nav class="section-horizontal">
       <div class="container items-center lg:flex noshow">
         <div class="mr-sp-6">
@@ -120,7 +142,7 @@
           <div class="w-full h-[1.5px] bg-white relative transition-all duration-100 delay-75 top-0 origin-center"></div>
         </div>
       </div>
-      <div class="bg-secondary-soft fixed panel-js h-[calc(100vh-60px)] w-full left-0 overflow-y-scroll opacity-0 invisible pointer-events-none transition-all duration-300 flex flex-col pt-sp-3">
+      <div class="bg-secondary-soft fixed panel-js <?= $enableBanner && $displayOnPage ? 'h-[calc(100vh-124px)]' : 'h-[calc(100vh-60px)]' ?> w-full left-0 overflow-y-scroll opacity-0 invisible pointer-events-none transition-all duration-300 flex flex-col pt-sp-3">
         <?php if (have_rows('navigation_item_new', 'option')) :
           while (have_rows('navigation_item_new', 'option')) : the_row(); ?>
             <?php
@@ -200,3 +222,4 @@
       </div>
     </nav>
   </header>
+  <main id="primary" class="site-main <?= $enableBanner && $displayOnPage ? 'lg:mt-[98px] mt-[124px]' : 'mt-[66px]'; ?>">
