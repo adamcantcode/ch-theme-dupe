@@ -23,8 +23,8 @@
           $illo = get_sub_field('illustration');
           ?>
           <div class="!h-auto swiper-slide">
-            <div class="grid lg:grid-cols-2 mb-sp-16">
-              <div class="order-2 lg:order-1">
+            <div class="grid lg:grid-cols-2">
+              <div class="order-2 lg:order-1 mb-sp-16">
                 <h5 class="lg:mt-sp-14 mb-sp-8">In their words</h5>
                 <div class="text-[56px] text-primary leading-[1.1] font-heading-serif mb-sp-8">“<?= $pullQuote; ?>”</div>
                 <p><?= $fullQuote; ?></p>
