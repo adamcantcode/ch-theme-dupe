@@ -1406,10 +1406,6 @@ a.ch-button.button-tertiary.inverted:hover {
   top: 2rem;
 }
 
-.-left-1\/2{
-  left: -50%;
-}
-
 .-z-50{
   z-index: -50;
 }
@@ -1962,11 +1958,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .translate-y-sp-2{
   --tw-translate-y: 0.5rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-x-1\/2{
-  --tw-translate-x: 50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -3387,6 +3378,31 @@ a.ch-button.button-tertiary.inverted:hover {
     font-weight: 400;
   }
             }
+
+/* Outcomes Revamp */
+
+.page-id-437 h1, .page-id-4980 h1 {
+    font-size: 4rem;
+    font-family: 'ABC Social'
+  }
+
+.page-id-437 h2, .page-id-4980 h2 {
+    font-size: 2.5rem;
+    font-family: 'ABC Arizona';
+    line-height: 1.1;
+  }
+
+.page-id-437 h3, .page-id-4980 h3 {
+    font-size: 1.5rem;
+    font-family: 'ABC Arizona';
+    line-height: 1.5;
+  }
+
+.page-id-437 h5, .page-id-4980 h5 {
+    font-size: 0.875rem;
+    font-family: 'ABC Social';
+    line-height: 1.4;
+  }
 
 #articleContent > div > div{
   margin-bottom: 1.5rem;
