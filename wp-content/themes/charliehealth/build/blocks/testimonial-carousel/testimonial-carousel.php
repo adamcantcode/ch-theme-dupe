@@ -23,7 +23,7 @@
           $illo = get_sub_field('illustration');
           ?>
           <div class="!h-auto swiper-slide">
-            <div class="grid lg:grid-cols-2">
+            <div class="grid h-full lg:grid-cols-2">
               <div class="order-2 lg:order-1 mb-sp-16">
                 <h5 class="lg:mt-sp-14 mb-sp-8">In their words</h5>
                 <div class="text-[56px] text-primary leading-[1.1] font-heading-serif mb-sp-8">“<?= $pullQuote; ?>”</div>
@@ -31,7 +31,7 @@
                 <p class="lg:mb-0 mb-sp-14">— <?= $attribution; ?></p>
               </div>
               <div class="order-1 lg:order-2">
-                <img src="<?= $illo['url']; ?>" alt="<?= $illo['alt']; ?>" class="mt-sp-14 lg:mt-0" data-swiper-parallax-scale="0.98">
+                <img src="<?= $illo['url']; ?>" alt="<?= $illo['alt']; ?>" class="object-cover h-full mt-sp-14 lg:mt-0" data-swiper-parallax-scale="0.98">
               </div>
             </div>
           </div>
