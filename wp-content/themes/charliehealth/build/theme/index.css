@@ -2107,6 +2107,10 @@ a.ch-button.button-tertiary.inverted:hover {
   gap: 3rem;
 }
 
+.gap-sp-14{
+  gap: 4rem;
+}
+
 .gap-sp-16{
   gap: 6rem;
 }
@@ -2133,10 +2137,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .gap-sp-8{
   gap: 2rem;
-}
-
-.gap-sp-14{
-  gap: 4rem;
 }
 
 .gap-x-4{
@@ -4370,28 +4370,12 @@ a.providers:hover {
     width: unset;
   }
 
-  .md\:max-w-\[\]{
-    max-width: ;
-  }
-
   .md\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .md\:gap-32{
     gap: 8rem;
-  }
-
-  .md\:gap-sp-16{
-    gap: 6rem;
-  }
-
-  .md\:gap-\[8rem\]{
-    gap: 8rem;
-  }
-
-  .md\:gap-\[12rem\]{
-    gap: 12rem;
   }
 
   .md\:gap-sp-4{
