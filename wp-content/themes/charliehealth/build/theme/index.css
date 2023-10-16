@@ -1350,6 +1350,10 @@ a.ch-button.button-tertiary.inverted:hover {
   bottom: 1rem;
 }
 
+.bottom-sp-4{
+  bottom: 1rem;
+}
+
 .bottom-sp-8{
   bottom: 2rem;
 }
@@ -1364,6 +1368,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .left-sp-10{
   left: 2.5rem;
+}
+
+.left-sp-4{
+  left: 1rem;
 }
 
 .left-sp-8{
@@ -1404,14 +1412,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .top-sp-8{
   top: 2rem;
-}
-
-.left-sp-4{
-  left: 1rem;
-}
-
-.bottom-sp-4{
-  bottom: 1rem;
 }
 
 .-z-50{
@@ -1489,6 +1489,14 @@ a.ch-button.button-tertiary.inverted:hover {
 .my-sp-8{
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+.\!mb-0{
+  margin-bottom: 0px !important;
+}
+
+.\!mb-sp-2{
+  margin-bottom: 0.5rem !important;
 }
 
 .-mb-sp-6{
@@ -1619,6 +1627,10 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-top: 4rem;
 }
 
+.mt-sp-16{
+  margin-top: 6rem;
+}
+
 .mt-sp-2{
   margin-top: 0.5rem;
 }
@@ -1637,26 +1649,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
-}
-
-.mb-sp-0{
-  margin-bottom: 0;
-}
-
-.\!mb-0{
-  margin-bottom: 0px !important;
-}
-
-.mt-sp-16{
-  margin-top: 6rem;
-}
-
-.\!mb-sp-4{
-  margin-bottom: 1rem !important;
-}
-
-.\!mb-sp-2{
-  margin-bottom: 0.5rem !important;
 }
 
 .block{
@@ -1942,6 +1934,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .max-w-\[80rem\]{
   max-width: 80rem;
+}
+
+.max-w-\[85px\]{
+  max-width: 85px;
 }
 
 .flex-\[0_0_auto\]{
@@ -2469,6 +2465,11 @@ a.ch-button.button-tertiary.inverted:hover {
   background-color: rgb(22 26 61 / var(--tw-bg-opacity));
 }
 
+.bg-primary-100{
+  --tw-bg-opacity: 1;
+  background-color: rgb(39 45 108 / var(--tw-bg-opacity));
+}
+
 .bg-purple-gradient-end{
   --tw-bg-opacity: 1;
   background-color: rgb(166 152 255 / var(--tw-bg-opacity));
@@ -2501,11 +2502,6 @@ a.ch-button.button-tertiary.inverted:hover {
 .bg-young-adult{
   --tw-bg-opacity: 1;
   background-color: rgb(218 193 251 / var(--tw-bg-opacity));
-}
-
-.bg-primary-100{
-  --tw-bg-opacity: 1;
-  background-color: rgb(39 45 108 / var(--tw-bg-opacity));
 }
 
 .bg-\[linear-gradient\(\#fead80\2c \#e2deca_50\%\2c \#bdc6fc\)\]{
