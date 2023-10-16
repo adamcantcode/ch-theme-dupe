@@ -9466,17 +9466,17 @@ __webpack_require__.r(__webpack_exports__);
 
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
 window.addEventListener('DOMContentLoaded', () => {
-  var statsBlock = document.querySelectorAll('.stats-block-grid');
+  var statsBlock = document.querySelectorAll('.stats-block-grid-container:has(.stats-block-grid)');
   if (statsBlock) {
     let statsTimeline = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
       scrollTrigger: {
-        trigger: '.stats-block-grid',
+        trigger: '.stats-block-grid-container:has(.stats-block-grid)',
         start: 'top 80%'
         // markers: true,
       }
     });
 
-    statsTimeline.from('.stats-block-grid .counter', {
+    statsTimeline.from('.stats-block-grid-container:has(.stats-block-grid) .counter', {
       textContent: 0 + '%',
       snap: {
         textContent: 1

@@ -3,14 +3,14 @@
     <InnerBlocks />
   </div>
   <div class="flex-grow">
-    <div class="grid grid-cols-2 gap-sp-8 stats-block-grid">
+    <div class="grid grid-cols-2 gap-sp-8 stats-block-grid-container">
       <?php if (have_rows('grid_item')) : while (have_rows('grid_item')) : the_row(); ?>
           <?php
           $stat    = get_sub_field('stat');
           $image   = get_sub_field('image');
           $details = get_sub_field('details');
           ?>
-          <div class="grid justify-items-center">
+          <div class="grid justify-items-center<?= $stat ? ' stats-block-grid' : ''; ?>">
             <?php if ($image) : ?>
               <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="mb-sp-4">
             <?php endif; ?>
