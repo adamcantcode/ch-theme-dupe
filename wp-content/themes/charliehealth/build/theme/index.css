@@ -3440,7 +3440,7 @@ a.ch-button.button-tertiary.inverted:hover {
     font-size: 1.25rem;
     font-family: 'ABC Arizona';
     line-height: 1.5;
-    margin-bottom: 2rem;
+    margin-bottom: 2rem!important;
   }
 
 .page-id-437 h5, .page-id-4980 h5 {
