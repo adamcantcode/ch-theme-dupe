@@ -1,9 +1,9 @@
-<div class="grid items-start grid-cols-1 gap-sp-14 md:gap-sp-4 md:grid-cols-2">
+<div class="grid items-center grid-cols-1 gap-sp-14 md:gap-sp-4 md:grid-cols-2">
   <div class="md:max-w-[400px]">
     <InnerBlocks />
   </div>
   <div class="flex-grow">
-    <div class="grid grid-cols-2 gap-sp-8 stats-block-grid-container">
+    <div class="grid items-start grid-cols-2 gap-sp-8 stats-block-grid-container">
       <?php if (have_rows('grid_item')) : while (have_rows('grid_item')) : the_row(); ?>
           <?php
           $stat    = get_sub_field('stat');
