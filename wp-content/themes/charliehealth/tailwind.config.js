@@ -60,6 +60,7 @@ module.exports = {
       },
       primary: {
         DEFAULT: '#161A3D',
+        100: '#272D6C',
       },
       grey: {
         warm: '#F7F5F1',

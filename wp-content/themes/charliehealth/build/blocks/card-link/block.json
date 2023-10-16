@@ -10,7 +10,7 @@
   "apiVersion": 2,
   "acf": {
     "mode": "preview",
-    "renderTemplate": "fifty-fifty-grid.php"
+    "renderTemplate": "card-link.php"
   },
   "supports": {}
 }
