@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "acf/card-link-block",
+  "title": "Card Link",
+  "description": "A decorative card link block",
+  "style": "file:./index.css",
+  "script": "file:./index.js",
+  "category": "custom",
+  "icon": "index-card",
+  "apiVersion": 2,
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "fifty-fifty-grid.php"
+  },
+  "supports": {}
+}
