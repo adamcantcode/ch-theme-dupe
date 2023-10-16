@@ -2470,6 +2470,11 @@ a.ch-button.button-tertiary.inverted:hover {
   background-color: rgb(39 45 108 / var(--tw-bg-opacity));
 }
 
+.bg-primary-black-blue{
+  --tw-bg-opacity: 1;
+  background-color: rgb(18 20 42 / var(--tw-bg-opacity));
+}
+
 .bg-purple-gradient-end{
   --tw-bg-opacity: 1;
   background-color: rgb(166 152 255 / var(--tw-bg-opacity));
@@ -2502,11 +2507,6 @@ a.ch-button.button-tertiary.inverted:hover {
 .bg-young-adult{
   --tw-bg-opacity: 1;
   background-color: rgb(218 193 251 / var(--tw-bg-opacity));
-}
-
-.bg-primary-black-blue{
-  --tw-bg-opacity: 1;
-  background-color: rgb(18 20 42 / var(--tw-bg-opacity));
 }
 
 .bg-\[linear-gradient\(\#fead80\2c \#e2deca_50\%\2c \#bdc6fc\)\]{
@@ -3437,9 +3437,10 @@ a.ch-button.button-tertiary.inverted:hover {
   }
 
 .page-id-437 h3, .page-id-4980 h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-family: 'ABC Arizona';
     line-height: 1.5;
+    margin-bottom: 2rem;
   }
 
 .page-id-437 h5, .page-id-4980 h5 {
@@ -4886,6 +4887,10 @@ a.providers:hover {
     padding-top: 0px;
   }
 
+  .lg\:\!text-\[4\.5rem\]{
+    font-size: 4.5rem !important;
+  }
+
   .lg\:text-\[2\.5rem\]{
     font-size: 2.5rem;
   }
@@ -4942,10 +4947,6 @@ a.providers:hover {
     line-height: 140%;
     letter-spacing: 0;
     font-weight: 500;
-  }
-
-  .lg\:\!text-\[4\.5rem\]{
-    font-size: 4.5rem !important;
   }
 
   .lg\:leading-tight{
