@@ -9,7 +9,7 @@ $subhead = get_field('subhead');
     <div></div>
     <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="rounded-sm shadow-[3px_3px_0px_0px_rgba(255,255,255,1)] absolute left-sp-4 bottom-sp-4 max-w-[85px]">
     <div>
-      <h4 class="text-white !mb-sp-2"><?= $link['text']; ?> -></h4>
+      <h4 class="text-white !mb-sp-2"><?= $link['title']; ?> -></h4>
       <?php if ($subhead) : ?>
         <h5 class="!mb-0 text-white"><?= $subhead; ?></h5>
       <?php endif; ?>
