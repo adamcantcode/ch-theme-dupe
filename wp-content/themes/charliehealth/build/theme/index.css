@@ -3427,7 +3427,8 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .page-id-437 h1, .page-id-4980 h1 {
     font-size: 4rem;
-    font-family: 'ABC Social'
+    font-family: 'ABC Social';
+    margin-top: 2rem;
   }
 
 .page-id-437 h2, .page-id-4980 h2 {

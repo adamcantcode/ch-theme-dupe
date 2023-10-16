@@ -23,7 +23,8 @@
 .page-id-437, .page-id-4980 {
   h1 {
     font-size: 4rem;
-    font-family: 'ABC Social'
+    font-family: 'ABC Social';
+    margin-top: 2rem;
   }
   h2 {
     font-size: 2.5rem;
