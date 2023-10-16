@@ -4836,6 +4836,11 @@ a.providers:hover {
     background-image: linear-gradient(#fead80,#e2deca 50%,#bdc6fc);
   }
 
+  .lg\:object-cover{
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+
   .lg\:p-0{
     padding: 0px;
   }
