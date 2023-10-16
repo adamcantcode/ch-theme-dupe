@@ -44,7 +44,7 @@ $blockClasses .= $background . ' ';
 <?php endif; ?>
 <?php if ($style === 'large') : ?>
   <div class="rounded-sm <?= $blockClasses; ?>">
-    <h2 class="text-white !lg:text-[4.5rem] text-h2-lg lg:leading-tight mb-sp-14 font-heading-serif max-w-[1000px]"><?= $heading; ?></h2>
+    <h2 class="text-white lg:!text-[4.5rem] text-h2-lg lg:leading-tight mb-sp-14 font-heading-serif max-w-[1000px]"><?= $heading; ?></h2>
     <?php if ($subhead) : ?>
       <p class="text-white"><?= $subhead; ?></p>
     <?php endif; ?>

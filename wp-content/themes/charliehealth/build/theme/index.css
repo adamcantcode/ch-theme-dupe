@@ -4944,6 +4944,10 @@ a.providers:hover {
     font-weight: 500;
   }
 
+  .lg\:\!text-\[4\.5rem\]{
+    font-size: 4.5rem !important;
+  }
+
   .lg\:leading-tight{
     line-height: 1.25;
   }
