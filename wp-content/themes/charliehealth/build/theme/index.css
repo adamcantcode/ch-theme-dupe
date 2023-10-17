@@ -2268,6 +2268,14 @@ a.ch-button.button-tertiary.inverted:hover {
   border-radius: 0.625rem;
 }
 
+.rounded-\[3px\]{
+  border-radius: 3px;
+}
+
+.rounded-\[6px\]{
+  border-radius: 6px;
+}
+
 .rounded-b-md{
   border-bottom-right-radius: 1.25rem;
   border-bottom-left-radius: 1.25rem;
