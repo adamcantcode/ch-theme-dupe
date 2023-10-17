@@ -4443,6 +4443,10 @@ a.providers:hover {
     max-width: 400px;
   }
 
+  .md\:max-w-\[430px\]{
+    max-width: 430px;
+  }
+
   .md\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }

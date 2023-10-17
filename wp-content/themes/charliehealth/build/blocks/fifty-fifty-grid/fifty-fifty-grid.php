@@ -1,5 +1,5 @@
 <div class="grid items-center grid-cols-1 gap-sp-14 md:gap-sp-4 md:grid-cols-2">
-  <div class="md:max-w-[400px]">
+  <div class="md:max-w-[430px]">
     <InnerBlocks />
   </div>
   <div class="flex-grow">
