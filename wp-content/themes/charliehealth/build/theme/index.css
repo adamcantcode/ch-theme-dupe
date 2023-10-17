@@ -3444,10 +3444,17 @@ a.ch-button.button-tertiary.inverted:hover {
     margin-bottom: 2rem!important;
   }
 
-.page-id-437 h5, .page-id-4980 h5 {
+.page-id-437 h5, .page-id-437 p, .page-id-4980 h5, .page-id-4980 p {
     font-size: 0.875rem;
     font-family: 'ABC Social';
     line-height: 1.4;
+    margin-bottom: 2rem;
+  }
+
+.page-id-437 .swiper-slide p, .page-id-4980 .swiper-slide p {
+    font-size: 0.875rem;
+    font-family: 'ABC Social';
+    line-height: 1.6;
     margin-bottom: 2rem;
   }
 
