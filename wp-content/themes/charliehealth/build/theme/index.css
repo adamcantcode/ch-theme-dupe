@@ -2252,8 +2252,16 @@ a.ch-button.button-tertiary.inverted:hover {
   border-radius: 1rem;
 }
 
+.rounded-\[3px\]{
+  border-radius: 3px;
+}
+
 .rounded-\[50\%\]{
   border-radius: 50%;
+}
+
+.rounded-\[6px\]{
+  border-radius: 6px;
 }
 
 .rounded-lg{
@@ -2266,14 +2274,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .rounded-sm{
   border-radius: 0.625rem;
-}
-
-.rounded-\[3px\]{
-  border-radius: 3px;
-}
-
-.rounded-\[6px\]{
-  border-radius: 6px;
 }
 
 .rounded-b-md{
@@ -3449,10 +3449,13 @@ a.ch-button.button-tertiary.inverted:hover {
     font-size: 1.25rem;
     font-family: 'ABC Arizona';
     line-height: 1.5;
-    margin-bottom: 2rem!important;
+    margin-bottom: 2rem !important;
   }
 
-.page-id-437 h5, .page-id-437 p, .page-id-4980 h5, .page-id-4980 p {
+.page-id-437 h5,
+  .page-id-437 p,
+  .page-id-4980 h5,
+  .page-id-4980 p {
     font-size: 0.875rem;
     font-family: 'ABC Social';
     line-height: 1.4;
@@ -3464,6 +3467,15 @@ a.ch-button.button-tertiary.inverted:hover {
     font-family: 'ABC Social';
     line-height: 1.6;
     margin-bottom: 2rem;
+  }
+
+.page-id-437 .section, .page-id-4980 .section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+.page-id-437 .section-top, .page-id-4980 .section-top {
+    padding-top: 4rem;
   }
 
 #articleContent > div > div{
