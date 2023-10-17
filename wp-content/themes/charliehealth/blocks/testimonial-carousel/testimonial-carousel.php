@@ -9,26 +9,18 @@
       <div class="swiper-wrapper">
         <?php while (have_rows('testimonials')) : the_row(); ?>
           <?php
-          $testimonial = get_sub_field('testimonial');
-          $postID = $testimonial->ID;
-
-          $anonymous = get_field('anonymous', $postID);
-          if ($anonymous === false) {
-            $attribution = get_field('attribution', $postID);
-          } else {
-            $attribution = 'Anonymous';
-          }
-          $pullQuote = get_field('pull-quote', $postID);
-          $fullQuote = get_field('full_quote', $postID);
-          $illo = get_sub_field('illustration');
+          $pull_quote = get_sub_field('pull_quote');
+          $full_quote = get_sub_field('full_quote');
+          $age        = get_sub_field('age');
+          $illo       = get_sub_field('illustration');
           ?>
           <div class="!h-auto swiper-slide">
             <div class="flex flex-col h-full lg:grid lg:grid-cols-2">
               <div class="order-2 lg:order-1 lg:mb-sp-16">
                 <h5 class="lg:mt-sp-14 mb-sp-8">In their words</h5>
-                <div class="text-[56px] text-primary leading-[1.1] font-heading-serif mb-sp-8">“<?= $pullQuote; ?>”</div>
-                <p><?= $fullQuote; ?></p>
-                <p class="mb-0 lg:mb-sp-14">— <?= $attribution; ?></p>
+                <div class="text-[56px] text-primary leading-[1.1] font-heading-serif mb-sp-8">“<?= $pull_quote; ?>”</div>
+                <p><?= $full_quote; ?></p>
+                <p class="mb-0 lg:mb-sp-14">— Anonymous, <?= $age; ?></p>
               </div>
               <div class="order-1 lg:order-2 mt-sp-14 lg:mt-0 mb-sp-4 lg:mb-0">
                 <img src="<?= $illo['url']; ?>" alt="<?= $illo['alt']; ?>" class="object-contain w-full h-full lg:object-cover" data-swiper-parallax-scale="0.98">
