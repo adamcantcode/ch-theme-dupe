@@ -1940,6 +1940,10 @@ a.ch-button.button-tertiary.inverted:hover {
   max-width: 85px;
 }
 
+.max-w-none{
+  max-width: none;
+}
+
 .flex-\[0_0_auto\]{
   flex: 0 0 auto;
 }
@@ -4490,6 +4494,10 @@ a.providers:hover {
     top: 32px;
   }
 
+  .lg\:left-1\/2{
+    left: 50%;
+  }
+
   .lg\:order-1{
     order: 1;
   }
@@ -4687,6 +4695,15 @@ a.providers:hover {
     max-width: 250px;
   }
 
+  .lg\:max-w-none{
+    max-width: none;
+  }
+
+  .lg\:-translate-x-1\/2{
+    --tw-translate-x: -50%;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
   .lg\:grid-flow-col{
     grid-auto-flow: column;
   }
@@ -4861,11 +4878,6 @@ a.providers:hover {
 
   .lg\:bg-\[linear-gradient\(\#fead80\2c \#e2deca_50\%\2c \#bdc6fc\)\]{
     background-image: linear-gradient(#fead80,#e2deca 50%,#bdc6fc);
-  }
-
-  .lg\:object-cover{
-    -o-object-fit: cover;
-       object-fit: cover;
   }
 
   .lg\:p-0{
