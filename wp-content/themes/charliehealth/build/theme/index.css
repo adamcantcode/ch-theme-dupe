@@ -4411,6 +4411,14 @@ a.providers:hover {
 
 @media (min-width: 480px){
 
+  .md\:absolute{
+    position: absolute;
+  }
+
+  .md\:left-1\/2{
+    left: 50%;
+  }
+
   .md\:order-1{
     order: 1;
   }
@@ -4431,6 +4439,26 @@ a.providers:hover {
     margin-top: 3rem;
   }
 
+  .md\:mb-0{
+    margin-bottom: 0px;
+  }
+
+  .md\:mb-sp-16{
+    margin-bottom: 6rem;
+  }
+
+  .md\:mt-0{
+    margin-top: 0px;
+  }
+
+  .md\:mt-sp-14{
+    margin-top: 4rem;
+  }
+
+  .md\:grid{
+    display: grid;
+  }
+
   .md\:max-h-none{
     max-height: none;
   }
@@ -4443,6 +4471,15 @@ a.providers:hover {
     max-width: 430px;
   }
 
+  .md\:max-w-none{
+    max-width: none;
+  }
+
+  .md\:-translate-x-1\/2{
+    --tw-translate-x: -50%;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
   .md\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -4453,6 +4490,11 @@ a.providers:hover {
 
   .md\:gap-sp-4{
     gap: 1rem;
+  }
+
+  .md\:object-cover{
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 
   .md\:p-sp-6{
@@ -4874,6 +4916,11 @@ a.providers:hover {
 
   .lg\:bg-\[linear-gradient\(\#fead80\2c \#e2deca_50\%\2c \#bdc6fc\)\]{
     background-image: linear-gradient(#fead80,#e2deca 50%,#bdc6fc);
+  }
+
+  .lg\:object-cover{
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 
   .lg\:p-0{
