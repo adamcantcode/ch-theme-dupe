@@ -1607,8 +1607,8 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-top: 124px;
 }
 
-.mt-\[66px\]{
-  margin-top: 66px;
+.mt-\[60px\]{
+  margin-top: 60px;
 }
 
 .mt-auto{
@@ -1649,10 +1649,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
-}
-
-.mt-\[60px\]{
-  margin-top: 60px;
 }
 
 .block{
@@ -3437,6 +3433,19 @@ a.ch-button.button-tertiary.inverted:hover {
 
 /* Outcomes Revamp */
 
+.page-id-437 main > section:first-child, .page-id-4980 main > section:first-child {
+    padding-top: 4rem!important;
+    padding-bottom: 4rem!important;
+  }
+
+@media (min-width: 768px) {
+
+.page-id-437 main > section:first-child, .page-id-4980 main > section:first-child {
+      padding-top: 0!important;
+      padding-bottom: 0!important
+  }
+    }
+
 .page-id-437 main > section h1, .page-id-4980 main > section h1 {
       font-size: 4rem;
       font-family: 'ABC Social';
@@ -4415,14 +4424,6 @@ a.providers:hover {
 
 @media (min-width: 480px){
 
-  .md\:absolute{
-    position: absolute;
-  }
-
-  .md\:left-1\/2{
-    left: 50%;
-  }
-
   .md\:order-1{
     order: 1;
   }
@@ -4443,24 +4444,8 @@ a.providers:hover {
     margin-top: 3rem;
   }
 
-  .md\:mb-0{
-    margin-bottom: 0px;
-  }
-
-  .md\:mb-sp-16{
-    margin-bottom: 6rem;
-  }
-
-  .md\:mt-0{
-    margin-top: 0px;
-  }
-
   .md\:mt-sp-14{
     margin-top: 4rem;
-  }
-
-  .md\:grid{
-    display: grid;
   }
 
   .md\:max-h-none{
@@ -4475,15 +4460,6 @@ a.providers:hover {
     max-width: 430px;
   }
 
-  .md\:max-w-none{
-    max-width: none;
-  }
-
-  .md\:-translate-x-1\/2{
-    --tw-translate-x: -50%;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-
   .md\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -4494,11 +4470,6 @@ a.providers:hover {
 
   .md\:gap-sp-4{
     gap: 1rem;
-  }
-
-  .md\:object-cover{
-    -o-object-fit: cover;
-       object-fit: cover;
   }
 
   .md\:p-sp-6{
