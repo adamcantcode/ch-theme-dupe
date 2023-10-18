@@ -1940,10 +1940,6 @@ a.ch-button.button-tertiary.inverted:hover {
   max-width: 85px;
 }
 
-.max-w-none{
-  max-width: none;
-}
-
 .flex-\[0_0_auto\]{
   flex: 0 0 auto;
 }
@@ -3473,12 +3469,12 @@ a.ch-button.button-tertiary.inverted:hover {
       margin-bottom: 2rem;
     }
 
-.page-id-437 main > section .section, .page-id-4980 main > section .section {
+.page-id-437 main > section.section, .page-id-4980 main > section.section {
       padding-top: 4rem;
       padding-bottom: 4rem;
     }
 
-.page-id-437 main > section .section-top, .page-id-4980 main > section .section-top {
+.page-id-437 main > section.section-top, .page-id-4980 main > section.section-top {
       padding-top: 4rem;
     }
 
@@ -4478,6 +4474,10 @@ a.providers:hover {
     position: sticky;
   }
 
+  .lg\:left-1\/2{
+    left: 50%;
+  }
+
   .lg\:left-sp-12{
     left: 3rem;
   }
@@ -4492,10 +4492,6 @@ a.providers:hover {
 
   .lg\:top-\[32px\]{
     top: 32px;
-  }
-
-  .lg\:left-1\/2{
-    left: 50%;
   }
 
   .lg\:order-1{
