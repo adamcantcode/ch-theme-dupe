@@ -3433,50 +3433,50 @@ a.ch-button.button-tertiary.inverted:hover {
 
 /* Outcomes Revamp */
 
-.page-id-437 h1, .page-id-4980 h1 {
-    font-size: 4rem;
-    font-family: 'ABC Social';
-    margin-top: 2rem;
-  }
+.page-id-437 main h1, .page-id-4980 main h1 {
+      font-size: 4rem;
+      font-family: 'ABC Social';
+      margin-top: 2rem;
+    }
 
-.page-id-437 h2, .page-id-4980 h2 {
-    font-size: 2.5rem;
-    font-family: 'ABC Arizona';
-    line-height: 1.1;
-  }
+.page-id-437 main h2, .page-id-4980 main h2 {
+      font-size: 2.5rem;
+      font-family: 'ABC Arizona';
+      line-height: 1.1;
+    }
 
-.page-id-437 h3, .page-id-4980 h3 {
-    font-size: 1.25rem;
-    font-family: 'ABC Arizona';
-    line-height: 1.5;
-    margin-bottom: 2rem !important;
-  }
+.page-id-437 main h3, .page-id-4980 main h3 {
+      font-size: 1.25rem;
+      font-family: 'ABC Arizona';
+      line-height: 1.5;
+      margin-bottom: 2rem !important;
+    }
 
-.page-id-437 h5,
-  .page-id-437 p,
-  .page-id-4980 h5,
-  .page-id-4980 p {
-    font-size: 0.875rem;
-    font-family: 'ABC Social';
-    line-height: 1.4;
-    margin-bottom: 2rem;
-  }
+.page-id-437 main h5,
+    .page-id-437 main p,
+    .page-id-4980 main h5,
+    .page-id-4980 main p {
+      font-size: 0.875rem;
+      font-family: 'ABC Social';
+      line-height: 1.4;
+      margin-bottom: 2rem;
+    }
 
-.page-id-437 .swiper-slide p, .page-id-4980 .swiper-slide p {
-    font-size: 0.875rem;
-    font-family: 'ABC Social';
-    line-height: 1.6;
-    margin-bottom: 2rem;
-  }
+.page-id-437 main .swiper-slide p, .page-id-4980 main .swiper-slide p {
+      font-size: 0.875rem;
+      font-family: 'ABC Social';
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
 
-.page-id-437 .section, .page-id-4980 .section {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-  }
+.page-id-437 main .section, .page-id-4980 main .section {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
 
-.page-id-437 .section-top, .page-id-4980 .section-top {
-    padding-top: 4rem;
-  }
+.page-id-437 main .section-top, .page-id-4980 main .section-top {
+      padding-top: 4rem;
+    }
 
 #articleContent > div > div{
   margin-bottom: 1.5rem;
@@ -4437,10 +4437,6 @@ a.providers:hover {
 
   .md\:w-\[unset\]{
     width: unset;
-  }
-
-  .md\:max-w-\[400px\]{
-    max-width: 400px;
   }
 
   .md\:max-w-\[430px\]{
