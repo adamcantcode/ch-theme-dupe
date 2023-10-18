@@ -222,4 +222,4 @@
       </div>
     </nav>
   </header>
-  <main id="primary" class="site-main <?= $enableBanner && $displayOnPage ? 'lg:mt-[98px] mt-[124px]' : 'mt-[66px]'; ?>">
+  <main id="primary" class="site-main <?= $enableBanner && $displayOnPage ? 'lg:mt-[98px] mt-[124px]' : 'mt-[60px]'; ?>">
