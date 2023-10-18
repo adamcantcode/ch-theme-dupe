@@ -22,7 +22,7 @@
 /* Outcomes Revamp */
 .page-id-437,
 .page-id-4980 {
-  main {
+  main > section {
     h1 {
       font-size: 4rem;
       font-family: 'ABC Social';
