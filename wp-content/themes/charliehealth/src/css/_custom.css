@@ -24,10 +24,10 @@
 .page-id-4980 {
   main > section:first-child {
     padding-top: 4rem!important;
-    padding-bottom: 4rem!important;
+    padding-bottom: 2rem!important;
     @media (min-width: 768px) {
       padding-top: 0!important;
-      padding-bottom: 2!important;
+      padding-bottom: 0!important;
     }
   }
   main > section {
