@@ -27,7 +27,7 @@
     padding-bottom: 4rem!important;
     @media (min-width: 768px) {
       padding-top: 0!important;
-      padding-bottom: 0!important;
+      padding-bottom: 2!important;
     }
   }
   main > section {
