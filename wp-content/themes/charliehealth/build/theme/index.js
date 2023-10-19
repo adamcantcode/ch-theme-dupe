@@ -23257,7 +23257,6 @@ document.addEventListener('DOMContentLoaded', () => {
     (0,_modules_mobile_cats__WEBPACK_IMPORTED_MODULE_17__["default"])();
   }
   if (body.classList.contains('tag')) {
-    console.log(document.querySelector('.resource-page-js'));
     if (document.querySelector('.resource-page-js')) {
       (0,_modules_tag_page__WEBPACK_IMPORTED_MODULE_19__["default"])();
     } else {

@@ -207,9 +207,9 @@
       endif; ?>
     </section>
     <section class="section" id="section3">
-      <div class="container-sm">
+      <div class="container">
         <?php if ($image) : ?>
-          <div class="grid items-center grid-cols-1 lg:grid-cols-2 gap-sp-4">
+          <div class="grid items-center grid-cols-1 lg:grid-cols-2 gap-sp-8">
           <?php endif; ?>
           <div><?= $sectionThree; ?></div>
           <?php if ($image) : ?>
