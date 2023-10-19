@@ -330,13 +330,7 @@
               <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover lg:h-[220px] h-[150px] w-full">
               <div class="grid p-sp-4">
                 <h3><a href="<?= get_the_permalink($relatedResearchPost->ID); ?>" class="stretched-link"><?= $relatedResearchPost->post_title; ?></a></h3>
-                <h5 class="mb-sp-4"><?= $author = get_field('by_author')->post_title ?: 'Charlile Health Editorial Team'; ?></h5>
-                <div class="grid items-end justify-start grid-flow-col gap-sp-4">
-                  <?php $tags = get_the_terms($relatedResearchPost->ID, 'post_tag'); ?>
-                  <?php foreach ($tags as $tag) : ?>
-                    <a href="<?= get_tag_link($tag->term_id); ?>" class="relative z-[6] inline-block no-underline rounded-lg px-sp-4 py-sp-3 text-h6 bg-tag-gray hover:bg-bright-teal"><?= $tag->name; ?></a>
-                  <?php endforeach; ?>
-                </div>
+                <h5 class="mb-sp-4"><?= $author = get_field('by_author')->post_title ?: 'Charlie Health Editorial Team'; ?></h5>
               </div>
             </div>
           </div>
