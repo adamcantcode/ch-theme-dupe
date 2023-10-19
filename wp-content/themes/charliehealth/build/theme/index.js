@@ -23257,8 +23257,12 @@ document.addEventListener('DOMContentLoaded', () => {
     (0,_modules_mobile_cats__WEBPACK_IMPORTED_MODULE_17__["default"])();
   }
   if (body.classList.contains('tag')) {
-    // ajaxPagination();
-    (0,_modules_tag_page__WEBPACK_IMPORTED_MODULE_19__["default"])();
+    console.log(document.querySelector('.resource-page-js'));
+    if (document.querySelector('.resource-page-js')) {
+      (0,_modules_tag_page__WEBPACK_IMPORTED_MODULE_19__["default"])();
+    } else {
+      (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__["default"])();
+    }
   }
   if (body.classList.contains('single-authors')) {
     (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__["default"])();

@@ -59,8 +59,11 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileCats()
   }
   if (body.classList.contains('tag')) {
-    // ajaxPagination();
-    tagPage();
+    if(document.querySelector('.resource-page-js')) {
+      tagPage();
+    } else {
+      ajaxPagination();
+    }
   }
   if (body.classList.contains('single-authors')) {
     ajaxPagination();
