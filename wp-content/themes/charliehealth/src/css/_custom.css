@@ -23,11 +23,21 @@
 .page-id-437,
 .page-id-4980 {
   main > section:first-child {
-    padding-top: 4rem!important;
-    padding-bottom: 2rem!important;
+    padding-bottom: 2rem !important;
     @media (min-width: 768px) {
-      padding-top: 0!important;
-      padding-bottom: 0!important;
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
+    @media (max-width: 479px) {
+      img {
+        left: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        max-width: 100vw;
+        position: relative;
+        right: 50%;
+        width: 100vw;
+      }
     }
   }
   main > section {
