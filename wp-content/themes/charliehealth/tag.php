@@ -83,12 +83,15 @@
   $sectionThree = get_field('section_3', get_queried_object());
   $sectionFour  = get_field('section_4', get_queried_object());
   $sectionFive  = get_field('section_5', get_queried_object());
+  $image        = get_field('image', get_queried_object());
   ?>
   <main id="primary" class="site-main mt-[68px]">
     <section class="section">
       <div class="container">
         <div class="breadcrumbs mb-sp-5 lg:mb-sp-6">
           <a href="<?= home_url(); ?>">Home</a>
+          <span>/</span>
+          <a href="<?= home_url('/blog'); ?>">The Library</a>
           <span>/</span>
           <span><?= $niceTitle; ?></span>
         </div>
@@ -139,7 +142,7 @@
           array(
             'taxonomy' => 'funnel-level',
             'field' => 'slug',
-            'terms' => 'upper-level', 
+            'terms' => 'upper-level',
           ),
           array(
             'taxonomy' => 'post_tag',
@@ -209,7 +212,16 @@
     </section>
     <section class="section" id="section3">
       <div class="container-sm">
-        <?= $sectionThree; ?>
+        <?php if ($image) : ?>
+          <div class="grid items-center grid-cols-1 lg:grid-cols-2 gap-sp-4">
+          <?php endif; ?>
+          <div><?= $sectionThree; ?></div>
+          <?php if ($image) : ?>
+            <div>
+              <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="rounded-md">
+            </div>
+          </div>
+        <?php endif; ?>
       </div>
     </section>
     <section class="bg-off-white section" id="section4">
@@ -223,7 +235,7 @@
           array(
             'taxonomy' => 'funnel-level',
             'field' => 'slug',
-            'terms' => 'lower-level', 
+            'terms' => 'lower-level',
           ),
           array(
             'taxonomy' => 'post_tag',
