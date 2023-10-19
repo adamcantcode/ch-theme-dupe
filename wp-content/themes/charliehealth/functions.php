@@ -639,6 +639,7 @@ add_filter('should_load_separate_core_block_assets', '__return_true');
 /* TEMP COLORS
 // $test = 'bg-dark-teal'
 // $test = 'bg-darker-blue'
+// $test = 'bg-orange-200'
 // $test = 'mt-0'
 // $test = 'bg-off-white'
 // $test = 'bg-off-white'
@@ -736,6 +737,24 @@ if (is_singular('post') || is_singular('research')) {
     }
   });
 }
+
+/**
+ * FIX yoast canonical, og:url mismatch
+ */
+function gb_wpseo_canonical($canonical)
+{
+  $paged = get_query_var('paged');
+
+  if (isset($paged) && (int) $paged > 0) {
+    return trailingslashit($canonical) . 'page/' . $paged;
+
+    return $url;
+  }
+
+  return $canonical;
+}
+
+add_filter('wpseo_opengraph_url', 'gb_wpseo_canonical');
 
 function remove_schema_pro_breadcrumbs($bool, $post_id, $type)
 {

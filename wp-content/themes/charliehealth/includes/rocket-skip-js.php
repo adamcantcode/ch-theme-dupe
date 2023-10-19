@@ -156,5 +156,29 @@
         }
       });
     });
+
+    /** Back button fix */
+    window.addEventListener('pageshow', () => {
+      if (mobileMenu.classList.contains('open')) {
+        /** Reset hamburger */
+        mobileMenu.classList.remove('open');
+        closeAnimation();
+        /** Close panel */
+        closePanel();
+        /** Close all dropdowns */
+        dropdownItems.forEach((item) => {
+          const accordionContent = item.nextElementSibling;
+          dropdownItems.forEach((otherItem) => {
+            if (otherItem !== item) {
+              const otherAccordionContent = otherItem.nextElementSibling;
+              if (otherAccordionContent) {
+                otherAccordionContent.style.maxHeight = null;
+                otherItem.querySelector('.rotate-90').classList.remove('scale-0');
+              }
+            }
+          });
+        })
+      }
+    });
   }
 </script>

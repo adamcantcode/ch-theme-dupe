@@ -337,7 +337,7 @@ function ajaxPaginationResearch() {
     </svg>`,
       callback: function (data, pagination) {
         // Add hrefs to pagianted links
-        jQuery('.pagination-container .paginationjs-page').each(function (index, element) {
+        jQuery('.pagination-container-research .paginationjs-page').each(function (index, element) {
           var page = jQuery(element).data('num');
           var link = jQuery(element).find('a');
           // Check if on paginated pages already
@@ -356,8 +356,8 @@ function ajaxPaginationResearch() {
         }).then(function (posts) {
           if (posts.length > 0) {
             const noPosts = document.querySelector('.no-posts-js');
-            const pagination = document.querySelector('.pagination-container');
-            const postsContainer = document.querySelector('.posts-container');
+            const pagination = document.querySelector('.pagination-container-research');
+            const postsContainer = document.querySelector('.posts-container-research');
             pagination.classList.remove('noshow');
             postsContainer.classList.remove('noshow');
             noPosts.classList.add('opacity-0');
@@ -371,14 +371,15 @@ function ajaxPaginationResearch() {
             jQuery('.posts-container-research').removeClass('opacity-0 scale-[0.99]');
           } else {
             const noPosts = document.querySelector('.no-posts-js');
-            const pagination = document.querySelector('.pagination-container');
-            const postsContainer = document.querySelector('.posts-container');
+            const pagination = document.querySelector('.pagination-container-research');
+            const postsContainer = document.querySelector('.posts-container-research');
             pagination.classList.add('noshow');
             postsContainer.classList.add('noshow');
             noPosts.classList.remove('opacity-0');
             noPosts.classList.remove('invisible');
             noPosts.classList.remove('absolute');
           }
+          clickPages();
         });
       },
       afterPageOnClick: function () {
@@ -393,13 +394,12 @@ function ajaxPaginationResearch() {
     });
   };
   const scollToPostsContainer = () => {
-    // TODO update scroll to for press, different anchor
     gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.to(window, {
       duration: 1,
       ease: 'Power2.easeInOut',
-      scrollTo: '#postsContainer',
+      scrollTo: '#researchContainer',
       scrollTo: {
-        y: '#postsContainer',
+        y: '#researchContainer',
         offsetY: self => document.querySelector('header').offsetHeight
       }
     });
@@ -490,6 +490,11 @@ function ajaxPaginationResearch() {
     </div>`;
     }
     return html;
+  };
+  const clickPages = () => {
+    jQuery('#researchContainer .paginationjs-prev, #researchContainer .paginationjs-next, #researchContainer .paginationjs-page').on('click', function () {
+      jQuery('.posts-container-reserach').addClass('opacity-0 scale-[0.99]');
+    });
   };
   termsClickHandler();
   initPagination();
@@ -948,7 +953,7 @@ function ajaxPagination() {
     return html;
   };
   const clickPages = () => {
-    jQuery('.paginationjs-prev, .paginationjs-next, .paginationjs-page').on('click', function () {
+    jQuery('#postsContainer .paginationjs-prev, #postsContainer .paginationjs-next, #postsContainer .paginationjs-page').on('click', function () {
       jQuery('.posts-container').addClass('opacity-0 scale-[0.99]');
     });
   };
@@ -1316,10 +1321,10 @@ function navigationMenu() {
       }
     });
     const openAnimation = () => {
-      mobileMenuX[0].classList.add('top-1/2', '-translate-y-1/2', 'w-[18px]');
+      mobileMenuX[0].classList.add('top-1/2', '-translate-y-1/2', '!w-[18px]');
       mobileMenuX[0].classList.remove('top-0');
       mobileMenuX[1].classList.add('scale-0');
-      mobileMenuX[2].classList.add('-top-1/2', '-translate-y-1/2', 'w-[18px]');
+      mobileMenuX[2].classList.add('-top-1/2', '-translate-y-1/2', '!w-[18px]');
       mobileMenuX[2].classList.remove('top-0');
       setTimeout(() => {
         mobileMenuX[0].classList.add('rotate-45');
@@ -1327,9 +1332,9 @@ function navigationMenu() {
       }, 50);
     };
     const closeAnimation = () => {
-      mobileMenuX[0].classList.remove('top-1/2', '-translate-y-1/2', 'rotate-45', 'w-[18px]');
+      mobileMenuX[0].classList.remove('top-1/2', '-translate-y-1/2', 'rotate-45', '!w-[18px]');
       mobileMenuX[1].classList.remove('scale-0', 'origin-center');
-      mobileMenuX[2].classList.remove('-top-1/2', '-translate-y-1/2', '-rotate-45', 'w-[18px]');
+      mobileMenuX[2].classList.remove('-top-1/2', '-translate-y-1/2', '-rotate-45', '!w-[18px]');
       mobileMenuX[0].classList.add('top-0');
       mobileMenuX[2].classList.add('top-0');
       setTimeout(() => {

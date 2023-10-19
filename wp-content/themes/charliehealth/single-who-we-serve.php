@@ -1,10 +1,8 @@
 <?php get_header(); ?>
 
-<main class="site-main mt-[68px]">
-  <article>
-    <?php the_content(); ?>
-  </article>
-</main>
+<article>
+  <?php the_content(); ?>
+</article>
 
 <?php
 get_footer();

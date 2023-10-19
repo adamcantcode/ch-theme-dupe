@@ -51,6 +51,7 @@ module.exports = {
       'young-adult': '#DAC1FB',
       parent: '#FDBF7C',
       lavender: {
+        100: '#F7EBFF',
         200: '#E7D3FF',
         300: '#DAC1FB',
       },
@@ -74,6 +75,7 @@ module.exports = {
       // 'orange-gradient-end': '#FFA776',
       // 'bright-orange': '#FF9F81',
       orange: {
+        200: '#F5A890',
         300: '#E07058',
       },
       // 'med-blue': '#262D70',

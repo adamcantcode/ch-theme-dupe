@@ -11,7 +11,7 @@ export default function ajaxPaginationResearch() {
     var [endpoint] = getEndpoint(bodyClasses, tagID);
     renderPagination(postsPerPage, endpoint, tagID);
   };
-  
+
   const checkPagination = () => {
     var match = window.location.href.match(/\/page\/(\d+)/);
     if (match) {
@@ -54,22 +54,21 @@ export default function ajaxPaginationResearch() {
     </svg>`,
       callback: function (data, pagination) {
         // Add hrefs to pagianted links
-        jQuery('.pagination-container .paginationjs-page').each(function (
-          index,
-          element
-        ) {
-          var page = jQuery(element).data('num');
-          var link = jQuery(element).find('a');
-          // Check if on paginated pages already
-          if (window.location.href.indexOf('/page/') !== -1) {
-            jQuery(link).attr(
-              'href',
-              window.location.origin + '/blog/page/' + page
-            );
-          } else {
-            jQuery(link).attr('href', window.location.href + '/page/' + page);
+        jQuery('.pagination-container-research .paginationjs-page').each(
+          function (index, element) {
+            var page = jQuery(element).data('num');
+            var link = jQuery(element).find('a');
+            // Check if on paginated pages already
+            if (window.location.href.indexOf('/page/') !== -1) {
+              jQuery(link).attr(
+                'href',
+                window.location.origin + '/blog/page/' + page
+              );
+            } else {
+              jQuery(link).attr('href', window.location.href + '/page/' + page);
+            }
           }
-        });
+        );
 
         const bodyClasses = Array.from(document.body.classList);
         var [endpoint] = getEndpoint(bodyClasses, tagID);
@@ -86,9 +85,11 @@ export default function ajaxPaginationResearch() {
             if (posts.length > 0) {
               const noPosts = document.querySelector('.no-posts-js');
               const pagination = document.querySelector(
-                '.pagination-container'
+                '.pagination-container-research'
               );
-              const postsContainer = document.querySelector('.posts-container');
+              const postsContainer = document.querySelector(
+                '.posts-container-research'
+              );
 
               pagination.classList.remove('noshow');
               postsContainer.classList.remove('noshow');
@@ -107,9 +108,11 @@ export default function ajaxPaginationResearch() {
             } else {
               const noPosts = document.querySelector('.no-posts-js');
               const pagination = document.querySelector(
-                '.pagination-container'
+                '.pagination-container-research'
               );
-              const postsContainer = document.querySelector('.posts-container');
+              const postsContainer = document.querySelector(
+                '.posts-container-research'
+              );
 
               pagination.classList.add('noshow');
               postsContainer.classList.add('noshow');
@@ -118,6 +121,7 @@ export default function ajaxPaginationResearch() {
               noPosts.classList.remove('invisible');
               noPosts.classList.remove('absolute');
             }
+            clickPages();
           });
       },
       afterPageOnClick: function () {
@@ -133,13 +137,12 @@ export default function ajaxPaginationResearch() {
   };
 
   const scollToPostsContainer = () => {
-    // TODO update scroll to for press, different anchor
     gsap.to(window, {
       duration: 1,
       ease: 'Power2.easeInOut',
-      scrollTo: '#postsContainer',
+      scrollTo: '#researchContainer',
       scrollTo: {
-        y: '#postsContainer',
+        y: '#researchContainer',
         offsetY: (self) => document.querySelector('header').offsetHeight,
       },
     });
@@ -251,6 +254,14 @@ export default function ajaxPaginationResearch() {
     </div>`;
     }
     return html;
+  };
+
+  const clickPages = () => {
+    jQuery(
+      '#researchContainer .paginationjs-prev, #researchContainer .paginationjs-next, #researchContainer .paginationjs-page'
+    ).on('click', function () {
+      jQuery('.posts-container-reserach').addClass('opacity-0 scale-[0.99]');
+    });
   };
 
   termsClickHandler();

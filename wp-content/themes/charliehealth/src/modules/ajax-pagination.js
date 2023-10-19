@@ -307,7 +307,7 @@ export default function ajaxPagination() {
   };
 
   const clickPages = () => {
-    jQuery('.paginationjs-prev, .paginationjs-next, .paginationjs-page').on(
+    jQuery('#postsContainer .paginationjs-prev, #postsContainer .paginationjs-next, #postsContainer .paginationjs-page').on(
       'click',
       function () {
         jQuery('.posts-container').addClass('opacity-0 scale-[0.99]');
