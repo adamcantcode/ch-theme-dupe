@@ -3706,8 +3706,8 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .swiper.swiper-testimonial-carousel-big .swiper-pagination-bullets{
   position: relative;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
   width: initial;
 }
 
@@ -4527,6 +4527,10 @@ a.providers:hover {
     top: 32px;
   }
 
+  .lg\:left-\[33\%\]{
+    left: 33%;
+  }
+
   .lg\:order-1{
     order: 1;
   }
@@ -4568,6 +4572,10 @@ a.providers:hover {
     margin-bottom: 0px;
   }
 
+  .lg\:mb-sp-12{
+    margin-bottom: 3rem;
+  }
+
   .lg\:mb-sp-14{
     margin-bottom: 4rem;
   }
@@ -4602,10 +4610,6 @@ a.providers:hover {
 
   .lg\:mt-sp-8{
     margin-top: 2rem;
-  }
-
-  .lg\:mb-sp-12{
-    margin-bottom: 3rem;
   }
 
   .lg\:block{

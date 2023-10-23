@@ -255,7 +255,7 @@
       @screen lg {
         @apply left-0 w-[initial] top-0;
       }
-      @apply w-[initial] mx-sp-4 relative;
+      @apply w-[initial] mx-sp-8 relative;
       .swiper-pagination-bullet {
         @apply bg-primary opacity-10 transition-all duration-500;
         &.swiper-pagination-bullet-active {
