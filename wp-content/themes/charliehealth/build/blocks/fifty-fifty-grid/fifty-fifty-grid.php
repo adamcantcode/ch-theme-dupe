@@ -17,7 +17,7 @@
             <?php if ($stat) : ?>
               <span class="counter text-[56px] text-white leading-[1.1] font-heading-serif mb-sp-4"><?= $stat; ?>%</span>
             <?php endif; ?>
-            <p class="text-center text-white"><?= $details; ?></p>
+            <p class="text-center text-white lg:max-w-[225px]"><?= $details; ?></p>
           </div>
       <?php endwhile;
       endif; ?>
