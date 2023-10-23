@@ -16,7 +16,7 @@
           ?>
           <div class="!h-auto swiper-slide">
             <div class="flex flex-col h-full lg:grid lg:grid-cols-2">
-              <div class="order-2 lg:order-1 lg:mb-sp-16">
+              <div class="order-2 lg:order-1 lg:mb-sp-16 mb-sp-8">
                 <h5 class="md:mt-sp-14 mb-sp-8">In their words</h5>
                 <div class="text-[56px] text-primary leading-[1.1] font-heading-serif mb-sp-8">“<?= $pull_quote; ?>”</div>
                 <p><?= $full_quote; ?></p>
@@ -29,7 +29,7 @@
           </div>
         <?php endwhile; ?>
       </div>
-      <div class="absolute bottom-0 w-full mb-sp-12 lg:w-fit">
+      <div class="absolute bottom-0 w-full lg:mb-sp-12 lg:w-fit mb-sp-4">
         <div class="absolute left-0 z-10 lg:bottom-0 swiper-button-prev-testimonial">
           <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M9 1L1 9L9 17" stroke="#161A3D" stroke-width="1.5" stroke-linejoin="round" />

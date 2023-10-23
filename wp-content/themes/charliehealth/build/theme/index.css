@@ -4604,6 +4604,10 @@ a.providers:hover {
     margin-top: 2rem;
   }
 
+  .lg\:mb-sp-12{
+    margin-bottom: 3rem;
+  }
+
   .lg\:block{
     display: block;
   }
