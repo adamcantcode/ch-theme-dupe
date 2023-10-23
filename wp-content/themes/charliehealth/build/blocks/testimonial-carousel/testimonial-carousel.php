@@ -29,18 +29,18 @@
           </div>
         <?php endwhile; ?>
       </div>
-      <div class="absolute bottom-0 mb-sp-12 w-fit">
-        <div class="swiper-pagination"></div>
-        <div class="absolute bottom-0 left-0 swiper-button-prev-testimonial">
+      <div class="absolute bottom-0 w-full mb-sp-12 lg:w-fit">
+        <div class="absolute left-0 z-10 lg:bottom-0 swiper-button-prev-testimonial">
           <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M9 1L1 9L9 17" stroke="#161A3D" stroke-width="1.5" stroke-linejoin="round" />
           </svg>
         </div>
-        <div class="absolute bottom-0 right-0 swiper-button-next-testimonial">
+        <div class="absolute right-0 z-10 lg:bottom-0 swiper-button-next-testimonial">
           <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 17L9 9L1 1" stroke="#161A3D" stroke-width="1.5" stroke-linejoin="round" />
           </svg>
         </div>
+        <div class="swiper-pagination"></div>
       </div>
     </div>
   <?php endif; ?>

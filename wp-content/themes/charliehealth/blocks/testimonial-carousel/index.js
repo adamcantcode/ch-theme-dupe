@@ -8,11 +8,6 @@ import 'swiper/css/bundle';
 
 window.addEventListener('DOMContentLoaded', () => {
   var swiper = new Swiper('.swiper.swiper-testimonial-carousel-big', {
-    // autoplay: {
-    //   delay: 3000,
-    //   disableOnInteraction: false,
-    //   pauseOnMouseEnter: true,
-    // },
     slidesPerView: 2,
     centeredSlides: true,
     loop: true,
@@ -31,6 +26,5 @@ window.addEventListener('DOMContentLoaded', () => {
       nextEl: '.swiper-button-next-testimonial',
       prevEl: '.swiper-button-prev-testimonial',
     },
-    navigation: false,
-  });
+  });  
 });

@@ -4503,6 +4503,10 @@ a.providers:hover {
     position: sticky;
   }
 
+  .lg\:bottom-0{
+    bottom: 0px;
+  }
+
   .lg\:left-1\/2{
     left: 50%;
   }
@@ -4706,6 +4710,11 @@ a.providers:hover {
 
   .lg\:w-auto{
     width: auto;
+  }
+
+  .lg\:w-fit{
+    width: -moz-fit-content;
+    width: fit-content;
   }
 
   .lg\:w-full{
