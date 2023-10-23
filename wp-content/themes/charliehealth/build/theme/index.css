@@ -4374,6 +4374,16 @@ a.providers:hover {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-primary:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 26 61 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-primary-black-blue:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(18 20 42 / var(--tw-bg-opacity));
+}
+
 .hover\:\!text-\[\#35919c\]:hover{
   --tw-text-opacity: 1 !important;
   color: rgb(53 145 156 / var(--tw-text-opacity)) !important;
@@ -4432,6 +4442,26 @@ a.providers:hover {
 .group:hover .group-hover\:rotate-45{
   --tw-rotate: 45deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.group:hover .group-hover\:bg-primary-black-blue{
+  --tw-bg-opacity: 1;
+  background-color: rgb(18 20 42 / var(--tw-bg-opacity));
+}
+
+.group:hover .group-hover\:bg-primary{
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 26 61 / var(--tw-bg-opacity));
+}
+
+.group:hover .group-hover\:bg-dark-blue{
+  --tw-bg-opacity: 1;
+  background-color: rgb(29 34 95 / var(--tw-bg-opacity));
+}
+
+.group:hover .group-hover\:bg-med-blue{
+  --tw-bg-opacity: 1;
+  background-color: rgb(33 41 132 / var(--tw-bg-opacity));
 }
 
 @media (min-width: 480px){
