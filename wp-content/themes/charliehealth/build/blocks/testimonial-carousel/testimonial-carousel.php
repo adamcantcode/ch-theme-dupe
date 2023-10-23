@@ -20,7 +20,7 @@
                 <h5 class="md:mt-sp-14 mb-sp-8">In their words</h5>
                 <div class="text-[56px] text-primary leading-[1.1] font-heading-serif mb-sp-8">“<?= $pull_quote; ?>”</div>
                 <p><?= $full_quote; ?></p>
-                <p class="mb-0 lg:mb-sp-14">— Anonymous, <?= $age; ?></p>
+                <p class="mb-0 lg:mb-sp-14">— <?= $age; ?> Client</p>
               </div>
               <div class="relative order-1 lg:order-2 mt-sp-14 lg:mt-0 mb-sp-8 lg:mb-0">
                 <img src="<?= $illo['url']; ?>" alt="<?= $illo['alt']; ?>" class="object-contain h-full mx-auto lg:object-cover lg:absolute lg:max-w-none lg:left-1/2 lg:-translate-x-1/2">
