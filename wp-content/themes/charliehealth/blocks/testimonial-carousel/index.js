@@ -27,6 +27,10 @@ window.addEventListener('DOMContentLoaded', () => {
       type: 'bullets',
       clickable: true,
     },
+    navigation: {
+      nextEl: '.swiper-button-next-testimonial',
+      prevEl: '.swiper-button-prev-testimonial',
+    },
     navigation: false,
   });
 });

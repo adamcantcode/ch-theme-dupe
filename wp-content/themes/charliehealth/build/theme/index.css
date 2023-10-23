@@ -3698,16 +3698,17 @@ a.ch-button.button-tertiary.inverted:hover {
 @media (min-width: 1024px) {
 
 .swiper.swiper-testimonial-carousel-big .swiper-pagination-bullets{
-    position: absolute !important;
     left: 0px;
+    top: 0px;
     width: initial;
   }
       }
 
 .swiper.swiper-testimonial-carousel-big .swiper-pagination-bullets{
   position: relative;
-  bottom: 0px;
-  margin-bottom: 3rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  width: initial;
 }
 
 .swiper.swiper-testimonial-carousel-big .swiper-pagination-bullets .swiper-pagination-bullet{
