@@ -5,7 +5,7 @@
         {
             "key": "field_65381460ad0eb",
             "label": "Page",
-            "name": "page",
+            "name": "footer_removal_pages",
             "aria-label": "",
             "type": "relationship",
             "instructions": "Select pages to remove the newsletter from the footer.",
@@ -49,5 +49,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1698174541
+    "modified": 1698174925
 }
