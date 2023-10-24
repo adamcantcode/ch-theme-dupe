@@ -1,0 +1,53 @@
+{
+    "key": "group_6538145ff148a",
+    "title": "Newsletter Footer Removal",
+    "fields": [
+        {
+            "key": "field_65381460ad0eb",
+            "label": "Page",
+            "name": "page",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "Select pages to remove the newsletter from the footer.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": "",
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "post_type"
+            ],
+            "return_format": "id",
+            "min": "",
+            "max": "",
+            "elements": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1698174541
+}
