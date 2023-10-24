@@ -88,6 +88,10 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/testimonial-review');
   register_block_type(__DIR__ . '/build/blocks/testimonial-list');
   register_block_type(__DIR__ . '/build/blocks/posts-list-in-content');
+  register_block_type(__DIR__ . '/build/blocks/testimonial-carousel');
+  register_block_type(__DIR__ . '/build/blocks/research-list');
+  register_block_type(__DIR__ . '/build/blocks/fifty-fifty-grid');
+  register_block_type(__DIR__ . '/build/blocks/card-link');
 }
 add_action('init', 'register_acf_blocks', 5);
 
@@ -638,11 +642,12 @@ add_filter('should_load_separate_core_block_assets', '__return_true');
 
 /* TEMP COLORS
 // $test = 'bg-dark-teal'
+// $test = 'bg-primary-black-blue'
 // $test = 'bg-darker-blue'
 // $test = 'bg-orange-200'
 // $test = 'mt-0'
 // $test = 'bg-off-white'
-// $test = 'bg-off-white'
+// $test = 'bg-grey-warm'
 // mobileMenuX[0].classList.add('top-1/2', '-translate-y-1/2');
 //     mobileMenuX[1].classList.add('scale-0');
 //     mobileMenuX[2].classList.add('-top-1/2', '-translate-y-1/2');

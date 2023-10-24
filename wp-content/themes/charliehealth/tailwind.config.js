@@ -60,6 +60,12 @@ module.exports = {
       },
       primary: {
         DEFAULT: '#161A3D',
+        100: '#272D6C',
+        'black-blue': '#12142A',
+      },
+      grey: {
+        warm: '#F7F5F1',
+        cool: '#F8F7F7',
       },
       salmon: '#F9E1D4',
       // 'light-teal': '#C8FFFF',
