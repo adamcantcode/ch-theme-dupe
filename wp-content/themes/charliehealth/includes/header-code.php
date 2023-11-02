@@ -63,7 +63,7 @@
       (d = c.getElementsByTagName("script")[0]) ? d.parentNode.insertBefore(b, d): c.head.appendChild(b)
     }
   })(document, window.freshpaint || []);
-  freshpaint.init("0ca256cb-0dc1-4d37-96b1-cd6723793f4a", {
+  freshpaint.init("16542b5f-ea29-493d-9d25-d062679c7e98", {
     "api_host": "https://xwsgki5761.execute-api.us-west-2.amazonaws.com/prod",
     "app_host": "https://d3ctaittqrzqon.cloudfront.net"
   });
