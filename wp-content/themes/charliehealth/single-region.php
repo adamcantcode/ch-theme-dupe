@@ -90,8 +90,8 @@ $nonDirectorArgs = array(
   <div class="container">
     <div class="rounded-md border-gradient">
       <div class="grid items-center lg:grid-cols-2">
-        <div class="flex items-center h-full bg-light-purple lg:p-sp-12 p-sp-4 lg:rounded-l-md lg:rounded-tr-none rounded-t-md">
-          <img src="<?= $regionImage['url']; ?>" alt="Illustration of <?= get_the_title(); ?>" class="object-contain w-full lg:rounded-l-md lg:rounded-tr-none rounded-t-md lg:max-h-[300px] max-h-[200px]">
+        <div class="flex items-center h-full bg-light-purple lg:rounded-l-md lg:rounded-tr-none rounded-t-md">
+          <img src="<?= $regionImage['url']; ?>" alt="Illustration of <?= get_the_title(); ?>" class="object-cover w-full h-full lg:rounded-l-md lg:rounded-tr-none rounded-t-md">
         </div>
         <div class="p-sp-8">
           <?= $regionInformation; ?>
