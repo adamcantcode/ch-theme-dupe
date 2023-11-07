@@ -105,7 +105,7 @@
           <div>
             <h3>Jump to:</h3>
           </div>
-          <div class="flex overflow-auto gap-sp-5 no-scrollbar">
+          <div class="flex overflow-auto gap-sp-5 custom-scroll">
             <?php if (have_rows('jump_buttons', get_queried_object())) : ?>
               <?php while (have_rows('jump_buttons', get_queried_object())) : the_row();
                 $label = get_sub_field('label', get_queried_object());
