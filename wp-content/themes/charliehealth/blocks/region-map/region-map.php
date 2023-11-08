@@ -6,7 +6,8 @@
   $args = array(
     'post_type' => 'outreach-team-member',
     'meta_key'      => 'is_director',
-    'meta_value'    => '1'
+    'meta_value'    => '1',
+    'posts_per_page' => -1
   );
 
   $query = new WP_Query($args);
