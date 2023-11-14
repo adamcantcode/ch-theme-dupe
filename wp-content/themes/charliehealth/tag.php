@@ -74,6 +74,9 @@
   // var_dump(get_queried_object());
   $url          = get_term_link(get_queried_object());
   $niceTitle    = get_queried_object()->name . ' Resources';
+  if (strpos($niceTitle, 'Resources') !== false) {
+    $niceTitle = get_queried_object()->name;
+  }
   $title        = get_field('title', get_queried_object()) ? get_field('title', get_queried_object()) : single_term_title('', false) . ' Resources for Teens & Young Adults';
   $subhead      = get_field('subhead', get_queried_object());
   $sectionOne   = get_field('section_1', get_queried_object());
