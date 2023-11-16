@@ -19,7 +19,7 @@ import newsletterPopup from './modules/newsletter-popup';
 import mobileCats from './modules/mobile-cats';
 import navigationMenu from './modules/navigation-menu';
 import tagPage from './modules/tag-page';
-import stickyCTA from './modules/stickyCTA';
+import stickyCTA from './modules/sticky-cta';
 
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
@@ -80,11 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (body.classList.contains('page-template-page-press')) {
     ajaxPagination();
   }
-  if (
-    document
-      .querySelector('meta[property="og:title"]')
-      .content.includes('https://www.charliehealth.com/page/hp1')
-  ) {
+  if (document.querySelector('meta[property="og:title"]').content === 'hp1') {
     stickyCTA();
   }
   /**
