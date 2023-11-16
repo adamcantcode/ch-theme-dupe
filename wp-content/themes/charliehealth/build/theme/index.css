@@ -1663,6 +1663,10 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-top: 2rem;
 }
 
+.mb-\[14px\]{
+  margin-bottom: 14px;
+}
+
 .block{
   display: block;
 }
@@ -2053,6 +2057,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .grid-flow-col{
   grid-auto-flow: column;
+}
+
+.grid-flow-dense{
+  grid-auto-flow: dense;
 }
 
 .grid-cols-1{
@@ -2589,6 +2597,10 @@ a.ch-button.button-tertiary.inverted:hover {
   padding: 2rem;
 }
 
+.p-\[10px\]{
+  padding: 10px;
+}
+
 .px-3{
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -2906,6 +2918,14 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .leading-tight{
   line-height: 1.25;
+}
+
+.leading-\[130\%\]{
+  line-height: 130%;
+}
+
+.leading-\[12px\]{
+  line-height: 12px;
 }
 
 .text-\[\#87889A\]{
@@ -4828,6 +4848,10 @@ a.providers:hover {
 
   .lg\:grid-cols-\[unset\]{
     grid-template-columns: unset;
+  }
+
+  .lg\:grid-cols-6{
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
   .lg\:flex-row{
