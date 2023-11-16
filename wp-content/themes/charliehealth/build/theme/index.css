@@ -1314,6 +1314,10 @@ a.ch-button.button-tertiary.inverted:hover {
   pointer-events: none;
 }
 
+.visible{
+  visibility: visible;
+}
+
 .invisible{
   visibility: hidden;
 }
@@ -2653,6 +2657,11 @@ a.ch-button.button-tertiary.inverted:hover {
 .py-8{
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.py-\[10px\]{
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .py-\[6px\]{
@@ -4538,6 +4547,9 @@ a.providers:hover {
 
   .md\:p-sp-6{
     padding: 1.5rem;
+  }
+  .md\:noshow{
+    display: none;
   }
 }
 

@@ -1618,6 +1618,38 @@ function shareButton() {
 
 /***/ }),
 
+/***/ "./src/modules/stickyCTA.js":
+/*!**********************************!*\
+  !*** ./src/modules/stickyCTA.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ stickyCTA)
+/* harmony export */ });
+function stickyCTA() {
+  document.addEventListener('DOMContentLoaded', function () {
+    var stickyCTA = document.querySelector('.sticky-cta-js');
+    var footer = document.querySelector('footer');
+    var triggerOffset = window.innerHeight;
+    window.addEventListener('scroll', function () {
+      var scrollPosition = window.scrollY;
+      var footerOffset = footer.offsetTop - triggerOffset;
+      if (scrollPosition > triggerOffset && scrollPosition < footerOffset) {
+        stickyCTA.classList.remove('opacity-0', 'invisible');
+      } else if (scrollPosition >= footerOffset) {
+        stickyCTA.classList.add('opacity-0', 'invisible');
+      } else {
+        stickyCTA.classList.add('opacity-0', 'invisible');
+      }
+    });
+  });
+}
+
+/***/ }),
+
 /***/ "./src/modules/stop-animations.js":
 /*!****************************************!*\
   !*** ./src/modules/stop-animations.js ***!
@@ -23494,6 +23526,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_mobile_cats__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./modules/mobile-cats */ "./src/modules/mobile-cats.js");
 /* harmony import */ var _modules_navigation_menu__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./modules/navigation-menu */ "./src/modules/navigation-menu.js");
 /* harmony import */ var _modules_tag_page__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./modules/tag-page */ "./src/modules/tag-page.js");
+/* harmony import */ var _modules_stickyCTA__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./modules/stickyCTA */ "./src/modules/stickyCTA.js");
+
 
 
 
@@ -23564,6 +23598,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   if (body.classList.contains('page-template-page-press')) {
     (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__["default"])();
+  }
+  if (document.querySelector('meta[property="og:title"]').content.includes('https://www.charliehealth.com/page/hp1')) {
+    (0,_modules_stickyCTA__WEBPACK_IMPORTED_MODULE_20__["default"])();
   }
   /**
    * needs to load last (or at least after TOC) in order for all links to be scrollable

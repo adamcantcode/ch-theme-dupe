@@ -19,6 +19,7 @@ import newsletterPopup from './modules/newsletter-popup';
 import mobileCats from './modules/mobile-cats';
 import navigationMenu from './modules/navigation-menu';
 import tagPage from './modules/tag-page';
+import stickyCTA from './modules/stickyCTA';
 
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
@@ -56,10 +57,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (body.classList.contains('category')) {
     featuredBlogSlider();
     ajaxPagination();
-    mobileCats()
+    mobileCats();
   }
   if (body.classList.contains('tag')) {
-    if(document.querySelector('.resource-page-js')) {
+    if (document.querySelector('.resource-page-js')) {
       tagPage();
     } else {
       ajaxPagination();
@@ -78,6 +79,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   if (body.classList.contains('page-template-page-press')) {
     ajaxPagination();
+  }
+  if (
+    document
+      .querySelector('meta[property="og:title"]')
+      .content.includes('https://www.charliehealth.com/page/hp1')
+  ) {
+    stickyCTA();
   }
   /**
    * needs to load last (or at least after TOC) in order for all links to be scrollable
