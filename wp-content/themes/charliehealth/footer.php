@@ -3,24 +3,24 @@
 		<div class="container ">
 			<div class="flex flex-col justify-between lg:flex-row">
 				<div class="w-full rounded-t-sm lg:rounded-l-sm lg:rounded-r-none py-sp-5 px-sp-6 bg-lavender-100">
-					<p class="mb-0 text-[14px] leading-none">If this is a life-threatening emergency, please call 911 or the <a href="https://988lifeline.org/" target="_blank" class="text-darker-blue">National Suicide Prevention Lifeline</a></p>
+					<p class="mb-0 text-[14px] leading-none">If this is a life-threatening emergency, please call 911 or the <a href="https://988lifeline.org/" target="_blank" class="text-darker-blue text-[14px]">National Suicide Prevention Lifeline</a></p>
 				</div>
 				<div class="rounded-b-sm bg-lavender-300 lg:rounded-r-sm lg:rounded-l-none py-sp-5 px-sp-6">
 					<a href="tel:+988" class="flex items-center no-underline gap-sp-2 text-darker-blue">
 						<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/phone.svg'); ?>" width="25" alt="phone call icon">
-						<div>988</div>
+						<div class="text-[14px]">988</div>
 					</a>
 				</div>
 			</div>
 		</div>
 		<div class="container">
-			<div class="grid grid-flow-col grid-cols-2 lg:grid-cols-6 py-sp-12">
+			<div class="grid grid-cols-2 lg:grid-flow-col lg:grid-cols-6 py-sp-12 gap-y-sp-6 lg:gap-y-0">
 				<?php
 				if (have_rows('footer_navigation_item_new', 'option')) :
 					while (have_rows('footer_navigation_item_new', 'option')) : the_row();
 						$heading = get_sub_field('footer_column_heading')
 				?>
-						<div class="flex flex-col lg:mb-0 mb-sp-6">
+						<div class="flex flex-col lg:mb-0 mb-sp-6 <?= get_row_index() === 4 ? 'mt-[-124px] lg:mt-0' : ''; ?> ">
 							<p class="font-heading text-nav-normal mb-sp-4 last:mb-0 text-lavender-200"><?= $heading; ?></p>
 							<?php
 							if (have_rows('footer_submenu_items', 'option')) :
@@ -53,7 +53,7 @@
 						<div class="flex-grow">
 							<h3 class="text-white font-heading mb-sp-2 text-[28px]">Stay connected</h3>
 							<p class="text-white text-[14px] leading-[130%]">Get mental health updates, research, insights, and resources directly to your inbox.</p>
-							<div id="newsletterFooter" class="w-full lg:w-1/2 newsletter-revamp footer-newsletter">
+							<div id="newsletterFooter" class="w-full lg:w-2/5 newsletter-revamp footer-newsletter">
 								<script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/newsletter_blog_revamp"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/newsletter_blog_revamp" title="Online Form">Online Form - Newsletter - Blog Revamp</a></noscript>
 								<script>
 									var container = document.currentScript.parentNode; // Newsletter container
