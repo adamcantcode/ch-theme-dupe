@@ -37,6 +37,13 @@
                 "operator": "==",
                 "value": "page-referral-houston.php"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-referral-california.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -62,5 +69,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1691594625
+    "modified": 1700153069
 }
