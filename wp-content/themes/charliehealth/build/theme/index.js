@@ -23597,9 +23597,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (body.classList.contains('page-template-page-press')) {
     (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__["default"])();
   }
-  if (document.querySelector('meta[property="og:title"]').content === 'hp1') {
-    (0,_modules_sticky_cta__WEBPACK_IMPORTED_MODULE_20__["default"])();
-  }
+  // if (document.querySelector('meta[property="og:title"]').content === 'hp1') {
+  //   stickyCTA();
+  // }
   /**
    * needs to load last (or at least after TOC) in order for all links to be scrollable
    */

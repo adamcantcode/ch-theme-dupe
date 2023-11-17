@@ -80,9 +80,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (body.classList.contains('page-template-page-press')) {
     ajaxPagination();
   }
-  if (document.querySelector('meta[property="og:title"]').content === 'hp1') {
-    stickyCTA();
-  }
+  // if (document.querySelector('meta[property="og:title"]').content === 'hp1') {
+  //   stickyCTA();
+  // }
   /**
    * needs to load last (or at least after TOC) in order for all links to be scrollable
    */
