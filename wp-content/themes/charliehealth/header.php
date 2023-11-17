@@ -222,7 +222,7 @@
             </div>
         <?php endwhile;
         endif; ?>
-        <div class="mt-auto">
+        <div class="mt-auto mb-sp-8">
           <div class="flex justify-center py-8 gap-x-sp-4 px-sp-5">
             <a href="https://app.charliehealth.com/" target="_blank" class="ch-button button-tertiary-lavender inverted !text-[1rem] !rounded-[6px]">Client Login</a>
             <a href="<?= get_field('cta', 'option')['url']; ?>" class="ch-button button-tertiary-lavender !text-[1rem] !rounded-[6px]"><?= get_field('cta', 'option')['title']; ?></a>
