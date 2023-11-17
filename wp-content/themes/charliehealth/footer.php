@@ -3,7 +3,8 @@
 </div>
 <script>
 	document.addEventListener('DOMContentLoaded', function() {
-		const enable = false;
+		// const enable = false;
+		const enable = true; // Staging
 		if (enable) {
 			var stickyCTA = document.querySelector('.sticky-cta-js');
 			var footer = document.querySelector('footer');
