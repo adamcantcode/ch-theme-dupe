@@ -411,7 +411,9 @@
       });
     }
     // Get userIP
-    document.querySelector('#field153805284').value = document.querySelector('#userIP').innerText;
+    waitForElement('field153805284', (element) => {
+      document.querySelector('#field153805284').value = document.querySelector('#userIP').innerText;
+    });
   }
 </script>
 <!-- Attribution Fix END -->
