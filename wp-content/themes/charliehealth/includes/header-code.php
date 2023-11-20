@@ -412,7 +412,6 @@
     }
     // Get userIP
     document.querySelector('#field153805284').value = document.querySelector('#userIP').innerText;
-    document.querySelector('#field153805284').value;
   }
 </script>
 <!-- Attribution Fix END -->
