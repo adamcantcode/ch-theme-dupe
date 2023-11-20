@@ -396,6 +396,7 @@
   });
 
   if (window.location.href.indexOf('form') > -1) {
+    // Get organic LP
     if (document.cookie.indexOf('organicLP' + '=') > -1) {
       if (!params) {
         waitForElement('field139624275', (element) => {
@@ -403,11 +404,15 @@
         });
       }
     }
+    // Get fbclid
     if (document.cookie.indexOf('fbclid' + '=') > -1) {
       waitForElement('field153805284', (element) => {
         element.value = getCookie('fbclid');
       });
     }
+    // Get userIP
+    document.querySelector('#field153805284').value = document.querySelector('#userIP').innerText;
+    document.querySelector('#field153805284').value;
   }
 </script>
 <!-- Attribution Fix END -->
