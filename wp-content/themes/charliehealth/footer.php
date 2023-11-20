@@ -1,32 +1,6 @@
 <div class="sticky-cta-js bg-white px-sp-5 py-[10px] fixed bottom-[-100%] w-full opacity-0 invisible transition-all duration-500 z-50 md:noshow">
 	<a href="/form" class="w-full ch-button button-primary" target="_self">Get Started</a>
 </div>
-<script>
-	document.addEventListener('DOMContentLoaded', function() {
-		const enable = false;
-		if (enable) {
-			var stickyCTA = document.querySelector('.sticky-cta-js');
-			var footer = document.querySelector('footer');
-			var triggerOffset = window.innerHeight;
-
-			window.addEventListener('scroll', function() {
-				var scrollPosition = window.scrollY;
-				var footerOffset = footer.offsetTop - triggerOffset;
-
-				if (scrollPosition > triggerOffset && scrollPosition < footerOffset) {
-					stickyCTA.classList.remove('opacity-0', 'invisible', 'bottom-[-100%]');
-					stickyCTA.classList.add('bottom-0');
-				} else if (scrollPosition >= footerOffset) {
-					stickyCTA.classList.add('opacity-0', 'invisible', 'bottom-[-100%]');
-					stickyCTA.classList.remove('bottom-0');
-				} else {
-					stickyCTA.classList.add('opacity-0', 'invisible', 'bottom-[-100%]');
-					stickyCTA.classList.remove('bottom-0');
-				}
-			});
-		}
-	})
-</script>
 <footer id="footer" class="grid bg-secondary-soft relatve">
 	<div class="section">
 		<div class="container ">
