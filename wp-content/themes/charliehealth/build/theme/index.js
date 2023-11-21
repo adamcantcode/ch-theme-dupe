@@ -671,7 +671,7 @@ function ajaxPaginationSearch() {
                   <h5 class="mb-sp-4">${post.acf.by_author.post_title}</h5>
                   <div class="grid justify-start grid-flow-col gap-sp-4 items-end">`;
     if (tags) {
-      html += `${tags.map(tag => `<a href="${window.location.origin}/post-tags/${tag.slug}" class="px-sp-4 py-sp-3 no-underline rounded-lg text-h6 bg-tag-gray z-20 relative inline-block hover:bg-bright-teal">${tag.name}</a>`).join('')}`;
+      html += `${tags.map(tag => `<a href="${window.location.origin}/resources/${tag.slug}" class="px-sp-4 py-sp-3 no-underline rounded-lg text-h6 bg-tag-gray z-20 relative inline-block hover:bg-bright-teal">${tag.name}</a>`).join('')}`;
     }
     html += `</div>
                   </div>

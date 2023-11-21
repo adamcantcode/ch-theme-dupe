@@ -33,7 +33,7 @@
         ));
         $currentTag = get_queried_object()->slug;
         foreach ($terms as $term) : ?>
-          <a href="<?= site_url('/post-tags/' . $term->slug); ?>" class="no-underline duration-300 rounded-lg px-sp-4 py-sp-3 text-h5 <?= $currentTag === $term->slug ? 'bg-dark-blue text-white' : 'bg-tag-gray hover:bg-bright-teal'; ?>"><?= $term->name; ?></a>
+          <a href="<?= site_url('/resources/' . $term->slug); ?>" class="no-underline duration-300 rounded-lg px-sp-4 py-sp-3 text-h5 <?= $currentTag === $term->slug ? 'bg-dark-blue text-white' : 'bg-tag-gray hover:bg-bright-teal'; ?>"><?= $term->name; ?></a>
         <?php endforeach; ?>
       </div>
     </div>

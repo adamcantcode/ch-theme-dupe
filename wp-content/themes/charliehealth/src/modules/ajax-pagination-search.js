@@ -195,7 +195,7 @@ export default function ajaxPaginationSearch() {
       html += `${tags
         .map(
           (tag) =>
-            `<a href="${window.location.origin}/post-tags/${tag.slug}" class="px-sp-4 py-sp-3 no-underline rounded-lg text-h6 bg-tag-gray z-20 relative inline-block hover:bg-bright-teal">${tag.name}</a>`
+            `<a href="${window.location.origin}/resources/${tag.slug}" class="px-sp-4 py-sp-3 no-underline rounded-lg text-h6 bg-tag-gray z-20 relative inline-block hover:bg-bright-teal">${tag.name}</a>`
         )
         .join('')}`;
     }
