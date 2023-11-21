@@ -412,7 +412,9 @@
     }
     // Get userIP
     waitForElement('field155080834', (element) => {
-      document.querySelector('#field155080834').value = document.querySelector('#userIP').innerText;
+      fetch('https://api.ipify.org/?format=json').then(results => results.json()).then(data =>
+        document.querySelector('#field155080834').value = data.ip
+        );
     });
   }
 </script>
