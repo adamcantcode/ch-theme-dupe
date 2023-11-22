@@ -9552,7 +9552,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
-window.addEventListener('DOMContentLoaded', () => {});
+window.addEventListener('DOMContentLoaded', () => {
+  let scrollImage = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
+    scrollTrigger: {
+      // trigger: '.pin-image-container-js',
+      // pin: '.pin-image-js',
+      // start: 'top 60px',
+      // end: 'bottom center',
+      // // pinSpacing: false,
+      // markers: true
+    }
+  });
+});
 })();
 
 /******/ })()

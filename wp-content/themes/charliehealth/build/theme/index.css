@@ -1338,6 +1338,10 @@ a.ch-button.button-tertiary.inverted:hover {
   position: relative;
 }
 
+.sticky{
+  position: sticky;
+}
+
 .\!inset-auto{
   inset: auto !important;
 }
@@ -1673,6 +1677,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
+}
+
+.mt-sp-10{
+  margin-top: 2.5rem;
 }
 
 .block{
