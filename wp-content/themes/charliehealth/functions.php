@@ -92,6 +92,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/research-list');
   register_block_type(__DIR__ . '/build/blocks/fifty-fifty-grid');
   register_block_type(__DIR__ . '/build/blocks/card-link');
+  register_block_type(__DIR__ . '/build/blocks/scrolling-steps');
 }
 add_action('init', 'register_acf_blocks', 5);
 
