@@ -9566,10 +9566,11 @@ window.addEventListener('DOMContentLoaded', () => {
       trigger: stepItem,
       animation: anim,
       start: 'top center',
-      toggleActions: 'play pause resume reverse',
-      markers: true
+      toggleActions: 'play pause resume reverse'
+      // markers: true,
     });
   });
+
   let pinImage = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
     scrollTrigger: {
       trigger: '.pin-image-js',
@@ -9578,14 +9579,27 @@ window.addEventListener('DOMContentLoaded', () => {
       start: 'center center',
       endTrigger: '.step-items-container',
       end: 'bottom center',
-      toggleActions: 'play reverse play reverse',
+      toggleActions: 'play reverse play reverse'
       // // pinSpacing: false,
+      // markers: true,
+    }
+  });
+
+  let sctionBg = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
+    scrollTrigger: {
+      trigger: '.section-bg-js',
+      start: 'center top',
+      end: '90% bottom',
+      scrub: true,
       markers: true
     }
   });
   pinImage.to('.pin-image-js', {
     autoAlpha: 1,
     duration: 1
+  });
+  sctionBg.to('.section-bg-js', {
+    background: '#8F92CD'
   });
 });
 })();

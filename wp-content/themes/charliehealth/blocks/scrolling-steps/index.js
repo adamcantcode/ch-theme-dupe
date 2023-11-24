@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
       animation: anim,
       start: 'top center',
       toggleActions: 'play pause resume reverse',
-      markers: true,
+      // markers: true,
     });
   });
 
@@ -31,6 +31,16 @@ window.addEventListener('DOMContentLoaded', () => {
       end: 'bottom center',
       toggleActions: 'play reverse play reverse',
       // // pinSpacing: false,
+      // markers: true,
+    },
+  });
+
+  let sctionBg = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.section-bg-js',
+      start: 'center top',
+      end: '90% bottom',
+      scrub: true,
       markers: true,
     },
   });
@@ -38,5 +48,9 @@ window.addEventListener('DOMContentLoaded', () => {
   pinImage.to('.pin-image-js', {
     autoAlpha: 1,
     duration: 1,
+  });
+
+  sctionBg.to('.section-bg-js', {
+    background: '#8F92CD',
   });
 });

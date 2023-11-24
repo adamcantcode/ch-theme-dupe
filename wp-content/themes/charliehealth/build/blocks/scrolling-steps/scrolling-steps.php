@@ -1,4 +1,4 @@
-<div class="section">
+<div class="section section-bg-js">
   <div class="container">
     <div>
       <div class="grid grid-cols-[3fr_6fr_3fr] step-items-container justify-items-center">
@@ -34,6 +34,14 @@
             <p>Once we connect, our team will be able to answer any questions you have about our virtual IOP and determine your eligibility for our program based on your mental health needs and goals.</p>
           </div>
         </div>
+      </div>
+      <div class="test">
+        <h3>test</h3>
+        <h3>test</h3>
+        <h3>test</h3>
+        <h3>test</h3>
+        <h3>test</h3>
+        <h3>test</h3>
       </div>
     </div>
   </div>
