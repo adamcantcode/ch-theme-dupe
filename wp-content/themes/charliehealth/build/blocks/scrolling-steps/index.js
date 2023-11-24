@@ -9553,23 +9553,22 @@ __webpack_require__.r(__webpack_exports__);
 
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
 window.addEventListener('DOMContentLoaded', () => {
-  const stepItems = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.utils.toArray('.step-item');
-  stepItems.forEach((stepItem, i) => {
-    const anim = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.fromTo(stepItem, {
-      autoAlpha: 0,
-      y: 32
-    }, {
-      autoAlpha: 1,
-      y: 0
-    });
-    gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create({
-      trigger: stepItem,
-      animation: anim,
-      start: 'top center',
-      toggleActions: 'play pause resume reverse'
-      // markers: true,
-    });
-  });
+  // const stepItems = gsap.utils.toArray('.step-item');
+
+  // stepItems.forEach((stepItem, i) => {
+  //   const anim = gsap.fromTo(
+  //     stepItem,
+  //     { autoAlpha: 0, y: 32 },
+  //     { autoAlpha: 1, y: 0 }
+  //   );
+  //   ScrollTrigger.create({
+  //     trigger: stepItem,
+  //     animation: anim,
+  //     start: 'top center',
+  //     toggleActions: 'play pause resume reverse',
+  //     // markers: true,
+  //   });
+  // });
 
   let pinImage = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
     scrollTrigger: {
@@ -9577,30 +9576,32 @@ window.addEventListener('DOMContentLoaded', () => {
       // scrub: true,
       pin: '.pin-image-js',
       start: 'center center',
-      endTrigger: '.step-items-container',
+      endTrigger: '.pin-section',
       end: 'bottom center',
-      toggleActions: 'play reverse play reverse'
+      toggleActions: 'play reverse play reverse',
       // // pinSpacing: false,
-      // markers: true,
-    }
-  });
-
-  let sctionBg = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
-    scrollTrigger: {
-      trigger: '.section-bg-js',
-      start: 'center top',
-      end: '90% bottom',
-      scrub: true,
       markers: true
     }
   });
+
+  // let sctionBg = gsap.timeline({
+  //   scrollTrigger: {
+  //     trigger: '.section-bg-js',
+  //     start: 'bottom bottom',
+  //     end: 'center center',
+  //     scrub: true,
+  //     // markers: true,
+  //   },
+  // });
+
   pinImage.to('.pin-image-js', {
     autoAlpha: 1,
     duration: 1
   });
-  sctionBg.to('.section-bg-js', {
-    background: '#8F92CD'
-  });
+
+  // sctionBg.to('.section-bg-js', {
+  //   background: '#8F92CD',
+  // });
 });
 })();
 
