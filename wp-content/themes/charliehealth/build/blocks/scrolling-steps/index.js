@@ -9553,15 +9553,39 @@ __webpack_require__.r(__webpack_exports__);
 
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
 window.addEventListener('DOMContentLoaded', () => {
-  let scrollImage = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
+  const stepItems = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.utils.toArray('.step-item');
+  stepItems.forEach((stepItem, i) => {
+    const anim = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.fromTo(stepItem, {
+      autoAlpha: 0,
+      y: 32
+    }, {
+      autoAlpha: 1,
+      y: 0
+    });
+    gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create({
+      trigger: stepItem,
+      animation: anim,
+      start: 'top center',
+      toggleActions: 'play pause resume reverse',
+      markers: true
+    });
+  });
+  let pinImage = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
     scrollTrigger: {
-      // trigger: '.pin-image-container-js',
-      // pin: '.pin-image-js',
-      // start: 'top 60px',
-      // end: 'bottom center',
+      trigger: '.pin-image-js',
+      // scrub: true,
+      pin: '.pin-image-js',
+      start: 'center center',
+      endTrigger: '.step-items-container',
+      end: 'bottom center'
       // // pinSpacing: false,
-      // markers: true
+      // markers: true,
     }
+  });
+
+  pinImage.to('.pin-image-js', {
+    autoAlpha: 1,
+    duration: 1
   });
 });
 })();

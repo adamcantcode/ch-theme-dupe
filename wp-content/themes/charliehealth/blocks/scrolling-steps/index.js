@@ -4,14 +4,38 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 window.addEventListener('DOMContentLoaded', () => {
-  let scrollImage = gsap.timeline({
+  const stepItems = gsap.utils.toArray('.step-item');
+
+  stepItems.forEach((stepItem, i) => {
+    const anim = gsap.fromTo(
+      stepItem,
+      { autoAlpha: 0, y: 32 },
+      { autoAlpha: 1, y: 0 }
+    );
+    ScrollTrigger.create({
+      trigger: stepItem,
+      animation: anim,
+      start: 'top center',
+      toggleActions: 'play pause resume reverse',
+      markers: true,
+    });
+  });
+
+  let pinImage = gsap.timeline({
     scrollTrigger: {
-      // trigger: '.pin-image-container-js',
-      // pin: '.pin-image-js',
-      // start: 'top 60px',
-      // end: 'bottom center',
+      trigger: '.pin-image-js',
+      // scrub: true,
+      pin: '.pin-image-js',
+      start: 'center center',
+      endTrigger: '.step-items-container',
+      end: 'bottom center',
       // // pinSpacing: false,
-      // markers: true
+      // markers: true,
     },
+  });
+
+  pinImage.to('.pin-image-js', {
+    autoAlpha: 1,
+    duration: 1,
   });
 });

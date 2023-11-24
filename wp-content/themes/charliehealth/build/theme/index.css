@@ -1338,10 +1338,6 @@ a.ch-button.button-tertiary.inverted:hover {
   position: relative;
 }
 
-.sticky{
-  position: sticky;
-}
-
 .\!inset-auto{
   inset: auto !important;
 }
@@ -1535,6 +1531,10 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-bottom: 14px;
 }
 
+.mb-\[200px\]{
+  margin-bottom: 200px;
+}
+
 .mb-sp-1{
   margin-bottom: 0.25rem;
 }
@@ -1635,6 +1635,10 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-top: 124px;
 }
 
+.mt-\[200px\]{
+  margin-top: 200px;
+}
+
 .mt-\[60px\]{
   margin-top: 60px;
 }
@@ -1677,10 +1681,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
-}
-
-.mt-sp-10{
-  margin-top: 2.5rem;
 }
 
 .block{
