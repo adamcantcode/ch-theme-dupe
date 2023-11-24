@@ -29,8 +29,9 @@ window.addEventListener('DOMContentLoaded', () => {
       start: 'center center',
       endTrigger: '.step-items-container',
       end: 'bottom center',
+      toggleActions: 'play reverse play reverse',
       // // pinSpacing: false,
-      // markers: true,
+      markers: true,
     },
   });
 

@@ -9577,12 +9577,12 @@ window.addEventListener('DOMContentLoaded', () => {
       pin: '.pin-image-js',
       start: 'center center',
       endTrigger: '.step-items-container',
-      end: 'bottom center'
+      end: 'bottom center',
+      toggleActions: 'play reverse play reverse',
       // // pinSpacing: false,
-      // markers: true,
+      markers: true
     }
   });
-
   pinImage.to('.pin-image-js', {
     autoAlpha: 1,
     duration: 1
