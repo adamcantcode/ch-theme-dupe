@@ -19,7 +19,7 @@
             <p>Once we connect, our team will be able to answer any questions you have about our virtual IOP and determine your eligibility for our program based on your mental health needs and goals.</p>
           </div>
         </div>
-        <div class="relative">
+        <div class="relative pin-image-end-js">
           <img src="https://placehold.co/538x538" alt="" class="pin-image-js">
         </div>
         <div class="mt-[50vh]">

@@ -9584,13 +9584,25 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  let fadeImage = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
+  let fadeImageIn = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
     scrollTrigger: {
       trigger: '.pin-image-js',
       start: 'top 66%',
       // end: 'top bottom',
       scrub: true,
-      toggleActions: 'play reverse play reverse',
+      toggleActions: 'play reverse play reverse'
+      // markers: true,
+    }
+  });
+
+  let fadeImageOut = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
+    scrollTrigger: {
+      trigger: '.pin-image-end-js',
+      // endTrigger: '.pin-image-end-js',
+      start: 'bottom bottom',
+      end: 'bottom center',
+      scrub: true,
+      // toggleActions: 'play reverse play reverse',
       markers: true
     }
   });
@@ -9604,11 +9616,14 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  fadeImage.fromTo('.pin-image-js', {
+  fadeImageIn.fromTo('.pin-image-js', {
     autoAlpha: 0
   }, {
     autoAlpha: 1
-  }).to({
+  });
+  fadeImageOut.fromTo('.pin-image-js', {
+    autoAlpha: 1
+  }, {
     autoAlpha: 0
   });
   sctionBg.to('.section-bg-js', {

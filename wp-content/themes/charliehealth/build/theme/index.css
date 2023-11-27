@@ -1531,8 +1531,8 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-bottom: 14px;
 }
 
-.mb-\[200px\]{
-  margin-bottom: 200px;
+.mb-\[250px\]{
+  margin-bottom: 250px;
 }
 
 .mb-sp-1{
@@ -1635,8 +1635,12 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-top: 124px;
 }
 
-.mt-\[200px\]{
-  margin-top: 200px;
+.mt-\[250px\]{
+  margin-top: 250px;
+}
+
+.mt-\[50vh\]{
+  margin-top: 50vh;
 }
 
 .mt-\[60px\]{
@@ -1681,26 +1685,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
-}
-
-.mt-\[100vh\]{
-  margin-top: 100vh;
-}
-
-.mt-\[50vh\]{
-  margin-top: 50vh;
-}
-
-.mb-\[250px\]{
-  margin-bottom: 250px;
-}
-
-.mt-\[250px\]{
-  margin-top: 250px;
-}
-
-.mt-\[66vh\]{
-  margin-top: 66vh;
 }
 
 .block{
@@ -2774,10 +2758,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .pt-sp-3{
   padding-top: 0.75rem;
-}
-
-.pb-\[200px\]{
-  padding-bottom: 200px;
 }
 
 .text-center{
