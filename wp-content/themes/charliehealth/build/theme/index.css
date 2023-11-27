@@ -1687,6 +1687,22 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-top: 2rem;
 }
 
+.mb-\[25vh\]{
+  margin-bottom: 25vh;
+}
+
+.mt-\[25vh\]{
+  margin-top: 25vh;
+}
+
+.mb-\[33vh\]{
+  margin-bottom: 33vh;
+}
+
+.mt-\[33vh\]{
+  margin-top: 33vh;
+}
+
 .block{
   display: block;
 }

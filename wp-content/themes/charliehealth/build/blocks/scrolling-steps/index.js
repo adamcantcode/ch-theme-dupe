@@ -9565,13 +9565,12 @@ window.addEventListener('DOMContentLoaded', () => {
     gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create({
       trigger: stepItem,
       animation: anim,
-      start: 'top center',
+      start: 'top 66%',
       toggleActions: 'play pause resume reverse',
-      duration: 2
-      // markers: true,
+      duration: 2,
+      markers: true
     });
   });
-
   let pinImage = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
     scrollTrigger: {
       trigger: '.pin-image-js',
@@ -9607,16 +9606,17 @@ window.addEventListener('DOMContentLoaded', () => {
 
   let pinCta = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
     scrollTrigger: {
-      // scrub: true,
+      scrub: true,
       trigger: '.pin-cta-js',
       pin: '.pin-cta-js',
       start: 'center center',
       endTrigger: '.section-bg-js-cta',
-      end: '+=100%',
+      end: '+=100%'
       // toggleActions: 'play reverse play reverse',
-      markers: true
+      // markers: true,
     }
   });
+
   let sctionBg = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
     scrollTrigger: {
       trigger: '.section-bg-js-cta',

@@ -15,10 +15,10 @@ window.addEventListener('DOMContentLoaded', () => {
     ScrollTrigger.create({
       trigger: stepItem,
       animation: anim,
-      start: 'top center',
+      start: 'top 66%',
       toggleActions: 'play pause resume reverse',
       duration: 2,
-      // markers: true,
+      markers: true,
     });
   });
 
@@ -54,14 +54,14 @@ window.addEventListener('DOMContentLoaded', () => {
   });
   let pinCta = gsap.timeline({
     scrollTrigger: {
-      // scrub: true,
+      scrub: true,
       trigger: '.pin-cta-js',
       pin: '.pin-cta-js',
       start: 'center center',
       endTrigger: '.section-bg-js-cta',
       end: '+=100%',
       // toggleActions: 'play reverse play reverse',
-      markers: true,
+      // markers: true,
     },
   });
 
