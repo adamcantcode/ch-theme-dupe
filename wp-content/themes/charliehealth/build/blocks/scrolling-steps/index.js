@@ -9557,7 +9557,7 @@ window.addEventListener('DOMContentLoaded', () => {
   stepItems.forEach((stepItem, i) => {
     const anim = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.fromTo(stepItem, {
       autoAlpha: 0,
-      y: 32
+      y: 64
     }, {
       autoAlpha: 1,
       y: 0
@@ -9589,7 +9589,7 @@ window.addEventListener('DOMContentLoaded', () => {
       trigger: '.pin-image-js',
       start: 'top 66%',
       // end: 'top bottom',
-      scrub: true,
+      scrub: 0.5,
       toggleActions: 'play reverse play reverse'
       // markers: true,
     }
@@ -9598,18 +9598,29 @@ window.addEventListener('DOMContentLoaded', () => {
   let fadeImageOut = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
     scrollTrigger: {
       trigger: '.pin-image-end-js',
-      // endTrigger: '.pin-image-end-js',
       start: 'bottom bottom',
       end: 'bottom center',
-      scrub: true,
+      scrub: 0.5
+      // markers: true,
+    }
+  });
+
+  let pinCta = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
+    scrollTrigger: {
+      // scrub: true,
+      trigger: '.pin-cta-js',
+      pin: '.pin-cta-js',
+      start: 'center center',
+      endTrigger: '.section-bg-js-cta',
+      end: '+=100%',
       // toggleActions: 'play reverse play reverse',
       markers: true
     }
   });
   let sctionBg = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
     scrollTrigger: {
-      trigger: '.section-bg-js',
-      start: 'bottom bottom',
+      trigger: '.section-bg-js-cta',
+      start: 'top bottom',
       end: 'bottom center',
       scrub: true
       // markers: true,
@@ -9621,13 +9632,18 @@ window.addEventListener('DOMContentLoaded', () => {
   }, {
     autoAlpha: 1
   });
-  fadeImageOut.fromTo('.pin-image-js', {
-    autoAlpha: 1
-  }, {
+  fadeImageOut.to('.pin-image-js', {
     autoAlpha: 0
   });
   sctionBg.to('.section-bg-js', {
     background: '#8F92CD'
+  });
+  pinCta.fromTo('.pin-cta-js-motion', {
+    autoAlpha: 0,
+    y: 128
+  }, {
+    autoAlpha: 1,
+    y: 0
   });
 });
 })();
