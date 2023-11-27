@@ -1,8 +1,8 @@
-<div class="section pin-section">
+<div class="section pin-section section-bg-js">
   <div class="container">
     <div>
       <div class="grid grid-cols-[3fr_6fr_3fr] step-items-container justify-items-center">
-        <div class="mt-[100vh]">
+        <div class="mt-[50vh]">
           <div class="step-item mb-[250px]">
             <h2>Lorem, ipsum.</h2>
             <p>Our Admissions Team is ready 24/7 to get you started on your healing journey.</p>
@@ -20,9 +20,9 @@
           </div>
         </div>
         <div class="relative">
-          <img src="https://placehold.co/538x538" alt="" class="opacity-0 pin-image-js">
+          <img src="https://placehold.co/538x538" alt="" class="pin-image-js">
         </div>
-        <div class="mt-[100vh]">
+        <div class="mt-[50vh]">
           <div class="step-item mb-[250px] mt-[250px]">
             <h2>Lorem, ipsum.</h2>
             <p>Our Admissions Team is ready 24/7 to get you started on your healing journey.</p>
@@ -35,18 +35,14 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-<div class="section">
-  <div class="container">
-    <div class="test">
-      <h3>test</h3>
-      <h3>test</h3>
-      <h3>test</h3>
-      <h3>test</h3>
-      <h3>test</h3>
-      <h3>test</h3>
+      <div class="test">
+        <h3>test</h3>
+        <h3>test</h3>
+        <h3>test</h3>
+        <h3>test</h3>
+        <h3>test</h3>
+        <h3>test</h3>
+      </div>
     </div>
   </div>
 </div>
