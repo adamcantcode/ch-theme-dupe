@@ -9566,11 +9566,11 @@ window.addEventListener('DOMContentLoaded', () => {
       trigger: stepItem,
       animation: anim,
       start: 'top 66%',
-      toggleActions: 'play pause resume reverse',
-      duration: 2,
-      markers: true
+      toggleActions: 'play pause resume reverse'
+      // markers: true,
     });
   });
+
   let pinImage = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
     scrollTrigger: {
       trigger: '.pin-image-js',
@@ -9588,7 +9588,7 @@ window.addEventListener('DOMContentLoaded', () => {
       trigger: '.pin-image-js',
       start: 'top 66%',
       // end: 'top bottom',
-      scrub: 0.5,
+      scrub: true,
       toggleActions: 'play reverse play reverse'
       // markers: true,
     }
@@ -9599,7 +9599,7 @@ window.addEventListener('DOMContentLoaded', () => {
       trigger: '.pin-image-end-js',
       start: 'bottom bottom',
       end: 'bottom center',
-      scrub: 0.5
+      scrub: true
       // markers: true,
     }
   });
@@ -9621,7 +9621,8 @@ window.addEventListener('DOMContentLoaded', () => {
     scrollTrigger: {
       trigger: '.section-bg-js-cta',
       start: 'top bottom',
-      end: 'bottom center',
+      endTrigger: '.pin-cta-js-motion',
+      end: 'top center',
       scrub: true
       // markers: true,
     }
@@ -9635,8 +9636,10 @@ window.addEventListener('DOMContentLoaded', () => {
   fadeImageOut.to('.pin-image-js', {
     autoAlpha: 0
   });
-  sctionBg.to('.section-bg-js', {
-    background: '#8F92CD'
+  sctionBg.fromTo('.section-bg-js', {
+    background: 'linear-gradient(180deg, rgba(143,146,205,0) 0%, rgba(143,146,205,0) 100%)'
+  }, {
+    background: 'linear-gradient(180deg, rgba(143,146,205,0) 0%, rgba(143,146,205,1) 100%)'
   });
   pinCta.fromTo('.pin-cta-js-motion', {
     autoAlpha: 0,

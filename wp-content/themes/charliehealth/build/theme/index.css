@@ -2409,6 +2409,11 @@ a.ch-button.button-tertiary.inverted:hover {
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
+.border-primary{
+  --tw-border-opacity: 1;
+  border-color: rgb(22 26 61 / var(--tw-border-opacity));
+}
+
 .border-b-card-border{
   --tw-border-opacity: 1;
   border-bottom-color: rgb(212 213 220 / var(--tw-border-opacity));
