@@ -55,6 +55,13 @@ module.exports = {
         200: '#E7D3FF',
         300: '#DAC1FB',
       },
+      'pale-blue': {
+        200: '#ADB0E1',
+        300: '#8F92CD',
+      },
+      yellow: {
+        300: '#FDBF7C',
+      },
       secondary: {
         soft: '#1A1F45',
       },
@@ -172,8 +179,8 @@ module.exports = {
         h4: [
           '1.25rem',
           {
-            lineHeight: '1.625',
-            letterSpacing: '0',
+            lineHeight: '140%',
+            letterSpacing: '1%',
             fontWeight: '400',
           },
         ],
