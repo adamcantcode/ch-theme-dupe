@@ -10,7 +10,7 @@ Template Post Type: page
 <section class="section-top">
   <div class="container">
     <div class="text-center">
-      <h1 class="mb-0">Direct Referral Portal</h1>
+      <h1 class="mb-0">Charlie Cares</h1>
     </div>
   </div>
 </section>
