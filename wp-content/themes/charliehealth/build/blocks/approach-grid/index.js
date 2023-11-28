@@ -9552,7 +9552,25 @@ __webpack_require__.r(__webpack_exports__);
 
 
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
-window.addEventListener('DOMContentLoaded', () => {});
+window.addEventListener('DOMContentLoaded', () => {
+  let gridItemStagger = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
+    scrollTrigger: {
+      trigger: '.approach-grid-js',
+      start: 'top 80%',
+      markers: true,
+      // scrub: true,
+      duration: 3
+    }
+  });
+  gridItemStagger.fromTo('.grid-approach-items-js > div', {
+    autoAlpha: 0
+  }, {
+    autoAlpha: 1,
+    duration: 3,
+    stagger: 0.2,
+    ease: 'power4.out'
+  });
+});
 })();
 
 /******/ })()

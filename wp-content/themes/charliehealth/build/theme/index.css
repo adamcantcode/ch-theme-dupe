@@ -2773,6 +2773,16 @@ a.ch-button.button-tertiary.inverted:hover {
   padding-bottom: 1.5rem;
 }
 
+.px-sp-7{
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+}
+
+.py-sp-10{
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
 .\!pb-0{
   padding-bottom: 0px !important;
 }

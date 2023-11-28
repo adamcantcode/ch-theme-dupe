@@ -1,4 +1,4 @@
-<div class="border-2 border-white rounded-[1rem] p-sp-12 grid grid-cols-[4fr_1fr_7fr] gap-x-sp-5">
+<div class="border-2 border-white rounded-[1rem] p-sp-12 grid grid-cols-[4fr_1fr_7fr] gap-x-sp-5 approach-grid-js">
   <div class="grid content-between">
     <div>
       <h2 class="text-white font-heading-serif">How is our approach different?</h2>
@@ -10,24 +10,28 @@
     </div>
   </div>
   <div></div>
-  <div class="grid grid-cols-3 gap-sp-2">
-    <div class="text-center bg-lavender-300 rounded-[6px] p-sp-10">
+  <div class="grid grid-cols-3 gap-sp-2 grid-approach-items-js">
+    <div class="text-center bg-lavender-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
       <h4 class="mb-0">Immediate availability</h5>
     </div>
-    <div class="text-center bg-orange-300 rounded-[6px] p-sp-10">
-      <h4 class="mb-0">Immediate availability</h5>
+    <div class="text-center bg-orange-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
+      <h4 class="mb-0">In-network with insurance</h5>
     </div>
-    <div class="text-center bg-pale-blue-200 rounded-[6px] p-sp-10">
-      <h4 class="mb-0">Immediate availability</h5>
+    <div class="text-center bg-pale-blue-200 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
+      <h4 class="mb-0">Personalized treatment</h5>
     </div>
-    <div class="text-center bg-yellow-300 rounded-[6px] p-sp-10">
-      <h4 class="mb-0">Immediate availability</h5>
+    <div class="text-center bg-yellow-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
+      <h4 class="mb-0">Virtual access</h5>
     </div>
-    <div class="text-center bg-pale-blue-300 rounded-[6px] p-sp-10">
-      <h4 class="mb-0">Immediate availability</h5>
+    <div class="text-center bg-pale-blue-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
+      <h4 class="mb-0">Flexible scheduling</h5>
     </div>
-    <div class="text-center bg-white rounded-[6px] p-sp-10">
-      <h4 class="mb-0">Immediate availability</h5>
+    <div class="text-center bg-white rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
+      <svg width="27" height="22" viewBox="0 0 27 22" fill="none" xmlns="http://www.w3.org/2000/svg" class="mb-sp-2">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M22.054 9.3431L14.3818 1.67092L16.0527 0L26.6686 10.6159L16.0527 21.2319L14.3818 19.561L22.2366 11.7061L2.08616e-07 11.7061L0 9.34311L22.054 9.3431Z" fill="#161A3D" />
+      </svg>
+
+      <h4 class="mb-0">Learn more</h5>
     </div>
   </div>
 </div>
