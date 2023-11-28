@@ -22,9 +22,37 @@
               <p>Once we connect, our team will be able to answer any questions you have about our virtual IOP and determine your eligibility for our program based on your mental health needs and goals.</p>
             </div>
             <div class="step-item mb-[33vh] mt-[33vh]">
-              <h2>Lorem, ipsum.</h2>
-              <p>Our Admissions Team is ready 24/7 to get you started on your healing journey.</p>
-              <p>Once we connect, our team will be able to answer any questions you have about our virtual IOP and determine your eligibility for our program based on your mental health needs and goals.</p>
+              <h2>See results</h2>
+              <div class="absolute opacity-0 get-started-quote-js">
+                <div class="bg-white py-sp-4 px-sp-5 mb-sp-4 rounded-[6px]">
+                  <h4 class="mb-sp-0">"Charlie Health succeeded where other programs failed me."</h4>
+                </div>
+                <p>Emily B., Charlie Health Alum</p>
+              </div>
+              <div class="absolute opacity-0 get-started-quote-js">
+                <div class="bg-white py-sp-4 px-sp-5 mb-sp-4 rounded-[6px]">
+                  <h4 class="mb-sp-0">"Charlie Health is the primary reason I have been able to make positive changes in my life."</h4>
+                </div>
+                <p>Sydney C.R., Charlie Health Alum</p>
+              </div>
+              <div class="absolute opacity-0 get-started-quote-js">
+                <div class="bg-white py-sp-4 px-sp-5 mb-sp-4 rounded-[6px]">
+                  <h4 class="mb-sp-0">"Charlie Health made me feel like I wasn’t alone."</h4>
+                </div>
+                <p>—Gloria M., Charlie Health Alum</p>
+              </div>
+              <div class="absolute opacity-0 get-started-quote-js">
+                <div class="bg-white py-sp-4 px-sp-5 mb-sp-4 rounded-[6px]">
+                  <h4 class="mb-sp-0">"I have never encountered such involved and compassionate care."</h4>
+                </div>
+                <p>—Camilla B., Charlie Health Alum</p>
+              </div>
+              <div class="absolute opacity-0 get-started-quote-js">
+                <div class="bg-white py-sp-4 px-sp-5 mb-sp-4 rounded-[6px]">
+                  <h4 class="mb-sp-0">"I made connections with people who struggle with the same things as me."</h4>
+                </div>
+                <p>—Sam C., Charlie Health Alum</p>
+              </div>
             </div>
           </div>
           <div class="relative pin-image-end-js">

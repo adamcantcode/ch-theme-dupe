@@ -1687,6 +1687,10 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-top: 2rem;
 }
 
+.mb-sp-0{
+  margin-bottom: 0;
+}
+
 .block{
   display: block;
 }

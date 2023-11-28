@@ -9554,6 +9554,9 @@ __webpack_require__.r(__webpack_exports__);
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
 window.addEventListener('DOMContentLoaded', () => {
   const stepItems = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.utils.toArray('.step-item');
+  let testing = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
+    repeat: -1
+  });
   stepItems.forEach((stepItem, i) => {
     const anim = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.fromTo(stepItem, {
       autoAlpha: 0,
@@ -9650,6 +9653,33 @@ window.addEventListener('DOMContentLoaded', () => {
   }, {
     autoAlpha: 1,
     y: 0
+  });
+  let quotes = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.utils.toArray('.get-started-quote-js');
+  testing.to(quotes[0], {
+    autoAlpha: 1
+  }).to(quotes[0], {
+    autoAlpha: 0,
+    delay: 5
+  }).to(quotes[1], {
+    autoAlpha: 1
+  }).to(quotes[1], {
+    autoAlpha: 0,
+    delay: 5
+  }).to(quotes[2], {
+    autoAlpha: 1
+  }).to(quotes[2], {
+    autoAlpha: 0,
+    delay: 5
+  }).to(quotes[3], {
+    autoAlpha: 1
+  }).to(quotes[3], {
+    autoAlpha: 0,
+    delay: 5
+  }).to(quotes[4], {
+    autoAlpha: 1
+  }).to(quotes[4], {
+    autoAlpha: 0,
+    delay: 5
   });
 });
 })();
