@@ -28,7 +28,7 @@
             </div>
           </div>
           <div class="relative pin-image-end-js">
-            <img src="https://placehold.co/538x538" alt="" class="opacity-0 pin-image-js">
+            <img src="https://www.charliehealth.com/wp-content/uploads/2023/11/Scene_Outdoor-1.png" alt="" class="pin-image-js">
           </div>
           <div class="mt-[50vh]">
             <div class="step-item mb-[33vh] mt-[33vh]">

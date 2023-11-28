@@ -9560,7 +9560,9 @@ window.addEventListener('DOMContentLoaded', () => {
       y: 64
     }, {
       autoAlpha: 1,
-      y: 0
+      y: 0,
+      ease: 'power4.out',
+      duration: 2
     });
     gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create({
       trigger: stepItem,
@@ -9613,7 +9615,7 @@ window.addEventListener('DOMContentLoaded', () => {
       endTrigger: '.section-bg-js-cta',
       end: '+=100%',
       snap: [1]
-      // toggleActions: 'play reverse play reverse',
+      // toggleActions: 'play pause play reverse',
       // markers: true,
     }
   });

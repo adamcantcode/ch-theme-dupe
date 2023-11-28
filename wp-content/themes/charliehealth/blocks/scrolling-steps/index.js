@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const anim = gsap.fromTo(
       stepItem,
       { autoAlpha: 0, y: 64 },
-      { autoAlpha: 1, y: 0 }
+      { autoAlpha: 1, y: 0, ease: 'power4.out', duration: 2 }
     );
     ScrollTrigger.create({
       trigger: stepItem,
@@ -60,7 +60,7 @@ window.addEventListener('DOMContentLoaded', () => {
       endTrigger: '.section-bg-js-cta',
       end: '+=100%',
       snap: [1],
-      // toggleActions: 'play reverse play reverse',
+      // toggleActions: 'play pause play reverse',
       // markers: true,
     },
   });
