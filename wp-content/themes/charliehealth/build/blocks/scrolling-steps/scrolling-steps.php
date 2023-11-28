@@ -1,5 +1,5 @@
 <div class="section-bg-js">
-  <div class="section pin-section">
+  <div class="section-top pin-section">
     <div class="container pin-container">
       <div>
         <div class="grid grid-cols-[3fr_6fr_3fr] step-items-container justify-items-center">
@@ -48,7 +48,7 @@
   </div>
   <div class="section-bottom section-bg-js-cta">
     <div class="container-sm">
-      <div class="pin-cta-js">
+      <div class="pin-cta-js flex flex-col justify-center h-[90vh]">
         <div class="pin-cta-js-motion">
           <div class="flex justify-center rounded-sm lg:p-sp-14 p-sp-6 mb-sp-6">
             <div class="flex flex-col items-center justify-center text-center max-w-[37.5rem]">

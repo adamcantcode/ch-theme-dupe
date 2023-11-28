@@ -9611,7 +9611,8 @@ window.addEventListener('DOMContentLoaded', () => {
       pin: '.pin-cta-js',
       start: 'center center',
       endTrigger: '.section-bg-js-cta',
-      end: '+=100%'
+      end: '+=100%',
+      snap: [1]
       // toggleActions: 'play reverse play reverse',
       // markers: true,
     }

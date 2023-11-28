@@ -1835,6 +1835,10 @@ a.ch-button.button-tertiary.inverted:hover {
   height: 2rem;
 }
 
+.h-\[90vh\]{
+  height: 90vh;
+}
+
 .max-h-0{
   max-height: 0px;
 }
