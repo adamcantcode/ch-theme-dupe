@@ -1879,6 +1879,10 @@ a.ch-button.button-tertiary.inverted:hover {
   width: 25px;
 }
 
+.w-\[28px\]{
+  width: 28px;
+}
+
 .w-\[3rem\]{
   width: 3rem;
 }
@@ -1944,12 +1948,8 @@ a.ch-button.button-tertiary.inverted:hover {
   width: 2rem;
 }
 
-.w-\[29px\]{
-  width: 29px;
-}
-
-.w-\[28px\]{
-  width: 28px;
+.w-\[33px\]{
+  width: 33px;
 }
 
 .\!max-w-md{
@@ -2123,12 +2123,20 @@ a.ch-button.button-tertiary.inverted:hover {
   grid-template-columns: 3fr 6fr 3fr;
 }
 
-.grid-cols-\[5fr_7fr\]{
-  grid-template-columns: 5fr 7fr;
-}
-
 .grid-cols-\[4fr_1fr_7fr\]{
   grid-template-columns: 4fr 1fr 7fr;
+}
+
+.grid-cols-4{
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-cols-\[1fr_1fr_1fr_2fr\]{
+  grid-template-columns: 1fr 1fr 1fr 2fr;
+}
+
+.grid-cols-\[1fr_1fr_1fr_1\.5fr\]{
+  grid-template-columns: 1fr 1fr 1fr 1.5fr;
 }
 
 .flex-col{
@@ -2267,6 +2275,16 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .gap-y-sp-8{
   row-gap: 2rem;
+}
+
+.gap-x-sp-14{
+  -moz-column-gap: 4rem;
+       column-gap: 4rem;
+}
+
+.gap-x-sp-10{
+  -moz-column-gap: 2.5rem;
+       column-gap: 2.5rem;
 }
 
 .self-start{
@@ -2546,6 +2564,16 @@ a.ch-button.button-tertiary.inverted:hover {
   background-color: rgb(224 112 88 / var(--tw-bg-opacity));
 }
 
+.bg-pale-blue-200{
+  --tw-bg-opacity: 1;
+  background-color: rgb(173 176 225 / var(--tw-bg-opacity));
+}
+
+.bg-pale-blue-300{
+  --tw-bg-opacity: 1;
+  background-color: rgb(143 146 205 / var(--tw-bg-opacity));
+}
+
 .bg-parent{
   --tw-bg-opacity: 1;
   background-color: rgb(253 191 124 / var(--tw-bg-opacity));
@@ -2595,24 +2623,14 @@ a.ch-button.button-tertiary.inverted:hover {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-young-adult{
-  --tw-bg-opacity: 1;
-  background-color: rgb(218 193 251 / var(--tw-bg-opacity));
-}
-
-.bg-pale-blue-200{
-  --tw-bg-opacity: 1;
-  background-color: rgb(173 176 225 / var(--tw-bg-opacity));
-}
-
-.bg-pale-blue-300{
-  --tw-bg-opacity: 1;
-  background-color: rgb(143 146 205 / var(--tw-bg-opacity));
-}
-
 .bg-yellow-300{
   --tw-bg-opacity: 1;
   background-color: rgb(253 191 124 / var(--tw-bg-opacity));
+}
+
+.bg-young-adult{
+  --tw-bg-opacity: 1;
+  background-color: rgb(218 193 251 / var(--tw-bg-opacity));
 }
 
 .bg-\[linear-gradient\(\#fead80\2c \#e2deca_50\%\2c \#bdc6fc\)\]{
@@ -2644,10 +2662,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .p-\[10px\]{
   padding: 10px;
-}
-
-.p-sp-10{
-  padding: 2.5rem;
 }
 
 .p-sp-12{
@@ -2713,6 +2727,11 @@ a.ch-button.button-tertiary.inverted:hover {
   padding-right: 1.5rem;
 }
 
+.px-sp-7{
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+}
+
 .px-sp-8{
   padding-left: 2rem;
   padding-right: 2rem;
@@ -2743,6 +2762,11 @@ a.ch-button.button-tertiary.inverted:hover {
   padding-bottom: 0.25rem;
 }
 
+.py-sp-10{
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
 .py-sp-12{
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -2771,16 +2795,6 @@ a.ch-button.button-tertiary.inverted:hover {
 .py-sp-6{
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-}
-
-.px-sp-7{
-  padding-left: 1.75rem;
-  padding-right: 1.75rem;
-}
-
-.py-sp-10{
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
 }
 
 .\!pb-0{

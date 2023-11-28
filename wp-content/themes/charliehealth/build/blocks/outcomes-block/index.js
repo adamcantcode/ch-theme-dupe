@@ -9543,34 +9543,16 @@ TweenMaxWithCSS = gsapWithCSS.core.Tween;
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!***************************************!*\
-  !*** ./blocks/approach-grid/index.js ***!
-  \***************************************/
+/*!****************************************!*\
+  !*** ./blocks/outcomes-block/index.js ***!
+  \****************************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 /* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
 
 
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
-window.addEventListener('DOMContentLoaded', () => {
-  let gridItemStagger = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
-    scrollTrigger: {
-      trigger: '.approach-grid-js',
-      start: 'top 80%',
-      // markers: true,
-      // scrub: true,
-      duration: 3
-    }
-  });
-  gridItemStagger.fromTo('.grid-approach-items-js > div', {
-    autoAlpha: 0
-  }, {
-    autoAlpha: 1,
-    duration: 3,
-    stagger: 0.2,
-    ease: 'power4.out'
-  });
-});
+window.addEventListener('DOMContentLoaded', () => {});
 })();
 
 /******/ })()

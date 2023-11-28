@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', () => {
     scrollTrigger: {
       trigger: '.approach-grid-js',
       start: 'top 80%',
-      markers: true,
+      // markers: true,
       // scrub: true,
       duration: 3,
     },
