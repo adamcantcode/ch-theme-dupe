@@ -1944,6 +1944,14 @@ a.ch-button.button-tertiary.inverted:hover {
   width: 2rem;
 }
 
+.w-\[29px\]{
+  width: 29px;
+}
+
+.w-\[28px\]{
+  width: 28px;
+}
+
 .\!max-w-md{
   max-width: 28rem !important;
 }
@@ -2117,6 +2125,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .grid-cols-\[5fr_7fr\]{
   grid-template-columns: 5fr 7fr;
+}
+
+.grid-cols-\[4fr_1fr_7fr\]{
+  grid-template-columns: 4fr 1fr 7fr;
 }
 
 .flex-col{

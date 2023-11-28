@@ -1,4 +1,4 @@
-<div class="section-bg-js">
+<div class="section-bg-js bg-grey-warm">
   <div class="section-top pin-section">
     <div class="container pin-container">
       <div>

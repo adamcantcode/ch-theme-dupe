@@ -9638,9 +9638,9 @@ window.addEventListener('DOMContentLoaded', () => {
     autoAlpha: 0
   });
   sctionBg.fromTo('.section-bg-js', {
-    background: 'linear-gradient(180deg, rgba(143,146,205,0) 0%, rgba(143,146,205,0) 100%)'
+    background: 'linear-gradient(180deg, rgba(247,245,241,1) 0%, rgba(143,146,205,0) 100%)'
   }, {
-    background: 'linear-gradient(180deg, rgba(143,146,205,0) 0%, rgba(143,146,205,1) 100%)'
+    background: 'linear-gradient(180deg,rgba(247,245,241,1) 0%, rgba(143,146,205,1) 100%)'
   });
   pinCta.fromTo('.pin-cta-js-motion', {
     autoAlpha: 0,
