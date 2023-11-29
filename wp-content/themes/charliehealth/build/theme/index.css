@@ -2131,6 +2131,22 @@ a.ch-button.button-tertiary.inverted:hover {
   grid-template-columns: 4fr 1fr 7fr;
 }
 
+.grid-cols-\[3fr_5fr\]{
+  grid-template-columns: 3fr 5fr;
+}
+
+.grid-cols-\[3fr_1fr_7fr\]{
+  grid-template-columns: 3fr 1fr 7fr;
+}
+
+.grid-cols-\[3fr_1fr_6fr\]{
+  grid-template-columns: 3fr 1fr 6fr;
+}
+
+.grid-cols-\[3fr_1fr_8fr\]{
+  grid-template-columns: 3fr 1fr 8fr;
+}
+
 .flex-col{
   flex-direction: column;
 }
@@ -2393,6 +2409,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .border-l{
   border-left-width: 1px;
+}
+
+.border-b-2{
+  border-bottom-width: 2px;
 }
 
 .border-none{
