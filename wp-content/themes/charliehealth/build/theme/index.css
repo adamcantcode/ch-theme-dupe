@@ -1470,6 +1470,10 @@ a.ch-button.button-tertiary.inverted:hover {
   grid-column: span 2 / span 2;
 }
 
+.float-right{
+  float: right;
+}
+
 .m-0{
   margin: 0px;
 }
