@@ -300,6 +300,16 @@
       }
     }
   }
+  .accordion-header-iop {
+    .vertical {
+      @apply transition-transform duration-300 origin-center;
+    }
+    &.active {
+      .vertical {
+        @apply scale-y-0;
+      }
+    }
+  }
 }
 .references-container {
   > div > div > p:last-child {

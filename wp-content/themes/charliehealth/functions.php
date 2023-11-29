@@ -95,6 +95,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/scrolling-steps');
   register_block_type(__DIR__ . '/build/blocks/approach-grid');
   register_block_type(__DIR__ . '/build/blocks/outcomes-block');
+  register_block_type(__DIR__ . '/build/blocks/iop-overview');
 }
 add_action('init', 'register_acf_blocks', 5);
 
