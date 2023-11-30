@@ -4,7 +4,7 @@
   </div>
   <div></div>
   <div>
-    <div class="overflow-hidden transition-all duration-500 ease-in-out view-all-js max-h-[33vh]">
+    <div class="overflow-hidden transition-all duration-500 ease-in-out view-all-js max-h-[63vh]">
       <?php
       $args = array(
         'post_type'      => 'areas-of-care',

@@ -115,11 +115,11 @@ $ctaHeadline = get_field('cta_heading');
       </div>
     </div>
   </div>
-  <div class="section-bottom section-bg-js-cta">
+  <div class="section-horizontal section-bg-js-cta">
     <div class="container-sm">
-      <div class="pin-cta-js flex flex-col justify-center h-[90vh]">
+      <div class="pin-cta-js flex flex-col justify-center h-[100vh]">
         <div class="pin-cta-js-motion">
-          <div class="flex justify-center rounded-sm lg:p-sp-14 p-sp-6 mb-sp-6">
+          <div class="flex justify-center rounded-sm lg:px-sp-14 lg:pt-sp-14 pb-sp-6 px-sp-6">
             <div class="flex flex-col items-center justify-center text-center max-w-[37.5rem]">
               <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health shield logo" class="w-[3rem] mb-sp-5">
               <h2 class="text-darkest-blue lg:text-[2.5rem] text-h2-lg lg:leading-tight mb-sp-5 font-heading-serif"><?= $ctaHeadline; ?></h2>

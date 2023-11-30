@@ -1843,6 +1843,10 @@ a.ch-button.button-tertiary.inverted:hover {
   height: 2rem;
 }
 
+.h-\[100vh\]{
+  height: 100vh;
+}
+
 .max-h-0{
   max-height: 0px;
 }
@@ -1873,6 +1877,26 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .max-h-\[80vh\]{
   max-height: 80vh;
+}
+
+.max-h-\[75vh\]{
+  max-height: 75vh;
+}
+
+.max-h-\[66vh\]{
+  max-height: 66vh;
+}
+
+.max-h-\[50vh\]{
+  max-height: 50vh;
+}
+
+.max-h-\[60vh\]{
+  max-height: 60vh;
+}
+
+.max-h-\[63vh\]{
+  max-height: 63vh;
 }
 
 .min-h-\[300px\]{
@@ -5153,6 +5177,11 @@ a.providers:hover {
     padding-right: 2rem;
   }
 
+  .lg\:px-sp-14{
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
   .lg\:pb-sp-16{
     padding-bottom: 6rem;
   }
@@ -5163,6 +5192,10 @@ a.providers:hover {
 
   .lg\:pt-0{
     padding-top: 0px;
+  }
+
+  .lg\:pt-sp-14{
+    padding-top: 4rem;
   }
 
   .lg\:\!text-\[4\.5rem\]{
