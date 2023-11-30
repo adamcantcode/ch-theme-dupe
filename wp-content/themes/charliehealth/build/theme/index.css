@@ -2127,28 +2127,20 @@ a.ch-button.button-tertiary.inverted:hover {
   grid-template-columns: 2fr 1fr;
 }
 
-.grid-cols-\[3fr_6fr_3fr\]{
-  grid-template-columns: 3fr 6fr 3fr;
-}
-
-.grid-cols-\[4fr_1fr_7fr\]{
-  grid-template-columns: 4fr 1fr 7fr;
+.grid-cols-\[3fr_1fr_8fr\]{
+  grid-template-columns: 3fr 1fr 8fr;
 }
 
 .grid-cols-\[3fr_5fr\]{
   grid-template-columns: 3fr 5fr;
 }
 
-.grid-cols-\[3fr_1fr_7fr\]{
-  grid-template-columns: 3fr 1fr 7fr;
+.grid-cols-\[3fr_6fr_3fr\]{
+  grid-template-columns: 3fr 6fr 3fr;
 }
 
-.grid-cols-\[3fr_1fr_6fr\]{
-  grid-template-columns: 3fr 1fr 6fr;
-}
-
-.grid-cols-\[3fr_1fr_8fr\]{
-  grid-template-columns: 3fr 1fr 8fr;
+.grid-cols-\[4fr_1fr_7fr\]{
+  grid-template-columns: 4fr 1fr 7fr;
 }
 
 .flex-col{
@@ -2411,12 +2403,12 @@ a.ch-button.button-tertiary.inverted:hover {
   border-bottom-width: 1px;
 }
 
-.border-l{
-  border-left-width: 1px;
-}
-
 .border-b-2{
   border-bottom-width: 2px;
+}
+
+.border-l{
+  border-left-width: 1px;
 }
 
 .border-none{
@@ -2450,11 +2442,6 @@ a.ch-button.button-tertiary.inverted:hover {
 .border-white{
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
-}
-
-.border-b-card-border{
-  --tw-border-opacity: 1;
-  border-bottom-color: rgb(212 213 220 / var(--tw-border-opacity));
 }
 
 .border-opacity-25{
@@ -3896,30 +3883,30 @@ a.ch-button.button-tertiary.inverted:hover {
 
 /* FAQ Accordion */
 
-.faq-block .accordion-header:hover .toggle svg, .faq-block .toc-heading:hover .toggle svg, .faq-block .references-heading:hover .toggle svg, .toc-container .accordion-header:hover .toggle svg, .toc-container .toc-heading:hover .toggle svg, .toc-container .references-heading:hover .toggle svg, .references-container .accordion-header:hover .toggle svg, .references-container .toc-heading:hover .toggle svg, .references-container .references-heading:hover .toggle svg{
+.faq-block .toc-heading:hover .toggle svg, .faq-block .references-heading:hover .toggle svg, .toc-container .toc-heading:hover .toggle svg, .toc-container .references-heading:hover .toggle svg, .references-container .toc-heading:hover .toggle svg, .references-container .references-heading:hover .toggle svg{
   --tw-rotate: -45deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.faq-block .accordion-header .toggle svg, .faq-block .toc-heading .toggle svg, .faq-block .references-heading .toggle svg, .toc-container .accordion-header .toggle svg, .toc-container .toc-heading .toggle svg, .toc-container .references-heading .toggle svg, .references-container .accordion-header .toggle svg, .references-container .toc-heading .toggle svg, .references-container .references-heading .toggle svg{
+.faq-block .toc-heading .toggle svg, .faq-block .references-heading .toggle svg, .toc-container .toc-heading .toggle svg, .toc-container .references-heading .toggle svg, .references-container .toc-heading .toggle svg, .references-container .references-heading .toggle svg{
   transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
 }
 
-.faq-block .accordion-header.active .toggle svg, .faq-block .toc-heading.active .toggle svg, .faq-block .references-heading.active .toggle svg, .toc-container .accordion-header.active .toggle svg, .toc-container .toc-heading.active .toggle svg, .toc-container .references-heading.active .toggle svg, .references-container .accordion-header.active .toggle svg, .references-container .toc-heading.active .toggle svg, .references-container .references-heading.active .toggle svg{
+.faq-block .toc-heading.active .toggle svg, .faq-block .references-heading.active .toggle svg, .toc-container .toc-heading.active .toggle svg, .toc-container .references-heading.active .toggle svg, .references-container .toc-heading.active .toggle svg, .references-container .references-heading.active .toggle svg{
   --tw-rotate: 45deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.faq-block .accordion-header-iop .vertical, .toc-container .accordion-header-iop .vertical, .references-container .accordion-header-iop .vertical{
+.faq-block .accordion-header .vertical, .faq-block .accordion-header-iop .vertical, .toc-container .accordion-header .vertical, .toc-container .accordion-header-iop .vertical, .references-container .accordion-header .vertical, .references-container .accordion-header-iop .vertical{
   transform-origin: center;
   transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
 }
 
-.faq-block .accordion-header-iop.active .vertical, .toc-container .accordion-header-iop.active .vertical, .references-container .accordion-header-iop.active .vertical{
+.faq-block .accordion-header.active .vertical, .faq-block .accordion-header-iop.active .vertical, .toc-container .accordion-header.active .vertical, .toc-container .accordion-header-iop.active .vertical, .references-container .accordion-header.active .vertical, .references-container .accordion-header-iop.active .vertical{
   --tw-scale-y: 0;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -4731,11 +4718,6 @@ a.providers:hover {
   .lg\:mx-sp-16{
     margin-left: 6rem;
     margin-right: 6rem;
-  }
-
-  .lg\:mx-sp-5{
-    margin-left: 1.25rem;
-    margin-right: 1.25rem;
   }
 
   .lg\:mx-sp-6{

@@ -32,18 +32,18 @@ $faqButton = get_field('faq_button');
               $headline = get_sub_field('faq_headline');
               $content = get_sub_field('faq_content');
               ?>
-              <div class="border-b accordion-item border-b-card-border">
-                <div class="flex justify-between cursor-pointer accordion-header py-sp-5">
+              <div class="border-b-2 border-primary accordion-item">
+                <div class="flex justify-between cursor-pointer accordion-header py-sp-6">
                   <h3 class="mb-0"><?= $headline; ?></h3>
-                  <div class="flex items-center lg:mx-sp-5 ml-sp-5 toggle">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="none" viewBox="8 8 8 8" height="12px" width="12px">
-                      <path d="M9 12H15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                      <path d="M12 9L12 15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <span class="ml-sp-4">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M1 10.9999H22.9984V12.9999H1V10.9999Z" fill="#161A3D" />
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M10.999 22.9999V1.00146H12.999V22.9999H10.999Z" fill="#161A3D" class="vertical" />
                     </svg>
-                  </div>
+                  </span>
                 </div>
                 <div class="overflow-hidden transition-all duration-500 ease-in-out accordion-content max-h-0">
-                  <div class="py-sp-5 lg:pr-sp-14 pr-sp-6"><?= $content; ?></div>
+                  <div class="lg:pr-sp-14 pr-sp-6"><?= $content; ?></div>
                 </div>
               </div>
               <?php

@@ -277,7 +277,6 @@
 .faq-block,
 .toc-container,
 .references-container {
-  .accordion-header,
   .toc-heading,
   .references-heading {
     &:hover {
@@ -300,6 +299,7 @@
       }
     }
   }
+  .accordion-header,
   .accordion-header-iop {
     .vertical {
       @apply transition-transform duration-300 origin-center;
