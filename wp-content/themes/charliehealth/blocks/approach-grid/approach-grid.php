@@ -26,12 +26,11 @@
     <div class="text-center bg-pale-blue-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
       <h4 class="mb-0">Flexible scheduling</h5>
     </div>
-    <div class="text-center bg-white rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
+    <div class="text-center bg-white rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center relative">
       <svg width="27" height="22" viewBox="0 0 27 22" fill="none" xmlns="http://www.w3.org/2000/svg" class="mb-sp-2">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M22.054 9.3431L14.3818 1.67092L16.0527 0L26.6686 10.6159L16.0527 21.2319L14.3818 19.561L22.2366 11.7061L2.08616e-07 11.7061L0 9.34311L22.054 9.3431Z" fill="#161A3D" />
       </svg>
-
-      <h4 class="mb-0">Learn more</h5>
+      <h4 class="mb-0"><a href="/intensive-outpatient-iop/outcomes" class="no-underline stretched-link">Learn more</a></h5>
     </div>
   </div>
 </div>
