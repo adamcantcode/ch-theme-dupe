@@ -68,6 +68,11 @@
           "name": "Darker Blue"
         },
         {
+          "slug": "pale-blue-100",
+          "color": "#D6D7F0",
+          "name": "Pale Blue 100"
+        },
+        {
           "slug": "pale-blue-300",
           "color": "#8F92CD",
           "name": "Pale Blue 300"
