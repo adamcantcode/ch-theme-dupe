@@ -135,6 +135,9 @@ Template Post Type: page
           </div>
         </div>
       </div>
+      <div class="grid items-center noshow">
+        <img src="https://www.charliehealth.com/wp-content/uploads/2023/11/Device_Laptop.png.webp" alt="Illustration of Charlie Health client using laptop for Virtual IOP Therapy">
+      </div>
     </div>
   </div>
 </div>
