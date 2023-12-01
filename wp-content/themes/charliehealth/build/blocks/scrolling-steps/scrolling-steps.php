@@ -2,11 +2,12 @@
 $heading     = get_field('heading');
 $steps       = get_field('steps');
 $ctaHeadline = get_field('cta_heading');
+$image = get_field('image')
 ?>
 <section class="section-bg-js bg-grey-warm">
   <div class="section-top pin-section">
     <div class="container pin-container">
-      <h4 class="text-center">How to Get Started</h4>
+      <h4 class="text-center"><?= $heading; ?></h4>
       <div>
         <div class="grid grid-cols-[3fr_6fr_3fr] step-items-container ">
           <div class="mt-[50vh]">
@@ -79,7 +80,7 @@ $ctaHeadline = get_field('cta_heading');
             </div>
           </div>
           <div class="relative pin-image-end-js justify-self-center">
-            <img src="https://www.charliehealth.com/wp-content/uploads/2023/11/Scene_Outdoor-1.png" alt="" class="pin-image-js">
+            <img src="<?= $image['url']; ?>" alt="<?= $alt; ?>" class="pin-image-js">
           </div>
           <div class="mt-[50vh]">
             <div class="step-item mb-[33vh] mt-[33vh] flex">
