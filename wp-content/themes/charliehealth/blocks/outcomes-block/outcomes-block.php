@@ -5,7 +5,7 @@
   </div>
   <div>
     <h2 class="text-white font-heading-serif mb-sp-2">92%</h2>
-    <p class="mb-0 text-white">of clients reported improvements in self-harm</p>
+    <p class="mb-0 text-white">of clients reported improvements in symptoms associated with anxiety</p>
   </div>
   <div>
     <h2 class="text-white font-heading-serif mb-sp-2">95%</h2>
