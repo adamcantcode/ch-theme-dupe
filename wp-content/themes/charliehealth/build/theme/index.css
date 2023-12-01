@@ -2868,6 +2868,10 @@ a.ch-button.button-tertiary.inverted:hover {
   text-align: center;
 }
 
+.align-middle{
+  vertical-align: middle;
+}
+
 .align-\[initial\]{
   vertical-align: initial;
 }
