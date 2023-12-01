@@ -2574,6 +2574,11 @@ a.ch-button.button-tertiary.inverted:hover {
   background-color: rgb(224 112 88 / var(--tw-bg-opacity));
 }
 
+.bg-pale-blue-100{
+  --tw-bg-opacity: 1;
+  background-color: rgb(214 215 240 / var(--tw-bg-opacity));
+}
+
 .bg-pale-blue-200{
   --tw-bg-opacity: 1;
   background-color: rgb(173 176 225 / var(--tw-bg-opacity));

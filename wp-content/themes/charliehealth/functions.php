@@ -655,6 +655,8 @@ add_filter('should_load_separate_core_block_assets', '__return_true');
 // $test = 'bg-off-white'
 // $test = 'bg-grey-warm'
 // $test = 'bg-pale-blue-300'
+// $test = 'bg-pale-blue-100'
+
 // mobileMenuX[0].classList.add('top-1/2', '-translate-y-1/2');
 //     mobileMenuX[1].classList.add('scale-0');
 //     mobileMenuX[2].classList.add('-top-1/2', '-translate-y-1/2');

@@ -56,6 +56,7 @@ module.exports = {
         300: '#DAC1FB',
       },
       'pale-blue': {
+        100: '#D6D7F0',
         200: '#ADB0E1',
         300: '#8F92CD',
       },
