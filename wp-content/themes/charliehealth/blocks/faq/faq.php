@@ -32,8 +32,8 @@ $faqButton = get_field('faq_button');
               $headline = get_sub_field('faq_headline');
               $content = get_sub_field('faq_content');
               ?>
-              <div class="border-b-2 border-primary accordion-item">
-                <div class="flex justify-between cursor-pointer accordion-header py-sp-6">
+              <div class="border-b-2 border-primary accordion-item mb-sp-6">
+                <div class="flex items-center justify-between cursor-pointer accordion-header pb-sp-6">
                   <h3 class="mb-0"><?= $headline; ?></h3>
                   <span class="ml-sp-4">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -1531,6 +1531,10 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-bottom: 1.25rem;
 }
 
+.mb-\[10px\]{
+  margin-bottom: 10px;
+}
+
 .mb-\[14px\]{
   margin-bottom: 14px;
 }
@@ -1609,6 +1613,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .mr-2{
   margin-right: 0.5rem;
+}
+
+.mr-\[10px\]{
+  margin-right: 10px;
 }
 
 .mr-sp-1{
@@ -1695,18 +1703,6 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-top: 2rem;
 }
 
-.mr-sp-3{
-  margin-right: 0.75rem;
-}
-
-.mr-\[10px\]{
-  margin-right: 10px;
-}
-
-.mb-\[10px\]{
-  margin-bottom: 10px;
-}
-
 .block{
   display: block;
 }
@@ -1755,6 +1751,10 @@ a.ch-button.button-tertiary.inverted:hover {
   height: 1.5px;
 }
 
+.h-\[100vh\]{
+  height: 100vh;
+}
+
 .h-\[125px\]{
   height: 125px;
 }
@@ -1793,10 +1793,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .h-\[5px\]{
   height: 5px;
-}
-
-.h-\[90vh\]{
-  height: 90vh;
 }
 
 .h-\[calc\(100vh-124px\)\]{
@@ -1843,10 +1839,6 @@ a.ch-button.button-tertiary.inverted:hover {
   height: 2rem;
 }
 
-.h-\[100vh\]{
-  height: 100vh;
-}
-
 .max-h-0{
   max-height: 0px;
 }
@@ -1871,32 +1863,16 @@ a.ch-button.button-tertiary.inverted:hover {
   max-height: 600px;
 }
 
+.max-h-\[63vh\]{
+  max-height: 63vh;
+}
+
 .max-h-\[70vh\]{
   max-height: 70vh;
 }
 
 .max-h-\[80vh\]{
   max-height: 80vh;
-}
-
-.max-h-\[75vh\]{
-  max-height: 75vh;
-}
-
-.max-h-\[66vh\]{
-  max-height: 66vh;
-}
-
-.max-h-\[50vh\]{
-  max-height: 50vh;
-}
-
-.max-h-\[60vh\]{
-  max-height: 60vh;
-}
-
-.max-h-\[63vh\]{
-  max-height: 63vh;
 }
 
 .min-h-\[300px\]{
@@ -2143,8 +2119,8 @@ a.ch-button.button-tertiary.inverted:hover {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.grid-cols-\[1fr_1fr_1fr_1\.5fr\]{
-  grid-template-columns: 1fr 1fr 1fr 1.5fr;
+.grid-cols-\[1fr_1fr_1fr_1fr\]{
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .grid-cols-\[1fr_2fr\]{
@@ -3028,10 +3004,6 @@ a.ch-button.button-tertiary.inverted:hover {
   line-height: 1rem;
 }
 
-.text-\[18px\]{
-  font-size: 18px;
-}
-
 .font-bold{
   font-weight: 700;
 }
@@ -3056,6 +3028,10 @@ a.ch-button.button-tertiary.inverted:hover {
   line-height: 130%;
 }
 
+.leading-\[140\%\]{
+  line-height: 140%;
+}
+
 .leading-none{
   line-height: 1;
 }
@@ -3070,10 +3046,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .leading-tight{
   line-height: 1.25;
-}
-
-.leading-\[140\%\]{
-  line-height: 140%;
 }
 
 .text-\[\#87889A\]{
@@ -3687,6 +3659,49 @@ a.ch-button.button-tertiary.inverted:hover {
 .page-id-437 main > section.section-top, .page-id-4980 main > section.section-top {
       padding-top: 4rem;
     }
+
+/* IOP Page */
+
+@media (min-width: 1024px) {
+      .page-id-435 main > section:first-child h2 {
+        font-size: 20px;
+        line-height: 140%;
+        letter-spacing: 0.2px;
+        max-width: 300px;
+      }
+      .page-id-435 main > section:first-child h1 {
+        font-size: 64px;
+        line-height: 110%;
+        letter-spacing: 0.64px;
+        max-width: 550px;
+      }
+      .page-id-435 main > section p,
+      .page-id-435 main > section ol > li,
+      .page-id-435 main > section ul > li {
+        font-size: 14px;
+        line-height: 160%;
+        letter-spacing: 0.14px;
+      }
+        .page-id-435 main > section p a {
+          font-size: 14px;
+          line-height: 160%;
+          letter-spacing: 0.14px;
+        }
+      .page-id-435 main > section h3 {
+        font-size: 28px;
+        line-height: 160%;
+        letter-spacing: 0.28px;
+      }
+      .page-id-435 main > section h4 {
+        font-size: 20px;
+        line-height: 110%;
+        letter-spacing: 0.2px;
+      }
+    }
+
+.page-id-435 main > section h2{
+  font-family: "ABC Arizona", serif;
+}
 
 #articleContent > div > div{
   margin-bottom: 1.5rem;
@@ -4520,6 +4535,10 @@ a.providers:hover {
   }
 }
 
+.hover\:text-white:hovera:hover {
+        color: #ffffff;
+      }
+
 .first\:mt-0:first-child{
   margin-top: 0px;
 }
@@ -4600,6 +4619,11 @@ a.providers:hover {
 .hover\:text-lavender-200:hover{
   --tw-text-opacity: 1;
   color: rgb(231 211 255 / var(--tw-text-opacity));
+}
+
+.hover\:text-white:hover{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .hover\:shadow-\[inset_0_0_0_2px_\#1d225f\]:hover{
@@ -5167,6 +5191,11 @@ a.providers:hover {
     padding-right: 2.5rem;
   }
 
+  .lg\:px-sp-14{
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
   .lg\:px-sp-16{
     padding-left: 6rem;
     padding-right: 6rem;
@@ -5175,11 +5204,6 @@ a.providers:hover {
   .lg\:px-sp-8{
     padding-left: 2rem;
     padding-right: 2rem;
-  }
-
-  .lg\:px-sp-14{
-    padding-left: 4rem;
-    padding-right: 4rem;
   }
 
   .lg\:pb-sp-16{

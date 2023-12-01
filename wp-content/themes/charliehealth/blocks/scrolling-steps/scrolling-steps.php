@@ -3,7 +3,7 @@ $heading     = get_field('heading');
 $steps       = get_field('steps');
 $ctaHeadline = get_field('cta_heading');
 ?>
-<div class="section-bg-js bg-grey-warm">
+<section class="section-bg-js bg-grey-warm">
   <div class="section-top pin-section">
     <div class="container pin-container">
       <h4 class="text-center">How to Get Started</h4>
@@ -130,4 +130,4 @@ $ctaHeadline = get_field('cta_heading');
       </div>
     </div>
   </div>
-</div>
+</section>

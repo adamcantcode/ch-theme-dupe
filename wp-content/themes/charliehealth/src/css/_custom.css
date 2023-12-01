@@ -80,6 +80,57 @@
   }
 }
 
+/* IOP Page */
+.page-id-435 {
+  main > section:first-child {
+    @screen lg {
+      h2 {
+        font-size: 20px;
+        line-height: 140%;
+        letter-spacing: 0.2px;
+        max-width: 300px;
+      }
+      h1 {
+        font-size: 64px;
+        line-height: 110%;
+        letter-spacing: 0.64px;
+        max-width: 550px;
+      }
+    }
+  }
+  main > section {
+    @screen lg {
+      p,
+      ol > li,
+      ul > li {
+        font-size: 14px;
+        line-height: 160%;
+        letter-spacing: 0.14px;
+      }
+      p {
+        a {
+          font-size: 14px;
+          line-height: 160%;
+          letter-spacing: 0.14px;
+        }
+      }
+      h3 {
+        font-size: 28px;
+        line-height: 160%;
+        letter-spacing: 0.28px;
+      }
+      h4 {
+        font-size: 20px;
+        line-height: 110%;
+        letter-spacing: 0.2px;
+      }
+    }
+    h2 {
+      @apply font-heading-serif;
+    }
+  }
+}
+
 #articleContent {
   & > div {
     & > div {
