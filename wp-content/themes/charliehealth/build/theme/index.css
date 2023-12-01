@@ -3682,7 +3682,7 @@ a.ch-button.button-tertiary.inverted:hover {
         line-height: 160%;
         letter-spacing: 0.14px;
       }
-        .page-id-435 main > section p a {
+        .page-id-435 main > section p a, .page-id-435 main > section li > a {
           font-size: 14px;
           line-height: 160%;
           letter-spacing: 0.14px;

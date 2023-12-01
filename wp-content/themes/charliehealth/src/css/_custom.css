@@ -107,7 +107,7 @@
         line-height: 160%;
         letter-spacing: 0.14px;
       }
-      p {
+      p, li > {
         a {
           font-size: 14px;
           line-height: 160%;
