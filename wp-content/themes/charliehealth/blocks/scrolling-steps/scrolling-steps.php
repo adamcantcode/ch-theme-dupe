@@ -78,7 +78,7 @@ $ctaHeadline = get_field('cta_heading');
               </div>
             </div>
           </div>
-          <div class="relative pin-image-end-js">
+          <div class="relative pin-image-end-js justify-self-center">
             <img src="https://www.charliehealth.com/wp-content/uploads/2023/11/Scene_Outdoor-1.png" alt="" class="pin-image-js">
           </div>
           <div class="mt-[50vh]">
