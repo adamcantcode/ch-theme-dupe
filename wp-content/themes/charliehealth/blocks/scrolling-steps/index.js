@@ -118,7 +118,9 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   let slideShow = gsap.timeline({ repeat: -1 });
+  let slideShowDesktop = gsap.timeline({ repeat: -1 });
   let quotes = gsap.utils.toArray('.mobile-js .get-started-quote-js');
+  let quotesDesktop = gsap.utils.toArray('.desktop-js .get-started-quote-js');
 
   slideShow
     .to(quotes[0], {
@@ -153,6 +155,42 @@ window.addEventListener('DOMContentLoaded', () => {
       autoAlpha: 1,
     })
     .to(quotes[4], {
+      autoAlpha: 0,
+      delay: 5,
+    });
+  slideShowDesktop
+    .to(quotesDesktop[0], {
+      autoAlpha: 1,
+    })
+    .to(quotesDesktop[0], {
+      autoAlpha: 0,
+      delay: 5,
+    })
+    .to(quotesDesktop[1], {
+      autoAlpha: 1,
+    })
+    .to(quotesDesktop[1], {
+      autoAlpha: 0,
+      delay: 5,
+    })
+    .to(quotesDesktop[2], {
+      autoAlpha: 1,
+    })
+    .to(quotesDesktop[2], {
+      autoAlpha: 0,
+      delay: 5,
+    })
+    .to(quotesDesktop[3], {
+      autoAlpha: 1,
+    })
+    .to(quotesDesktop[3], {
+      autoAlpha: 0,
+      delay: 5,
+    })
+    .to(quotesDesktop[4], {
+      autoAlpha: 1,
+    })
+    .to(quotesDesktop[4], {
       autoAlpha: 0,
       delay: 5,
     });

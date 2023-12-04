@@ -9,7 +9,7 @@ $image       = get_field('image')
     <div class="container pin-container">
       <h4 class="text-center"><?= $heading; ?></h4>
       <div>
-        <div class="lg:grid-cols-[3fr_6fr_3fr] step-items-container noshow lg:grid">
+        <div class="lg:grid-cols-[3fr_6fr_3fr] step-items-container noshow lg:grid desktop-js">
           <div class="lg:mt-[50vh]">
             <div class="step-item lg:mb-[33vh] mb-sp-8 flex">
               <div class="mt-sp-1 mr-[10px]">

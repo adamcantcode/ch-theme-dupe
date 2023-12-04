@@ -9658,7 +9658,11 @@ window.addEventListener('DOMContentLoaded', () => {
   let slideShow = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
     repeat: -1
   });
+  let slideShowDesktop = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
+    repeat: -1
+  });
   let quotes = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.utils.toArray('.mobile-js .get-started-quote-js');
+  let quotesDesktop = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.utils.toArray('.desktop-js .get-started-quote-js');
   slideShow.to(quotes[0], {
     autoAlpha: 1
   }).to(quotes[0], {
@@ -9682,6 +9686,32 @@ window.addEventListener('DOMContentLoaded', () => {
   }).to(quotes[4], {
     autoAlpha: 1
   }).to(quotes[4], {
+    autoAlpha: 0,
+    delay: 5
+  });
+  slideShowDesktop.to(quotesDesktop[0], {
+    autoAlpha: 1
+  }).to(quotesDesktop[0], {
+    autoAlpha: 0,
+    delay: 5
+  }).to(quotesDesktop[1], {
+    autoAlpha: 1
+  }).to(quotesDesktop[1], {
+    autoAlpha: 0,
+    delay: 5
+  }).to(quotesDesktop[2], {
+    autoAlpha: 1
+  }).to(quotesDesktop[2], {
+    autoAlpha: 0,
+    delay: 5
+  }).to(quotesDesktop[3], {
+    autoAlpha: 1
+  }).to(quotesDesktop[3], {
+    autoAlpha: 0,
+    delay: 5
+  }).to(quotesDesktop[4], {
+    autoAlpha: 1
+  }).to(quotesDesktop[4], {
     autoAlpha: 0,
     delay: 5
   });
