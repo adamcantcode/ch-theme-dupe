@@ -1,4 +1,4 @@
-<div class="grid grid-cols-[3fr_1fr_8fr] gap-x-sp-5">
+<div class="grid lg:grid-cols-[3fr_1fr_8fr] gap-x-sp-5">
   <div>
     <h2>What does our virtual IOP treat?</h2>
   </div>
@@ -17,8 +17,8 @@
       $query = new WP_Query($args);
       if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
           <div class="relative">
-            <a href="<?= get_the_permalink(); ?>" class="stretched-link no-underline pb-sp-6 border-b-2 border-primary grid grid-cols-[3fr_5fr] mb-sp-6 gap-x-sp-5 items-center">
-              <div class="flex items-center">
+            <a href="<?= get_the_permalink(); ?>" class="stretched-link no-underline pb-sp-6 border-b-2 border-primary grid lg:grid-cols-[3fr_5fr] mb-sp-6 gap-x-sp-5 items-center">
+              <div class="flex items-center mb-sp-4 lg:mb-0">
                 <h4 class="mb-0"><?= get_the_title(); ?></h4>
                 <span class="ml-sp-4">
                   <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">

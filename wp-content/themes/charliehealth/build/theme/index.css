@@ -5081,6 +5081,14 @@ a.providers:hover {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
+  .lg\:grid-cols-\[3fr_1fr_8fr\]{
+    grid-template-columns: 3fr 1fr 8fr;
+  }
+
+  .lg\:grid-cols-\[3fr_5fr\]{
+    grid-template-columns: 3fr 5fr;
+  }
+
   .lg\:flex-row{
     flex-direction: row;
   }
