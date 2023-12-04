@@ -117,7 +117,7 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   let slideShow = gsap.timeline({ repeat: -1 });
-  let quotes = gsap.utils.toArray('.get-started-quote-js');
+  let quotes = gsap.utils.toArray('.mobile-js .get-started-quote-js');
 
   slideShow
     .to(quotes[0], {

@@ -1703,6 +1703,14 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-top: 2rem;
 }
 
+.mt-\[400px\]{
+  margin-top: 400px;
+}
+
+.mt-\[200px\]{
+  margin-top: 200px;
+}
+
 .block{
   display: block;
 }
@@ -4951,6 +4959,10 @@ a.providers:hover {
     height: 2rem;
   }
 
+  .lg\:h-\[100vh\]{
+    height: 100vh;
+  }
+
   .lg\:max-h-full{
     max-height: 100%;
   }
@@ -5355,6 +5367,10 @@ a.providers:hover {
 
   .lg\:leading-tight{
     line-height: 1.25;
+  }
+
+  .lg\:opacity-0{
+    opacity: 0;
   }
   .lg\:noshow{
     display: none;

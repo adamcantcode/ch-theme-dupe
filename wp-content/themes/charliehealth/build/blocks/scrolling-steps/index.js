@@ -9657,7 +9657,7 @@ window.addEventListener('DOMContentLoaded', () => {
   let slideShow = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
     repeat: -1
   });
-  let quotes = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.utils.toArray('.get-started-quote-js');
+  let quotes = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.utils.toArray('.mobile-js .get-started-quote-js');
   slideShow.to(quotes[0], {
     autoAlpha: 1
   }).to(quotes[0], {

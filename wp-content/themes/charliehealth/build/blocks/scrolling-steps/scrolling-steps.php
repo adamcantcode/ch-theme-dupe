@@ -37,7 +37,7 @@ $image = get_field('image')
                 <?= $steps[2]['description']; ?>
               </div>
             </div>
-            <div class="step-item lg:mb-[33vh] mb-sp-8 lg:mt-[33vh] flex">
+            <div class="step-item lg:mb-[33vh] mb-sp-8 lg:mt-[33vh] flex relative">
               <div class="mt-sp-1 mr-[10px]">
                 <svg width="29" height="30" viewBox="0 0 29 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="14.5" cy="14.8914" r="13.75" stroke="#161A3D" stroke-width="1.5" />
@@ -113,7 +113,7 @@ $image = get_field('image')
             </div>
           </div>
         </div>
-        <div class="lg:grid-cols-[3fr_6fr_3fr] step-items-container grid lg:noshow">
+        <div class="lg:grid-cols-[3fr_6fr_3fr] step-items-container grid lg:noshow mobile-js">
           <div class="relative pin-image-end-js justify-self-center">
             <img src="<?= $image['url']; ?>" alt="<?= $alt; ?>" class="pin-image-js">
           </div>
@@ -174,7 +174,7 @@ $image = get_field('image')
                 </div>
               </div>
             </div>
-            <div class="step-item lg:mb-[33vh] mb-sp-8 lg:mt-[33vh] flex">
+            <div class="step-item lg:mb-[33vh] mb-sp-8 lg:mt-[33vh] flex relative">
               <div class="mt-sp-1 mr-[10px]">
                 <svg width="29" height="30" viewBox="0 0 29 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="14.5" cy="14.8914" r="13.75" stroke="#161A3D" stroke-width="1.5" />
@@ -222,7 +222,7 @@ $image = get_field('image')
   </div>
   <div class="section-horizontal section-bg-js-cta">
     <div class="container-sm">
-      <div class="pin-cta-js flex flex-col justify-center h-[100vh]">
+      <div class="pin-cta-js flex flex-col justify-center lg:h-[100vh] mt-[200px]">
         <div class="pin-cta-js-motion">
           <div class="flex justify-center rounded-sm lg:px-sp-14 lg:pt-sp-14 pb-sp-6 px-sp-6">
             <div class="flex flex-col items-center justify-center text-center max-w-[37.5rem]">
