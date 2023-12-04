@@ -10,7 +10,7 @@
     </div>
   </div>
   <div></div>
-  <div class="grid grid-cols-2 lg:grid-cols-3 gap-sp-2 grid-approach-items-js">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-sp-2 grid-approach-items-js">
     <div class="text-center bg-lavender-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
       <h4 class="mb-0">Immediate availability</h5>
     </div>
