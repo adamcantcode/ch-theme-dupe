@@ -1859,12 +1859,12 @@ a.ch-button.button-tertiary.inverted:hover {
   max-height: 33vh;
 }
 
-.max-h-\[600px\]{
-  max-height: 600px;
+.max-h-\[45vh\]{
+  max-height: 45vh;
 }
 
-.max-h-\[63vh\]{
-  max-height: 63vh;
+.max-h-\[600px\]{
+  max-height: 600px;
 }
 
 .max-h-\[70vh\]{
@@ -1873,14 +1873,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .max-h-\[80vh\]{
   max-height: 80vh;
-}
-
-.max-h-\[50vh\]{
-  max-height: 50vh;
-}
-
-.max-h-\[45vh\]{
-  max-height: 45vh;
 }
 
 .min-h-\[300px\]{
@@ -5047,6 +5039,10 @@ a.providers:hover {
 
   .lg\:grid-cols-\[4\.25fr_5fr\]{
     grid-template-columns: 4.25fr 5fr;
+  }
+
+  .lg\:grid-cols-\[4fr_1fr_7fr\]{
+    grid-template-columns: 4fr 1fr 7fr;
   }
 
   .lg\:grid-cols-\[unset\]{

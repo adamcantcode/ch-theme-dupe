@@ -4,7 +4,7 @@ $highlight = get_field('heading_highlight');
 $details = get_field('details');
 ?>
 
-<div class="grid grid-cols-[4fr_1fr_7fr] gap-x-sp-5 iop-overview">
+<div class="grid lg:grid-cols-[4fr_1fr_7fr] gap-x-sp-5 iop-overview">
   <div>
     <h2 class="font-heading-serif"><?= $heading; ?> <span class="rounded-md bg-primary-100 px-sp-4 pt-sp-2"><?= $highlight; ?></span></h2>
     <?= $details; ?>
