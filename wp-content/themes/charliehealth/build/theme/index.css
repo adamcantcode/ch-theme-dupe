@@ -4879,6 +4879,18 @@ a.providers:hover {
     margin-left: auto;
   }
 
+  .lg\:mb-\[33vh\]{
+    margin-bottom: 33vh;
+  }
+
+  .lg\:mt-\[33vh\]{
+    margin-top: 33vh;
+  }
+
+  .lg\:mt-\[50vh\]{
+    margin-top: 50vh;
+  }
+
   .lg\:block{
     display: block;
   }
@@ -5087,6 +5099,10 @@ a.providers:hover {
 
   .lg\:grid-cols-\[3fr_5fr\]{
     grid-template-columns: 3fr 5fr;
+  }
+
+  .lg\:grid-cols-\[3fr_6fr_3fr\]{
+    grid-template-columns: 3fr 6fr 3fr;
   }
 
   .lg\:flex-row{

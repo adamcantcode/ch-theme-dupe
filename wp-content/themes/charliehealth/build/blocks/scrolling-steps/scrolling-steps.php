@@ -9,9 +9,9 @@ $image = get_field('image')
     <div class="container pin-container">
       <h4 class="text-center"><?= $heading; ?></h4>
       <div>
-        <div class="grid grid-cols-[3fr_6fr_3fr] step-items-container ">
-          <div class="mt-[50vh]">
-            <div class="step-item mb-[33vh] flex">
+        <div class="grid lg:grid-cols-[3fr_6fr_3fr] step-items-container ">
+          <div class="lg:mt-[50vh]">
+            <div class="step-item lg:mb-[33vh] mb-sp-8 flex">
               <div class="mt-sp-1 mr-[10px]">
                 <svg width="29" height="30" viewBox="0 0 29 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="14.5" cy="14.8914" r="13.75" stroke="#161A3D" stroke-width="1.5" />
@@ -25,7 +25,7 @@ $image = get_field('image')
                 </div>
               </div>
             </div>
-            <div class="step-item mb-[33vh] mt-[33vh] flex">
+            <div class="step-item lg:mb-[33vh] mb-sp-8 lg:mt-[33vh] flex">
               <div class="mt-sp-1 mr-[10px]">
                 <svg width="29" height="30" viewBox="0 0 29 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="14.5" cy="14.8914" r="13.75" stroke="#161A3D" stroke-width="1.5" />
@@ -37,7 +37,7 @@ $image = get_field('image')
                 <?= $steps[2]['description']; ?>
               </div>
             </div>
-            <div class="step-item mb-[33vh] mt-[33vh] flex">
+            <div class="step-item lg:mb-[33vh] mb-sp-8 lg:mt-[33vh] flex">
               <div class="mt-sp-1 mr-[10px]">
                 <svg width="29" height="30" viewBox="0 0 29 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="14.5" cy="14.8914" r="13.75" stroke="#161A3D" stroke-width="1.5" />
@@ -79,11 +79,11 @@ $image = get_field('image')
               </div>
             </div>
           </div>
-          <div class="relative pin-image-end-js justify-self-center">
+          <div class="relative pin-image-end-js justify-self-center noshow lg:block">
             <img src="<?= $image['url']; ?>" alt="<?= $alt; ?>" class="pin-image-js">
           </div>
-          <div class="mt-[50vh]">
-            <div class="step-item mb-[33vh] mt-[33vh] flex">
+          <div class="lg:mt-[50vh]">
+            <div class="step-item lg:mb-[33vh] mb-sp-8 lg:mt-[33vh] flex">
               <div class="mt-sp-1 mr-[10px]">
                 <svg width="29" height="30" viewBox="0 0 29 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="14.5" cy="14.8914" r="13.75" stroke="#161A3D" stroke-width="1.5" />
@@ -97,7 +97,7 @@ $image = get_field('image')
                 </div>
               </div>
             </div>
-            <div class="step-item mb-[33vh] flex">
+            <div class="step-item lg:mb-[33vh] mb-sp-8 flex">
               <div class="mt-sp-1 mr-[10px]">
                 <svg width="29" height="30" viewBox="0 0 29 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="14.5" cy="14.8914" r="13.75" stroke="#161A3D" stroke-width="1.5" />
