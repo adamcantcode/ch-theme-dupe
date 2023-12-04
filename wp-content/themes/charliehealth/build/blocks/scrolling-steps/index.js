@@ -9554,7 +9554,7 @@ __webpack_require__.r(__webpack_exports__);
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
 window.addEventListener('DOMContentLoaded', () => {
   let mm = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.matchMedia();
-  mm.add('min-width: 1024px', () => {
+  mm.add('(min-width: 1024px)', () => {
     let stepItems = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.utils.toArray('.step-item');
     let pinImage = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
       scrollTrigger: {

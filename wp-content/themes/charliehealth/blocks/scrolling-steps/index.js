@@ -6,7 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 window.addEventListener('DOMContentLoaded', () => {
   let mm = gsap.matchMedia();
 
-  mm.add('min-width: 1024px', () => {
+  mm.add('(min-width: 1024px)', () => {
     let stepItems = gsap.utils.toArray('.step-item');
     let pinImage = gsap.timeline({
       scrollTrigger: {
