@@ -9560,6 +9560,7 @@ window.addEventListener('DOMContentLoaded', () => {
       scrollTrigger: {
         trigger: '.pin-image-js',
         pin: '.pin-image-js',
+        pinSpacing: false,
         start: 'center center',
         endTrigger: '.pin-section',
         end: 'bottom center',

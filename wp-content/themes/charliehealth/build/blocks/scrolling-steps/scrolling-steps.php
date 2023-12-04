@@ -2,7 +2,7 @@
 $heading     = get_field('heading');
 $steps       = get_field('steps');
 $ctaHeadline = get_field('cta_heading');
-$image = get_field('image')
+$image       = get_field('image')
 ?>
 <section class="section-bg-js bg-grey-warm">
   <div class="section-top pin-section">
