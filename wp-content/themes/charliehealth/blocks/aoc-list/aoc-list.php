@@ -1,6 +1,6 @@
 <div class="grid lg:grid-cols-[3fr_1fr_8fr] gap-x-sp-5">
   <div>
-    <h2>What does our virtual IOP treat?</h2>
+    <h2>What do we treat in our virtual IOP?</h2>
   </div>
   <div></div>
   <div>
