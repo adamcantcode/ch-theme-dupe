@@ -4,7 +4,7 @@
   </div>
   <div></div>
   <div>
-    <div class="overflow-hidden transition-all duration-500 ease-in-out view-all-js max-h-[45vh]">
+    <div class="overflow-hidden transition-all duration-500 ease-in-out view-all-js">
       <?php
       $args = array(
         'post_type'      => 'areas-of-care',
@@ -17,7 +17,7 @@
       $query = new WP_Query($args);
       if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
           <div class="relative">
-            <a href="<?= get_the_permalink(); ?>" class="stretched-link no-underline pb-sp-6 border-b-2 border-primary grid lg:grid-cols-[3fr_5fr] mb-sp-6 gap-x-sp-5 items-center">
+            <a href="<?= get_the_permalink(); ?>" class="stretched-link no-underline pb-sp-6 border-b-2 border-primary grid lg:grid-cols-[3fr_5fr] mb-sp-6 gap-x-sp-5 items-center list-item-height-js">
               <div class="flex items-center mb-sp-4 lg:mb-0">
                 <h4 class="mb-0"><?= ucfirst(strtolower(get_the_title())); ?></h4>
                 <span class="ml-sp-4">
