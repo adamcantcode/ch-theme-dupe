@@ -33,8 +33,8 @@ window.addEventListener('DOMContentLoaded', () => {
     let fadeImageOut = gsap.timeline({
       scrollTrigger: {
         trigger: '.pin-image-end-js',
-        start: 'bottom bottom',
-        end: 'bottom center',
+        start: 'bottom 60%',
+        end: 'bottom 50%',
         scrub: true,
         // markers: true,
       },
@@ -62,7 +62,7 @@ window.addEventListener('DOMContentLoaded', () => {
       ScrollTrigger.create({
         trigger: stepItem,
         animation: anim,
-        start: 'top 80%',
+        start: 'top 90%',
         toggleActions: 'play pause resume reverse',
         // markers: true,
       });
@@ -86,11 +86,11 @@ window.addEventListener('DOMContentLoaded', () => {
       '.pin-cta-js-motion',
       {
         autoAlpha: 0,
-        y: 128,
+        // y: 128,
       },
       {
         autoAlpha: 1,
-        y: 0,
+        // y: 0, 
       }
     );
   });
@@ -101,9 +101,9 @@ window.addEventListener('DOMContentLoaded', () => {
       trigger: '.section-bg-js-cta',
       start: 'top bottom',
       endTrigger: '.pin-cta-js-motion',
-      end: 'top center',
+      end: 'top 80%',
       scrub: true,
-      // markers: true,
+      markers: true,
     },
   });
 

@@ -9583,8 +9583,8 @@ window.addEventListener('DOMContentLoaded', () => {
     let fadeImageOut = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
       scrollTrigger: {
         trigger: '.pin-image-end-js',
-        start: 'bottom bottom',
-        end: 'bottom center',
+        start: 'bottom 60%',
+        end: 'bottom 50%',
         scrub: true
         // markers: true,
       }
@@ -9617,7 +9617,7 @@ window.addEventListener('DOMContentLoaded', () => {
       gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create({
         trigger: stepItem,
         animation: anim,
-        start: 'top 80%',
+        start: 'top 90%',
         toggleActions: 'play pause resume reverse'
         // markers: true,
       });
@@ -9632,11 +9632,11 @@ window.addEventListener('DOMContentLoaded', () => {
       autoAlpha: 0
     });
     pinCta.fromTo('.pin-cta-js-motion', {
-      autoAlpha: 0,
-      y: 128
+      autoAlpha: 0
+      // y: 128,
     }, {
-      autoAlpha: 1,
-      y: 0
+      autoAlpha: 1
+      // y: 0, 
     });
   });
 
@@ -9646,12 +9646,11 @@ window.addEventListener('DOMContentLoaded', () => {
       trigger: '.section-bg-js-cta',
       start: 'top bottom',
       endTrigger: '.pin-cta-js-motion',
-      end: 'top center',
-      scrub: true
-      // markers: true,
+      end: 'top 80%',
+      scrub: true,
+      markers: true
     }
   });
-
   sctionBg.fromTo('.section-bg-js', {
     background: 'linear-gradient(180deg, rgba(247,245,241,1) 0%, rgba(143,146,205,0) 100%)'
   }, {

@@ -4932,6 +4932,14 @@ a.providers:hover {
     height: 2rem;
   }
 
+  .lg\:h-\[75vh\]{
+    height: 75vh;
+  }
+
+  .lg\:h-\[50vh\]{
+    height: 50vh;
+  }
+
   .lg\:max-h-full{
     max-height: 100%;
   }
