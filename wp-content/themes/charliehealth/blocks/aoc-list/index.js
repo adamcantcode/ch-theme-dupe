@@ -7,12 +7,14 @@ window.addEventListener('DOMContentLoaded', () => {
   let revealedContent = null;
 
   const setMaxHeight = () => {
-    const listItems = aocContent.querySelectorAll('.list-item-height-js');
-    const first5ListItems = Array.from(listItems).slice(0, 5);
-    const combinedHeight = first5ListItems.reduce((totalHeight, listItem) => {
-      return totalHeight + listItem.offsetHeight + 24;
-    }, 0);
-    aocContent.style.maxHeight = combinedHeight + 'px';
+    if(!revealedContent) {
+      const listItems = aocContent.querySelectorAll('.list-item-height-js');
+      const first5ListItems = Array.from(listItems).slice(0, 5);
+      const combinedHeight = first5ListItems.reduce((totalHeight, listItem) => {
+        return totalHeight + listItem.offsetHeight + 24;
+      }, 0);
+      aocContent.style.maxHeight = combinedHeight + 'px';
+    }
   };
 
   function closeAccordion() {
@@ -30,7 +32,7 @@ window.addEventListener('DOMContentLoaded', () => {
       closeAccordion();
       aocContent.style.maxHeight = aocContent.scrollHeight + 'px';
       revealedContent = this;
-      viewAllButton.innerText = 'Close';
+      viewAllButton.remove();
     }
   }
 
