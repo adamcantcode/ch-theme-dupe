@@ -2433,11 +2433,6 @@ a.ch-button.button-tertiary.inverted:hover {
   background-color: rgb(19 22 50 / var(--tw-bg-opacity));
 }
 
-.bg-\[\#1E225B\]{
-  --tw-bg-opacity: 1;
-  background-color: rgb(30 34 91 / var(--tw-bg-opacity));
-}
-
 .bg-\[\#35919c\]{
   --tw-bg-opacity: 1;
   background-color: rgb(53 145 156 / var(--tw-bg-opacity));
@@ -2572,6 +2567,11 @@ a.ch-button.button-tertiary.inverted:hover {
   background-color: rgb(39 45 108 / var(--tw-bg-opacity));
 }
 
+.bg-primary-200{
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 34 91 / var(--tw-bg-opacity));
+}
+
 .bg-primary-black-blue{
   --tw-bg-opacity: 1;
   background-color: rgb(18 20 42 / var(--tw-bg-opacity));
@@ -2614,11 +2614,6 @@ a.ch-button.button-tertiary.inverted:hover {
 .bg-young-adult{
   --tw-bg-opacity: 1;
   background-color: rgb(218 193 251 / var(--tw-bg-opacity));
-}
-
-.bg-primary-200{
-  --tw-bg-opacity: 1;
-  background-color: rgb(30 34 91 / var(--tw-bg-opacity));
 }
 
 .bg-\[linear-gradient\(\#fead80\2c \#e2deca_50\%\2c \#bdc6fc\)\]{
@@ -4575,6 +4570,11 @@ a.providers:hover {
   background-color: rgb(248 248 255 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-primary-200:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 34 91 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-transparent:hover{
   background-color: rgba(0,0,0,0);
 }
@@ -4582,11 +4582,6 @@ a.providers:hover {
 .hover\:bg-white:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-primary-200:hover{
-  --tw-bg-opacity: 1;
-  background-color: rgb(30 34 91 / var(--tw-bg-opacity));
 }
 
 .hover\:\!text-\[\#35919c\]:hover{
@@ -4861,6 +4856,18 @@ a.providers:hover {
     margin-top: 2rem;
   }
 
+  .lg\:mt-\[10vh\]{
+    margin-top: 10vh;
+  }
+
+  .lg\:mt-\[5vh\]{
+    margin-top: 5vh;
+  }
+
+  .lg\:mt-\[15vh\]{
+    margin-top: 15vh;
+  }
+
   .lg\:block{
     display: block;
   }
@@ -5055,12 +5062,12 @@ a.providers:hover {
     grid-template-columns: 3fr 1fr 8fr;
   }
 
-  .lg\:grid-cols-\[3fr_4fr\]{
-    grid-template-columns: 3fr 4fr;
+  .lg\:grid-cols-\[3fr_4\.4fr\]{
+    grid-template-columns: 3fr 4.4fr;
   }
 
-  .lg\:grid-cols-\[3fr_5fr\]{
-    grid-template-columns: 3fr 5fr;
+  .lg\:grid-cols-\[3fr_4fr\]{
+    grid-template-columns: 3fr 4fr;
   }
 
   .lg\:grid-cols-\[3fr_6fr_3fr\]{
@@ -5077,10 +5084,6 @@ a.providers:hover {
 
   .lg\:grid-cols-\[unset\]{
     grid-template-columns: unset;
-  }
-
-  .lg\:grid-cols-\[3fr_4\.4fr\]{
-    grid-template-columns: 3fr 4.4fr;
   }
 
   .lg\:flex-row{

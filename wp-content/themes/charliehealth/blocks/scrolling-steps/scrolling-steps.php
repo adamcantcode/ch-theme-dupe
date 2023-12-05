@@ -10,7 +10,7 @@ $image       = get_field('image')
       <h4 class="text-center"><?= $heading; ?></h4>
       <div>
         <div class="lg:grid-cols-[3fr_6fr_3fr] step-items-container noshow lg:grid desktop-js">
-          <div class="lg:mt-[50vh]">
+          <div class="lg:mt-[15vh]">
             <div class="step-item lg:mb-[33vh] mb-sp-8 flex">
               <div class="mt-sp-1 mr-[10px]">
                 <svg width="29" height="30" viewBox="0 0 29 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -82,7 +82,7 @@ $image       = get_field('image')
           <div class="relative pin-image-end-js justify-self-center noshow lg:block">
             <img src="<?= $image['url']; ?>" alt="<?= $alt; ?>" class="pin-image-js">
           </div>
-          <div class="lg:mt-[50vh]">
+          <div class="lg:mt-[15vh]">
             <div class="step-item lg:mb-[33vh] mb-sp-8 lg:mt-[33vh] flex">
               <div class="mt-sp-1 mr-[10px]">
                 <svg width="29" height="30" viewBox="0 0 29 30" fill="none" xmlns="http://www.w3.org/2000/svg">

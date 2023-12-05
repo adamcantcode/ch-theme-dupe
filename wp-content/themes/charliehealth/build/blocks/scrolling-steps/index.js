@@ -9572,8 +9572,8 @@ window.addEventListener('DOMContentLoaded', () => {
     let fadeImageIn = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
       scrollTrigger: {
         trigger: '.pin-image-js',
-        start: 'top 66%',
-        // end: 'top bottom',
+        start: 'top 95%',
+        end: 'top center',
         scrub: true,
         toggleActions: 'play reverse play reverse'
         // markers: true,
@@ -9617,7 +9617,7 @@ window.addEventListener('DOMContentLoaded', () => {
       gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create({
         trigger: stepItem,
         animation: anim,
-        start: 'top 66%',
+        start: 'top 80%',
         toggleActions: 'play pause resume reverse'
         // markers: true,
       });
