@@ -131,3 +131,36 @@ $blockClasses .= $background . ' ';
     </div>
   </div>
 <?php endif; ?>
+<?php if ($style === 'sad') : ?>
+  <div class="grid lg:grid-cols-[1fr_2fr] rounded-md p-sp-6 lg:gap-sp-8 <?= $blockClasses; ?>">
+    <div>
+      <h2 class="mb-0"><?= $heading; ?></h2>
+    </div>
+    <div>
+      <?php if ($subhead) : ?>
+        <p class="noshow lg:block"><?= $subhead; ?></p>
+      <?php endif; ?>
+      <div id="newsletterInContent" class="newsletter-revamp">
+        <script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/dbt_skills_book_copy"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/dbt_skills_book_copy" title="Online Form">Online Form - DBT [gated] - COPY</a></noscript>
+        <script>
+          var containerSAD = document.currentScript.parentNode; // DBT Guide container
+          var elementToCutDBT = containerSAD.querySelector("#fsSubmitButton5552306"); // Submit button
+          var destinationElementDBT = containerSAD.querySelector("#fsCell155914871"); // Email container
+          var newsletterIDDBT = containerSAD.id; // DBT Guide identifier
+          var newsletterLPFieldDBT = containerSAD.querySelector('#field155914872'); // LP URL field
+          var newsletterIDFieldDBT = containerSAD.querySelector('#field155914873'); // Type field
+
+          if (elementToCutDBT && destinationElementDBT) {
+            var clonedElementDBT = elementToCutDBT.cloneNode(true);
+            elementToCutDBT.parentNode.removeChild(elementToCutDBT);
+            destinationElementDBT.appendChild(clonedElementDBT);
+          }
+
+          newsletterIDFieldDBT.value = newsletterIDDBT;
+          newsletterLPFieldDBT.value = window.location.href;
+        </script>
+      </div>
+      <h6>By entering your email you agree to receive marketing communications from Charlie Health. You can unsubscribe anytime.</h6>
+    </div>
+  </div>
+<?php endif; ?>
