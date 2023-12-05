@@ -222,7 +222,7 @@ $image       = get_field('image')
   </div>
   <div class="section-horizontal section-bg-js-cta">
     <div class="container-sm">
-      <div class="pin-cta-js flex flex-col justify-center lg:h-[100vh]">
+      <div class="pin-cta-js flex flex-col justify-center lg:h-[100vh] lg:mt-[200px] mt-0">
         <div class="pin-cta-js-motion">
           <div class="flex justify-center rounded-sm lg:px-sp-14 lg:pt-sp-14 pb-sp-6 px-sp-6">
             <div class="flex flex-col items-center justify-center text-center max-w-[37.5rem]">

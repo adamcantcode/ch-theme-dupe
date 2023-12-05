@@ -52,16 +52,6 @@ window.addEventListener('DOMContentLoaded', () => {
         // markers: true,
       },
     });
-    let sctionBg = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.section-bg-js-cta',
-        start: 'top bottom',
-        endTrigger: '.pin-cta-js-motion',
-        end: 'top center',
-        scrub: true,
-        // markers: true,
-      },
-    });
 
     stepItems.forEach((stepItem, i) => {
       const anim = gsap.fromTo(
@@ -92,18 +82,6 @@ window.addEventListener('DOMContentLoaded', () => {
       autoAlpha: 0,
     });
 
-    sctionBg.fromTo(
-      '.section-bg-js',
-      {
-        background:
-          'linear-gradient(180deg, rgba(247,245,241,1) 0%, rgba(143,146,205,0) 100%)',
-      },
-      {
-        background:
-          'linear-gradient(180deg,rgba(247,245,241,1) 0%, rgba(143,146,205,1) 100%)',
-      }
-    );
-
     pinCta.fromTo(
       '.pin-cta-js-motion',
       {
@@ -117,6 +95,31 @@ window.addEventListener('DOMContentLoaded', () => {
     );
   });
 
+  // Bakground color change
+  let sctionBg = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.section-bg-js-cta',
+      start: 'top bottom',
+      endTrigger: '.pin-cta-js-motion',
+      end: 'top center',
+      scrub: true,
+      // markers: true,
+    },
+  });
+
+  sctionBg.fromTo(
+    '.section-bg-js',
+    {
+      background:
+        'linear-gradient(180deg, rgba(247,245,241,1) 0%, rgba(143,146,205,0) 100%)',
+    },
+    {
+      background:
+        'linear-gradient(180deg,rgba(247,245,241,1) 0%, rgba(143,146,205,1) 100%)',
+    }
+  );
+
+  // Slideshow
   let slideShow = gsap.timeline({ repeat: -1 });
   let slideShowDesktop = gsap.timeline({ repeat: -1 });
   let quotes = gsap.utils.toArray('.mobile-js .get-started-quote-js');
