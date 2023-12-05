@@ -73,7 +73,6 @@ window.addEventListener('DOMContentLoaded', () => {
       return totalHeight + listItem.offsetHeight + 24;
     }, 0);
     aocContent.style.maxHeight = combinedHeight + 'px';
-    console.log(aocContent.style.maxHeight);
   };
   function closeAccordion() {
     if (revealedContent) {
