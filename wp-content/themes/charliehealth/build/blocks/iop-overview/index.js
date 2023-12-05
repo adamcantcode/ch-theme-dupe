@@ -88,6 +88,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const accordionHeader = item.querySelector('.accordion-header-iop');
     accordionHeader.addEventListener('click', toggleAccordion);
   });
+  document.querySelector('.accordion-header-iop').click();
 });
 })();
 

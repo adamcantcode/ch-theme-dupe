@@ -107,7 +107,8 @@
         line-height: 160%;
         letter-spacing: 0.14px;
       }
-      p, li > {
+      p,
+      li > {
         a {
           font-size: 14px;
           line-height: 160%;
@@ -332,7 +333,8 @@
 /* FAQ Accordion */
 .faq-block,
 .toc-container,
-.references-container {
+.references-container,
+.iop-overview-accordion {
   .toc-heading,
   .references-heading {
     &:hover {

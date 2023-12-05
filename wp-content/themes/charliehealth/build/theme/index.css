@@ -2685,11 +2685,6 @@ a.ch-button.button-tertiary.inverted:hover {
   padding-right: 1rem;
 }
 
-.px-\[17px\]{
-  padding-left: 17px;
-  padding-right: 17px;
-}
-
 .px-sp-2{
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -2738,6 +2733,11 @@ a.ch-button.button-tertiary.inverted:hover {
 .py-\[10px\]{
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.py-\[11px\]{
+  padding-top: 11px;
+  padding-bottom: 11px;
 }
 
 .py-\[4px\]{
@@ -3930,30 +3930,30 @@ a.ch-button.button-tertiary.inverted:hover {
 
 /* FAQ Accordion */
 
-.faq-block .toc-heading:hover .toggle svg, .faq-block .references-heading:hover .toggle svg, .toc-container .toc-heading:hover .toggle svg, .toc-container .references-heading:hover .toggle svg, .references-container .toc-heading:hover .toggle svg, .references-container .references-heading:hover .toggle svg{
+.faq-block .toc-heading:hover .toggle svg, .faq-block .references-heading:hover .toggle svg, .toc-container .toc-heading:hover .toggle svg, .toc-container .references-heading:hover .toggle svg, .references-container .toc-heading:hover .toggle svg, .references-container .references-heading:hover .toggle svg, .iop-overview-accordion .toc-heading:hover .toggle svg, .iop-overview-accordion .references-heading:hover .toggle svg{
   --tw-rotate: -45deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.faq-block .toc-heading .toggle svg, .faq-block .references-heading .toggle svg, .toc-container .toc-heading .toggle svg, .toc-container .references-heading .toggle svg, .references-container .toc-heading .toggle svg, .references-container .references-heading .toggle svg{
+.faq-block .toc-heading .toggle svg, .faq-block .references-heading .toggle svg, .toc-container .toc-heading .toggle svg, .toc-container .references-heading .toggle svg, .references-container .toc-heading .toggle svg, .references-container .references-heading .toggle svg, .iop-overview-accordion .toc-heading .toggle svg, .iop-overview-accordion .references-heading .toggle svg{
   transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
 }
 
-.faq-block .toc-heading.active .toggle svg, .faq-block .references-heading.active .toggle svg, .toc-container .toc-heading.active .toggle svg, .toc-container .references-heading.active .toggle svg, .references-container .toc-heading.active .toggle svg, .references-container .references-heading.active .toggle svg{
+.faq-block .toc-heading.active .toggle svg, .faq-block .references-heading.active .toggle svg, .toc-container .toc-heading.active .toggle svg, .toc-container .references-heading.active .toggle svg, .references-container .toc-heading.active .toggle svg, .references-container .references-heading.active .toggle svg, .iop-overview-accordion .toc-heading.active .toggle svg, .iop-overview-accordion .references-heading.active .toggle svg{
   --tw-rotate: 45deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.faq-block .accordion-header .vertical, .faq-block .accordion-header-iop .vertical, .toc-container .accordion-header .vertical, .toc-container .accordion-header-iop .vertical, .references-container .accordion-header .vertical, .references-container .accordion-header-iop .vertical{
+.faq-block .accordion-header .vertical, .faq-block .accordion-header-iop .vertical, .toc-container .accordion-header .vertical, .toc-container .accordion-header-iop .vertical, .references-container .accordion-header .vertical, .references-container .accordion-header-iop .vertical, .iop-overview-accordion .accordion-header .vertical, .iop-overview-accordion .accordion-header-iop .vertical{
   transform-origin: center;
   transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
 }
 
-.faq-block .accordion-header.active .vertical, .faq-block .accordion-header-iop.active .vertical, .toc-container .accordion-header.active .vertical, .toc-container .accordion-header-iop.active .vertical, .references-container .accordion-header.active .vertical, .references-container .accordion-header-iop.active .vertical{
+.faq-block .accordion-header.active .vertical, .faq-block .accordion-header-iop.active .vertical, .toc-container .accordion-header.active .vertical, .toc-container .accordion-header-iop.active .vertical, .references-container .accordion-header.active .vertical, .references-container .accordion-header-iop.active .vertical, .iop-overview-accordion .accordion-header.active .vertical, .iop-overview-accordion .accordion-header-iop.active .vertical{
   --tw-scale-y: 0;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }

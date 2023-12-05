@@ -22,7 +22,7 @@ $details = get_field('details');
               $link = get_sub_field('link');
               ?>
               <div class="accordion-item-iop bg-primary-100 rounded-[6px] mb-sp-4">
-                <div class="flex justify-between cursor-pointer accordion-header-iop py-sp-6 px-sp-6">
+                <div class="flex justify-between cursor-pointer accordion-header-iop py-[11px] px-sp-6">
                   <h3 class="mb-0"><?= $title; ?></h3>
                   <div class="flex items-center ml-sp-5 toggle">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
