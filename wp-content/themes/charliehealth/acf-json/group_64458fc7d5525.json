@@ -20,7 +20,8 @@
                 "value": "Value Prop",
                 "full": "Full Width",
                 "newsletter": "Newsletter",
-                "dbt": "DBT Skills Book"
+                "dbt": "DBT Skills Book",
+                "SAD": "SAD Survival Guide"
             },
             "default_value": "value",
             "return_format": "value",
@@ -119,5 +120,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1695735628
+    "modified": 1701808684
 }
