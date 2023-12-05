@@ -2616,6 +2616,11 @@ a.ch-button.button-tertiary.inverted:hover {
   background-color: rgb(218 193 251 / var(--tw-bg-opacity));
 }
 
+.bg-primary-200{
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 34 91 / var(--tw-bg-opacity));
+}
+
 .bg-\[linear-gradient\(\#fead80\2c \#e2deca_50\%\2c \#bdc6fc\)\]{
   background-image: linear-gradient(#fead80,#e2deca 50%,#bdc6fc);
 }
@@ -4579,6 +4584,11 @@ a.providers:hover {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-primary-200:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 34 91 / var(--tw-bg-opacity));
+}
+
 .hover\:\!text-\[\#35919c\]:hover{
   --tw-text-opacity: 1 !important;
   color: rgb(53 145 156 / var(--tw-text-opacity)) !important;
@@ -4637,11 +4647,6 @@ a.providers:hover {
 
 .focus-visible\:border-none:focus-visible{
   border-style: none;
-}
-
-.group:hover .group-hover\:translate-x-sp-2{
-  --tw-translate-x: 0.5rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .group:hover .group-hover\:translate-x-\[5px\]{

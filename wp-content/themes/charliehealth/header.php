@@ -60,7 +60,7 @@
   ?>
   <!-- NOT BLOG -->
   <?php if ($showBanner) : ?>
-    <div class="z-[9999] w-full lg:h-sp-8 h-sp-14 bg-[#1E225B] flex justify-center items-center fixed<?= is_user_logged_in() ? ' lg:top-[32px] top-[46px]' : ' top-0'; ?>">
+    <div class="z-[9999] w-full lg:h-sp-8 h-sp-14 bg-primary-200 flex justify-center items-center fixed<?= is_user_logged_in() ? ' lg:top-[32px] top-[46px]' : ' top-0'; ?>">
       <div class="w-sp-2 h-sp-2 bg-orange-300 rounded-[50%] ml-sp-5 flex-none"></div>
       <a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>" class="inline-block">
         <p class="text-white px-sp-2 font-heading text-[14px] leading-normal mb-0"><?= $link['title']; ?></p>
