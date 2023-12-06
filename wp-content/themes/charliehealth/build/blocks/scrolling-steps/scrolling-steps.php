@@ -47,30 +47,45 @@ $image       = get_field('image')
               <div>
                 <h3 class="font-heading text-[28px] leading-[140%] mb-[10px]"><?= $steps[4]['title']; ?></h3>
                 <div class="absolute opacity-0 get-started-quote-js">
+                  <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 translate-x-[45%] translate-y-[-1px]">
+                    <path d="M17.9359 0.959292C18.7057 0.959293 19.1868 1.79263 18.8019 2.45929L10.5747 16.7093C10.1898 17.376 9.22755 17.376 8.84265 16.7093L0.615409 2.45929C0.230508 1.79262 0.711634 0.959291 1.48143 0.959291L17.9359 0.959292Z" fill="white" />
+                  </svg>
                   <div class="bg-white py-sp-4 px-sp-5 mb-sp-4 rounded-[6px]">
                     <h4 class="mb-sp-0">"<?= $steps[4]['quotes'][0]['quote']; ?>"</h4>
                   </div>
                   <p>—<?= $steps[4]['quotes'][0]['attribution']; ?>, Charlie Health Alum</p>
                 </div>
                 <div class="absolute opacity-0 get-started-quote-js">
+                  <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 translate-x-[45%] translate-y-[-1px]">
+                    <path d="M17.9359 0.959292C18.7057 0.959293 19.1868 1.79263 18.8019 2.45929L10.5747 16.7093C10.1898 17.376 9.22755 17.376 8.84265 16.7093L0.615409 2.45929C0.230508 1.79262 0.711634 0.959291 1.48143 0.959291L17.9359 0.959292Z" fill="white" />
+                  </svg>
                   <div class="bg-white py-sp-4 px-sp-5 mb-sp-4 rounded-[6px]">
                     <h4 class="mb-sp-0">"<?= $steps[4]['quotes'][1]['quote']; ?>"</h4>
                   </div>
                   <p>—<?= $steps[4]['quotes'][1]['attribution']; ?>, Charlie Health Alum</p>
                 </div>
                 <div class="absolute opacity-0 get-started-quote-js">
+                  <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 translate-x-[45%] translate-y-[-1px]">
+                    <path d="M17.9359 0.959292C18.7057 0.959293 19.1868 1.79263 18.8019 2.45929L10.5747 16.7093C10.1898 17.376 9.22755 17.376 8.84265 16.7093L0.615409 2.45929C0.230508 1.79262 0.711634 0.959291 1.48143 0.959291L17.9359 0.959292Z" fill="white" />
+                  </svg>
                   <div class="bg-white py-sp-4 px-sp-5 mb-sp-4 rounded-[6px]">
                     <h4 class="mb-sp-0">"<?= $steps[4]['quotes'][2]['quote']; ?>"</h4>
                   </div>
                   <p>—<?= $steps[4]['quotes'][2]['attribution']; ?>, Charlie Health Alum</p>
                 </div>
                 <div class="absolute opacity-0 get-started-quote-js">
+                  <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 translate-x-[45%] translate-y-[-1px]">
+                    <path d="M17.9359 0.959292C18.7057 0.959293 19.1868 1.79263 18.8019 2.45929L10.5747 16.7093C10.1898 17.376 9.22755 17.376 8.84265 16.7093L0.615409 2.45929C0.230508 1.79262 0.711634 0.959291 1.48143 0.959291L17.9359 0.959292Z" fill="white" />
+                  </svg>
                   <div class="bg-white py-sp-4 px-sp-5 mb-sp-4 rounded-[6px]">
                     <h4 class="mb-sp-0">"<?= $steps[4]['quotes'][3]['quote']; ?>"</h4>
                   </div>
                   <p>—<?= $steps[4]['quotes'][3]['attribution']; ?>, Charlie Health Alum</p>
                 </div>
                 <div class="absolute opacity-0 get-started-quote-js">
+                  <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 translate-x-[45%] translate-y-[-1px]">
+                    <path d="M17.9359 0.959292C18.7057 0.959293 19.1868 1.79263 18.8019 2.45929L10.5747 16.7093C10.1898 17.376 9.22755 17.376 8.84265 16.7093L0.615409 2.45929C0.230508 1.79262 0.711634 0.959291 1.48143 0.959291L17.9359 0.959292Z" fill="white" />
+                  </svg>
                   <div class="bg-white py-sp-4 px-sp-5 mb-sp-4 rounded-[6px]">
                     <h4 class="mb-sp-0">"<?= $steps[4]['quotes'][4]['quote']; ?>"</h4>
                   </div>
@@ -184,30 +199,45 @@ $image       = get_field('image')
               <div>
                 <h3 class="font-heading text-[28px] leading-[140%] mb-[10px]"><?= $steps[4]['title']; ?></h3>
                 <div class="absolute opacity-0 get-started-quote-js">
+                <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 translate-x-[45%] translate-y-[-1px]">
+                    <path d="M17.9359 0.959292C18.7057 0.959293 19.1868 1.79263 18.8019 2.45929L10.5747 16.7093C10.1898 17.376 9.22755 17.376 8.84265 16.7093L0.615409 2.45929C0.230508 1.79262 0.711634 0.959291 1.48143 0.959291L17.9359 0.959292Z" fill="white" />
+                  </svg>
                   <div class="bg-white py-sp-4 px-sp-5 mb-sp-4 rounded-[6px]">
                     <h4 class="mb-sp-0">"<?= $steps[4]['quotes'][0]['quote']; ?>"</h4>
                   </div>
                   <p>—<?= $steps[4]['quotes'][0]['attribution']; ?>, Charlie Health Alum</p>
                 </div>
                 <div class="absolute opacity-0 get-started-quote-js">
+                <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 translate-x-[45%] translate-y-[-1px]">
+                    <path d="M17.9359 0.959292C18.7057 0.959293 19.1868 1.79263 18.8019 2.45929L10.5747 16.7093C10.1898 17.376 9.22755 17.376 8.84265 16.7093L0.615409 2.45929C0.230508 1.79262 0.711634 0.959291 1.48143 0.959291L17.9359 0.959292Z" fill="white" />
+                  </svg>
                   <div class="bg-white py-sp-4 px-sp-5 mb-sp-4 rounded-[6px]">
                     <h4 class="mb-sp-0">"<?= $steps[4]['quotes'][1]['quote']; ?>"</h4>
                   </div>
                   <p>—<?= $steps[4]['quotes'][1]['attribution']; ?>, Charlie Health Alum</p>
                 </div>
                 <div class="absolute opacity-0 get-started-quote-js">
+                <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 translate-x-[45%] translate-y-[-1px]">
+                    <path d="M17.9359 0.959292C18.7057 0.959293 19.1868 1.79263 18.8019 2.45929L10.5747 16.7093C10.1898 17.376 9.22755 17.376 8.84265 16.7093L0.615409 2.45929C0.230508 1.79262 0.711634 0.959291 1.48143 0.959291L17.9359 0.959292Z" fill="white" />
+                  </svg>
                   <div class="bg-white py-sp-4 px-sp-5 mb-sp-4 rounded-[6px]">
                     <h4 class="mb-sp-0">"<?= $steps[4]['quotes'][2]['quote']; ?>"</h4>
                   </div>
                   <p>—<?= $steps[4]['quotes'][2]['attribution']; ?>, Charlie Health Alum</p>
                 </div>
                 <div class="absolute opacity-0 get-started-quote-js">
+                <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 translate-x-[45%] translate-y-[-1px]">
+                    <path d="M17.9359 0.959292C18.7057 0.959293 19.1868 1.79263 18.8019 2.45929L10.5747 16.7093C10.1898 17.376 9.22755 17.376 8.84265 16.7093L0.615409 2.45929C0.230508 1.79262 0.711634 0.959291 1.48143 0.959291L17.9359 0.959292Z" fill="white" />
+                  </svg>
                   <div class="bg-white py-sp-4 px-sp-5 mb-sp-4 rounded-[6px]">
                     <h4 class="mb-sp-0">"<?= $steps[4]['quotes'][3]['quote']; ?>"</h4>
                   </div>
                   <p>—<?= $steps[4]['quotes'][3]['attribution']; ?>, Charlie Health Alum</p>
                 </div>
                 <div class="absolute opacity-0 get-started-quote-js">
+                <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 translate-x-[45%] translate-y-[-1px]">
+                    <path d="M17.9359 0.959292C18.7057 0.959293 19.1868 1.79263 18.8019 2.45929L10.5747 16.7093C10.1898 17.376 9.22755 17.376 8.84265 16.7093L0.615409 2.45929C0.230508 1.79262 0.711634 0.959291 1.48143 0.959291L17.9359 0.959292Z" fill="white" />
+                  </svg>
                   <div class="bg-white py-sp-4 px-sp-5 mb-sp-4 rounded-[6px]">
                     <h4 class="mb-sp-0">"<?= $steps[4]['quotes'][4]['quote']; ?>"</h4>
                   </div>
