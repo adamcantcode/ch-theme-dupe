@@ -1695,6 +1695,10 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-top: 2rem;
 }
 
+.\!mb-sp-1{
+  margin-bottom: 0.25rem !important;
+}
+
 .block{
   display: block;
 }
@@ -4880,6 +4884,10 @@ a.providers:hover {
 
   .lg\:mt-sp-8{
     margin-top: 2rem;
+  }
+
+  .lg\:mb-sp-0{
+    margin-bottom: 0;
   }
 
   .lg\:block{

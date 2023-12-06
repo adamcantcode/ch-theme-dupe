@@ -1,4 +1,4 @@
-<div class="rounded-[6px] bg-primary grid lg:grid-cols-[1fr_1fr_1fr_1fr] p-sp-12 gap-x-sp-10 gap-y-sp-8 lg:gap-y-0 relative hover:bg-primary-200 group transition-all duration-300">
+<div class="rounded-[6px] bg-primary grid lg:grid-cols-[1fr_1fr_1fr_1fr] p-sp-12 gap-x-sp-10 gap-y-sp-8 lg:gap-y-0 relative hover:bg-primary-200 group transition-all duration-300 !mb-sp-2 lg:mb-0">
   <div>
     <h2 class="text-white font-heading-serif mb-sp-2">89%</h2>
     <p class="mb-0 text-white">of clients reported improvements in self-harm</p>
