@@ -42,6 +42,7 @@
   <?php
   $enableBanner = get_field('enable_banner', 'options');
   $enableBlogBanner = get_field('enable_blog_banner', 'options');
+  $displayOnPage = false;
   if ($enableBanner) {
     $link = get_field('link', 'options');
     $pages = get_field('pages', 'options');
