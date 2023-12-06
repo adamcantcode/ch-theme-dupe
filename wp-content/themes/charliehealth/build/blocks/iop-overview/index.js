@@ -71,20 +71,17 @@ window.addEventListener('DOMContentLoaded', () => {
       const accordionContent = openAccordionItem.nextElementSibling;
       accordionContent.style.maxHeight = null;
       openAccordionItem = null;
-      ScrollTrigger.refresh();
     }
   }
   function toggleAccordion() {
     if (this === openAccordionItem) {
       closeAccordion();
-      ScrollTrigger.refresh();
     } else {
       closeAccordion();
       this.classList.add('active');
       const accordionContent = this.nextElementSibling;
       accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
       openAccordionItem = this;
-      ScrollTrigger.refresh();
     }
   }
   accordionItems.forEach(item => {

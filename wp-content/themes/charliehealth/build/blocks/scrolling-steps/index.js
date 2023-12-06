@@ -9636,7 +9636,7 @@ window.addEventListener('DOMContentLoaded', () => {
       // y: 128,
     }, {
       autoAlpha: 1
-      // y: 0, 
+      // y: 0,
     });
   });
 
@@ -9719,6 +9719,31 @@ window.addEventListener('DOMContentLoaded', () => {
     autoAlpha: 0,
     delay: 5
   });
+
+  // Function to be executed when scroll position is 2x window height
+  function runCodeAfterScroll() {
+    // Your code here
+    gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.refresh();
+  }
+
+  // Event listener function
+  function scrollEventListener() {
+    // Calculate the scroll position and window height
+    var scrollPosition = window.scrollY;
+    var windowHeight = window.innerHeight;
+
+    // Check if the scroll position is 2x window height
+    if (scrollPosition >= 1.5 * windowHeight) {
+      // Remove the event listener
+      window.removeEventListener('scroll', scrollEventListener);
+
+      // Run the code
+      runCodeAfterScroll();
+    }
+  }
+
+  // Add the event listener for scroll events
+  window.addEventListener('scroll', scrollEventListener);
 });
 })();
 
