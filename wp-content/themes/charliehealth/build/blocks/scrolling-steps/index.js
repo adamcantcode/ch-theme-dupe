@@ -9644,9 +9644,9 @@ window.addEventListener('DOMContentLoaded', () => {
   let sctionBg = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
     scrollTrigger: {
       trigger: '.section-bg-js-cta',
-      start: 'top 80%',
+      start: 'top bottom',
       endTrigger: '.pin-cta-js-motion',
-      end: 'top 20%',
+      end: 'top 60%',
       scrub: true
       // markers: true,
     }
