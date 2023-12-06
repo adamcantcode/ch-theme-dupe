@@ -549,7 +549,7 @@ h1.text-display{
   font-weight: 400;
 }
 
-.page-id-435 main > section .hero-cta h1.text-display{
+.page-id-435 main > section .hero-cta h2h1.text-display{
   font-family: "ABC Social", sans-serif;
         font-size: 42px;
         line-height: 110%;
@@ -3662,7 +3662,7 @@ a.ch-button.button-tertiary.inverted:hover {
 
 /* IOP Page */
 
-.page-id-435 main > section .hero-cta .text-h1-display{
+.page-id-435 main > section .hero-cta h2.text-h1-display{
   font-family: "ABC Social", sans-serif;
         font-size: 42px;
         line-height: 110%;
@@ -3735,6 +3735,12 @@ a.ch-button.button-tertiary.inverted:hover {
         }
       .page-id-435 main > section p {
         margin-bottom: 24px;
+      }
+      .page-id-435 main > section h1 {
+        font-size: 64px;
+        line-height: 110%;
+        letter-spacing: 0.64px;
+        
       }
       .page-id-435 main > section h2 {
         font-size: 40px;
