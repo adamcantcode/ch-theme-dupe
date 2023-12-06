@@ -101,6 +101,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
   triggerAccordion();
+  ScrollTrigger.refresh();
 });
 })();
 

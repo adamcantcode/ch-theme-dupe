@@ -33,7 +33,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const triggerAccordion = () => {
     if (window.innerWidth > 1024) {
       document.querySelector('.accordion-header-iop').click();
-    } 
+    }
   };
 
   window.addEventListener('resize', function () {
@@ -45,4 +45,5 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   triggerAccordion();
+  ScrollTrigger.refresh();
 });
