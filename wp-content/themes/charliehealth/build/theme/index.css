@@ -2834,6 +2834,10 @@ a.ch-button.button-tertiary.inverted:hover {
   text-align: center;
 }
 
+.align-baseline{
+  vertical-align: baseline;
+}
+
 .align-middle{
   vertical-align: middle;
 }
@@ -4832,6 +4836,10 @@ a.providers:hover {
     margin-top: 0px;
   }
 
+  .lg\:mt-\[15vh\]{
+    margin-top: 15vh;
+  }
+
   .lg\:mt-\[33vh\]{
     margin-top: 33vh;
   }
@@ -4856,18 +4864,6 @@ a.providers:hover {
     margin-top: 2rem;
   }
 
-  .lg\:mt-\[10vh\]{
-    margin-top: 10vh;
-  }
-
-  .lg\:mt-\[5vh\]{
-    margin-top: 5vh;
-  }
-
-  .lg\:mt-\[15vh\]{
-    margin-top: 15vh;
-  }
-
   .lg\:block{
     display: block;
   }
@@ -4882,10 +4878,6 @@ a.providers:hover {
 
   .lg\:aspect-auto{
     aspect-ratio: auto;
-  }
-
-  .lg\:h-\[100vh\]{
-    height: 100vh;
   }
 
   .lg\:h-\[220px\]{
@@ -4906,6 +4898,10 @@ a.providers:hover {
 
   .lg\:h-\[500px\]{
     height: 500px;
+  }
+
+  .lg\:h-\[50vh\]{
+    height: 50vh;
   }
 
   .lg\:h-\[600px\]{
@@ -4930,14 +4926,6 @@ a.providers:hover {
 
   .lg\:h-sp-8{
     height: 2rem;
-  }
-
-  .lg\:h-\[75vh\]{
-    height: 75vh;
-  }
-
-  .lg\:h-\[50vh\]{
-    height: 50vh;
   }
 
   .lg\:max-h-full{
@@ -5227,6 +5215,10 @@ a.providers:hover {
     padding: 0px;
   }
 
+  .lg\:p-sp-12{
+    padding: 3rem;
+  }
+
   .lg\:p-sp-14{
     padding: 4rem;
   }
@@ -5237,10 +5229,6 @@ a.providers:hover {
 
   .lg\:p-sp-8{
     padding: 2rem;
-  }
-
-  .lg\:p-sp-12{
-    padding: 3rem;
   }
 
   .lg\:px-0{
