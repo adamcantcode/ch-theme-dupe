@@ -1,4 +1,4 @@
-<div class="border-2 border-white rounded-[1rem] lg:p-sp-12 p-sp-8 grid lg:grid-cols-[4fr_1fr_7fr] gap-x-sp-5 approach-grid-js">
+<div class="border-2 border-white rounded-[1rem] lg:p-sp-12 p-sp-4 grid lg:grid-cols-[4fr_1fr_7fr] gap-x-sp-5 approach-grid-js">
   <div class="grid content-between">
     <div class="order-2 lg:order-1">
       <h2 class="text-white font-heading-serif">How is our approach different?</h2>
@@ -10,7 +10,7 @@
     </div>
   </div>
   <div></div>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-sp-2 grid-approach-items-js auto-rows-fr">
+  <div class="grid grid-cols-2 lg:grid-cols-3 gap-sp-2 grid-approach-items-js auto-rows-fr">
     <div class="text-center bg-lavender-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
       <h4 class="mb-0">Immediate availability</h5>
     </div>
