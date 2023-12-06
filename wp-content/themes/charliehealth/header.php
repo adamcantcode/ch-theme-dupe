@@ -54,7 +54,7 @@
   }
   if ($enableBlogBanner) {
     $link = get_field('link', 'options');
-    $isBlogPost = is_single();
+    $isBlogPost = is_singular('post');
   }
   $showBanner = ($enableBanner && $displayOnPage) || ($enableBlogBanner && $isBlogPost) ? true : false;
   ?>
