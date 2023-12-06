@@ -1,4 +1,4 @@
-<div class="border-2 border-white rounded-[1rem] p-sp-12 grid lg:grid-cols-[4fr_1fr_7fr] gap-x-sp-5 approach-grid-js">
+<div class="border-2 border-white rounded-[1rem] lg:p-sp-12 p-sp-8 grid lg:grid-cols-[4fr_1fr_7fr] gap-x-sp-5 approach-grid-js">
   <div class="grid content-between">
     <div class="order-2 lg:order-1">
       <h2 class="text-white font-heading-serif">How is our approach different?</h2>

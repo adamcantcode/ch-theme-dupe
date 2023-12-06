@@ -5239,6 +5239,10 @@ a.providers:hover {
     padding: 2rem;
   }
 
+  .lg\:p-sp-12{
+    padding: 3rem;
+  }
+
   .lg\:px-0{
     padding-left: 0px;
     padding-right: 0px;
