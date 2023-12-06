@@ -83,6 +83,9 @@
 /* IOP Page */
 .page-id-435 {
   main > section:first-child {
+    h2 {
+      @apply font-heading;
+    }
     @screen lg {
       h2 {
         font-size: 20px;
@@ -115,6 +118,9 @@
           letter-spacing: 0.14px;
         }
       }
+      p {
+        margin-bottom: 24px!important;
+      }
       h2 {
         font-size: 40px;
         line-height: 110%;
@@ -130,6 +136,12 @@
         line-height: 110%;
         letter-spacing: 0.2px;
       }
+    }
+    p {
+      font-size: 14px;
+      line-height: 160%;
+      letter-spacing: 0.14px;
+      margin-bottom: 10px;
     }
     h2 {
       @apply font-heading-serif;
