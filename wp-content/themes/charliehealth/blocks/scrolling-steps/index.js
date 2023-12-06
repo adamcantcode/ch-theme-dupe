@@ -99,11 +99,11 @@ window.addEventListener('DOMContentLoaded', () => {
   let sctionBg = gsap.timeline({
     scrollTrigger: {
       trigger: '.section-bg-js-cta',
-      start: 'top bottom',
+      start: 'top 80%',
       endTrigger: '.pin-cta-js-motion',
-      end: 'top 80%',
+      end: 'top 20%',
       scrub: true,
-      markers: true,
+      // markers: true,
     },
   });
 

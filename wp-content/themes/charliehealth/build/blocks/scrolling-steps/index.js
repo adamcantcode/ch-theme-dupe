@@ -9644,13 +9644,14 @@ window.addEventListener('DOMContentLoaded', () => {
   let sctionBg = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
     scrollTrigger: {
       trigger: '.section-bg-js-cta',
-      start: 'top bottom',
+      start: 'top 80%',
       endTrigger: '.pin-cta-js-motion',
-      end: 'top 80%',
-      scrub: true,
-      markers: true
+      end: 'top 20%',
+      scrub: true
+      // markers: true,
     }
   });
+
   sctionBg.fromTo('.section-bg-js', {
     background: 'linear-gradient(180deg, rgba(247,245,241,1) 0%, rgba(143,146,205,0) 100%)'
   }, {
