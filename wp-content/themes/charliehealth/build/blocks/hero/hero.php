@@ -27,8 +27,8 @@ if ($style === 'image') {
   <?php include('includes/breadcrumbs.php'); ?>
 <?php endif; ?>
 <?php if ($style === 'image') : ?>
-  <div class="grid items-center lg:grid-cols-2 gap-sp-4 lg:gap-sp-16">
-    <div class="order-2 lg:order-1">
+  <div class="grid items-center lg:grid-cols-2 gap-sp-4 lg:gap-sp-16 hero-cta">
+    <div class="order-2 lg:order-1 mobile-hero-sub">
       <h1 class="noshow text-display mb-sp-8 lg:block"><?= $title; ?></h1>
       <div class="flex items-center gap-sp-4 mb-sp-8">
         <?php if ($icon) : ?>
@@ -38,8 +38,8 @@ if ($style === 'image') {
       </div>
       <?php include(get_template_directory() . '/includes/button-group.php'); ?>
     </div>
-    <h2 class="block text-h1-display lg:noshow"><?= $title; ?></h2>
-    <div class="flex flex-col justify-between order-1 lg:order-2">
+    <h2 class="block text-h1-display lg:noshow hero-heading"><?= $title; ?></h2>
+    <div class="flex flex-col justify-between order-1 lg:order-2 hero-image-container">
       <!-- TODO fix image offset bool issue -->
       <img src="<?= $heroImage['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $heroImage['alt'] ?: 'Placeholder image'; ?>" class="object-cover object-top rounded-lg max-h-52 md:max-h-none nolazy">
     </div>
