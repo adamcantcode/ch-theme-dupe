@@ -10,7 +10,7 @@
   }
   /* Default Section padding */
   .section {
-    @apply py-sp-8 px-sp-5;
+    @apply py-sp-10 px-sp-5;
     @screen md {
       @apply py-sp-12;
     }
@@ -18,7 +18,7 @@
       @apply py-sp-16 px-sp-10;
     }
     &-top {
-      @apply pt-sp-8 px-sp-5;
+      @apply pt-sp-10 px-sp-5;
       @screen md {
         @apply pt-sp-12;
       }
@@ -27,7 +27,7 @@
       }
     }
     &-bottom {
-      @apply pb-sp-8 px-sp-5;
+      @apply pb-sp-10 px-sp-5;
       @screen md {
         @apply pb-sp-12;
       }
@@ -152,7 +152,7 @@
       }
     }
     &-vertical {
-      @apply py-sp-8;
+      @apply py-10;
       @screen md {
         @apply py-sp-12;
       }
