@@ -414,7 +414,15 @@
     waitForElement('field155080834', (element) => {
       fetch('https://api.ipify.org/?format=json').then(results => results.json()).then(data =>
         document.querySelector('#field155080834').value = data.ip
-        );
+      );
+    });
+    // Get fbp
+    waitForElement('field156043836', (element) => {
+      element.value = getCookie('_fbp');
+    });
+    // Get user_agent
+    waitForElement('field156043890', (element) => {
+      element.value = window.navigator.userAgent;
     });
   }
 </script>
