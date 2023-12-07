@@ -2857,6 +2857,10 @@ a.ch-button.button-tertiary.inverted:hover {
   padding-top: 0.75rem;
 }
 
+.pb-sp-12{
+  padding-bottom: 3rem;
+}
+
 .text-center{
   text-align: center;
 }

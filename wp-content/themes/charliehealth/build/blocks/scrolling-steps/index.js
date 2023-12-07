@@ -9645,24 +9645,42 @@ window.addEventListener('DOMContentLoaded', () => {
       autoAlpha: 1,
       y: 0
     });
-  });
+    // Bakground color change
+    let sectionBg = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
+      scrollTrigger: {
+        trigger: '.section-bg-js-cta',
+        start: 'top bottom',
+        endTrigger: '.pin-cta-js-motion',
+        end: 'top 60%',
+        scrub: true
+        // markers: true,
+      }
+    });
 
-  // Bakground color change
-  let sctionBg = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
-    scrollTrigger: {
-      trigger: '.section-bg-js-cta',
-      start: 'top bottom',
-      endTrigger: '.pin-cta-js-motion',
-      end: 'top 60%',
-      scrub: true
-      // markers: true,
-    }
+    sectionBg.fromTo('.section-bg-js', {
+      background: 'linear-gradient(180deg, rgba(247,245,241,1) 0%, rgba(143,146,205,0) 100%)'
+    }, {
+      background: 'linear-gradient(180deg,rgba(247,245,241,1) 0%, rgba(143,146,205,1) 100%)'
+    });
   });
+  mm.add('(max-width: 1023px)', () => {
+    // Bakground color change
+    let sectionBg = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
+      scrollTrigger: {
+        trigger: '.pin-section',
+        start: 'top bottom',
+        endTrigger: '.pin-cta-js-motion',
+        end: 'top 40%',
+        scrub: true
+        // markers: true,
+      }
+    });
 
-  sctionBg.fromTo('.section-bg-js', {
-    background: 'linear-gradient(180deg, rgba(247,245,241,1) 0%, rgba(143,146,205,0) 100%)'
-  }, {
-    background: 'linear-gradient(180deg,rgba(247,245,241,1) 0%, rgba(143,146,205,1) 100%)'
+    sectionBg.fromTo('.section-bg-js', {
+      background: 'linear-gradient(180deg, rgba(247,245,241,1) 0%, rgba(143,146,205,0) 100%)'
+    }, {
+      background: 'linear-gradient(180deg,rgba(247,245,241,1) 0%, rgba(143,146,205,1) 100%)'
+    });
   });
 
   // Slideshow
