@@ -32,11 +32,10 @@ window.addEventListener('DOMContentLoaded', () => {
     });
     let fadeImageOut = gsap.timeline({
       scrollTrigger: {
-        trigger: '.pin-image-end-js',
+        trigger: '.fade-out-js',
         start: 'bottom 60%',
         end: 'bottom 50%',
         scrub: true,
-        // markers: true,
       },
     });
     let pinCta = gsap.timeline({
@@ -46,10 +45,18 @@ window.addEventListener('DOMContentLoaded', () => {
         pin: '.pin-cta-js',
         start: 'center center',
         endTrigger: '.section-bg-js-cta',
-        end: '+=100%',
-        snap: [1],
-        // toggleActions: 'play pause play reverse',
+        end: '+=50%',
         // markers: true,
+      },
+    });
+    let pinCtaFadein = gsap.timeline({
+      scrollTrigger: {
+        scrub: 1,
+        trigger: '.pin-section',
+        start: 'bottom bottom',
+        end: '+=50%',
+        // snap: [1],
+        markers: true,
       },
     });
 
@@ -82,15 +89,15 @@ window.addEventListener('DOMContentLoaded', () => {
       autoAlpha: 0,
     });
 
-    pinCta.fromTo(
+    pinCtaFadein.fromTo(
       '.pin-cta-js-motion',
       {
         autoAlpha: 0,
-        // y: 128,
+        y: 128,
       },
       {
         autoAlpha: 1,
-        // y: 0,
+        y: 0,
       }
     );
   });

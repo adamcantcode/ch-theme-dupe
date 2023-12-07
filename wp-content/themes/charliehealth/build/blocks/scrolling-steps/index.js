@@ -9582,14 +9582,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
     let fadeImageOut = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
       scrollTrigger: {
-        trigger: '.pin-image-end-js',
+        trigger: '.fade-out-js',
         start: 'bottom 60%',
         end: 'bottom 50%',
         scrub: true
-        // markers: true,
       }
     });
-
     let pinCta = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
       scrollTrigger: {
         scrub: true,
@@ -9597,13 +9595,21 @@ window.addEventListener('DOMContentLoaded', () => {
         pin: '.pin-cta-js',
         start: 'center center',
         endTrigger: '.section-bg-js-cta',
-        end: '+=100%',
-        snap: [1]
-        // toggleActions: 'play pause play reverse',
+        end: '+=50%'
         // markers: true,
       }
     });
 
+    let pinCtaFadein = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
+      scrollTrigger: {
+        scrub: 1,
+        trigger: '.pin-section',
+        start: 'bottom bottom',
+        end: '+=50%',
+        // snap: [1],
+        markers: true
+      }
+    });
     stepItems.forEach((stepItem, i) => {
       const anim = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.fromTo(stepItem, {
         autoAlpha: 0,
@@ -9631,12 +9637,12 @@ window.addEventListener('DOMContentLoaded', () => {
     fadeImageOut.to('.pin-image-js', {
       autoAlpha: 0
     });
-    pinCta.fromTo('.pin-cta-js-motion', {
-      autoAlpha: 0
-      // y: 128,
+    pinCtaFadein.fromTo('.pin-cta-js-motion', {
+      autoAlpha: 0,
+      y: 128
     }, {
-      autoAlpha: 1
-      // y: 0,
+      autoAlpha: 1,
+      y: 0
     });
   });
 

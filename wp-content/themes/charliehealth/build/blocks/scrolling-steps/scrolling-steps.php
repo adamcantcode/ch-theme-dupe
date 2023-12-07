@@ -112,7 +112,7 @@ $image       = get_field('image')
                 </div>
               </div>
             </div>
-            <div class="step-item lg:mb-[33vh] mb-sp-8 flex">
+            <div class="step-item lg:mb-[33vh] mb-sp-8 flex fade-out-js">
               <div class="mt-sp-1 mr-[10px]">
                 <svg width="29" height="30" viewBox="0 0 29 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="14.5" cy="14.8914" r="13.75" stroke="#161A3D" stroke-width="1.5" />
