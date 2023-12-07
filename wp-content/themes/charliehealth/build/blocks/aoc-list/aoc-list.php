@@ -17,7 +17,7 @@
       $query = new WP_Query($args);
       if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
           <div class="relative">
-            <a href="<?= get_the_permalink(); ?>" class="stretched-link no-underline pb-sp-6 border-b-2 border-primary grid lg:grid-cols-[3fr_4.4fr] mb-sp-6 gap-x-sp-5 items-center list-item-height-js group">
+            <a href="<?= get_the_permalink(); ?>" class="stretched-link no-underline pb-sp-6 border-b-2 border-primary grid lg:grid-cols-[3fr_3.5fr] mb-sp-6 gap-x-sp-5 items-center list-item-height-js group">
               <div class="mb-sp-2 lg:mb-0">
                 <h4 class="inline-block mb-0"><?= ucfirst(strtolower(get_the_title())); ?></h4>
                 <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="group-hover:translate-x-[5px] transition-all duration-300 ml-sp-4 inline-block align-baseline">

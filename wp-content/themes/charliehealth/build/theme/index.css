@@ -5150,8 +5150,8 @@ a.providers:hover {
     grid-template-columns: 3fr 1fr 8fr;
   }
 
-  .lg\:grid-cols-\[3fr_4\.4fr\]{
-    grid-template-columns: 3fr 4.4fr;
+  .lg\:grid-cols-\[3fr_3\.5fr\]{
+    grid-template-columns: 3fr 3.5fr;
   }
 
   .lg\:grid-cols-\[3fr_4fr\]{
