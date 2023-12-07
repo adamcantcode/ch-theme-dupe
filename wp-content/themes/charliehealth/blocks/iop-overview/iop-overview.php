@@ -10,7 +10,7 @@ $details = get_field('details');
     <?= $details; ?>
   </div>
   <div></div>
-  <div>
+  <div class="mt-sp-5 lg:mt-0">
     <div class="iop-overview-accordion">
       <div class="accordion">
         <div class="wrapper">
@@ -21,7 +21,7 @@ $details = get_field('details');
               $description = get_sub_field('description');
               $link = get_sub_field('link');
               ?>
-              <div class="accordion-item-iop bg-primary-100 rounded-[6px] mb-sp-4">
+              <div class="accordion-item-iop bg-primary-100 rounded-[6px] mb-sp-2 lg:mb-sp-4">
                 <div class="flex justify-between cursor-pointer accordion-header-iop py-[11px] px-sp-6">
                   <h3 class="mb-0"><?= $title; ?></h3>
                   <div class="flex items-center ml-sp-5 toggle">
