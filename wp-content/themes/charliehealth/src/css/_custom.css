@@ -80,6 +80,130 @@
   }
 }
 
+/* IOP Page */
+
+.page-id-435 {
+  main > section {
+    .hero-cta {
+      h2.text-h1-display {
+        @apply font-heading;
+        font-size: 42px;
+        line-height: 110%;
+        letter-spacing: 0.42px;
+      }
+      h2 {
+        @apply font-heading-serif;
+        font-size: 20px;
+        line-height: 110%;
+        letter-spacing: 0.20px;
+      }
+      .mobile-hero-sub {
+        order: 3;
+      }
+      .hero-heading {
+        order: 2;
+      }
+      .hero-image-container {
+        order: 1;
+        img {
+          max-height: unset;
+          border-radius: unset;
+        }
+      }
+    }
+    h2 {
+      @apply font-heading-serif;
+      font-size: 32px;
+      line-height: 110%;
+      letter-spacing: 0.32px;
+    }
+    h3 {
+      font-size: 20px;
+    }
+    .step-items-container {
+      h3 {
+        font-size: 28px;
+      }
+    }
+    h4 {
+      font-size: 18px;
+    }
+    p {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+  }
+}
+@screen lg {
+  .page-id-435 {
+    main > section {
+      .hero-cta {
+        .mobile-hero-sub {
+          order: 1;
+        }
+      }
+      p,
+      ol > li,
+      ul > li {
+        font-size: 14px;
+        line-height: 160%;
+        letter-spacing: 0.14px;
+      }
+      p,
+      li > {
+        a {
+          font-size: 14px;
+          line-height: 160%;
+          letter-spacing: 0.14px;
+        }
+      }
+      p {
+        margin-bottom: 24px;
+      }
+      h1 {
+        font-size: 64px;
+        line-height: 110%;
+        letter-spacing: 0.64px;
+        
+      }
+      h2 {
+        font-size: 40px;
+        line-height: 110%;
+        letter-spacing: 0.4px;
+      }
+      h3 {
+        font-size: 28px;
+        line-height: 160%;
+        letter-spacing: 0.28px;
+      }
+      h4 {
+        font-size: 20px;
+        line-height: 110%;
+        letter-spacing: 0.2px;
+      }
+    }
+  }
+}
+@screen lg {
+  .page-id-435 {
+    .hero-cta {
+      h2 {
+        .text-h1-display {
+        }
+        font-size: 20px;
+        line-height: 140%;
+        letter-spacing: 0.2px;
+        max-width: 300px;
+      }
+      h1 {
+        font-size: 64px;
+        line-height: 110%;
+        letter-spacing: 0.64px;
+        max-width: 550px;
+      }
+    }
+  }
+}
 #articleContent {
   & > div {
     & > div {
@@ -276,8 +400,8 @@
 /* FAQ Accordion */
 .faq-block,
 .toc-container,
-.references-container {
-  .accordion-header,
+.references-container,
+.iop-overview-accordion {
   .toc-heading,
   .references-heading {
     &:hover {
@@ -297,6 +421,17 @@
         svg {
           @apply rotate-45;
         }
+      }
+    }
+  }
+  .accordion-header,
+  .accordion-header-iop {
+    .vertical {
+      @apply transition-transform duration-300 origin-center;
+    }
+    &.active {
+      .vertical {
+        @apply scale-y-0;
       }
     }
   }
