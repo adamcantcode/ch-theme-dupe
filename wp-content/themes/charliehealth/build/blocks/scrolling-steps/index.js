@@ -9605,11 +9605,12 @@ window.addEventListener('DOMContentLoaded', () => {
         scrub: 1,
         trigger: '.pin-section',
         start: 'bottom bottom',
-        end: '+=50%',
+        end: '+=50%'
         // snap: [1],
-        markers: true
+        // markers: true,
       }
     });
+
     stepItems.forEach((stepItem, i) => {
       const anim = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.fromTo(stepItem, {
         autoAlpha: 0,

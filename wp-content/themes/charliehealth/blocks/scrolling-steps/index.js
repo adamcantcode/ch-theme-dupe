@@ -56,7 +56,7 @@ window.addEventListener('DOMContentLoaded', () => {
         start: 'bottom bottom',
         end: '+=50%',
         // snap: [1],
-        markers: true,
+        // markers: true,
       },
     });
 
