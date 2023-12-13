@@ -95,7 +95,7 @@ $image       = get_field('image')
             </div>
           </div>
           <div class="relative pin-image-end-js justify-self-center noshow lg:block">
-            <img src="<?= $image['url']; ?>" alt="<?= $alt; ?>" class="pin-image-js">
+            <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="pin-image-js">
           </div>
           <div class="lg:mt-[15vh]">
             <div class="step-item lg:mb-[33vh] mb-sp-8 lg:mt-[33vh] flex">
@@ -130,7 +130,7 @@ $image       = get_field('image')
         </div>
         <div class="lg:grid-cols-[3fr_6fr_3fr] step-items-container grid lg:noshow mobile-js">
           <div class="relative pin-image-end-js justify-self-center">
-            <img src="<?= $image['url']; ?>" alt="<?= $alt; ?>" class="pin-image-js">
+            <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="pin-image-js">
           </div>
           <div class="lg:mt-[50vh]">
             <div class="step-item lg:mb-[33vh] mb-sp-8 flex">
