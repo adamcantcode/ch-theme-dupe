@@ -4,11 +4,22 @@ $division = get_field('division')['division'];
 
 $posts = get_field('team_member');
 $heading = get_field('heading');
-// var_dump($posts);
+
+switch ($division) {
+  case 'Founding Members':
+    $divisionRewrite = 'Co-Founders';
+    break;
+  case 'Leadership':
+    $divisionRewrite = 'Clinical Leadership';
+    break;
+  default:
+    $divisionRewrite = $division;
+    break;
+}
 ?>
 
 <div id="<?= $block['id']; ?>">
-  <h2><?= $heading ?: $division; ?></h2>
+  <h2><?= $heading ?: $divisionRewrite; ?></h2>
   <div class="grid grid-cols-2 lg:grid-cols-4 gap-sp-8 lg:gap-x-sp-16 lg:gap-y-sp-16">
     <?php
     if ($entireDivision) {
