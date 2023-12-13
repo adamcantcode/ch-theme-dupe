@@ -98,7 +98,7 @@ if ($style === 'image') {
         <?php if ($icon) : ?>
           <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health Shield" class="w-10">
         <?php endif; ?>
-        <h2 class="mb-0 font-heading-serif"><?= $subtitle; ?></h2>
+        <p class="mb-0 font-heading-serif lg:text-h2-lg text-h2"><?= $subtitle; ?></p>
       </div>
       <div class="">
         <?= $subtitleEditor; ?>
@@ -110,7 +110,7 @@ if ($style === 'image') {
 <?php if (have_rows('hero_jump_buttons_jump_buttons')) : ?>
   <div class="mt-sp-6 md:mt-sp-10 lg:mt-sp-14">
     <div>
-      <h3>Jump to:</h3>
+      <p class="lg:text-h3-lg text-h3 font-heading-serif">Jump to:</p>
     </div>
     <div class="flex overflow-auto gap-sp-5 custom-scroll">
       <?php while (have_rows('hero_jump_buttons_jump_buttons')) : the_row();
