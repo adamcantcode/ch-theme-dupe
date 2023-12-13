@@ -557,15 +557,13 @@ h1.text-display{
 }
 
 @media (min-width: 1024px) {
-        .page-id-435 .hero-cta h2 h1.text-display {
-        }
     h1.text-display{
     font-size: 4rem;
     line-height: 4.2rem;
     letter-spacing: 0;
     font-weight: 400;
   }
-}
+      }
 
 h2{
   margin-bottom: 1.25rem;
@@ -1520,21 +1518,6 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-bottom: 2rem;
 }
 
-.mx-sp-6{
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-}
-
-.mx-sp-10{
-  margin-left: 2.5rem;
-  margin-right: 2.5rem;
-}
-
-.my-sp-10{
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-}
-
 .\!mb-0{
   margin-bottom: 0px !important;
 }
@@ -1577,10 +1560,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .mb-sp-12{
   margin-bottom: 3rem;
-}
-
-.mb-sp-14{
-  margin-bottom: 4rem;
 }
 
 .mb-sp-16{
@@ -1984,10 +1963,6 @@ a.ch-button.button-tertiary.inverted:hover {
   max-width: 28rem !important;
 }
 
-.max-w-\[1000px\]{
-  max-width: 1000px;
-}
-
 .max-w-\[1280px\]{
   max-width: 1280px;
 }
@@ -2012,12 +1987,12 @@ a.ch-button.button-tertiary.inverted:hover {
   max-width: 80rem;
 }
 
-.max-w-\[85px\]{
-  max-width: 85px;
-}
-
 .max-w-\[850px\]{
   max-width: 850px;
+}
+
+.max-w-\[85px\]{
+  max-width: 85px;
 }
 
 .flex-1{
@@ -2936,6 +2911,10 @@ a.ch-button.button-tertiary.inverted:hover {
   font-size: 28px;
 }
 
+.text-\[42px\]{
+  font-size: 42px;
+}
+
 .text-\[4rem\]{
   font-size: 4rem;
 }
@@ -2993,6 +2972,13 @@ a.ch-button.button-tertiary.inverted:hover {
   font-weight: 400;
 }
 
+.text-h3-lg{
+  font-size: 1.5rem;
+  line-height: 2rem;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
 .text-h4{
   font-size: 1.25rem;
   line-height: 140%;
@@ -3033,21 +3019,6 @@ a.ch-button.button-tertiary.inverted:hover {
   line-height: 1rem;
 }
 
-.text-\[64px\]{
-  font-size: 64px;
-}
-
-.text-\[42px\]{
-  font-size: 42px;
-}
-
-.text-h3-lg{
-  font-size: 1.5rem;
-  line-height: 2rem;
-  letter-spacing: 0;
-  font-weight: 400;
-}
-
 .font-bold{
   font-weight: 700;
 }
@@ -3058,6 +3029,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .leading-\[1\.1\]{
   line-height: 1.1;
+}
+
+.leading-\[1\.2\]{
+  line-height: 1.2;
 }
 
 .leading-\[1\.4\]{
@@ -3098,14 +3073,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .leading-tight{
   line-height: 1.25;
-}
-
-.leading-\[1\.2\]{
-  line-height: 1.2;
-}
-
-.leading-\[1\]{
-  line-height: 1;
 }
 
 .text-\[\#87889A\]{
@@ -3733,7 +3700,7 @@ a.ch-button.button-tertiary.inverted:hover {
   font-family: "ABC Arizona", serif;
         font-size: 20px;
         line-height: 110%;
-        letter-spacing: 0.20px;
+        letter-spacing: 0.2px;
 }
 
 .page-id-435 main > section .hero-cta .mobile-hero-sub {
@@ -3800,7 +3767,6 @@ a.ch-button.button-tertiary.inverted:hover {
         font-size: 64px;
         line-height: 110%;
         letter-spacing: 0.64px;
-        
       }
       .page-id-435 main > section h2 {
         font-size: 40px;
@@ -3817,13 +3783,13 @@ a.ch-button.button-tertiary.inverted:hover {
         line-height: 110%;
         letter-spacing: 0.2px;
       }
-        .page-id-435 .hero-cta h2 .text-h1-display {
-        }
-        .page-id-435 .hero-cta h2{
+      .page-id-435 .hero-cta p{
+    font-family: "ABC Arizona", serif;
         font-size: 20px;
         line-height: 140%;
         letter-spacing: 0.2px;
         max-width: 300px;
+        margin-bottom: 0;
   }
       .page-id-435 .hero-cta h1 {
         font-size: 64px;
@@ -4938,16 +4904,6 @@ a.providers:hover {
     margin-bottom: 6rem;
   }
 
-  .lg\:mx-0{
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-
-  .lg\:my-0{
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
   .lg\:mb-0{
     margin-bottom: 0px;
   }
@@ -5429,16 +5385,8 @@ a.providers:hover {
     padding-top: 4rem;
   }
 
-  .lg\:\!text-\[4\.5rem\]{
-    font-size: 4.5rem !important;
-  }
-
   .lg\:text-\[2\.5rem\]{
     font-size: 2.5rem;
-  }
-
-  .lg\:text-\[28px\]{
-    font-size: 28px;
   }
 
   .lg\:text-\[2rem\]{
@@ -5447,6 +5395,14 @@ a.providers:hover {
 
   .lg\:text-\[41px\]{
     font-size: 41px;
+  }
+
+  .lg\:text-\[56px\]{
+    font-size: 56px;
+  }
+
+  .lg\:text-\[64px\]{
+    font-size: 64px;
   }
 
   .lg\:text-\[9\.5rem\]{
@@ -5495,20 +5451,12 @@ a.providers:hover {
     font-weight: 500;
   }
 
-  .lg\:text-\[56px\]{
-    font-size: 56px;
-  }
-
-  .lg\:text-\[64px\]{
-    font-size: 64px;
+  .lg\:leading-\[1\.2\]{
+    line-height: 1.2;
   }
 
   .lg\:leading-tight{
     line-height: 1.25;
-  }
-
-  .lg\:leading-\[1\.2\]{
-    line-height: 1.2;
   }
   .lg\:noshow{
     display: none;
