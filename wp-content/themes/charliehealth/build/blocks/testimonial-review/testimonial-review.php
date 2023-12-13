@@ -77,7 +77,7 @@
                 <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>"><?= $name; ?></span>
               <?php endif; ?>
               <?php if ($pullQuote) : ?>
-                <h3 class="leading-[1.2] mb-sp-2 text-[28px]">“<?= $pullQuote; ?>.”</h3>
+                <p class="leading-[1.2] mb-sp-2 text-[28px] font-heading-serif">“<?= $pullQuote; ?>.”</p>
               <?php endif; ?>
               <p class="leading-[1.6] mb-sp-5 text-[14px]"><?= $fullQuote; ?></p>
               <p class="mb-0 leading-[1.6] text-[14px]">—<?= $attribution; ?></p>
