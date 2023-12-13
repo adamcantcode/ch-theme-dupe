@@ -48,7 +48,7 @@ if ($style === 'image') {
 <?php if ($style === 'new_image') : ?>
   <div class="grid items-center lg:grid-cols-2 gap-sp-5 py-sp-10 lg:py-0">
     <div class="order-2 lg:order-1 mobile-hero-sub">
-      <h1 class="noshow text-display mb-sp-6 lg:block"><?= $title; ?></h1>
+      <h1 class="mb-sp-6 lg:text-[64px] text-[42px] leading-[1.1]"><?= $title; ?></h1>
       <div class="flex items-center gap-sp-4">
         <?php if ($icon) : ?>
           <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health Shield" class="w-10">

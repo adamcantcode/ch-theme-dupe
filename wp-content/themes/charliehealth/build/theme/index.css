@@ -3033,6 +3033,14 @@ a.ch-button.button-tertiary.inverted:hover {
   line-height: 1rem;
 }
 
+.text-\[64px\]{
+  font-size: 64px;
+}
+
+.text-\[42px\]{
+  font-size: 42px;
+}
+
 .font-bold{
   font-weight: 700;
 }
@@ -3087,6 +3095,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .leading-\[1\.2\]{
   line-height: 1.2;
+}
+
+.leading-\[1\]{
+  line-height: 1;
 }
 
 .text-\[\#87889A\]{
@@ -5478,6 +5490,10 @@ a.providers:hover {
 
   .lg\:text-\[56px\]{
     font-size: 56px;
+  }
+
+  .lg\:text-\[64px\]{
+    font-size: 64px;
   }
 
   .lg\:leading-tight{
