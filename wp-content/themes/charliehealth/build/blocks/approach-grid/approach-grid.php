@@ -12,25 +12,24 @@
   <div></div>
   <div class="grid grid-cols-2 lg:grid-cols-3 gap-sp-2 grid-approach-items-js auto-rows-fr">
     <div class="text-center bg-lavender-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
-      <h4 class="mb-0 leading-[110%]">Immediate availability</h5>
+      <p class="mb-0 leading-[110%] not-heading-h4">Immediate availability</h5>
     </div>
     <div class="text-center bg-orange-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
-      <h4 class="mb-0 leading-[110%]">In-network with insurance</h5>
+      <p class="mb-0 leading-[110%] not-heading-h4">In-network with insurance</h5>
     </div>
     <div class="text-center bg-pale-blue-200 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
-      <h4 class="mb-0 leading-[110%]">Personalized treatment</h5>
+      <p class="mb-0 leading-[110%] not-heading-h4">Personalized treatment</h5>
     </div>
     <div class="text-center bg-yellow-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
-      <h4 class="mb-0 leading-[110%]">Virtual access</h5>
+      <p class="mb-0 leading-[110%] not-heading-h4">Virtual access</h5>
     </div>
     <div class="text-center bg-pale-blue-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
-      <h4 class="mb-0 leading-[110%]">Flexible scheduling</h5>
+      <p class="mb-0 leading-[110%] not-heading-h4">Flexible scheduling</h5>
     </div>
     <div class="text-center bg-white rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center relative group">
       <svg width="27" height="22" viewBox="0 0 27 22" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all mb-sp-2 group-hover:translate-x-[5px] duration-300">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M22.054 9.3431L14.3818 1.67092L16.0527 0L26.6686 10.6159L16.0527 21.2319L14.3818 19.561L22.2366 11.7061L2.08616e-07 11.7061L0 9.34311L22.054 9.3431Z" fill="#161A3D" />
-      </svg>
-      <h4 class="mb-0 leading-[110%]"><a href="/intensive-outpatient-iop/outcomes" class="no-underline stretched-link">Learn more</a></h5>
+      </svg><a href="/intensive-outpatient-iop/outcomes" class="no-underline stretched-link mb-0 leading-[110%] not-heading-h4">Learn more</a>
     </div>
   </div>
 </div>
