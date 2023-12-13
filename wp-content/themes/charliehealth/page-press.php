@@ -64,7 +64,7 @@ Template Name: Press page
                 </div>
               </div>
               <div class="grid p-sp-4">
-                <h5 class="mb-sp-4"><?= $date; ?></h5>
+                <p class="mb-sp-4 text-h5 lg:text-h5-lg"><?= $date; ?></p>
                 <h3 class="mb-0"><a href="<?= $link; ?>" class="stretched-link" target="_blank"><?= get_the_title(); ?></a></h3>
               </div>
             </div>
@@ -94,8 +94,8 @@ Template Name: Press page
         <!-- <div class="relative grid lg:grid-cols-[1fr_4fr] grid-cols-[1fr_2fr] overflow-hidden border rounded-sm border-card-border">
           <img src="https://images.placeholders.dev/?width=800&height=600&text=FPO" alt="" class="object-contain h-[125px] w-full">
           <div class="grid p-sp-4">
-            <h5 class="mb-sp-4"><?php // $date; 
-                                ?></h5>
+           <p class="mb-sp-4 text-h5 lg:text-h5-lg"><?php // $date; 
+                                ?></p>
             <h3 class="mb-0"><a href="<?php // get_the_ID(); 
                                       ?>" class="stretched-link"><?php // get_the_title(); 
                                                                   ?></a></h3>

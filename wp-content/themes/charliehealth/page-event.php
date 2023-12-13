@@ -62,7 +62,7 @@ Template Name: Event Page
             <div class="relative grid overflow-hidden duration-300 border rounded-sm border-card-border hover:shadow-lg">
               <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover lg:h-[220px] h-[150px] w-full">
               <div class="p-sp-4">
-                <h5 class="mb-sp-4"><?= $date; ?></h5>
+                <p class="mb-sp-4 text-h5 lg:text-h5-lg"><?= $date; ?></p>
                 <h3><?= get_the_title(); ?></h3>
                 <h5 class="flex items-center mb-0 gap-sp-4"><a href="<?= $link; ?>" class="stretched-link" target="_blank">Register Now</a><img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/arrow-left-blue.svg'); ?>" alt="arrow" class="rotate-180 h-sp-4"></h5>
               </div>
@@ -152,7 +152,7 @@ Template Name: Event Page
             <div class="relative grid lg:grid-cols-[1fr_4fr] grid-cols-[1fr_2fr] overflow-hidden border rounded-sm border-card-border">
               <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover rounded-md lg:rounded-none lg:w-full lg:h-full lg:aspect-auto aspect-square lg:p-0 p-sp-2">
               <div class="grid p-sp-4">
-                <h5 class="mb-sp-4"><?= $date; ?></h5>
+                <p class="mb-sp-4 text-h5 lg:text-h5-lg"><?= $date; ?></p>
                 <h3 class="<?= get_the_excerpt() ? '' : 'mb-0'; ?>"><a href="<?= get_the_permalink(); ?>" class="stretched-link"><?= get_the_title(); ?></a></h3>
                 <?php if (get_the_excerpt()) : ?>
                   <p class="mb-0"><?= get_the_excerpt(); ?></p>

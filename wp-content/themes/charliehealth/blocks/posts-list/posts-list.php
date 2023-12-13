@@ -36,7 +36,7 @@ $style  = get_field('style');
             <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover lg:h-[220px] h-[150px] w-full">
             <div class="grid p-sp-4">
               <h3><a href="<?= get_the_permalink(); ?>" class="stretched-link"><?= get_the_title(); ?></a></h3>
-              <h5 class="mb-sp-4"><?= $author->post_title; ?></h5>
+              <p class="mb-sp-4 text-h5 lg:text-h5-lg"><?= $author->post_title; ?></p>
               <div class="grid items-end justify-start grid-flow-col gap-sp-4">
                 <?php
                 $tags = get_the_terms(get_the_ID(), 'post_tag');
@@ -76,7 +76,7 @@ $style  = get_field('style');
           <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover lg:h-[220px] h-[150px] w-full">
           <div class="grid p-sp-4">
             <h3><a href="<?= get_the_permalink($customPost->ID); ?>" class="stretched-link"><?= $customPost->post_title; ?></a></h3>
-            <h5 class="mb-sp-4"><?= get_field('by_author', ($relatedPost->ID))->post_title ?: 'Charlie Health Editorial Team'; ?></h5>
+            <p class="mb-sp-4 text-h5 lg:text-h5-lg"><?= get_field('by_author', ($relatedPost->ID))->post_title ?: 'Charlie Health Editorial Team'; ?></p>
             <div class="grid items-end justify-start grid-flow-col gap-sp-4">
               <?php $tags = get_the_terms($customPost->ID, 'post_tag'); ?>
               <?php foreach ($tags as $tag) : ?>

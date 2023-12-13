@@ -189,7 +189,9 @@ export default function ajaxPaginationSearch() {
                   <h3><a href="${post.link}" class="stretched-link">${
       post.title
     }</a></h3>
-                  <h5 class="mb-sp-4">${post.acf.by_author.post_title}</h5>
+    <p class="mb-sp-4 text-h5 lg:text-h5-lg">${
+      post.acf.by_author.post_title
+    }</p>
                   <div class="grid justify-start grid-flow-col gap-sp-4 items-end">`;
     if (tags) {
       html += `${tags

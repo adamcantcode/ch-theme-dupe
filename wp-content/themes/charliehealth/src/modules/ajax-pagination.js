@@ -281,7 +281,7 @@ export default function ajaxPagination() {
                   <img src="${imageUrl}" alt="${imageAlt}" class="object-cover lg:h-[220px] h-[150px] w-full">
                   <div class="grid p-sp-4">
                     <h3><a href="${post.link}" class="stretched-link">${post.title.rendered}</a></h3>
-                    <h5 class="mb-sp-4">${post.acf.by_author.post_title}</h5>
+                    <p class="mb-sp-4 text-h5 lg:text-h5-lg">${post.acf.by_author.post_title}</p>
                     <div class="grid justify-start grid-flow-col gap-sp-4 items-end">`;
       if (tags) {
         html += `${tags
