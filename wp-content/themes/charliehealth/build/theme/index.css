@@ -3062,6 +3062,10 @@ a.ch-button.button-tertiary.inverted:hover {
   line-height: 1.25;
 }
 
+.leading-\[1\.6\]{
+  line-height: 1.6;
+}
+
 .text-\[\#87889A\]{
   --tw-text-opacity: 1;
   color: rgb(135 136 154 / var(--tw-text-opacity));
@@ -5428,6 +5432,10 @@ a.providers:hover {
     line-height: 140%;
     letter-spacing: 0;
     font-weight: 500;
+  }
+
+  .lg\:text-\[28px\]{
+    font-size: 28px;
   }
 
   .lg\:leading-tight{
