@@ -951,7 +951,7 @@ table {
     flex: none;
     padding-left: 25px;
     padding-right: 25px;
-    font-size: 1.25rem;
+    font-size: 18px;
     line-height: 1.8rem;
   }
 }
@@ -2001,6 +2001,10 @@ a.ch-button.button-tertiary.inverted:hover {
   max-width: 85px;
 }
 
+.max-w-\[850px\]{
+  max-width: 850px;
+}
+
 .flex-1{
   flex: 1 1 0%;
 }
@@ -3030,6 +3034,10 @@ a.ch-button.button-tertiary.inverted:hover {
   line-height: 1.4;
 }
 
+.leading-\[1\.6\]{
+  line-height: 1.6;
+}
+
 .leading-\[1\.8rem\]{
   line-height: 1.8rem;
 }
@@ -3062,8 +3070,8 @@ a.ch-button.button-tertiary.inverted:hover {
   line-height: 1.25;
 }
 
-.leading-\[1\.6\]{
-  line-height: 1.6;
+.leading-\[1\.2\]{
+  line-height: 1.2;
 }
 
 .text-\[\#87889A\]{
@@ -5380,6 +5388,10 @@ a.providers:hover {
     font-size: 2.5rem;
   }
 
+  .lg\:text-\[28px\]{
+    font-size: 28px;
+  }
+
   .lg\:text-\[2rem\]{
     font-size: 2rem;
   }
@@ -5434,12 +5446,16 @@ a.providers:hover {
     font-weight: 500;
   }
 
-  .lg\:text-\[28px\]{
-    font-size: 28px;
+  .lg\:text-\[56px\]{
+    font-size: 56px;
   }
 
   .lg\:leading-tight{
     line-height: 1.25;
+  }
+
+  .lg\:leading-\[1\.2\]{
+    line-height: 1.2;
   }
   .lg\:noshow{
     display: none;

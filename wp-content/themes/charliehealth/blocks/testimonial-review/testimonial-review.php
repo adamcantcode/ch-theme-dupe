@@ -19,7 +19,7 @@
     <div class="lg:sticky self-start top-[8rem]">
       <p class="lg:text-[9.5rem] text-[4rem] font-heading-serif leading-tight mb-0"><?= $stat ?></p>
       <div class="grid items-start grid-cols-2 gap-4 lg:block">
-        <p class="leading-[1.4] lg:max-w-[250px]"><?= $statDetails; ?></p>
+        <p class="leading-[1.4] text-[20px] lg:max-w-[250px]"><?= $statDetails; ?></p>
         <a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>" class="ch-button button-secondary"><?= $link['title']; ?></a>
       </div>
     </div>
@@ -77,7 +77,7 @@
                 <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>"><?= $name; ?></span>
               <?php endif; ?>
               <?php if ($pullQuote) : ?>
-                <h3 class="leading-tight mb-sp-2 lg:text-[28px]">“<?= $pullQuote; ?>.”</h3>
+                <h3 class="leading-[1.2] mb-sp-2 text-[28px]">“<?= $pullQuote; ?>.”</h3>
               <?php endif; ?>
               <p class="leading-[1.6] mb-sp-8 text-[14px]"><?= $fullQuote; ?></p>
               <p class="mb-0 leading-[1.6] text-[14px]">—<?= $attribution; ?></p>
