@@ -27,21 +27,22 @@ if ($style === 'image') {
   <?php include('includes/breadcrumbs.php'); ?>
 <?php endif; ?>
 <?php if ($style === 'image') : ?>
-  <div class="grid items-center lg:grid-cols-2 gap-sp-4 lg:gap-sp-16 hero-cta">
-    <div class="order-2 lg:order-1 mobile-hero-sub">
-      <h1 class="noshow text-display mb-sp-6 lg:block"><?= $title; ?></h1>
-      <div class="flex items-center gap-sp-4 mb-sp-12">
+  <div class="grid items-center lg:grid-cols-2 lg:gap-sp-16 hero-cta">
+    <div class="order-2 lg:order-1 fix-order">
+      <h1 class="text-display mb-sp-6 lg:block hero-heading"><?= $title; ?></h1>
+      <img src="<?= $heroImage['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $heroImage['alt'] ?: 'Placeholder image'; ?>" class="block object-cover object-top rounded-lg max-h-52 md:max-h-none nolazy lg:noshow mb-sp-4 hero-image-container">
+      <div class="flex items-center gap-sp-4 mb-sp-12 mobile-hero-sub">
         <?php if ($icon) : ?>
           <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health Shield" class="w-10">
         <?php endif; ?>
         <p class="mb-0 lg:text-h2-lg text-h2 font-heading-serif not-heading-h2"><?= $subtitle; ?></p>
       </div>
-      <?php include(get_template_directory() . '/includes/button-group.php'); ?>
+      <div class="hero-image-buttons">
+        <?php include(get_template_directory() . '/includes/button-group.php'); ?>
+      </div>
     </div>
-    <h2 class="block mb-0 text-h1-display lg:noshow hero-heading"><?= $title; ?></h2>
-    <div class="flex flex-col justify-between order-1 lg:order-2 hero-image-container">
-      <!-- TODO fix image offset bool issue -->
-      <img src="<?= $heroImage['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $heroImage['alt'] ?: 'Placeholder image'; ?>" class="object-cover object-top rounded-lg max-h-52 md:max-h-none nolazy">
+    <div class="flex flex-col justify-between order-1 lg:order-2">
+      <img src="<?= $heroImage['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $heroImage['alt'] ?: 'Placeholder image'; ?>" class="object-cover object-top rounded-lg max-h-52 md:max-h-none nolazy noshow lg:block">
     </div>
   </div>
 <?php endif; ?>

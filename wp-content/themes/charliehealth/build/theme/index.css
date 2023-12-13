@@ -549,13 +549,6 @@ h1.text-display{
   font-weight: 400;
 }
 
-.page-id-435 main > section .hero-cta h2h1.text-display{
-  font-family: "ABC Social", sans-serif;
-        font-size: 42px;
-        line-height: 110%;
-        letter-spacing: 0.42px;
-}
-
 @media (min-width: 1024px) {
     h1.text-display{
     font-size: 4rem;
@@ -2859,16 +2852,16 @@ a.ch-button.button-tertiary.inverted:hover {
   vertical-align: initial;
 }
 
+.\!font-heading{
+  font-family: "ABC Social", sans-serif !important;
+}
+
 .font-heading{
   font-family: "ABC Social", sans-serif;
 }
 
 .font-heading-serif{
   font-family: "ABC Arizona", serif;
-}
-
-.\!font-heading{
-  font-family: "ABC Social", sans-serif !important;
 }
 
 .\!text-\[1rem\]{
@@ -3696,12 +3689,31 @@ a.ch-button.button-tertiary.inverted:hover {
 
 /* IOP Page */
 
-.page-id-435 main > section .hero-cta h2.text-h1-display{
-  font-family: "ABC Social", sans-serif;
-        font-size: 42px;
-        line-height: 110%;
-        letter-spacing: 0.42px;
-}
+.page-id-435 main > section .hero-cta .fix-order {
+        display: grid;
+      }
+
+.page-id-435 main > section .hero-cta .fix-order .mobile-hero-sub {
+          order: 3;
+        }
+
+.page-id-435 main > section .hero-cta .fix-order .hero-heading {
+          order: 2;
+        }
+
+.page-id-435 main > section .hero-cta .fix-order .hero-image-buttons {
+          order: 4;
+        }
+
+.page-id-435 main > section .hero-cta .fix-order picture,
+        .page-id-435 main > section .hero-cta .fix-order .hero-image-container {
+          order: 1;
+        }
+
+.page-id-435 main > section .hero-cta .fix-order picture img, .page-id-435 main > section .hero-cta .fix-order .hero-image-container img {
+            max-height: unset;
+            border-radius: unset;
+          }
 
 .page-id-435 main > section .hero-cta h2,
       .page-id-435 main > section .hero-cta p.not-heading-h2{
@@ -3712,22 +3724,12 @@ a.ch-button.button-tertiary.inverted:hover {
         margin-bottom: 0;
 }
 
-.page-id-435 main > section .hero-cta .mobile-hero-sub {
-        order: 3;
-      }
-
-.page-id-435 main > section .hero-cta .hero-heading {
-        order: 2;
-      }
-
-.page-id-435 main > section .hero-cta .hero-image-container {
-        order: 1;
-      }
-
-.page-id-435 main > section .hero-cta .hero-image-container img {
-          max-height: unset;
-          border-radius: unset;
-        }
+.page-id-435 main > section h1{
+  font-family: "ABC Social", sans-serif;
+      font-size: 42px;
+      line-height: 110%;
+      letter-spacing: 0.42px;
+}
 
 .page-id-435 main > section h2,
     .page-id-435 main > section .not-heading-h2{
@@ -3775,6 +3777,7 @@ a.ch-button.button-tertiary.inverted:hover {
       .page-id-435 main > section p {
         margin-bottom: 24px;
       }
+
       .page-id-435 main > section h1 {
         font-size: 64px;
         line-height: 110%;

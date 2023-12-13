@@ -85,11 +85,25 @@
 .page-id-435 {
   main > section {
     .hero-cta {
-      h2.text-h1-display {
-        @apply font-heading;
-        font-size: 42px;
-        line-height: 110%;
-        letter-spacing: 0.42px;
+      .fix-order {
+        display: grid;
+        .mobile-hero-sub {
+          order: 3;
+        }
+        .hero-heading {
+          order: 2;
+        }
+        .hero-image-buttons {
+          order: 4;
+        }
+        picture,
+        .hero-image-container {
+          order: 1;
+          img {
+            max-height: unset;
+            border-radius: unset;
+          }
+        }
       }
       h2,
       p.not-heading-h2 {
@@ -99,19 +113,12 @@
         letter-spacing: 0.2px;
         margin-bottom: 0;
       }
-      .mobile-hero-sub {
-        order: 3;
-      }
-      .hero-heading {
-        order: 2;
-      }
-      .hero-image-container {
-        order: 1;
-        img {
-          max-height: unset;
-          border-radius: unset;
-        }
-      }
+    }
+    h1 {
+      @apply font-heading;
+      font-size: 42px;
+      line-height: 110%;
+      letter-spacing: 0.42px;
     }
     h2,
     .not-heading-h2 {
@@ -165,6 +172,7 @@
       p {
         margin-bottom: 24px;
       }
+
       h1 {
         font-size: 64px;
         line-height: 110%;
