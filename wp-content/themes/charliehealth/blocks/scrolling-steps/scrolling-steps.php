@@ -7,7 +7,7 @@ $image       = get_field('image')
 <section class="section-bg-js bg-grey-warm">
   <div class="section-top pin-section">
     <div class="container pin-container">
-      <h4 class="text-center"><?= $heading; ?></h4>
+      <h2 class="text-center not-heading-h4 !font-heading mb-sp-2"><?= $heading; ?></h2>
       <div>
         <div class="lg:grid-cols-[3fr_6fr_3fr] step-items-container noshow lg:grid desktop-js">
           <div class="lg:mt-[15vh]">

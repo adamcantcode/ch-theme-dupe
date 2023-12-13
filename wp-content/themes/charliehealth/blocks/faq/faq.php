@@ -34,7 +34,7 @@ $faqButton = get_field('faq_button');
               ?>
               <div class="border-b-2 border-primary accordion-item mb-sp-6">
                 <div class="flex items-center justify-between cursor-pointer accordion-header pb-sp-6">
-                  <h4 class="mb-0"><?= $headline; ?></h4>
+                  <h3 class="mb-0 font-heading not-heading-h4"><?= $headline; ?></h3>
                   <span class="ml-sp-4">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M1 10.9999H22.9984V12.9999H1V10.9999Z" fill="#161A3D" />

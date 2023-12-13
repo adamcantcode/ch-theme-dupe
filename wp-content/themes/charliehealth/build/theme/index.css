@@ -2867,6 +2867,10 @@ a.ch-button.button-tertiary.inverted:hover {
   font-family: "ABC Arizona", serif;
 }
 
+.\!font-heading{
+  font-family: "ABC Social", sans-serif !important;
+}
+
 .\!text-\[1rem\]{
   font-size: 1rem !important;
 }
@@ -3699,11 +3703,13 @@ a.ch-button.button-tertiary.inverted:hover {
         letter-spacing: 0.42px;
 }
 
-.page-id-435 main > section .hero-cta h2{
+.page-id-435 main > section .hero-cta h2,
+      .page-id-435 main > section .hero-cta p.not-heading-h2{
   font-family: "ABC Arizona", serif;
         font-size: 20px;
         line-height: 110%;
         letter-spacing: 0.2px;
+        margin-bottom: 0;
 }
 
 .page-id-435 main > section .hero-cta .mobile-hero-sub {
@@ -3723,7 +3729,8 @@ a.ch-button.button-tertiary.inverted:hover {
           border-radius: unset;
         }
 
-.page-id-435 main > section h2, .page-id-435 main > section .not-heading-h2{
+.page-id-435 main > section h2,
+    .page-id-435 main > section .not-heading-h2{
   font-family: "ABC Arizona", serif;
       font-size: 32px;
       line-height: 110%;
@@ -3773,7 +3780,8 @@ a.ch-button.button-tertiary.inverted:hover {
         line-height: 110%;
         letter-spacing: 0.64px;
       }
-      .page-id-435 main > section h2, .page-id-435 main > section .not-heading-h2 {
+      .page-id-435 main > section h2,
+      .page-id-435 main > section .not-heading-h2 {
         font-size: 40px;
         line-height: 110%;
         letter-spacing: 0.4px;
@@ -4638,10 +4646,6 @@ a.providers:hover {
   }
 }
 
-.hover\:text-white:hovera:hover {
-        color: #ffffff;
-      }
-
 .first\:mt-0:first-child{
   margin-top: 0px;
 }
@@ -4727,11 +4731,6 @@ a.providers:hover {
 .hover\:text-lavender-200:hover{
   --tw-text-opacity: 1;
   color: rgb(231 211 255 / var(--tw-text-opacity));
-}
-
-.hover\:text-white:hover{
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .hover\:shadow-\[inset_0_0_0_2px_\#1d225f\]:hover{
