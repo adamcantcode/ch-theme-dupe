@@ -18,6 +18,7 @@
             },
             "choices": {
                 "image": "Hero Image",
+                "new_image": "Bleed Image",
                 "cover": "Hero Cover Image",
                 "details": "Details",
                 "container": "Container"
@@ -90,6 +91,13 @@
                         "operator": "==",
                         "value": "cover"
                     }
+                ],
+                [
+                    {
+                        "field": "field_641639ffb2d96",
+                        "operator": "==",
+                        "value": "new_image"
+                    }
                 ]
             ],
             "wrapper": {
@@ -128,6 +136,17 @@
                         "field": "field_641639ffb2d96",
                         "operator": "==",
                         "value": "cover"
+                    },
+                    {
+                        "field": "field_63df133c0e495",
+                        "operator": "!=empty"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_641639ffb2d96",
+                        "operator": "==",
+                        "value": "new_image"
                     },
                     {
                         "field": "field_63df133c0e495",
@@ -352,5 +371,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1685824993
+    "modified": 1702484240
 }

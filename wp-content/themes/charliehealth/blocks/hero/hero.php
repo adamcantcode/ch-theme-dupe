@@ -45,6 +45,23 @@ if ($style === 'image') {
     </div>
   </div>
 <?php endif; ?>
+<?php if ($style === 'new_image') : ?>
+  <div class="grid items-center lg:grid-cols-2 gap-sp-5 py-sp-10 lg:py-0">
+    <div class="order-2 lg:order-1 mobile-hero-sub">
+      <h1 class="noshow text-display mb-sp-6 lg:block"><?= $title; ?></h1>
+      <div class="flex items-center gap-sp-4">
+        <?php if ($icon) : ?>
+          <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health Shield" class="w-10">
+        <?php endif; ?>
+        <h4 class="mb-0 font-heading-serif text-20px"><?= $subtitle; ?></h3>
+      </div>
+      <?php include(get_template_directory() . '/includes/button-group.php'); ?>
+    </div>
+    <div class="flex flex-col justify-between order-1 lg:order-2">
+      <img src="<?= $heroImage['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $heroImage['alt'] ?: 'Placeholder image'; ?>" class="object-cover object-top nolazy">
+    </div>
+  </div>
+<?php endif; ?>
 <?php if ($style === 'details') : ?>
   <div class="grid items-start lg:grid-cols-2 gap-sp-8">
     <div class="order-1">
