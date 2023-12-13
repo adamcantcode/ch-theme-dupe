@@ -118,7 +118,7 @@ $readingTime = ceil($wordCount / $wordsPerMinute);
       <div class="container-sm">
         <div class="rounded-md toc-container bg-light-purple">
           <div class="flex cursor-pointer toc-heading lg:p-sp-8 p-sp-4">
-            <h3 class="mb-0">Table of Contents</h3>
+            <p class="mb-0 text-h3 lg:text-h3-lg font-heading-serif">Table of Contents</p>
             <div class="flex items-center ml-auto toggle">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="none" viewBox="8 8 8 8" height="12px" width="12px">
                 <path d="M9 12H15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -145,7 +145,7 @@ $readingTime = ceil($wordCount / $wordsPerMinute);
         <div class="divider mb-sp-4"></div>
         <div class="rounded-md references-container">
           <div class="flex duration-300 rounded-md cursor-pointer references-heading lg:p-sp-8 p-sp-4 hover:bg-lightest-purple">
-            <h3 class="mb-0">References</h3>
+            <p class="mb-0 font-heading-serif text-h3 lg:text-h3-lg">References</p>
             <div class="flex items-center ml-auto toggle">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="none" viewBox="8 8 8 8" height="12px" width="12px">
                 <path d="M9 12H15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>

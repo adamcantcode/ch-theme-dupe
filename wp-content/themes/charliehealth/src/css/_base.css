@@ -93,7 +93,7 @@
   p,
   ul li,
   ol li {
-    @apply text-darker-blue font-body;
+    @apply text-darker-blue font-body antialiased;
   }
   h1 {
     @apply mb-sp-6 text-h1;

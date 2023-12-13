@@ -512,6 +512,8 @@ p,
   font-family: "GT America", sans-serif;
   --tw-text-opacity: 1;
   color: rgb(22 26 61 / var(--tw-text-opacity));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1{
