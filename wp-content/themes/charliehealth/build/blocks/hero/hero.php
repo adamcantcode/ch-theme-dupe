@@ -34,7 +34,7 @@ if ($style === 'image') {
         <?php if ($icon) : ?>
           <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health Shield" class="w-10">
         <?php endif; ?>
-        <h2 class="mb-0 font-heading-serif"><?= $subtitle; ?></h2>
+        <p class="mb-0 font-heading-serif lg:text-h2-lg text-h2"><?= $subtitle; ?></p>
       </div>
       <?php include(get_template_directory() . '/includes/button-group.php'); ?>
     </div>
@@ -53,7 +53,7 @@ if ($style === 'image') {
         <?php if ($icon) : ?>
           <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health Shield" class="w-10">
         <?php endif; ?>
-        <h4 class="mb-0 font-heading-serif text-20px"><?= $subtitle; ?></h3>
+        <p class="mb-0 font-heading-serif lg:text-h2-lg text-h2 "><?= $subtitle; ?></h3>
       </div>
       <?php include(get_template_directory() . '/includes/button-group.php'); ?>
     </div>
