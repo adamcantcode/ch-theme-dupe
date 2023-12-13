@@ -79,7 +79,7 @@
               <?php if ($pullQuote) : ?>
                 <h3 class="leading-[1.2] mb-sp-2 text-[28px]">“<?= $pullQuote; ?>.”</h3>
               <?php endif; ?>
-              <p class="leading-[1.6] mb-sp-8 text-[14px]"><?= $fullQuote; ?></p>
+              <p class="leading-[1.6] mb-sp-5 text-[14px]"><?= $fullQuote; ?></p>
               <p class="mb-0 leading-[1.6] text-[14px]">—<?= $attribution; ?></p>
             </div>
           <?php endwhile; ?>
