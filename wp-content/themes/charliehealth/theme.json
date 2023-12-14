@@ -65,7 +65,17 @@
         {
           "slug": "darker-blue",
           "color": "#161A3D",
-          "name": "Darker Blue"
+          "name": "Primary"
+        },
+        {
+          "slug": "primary-100",
+          "color": "#272D6C",
+          "name": "Primary 100"
+        },
+        {
+          "slug": "primary-200",
+          "color": "#1E225B",
+          "name": "Primary 200"
         },
         {
           "slug": "pale-blue-100",

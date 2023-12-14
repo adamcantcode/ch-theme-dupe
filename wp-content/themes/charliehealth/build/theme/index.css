@@ -1517,6 +1517,10 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-bottom: 0px !important;
 }
 
+.\!mb-sp-1{
+  margin-bottom: 0.25rem !important;
+}
+
 .\!mb-sp-2{
   margin-bottom: 0.5rem !important;
 }
@@ -1693,10 +1697,6 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-top: 2rem;
 }
 
-.\!mb-sp-1{
-  margin-bottom: 0.25rem !important;
-}
-
 .block{
   display: block;
 }
@@ -1749,6 +1749,10 @@ a.ch-button.button-tertiary.inverted:hover {
   height: 125px;
 }
 
+.h-\[130px\]{
+  height: 130px;
+}
+
 .h-\[150px\]{
   height: 150px;
 }
@@ -1783,6 +1787,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .h-\[5px\]{
   height: 5px;
+}
+
+.h-\[85px\]{
+  height: 85px;
 }
 
 .h-\[calc\(100vh-124px\)\]{
@@ -2850,18 +2858,6 @@ a.ch-button.button-tertiary.inverted:hover {
   padding-top: 0.75rem;
 }
 
-.pt-sp-8{
-  padding-top: 2rem;
-}
-
-.pt-sp-6{
-  padding-top: 1.5rem;
-}
-
-.pb-sp-4{
-  padding-bottom: 1rem;
-}
-
 .pt-sp-7{
   padding-top: 1.75rem;
 }
@@ -2892,6 +2888,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .font-heading-serif{
   font-family: "ABC Arizona", serif;
+}
+
+.\!text-\[13px\]{
+  font-size: 13px !important;
 }
 
 .\!text-\[1rem\]{
@@ -3047,14 +3047,6 @@ a.ch-button.button-tertiary.inverted:hover {
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-\[13px\]{
-  font-size: 13px;
-}
-
-.\!text-\[13px\]{
-  font-size: 13px !important;
 }
 
 .font-bold{
@@ -4908,10 +4900,6 @@ a.providers:hover {
     bottom: 0px;
   }
 
-  .lg\:left-\[33\%\]{
-    left: 33%;
-  }
-
   .lg\:left-sp-12{
     left: 3rem;
   }
@@ -5012,6 +5000,10 @@ a.providers:hover {
     margin-top: 98px;
   }
 
+  .lg\:mt-auto{
+    margin-top: auto;
+  }
+
   .lg\:mt-sp-14{
     margin-top: 4rem;
   }
@@ -5022,10 +5014,6 @@ a.providers:hover {
 
   .lg\:mt-sp-8{
     margin-top: 2rem;
-  }
-
-  .lg\:mt-auto{
-    margin-top: auto;
   }
 
   .lg\:block{
@@ -5112,6 +5100,10 @@ a.providers:hover {
     width: 130px;
   }
 
+  .lg\:w-\[300px\]{
+    width: 300px;
+  }
+
   .lg\:w-\[600px\]{
     width: 600px;
   }
@@ -5144,10 +5136,6 @@ a.providers:hover {
     width: 1.25rem;
   }
 
-  .lg\:w-\[300px\]{
-    width: 300px;
-  }
-
   .lg\:max-w-\[225px\]{
     max-width: 225px;
   }
@@ -5156,25 +5144,8 @@ a.providers:hover {
     max-width: 250px;
   }
 
-  .lg\:max-w-none{
-    max-width: none;
-  }
-
-  .lg\:max-w-\[320px\]{
-    max-width: 320px;
-  }
-
-  .lg\:max-w-\[325px\]{
-    max-width: 325px;
-  }
-
   .lg\:max-w-\[335px\]{
     max-width: 335px;
-  }
-
-  .lg\:-translate-x-1\/2{
-    --tw-translate-x: -50%;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
   .lg\:grid-flow-col{
@@ -5381,11 +5352,6 @@ a.providers:hover {
     background-image: linear-gradient(#fead80,#e2deca 50%,#bdc6fc);
   }
 
-  .lg\:object-cover{
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-
   .lg\:p-0{
     padding: 0px;
   }
@@ -5520,20 +5486,6 @@ a.providers:hover {
     line-height: 140%;
     letter-spacing: 0;
     font-weight: 500;
-  }
-
-  .lg\:text-h4-lg{
-    font-size: 1.5rem;
-    line-height: 1.8rem;
-    letter-spacing: 0;
-    font-weight: 400;
-  }
-
-  .lg\:\!text-h4-lg{
-    font-size: 1.5rem !important;
-    line-height: 1.8rem !important;
-    letter-spacing: 0 !important;
-    font-weight: 400 !important;
   }
 
   .lg\:leading-\[1\.2\]{
