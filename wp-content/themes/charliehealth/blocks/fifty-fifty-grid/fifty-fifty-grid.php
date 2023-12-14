@@ -3,7 +3,7 @@
     <InnerBlocks />
   </div>
   <div class="flex-grow">
-    <div class="grid items-start grid-cols-2 gap-sp-8 stats-block-grid-container">
+    <div class="grid items-start grid-cols-2 gap-sp-14 stats-block-grid-container">
       <?php if (have_rows('grid_item')) : while (have_rows('grid_item')) : the_row(); ?>
           <?php
           $stat    = get_sub_field('stat');
@@ -17,7 +17,7 @@
             <?php if ($stat) : ?>
               <span class="counter text-[56px] text-white leading-[1.1] font-heading-serif mb-sp-4 antialiased"><?= $stat; ?>%</span>
             <?php endif; ?>
-            <p class="text-center text-white lg:max-w-[225px]"><?= $details; ?></p>
+            <p class="text-center text-white lg:max-w-[225px] !mb-0"><?= $details; ?></p>
           </div>
       <?php endwhile;
       endif; ?>
