@@ -1517,6 +1517,10 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-bottom: 0px !important;
 }
 
+.\!mb-sp-1{
+  margin-bottom: 0.25rem !important;
+}
+
 .\!mb-sp-2{
   margin-bottom: 0.5rem !important;
 }
@@ -1745,6 +1749,10 @@ a.ch-button.button-tertiary.inverted:hover {
   height: 125px;
 }
 
+.h-\[130px\]{
+  height: 130px;
+}
+
 .h-\[150px\]{
   height: 150px;
 }
@@ -1779,6 +1787,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .h-\[5px\]{
   height: 5px;
+}
+
+.h-\[85px\]{
+  height: 85px;
 }
 
 .h-\[calc\(100vh-124px\)\]{
@@ -1893,6 +1905,10 @@ a.ch-button.button-tertiary.inverted:hover {
   width: 42px;
 }
 
+.w-\[50px\]{
+  width: 50px;
+}
+
 .w-\[555px\]{
   width: 555px;
 }
@@ -1920,10 +1936,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .w-screen{
   width: 100vw;
-}
-
-.w-sp-10{
-  width: 2.5rem;
 }
 
 .w-sp-2{
@@ -1984,6 +1996,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .max-w-\[85px\]{
   max-width: 85px;
+}
+
+.max-w-full{
+  max-width: 100%;
 }
 
 .flex-1{
@@ -2451,11 +2467,6 @@ a.ch-button.button-tertiary.inverted:hover {
   background-color: rgb(95 99 135 / var(--tw-bg-opacity));
 }
 
-.bg-\[\#E07058\]{
-  --tw-bg-opacity: 1;
-  background-color: rgb(224 112 88 / var(--tw-bg-opacity));
-}
-
 .bg-\[\#e07058\]{
   --tw-bg-opacity: 1;
   background-color: rgb(224 112 88 / var(--tw-bg-opacity));
@@ -2838,6 +2849,10 @@ a.ch-button.button-tertiary.inverted:hover {
   padding-top: 0.75rem;
 }
 
+.pt-sp-7{
+  padding-top: 1.75rem;
+}
+
 .text-center{
   text-align: center;
 }
@@ -2870,8 +2885,34 @@ a.ch-button.button-tertiary.inverted:hover {
   font-family: "ABC Arizona", serif;
 }
 
+.\!text-\[13px\]{
+  font-size: 13px !important;
+}
+
+.\!text-\[18px\]{
+  font-size: 18px !important;
+}
+
 .\!text-\[1rem\]{
   font-size: 1rem !important;
+}
+
+.\!text-\[20px\]{
+  font-size: 20px !important;
+}
+
+.\!text-h2{
+  font-size: 1.75rem !important;
+  line-height: 2.3rem !important;
+  letter-spacing: 0 !important;
+  font-weight: 400 !important;
+}
+
+.\!text-h2-lg{
+  font-size: 2.25rem !important;
+  line-height: 1.21 !important;
+  letter-spacing: 0 !important;
+  font-weight: 400 !important;
 }
 
 .\!text-h4{
@@ -2879,6 +2920,13 @@ a.ch-button.button-tertiary.inverted:hover {
   line-height: 140% !important;
   letter-spacing: 1% !important;
   font-weight: 400 !important;
+}
+
+.\!text-h5{
+  font-size: 1rem !important;
+  line-height: 140% !important;
+  letter-spacing: 0 !important;
+  font-weight: 500 !important;
 }
 
 .text-\[\.875rem\]{
@@ -3025,23 +3073,16 @@ a.ch-button.button-tertiary.inverted:hover {
   line-height: 1rem;
 }
 
-.\!text-\[56px\]{
-  font-size: 56px !important;
-}
-
-.\!text-h2-lg{
-  font-size: 2.25rem !important;
-  line-height: 1.21 !important;
-  letter-spacing: 0 !important;
-  font-weight: 400 !important;
-}
-
 .font-bold{
   font-weight: 700;
 }
 
 .font-normal{
   font-weight: 400;
+}
+
+.\!leading-\[1\.1\]{
+  line-height: 1.1 !important;
 }
 
 .leading-\[1\.1\]{
@@ -3640,20 +3681,14 @@ a.ch-button.button-tertiary.inverted:hover {
 
 /* Outcomes Revamp */
 
-.page-id-437 main > section:first-child, .page-id-4980 main > section:first-child {
+/* main > section:first-child {
     padding-bottom: 2rem !important;
-  }
-
-@media (min-width: 768px) {
-
-.page-id-437 main > section:first-child, .page-id-4980 main > section:first-child {
+    @media (min-width: 768px) {
       padding-top: 0 !important;
-      padding-bottom: 0 !important
-  }
+      padding-bottom: 0 !important;
     }
-
-@media (max-width: 479px) {
-      .page-id-437 main > section:first-child img, .page-id-4980 main > section:first-child img {
+    @media (max-width: 479px) {
+      img {
         left: 50%;
         margin-left: -50vw;
         margin-right: -50vw;
@@ -3663,6 +3698,7 @@ a.ch-button.button-tertiary.inverted:hover {
         width: 100vw;
       }
     }
+  } */
 
 .page-id-437 main > section h1, .page-id-4980 main > section h1 {
       font-size: 4rem;
@@ -4030,6 +4066,10 @@ a.ch-button.button-tertiary.inverted:hover {
 .swiper .swiper-pagination-bullet.swiper-pagination-bullet-active{
   --tw-bg-opacity: 1;
   background-color: rgb(33 41 132 / var(--tw-bg-opacity));
+}
+
+.swiper.swiper-testimonial-carousel-big .swiper-button-disabled{
+  opacity: 0.2;
 }
 
 @media (min-width: 1024px) {
@@ -4849,6 +4889,10 @@ a.providers:hover {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .md\:grid-cols-\[1fr_2fr_2fr_1fr\]{
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+  }
+
   .md\:gap-32{
     gap: 8rem;
   }
@@ -4881,10 +4925,6 @@ a.providers:hover {
 
   .lg\:bottom-0{
     bottom: 0px;
-  }
-
-  .lg\:left-\[33\%\]{
-    left: 33%;
   }
 
   .lg\:left-sp-12{
@@ -4987,6 +5027,10 @@ a.providers:hover {
     margin-top: 98px;
   }
 
+  .lg\:mt-auto{
+    margin-top: auto;
+  }
+
   .lg\:mt-sp-14{
     margin-top: 4rem;
   }
@@ -5083,6 +5127,10 @@ a.providers:hover {
     width: 130px;
   }
 
+  .lg\:w-\[300px\]{
+    width: 300px;
+  }
+
   .lg\:w-\[600px\]{
     width: 600px;
   }
@@ -5107,11 +5155,6 @@ a.providers:hover {
     width: auto;
   }
 
-  .lg\:w-fit{
-    width: -moz-fit-content;
-    width: fit-content;
-  }
-
   .lg\:w-full{
     width: 100%;
   }
@@ -5128,13 +5171,8 @@ a.providers:hover {
     max-width: 250px;
   }
 
-  .lg\:max-w-none{
-    max-width: none;
-  }
-
-  .lg\:-translate-x-1\/2{
-    --tw-translate-x: -50%;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  .lg\:max-w-\[335px\]{
+    max-width: 335px;
   }
 
   .lg\:grid-flow-col{
@@ -5341,11 +5379,6 @@ a.providers:hover {
     background-image: linear-gradient(#fead80,#e2deca 50%,#bdc6fc);
   }
 
-  .lg\:object-cover{
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-
   .lg\:p-0{
     padding: 0px;
   }
@@ -5424,8 +5457,8 @@ a.providers:hover {
     font-size: 2rem;
   }
 
-  .lg\:text-\[41px\]{
-    font-size: 41px;
+  .lg\:text-\[56px\]{
+    font-size: 56px;
   }
 
   .lg\:text-\[64px\]{
@@ -5476,14 +5509,6 @@ a.providers:hover {
     line-height: 140%;
     letter-spacing: 0;
     font-weight: 500;
-  }
-
-  .lg\:\!text-\[56px\]{
-    font-size: 56px !important;
-  }
-
-  .lg\:text-\[56px\]{
-    font-size: 56px;
   }
 
   .lg\:leading-\[1\.2\]{

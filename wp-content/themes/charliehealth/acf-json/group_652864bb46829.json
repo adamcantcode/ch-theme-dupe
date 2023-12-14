@@ -104,6 +104,13 @@
                 "operator": "==",
                 "value": "acf\/fifty-fifty-grid-block"
             }
+        ],
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/tri-grid-block"
+            }
         ]
     ],
     "menu_order": 0,
@@ -115,5 +122,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1697146657
+    "modified": 1702580186
 }

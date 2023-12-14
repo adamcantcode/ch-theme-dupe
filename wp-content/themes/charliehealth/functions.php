@@ -97,6 +97,8 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/outcomes-block');
   register_block_type(__DIR__ . '/build/blocks/iop-overview');
   register_block_type(__DIR__ . '/build/blocks/aoc-list');
+  register_block_type(__DIR__ . '/build/blocks/fifty-fifty-grid-graph');
+  register_block_type(__DIR__ . '/build/blocks/tri-grid');
 }
 add_action('init', 'register_acf_blocks', 5);
 
@@ -650,11 +652,16 @@ add_filter('should_load_separate_core_block_assets', '__return_true');
 // $test = 'bg-dark-teal'
 // $test = 'bg-primary-black-blue'
 // $test = 'bg-darker-blue'
+// $test = 'bg-primary-100'
+// $test = 'bg-primary-200'
 // $test = 'bg-orange-200'
 // $test = 'mt-0'
 // $test = 'bg-off-white'
 // $test = 'bg-grey-warm'
 // $test = 'bg-pale-blue-300'
+// $test = 'bg-pale-blue-100'
+
+// $test = '!text-h2-lg !text-h2 !font-heading !font-heading-serif !text-h5'
 // $test = 'bg-pale-blue-100'
 
 // mobileMenuX[0].classList.add('top-1/2', '-translate-y-1/2');

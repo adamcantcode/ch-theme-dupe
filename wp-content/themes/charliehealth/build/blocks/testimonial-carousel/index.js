@@ -10631,18 +10631,14 @@ window.addEventListener('DOMContentLoaded', () => {
   var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper.swiper-testimonial-carousel-big', {
     slidesPerView: 2,
     centeredSlides: true,
-    loop: true,
+    loop: false,
     parallax: true,
     effect: 'fade',
     fadeEffect: {
       crossFade: true
     },
     speed: 1000,
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    },
+    pagination: false,
     navigation: {
       nextEl: '.swiper-button-next-testimonial',
       prevEl: '.swiper-button-prev-testimonial'

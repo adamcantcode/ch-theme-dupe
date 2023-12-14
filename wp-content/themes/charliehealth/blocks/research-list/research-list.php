@@ -28,7 +28,7 @@ $articles = get_field('articles');
     <h2><?= $heading; ?></h2>
     <p><?= $subhead; ?></p>
     <?php if ($image) : ?>
-      <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>">
+      <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="lg:w-[300px] w-full">
     <?php endif; ?>
   </div>
   <div class="sticky-split-info">
