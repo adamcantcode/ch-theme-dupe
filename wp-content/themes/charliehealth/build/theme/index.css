@@ -1893,6 +1893,10 @@ a.ch-button.button-tertiary.inverted:hover {
   width: 42px;
 }
 
+.w-\[50px\]{
+  width: 50px;
+}
+
 .w-\[555px\]{
   width: 555px;
 }
@@ -4012,6 +4016,10 @@ a.ch-button.button-tertiary.inverted:hover {
   background-color: rgb(33 41 132 / var(--tw-bg-opacity));
 }
 
+.swiper.swiper-testimonial-carousel-big .swiper-button-disabled{
+  opacity: 0.2;
+}
+
 @media (min-width: 1024px) {
 
 .swiper.swiper-testimonial-carousel-big .swiper-pagination-bullets{
@@ -5085,11 +5093,6 @@ a.providers:hover {
 
   .lg\:w-auto{
     width: auto;
-  }
-
-  .lg\:w-fit{
-    width: -moz-fit-content;
-    width: fit-content;
   }
 
   .lg\:w-full{

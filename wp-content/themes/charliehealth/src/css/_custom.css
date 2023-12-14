@@ -390,6 +390,9 @@
     }
   }
   &.swiper-testimonial-carousel-big {
+    .swiper-button-disabled {
+      @apply opacity-20
+    }
     .swiper-pagination-bullets {
       @screen lg {
         @apply left-0 w-[initial] top-0;
