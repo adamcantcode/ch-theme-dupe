@@ -15,7 +15,7 @@
               <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="mb-sp-4">
             <?php endif; ?>
             <?php if ($stat) : ?>
-              <span class="counter text-[56px] text-white leading-[1.1] font-heading-serif mb-sp-4"><?= $stat; ?>%</span>
+              <span class="counter text-[56px] text-white leading-[1.1] font-heading-serif mb-sp-4 antialiased"><?= $stat; ?>%</span>
             <?php endif; ?>
             <p class="text-center text-white lg:max-w-[225px]"><?= $details; ?></p>
           </div>
