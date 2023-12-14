@@ -22,7 +22,7 @@
 /* Outcomes Revamp */
 .page-id-437,
 .page-id-4980 {
-  main > section:first-child {
+  /* main > section:first-child {
     padding-bottom: 2rem !important;
     @media (min-width: 768px) {
       padding-top: 0 !important;
@@ -39,7 +39,7 @@
         width: 100vw;
       }
     }
-  }
+  } */
   main > section {
     h1 {
       font-size: 4rem;

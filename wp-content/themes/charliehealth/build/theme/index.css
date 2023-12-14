@@ -2151,6 +2151,10 @@ a.ch-button.button-tertiary.inverted:hover {
   grid-template-columns: 2fr 1fr;
 }
 
+.grid-cols-\[1fr_2fr_2fr_1fr\]{
+  grid-template-columns: 1fr 2fr 2fr 1fr;
+}
+
 .flex-col{
   flex-direction: column;
 }
@@ -2882,6 +2886,10 @@ a.ch-button.button-tertiary.inverted:hover {
   font-family: "ABC Social", sans-serif !important;
 }
 
+.\!font-heading-serif{
+  font-family: "ABC Arizona", serif !important;
+}
+
 .font-heading{
   font-family: "ABC Social", sans-serif;
 }
@@ -2896,6 +2904,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .\!text-\[1rem\]{
   font-size: 1rem !important;
+}
+
+.\!text-\[20px\]{
+  font-size: 20px !important;
 }
 
 .\!text-h4{
@@ -3103,6 +3115,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .leading-tight{
   line-height: 1.25;
+}
+
+.\!leading-\[1\.1\]{
+  line-height: 1.1 !important;
 }
 
 .text-\[\#87889A\]{
@@ -3653,20 +3669,14 @@ a.ch-button.button-tertiary.inverted:hover {
 
 /* Outcomes Revamp */
 
-.page-id-437 main > section:first-child, .page-id-4980 main > section:first-child {
+/* main > section:first-child {
     padding-bottom: 2rem !important;
-  }
-
-@media (min-width: 768px) {
-
-.page-id-437 main > section:first-child, .page-id-4980 main > section:first-child {
+    @media (min-width: 768px) {
       padding-top: 0 !important;
-      padding-bottom: 0 !important
-  }
+      padding-bottom: 0 !important;
     }
-
-@media (max-width: 479px) {
-      .page-id-437 main > section:first-child img, .page-id-4980 main > section:first-child img {
+    @media (max-width: 479px) {
+      img {
         left: 50%;
         margin-left: -50vw;
         margin-right: -50vw;
@@ -3676,6 +3686,7 @@ a.ch-button.button-tertiary.inverted:hover {
         width: 100vw;
       }
     }
+  } */
 
 .page-id-437 main > section h1, .page-id-4980 main > section h1 {
       font-size: 4rem;
@@ -4864,6 +4875,10 @@ a.providers:hover {
 
   .md\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-\[1fr_2fr_2fr_1fr\]{
+    grid-template-columns: 1fr 2fr 2fr 1fr;
   }
 
   .md\:gap-32{
