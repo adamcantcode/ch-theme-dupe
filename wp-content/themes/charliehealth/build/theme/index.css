@@ -2898,6 +2898,10 @@ a.ch-button.button-tertiary.inverted:hover {
   font-size: 13px !important;
 }
 
+.\!text-\[18px\]{
+  font-size: 18px !important;
+}
+
 .\!text-\[1rem\]{
   font-size: 1rem !important;
 }
@@ -2906,11 +2910,32 @@ a.ch-button.button-tertiary.inverted:hover {
   font-size: 20px !important;
 }
 
+.\!text-h2{
+  font-size: 1.75rem !important;
+  line-height: 2.3rem !important;
+  letter-spacing: 0 !important;
+  font-weight: 400 !important;
+}
+
+.\!text-h2-lg{
+  font-size: 2.25rem !important;
+  line-height: 1.21 !important;
+  letter-spacing: 0 !important;
+  font-weight: 400 !important;
+}
+
 .\!text-h4{
   font-size: 1.25rem !important;
   line-height: 140% !important;
   letter-spacing: 1% !important;
   font-weight: 400 !important;
+}
+
+.\!text-h5{
+  font-size: 1rem !important;
+  line-height: 140% !important;
+  letter-spacing: 0 !important;
+  font-weight: 500 !important;
 }
 
 .text-\[\.875rem\]{
@@ -3055,31 +3080,6 @@ a.ch-button.button-tertiary.inverted:hover {
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.\!text-\[18px\]{
-  font-size: 18px !important;
-}
-
-.\!text-h2{
-  font-size: 1.75rem !important;
-  line-height: 2.3rem !important;
-  letter-spacing: 0 !important;
-  font-weight: 400 !important;
-}
-
-.\!text-h2-lg{
-  font-size: 2.25rem !important;
-  line-height: 1.21 !important;
-  letter-spacing: 0 !important;
-  font-weight: 400 !important;
-}
-
-.\!text-h5{
-  font-size: 1rem !important;
-  line-height: 140% !important;
-  letter-spacing: 0 !important;
-  font-weight: 500 !important;
 }
 
 .font-bold{
