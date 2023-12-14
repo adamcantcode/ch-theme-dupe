@@ -2858,6 +2858,10 @@ a.ch-button.button-tertiary.inverted:hover {
   font-family: "ABC Social", sans-serif !important;
 }
 
+.\!font-heading-serif{
+  font-family: "ABC Arizona", serif !important;
+}
+
 .font-heading{
   font-family: "ABC Social", sans-serif;
 }
@@ -3021,6 +3025,17 @@ a.ch-button.button-tertiary.inverted:hover {
   line-height: 1rem;
 }
 
+.\!text-\[56px\]{
+  font-size: 56px !important;
+}
+
+.\!text-h2-lg{
+  font-size: 2.25rem !important;
+  line-height: 1.21 !important;
+  letter-spacing: 0 !important;
+  font-weight: 400 !important;
+}
+
 .font-bold{
   font-weight: 700;
 }
@@ -3118,6 +3133,11 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .no-underline{
   text-decoration-line: none;
+}
+
+.antialiased{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .opacity-0{
@@ -5408,10 +5428,6 @@ a.providers:hover {
     font-size: 41px;
   }
 
-  .lg\:text-\[56px\]{
-    font-size: 56px;
-  }
-
   .lg\:text-\[64px\]{
     font-size: 64px;
   }
@@ -5460,6 +5476,14 @@ a.providers:hover {
     line-height: 140%;
     letter-spacing: 0;
     font-weight: 500;
+  }
+
+  .lg\:\!text-\[56px\]{
+    font-size: 56px !important;
+  }
+
+  .lg\:text-\[56px\]{
+    font-size: 56px;
   }
 
   .lg\:leading-\[1\.2\]{
