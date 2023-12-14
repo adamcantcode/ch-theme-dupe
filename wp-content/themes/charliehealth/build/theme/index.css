@@ -4992,6 +4992,10 @@ a.providers:hover {
     margin-top: 2rem;
   }
 
+  .lg\:mt-auto{
+    margin-top: auto;
+  }
+
   .lg\:block{
     display: block;
   }

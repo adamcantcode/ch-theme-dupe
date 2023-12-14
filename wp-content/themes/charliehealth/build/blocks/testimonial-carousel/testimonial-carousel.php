@@ -18,12 +18,12 @@
             <div class="flex flex-col h-full lg:grid lg:grid-cols-2 lg:gap-[10rem]">
               <div class="order-2 lg:order-1 lg:mb-sp-16 mb-sp-8">
                 <p class="md:mt-sp-14 mb-sp-8 text-h5">In their words</p>
-                <div class="text-[56px] text-primary leading-[1.1] font-heading-serif mb-sp-8">“<?= $pull_quote; ?>”</div>
+                <div class="text-[56px] text-primary leading-[1.1] font-heading-serif mb-sp-8 antialiased">“<?= $pull_quote; ?>”</div>
                 <p><?= $full_quote; ?></p>
                 <p class="mb-0 lg:mb-sp-14">— <?= $age; ?> Client</p>
               </div>
-              <div class="relative order-1 lg:order-2 mt-sp-14 lg:mt-0 mb-sp-8 lg:mb-0">
-                <img src="<?= $illo['url']; ?>" alt="<?= $illo['alt']; ?>" class="object-contain mx-auto lg:object-cover lg:absolute lg:max-w-none lg:left-[33%] lg:-translate-x-1/2 lg:h-full">
+              <div class="relative order-1 lg:order-2 mt-sp-14 lg:mt-auto mb-sp-8 lg:mb-0">
+                <img src="<?= $illo['url']; ?>" alt="<?= $illo['alt']; ?>" class="object-cover">
               </div>
             </div>
           </div>
