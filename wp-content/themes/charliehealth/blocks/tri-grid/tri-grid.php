@@ -3,7 +3,7 @@
     <InnerBlocks />
   </div>
   <div class="flex-grow">
-    <div class="grid items-start grid-cols-3 gap-sp-5 tri-grid-container">
+    <div class="grid items-start grid-cols-1 lg:grid-cols-3 gap-sp-5 tri-grid-container">
       <?php if (have_rows('grid_item')) : while (have_rows('grid_item')) : the_row(); ?>
           <?php
           $stat    = get_sub_field('stat');

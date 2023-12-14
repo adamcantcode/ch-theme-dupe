@@ -1,4 +1,4 @@
-<?php 
+<?php
 $statOne = get_field('stat_one');
 $statTwo = get_field('stat_two');
 $detailsOne = get_field('details_one');
@@ -10,8 +10,8 @@ $detailsTwo = get_field('details_two');
     <InnerBlocks />
   </div>
   <div class="flex-grow">
-    <div class="grid md:grid-cols-[1fr_2fr_2fr_1fr] gap-sp-5 items-end stats-block-grid-graph-container grid-cols-1">
-      <div></div>
+    <div class="grid md:grid-cols-[1fr_2fr_2fr_1fr] gap-sp-5 items-end stats-block-grid-graph-container grid-cols-2">
+      <div class="lg:block noshow"></div>
       <div class="text-center stats-block-grid-graph">
         <span class="counter block text-[56px] text-white leading-[1.1] font-heading-serif mb-sp-4 antialiased"><?= $statOne; ?>%</span>
         <div class="graph flex flex-col justify-center items-center bg-lavender-300 w-full h-[130px] p-sp-4">
@@ -27,7 +27,7 @@ $detailsTwo = get_field('details_two');
           <p class="!mb-0 text-center text-primary !leading-[1.1]"><?= $detailsTwo; ?></p>
         </div>
       </div>
-      <div></div>
+      <div class="lg:block noshow"></div>
     </div>
   </div>
 </div>
