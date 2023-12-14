@@ -2151,10 +2151,6 @@ a.ch-button.button-tertiary.inverted:hover {
   grid-template-columns: 2fr 1fr;
 }
 
-.grid-cols-\[1fr_2fr_2fr_1fr\]{
-  grid-template-columns: 1fr 2fr 2fr 1fr;
-}
-
 .flex-col{
   flex-direction: column;
 }
@@ -3069,6 +3065,10 @@ a.ch-button.button-tertiary.inverted:hover {
   font-weight: 400;
 }
 
+.\!leading-\[1\.1\]{
+  line-height: 1.1 !important;
+}
+
 .leading-\[1\.1\]{
   line-height: 1.1;
 }
@@ -3115,10 +3115,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .leading-tight{
   line-height: 1.25;
-}
-
-.\!leading-\[1\.1\]{
-  line-height: 1.1 !important;
 }
 
 .text-\[\#87889A\]{
