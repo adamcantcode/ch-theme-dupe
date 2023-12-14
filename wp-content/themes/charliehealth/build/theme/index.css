@@ -5103,6 +5103,10 @@ a.providers:hover {
     width: 1.25rem;
   }
 
+  .lg\:w-\[300px\]{
+    width: 300px;
+  }
+
   .lg\:max-w-\[225px\]{
     max-width: 225px;
   }
