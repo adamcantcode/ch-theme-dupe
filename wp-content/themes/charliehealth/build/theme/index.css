@@ -1693,6 +1693,10 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-top: 2rem;
 }
 
+.\!mb-sp-1{
+  margin-bottom: 0.25rem !important;
+}
+
 .block{
   display: block;
 }
@@ -1988,6 +1992,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .max-w-\[85px\]{
   max-width: 85px;
+}
+
+.max-w-full{
+  max-width: 100%;
 }
 
 .flex-1{
@@ -2842,6 +2850,22 @@ a.ch-button.button-tertiary.inverted:hover {
   padding-top: 0.75rem;
 }
 
+.pt-sp-8{
+  padding-top: 2rem;
+}
+
+.pt-sp-6{
+  padding-top: 1.5rem;
+}
+
+.pb-sp-4{
+  padding-bottom: 1rem;
+}
+
+.pt-sp-7{
+  padding-top: 1.75rem;
+}
+
 .text-center{
   text-align: center;
 }
@@ -3023,6 +3047,14 @@ a.ch-button.button-tertiary.inverted:hover {
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-\[13px\]{
+  font-size: 13px;
+}
+
+.\!text-\[13px\]{
+  font-size: 13px !important;
 }
 
 .font-bold{
@@ -5128,6 +5160,18 @@ a.providers:hover {
     max-width: none;
   }
 
+  .lg\:max-w-\[320px\]{
+    max-width: 320px;
+  }
+
+  .lg\:max-w-\[325px\]{
+    max-width: 325px;
+  }
+
+  .lg\:max-w-\[335px\]{
+    max-width: 335px;
+  }
+
   .lg\:-translate-x-1\/2{
     --tw-translate-x: -50%;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -5476,6 +5520,20 @@ a.providers:hover {
     line-height: 140%;
     letter-spacing: 0;
     font-weight: 500;
+  }
+
+  .lg\:text-h4-lg{
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+
+  .lg\:\!text-h4-lg{
+    font-size: 1.5rem !important;
+    line-height: 1.8rem !important;
+    letter-spacing: 0 !important;
+    font-weight: 400 !important;
   }
 
   .lg\:leading-\[1\.2\]{
