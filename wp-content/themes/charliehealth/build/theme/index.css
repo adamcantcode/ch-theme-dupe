@@ -1697,6 +1697,10 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-top: 2rem;
 }
 
+.mb-sp-14{
+  margin-bottom: 4rem;
+}
+
 .block{
   display: block;
 }
@@ -1755,6 +1759,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .h-\[150px\]{
   height: 150px;
+}
+
+.h-\[15px\]{
+  height: 15px;
 }
 
 .h-\[1px\]{
@@ -1883,6 +1891,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .w-10{
   width: 2.5rem;
+}
+
+.w-\[15px\]{
+  width: 15px;
 }
 
 .w-\[240px\]{
@@ -2288,6 +2300,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .gap-y-sp-8{
   row-gap: 2rem;
+}
+
+.gap-y-sp-2{
+  row-gap: 0.5rem;
 }
 
 .self-start{
@@ -3671,13 +3687,15 @@ a.ch-button.button-tertiary.inverted:hover {
     font-size: 140px;
     line-height: .8;
   }
+    .home h2{
+    font-family: "ABC Arizona", serif;
+    font-size: 40px;
+    line-height: 1.1;
+  }
       a.home .features-block-intro h2:hover {
         color: #ffffff;
       }
       .home .features-block-intro h2{
-    font-family: "ABC Arizona", serif;
-    font-size: 40px;
-    line-height: 1.1;
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
@@ -3690,6 +3708,11 @@ a.ch-button.button-tertiary.inverted:hover {
     line-height: 1.6;
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+      .home .home-testimonials p{
+    font-family: "ABC Social", sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
   }
 }
 
@@ -5289,6 +5312,10 @@ a.providers:hover {
 
   .lg\:grid-cols-\[4fr_1fr_7fr\]{
     grid-template-columns: 4fr 1fr 7fr;
+  }
+
+  .lg\:grid-cols-\[7fr_1fr_4fr\]{
+    grid-template-columns: 7fr 1fr 4fr;
   }
 
   .lg\:grid-cols-\[unset\]{

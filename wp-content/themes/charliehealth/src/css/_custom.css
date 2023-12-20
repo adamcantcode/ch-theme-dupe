@@ -6,14 +6,22 @@
     h1 {
       @apply text-[140px] leading-[.8] mb-sp-12;
     }
+    h2 {
+      @apply font-heading-serif text-[40px] leading-[1.1];
+    }
     .features-block-intro {
       h2 {
-        @apply font-heading-serif text-[40px] leading-[1.1] text-white;
+        @apply text-white;
       }
     }
     .features-block-callout {
       > p {
         @apply text-[20px] leading-[1.6] text-white font-heading;
+      }
+    }
+    .home-testimonials {
+      p {
+        @apply text-[14px] leading-[1.6] font-heading;
       }
     }
   }

@@ -4,10 +4,14 @@ $calloutCopy = get_field('callout_copy');
 $features = get_field('features');
 ?>
 
-<div class="features-block grid grid-cols-1 gap-sp-14 lg:gap-sp-5 lg:grid-cols-[4fr_1fr_7fr] items-start">
+<div class="grid grid-cols-1 gap-sp-14 lg:gap-sp-5 lg:grid-cols-[7fr_1fr_4fr]">
   <div class="features-block-intro">
+    <div>
+      <span class="relative z-20 self-start bg-yellow-300 rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8">Parents</span>
+      <span class="relative z-20 self-start rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 bg-lavender-300">Parents</span>
+      <span class="relative z-20 self-start rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 bg-pale-blue-300">Parents</span>
+    </div>
     <h2><?= $heading; ?></h2>
-    <?php include(get_template_directory() . '/includes/button-group.php'); ?>
   </div>
   <div></div>
   <div class="features-block-callout">
