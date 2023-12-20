@@ -43,9 +43,9 @@
             $count++;
             $anonymous = get_field('anonymous', get_the_ID());
             if ($anonymous === false) {
-              $attribution = get_field('attribution', get_the_ID());
+              $attribution = abbreviateAfterFirstWord(get_field('attribution', get_the_ID()));
             } else {
-              $attribution = 'Anonymous';
+              $attribution = 'Charlie Health Alum';
             }
             $pullQuote = get_field('pull-quote', get_the_ID());
             $fullQuote = get_field('full_quote', get_the_ID());

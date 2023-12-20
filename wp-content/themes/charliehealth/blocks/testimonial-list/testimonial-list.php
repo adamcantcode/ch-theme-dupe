@@ -38,9 +38,9 @@ $group = get_field('group')
         <?php
         $anonymous = get_field('anonymous', get_the_ID());
         if ($anonymous === false) {
-          $attribution = get_field('attribution', get_the_ID());
+          $attribution = abbreviateAfterFirstWord(get_field('attribution', get_the_ID()));
         } else {
-          $attribution = 'Anonymous';
+          $attribution = 'Charlie Health Alum';
         }
         $pullQuote = get_field('pull-quote', get_the_ID());
         $fullQuote = get_field('full_quote', get_the_ID());
@@ -94,9 +94,9 @@ $group = get_field('group')
 
             $anonymous = get_field('anonymous', $postID);
             if ($anonymous === false) {
-              $attribution = get_field('attribution', $postID);
+              $attribution = abbreviateAfterFirstWord(get_field('attribution', $postID));
             } else {
-              $attribution = 'Anonymous';
+              $attribution = 'Charlie Health Alum';
             }
             $pullQuote = get_field('pull-quote', $postID);
             $fullQuote = get_field('full_quote', $postID);
@@ -147,9 +147,9 @@ $group = get_field('group')
 
                 $anonymous = get_field('anonymous', $postID);
                 if ($anonymous === false) {
-                  $attribution = get_field('attribution', $postID);
+                  $attribution = abbreviateAfterFirstWord(get_field('attribution', $postID));
                 } else {
-                  $attribution = 'Anonymous';
+                  $attribution = 'Charlie Health Alum';
                 }
                 $pullQuote = get_field('pull-quote', $postID);
                 $fullQuote = get_field('full_quote', $postID);
