@@ -1,25 +1,16 @@
-.single-areas-of-care,
-.single-treatment-modalities {
-  .main-article-content {
-    section {
-      .acf-innerblocks-container {
-        & > {
-          img {
-            @apply rounded-md;
-          }
-          figure {
-            @apply mb-sp-6;
-            @screen lg {
-              @apply text-p-lg;
-            }
-          }
-        }
-      }
+/* *** Custom Pages *** */
+
+/* Home */
+@screen lg {
+  .home {
+    h1 {
+      @apply text-[140px] leading-[.8] mb-sp-12;
     }
   }
 }
+/* END Home */
 
-/* Outcomes Revamp */
+/* Outcomes */
 .page-id-437,
 .page-id-4980 {
   /* main > section:first-child {
@@ -79,9 +70,9 @@
     }
   }
 }
+/* END Outomes */
 
-/* IOP Page */
-
+/* IOP */
 .page-id-435 {
   main > section {
     .hero-cta {
@@ -219,6 +210,31 @@
     }
   }
 }
+/* END IOP */
+
+/* *** END Custom Pages *** */
+
+.single-areas-of-care,
+.single-treatment-modalities {
+  .main-article-content {
+    section {
+      .acf-innerblocks-container {
+        & > {
+          img {
+            @apply rounded-md;
+          }
+          figure {
+            @apply mb-sp-6;
+            @screen lg {
+              @apply text-p-lg;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 #articleContent {
   & > div {
     & > div {
@@ -391,7 +407,7 @@
   }
   &.swiper-testimonial-carousel-big {
     .swiper-button-disabled {
-      @apply opacity-20
+      @apply opacity-20;
     }
     .swiper-pagination-bullets {
       @screen lg {

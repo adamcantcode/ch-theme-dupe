@@ -3661,25 +3661,21 @@ a.ch-button.button-tertiary.inverted:hover {
 
 /* CUSTOM STYELS */
 
-.single-areas-of-care .main-article-content section .acf-innerblocks-container > img, .single-treatment-modalities .main-article-content section .acf-innerblocks-container > img{
-  border-radius: 1.25rem;
-}
+/* *** Custom Pages *** */
 
-.single-areas-of-care .main-article-content section .acf-innerblocks-container > figure, .single-treatment-modalities .main-article-content section .acf-innerblocks-container > figure{
-  margin-bottom: 1.5rem;
-}
+/* Home */
 
 @media (min-width: 1024px) {
-
-.single-areas-of-care .main-article-content section .acf-innerblocks-container > figure, .single-treatment-modalities .main-article-content section .acf-innerblocks-container > figure{
-    font-size: 1.125rem;
-    line-height: 1.8rem;
-    letter-spacing: 0;
-    font-weight: 400;
+    .home h1{
+    margin-bottom: 3rem;
+    font-size: 140px;
+    line-height: .8;
   }
-            }
+}
 
-/* Outcomes Revamp */
+/* END Home */
+
+/* Outcomes */
 
 /* main > section:first-child {
     padding-bottom: 2rem !important;
@@ -3745,7 +3741,9 @@ a.ch-button.button-tertiary.inverted:hover {
       padding-top: 4rem;
     }
 
-/* IOP Page */
+/* END Outomes */
+
+/* IOP */
 
 .page-id-435 main > section .hero-cta .fix-order {
         display: grid;
@@ -3874,6 +3872,28 @@ a.ch-button.button-tertiary.inverted:hover {
         max-width: 550px;
       }
 }
+
+/* END IOP */
+
+/* *** END Custom Pages *** */
+
+.single-areas-of-care .main-article-content section .acf-innerblocks-container > img, .single-treatment-modalities .main-article-content section .acf-innerblocks-container > img{
+  border-radius: 1.25rem;
+}
+
+.single-areas-of-care .main-article-content section .acf-innerblocks-container > figure, .single-treatment-modalities .main-article-content section .acf-innerblocks-container > figure{
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+
+.single-areas-of-care .main-article-content section .acf-innerblocks-container > figure, .single-treatment-modalities .main-article-content section .acf-innerblocks-container > figure{
+    font-size: 1.125rem;
+    line-height: 1.8rem;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+            }
 
 #articleContent > div > div{
   margin-bottom: 1.5rem;
