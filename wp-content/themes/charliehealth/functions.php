@@ -99,6 +99,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/aoc-list');
   register_block_type(__DIR__ . '/build/blocks/fifty-fifty-grid-graph');
   register_block_type(__DIR__ . '/build/blocks/tri-grid');
+  register_block_type(__DIR__ . '/build/blocks/features');
 }
 add_action('init', 'register_acf_blocks', 5);
 

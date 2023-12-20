@@ -3671,6 +3671,26 @@ a.ch-button.button-tertiary.inverted:hover {
     font-size: 140px;
     line-height: .8;
   }
+      a.home .features-block-intro h2:hover {
+        color: #ffffff;
+      }
+      .home .features-block-intro h2{
+    font-family: "ABC Arizona", serif;
+    font-size: 40px;
+    line-height: 1.1;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+      a.home .features-block-callout > p:hover {
+        color: #ffffff;
+      }
+      .home .features-block-callout > p{
+    font-family: "ABC Social", sans-serif;
+    font-size: 20px;
+    line-height: 1.6;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
 }
 
 /* END Home */
@@ -5313,6 +5333,10 @@ a.providers:hover {
 
   .lg\:gap-sp-16{
     gap: 6rem;
+  }
+
+  .lg\:gap-sp-5{
+    gap: 1.25rem;
   }
 
   .lg\:gap-sp-6{
