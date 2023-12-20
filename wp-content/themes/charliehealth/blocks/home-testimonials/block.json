@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "acf/home-testimonials-block",
+  "title": "Home Testimonials",
+  "description": "List features of CH IOP.",
+  "style": "file:./index.css",
+  "script": "file:./index.js",
+  "category": "custom",
+  "icon": "columns",
+  "apiVersion": 2,
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "home-testimonials.php"
+  },
+  "supports": {}
+}
