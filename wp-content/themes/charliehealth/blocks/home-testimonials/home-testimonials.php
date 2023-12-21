@@ -30,19 +30,17 @@ $heading = get_field('heading');
   </div>
   <div></div>
   <?php if (have_rows('illustrations')) : ?>
-    <div class="relative">
-      <div class="absolute">
-        <!-- parent grid fix for swiper wrap -->
-        <div class="w-full overflow-hidden">
-          <div class="h-full swiper swiper-home-test">
-            <div class="swiper-wrapper">
-              <?php while (have_rows('illustrations')) : the_row(); ?>
-                <div class="swiper-slide">
-                  <img src="<?= get_sub_field('image')['sizes']['featured-large']; ?>" alt="<?= get_sub_field('image')['alt']; ?>">
-                </div>
-              <?php endwhile; ?>
+    <!-- parent grid fix for swiper wrap -->
+    <div class="w-full overflow-hidden">
+      <div class="h-full swiper swiper-home-test">
+        <div class="swiper-wrapper">
+          <?php while (have_rows('illustrations')) : the_row(); ?>
+            <div class="swiper-slide">
+              <div class="absolute top-0 left-0">
+                <img src="<?= get_sub_field('image')['sizes']['featured-large']; ?>" alt="<?= get_sub_field('image')['alt']; ?>">
+              </div>
             </div>
-          </div>
+          <?php endwhile; ?>
         </div>
       </div>
     </div>
