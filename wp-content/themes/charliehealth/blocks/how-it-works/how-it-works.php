@@ -11,7 +11,7 @@ $image = get_field('image');
   <div>
     <h2>How it works</h2>
     <?php if (have_rows('steps')) : ?>
-      <div class="grid grid-cols-1 gap-sp-2">
+      <div class="grid grid-cols-1 gap-sp-3">
         <?php while (have_rows('steps')) : the_row(); ?>
           <div class="grid grid-cols-[2fr_5fr] gap-sp-5 bg-white rounded-[6px] py-sp-4 px-sp-6 items-center">
             <h3 class="mb-0 text-[20px] leading-[1.4]"><?= get_sub_field('heading'); ?></h3>
