@@ -9,7 +9,7 @@ $features = get_field('features');
   <span class="relative z-20 self-start rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 bg-lavender-300">Young Adults</span>
   <span class="relative z-20 self-start rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 bg-pale-blue-300">Teens</span>
 </div>
-<div class="grid grid-cols-1 gap-sp-14 lg:gap-sp-5 lg:grid-cols-[7fr_1fr_4fr] home-testimonials">
+<div class="grid grid-cols-1 gap-sp-14 lg:gap-sp-5 lg:grid-cols-[minmax(0,_7fr)_minmax(0,_1fr)_minmax(0,_4fr)] home-testimonials relative">
   <div>
     <h2 class="mb-sp-14">Real stories of hope & healing</h2>
     <div class="grid gap-y-sp-2">
@@ -53,17 +53,17 @@ $features = get_field('features');
   </div>
   <div></div>
   <!-- parent grid fix for swiper wrap -->
-  <div class="w-full overflow-hidden">
-    <div class="h-full swiper swiper-home-test">
-      <div class="swiper-wrapper">
-        <div class="relative swiper-slide">
-          <div class="absolute">
-            <img src="https://placehold.co/670x670" alt="">
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="relative">
-            <img src="https://placehold.co/670x670" alt="">
+  <div class="relative">
+    <div class="absolute">
+      <div class="w-full overflow-hidden">
+        <div class="h-full swiper swiper-home-test">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="https://placehold.co/670x670" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="https://placehold.co/670x670" alt="">
+            </div>
           </div>
         </div>
       </div>
