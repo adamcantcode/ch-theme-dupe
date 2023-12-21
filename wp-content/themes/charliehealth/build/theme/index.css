@@ -2199,6 +2199,10 @@ a.ch-button.button-tertiary.inverted:hover {
   justify-items: center;
 }
 
+.gap-0{
+  gap: 0px;
+}
+
 .gap-4{
   gap: 1rem;
 }
