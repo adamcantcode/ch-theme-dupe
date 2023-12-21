@@ -10628,7 +10628,7 @@ __webpack_require__.r(__webpack_exports__);
 // import styles bundle
 
 window.addEventListener('DOMContentLoaded', () => {
-  var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper.swiper-home-testimonials', {
+  var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper.swiper-home-test', {
     slidesPerView: 1,
     loop: true,
     autoplay: {

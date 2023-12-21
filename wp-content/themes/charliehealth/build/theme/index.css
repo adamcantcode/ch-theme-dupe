@@ -1982,6 +1982,18 @@ a.ch-button.button-tertiary.inverted:hover {
   width: auto;
 }
 
+.w-0{
+  width: 0px;
+}
+
+.\!w-0{
+  width: 0px !important;
+}
+
+.w-\[200px\]{
+  width: 200px;
+}
+
 .\!max-w-md{
   max-width: 28rem !important;
 }
@@ -5332,6 +5344,10 @@ a.providers:hover {
 
   .lg\:grid-cols-\[unset\]{
     grid-template-columns: unset;
+  }
+
+  .lg\:grid-cols-\[minmax\(0\2c _7fr\)_minmax\(0\2c _1fr\)_minmax\(0\2c _4fr\)\]{
+    grid-template-columns: minmax(0, 7fr) minmax(0, 1fr) minmax(0, 4fr);
   }
 
   .lg\:flex-row{
