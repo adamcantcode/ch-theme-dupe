@@ -1877,6 +1877,10 @@ a.ch-button.button-tertiary.inverted:hover {
   max-height: 80vh;
 }
 
+.max-h-full{
+  max-height: 100%;
+}
+
 .min-h-\[300px\]{
   min-height: 300px;
 }
@@ -1974,6 +1978,10 @@ a.ch-button.button-tertiary.inverted:hover {
   width: 2rem;
 }
 
+.w-auto{
+  width: auto;
+}
+
 .\!max-w-md{
   max-width: 28rem !important;
 }
@@ -2024,6 +2032,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .flex-none{
   flex: none;
+}
+
+.flex-shrink-0{
+  flex-shrink: 0;
 }
 
 .flex-grow{

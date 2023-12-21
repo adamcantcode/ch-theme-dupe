@@ -4,17 +4,17 @@ $calloutCopy = get_field('callout_copy');
 $features = get_field('features');
 ?>
 
+<div class="mb-sp-14">
+  <span class="relative z-20 self-start bg-yellow-300 rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8">Parents</span>
+  <span class="relative z-20 self-start rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 bg-lavender-300">Young Adults</span>
+  <span class="relative z-20 self-start rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 bg-pale-blue-300">Teens</span>
+</div>
 <div class="grid grid-cols-1 gap-sp-14 lg:gap-sp-5 lg:grid-cols-[7fr_1fr_4fr] home-testimonials">
   <div class="">
-    <div class="mb-sp-14">
-      <span class="relative z-20 self-start bg-yellow-300 rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8">Parents</span>
-      <span class="relative z-20 self-start rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 bg-lavender-300">Young Adults</span>
-      <span class="relative z-20 self-start rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 bg-pale-blue-300">Teens</span>
-    </div>
     <h2 class="mb-sp-14">Real stories of hope & healing</h2>
     <div class="grid gap-y-sp-2">
       <div class="grid grid-cols-1 lg:grid-cols-[3fr_4fr]">
-        <div class="flex gap-x-sp-8">
+        <div class="flex gap-x-sp-6">
           <div class="rounded-[50%] h-[15px] w-[15px] bg-yellow-300 mt-sp-2"></div>
           <div class="font-heading-serif text-primary text-[20px] leading-[1.4] antialiased flex-1">“My daughter was acting like herself again.”</div>
         </div>
@@ -52,7 +52,37 @@ $features = get_field('features');
     </div>
   </div>
   <div></div>
-  <div class="features-block-callout">
-
+  <div class="grid grid-cols-1">
+    <?php //if (have_rows('fifty_fifty_slides')) : 
+    ?>
+    <div class="h-full swiper swiper-home-testimonials">
+      <div class="swiper-wrapper">
+        <?php //while (have_rows('fifty_fifty_slides')) : the_row();
+        // $sliderImage = get_sub_field('fifty_fifty_slide_image');
+        ?>
+        <div class="swiper-slide">
+          <div class="relative">
+            <!-- <img src="<?= $sliderImage['sizes']['featured-large']; ?>" alt="<?= $sliderImage['alt']; ?>" class="nolazy"> -->
+            <img src="https://placehold.co/670x670" alt="" class="absolute ">
+          </div>
+        </div>
+        <div class=" swiper-slide">
+          <div class="relative">
+            <!-- <img src="<?= $sliderImage['sizes']['featured-large']; ?>" alt="<?= $sliderImage['alt']; ?>" class="nolazy"> -->
+            <img src="https://placehold.co/670x670" alt="" class="">
+          </div>
+        </div>
+        <div class=" swiper-slide">
+          <div class="relative">
+            <!-- <img src="<?= $sliderImage['sizes']['featured-large']; ?>" alt="<?= $sliderImage['alt']; ?>" class="nolazy"> -->
+            <img src="https://placehold.co/670x670" alt="" class="absolute ">
+          </div>
+        </div>
+        <?php //endwhile; 
+        ?>
+      </div>
+    </div>
+    <?php //endif; 
+    ?>
   </div>
 </div>
