@@ -14,88 +14,28 @@ Template Post Type: page
         <script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/test_charlie_health_webform_copy_1"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/test_charlie_health_webform_copy_1" title="Online Form">Online Form - [LIVE] Charlie Health Webform 2.0</a></noscript>
         <script>
           document.addEventListener("DOMContentLoaded", function() {
-            const progressBar = document.querySelector(".fsProgressBar");
-            const nextButton = document.querySelector(".fsNextButton");
-            const prevButton = document.querySelector(".fsPreviousButton");
+            const newDisclaimerText = 'We may employ third-party tools to analyze usage data on our website, including your submission of this form. We make reasonable efforts to obscure or de-identify protected health information from our analytics providers whenever feasible.'
+            const disclaimerContainer = document.querySelector('.field-auto-capture');
+            const progressBar = document.querySelector('#fsSubmit4865954');
 
-            nextButton.addEventListener("click", function() {
-              setTimeout(() => {
-                const progressBarWidth = parseFloat(getComputedStyle(progressBar).width);
-                const containerWidth = parseFloat(getComputedStyle(progressBar.parentElement).width);
-                const progressPercentage = (progressBarWidth / containerWidth) * 100;
-                const quotes = document.querySelectorAll('.quote');
+            progressBar.insertAdjacentElement('afterend', disclaimerContainer);
+            disclaimerContainer.style.display = 'none';
+            disclaimerContainer.style.padding = "0";
+            disclaimerContainer.querySelector('.field-auto-capture__message p').innerHTML = newDisclaimerText;
+            disclaimerContainer.querySelector('.field-auto-capture__message p').style.lineHeight = 1.1;
+            disclaimerContainer.querySelector('.field-auto-capture__message p').style.textAlign = "left";
 
-                if (progressPercentage >= 33) {
-                  quotes.forEach(quote => {
-                    quote.classList.add('opacity-0')
-                    quote.classList.remove('opacity-100')
-                  });
-                  quotes[1].classList.remove('opacity-0');
-                  quotes[1].classList.add('opacity-100');
-                  quotes[1].classList.remove('opacity-0');
-                }
+            document.querySelector('.fsPagination').addEventListener('click', function() {
+              console.log(document.querySelector('#fsPage4865954-2').classList.contains('fsHiddenPage'));
+              if (document.querySelector('#fsPage4865954-2').classList.contains('fsHiddenPage')) {
+                setTimeout(() => {
+                  disclaimerContainer.style.display = 'block';
+                }, 300);
+              } else {
+                disclaimerContainer.style.display = 'none';
+              }
+            })
 
-                if (progressPercentage >= 50) {
-                  quotes.forEach(quote => {
-                    quote.classList.add('opacity-0')
-                  });
-                  quotes[2].classList.add('opacity-100');
-                  quotes[2].classList.remove('opacity-0');
-                }
-                if (progressPercentage >= 66) {
-                  quotes.forEach(quote => {
-                    quote.classList.add('opacity-0')
-                  });
-                  quotes[3].classList.add('opacity-100');
-                  quotes[3].classList.remove('opacity-0');
-                }
-              }, 100);
-            });
-            prevButton.addEventListener("click", function() {
-              setTimeout(() => {
-                const progressBarWidth = parseFloat(getComputedStyle(progressBar).width);
-                const containerWidth = parseFloat(getComputedStyle(progressBar.parentElement).width);
-                const progressPercentage = (progressBarWidth / containerWidth) * 100;
-                const quotes = document.querySelectorAll('.quote');
-
-                if (progressPercentage < 33) {
-                  quotes.forEach(quote => {
-                    quote.classList.add('opacity-0')
-                  });
-                  quotes[0].classList.add('opacity-100');
-                  quotes[0].classList.remove('opacity-0');
-                  quotes[1].classList.add('opacity-0');
-                  quotes[1].classList.remove('opacity-100');
-                }
-
-                if (progressPercentage >= 33) {
-                  quotes.forEach(quote => {
-                    quote.classList.add('opacity-0')
-                  });
-                  quotes[1].classList.add('opacity-100');
-                  quotes[1].classList.remove('opacity-0');
-                  quotes[2].classList.add('opacity-0');
-                  quotes[2].classList.remove('opacity-100');
-                }
-
-                if (progressPercentage >= 50) {
-                  quotes.forEach(quote => {
-                    quote.classList.add('opacity-0')
-                  });
-                  quotes[2].classList.add('opacity-100');
-                  quotes[2].classList.remove('opacity-0');
-                  quotes[3].classList.add('opacity-0');
-                  quotes[3].classList.remove('opacity-100');
-                }
-                if (progressPercentage >= 66) {
-                  quotes.forEach(quote => {
-                    quote.classList.add('opacity-0')
-                  });
-                  quotes[3].classList.add('opacity-100');
-                  quotes[3].classList.remove('opacity-0');
-                }
-              }, 100);
-            });
           });
         </script>
         <div style="text-align:right; font-size:x-small;">
