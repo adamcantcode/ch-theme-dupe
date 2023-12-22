@@ -9,6 +9,18 @@
     h2 {
       @apply font-heading-serif text-[40px] leading-[1.1];
     }
+    h3 {
+      font-size: 28px;
+      line-height: 160%;
+      letter-spacing: 0.28px;
+    }
+    h4,
+    .not-heading-h4 {
+      font-size: 20px;
+      line-height: 110%;
+      letter-spacing: 0.2px;
+      margin-bottom: 0;
+    }
     .features-block-intro {
       h2 {
         @apply text-white;
