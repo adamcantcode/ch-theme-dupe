@@ -13,9 +13,26 @@ $heading = get_field('heading');
     <div class="grid gap-y-sp-2">
       <?php if (have_rows('testimonials')) : ?>
         <?php while (have_rows('testimonials')) : the_row(); ?>
+          <?php
+          $row = get_row_index();
+          switch ($row) {
+            case '1':
+              $dotColor = 'bg-yellow-300';
+              break;
+            case '2':
+              $dotColor = 'bg-lavender-300';
+              break;
+            case '3':
+              $dotColor = 'bg-pale-blue-300';
+              break;
+            default:
+              $dotColor = 'bg-yellow-300';
+              break;
+          }
+          ?>
           <div class="grid grid-cols-1 lg:grid-cols-[3fr_4fr]">
             <div class="flex gap-x-sp-6">
-              <div class="rounded-[50%] h-[15px] w-[15px] bg-yellow-300 mt-sp-2"></div>
+              <div class="rounded-[50%] h-[15px] w-[15px] mt-sp-2 <?= $dotColor; ?>"></div>
               <div class="font-heading-serif text-primary text-[20px] leading-[1.4] antialiased flex-1">“<?= get_sub_field('pull_quote'); ?>”</div>
             </div>
             <div>
