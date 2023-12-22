@@ -1845,10 +1845,6 @@ a.ch-button.button-tertiary.inverted:hover {
   height: 2rem;
 }
 
-.h-\[162px\]{
-  height: 162px;
-}
-
 .max-h-0{
   max-height: 0px;
 }
@@ -5346,6 +5342,10 @@ a.providers:hover {
 
   .lg\:grid-cols-\[5fr_7fr\]{
     grid-template-columns: 5fr 7fr;
+  }
+
+  .lg\:grid-cols-\[8fr_4fr\]{
+    grid-template-columns: 8fr 4fr;
   }
 
   .lg\:grid-cols-\[minmax\(0\2c _7fr\)_minmax\(0\2c _1fr\)_minmax\(0\2c _4fr\)\]{
