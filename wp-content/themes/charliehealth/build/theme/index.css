@@ -5389,6 +5389,10 @@ a.providers:hover {
     grid-template-columns: unset;
   }
 
+  .lg\:grid-cols-\[3fr_9fr\]{
+    grid-template-columns: 3fr 9fr;
+  }
+
   .lg\:flex-row{
     flex-direction: row;
   }

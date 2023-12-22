@@ -18,7 +18,8 @@
             },
             "choices": {
                 "latest": "Latest Posts",
-                "custom": "Custom"
+                "custom": "Custom",
+                "latest_new": "Latest Posts (NEW)"
             },
             "default_value": "latest",
             "return_format": "value",
@@ -42,6 +43,13 @@
                         "field": "field_648c77d68929c",
                         "operator": "==",
                         "value": "latest"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_648c77d68929c",
+                        "operator": "==",
+                        "value": "latest_new"
                     }
                 ]
             ],
@@ -76,6 +84,13 @@
                         "field": "field_648c77d68929c",
                         "operator": "==",
                         "value": "latest"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_648c77d68929c",
+                        "operator": "==",
+                        "value": "latest_new"
                     }
                 ]
             ],
@@ -141,5 +156,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1686927550
+    "modified": 1703263888
 }
