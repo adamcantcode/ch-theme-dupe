@@ -1503,6 +1503,11 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-right: 1.25rem;
 }
 
+.my-sp-10{
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
 .my-sp-4{
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -1511,11 +1516,6 @@ a.ch-button.button-tertiary.inverted:hover {
 .my-sp-8{
   margin-top: 2rem;
   margin-bottom: 2rem;
-}
-
-.my-sp-10{
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
 }
 
 .\!mb-0{
@@ -1999,6 +1999,14 @@ a.ch-button.button-tertiary.inverted:hover {
   max-width: 37.5rem;
 }
 
+.max-w-\[500px\]{
+  max-width: 500px;
+}
+
+.max-w-\[600px\]{
+  max-width: 600px;
+}
+
 .max-w-\[72px\]{
   max-width: 72px;
 }
@@ -2021,14 +2029,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .max-w-none{
   max-width: none;
-}
-
-.max-w-\[500px\]{
-  max-width: 500px;
-}
-
-.max-w-\[600px\]{
-  max-width: 600px;
 }
 
 .flex-1{
@@ -2222,6 +2222,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .justify-between{
   justify-content: space-between;
+}
+
+.justify-around{
+  justify-content: space-around;
 }
 
 .justify-items-start{
@@ -2707,6 +2711,10 @@ a.ch-button.button-tertiary.inverted:hover {
   padding: 10px;
 }
 
+.p-sp-14{
+  padding: 4rem;
+}
+
 .p-sp-2{
   padding: 0.5rem;
 }
@@ -2729,10 +2737,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .p-sp-8{
   padding: 2rem;
-}
-
-.p-sp-14{
-  padding: 4rem;
 }
 
 .px-3{
