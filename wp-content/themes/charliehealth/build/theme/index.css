@@ -1513,6 +1513,11 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-bottom: 2rem;
 }
 
+.my-sp-10{
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
 .\!mb-0{
   margin-bottom: 0px !important;
 }
@@ -2016,6 +2021,14 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .max-w-none{
   max-width: none;
+}
+
+.max-w-\[500px\]{
+  max-width: 500px;
+}
+
+.max-w-\[600px\]{
+  max-width: 600px;
 }
 
 .flex-1{
@@ -2716,6 +2729,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .p-sp-8{
   padding: 2rem;
+}
+
+.p-sp-14{
+  padding: 4rem;
 }
 
 .px-3{

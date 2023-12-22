@@ -105,6 +105,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/how-it-works');
   register_block_type(__DIR__ . '/build/blocks/our-providers');
   register_block_type(__DIR__ . '/build/blocks/grid-eight-four');
+  register_block_type(__DIR__ . '/build/blocks/home-cta');
 }
 add_action('init', 'register_acf_blocks', 5);
 

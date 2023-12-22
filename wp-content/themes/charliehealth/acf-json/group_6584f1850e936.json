@@ -1,0 +1,87 @@
+{
+    "key": "group_6584f1850e936",
+    "title": "Home CTA",
+    "fields": [
+        {
+            "key": "field_6584f1df9f478",
+            "label": "Heading",
+            "name": "heading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Reach out to start your healing journey today",
+            "maxlength": "",
+            "placeholder": "Reach out to start your healing journey today",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6584f1eb9f479",
+            "label": "Details",
+            "name": "details",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Fill out our form or call us directly to learn if Charlie Health is right for you or a loved one. We’re available 24\/7. ",
+            "maxlength": "",
+            "placeholder": "Fill out our form or call us directly to learn if Charlie Health is right for you or a loved one. We’re available 24\/7. ",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6584f185a1557",
+            "label": "Buttons",
+            "name": "buttons",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_64134bca033e5"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/home-cta-block"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1703211640
+}
