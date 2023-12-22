@@ -93,6 +93,7 @@ $style  = get_field('style');
     <div class="grid lg:grid-cols-[3fr_9fr] gap-x-sp-5 gap-y-sp-10">
       <div>
         <h2>From the Library</h2>
+        <?php include(get_template_directory() . '/includes/button-group.php'); ?>
       </div>
       <div class="grid lg:grid-cols-3 gap-sp-5">
         <?php
@@ -120,21 +121,19 @@ $style  = get_field('style');
               $featuredImageAltText = 'Charlie Health Logo';
             }
         ?>
-            <div class="relative grid overflow-hidden duration-300 border rounded-sm border-card-border hover:shadow-lg">
-              <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover lg:h-[220px] h-[150px] w-full">
-              <div class="grid p-sp-4">
-                <h3><a href="<?= get_the_permalink(); ?>" class="stretched-link"><?= get_the_title(); ?></a></h3>
-                <p class="mb-sp-4 text-h5 lg:text-h5-lg"><?= $author->post_title; ?></p>
-                <div class="grid items-end justify-start grid-flow-col gap-sp-4">
-                  <?php
-                  $tags = get_the_terms(get_the_ID(), 'post_tag');
-                  ?>
-                  <?php if ($tags) :  ?>
-                    <?php foreach ($tags as $tag) : ?>
-                      <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="relative z-[6] inline-block no-underline rounded-lg px-sp-4 py-sp-3 text-h6 bg-tag-gray hover:bg-bright-teal"><?= $tag->name; ?></a>
-                    <?php endforeach; ?>
-                  <?php endif; ?>
-                </div>
+            <div class="relative rounded-[6px] bg-white">
+              <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover lg:h-[167px] h-[150px] w-full rounded-t-[6px]">
+              <div class="absolute top-sp-4 left-sp-4 rounded-t-[6px]">
+                <?php $tags = get_the_terms(get_the_ID(), 'post_tag');  ?>
+                <?php if ($tags) :  ?>
+                  <?php foreach ($tags as $tag) : ?>
+                    <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="relative inline-block no-underline rounded-lg px-[15px] py-[10px] text-[14px] text-white bg-transparent hover:bg-white hover:!text-primary border border-white z-[6] leading-[1.4]"><?= $tag->name; ?></a>
+                  <?php endforeach; ?>
+                <?php endif; ?>
+              </div>
+              <div class="grid bg-white p-sp-4 rounded-b-[6px]">
+                <h3 class="font-heading text-[20px] !leading-[1.1] mb-sp-5"><a href="<?= get_the_permalink(); ?>" class="stretched-link font-heading text-[20px] !leading-[1.1]"><?= get_the_title(); ?></a></h3>
+                <p class="mb-0 text-[14px]"><?= $author->post_title; ?></p>
               </div>
             </div>
         <?php endwhile;

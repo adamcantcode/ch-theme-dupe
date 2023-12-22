@@ -1432,6 +1432,10 @@ a.ch-button.button-tertiary.inverted:hover {
   top: 2rem;
 }
 
+.top-sp-4{
+  top: 1rem;
+}
+
 .-z-50{
   z-index: -50;
 }
@@ -1458,6 +1462,14 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .z-\[9999\]{
   z-index: 9999;
+}
+
+.z-\[2\]{
+  z-index: 2;
+}
+
+.z-\[5\]{
+  z-index: 5;
 }
 
 .order-1{
@@ -2440,6 +2452,16 @@ a.ch-button.button-tertiary.inverted:hover {
   border-top-right-radius: 0.625rem;
 }
 
+.rounded-b-\[6px\]{
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.rounded-t-\[6px\]{
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
 .border{
   border-width: 1px;
 }
@@ -2854,6 +2876,11 @@ a.ch-button.button-tertiary.inverted:hover {
   padding-bottom: 1.5rem;
 }
 
+.px-\[15px\]{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 .\!pb-0{
   padding-bottom: 0px !important;
 }
@@ -3188,6 +3215,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .leading-tight{
   line-height: 1.25;
+}
+
+.\!leading-\[1\.4\]{
+  line-height: 1.4 !important;
 }
 
 .text-\[\#87889A\]{
@@ -4920,6 +4951,16 @@ a.providers:hover {
   color: rgb(231 211 255 / var(--tw-text-opacity));
 }
 
+.hover\:text-primary:hover{
+  --tw-text-opacity: 1;
+  color: rgb(22 26 61 / var(--tw-text-opacity));
+}
+
+.hover\:\!text-primary:hover{
+  --tw-text-opacity: 1 !important;
+  color: rgb(22 26 61 / var(--tw-text-opacity)) !important;
+}
+
 .hover\:shadow-\[inset_0_0_0_2px_\#1d225f\]:hover{
   --tw-shadow: inset 0 0 0 2px #1d225f;
   --tw-shadow-colored: inset 0 0 0 2px var(--tw-shadow-color);
@@ -5227,6 +5268,10 @@ a.providers:hover {
 
   .lg\:h-sp-8{
     height: 2rem;
+  }
+
+  .lg\:h-\[167px\]{
+    height: 167px;
   }
 
   .lg\:max-h-full{
