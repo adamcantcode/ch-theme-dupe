@@ -11,7 +11,7 @@ $customPosts = get_field('areas_of_care');
   <div></div>
   <div>
     <div class="overflow-hidden transition-all duration-500 ease-in-out view-all-js">
-      <?php if ($style === 'feed') : ?>
+      <?php if ($style === 'feed' || $style === null) : ?>
         <?php
         $args = array(
           'post_type'      => 'areas-of-care',
