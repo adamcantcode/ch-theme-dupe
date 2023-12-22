@@ -8,7 +8,7 @@ $heading = get_field('heading');
   <span class="relative z-20 self-start rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 bg-pale-blue-300">Teens</span>
 </div>
 <div class="grid grid-cols-1 gap-sp-14 lg:gap-sp-5 lg:grid-cols-[minmax(0,_7fr)_minmax(0,_1fr)_minmax(0,_4fr)] home-testimonials relative">
-  <div>
+  <div class="min-w-0">
     <h2 class="mb-sp-14"><?= $heading; ?></h2>
     <div class="grid gap-y-sp-2">
       <?php if (have_rows('testimonials')) : ?>
@@ -45,19 +45,21 @@ $heading = get_field('heading');
       <?php endif; ?>
     </div>
   </div>
-  <div></div>
+  <div class="min-w-0"></div>
   <?php if (have_rows('illustrations')) : ?>
     <!-- parent grid fix for swiper wrap -->
-    <div class="w-full overflow-hidden">
-      <div class="h-full swiper swiper-home-test">
-        <div class="swiper-wrapper">
-          <?php while (have_rows('illustrations')) : the_row(); ?>
-            <div class="swiper-slide">
-              <div class="absolute top-0 left-0">
-                <img src="<?= get_sub_field('image')['sizes']['featured-large']; ?>" alt="<?= get_sub_field('image')['alt']; ?>">
-              </div>
+    <div class="w-full min-w-0 overflow-hidden">
+      <div class="relative">
+        <div class="absolute top-0 left-0">
+          <div class="h-full swiper swiper-home-test">
+            <div class="swiper-wrapper">
+              <?php while (have_rows('illustrations')) : the_row(); ?>
+                <div class="swiper-slide">
+                  <img src="<?= get_sub_field('image')['sizes']['featured-large']; ?>" alt="<?= get_sub_field('image')['alt']; ?>">
+                </div>
+              <?php endwhile; ?>
             </div>
-          <?php endwhile; ?>
+          </div>
         </div>
       </div>
     </div>
