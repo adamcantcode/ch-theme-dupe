@@ -9556,8 +9556,8 @@ window.addEventListener('DOMContentLoaded', () => {
   let gridItemStagger = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
     scrollTrigger: {
       trigger: '.feature-card',
-      start: 'top 80%',
-      markers: true
+      start: 'top 80%'
+      // markers: true,
       // scrub: true,
     }
   });

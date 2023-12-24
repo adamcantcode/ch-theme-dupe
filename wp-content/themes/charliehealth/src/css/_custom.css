@@ -6,9 +6,6 @@
     h1 {
       @apply !text-[140px] !leading-[.8] !mb-sp-10;
     }
-    h2 {
-      @apply !text-[40px];
-    }
     h3 {
       @apply !text-[28px] !leading-[1.1];
     }
@@ -37,6 +34,9 @@
   }
   h2 {
     @apply text-[32px] leading-[1.1] mb-sp-6 font-heading-serif;
+    @screen lg {
+      @apply text-[40px];
+    }
   }
   h3 {
     font-size: 20px;
