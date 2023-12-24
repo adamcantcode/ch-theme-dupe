@@ -1332,6 +1332,10 @@ a.ch-button.button-tertiary.inverted:hover {
   position: absolute;
 }
 
+.\!absolute{
+  position: absolute !important;
+}
+
 .\!relative{
   position: relative !important;
 }
@@ -1366,6 +1370,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .bottom-\[-100\%\]{
   bottom: -100%;
+}
+
+.bottom-\[-50px\]{
+  bottom: -50px;
 }
 
 .bottom-sp-4{
@@ -1434,6 +1442,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .top-sp-8{
   top: 2rem;
+}
+
+.left-\[66\.667\%\]{
+  left: 66.667%;
 }
 
 .-z-50{
@@ -1834,10 +1846,6 @@ a.ch-button.button-tertiary.inverted:hover {
   height: 4rem;
 }
 
-.h-sp-16{
-  height: 6rem;
-}
-
 .h-sp-2{
   height: 0.5rem;
 }
@@ -1981,6 +1989,14 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .w-sp-8{
   width: 2rem;
+}
+
+.\!w-full{
+  width: 100% !important;
+}
+
+.min-w-0{
+  min-width: 0px;
 }
 
 .\!max-w-md{
@@ -3161,6 +3177,10 @@ a.ch-button.button-tertiary.inverted:hover {
   line-height: 1.1 !important;
 }
 
+.\!leading-\[1\.4\]{
+  line-height: 1.4 !important;
+}
+
 .leading-\[1\.1\]{
   line-height: 1.1;
 }
@@ -3207,10 +3227,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .leading-tight{
   line-height: 1.25;
-}
-
-.\!leading-\[1\.4\]{
-  line-height: 1.4 !important;
 }
 
 .text-\[\#87889A\]{

@@ -10632,16 +10632,15 @@ window.addEventListener('DOMContentLoaded', () => {
     slidesPerView: 1,
     loop: true,
     autoplay: {
-      delay: 300,
+      delay: 4000,
       disableOnInteraction: false,
       pauseOnMouseEnter: false
     },
-    autoplay: false,
     effect: 'fade',
     fadeEffect: {
       crossFade: true
     },
-    speed: 100,
+    speed: 1000,
     pagination: false,
     navigation: false,
     scrollbar: false
