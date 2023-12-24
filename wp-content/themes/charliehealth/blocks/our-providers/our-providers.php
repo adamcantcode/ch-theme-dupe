@@ -2,8 +2,8 @@
 $image = get_field('image');
 ?>
 
-<div class="grid grid-cols-1 lg:grid-cols-6 gap-sp-5">
-  <div>
+<div class="grid grid-cols-2 lg:grid-cols-6 gap-sp-5">
+  <div class="col-span-2 lg:col-span-1">
     <h2>Meet our providers</h2>
     <?php include(get_template_directory() . '/includes/button-group.php'); ?>
   </div>

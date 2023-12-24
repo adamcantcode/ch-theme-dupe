@@ -2,7 +2,7 @@
   <div>
     <InnerBlocks />
   </div>
-  <div class="grid justify-end">
+  <div class="grid justify-center lg:justify-end">
     <img src="<?= get_field('image')['url']; ?>" alt="<?= get_field('image')['alt']; ?>">
   </div>
 </div>

@@ -5134,6 +5134,10 @@ a.providers:hover {
     order: 2;
   }
 
+  .lg\:col-span-1{
+    grid-column: span 1 / span 1;
+  }
+
   .lg\:col-start-2{
     grid-column-start: 2;
   }
@@ -5470,6 +5474,10 @@ a.providers:hover {
     grid-template-columns: unset;
   }
 
+  .lg\:grid-cols-\[2fr_5fr\]{
+    grid-template-columns: 2fr 5fr;
+  }
+
   .lg\:flex-row{
     flex-direction: row;
   }
@@ -5492,6 +5500,10 @@ a.providers:hover {
 
   .lg\:items-stretch{
     align-items: stretch;
+  }
+
+  .lg\:justify-end{
+    justify-content: flex-end;
   }
 
   .lg\:gap-\[10rem\]{

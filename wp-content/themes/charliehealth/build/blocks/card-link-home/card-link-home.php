@@ -12,7 +12,7 @@ $cardSubheading = get_field('card_subheading');
     <?php include(get_template_directory() . '/includes/button-group.php'); ?>
   </div>
   <div>
-    <div class="bg-primary-200 rounded-[16px] grid grid-cols-[1fr_2fr] py-sp-12 px-sp-8 gap-sp-8 items-end relative">
+    <div class="bg-primary-200 rounded-[16px] grid lg:grid-cols-[1fr_2fr] grid-cols-1 py-sp-12 px-sp-8 gap-sp-8 items-end relative">
       <div>
         <img src="<?= $image['url']; ?>" alt="" <?= $image['alt']; ?>" class="rounded-[3px] shadow-[5px_5px_0_white]">
       </div>
