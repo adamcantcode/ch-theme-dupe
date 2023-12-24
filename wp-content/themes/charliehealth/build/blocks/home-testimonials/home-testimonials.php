@@ -53,7 +53,7 @@ $heading = get_field('heading');
         <div class="swiper-wrapper">
           <?php while (have_rows('illustrations')) : the_row(); ?>
             <div class="swiper-slide !w-full">
-              <img src="<?= get_sub_field('image')['sizes']['featured-large']; ?>" alt="<?= get_sub_field('image')['alt']; ?>">
+              <img src="<?= get_sub_field('image')['sizes']['featured-large']; ?>" alt="<?= get_sub_field('image')['alt']; ?>" class="max-w-[670px]">
             </div>
           <?php endwhile; ?>
         </div>
