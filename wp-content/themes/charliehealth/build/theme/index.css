@@ -5518,6 +5518,10 @@ a.providers:hover {
     justify-content: flex-end;
   }
 
+  .lg\:justify-around{
+    justify-content: space-around;
+  }
+
   .lg\:gap-\[10rem\]{
     gap: 10rem;
   }
