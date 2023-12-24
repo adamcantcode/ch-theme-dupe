@@ -4,7 +4,7 @@ $calloutCopy = get_field('callout_copy');
 $features = get_field('features');
 ?>
 
-<div class="features-block grid grid-cols-1 gap-sp-14 lg:gap-sp-5 lg:grid-cols-[4fr_1fr_7fr] items-start">
+<div class="features-block grid grid-cols-1 lg:gap-sp-5 gap-sp-4 lg:grid-cols-[4fr_1fr_7fr] items-start">
   <div class="features-block-intro">
     <h2><?= $heading; ?></h2>
     <?php include(get_template_directory() . '/includes/button-group.php'); ?>

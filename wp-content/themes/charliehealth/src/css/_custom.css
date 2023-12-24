@@ -4,15 +4,13 @@
 @screen lg {
   .home {
     h1 {
-      @apply text-[140px] leading-[.8] mb-sp-12;
+      @apply !text-[140px] !leading-[.8] !mb-sp-10;
     }
     h2 {
-      @apply font-heading-serif text-[40px] leading-[1.1];
+      @apply !text-[40px];
     }
     h3 {
-      font-size: 28px;
-      line-height: 110%;
-      letter-spacing: 0.28px;
+      @apply !text-[28px] !leading-[1.1];
     }
     h4,
     .not-heading-h4 {
@@ -21,20 +19,38 @@
       letter-spacing: 0.2px;
       margin-bottom: 0;
     }
-    .features-block-intro {
-      h2 {
-        @apply text-white;
-      }
-    }
     .features-block-callout {
       > p {
-        @apply text-[20px] leading-[1.6] text-white font-heading;
+        @apply text-[20px] leading-[1.6] font-heading;
       }
     }
     .home-testimonials {
       p {
         @apply text-[14px] leading-[1.6] font-heading;
       }
+    }
+  }
+}
+.home {
+  h1 {
+    @apply text-[42px] leading-[1.1] mb-sp-4 font-heading;
+  }
+  h2 {
+    @apply text-[32px] leading-[1.1] mb-sp-6 font-heading-serif;
+  }
+  h3 {
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 0.2px;
+  }
+  .features-block-intro {
+    h2 {
+      @apply text-white font-heading-serif;
+    }
+  }
+  .features-block-callout {
+    > p {
+      @apply text-white font-heading;
     }
   }
 }
