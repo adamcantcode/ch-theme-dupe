@@ -132,8 +132,8 @@ $style  = get_field('style');
                 <?php endif; ?>
               </div>
               <div class="grid bg-white p-sp-4 rounded-b-[6px]">
-                <h3 class="font-heading text-[20px] !leading-[1.1] mb-sp-5"><a href="<?= get_the_permalink(); ?>" class="stretched-link font-heading text-[20px] !leading-[1.1]"><?= get_the_title(); ?></a></h3>
-                <p class="mb-0 text-[14px]"><?= $author->post_title; ?></p>
+                <h3 class="font-heading text-[20px] !leading-[1.1] mb-sp-5"><a href="<?= get_the_permalink(); ?>" class="stretched-link font-heading text-[20px] !leading-[1.1] block"><?= get_the_title(); ?></a></h3>
+                <p class="mb-0 text-[14px] leading-[1.1]"><?= $author->post_title; ?></p>
               </div>
             </div>
         <?php endwhile;

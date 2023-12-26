@@ -6,9 +6,6 @@
     h1 {
       @apply !text-[140px] !leading-[.8] !mb-sp-10;
     }
-    h3 {
-      @apply !text-[28px] !leading-[1.1];
-    }
     h4,
     .not-heading-h4 {
       font-size: 20px;
@@ -42,6 +39,9 @@
     font-size: 20px;
     line-height: 120%;
     letter-spacing: 0.2px;
+    @screen lg {
+      @apply text-[28px] leading-[1.1];
+    }
   }
   .features-block-intro {
     h2 {

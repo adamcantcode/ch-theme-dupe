@@ -3737,10 +3737,6 @@ a.ch-button.button-tertiary.inverted:hover {
     font-size: 140px !important;
     line-height: .8 !important;
   }
-    .home h3{
-    font-size: 28px !important;
-    line-height: 1.1 !important;
-  }
     .home h4,
     .home .not-heading-h4 {
       font-size: 20px;
@@ -3786,6 +3782,14 @@ a.ch-button.button-tertiary.inverted:hover {
     line-height: 120%;
     letter-spacing: 0.2px;
   }
+
+@media (min-width: 1024px) {
+
+.home h3{
+    font-size: 28px;
+    line-height: 1.1;
+  }
+    }
 
 a.home .features-block-intro h2:hover {
         color: #ffffff;
