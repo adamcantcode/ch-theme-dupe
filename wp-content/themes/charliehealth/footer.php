@@ -79,8 +79,8 @@
 					?>
 					<?php if (!0 == true) : ?>
 						<div class="flex-grow">
-							<p class="text-white font-heading mb-sp-2 text-[28px]">Stay connected</p>
-							<p class="text-white text-[14px] leading-[130%]">Get mental health updates, research, insights, and resources directly to your inbox.</p>
+							<p class="text-white font-heading text-[28px]">Sign up for our email newsletter</p>
+							<p class="text-white text-[14px] leading-[130%] noshow">Get mental health updates, research, insights, and resources directly to your inbox.</p>
 							<div id="newsletterFooter" class="w-full lg:w-2/5 newsletter-revamp footer-newsletter">
 								<script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/newsletter_blog_revamp"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/newsletter_blog_revamp" title="Online Form">Online Form - Newsletter - Blog Revamp</a></noscript>
 								<script>
