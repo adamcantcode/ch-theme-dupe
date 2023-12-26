@@ -43,6 +43,9 @@
       @apply text-[28px] leading-[1.1];
     }
   }
+  p {
+    @apply text-[14px] leading-[1.6] font-heading;
+  }
   .features-block-intro {
     h2 {
       @apply text-white font-heading-serif;

@@ -3791,6 +3791,12 @@ a.ch-button.button-tertiary.inverted:hover {
   }
     }
 
+.home p{
+  font-family: "ABC Social", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
 a.home .features-block-intro h2:hover {
         color: #ffffff;
       }
