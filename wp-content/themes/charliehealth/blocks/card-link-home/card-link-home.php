@@ -14,7 +14,7 @@ $cardSubheading = get_field('card_subheading');
   <div>
     <div class="bg-primary-200 rounded-[16px] grid lg:grid-cols-[1fr_2fr] grid-cols-1 py-sp-12 px-sp-8 gap-sp-8 items-end relative">
       <div>
-        <img src="<?= $image['url']; ?>" alt="" <?= $image['alt']; ?>" class="rounded-[3px] shadow-[5px_5px_0_white]">
+        <img src="<?= $image['url']; ?>" alt="" <?= $image['alt']; ?>" class="rounded-[3px] shadow-[5px_5px_0_white] max-w-[250px] lg:max-w-none">
       </div>
       <div>
         <h3 class="text-white font-heading text-[28px] leading-[1.1] mb-[14px]"><a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>" class="text-white font-heading text-[28px] leading-[1.1] mb-[14px] stretched-link"><?= $cardHeading; ?><svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="inline-block middle ml-sp-2">
