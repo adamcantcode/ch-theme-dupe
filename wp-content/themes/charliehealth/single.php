@@ -163,8 +163,9 @@ $readingTime = ceil($wordCount / $wordsPerMinute);
     </div>
   </article>
 </div>
+<?= do_blocks('<!-- wp:block {"ref":12} /-->'); ?>
 <?php if ($relatedPosts) : ?>
-  <section class="section-top">
+  <section class="section-horizontal">
     <div class="container">
       <h2>More like this</h2>
       <div class="grid lg:grid-cols-3 posts-container gap-x-sp-8 gap-y-sp-10">
@@ -202,12 +203,6 @@ $readingTime = ceil($wordCount / $wordsPerMinute);
     </div>
   </section>
 <?php endif; ?>
-
-<section class="section-top">
-  <div class="container">
-    <div class="divider"></div>
-  </div>
-</section>
-<?= do_blocks('<!-- wp:block {"ref":12} /-->'); ?>
+<?= do_blocks('<!-- wp:block {"ref":7353} /-->'); ?>
 
 <?php get_footer(); ?>
