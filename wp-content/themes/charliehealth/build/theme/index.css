@@ -1996,6 +1996,10 @@ a.ch-button.button-tertiary.inverted:hover {
   max-width: 200px;
 }
 
+.max-w-\[250px\]{
+  max-width: 250px;
+}
+
 .max-w-\[350px\]{
   max-width: 350px;
 }
@@ -2030,10 +2034,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .max-w-full{
   max-width: 100%;
-}
-
-.max-w-\[250px\]{
-  max-width: 250px;
 }
 
 .flex-1{
@@ -4882,6 +4882,14 @@ a.providers:hover {
 
 .first\:mt-0:first-child{
   margin-top: 0px;
+}
+
+.last\:col-start-\[span_2\]:last-child{
+  grid-column-start: span 2;
+}
+
+.last\:col-end-2:last-child{
+  grid-column-end: 2;
 }
 
 .last\:mb-0:last-child{
