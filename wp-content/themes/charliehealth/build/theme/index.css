@@ -926,6 +926,7 @@ main{
 /* Components Layer */
 
 .ch-button{
+  z-index: 1;
   display: inline-block;
   flex: 1 1 0%;
   padding-left: 10px;
