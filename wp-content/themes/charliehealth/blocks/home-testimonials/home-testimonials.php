@@ -9,7 +9,7 @@ $heading = get_field('heading');
 </div>
 <div class="grid grid-cols-1 gap-sp-5 lg:grid-cols-[minmax(0,_7fr)_minmax(0,_1fr)_minmax(0,_4fr)] home-testimonials relative">
   <div class="min-w-0">
-    <h2 class="lg:mb-sp-14 mb-sp-8"><?= $heading; ?></h2>
+    <h2 class="lg:!mb-sp-14 mb-sp-8"><?= $heading; ?></h2>
     <div class="grid gap-y-sp-2">
       <?php if (have_rows('testimonials')) : ?>
         <?php while (have_rows('testimonials')) : the_row(); ?>

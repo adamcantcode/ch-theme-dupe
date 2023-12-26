@@ -5146,6 +5146,10 @@ a.providers:hover {
     margin-bottom: 6rem;
   }
 
+  .lg\:\!mb-sp-14{
+    margin-bottom: 4rem !important;
+  }
+
   .lg\:mb-0{
     margin-bottom: 0px;
   }
