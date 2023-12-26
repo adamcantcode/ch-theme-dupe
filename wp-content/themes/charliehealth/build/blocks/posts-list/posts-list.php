@@ -121,8 +121,10 @@ $style  = get_field('style');
               $featuredImageAltText = 'Charlie Health Logo';
             }
         ?>
-            <div class="relative rounded-[6px] bg-white">
-              <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover lg:h-[167px] h-[150px] w-full rounded-t-[6px]">
+            <div class="relative bg-white group rounded-[6px]">
+              <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-[6px]">
+                <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover w-full rounded-t-[6px] h-full group-hover:scale-110 transition-all duration-300">
+              </div>
               <div class="absolute top-sp-4 left-sp-4 rounded-t-[6px]">
                 <?php $tags = get_the_terms(get_the_ID(), 'post_tag');  ?>
                 <?php if ($tags) :  ?>
