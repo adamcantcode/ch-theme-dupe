@@ -2036,6 +2036,10 @@ a.ch-button.button-tertiary.inverted:hover {
   max-width: 100%;
 }
 
+.max-w-\[150px\]{
+  max-width: 150px;
+}
+
 .flex-1{
   flex: 1 1 0%;
 }
