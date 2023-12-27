@@ -30,13 +30,13 @@ $heading = get_field('heading');
               break;
           }
           ?>
-          <div class="grid grid-cols-1 lg:grid-cols-[3fr_4fr] gap-sp-5">
+          <div class="grid grid-cols-1 lg:grid-cols-[2.33fr_4fr] gap-sp-10">
             <div class="flex gap-x-sp-6">
               <div class="rounded-[50%] h-[15px] w-[15px] mt-sp-2 <?= $dotColor; ?>"></div>
               <div class="font-heading-serif text-primary text-[20px] leading-[1.4] antialiased flex-1">“<?= get_sub_field('pull_quote'); ?>”</div>
             </div>
             <div>
-              <div>
+              <div class="testimonial-paragraphs">
                 <?= get_sub_field('full_quote'); ?>
               </div>
             </div>
