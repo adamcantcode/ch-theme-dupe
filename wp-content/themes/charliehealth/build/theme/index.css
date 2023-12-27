@@ -1992,12 +1992,12 @@ a.ch-button.button-tertiary.inverted:hover {
   max-width: 1280px;
 }
 
-.max-w-\[200px\]{
-  max-width: 200px;
+.max-w-\[150px\]{
+  max-width: 150px;
 }
 
-.max-w-\[250px\]{
-  max-width: 250px;
+.max-w-\[200px\]{
+  max-width: 200px;
 }
 
 .max-w-\[350px\]{
@@ -2034,10 +2034,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .max-w-full{
   max-width: 100%;
-}
-
-.max-w-\[150px\]{
-  max-width: 150px;
 }
 
 .flex-1{
@@ -3773,7 +3769,7 @@ a.ch-button.button-tertiary.inverted:hover {
 }
 
 .home h2{
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   font-family: "ABC Arizona", serif;
   font-size: 32px;
   line-height: 1.1;
@@ -4892,10 +4888,6 @@ a.providers:hover {
   grid-column-start: span 2;
 }
 
-.last\:col-end-2:last-child{
-  grid-column-end: 2;
-}
-
 .last\:mb-0:last-child{
   margin-bottom: 0px;
 }
@@ -5021,12 +5013,6 @@ a.providers:hover {
 
 .group:hover .group-hover\:rotate-45{
   --tw-rotate: 45deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.group:hover .group-hover\:scale-125{
-  --tw-scale-x: 1.25;
-  --tw-scale-y: 1.25;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -5414,12 +5400,12 @@ a.providers:hover {
     max-width: 670px;
   }
 
-  .lg\:max-w-none{
-    max-width: none;
-  }
-
   .lg\:max-w-full{
     max-width: 100%;
+  }
+
+  .lg\:max-w-none{
+    max-width: none;
   }
 
   .lg\:grid-flow-col{
