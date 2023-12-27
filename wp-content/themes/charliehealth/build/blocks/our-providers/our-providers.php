@@ -11,7 +11,7 @@ $image = get_field('image');
     <?php while (have_rows('providers')) : the_row(); ?>
       <div class="bg-white rounded-[6px] py-sp-4 px-sp-3">
         <img src="<?= get_sub_field('headshot')['sizes']['featured-large']; ?>" alt="<?= get_sub_field('headshot')['alt']; ?>" class="object-cover rounded-[50%] aspect-square mb-sp-6">
-        <p class="font-heading-serif mb-[10px] text-[14px] !leading-[1.1]"><?= get_sub_field('name'); ?></p>
+        <p class="!font-heading-serif mb-[8px] text-[14px] !leading-[1.1]"><?= get_sub_field('name'); ?></p>
         <p class="mb-0 text-[14px] !leading-[1.1]"><?= get_sub_field('title'); ?></p>
       </div>
     <?php endwhile; ?>
