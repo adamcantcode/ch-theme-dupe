@@ -48,7 +48,7 @@ $heading = get_field('heading');
   <div class="min-w-0"></div>
   <?php if (have_rows('illustrations')) : ?>
     <!-- parent grid fix for swiper wrap -->
-    <div class="lg:absolute lg:top-0 lg:left-[66.667%] w-full lg:min-w-0">
+    <div class="lg:absolute lg:top-0 lg:left-[60%] w-full lg:min-w-0">
       <div class="h-full swiper swiper-home-test">
         <div class="swiper-wrapper">
           <?php while (have_rows('illustrations')) : the_row(); ?>

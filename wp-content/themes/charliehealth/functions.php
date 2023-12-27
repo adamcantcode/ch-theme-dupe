@@ -667,6 +667,8 @@ add_filter('should_load_separate_core_block_assets', '__return_true');
 // $test = 'bg-grey-warm'
 // $test = 'bg-pale-blue-300'
 // $test = 'bg-pale-blue-100'
+// $test = '!text-[28px]'
+// $test = '!text-[20px]'
 
 // $test = '!text-h2-lg !text-h2 !font-heading !font-heading-serif !text-h5'
 // $test = 'bg-pale-blue-100'

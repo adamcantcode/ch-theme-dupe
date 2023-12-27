@@ -123,18 +123,18 @@ $style  = get_field('style');
         ?>
             <div class="relative bg-white group rounded-[6px]">
               <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-[6px]">
-                <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover w-full rounded-t-[6px] h-full group-hover:scale-110 transition-all duration-300">
+                <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover w-full rounded-t-[6px] h-full group-hover:scale-105 transition-all duration-300">
               </div>
               <div class="absolute top-sp-4 left-sp-4 rounded-t-[6px]">
                 <?php $tags = get_the_terms(get_the_ID(), 'post_tag');  ?>
                 <?php if ($tags) :  ?>
                   <?php foreach ($tags as $tag) : ?>
-                    <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="relative inline-block no-underline rounded-lg px-[15px] py-[10px] text-[14px] text-white bg-transparent hover:bg-white hover:!text-primary border border-white z-[6] leading-[1.4]"><?= $tag->name; ?></a>
+                    <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="relative inline-block no-underline rounded-lg px-[15px] py-[10px] text-[14px] text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] leading-[1.4]"><?= $tag->name; ?></a>
                   <?php endforeach; ?>
                 <?php endif; ?>
               </div>
               <div class="grid bg-white p-sp-4 rounded-b-[6px]">
-                <h3 class="font-heading text-[20px] !leading-[1.1] mb-sp-5"><a href="<?= get_the_permalink(); ?>" class="stretched-link font-heading text-[20px] !leading-[1.1] block"><?= get_the_title(); ?></a></h3>
+                <h3 class="font-heading text-[20px] !leading-[1.1] mb-sp-5"><a href="<?= get_the_permalink(); ?>" class="stretched-link font-heading text-[20px] !leading-[1.4] block"><?= get_the_title(); ?></a></h3>
                 <p class="mb-0 text-[14px] leading-[1.1]"><?= $author->post_title; ?></p>
               </div>
             </div>
