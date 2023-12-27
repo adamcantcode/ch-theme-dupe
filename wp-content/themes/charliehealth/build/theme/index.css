@@ -1559,6 +1559,10 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-bottom: 14px;
 }
 
+.mb-\[8px\]{
+  margin-bottom: 8px;
+}
+
 .mb-sp-1{
   margin-bottom: 0.25rem;
 }
@@ -1711,8 +1715,8 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-top: 2rem;
 }
 
-.mb-\[8px\]{
-  margin-bottom: 8px;
+.ml-\[40px\]{
+  margin-left: 40px;
 }
 
 .block{
@@ -2040,6 +2044,10 @@ a.ch-button.button-tertiary.inverted:hover {
   max-width: 100%;
 }
 
+.max-w-\[50\%\]{
+  max-width: 50%;
+}
+
 .flex-1{
   flex: 1 1 0%;
 }
@@ -2245,6 +2253,10 @@ a.ch-button.button-tertiary.inverted:hover {
   gap: 0.25rem;
 }
 
+.gap-sp-10{
+  gap: 2.5rem;
+}
+
 .gap-sp-12{
   gap: 3rem;
 }
@@ -2281,8 +2293,8 @@ a.ch-button.button-tertiary.inverted:hover {
   gap: 2rem;
 }
 
-.gap-sp-10{
-  gap: 2.5rem;
+.gap-0{
+  gap: 0px;
 }
 
 .gap-x-4{
@@ -2870,6 +2882,11 @@ a.ch-button.button-tertiary.inverted:hover {
   padding-bottom: 1.5rem;
 }
 
+.py-sp-8{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .\!pb-0{
   padding-bottom: 0px !important;
 }
@@ -2964,6 +2981,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .\!text-\[20px\]{
   font-size: 20px !important;
+}
+
+.\!text-\[28px\]{
+  font-size: 28px !important;
 }
 
 .\!text-h2{
@@ -3142,8 +3163,12 @@ a.ch-button.button-tertiary.inverted:hover {
   line-height: 1rem;
 }
 
-.\!text-\[28px\]{
-  font-size: 28px !important;
+.text-\[32px\]{
+  font-size: 32px;
+}
+
+.\!text-\[32px\]{
+  font-size: 32px !important;
 }
 
 .font-bold{
@@ -3776,7 +3801,7 @@ a.ch-button.button-tertiary.inverted:hover {
 .home h1{
   margin-bottom: 1rem;
   font-family: "ABC Social", sans-serif;
-  font-size: 42px;
+  font-size: 64px;
   line-height: 1.1;
 }
 
@@ -4978,11 +5003,6 @@ a.providers:hover {
   color: rgb(29 34 95 / var(--tw-text-opacity)) !important;
 }
 
-.hover\:\!text-primary:hover{
-  --tw-text-opacity: 1 !important;
-  color: rgb(22 26 61 / var(--tw-text-opacity)) !important;
-}
-
 .hover\:text-lavender-200:hover{
   --tw-text-opacity: 1;
   color: rgb(231 211 255 / var(--tw-text-opacity));
@@ -5025,12 +5045,6 @@ a.providers:hover {
 
 .group:hover .group-hover\:rotate-45{
   --tw-rotate: 45deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.group:hover .group-hover\:scale-110{
-  --tw-scale-x: 1.1;
-  --tw-scale-y: 1.1;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -5148,8 +5162,8 @@ a.providers:hover {
     bottom: -50px;
   }
 
-  .lg\:left-\[66\.667\%\]{
-    left: 66.667%;
+  .lg\:left-\[60\%\]{
+    left: 60%;
   }
 
   .lg\:left-sp-12{
@@ -5166,10 +5180,6 @@ a.providers:hover {
 
   .lg\:top-\[32px\]{
     top: 32px;
-  }
-
-  .lg\:left-\[60\%\]{
-    left: 60%;
   }
 
   .lg\:order-1{
@@ -5278,6 +5288,10 @@ a.providers:hover {
 
   .lg\:mt-sp-8{
     margin-top: 2rem;
+  }
+
+  .lg\:ml-0{
+    margin-left: 0px;
   }
 
   .lg\:block{
@@ -5488,6 +5502,10 @@ a.providers:hover {
     grid-template-columns: 1fr 4fr;
   }
 
+  .lg\:grid-cols-\[2\.33fr_4fr\]{
+    grid-template-columns: 2.33fr 4fr;
+  }
+
   .lg\:grid-cols-\[2fr\2c 1fr\]{
     grid-template-columns: 2fr 1fr;
   }
@@ -5538,22 +5556,6 @@ a.providers:hover {
 
   .lg\:grid-cols-\[unset\]{
     grid-template-columns: unset;
-  }
-
-  .lg\:grid-cols-\[2fr_4fr\]{
-    grid-template-columns: 2fr 4fr;
-  }
-
-  .lg\:grid-cols-\[2\.5fr_4fr\]{
-    grid-template-columns: 2.5fr 4fr;
-  }
-
-  .lg\:grid-cols-\[2\.25fr_4fr\]{
-    grid-template-columns: 2.25fr 4fr;
-  }
-
-  .lg\:grid-cols-\[2\.33fr_4fr\]{
-    grid-template-columns: 2.33fr 4fr;
   }
 
   .lg\:flex-row{
@@ -5614,6 +5616,10 @@ a.providers:hover {
 
   .lg\:gap-sp-8{
     gap: 2rem;
+  }
+
+  .lg\:gap-sp-10{
+    gap: 2.5rem;
   }
 
   .lg\:gap-x-sp-16{
@@ -5742,6 +5748,11 @@ a.providers:hover {
     padding-bottom: 0px;
   }
 
+  .lg\:py-sp-12{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
   .lg\:pb-0{
     padding-bottom: 0px;
   }
@@ -5762,8 +5773,8 @@ a.providers:hover {
     padding-top: 4rem;
   }
 
-  .lg\:\!text-\[28px\]{
-    font-size: 28px !important;
+  .lg\:\!text-\[20px\]{
+    font-size: 20px !important;
   }
 
   .lg\:text-\[2\.5rem\]{
@@ -5776,10 +5787,6 @@ a.providers:hover {
 
   .lg\:text-\[56px\]{
     font-size: 56px;
-  }
-
-  .lg\:text-\[60px\]{
-    font-size: 60px;
   }
 
   .lg\:text-\[64px\]{
@@ -5830,10 +5837,6 @@ a.providers:hover {
     line-height: 140%;
     letter-spacing: 0;
     font-weight: 500;
-  }
-
-  .lg\:\!text-\[20px\]{
-    font-size: 20px !important;
   }
 
   .lg\:\!leading-\[1\.4\]{

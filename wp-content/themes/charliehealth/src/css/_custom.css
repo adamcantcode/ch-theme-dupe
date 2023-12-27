@@ -27,7 +27,7 @@
 }
 .home {
   h1 {
-    @apply text-[42px] leading-[1.1] mb-sp-4 font-heading;
+    @apply text-[64px] leading-[1.1] mb-sp-4 font-heading;
   }
   h2 {
     @apply text-[32px] leading-[1.1] mb-sp-8 font-heading-serif;
