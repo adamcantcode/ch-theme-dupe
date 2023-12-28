@@ -8,7 +8,7 @@ $cardSubheading = get_field('card_subheading');
 ?>
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-sp-5">
   <div>
-    <h2 class="lg:!text-[20px] !text-[18px] lg:!leading-[1.4] !font-heading"><span class="lg:text-[56px] text-[40px] lg:leading-[1.4] block !font-heading-serif lg:max-w-[400px]"><?= $heading; ?></span><?= $subheading; ?></h2>
+    <h2 class="lg:!text-[20px] !text-[18px] lg:!leading-[1.4] !font-heading lg:max-w-[400px]"><span class="lg:text-[56px] text-[40px] lg:leading-[1.4] block !font-heading-serif"><?= $heading; ?></span><?= $subheading; ?></h2>
     <?php include(get_template_directory() . '/includes/button-group.php'); ?>
   </div>
   <div>
