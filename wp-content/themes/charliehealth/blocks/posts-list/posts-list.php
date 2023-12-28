@@ -4,7 +4,7 @@ $count = get_field('count');
 $style  = get_field('style');
 ?>
 
-<?php if ($style !== 'custom') : ?>
+<?php if ($style === 'latest' || $style === null) : ?>
   <div id="<?= $block['id']; ?>">
     <div class="grid lg:grid-cols-3 gap-x-sp-8 gap-y-sp-10 mb-sp-10">
       <?php
@@ -54,9 +54,9 @@ $style  = get_field('style');
       endif; ?>
     </div>
   </div>
-  <?php else :
-  $customPosts = get_field('custom_posts');
-  if ($customPosts) : ?>
+<?php elseif ($style === 'custom') :
+  $customPosts = get_field('custom_posts'); ?>
+  <?php if ($customPosts) : ?>
     <div class="grid lg:grid-cols-3 posts-container gap-x-sp-8 gap-y-sp-10">
       <?php foreach ($customPosts['related_posts'] as $customPost) : ?>
         <?php
@@ -88,4 +88,60 @@ $style  = get_field('style');
       <?php endforeach; ?>
     </div>
   <?php endif; ?>
+<?php elseif ($style === 'latest_new') : ?>
+  <div id="<?= $block['id']; ?>">
+    <div class="grid lg:grid-cols-[3fr_9fr] gap-x-sp-5 gap-y-sp-10">
+      <div>
+        <h2>From the Library</h2>
+        <?php include(get_template_directory() . '/includes/button-group.php'); ?>
+      </div>
+      <div class="grid lg:grid-cols-3 gap-sp-5">
+        <?php
+        $args = array(
+          'post_type' => $type,
+          'posts_per_page' => $count,
+          'meta_key'       => 'date',
+          'orderby'        => 'meta_value',
+          'order'          => 'DESC',
+          'meta_type'      => 'DATE',
+        );
+
+        $query = new WP_Query($args);
+        if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
+            $author = get_field('by_author', get_the_ID());
+            if (has_post_thumbnail()) {
+              $featuredImageID = get_post_thumbnail_id();
+              $featuredImage = wp_get_attachment_image_src($featuredImageID, 'card-thumb');
+              $featuredImageAltText = get_post_meta($featuredImageID, '_wp_attachment_image_alt', true);
+
+              $featuredImageUrl = $featuredImage[0];
+              $featuredImageAltText = $featuredImageAltText ?: '';
+            } else {
+              $featuredImageUrl = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
+              $featuredImageAltText = 'Charlie Health Logo';
+            }
+        ?>
+            <div class="relative bg-white group rounded-[6px]">
+              <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-[6px]">
+                <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover w-full rounded-t-[6px] h-full group-hover:scale-105 transition-all duration-300">
+              </div>
+              <div class="absolute top-sp-4 left-sp-4 rounded-t-[6px]">
+                <?php $tags = get_the_terms(get_the_ID(), 'post_tag');  ?>
+                <?php if ($tags) :  ?>
+                  <?php foreach ($tags as $tag) : ?>
+                    <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="relative inline-block no-underline rounded-lg px-[15px] py-[10px] text-[14px] text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] leading-[1.4]"><?= $tag->name; ?></a>
+                  <?php endforeach; ?>
+                <?php endif; ?>
+              </div>
+              <div class="grid bg-white p-sp-4 rounded-b-[6px]">
+                <h3 class="font-heading text-[20px] !leading-[1.1] mb-sp-5"><a href="<?= get_the_permalink(); ?>" class="stretched-link font-heading text-[20px] !leading-[1.4] block"><?= get_the_title(); ?></a></h3>
+                <p class="mb-0 text-[14px] leading-[1.1]"><?= $author->post_title; ?></p>
+              </div>
+            </div>
+        <?php endwhile;
+          wp_reset_postdata();
+        endif; ?>
+      </div>
+    </div>
+  </div>
 <?php endif; ?>

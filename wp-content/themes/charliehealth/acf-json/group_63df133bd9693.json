@@ -180,6 +180,13 @@
                         "operator": "!=",
                         "value": "image"
                     }
+                ],
+                [
+                    {
+                        "field": "field_641639ffb2d96",
+                        "operator": "!=",
+                        "value": "new_image"
+                    }
                 ]
             ],
             "wrapper": {
@@ -371,5 +378,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1702484240
+    "modified": 1703082906
 }

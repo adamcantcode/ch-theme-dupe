@@ -1,25 +1,65 @@
-.single-areas-of-care,
-.single-treatment-modalities {
-  .main-article-content {
-    section {
-      .acf-innerblocks-container {
-        & > {
-          img {
-            @apply rounded-md;
-          }
-          figure {
-            @apply mb-sp-6;
-            @screen lg {
-              @apply text-p-lg;
-            }
-          }
-        }
+/* *** Custom Pages *** */
+
+/* Home */
+@screen lg {
+  .home {
+    h1 {
+      @apply !text-[140px] !leading-[.8] !mb-sp-10;
+    }
+    h4,
+    .not-heading-h4 {
+      font-size: 20px;
+      line-height: 110%;
+      letter-spacing: 0.2px;
+      margin-bottom: 0;
+    }
+    .features-block-callout {
+      > p {
+        @apply text-[20px] leading-[1.6] font-heading;
+      }
+    }
+    .home-testimonials {
+      p {
+        @apply text-[14px] leading-[1.6] font-heading;
       }
     }
   }
 }
+.home {
+  h1 {
+    @apply text-[64px] leading-[1.1] mb-sp-4 font-heading;
+  }
+  h2 {
+    @apply text-[32px] leading-[1.1] mb-sp-8 font-heading-serif;
+    @screen lg {
+      @apply text-[40px];
+    }
+  }
+  h3 {
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 0.2px;
+    @screen lg {
+      @apply text-[28px] leading-[1.1];
+    }
+  }
+  p {
+    @apply text-[14px] leading-[1.6] font-heading;
+  }
+  .features-block-intro {
+    h2 {
+      @apply text-white font-heading-serif;
+    }
+  }
+  .features-block-callout {
+    > p {
+      @apply text-white font-heading;
+    }
+  }
+}
+/* END Home */
 
-/* Outcomes Revamp */
+/* Outcomes */
 .page-id-437,
 .page-id-4980 {
   /* main > section:first-child {
@@ -79,9 +119,9 @@
     }
   }
 }
+/* END Outomes */
 
-/* IOP Page */
-
+/* IOP */
 .page-id-435 {
   main > section {
     .hero-cta {
@@ -219,6 +259,31 @@
     }
   }
 }
+/* END IOP */
+
+/* *** END Custom Pages *** */
+
+.single-areas-of-care,
+.single-treatment-modalities {
+  .main-article-content {
+    section {
+      .acf-innerblocks-container {
+        & > {
+          img {
+            @apply rounded-md;
+          }
+          figure {
+            @apply mb-sp-6;
+            @screen lg {
+              @apply text-p-lg;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 #articleContent {
   & > div {
     & > div {
@@ -391,7 +456,7 @@
   }
   &.swiper-testimonial-carousel-big {
     .swiper-button-disabled {
-      @apply opacity-20
+      @apply opacity-20;
     }
     .swiper-pagination-bullets {
       @screen lg {

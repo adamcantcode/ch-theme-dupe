@@ -27,7 +27,7 @@
 	})
 </script>
 <footer id="footer" class="grid bg-secondary-soft relatve">
-	<div class="section">
+	<div class="section-sm-top section-lg-bottom ">
 		<div class="container ">
 			<div class="flex flex-col justify-between lg:flex-row">
 				<div class="w-full rounded-t-sm lg:rounded-l-sm lg:rounded-r-none py-sp-5 px-sp-6 bg-lavender-100">

@@ -99,6 +99,13 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/aoc-list');
   register_block_type(__DIR__ . '/build/blocks/fifty-fifty-grid-graph');
   register_block_type(__DIR__ . '/build/blocks/tri-grid');
+  register_block_type(__DIR__ . '/build/blocks/features');
+  register_block_type(__DIR__ . '/build/blocks/home-testimonials');
+  register_block_type(__DIR__ . '/build/blocks/card-link-home');
+  register_block_type(__DIR__ . '/build/blocks/how-it-works');
+  register_block_type(__DIR__ . '/build/blocks/our-providers');
+  register_block_type(__DIR__ . '/build/blocks/grid-eight-four');
+  register_block_type(__DIR__ . '/build/blocks/home-cta');
 }
 add_action('init', 'register_acf_blocks', 5);
 
@@ -661,6 +668,8 @@ add_filter('should_load_separate_core_block_assets', '__return_true');
 // $test = 'bg-pale-blue-300'
 // $test = 'bg-pale-blue-100'
 // $test = 'gap-0'
+// $test = '!text-[28px]'
+// $test = '!text-[20px]'
 
 // $test = '!text-h2-lg !text-h2 !font-heading !font-heading-serif !text-h5'
 // $test = 'bg-pale-blue-100'

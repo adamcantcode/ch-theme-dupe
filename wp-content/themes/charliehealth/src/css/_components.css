@@ -1,6 +1,6 @@
 @layer components {
   .ch-button {
-    @apply md:text-[18px] text-[4vw] inline-block md:px-[25px] px-[10px] py-[15px] no-underline transition-all duration-300 flex-1 md:flex-none text-center leading-none md:leading-[1.8rem] capitalize;
+    @apply md:text-[18px] text-[4vw] inline-block md:px-[25px] px-[10px] py-[15px] no-underline transition-all duration-300 flex-1 md:flex-none text-center leading-none md:leading-[1.8rem] capitalize z-[1];
     &.button-primary {
       @apply shadow-[inset-0_0_0_2px_transparent] text-white rounded-sm bg-darker-blue hover:bg-darker-blue-hover;
       &.inverted {
