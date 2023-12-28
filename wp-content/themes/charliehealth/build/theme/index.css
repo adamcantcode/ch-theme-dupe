@@ -3758,38 +3758,38 @@ a.ch-button.button-tertiary.inverted:hover {
 /* Home */
 
 @media (min-width: 1024px) {
-    .home h1{
+    .page-id-6 h1{
     margin-bottom: 2.5rem !important;
     font-size: 120px !important;
     line-height: .8 !important;
   }
-    .home h4,
-    .home .not-heading-h4 {
+    .page-id-6 h4,
+    .page-id-6 .not-heading-h4 {
       font-size: 20px;
       line-height: 110%;
       letter-spacing: 0.2px;
       margin-bottom: 0;
     }
-      .home .features-block-callout > p{
+      .page-id-6 .features-block-callout > p{
     font-family: "ABC Social", sans-serif;
     font-size: 20px;
     line-height: 1.6;
   }
-      .home .home-testimonials p{
+      .page-id-6 .home-testimonials p{
     font-family: "ABC Social", sans-serif;
     font-size: 14px;
     line-height: 1.6;
   }
 }
 
-.home h1{
+.page-id-6 h1{
   margin-bottom: 1rem;
   font-family: "ABC Social", sans-serif;
   font-size: 64px;
   line-height: 1.1;
 }
 
-.home h2{
+.page-id-6 h2{
   margin-bottom: 2rem;
   font-family: "ABC Arizona", serif;
   font-size: 32px;
@@ -3798,12 +3798,12 @@ a.ch-button.button-tertiary.inverted:hover {
 
 @media (min-width: 1024px) {
 
-.home h2{
+.page-id-6 h2{
     font-size: 40px;
   }
     }
 
-.home h3 {
+.page-id-6 h3 {
     font-size: 20px;
     line-height: 120%;
     letter-spacing: 0.2px;
@@ -3811,33 +3811,33 @@ a.ch-button.button-tertiary.inverted:hover {
 
 @media (min-width: 1024px) {
 
-.home h3{
+.page-id-6 h3{
     font-size: 28px;
     line-height: 1.1;
   }
     }
 
-.home p{
+.page-id-6 p{
   font-family: "ABC Social", sans-serif;
   font-size: 14px;
   line-height: 1.6;
 }
 
-a.home .features-block-intro h2:hover {
+a.page-id-6 .features-block-intro h2:hover {
         color: #ffffff;
       }
 
-.home .features-block-intro h2{
+.page-id-6 .features-block-intro h2{
   font-family: "ABC Arizona", serif;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-a.home .features-block-callout > p:hover {
+a.page-id-6 .features-block-callout > p:hover {
         color: #ffffff;
       }
 
-.home .features-block-callout > p{
+.page-id-6 .features-block-callout > p{
   font-family: "ABC Social", sans-serif;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
