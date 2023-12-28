@@ -91,6 +91,11 @@
           "slug": "primary-black-blue",
           "color": "#12142A",
           "name": "Black Blue"
+        },
+        {
+          "slug": "secondary-soft",
+          "color": "#1A1F45",
+          "name": "Secondary soft"
         }
       ]
     },
