@@ -3760,7 +3760,7 @@ a.ch-button.button-tertiary.inverted:hover {
 @media (min-width: 1024px) {
     .home h1{
     margin-bottom: 2.5rem !important;
-    font-size: 140px !important;
+    font-size: 120px !important;
     line-height: .8 !important;
   }
     .home h4,

@@ -4,7 +4,7 @@
 @screen lg {
   .home {
     h1 {
-      @apply !text-[140px] !leading-[.8] !mb-sp-10;
+      @apply !text-[120px] !leading-[.8] !mb-sp-10;
     }
     h4,
     .not-heading-h4 {
