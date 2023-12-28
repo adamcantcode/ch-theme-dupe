@@ -2344,6 +2344,10 @@ a.ch-button.button-tertiary.inverted:hover {
   row-gap: 2rem;
 }
 
+.gap-y-sp-4{
+  row-gap: 1rem;
+}
+
 .self-start{
   align-self: flex-start;
 }
@@ -3157,6 +3161,10 @@ a.ch-button.button-tertiary.inverted:hover {
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-\[40px\]{
+  font-size: 40px;
 }
 
 .font-bold{
@@ -5170,6 +5178,10 @@ a.providers:hover {
     top: 32px;
   }
 
+  .lg\:top-\[-120px\]{
+    top: -120px;
+  }
+
   .lg\:order-1{
     order: 1;
   }
@@ -5440,6 +5452,10 @@ a.providers:hover {
 
   .lg\:max-w-none{
     max-width: none;
+  }
+
+  .lg\:max-w-\[400px\]{
+    max-width: 400px;
   }
 
   .lg\:grid-flow-col{

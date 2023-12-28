@@ -10,7 +10,7 @@ $heading = get_field('heading');
 <div class="grid grid-cols-1 lg:gap-sp-5 gap-0 lg:grid-cols-[minmax(0,_7fr)_minmax(0,_1fr)_minmax(0,_4fr)] home-testimonials relative">
   <div class="min-w-0">
     <h2 class="lg:!mb-sp-14 mb-sp-8"><?= $heading; ?></h2>
-    <div class="grid gap-y-sp-2">
+    <div class="grid gap-y-sp-4">
       <?php if (have_rows('testimonials')) : ?>
         <?php while (have_rows('testimonials')) : the_row(); ?>
           <?php
@@ -30,7 +30,7 @@ $heading = get_field('heading');
               break;
           }
           ?>
-          <div class="grid grid-cols-1 lg:grid-cols-[2.33fr_4fr] lg:gap-sp-10 gap-sp-6">
+          <div class="grid grid-cols-1 lg:grid-cols-[2.33fr_4fr] lg:gap-sp-10 gap-sp-3">
             <div class="flex gap-x-sp-6">
               <div class="rounded-[50%] h-[15px] w-[15px] mt-sp-2 <?= $dotColor; ?>"></div>
               <div class="font-heading-serif text-primary text-[20px] leading-[1.4] antialiased flex-1">“<?= get_sub_field('pull_quote'); ?>”</div>
@@ -48,7 +48,7 @@ $heading = get_field('heading');
   <div class="min-w-0"></div>
   <?php if (have_rows('illustrations')) : ?>
     <!-- parent grid fix for swiper wrap -->
-    <div class="lg:absolute lg:top-0 lg:left-[60%] w-full lg:min-w-0">
+    <div class="lg:absolute lg:top-[-120px] lg:left-[60%] w-full lg:min-w-0">
       <div class="h-full swiper swiper-home-test">
         <div class="swiper-wrapper">
           <?php while (have_rows('illustrations')) : the_row(); ?>
