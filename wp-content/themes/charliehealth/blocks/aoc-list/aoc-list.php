@@ -26,10 +26,9 @@ $customPosts = get_field('areas_of_care');
             <div class="relative">
               <a href="<?= get_the_permalink(); ?>" class="stretched-link no-underline pb-sp-6 border-b-2 border-primary grid lg:grid-cols-[3fr_3.5fr] mb-sp-6 gap-x-sp-5 items-center list-item-height-js group">
                 <div class="flex items-center mb-sp-2 lg:mb-0">
-                  <h3 class="inline-block mb-0 not-heading-h4 !font-heading"><?= ucfirst(strtolower(get_the_title())); ?></h3>
-                  <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="group-hover:translate-x-[5px] transition-all duration-300 ml-sp-4 inline-block align-baseline flex-none">
+                  <h3 class="inline-block mb-0 not-heading-h4 !font-heading"><?= ucfirst(strtolower(get_the_title())); ?><svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="group-hover:translate-x-[5px] transition-all duration-300 ml-sp-4 inline-block align-baseline flex-none">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3431 0.278417L16.7071 6.32784C17.0976 6.69906 17.0976 7.30094 16.7071 7.67216L10.3431 13.7216C9.95262 14.0928 9.31946 14.0928 8.92893 13.7216C8.53841 13.3504 8.53841 12.7485 8.92893 12.3773L13.5858 7.95058H0V6.04942H13.5858L8.92893 1.62273C8.53841 1.25151 8.53841 0.64964 8.92893 0.278417C9.31946 -0.0928058 9.95262 -0.0928058 10.3431 0.278417Z" fill="#161A3D" />
-                  </svg>
+                  </svg></h3>
                 </div>
                 <p class="!mb-0 text-[14px] leading-[1.6]"><?= the_field('short_description', get_the_ID()); ?></p>
               </a>
@@ -43,10 +42,10 @@ $customPosts = get_field('areas_of_care');
           <div class="relative">
             <a href="<?= get_the_permalink(); ?>" class="stretched-link no-underline pb-sp-6 border-b-2 border-primary grid lg:grid-cols-[3fr_3.5fr] mb-sp-6 gap-x-sp-5 items-center list-item-height-js group">
               <div class="flex items-center mb-sp-2 lg:mb-0">
-                <h3 class="inline-block mb-0 not-heading-h4 !font-heading"><?= ucfirst(strtolower(get_the_title())); ?></h3>
-                <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="group-hover:translate-x-[5px] transition-all duration-300 ml-sp-4 inline-block align-baseline flex-none">
+                <h3 class="inline-block mb-0 not-heading-h4 !font-heading"><?= ucfirst(strtolower(get_the_title())); ?><svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="group-hover:translate-x-[5px] transition-all duration-300 ml-sp-4 inline-block align-baseline flex-none">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3431 0.278417L16.7071 6.32784C17.0976 6.69906 17.0976 7.30094 16.7071 7.67216L10.3431 13.7216C9.95262 14.0928 9.31946 14.0928 8.92893 13.7216C8.53841 13.3504 8.53841 12.7485 8.92893 12.3773L13.5858 7.95058H0V6.04942H13.5858L8.92893 1.62273C8.53841 1.25151 8.53841 0.64964 8.92893 0.278417C9.31946 -0.0928058 9.95262 -0.0928058 10.3431 0.278417Z" fill="#161A3D" />
-                </svg>
+                </svg></h3>
+                
               </div>
               <p class="!mb-0 text-[14px] leading-[1.6]"><?= the_field('short_description', get_the_ID()); ?></p>
             </a>
