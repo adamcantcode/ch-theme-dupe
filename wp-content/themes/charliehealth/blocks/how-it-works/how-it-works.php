@@ -5,7 +5,7 @@ $image = get_field('image');
 <div class="grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-sp-5">
   <div class="relative">
     <div class="lg:absolute lg:bottom-[-50px] right-0">
-      <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="lg:max-w-none lg:w-[690px]">
+      <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="lg:max-w-none lg:w-[600px]">
     </div>
   </div>
   <div>
