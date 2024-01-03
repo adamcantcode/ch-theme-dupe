@@ -107,6 +107,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/grid-eight-four');
   register_block_type(__DIR__ . '/build/blocks/home-cta');
   register_block_type(__DIR__ . '/build/blocks/values');
+  register_block_type(__DIR__ . '/build/blocks/testimonials-careers');
 }
 add_action('init', 'register_acf_blocks', 5);
 
