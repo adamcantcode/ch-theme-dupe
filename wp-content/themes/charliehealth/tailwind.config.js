@@ -75,6 +75,7 @@ module.exports = {
       grey: {
         warm: '#F7F5F1',
         cool: '#F8F7F7',
+        deactivated: '#87889A',
       },
       salmon: '#F9E1D4',
       // 'light-teal': '#C8FFFF',

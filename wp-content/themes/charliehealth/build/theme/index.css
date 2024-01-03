@@ -3183,6 +3183,10 @@ a.ch-button.button-tertiary.inverted:hover {
   line-height: 1.4 !important;
 }
 
+.leading-\[\.\]{
+  line-height: .;
+}
+
 .leading-\[1\.1\]{
   line-height: 1.1;
 }
@@ -5899,6 +5903,10 @@ mark{
     line-height: 140%;
     letter-spacing: 0;
     font-weight: 500;
+  }
+
+  .lg\:text-\[28px\]{
+    font-size: 28px;
   }
 
   .lg\:\!leading-\[1\.4\]{
