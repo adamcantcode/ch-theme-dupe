@@ -180,7 +180,7 @@ Template Post Type: page
                 }
               });
 
-              
+
               if (allHidden) {
                 console.log(departmentContainer, 'hide');
                 departmentContainer.style.display = 'none';

@@ -1321,6 +1321,10 @@ a.ch-button.button-tertiary.inverted:hover {
   pointer-events: none;
 }
 
+.visible{
+  visibility: visible;
+}
+
 .invisible{
   visibility: hidden;
 }
