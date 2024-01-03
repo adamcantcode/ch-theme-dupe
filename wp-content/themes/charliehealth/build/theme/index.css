@@ -5210,6 +5210,22 @@ a.providers:hover {
     top: 32px;
   }
 
+  .lg\:left-0{
+    left: 0px;
+  }
+
+  .lg\:top-\[-10\%\]{
+    top: -10%;
+  }
+
+  .lg\:top-\[100\%\]{
+    top: 100%;
+  }
+
+  .lg\:top-\[20\%\]{
+    top: 20%;
+  }
+
   .lg\:order-1{
     order: 1;
   }
