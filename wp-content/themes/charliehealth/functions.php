@@ -670,6 +670,7 @@ add_filter('should_load_separate_core_block_assets', '__return_true');
 // $test = 'gap-0'
 // $test = '!text-[28px]'
 // $test = '!text-[20px]'
+// $test = 'font-heading-serif lg:text-[40px] text-[32px] leading-[1.1]'
 
 // $test = '!text-h2-lg !text-h2 !font-heading !font-heading-serif !text-h5'
 // $test = 'bg-pale-blue-100'

@@ -1080,6 +1080,10 @@ a.ch-button.button-secondary.inverted:hover {
   line-height: 1;
 }
 
+.ch-button.button-tertiary-lavender a {
+    font-size: 14px;
+  }
+
 .ch-button.button-tertiary-lavender:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(218 193 251 / var(--tw-bg-opacity));
@@ -1439,42 +1443,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .top-sp-8{
   top: 2rem;
-}
-
-.bottom-\[10\%\]{
-  bottom: 10%;
-}
-
-.bottom-2\/3{
-  bottom: 66.666667%;
-}
-
-.top-\[20\%\]{
-  top: 20%;
-}
-
-.top-\[100\%\]{
-  top: 100%;
-}
-
-.top-2\/3{
-  top: 66.666667%;
-}
-
-.top-1\/3{
-  top: 33.333333%;
-}
-
-.bottom-1\/3{
-  bottom: 33.333333%;
-}
-
-.top-\[10\%\]{
-  top: 10%;
-}
-
-.top-\[-10\%\]{
-  top: -10%;
 }
 
 .-z-50{
@@ -2082,10 +2050,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .max-w-full{
   max-width: 100%;
-}
-
-.max-w-\[400px\]{
-  max-width: 400px;
 }
 
 .flex-1{
@@ -3087,6 +3051,10 @@ a.ch-button.button-tertiary.inverted:hover {
   font-size: 28px;
 }
 
+.text-\[32px\]{
+  font-size: 32px;
+}
+
 .text-\[40px\]{
   font-size: 40px;
 }
@@ -3820,6 +3788,10 @@ a.ch-button.button-tertiary.inverted:hover {
     font-size: 14px;
     line-height: 1.6;
   }
+
+.page-id-6 .home-testimonials p a {
+    font-size: 14px;
+  }
 }
 
 .page-id-6 h1{
@@ -3862,6 +3834,10 @@ a.ch-button.button-tertiary.inverted:hover {
   font-size: 14px;
   line-height: 1.6;
 }
+
+.page-id-6 p a {
+    font-size: 14px;
+  }
 
 a.page-id-6 .features-block-intro h2:hover {
         color: #ffffff;
@@ -4804,6 +4780,14 @@ a.providers:hover {
   fill: #FFFFFF;
 }
 
+mark{
+  border-radius: 6px;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
 .toc-underline{
   text-decoration-line: none;
 
@@ -4940,6 +4924,12 @@ a.providers:hover {
     font-size: 16px;
   }
 }
+
+/* TEMP STYLES */
+
+.text-\[14px\] a {
+    font-size: 14px;
+  }
 
 .first\:mt-0:first-child{
   margin-top: 0px;
@@ -5186,6 +5176,10 @@ a.providers:hover {
     bottom: -50px;
   }
 
+  .lg\:left-0{
+    left: 0px;
+  }
+
   .lg\:left-\[60\%\]{
     left: 60%;
   }
@@ -5202,20 +5196,12 @@ a.providers:hover {
     top: 0px;
   }
 
-  .lg\:top-\[-120px\]{
-    top: -120px;
-  }
-
-  .lg\:top-\[32px\]{
-    top: 32px;
-  }
-
-  .lg\:left-0{
-    left: 0px;
-  }
-
   .lg\:top-\[-10\%\]{
     top: -10%;
+  }
+
+  .lg\:top-\[-120px\]{
+    top: -120px;
   }
 
   .lg\:top-\[100\%\]{
@@ -5224,6 +5210,10 @@ a.providers:hover {
 
   .lg\:top-\[20\%\]{
     top: 20%;
+  }
+
+  .lg\:top-\[32px\]{
+    top: 32px;
   }
 
   .lg\:order-1{
@@ -5554,6 +5544,10 @@ a.providers:hover {
     grid-template-columns: 2fr 1fr;
   }
 
+  .lg\:grid-cols-\[2fr_3fr_3fr\]{
+    grid-template-columns: 2fr 3fr 3fr;
+  }
+
   .lg\:grid-cols-\[2fr_5fr\]{
     grid-template-columns: 2fr 5fr;
   }
@@ -5586,6 +5580,10 @@ a.providers:hover {
     grid-template-columns: 4fr 1fr 7fr;
   }
 
+  .lg\:grid-cols-\[4fr_8fr\]{
+    grid-template-columns: 4fr 8fr;
+  }
+
   .lg\:grid-cols-\[5fr_7fr\]{
     grid-template-columns: 5fr 7fr;
   }
@@ -5600,14 +5598,6 @@ a.providers:hover {
 
   .lg\:grid-cols-\[unset\]{
     grid-template-columns: unset;
-  }
-
-  .lg\:grid-cols-\[4fr_8fr\]{
-    grid-template-columns: 4fr 8fr;
-  }
-
-  .lg\:grid-cols-\[2fr_3fr_3fr\]{
-    grid-template-columns: 2fr 3fr 3fr;
   }
 
   .lg\:flex-row{
@@ -5831,6 +5821,10 @@ a.providers:hover {
 
   .lg\:text-\[2rem\]{
     font-size: 2rem;
+  }
+
+  .lg\:text-\[40px\]{
+    font-size: 40px;
   }
 
   .lg\:text-\[56px\]{

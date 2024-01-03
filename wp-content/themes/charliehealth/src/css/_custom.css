@@ -782,6 +782,10 @@
   }
 }
 
+mark {
+  @apply py-sp-1 px-sp-3 rounded-[6px];
+}
+
 .toc-underline {
   @apply no-underline;
 
@@ -898,5 +902,13 @@
   }
   .nav-cta a {
     @apply text-[16px] px-sp-4;
+  }
+}
+
+/* TEMP STYLES */
+
+.text-\[14px\] {
+  a {
+    font-size: 14px;
   }
 }
