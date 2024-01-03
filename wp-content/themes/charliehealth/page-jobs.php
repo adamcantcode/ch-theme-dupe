@@ -30,6 +30,7 @@ Template Post Type: page
     </div>
 
     <script>
+
       var requestOptions = {
         method: 'GET',
         redirect: 'follow'
@@ -86,19 +87,13 @@ Template Post Type: page
           'WA': 'Washington',
           'WV': 'West Virginia',
           'WI': 'Wisconsin',
-          'WY': 'Wyoming'
+          'WY': 'Wyoming',
         };
 
         const upperCaseAbbreviation = abbreviation.toUpperCase();
 
         return stateMap[upperCaseAbbreviation] || 'Remote';
       }
-
-      // Example usage:
-      const abbreviation = 'CA';
-      const fullName = stateAbbreviationToFullName(abbreviation);
-      console.log(`The full name of ${abbreviation} is ${fullName}`);
-
 
       fetch("https://boards-api.greenhouse.io/v1/boards/charliehealth/departments", requestOptions)
         .then(response => response.json())
@@ -112,7 +107,7 @@ Template Post Type: page
             var dropdown = document.getElementById('locationFilter');
 
             states.forEach(state => {
-              if (state !== null) {
+              if (state !== null && state !== undefined) {
                 var option = document.createElement('option');
                 var fullState = stateAbbreviationToFullName(state);
                 option.value = state;
