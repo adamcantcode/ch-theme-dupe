@@ -30,7 +30,6 @@ Template Post Type: page
     </div>
 
     <script>
-
       var requestOptions = {
         method: 'GET',
         redirect: 'follow'
@@ -105,6 +104,22 @@ Template Post Type: page
           function populateStateDropdown() {
             var states = Array.from(new Set(departmentsData.departments.flatMap(dep => dep.jobs.flatMap(job => job.location.name.split(', ')[1]))));
             var dropdown = document.getElementById('locationFilter');
+
+            console.log(states);
+            // Find the index of 'United States'
+            const indexOfUS = states.indexOf('United States');
+
+            // Update 'United States' to 'Remote' if found
+            if (indexOfUS !== -1) {
+              states[indexOfUS] = 'Remote';
+            }
+
+            // Remove undefined from the array
+            states = states.filter(location => location !== undefined);
+
+            // Sort the array and place 'Remote' first
+            states.sort((a, b) => (a === 'Remote' ? -1 : b === 'Remote' ? 1 : 0));
+            console.log(states);
 
             states.forEach(state => {
               if (state !== null && state !== undefined) {
