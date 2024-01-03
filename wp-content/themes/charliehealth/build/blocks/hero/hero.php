@@ -63,6 +63,36 @@ if ($style === 'image') {
     </div>
   </div>
 <?php endif; ?>
+<?php if ($style === 'multi_image') : ?>
+  <div class="grid items-center lg:grid-cols-[4fr_8fr] gap-sp-5 py-sp-10 lg:py-0">
+    <div class="order-2 lg:order-1">
+      <h1 class="mb-sp-6 lg:text-[64px] text-[42px] leading-[1.1]"><?= $title; ?></h1>
+      <div class="flex items-center gap-sp-4 mb-sp-10">
+        <?php if ($icon) : ?>
+          <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health Shield" class="w-10">
+        <?php endif; ?>
+        <p class="!mb-0 !font-heading-serif !text-[20px]"><?= $subtitle; ?></p>
+      </div>
+      <?php include(get_template_directory() . '/includes/button-group.php'); ?>
+    </div>
+    <div class="order-1 lg:order-2 grid grid-cols-1 lg:grid-cols-[2fr_3fr_3fr] gap-sp-5 h-full">
+      <?php
+      $imageOne   = get_field('image_one');
+      $imageTwo   = get_field('image_two');
+      $imageThree = get_field('image_three');
+      ?>
+      <div class="relative">
+        <img src="<?= $imageOne['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $imageOne['alt'] ?: 'Placeholder image'; ?>" class="absolute left-0 top-[100%] rounded-[16px] nolazy">
+      </div>
+      <div class="relative">
+        <img src="<?= $imageOne['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $imageOne['alt'] ?: 'Placeholder image'; ?>" class="absolute left-0 top-[-10%] rounded-[16px] nolazy">
+      </div>
+      <div class="relative">
+        <img src="<?= $imageOne['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $imageOne['alt'] ?: 'Placeholder image'; ?>" class="absolute left-0 top-[20%] rounded-[16px] nolazy max-w-[400px]">
+      </div>
+    </div>
+  </div>
+<?php endif; ?>
 <?php if ($style === 'details') : ?>
   <div class="grid items-start lg:grid-cols-2 gap-sp-8">
     <div class="order-1">
