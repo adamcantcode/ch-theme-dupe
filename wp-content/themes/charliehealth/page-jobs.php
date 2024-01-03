@@ -105,7 +105,6 @@ Template Post Type: page
             var states = Array.from(new Set(departmentsData.departments.flatMap(dep => dep.jobs.flatMap(job => job.location.name.split(', ')[1]))));
             var dropdown = document.getElementById('locationFilter');
 
-            console.log(states);
             // Find the index of 'United States'
             const indexOfUS = states.indexOf('United States');
 
@@ -119,6 +118,7 @@ Template Post Type: page
 
             // Sort the array and place 'Remote' first
             states.sort((a, b) => (a === 'Remote' ? -1 : b === 'Remote' ? 1 : 0));
+
             console.log(states);
 
             states.forEach(state => {
@@ -126,7 +126,7 @@ Template Post Type: page
                 var option = document.createElement('option');
                 var fullState = stateAbbreviationToFullName(state);
                 option.value = state;
-                option.textContent = state;
+                option.textContent = fullState;
                 dropdown.appendChild(option);
               }
             });
@@ -140,6 +140,7 @@ Template Post Type: page
               // Check if the department has jobs
               if (department.jobs.length > 0) {
                 var departmentContainer = document.createElement('div');
+                departmentContainer.className = 'department-container'
                 departmentContainer.innerHTML = `<h2>${department.name}</h2>`;
 
                 department.jobs.forEach(job => {
@@ -158,11 +159,11 @@ Template Post Type: page
           // Function to filter job listings based on selected state
           function filterJobListingsByState() {
             var selectedState = document.getElementById('locationFilter').value;
-            var jobListings = document.getElementById('jobListings').querySelectorAll('div');
+            var jobListings = document.getElementById('jobListings').querySelectorAll('.department-container');
 
             jobListings.forEach(departmentContainer => {
               var jobsInDepartment = departmentContainer.querySelectorAll('div');
-
+              var allHidden = true;
 
               jobsInDepartment.forEach(jobElement => {
                 var jobState = jobElement.querySelector('p').textContent.split(', ')[1];
@@ -173,10 +174,21 @@ Template Post Type: page
 
                 if (selectedState === '' || jobState === selectedState) {
                   jobElement.style.display = 'block';
+                  allHidden = false
                 } else {
                   jobElement.style.display = 'none';
                 }
               });
+
+              
+              if (allHidden) {
+                console.log(departmentContainer, 'hide');
+                departmentContainer.style.display = 'none';
+              } else {
+                console.log(departmentContainer, 'show');
+                departmentContainer.style.display = '';
+                // Reset display property if at least one jobElement is visible
+              }
             });
           }
 
