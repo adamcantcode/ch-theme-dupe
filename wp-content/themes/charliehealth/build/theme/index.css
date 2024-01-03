@@ -4931,6 +4931,26 @@ mark{
     font-size: 14px;
   }
 
+.not-heading-h4{
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+@media (min-width: 1024px){
+
+  .not-heading-h4{
+    font-size: 20px;
+  }
+}
+
+.faq-block-text-updates .faq-block p,
+  .faq-block-text-updates .faq-block ul,
+  .faq-block-text-updates .faq-block li,
+  .faq-block-text-updates .faq-block a{
+  font-size: 14px !important;
+  line-height: 1.1 !important;
+}
+
 .first\:mt-0:first-child{
   margin-top: 0px;
 }
