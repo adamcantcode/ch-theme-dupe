@@ -1445,6 +1445,18 @@ a.ch-button.button-tertiary.inverted:hover {
   top: 2rem;
 }
 
+.right-\[\]{
+  right: ;
+}
+
+.right-sp-4{
+  right: 1rem;
+}
+
+.right-sp-6{
+  right: 1.5rem;
+}
+
 .-z-50{
   z-index: -50;
 }
@@ -1483,6 +1495,14 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .col-span-2{
   grid-column: span 2 / span 2;
+}
+
+.col-span-6{
+  grid-column: span 6 / span 6;
+}
+
+.col-start-4{
+  grid-column-start: 4;
 }
 
 .float-right{
@@ -2032,6 +2052,10 @@ a.ch-button.button-tertiary.inverted:hover {
   max-width: 600px;
 }
 
+.max-w-\[700px\]{
+  max-width: 700px;
+}
+
 .max-w-\[72px\]{
   max-width: 72px;
 }
@@ -2052,8 +2076,8 @@ a.ch-button.button-tertiary.inverted:hover {
   max-width: 100%;
 }
 
-.max-w-\[700px\]{
-  max-width: 700px;
+.max-w-\[180px\]{
+  max-width: 180px;
 }
 
 .flex-1{
@@ -2448,6 +2472,10 @@ a.ch-button.button-tertiary.inverted:hover {
   border-radius: 0.625rem;
 }
 
+.rounded-\[50px\]{
+  border-radius: 50px;
+}
+
 .rounded-b-\[6px\]{
   border-bottom-right-radius: 6px;
   border-bottom-left-radius: 6px;
@@ -2721,6 +2749,11 @@ a.ch-button.button-tertiary.inverted:hover {
 .bg-young-adult{
   --tw-bg-opacity: 1;
   background-color: rgb(218 193 251 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#FDF9F5\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(253 249 245 / var(--tw-bg-opacity));
 }
 
 .bg-\[linear-gradient\(\#fead80\2c \#e2deca_50\%\2c \#bdc6fc\)\]{
@@ -3189,6 +3222,10 @@ a.ch-button.button-tertiary.inverted:hover {
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-\[18px\]{
+  font-size: 18px;
 }
 
 .font-bold{
@@ -5294,8 +5331,16 @@ mark{
     grid-column: span 1 / span 1;
   }
 
+  .lg\:col-span-6{
+    grid-column: span 6 / span 6;
+  }
+
   .lg\:col-start-2{
     grid-column-start: 2;
+  }
+
+  .lg\:col-start-4{
+    grid-column-start: 4;
   }
 
   .lg\:mx-auto{
@@ -5666,6 +5711,10 @@ mark{
     grid-template-columns: unset;
   }
 
+  .lg\:grid-cols-12{
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
   .lg\:flex-row{
     flex-direction: row;
   }
@@ -5949,6 +5998,10 @@ mark{
     line-height: 140%;
     letter-spacing: 0;
     font-weight: 500;
+  }
+
+  .lg\:text-\[20px\]{
+    font-size: 20px;
   }
 
   .lg\:\!leading-\[1\.4\]{

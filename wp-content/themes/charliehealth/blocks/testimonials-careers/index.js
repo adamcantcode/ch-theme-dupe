@@ -76,7 +76,7 @@ window.addEventListener('DOMContentLoaded', () => {
         endTrigger: '.pin-cta-js-motion',
         end: 'top 50%',
         scrub: true,
-        markers: true,
+        // markers: true,
       },
     });
     sectionBg.fromTo(
