@@ -7,15 +7,15 @@ import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 
 window.addEventListener('DOMContentLoaded', () => {
-  var swiper = new Swiper('.swiper.swiper-testimonial', {
+  var swiper = new Swiper('.swiper.swiper-careers-testimonial', {
     slidesPerView: 1,
     spaceBetween: 20,
     speed: 1000,
     loop: false,
     breakpoints: {
       1024: {
-        slidesPerView: 1.75,
-        spaceBetween: 64,
+        slidesPerView: 1.5,
+        spaceBetween: 20,
       },
     },
     pagination: {

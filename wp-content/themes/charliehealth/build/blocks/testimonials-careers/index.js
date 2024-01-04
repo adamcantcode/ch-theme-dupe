@@ -10628,15 +10628,15 @@ __webpack_require__.r(__webpack_exports__);
 // import styles bundle
 
 window.addEventListener('DOMContentLoaded', () => {
-  var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper.swiper-testimonial', {
+  var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper.swiper-careers-testimonial', {
     slidesPerView: 1,
     spaceBetween: 20,
     speed: 1000,
     loop: false,
     breakpoints: {
       1024: {
-        slidesPerView: 1.75,
-        spaceBetween: 64
+        slidesPerView: 1.5,
+        spaceBetween: 20
       }
     },
     pagination: {
