@@ -21,7 +21,7 @@ if (!empty($block['align'])) {
 }
 ?>
 
-<section <?= $anchor ?: ''; ?>class="<?= $className; ?> testimonial-padding bg-grey-warm">
+<section <?= $anchor ?: ''; ?>class="<?= $className; ?> testimonial-padding bg-grey-warm section-bg-js">
   <div class="section-horizontal">
     <div class="container">
       <h2><?= get_field('headline'); ?>headline</h2>
@@ -106,5 +106,21 @@ if (!empty($block['align'])) {
   </div>
   <?php //endif; 
   ?>
+  <!-- Slider main container -->
+
+  <div class="section-horizontal section-bg-js-cta">
+    <div class="container-sm">
+      <div class="flex flex-col justify-center pin-cta-js lg:h-[50vh] lg:mt-0 mt-[200px] pb-sp-14 lg:pb-0">
+        <div class="pin-cta-js-motion">
+          <div class="flex justify-center rounded-sm lg:px-sp-14 lg:pt-sp-14 pb-sp-6 px-sp-6">
+            <div class="flex flex-col items-center justify-center text-center max-w-[700px]">
+              <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health shield logo" class="w-[3rem] mb-sp-5">
+              <h2 class="text-darkest-blue lg:text-[2.5rem] text-h2-lg lg:leading-tight mb-sp-10 font-heading-serif"><?= $ctaHeadline; ?>Let’s build the solution to the youth mental health crisis together</h2>
+              <?php include(get_template_directory() . '/includes/button-group.php'); ?>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- Slider main container -->
