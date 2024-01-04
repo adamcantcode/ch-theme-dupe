@@ -910,6 +910,9 @@ mark {
 .text-\[14px\] {
   a {
     font-size: 14px;
+    &:hover {
+      @apply text-current;
+    }
   }
 }
 .not-heading-h4 {

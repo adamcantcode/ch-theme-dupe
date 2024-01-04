@@ -1084,6 +1084,10 @@ a.ch-button.button-secondary.inverted:hover {
     font-size: 14px;
   }
 
+.ch-button.button-tertiary-lavender a:hover{
+  color: currentColor;
+}
+
 .ch-button.button-tertiary-lavender:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(218 193 251 / var(--tw-bg-opacity));
@@ -1409,6 +1413,10 @@ a.ch-button.button-tertiary.inverted:hover {
   right: 0px;
 }
 
+.right-sp-6{
+  right: 1.5rem;
+}
+
 .top-0{
   top: 0px;
 }
@@ -1443,18 +1451,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .top-sp-8{
   top: 2rem;
-}
-
-.right-\[\]{
-  right: ;
-}
-
-.right-sp-4{
-  right: 1rem;
-}
-
-.right-sp-6{
-  right: 1.5rem;
 }
 
 .-z-50{
@@ -1495,14 +1491,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .col-span-2{
   grid-column: span 2 / span 2;
-}
-
-.col-span-6{
-  grid-column: span 6 / span 6;
-}
-
-.col-start-4{
-  grid-column-start: 4;
 }
 
 .float-right{
@@ -2080,10 +2068,6 @@ a.ch-button.button-tertiary.inverted:hover {
   max-width: 100%;
 }
 
-.max-w-\[180px\]{
-  max-width: 180px;
-}
-
 .flex-1{
   flex: 1 1 0%;
 }
@@ -2345,10 +2329,6 @@ a.ch-button.button-tertiary.inverted:hover {
   gap: 2rem;
 }
 
-.gap-\[150px\]{
-  gap: 150px;
-}
-
 .gap-x-4{
   -moz-column-gap: 1rem;
        column-gap: 1rem;
@@ -2468,6 +2448,10 @@ a.ch-button.button-tertiary.inverted:hover {
   border-radius: 50%;
 }
 
+.rounded-\[50px\]{
+  border-radius: 50px;
+}
+
 .rounded-\[6px\]{
   border-radius: 6px;
 }
@@ -2482,10 +2466,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .rounded-sm{
   border-radius: 0.625rem;
-}
-
-.rounded-\[50px\]{
-  border-radius: 50px;
 }
 
 .rounded-b-\[6px\]{
@@ -2593,6 +2573,11 @@ a.ch-button.button-tertiary.inverted:hover {
 .bg-\[\#5f6387\]{
   --tw-bg-opacity: 1;
   background-color: rgb(95 99 135 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#FDF9F5\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(253 249 245 / var(--tw-bg-opacity));
 }
 
 .bg-\[\#e07058\]{
@@ -2761,11 +2746,6 @@ a.ch-button.button-tertiary.inverted:hover {
 .bg-young-adult{
   --tw-bg-opacity: 1;
   background-color: rgb(218 193 251 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#FDF9F5\]{
-  --tw-bg-opacity: 1;
-  background-color: rgb(253 249 245 / var(--tw-bg-opacity));
 }
 
 .bg-\[linear-gradient\(\#fead80\2c \#e2deca_50\%\2c \#bdc6fc\)\]{
@@ -3104,6 +3084,10 @@ a.ch-button.button-tertiary.inverted:hover {
   font-size: 14px;
 }
 
+.text-\[18px\]{
+  font-size: 18px;
+}
+
 .text-\[1rem\]{
   font-size: 1rem;
 }
@@ -3234,10 +3218,6 @@ a.ch-button.button-tertiary.inverted:hover {
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-\[18px\]{
-  font-size: 18px;
 }
 
 .font-bold{
@@ -3865,6 +3845,10 @@ a.ch-button.button-tertiary.inverted:hover {
 .page-id-6 .home-testimonials p a {
     font-size: 14px;
   }
+
+.page-id-6 .home-testimonials p a:hover{
+    color: currentColor;
+  }
 }
 
 .page-id-6 h1{
@@ -3911,6 +3895,10 @@ a.ch-button.button-tertiary.inverted:hover {
 .page-id-6 p a {
     font-size: 14px;
   }
+
+.page-id-6 p a:hover{
+  color: currentColor;
+}
 
 a.page-id-6 .features-block-intro h2:hover {
         color: #ffffff;
@@ -5004,6 +4992,10 @@ mark{
     font-size: 14px;
   }
 
+.text-\[14px\] a:hover{
+  color: currentColor;
+}
+
 .not-heading-h4{
   font-size: 18px;
   line-height: 1.4;
@@ -5171,13 +5163,13 @@ mark{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.group:hover .group-hover\:translate-x-sp-2{
-  --tw-translate-x: 0.5rem;
+.group:hover .group-hover\:translate-x-sp-1{
+  --tw-translate-x: 0.25rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.group:hover .group-hover\:translate-x-sp-1{
-  --tw-translate-x: 0.25rem;
+.group:hover .group-hover\:translate-x-sp-2{
+  --tw-translate-x: 0.5rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -5596,6 +5588,10 @@ mark{
     max-width: 225px;
   }
 
+  .lg\:max-w-\[240px\]{
+    max-width: 240px;
+  }
+
   .lg\:max-w-\[250px\]{
     max-width: 250px;
   }
@@ -5620,12 +5616,12 @@ mark{
     max-width: none;
   }
 
-  .lg\:max-w-\[240px\]{
-    max-width: 240px;
-  }
-
   .lg\:grid-flow-col{
     grid-auto-flow: column;
+  }
+
+  .lg\:grid-cols-12{
+    grid-template-columns: repeat(12, minmax(0, 1fr));
   }
 
   .lg\:grid-cols-2{
@@ -5736,10 +5732,6 @@ mark{
     grid-template-columns: unset;
   }
 
-  .lg\:grid-cols-12{
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-  }
-
   .lg\:flex-row{
     flex-direction: row;
   }
@@ -5772,6 +5764,10 @@ mark{
     gap: 10rem;
   }
 
+  .lg\:gap-\[150px\]{
+    gap: 150px;
+  }
+
   .lg\:gap-sp-10{
     gap: 2.5rem;
   }
@@ -5798,10 +5794,6 @@ mark{
 
   .lg\:gap-sp-8{
     gap: 2rem;
-  }
-
-  .lg\:gap-\[150px\]{
-    gap: 150px;
   }
 
   .lg\:gap-x-sp-16{
@@ -5935,11 +5927,6 @@ mark{
     padding-bottom: 3rem;
   }
 
-  .lg\:py-sp-10{
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-  }
-
   .lg\:pb-0{
     padding-bottom: 0px;
   }
@@ -5966,6 +5953,10 @@ mark{
 
   .lg\:text-\[2\.5rem\]{
     font-size: 2.5rem;
+  }
+
+  .lg\:text-\[20px\]{
+    font-size: 20px;
   }
 
   .lg\:text-\[28px\]{
@@ -6032,10 +6023,6 @@ mark{
     line-height: 140%;
     letter-spacing: 0;
     font-weight: 500;
-  }
-
-  .lg\:text-\[20px\]{
-    font-size: 20px;
   }
 
   .lg\:\!leading-\[1\.4\]{
