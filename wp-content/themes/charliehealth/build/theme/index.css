@@ -5620,6 +5620,10 @@ mark{
     max-width: none;
   }
 
+  .lg\:max-w-\[240px\]{
+    max-width: 240px;
+  }
+
   .lg\:grid-flow-col{
     grid-auto-flow: column;
   }
