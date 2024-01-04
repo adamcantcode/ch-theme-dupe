@@ -9,8 +9,8 @@ $linkedinLink = get_field('linkedin_link');
       <p class="text-[14px] leading-[1.4] mb-0 text-white">Featured</p>
     </div>
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-sp-5 mb-sp-6">
-      <div class="relative flex justify-center bg-[#FDF9F5] lg:col-span-6 lg:col-start-4 py-sp-4 px-sp-6 rounded-[6px] group">
-        <img src="<?= $liImage['url']; ?>" alt="<?= $$liImage['alt']; ?>" class="lg:max-w-[240px]">
+      <div class="relative flex lg:flex-row flex-col justify-center bg-[#FDF9F5] lg:col-span-6 lg:col-start-4 py-sp-4 px-sp-6 rounded-[6px] group">
+        <img src="<?= $liImage['url']; ?>" alt="<?= $liImage['alt']; ?>" class="lg:max-w-[240px]">
         <div class="flex items-center">
           <p class="max-w-[200px] mb-0 text-center lg:text-[20px] text-[18px] leading-[1.1]"><?= $headline; ?></p>
         </div>
@@ -23,7 +23,7 @@ $linkedinLink = get_field('linkedin_link');
   </div>
 </section>
 <div class="bg-primary-100 lg:pb-sp-16 pb-sp-8">
-  <div id="marquee" class="flex gap-[150px] w-full overflow-hidden">
+  <div id="marquee" class="flex lg:gap-[150px] gap-sp-4 w-full overflow-hidden">
     <div class="flex justify-around min-w-full scroll gap-[150px] items-center">
       <?php if (have_rows('publications')) :  while (have_rows('publications')) : the_row();  ?>
           <?php

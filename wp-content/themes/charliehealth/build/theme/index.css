@@ -5800,6 +5800,10 @@ mark{
     gap: 2rem;
   }
 
+  .lg\:gap-\[150px\]{
+    gap: 150px;
+  }
+
   .lg\:gap-x-sp-16{
     -moz-column-gap: 6rem;
          column-gap: 6rem;
