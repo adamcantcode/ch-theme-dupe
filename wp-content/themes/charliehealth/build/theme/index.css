@@ -5906,6 +5906,11 @@ mark{
     padding-bottom: 3rem;
   }
 
+  .lg\:py-sp-10{
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
   .lg\:pb-0{
     padding-bottom: 0px;
   }
