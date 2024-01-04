@@ -1,9 +1,9 @@
-<section class="section bg-primary-100">
+<section class="section section-xs-bottom bg-primary-100">
   <div class="container">
     <div class="border border-white py-[10px] px-[15px] rounded-[50px] inline-block mb-sp-8">
       <p class="text-[14px] leading-[1.4] mb-0 text-white">Featured</p>
     </div>
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-sp-5 mb-sp-12">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-sp-5 mb-sp-6">
       <div class="relative flex justify-center bg-[#FDF9F5] lg:col-span-6 lg:col-start-4 py-sp-4 px-sp-6 rounded-[6px]">
         <img src="https://placehold.co/238x171" alt="">
         <div class="flex items-center">
@@ -15,23 +15,25 @@
       </div>
     </div>
   </div>
+</section>
+<div class="bg-primary-100"">
   <div id="marquee" class="flex">
-    <div class="marquee-content scroll reverse">
-      <img src="https://placehold.co/150x80" alt="">
-      <img src="https://placehold.co/150x80" alt="">
-      <img src="https://placehold.co/150x80" alt="">
-      <img src="https://placehold.co/150x80" alt="">
-      <img src="https://placehold.co/150x80" alt="">
+    <div class="marquee-content scroll">
+      <a href="#"><img src="https://placehold.co/150x80?text=a" alt=""></a>
+      <img src="https://placehold.co/150x80?text=b" alt="">
+      <img src="https://placehold.co/150x80?text=c" alt="">
+      <img src="https://placehold.co/150x80?text=d" alt="">
+      <img src="https://placehold.co/150x80?text=e" alt="">
     </div>
-    <div class="marquee-content scroll reverse">
-      <img src="https://placehold.co/150x80" alt="">
-      <img src="https://placehold.co/150x80" alt="">
-      <img src="https://placehold.co/150x80" alt="">
-      <img src="https://placehold.co/150x80" alt="">
-      <img src="https://placehold.co/150x80" alt="">
+    <div class="marquee-content scroll">
+      <a href="#"><img src="https://placehold.co/150x80?text=a" alt=""></a>
+      <img src="https://placehold.co/150x80?text=b" alt="">
+      <img src="https://placehold.co/150x80?text=c" alt="">
+      <img src="https://placehold.co/150x80?text=d" alt="">
+      <img src="https://placehold.co/150x80?text=e" alt="">
     </div>
   </div>
-</section>
+</div>
 
 <style>
   @keyframes scroll {
@@ -45,10 +47,7 @@
   }
 
   .scroll {
-    animation: scroll 10s linear infinite;
-  }
-
-  .reverse {
+    animation: scroll 60s linear infinite;
     animation-direction: reverse;
   }
 
