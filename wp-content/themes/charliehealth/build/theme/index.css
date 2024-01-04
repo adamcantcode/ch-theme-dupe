@@ -2016,6 +2016,10 @@ a.ch-button.button-tertiary.inverted:hover {
   min-width: 0px;
 }
 
+.min-w-full{
+  min-width: 100%;
+}
+
 .\!max-w-md{
   max-width: 28rem !important;
 }
@@ -2279,6 +2283,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .justify-between{
   justify-content: space-between;
+}
+
+.justify-around{
+  justify-content: space-around;
 }
 
 .justify-items-start{

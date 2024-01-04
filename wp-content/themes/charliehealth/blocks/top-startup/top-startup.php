@@ -22,19 +22,19 @@ $linkedinLink = get_field('linkedin_link');
     </div>
   </div>
 </section>
-<div class="bg-primary-100">
-  <div id="marquee" class="flex gap-[150px]">
-    <div class="marquee-content scroll gap-[150px]">
+<div class="bg-primary-100 lg:pb-sp-16 pb-sp-8">
+  <div id="marquee" class="flex gap-[150px] w-full overflow-hidden">
+    <div class="flex justify-around min-w-full scroll gap-[150px] items-center">
       <?php if (have_rows('publications')) :  while (have_rows('publications')) : the_row();  ?>
           <?php
           $image = get_sub_field('image');
           $link = get_sub_field('link');
           ?>
-          <a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>"><img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>"></a>
+          <a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>"><img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="transition-all opacity-30 hover:opacity-100"></a>
       <?php endwhile;
       endif; ?>
     </div>
-    <div class="marquee-content scroll gap-[150px]">
+    <div class="flex justify-around min-w-full scroll gap-[150px] items-center">
       <?php if (have_rows('publications')) :  while (have_rows('publications')) : the_row();  ?>
           <?php
           $image = get_sub_field('image');
@@ -63,19 +63,8 @@ $linkedinLink = get_field('linkedin_link');
     animation-direction: reverse;
   }
 
-  #marquee {
-    width: 100%;
-    display: flex;
-    overflow: hidden;
-  }
-
   #marquee:hover * {
     animation-play-state: paused;
   }
 
-  .marquee-content {
-    display: flex;
-    justify-content: space-around;
-    min-width: 100%;
-  }
 </style>
