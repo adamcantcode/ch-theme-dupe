@@ -924,3 +924,22 @@ mark {
     @apply !text-[14px] !leading-[1.1];
   }
 }
+
+.swiper.swiper-careers-testimonial {
+  .swiper-slide {
+    @apply w-[75%];
+    /* .testing {
+      @apply left-full absolute;
+    } */
+    .careers-testimonials-panel {
+      /* display: none; */
+    }
+    &.swiper-slide-active {
+      /* @apply w-[75%]; */
+    }
+    &.swiper-slide-next {
+    }
+    &.swiper-slide-prev {
+    }
+  }
+}

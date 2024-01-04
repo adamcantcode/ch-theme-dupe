@@ -8,13 +8,13 @@ import 'swiper/css/bundle';
 
 window.addEventListener('DOMContentLoaded', () => {
   var swiper = new Swiper('.swiper.swiper-careers-testimonial', {
-    slidesPerView: 1,
+    slidesPerView: 'auto',
     spaceBetween: 20,
     speed: 1000,
     loop: false,
     breakpoints: {
       1024: {
-        slidesPerView: 1.5,
+        slidesPerView: 'auto',
         spaceBetween: 20,
       },
     },
@@ -36,4 +36,14 @@ window.addEventListener('DOMContentLoaded', () => {
       },
     },
   });
+  // swiper.on('slideChange', function () {
+  //   console.log('slide changed');
+  //   swiper.update()
+  //   swiper.updateSize();
+  // });
+  // swiper.on('transitionEnd', function () {
+  //   console.log('transiton end');
+  //   swiper.update()
+  //   swiper.updateSize();
+  // });
 });

@@ -34,44 +34,51 @@ if (!empty($block['align'])) {
       <?php // while (have_rows('slides')) : the_row(); 
       ?>
       <div class="swiper-slide">
-        <div class="grid grid-cols-[3fr_6fr_1fr] gap-sp-8 pb-sp-8 border-b-[1.5px] border-primary">
-          <div class="text-center bg-white p-sp-10 rounded-[6px] [border-end-end-radius: 50%]">
+        <div class="flex gap-sp-8 pb-sp-8">
+          <div class="text-center bg-white p-sp-10 rounded-[6px] basis-[30%] careers-testimonial-image">
             <img src="<?= placeHolderImage(); ?>" alt="" class="object-cover rounded-[50%] aspect-square mb-sp-6">
             <p class="font-heading-serif text-[14px] leading-[1.6] mb-sp-1">Dr. Caroline Fenkel, DSW, LCSW</p>
             <p class="text-[14px] leading-[1.6] mb-0">Chief Clinical Officer & Co-Founder</p>
           </div>
-          <div>
+          <div class="careers-testimonials-panel basis-[60%]">
             <p class="lg:text-[28px] text-[20px] leading-[1.4] mb-sp-4 font-heading-serif">Think of a time that you’ve gone out of your way to help someone else feel less alone or a time when you were feeling down and someone put out their hand to pick you back up.</p>
             <p class="text-[14px] leading-[1.4]">Now multiply those moments into thousands of interactions and imagine that healing power. That's the power of the Charlie Health Clinical Team. Amidst an epidemic of loneliness, we are the champions of an entire generation, fostering hope and saving lives.</p>
           </div>
-          <div></div>
+        </div>
+        <div class="flex swiper-careers-testimonial-border">
+          <div class="h-[1.5px] bg-primary basis-[100%]"></div>
         </div>
       </div>
       <div class="swiper-slide">
-        <div class="grid grid-cols-[3fr_6fr_1fr] gap-sp-8">
-          <div class="text-center bg-white p-sp-10">
+        <div class="flex gap-sp-8 pb-sp-8">
+          <div class="text-center bg-white p-sp-10 rounded-[6px] basis-[30%] careers-testimonial-image">
             <img src="<?= placeHolderImage(); ?>" alt="" class="object-cover rounded-[50%] aspect-square mb-sp-6">
             <p class="font-heading-serif text-[14px] leading-[1.6] mb-sp-1">Dr. Caroline Fenkel, DSW, LCSW</p>
             <p class="text-[14px] leading-[1.6] mb-0">Chief Clinical Officer & Co-Founder</p>
           </div>
-          <div>
+          <div class="careers-testimonials-panel basis-[60%]">
             <p class="lg:text-[28px] text-[20px] leading-[1.4] mb-sp-4 font-heading-serif">Think of a time that you’ve gone out of your way to help someone else feel less alone or a time when you were feeling down and someone put out their hand to pick you back up.</p>
             <p class="text-[14px] leading-[1.4]">Now multiply those moments into thousands of interactions and imagine that healing power. That's the power of the Charlie Health Clinical Team. Amidst an epidemic of loneliness, we are the champions of an entire generation, fostering hope and saving lives.</p>
           </div>
-          <div></div>
+        </div>
+        <div class="flex swiper-careers-testimonial-border">
+          <div class="h-[1.5px] bg-primary basis-[100%]"></div>
         </div>
       </div>
       <div class="swiper-slide">
-        <div class="grid grid-cols-[1fr_2fr] gap-sp-8">
-          <div class="text-center bg-white p-sp-10">
+        <div class="flex gap-sp-8 pb-sp-8">
+          <div class="text-center bg-white p-sp-10 rounded-[6px] basis-[30%] careers-testimonial-image">
             <img src="<?= placeHolderImage(); ?>" alt="" class="object-cover rounded-[50%] aspect-square mb-sp-6">
             <p class="font-heading-serif text-[14px] leading-[1.6] mb-sp-1">Dr. Caroline Fenkel, DSW, LCSW</p>
             <p class="text-[14px] leading-[1.6] mb-0">Chief Clinical Officer & Co-Founder</p>
           </div>
-          <div>
+          <div class="careers-testimonials-panel basis-[60%]">
             <p class="lg:text-[28px] text-[20px] leading-[1.4] mb-sp-4 font-heading-serif">Think of a time that you’ve gone out of your way to help someone else feel less alone or a time when you were feeling down and someone put out their hand to pick you back up.</p>
             <p class="text-[14px] leading-[1.4]">Now multiply those moments into thousands of interactions and imagine that healing power. That's the power of the Charlie Health Clinical Team. Amidst an epidemic of loneliness, we are the champions of an entire generation, fostering hope and saving lives.</p>
           </div>
+        </div>
+        <div class="flex swiper-careers-testimonial-border">
+          <div class="h-[1.5px] bg-primary basis-[100%]"></div>
         </div>
       </div>
       <?php // endwhile; 

@@ -2052,10 +2052,6 @@ a.ch-button.button-tertiary.inverted:hover {
   max-width: 100%;
 }
 
-.max-w-\[223px\]{
-  max-width: 223px;
-}
-
 .flex-1{
   flex: 1 1 0%;
 }
@@ -2070,6 +2066,18 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .flex-grow{
   flex-grow: 1;
+}
+
+.basis-\[100\%\]{
+  flex-basis: 100%;
+}
+
+.basis-\[30\%\]{
+  flex-basis: 30%;
+}
+
+.basis-\[60\%\]{
+  flex-basis: 60%;
 }
 
 .origin-center{
@@ -2199,10 +2207,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .grid-cols-\[2fr_1fr\]{
   grid-template-columns: 2fr 1fr;
-}
-
-.grid-cols-\[3fr_6fr_1fr\]{
-  grid-template-columns: 3fr 6fr 1fr;
 }
 
 .flex-col{
@@ -2495,10 +2499,6 @@ a.ch-button.button-tertiary.inverted:hover {
   border-left-width: 1px;
 }
 
-.border-b-\[1\.5px\]{
-  border-bottom-width: 1.5px;
-}
-
 .border-none{
   border-style: none;
 }
@@ -2750,6 +2750,10 @@ a.ch-button.button-tertiary.inverted:hover {
   padding: 10px;
 }
 
+.p-sp-10{
+  padding: 2.5rem;
+}
+
 .p-sp-2{
   padding: 0.5rem;
 }
@@ -2772,14 +2776,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .p-sp-8{
   padding: 2rem;
-}
-
-.p-sp-12{
-  padding: 3rem;
-}
-
-.p-sp-10{
-  padding: 2.5rem;
 }
 
 .px-3{
@@ -2931,6 +2927,10 @@ a.ch-button.button-tertiary.inverted:hover {
   padding-bottom: 1.5rem;
 }
 
+.pb-sp-8{
+  padding-bottom: 2rem;
+}
+
 .pr-sp-6{
   padding-right: 1.5rem;
 }
@@ -2953,10 +2953,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .pt-sp-7{
   padding-top: 1.75rem;
-}
-
-.pb-sp-8{
-  padding-bottom: 2rem;
 }
 
 .text-center{
@@ -4974,6 +4970,28 @@ mark{
   font-size: 14px !important;
   line-height: 1.1 !important;
 }
+
+.swiper.swiper-careers-testimonial .swiper-slide{
+  width: 75%;
+}
+
+/* .testing {
+      @apply left-full absolute;
+    } */
+
+.swiper.swiper-careers-testimonial .swiper-slide .careers-testimonials-panel {
+      /* display: none; */
+    }
+
+.swiper.swiper-careers-testimonial .swiper-slide.swiper-slide-active {
+      /* @apply w-[75%]; */
+    }
+
+.swiper.swiper-careers-testimonial .swiper-slide.swiper-slide-next {
+    }
+
+.swiper.swiper-careers-testimonial .swiper-slide.swiper-slide-prev {
+    }
 
 .first\:mt-0:first-child{
   margin-top: 0px;
