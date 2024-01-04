@@ -248,9 +248,7 @@
                         "field": "field_641639ffb2d96",
                         "operator": "!=",
                         "value": "details"
-                    }
-                ],
-                [
+                    },
                     {
                         "field": "field_641639ffb2d96",
                         "operator": "!=",
@@ -492,5 +490,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1704306101
+    "modified": 1704402636
 }
