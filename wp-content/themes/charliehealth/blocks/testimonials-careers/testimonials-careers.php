@@ -24,7 +24,7 @@ if (!empty($block['align'])) {
 <section <?= $anchor ?: ''; ?>class="<?= $className; ?> testimonial-padding bg-grey-warm section-bg-js">
   <div class="section-horizontal">
     <div class="container">
-      <h2 class="text-[14px] leading-[1.1]"><?= get_field('headline'); ?></h2>
+      <h2 class="text-[14px] leading-[1.1]">Hear from the team</h2>
     </div>
   </div>
   <?php if (have_rows('testimonials')) :  ?>
