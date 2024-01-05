@@ -41,7 +41,7 @@ if (!empty($block['align'])) {
           <div class="!h-auto swiper-slide mb-sp-12">
             <div class="flex !h-full gap-sp-8 pb-sp-8 lg:flex-row flex-col">
               <div class="text-center bg-white p-sp-8 rounded-[6px] lg:basis-[33%] careers-testimonial-image self-start">
-                <img src="<?= $image['sizes']['card-image'] ?: placeHolderImage(); ?>" alt="<?= $image['alt']; ?>" class="object-cover rounded-[50%] aspect-square mb-sp-6">
+                <img src="<?= $image['url'] ?: placeHolderImage(); ?>" alt="<?= $image['alt']; ?>" class="object-cover rounded-[50%] aspect-square mb-sp-6">
                 <p class="font-heading-serif text-[14px] leading-[1.6] mb-sp-1"><?= $name; ?></p>
                 <p class="text-[14px] leading-[1.6] mb-0"><?= $title; ?></p>
               </div>
