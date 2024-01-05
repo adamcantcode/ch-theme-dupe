@@ -16,6 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
   var swiper = new Swiper('.swiper.swiper-careers-testimonial', {
     slidesPerView: 'auto',
     spaceBetween: 20,
+    slideToClickedSlide: true,
     speed: 1000,
     loop: false,
     breakpoints: {

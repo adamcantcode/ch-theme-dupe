@@ -20120,6 +20120,7 @@ window.addEventListener('DOMContentLoaded', () => {
   var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper.swiper-careers-testimonial', {
     slidesPerView: 'auto',
     spaceBetween: 20,
+    slideToClickedSlide: true,
     speed: 1000,
     loop: false,
     breakpoints: {
