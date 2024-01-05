@@ -5,7 +5,7 @@ $features = get_field('features');
 ?>
 
 <div class="grid grid-cols-1 gap-sp-5 lg:grid-cols-4">
-  <h2 class="font-heading-serif lg:text-[40px] text-[32px] leading-[1.1] text-white self-center">Our values</h2>
+  <h2 class="font-heading-serif lg:text-[40px] text-[32px] leading-[1.1] text-white self-center mb-0">Our values</h2>
   <?php include(get_template_directory() . '/includes/button-group.php'); ?>
   <div class="bg-pale-blue-200 rounded-[6px] p-sp-5 flex flex-col justify-between">
     <h3 class="font-heading lg:text-[40px] text-[32px] leading-[1.1]">Connection</h3>
