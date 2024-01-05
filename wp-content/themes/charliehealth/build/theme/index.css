@@ -5355,6 +5355,10 @@ mark{
     top: 32px;
   }
 
+  .lg\:top-\[95\%\]{
+    top: 95%;
+  }
+
   .lg\:order-1{
     order: 1;
   }
