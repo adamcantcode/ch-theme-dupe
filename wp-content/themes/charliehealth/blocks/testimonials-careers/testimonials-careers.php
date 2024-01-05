@@ -24,93 +24,59 @@ if (!empty($block['align'])) {
 <section <?= $anchor ?: ''; ?>class="<?= $className; ?> testimonial-padding bg-grey-warm section-bg-js">
   <div class="section-horizontal">
     <div class="container">
-      <h2><?= get_field('headline'); ?>headline</h2>
+      <h2><?= get_field('headline'); ?></h2>
     </div>
   </div>
-  <?php // if (have_rows('slides')) : 
-  ?>
-  <div class="swiper swiper-careers-testimonial">
-    <div class="container lg:px-sp-10 swiper-wrapper">
-      <?php // while (have_rows('slides')) : the_row(); 
-      ?>
-      <div class="swiper-slide">
-        <div class="flex gap-sp-8 pb-sp-8">
-          <div class="text-center bg-white p-sp-10 rounded-[6px] basis-[30%] careers-testimonial-image">
-            <img src="<?= placeHolderImage(); ?>" alt="" class="object-cover rounded-[50%] aspect-square mb-sp-6">
-            <p class="font-heading-serif text-[14px] leading-[1.6] mb-sp-1">Dr. Caroline Fenkel, DSW, LCSW</p>
-            <p class="text-[14px] leading-[1.6] mb-0">Chief Clinical Officer & Co-Founder</p>
+  <?php if (have_rows('testimonials')) :  ?>
+    <div class="swiper swiper-careers-testimonial">
+      <div class="container lg:px-sp-10 swiper-wrapper px-[20px]">
+        <?php while (have_rows('testimonials')) : the_row(); ?>
+          <?php
+          $image     = get_sub_field('image');
+          $name      = get_sub_field('name');
+          $title     = get_sub_field('title');
+          $pullQuote = get_sub_field('pull_quote');
+          $fullQuote = get_sub_field('full_quote');
+          ?>
+          <div class="!h-auto swiper-slide mb-sp-12">
+            <div class="flex !h-full gap-sp-8 pb-sp-8 lg:flex-row flex-col">
+              <div class="text-center bg-white p-sp-8 rounded-[6px] lg:basis-[33%] careers-testimonial-image self-start">
+                <img src="<?= $image['sizes']['card-image'] ?: placeHolderImage(); ?>" alt="<?= $image['alt']; ?>" class="object-cover rounded-[50%] aspect-square mb-sp-6">
+                <p class="font-heading-serif text-[14px] leading-[1.6] mb-sp-1"><?= $name; ?></p>
+                <p class="text-[14px] leading-[1.6] mb-0"><?= $title; ?></p>
+              </div>
+              <div class="careers-testimonials-panel lg:basis-[55%]">
+                <p class="lg:text-[28px] text-[20px] leading-[1.4] mb-sp-4 font-heading-serif"><?= $pullQuote; ?></p>
+                <p class="text-[14px] leading-[1.4]"><?= $fullQuote; ?></p>
+              </div>
+            </div>
+            <div class="flex swiper-careers-testimonial-border">
+              <div class="h-[1.5px] bg-primary basis-[100%]"></div>
+            </div>
           </div>
-          <div class="careers-testimonials-panel basis-[60%]">
-            <p class="lg:text-[28px] text-[20px] leading-[1.4] mb-sp-4 font-heading-serif">Think of a time that you’ve gone out of your way to help someone else feel less alone or a time when you were feeling down and someone put out their hand to pick you back up.</p>
-            <p class="text-[14px] leading-[1.4]">Now multiply those moments into thousands of interactions and imagine that healing power. That's the power of the Charlie Health Clinical Team. Amidst an epidemic of loneliness, we are the champions of an entire generation, fostering hope and saving lives.</p>
-          </div>
-        </div>
-        <div class="flex swiper-careers-testimonial-border">
-          <div class="h-[1.5px] bg-primary basis-[100%]"></div>
-        </div>
+        <?php endwhile; ?>
       </div>
-      <div class="swiper-slide">
-        <div class="flex gap-sp-8 pb-sp-8">
-          <div class="text-center bg-white p-sp-10 rounded-[6px] basis-[30%] careers-testimonial-image">
-            <img src="<?= placeHolderImage(); ?>" alt="" class="object-cover rounded-[50%] aspect-square mb-sp-6">
-            <p class="font-heading-serif text-[14px] leading-[1.6] mb-sp-1">Dr. Caroline Fenkel, DSW, LCSW</p>
-            <p class="text-[14px] leading-[1.6] mb-0">Chief Clinical Officer & Co-Founder</p>
+      <div class="container px-[20px] lg:p-0">
+        <div class="w-[50px] relative">
+          <div class="absolute left-0 z-10 lg:bottom-0 swiper-button-prev-testimonial">
+            <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="rotate-180">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3431 0.278417L16.7071 6.32784C17.0976 6.69906 17.0976 7.30094 16.7071 7.67216L10.3431 13.7216C9.95262 14.0928 9.31946 14.0928 8.92893 13.7216C8.53841 13.3504 8.53841 12.7485 8.92893 12.3773L13.5858 7.95058H0V6.04942H13.5858L8.92893 1.62273C8.53841 1.25151 8.53841 0.64964 8.92893 0.278417C9.31946 -0.0928058 9.95262 -0.0928058 10.3431 0.278417Z" fill="#161A3D" />
+            </svg>
           </div>
-          <div class="careers-testimonials-panel basis-[60%]">
-            <p class="lg:text-[28px] text-[20px] leading-[1.4] mb-sp-4 font-heading-serif">Think of a time that you’ve gone out of your way to help someone else feel less alone or a time when you were feeling down and someone put out their hand to pick you back up.</p>
-            <p class="text-[14px] leading-[1.4]">Now multiply those moments into thousands of interactions and imagine that healing power. That's the power of the Charlie Health Clinical Team. Amidst an epidemic of loneliness, we are the champions of an entire generation, fostering hope and saving lives.</p>
-          </div>
-        </div>
-        <div class="flex swiper-careers-testimonial-border">
-          <div class="h-[1.5px] bg-primary basis-[100%]"></div>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="flex gap-sp-8 pb-sp-8">
-          <div class="text-center bg-white p-sp-10 rounded-[6px] basis-[30%] careers-testimonial-image">
-            <img src="<?= placeHolderImage(); ?>" alt="" class="object-cover rounded-[50%] aspect-square mb-sp-6">
-            <p class="font-heading-serif text-[14px] leading-[1.6] mb-sp-1">Dr. Caroline Fenkel, DSW, LCSW</p>
-            <p class="text-[14px] leading-[1.6] mb-0">Chief Clinical Officer & Co-Founder</p>
-          </div>
-          <div class="careers-testimonials-panel basis-[60%]">
-            <p class="lg:text-[28px] text-[20px] leading-[1.4] mb-sp-4 font-heading-serif">Think of a time that you’ve gone out of your way to help someone else feel less alone or a time when you were feeling down and someone put out their hand to pick you back up.</p>
-            <p class="text-[14px] leading-[1.4]">Now multiply those moments into thousands of interactions and imagine that healing power. That's the power of the Charlie Health Clinical Team. Amidst an epidemic of loneliness, we are the champions of an entire generation, fostering hope and saving lives.</p>
+          <div class="absolute right-0 z-10 lg:bottom-0 swiper-button-next-testimonial">
+            <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3431 0.278417L16.7071 6.32784C17.0976 6.69906 17.0976 7.30094 16.7071 7.67216L10.3431 13.7216C9.95262 14.0928 9.31946 14.0928 8.92893 13.7216C8.53841 13.3504 8.53841 12.7485 8.92893 12.3773L13.5858 7.95058H0V6.04942H13.5858L8.92893 1.62273C8.53841 1.25151 8.53841 0.64964 8.92893 0.278417C9.31946 -0.0928058 9.95262 -0.0928058 10.3431 0.278417Z" fill="#161A3D" />
+            </svg>
           </div>
         </div>
-        <div class="flex swiper-careers-testimonial-border">
-          <div class="h-[1.5px] bg-primary basis-[100%]"></div>
-        </div>
-      </div>
-      <?php // endwhile; 
-      ?>
-    </div>
-    <div class="container relative h-[50px] my-sp-8 noshow lg:block">
-      <div class="absolute left-0 swiper-button-prev-arrow">
-        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none" class="arrow-slider">
-          <rect width="50" height="50" rx="25" fill="#ffffff" class="arrow-slider-bg" />
-          <path d="M11.9393 26.0607C11.3536 25.4749 11.3536 24.5251 11.9393 23.9393L21.4853 14.3934C22.0711 13.8076 23.0208 13.8076 23.6066 14.3934C24.1924 14.9792 24.1924 15.9289 23.6066 16.5147L15.1213 25L23.6066 33.4853C24.1924 34.0711 24.1924 35.0208 23.6066 35.6066C23.0208 36.1924 22.0711 36.1924 21.4853 35.6066L11.9393 26.0607ZM37 26.5H13V23.5H37V26.5Z" fill="#212984" class="arrow-slider-arrow" />
-          <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
-        </svg>
-      </div>
-      <div class="absolute right-0 swiper-button-next-arrow">
-        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none" class="arrow-slider">
-          <rect width="50" height="50" rx="25" fill="#ffffff" class="arrow-slider-bg" />
-          <path d="M38.0607 26.0607C38.6464 25.4749 38.6464 24.5251 38.0607 23.9393L28.5147 14.3934C27.9289 13.8076 26.9792 13.8076 26.3934 14.3934C25.8076 14.9792 25.8076 15.9289 26.3934 16.5147L34.8787 25L26.3934 33.4853C25.8076 34.0711 25.8076 35.0208 26.3934 35.6066C26.9792 36.1924 27.9289 36.1924 28.5147 35.6066L38.0607 26.0607ZM13 26.5H37V23.5H13V26.5Z" fill="#212984" class="arrow-slider-arrow" />
-          <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
-        </svg>
       </div>
     </div>
-    <div class="max-w-[1280px] lg:mx-auto mx-sp-5 relative h-[2px] mt-sp-2">
-      <div class="relative swiper-pagination"></div>
-    </div>
-  </div>
-  <?php //endif; 
-  ?>
+  <?php endif;  ?>
   <!-- Slider main container -->
-<?php $ctaHeadline = get_field('headline'); ?>
+  <?php $ctaHeadline = get_field('headline'); ?>
   <div class="section-horizontal section-bg-js-cta">
     <div class="container-sm">
-      <div class="flex flex-col justify-center pin-cta-js lg:h-[50vh] lg:mt-0 mt-[200px] pb-sp-14 lg:pb-0">
+      <div class="flex flex-col justify-center pin-cta-js lg:h-[50vh] lg:mt-0 mt-sp-16 pb-sp-14 lg:pb-0">
         <div class="pin-cta-js-motion">
           <div class="flex justify-center rounded-sm lg:px-sp-14 lg:pt-sp-14 pb-sp-6 px-sp-6">
             <div class="flex flex-col items-center justify-center text-center max-w-[700px]">

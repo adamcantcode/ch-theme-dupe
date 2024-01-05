@@ -471,6 +471,17 @@
       }
     }
   }
+  &.swiper-careers-testimonial {
+    .swiper-button-disabled {
+      @apply opacity-20;
+    }
+    .swiper-slide {
+      @apply opacity-50 transition-all duration-300;
+      &.swiper-slide-active {
+        @apply opacity-100;
+      }
+    }
+  }
   &.swiper-blog-carousel {
     .swiper-pagination-bullet {
       @apply bg-transparent border-2 border-purple-gradient-end opacity-100;
@@ -930,7 +941,7 @@ mark {
 
 .swiper.swiper-careers-testimonial {
   .swiper-slide {
-    @apply w-[75%];
+    @apply lg:w-[75%] w-[80%];
     /* .testing {
       @apply left-full absolute;
     } */

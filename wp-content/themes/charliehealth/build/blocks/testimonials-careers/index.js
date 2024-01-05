@@ -20128,19 +20128,15 @@ window.addEventListener('DOMContentLoaded', () => {
         spaceBetween: 20
       }
     },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'progressbar'
-    },
     navigation: {
-      nextEl: '.swiper-button-next-arrow',
-      prevEl: '.swiper-button-prev-arrow'
+      nextEl: '.swiper-button-next-testimonial',
+      prevEl: '.swiper-button-prev-testimonial'
     },
     on: {
       reachEnd: function () {
         this.snapGrid = [...this.slidesGrid];
         setTimeout(() => {
-          document.querySelector('.swiper-button-next-arrow').click();
+          document.querySelector('.swiper-button-next-testimonial').click();
           clearTimeout();
         }, 1);
       }
