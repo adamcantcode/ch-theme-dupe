@@ -53,17 +53,17 @@ window.addEventListener('DOMContentLoaded', () => {
   let mm = gsap.matchMedia();
 
   mm.add('(min-width: 1024px)', () => {
-    let pinCta = gsap.timeline({
-      scrollTrigger: {
-        scrub: true,
-        trigger: '.pin-cta-js',
-        pin: '.pin-cta-js',
-        start: 'center center',
-        endTrigger: '.section-bg-js-cta',
-        end: '+=50%',
-        // markers: true,
-      },
-    });
+    // let pinCta = gsap.timeline({
+    //   scrollTrigger: {
+    //     scrub: true,
+    //     trigger: '.pin-cta-js',
+    //     pin: '.pin-cta-js',
+    //     start: 'center center',
+    //     endTrigger: '.section-bg-js-cta',
+    //     end: '+=50%',
+    //     // markers: true,
+    //   },
+    // });
 
     // Bakground color change
     let sectionBg = gsap.timeline({
