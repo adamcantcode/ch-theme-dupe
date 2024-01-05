@@ -24,13 +24,13 @@ $linkedinLink = get_field('linkedin_link');
 </section>
 <div class="bg-primary-100 lg:pb-sp-16 pb-sp-8">
   <div id="marquee" class="flex lg:gap-[150px] gap-sp-4 w-full overflow-hidden">
-    <div class="flex justify-around min-w-full scroll lg:gap-[150px] gap-sp-4 items-center">
+    <div class="flex justify-around min-w-full scroll lg:gap-[150px] gap-sp-8 items-center">
       <?php if (have_rows('publications')) :  while (have_rows('publications')) : the_row();  ?>
           <?php
           $image = get_sub_field('image');
           $link = get_sub_field('link');
           ?>
-         <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="opacity-30">
+          <div><img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="opacity-30"></div>
       <?php endwhile;
       endif; ?>
     </div>
@@ -40,7 +40,7 @@ $linkedinLink = get_field('linkedin_link');
           $image = get_sub_field('image');
           $link = get_sub_field('link');
           ?>
-          <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="opacity-30">
+          <div><img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="opacity-30"></div>
       <?php endwhile;
       endif; ?>
     </div>
@@ -66,5 +66,4 @@ $linkedinLink = get_field('linkedin_link');
   #marquee:hover * {
     animation-play-state: paused;
   }
-
 </style>

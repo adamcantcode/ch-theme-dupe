@@ -2012,6 +2012,14 @@ a.ch-button.button-tertiary.inverted:hover {
   min-width: 100%;
 }
 
+.min-w-\[200px\]{
+  min-width: 200px;
+}
+
+.min-w-\[200\%\]{
+  min-width: 200%;
+}
+
 .\!max-w-md{
   max-width: 28rem !important;
 }
@@ -5609,6 +5617,10 @@ mark{
 
   .lg\:min-w-0{
     min-width: 0px;
+  }
+
+  .lg\:min-w-full{
+    min-width: 100%;
   }
 
   .lg\:max-w-\[225px\]{
