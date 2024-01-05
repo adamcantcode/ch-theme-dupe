@@ -151,6 +151,24 @@
                     "placeholder": "",
                     "new_lines": "br",
                     "parent_repeater": "field_6597420f7e944"
+                },
+                {
+                    "key": "field_65988660bb2ce",
+                    "label": "Linkedin",
+                    "name": "linkedin",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_6597420f7e944"
                 }
             ]
         },
@@ -233,5 +251,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1704412484
+    "modified": 1704494711
 }
