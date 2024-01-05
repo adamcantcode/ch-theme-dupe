@@ -80,10 +80,10 @@ if ($style === 'image') {
         <img src="<?= $imageOne['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $imageOne['alt'] ?: 'Placeholder image'; ?>" class="lg:absolute lg:left-0 lg:top-[100%] rounded-[16px] nolazy lg:block noshow">
       </div>
       <div class="relative">
-        <img src="<?= $imageTwo['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $imageTwo['alt'] ?: 'Placeholder image'; ?>" class="lg:absolute lg:left-0 lg:top-[-10%] rounded-[16px] nolazy lg:block noshow">
+        <img src="<?= $imageTwo['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $imageTwo['alt'] ?: 'Placeholder image'; ?>" class="lg:absolute lg:left-0 lg:top-[-10%] rounded-[16px] nolazy">
       </div>
       <div class="relative">
-        <img src="<?= $imageThree['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $imageThree['alt'] ?: 'Placeholder image'; ?>" class="lg:absolute lg:left-0 lg:top-[20%] lg:max-w-[400px] rounded-[16px] nolazy">
+        <img src="<?= $imageThree['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $imageThree['alt'] ?: 'Placeholder image'; ?>" class="lg:absolute lg:left-0 lg:top-[20%] lg:max-w-[400px] rounded-[16px] lg:block noshow nolazy">
       </div>
     </div>
   </div>
