@@ -24,7 +24,7 @@ if (!empty($block['align'])) {
 <section <?= $anchor ?: ''; ?>class="<?= $className; ?> testimonial-padding bg-grey-warm section-bg-js">
   <div class="section-horizontal">
     <div class="container">
-      <h2 class="text-[14px] leading-[1.1]">Hear from the team</h2>
+      <h2 class="text-[14px] leading-[1.1] lg:mb-sp-14">Hear from the team</h2>
     </div>
   </div>
   <?php if (have_rows('testimonials')) :  ?>
@@ -56,7 +56,7 @@ if (!empty($block['align'])) {
           </div>
         <?php endwhile; ?>
       </div>
-      <div class="container px-[20px] lg:p-0">
+      <div class="container px-[20px] lg:p-0 mb-sp-5 lg:mb-0">
         <div class="w-[50px] relative">
           <div class="absolute left-0 z-10 lg:bottom-0 swiper-button-prev-testimonial">
             <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="rotate-180">
