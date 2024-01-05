@@ -40,7 +40,7 @@ $linkedinLink = get_field('linkedin_link');
           $image = get_sub_field('image');
           $link = get_sub_field('link');
           ?>
-          <a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>"><img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="transition-all opacity-30 hover:opacity-100"></a>
+          <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="opacity-30">
       <?php endwhile;
       endif; ?>
     </div>
