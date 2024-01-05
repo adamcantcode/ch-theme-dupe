@@ -11,7 +11,7 @@ $linkedinLink = get_field('linkedin_link');
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-sp-5 mb-sp-6">
       <div class="relative flex lg:flex-row flex-col justify-center bg-[#FDF9F5] lg:col-span-6 lg:col-start-4 py-sp-4 px-sp-6 rounded-[6px] group">
         <img src="<?= $liImage['url']; ?>" alt="<?= $liImage['alt']; ?>" class="lg:max-w-[240px]">
-        <div class="flex items-center">
+        <div class="flex items-center justify-center">
           <p class="max-w-[200px] mb-0 text-center lg:text-[20px] text-[18px] leading-[1.1]"><?= $headline; ?></p>
         </div>
         <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute transition-all duration-300 right-sp-6 bottom-sp-4 group-hover:translate-x-sp-1">

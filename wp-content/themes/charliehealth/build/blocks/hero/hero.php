@@ -66,7 +66,7 @@ if ($style === 'image') {
 <?php if ($style === 'multi_image') : ?>
   <div class="grid items-center lg:grid-cols-[4fr_8fr] gap-sp-5">
     <div class="order-2 lg:order-1">
-      <p class="text-[20px]"><?= $subtitle; ?></p>
+      <p class="text-[20px] mb-sp-4"><?= $subtitle; ?></p>
       <h1 class="mb-sp-5 lg:text-[64px] text-[42px] leading-[1.1]"><?= $title; ?></h1>
       <?php include(get_template_directory() . '/includes/button-group.php'); ?>
     </div>
