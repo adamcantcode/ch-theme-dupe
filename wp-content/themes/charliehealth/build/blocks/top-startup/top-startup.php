@@ -60,7 +60,7 @@ $linkedinLink = get_field('linkedin_link');
 
   .scroll {
     animation: scroll 60s linear infinite;
-    animation-direction: reverse;
+    animation-direction: normal;
   }
 
   #marquee:hover * {
