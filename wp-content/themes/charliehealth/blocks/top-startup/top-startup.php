@@ -9,7 +9,7 @@ $linkedinLink = get_field('linkedin_link');
       <p class="text-[14px] leading-[1.4] mb-0 text-white">Featured</p>
     </div>
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-sp-5 mb-sp-6">
-      <div class="relative flex lg:flex-row flex-col justify-center bg-[#FDF9F5] lg:col-span-6 lg:col-start-4 py-sp-4 px-sp-6 rounded-[6px] group">
+      <div class="relative flex lg:flex-row flex-col justify-around bg-[#FDF9F5] lg:col-span-6 lg:col-start-4 py-sp-4 px-sp-6 rounded-[6px] group">
         <img src="<?= $liImage['url']; ?>" alt="<?= $liImage['alt']; ?>" class="lg:max-w-[240px]">
         <div class="flex items-center justify-center">
           <p class="max-w-[200px] mb-0 text-center lg:text-[20px] text-[18px] leading-[1.1]"><?= $headline; ?></p>
