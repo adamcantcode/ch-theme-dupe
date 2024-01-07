@@ -2985,6 +2985,14 @@ a.ch-button.button-tertiary.inverted:hover {
   padding-top: 1.75rem;
 }
 
+.pb-sp-5{
+  padding-bottom: 1.25rem;
+}
+
+.pb-sp-4{
+  padding-bottom: 1rem;
+}
+
 .text-center{
   text-align: center;
 }
@@ -5065,6 +5073,18 @@ mark{
   margin-top: 0px;
 }
 
+.first\:border-t-2:first-child{
+  border-top-width: 2px;
+}
+
+.first\:pt-sp-4:first-child{
+  padding-top: 1rem;
+}
+
+.first\:pt-sp-6:first-child{
+  padding-top: 1.5rem;
+}
+
 .last\:col-start-\[span_2\]:last-child{
   grid-column-start: span 2;
 }
@@ -5469,6 +5489,14 @@ mark{
 
   .lg\:mt-sp-8{
     margin-top: 2rem;
+  }
+
+  .lg\:mb-sp-2{
+    margin-bottom: 0.5rem;
+  }
+
+  .lg\:mb-sp-8{
+    margin-bottom: 2rem;
   }
 
   .lg\:block{
