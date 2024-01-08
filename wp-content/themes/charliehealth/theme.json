@@ -23,6 +23,11 @@
           "name": "Grey Cool"
         },
         {
+          "slug": "grey-deactivated",
+          "color": "#87889A",
+          "name": "Deactivated Grey"
+        },
+        {
           "slug": "grey-warm",
           "color": "#F7F5F1",
           "name": "Greay - Warm"
@@ -51,6 +56,11 @@
           "slug": "orange-200",
           "color": "#F5A890",
           "name": "Orange 200"
+        },
+        {
+          "slug": "yellow-300",
+          "color": "#FDBF7C",
+          "name": "Orange 300"
         },
         {
           "slug": "dark-teal",
@@ -86,6 +96,16 @@
           "slug": "pale-blue-300",
           "color": "#8F92CD",
           "name": "Pale Blue 300"
+        },
+        {
+          "slug": "pale-blue-200",
+          "color": "#ADB0E1",
+          "name": "Pale Blue 200"
+        },
+        {
+          "slug": "lavender-300",
+          "color": "#DAC1FB",
+          "name": "Lavender 300"
         },
         {
           "slug": "primary-black-blue",

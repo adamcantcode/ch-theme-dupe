@@ -106,6 +106,9 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/our-providers');
   register_block_type(__DIR__ . '/build/blocks/grid-eight-four');
   register_block_type(__DIR__ . '/build/blocks/home-cta');
+  register_block_type(__DIR__ . '/build/blocks/values');
+  register_block_type(__DIR__ . '/build/blocks/testimonials-careers');
+  register_block_type(__DIR__ . '/build/blocks/top-startup');
 }
 add_action('init', 'register_acf_blocks', 5);
 
@@ -670,6 +673,7 @@ add_filter('should_load_separate_core_block_assets', '__return_true');
 // $test = 'gap-0'
 // $test = '!text-[28px]'
 // $test = '!text-[20px]'
+// $test = 'font-heading-serif lg:text-[40px] text-[32px] leading-[1.1] overflow-y-hidden'
 
 // $test = '!text-h2-lg !text-h2 !font-heading !font-heading-serif !text-h5'
 // $test = 'bg-pale-blue-100'

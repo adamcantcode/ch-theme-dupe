@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "acf/top-startup-block",
+  "title": "Top Startup Block",
+  "description": "Displays LI Top Startup callout",
+  "style": "file:./index.css",
+  "script": "file:./index.js",
+  "category": "custom",
+  "icon": "columns",
+  "apiVersion": 2,
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "top-startup.php"
+  },
+  "supports": {}
+}

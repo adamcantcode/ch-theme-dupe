@@ -471,6 +471,17 @@
       }
     }
   }
+  &.swiper-careers-testimonial {
+    .swiper-button-disabled {
+      @apply opacity-20;
+    }
+    .swiper-slide {
+      @apply opacity-50 transition-all duration-300;
+      &.swiper-slide-active {
+        @apply opacity-100;
+      }
+    }
+  }
   &.swiper-blog-carousel {
     .swiper-pagination-bullet {
       @apply bg-transparent border-2 border-purple-gradient-end opacity-100;
@@ -782,6 +793,10 @@
   }
 }
 
+mark {
+  @apply py-sp-1 px-sp-3 rounded-[6px];
+}
+
 .toc-underline {
   @apply no-underline;
 
@@ -898,5 +913,47 @@
   }
   .nav-cta a {
     @apply text-[16px] px-sp-4;
+  }
+}
+
+/* TEMP STYLES */
+
+.text-\[14px\] {
+  a {
+    font-size: 14px;
+    &:hover {
+      @apply text-current;
+    }
+  }
+}
+.not-heading-h4 {
+  @apply lg:text-[20px] text-[18px] leading-[1.4];
+}
+
+.faq-block-text-updates .faq-block {
+  p,
+  ul,
+  li,
+  a {
+    @apply !text-[14px] !leading-[1.1];
+  }
+}
+
+.swiper.swiper-careers-testimonial {
+  .swiper-slide {
+    @apply lg:w-[75%] w-[80%];
+    /* .testing {
+      @apply left-full absolute;
+    } */
+    .careers-testimonials-panel {
+      /* display: none; */
+    }
+    &.swiper-slide-active {
+      /* @apply w-[75%]; */
+    }
+    &.swiper-slide-next {
+    }
+    &.swiper-slide-prev {
+    }
   }
 }
