@@ -20118,14 +20118,14 @@ __webpack_require__.r(__webpack_exports__);
 gsap__WEBPACK_IMPORTED_MODULE_3__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_4__.ScrollTrigger);
 window.addEventListener('DOMContentLoaded', () => {
   var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper.swiper-careers-testimonial', {
-    slidesPerView: 'auto',
+    slidesPerView: 1,
     spaceBetween: 20,
     slideToClickedSlide: true,
     speed: 1000,
     loop: false,
     breakpoints: {
       1024: {
-        slidesPerView: 'auto',
+        slidesPerView: 1,
         spaceBetween: 20
       }
     },
