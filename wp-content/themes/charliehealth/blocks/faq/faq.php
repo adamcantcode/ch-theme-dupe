@@ -32,7 +32,7 @@ $faqButton = get_field('faq_button');
               $headline = get_sub_field('faq_headline');
               $content = get_sub_field('faq_content');
               ?>
-              <div class="border-b-2 border-primary accordion-item mb-sp-6">
+              <div class="border-b-2 first:border-t-2 first:pt-sp-6 border-primary accordion-item mb-sp-6">
                 <div class="flex items-center justify-between cursor-pointer accordion-header pb-sp-6">
                   <h3 class="mb-0 font-heading not-heading-h4"><?= $headline; ?></h3>
                   <span class="ml-sp-4">
@@ -43,7 +43,7 @@ $faqButton = get_field('faq_button');
                   </span>
                 </div>
                 <div class="overflow-hidden transition-all duration-500 ease-in-out accordion-content max-h-0">
-                  <div class="lg:pr-sp-14 pr-sp-6"><?= $content; ?></div>
+                  <div class="lg:pr-sp-14 pr-sp-6 lg:mb-sp-8"><?= $content; ?></div>
                 </div>
               </div>
               <?php

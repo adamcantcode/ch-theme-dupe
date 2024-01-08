@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "acf/testimonials-careers-block",
+  "title": "Career Testimonials",
+  "description": "A carousel for career testimonials",
+  "style": "file:./index.css",
+  "script": "file:./index.js",
+  "category": "custom",
+  "icon": "editor-quote",
+  "apiVersion": 2,
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "testimonials-careers.php"
+  },
+  "supports": {}
+}
