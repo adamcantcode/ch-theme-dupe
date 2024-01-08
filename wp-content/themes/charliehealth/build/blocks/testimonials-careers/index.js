@@ -20117,33 +20117,6 @@ __webpack_require__.r(__webpack_exports__);
 
 gsap__WEBPACK_IMPORTED_MODULE_3__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_4__.ScrollTrigger);
 window.addEventListener('DOMContentLoaded', () => {
-  var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper.swiper-careers-testimonial', {
-    slidesPerView: 1,
-    spaceBetween: 20,
-    slideToClickedSlide: true,
-    speed: 1000,
-    loop: false,
-    breakpoints: {
-      1024: {
-        slidesPerView: 1,
-        spaceBetween: 20
-      }
-    },
-    navigation: {
-      nextEl: '.swiper-button-next-testimonial',
-      prevEl: '.swiper-button-prev-testimonial'
-    },
-    on: {
-      reachEnd: function () {
-        this.snapGrid = [...this.slidesGrid];
-        setTimeout(() => {
-          document.querySelector('.swiper-button-next-testimonial').click();
-          clearTimeout();
-        }, 1);
-      }
-    }
-  });
-
   // Bakground color change
   let sectionBg = gsap__WEBPACK_IMPORTED_MODULE_3__.gsap.timeline({
     scrollTrigger: {
@@ -20160,6 +20133,34 @@ window.addEventListener('DOMContentLoaded', () => {
     background: 'linear-gradient(180deg, rgba(247,245,241,1) 0%, rgba(143,146,205,0) 100%)'
   }, {
     background: 'linear-gradient(180deg,rgba(247,245,241,1) 0%, rgba(143,146,205,1) 100%)'
+  });
+});
+window.addEventListener('DOMContentLoaded', () => {
+  var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper.swiper-careers-testimonial', {
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+    slideToClickedSlide: true,
+    speed: 1000,
+    loop: false,
+    breakpoints: {
+      1024: {
+        slidesPerView: 'auto',
+        spaceBetween: 20
+      }
+    },
+    navigation: {
+      nextEl: '.swiper-button-next-testimonial',
+      prevEl: '.swiper-button-prev-testimonial'
+    },
+    on: {
+      reachEnd: function () {
+        this.snapGrid = [...this.slidesGrid];
+        setTimeout(() => {
+          document.querySelector('.swiper-button-next-testimonial').click();
+          clearTimeout();
+        }, 1);
+      }
+    }
   });
 });
 })();
