@@ -27,6 +27,17 @@ Template Post Type: page
 
     <div id="jobListings">
       <!-- Job listings will be dynamically added here -->
+      <div class="grid grid-cols-1 lg:grid-cols-[5fr_7fr] mt-sp-12 first:mt-0 job-departments-section-js">
+        <div class="job-departments-js">
+          <p class="text-h2">Test deparment</p>
+        </div>
+        <div class="job-list-js">
+          <div class="relative flex items-center justify-between border-b border-primary last:border-none py-sp-6 job-list-job-js ">
+            <a href="${job.absolute_url}" target="_blank" class="no-underline stretched-link">${job.title}</a>
+            <p class="mb-0">${job.location.name}</p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script>
@@ -139,19 +150,26 @@ Template Post Type: page
             departmentsData.departments.forEach(department => {
               // Check if the department has jobs
               if (department.jobs.length > 0) {
-                var departmentContainer = document.createElement('div');
-                departmentContainer.className = 'department-container'
-                departmentContainer.innerHTML = `<h2>${department.name}</h2>`;
+                const jobMarkup = department.jobs.map(job => `
+                  <div class="relative flex items-center justify-between border-b border-primary last:border-none py-sp-6 job-list-job-js">
+                    <a href="${job.absolute_url}" target="_blank" class="no-underline stretched-link">${job.title}</a>
+                    <p class="mb-0">${job.location.name}</p>
+                  </div>
+                `).join('');
+                const markup = `
+                  <div class="job-departments-js">
+                      <p class="text-h2">${department.name}</p>
+                  </div>
+                  <div class="job-list-js">
+                      ${jobMarkup}
+                  </div>
+                `;
 
-                department.jobs.forEach(job => {
-                  var jobElement = document.createElement('div');
-                  jobElement.innerHTML = `<a href="${job.absolute_url}" target="_blank">${job.title}</a><p>${job.location.name}</p>`;
+                var jobsContainer = document.createElement('div');
+                jobsContainer.className = 'grid grid-cols-1 lg:grid-cols-[5fr_7fr] mt-sp-12 first:mt-0 job-departments-section-js';
+                jobsContainer.innerHTML = markup;
 
-
-                  departmentContainer.appendChild(jobElement);
-                });
-
-                jobListingsContainer.appendChild(departmentContainer);
+                jobListingsContainer.appendChild(jobsContainer);
               }
             });
           }
@@ -202,6 +220,18 @@ Template Post Type: page
         .catch(error => console.log('Error fetching data:', error));
     </script>
 
+    <!-- Template -->
+    <!-- <div class="grid grid-cols-1 lg:grid-cols-[5fr_7fr] mt-sp-12 first:mt-0 job-departments-section-js">
+      <div class="job-departments-js">
+        <p class="text-h2">Test deparment</p>
+      </div>
+      <div class="job-list-js">
+        <div class="relative flex items-center justify-between border-b border-primary last:border-none py-sp-6 job-list-job-js ">
+          <a href="${job.absolute_url}" target="_blank" class="no-underline stretched-link">${job.title}</a>
+          <p class="mb-0">${job.location.name}</p>
+        </div>
+      </div>
+    </div> -->
 
   </div>
 </section>
