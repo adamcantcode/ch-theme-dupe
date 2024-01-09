@@ -15,7 +15,7 @@ Template Post Type: page
         <script>
           document.addEventListener("DOMContentLoaded", function() {
             const newDisclaimerText = 'We may employ third-party tools to analyze usage data on our website, including your submission of this form. We make reasonable efforts to obscure or de-identify protected health information from our analytics providers whenever feasible.'
-            const disclaimerContainer = document.querySelector('.field-auto-capture');
+            const disclaimerContainer = document.querySelectorAll('.field-auto-capture')[0];
             const progressBar = document.querySelector('#fsSubmit4865954');
 
             progressBar.insertAdjacentElement('afterend', disclaimerContainer);
@@ -26,14 +26,47 @@ Template Post Type: page
             disclaimerContainer.querySelector('.field-auto-capture__message p').style.textAlign = "left";
 
             document.querySelector('.fsPagination').addEventListener('click', function() {
-              console.log(document.querySelector('#fsPage4865954-2').classList.contains('fsHiddenPage'));
-              if (document.querySelector('#fsPage4865954-2').classList.contains('fsHiddenPage')) {
-                setTimeout(() => {
+              setTimeout(() => {
+                if (document.querySelector('#fsPage4865954-2').classList.contains('fsHiddenPage')) {
+                  console.log('page 2 hidden');
+                  setTimeout(() => {
+                    disclaimerContainer.style.display = 'none';
+                  }, 300);
+                } else {
+                  console.log('page 2 not hidden');
                   disclaimerContainer.style.display = 'block';
-                }, 300);
-              } else {
-                disclaimerContainer.style.display = 'none';
-              }
+                }
+              }, 300);
+            })
+
+            // Select the element to be cloned
+            var originalElement = document.querySelector('.field-auto-capture');
+
+            // Clone the element
+            var clonedElement = originalElement.cloneNode(true);
+
+            // Insert the cloned element right after the original element
+            originalElement.parentNode.insertBefore(clonedElement, originalElement.nextSibling);
+
+            // Select the child element within the cloned element
+            var clonedChildElement = clonedElement.querySelector('.field-auto-capture__message__text');
+
+            // Change the inner text of the child element
+            clonedChildElement.innerText = "By providing your phone number in this form, you agree to receive text messages from us. Standard message and data rates may apply.";
+
+
+            document.querySelector('.fsPagination').addEventListener('click', function() {
+              setTimeout(() => {
+                if (document.querySelector('#fsPage4865954-3').classList.contains('fsHiddenPage')) {
+                  console.log('page 1 hidden');
+                  setTimeout(() => {
+                    clonedElement.style.display = 'none';
+                  }, 300);
+                } else {
+                  console.log('page 1 not hidden');
+                  clonedElement.style.display = 'block';
+                }
+              }, 300);
             })
 
           });
