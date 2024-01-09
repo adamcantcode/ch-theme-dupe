@@ -20135,7 +20135,7 @@ window.addEventListener('DOMContentLoaded', () => {
     background: 'linear-gradient(180deg,rgba(247,245,241,1) 0%, rgba(143,146,205,1) 100%)'
   });
 });
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
   var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper.swiper-careers-testimonial', {
     slidesPerView: 'auto',
     spaceBetween: 20,

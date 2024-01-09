@@ -13,7 +13,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 window.addEventListener('DOMContentLoaded', () => {
-
   // Bakground color change
   let sectionBg = gsap.timeline({
     scrollTrigger: {
@@ -37,8 +36,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   );
 });
-
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
   var swiper = new Swiper('.swiper.swiper-careers-testimonial', {
     slidesPerView: 'auto',
     spaceBetween: 20,
