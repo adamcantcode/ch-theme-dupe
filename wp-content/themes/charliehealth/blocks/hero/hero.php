@@ -77,7 +77,7 @@ if ($style === 'image') {
       $imageThree = get_field('image_three');
       ?>
       <div class="relative">
-        <img src="<?= $imageOne['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $imageOne['alt'] ?: 'Placeholder image'; ?>" class="lg:absolute lg:left-0 lg:top-[95%] rounded-[16px] nolazy lg:block noshow">
+        <img src="<?= $imageOne['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $imageOne['alt'] ?: 'Placeholder image'; ?>" class="lg:absolute lg:left-0 lg:top-[80%] rounded-[16px] nolazy lg:block noshow">
       </div>
       <div class="relative">
         <img src="<?= $imageTwo['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $imageTwo['alt'] ?: 'Placeholder image'; ?>" class="lg:absolute lg:left-0 lg:top-[-10%] rounded-[16px] nolazy">
