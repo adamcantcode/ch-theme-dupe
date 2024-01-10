@@ -175,19 +175,24 @@ Template Post Type: page
 
           // Function to filter job listings based on selected state
           function filterJobListingsByState() {
-
+            // Get value, not title of selection
             var selectedState = document.getElementById('locationFilter').value;
+            // Get all departments
             var jobListings = document.getElementById('jobListings').querySelectorAll('.job-departments-section-js');
 
             jobListings.forEach(departmentContainer => {
               var jobsInDepartment = departmentContainer.querySelectorAll('.job-list-js');
               var allHidden = true;
 
+              // Loop through all job containers within department container
               jobsInDepartment.forEach(jobElement => {
                 var jobs = jobElement.querySelectorAll('.job-list-job-js');
+                
+                // Loop through all jobs within jobs container
                 jobs.forEach(job => {
                   var jobState = job.querySelector('.location-js').textContent.split(', ')[1];
 
+                  // Handle improper location naming
                   switch (jobState) {
                     case 'United States':
                       jobState = 'Remote';
@@ -199,8 +204,7 @@ Template Post Type: page
                       break;
                   }
 
-                  console.log(job, jobState, selectedState);
-
+                  // Hide jobs if not selected location
                   if (selectedState === '' || jobState === selectedState) {
                     job.style.display = '';
                     allHidden = false
@@ -208,6 +212,8 @@ Template Post Type: page
                     job.style.display = 'none';
                   }
                 });
+
+                // Hide container/department if no jobs
                 if (allHidden) {
                   departmentContainer.style.display = 'none';
                 } else {
