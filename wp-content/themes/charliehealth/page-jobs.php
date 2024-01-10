@@ -6,17 +6,8 @@ Template Post Type: page
 ?>
 
 <?php get_header();  ?>
-
-<section class="section-top">
-  <div class="container">
-    <div class="text-center">
-      <h1 class="mb-0">Charlie Cares</h1>
-    </div>
-  </div>
-</section>
 <section class="section">
   <div class="container">
-
     <div>
       <label for="locationFilter">Filter by State:</label>
       <select id="locationFilter">
@@ -24,7 +15,6 @@ Template Post Type: page
         <!-- Populate the dropdown with unique state names -->
       </select>
     </div>
-
     <div id="jobListings">
       <!-- Job listings will be dynamically added here -->
       <!-- <div class="grid grid-cols-1 lg:grid-cols-[5fr_7fr] mt-sp-12 first:mt-0 job-departments-section-js">
@@ -39,77 +29,75 @@ Template Post Type: page
         </div>
       </div> -->
     </div>
-
     <script>
       var requestOptions = {
         method: 'GET',
         redirect: 'follow'
       };
 
-      function stateAbbreviationToFullName(abbreviation) {
-        const stateMap = {
-          'AL': 'Alabama',
-          'AK': 'Alaska',
-          'AZ': 'Arizona',
-          'AR': 'Arkansas',
-          'CA': 'California',
-          'CO': 'Colorado',
-          'CT': 'Connecticut',
-          'DE': 'Delaware',
-          'FL': 'Florida',
-          'GA': 'Georgia',
-          'HI': 'Hawaii',
-          'ID': 'Idaho',
-          'IL': 'Illinois',
-          'IN': 'Indiana',
-          'IA': 'Iowa',
-          'KS': 'Kansas',
-          'KY': 'Kentucky',
-          'LA': 'Louisiana',
-          'ME': 'Maine',
-          'MD': 'Maryland',
-          'MA': 'Massachusetts',
-          'MI': 'Michigan',
-          'MN': 'Minnesota',
-          'MS': 'Mississippi',
-          'MO': 'Missouri',
-          'MT': 'Montana',
-          'NE': 'Nebraska',
-          'NV': 'Nevada',
-          'NH': 'New Hampshire',
-          'NJ': 'New Jersey',
-          'NM': 'New Mexico',
-          'NY': 'New York',
-          'NC': 'North Carolina',
-          'ND': 'North Dakota',
-          'OH': 'Ohio',
-          'OK': 'Oklahoma',
-          'OR': 'Oregon',
-          'PA': 'Pennsylvania',
-          'RI': 'Rhode Island',
-          'SC': 'South Carolina',
-          'SD': 'South Dakota',
-          'TN': 'Tennessee',
-          'TX': 'Texas',
-          'UT': 'Utah',
-          'VT': 'Vermont',
-          'VA': 'Virginia',
-          'WA': 'Washington',
-          'WV': 'West Virginia',
-          'WI': 'Wisconsin',
-          'WY': 'Wyoming',
-        };
-
-        const upperCaseAbbreviation = abbreviation.toUpperCase();
-
-        return stateMap[upperCaseAbbreviation] || 'Remote';
-      }
-
-      fetch("https://boards-api.greenhouse.io/v1/boards/charliehealth/departments", requestOptions)
+      fetch("https://boards-api.greenhouse.io/v1/boards/<?= get_field('board_code'); ?>/departments", requestOptions)
         .then(response => response.json())
         .then(data => {
           // Save the fetched data for later use
           var departmentsData = data;
+
+          // Format location text
+          function stateAbbreviationToFullName(abbreviation) {
+            const stateMap = {
+              'AL': 'Alabama',
+              'AK': 'Alaska',
+              'AZ': 'Arizona',
+              'AR': 'Arkansas',
+              'CA': 'California',
+              'CO': 'Colorado',
+              'CT': 'Connecticut',
+              'DE': 'Delaware',
+              'FL': 'Florida',
+              'GA': 'Georgia',
+              'HI': 'Hawaii',
+              'ID': 'Idaho',
+              'IL': 'Illinois',
+              'IN': 'Indiana',
+              'IA': 'Iowa',
+              'KS': 'Kansas',
+              'KY': 'Kentucky',
+              'LA': 'Louisiana',
+              'ME': 'Maine',
+              'MD': 'Maryland',
+              'MA': 'Massachusetts',
+              'MI': 'Michigan',
+              'MN': 'Minnesota',
+              'MS': 'Mississippi',
+              'MO': 'Missouri',
+              'MT': 'Montana',
+              'NE': 'Nebraska',
+              'NV': 'Nevada',
+              'NH': 'New Hampshire',
+              'NJ': 'New Jersey',
+              'NM': 'New Mexico',
+              'NY': 'New York',
+              'NC': 'North Carolina',
+              'ND': 'North Dakota',
+              'OH': 'Ohio',
+              'OK': 'Oklahoma',
+              'OR': 'Oregon',
+              'PA': 'Pennsylvania',
+              'RI': 'Rhode Island',
+              'SC': 'South Carolina',
+              'SD': 'South Dakota',
+              'TN': 'Tennessee',
+              'TX': 'Texas',
+              'UT': 'Utah',
+              'VT': 'Vermont',
+              'VA': 'Virginia',
+              'WA': 'Washington',
+              'WV': 'West Virginia',
+              'WI': 'Wisconsin',
+              'WY': 'Wyoming',
+            };
+
+            return stateMap[abbreviation.toUpperCase()] || 'Remote';
+          }
 
           // Function to create option elements for the state dropdown
           function populateStateDropdown() {
@@ -144,7 +132,7 @@ Template Post Type: page
           // Function to create HTML structure for job listings
           function createJobListings() {
             var jobListingsContainer = document.getElementById('jobListings');
-            
+
             departmentsData.departments.forEach(department => {
               // Check if the department has jobs
               if (department.jobs.length > 0) {
@@ -231,7 +219,6 @@ Template Post Type: page
         })
         .catch(error => console.log('Error fetching data:', error));
     </script>
-
   </div>
 </section>
 
