@@ -27,7 +27,7 @@ Template Post Type: page
 
     <div id="jobListings">
       <!-- Job listings will be dynamically added here -->
-      <div class="grid grid-cols-1 lg:grid-cols-[5fr_7fr] mt-sp-12 first:mt-0 job-departments-section-js">
+      <!-- <div class="grid grid-cols-1 lg:grid-cols-[5fr_7fr] mt-sp-12 first:mt-0 job-departments-section-js">
         <div class="job-departments-js">
           <p class="text-h2">Test deparment</p>
         </div>
@@ -37,7 +37,7 @@ Template Post Type: page
             <p class="mb-0">${job.location.name}</p>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
 
     <script>
@@ -130,7 +130,6 @@ Template Post Type: page
             // Sort the array and place 'Remote' first
             states.sort((a, b) => (a === 'Remote' ? -1 : b === 'Remote' ? 1 : 0));
 
-            console.log(states);
 
             states.forEach(state => {
               if (state !== null && state !== undefined) {
@@ -153,7 +152,7 @@ Template Post Type: page
                 const jobMarkup = department.jobs.map(job => `
                   <div class="relative flex items-center justify-between border-b border-primary last:border-none py-sp-6 job-list-job-js">
                     <a href="${job.absolute_url}" target="_blank" class="no-underline stretched-link">${job.title}</a>
-                    <p class="mb-0">${job.location.name}</p>
+                    <p class="mb-0 location-js">${job.location.name}</p>
                   </div>
                 `).join('');
                 const markup = `
@@ -176,37 +175,45 @@ Template Post Type: page
 
           // Function to filter job listings based on selected state
           function filterJobListingsByState() {
+
             var selectedState = document.getElementById('locationFilter').value;
-            var jobListings = document.getElementById('jobListings').querySelectorAll('.department-container');
+            var jobListings = document.getElementById('jobListings').querySelectorAll('.job-departments-section-js');
 
             jobListings.forEach(departmentContainer => {
-              var jobsInDepartment = departmentContainer.querySelectorAll('div');
+              var jobsInDepartment = departmentContainer.querySelectorAll('.job-list-js');
               var allHidden = true;
 
               jobsInDepartment.forEach(jobElement => {
-                var jobState = jobElement.querySelector('p').textContent.split(', ')[1];
+                var jobs = jobElement.querySelectorAll('.job-list-job-js');
+                jobs.forEach(job => {
+                  var jobState = job.querySelector('.location-js').textContent.split(', ')[1];
 
-                if (jobState === 'United States') {
-                  jobState = 'Remote';
-                }
+                  switch (jobState) {
+                    case 'United States':
+                      jobState = 'Remote';
+                      break;
+                    case undefined:
+                      jobState = job.querySelector('.location-js').textContent.split(', ')[0];
+                      break
+                    default:
+                      break;
+                  }
 
-                if (selectedState === '' || jobState === selectedState) {
-                  jobElement.style.display = 'block';
-                  allHidden = false
+                  console.log(job, jobState, selectedState);
+
+                  if (selectedState === '' || jobState === selectedState) {
+                    job.style.display = '';
+                    allHidden = false
+                  } else {
+                    job.style.display = 'none';
+                  }
+                });
+                if (allHidden) {
+                  departmentContainer.style.display = 'none';
                 } else {
-                  jobElement.style.display = 'none';
+                  departmentContainer.style.display = '';
                 }
               });
-
-
-              if (allHidden) {
-                console.log(departmentContainer, 'hide');
-                departmentContainer.style.display = 'none';
-              } else {
-                console.log(departmentContainer, 'show');
-                departmentContainer.style.display = '';
-                // Reset display property if at least one jobElement is visible
-              }
             });
           }
 
