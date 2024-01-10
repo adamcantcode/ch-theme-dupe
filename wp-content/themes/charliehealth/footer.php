@@ -77,7 +77,7 @@
 						}
 					}
 					?>
-					<?php if (!0 == true) : ?>
+					<?php if (!$removeNewsletter) : ?>
 						<div class="flex-grow">
 							<p class="text-white font-heading !text-[28px]">Sign up for our email newsletter</p>
 							<p class="text-white text-[14px] leading-[130%] noshow">Get mental health updates, research, insights, and resources directly to your inbox.</p>
