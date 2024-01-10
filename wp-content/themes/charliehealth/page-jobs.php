@@ -130,7 +130,6 @@ Template Post Type: page
             // Sort the array and place 'Remote' first
             states.sort((a, b) => (a === 'Remote' ? -1 : b === 'Remote' ? 1 : 0));
 
-
             states.forEach(state => {
               if (state !== null && state !== undefined) {
                 var option = document.createElement('option');
@@ -145,12 +144,12 @@ Template Post Type: page
           // Function to create HTML structure for job listings
           function createJobListings() {
             var jobListingsContainer = document.getElementById('jobListings');
-
+            
             departmentsData.departments.forEach(department => {
               // Check if the department has jobs
               if (department.jobs.length > 0) {
                 const jobMarkup = department.jobs.map(job => `
-                  <div class="relative flex items-center justify-between border-b border-primary last:border-none py-sp-6 job-list-job-js">
+                  <div class="relative flex items-center justify-between border-b border-primary last:border-none only:border-y only:border-solid py-sp-6 job-list-job-js">
                     <a href="${job.absolute_url}" target="_blank" class="no-underline stretched-link">${job.title}</a>
                     <p class="mb-0 location-js">${job.location.name}</p>
                   </div>
@@ -187,7 +186,7 @@ Template Post Type: page
               // Loop through all job containers within department container
               jobsInDepartment.forEach(jobElement => {
                 var jobs = jobElement.querySelectorAll('.job-list-job-js');
-                
+
                 // Loop through all jobs within jobs container
                 jobs.forEach(job => {
                   var jobState = job.querySelector('.location-js').textContent.split(', ')[1];
@@ -232,19 +231,6 @@ Template Post Type: page
         })
         .catch(error => console.log('Error fetching data:', error));
     </script>
-
-    <!-- Template -->
-    <!-- <div class="grid grid-cols-1 lg:grid-cols-[5fr_7fr] mt-sp-12 first:mt-0 job-departments-section-js">
-      <div class="job-departments-js">
-        <p class="text-h2">Test deparment</p>
-      </div>
-      <div class="job-list-js">
-        <div class="relative flex items-center justify-between border-b border-primary last:border-none py-sp-6 job-list-job-js ">
-          <a href="${job.absolute_url}" target="_blank" class="no-underline stretched-link">${job.title}</a>
-          <p class="mb-0">${job.location.name}</p>
-        </div>
-      </div>
-    </div> -->
 
   </div>
 </section>

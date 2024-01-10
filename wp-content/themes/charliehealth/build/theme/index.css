@@ -5073,8 +5073,17 @@ mark{
   border-top-width: 2px;
 }
 
+.first\:py-0:first-child{
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
 .first\:pt-sp-6:first-child{
   padding-top: 1.5rem;
+}
+
+.first\:pt-0:first-child{
+  padding-top: 0px;
 }
 
 .last\:col-start-\[span_2\]:last-child{
@@ -5087,6 +5096,20 @@ mark{
 
 .last\:border-none:last-child{
   border-style: none;
+}
+
+.only\:border-y:only-child{
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+}
+
+.only\:border-solid:only-child{
+  border-style: solid;
+}
+
+.only\:border-primary:only-child{
+  --tw-border-opacity: 1;
+  border-color: rgb(22 26 61 / var(--tw-border-opacity));
 }
 
 .hover\:-translate-y-sp-1:hover{
