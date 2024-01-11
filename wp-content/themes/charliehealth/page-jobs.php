@@ -6,6 +6,7 @@ Template Post Type: page
 ?>
 
 <?php get_header();  ?>
+<?= get_the_content(); ?>
 <section class="section">
   <div class="container">
     <div>
@@ -138,7 +139,7 @@ Template Post Type: page
               if (department.jobs.length > 0) {
                 const jobMarkup = department.jobs.map(job => `
                   <div class="relative flex items-center justify-between border-b border-primary last:border-none only:border-y only:border-solid py-sp-6 job-list-job-js">
-                    <a href="${job.absolute_url}" target="_blank" class="no-underline stretched-link">${job.title}</a>
+                    <a href="${job.absolute_url}" class="no-underline stretched-link">${job.title}</a>
                     <p class="mb-0 location-js">${job.location.name}</p>
                   </div>
                 `).join('');
