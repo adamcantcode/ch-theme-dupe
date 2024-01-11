@@ -149,7 +149,7 @@ $jobCode = get_field('board_code');
                 // Check if the department has jobs
                 if (department.jobs.length > 0) {
                   const jobMarkup = department.jobs.map(job => `
-                  <div class="relative flex items-center justify-between transition-all border-b border-primary last:border-none only:border-y only:border-solid py-sp-6 duration-300ms job-list-job-js">
+                  <div class="relative flex items-center justify-between transition-all duration-300 border-b border-primary last:border-none only:border-y only:border-solid py-sp-6 job-list-job-js">
                     <a href="${job.absolute_url}" class="no-underline stretched-link">${job.title}</a>
                     <p class="mb-0 location-js">${job.location.name}</p>
                   </div>
@@ -164,7 +164,7 @@ $jobCode = get_field('board_code');
                 `;
 
                   var jobsContainer = document.createElement('div');
-                  jobsContainer.className = 'grid grid-cols-1 lg:grid-cols-[5fr_7fr] mt-sp-12 first:mt-0 job-departments-section-js transition-all duration-300ms';
+                  jobsContainer.className = 'grid grid-cols-1 lg:grid-cols-[5fr_7fr] mt-sp-12 first:mt-0 job-departments-section-js transition-all duration-300';
                   jobsContainer.innerHTML = markup;
 
                   jobListingsContainer.appendChild(jobsContainer);
@@ -205,15 +205,13 @@ $jobCode = get_field('board_code');
 
                     // Hide jobs if not selected location
                     if (selectedState === '' || jobState === selectedState) {
-                      // job.style.display = '';
-                      job.classList.remove('opacity-0');
+                      job.classList.remove('noshow');
                       setTimeout(() => {
-                        job.classList.remove('noshow', 'translate-x-sp-4');
+                        job.classList.remove('opacity-0', 'translate-x-sp-4');
                       }, 300);
                       allHidden = false
                     } else {
-                      // job.style.display = 'none';
-                      job.classList.add('opacity-0', 'translate-y-sp-4');
+                      job.classList.add('opacity-0', 'translate-x-sp-4');
                       setTimeout(() => {
                         job.classList.add('noshow');
                       }, 300);
