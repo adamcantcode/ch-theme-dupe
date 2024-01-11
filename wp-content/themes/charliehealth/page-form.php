@@ -52,7 +52,7 @@ Template Post Type: page
             var clonedChildElement = clonedElement.querySelector('.field-auto-capture__message__text');
 
             // Change the inner text of the child element
-            clonedChildElement.innerText = "By providing your phone number in this form, you agree to receive text messages from us. Standard message and data rates may apply.";
+            clonedChildElement.innerText = "By entering your phone number and email address in this form, you agree to receive text messages and emails from us. Standard message and data rates may apply.";
 
 
             document.querySelector('.fsPagination').addEventListener('click', function() {
