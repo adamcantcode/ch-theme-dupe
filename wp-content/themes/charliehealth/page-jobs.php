@@ -27,20 +27,7 @@ $jobCode = get_field('board_code');
           <!-- Populate the dropdown with unique state names -->
         </select>
       </div>
-      <div id="jobListings">
-        <!-- Job listings will be dynamically added here -->
-        <!-- <div class="grid grid-cols-1 lg:grid-cols-[5fr_7fr] mt-sp-12 first:mt-0 job-departments-section-js">
-        <div class="job-departments-js">
-          <p class="text-h2">Test deparment</p>
-        </div>
-        <div class="job-list-js">
-          <div class="relative flex items-center justify-between border-b border-primary last:border-none py-sp-6 job-list-job-js ">
-            <a href="${job.absolute_url}" target="_blank" class="no-underline stretched-link">${job.title}</a>
-            <p class="mb-0">${job.location.name}</p>
-          </div>
-        </div>
-      </div> -->
-      </div>
+      <div id="jobListings"></div>
       <script>
         var requestOptions = {
           method: 'GET',
