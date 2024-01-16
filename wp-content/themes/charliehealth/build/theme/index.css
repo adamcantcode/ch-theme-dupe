@@ -2989,6 +2989,10 @@ a.ch-button.button-tertiary.inverted:hover {
   text-align: center;
 }
 
+.text-right{
+  text-align: right;
+}
+
 .align-baseline{
   vertical-align: baseline;
 }
@@ -5075,6 +5079,7 @@ mark{
     no-repeat;
   background-position: right 25px top 50%;
   padding-right: 64px;
+  text-align: left;
 }
 
 .first\:mt-0:first-child{
@@ -6013,6 +6018,10 @@ mark{
 
   .lg\:pt-sp-14{
     padding-top: 4rem;
+  }
+
+  .lg\:text-right{
+    text-align: right;
   }
 
   .lg\:\!text-\[20px\]{

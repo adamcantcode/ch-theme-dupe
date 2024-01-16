@@ -76,9 +76,9 @@ $jobCode = get_field('board_code');
         });
         sectionBg.fromTo(
           '.section-bg-js', {
-            background: 'linear-gradient(180deg, rgba(247,245,241,1) 0%, rgba(143,146,205,0) 100%)',
+            background: 'linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(143,146,205,0) 100%)',
           }, {
-            background: 'linear-gradient(180deg,rgba(247,245,241,1) 0%, rgba(143,146,205,1) 100%)',
+            background: 'linear-gradient(180deg,rgba(255,255,255,1) 0%, rgba(143,146,205,1) 100%)',
           }
         );
       }
@@ -195,13 +195,13 @@ $jobCode = get_field('board_code');
               if (department.jobs.length > 0) {
                 const jobMarkup = department.jobs.map(job => `
                   <div class="relative flex flex-col justify-between transition-all duration-300 border-b lg:flex-row lg:items-center border-primary last:border-none only:border-y only:border-solid py-sp-6 job-list-job-js">
-                    <a href="${job.absolute_url}" class="no-underline stretched-link">${job.title}</a>
-                    <p class="mb-0 location-js">${job.location.name}</p>
+                    <a href="${job.absolute_url}" class="no-underline stretched-link text-[20px] leading-[1.1] mb-sp-2 lg:mb-0">${job.title}</a>
+                    <p class="mb-0 text-[14px] leading-[1.1] location-js lg:text-right">${job.location.name}</p>
                   </div>
                 `).join('');
                 const markup = `
                   <div class="job-departments-js">
-                      <h3 class="text-[40px] leading-[1.1] font-heading">${department.name}</h3>
+                      <h3 class="text-[40px] leading-[1.1] font-heading mb-0 mt-sp-4">${department.name}</h3>
                   </div>
                   <div class="job-list-js">
                       ${jobMarkup}
@@ -209,7 +209,7 @@ $jobCode = get_field('board_code');
                 `;
 
                 var jobsContainer = document.createElement('div');
-                jobsContainer.className = 'grid grid-cols-1 lg:grid-cols-[5fr_7fr] mt-sp-12 first:mt-0 job-departments-section-js transition-all duration-300 opacity-0';
+                jobsContainer.className = 'grid grid-cols-1 lg:grid-cols-[3fr_9fr] mt-sp-12 first:mt-0 job-departments-section-js transition-all duration-300 opacity-0';
                 jobsContainer.innerHTML = markup;
 
                 jobListingsContainer.appendChild(jobsContainer);
@@ -219,8 +219,8 @@ $jobCode = get_field('board_code');
               }
             });
 
-            const height = document.getElementById('jobListings').clientHeight;
-            document.getElementById('jobListings').style.height = height + 'px';
+            // const height = document.getElementById('jobListings').clientHeight;
+            // document.getElementById('jobListings').style.height = height + 'px';
           }
 
           // Function to filter job listings based on selected state
@@ -275,6 +275,8 @@ $jobCode = get_field('board_code');
               });
               departmentContainer.classList.remove('opacity-0');
             });
+
+            ScrollTrigger.refresh();
 
           }
 
