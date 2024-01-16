@@ -30,7 +30,7 @@ $jobCode = get_field('board_code');
     <div class="container mb-sp-16">
       <h1 class="text-[14px] leading-[1.6] mb-sp-4"><?= get_the_title(); ?></h1>
       <div class="flex flex-col justify-between lg:items-center lg:mb-sp-16 mb-sp-8 lg:flex-row">
-        <h2 class="text-[64px] leading-[1.1] lg:mb-0">Open Roles</h2>
+        <h2 class="lg:text-[64px] text-[42px] leading-[1.1] lg:mb-0">Open Roles</h2>
         <div>
           <select id="locationFilter" class="cursor-pointer ch-button button-secondary custom-select">
             <option value="">All Locations</option>
