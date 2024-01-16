@@ -11,10 +11,18 @@ $jobCode = get_field('board_code');
 
 <?php get_header();  ?>
 <?php if (isset($_GET['gh_jid'])) : ?>
-  <section class="section">
+  <section class="section section-xs-bottom">
     <div class="container">
-      <div id="grnhse_app"></div>
-      <script src="https://boards.greenhouse.io/embed/job_board/js?for=<?= $jobCode; ?>"></script>
+      <h1 class="text-[64px] leading-[1.1] lg:mb-0">Apply</h1>
+    </div>
+  </section>
+  <section class="section-horizontal">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-[3fr_9fr]">
+        <div></div>
+        <div id="grnhse_app"></div>
+        <script src="https://boards.greenhouse.io/embed/job_board/js?for=<?= $jobCode; ?>"></script>
+      </div>
     </div>
   </section>
 <?php else : ?>
