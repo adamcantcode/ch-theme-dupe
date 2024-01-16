@@ -1587,10 +1587,6 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-bottom: 3rem;
 }
 
-.mb-sp-14{
-  margin-bottom: 4rem;
-}
-
 .mb-sp-16{
   margin-bottom: 6rem;
 }
@@ -2126,11 +2122,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .translate-x-\[45\%\]{
   --tw-translate-x: 45%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-x-sp-4{
-  --tw-translate-x: 1rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -3134,6 +3125,10 @@ a.ch-button.button-tertiary.inverted:hover {
   font-size: 56px;
 }
 
+.text-\[64px\]{
+  font-size: 64px;
+}
+
 .text-h1{
   font-size: 2rem;
   line-height: 2rem;
@@ -3230,10 +3225,6 @@ a.ch-button.button-tertiary.inverted:hover {
   line-height: 1rem;
 }
 
-.text-\[64px\]{
-  font-size: 64px;
-}
-
 .font-bold{
   font-weight: 700;
 }
@@ -3301,10 +3292,6 @@ a.ch-button.button-tertiary.inverted:hover {
 .text-\[\#87889A\]{
   --tw-text-opacity: 1;
   color: rgb(135 136 154 / var(--tw-text-opacity));
-}
-
-.text-\[64\]{
-  color: 64;
 }
 
 .text-darker-blue{
@@ -5835,10 +5822,6 @@ mark{
 
   .lg\:items-stretch{
     align-items: stretch;
-  }
-
-  .lg\:justify-between{
-    justify-content: space-between;
   }
 
   .lg\:justify-around{
