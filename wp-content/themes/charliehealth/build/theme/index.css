@@ -5837,6 +5837,10 @@ mark{
     align-items: stretch;
   }
 
+  .lg\:justify-between{
+    justify-content: space-between;
+  }
+
   .lg\:justify-around{
     justify-content: space-around;
   }

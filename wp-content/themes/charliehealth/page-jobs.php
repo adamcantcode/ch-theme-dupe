@@ -21,8 +21,8 @@ $jobCode = get_field('board_code');
   <section class="section section-bg-js">
     <div class="container mb-sp-16">
       <h1 class="text-[14px] leading-[1.6] mb-sp-4"><?= get_the_title(); ?></h1>
-      <div class="flex items-center justify-between mb-sp-16">
-        <h2 class="text-[64px] leading-[1.1] mb-0">Open Roles</h2>
+      <div class="flex flex-col justify-between lg:items-center lg:mb-sp-16 mb-sp-8 lg:flex-row">
+        <h2 class="text-[64px] leading-[1.1] lg:mb-0">Open Roles</h2>
         <div>
           <select id="locationFilter" class="cursor-pointer ch-button button-secondary custom-select">
             <option value="">All Locations</option>
@@ -186,7 +186,7 @@ $jobCode = get_field('board_code');
               // Check if the department has jobs
               if (department.jobs.length > 0) {
                 const jobMarkup = department.jobs.map(job => `
-                  <div class="relative flex items-center justify-between transition-all duration-300 border-b border-primary last:border-none only:border-y only:border-solid py-sp-6 job-list-job-js">
+                  <div class="relative flex flex-col justify-between transition-all duration-300 border-b lg:flex-row lg:items-center border-primary last:border-none only:border-y only:border-solid py-sp-6 job-list-job-js">
                     <a href="${job.absolute_url}" class="no-underline stretched-link">${job.title}</a>
                     <p class="mb-0 location-js">${job.location.name}</p>
                   </div>
