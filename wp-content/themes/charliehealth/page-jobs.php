@@ -22,7 +22,7 @@ $jobCode = get_field('board_code');
     <div class="container">
       <h1 class="text-[14px] leading-[1.6] mb-sp-4"><?= get_the_title(); ?></h1>
       <div class="flex items-center justify-between mb-sp-16">
-        <h2 class="text-[64] leading-[1.1] mb-0">Open Roles</h2>
+        <h2 class="text-[64px] leading-[1.1] mb-0">Open Roles</h2>
         <div>
           <select id="locationFilter" class="cursor-pointer ch-button button-secondary custom-select">
             <option value="">All Locations</option>
@@ -135,6 +135,10 @@ $jobCode = get_field('board_code');
             function createJobListings() {
               var jobListingsContainer = document.getElementById('jobListings');
 
+              // Reset HTML
+              jobListingsContainer.innerHTML = '';
+
+              // Build markup
               departmentsData.departments.forEach(department => {
                 // Check if the department has jobs
                 if (department.jobs.length > 0) {
@@ -146,7 +150,7 @@ $jobCode = get_field('board_code');
                 `).join('');
                   const markup = `
                   <div class="job-departments-js">
-                      <p class="text-h2">${department.name}</p>
+                      <h3 class="text-[40px] leading-[1.1] font-heading">${department.name}</h3>
                   </div>
                   <div class="job-list-js">
                       ${jobMarkup}
@@ -154,16 +158,24 @@ $jobCode = get_field('board_code');
                 `;
 
                   var jobsContainer = document.createElement('div');
-                  jobsContainer.className = 'grid grid-cols-1 lg:grid-cols-[5fr_7fr] mt-sp-12 first:mt-0 job-departments-section-js transition-all duration-300';
+                  jobsContainer.className = 'grid grid-cols-1 lg:grid-cols-[5fr_7fr] mt-sp-12 first:mt-0 job-departments-section-js transition-all duration-300 opacity-0';
                   jobsContainer.innerHTML = markup;
 
                   jobListingsContainer.appendChild(jobsContainer);
+                  setTimeout(() => {
+                    jobsContainer.classList.remove('opacity-0');
+                  }, 300);
                 }
               });
+
+              const height = document.getElementById('jobListings').clientHeight;
+              document.getElementById('jobListings').style.height = height + 'px';
             }
 
             // Function to filter job listings based on selected state
             function filterJobListingsByState() {
+              // Rebuild markup
+              createJobListings();
               // Get value, not title of selection
               var selectedState = document.getElementById('locationFilter').value;
               // Get all departments
@@ -196,35 +208,23 @@ $jobCode = get_field('board_code');
                     // Hide jobs if not selected location
                     if (selectedState === '' || jobState === selectedState) {
                       job.classList.remove('noshow');
-                      setTimeout(() => {
-                        job.classList.remove('opacity-0', 'translate-x-sp-4');
-                      }, 300);
                       allHidden = false
                     } else {
-                      job.classList.add('opacity-0', 'translate-x-sp-4');
-                      setTimeout(() => {
-                        job.classList.add('noshow');
-                      }, 300);
+                      job.classList.add('noshow');
+                      job.remove();
                     }
                   });
 
                   // Hide container/department if no jobs
                   if (allHidden) {
-                    departmentContainer.classList.add('opacity-0')
-                    setTimeout(() => {
-                      departmentContainer.classList.add('noshow')
-                    }, 300);
+                    departmentContainer.classList.add('noshow')
                   } else {
                     departmentContainer.classList.remove('noshow')
-                    setTimeout(() => {
-                      departmentContainer.classList.remove('opacity-0')
-                    }, 300);
                   }
                 });
+                departmentContainer.classList.remove('opacity-0');
               });
 
-              const height = document.getElementById('jobListings').clientHeight;
-              document.getElementById('jobListings').style.height = height + 'px';
             }
 
             // Initial setup
