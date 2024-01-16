@@ -20,12 +20,15 @@ $jobCode = get_field('board_code');
 <?php else : ?>
   <section class="section">
     <div class="container">
-      <div>
-        <label for="locationFilter">Filter by State:</label>
-        <select id="locationFilter">
-          <option value="">All States</option>
-          <!-- Populate the dropdown with unique state names -->
-        </select>
+      <h1 class="text-[14px] leading-[1.6] mb-sp-4"><?= get_the_title(); ?></h1>
+      <div class="flex items-center justify-between mb-sp-16">
+        <h2 class="text-[64] leading-[1.1] mb-0">Open Roles</h2>
+        <div>
+          <select id="locationFilter" class="cursor-pointer ch-button button-secondary custom-select">
+            <option value="">All Locations</option>
+            <!-- Populate the dropdown with unique state names -->
+          </select>
+        </div>
       </div>
       <div id="jobListings"></div>
       <script>
