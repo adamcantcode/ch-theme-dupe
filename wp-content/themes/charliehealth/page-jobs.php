@@ -32,6 +32,7 @@ $jobCode = get_field('board_code');
       </div>
       <div id="jobListings"></div>
     </div>
+    <?php $link = get_field('link'); ?>
     <div class="section-horizontal section-bg-js-cta">
       <div class="container-sm">
         <div class="flex flex-col justify-center pin-cta-js lg:h-[50vh] lg:mt-0 mt-sp-16 pb-sp-14 lg:pb-0">
@@ -41,7 +42,7 @@ $jobCode = get_field('board_code');
                 <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health shield logo" class="w-[3rem] mb-sp-5">
                 <h2 class="text-darkest-blue lg:text-[2.5rem] text-h2-lg lg:leading-tight mb-sp-10 font-heading-serif">Let’s build the solution to the youth mental health crisis together</h2>
                 <div class="flex gap-x-sp-4 items-center md:w-[unset] w-full">
-                  <a href=#" class="ch-button button-primary<?= $invert ? ' inverted' : '' ?>">Explore benefits</a>
+                  <a href="<?= $link['url']; ?>" class="ch-button button-primary<?= $invert ? ' inverted' : '' ?>"><?= $link['title']; ?></a>
                 </div>
               </div>
             </div>
