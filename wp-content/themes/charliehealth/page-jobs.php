@@ -5,9 +5,7 @@ Template Post Type: page
 */
 ?>
 
-<?php
-$jobCode = get_field('board_code');
-?>
+<?php $boardCode = get_field('board_code'); ?>
 
 <?php get_header();  ?>
 <?php if (isset($_GET['gh_jid'])) : ?>
@@ -21,7 +19,7 @@ $jobCode = get_field('board_code');
       <div class="grid grid-cols-1 lg:grid-cols-[3fr_9fr]">
         <div></div>
         <div id="grnhse_app"></div>
-        <script src="https://boards.greenhouse.io/embed/job_board/js?for=<?= $jobCode; ?>"></script>
+        <script src="https://boards.greenhouse.io/embed/job_board/js?for=<?= $boardCode; ?>"></script>
       </div>
     </div>
   </section>
@@ -88,7 +86,7 @@ $jobCode = get_field('board_code');
         redirect: 'follow'
       };
 
-      fetch("https://boards-api.greenhouse.io/v1/boards/<?= $jobCode; ?>/departments", requestOptions)
+      fetch("https://boards-api.greenhouse.io/v1/boards/<?= $boardCode; ?>/departments", requestOptions)
         .then(response => response.json())
         .then(data => {
           // Save the fetched data for later use
@@ -152,15 +150,83 @@ $jobCode = get_field('board_code');
             return stateMap[abbreviation.toUpperCase()] || 'Remote';
           }
 
+          function stateFullNameToAbbreviation(fullName) {
+            console.log(fullName);
+            const stateMap = {
+              'Alabama': 'AL',
+              'Alaska': 'AK',
+              'Arizona': 'AZ',
+              'Arkansas': 'AR',
+              'California': 'CA',
+              'Colorado': 'CO',
+              'Connecticut': 'CT',
+              'Delaware': 'DE',
+              'Florida': 'FL',
+              'Georgia': 'GA',
+              'Hawaii': 'HI',
+              'Idaho': 'ID',
+              'Illinois': 'IL',
+              'Indiana': 'IN',
+              'Iowa': 'IA',
+              'Kansas': 'KS',
+              'Kentucky': 'KY',
+              'Louisiana': 'LA',
+              'Maine': 'ME',
+              'Maryland': 'MD',
+              'Massachusetts': 'MA',
+              'Michigan': 'MI',
+              'Minnesota': 'MN',
+              'Mississippi': 'MS',
+              'Missouri': 'MO',
+              'Montana': 'MT',
+              'Nebraska': 'NE',
+              'Nevada': 'NV',
+              'New Hampshire': 'NH',
+              'New Jersey': 'NJ',
+              'New Mexico': 'NM',
+              'New York': 'NY',
+              'North Carolina': 'NC',
+              'North Dakota': 'ND',
+              'Ohio': 'OH',
+              'Oklahoma': 'OK',
+              'Oregon': 'OR',
+              'Pennsylvania': 'PA',
+              'Rhode Island': 'RI',
+              'South Carolina': 'SC',
+              'South Dakota': 'SD',
+              'Tennessee': 'TN',
+              'Texas': 'TX',
+              'Utah': 'UT',
+              'Vermont': 'VT',
+              'Virginia': 'VA',
+              'Washington': 'WA',
+              'West Virginia': 'WV',
+              'Wisconsin': 'WI',
+              'Wyoming': 'WY',
+            };
+
+            return stateMap[fullName] || fullName;
+          }
+
           // Function to create option elements for the state dropdown
           function populateStateDropdown() {
-            var states = Array.from(new Set(departmentsData.departments.flatMap(dep => dep.jobs.flatMap(job => job.location.name.split(', ')[1]))));
+            var states = Array.from(new Set(departmentsData.departments.flatMap(dep => dep.jobs.flatMap(job => {
+              if (job.location.name.endsWith("United States") || job.location.name.endsWith("USA")) {
+                // Handle 'City, United States' and 'Remote, United States'
+                if (job.location.name.split(', ')[0] === 'Remote') {
+                  return job.location.name.split(', ')[1];
+                } else {
+                  return stateFullNameToAbbreviation(job.location.name.split(', ')[0]);
+                }
+              } else {
+                return job.location.name.split(', ')[1];
+              }
+            }))));
+
             var dropdown = document.getElementById('locationFilter');
 
-            // Find the index of 'United States'
-            const indexOfUS = states.indexOf('United States');
-
             // Update 'United States' to 'Remote' if found
+            const indexOfUS = states.indexOf('United States');
             if (indexOfUS !== -1) {
               states[indexOfUS] = 'Remote';
             }
@@ -171,10 +237,12 @@ $jobCode = get_field('board_code');
             // Sort the array and place 'Remote' first
             states.sort((a, b) => (a === 'Remote' ? -1 : b === 'Remote' ? 1 : 0));
 
+            console.log(states);
+
             states.forEach(state => {
               if (state !== null && state !== undefined) {
                 var option = document.createElement('option');
-                var fullState = stateAbbreviationToFullName(state);
+                var fullState = state.length == 2 ? stateAbbreviationToFullName(state) : state;
                 option.value = state;
                 option.textContent = fullState;
                 dropdown.appendChild(option);
