@@ -36,7 +36,7 @@ Template Post Type: page
           </select>
         </div>
       </div>
-      <div id="jobListings"></div>
+      <div id="jobListings" class="min-h-[100vh]"></div>
     </div>
     <?php $link = get_field('link'); ?>
     <div class="section-horizontal section-bg-js-cta">
@@ -348,7 +348,10 @@ Template Post Type: page
                   departmentContainer.classList.remove('noshow')
                 }
               });
-              departmentContainer.classList.remove('opacity-0');
+              departmentContainer.classList.add('opacity-0');
+              setTimeout(() => {
+                departmentContainer.classList.remove('opacity-0');
+              }, 300);
             });
 
             ScrollTrigger.refresh();

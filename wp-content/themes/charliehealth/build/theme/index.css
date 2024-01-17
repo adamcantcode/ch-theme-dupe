@@ -1907,6 +1907,10 @@ a.ch-button.button-tertiary.inverted:hover {
   max-height: 80vh;
 }
 
+.min-h-\[100vh\]{
+  min-height: 100vh;
+}
+
 .min-h-\[300px\]{
   min-height: 300px;
 }
@@ -2987,10 +2991,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .text-center{
   text-align: center;
-}
-
-.text-right{
-  text-align: right;
 }
 
 .align-baseline{
