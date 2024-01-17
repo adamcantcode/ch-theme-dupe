@@ -309,7 +309,11 @@ Template Post Type: page
                 jobs.forEach((job, i) => {
                   var jobState = job.querySelector('.location-js').textContent;
 
-                  if(jobState.split(', ')[1].length == 2 ) {
+                  if (jobState === 'Remote') {
+                    jobState = 'Remote, United States'
+                  }
+
+                  if (jobState.split(', ')[1].length == 2) {
                     jobState = jobState.split(', ')[1];
                   } else {
                     jobState = jobState.split(', ')[0];
@@ -328,7 +332,7 @@ Template Post Type: page
                   }
 
                   // Hide jobs if not selected location
-                  if (selectedState === '' || jobState === selectedState) {
+                  if (selectedState === '' || jobState === selectedState || stateFullNameToAbbreviation(jobState) === selectedState) {
                     job.classList.remove('noshow');
                     allHidden = false
                   } else {
