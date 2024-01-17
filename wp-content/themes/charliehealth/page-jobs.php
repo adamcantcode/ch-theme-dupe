@@ -151,7 +151,6 @@ Template Post Type: page
           }
 
           function stateFullNameToAbbreviation(fullName) {
-            console.log(fullName);
             const stateMap = {
               'Alabama': 'AL',
               'Alaska': 'AK',
@@ -237,8 +236,6 @@ Template Post Type: page
             // Sort the array and place 'Remote' first
             states.sort((a, b) => (a === 'Remote' ? -1 : b === 'Remote' ? 1 : 0));
 
-            console.log(states);
-
             states.forEach(state => {
               if (state !== null && state !== undefined) {
                 var option = document.createElement('option');
@@ -310,7 +307,13 @@ Template Post Type: page
 
                 // Loop through all jobs within jobs container
                 jobs.forEach((job, i) => {
-                  var jobState = job.querySelector('.location-js').textContent.split(', ')[1];
+                  var jobState = job.querySelector('.location-js').textContent;
+
+                  if(jobState.split(', ')[1].length == 2 ) {
+                    jobState = jobState.split(', ')[1];
+                  } else {
+                    jobState = jobState.split(', ')[0];
+                  }
 
                   // Handle improper location naming
                   switch (jobState) {
