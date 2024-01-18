@@ -5086,6 +5086,10 @@ mark{
   margin-top: 0px;
 }
 
+.first\:border-t:first-child{
+  border-top-width: 1px;
+}
+
 .first\:border-t-2:first-child{
   border-top-width: 2px;
 }
@@ -5100,19 +5104,6 @@ mark{
 
 .last\:mb-0:last-child{
   margin-bottom: 0px;
-}
-
-.last\:border-none:last-child{
-  border-style: none;
-}
-
-.only\:border-y:only-child{
-  border-top-width: 1px;
-  border-bottom-width: 1px;
-}
-
-.only\:border-solid:only-child{
-  border-style: solid;
 }
 
 .hover\:-translate-y-sp-1:hover{

@@ -259,14 +259,14 @@ Template Post Type: page
               // Check if the department has jobs
               if (department.jobs.length > 0) {
                 const jobMarkup = department.jobs.map(job => `
-                  <div class="relative flex flex-col justify-between transition-all duration-300 border-b lg:flex-row lg:items-center border-primary last:border-none only:border-y only:border-solid py-sp-6 job-list-job-js">
+                  <div class="relative flex flex-col justify-between transition-all duration-300 border-b lg:flex-row lg:items-center border-primary first:border-t py-sp-6 gap-sp-5 job-list-job-js">
                     <a href="${job.absolute_url}" class="no-underline stretched-link text-[20px] leading-[1.1] mb-sp-2 lg:mb-0">${job.title}</a>
                     <p class="mb-0 text-[14px] leading-[1.1] location-js lg:text-right">${job.location.name}</p>
                   </div>
                 `).join('');
                 const markup = `
                   <div class="job-departments-js">
-                      <h3 class="text-[40px] leading-[1.1] font-heading mb-0 mt-sp-4">${department.name}</h3>
+                      <h3 class="text-[40px] leading-[1.1] font-heading my-sp-4">${department.name}</h3>
                   </div>
                   <div class="job-list-js">
                       ${jobMarkup}
@@ -274,7 +274,7 @@ Template Post Type: page
                 `;
 
                 var jobsContainer = document.createElement('div');
-                jobsContainer.className = 'grid grid-cols-1 lg:grid-cols-[3fr_9fr] mt-sp-12 first:mt-0 job-departments-section-js transition-all duration-300 opacity-0';
+                jobsContainer.className = 'grid grid-cols-1 gap-sp-8 lg:grid-cols-[3fr_9fr] mt-sp-16 first:mt-0 job-departments-section-js transition-all duration-300 opacity-0';
                 jobsContainer.innerHTML = markup;
 
                 jobListingsContainer.appendChild(jobsContainer);
