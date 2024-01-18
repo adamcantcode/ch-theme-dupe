@@ -259,7 +259,7 @@ Template Post Type: page
               // Check if the department has jobs
               if (department.jobs.length > 0) {
                 const jobMarkup = department.jobs.map(job => `
-                  <div class="relative flex flex-col justify-between transition-all duration-300 border-b lg:flex-row lg:items-center border-primary first:border-t py-sp-6 gap-sp-5 job-list-job-js">
+                  <div class="relative flex flex-col justify-between transition-all duration-300 border-b lg:flex-row lg:items-center border-primary first:border-t py-sp-6 gap-x-sp-5 job-list-job-js">
                     <a href="${job.absolute_url}" class="no-underline stretched-link text-[20px] leading-[1.1] mb-sp-2 lg:mb-0">${job.title}</a>
                     <p class="mb-0 text-[14px] leading-[1.1] location-js lg:text-right">${job.location.name}</p>
                   </div>
