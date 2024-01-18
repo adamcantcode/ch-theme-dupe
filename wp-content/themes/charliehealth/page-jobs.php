@@ -9,7 +9,7 @@ Template Post Type: page
 
 <?php get_header();  ?>
 <?php if (isset($_GET['gh_jid'])) : ?>
-  <section class="section section-xs-bottom">
+  <section class="section-top">
     <div class="container">
       <h1 class="text-[64px] leading-[1.1] lg:mb-0">Apply</h1>
     </div>
