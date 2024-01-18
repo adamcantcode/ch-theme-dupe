@@ -19,6 +19,10 @@ Template Name: Press page new
       <h2 class="mb-12 text-[14px] leading-[1.1]">Charlie Health in the News</h2>
       <div class="grid lg:grid-cols-2 gap-sp-5 mb-sp-5">
         <?php
+        $featured = get_field('featured_posts');
+        var_dump($featured);
+        ?>
+        <?php
         $args = array(
           'post_type'      => 'press',
           'posts_per_page' => 2,
