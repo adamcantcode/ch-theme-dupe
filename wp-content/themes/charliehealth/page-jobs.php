@@ -274,7 +274,7 @@ Template Post Type: page
                 `;
 
                 var jobsContainer = document.createElement('div');
-                jobsContainer.className = 'grid grid-cols-1 gap-sp-8 lg:grid-cols-[3fr_9fr] mt-sp-16 first:mt-0 job-departments-section-js transition-all duration-300 opacity-0';
+                jobsContainer.className = 'grid grid-cols-1 gap-x-sp-8 lg:grid-cols-[3fr_9fr] mt-sp-16 first:mt-0 job-departments-section-js transition-all duration-300 opacity-0';
                 jobsContainer.innerHTML = markup;
 
                 jobListingsContainer.appendChild(jobsContainer);
