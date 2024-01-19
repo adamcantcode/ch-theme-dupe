@@ -40,8 +40,8 @@ Template Name: Press page new
             <div class="relative rounded-[6px] overflow-hidden bg-white group">
               <div class="h-[260px] relative">
                 <div class="absolute inset-0 w-full h-full transition-all bg-primary opacity-70 group-hover:opacity-0"></div>
-                <div class="h-full bg-cover" style="background-image: url(<?= $bgImage; ?>)">
-                  <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px]">
+                <div class="h-full transition-all [background-size:100%] bg-top group-hover:[background-size:105%]" style="background-image: url(<?= $bgImage; ?>)">
+                  <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px] group-hover:opacity-0 transition-all">
                 </div>
               </div>
               <div class="p-sp-4">
@@ -62,6 +62,13 @@ Template Name: Press page new
           'meta_key'       => 'date',
           'orderby'        => 'meta_value',
           'order'          => 'DESC',
+          'tax_query'      => array(
+            array(
+              'taxonomy' => 'press-type',
+              'field'    => 'slug',
+              'terms'    => 'news',
+            ),
+          ),
         );
 
         $query = new WP_Query($args);
@@ -84,8 +91,8 @@ Template Name: Press page new
             <div class="relative rounded-[6px] overflow-hidden bg-white group not-loaded noshow opacity-0 press-posts-js transition-all duration-500">
               <div class="h-[170px] relative">
                 <div class="absolute inset-0 w-full h-full transition-all bg-primary opacity-70 group-hover:opacity-0"></div>
-                <div class="h-full bg-cover" style="background-image: url(<?= $bgImage; ?>)">
-                  <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px]">
+                <div class="h-full transition-all [background-size:100%] bg-top group-hover:[background-size:105%]" style="background-image: url(<?= $bgImage; ?>)">
+                  <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px] group-hover:opacity-0 transition-all">
                 </div>
               </div>
               <div class="p-sp-4">
@@ -98,13 +105,13 @@ Template Name: Press page new
         endif;
         ?>
       </div>
-      <a role="button" class="float-right w-full ch-button button-primary justify-self-center lg:w-auto press-load-more-js mt-sp-10">Load more</a>
+      <a role="button" class="w-full ch-button button-primary justify-self-center lg:w-auto press-load-more-js mt-sp-10">Load more</a>
     </div>
   </section>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const loadMorePress = document.querySelector('.press-load-more-js');
-      
+
       loadMorePress.addEventListener('click', function() {
         let posts = document.querySelectorAll('.press-posts-js.not-loaded');
         let firstFourPosts = Array.from(posts).slice(0, 4);
@@ -129,6 +136,13 @@ Template Name: Press page new
           'meta_key'       => 'date',
           'orderby'        => 'meta_value',
           'order'          => 'DESC',
+          'tax_query'      => array(
+            array(
+              'taxonomy' => 'press-type',
+              'field'    => 'slug',
+              'terms'    => 'expert-opinion',
+            ),
+          ),
         );
 
         $query = new WP_Query($args);
@@ -148,11 +162,11 @@ Template Name: Press page new
             $link = get_field('link');
             $date = get_field('date');
         ?>
-            <div class="relative rounded-[6px] overflow-hidden bg-white group">
+            <div class="relative rounded-[6px] overflow-hidden bg-white group not-loaded noshow opacity-0 expert-posts-js transition-all duration-500">
               <div class="h-[170px] relative">
                 <div class="absolute inset-0 w-full h-full transition-all bg-primary opacity-70 group-hover:opacity-0"></div>
-                <div class="h-full bg-cover" style="background-image: url(<?= $bgImage; ?>)">
-                  <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px]">
+                <div class="h-full transition-all [background-size:100%] bg-top group-hover:[background-size:105%]" style="background-image: url(<?= $bgImage; ?>)">
+                  <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px] group-hover:opacity-0 transition-all">
                 </div>
               </div>
               <div class="p-sp-4">
@@ -165,8 +179,25 @@ Template Name: Press page new
         endif;
         ?>
       </div>
+      <a role="button" class="w-full ch-button button-primary justify-self-center lg:w-auto expert-load-more-js mt-sp-10">Load more</a>
     </div>
   </section>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const loadMoreExpert = document.querySelector('.expert-load-more-js');
+
+      loadMoreExpert.addEventListener('click', function() {
+        let posts = document.querySelectorAll('.expert-posts-js.not-loaded');
+        let firstFourPosts = Array.from(posts).slice(0, 4);
+        firstFourPosts.forEach(post => {
+          post.classList.remove('noshow', 'not-loaded');
+          setTimeout(() => {
+            post.classList.remove('opacity-0');
+          }, 10);
+        });
+      })
+    })
+  </script>
 </article>
 
 <?php

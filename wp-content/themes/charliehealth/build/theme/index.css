@@ -2792,6 +2792,10 @@ a.ch-button.button-tertiary.inverted:hover {
   background-size: cover !important;
 }
 
+.bg-top{
+  background-position: top;
+}
+
 .object-contain{
   -o-object-fit: contain;
      object-fit: contain;
@@ -3899,6 +3903,14 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .\[background\:linear-gradient\(0deg\2c _rgba\(22\2c _26\2c _61\2c _0\.70\)_0\%\2c _rgba\(22\2c _26\2c _61\2c _0\.70\)_100\%\)\2c _url\(https\:\/\/placehold\.co\/600x400\)_center_top\]{
   background: linear-gradient(0deg, rgba(22, 26, 61, 0.70) 0%, rgba(22, 26, 61, 0.70) 100%), url(https://placehold.co/600x400) center top;
+}
+
+.\[background-size\:10\%\]{
+  background-size: 10%;
+}
+
+.\[background-size\:100\%\]{
+  background-size: 100%;
 }
 
 /* CUSTOM STYELS */
@@ -5319,6 +5331,10 @@ mark{
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.group:hover .group-hover\:bg-\[105\%\]{
+  background-position: 105%;
+}
+
 .group:hover .group-hover\:\!text-primary{
   --tw-text-opacity: 1 !important;
   color: rgb(22 26 61 / var(--tw-text-opacity)) !important;
@@ -5334,6 +5350,10 @@ mark{
 
 .group:hover .group-hover\:\!\[background\:_linear-gradient\(0deg\2c _rgba\(22\2c _26\2c _61\2c _0\.0\)_0\%\2c _rgba\(22\2c _26\2c _61\2c _0\.0\)_100\%\)_no-repeat\]{
   background: linear-gradient(0deg, rgba(22, 26, 61, 0.0) 0%, rgba(22, 26, 61, 0.0) 100%) no-repeat !important;
+}
+
+.group:hover .group-hover\:\[background-size\:105\%\]{
+  background-size: 105%;
 }
 
 @media (min-width: 480px){
