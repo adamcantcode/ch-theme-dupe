@@ -1509,6 +1509,10 @@ a.ch-button.button-tertiary.inverted:hover {
   margin: 1.5rem;
 }
 
+.m-auto{
+  margin: auto;
+}
+
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
@@ -1887,6 +1891,10 @@ a.ch-button.button-tertiary.inverted:hover {
   height: 2rem;
 }
 
+.h-\[260px\]{
+  height: 260px;
+}
+
 .max-h-0{
   max-height: 0px;
 }
@@ -1917,6 +1925,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .max-h-\[80vh\]{
   max-height: 80vh;
+}
+
+.max-h-\[50px\]{
+  max-height: 50px;
 }
 
 .min-h-\[300px\]{
@@ -5084,6 +5096,11 @@ mark{
 
 .swiper.swiper-careers-testimonial .swiper-slide.swiper-slide-prev {
     }
+
+.before\:contents::before{
+  content: var(--tw-content);
+  display: contents;
+}
 
 .first\:mt-0:first-child{
   margin-top: 0px;

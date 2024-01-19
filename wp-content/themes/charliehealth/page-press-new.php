@@ -16,7 +16,7 @@ Template Name: Press page new
   </section>
   <section class="section bg-grey-warm">
     <div class="container">
-      <h2 class="mb-12 text-[14px] leading-[1.1]">Charlie Health in the News</h2>
+      <h2 class="mb-12 text-[20px] leading-[1.1]">Charlie Health in the News</h2>
       <div class="grid lg:grid-cols-2 gap-sp-5 mb-sp-5">
         <?php
         $featured = get_field('featured_posts');
@@ -38,10 +38,11 @@ Template Name: Press page new
             $date = get_field('date');
         ?>
             <div class="relative grid rounded-[6px] overflow-hidden bg-white">
-              <div class="grid items-center justify-center w-full h-[190px]">
-                <div class="h-[190px]">
-                  <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover w-full h-full">
+              <div class="h-[260px] relative">
+                <div>
+                  <img src="https://placehold.co/600x400/EEE/31343C" alt="<?= $featuredImageAltText; ?>" class="object-cover w-full h-full before:contents">
                 </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Forbes_logo.svg" alt="" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px]">
               </div>
               <div class="grid p-sp-4">
                 <h3 class="mb-sp-3 text-[24px] font-heading leading-[1.3]"><a href="<?= $link; ?>" class="stretched-link hover:text-primary featured-title-js" target="_blank"><?= get_the_title(); ?></a></h3>
