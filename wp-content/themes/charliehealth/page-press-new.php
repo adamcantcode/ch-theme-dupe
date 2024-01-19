@@ -57,7 +57,7 @@ Template Name: Press page new
     </style>
   </div>
 </section>
-<section class="section bg-grey-warm">
+<section class="section-top bg-grey-warm">
   <div class="container">
     <h2 class="mb-12 text-[20px] leading-[1.1]">Charlie Health in the News</h2>
     <div class="grid lg:grid-cols-2 gap-sp-5 mb-sp-5">
@@ -82,10 +82,10 @@ Template Name: Press page new
       ?>
           <div class="relative rounded-[6px] overflow-hidden bg-white group">
             <div class="h-[260px] relative overflow-hidden">
-              <div class="absolute inset-0 w-full h-full transition-all duration-300 bg-primary opacity-[.75] group-hover:opacity-0"></div>
+              <div class="absolute inset-0 w-full h-full transition-all duration-300 bg-primary opacity-[.75] group-hover:opacity-0 z-[2]"></div>
               <div class="h-full">
                 <img src="<?= $bgImage; ?>" alt="" class="transition-all duration-300 bg-cover group-hover:scale-105">
-                <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px] group-hover:opacity-0 transition-all duration-300">
+                <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px] group-hover:opacity-0 transition-all duration-300 z-[3]">
               </div>
             </div>
             <div class="p-sp-4">
@@ -134,10 +134,10 @@ Template Name: Press page new
       ?>
           <div class="relative rounded-[6px] overflow-hidden bg-white group not-loaded noshow opacity-0 press-posts-js transition-all duration-500">
             <div class="h-[170px] relative overflow-hidden">
-              <div class="absolute inset-0 w-full h-full transition-all duration-300 bg-primary opacity-[.75] group-hover:opacity-0"></div>
+              <div class="absolute inset-0 w-full h-full transition-all duration-300 bg-primary opacity-[.75] group-hover:opacity-0 z-[2]"></div>
               <div class="h-full">
                 <img src="<?= $bgImage; ?>" alt="" class="transition-all duration-300 bg-cover group-hover:scale-105">
-                <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px] group-hover:opacity-0 transition-all duration-300">
+                <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px] group-hover:opacity-0 transition-all duration-300 z-[3]">
               </div>
             </div>
             <div class="p-sp-4">
@@ -212,10 +212,10 @@ Template Name: Press page new
       ?>
           <div class="relative rounded-[6px] bg-white group not-loaded noshow opacity-0 expert-posts-js transition-all duration-500">
             <div class="h-[170px] relative overflow-hidden">
-              <div class="absolute inset-0 w-full h-full transition-all duration-300 bg-primary opacity-[.75] group-hover:opacity-0"></div>
+              <div class="absolute inset-0 w-full h-full transition-all duration-300 bg-primary opacity-[.75] group-hover:opacity-0 z-[2]"></div>
               <div class="h-full">
                 <img src="<?= $bgImage; ?>" alt="" class="transition-all duration-300 bg-cover group-hover:scale-105">
-                <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px] group-hover:opacity-0 transition-all duration-300">
+                <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px] group-hover:opacity-0 transition-all duration-300 z-[3]">
               </div>
             </div>
             <div class="p-sp-4">
