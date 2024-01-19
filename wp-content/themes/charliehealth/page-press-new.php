@@ -38,10 +38,11 @@ Template Name: Press page new
             $bgImage = get_field('bg_image') ?: placeHolderImage();
         ?>
             <div class="relative rounded-[6px] overflow-hidden bg-white group">
-              <div class="h-[260px] relative">
-                <div class="absolute inset-0 w-full h-full transition-all bg-primary opacity-70 group-hover:opacity-0"></div>
-                <div class="h-full transition-all [background-size:100%] bg-top group-hover:[background-size:105%]" style="background-image: url(<?= $bgImage; ?>)">
-                  <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px] group-hover:opacity-0 transition-all">
+              <div class="h-[260px] relative overflow-hidden">
+                <div class="absolute inset-0 w-full h-full transition-all duration-300 bg-primary opacity-70 group-hover:opacity-0"></div>
+                <div class="h-full">
+                  <img src="<?= $bgImage; ?>" alt="" class="transition-all duration-300 bg-cover group-hover:scale-105">
+                  <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px] group-hover:opacity-0 transition-all duration-300">
                 </div>
               </div>
               <div class="p-sp-4">
@@ -89,10 +90,11 @@ Template Name: Press page new
             $date = get_field('date');
         ?>
             <div class="relative rounded-[6px] overflow-hidden bg-white group not-loaded noshow opacity-0 press-posts-js transition-all duration-500">
-              <div class="h-[170px] relative">
-                <div class="absolute inset-0 w-full h-full transition-all bg-primary opacity-70 group-hover:opacity-0"></div>
-                <div class="h-full transition-all [background-size:100%] bg-top group-hover:[background-size:105%]" style="background-image: url(<?= $bgImage; ?>)">
-                  <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px] group-hover:opacity-0 transition-all">
+              <div class="h-[170px] relative overflow-hidden">
+                <div class="absolute inset-0 w-full h-full transition-all duration-300 bg-primary opacity-70 group-hover:opacity-0"></div>
+                <div class="h-full">
+                  <img src="<?= $bgImage; ?>" alt="" class="transition-all duration-300 bg-cover group-hover:scale-105">
+                  <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px] group-hover:opacity-0 transition-all duration-300">
                 </div>
               </div>
               <div class="p-sp-4">
@@ -164,9 +166,9 @@ Template Name: Press page new
         ?>
             <div class="relative rounded-[6px] overflow-hidden bg-white group not-loaded noshow opacity-0 expert-posts-js transition-all duration-500">
               <div class="h-[170px] relative">
-                <div class="absolute inset-0 w-full h-full transition-all bg-primary opacity-70 group-hover:opacity-0"></div>
-                <div class="h-full transition-all [background-size:100%] bg-top group-hover:[background-size:105%]" style="background-image: url(<?= $bgImage; ?>)">
-                  <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px] group-hover:opacity-0 transition-all">
+                <div class="absolute inset-0 w-full h-full transition-all duration-300 bg-primary opacity-70 group-hover:opacity-0"></div>
+                <div class="h-full transition-all duration-300 [background-size:100%] bg-top group-hover:[background-size:105%]" style="background-image: url(<?= $bgImage; ?>)">
+                  <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px] group-hover:opacity-0 transition-all duration-300">
                 </div>
               </div>
               <div class="p-sp-4">
@@ -185,6 +187,12 @@ Template Name: Press page new
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const loadMoreExpert = document.querySelector('.expert-load-more-js');
+      const posts = document.querySelectorAll('.expert-posts-js.not-loaded');
+      const firstFourPosts = Array.from(posts).slice(0, 4);
+
+      firstFourPosts.forEach(post => {
+        post.classList.remove('noshow', 'not-loaded', 'opacity-0');
+      });
 
       loadMoreExpert.addEventListener('click', function() {
         let posts = document.querySelectorAll('.expert-posts-js.not-loaded');

@@ -3451,6 +3451,18 @@ a.ch-button.button-tertiary.inverted:hover {
   transition-duration: 150ms;
 }
 
+.transition-opacity{
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-transform{
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .delay-200{
   transition-delay: 200ms;
 }
@@ -5342,6 +5354,12 @@ mark{
 
 .group:hover .group-hover\:opacity-0{
   opacity: 0;
+}
+
+.group:hover .group-hover\:transition-all{
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .group:hover .group-hover\:\[background\:_linear-gradient\(0deg\2c _rgba\(22\2c _26\2c _61\2c _0\.0\)_0\%\2c _rgba\(22\2c _26\2c _61\2c _0\.0\)_100\%\)_no-repeat\]{
