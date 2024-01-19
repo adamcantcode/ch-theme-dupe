@@ -78,13 +78,13 @@ Template Name: Press page new
           }
           $link = get_field('link');
           $date = get_field('date');
-          $bgImage = get_field('bg_image') ?: placeHolderImage();
+          $bgImage = get_field('bg_image');
       ?>
           <div class="relative rounded-[6px] overflow-hidden bg-white group">
             <div class="h-[260px] relative overflow-hidden">
               <div class="absolute inset-0 w-full h-full transition-all duration-300 bg-primary opacity-[.75] group-hover:opacity-0 z-[2]"></div>
               <div class="h-full">
-                <img src="<?= $bgImage; ?>" alt="" class="transition-all duration-300 bg-cover group-hover:scale-105">
+                <img src="<?= $bgImage['url'] ?: placeHolderImage(); ?>" alt="<?= $bgImage['alt']; ?>" class="transition-all duration-300 bg-cover group-hover:scale-105">
                 <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px] group-hover:opacity-0 transition-all duration-300 z-[3]">
               </div>
             </div>
@@ -136,7 +136,7 @@ Template Name: Press page new
             <div class="h-[170px] relative overflow-hidden">
               <div class="absolute inset-0 w-full h-full transition-all duration-300 bg-primary opacity-[.75] group-hover:opacity-0 z-[2]"></div>
               <div class="h-full">
-                <img src="<?= $bgImage; ?>" alt="" class="transition-all duration-300 bg-cover group-hover:scale-105">
+                <img src="<?= $bgImage['url'] ?: placeHolderImage(); ?>" alt="<?= $bgImage['alt']; ?>" class="transition-all duration-300 bg-cover group-hover:scale-105">
                 <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px] group-hover:opacity-0 transition-all duration-300 z-[3]">
               </div>
             </div>
@@ -214,7 +214,7 @@ Template Name: Press page new
             <div class="h-[170px] relative overflow-hidden">
               <div class="absolute inset-0 w-full h-full transition-all duration-300 bg-primary opacity-[.75] group-hover:opacity-0 z-[2]"></div>
               <div class="h-full">
-                <img src="<?= $bgImage; ?>" alt="" class="transition-all duration-300 bg-cover group-hover:scale-105">
+                <img src="<?= $bgImage; ?>" alt="<?= $bgImage['alt']; ?>" class="transition-all duration-300 bg-cover group-hover:scale-105">
                 <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px] group-hover:opacity-0 transition-all duration-300 z-[3]">
               </div>
             </div>
