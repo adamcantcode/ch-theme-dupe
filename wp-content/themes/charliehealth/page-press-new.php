@@ -81,7 +81,7 @@ Template Name: Press page new
             $link = get_field('link');
             $date = get_field('date');
         ?>
-            <div class="relative rounded-[6px] overflow-hidden bg-white group press-posts-load-more-js">
+            <div class="relative rounded-[6px] overflow-hidden bg-white group not-loaded noshow opacity-0 press-posts-js transition-all duration-500">
               <div class="h-[170px] relative">
                 <div class="absolute inset-0 w-full h-full transition-all bg-primary opacity-70 group-hover:opacity-0"></div>
                 <div class="h-full bg-cover" style="background-image: url(<?= $bgImage; ?>)">
@@ -98,8 +98,25 @@ Template Name: Press page new
         endif;
         ?>
       </div>
+      <a role="button" class="float-right w-full ch-button button-primary justify-self-center lg:w-auto press-load-more-js mt-sp-10">Load more</a>
     </div>
   </section>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const loadMorePress = document.querySelector('.press-load-more-js');
+      
+      loadMorePress.addEventListener('click', function() {
+        let posts = document.querySelectorAll('.press-posts-js.not-loaded');
+        let firstFourPosts = Array.from(posts).slice(0, 4);
+        firstFourPosts.forEach(post => {
+          post.classList.remove('noshow', 'not-loaded');
+          setTimeout(() => {
+            post.classList.remove('opacity-0');
+          }, 10);
+        });
+      })
+    })
+  </script>
   <section class="section bg-grey-warm">
     <div class="container">
       <h2 class="mb-12 text-[20px] leading-[1.1]">Our Expert Opinion</h2>
