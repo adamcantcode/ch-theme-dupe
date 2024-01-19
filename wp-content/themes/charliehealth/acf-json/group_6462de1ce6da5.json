@@ -44,6 +44,13 @@
                 "operator": "==",
                 "value": "page-referral-california.php"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-referral-modern.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -69,5 +76,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1700153069
+    "modified": 1705702769
 }
