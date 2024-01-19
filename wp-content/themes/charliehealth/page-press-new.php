@@ -7,9 +7,9 @@ Template Name: Press page new
 
 <section class="section">
   <div class="container">
-    <div class="grid lg:grid-cols-2">
-      <h1><?= get_the_title(); ?></h1>
-      <p>For all media inquiries, please contact us at <a href="mailto:press@charliehealth.com?subject=Press%20inquiry">press@charliehealth.com</a></p>
+    <div>
+      <h1 class="mb-sp-2"><?= get_the_title(); ?></h1>
+      <p class="text-[14px] leading-[1.1]">Contact us at <a href="mailto:press@charliehealth.com?subject=Press%20inquiry">press@charliehealth.com</a></p>
     </div>
   </div>
 </section>
@@ -205,6 +205,60 @@ Template Name: Press page new
     })
   })
 </script>
+<section class="section">
+  <div class="container">
+    <div class="grid grid-cols-1 lg:grid-cols-[3fr_9fr] gap-sp-5">
+      <h2 class="mb-12 text-[20px] leading-[1.1]">Press Releases & Published Research</h2>
+      <div class="">
+        <?php
+        $args = array(
+          'post_type'      => 'press',
+          'posts_per_page' => -1,
+          'numberposts'    => -1,
+          'meta_key'       => 'date',
+          'orderby'        => 'meta_value',
+          'order'          => 'DESC',
+          'tax_query'      => array(
+            array(
+              'taxonomy' => 'press-type',
+              'field'    => 'slug',
+              'terms'    => 'press-release',
+            ),
+          ),
+        );
+
+        $query = new WP_Query($args);
+
+        if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
+            if (has_post_thumbnail()) {
+              $featuredImageID = get_post_thumbnail_id();
+              $featuredImage = wp_get_attachment_image_src($featuredImageID, 'card-thumb');
+              $featuredImageAltText = get_post_meta($featuredImageID, '_wp_attachment_image_alt', true);
+
+              $featuredImageUrl = $featuredImage[0];
+              $featuredImageAltText = $featuredImageAltText ?: '';
+            } else {
+              $featuredImageUrl = placeHolderImage(600, 800);
+              $featuredImageAltText = 'place holder image';
+            }
+            $link = get_field('link');
+            $date = get_field('date');
+        ?>
+            <a href="<?= get_the_permalink(); ?>" class="grid no-underline border-b first:border-t py-sp-6 border-primary group">
+              <div class="flex items-center mb-sp-2 lg:mb-0">
+                <h3 class="inline-block mb-0 text-[20px] leading-[1.4] font-heading"><?= ucfirst(strtolower(get_the_title())); ?><svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="group-hover:translate-x-[5px] transition-all duration-300 ml-sp-4 inline-block align-baseline flex-none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3431 0.278417L16.7071 6.32784C17.0976 6.69906 17.0976 7.30094 16.7071 7.67216L10.3431 13.7216C9.95262 14.0928 9.31946 14.0928 8.92893 13.7216C8.53841 13.3504 8.53841 12.7485 8.92893 12.3773L13.5858 7.95058H0V6.04942H13.5858L8.92893 1.62273C8.53841 1.25151 8.53841 0.64964 8.92893 0.278417C9.31946 -0.0928058 9.95262 -0.0928058 10.3431 0.278417Z" fill="#161A3D" />
+                  </svg></h3>
+              </div>
+            </a>
+        <?php wp_reset_postdata();
+          endwhile;
+        endif;
+        ?>
+      </div>
+    </div>
+  </div>
+</section>
 
 <?php
 get_footer();

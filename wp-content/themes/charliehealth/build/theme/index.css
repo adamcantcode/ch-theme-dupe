@@ -5186,6 +5186,10 @@ mark{
   border-top-width: 2px;
 }
 
+.first\:border-t:first-child{
+  border-top-width: 1px;
+}
+
 .first\:pt-sp-6:first-child{
   padding-top: 1.5rem;
 }
