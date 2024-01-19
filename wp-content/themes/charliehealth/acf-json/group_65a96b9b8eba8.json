@@ -25,8 +25,8 @@
             "taxonomy": "",
             "filters": "",
             "return_format": "object",
-            "min": "",
-            "max": "",
+            "min": 2,
+            "max": 2,
             "elements": [
                 "featured_image"
             ]
@@ -50,5 +50,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1705602248
+    "modified": 1705679534
 }

@@ -20,7 +20,6 @@ Template Name: Press page new
       <div class="grid lg:grid-cols-2 gap-sp-5 mb-sp-5">
         <?php
         $featured = get_field('featured_posts');
-        $featured = array_slice($featured, 0, 2);
 
         if ($featured) :  foreach ($featured as $post) : setup_postdata($post);
             if (has_post_thumbnail()) {
@@ -36,13 +35,14 @@ Template Name: Press page new
             }
             $link = get_field('link');
             $date = get_field('date');
+            $bgImage = get_field('bg_image') ?: placeHolderImage();
         ?>
-            <div class="relative grid rounded-[6px] overflow-hidden bg-white">
+            <div class="relative grid rounded-[6px] overflow-hidden bg-white group">
               <div class="h-[260px] relative">
-                <div>
-                  <img src="https://placehold.co/600x400/EEE/31343C" alt="<?= $featuredImageAltText; ?>" class="object-cover w-full h-full before:contents">
+                <div class="absolute inset-0 w-full h-full transition-all bg-primary opacity-70 group-hover:opacity-0"></div>
+                <div class="h-full bg-cover" style="background-image: url(<?= $bgImage; ?>)">
+                  <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px]">
                 </div>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Forbes_logo.svg" alt="" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px]">
               </div>
               <div class="grid p-sp-4">
                 <h3 class="mb-sp-3 text-[24px] font-heading leading-[1.3]"><a href="<?= $link; ?>" class="stretched-link hover:text-primary featured-title-js" target="_blank"><?= get_the_title(); ?></a></h3>
@@ -53,42 +53,6 @@ Template Name: Press page new
           endforeach;
         endif; ?>
       </div>
-      <div class="grid lg:grid-cols-4 gap-sp-5 mb-sp-5">
-        <?php
-        $featured = get_field('featured_posts');
-        $featured = array_slice($featured, 2, 6);
-
-        if ($featured) :  foreach ($featured as $post) : setup_postdata($post);
-            if (has_post_thumbnail()) {
-              $featuredImageID = get_post_thumbnail_id();
-              $featuredImage = wp_get_attachment_image_src($featuredImageID, 'card-thumb');
-              $featuredImageAltText = get_post_meta($featuredImageID, '_wp_attachment_image_alt', true);
-
-              $featuredImageUrl = $featuredImage[0];
-              $featuredImageAltText = $featuredImageAltText ?: '';
-            } else {
-              $featuredImageUrl = placeHolderImage(600, 800);
-              $featuredImageAltText = 'place holder image';
-            }
-            $link = get_field('link');
-            $date = get_field('date');
-        ?>
-            <div class="relative flex flex-col rounded-[6px] overflow-hidden bg-white">
-              <div class="flex items-center justify-center w-full h-[170px]">
-                <div class="h-[170px]">
-                  <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover w-full h-full">
-                </div>
-              </div>
-              <div class="flex flex-col p-sp-5">
-                <h3 class="mb-sp-3 text-[24px] font-heading  leading-[1.3]"><a href="<?= $link; ?>" class="stretched-link hover:text-primary featured-title-js" target="_blank"><?= get_the_title(); ?></a></h3>
-                <p class="mb-0 text-[14px] leading-[1.5]">Publication — <?= $date; ?></p>
-              </div>
-            </div>
-        <?php wp_reset_postdata();
-          endforeach;
-        endif;
-        ?>
-      </div>
       <div class="grid lg:grid-cols-4 gap-sp-5">
         <?php
         $args = array(
@@ -98,13 +62,6 @@ Template Name: Press page new
           'meta_key'       => 'date',
           'orderby'        => 'meta_value',
           'order'          => 'DESC',
-          'meta_query'     => array(
-            array(
-              'key'     => 'featured',
-              'value'   => true,
-              'compare' => '!=',
-            )
-          )
         );
 
         $query = new WP_Query($args);

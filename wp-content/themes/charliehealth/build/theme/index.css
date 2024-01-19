@@ -1501,16 +1501,16 @@ a.ch-button.button-tertiary.inverted:hover {
   margin: 0px;
 }
 
+.m-auto{
+  margin: auto;
+}
+
 .m-sp-4{
   margin: 1rem;
 }
 
 .m-sp-6{
   margin: 1.5rem;
-}
-
-.m-auto{
-  margin: auto;
 }
 
 .mx-auto{
@@ -1811,10 +1811,6 @@ a.ch-button.button-tertiary.inverted:hover {
   height: 170px;
 }
 
-.h-\[190px\]{
-  height: 190px;
-}
-
 .h-\[1px\]{
   height: 1px;
 }
@@ -1825,6 +1821,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .h-\[25px\]{
   height: 25px;
+}
+
+.h-\[260px\]{
+  height: 260px;
 }
 
 .h-\[280px\]{
@@ -1891,10 +1891,6 @@ a.ch-button.button-tertiary.inverted:hover {
   height: 2rem;
 }
 
-.h-\[260px\]{
-  height: 260px;
-}
-
 .max-h-0{
   max-height: 0px;
 }
@@ -1915,6 +1911,10 @@ a.ch-button.button-tertiary.inverted:hover {
   max-height: 33vh;
 }
 
+.max-h-\[50px\]{
+  max-height: 50px;
+}
+
 .max-h-\[600px\]{
   max-height: 600px;
 }
@@ -1925,10 +1925,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .max-h-\[80vh\]{
   max-height: 80vh;
-}
-
-.max-h-\[50px\]{
-  max-height: 50px;
 }
 
 .min-h-\[300px\]{
@@ -2614,6 +2610,10 @@ a.ch-button.button-tertiary.inverted:hover {
   background-color: rgb(255 159 129 / var(--tw-bg-opacity));
 }
 
+.bg-\[linear-gradient\(0deg\2c _rgba\(255\2c _0\2c _150\2c _0\.3\)\2c _rgba\(255\2c _0\2c _150\2c _0\.3\)\)\2c _url\(https\:\/\/picsum\.photos\/id\/1043\/800\/600\)\]{
+  background-color: linear-gradient(0deg, rgba(255, 0, 150, 0.3), rgba(255, 0, 150, 0.3)), url(https://picsum.photos/id/1043/800/600);
+}
+
 .bg-\[rgba\(0\2c 0\2c 0\2c \.5\)\]{
   background-color: rgba(0,0,0,.5);
 }
@@ -2778,6 +2778,14 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .bg-\[linear-gradient\(to_right\2c \#fead80\2c \#e2deca_50\%\2c \#bdc6fc\)\]{
   background-image: linear-gradient(to right,#fead80,#e2deca 50%,#bdc6fc);
+}
+
+.bg-cover{
+  background-size: cover;
+}
+
+.\!bg-cover{
+  background-size: cover !important;
 }
 
 .object-contain{
@@ -3377,6 +3385,10 @@ a.ch-button.button-tertiary.inverted:hover {
   opacity: 0.3;
 }
 
+.opacity-70{
+  opacity: 0.7;
+}
+
 .shadow-\[3px_3px_0px_0px_rgba\(255\2c 255\2c 255\2c 1\)\]{
   --tw-shadow: 3px 3px 0px 0px rgba(255,255,255,1);
   --tw-shadow-colored: 3px 3px 0px 0px var(--tw-shadow-color);
@@ -3847,6 +3859,42 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .noshow{
   display: none;
+}
+
+.\[background\:linear-gradient\(0deg\2c _rgba\(255\2c _0\2c _150\2c _0\.3\)\2c _rgba\(255\2c _0\2c _150\2c _0\.3\)\)\2c _url\(https\:\/\/picsum\.photos\/id\/1043\/800\/600\)\]{
+  background: linear-gradient(0deg, rgba(255, 0, 150, 0.3), rgba(255, 0, 150, 0.3)), url(https://picsum.photos/id/1043/800/600);
+}
+
+.\[background\:linear-gradient\(0deg\2c _rgba\(255\2c _0\2c _150\2c _0\.3\)\2c _rgba\(255\2c _0\2c _150\2c _0\.3\)\)\2c _url\(https\:\/\/placehold\.co\/600x400\/EEE\/31343C\)\]{
+  background: linear-gradient(0deg, rgba(255, 0, 150, 0.3), rgba(255, 0, 150, 0.3)), url(https://placehold.co/600x400/EEE/31343C);
+}
+
+.\[background\:linear-gradient\(0deg\2c _rgba\(22\2c _26\2c _61\2c _0\.70\)_0\%\2c _rgba\(22\2c _26\2c _61\2c _0\.70\)_100\%\)\2c _url\(https\:\/\/placehold\.co\/600x400\/EEE\/31343C\)\]{
+  background: linear-gradient(0deg, rgba(22, 26, 61, 0.70) 0%, rgba(22, 26, 61, 0.70) 100%), url(https://placehold.co/600x400/EEE/31343C);
+}
+
+.\[background\:linear-gradient\(0deg\2c _rgba\(22\2c _26\2c _61\2c _0\.70\)_0\%\2c _rgba\(22\2c _26\2c _61\2c _0\.70\)_100\%\)\2c _url\(https\:\/\/placehold\.co\/600x400\/EEE\/31343C\)_center_top_no-repeat\]{
+  background: linear-gradient(0deg, rgba(22, 26, 61, 0.70) 0%, rgba(22, 26, 61, 0.70) 100%), url(https://placehold.co/600x400/EEE/31343C) center top no-repeat;
+}
+
+.\[background\:linear-gradient\(0deg\2c _rgba\(22\2c _26\2c _61\2c _0\.70\)_0\%\2c _rgba\(22\2c _26\2c _61\2c _0\.70\)_100\%\)\2c _url\(https\:\/\/placehold\.co\/600x400\/EEE\/31343C\)_center_top_cover\]{
+  background: linear-gradient(0deg, rgba(22, 26, 61, 0.70) 0%, rgba(22, 26, 61, 0.70) 100%), url(https://placehold.co/600x400/EEE/31343C) center top cover;
+}
+
+.\[background\:linear-gradient\(0deg\2c _rgba\(22\2c _26\2c _61\2c _0\.70\)_0\%\2c _rgba\(22\2c _26\2c _61\2c _0\.70\)_100\%\)\2c _url\(https\:\/\/placehold\.co\/600x400\/EEE\/31343C\)_no-repeat\]{
+  background: linear-gradient(0deg, rgba(22, 26, 61, 0.70) 0%, rgba(22, 26, 61, 0.70) 100%), url(https://placehold.co/600x400/EEE/31343C) no-repeat;
+}
+
+.\[background\:linear-gradient\(0deg\2c _rgba\(22\2c _26\2c _61\2c _0\.70\)_0\%\2c _rgba\(22\2c _26\2c _61\2c _0\.70\)_100\%\)\2c _url\(https\:\/\/placehold\.co\/600x400\/EEE\/31343C\)_center_top\]{
+  background: linear-gradient(0deg, rgba(22, 26, 61, 0.70) 0%, rgba(22, 26, 61, 0.70) 100%), url(https://placehold.co/600x400/EEE/31343C) center top;
+}
+
+.\[background\:linear-gradient\(0deg\2c _rgba\(22\2c _26\2c _61\2c _0\.70\)_0\%\2c _rgba\(22\2c _26\2c _61\2c _0\.70\)_100\%\)\]{
+  background: linear-gradient(0deg, rgba(22, 26, 61, 0.70) 0%, rgba(22, 26, 61, 0.70) 100%);
+}
+
+.\[background\:linear-gradient\(0deg\2c _rgba\(22\2c _26\2c _61\2c _0\.70\)_0\%\2c _rgba\(22\2c _26\2c _61\2c _0\.70\)_100\%\)\2c _url\(https\:\/\/placehold\.co\/600x400\)_center_top\]{
+  background: linear-gradient(0deg, rgba(22, 26, 61, 0.70) 0%, rgba(22, 26, 61, 0.70) 100%), url(https://placehold.co/600x400) center top;
 }
 
 /* CUSTOM STYELS */
@@ -5270,6 +5318,18 @@ mark{
 .group:hover .group-hover\:\!text-primary{
   --tw-text-opacity: 1 !important;
   color: rgb(22 26 61 / var(--tw-text-opacity)) !important;
+}
+
+.group:hover .group-hover\:opacity-0{
+  opacity: 0;
+}
+
+.group:hover .group-hover\:\[background\:_linear-gradient\(0deg\2c _rgba\(22\2c _26\2c _61\2c _0\.0\)_0\%\2c _rgba\(22\2c _26\2c _61\2c _0\.0\)_100\%\)_no-repeat\]{
+  background: linear-gradient(0deg, rgba(22, 26, 61, 0.0) 0%, rgba(22, 26, 61, 0.0) 100%) no-repeat;
+}
+
+.group:hover .group-hover\:\!\[background\:_linear-gradient\(0deg\2c _rgba\(22\2c _26\2c _61\2c _0\.0\)_0\%\2c _rgba\(22\2c _26\2c _61\2c _0\.0\)_100\%\)_no-repeat\]{
+  background: linear-gradient(0deg, rgba(22, 26, 61, 0.0) 0%, rgba(22, 26, 61, 0.0) 100%) no-repeat !important;
 }
 
 @media (min-width: 480px){
