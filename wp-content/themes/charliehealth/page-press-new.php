@@ -7,10 +7,54 @@ Template Name: Press page new
 
 <section class="section">
   <div class="container">
-    <div>
-      <h1 class="mb-sp-2"><?= get_the_title(); ?></h1>
-      <p class="text-[14px] leading-[1.1]">Contact us at <a href="mailto:press@charliehealth.com?subject=Press%20inquiry">press@charliehealth.com</a></p>
+    <div class="grid grid-cols-1 lg:grid-cols-[4fr_8fr] relative">
+      <div class="bg-gradient-to-r from-white from-70% to-transparent z-20">
+        <h1 class="mb-sp-2"><?= get_the_title(); ?></h1>
+        <p class="text-[14px] leading-[1.1]">Contact us at <a href="mailto:press@charliehealth.com?subject=Press%20inquiry">press@charliehealth.com</a></p>
+      </div>
+      <div id="marquee" class="flex lg:gap-[150px] gap-sp-4 w-full overflow-hidden absolute z-10">
+        <div class="flex justify-around min-w-full scroll lg:gap-[150px] gap-sp-8 items-center flex-none">
+          <?php if (have_rows('publications')) :  while (have_rows('publications')) : the_row();  ?>
+              <?php
+              $image = get_sub_field('image');
+              $link = get_sub_field('link');
+              ?>
+              <div><img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="opacity-30 max-h-[50px]"></div>
+          <?php endwhile;
+          endif; ?>
+        </div>
+        <div class="flex justify-around min-w-full scroll lg:gap-[150px] gap-sp-4 items-center flex-none">
+          <?php if (have_rows('publications')) :  while (have_rows('publications')) : the_row();  ?>
+              <?php
+              $image = get_sub_field('image');
+              $link = get_sub_field('link');
+              ?>
+              <div><img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="opacity-30 max-h-[50px]"></div>
+          <?php endwhile;
+          endif; ?>
+        </div>
+      </div>
     </div>
+    <style>
+      @keyframes scroll {
+        from {
+          transform: translateX(0);
+        }
+
+        to {
+          transform: translateX(calc(-100% - 1rem));
+        }
+      }
+
+      .scroll {
+        animation: scroll 60s linear infinite;
+        animation-direction: normal;
+      }
+
+      #marquee:hover * {
+        animation-play-state: paused;
+      }
+    </style>
   </div>
 </section>
 <section class="section bg-grey-warm">
