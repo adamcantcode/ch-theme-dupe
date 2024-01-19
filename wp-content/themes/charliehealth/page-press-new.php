@@ -44,7 +44,7 @@ Template Name: Press page new
                 </div>
               </div>
               <div class="grid p-sp-4">
-                <h3 class="mb-sp-3 text-[24px] font-heading  leading-[1.3]"><a href="<?= $link; ?>" class="stretched-link" target="_blank"><?= get_the_title(); ?></a></h3>
+                <h3 class="mb-sp-3 text-[24px] font-heading leading-[1.3]"><a href="<?= $link; ?>" class="stretched-link hover:text-primary featured-title-js" target="_blank"><?= get_the_title(); ?></a></h3>
                 <p class="mb-0 text-[14px] leading-[1.5]">Publication — <?= $date; ?></p>
               </div>
             </div>
@@ -79,7 +79,7 @@ Template Name: Press page new
                 </div>
               </div>
               <div class="flex flex-col p-sp-5">
-                <h3 class="mb-sp-3 text-[24px] font-heading  leading-[1.3]"><a href="<?= $link; ?>" class="stretched-link hover:text-primary" target="_blank"><?= get_the_title(); ?></a></h3>
+                <h3 class="mb-sp-3 text-[24px] font-heading  leading-[1.3]"><a href="<?= $link; ?>" class="stretched-link hover:text-primary featured-title-js" target="_blank"><?= get_the_title(); ?></a></h3>
                 <p class="mb-0 text-[14px] leading-[1.5]">Publication — <?= $date; ?></p>
               </div>
             </div>
