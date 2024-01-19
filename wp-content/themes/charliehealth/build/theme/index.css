@@ -3397,6 +3397,10 @@ a.ch-button.button-tertiary.inverted:hover {
   opacity: 0.7;
 }
 
+.opacity-\[\.75\]{
+  opacity: .75;
+}
+
 .shadow-\[3px_3px_0px_0px_rgba\(255\2c 255\2c 255\2c 1\)\]{
   --tw-shadow: 3px 3px 0px 0px rgba(255,255,255,1);
   --tw-shadow-colored: 3px 3px 0px 0px var(--tw-shadow-color);
