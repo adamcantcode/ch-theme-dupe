@@ -122,6 +122,9 @@ Template Name: Press page new
           post.classList.remove('opacity-0');
         }, 10);
       });
+      if (document.querySelectorAll('.press-posts-js.not-loaded').length === 0) {
+        loadMoreExpert.remove()
+      }
     })
   })
 </script>
@@ -163,10 +166,11 @@ Template Name: Press page new
           $link = get_field('link');
           $date = get_field('date');
       ?>
-          <div class="relative rounded-[6px] overflow-hidden bg-white group not-loaded noshow opacity-0 expert-posts-js transition-all duration-500">
-            <div class="h-[170px] relative">
+          <div class="relative rounded-[6px] bg-white group not-loaded noshow opacity-0 expert-posts-js transition-all duration-500">
+            <div class="h-[170px] relative overflow-hidden">
               <div class="absolute inset-0 w-full h-full transition-all duration-300 bg-primary opacity-70 group-hover:opacity-0"></div>
-              <div class="h-full transition-all duration-300 [background-size:100%] bg-top group-hover:[background-size:105%]" style="background-image: url(<?= $bgImage; ?>)">
+              <div class="h-full">
+                <img src="<?= $bgImage; ?>" alt="" class="transition-all duration-300 bg-cover group-hover:scale-105">
                 <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px] group-hover:opacity-0 transition-all duration-300">
               </div>
             </div>
@@ -202,6 +206,9 @@ Template Name: Press page new
           post.classList.remove('opacity-0');
         }, 10);
       });
+      if (document.querySelectorAll('.expert-posts-js.not-loaded').length === 0) {
+        loadMoreExpert.remove()
+      }
     })
   })
 </script>
@@ -244,7 +251,7 @@ Template Name: Press page new
             $link = get_field('link');
             $date = get_field('date');
         ?>
-            <a href="<?= get_the_permalink(); ?>" class="grid no-underline border-b first:border-t py-sp-6 border-primary group">
+            <a href="<?= get_the_permalink(); ?>" class="grid no-underline border-b opacity-0 first:border-t py-sp-6 border-primary group press-release-js noshow not-loaded">
               <div class="flex items-center mb-sp-2 lg:mb-0">
                 <h3 class="inline-block mb-0 text-[20px] leading-[1.4] font-heading"><?= ucfirst(strtolower(get_the_title())); ?><svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="group-hover:translate-x-[5px] transition-all duration-300 ml-sp-4 inline-block align-baseline flex-none">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3431 0.278417L16.7071 6.32784C17.0976 6.69906 17.0976 7.30094 16.7071 7.67216L10.3431 13.7216C9.95262 14.0928 9.31946 14.0928 8.92893 13.7216C8.53841 13.3504 8.53841 12.7485 8.92893 12.3773L13.5858 7.95058H0V6.04942H13.5858L8.92893 1.62273C8.53841 1.25151 8.53841 0.64964 8.92893 0.278417C9.31946 -0.0928058 9.95262 -0.0928058 10.3431 0.278417Z" fill="#161A3D" />
@@ -257,8 +264,34 @@ Template Name: Press page new
         ?>
       </div>
     </div>
+    <a role="button" class="w-full ch-button button-primary justify-self-center lg:w-auto press-release-load-more-js mt-sp-10">Load more</a>
   </div>
 </section>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const loadMorePressRelease = document.querySelector('.press-release-load-more-js');
+    const posts = document.querySelectorAll('.press-release-js.not-loaded');
+    const firstFourPosts = Array.from(posts).slice(0, 6);
+
+    firstFourPosts.forEach(post => {
+      post.classList.remove('noshow', 'not-loaded', 'opacity-0');
+    });
+
+    loadMorePressRelease.addEventListener('click', function() {
+      let posts = document.querySelectorAll('.press-release-js.not-loaded');
+      let firstFourPosts = Array.from(posts).slice(0, 4);
+      firstFourPosts.forEach(post => {
+        post.classList.remove('noshow', 'not-loaded');
+        setTimeout(() => {
+          post.classList.remove('opacity-0');
+        }, 10);
+      });
+      if (document.querySelectorAll('.press-release-js.not-loaded').length === 0) {
+        loadMorePressRelease.remove()
+      }
+    })
+  })
+</script>
 
 <?php
 get_footer();
