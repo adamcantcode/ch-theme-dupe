@@ -218,7 +218,7 @@ Template Name: Press page new
           <div class="relative rounded-[6px] bg-white group not-loaded noshow opacity-0 expert-posts-js transition-all duration-500">
             <div class="h-[170px] relative overflow-hidden">
               <div class="absolute inset-0 w-full h-full transition-all duration-300 bg-primary opacity-[.75] group-hover:opacity-0 z-[2]"></div>
-              <img src="<?= $bgImage['url']; ?>" alt="<?= $bgImage['alt']; ?>" class="object-cover object-top w-full h-full transition-all duration-300 bg-cover group-hover:scale-105">
+              <img src="<?= $bgImage['url'] ?: placeHolderImage(); ?>" alt="<?= $bgImage['alt']; ?>" class="object-cover object-top w-full h-full transition-all duration-300 bg-cover group-hover:scale-105">
               <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px] group-hover:opacity-0 transition-all duration-300 z-[3]">
             </div>
             <div class="p-sp-4">
