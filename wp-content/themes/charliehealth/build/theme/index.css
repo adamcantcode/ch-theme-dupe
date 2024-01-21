@@ -3279,6 +3279,10 @@ a.ch-button.button-tertiary.inverted:hover {
   line-height: 1rem;
 }
 
+.text-\[64px\]{
+  font-size: 64px;
+}
+
 .font-bold{
   font-weight: 700;
 }
@@ -5632,6 +5636,10 @@ mark{
 
   .lg\:h-sp-8{
     height: 2rem;
+  }
+
+  .lg\:h-\[260px\]{
+    height: 260px;
   }
 
   .lg\:max-h-full{

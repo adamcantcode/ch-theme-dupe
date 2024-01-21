@@ -9,7 +9,7 @@ Template Name: Press page new
   <div class="container">
     <div class="grid grid-cols-1 lg:grid-cols-[4fr_8fr] relative">
       <div class="bg-gradient-to-r from-white from-70% to-transparent z-20">
-        <h1 class="mb-sp-2"><?= get_the_title(); ?></h1>
+        <h1 class="mb-sp-2 text-[64px] leading-[1.1]"><?= get_the_title(); ?></h1>
         <p class="text-[14px] leading-[1.1]">Contact us at <a href="mailto:press@charliehealth.com?subject=Press%20inquiry">press@charliehealth.com</a></p>
       </div>
       <div id="marquee" class="flex lg:gap-[150px] gap-sp-4 w-full overflow-hidden absolute z-10">
@@ -81,12 +81,10 @@ Template Name: Press page new
           $bgImage = get_field('bg_image');
       ?>
           <div class="relative rounded-[6px] overflow-hidden bg-white group">
-            <div class="h-[260px] relative overflow-hidden">
+            <div class="lg:h-[260px] h-[170px] relative overflow-hidden">
               <div class="absolute inset-0 w-full h-full transition-all duration-300 bg-primary opacity-[.75] group-hover:opacity-0 z-[2]"></div>
-              <div class="h-full">
-                <img src="<?= $bgImage['url'] ?: placeHolderImage(); ?>" alt="<?= $bgImage['alt']; ?>" class="transition-all duration-300 bg-cover group-hover:scale-105">
-                <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px] group-hover:opacity-0 transition-all duration-300 z-[3]">
-              </div>
+              <img src="<?= $bgImage['url'] ?: placeHolderImage(); ?>" alt="<?= $bgImage['alt']; ?>" class="object-cover w-full h-full transition-all duration-300 group-hover:scale-105">
+              <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px] group-hover:opacity-0 transition-all duration-300 z-[3]">
             </div>
             <div class="p-sp-4">
               <p class="mb-sp-2 text-[14px] leading-[1.5]"><?= $date; ?></p>
@@ -136,10 +134,8 @@ Template Name: Press page new
           <div class="relative rounded-[6px] overflow-hidden bg-white group not-loaded noshow opacity-0 press-posts-js transition-all duration-500">
             <div class="h-[170px] relative overflow-hidden">
               <div class="absolute inset-0 w-full h-full transition-all duration-300 bg-primary opacity-[.75] group-hover:opacity-0 z-[2]"></div>
-              <div class="h-full">
-                <img src="<?= $bgImage['url'] ?: placeHolderImage(); ?>" alt="<?= $bgImage['alt']; ?>" class="transition-all duration-300 bg-cover group-hover:scale-105">
-                <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px] group-hover:opacity-0 transition-all duration-300 z-[3]">
-              </div>
+              <img src="<?= $bgImage['url'] ?: placeHolderImage(); ?>" alt="<?= $bgImage['alt']; ?>" class="object-cover w-full h-full transition-all duration-300 bg-cover group-hover:scale-105">
+              <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px] group-hover:opacity-0 transition-all duration-300 z-[3]">
             </div>
             <div class="p-sp-4">
               <p class="mb-sp-2 text-[14px] leading-[1.5]"><?= $date; ?></p>
@@ -215,10 +211,8 @@ Template Name: Press page new
           <div class="relative rounded-[6px] bg-white group not-loaded noshow opacity-0 expert-posts-js transition-all duration-500">
             <div class="h-[170px] relative overflow-hidden">
               <div class="absolute inset-0 w-full h-full transition-all duration-300 bg-primary opacity-[.75] group-hover:opacity-0 z-[2]"></div>
-              <div class="h-full">
-                <img src="<?= $bgImage['url']; ?>" alt="<?= $bgImage['alt']; ?>" class="transition-all duration-300 bg-cover group-hover:scale-105">
-                <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px] group-hover:opacity-0 transition-all duration-300 z-[3]">
-              </div>
+              <img src="<?= $bgImage['url']; ?>" alt="<?= $bgImage['alt']; ?>" class="object-cover w-full h-full transition-all duration-300 bg-cover group-hover:scale-105">
+              <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px] group-hover:opacity-0 transition-all duration-300 z-[3]">
             </div>
             <div class="p-sp-4">
               <p class="mb-sp-2 text-[14px] leading-[1.5]"><?= $date; ?></p>
@@ -326,6 +320,21 @@ Template Name: Press page new
     })
   })
 </script>
+
+<section class="bg-primary-black-blue section ">
+  <div class="container">
+    <div class="rounded-sm">
+      <div class="text-white lg:text-[56px] text-h2-lg lg:leading-[1.2] lg:mb-sp-16 mb-sp-12 font-heading-serif max-w-[850px] antialiased">Download our Press Kit</div>
+      <div class="flex justify-between">
+        <div class="flex gap-x-sp-4 items-center md:w-[unset] w-full ">
+          <a href="https://drive.google.com/drive/folders/1Fpq2ITetBNm8_xj7e-9Qtyz7CMsF3Vdy?usp=drive_link" class="ch-button button-primary inverted" target="_self">Download .zip</a>
+          <p class="mb-0 text-[20px] leading-[1.5] text-white">Logos, photography, and more</p>
+        </div>
+        <img width="150" height="148" decoding="async" src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/logos/shield.svg" alt="Charlie Health shield logo" class="w-[3rem] lg:block noshow" data-uw-rm-alt-original="Charlie Health shield logo" role="img" data-uw-rm-alt="ALT">
+      </div>
+    </div>
+  </div>
+</section>
 
 <?php
 get_footer();
