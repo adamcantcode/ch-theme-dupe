@@ -216,7 +216,7 @@ Template Name: Press page new
             <div class="h-[170px] relative overflow-hidden">
               <div class="absolute inset-0 w-full h-full transition-all duration-300 bg-primary opacity-[.75] group-hover:opacity-0 z-[2]"></div>
               <div class="h-full">
-                <img src="<?= $bgImage; ?>" alt="<?= $bgImage['alt']; ?>" class="transition-all duration-300 bg-cover group-hover:scale-105">
+                <img src="<?= $bgImage['url']; ?>" alt="<?= $bgImage['alt']; ?>" class="transition-all duration-300 bg-cover group-hover:scale-105">
                 <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px] group-hover:opacity-0 transition-all duration-300 z-[3]">
               </div>
             </div>
@@ -285,7 +285,7 @@ Template Name: Press page new
         if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
             $link = get_field('link');
         ?>
-            <a href="<?= $link['url']; ?>" target="_blank" class="grid no-underline border-b opacity-0 first:border-t py-sp-6 border-primary group press-release-js noshow not-loaded">
+            <a href="<?= $link; ?>" target="_blank" class="grid no-underline border-b opacity-0 first:border-t py-sp-6 border-primary group press-release-js noshow not-loaded">
               <div class="flex items-center mb-sp-2 lg:mb-0">
                 <h3 class="inline-block mb-0 text-[20px] leading-[1.4] font-heading"><?= ucfirst(strtolower(get_the_title())); ?><svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="group-hover:translate-x-[5px] transition-all duration-300 ml-sp-4 inline-block align-baseline flex-none">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3431 0.278417L16.7071 6.32784C17.0976 6.69906 17.0976 7.30094 16.7071 7.67216L10.3431 13.7216C9.95262 14.0928 9.31946 14.0928 8.92893 13.7216C8.53841 13.3504 8.53841 12.7485 8.92893 12.3773L13.5858 7.95058H0V6.04942H13.5858L8.92893 1.62273C8.53841 1.25151 8.53841 0.64964 8.92893 0.278417C9.31946 -0.0928058 9.95262 -0.0928058 10.3431 0.278417Z" fill="#161A3D" />
