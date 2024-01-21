@@ -19,7 +19,7 @@ Template Name: Press page new
               $image = get_sub_field('image');
               $link = get_sub_field('link');
               ?>
-              <div><img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="opacity-30 max-h-[50px]"></div>
+              <div><img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="opacity-30 max-h-[50px] w-full"></div>
           <?php endwhile;
           endif; ?>
         </div>
@@ -29,7 +29,7 @@ Template Name: Press page new
               $image = get_sub_field('image');
               $link = get_sub_field('link');
               ?>
-              <div><img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="opacity-30 max-h-[50px]"></div>
+              <div><img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="opacity-30 max-h-[50px] w-full"></div>
           <?php endwhile;
           endif; ?>
         </div>

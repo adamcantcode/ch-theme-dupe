@@ -23,7 +23,9 @@
                 "publish"
             ],
             "taxonomy": "",
-            "filters": "",
+            "filters": [
+                "search"
+            ],
             "return_format": "object",
             "min": 2,
             "max": 2,
@@ -100,5 +102,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1705695042
+    "modified": 1705869304
 }

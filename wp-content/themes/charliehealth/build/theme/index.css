@@ -1473,20 +1473,20 @@ a.ch-button.button-tertiary.inverted:hover {
   z-index: 100;
 }
 
-.z-\[6\]{
-  z-index: 6;
-}
-
-.z-\[9999\]{
-  z-index: 9999;
-}
-
 .z-\[2\]{
   z-index: 2;
 }
 
 .z-\[3\]{
   z-index: 3;
+}
+
+.z-\[6\]{
+  z-index: 6;
+}
+
+.z-\[9999\]{
+  z-index: 9999;
 }
 
 .order-1{
@@ -1711,6 +1711,10 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-top: 0.25rem;
 }
 
+.mt-sp-10{
+  margin-top: 2.5rem;
+}
+
 .mt-sp-12{
   margin-top: 3rem;
 }
@@ -1745,10 +1749,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
-}
-
-.mt-sp-10{
-  margin-top: 2.5rem;
 }
 
 .block{
@@ -2622,10 +2622,6 @@ a.ch-button.button-tertiary.inverted:hover {
   background-color: rgb(255 159 129 / var(--tw-bg-opacity));
 }
 
-.bg-\[linear-gradient\(0deg\2c _rgba\(255\2c _0\2c _150\2c _0\.3\)\2c _rgba\(255\2c _0\2c _150\2c _0\.3\)\)\2c _url\(https\:\/\/picsum\.photos\/id\/1043\/800\/600\)\]{
-  background-color: linear-gradient(0deg, rgba(255, 0, 150, 0.3), rgba(255, 0, 150, 0.3)), url(https://picsum.photos/id/1043/800/600);
-}
-
 .bg-\[rgba\(0\2c 0\2c 0\2c \.5\)\]{
   background-color: rgba(0,0,0,.5);
 }
@@ -2806,25 +2802,12 @@ a.ch-button.button-tertiary.inverted:hover {
   --tw-gradient-from-position: 70%;
 }
 
-.via-white{
-  --tw-gradient-to: rgb(255 255 255 / 0)  var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), #FFFFFF var(--tw-gradient-via-position), var(--tw-gradient-to);
-}
-
 .to-transparent{
   --tw-gradient-to: rgba(0,0,0,0) var(--tw-gradient-to-position);
 }
 
 .bg-cover{
   background-size: cover;
-}
-
-.\!bg-cover{
-  background-size: cover !important;
-}
-
-.bg-top{
-  background-position: top;
 }
 
 .object-contain{
@@ -3424,10 +3407,6 @@ a.ch-button.button-tertiary.inverted:hover {
   opacity: 0.3;
 }
 
-.opacity-70{
-  opacity: 0.7;
-}
-
 .opacity-\[\.75\]{
   opacity: .75;
 }
@@ -3482,18 +3461,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .transition-colors{
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.transition-opacity{
-  transition-property: opacity;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.transition-transform{
-  transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -3914,50 +3881,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .noshow{
   display: none;
-}
-
-.\[background\:linear-gradient\(0deg\2c _rgba\(255\2c _0\2c _150\2c _0\.3\)\2c _rgba\(255\2c _0\2c _150\2c _0\.3\)\)\2c _url\(https\:\/\/picsum\.photos\/id\/1043\/800\/600\)\]{
-  background: linear-gradient(0deg, rgba(255, 0, 150, 0.3), rgba(255, 0, 150, 0.3)), url(https://picsum.photos/id/1043/800/600);
-}
-
-.\[background\:linear-gradient\(0deg\2c _rgba\(255\2c _0\2c _150\2c _0\.3\)\2c _rgba\(255\2c _0\2c _150\2c _0\.3\)\)\2c _url\(https\:\/\/placehold\.co\/600x400\/EEE\/31343C\)\]{
-  background: linear-gradient(0deg, rgba(255, 0, 150, 0.3), rgba(255, 0, 150, 0.3)), url(https://placehold.co/600x400/EEE/31343C);
-}
-
-.\[background\:linear-gradient\(0deg\2c _rgba\(22\2c _26\2c _61\2c _0\.70\)_0\%\2c _rgba\(22\2c _26\2c _61\2c _0\.70\)_100\%\)\2c _url\(https\:\/\/placehold\.co\/600x400\/EEE\/31343C\)\]{
-  background: linear-gradient(0deg, rgba(22, 26, 61, 0.70) 0%, rgba(22, 26, 61, 0.70) 100%), url(https://placehold.co/600x400/EEE/31343C);
-}
-
-.\[background\:linear-gradient\(0deg\2c _rgba\(22\2c _26\2c _61\2c _0\.70\)_0\%\2c _rgba\(22\2c _26\2c _61\2c _0\.70\)_100\%\)\2c _url\(https\:\/\/placehold\.co\/600x400\/EEE\/31343C\)_center_top_no-repeat\]{
-  background: linear-gradient(0deg, rgba(22, 26, 61, 0.70) 0%, rgba(22, 26, 61, 0.70) 100%), url(https://placehold.co/600x400/EEE/31343C) center top no-repeat;
-}
-
-.\[background\:linear-gradient\(0deg\2c _rgba\(22\2c _26\2c _61\2c _0\.70\)_0\%\2c _rgba\(22\2c _26\2c _61\2c _0\.70\)_100\%\)\2c _url\(https\:\/\/placehold\.co\/600x400\/EEE\/31343C\)_center_top_cover\]{
-  background: linear-gradient(0deg, rgba(22, 26, 61, 0.70) 0%, rgba(22, 26, 61, 0.70) 100%), url(https://placehold.co/600x400/EEE/31343C) center top cover;
-}
-
-.\[background\:linear-gradient\(0deg\2c _rgba\(22\2c _26\2c _61\2c _0\.70\)_0\%\2c _rgba\(22\2c _26\2c _61\2c _0\.70\)_100\%\)\2c _url\(https\:\/\/placehold\.co\/600x400\/EEE\/31343C\)_no-repeat\]{
-  background: linear-gradient(0deg, rgba(22, 26, 61, 0.70) 0%, rgba(22, 26, 61, 0.70) 100%), url(https://placehold.co/600x400/EEE/31343C) no-repeat;
-}
-
-.\[background\:linear-gradient\(0deg\2c _rgba\(22\2c _26\2c _61\2c _0\.70\)_0\%\2c _rgba\(22\2c _26\2c _61\2c _0\.70\)_100\%\)\2c _url\(https\:\/\/placehold\.co\/600x400\/EEE\/31343C\)_center_top\]{
-  background: linear-gradient(0deg, rgba(22, 26, 61, 0.70) 0%, rgba(22, 26, 61, 0.70) 100%), url(https://placehold.co/600x400/EEE/31343C) center top;
-}
-
-.\[background\:linear-gradient\(0deg\2c _rgba\(22\2c _26\2c _61\2c _0\.70\)_0\%\2c _rgba\(22\2c _26\2c _61\2c _0\.70\)_100\%\)\]{
-  background: linear-gradient(0deg, rgba(22, 26, 61, 0.70) 0%, rgba(22, 26, 61, 0.70) 100%);
-}
-
-.\[background\:linear-gradient\(0deg\2c _rgba\(22\2c _26\2c _61\2c _0\.70\)_0\%\2c _rgba\(22\2c _26\2c _61\2c _0\.70\)_100\%\)\2c _url\(https\:\/\/placehold\.co\/600x400\)_center_top\]{
-  background: linear-gradient(0deg, rgba(22, 26, 61, 0.70) 0%, rgba(22, 26, 61, 0.70) 100%), url(https://placehold.co/600x400) center top;
-}
-
-.\[background-size\:10\%\]{
-  background-size: 10%;
-}
-
-.\[background-size\:100\%\]{
-  background-size: 100%;
 }
 
 /* CUSTOM STYELS */
@@ -5208,21 +5131,16 @@ mark{
 .swiper.swiper-careers-testimonial .swiper-slide.swiper-slide-prev {
     }
 
-.before\:contents::before{
-  content: var(--tw-content);
-  display: contents;
-}
-
 .first\:mt-0:first-child{
   margin-top: 0px;
 }
 
-.first\:border-t-2:first-child{
-  border-top-width: 2px;
-}
-
 .first\:border-t:first-child{
   border-top-width: 1px;
+}
+
+.first\:border-t-2:first-child{
+  border-top-width: 2px;
 }
 
 .first\:pt-sp-6:first-child{
@@ -5382,10 +5300,6 @@ mark{
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.group:hover .group-hover\:bg-\[105\%\]{
-  background-position: 105%;
-}
-
 .group:hover .group-hover\:\!text-primary{
   --tw-text-opacity: 1 !important;
   color: rgb(22 26 61 / var(--tw-text-opacity)) !important;
@@ -5393,24 +5307,6 @@ mark{
 
 .group:hover .group-hover\:opacity-0{
   opacity: 0;
-}
-
-.group:hover .group-hover\:transition-all{
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.group:hover .group-hover\:\[background\:_linear-gradient\(0deg\2c _rgba\(22\2c _26\2c _61\2c _0\.0\)_0\%\2c _rgba\(22\2c _26\2c _61\2c _0\.0\)_100\%\)_no-repeat\]{
-  background: linear-gradient(0deg, rgba(22, 26, 61, 0.0) 0%, rgba(22, 26, 61, 0.0) 100%) no-repeat;
-}
-
-.group:hover .group-hover\:\!\[background\:_linear-gradient\(0deg\2c _rgba\(22\2c _26\2c _61\2c _0\.0\)_0\%\2c _rgba\(22\2c _26\2c _61\2c _0\.0\)_100\%\)_no-repeat\]{
-  background: linear-gradient(0deg, rgba(22, 26, 61, 0.0) 0%, rgba(22, 26, 61, 0.0) 100%) no-repeat !important;
-}
-
-.group:hover .group-hover\:\[background-size\:105\%\]{
-  background-size: 105%;
 }
 
 @media (min-width: 480px){
