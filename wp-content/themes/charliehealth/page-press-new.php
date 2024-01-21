@@ -131,6 +131,7 @@ Template Name: Press page new
           }
           $link = get_field('link');
           $date = get_field('date');
+          $bgImage = get_field('bg_image');
       ?>
           <div class="relative rounded-[6px] overflow-hidden bg-white group not-loaded noshow opacity-0 press-posts-js transition-all duration-500">
             <div class="h-[170px] relative overflow-hidden">
@@ -209,6 +210,7 @@ Template Name: Press page new
           }
           $link = get_field('link');
           $date = get_field('date');
+          $bgImage = get_field('bg_image');
       ?>
           <div class="relative rounded-[6px] bg-white group not-loaded noshow opacity-0 expert-posts-js transition-all duration-500">
             <div class="h-[170px] relative overflow-hidden">
