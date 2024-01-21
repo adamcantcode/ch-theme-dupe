@@ -83,7 +83,7 @@ Template Name: Press page new
           <div class="relative rounded-[6px] overflow-hidden bg-white group">
             <div class="lg:h-[260px] h-[170px] relative overflow-hidden">
               <div class="absolute inset-0 w-full h-full transition-all duration-300 bg-primary opacity-[.75] group-hover:opacity-0 z-[2]"></div>
-              <img src="<?= $bgImage['url'] ?: placeHolderImage(); ?>" alt="<?= $bgImage['alt']; ?>" class="object-cover w-full h-full transition-all duration-300 group-hover:scale-105">
+              <img src="<?= $bgImage['url'] ?: placeHolderImage(); ?>" alt="<?= $bgImage['alt']; ?>" class="object-cover object-top w-full h-full transition-all duration-300 group-hover:scale-105">
               <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px] group-hover:opacity-0 transition-all duration-300 z-[3]">
             </div>
             <div class="p-sp-4">
@@ -104,6 +104,13 @@ Template Name: Press page new
         'meta_key'       => 'date',
         'orderby'        => 'meta_value',
         'order'          => 'DESC',
+        // 'meta_query'     => array(
+        //   array(
+        //     'key'     => 'featured',
+        //     'value'   => false,
+        //     'compare' => '=',
+        //   )
+        // ),
         'tax_query'      => array(
           array(
             'taxonomy' => 'press-type',
@@ -134,7 +141,7 @@ Template Name: Press page new
           <div class="relative rounded-[6px] overflow-hidden bg-white group not-loaded noshow opacity-0 press-posts-js transition-all duration-500">
             <div class="h-[170px] relative overflow-hidden">
               <div class="absolute inset-0 w-full h-full transition-all duration-300 bg-primary opacity-[.75] group-hover:opacity-0 z-[2]"></div>
-              <img src="<?= $bgImage['url'] ?: placeHolderImage(); ?>" alt="<?= $bgImage['alt']; ?>" class="object-cover w-full h-full transition-all duration-300 bg-cover group-hover:scale-105">
+              <img src="<?= $bgImage['url'] ?: placeHolderImage(); ?>" alt="<?= $bgImage['alt']; ?>" class="object-cover object-top w-full h-full transition-all duration-300 bg-cover group-hover:scale-105">
               <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px] group-hover:opacity-0 transition-all duration-300 z-[3]">
             </div>
             <div class="p-sp-4">
@@ -164,7 +171,7 @@ Template Name: Press page new
         }, 10);
       });
       if (document.querySelectorAll('.press-posts-js.not-loaded').length === 0) {
-        loadMoreExpert.remove()
+        loadMorePress.remove()
       }
     })
   })
@@ -211,7 +218,7 @@ Template Name: Press page new
           <div class="relative rounded-[6px] bg-white group not-loaded noshow opacity-0 expert-posts-js transition-all duration-500">
             <div class="h-[170px] relative overflow-hidden">
               <div class="absolute inset-0 w-full h-full transition-all duration-300 bg-primary opacity-[.75] group-hover:opacity-0 z-[2]"></div>
-              <img src="<?= $bgImage['url']; ?>" alt="<?= $bgImage['alt']; ?>" class="object-cover w-full h-full transition-all duration-300 bg-cover group-hover:scale-105">
+              <img src="<?= $bgImage['url']; ?>" alt="<?= $bgImage['alt']; ?>" class="object-cover object-top w-full h-full transition-all duration-300 bg-cover group-hover:scale-105">
               <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-h-[50px] max-w-[200px] group-hover:opacity-0 transition-all duration-300 z-[3]">
             </div>
             <div class="p-sp-4">
