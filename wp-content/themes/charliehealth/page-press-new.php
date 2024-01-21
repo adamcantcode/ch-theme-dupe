@@ -12,7 +12,7 @@ Template Name: Press page new
         <h1 class="mb-sp-2 text-[64px] leading-[1.1]"><?= get_the_title(); ?></h1>
         <p class="text-[14px] leading-[1.1]">Contact us at <a href="mailto:press@charliehealth.com?subject=Press%20inquiry">press@charliehealth.com</a></p>
       </div>
-      <div id="marquee" class="flex lg:gap-[150px] gap-sp-4 w-full overflow-hidden absolute z-10">
+      <div id="marquee" class="lg:flex lg:gap-[150px] gap-sp-4 w-full overflow-hidden absolute z-10 noshow">
         <div class="flex justify-around min-w-full scroll lg:gap-[150px] gap-sp-8 items-center flex-none">
           <?php if (have_rows('publications')) :  while (have_rows('publications')) : the_row();  ?>
               <?php
@@ -51,9 +51,9 @@ Template Name: Press page new
         animation-direction: normal;
       }
 
-      #marquee:hover * {
+      /* #marquee:hover * {
         animation-play-state: paused;
-      }
+      } */
     </style>
   </div>
 </section>
@@ -333,7 +333,7 @@ Template Name: Press page new
     <div class="rounded-sm">
       <div class="text-white lg:text-[56px] text-h2-lg lg:leading-[1.2] lg:mb-sp-16 mb-sp-12 font-heading-serif max-w-[850px] antialiased">Download our Press Kit</div>
       <div class="flex justify-between">
-        <div class="flex gap-x-sp-4 items-center md:w-[unset] w-full ">
+        <div class="flex lg:flex-row flex-col gap-sp-4 items-center md:w-[unset] w-full ">
           <a href="https://drive.google.com/drive/folders/1Fpq2ITetBNm8_xj7e-9Qtyz7CMsF3Vdy?usp=drive_link" class="ch-button button-primary inverted" target="_self">Download .zip</a>
           <p class="mb-0 text-[20px] leading-[1.5] text-white">Logos, photography, and more</p>
         </div>
