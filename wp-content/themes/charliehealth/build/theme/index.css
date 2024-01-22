@@ -5566,6 +5566,14 @@ mark{
     margin-top: 2rem;
   }
 
+  .lg\:mt-sp-10{
+    margin-top: 2.5rem;
+  }
+
+  .lg\:mb-12{
+    margin-bottom: 3rem;
+  }
+
   .lg\:block{
     display: block;
   }

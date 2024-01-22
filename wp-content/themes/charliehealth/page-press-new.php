@@ -10,7 +10,7 @@ Template Name: Press page new
     <div class="grid grid-cols-1 lg:grid-cols-[4fr_8fr] relative">
       <div class="bg-gradient-to-r from-white from-85% to-transparent z-20">
         <h1 class="mb-sp-2 text-[64px] leading-[1.1]"><?= get_the_title(); ?></h1>
-        <p class="text-[14px] leading-[1.1]">Contact us at <a href="mailto:press@charliehealth.com?subject=Press%20inquiry">press@charliehealth.com</a></p>
+        <p class="text-[14px] leading-[1.1] mb-0">Contact us at <a href="mailto:press@charliehealth.com?subject=Press%20inquiry">press@charliehealth.com</a></p>
       </div>
       <div id="marquee" class="absolute z-10 w-full overflow-hidden lg:flex lg:gap-sp-16 gap-sp-4 noshow mt-sp-4">
         <div class="flex items-center justify-around flex-none min-w-full scroll lg:gap-sp-16 gap-sp-4">
@@ -59,7 +59,7 @@ Template Name: Press page new
 </section>
 <section class="section-top bg-grey-warm">
   <div class="container">
-    <h2 class="mb-12 text-[20px] leading-[1.1]">Charlie Health in the News</h2>
+    <h2 class="lg:mb-12 text-[20px] leading-[1.1]">Charlie Health in the News</h2>
     <div class="grid lg:grid-cols-2 gap-sp-5 mb-sp-5">
       <?php
       $featured = get_field('featured_posts');
@@ -155,7 +155,7 @@ Template Name: Press page new
       ?>
     </div>
     <div class="flex">
-      <a role="button" class="w-full ml-auto ch-button button-primary justify-self-center lg:w-auto press-load-more-js mt-sp-10">Load more</a>
+      <a role="button" class="w-full ml-auto ch-button button-primary justify-self-center lg:w-auto press-load-more-js lg:mt-sp-10 mt-sp-5">Load more</a>
     </div>
   </div>
 </section>
@@ -180,7 +180,7 @@ Template Name: Press page new
 </script>
 <section class="section bg-grey-warm">
   <div class="container">
-    <h2 class="mb-12 text-[20px] leading-[1.1]">Our Expert Opinion</h2>
+    <h2 class="lg:mb-12 text-[20px] leading-[1.1]">Our Expert Opinion</h2>
     <div class="grid lg:grid-cols-4 gap-sp-5">
       <?php
       $args = array(
@@ -233,7 +233,7 @@ Template Name: Press page new
       endif;
       ?>
     </div>
-    <div class="flex"><a role="button" class="w-full ml-auto ch-button button-primary justify-self-center lg:w-auto expert-load-more-js mt-sp-10">Load more</a></div>
+    <div class="flex"><a role="button" class="w-full ml-auto ch-button button-primary justify-self-center lg:w-auto expert-load-more-js lg:mt-sp-10 mt-sp-5">Load more</a></div>
   </div>
 </section>
 <script>
@@ -264,7 +264,7 @@ Template Name: Press page new
 <section class="section">
   <div class="container">
     <div class="grid grid-cols-1 lg:grid-cols-[3fr_9fr] gap-sp-5">
-      <h2 class="mb-12 text-[20px] leading-[1.1]">Press Releases & Published Research</h2>
+      <h2 class="lg:mb-12 text-[20px] leading-[1.1]">Press Releases & Published Research</h2>
       <div class="">
         <?php
         $args = array(
@@ -301,7 +301,7 @@ Template Name: Press page new
         ?>
       </div>
     </div>
-    <div class="flex"><a role="button" class="w-full ml-auto ch-button button-primary justify-self-center lg:w-auto press-release-load-more-js mt-sp-10">Load more</a></div>
+    <div class="flex"><a role="button" class="w-full ml-auto ch-button button-primary justify-self-center lg:w-auto press-release-load-more-js lg:mt-sp-10 mt-sp-5">Load more</a></div>
   </div>
 </section>
 <script>
