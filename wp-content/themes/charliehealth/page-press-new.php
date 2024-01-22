@@ -12,24 +12,24 @@ Template Name: Press page new
         <h1 class="mb-sp-2 text-[64px] leading-[1.1]"><?= get_the_title(); ?></h1>
         <p class="text-[14px] leading-[1.1]">Contact us at <a href="mailto:press@charliehealth.com?subject=Press%20inquiry">press@charliehealth.com</a></p>
       </div>
-      <div id="marquee" class="lg:flex lg:gap-[150px] gap-sp-4 w-full overflow-hidden absolute z-10 noshow mt-sp-4">
-        <div class="flex justify-around min-w-full scroll lg:gap-[150px] gap-sp-8 items-center flex-none">
+      <div id="marquee" class="absolute z-10 w-full overflow-hidden lg:flex lg:gap-sp-16 gap-sp-4 noshow mt-sp-4">
+        <div class="flex items-center justify-around flex-none min-w-full scroll lg:gap-sp-16 gap-sp-4">
           <?php if (have_rows('publications')) :  while (have_rows('publications')) : the_row();  ?>
               <?php
               $image = get_sub_field('image');
               $link = get_sub_field('link');
               ?>
-              <div><img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="opacity-30 max-h-[50px] w-full"></div>
+              <div><img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="opacity-30 max-h-[50px] max-w-[200px] w-full"></div>
           <?php endwhile;
           endif; ?>
         </div>
-        <div class="flex justify-around min-w-full scroll lg:gap-[150px] gap-sp-4 items-center flex-none">
+        <div class="flex items-center justify-around flex-none min-w-full scroll lg:gap-sp-16 gap-sp-4">
           <?php if (have_rows('publications')) :  while (have_rows('publications')) : the_row();  ?>
               <?php
               $image = get_sub_field('image');
               $link = get_sub_field('link');
               ?>
-              <div><img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="opacity-30 max-h-[50px] w-full"></div>
+              <div><img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="opacity-30 max-h-[50px] max-w-[200px] w-full"></div>
           <?php endwhile;
           endif; ?>
         </div>
@@ -217,7 +217,7 @@ Template Name: Press page new
           $date = get_field('date');
           $bgImage = get_field('bg_image');
       ?>
-          <div class="relative rounded-[6px] bg-white group not-loaded noshow opacity-0 expert-posts-js transition-all duration-500">
+          <div class="relative rounded-[6px] bg-white group not-loaded noshow opacity-0 expert-posts-js transition-all duration-500 overflow-hidden">
             <div class="h-[170px] relative overflow-hidden">
               <div class="absolute inset-0 w-full h-full transition-all duration-300 bg-primary opacity-[.75] group-hover:opacity-0 z-[2]"></div>
               <img src="<?= $bgImage['url'] ?: placeHolderImage(); ?>" alt="<?= $bgImage['alt']; ?>" class="object-cover object-top w-full h-full transition-all duration-300 bg-cover group-hover:scale-105">
