@@ -84,7 +84,7 @@ Template Name: Press page new
             <div class="lg:h-[260px] h-[170px] relative overflow-hidden">
               <div class="absolute inset-0 w-full h-full transition-all duration-300 bg-primary opacity-[.75] group-hover:opacity-0 z-[2]"></div>
               <img src="<?= $bgImage['url'] ?: placeHolderImage(); ?>" alt="<?= $bgImage['alt']; ?>" class="object-cover object-top w-full h-full transition-all duration-300 group-hover:scale-105">
-              <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-w-[200px] group-hover:opacity-0 transition-all duration-300 z-[3]">
+              <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-w-[200px] max-h-[50px] group-hover:opacity-0 transition-all duration-300 z-[3]">
             </div>
             <div class="p-sp-4">
               <p class="mb-sp-2 text-[14px] leading-[1.5]"><?= $date; ?></p>
@@ -142,7 +142,7 @@ Template Name: Press page new
             <div class="h-[170px] relative overflow-hidden">
               <div class="absolute inset-0 w-full h-full transition-all duration-300 bg-primary opacity-[.75] group-hover:opacity-0 z-[2]"></div>
               <img src="<?= $bgImage['url'] ?: placeHolderImage(); ?>" alt="<?= $bgImage['alt']; ?>" class="object-cover object-top w-full h-full transition-all duration-300 bg-cover group-hover:scale-105">
-              <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-w-[200px] group-hover:opacity-0 transition-all duration-300 z-[3]">
+              <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-w-[200px] max-h-[50px] group-hover:opacity-0 transition-all duration-300 z-[3]">
             </div>
             <div class="p-sp-4">
               <p class="mb-sp-2 text-[14px] leading-[1.5]"><?= $date; ?></p>
@@ -219,7 +219,7 @@ Template Name: Press page new
             <div class="h-[170px] relative overflow-hidden">
               <div class="absolute inset-0 w-full h-full transition-all duration-300 bg-primary opacity-[.75] group-hover:opacity-0 z-[2]"></div>
               <img src="<?= $bgImage['url'] ?: placeHolderImage(); ?>" alt="<?= $bgImage['alt']; ?>" class="object-cover object-top w-full h-full transition-all duration-300 bg-cover group-hover:scale-105">
-              <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-w-[200px] group-hover:opacity-0 transition-all duration-300 z-[3]">
+              <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-w-[200px] max-h-[50px] group-hover:opacity-0 transition-all duration-300 z-[3]">
             </div>
             <div class="p-sp-4">
               <p class="mb-sp-2 text-[14px] leading-[1.5]"><?= $date; ?></p>
