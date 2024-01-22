@@ -1571,10 +1571,6 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-bottom: 0px;
 }
 
-.mb-12{
-  margin-bottom: 3rem;
-}
-
 .mb-5{
   margin-bottom: 1.25rem;
 }
@@ -1711,10 +1707,6 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-top: 0.25rem;
 }
 
-.mt-sp-10{
-  margin-top: 2.5rem;
-}
-
 .mt-sp-12{
   margin-top: 3rem;
 }
@@ -1749,6 +1741,13 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
+}
+
+.line-clamp-3{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 
 .block{
@@ -1933,6 +1932,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .max-h-\[80vh\]{
   max-height: 80vh;
+}
+
+.max-h-\[30px\]{
+  max-height: 30px;
 }
 
 .min-h-\[300px\]{
@@ -5494,6 +5497,10 @@ mark{
     margin-bottom: 0px;
   }
 
+  .lg\:mb-12{
+    margin-bottom: 3rem;
+  }
+
   .lg\:mb-\[33vh\]{
     margin-bottom: 33vh;
   }
@@ -5554,6 +5561,10 @@ mark{
     margin-top: auto;
   }
 
+  .lg\:mt-sp-10{
+    margin-top: 2.5rem;
+  }
+
   .lg\:mt-sp-14{
     margin-top: 4rem;
   }
@@ -5564,14 +5575,6 @@ mark{
 
   .lg\:mt-sp-8{
     margin-top: 2rem;
-  }
-
-  .lg\:mt-sp-10{
-    margin-top: 2.5rem;
-  }
-
-  .lg\:mb-12{
-    margin-bottom: 3rem;
   }
 
   .lg\:block{

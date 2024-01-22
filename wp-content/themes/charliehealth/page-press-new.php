@@ -19,7 +19,7 @@ Template Name: Press page new
               $image = get_sub_field('image');
               $link = get_sub_field('link');
               ?>
-              <div><img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="opacity-30 max-h-[50px] max-w-[200px] w-full"></div>
+              <div><img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="opacity-30 max-h-[30px] max-w-[200px] w-full"></div>
           <?php endwhile;
           endif; ?>
         </div>
@@ -29,7 +29,7 @@ Template Name: Press page new
               $image = get_sub_field('image');
               $link = get_sub_field('link');
               ?>
-              <div><img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="opacity-30 max-h-[50px] max-w-[200px] w-full"></div>
+              <div><img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="opacity-30 max-h-[30px] max-w-[200px] w-full"></div>
           <?php endwhile;
           endif; ?>
         </div>
@@ -88,7 +88,7 @@ Template Name: Press page new
             </div>
             <div class="p-sp-4">
               <p class="mb-sp-2 text-[14px] leading-[1.5]"><?= $date; ?></p>
-              <h3 class="mb-0 text-[24px] font-heading leading-[1.3]"><a href="<?= $link; ?>" class="stretched-link hover:text-primary featured-title-js" target="_blank"><?= get_the_title(); ?></a></h3>
+              <h3 class="mb-0 text-[24px] font-heading leading-[1.3]"><a href="<?= $link; ?>" class="stretched-link hover:text-primary line-clamp-3" target="_blank"><?= get_the_title(); ?></a></h3>
             </div>
           </div>
       <?php wp_reset_postdata();
@@ -146,7 +146,7 @@ Template Name: Press page new
             </div>
             <div class="p-sp-4">
               <p class="mb-sp-2 text-[14px] leading-[1.5]"><?= $date; ?></p>
-              <h3 class="mb-0 text-[24px] font-heading leading-[1.3]"><a href="<?= $link; ?>" class="stretched-link hover:text-primary featured-title-js" target="_blank"><?= get_the_title(); ?></a></h3>
+              <h3 class="mb-0 text-[24px] font-heading leading-[1.3]"><a href="<?= $link; ?>" class="stretched-link hover:text-primary line-clamp-3" target="_blank"><?= get_the_title(); ?></a></h3>
             </div>
           </div>
       <?php wp_reset_postdata();
@@ -225,7 +225,7 @@ Template Name: Press page new
             </div>
             <div class="p-sp-4">
               <p class="mb-sp-2 text-[14px] leading-[1.5]"><?= $date; ?></p>
-              <h3 class="mb-0 text-[24px] font-heading leading-[1.3]"><a href="<?= $link; ?>" class="stretched-link hover:text-primary featured-title-js" target="_blank"><?= get_the_title(); ?></a></h3>
+              <h3 class="mb-0 text-[24px] font-heading leading-[1.3]"><a href="<?= $link; ?>" class="stretched-link hover:text-primary line-clamp-3" target="_blank"><?= get_the_title(); ?></a></h3>
             </div>
           </div>
       <?php wp_reset_postdata();
