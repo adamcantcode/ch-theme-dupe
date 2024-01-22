@@ -87,7 +87,7 @@ Template Name: Press page new
               <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-w-[200px] max-h-[50px] group-hover:opacity-0 transition-all duration-300 z-[3]">
             </div>
             <div class="p-sp-4">
-              <p class="mb-sp-2 text-[14px] leading-[1.5]"><?= $date; ?></p>
+              <p class="mb-sp-5 text-[14px] leading-[1.5]"><?= $date; ?></p>
               <h3 class="mb-0 text-[24px] font-heading leading-[1.3]"><a href="<?= $link; ?>" class="stretched-link hover:text-primary line-clamp-3" target="_blank"><?= get_the_title(); ?></a></h3>
             </div>
           </div>
@@ -145,7 +145,7 @@ Template Name: Press page new
               <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-w-[200px] max-h-[50px] group-hover:opacity-0 transition-all duration-300 z-[3]">
             </div>
             <div class="p-sp-4">
-              <p class="mb-sp-2 text-[14px] leading-[1.5]"><?= $date; ?></p>
+              <p class="mb-sp-5 text-[14px] leading-[1.5]"><?= $date; ?></p>
               <h3 class="mb-0 text-[24px] font-heading leading-[1.3]"><a href="<?= $link; ?>" class="stretched-link hover:text-primary line-clamp-3" target="_blank"><?= get_the_title(); ?></a></h3>
             </div>
           </div>
@@ -224,7 +224,7 @@ Template Name: Press page new
               <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="absolute inset-0 m-auto max-w-[200px] group-hover:opacity-0 transition-all duration-300 z-[3]">
             </div>
             <div class="p-sp-4">
-              <p class="mb-sp-2 text-[14px] leading-[1.5]"><?= $date; ?></p>
+              <p class="mb-sp-5 text-[14px] leading-[1.5]"><?= $date; ?></p>
               <h3 class="mb-0 text-[24px] font-heading leading-[1.3]"><a href="<?= $link; ?>" class="stretched-link hover:text-primary line-clamp-3" target="_blank"><?= get_the_title(); ?></a></h3>
             </div>
           </div>
