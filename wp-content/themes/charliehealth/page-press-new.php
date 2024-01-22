@@ -336,7 +336,7 @@ Template Name: Press page new
       <div class="text-white lg:text-[56px] text-h2-lg lg:leading-[1.2] lg:mb-sp-16 mb-sp-12 font-heading-serif max-w-[850px] antialiased">Download our Press Kit</div>
       <div class="flex justify-between">
         <div class="flex lg:flex-row flex-col gap-sp-4 items-center md:w-[unset] w-full ">
-          <a href="https://drive.google.com/drive/folders/1Fpq2ITetBNm8_xj7e-9Qtyz7CMsF3Vdy?usp=drive_link" class="ch-button button-primary inverted" target="_self">Download .zip</a>
+          <a href="https://www.dropbox.com/scl/fi/v0mh80ry4vhooc2psusol/Brand-Kit.zip?rlkey=hfkkorq8uuz50q2es3xwi32l9&dl=1" class="ch-button button-primary inverted" target="_self">Download .zip</a>
           <p class="mb-0 text-[20px] leading-[1.5] text-white">Logos, photography, and more</p>
         </div>
         <img width="150" height="148" decoding="async" src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/logos/shield.svg" alt="Charlie Health shield logo" class="w-[3rem] lg:block noshow" data-uw-rm-alt-original="Charlie Health shield logo" role="img" data-uw-rm-alt="ALT">
