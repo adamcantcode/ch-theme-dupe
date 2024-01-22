@@ -12,7 +12,7 @@ Template Name: Press page new
         <h1 class="mb-sp-2 text-[64px] leading-[1.1]"><?= get_the_title(); ?></h1>
         <p class="text-[14px] leading-[1.1]">Contact us at <a href="mailto:press@charliehealth.com?subject=Press%20inquiry">press@charliehealth.com</a></p>
       </div>
-      <div id="marquee" class="lg:flex lg:gap-[150px] gap-sp-4 w-full overflow-hidden absolute z-10 noshow">
+      <div id="marquee" class="lg:flex lg:gap-[150px] gap-sp-4 w-full overflow-hidden absolute z-10 noshow mt-sp-4">
         <div class="flex justify-around min-w-full scroll lg:gap-[150px] gap-sp-8 items-center flex-none">
           <?php if (have_rows('publications')) :  while (have_rows('publications')) : the_row();  ?>
               <?php
@@ -154,7 +154,9 @@ Template Name: Press page new
       endif;
       ?>
     </div>
-    <a role="button" class="w-full ch-button button-primary justify-self-center lg:w-auto press-load-more-js mt-sp-10">Load more</a>
+    <div class="flex">
+      <a role="button" class="w-full ml-auto ch-button button-primary justify-self-center lg:w-auto press-load-more-js mt-sp-10">Load more</a>
+    </div>
   </div>
 </section>
 <script>
@@ -231,7 +233,7 @@ Template Name: Press page new
       endif;
       ?>
     </div>
-    <a role="button" class="w-full ch-button button-primary justify-self-center lg:w-auto expert-load-more-js mt-sp-10">Load more</a>
+    <div class="flex"><a role="button" class="w-full ml-auto ch-button button-primary justify-self-center lg:w-auto expert-load-more-js mt-sp-10">Load more</a></div>
   </div>
 </section>
 <script>
@@ -299,7 +301,7 @@ Template Name: Press page new
         ?>
       </div>
     </div>
-    <a role="button" class="w-full ch-button button-primary justify-self-center lg:w-auto press-release-load-more-js mt-sp-10">Load more</a>
+    <div class="flex"><a role="button" class="w-full ml-auto ch-button button-primary justify-self-center lg:w-auto press-release-load-more-js mt-sp-10">Load more</a></div>
   </div>
 </section>
 <script>
