@@ -6093,6 +6093,13 @@ mark{
     font-weight: 500;
   }
 
+  .lg\:text-h3{
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+
   .lg\:\!leading-\[1\.4\]{
     line-height: 1.4 !important;
   }
@@ -6110,6 +6117,9 @@ mark{
   }
   .lg\:noshow{
     display: none;
+  }
+  .lg\:last\:col-start-auto:last-child{
+    grid-column-start: auto;
   }
 }
 /*!*******************************************************************************************************************************************************************************************************************************!*\

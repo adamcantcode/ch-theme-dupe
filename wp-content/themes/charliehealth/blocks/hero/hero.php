@@ -35,7 +35,7 @@ if ($style === 'image') {
         <?php if ($icon) : ?>
           <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health Shield" class="w-10">
         <?php endif; ?>
-        <p class="mb-0 lg:text-h2-lg text-h2 font-heading-serif not-heading-h2"><?= $subtitle; ?></p>
+        <p class="mb-0 lg:text-h3 font-heading-serif"><?= $subtitle; ?></p>
       </div>
       <div class="hero-image-buttons">
         <?php include(get_template_directory() . '/includes/button-group.php'); ?>
