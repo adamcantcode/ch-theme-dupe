@@ -819,9 +819,9 @@ table {
     width: 100%;
   }
 
-main{
-  overflow: hidden;
-}
+main {
+    /* @apply overflow-hidden */
+  }
 
 *, ::before, ::after{
   --tw-border-spacing-x: 0;
@@ -6079,6 +6079,13 @@ mark{
     font-weight: 400;
   }
 
+  .lg\:text-h3{
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+
   .lg\:text-h3-lg{
     font-size: 1.5rem;
     line-height: 2rem;
@@ -6091,13 +6098,6 @@ mark{
     line-height: 140%;
     letter-spacing: 0;
     font-weight: 500;
-  }
-
-  .lg\:text-h3{
-    font-size: 1.25rem;
-    line-height: 1.625rem;
-    letter-spacing: 0;
-    font-weight: 400;
   }
 
   .lg\:\!leading-\[1\.4\]{
