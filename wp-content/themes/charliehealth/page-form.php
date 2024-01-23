@@ -28,42 +28,34 @@ Template Post Type: page
             document.querySelector('.fsPagination').addEventListener('click', function() {
               setTimeout(() => {
                 if (document.querySelector('#fsPage4865954-2').classList.contains('fsHiddenPage')) {
-                  console.log('page 2 hidden');
                   setTimeout(() => {
                     disclaimerContainer.style.display = 'none';
                   }, 300);
                 } else {
-                  console.log('page 2 not hidden');
                   disclaimerContainer.style.display = 'block';
                 }
               }, 300);
             })
 
-            // Select the element to be cloned
-            var originalElement = document.querySelector('.field-auto-capture');
+            const originalElement = document.querySelector('.field-auto-capture');
+            const clonedElement = originalElement.cloneNode(true);
 
-            // Clone the element
-            var clonedElement = originalElement.cloneNode(true);
+            clonedElement.classList.remove(clonedElement.classList);
 
-            // Insert the cloned element right after the original element
             originalElement.parentNode.insertBefore(clonedElement, originalElement.nextSibling);
 
-            // Select the child element within the cloned element
-            var clonedChildElement = clonedElement.querySelector('.field-auto-capture__message__text');
+            const clonedChildElement = clonedElement.querySelector('.field-auto-capture__message__text');
+            clonedChildElement.classList.remove(clonedChildElement.classList);
 
-            // Change the inner text of the child element
             clonedChildElement.innerText = "By entering your phone number and email address in this form, you agree to receive text messages and emails from us. Standard message and data rates may apply.";
-
 
             document.querySelector('.fsPagination').addEventListener('click', function() {
               setTimeout(() => {
                 if (document.querySelector('#fsPage4865954-3').classList.contains('fsHiddenPage')) {
-                  console.log('page 1 hidden');
                   setTimeout(() => {
                     clonedElement.style.display = 'none';
                   }, 300);
                 } else {
-                  console.log('page 1 not hidden');
                   clonedElement.style.display = 'block';
                 }
               }, 300);
