@@ -237,7 +237,7 @@ Template Post Type: page
             states.sort((a, b) => (a === 'Remote' ? -1 : b === 'Remote' ? 1 : 0));
 
             states.forEach(state => {
-              if (state !== null && state !== undefined) {
+              if (state !== null && state !== undefined && !state.includes('or')) {
                 var option = document.createElement('option');
                 var fullState = state.length == 2 ? stateAbbreviationToFullName(state) : state;
                 option.value = state;
