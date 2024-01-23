@@ -42,7 +42,7 @@
 			</div>
 		</div>
 		<div class="container">
-			<div class="grid grid-cols-2 lg:grid-flow-col lg:grid-cols-6 py-sp-12 gap-y-sp-6 lg:gap-y-0">
+			<div class="grid grid-cols-2 lg:grid-flow-col lg:grid-cols-6 py-sp-12 gap-sp-6">
 				<?php
 				if (have_rows('footer_navigation_item_new', 'option')) :
 					while (have_rows('footer_navigation_item_new', 'option')) : the_row();
