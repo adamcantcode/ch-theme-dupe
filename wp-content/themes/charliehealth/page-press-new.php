@@ -7,7 +7,7 @@ Template Name: Press page new
 
 <section class="section">
   <div class="container">
-    <div class="grid grid-cols-1 lg:grid-cols-[4fr_8fr] relative">
+    <div class="grid grid-cols-1 lg:grid-cols-[5fr_7fr] relative">
       <div class="bg-gradient-to-r from-white from-85% to-transparent z-20">
         <h1 class="mb-sp-2 text-[64px] leading-[1.1]"><?= get_the_title(); ?></h1>
         <p class="text-[14px] leading-[1.1] mb-0">Contact us at <a href="mailto:press@charliehealth.com?subject=Press%20inquiry">press@charliehealth.com</a></p>
