@@ -9,11 +9,11 @@ Template Name: Press page new
   <div class="container">
     <div class="grid grid-cols-1 lg:grid-cols-[5fr_7fr] relative">
       <div class="bg-gradient-to-r from-white from-85% to-transparent z-20">
-        <h1 class="mb-sp-2 text-[64px] leading-[1.1]"><?= get_the_title(); ?></h1>
+        <h1 class="mb-sp-2 lg:text-[64px] text-[42px] leading-[1.1]"><?= get_the_title(); ?></h1>
         <p class="text-[14px] leading-[1.1] mb-0">Contact us at <a href="mailto:press@charliehealth.com?subject=Press%20inquiry">press@charliehealth.com</a></p>
       </div>
-      <div id="marquee" class="absolute z-10 w-full overflow-hidden lg:flex lg:gap-sp-8 gap-sp-4 noshow mt-sp-4">
-        <div class="flex items-center justify-around flex-none min-w-full scroll lg:gap-sp-8 gap-sp-4">
+      <div id="marquee" class="z-10 flex w-full overflow-hidden lg:absolute gap-sp-8 mt-sp-4">
+        <div class="flex items-center justify-around flex-none min-w-full scroll gap-sp-8">
           <?php if (have_rows('publications')) :  while (have_rows('publications')) : the_row();  ?>
               <?php
               $image = get_sub_field('image');
@@ -23,7 +23,7 @@ Template Name: Press page new
           <?php endwhile;
           endif; ?>
         </div>
-        <div class="flex items-center justify-around flex-none min-w-full scroll lg:gap-sp-8 gap-sp-4">
+        <div class="flex items-center justify-around flex-none min-w-full scroll gap-sp-8">
           <?php if (have_rows('publications')) :  while (have_rows('publications')) : the_row();  ?>
               <?php
               $image = get_sub_field('image');
@@ -59,7 +59,7 @@ Template Name: Press page new
 </section>
 <section class="section-top bg-grey-warm">
   <div class="container">
-    <h2 class="lg:mb-12 text-[20px] leading-[1.1]">Charlie Health in the News</h2>
+    <h2 class="lg:mb-12 lg:text-[40px] text-[32px] leading-[1.1]">Charlie Health in the News</h2>
     <div class="grid lg:grid-cols-2 gap-sp-5 mb-sp-5">
       <?php
       $featured = get_field('featured_posts');
@@ -88,7 +88,7 @@ Template Name: Press page new
             </div>
             <div class="p-sp-4">
               <p class="mb-sp-5 text-[14px] leading-[1.5]"><?= $date; ?></p>
-              <h3 class="mb-0 text-[24px] font-heading leading-[1.3]"><a href="<?= $link; ?>" class="stretched-link hover:text-primary line-clamp-3" target="_blank"><?= get_the_title(); ?></a></h3>
+              <h3 class="mb-0 lg:text-[20px] text-[18px] font-heading leading-[1.3]"><a href="<?= $link; ?>" class="stretched-link hover:text-primary line-clamp-3" target="_blank"><?= get_the_title(); ?></a></h3>
             </div>
           </div>
       <?php wp_reset_postdata();
@@ -146,7 +146,7 @@ Template Name: Press page new
             </div>
             <div class="p-sp-4">
               <p class="mb-sp-5 text-[14px] leading-[1.5]"><?= $date; ?></p>
-              <h3 class="mb-0 text-[24px] font-heading leading-[1.3]"><a href="<?= $link; ?>" class="stretched-link hover:text-primary line-clamp-3" target="_blank"><?= get_the_title(); ?></a></h3>
+              <h3 class="mb-0 lg:text-[20px] text-[18px] font-heading leading-[1.3]"><a href="<?= $link; ?>" class="stretched-link hover:text-primary line-clamp-3" target="_blank"><?= get_the_title(); ?></a></h3>
             </div>
           </div>
       <?php wp_reset_postdata();
@@ -155,7 +155,7 @@ Template Name: Press page new
       ?>
     </div>
     <div class="flex">
-      <a role="button" class="w-full ml-auto ch-button button-primary justify-self-center lg:w-auto press-load-more-js lg:mt-sp-10 mt-sp-5">Load more</a>
+      <a role="button" class="w-full ml-auto ch-button button-primary justify-self-center lg:w-auto press-load-more-js lg:mt-sp-10 mt-sp-5 mb-sp-5 lg:mb-0">Load more</a>
     </div>
   </div>
 </section>
@@ -180,7 +180,7 @@ Template Name: Press page new
 </script>
 <section class="section bg-grey-warm">
   <div class="container">
-    <h2 class="lg:mb-12 text-[20px] leading-[1.1]">Our Expert Opinion</h2>
+    <h2 class="lg:mb-12 lg:text-[40px] text-[32px] leading-[1.1]">Our Expert Opinion</h2>
     <div class="grid lg:grid-cols-4 gap-sp-5">
       <?php
       $args = array(
@@ -225,7 +225,7 @@ Template Name: Press page new
             </div>
             <div class="p-sp-4">
               <p class="mb-sp-5 text-[14px] leading-[1.5]"><?= $date; ?></p>
-              <h3 class="mb-0 text-[24px] font-heading leading-[1.3]"><a href="<?= $link; ?>" class="stretched-link hover:text-primary line-clamp-3" target="_blank"><?= get_the_title(); ?></a></h3>
+              <h3 class="mb-0 lg:text-[20px] text-[18px] font-heading leading-[1.3]"><a href="<?= $link; ?>" class="stretched-link hover:text-primary line-clamp-3" target="_blank"><?= get_the_title(); ?></a></h3>
             </div>
           </div>
       <?php wp_reset_postdata();
@@ -264,7 +264,7 @@ Template Name: Press page new
 <section class="section">
   <div class="container">
     <div class="grid grid-cols-1 lg:grid-cols-[3fr_9fr] gap-sp-5">
-      <h2 class="lg:mb-12 text-[20px] leading-[1.1]">Press Releases & Published Research</h2>
+      <h2 class="lg:mb-12 lg:text-[40px] text-[32px] leading-[1.1]">Press Releases & Published Research</h2>
       <div class="">
         <?php
         $args = array(
@@ -290,7 +290,7 @@ Template Name: Press page new
         ?>
             <a href="<?= $link; ?>" target="_blank" class="grid no-underline border-b opacity-0 first:border-t py-sp-6 border-primary group press-release-js noshow not-loaded">
               <div class="flex items-center mb-sp-2 lg:mb-0">
-                <h3 class="inline-block mb-0 text-[20px] leading-[1.4] font-heading"><?= get_the_title(); ?><svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="group-hover:translate-x-[5px] transition-all duration-300 ml-sp-4 inline-block align-baseline flex-none">
+                <h3 class="inline-block mb-0 lg:text-[20px] text-[18px] leading-[1.4] font-heading"><?= get_the_title(); ?><svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="group-hover:translate-x-[5px] transition-all duration-300 ml-sp-4 inline-block align-baseline flex-none">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3431 0.278417L16.7071 6.32784C17.0976 6.69906 17.0976 7.30094 16.7071 7.67216L10.3431 13.7216C9.95262 14.0928 9.31946 14.0928 8.92893 13.7216C8.53841 13.3504 8.53841 12.7485 8.92893 12.3773L13.5858 7.95058H0V6.04942H13.5858L8.92893 1.62273C8.53841 1.25151 8.53841 0.64964 8.92893 0.278417C9.31946 -0.0928058 9.95262 -0.0928058 10.3431 0.278417Z" fill="#161A3D" />
                   </svg></h3>
               </div>
@@ -337,7 +337,7 @@ Template Name: Press page new
       <div class="flex justify-between">
         <div class="flex lg:flex-row flex-col gap-sp-4 items-center md:w-[unset] w-full ">
           <a href="https://www.dropbox.com/scl/fi/v0mh80ry4vhooc2psusol/Brand-Kit.zip?rlkey=hfkkorq8uuz50q2es3xwi32l9&dl=1" class="w-full ch-button button-primary inverted lg:w-auto" target="_self">Download .zip</a>
-          <p class="mb-0 text-[20px] leading-[1.5] text-white">Logos, photography, and more</p>
+          <p class="mb-0 lg:text-[20px] text-[18px] leading-[1.5] text-white">Logos, photography, and more</p>
         </div>
         <img width="150" height="148" decoding="async" src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/logos/shield.svg" alt="Charlie Health shield logo" class="w-[3rem] lg:block noshow" data-uw-rm-alt-original="Charlie Health shield logo" role="img" data-uw-rm-alt="ALT">
       </div>

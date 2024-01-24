@@ -34,7 +34,7 @@ $linkedinLink = get_field('linkedin_link');
       <?php endwhile;
       endif; ?>
     </div>
-    <div class="flex justify-around min-w-full scroll lg:gap-[150px] gap-sp-4 items-center flex-none">
+    <div class="flex justify-around min-w-full scroll lg:gap-[150px] gap-sp-8 items-center flex-none">
       <?php if (have_rows('publications')) :  while (have_rows('publications')) : the_row();  ?>
           <?php
           $image = get_sub_field('image');
