@@ -1918,6 +1918,10 @@ a.ch-button.button-tertiary.inverted:hover {
   max-height: 33vh;
 }
 
+.max-h-\[40px\]{
+  max-height: 40px;
+}
+
 .max-h-\[50px\]{
   max-height: 50px;
 }
@@ -1932,10 +1936,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .max-h-\[80vh\]{
   max-height: 80vh;
-}
-
-.max-h-\[30px\]{
-  max-height: 30px;
 }
 
 .min-h-\[300px\]{

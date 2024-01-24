@@ -12,24 +12,24 @@ Template Name: Press page new
         <h1 class="mb-sp-2 text-[64px] leading-[1.1]"><?= get_the_title(); ?></h1>
         <p class="text-[14px] leading-[1.1] mb-0">Contact us at <a href="mailto:press@charliehealth.com?subject=Press%20inquiry">press@charliehealth.com</a></p>
       </div>
-      <div id="marquee" class="absolute z-10 w-full overflow-hidden lg:flex lg:gap-sp-16 gap-sp-4 noshow mt-sp-4">
-        <div class="flex items-center justify-around flex-none min-w-full scroll lg:gap-sp-16 gap-sp-4">
+      <div id="marquee" class="absolute z-10 w-full overflow-hidden lg:flex lg:gap-sp-8 gap-sp-4 noshow mt-sp-4">
+        <div class="flex items-center justify-around flex-none min-w-full scroll lg:gap-sp-8 gap-sp-4">
           <?php if (have_rows('publications')) :  while (have_rows('publications')) : the_row();  ?>
               <?php
               $image = get_sub_field('image');
               $link = get_sub_field('link');
               ?>
-              <div><img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="opacity-30 max-h-[30px] max-w-[200px] w-full"></div>
+              <div><img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="opacity-30 max-h-[40px] max-w-[200px] w-full"></div>
           <?php endwhile;
           endif; ?>
         </div>
-        <div class="flex items-center justify-around flex-none min-w-full scroll lg:gap-sp-16 gap-sp-4">
+        <div class="flex items-center justify-around flex-none min-w-full scroll lg:gap-sp-8 gap-sp-4">
           <?php if (have_rows('publications')) :  while (have_rows('publications')) : the_row();  ?>
               <?php
               $image = get_sub_field('image');
               $link = get_sub_field('link');
               ?>
-              <div><img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="opacity-30 max-h-[30px] max-w-[200px] w-full"></div>
+              <div><img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="opacity-30 max-h-[40px] max-w-[200px] w-full"></div>
           <?php endwhile;
           endif; ?>
         </div>
