@@ -223,7 +223,7 @@ $nonDirectorArgs = array(
     if ($pageSubregions) :
       foreach ($pageSubregions as $pageSubregion) : ?>
         <h3><?= $pageSubregion; ?></h3>
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-sp-8 lg:gap-y-sp-16">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-sp-8 lg:gap-y-sp-16 mb-sp-16">
           <?php
           $custom_query = new WP_Query($directorArgs);
 
