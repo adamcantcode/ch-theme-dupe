@@ -4,9 +4,9 @@
 <div class="grid lg:grid-cols-[1fr_2fr]">
   <?php
   $args = array(
-    'post_type' => 'outreach-team-member',
-    'meta_key'      => 'is_director',
-    'meta_value'    => '1',
+    'post_type'      => 'outreach-team-member',
+    'meta_key'       => 'is_director',
+    'meta_value'     => '1',
     'posts_per_page' => -1
   );
 
@@ -16,13 +16,16 @@
     <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
         <?php
         $region = get_field('region', get_the_ID());
-        $title = get_field('title', get_the_ID());
-        $email = get_field('email', get_the_ID());
-        $phone = get_field('phone', get_the_ID());
+        $title  = get_field('title', get_the_ID());
+        $email  = get_field('email', get_the_ID());
+        $phone  = get_field('phone', get_the_ID());
         ?>
         <?php foreach ($region as $rd) : ?>
+          <?php 
+          $title = get_field('subregion_subregion', get_the_ID())[0] ?: $rd->post_title;
+          ?>
           <div class="border rounded-md border-card-border lg:p-sp-8 p-sp-4 hover:shadow-[inset_0_0_0_2px_#1d225f] shadow-[inset_0_0_0_2px_transparent] duration-300 relative mb-sp-8">
-            <h3><a href="<?= site_url('regions/' . $rd->post_name); ?>" class="stretched-link"><?= $rd->post_title; ?></a></h3>
+            <h3><a href="<?= site_url('regions/' . $rd->post_name); ?>" class="stretched-link"><?= $title; ?></a></h3>
             <h5><?= get_the_title(); ?></h5>
             <h5>Regional Director</h5>
             <h5><a href="mailto:<?= $email; ?>" class="relative z-10"><?= $email; ?></a></h5>
