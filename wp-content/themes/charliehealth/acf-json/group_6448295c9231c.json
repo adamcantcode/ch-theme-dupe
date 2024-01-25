@@ -8,7 +8,32 @@
             "name": "headshot",
             "aria-label": "",
             "type": "image",
-            "instructions": "Upload a 400x400 image.",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_644829a645885",
+            "label": "Title",
+            "name": "title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -16,16 +41,11 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
-            "library": "all",
-            "min_width": 400,
-            "min_height": 400,
-            "min_size": "",
-            "max_width": 400,
-            "max_height": 400,
-            "max_size": "",
-            "mime_types": "",
-            "preview_size": "medium"
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_6470e5721042f",
@@ -33,7 +53,7 @@
             "name": "is_director",
             "aria-label": "",
             "type": "true_false",
-            "instructions": "Selecting yes will make this director show up as a contact on the homepage<br><code>outreach.charliehealth.com<\/code>",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -48,26 +68,6 @@
             "ui": 1
         },
         {
-            "key": "field_644829a645885",
-            "label": "Title",
-            "name": "title",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
             "key": "field_644829e345886",
             "label": "Phone",
             "name": "phone",
@@ -77,7 +77,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -94,10 +94,10 @@
             "aria-label": "",
             "type": "email",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -116,7 +116,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -129,17 +129,17 @@
             "name": "why_statement",
             "aria-label": "",
             "type": "textarea",
-            "instructions": "Note: do not include equation marks, they are automatically added.",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
             "maxlength": "",
-            "rows": 4,
+            "rows": "",
             "placeholder": "",
             "new_lines": ""
         },
@@ -153,13 +153,13 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
             "maxlength": "",
-            "rows": 4,
+            "rows": "",
             "placeholder": "",
             "new_lines": ""
         },
@@ -169,20 +169,18 @@
             "name": "region",
             "aria-label": "",
             "type": "relationship",
-            "instructions": "This will determine where the Outreach Member will appear<br><code>outreach.charliehealth.com\/regions\/{region}<\/code>",
-            "required": 1,
+            "instructions": "",
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
             "post_type": [
                 "region"
             ],
-            "post_status": [
-                "publish"
-            ],
+            "post_status": "",
             "taxonomy": "",
             "filters": [
                 "search"
@@ -190,9 +188,7 @@
             "return_format": "object",
             "min": "",
             "max": "",
-            "elements": [
-                "featured_image"
-            ]
+            "elements": ""
         },
         {
             "key": "field_64482b1e4588b",
@@ -200,11 +196,11 @@
             "name": "state",
             "aria-label": "",
             "type": "select",
-            "instructions": "These states will appear under the individuals title",
-            "required": 1,
+            "instructions": "",
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -263,7 +259,6 @@
                 "Virgin Islands": "Virgin Islands",
                 "Washington": "Washington",
                 "West Virginia": "West Virginia",
-                "West": "West",
                 "Wisconsin": "Wisconsin",
                 "Wyoming": "Wyoming"
             },
@@ -274,6 +269,28 @@
             "ui": 1,
             "ajax": 0,
             "placeholder": ""
+        },
+        {
+            "key": "field_65b179e6a8c62",
+            "label": "Subregion",
+            "name": "subregion",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "field_65b178b8c4fe4"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
         }
     ],
     "location": [
@@ -294,5 +311,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1692039249
+    "modified": 1706197734
 }

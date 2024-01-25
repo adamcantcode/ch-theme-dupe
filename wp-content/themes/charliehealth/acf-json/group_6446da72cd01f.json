@@ -126,6 +126,36 @@
             "ui": 1,
             "ajax": 1,
             "placeholder": ""
+        },
+        {
+            "key": "field_65b178b8c4fe4",
+            "label": "Subregion",
+            "name": "subregion",
+            "aria-label": "",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "North Texas": "North Texas",
+                "South Texas": "South Texas",
+                "North Florida": "North Florida",
+                "South Florida": "South Florida",
+                "North California": "North California",
+                "South California": "South California"
+            },
+            "default_value": [],
+            "return_format": "value",
+            "allow_custom": 0,
+            "layout": "vertical",
+            "toggle": 0,
+            "save_custom": 0,
+            "custom_choice_button_text": "Add new choice"
         }
     ],
     "location": [
@@ -146,5 +176,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1682372347
+    "modified": 1706194021
 }

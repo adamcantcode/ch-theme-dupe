@@ -2372,10 +2372,6 @@ a.ch-button.button-tertiary.inverted:hover {
   row-gap: 1rem;
 }
 
-.gap-y-sp-6{
-  row-gap: 1.5rem;
-}
-
 .gap-y-sp-8{
   row-gap: 2rem;
 }
@@ -5858,10 +5854,6 @@ mark{
 
   .lg\:gap-sp-8{
     gap: 2rem;
-  }
-
-  .lg\:gap-0{
-    gap: 0px;
   }
 
   .lg\:gap-x-sp-16{

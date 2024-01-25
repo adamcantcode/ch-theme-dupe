@@ -1,9 +1,11 @@
 <?php
 get_header();
 
-$regionImage = get_field('region_image');
+$regionImage       = get_field('region_image');
 $regionInformation = get_field('region_information');
-$statesServed = get_field('states_served');
+$statesServed      = get_field('states_served');
+$pageSubregions    = get_field('subregion');
+
 
 $statesServedList = implode(", ", $statesServed);
 $lastComma = strrpos($statesServedList, ',');
@@ -217,93 +219,194 @@ $nonDirectorArgs = array(
 <section id="team" class="section">
   <div class="container">
     <h2>Meet our team</h2>
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-sp-8 lg:gap-y-sp-16">
-      <?php
-      $custom_query = new WP_Query($directorArgs);
+    <?php
+    if ($pageSubregions) :
+      foreach ($pageSubregions as $pageSubregion) : ?>
+        <h3><?= $pageSubregion; ?></h3>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-sp-8 lg:gap-y-sp-16">
+          <?php
+          $custom_query = new WP_Query($directorArgs);
 
-      if ($custom_query->have_posts()) : while ($custom_query->have_posts()) : $custom_query->the_post();
-          $title = get_field('title');
-          $state = get_field('state');
-          $state = implode(", ", $state);
-          $lastComma = strrpos($state, ',');
-          if ($lastComma !== false) {
-            $state = substr_replace($state, ' and', $lastComma, 1);
-          }
-          $phone = get_field('phone');
-          $email = get_field('email');
-          $headshot = get_field('headshot');
-          if ($headshot) {
-            $altText = $headshot['alt'];
-          } else {
-            $altText = 'Headshot of ' . get_the_title();
-          }
-      ?>
-          <div class="grid justify-items-start gap-sp-1">
-            <div class="cursor-pointer" data-modal-id="<?= get_the_ID(); ?>">
-              <img src="<?= $headshot['url'] ?: site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="rounded-[50%] mb-sp-4 w-[240px] hover:shadow-lg duration-300">
-              <h4 class="underline"><?= get_the_title(); ?></h4>
-            </div>
-            <h5 class="mb-0"><?= $title; ?></h5>
-            <h5 class="mb-0"><?= $state; ?></h5>
-            <?php if ($phone) : ?>
-              <a href="tel:+<?= $phone; ?>" class="inline-block no-underline break-all">
-                <h5 class="mb-0"><?= $phone; ?></h5>
-              </a>
-            <?php endif; ?>
-            <a href="mailto:<?= $email; ?>" class="inline-block no-underline break-all">
-              <h5 class="mb-0"><?= $email; ?></h5>
-            </a>
-          </div>
-      <?php
-        endwhile;
-        wp_reset_postdata();
-      endif;
-      ?>
-      <?php
-      $custom_query = new WP_Query($nonDirectorArgs);
+          if ($custom_query->have_posts()) : while ($custom_query->have_posts()) : $custom_query->the_post();
+              $title = get_field('title');
+              $state = get_field('state');
+              $state = implode(", ", $state);
+              $lastComma = strrpos($state, ',');
+              if ($lastComma !== false) {
+                $state = substr_replace($state, ' and', $lastComma, 1);
+              }
+              $phone = get_field('phone');
+              $email = get_field('email');
+              $headshot = get_field('headshot');
+              if ($headshot) {
+                $altText = $headshot['alt'];
+              } else {
+                $altText = 'Headshot of ' . get_the_title();
+              }
+              $subregion = get_field('subregion_subregion');
+          ?>
+              <?php if ($subregion[0] === $pageSubregion) : ?>
+                <div class="grid justify-items-start gap-sp-1">
+                  <div class="cursor-pointer" data-modal-id="<?= get_the_ID(); ?>">
+                    <img src="<?= $headshot['url'] ?: site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="rounded-[50%] mb-sp-4 w-[240px] hover:shadow-lg duration-300">
+                    <h4 class="underline"><?= get_the_title(); ?></h4>
+                  </div>
+                  <h5 class="mb-0"><?= $title; ?></h5>
+                  <h5 class="mb-0"><?= $state; ?></h5>
+                  <?php if ($phone) : ?>
+                    <a href="tel:+<?= $phone; ?>" class="inline-block no-underline break-all">
+                      <h5 class="mb-0"><?= $phone; ?></h5>
+                    </a>
+                  <?php endif; ?>
+                  <a href="mailto:<?= $email; ?>" class="inline-block no-underline break-all">
+                    <h5 class="mb-0"><?= $email; ?></h5>
+                  </a>
+                </div>
+              <?php endif; ?>
+          <?php
+            endwhile;
+            wp_reset_postdata();
+          endif;
+          ?>
+          <?php
+          $custom_query = new WP_Query($nonDirectorArgs);
 
-      if ($custom_query->have_posts()) : while ($custom_query->have_posts()) : $custom_query->the_post();
-          $title = get_field('title');
-          $state = get_field('state');
-          $state = implode(", ", $state);
-          $lastComma = strrpos($state, ',');
-          if ($lastComma !== false) {
-            $state = substr_replace($state, ' and', $lastComma, 1);
-          }
-          $phone = get_field('phone');
-          $email = get_field('email');
-          $headshot = get_field('headshot');
-          if ($headshot) {
-            $altText = $headshot['alt'];
-          } else {
-            $altText = 'Headshot of ' . get_the_title();
-          }
-      ?>
-          <div class="grid justify-items-start gap-sp-1">
-            <div class="cursor-pointer" data-modal-id="<?= get_the_ID(); ?>">
-              <img src="<?= $headshot['url'] ?: site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="rounded-[50%] mb-sp-4 w-[240px] hover:shadow-lg duration-300">
-              <h4 class="underline"><?= get_the_title(); ?></h4>
-            </div>
-            <h5 class="mb-0"><?= $title; ?></h5>
-            <h5 class="mb-0"><?= $state; ?></h5>
-            <?php if ($phone) : ?>
-              <a href="tel:+<?= $phone; ?>" class="inline-block no-underline break-all">
-                <h5 class="mb-0"><?= $phone; ?></h5>
-              </a>
+          if ($custom_query->have_posts()) : while ($custom_query->have_posts()) : $custom_query->the_post();
+              $title = get_field('title');
+              $state = get_field('state');
+              $state = implode(", ", $state);
+              $lastComma = strrpos($state, ',');
+              if ($lastComma !== false) {
+                $state = substr_replace($state, ' and', $lastComma, 1);
+              }
+              $phone = get_field('phone');
+              $email = get_field('email');
+              $headshot = get_field('headshot');
+              if ($headshot) {
+                $altText = $headshot['alt'];
+              } else {
+                $altText = 'Headshot of ' . get_the_title();
+              }
+              $subregion = get_field('subregion_subregion');
+          ?>
+              <?php if ($subregion[0] === $pageSubregion) : ?>
+                <div class="grid justify-items-start gap-sp-1">
+                  <div class="cursor-pointer" data-modal-id="<?= get_the_ID(); ?>">
+                    <img src="<?= $headshot['url'] ?: site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="rounded-[50%] mb-sp-4 w-[240px] hover:shadow-lg duration-300">
+                    <h4 class="underline"><?= get_the_title(); ?></h4>
+                  </div>
+                  <h5 class="mb-0"><?= $title; ?></h5>
+                  <h5 class="mb-0"><?= $state; ?></h5>
+                  <?php if ($phone) : ?>
+                    <a href="tel:+<?= $phone; ?>" class="inline-block no-underline break-all">
+                      <h5 class="mb-0"><?= $phone; ?></h5>
+                    </a>
+                  <?php endif; ?>
+                  <a href="mailto:<?= $email; ?>" class="inline-block no-underline break-all">
+                    <h5 class="mb-0"><?= $email; ?></h5>
+                  </a>
+                </div>
+              <?php endif; ?>
+          <?php
+            endwhile;
+            wp_reset_postdata();
+          endif;
+          ?>
+        </div>
+      <?php endforeach; ?>
+    <?php else : ?>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-sp-8 lg:gap-y-sp-16">
+        <?php
+        $custom_query = new WP_Query($directorArgs);
+
+        if ($custom_query->have_posts()) : while ($custom_query->have_posts()) : $custom_query->the_post();
+            $title = get_field('title');
+            $state = get_field('state');
+            $state = implode(", ", $state);
+            $lastComma = strrpos($state, ',');
+            if ($lastComma !== false) {
+              $state = substr_replace($state, ' and', $lastComma, 1);
+            }
+            $phone = get_field('phone');
+            $email = get_field('email');
+            $headshot = get_field('headshot');
+            if ($headshot) {
+              $altText = $headshot['alt'];
+            } else {
+              $altText = 'Headshot of ' . get_the_title();
+            }
+        ?>
+            <?php if ($subregion === $subregion) : ?>
+              <div class="grid justify-items-start gap-sp-1">
+                <div class="cursor-pointer" data-modal-id="<?= get_the_ID(); ?>">
+                  <img src="<?= $headshot['url'] ?: site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="rounded-[50%] mb-sp-4 w-[240px] hover:shadow-lg duration-300">
+                  <h4 class="underline"><?= get_the_title(); ?></h4>
+                </div>
+                <h5 class="mb-0"><?= $title; ?></h5>
+                <h5 class="mb-0"><?= $state; ?></h5>
+                <?php if ($phone) : ?>
+                  <a href="tel:+<?= $phone; ?>" class="inline-block no-underline break-all">
+                    <h5 class="mb-0"><?= $phone; ?></h5>
+                  </a>
+                <?php endif; ?>
+                <a href="mailto:<?= $email; ?>" class="inline-block no-underline break-all">
+                  <h5 class="mb-0"><?= $email; ?></h5>
+                </a>
+              </div>
             <?php endif; ?>
-            <a href="mailto:<?= $email; ?>" class="inline-block no-underline break-all">
-              <h5 class="mb-0"><?= $email; ?></h5>
-            </a>
-          </div>
-      <?php
-        endwhile;
-        wp_reset_postdata();
-      endif;
-      ?>
-    </div>
+        <?php
+          endwhile;
+          wp_reset_postdata();
+        endif;
+        ?>
+        <?php
+        $custom_query = new WP_Query($nonDirectorArgs);
+
+        if ($custom_query->have_posts()) : while ($custom_query->have_posts()) : $custom_query->the_post();
+            $title = get_field('title');
+            $state = get_field('state');
+            $state = implode(", ", $state);
+            $lastComma = strrpos($state, ',');
+            if ($lastComma !== false) {
+              $state = substr_replace($state, ' and', $lastComma, 1);
+            }
+            $phone = get_field('phone');
+            $email = get_field('email');
+            $headshot = get_field('headshot');
+            if ($headshot) {
+              $altText = $headshot['alt'];
+            } else {
+              $altText = 'Headshot of ' . get_the_title();
+            }
+        ?>
+            <?php if ($subregion === $subregion) : ?>
+              <div class="grid justify-items-start gap-sp-1">
+                <div class="cursor-pointer" data-modal-id="<?= get_the_ID(); ?>">
+                  <img src="<?= $headshot['url'] ?: site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="rounded-[50%] mb-sp-4 w-[240px] hover:shadow-lg duration-300">
+                  <h4 class="underline"><?= get_the_title(); ?></h4>
+                </div>
+                <h5 class="mb-0"><?= $title; ?></h5>
+                <h5 class="mb-0"><?= $state; ?></h5>
+                <?php if ($phone) : ?>
+                  <a href="tel:+<?= $phone; ?>" class="inline-block no-underline break-all">
+                    <h5 class="mb-0"><?= $phone; ?></h5>
+                  </a>
+                <?php endif; ?>
+                <a href="mailto:<?= $email; ?>" class="inline-block no-underline break-all">
+                  <h5 class="mb-0"><?= $email; ?></h5>
+                </a>
+              </div>
+            <?php endif; ?>
+        <?php
+          endwhile;
+          wp_reset_postdata();
+        endif;
+        ?>
+      </div>
+    <?php endif; ?>
   </div>
 </section>
-
+<!-- MODALS -->
 <?php
 $custom_query = new WP_Query($directorArgs);
 
