@@ -1743,6 +1743,10 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-top: 2rem;
 }
 
+.mt-sp-10{
+  margin-top: 2.5rem;
+}
+
 .line-clamp-3{
   overflow: hidden;
   display: -webkit-box;
@@ -3154,10 +3158,6 @@ a.ch-button.button-tertiary.inverted:hover {
   font-size: 20px;
 }
 
-.text-\[24px\]{
-  font-size: 24px;
-}
-
 .text-\[28px\]{
   font-size: 28px;
 }
@@ -3180,10 +3180,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .text-\[56px\]{
   font-size: 56px;
-}
-
-.text-\[64px\]{
-  font-size: 64px;
 }
 
 .text-h1{
@@ -5575,6 +5571,10 @@ mark{
 
   .lg\:mt-sp-8{
     margin-top: 2rem;
+  }
+
+  .lg\:mt-sp-4{
+    margin-top: 1rem;
   }
 
   .lg\:block{

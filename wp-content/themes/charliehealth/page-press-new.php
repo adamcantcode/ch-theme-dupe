@@ -12,7 +12,7 @@ Template Name: Press page new
         <h1 class="mb-sp-2 lg:text-[64px] text-[42px] leading-[1.1]"><?= get_the_title(); ?></h1>
         <p class="text-[14px] leading-[1.1] mb-0">Contact us at <a href="mailto:press@charliehealth.com?subject=Press%20inquiry">press@charliehealth.com</a></p>
       </div>
-      <div id="marquee" class="z-10 flex w-full overflow-hidden lg:absolute gap-sp-8 mt-sp-4">
+      <div id="marquee" class="z-10 flex w-full overflow-hidden lg:absolute gap-sp-8 mt-sp-10 lg:mt-sp-4">
         <div class="flex items-center justify-around flex-none min-w-full scroll gap-sp-8">
           <?php if (have_rows('publications')) :  while (have_rows('publications')) : the_row();  ?>
               <?php
