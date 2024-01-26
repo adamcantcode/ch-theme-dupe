@@ -622,27 +622,12 @@ var simplemaps_usmap_mapdata={
     "1": {
       states: [
         "FL",
-        "GA",
         "SC"
       ],
-      name: "Southeast <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
+      name: "Southeast <img src=\"https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
       zoomable: "no",
       color: "#1D225F",
       url: "/regions/southeast",
-      description: "Learn more",
-      hover_color: "#101334"
-    },
-    "2": {
-      states: [
-        "AZ",
-        "UT",
-        "NV",
-        "CO"
-      ],
-      name: "Southwest <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
-      zoomable: "no",
-      color: "#1D225F",
-      url: "/regions/southwest",
       description: "Learn more",
       hover_color: "#101334"
     },
@@ -650,7 +635,7 @@ var simplemaps_usmap_mapdata={
       states: [
         "CA"
       ],
-      name: "California <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
+      name: "California <img src=\"https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
       zoomable: "no",
       color: "#1D225F",
       url: "/regions/california",
@@ -659,7 +644,6 @@ var simplemaps_usmap_mapdata={
     },
     "4": {
       states: [
-        "PA",
         "DE",
         "NJ",
         "MD"
@@ -667,7 +651,7 @@ var simplemaps_usmap_mapdata={
       zoomable: "no",
       color: "#1D225F",
       url: "/regions/mid-atlantic",
-      name: "Mid-Atlantic <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
+      name: "Mid-Atlantic <img src=\"https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
       description: "Learn more",
       hover_color: "#101334"
     },
@@ -675,7 +659,7 @@ var simplemaps_usmap_mapdata={
       states: [
         "NY"
       ],
-      name: "Northeast <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
+      name: "Northeast <img src=\"https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
       url: "/regions/northeast",
       zoomable: "no",
       color: "#1D225F",
@@ -688,7 +672,7 @@ var simplemaps_usmap_mapdata={
         "ID",
         "WY"
       ],
-      name: "Pacific Northwest <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
+      name: "Pacific Northwest <img src=\"https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
       zoomable: "no",
       color: "#1D225F",
       url: "/regions/pacific-northwest",
@@ -700,7 +684,7 @@ var simplemaps_usmap_mapdata={
         "OH",
         "MI"
       ],
-      name: "Midwest <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
+      name: "Midwest <img src=\"https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
       zoomable: "no",
       color: "#1D225F",
       url: "/regions/midwest",
@@ -711,9 +695,10 @@ var simplemaps_usmap_mapdata={
       states: [
         "WA",
         "MT",
-        "ND"
+        "ND",
+        "AK"
       ],
-      name: "Mountain <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
+      name: "Mountain <img src=\"https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
       color: "#1D225F",
       hover_color: "#101334",
       description: "Learn more",
@@ -725,7 +710,7 @@ var simplemaps_usmap_mapdata={
         "IA",
         "MO"
       ],
-      name: "Central <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
+      name: "Central <img src=\"https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
       color: "#1D225F",
       hover_color: "#101334",
       description: "Learn more",
@@ -738,7 +723,7 @@ var simplemaps_usmap_mapdata={
         "IN",
         "WI"
       ],
-      name: "Heartland <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
+      name: "Heartland <img src=\"https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
       color: "#1D225F",
       hover_color: "#101334",
       description: "Learn more",
@@ -750,11 +735,57 @@ var simplemaps_usmap_mapdata={
         "TN",
         "NC"
       ],
-      name: "Smoky Mountains <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
+      name: "Smoky Mountains <img src=\"https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
       color: "#1D225F",
       hover_color: "#101334",
       description: "Learn more",
       url: "/regions/smoky-mountains",
+      zoomable: "no"
+    },
+    "12": {
+      states: [
+        "UT",
+        "CO"
+      ],
+      name: "Rockies <img src=\"https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
+      color: "#1D225F",
+      hover_color: "#101334",
+      description: "Learn more",
+      url: "/regions/rockies",
+      zoomable: "no"
+    },
+    "13": {
+      states: [
+        "GA"
+      ],
+      name: "Georgia <img src=\"https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
+      color: "#1D225F",
+      hover_color: "#101334",
+      description: "Learn more",
+      url: "/regions/georgia",
+      zoomable: "no"
+    },
+    "14": {
+      states: [
+        "AZ",
+        "NV"
+      ],
+      name: "Desert <img src=\"https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
+      color: "#1D225F",
+      hover_color: "#101334",
+      description: "Learn more",
+      url: "/regions/desert",
+      zoomable: "no"
+    },
+    "15": {
+      states: [
+        "PA"
+      ],
+      name: "Pennsylvania <img src=\"https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
+      color: "#1D225F",
+      hover_color: "#101334",
+      description: "Learn more",
+      url: "/regions/pennsylvania",
       zoomable: "no"
     }
   }
