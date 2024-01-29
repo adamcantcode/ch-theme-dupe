@@ -1,30 +1,28 @@
 <div class="grid grid-cols-1 lg:grid-cols-2">
-  <div>
-    <div class="border-b border-opacity-25 border-card-border">
-      <h2 class="mb-0 text-white lg:px-sp-8 py-sp-4">National Averages</h2>
+  <div class="py-sp-12 pl-sp-12 bg-primary-200 lg:rounded-tl-[12px] lg:rounded-bl-[12px] lg:rounded-br-none lg:rounded-tr-none rounded-t-[12px]">
+    <div class="grid grid-cols-1 lg:grid-cols-2">
+      <div class="border-b pr-sp-12 border-pale-blue-300">
+        <h3 class="text-white">Standard approach</h3>
+        <h4 class="text-white">Limited support</h4>
+        <p class="text-white">Mental health crises can happen at any time, but many treatment options are only available during business hours and lack triage care and/or trained professionals.</p>
+      </div>
+      <div class="border-b pr-sp-12 border-pale-blue-300">
+        <h3 class="text-white">Standard approach</h3>
+        <h4 class="text-white">Limited support</h4>
+        <p class="text-white">Mental health crises can happen at any time, but many treatment options are only available during business hours and lack triage care and/or trained professionals.</p>
+      </div>
     </div>
-    <?php if (have_rows('left_column')) : while (have_rows('left_column')) : the_row(); ?>
-        <div class="flex items-center gap-sp-4 lg:px-sp-8 py-sp-4">
-          <div class="rounded-[50%] bg-white aspect-square lg:h-sp-16 h-sp-14 p-sp-4 flex items-center justify-center">
-            <h3 class="mb-0 leading-none text-center"><?= get_sub_field('statistic'); ?></h3>
-          </div>
-          <p class="mb-0 text-white"><?= get_sub_field('description'); ?></p>
-        </div>
-    <?php endwhile;
-    endif; ?>
   </div>
-  <div class="border-opacity-25 lg:border-l border-card-border">
-    <div class="border-b border-opacity-25 border-card-border">
-      <h2 class="mb-0 text-white lg:px-sp-8 py-sp-4">Charlie Health</h2>
+  <div class="bg-white py-sp-12 pr-sp-12 lg:rounded-tr-[12px] lg:rounded-br-[12px] lg:rounded-bl-none  lg:rounded-tl-none rounded-b-[12px]">
+    <div class="border-b pl-sp-12 border-pale-blue-300">
+      <h3 class="">Standard approach</h3>
+      <h4 class="">Limited support</h4>
+      <p class="">Mental health crises can happen at any time, but many treatment options are only available during business hours and lack triage care and/or trained professionals.</p>
     </div>
-    <?php if (have_rows('right_column')) : while (have_rows('right_column')) : the_row(); ?>
-        <div class="flex items-center gap-sp-4 lg:px-sp-8 py-sp-4">
-          <div class="rounded-[50%] bg-bright-teal aspect-square lg:h-sp-16 h-sp-14 p-sp-4 flex items-center justify-center">
-            <h3 class="mb-0"><?= get_sub_field('statistic'); ?></h3>
-          </div>
-          <p class="mb-0 text-white"><?= get_sub_field('description'); ?></p>
-        </div>
-    <?php endwhile;
-    endif; ?>
+    <div class="border-b pl-sp-12 border-pale-blue-300">
+      <h3 class="">Standard approach</h3>
+      <h4 class="">Limited support</h4>
+      <p class="">Mental health crises can happen at any time, but many treatment options are only available during business hours and lack triage care and/or trained professionals. Mental health crises can happen at any time, but many treatment options are only available during business hours and lack triage care and/or trained professionals. Mental health crises can happen at any time, but many treatment options are only available during business hours and lack triage care and/or trained professionals.</p>
+    </div>
   </div>
 </div>
