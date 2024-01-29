@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "acf/comparison-table",
+  "title": "Comparison Table",
+  "description": "Table for comparison of services",
+  "category": "custom",
+  "icon": "chart-area",
+  "style": "file:./index.css",
+  "script": "file:./index.js",
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "comparison-table.php"
+  },
+  "supports": {}
+}

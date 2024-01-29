@@ -109,6 +109,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/values');
   register_block_type(__DIR__ . '/build/blocks/testimonials-careers');
   register_block_type(__DIR__ . '/build/blocks/top-startup');
+  register_block_type(__DIR__ . '/build/blocks/comparison-table');
 }
 add_action('init', 'register_acf_blocks', 5);
 
