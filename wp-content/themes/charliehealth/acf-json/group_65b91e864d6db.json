@@ -109,7 +109,7 @@
                 {
                     "key": "field_65b921fd1b48d",
                     "label": "Right Headline",
-                    "name": "left_headline",
+                    "name": "right_headline",
                     "aria-label": "",
                     "type": "text",
                     "instructions": "",
@@ -169,5 +169,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1706632371
+    "modified": 1706632781
 }
