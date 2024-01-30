@@ -3303,6 +3303,10 @@ a.ch-button.button-tertiary.inverted:hover {
   line-height: 1rem;
 }
 
+.text-\[25px\]{
+  font-size: 25px;
+}
+
 .font-bold{
   font-weight: 700;
 }
@@ -6265,9 +6269,25 @@ ul.alert li {
   padding-bottom: 1.5rem;
 }
 
+.\[\&_\*\]\:text-\[14px\] *{
+  font-size: 14px;
+}
+
+.\[\&_\*\]\:leading-\[1\.6\] *{
+  line-height: 1.6;
+}
+
 .\[\&_\*\]\:text-white *{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.\[\&_p\]\:mb-sp-4 p{
+  margin-bottom: 1rem;
+}
+
+.\[\&_p\]\:mb-sp-3 p{
+  margin-bottom: 0.75rem;
 }
 /*!*******************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/@wordpress/scripts/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/swiper/swiper-bundle.min.css ***!
