@@ -6,7 +6,7 @@
       </svg>
       <a href="tel:741741" class="no-underline lg:text-[28px] text-[20px] leading-[1.6] stretched-link hover:text-white">741-741</a>
     </div>
-    <p>If you’re in emotional distress, text HOME to connect with a counselor immediately.</p>
+    <p class="text-[14px] leading-[1.6]">If you’re in emotional distress, text HOME to connect with a counselor immediately.</p>
   </div>
   <div>
     <div class="relative flex flex-row items-center gap-sp-4 mb-sp-2">
@@ -15,7 +15,7 @@
       </svg>
       <a href="tel:988" class="no-underline lg:text-[28px] text-[20px] leading-[1.6] stretched-link hover:text-white">988</a>
     </div>
-    <p>Call or text the National Suicide Prevention Lifeline for 24/7 emotional support.</p>
+    <p class="text-[14px] leading-[1.6]">Call or text the National Suicide Prevention Lifeline for 24/7 emotional support.</p>
   </div>
   <div>
     <div class="relative flex flex-row items-center gap-sp-4 mb-sp-2">
@@ -24,7 +24,7 @@
       </svg>
       <a href="tel:911" class="no-underline lg:text-[28px] text-[20px] leading-[1.6] stretched-link hover:text-white">911</a>
     </div>
-    <p>If you’re having a medical or mental health emergency, call 911 or go to your local ER.</p>
+    <p class="text-[14px] leading-[1.6]">If you’re having a medical or mental health emergency, call 911 or go to your local ER.</p>
   </div>
   <div>
     <div class="relative flex flex-row items-center gap-sp-4 mb-sp-2">
@@ -33,6 +33,6 @@
       </svg>
       <a href="tel:8007997233" class="no-underline lg:text-[28px] text-[20px] leading-[1.6] stretched-link hover:text-white">800.799.SAFE (7233)</a>
     </div>
-    <p>If you’re experiencing intimate partner violence, call the National Domestic Violence Hotline 24/7.</p>
+    <p class="text-[14px] leading-[1.6]">If you’re experiencing intimate partner violence, call the National Domestic Violence Hotline 24/7.</p>
   </div>
 </div>
