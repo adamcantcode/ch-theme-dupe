@@ -42,6 +42,19 @@ $blockClasses .= $background . ' ';
     </div>
   </div>
 <?php endif; ?>
+<?php if ($style === 'value_image') : ?>
+  <div class="grid gap-sp-5 grid-cols-1 lg:grid-cols-[4fr_8fr]">
+    <img src="<?= get_field('iamge')['url']; ?>" alt="<?= get_field('iamge')['alt']; ?>">
+    <div class="flex justify-center rounded-sm lg:p-sp-14 p-sp-6 mb-sp-6 <?= $blockClasses; ?>">
+      <div class="flex flex-col items-center justify-center text-center max-w-[37.5rem]">
+        <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health shield logo" class="w-[3rem] mb-sp-5">
+        <p class="text-darkest-blue lg:text-[2.5rem] text-h2-lg lg:leading-tight mb-sp-5 font-heading-serif"><?= $heading; ?></p>
+        <p class="text-darkest-blue"><?= $subhead; ?></p>
+        <?php include(get_template_directory() . '/includes/button-group.php'); ?>
+      </div>
+    </div>
+  </div>
+<?php endif; ?>
 <?php if ($style === 'large') : ?>
   <div class="rounded-sm <?= $blockClasses; ?>">
     <div class="text-white lg:text-[56px] text-h2-lg lg:leading-[1.2] lg:mb-sp-16 mb-sp-12 font-heading-serif max-w-[850px] antialiased"><?= $heading; ?></div>

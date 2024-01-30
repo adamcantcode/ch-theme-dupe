@@ -18,6 +18,7 @@
             },
             "choices": {
                 "value": "Value Prop",
+                "value_image": "Value Prop with image",
                 "full": "Full Width",
                 "newsletter": "Newsletter",
                 "dbt": "DBT Skills Book",
@@ -30,6 +31,39 @@
             "ui": 0,
             "ajax": 0,
             "placeholder": ""
+        },
+        {
+            "key": "field_65b949d99c9ef",
+            "label": "Image",
+            "name": "image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_645abb1af2ab6",
+                        "operator": "==",
+                        "value": "value_image"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
         },
         {
             "key": "field_64458fc822837",
@@ -120,5 +154,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1701809011
+    "modified": 1706641909
 }
