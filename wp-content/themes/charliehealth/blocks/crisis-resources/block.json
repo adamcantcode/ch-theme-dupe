@@ -1,8 +1,8 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
-  "name": "acf/approach-grid-block",
-  "title": "Approach Grid",
-  "description": "CH Approach branding with link",
+  "name": "acf/crisis-resources-block",
+  "title": "Crisis Resources",
+  "description": "Grid of Crisis Resources",
   "style": "file:./index.css",
   "script": "file:./index.js",
   "category": "custom",
@@ -10,7 +10,7 @@
   "apiVersion": 2,
   "acf": {
     "mode": "preview",
-    "renderTemplate": "approach-grid.php"
+    "renderTemplate": "crisis-resources.php"
   },
   "supports": {}
 }
