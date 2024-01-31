@@ -6090,6 +6090,15 @@ ul.alert li {
     border-left-width: 1px;
   }
 
+  .lg\:border-b{
+    border-bottom-width: 1px;
+  }
+
+  .lg\:border-pale-blue-300{
+    --tw-border-opacity: 1;
+    border-color: rgb(143 146 205 / var(--tw-border-opacity));
+  }
+
   .lg\:bg-\[linear-gradient\(\#fead80\2c \#e2deca_50\%\2c \#bdc6fc\)\]{
     background-image: linear-gradient(#fead80,#e2deca 50%,#bdc6fc);
   }
@@ -6291,6 +6300,9 @@ ul.alert li {
   }
   .lg\:last\:col-start-auto:last-child{
     grid-column-start: auto;
+  }
+  .group:nth-last-child(-n+2) .lg\:group-\[\&\:nth-last-child\(-n\+2\)\]\:border-none{
+    border-style: none;
   }
 }
 
