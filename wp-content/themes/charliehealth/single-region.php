@@ -248,7 +248,7 @@ $nonDirectorArgs = array(
               <?php if ($subregion[0] === $pageSubregion) : ?>
                 <div class="grid justify-items-start gap-sp-1">
                   <div class="cursor-pointer" data-modal-id="<?= get_the_ID(); ?>">
-                    <img src="<?= $headshot['url'] ?: site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="rounded-[50%] mb-sp-4 w-[240px] hover:shadow-lg duration-300">
+                    <img src="<?= $headshot['url'] ?: site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="rounded-circle mb-sp-4 w-[240px] hover:shadow-lg duration-300">
                     <h4 class="underline"><?= get_the_title(); ?></h4>
                   </div>
                   <h5 class="mb-0"><?= $title; ?></h5>
@@ -292,7 +292,7 @@ $nonDirectorArgs = array(
               <?php if ($subregion[0] === $pageSubregion) : ?>
                 <div class="grid justify-items-start gap-sp-1">
                   <div class="cursor-pointer" data-modal-id="<?= get_the_ID(); ?>">
-                    <img src="<?= $headshot['url'] ?: site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="rounded-[50%] mb-sp-4 w-[240px] hover:shadow-lg duration-300">
+                    <img src="<?= $headshot['url'] ?: site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="rounded-circle mb-sp-4 w-[240px] hover:shadow-lg duration-300">
                     <h4 class="underline"><?= get_the_title(); ?></h4>
                   </div>
                   <h5 class="mb-0"><?= $title; ?></h5>
@@ -339,7 +339,7 @@ $nonDirectorArgs = array(
             <?php if ($subregion === $subregion) : ?>
               <div class="grid justify-items-start gap-sp-1">
                 <div class="cursor-pointer" data-modal-id="<?= get_the_ID(); ?>">
-                  <img src="<?= $headshot['url'] ?: site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="rounded-[50%] mb-sp-4 w-[240px] hover:shadow-lg duration-300">
+                  <img src="<?= $headshot['url'] ?: site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="rounded-circle mb-sp-4 w-[240px] hover:shadow-lg duration-300">
                   <h4 class="underline"><?= get_the_title(); ?></h4>
                 </div>
                 <h5 class="mb-0"><?= $title; ?></h5>
@@ -382,7 +382,7 @@ $nonDirectorArgs = array(
             <?php if ($subregion === $subregion) : ?>
               <div class="grid justify-items-start gap-sp-1">
                 <div class="cursor-pointer" data-modal-id="<?= get_the_ID(); ?>">
-                  <img src="<?= $headshot['url'] ?: site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="rounded-[50%] mb-sp-4 w-[240px] hover:shadow-lg duration-300">
+                  <img src="<?= $headshot['url'] ?: site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="rounded-circle mb-sp-4 w-[240px] hover:shadow-lg duration-300">
                   <h4 class="underline"><?= get_the_title(); ?></h4>
                 </div>
                 <h5 class="mb-0"><?= $title; ?></h5>
@@ -466,7 +466,7 @@ if ($custom_query->have_posts()) : while ($custom_query->have_posts()) : $custom
             <?php endif; ?>
           </div>
           <div class="grid items-center justify-center order-1 lg:order-2">
-            <img src="<?= $headshot['url'] ?: site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png');; ?>" alt="<?= $altText ?>" class="rounded-[50%]">
+            <img src="<?= $headshot['url'] ?: site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png');; ?>" alt="<?= $altText ?>" class="rounded-circle">
           </div>
         </div>
       </div>
@@ -535,7 +535,7 @@ if ($custom_query->have_posts()) : while ($custom_query->have_posts()) : $custom
             <?php endif; ?>
           </div>
           <div class="grid items-center justify-center order-1 lg:order-2">
-            <img src="<?= $headshot['url'] ?: site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png');; ?>" alt="<?= $altText ?>" class="rounded-[50%]">
+            <img src="<?= $headshot['url'] ?: site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png');; ?>" alt="<?= $altText ?>" class="rounded-circle">
           </div>
         </div>
       </div>

@@ -2511,6 +2511,10 @@ a.ch-button.button-tertiary.inverted:hover {
   border-radius: 10px;
 }
 
+.rounded-circle{
+  border-radius: 50%;
+}
+
 .rounded-b-\[6px\]{
   border-bottom-right-radius: 6px;
   border-bottom-left-radius: 6px;

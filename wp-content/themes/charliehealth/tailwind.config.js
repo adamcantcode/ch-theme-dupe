@@ -105,6 +105,7 @@ module.exports = {
       sm: '10px',
       md: '10px',
       lg: '10px',
+      circle: '50%',
     },
     extend: {
       fontSize: {
@@ -236,7 +237,7 @@ module.exports = {
             fontWeight: '400',
           },
         ],
-        'mini': [
+        mini: [
           '12px',
           {
             lineHeight: '140%',
