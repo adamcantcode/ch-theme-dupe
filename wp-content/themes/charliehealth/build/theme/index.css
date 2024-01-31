@@ -471,8 +471,8 @@ video {
 
 body{
   font-family: "GT America", sans-serif;
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 16px;
+  line-height: 160%;
   letter-spacing: 0;
   font-weight: 400;
 }
@@ -518,8 +518,8 @@ p,
 
 h1{
   margin-bottom: 1.5rem;
-  font-size: 2rem;
-  line-height: 2rem;
+  font-size: 50px;
+  line-height: 110%;
   letter-spacing: 0;
   font-weight: 400;
 }
@@ -527,8 +527,8 @@ h1{
 @media (min-width: 480px) {
   h1{
     margin-bottom: 2rem;
-    font-size: 2rem;
-    line-height: 2rem;
+    font-size: 50px;
+    line-height: 110%;
     letter-spacing: 0;
     font-weight: 400;
   }
@@ -537,24 +537,24 @@ h1{
 @media (min-width: 1024px) {
   h1{
     margin-bottom: 2.5rem;
-    font-size: 3rem;
-    line-height: 3rem;
+    font-size: 64px;
+    line-height: 110%;
     letter-spacing: 0;
     font-weight: 400;
   }
     }
 
 h1.text-display{
-  font-size: 2.25rem;
-  line-height: 2.75rem;
+  font-size: 70px;
+  line-height: 90%;
   letter-spacing: 0;
   font-weight: 400;
 }
 
 @media (min-width: 1024px) {
     h1.text-display{
-    font-size: 4rem;
-    line-height: 4.2rem;
+    font-size: 120px;
+    line-height: 90%;
     letter-spacing: 0;
     font-weight: 400;
   }
@@ -562,8 +562,8 @@ h1.text-display{
 
 h2{
   margin-bottom: 1.25rem;
-  font-size: 1.75rem;
-  line-height: 2.3rem;
+  font-size: 35px;
+  line-height: 110%;
   letter-spacing: 0;
   font-weight: 400;
 }
@@ -577,8 +577,8 @@ h2{
 @media (min-width: 1024px) {
   h2{
     margin-bottom: 2rem;
-    font-size: 2.25rem;
-    line-height: 1.21;
+    font-size: 40px;
+    line-height: 110%;
     letter-spacing: 0;
     font-weight: 400;
   }
@@ -587,8 +587,8 @@ h2{
 h3{
   margin-bottom: 1rem;
   font-family: "ABC Arizona", serif;
-  font-size: 1.25rem;
-  line-height: 1.625rem;
+  font-size: 25px;
+  line-height: 110%;
   letter-spacing: 0;
   font-weight: 400;
 }
@@ -596,8 +596,8 @@ h3{
 @media (min-width: 1024px) {
   h3{
     margin-bottom: 2rem;
-    font-size: 1.5rem;
-    line-height: 2rem;
+    font-size: 28px;
+    line-height: 110%;
     letter-spacing: 0;
     font-weight: 400;
   }
@@ -605,17 +605,17 @@ h3{
 
 h4{
   margin-bottom: 0.5rem;
-  font-size: 1.25rem;
+  font-size: 18px;
   line-height: 140%;
-  letter-spacing: 1%;
+  letter-spacing: 0;
   font-weight: 400;
 }
 
 @media (min-width: 1024px) {
   h4{
     margin-bottom: 1.5rem;
-    font-size: 1.5rem;
-    line-height: 1.8rem;
+    font-size: 20px;
+    line-height: 140%;
     letter-spacing: 0;
     font-weight: 400;
   }
@@ -623,7 +623,7 @@ h4{
 
 h5{
   margin-bottom: 0.25rem;
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 140%;
   letter-spacing: 0;
   font-weight: 500;
@@ -637,7 +637,7 @@ h5{
 
 h6{
   margin-bottom: 0.25rem;
-  font-size: 0.875rem;
+  font-size: 14px;
   line-height: 140%;
   letter-spacing: 0;
   font-weight: 400;
@@ -651,16 +651,16 @@ h6{
 
 p{
   margin-bottom: 1.5rem;
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 16px;
+  line-height: 160%;
   letter-spacing: 0;
   font-weight: 400;
 }
 
 @media (min-width: 1024px) {
   p{
-    font-size: 1.125rem;
-    line-height: 1.8rem;
+    font-size: 16px;
+    line-height: 160%;
     letter-spacing: 0;
     font-weight: 400;
   }
@@ -671,8 +671,8 @@ ul,
   margin-bottom: 1.5rem;
   display: block;
   padding-left: 2.5rem;
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 16px;
+  line-height: 160%;
   letter-spacing: 0;
   font-weight: 400;
 }
@@ -680,8 +680,8 @@ ul,
 @media (min-width: 1024px) {
   ul,
   ol{
-    font-size: 1.125rem;
-    line-height: 1.8rem;
+    font-size: 16px;
+    line-height: 160%;
     letter-spacing: 0;
     font-weight: 400;
   }
@@ -703,8 +703,8 @@ li{
 }
 
 a{
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 16px;
+  line-height: 160%;
   letter-spacing: 0;
   font-weight: 400;
   --tw-text-opacity: 1;
@@ -722,8 +722,8 @@ a:hover{
 
 @media (min-width: 1024px) {
   a{
-    font-size: 1.125rem;
-    line-height: 1.8rem;
+    font-size: 16px;
+    line-height: 160%;
     letter-spacing: 0;
     font-weight: 400;
   }
@@ -803,15 +803,15 @@ figure{
 @media (min-width: 1024px) {
 
   figure{
-    font-size: 1.125rem;
-    line-height: 1.8rem;
+    font-size: 16px;
+    line-height: 160%;
     letter-spacing: 0;
     font-weight: 400;
   }
     }
 
 figure img{
-  border-radius: 1.25rem;
+  border-radius: 10px;
 }
 
 table {
@@ -959,7 +959,7 @@ a.ch-button.button-primary:hover {
       }
 
 .ch-button.button-primary{
-  border-radius: 0.625rem;
+  border-radius: 10px;
   --tw-bg-opacity: 1;
   background-color: rgb(22 26 61 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
@@ -996,7 +996,7 @@ a.ch-button.button-primary-dark:hover {
       }
 
 .ch-button.button-primary-dark{
-  border-radius: 0.625rem;
+  border-radius: 10px;
   --tw-bg-opacity: 1;
   background-color: rgb(22 26 61 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
@@ -1012,7 +1012,7 @@ a.ch-button.button-primary-dark:hover {
 }
 
 .ch-button.button-secondary{
-  border-radius: 0.625rem;
+  border-radius: 10px;
   background-color: rgba(0,0,0,0);
   --tw-text-opacity: 1;
   color: rgb(22 26 61 / var(--tw-text-opacity));
@@ -1049,7 +1049,7 @@ a.ch-button.button-secondary.inverted:hover {
 }
 
 .ch-button.button-tertiary{
-  border-radius: 0.625rem;
+  border-radius: 10px;
   --tw-bg-opacity: 1;
   background-color: rgb(177 252 250 / var(--tw-bg-opacity));
 }
@@ -1072,7 +1072,7 @@ a.ch-button.button-secondary.inverted:hover {
 }
 
 .ch-button.button-tertiary-lavender{
-  border-radius: 0.625rem;
+  border-radius: 10px;
   --tw-bg-opacity: 1;
   background-color: rgb(231 211 255 / var(--tw-bg-opacity));
   font-family: "ABC Social", sans-serif;
@@ -1140,7 +1140,7 @@ a.ch-button.button-tertiary.inverted:hover {
 }
 
 .ch-button.button-nav{
-  border-radius: 0.625rem;
+  border-radius: 10px;
   border-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(177 252 250 / var(--tw-border-opacity));
@@ -1180,8 +1180,8 @@ a.ch-button.button-tertiary.inverted:hover {
 .nav-parent-menu .nav-sub-menu{
   visibility: hidden;
   height: 0px;
-  border-bottom-right-radius: 0.625rem;
-  border-bottom-left-radius: 0.625rem;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -1294,7 +1294,7 @@ a.ch-button.button-tertiary.inverted:hover {
 }
 
 .breadcrumbs > *{
-  font-size: 0.875rem;
+  font-size: 14px;
   line-height: 140%;
   letter-spacing: 0;
   font-weight: 400;
@@ -1304,8 +1304,8 @@ a.ch-button.button-tertiary.inverted:hover {
 @media (min-width: 1024px){
 
   .breadcrumbs > *{
-    font-size: 1.125rem;
-    line-height: 1.8rem;
+    font-size: 16px;
+    line-height: 160%;
     letter-spacing: 0;
     font-weight: 400;
   }
@@ -2500,15 +2500,15 @@ a.ch-button.button-tertiary.inverted:hover {
 }
 
 .rounded-lg{
-  border-radius: 2.5rem;
+  border-radius: 10px;
 }
 
 .rounded-md{
-  border-radius: 1.25rem;
+  border-radius: 10px;
 }
 
 .rounded-sm{
-  border-radius: 0.625rem;
+  border-radius: 10px;
 }
 
 .rounded-b-\[6px\]{
@@ -2517,18 +2517,18 @@ a.ch-button.button-tertiary.inverted:hover {
 }
 
 .rounded-b-md{
-  border-bottom-right-radius: 1.25rem;
-  border-bottom-left-radius: 1.25rem;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .rounded-b-sm{
-  border-bottom-right-radius: 0.625rem;
-  border-bottom-left-radius: 0.625rem;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .rounded-r-sm{
-  border-top-right-radius: 0.625rem;
-  border-bottom-right-radius: 0.625rem;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .rounded-t-\[6px\]{
@@ -2537,13 +2537,13 @@ a.ch-button.button-tertiary.inverted:hover {
 }
 
 .rounded-t-md{
-  border-top-left-radius: 1.25rem;
-  border-top-right-radius: 1.25rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .rounded-t-sm{
-  border-top-left-radius: 0.625rem;
-  border-top-right-radius: 0.625rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .border{
@@ -3116,28 +3116,28 @@ a.ch-button.button-tertiary.inverted:hover {
 }
 
 .\!text-h2{
-  font-size: 1.75rem !important;
-  line-height: 2.3rem !important;
+  font-size: 35px !important;
+  line-height: 110% !important;
   letter-spacing: 0 !important;
   font-weight: 400 !important;
 }
 
 .\!text-h2-lg{
-  font-size: 2.25rem !important;
-  line-height: 1.21 !important;
+  font-size: 40px !important;
+  line-height: 110% !important;
   letter-spacing: 0 !important;
   font-weight: 400 !important;
 }
 
 .\!text-h4{
-  font-size: 1.25rem !important;
+  font-size: 18px !important;
   line-height: 140% !important;
-  letter-spacing: 1% !important;
+  letter-spacing: 0 !important;
   font-weight: 400 !important;
 }
 
 .\!text-h5{
-  font-size: 1rem !important;
+  font-size: 16px !important;
   line-height: 140% !important;
   letter-spacing: 0 !important;
   font-weight: 500 !important;
@@ -3179,6 +3179,10 @@ a.ch-button.button-tertiary.inverted:hover {
   font-size: 20px;
 }
 
+.text-\[25px\]{
+  font-size: 25px;
+}
+
 .text-\[28px\]{
   font-size: 28px;
 }
@@ -3208,92 +3212,92 @@ a.ch-button.button-tertiary.inverted:hover {
 }
 
 .text-h1{
-  font-size: 2rem;
-  line-height: 2rem;
+  font-size: 50px;
+  line-height: 110%;
   letter-spacing: 0;
   font-weight: 400;
 }
 
 .text-h1-display{
-  font-size: 2.25rem;
-  line-height: 2.75rem;
+  font-size: 70px;
+  line-height: 90%;
   letter-spacing: 0;
   font-weight: 400;
 }
 
 .text-h1-display-lg{
-  font-size: 4rem;
-  line-height: 4.2rem;
+  font-size: 120px;
+  line-height: 90%;
   letter-spacing: 0;
   font-weight: 400;
 }
 
 .text-h1-lg{
-  font-size: 3rem;
-  line-height: 3rem;
+  font-size: 64px;
+  line-height: 110%;
   letter-spacing: 0;
   font-weight: 400;
 }
 
 .text-h2{
-  font-size: 1.75rem;
-  line-height: 2.3rem;
+  font-size: 35px;
+  line-height: 110%;
   letter-spacing: 0;
   font-weight: 400;
 }
 
 .text-h2-lg{
-  font-size: 2.25rem;
-  line-height: 1.21;
+  font-size: 40px;
+  line-height: 110%;
   letter-spacing: 0;
   font-weight: 400;
 }
 
 .text-h3{
-  font-size: 1.25rem;
-  line-height: 1.625rem;
+  font-size: 25px;
+  line-height: 110%;
   letter-spacing: 0;
   font-weight: 400;
 }
 
 .text-h3-lg{
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 28px;
+  line-height: 110%;
   letter-spacing: 0;
   font-weight: 400;
 }
 
 .text-h4{
-  font-size: 1.25rem;
+  font-size: 18px;
   line-height: 140%;
-  letter-spacing: 1%;
+  letter-spacing: 0;
   font-weight: 400;
 }
 
 .text-h5{
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 140%;
   letter-spacing: 0;
   font-weight: 500;
 }
 
 .text-h6{
-  font-size: 0.875rem;
+  font-size: 14px;
   line-height: 140%;
   letter-spacing: 0;
   font-weight: 400;
 }
 
 .text-nav-normal{
-  font-size: 0.875rem;
-  line-height: normal;
+  font-size: 18px;
+  line-height: 140%;
   letter-spacing: 0;
   font-weight: 400;
 }
 
 .text-nav-small{
-  font-size: 0.75rem;
-  line-height: normal;
+  font-size: 16px;
+  line-height: 140%;
   letter-spacing: 0;
   font-weight: 400;
 }
@@ -3301,10 +3305,6 @@ a.ch-button.button-tertiary.inverted:hover {
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-\[25px\]{
-  font-size: 25px;
 }
 
 .font-bold{
@@ -4224,7 +4224,7 @@ a.page-id-6 .features-block-callout > p:hover {
 /* *** END Custom Pages *** */
 
 .single-areas-of-care .main-article-content section .acf-innerblocks-container > img, .single-treatment-modalities .main-article-content section .acf-innerblocks-container > img{
-  border-radius: 1.25rem;
+  border-radius: 10px;
 }
 
 .single-areas-of-care .main-article-content section .acf-innerblocks-container > figure, .single-treatment-modalities .main-article-content section .acf-innerblocks-container > figure{
@@ -4234,8 +4234,8 @@ a.page-id-6 .features-block-callout > p:hover {
 @media (min-width: 1024px) {
 
 .single-areas-of-care .main-article-content section .acf-innerblocks-container > figure, .single-treatment-modalities .main-article-content section .acf-innerblocks-container > figure{
-    font-size: 1.125rem;
-    line-height: 1.8rem;
+    font-size: 16px;
+    line-height: 160%;
     letter-spacing: 0;
     font-weight: 400;
   }
@@ -4548,7 +4548,7 @@ a.page-id-6 .features-block-callout > p:hover {
   left: 0px;
   right: 0px;
   bottom: 0px;
-  border-radius: 1.25rem;
+  border-radius: 10px;
   border-width: 1px;
   border-color: rgba(0,0,0,0);
     content: '';
@@ -4597,7 +4597,7 @@ a.footer-links > a:hover {
 
 .footer-links > a{
   margin-bottom: 0.75rem;
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 140%;
   letter-spacing: 0;
   font-weight: 500;
@@ -4776,21 +4776,21 @@ a.js-tag-id.active:hover {
 
 .wp-block-cover{
   margin-bottom: 1.5rem;
-  border-radius: 1.25rem;
+  border-radius: 10px;
 }
 
 @media (min-width: 1024px) {
 
 .wp-block-cover{
-    font-size: 1.125rem;
-    line-height: 1.8rem;
+    font-size: 16px;
+    line-height: 160%;
     letter-spacing: 0;
     font-weight: 400;
   }
   }
 
 .wp-block-cover img{
-  border-radius: 1.25rem;
+  border-radius: 10px;
 }
 
 .wp-block-image.alignfull {
@@ -5005,7 +5005,7 @@ mark{
 }
 
 .checklist > div{
-  border-radius: 1.25rem;
+  border-radius: 10px;
 }
 
 .checklist > div:first-child{
@@ -5016,8 +5016,8 @@ mark{
 @media (min-width: 1024px) {
 
 .checklist > div:first-child{
-    border-bottom-right-radius: 1.25rem;
-    border-bottom-left-radius: 1.25rem;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
   }
       }
 
@@ -5029,8 +5029,8 @@ mark{
 @media (min-width: 1024px) {
 
 .checklist > div:last-child{
-    border-top-left-radius: 1.25rem;
-    border-top-right-radius: 1.25rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
   }
       }
 
@@ -6025,7 +6025,7 @@ ul.alert li {
   }
 
   .lg\:rounded-md{
-    border-radius: 1.25rem;
+    border-radius: 10px;
   }
 
   .lg\:rounded-none{
@@ -6033,8 +6033,8 @@ ul.alert li {
   }
 
   .lg\:rounded-l-md{
-    border-top-left-radius: 1.25rem;
-    border-bottom-left-radius: 1.25rem;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
   }
 
   .lg\:rounded-l-none{
@@ -6043,13 +6043,13 @@ ul.alert li {
   }
 
   .lg\:rounded-l-sm{
-    border-top-left-radius: 0.625rem;
-    border-bottom-left-radius: 0.625rem;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
   }
 
   .lg\:rounded-r-md{
-    border-top-right-radius: 1.25rem;
-    border-bottom-right-radius: 1.25rem;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
 
   .lg\:rounded-r-none{
@@ -6058,8 +6058,8 @@ ul.alert li {
   }
 
   .lg\:rounded-r-sm{
-    border-top-right-radius: 0.625rem;
-    border-bottom-right-radius: 0.625rem;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
 
   .lg\:rounded-tr-none{
@@ -6190,49 +6190,49 @@ ul.alert li {
   }
 
   .lg\:text-h1-display{
-    font-size: 2.25rem;
-    line-height: 2.75rem;
+    font-size: 70px;
+    line-height: 90%;
     letter-spacing: 0;
     font-weight: 400;
   }
 
   .lg\:text-h1-display-lg{
-    font-size: 4rem;
-    line-height: 4.2rem;
+    font-size: 120px;
+    line-height: 90%;
     letter-spacing: 0;
     font-weight: 400;
   }
 
   .lg\:text-h1-lg{
-    font-size: 3rem;
-    line-height: 3rem;
+    font-size: 64px;
+    line-height: 110%;
     letter-spacing: 0;
     font-weight: 400;
   }
 
   .lg\:text-h2-lg{
-    font-size: 2.25rem;
-    line-height: 1.21;
+    font-size: 40px;
+    line-height: 110%;
     letter-spacing: 0;
     font-weight: 400;
   }
 
   .lg\:text-h3{
-    font-size: 1.25rem;
-    line-height: 1.625rem;
+    font-size: 25px;
+    line-height: 110%;
     letter-spacing: 0;
     font-weight: 400;
   }
 
   .lg\:text-h3-lg{
-    font-size: 1.5rem;
-    line-height: 2rem;
+    font-size: 28px;
+    line-height: 110%;
     letter-spacing: 0;
     font-weight: 400;
   }
 
   .lg\:text-h5{
-    font-size: 1rem;
+    font-size: 16px;
     line-height: 140%;
     letter-spacing: 0;
     font-weight: 500;
@@ -6280,10 +6280,6 @@ ul.alert li {
 .\[\&_\*\]\:text-white *{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.\[\&_p\]\:mb-sp-4 p{
-  margin-bottom: 1rem;
 }
 
 .\[\&_p\]\:mb-sp-3 p{
