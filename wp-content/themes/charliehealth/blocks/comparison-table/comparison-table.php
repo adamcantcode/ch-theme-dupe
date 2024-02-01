@@ -1,7 +1,7 @@
 <div class="grid grid-cols-1 lg:grid-cols-2 rounded-[12px] overflow-hidden">
   <?php if (have_rows('tables')) : while (have_rows('tables')) : the_row(); ?>
-      <div class="bg-primary-200 lg:pl-sp-12 pl-sp-4 lg:[&:nth-child(-n+2)]:pt-sp-6 [&:nth-child(-n+2)]:pt-sp-4 lg:[&:nth-last-child(-n+2)]:pb-sp-6 [&:nth-last-child(-n+2)]:pb-sp-4 group">
-        <div class="[&_*]:text-white h-full lg:border-b lg:border-pale-blue-300 lg:pr-sp-12 pr-sp-4 lg:py-sp-6 py-sp-4 lg:group-[&:nth-last-child(-n+2)]:border-none">
+      <div class="bg-primary-200 lg:pl-sp-12 pl-sp-4 lg:[&:nth-child(-n+2)]:pt-sp-6 [&:nth-child(-n+2)]:pt-0 lg:[&:nth-last-child(-n+2)]:pb-sp-6 [&:nth-last-child(-n+2)]:pb-sp-4 group">
+        <div class="[&_*]:text-white h-full lg:border-b lg:border-pale-blue-300 lg:pr-sp-12 pr-sp-4 lg:py-sp-6 py-sp-4 lg:group-[&:nth-last-child(-n+2)]:border-none mb-[-.75rem]">
           <?php if (get_row_index() === 1) : ?>
             <h3 class="mb-sp-8 lg:text-[28px] text-[25px] noshow lg:block"><?= get_field('left_title'); ?></h3>
           <?php endif; ?>
@@ -11,8 +11,8 @@
           </div>
         </div>
       </div>
-      <div class="bg-white lg:pr-sp-12 pr-sp-4 lg:[&:nth-child(-n+2)]:pt-sp-6 [&:nth-child(-n+2)]:pt-sp-4 lg:[&:nth-last-child(-n+2)]:pb-sp-6 [&:nth-last-child(-n+2)]:pb-sp-4 group">
-        <div class="h-full lg:border-b lg:border-pale-blue-300 lg:pl-sp-12 pl-sp-4 lg:py-sp-6 py-sp-4 lg:group-[&:nth-last-child(-n+2)]:border-none">
+      <div class="bg-white lg:pr-sp-12 pr-sp-4 lg:[&:nth-child(-n+2)]:pt-sp-6 [&:nth-child(-n+2)]:pt-0 lg:[&:nth-last-child(-n+2)]:pb-sp-6 [&:nth-last-child(-n+2)]:pb-sp-4 group">
+        <div class="h-full lg:border-b lg:border-pale-blue-300 lg:pl-sp-12 pl-sp-4 lg:py-sp-6 py-sp-4 lg:group-[&:nth-last-child(-n+2)]:border-none mb-[-.75rem]">
           <?php if (get_row_index() === 1) : ?>
             <div class="flex-row items-center lg:flex gap-sp-4 mb-sp-8 noshow">
               <svg width="44" height="43" viewBox="0 0 44 43" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -27,7 +27,7 @@
             </svg>
             <h4 class="text-[20px] leading-[1.1] mb-sp-3"><?= get_sub_field('right_headline'); ?></h4>
           </div>
-          <div class="[&_*]:text-[14px] [&_*]:leading-[1.6] [&_p]:mb-sp-3 ml-sp-8">
+          <div class="[&_*]:text-[14px] [&_*]:leading-[1.6] [&_p]:mb-sp-3">
             <?= get_sub_field('right_details'); ?>
           </div>
         </div>
