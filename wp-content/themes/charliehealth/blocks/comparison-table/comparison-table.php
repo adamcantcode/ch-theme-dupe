@@ -22,7 +22,7 @@
             </div>
           <?php endif; ?>
           <div class="flex flex-row items-start gap-sp-2">
-            <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-[-4px]">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M9.92662 19.7297L9.93197 19.735L8.50917 21.1492L1.59961 14.2814L3.02241 12.8671L8.50382 18.3155L21.1279 5.76758L22.5507 7.18179L9.92662 19.7297Z" fill="#161A3D" />
             </svg>
             <h4 class="text-[20px] leading-[1.1] mb-sp-3"><?= get_sub_field('right_headline'); ?></h4>
