@@ -146,8 +146,8 @@
                 "South Texas": "South Texas",
                 "North Florida": "North Florida",
                 "South Florida": "South Florida",
-                "North California": "North California",
-                "South California": "South California"
+                "North\/South California": "North\/South California",
+                "Central California": "Central California"
             },
             "default_value": [],
             "return_format": "value",
@@ -176,5 +176,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1706194021
+    "modified": 1706820669
 }
