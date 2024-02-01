@@ -44,6 +44,7 @@
   <?php wp_body_open(); ?>
   <!-- <pre class="fixed left-0 right-0 w-full text-xs text-center text-white top-4 -z-10-50 opacity-30">Better care, from anywhere ❤️ Carter Barnhart</pre> -->
   <?php
+  // Banner
   $enableBanner = get_field('enable_banner', 'options');
   $enableBlogBanner = get_field('enable_blog_banner', 'options');
   $displayOnPage = false;
@@ -62,6 +63,10 @@
     $isBlogPost = is_singular('post');
   }
   $showBanner = ($enableBanner && $displayOnPage) || ($enableBlogBanner && $isBlogPost) ? true : false;
+
+  // Nav button
+  $clientLogin = get_field('client_login', get_the_ID());
+  $getStarted  = get_field('get_started', get_the_ID());
   ?>
   <!-- NOT BLOG -->
   <?php if ($showBanner) : ?>
@@ -139,10 +144,6 @@
             </div>
         <?php endwhile;
         endif; ?>
-        <?php
-        $clientLogin = get_field('client_login', get_the_ID());
-        $getStarted  = get_field('get_started', get_the_ID());
-        ?>
         <div class="flex ml-auto content gap-x-sp-2">
           <a href="<?= !empty($clientLogin['url']) ? $clientLogin['url'] : 'https://app.charliehealth.com/'; ?>" target="<?= !empty($clientLogin['target']) ? $clientLogin['target'] : '_blank'; ?>" class="ch-button button-tertiary-lavender inverted !rounded-[6px]"><?= !empty($clientLogin['title']) ? $clientLogin['title'] : 'Client Login'; ?></a>
           <a href="<?= !empty($getStarted['url']) ? $getStarted['url'] : '/form'; ?>" target="<?= !empty($getStarted['target']) ? $getStarted['target'] : '_self'; ?>" class="ch-button button-tertiary-lavender !rounded-[6px]"><?= !empty($getStarted['title']) ? $getStarted['title'] : 'Get started'; ?></a>
@@ -233,8 +234,8 @@
         endif; ?>
         <div class="mt-auto mb-sp-8">
           <div class="flex justify-center py-8 gap-x-sp-4 px-sp-5">
-            <a href="https://app.charliehealth.com/" target="_blank" class="ch-button button-tertiary-lavender inverted !text-[1rem] !rounded-[6px]">Client Login</a>
-            <a href="<?= get_field('cta', 'option')['url']; ?>" class="ch-button button-tertiary-lavender !text-[1rem] !rounded-[6px]"><?= get_field('cta', 'option')['title']; ?></a>
+            <a href="<?= !empty($clientLogin['url']) ? $clientLogin['url'] : 'https://app.charliehealth.com/'; ?>" target="<?= !empty($clientLogin['target']) ? $clientLogin['target'] : '_blank'; ?>" class="ch-button button-tertiary-lavender inverted !text-[1rem] !rounded-[6px]"><?= !empty($clientLogin['title']) ? $clientLogin['title'] : 'Client Login'; ?></a>
+            <a href="<?= !empty($getStarted['url']) ? $getStarted['url'] : '/form'; ?>" target="<?= !empty($getStarted['target']) ? $getStarted['target'] : '_self'; ?>" class="ch-button button-tertiary-lavender !text-[1rem] !rounded-[6px]"><?= !empty($getStarted['title']) ? $getStarted['title'] : 'Get started'; ?></a>
           </div>
         </div>
       </div>
