@@ -139,9 +139,13 @@
             </div>
         <?php endwhile;
         endif; ?>
+        <?php
+        $clientLogin = get_field('client_login', get_the_ID());
+        $getStarted  = get_field('get_started', get_the_ID());
+        ?>
         <div class="flex ml-auto content gap-x-sp-2">
-          <a href="https://app.charliehealth.com/" target="_blank" class="ch-button button-tertiary-lavender inverted !rounded-[6px]">Client Login</a>
-          <a href="<?= get_field('cta', 'option')['url']; ?>" class="ch-button button-tertiary-lavender !rounded-[6px]"><?= get_field('cta', 'option')['title']; ?></a>
+          <a href="<?= !empty($clientLogin['url']) ? $clientLogin['url'] : 'https://app.charliehealth.com/'; ?>" target="<?= !empty($clientLogin['target']) ? $clientLogin['target'] : '_blank'; ?>" class="ch-button button-tertiary-lavender inverted !rounded-[6px]"><?= !empty($clientLogin['title']) ? $clientLogin['title'] : 'Client Login'; ?></a>
+          <a href="<?= !empty($getStarted['url']) ? $getStarted['url'] : '/form'; ?>" target="<?= !empty($getStarted['target']) ? $getStarted['target'] : '_self'; ?>" class="ch-button button-tertiary-lavender !rounded-[6px]"><?= !empty($getStarted['title']) ? $getStarted['title'] : 'Get started'; ?></a>
         </div>
       </div>
       <div class="container flex justify-between lg:noshow py-sp-5">
