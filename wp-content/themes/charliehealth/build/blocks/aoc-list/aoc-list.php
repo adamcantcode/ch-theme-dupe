@@ -5,8 +5,10 @@ $customPosts = get_field('areas_of_care');
 ?>
 
 <div class="grid lg:grid-cols-[3fr_1fr_8fr] gap-x-sp-5">
-  <div class="mb-sp-1">
-    <h2><?= $heading; ?></h2>
+  <div>
+    <div class="mb-base5-5">
+      <h2><?= $heading; ?></h2>
+    </div>
   </div>
   <div></div>
   <div>
