@@ -129,13 +129,13 @@ $style  = get_field('style');
                 <?php $tags = get_the_terms(get_the_ID(), 'post_tag');  ?>
                 <?php if ($tags) :  ?>
                   <?php foreach ($tags as $tag) : ?>
-                    <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="relative inline-block no-underline rounded-lg px-[15px] py-[10px] text-[14px] text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] leading-[1.4]"><?= $tag->name; ?></a>
+                    <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="relative inline-block no-underline rounded-pill px-[15px] py-[10px] text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base"><?= $tag->name; ?></a>
                   <?php endforeach; ?>
                 <?php endif; ?>
               </div>
               <div class="grid bg-white p-sp-4 rounded-b-[6px]">
-                <h3 class="font-heading text-[20px] !leading-[1.1] mb-sp-5"><a href="<?= get_the_permalink(); ?>" class="stretched-link font-heading text-[20px] !leading-[1.4] block"><?= get_the_title(); ?></a></h3>
-                <p class="mb-0 text-[14px] leading-[1.1]"><?= $author->post_title; ?></p>
+                <h3 class="text-h4-base"><a href="<?= get_the_permalink(); ?>" class="block stretched-link"><?= get_the_title(); ?></a></h3>
+                <p><?= $author->post_title; ?></p>
               </div>
             </div>
         <?php endwhile;
