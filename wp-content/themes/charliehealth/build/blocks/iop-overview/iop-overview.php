@@ -6,7 +6,7 @@ $details = get_field('details');
 
 <div class="grid lg:grid-cols-[4fr_1fr_7fr] gap-x-sp-5 iop-overview">
   <div>
-    <h2 class="font-heading-serif"><?= $heading; ?> <span class="rounded-md bg-primary-100 px-sp-4 py-[4px]"><?= $highlight; ?></span></h2>
+    <h2><?= $heading; ?> <span class="rounded-md bg-primary-100 px-sp-4 py-[4px]"><?= $highlight; ?></span></h2>
     <?= $details; ?>
   </div>
   <div></div>
@@ -32,14 +32,15 @@ $details = get_field('details');
                   </div>
                 </div>
                 <div class="overflow-hidden transition-all duration-500 ease-in-out accordion-content max-h-0">
-                  <div class="px-sp-6">
+                  <div class="px-base5-5 pb-base5-2">
                     <?= $description; ?>
                     <p>
                       <a href="<?= $link['url']; ?>" class="no-underline">Learn More<span class="inline-block align-middle ml-sp-2">
                           <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3431 0.278417L16.7071 6.32784C17.0976 6.69906 17.0976 7.30094 16.7071 7.67216L10.3431 13.7216C9.95262 14.0928 9.31946 14.0928 8.92893 13.7216C8.53841 13.3504 8.53841 12.7485 8.92893 12.3773L13.5858 7.95058H0V6.04942H13.5858L8.92893 1.62273C8.53841 1.25151 8.53841 0.64964 8.92893 0.278417C9.31946 -0.0928058 9.95262 -0.0928058 10.3431 0.278417Z" fill="white" />
                           </svg>
-                        </span></a>
+                        </span>
+                      </a>
                     </p>
                   </div>
                 </div>
