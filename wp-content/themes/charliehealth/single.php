@@ -189,7 +189,7 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
             <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover lg:h-[220px] h-[150px] w-full">
             <div class="grid p-sp-4">
               <h3><a href="<?= get_the_permalink($post->ID); ?>" class="stretched-link"><?= $post->post_title; ?></a></h3>
-              <p class="mb-sp-4 text-h5 lg:text-h5-lg"><?= get_field('by_author', ($relatedPost->ID))->post_title ?: 'Charlie Health Editorial Team'; ?></p>
+              <p class="mb-sp-4 text-h5 lg:text-h5-lg"><?= get_field('by_author', ($post->ID))->post_title ?: 'Charlie Health Editorial Team'; ?></p>
               <div class="grid items-end justify-start grid-flow-col gap-sp-4">
                 <?php $tags = get_the_terms($post->ID, 'post_tag'); ?>
                 <?php if ($tags) : ?>
