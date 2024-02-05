@@ -1,7 +1,7 @@
 <div class="border-2 border-white rounded-[1rem] lg:p-sp-12 p-sp-4 grid lg:grid-cols-[4fr_1fr_7fr] gap-x-sp-5 approach-grid-js mt-s">
   <div class="grid content-between">
     <div class="order-2 lg:order-1">
-      <h2 class="text-white font-heading-serif mb-sp-8">How is our approach different?</h2>
+      <h2 class="text-white font-heading-serif !mb-sp-8">How is our approach different?</h2>
     </div>
     <div class="order-1 lg:order-2 mb-sp-10 lg:mb-0">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 150 148" class="w-[28px]">
@@ -12,19 +12,19 @@
   <div></div>
   <div class="grid grid-cols-2 lg:grid-cols-3 gap-sp-2 grid-approach-items-js auto-rows-fr">
     <div class="text-center bg-lavender-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
-      <p class="mb-0 leading-[110%] not-heading-h4">Immediate availability</h5>
+      <p class="text-h4-base">Immediate availability</h5>
     </div>
     <div class="text-center bg-orange-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
-      <p class="mb-0 leading-[110%] not-heading-h4">In-network with insurance</h5>
+      <p class="text-h4-base">In-network with insurance</h5>
     </div>
     <div class="text-center bg-pale-blue-200 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
-      <p class="mb-0 leading-[110%] not-heading-h4">Personalized treatment</h5>
+      <p class="text-h4-base">Personalized treatment</h5>
     </div>
     <div class="text-center bg-yellow-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
-      <p class="mb-0 leading-[110%] not-heading-h4">Virtual access</h5>
+      <p class="text-h4-base">Virtual access</h5>
     </div>
     <div class="text-center bg-pale-blue-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
-      <p class="mb-0 leading-[110%] not-heading-h4">Flexible scheduling</h5>
+      <p class="text-h4-base">Flexible scheduling</h5>
     </div>
     <div class="text-center bg-white rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center relative group">
       <svg width="27" height="22" viewBox="0 0 27 22" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all mb-sp-2 group-hover:translate-x-[5px] duration-300">
