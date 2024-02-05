@@ -2498,6 +2498,10 @@ a.ch-button.button-tertiary.inverted:hover {
   border-radius: 10px;
 }
 
+.rounded-pill{
+  border-radius: 1000px;
+}
+
 .rounded-sm{
   border-radius: 10px;
 }
@@ -6195,6 +6199,13 @@ ul.alert li {
     line-height: 140%;
     letter-spacing: 0;
     font-weight: 500;
+  }
+
+  .lg\:text-h4-lg{
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: 0;
+    font-weight: 400;
   }
 
   .lg\:\!leading-\[1\.4\]{

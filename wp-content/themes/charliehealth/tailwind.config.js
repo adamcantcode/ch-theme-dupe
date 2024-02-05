@@ -90,6 +90,7 @@ module.exports = {
       md: '10px',
       lg: '10px',
       circle: '50%',
+      pill: '1000px',
     },
     extend: {
       fontSize: {
