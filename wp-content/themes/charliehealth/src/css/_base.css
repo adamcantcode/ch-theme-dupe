@@ -108,44 +108,44 @@
     }
   }
   h2 {
-    @apply text-h2 mb-base5-5;
+    @apply text-h2 mb-base5-5 font-heading-serif;
     @screen lg {
       @apply text-h2-lg mb-base5-3;
     }
   }
   h3 {
-    @apply text-h3 mb-base5-5;
+    @apply text-h3 mb-base5-3;
     @screen lg {
-      @apply text-h3-lg mb-base5-3;
+      @apply text-h3-lg mb-base5-4;
     }
   }
   h4 {
-    @apply text-h4 mb-base5-4;
+    @apply text-h4 mb-base5-2;
     @screen lg {
-      @apply text-h4-lg mb-base5-4;
+      @apply text-h4-lg mb-base5-2;
     }
   }
   h5 {
-    @apply text-h5 mb-sp-1;
+    @apply text-h5 mb-base5-1;
     @screen lg {
-      @apply mb-sp-2;
+      @apply mb-base5-2;
     }
   }
   h6 {
-    @apply text-h6 mb-sp-1;
+    @apply text-h6 mb-base5-1;
     @screen lg {
       @apply mb-sp-2;
     }
   }
   p {
-    @apply text-p mb-[18px];
+    @apply text-p mb-base5-2;
     @screen lg {
       @apply text-p-lg;
     }
   }
   ul,
   ol {
-    @apply block pl-10 mb-[18px] text-p;
+    @apply block pl-10 mb-base5-2 text-p;
     @screen lg {
       @apply text-p-lg;
     }
@@ -157,7 +157,7 @@
     @apply list-decimal;
   }
   li {
-    @apply my-1 leading-7 list-item;
+    @apply my-1 leading-[160%] list-item;
   }
   a {
     @apply underline transition-colors duration-300 text-p text-dark-blue hover:text-dark-blue;

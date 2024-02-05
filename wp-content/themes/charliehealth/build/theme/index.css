@@ -554,6 +554,7 @@ h1.text-display{
 
 h2{
   margin-bottom: 25px;
+  font-family: "ABC Arizona", serif;
   font-size: 35px;
   line-height: 110%;
   letter-spacing: 0;
@@ -571,7 +572,7 @@ h2{
     }
 
 h3{
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   font-size: 25px;
   line-height: 110%;
   letter-spacing: 0;
@@ -580,7 +581,7 @@ h3{
 
 @media (min-width: 1024px) {
   h3{
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     font-size: 28px;
     line-height: 110%;
     letter-spacing: 0;
@@ -589,7 +590,7 @@ h3{
     }
 
 h4{
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-size: 18px;
   line-height: 140%;
   letter-spacing: 0;
@@ -598,7 +599,7 @@ h4{
 
 @media (min-width: 1024px) {
   h4{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: 20px;
     line-height: 140%;
     letter-spacing: 0;
@@ -607,7 +608,7 @@ h4{
     }
 
 h5{
-  margin-bottom: 0.25rem;
+  margin-bottom: 5px;
   font-size: 16px;
   line-height: 140%;
   letter-spacing: 0;
@@ -616,12 +617,12 @@ h5{
 
 @media (min-width: 1024px) {
   h5{
-    margin-bottom: 0.5rem;
+    margin-bottom: 10px;
   }
     }
 
 h6{
-  margin-bottom: 0.25rem;
+  margin-bottom: 5px;
   font-size: 14px;
   line-height: 140%;
   letter-spacing: 0;
@@ -635,7 +636,7 @@ h6{
     }
 
 p{
-  margin-bottom: 18px;
+  margin-bottom: 10px;
   font-size: 16px;
   line-height: 160%;
   letter-spacing: 0;
@@ -653,7 +654,7 @@ p{
 
 ul,
   ol{
-  margin-bottom: 18px;
+  margin-bottom: 10px;
   display: block;
   padding-left: 2.5rem;
   font-size: 16px;
@@ -684,7 +685,7 @@ li{
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
   display: list-item;
-  line-height: 1.75rem;
+  line-height: 160%;
 }
 
 a{
@@ -3887,107 +3888,62 @@ a.ch-button.button-tertiary.inverted:hover {
 
 /* Home */
 
-@media (min-width: 1024px) {
-    .page-id-6 h1{
-    margin-bottom: 2.5rem !important;
-    font-size: 120px !important;
-    line-height: .8 !important;
-  }
-    .page-id-6 h4,
-    .page-id-6 .not-heading-h4 {
+/* @screen lg {
+  .page-id-6 {
+    h1 {
+      @apply !text-[120px] !leading-[.8] !mb-sp-10;
+    }
+    h4,
+    .not-heading-h4 {
       font-size: 20px;
       line-height: 110%;
       letter-spacing: 0.2px;
       margin-bottom: 0;
     }
-      .page-id-6 .features-block-callout > p{
-    font-family: "ABC Social", sans-serif;
-    font-size: 20px;
-    line-height: 1.6;
-  }
-      .page-id-6 .home-testimonials p{
-    font-family: "ABC Social", sans-serif;
-    font-size: 14px;
-    line-height: 1.6;
-  }
-
-.page-id-6 .home-testimonials p a {
-    font-size: 14px;
-  }
-
-.page-id-6 .home-testimonials p a:hover{
-    color: currentColor;
-  }
-}
-
-.page-id-6 h1{
-  margin-bottom: 1rem;
-  font-family: "ABC Social", sans-serif;
-  font-size: 64px;
-  line-height: 1.1;
-}
-
-.page-id-6 h2{
-  margin-bottom: 2rem;
-  font-family: "ABC Arizona", serif;
-  font-size: 32px;
-  line-height: 1.1;
-}
-
-@media (min-width: 1024px) {
-
-.page-id-6 h2{
-    font-size: 40px;
-  }
+    .features-block-callout {
+      > p {
+        @apply text-[20px] leading-[1.6] font-heading;
+      }
     }
-
-.page-id-6 h3 {
+    .home-testimonials {
+      p {
+        @apply text-[14px] leading-[1.6] font-heading;
+      }
+    }
+  }
+}
+.page-id-6 {
+  h1 {
+    @apply text-[64px] leading-[1.1] mb-sp-4 font-heading;
+  }
+  h2 {
+    @apply text-[32px] leading-[1.1] mb-sp-8 font-heading-serif;
+    @screen lg {
+      @apply text-[40px];
+    }
+  }
+  h3 {
     font-size: 20px;
     line-height: 120%;
     letter-spacing: 0.2px;
-  }
-
-@media (min-width: 1024px) {
-
-.page-id-6 h3{
-    font-size: 28px;
-    line-height: 1.1;
-  }
+    @screen lg {
+      @apply text-[28px] leading-[1.1];
     }
-
-.page-id-6 p{
-  font-family: "ABC Social", sans-serif;
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.page-id-6 p a {
-    font-size: 14px;
   }
-
-.page-id-6 p a:hover{
-  color: currentColor;
-}
-
-a.page-id-6 .features-block-intro h2:hover {
-        color: #ffffff;
-      }
-
-.page-id-6 .features-block-intro h2{
-  font-family: "ABC Arizona", serif;
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-a.page-id-6 .features-block-callout > p:hover {
-        color: #ffffff;
-      }
-
-.page-id-6 .features-block-callout > p{
-  font-family: "ABC Social", sans-serif;
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
+  p {
+    @apply text-[14px] leading-[1.6] font-heading;
+  }
+  .features-block-intro {
+    h2 {
+      @apply text-white font-heading-serif;
+    }
+  }
+  .features-block-callout {
+    > p {
+      @apply text-white font-heading;
+    }
+  }
+} */
 
 /* END Home */
 
