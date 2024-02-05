@@ -96,39 +96,33 @@
     @apply text-darker-blue font-body antialiased;
   }
   h1 {
-    @apply mb-sp-6 text-h1;
-    @screen md {
-      @apply mb-sp-8 text-h1;
-    }
+    @apply mb-sp-5 text-h1;
     @screen lg {
-      @apply mb-sp-10 text-h1-lg;
+      @apply mb-base5-5 text-h1-lg;
     }
     &.text-display {
-      @apply text-h1-display;
+      @apply mb-base5-10 text-h1-display;
       @screen lg {
-        @apply text-h1-display-lg;
+        @apply mb-base5-10 text-h1-display-lg;
       }
     }
   }
   h2 {
-    @apply text-h2 mb-sp-5;
-    @screen md {
-      @apply mb-sp-6;
-    }
+    @apply text-h2 mb-base5-5;
     @screen lg {
-      @apply text-h2-lg mb-sp-8;
+      @apply text-h2-lg mb-base5-3;
     }
   }
   h3 {
-    @apply font-heading-serif text-h3 mb-sp-4;
+    @apply text-h3 mb-base5-5;
     @screen lg {
-      @apply mb-sp-8 text-h3-lg;
+      @apply text-h3-lg mb-base5-3;
     }
   }
   h4 {
-    @apply text-h4 mb-sp-2;
+    @apply text-h4 mb-base5-4;
     @screen lg {
-      @apply mb-sp-6 text-h4-lg;
+      @apply text-h4-lg mb-base5-4;
     }
   }
   h5 {
@@ -144,14 +138,14 @@
     }
   }
   p {
-    @apply text-p mb-sp-6;
+    @apply text-p mb-[18px];
     @screen lg {
       @apply text-p-lg;
     }
   }
   ul,
   ol {
-    @apply block pl-10 mb-sp-6 text-p;
+    @apply block pl-10 mb-[18px] text-p;
     @screen lg {
       @apply text-p-lg;
     }
@@ -187,7 +181,7 @@
     }
   }
   blockquote {
-    @apply py-8 my-8 border-solid border-y-4 border-purple-gradient-start mb-sp-6;
+    @apply py-8 my-8 border-solid border-y-4 border-purple-gradient-start mb-base5-5;
   }
   blockquote > p {
     @apply font-heading-serif text-4xl leading-10 text-dark-blue;
@@ -199,7 +193,7 @@
     @apply mb-0;
   }
   hr {
-    @apply mb-10;
+    @apply mb-base5-8;
   }
   img {
     /* @apply mb-10 rounded-lg; */
@@ -220,7 +214,7 @@
   }
 
   figure {
-    @apply mb-sp-6;
+    @apply mb-base5-5;
     @screen lg {
       @apply text-p-lg;
     }
