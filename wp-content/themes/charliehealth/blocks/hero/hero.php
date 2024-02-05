@@ -28,13 +28,13 @@ $icon           = get_field('hero_icon');
 <?php if ($style === 'image') : ?>
   <div class="grid items-center lg:grid-cols-2 lg:gap-sp-16 hero-cta">
     <div class="order-2 lg:order-1 fix-order">
-      <h1 class="text-h1-display-lg lg:text-h1-display-lg"><?= $title; ?></h1>
+      <h1 class="text-h1-display-base"><?= $title; ?></h1>
       <img src="<?= $heroImage['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $heroImage['alt'] ?: 'Placeholder image'; ?>" class="block object-cover object-top rounded-lg max-h-52 md:max-h-none nolazy lg:noshow mb-sp-4 hero-image-container">
       <div class="flex items-center gap-sp-4 mb-sp-12 mobile-hero-sub">
         <?php if ($icon) : ?>
           <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health Shield" class="w-10">
         <?php endif; ?>
-        <p class="mb-0 text-h4 lg:text-h4 font-heading-serif"><?= $subtitle; ?></p>
+        <p class="mb-0 text-h4-base font-heading-serif"><?= $subtitle; ?></p>
       </div>
       <div class="hero-image-buttons">
         <?php include(get_template_directory() . '/includes/button-group.php'); ?>
@@ -48,12 +48,12 @@ $icon           = get_field('hero_icon');
 <?php if ($style === 'new_image') : ?>
   <div class="grid items-center lg:grid-cols-2 gap-sp-5 py-sp-10 lg:py-0">
     <div class="order-2 lg:order-1 mobile-hero-sub">
-      <h1 class="text-display lg:text-h1-display-lg"><?= $title; ?></h1>
+      <h1 class="text-h1-display-base"><?= $title; ?></h1>
       <div class="flex items-center gap-sp-4 mb-sp-10">
         <?php if ($icon) : ?>
           <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health Shield" class="w-10">
         <?php endif; ?>
-        <p class="mb-0 text-h4 lg:text-h4 font-heading-serif"><?= $subtitle; ?></p>
+        <p class="mb-0 text-h4-base font-heading-serif"><?= $subtitle; ?></p>
       </div>
       <?php include(get_template_directory() . '/includes/button-group.php'); ?>
     </div>
@@ -65,7 +65,7 @@ $icon           = get_field('hero_icon');
 <?php if ($style === 'multi_image') : ?>
   <div class="grid items-center lg:grid-cols-[4fr_8fr] gap-sp-5">
     <div class="order-2 lg:order-1">
-      <p class="text-[20px] mb-sp-4"><?= $subtitle; ?></p>
+      <p class="text-h4-base"><?= $subtitle; ?></p>
       <h1><?= $title; ?></h1>
       <?php include(get_template_directory() . '/includes/button-group.php'); ?>
     </div>
@@ -123,7 +123,7 @@ $icon           = get_field('hero_icon');
         <?php if ($icon) : ?>
           <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health Shield" class="w-10">
         <?php endif; ?>
-        <p class="mb-0 text-h4 lg:text-h4 font-heading-serif"><?= $subtitle; ?></p>
+        <p class="mb-0 text-h4-base font-heading-serif"><?= $subtitle; ?></p>
       </div>
       <div class="">
         <?= $subtitleEditor; ?>

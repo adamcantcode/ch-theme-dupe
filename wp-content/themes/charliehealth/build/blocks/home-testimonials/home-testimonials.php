@@ -3,9 +3,9 @@ $heading = get_field('heading');
 ?>
 
 <div class="lg:mb-sp-14 mb-sp-10">
-  <div class="relative z-20 inline-block bg-yellow-300 rounded-pill px-sp-4 py-sp-3 text-h5">Parents</div>
-  <div class="relative z-20 inline-block bg-lavender-300 rounded-pill px-sp-4 py-sp-3 text-h5">Young Adults</div>
-  <div class="relative z-20 inline-block bg-pale-blue-300 rounded-pill px-sp-4 py-sp-3 text-h5">Teens</div>
+  <div class="relative z-20 inline-block bg-yellow-300 rounded-pill px-sp-4 py-sp-3 text-h5-base">Parents</div>
+  <div class="relative z-20 inline-block bg-lavender-300 rounded-pill px-sp-4 py-sp-3 text-h5-base">Young Adults</div>
+  <div class="relative z-20 inline-block bg-pale-blue-300 rounded-pill px-sp-4 py-sp-3 text-h5-base">Teens</div>
 </div>
 <div class="grid grid-cols-1 lg:gap-sp-5 gap-0 lg:grid-cols-[minmax(0,_7fr)_minmax(0,_1fr)_minmax(0,_4fr)] home-testimonials relative">
   <div class="min-w-0">
@@ -33,7 +33,7 @@ $heading = get_field('heading');
           <div class="grid grid-cols-1 lg:grid-cols-[2.33fr_4fr] lg:gap-sp-10 gap-sp-3">
             <div class="flex gap-x-sp-6">
               <div class="rounded-circle h-[15px] w-[15px] mt-sp-2 <?= $dotColor; ?>"></div>
-              <p class="flex-1 font-heading-serif text-h4 lg:text-h4-lg">“<?= get_sub_field('pull_quote'); ?>”</p>
+              <p class="flex-1 font-heading-serif text-h4-base">“<?= get_sub_field('pull_quote'); ?>”</p>
             </div>
             <div>
               <div class="ml-[40px] lg:ml-0">

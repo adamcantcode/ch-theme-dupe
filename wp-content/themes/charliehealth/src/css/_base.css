@@ -95,56 +95,56 @@
   ol li {
     @apply text-darker-blue font-body antialiased last:mb-0;
   }
-  h1 {
+  h1, .text-h1-base {
     @apply mb-sp-5 text-h1;
     @screen lg {
       @apply mb-base5-5 text-h1-lg;
     }
-    &.text-display {
+    &.text-h1-display-base {
       @apply mb-base5-10 text-h1-display;
       @screen lg {
         @apply mb-base5-10 text-h1-display-lg;
       }
     }
   }
-  h2 {
+  h2, .text-h2-base {
     @apply text-h2 mb-base5-3 font-heading-serif;
     @screen lg {
       @apply text-h2-lg mb-base5-5;
     }
   }
-  h3 {
+  h3, .text-h3-base {
     @apply text-h3 mb-base5-3;
     @screen lg {
       @apply text-h3-lg mb-base5-4;
     }
   }
-  h4 {
+  h4, .text-h4-base {
     @apply text-h4 mb-base5-2;
     @screen lg {
       @apply text-h4-lg mb-base5-2;
     }
   }
-  h5 {
+  h5, .text-h5-base {
     @apply text-h5 mb-base5-1;
     @screen lg {
       @apply mb-base5-2;
     }
   }
-  h6 {
+  h6, .text-h5-base {
     @apply text-h6 mb-base5-1;
     @screen lg {
       @apply mb-sp-2;
     }
   }
-  p {
+  p, .text-p-base {
     @apply text-p mb-base5-2;
     @screen lg {
       @apply text-p-lg;
     }
   }
   ul,
-  ol {
+  ol, .text-ul-base, .text-ol-base {
     @apply block pl-10 mb-base5-2 text-p;
     @screen lg {
       @apply text-p-lg;

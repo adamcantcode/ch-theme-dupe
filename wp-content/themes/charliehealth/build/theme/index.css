@@ -531,7 +531,7 @@ p:last-child,
   margin-bottom: 0px;
 }
 
-h1{
+h1, .text-h1-base{
   margin-bottom: 1.25rem;
   font-size: 50px;
   line-height: 110%;
@@ -540,7 +540,7 @@ h1{
 }
 
 @media (min-width: 1024px) {
-  h1{
+  h1, .text-h1-base{
     margin-bottom: 25px;
     font-size: 64px;
     line-height: 110%;
@@ -549,7 +549,7 @@ h1{
   }
     }
 
-h1.text-display{
+h1.text-h1-display-base, .text-h1-base.text-h1-display-base{
   margin-bottom: 50px;
   font-size: 70px;
   line-height: 90%;
@@ -558,7 +558,7 @@ h1.text-display{
 }
 
 @media (min-width: 1024px) {
-    h1.text-display{
+    h1.text-h1-display-base, .text-h1-base.text-h1-display-base{
     margin-bottom: 50px;
     font-size: 120px;
     line-height: 90%;
@@ -567,7 +567,7 @@ h1.text-display{
   }
       }
 
-h2{
+h2, .text-h2-base{
   margin-bottom: 15px;
   font-family: "ABC Arizona", serif;
   font-size: 35px;
@@ -577,7 +577,7 @@ h2{
 }
 
 @media (min-width: 1024px) {
-  h2{
+  h2, .text-h2-base{
     margin-bottom: 25px;
     font-size: 40px;
     line-height: 110%;
@@ -586,7 +586,7 @@ h2{
   }
     }
 
-h3{
+h3, .text-h3-base{
   margin-bottom: 15px;
   font-size: 25px;
   line-height: 110%;
@@ -595,7 +595,7 @@ h3{
 }
 
 @media (min-width: 1024px) {
-  h3{
+  h3, .text-h3-base{
     margin-bottom: 20px;
     font-size: 28px;
     line-height: 110%;
@@ -604,7 +604,7 @@ h3{
   }
     }
 
-h4{
+h4, .text-h4-base{
   margin-bottom: 10px;
   font-size: 18px;
   line-height: 140%;
@@ -613,7 +613,7 @@ h4{
 }
 
 @media (min-width: 1024px) {
-  h4{
+  h4, .text-h4-base{
     margin-bottom: 10px;
     font-size: 20px;
     line-height: 140%;
@@ -622,7 +622,7 @@ h4{
   }
     }
 
-h5{
+h5, .text-h5-base{
   margin-bottom: 5px;
   font-size: 16px;
   line-height: 140%;
@@ -631,12 +631,12 @@ h5{
 }
 
 @media (min-width: 1024px) {
-  h5{
+  h5, .text-h5-base{
     margin-bottom: 10px;
   }
     }
 
-h6{
+h6, .text-h5-base{
   margin-bottom: 5px;
   font-size: 14px;
   line-height: 140%;
@@ -645,12 +645,12 @@ h6{
 }
 
 @media (min-width: 1024px) {
-  h6{
+  h6, .text-h5-base{
     margin-bottom: 0.5rem;
   }
     }
 
-p{
+p, .text-p-base{
   margin-bottom: 10px;
   font-size: 16px;
   line-height: 160%;
@@ -659,7 +659,7 @@ p{
 }
 
 @media (min-width: 1024px) {
-  p{
+  p, .text-p-base{
     font-size: 16px;
     line-height: 160%;
     letter-spacing: 0;
@@ -668,7 +668,7 @@ p{
     }
 
 ul,
-  ol{
+  ol, .text-ul-base, .text-ol-base{
   margin-bottom: 10px;
   display: block;
   padding-left: 2.5rem;
@@ -680,7 +680,7 @@ ul,
 
 @media (min-width: 1024px) {
   ul,
-  ol{
+  ol, .text-ul-base, .text-ol-base{
     font-size: 16px;
     line-height: 160%;
     letter-spacing: 0;
@@ -2396,10 +2396,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .gap-y-sp-10{
   row-gap: 2.5rem;
-}
-
-.gap-y-sp-4{
-  row-gap: 1rem;
 }
 
 .gap-y-sp-8{
@@ -5495,10 +5491,6 @@ ul.alert li {
     margin-bottom: 6rem;
   }
 
-  .lg\:\!mb-sp-14{
-    margin-bottom: 4rem !important;
-  }
-
   .lg\:mb-0{
     margin-bottom: 0px;
   }
@@ -6198,13 +6190,6 @@ ul.alert li {
     font-weight: 400;
   }
 
-  .lg\:text-h5{
-    font-size: 16px;
-    line-height: 140%;
-    letter-spacing: 0;
-    font-weight: 500;
-  }
-
   .lg\:text-h4-lg{
     font-size: 20px;
     line-height: 140%;
@@ -6212,16 +6197,15 @@ ul.alert li {
     font-weight: 400;
   }
 
-  .lg\:\!leading-\[1\.4\]{
-    line-height: 1.4 !important;
+  .lg\:text-h5{
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0;
+    font-weight: 500;
   }
 
   .lg\:leading-\[1\.2\]{
     line-height: 1.2;
-  }
-
-  .lg\:leading-\[1\.4\]{
-    line-height: 1.4;
   }
 
   .lg\:leading-tight{
