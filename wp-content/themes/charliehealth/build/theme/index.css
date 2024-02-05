@@ -6182,6 +6182,13 @@ ul.alert li {
     font-weight: 500;
   }
 
+  .lg\:text-h4{
+    font-size: 18px;
+    line-height: 140%;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+
   .lg\:\!leading-\[1\.4\]{
     line-height: 1.4 !important;
   }
