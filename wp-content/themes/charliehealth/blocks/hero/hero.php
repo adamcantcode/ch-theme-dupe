@@ -28,7 +28,7 @@ $icon           = get_field('hero_icon');
 <?php if ($style === 'image') : ?>
   <div class="grid items-center lg:grid-cols-2 lg:gap-sp-16 hero-cta">
     <div class="order-2 lg:order-1 fix-order">
-      <h1 class="text-h1-display-base"><?= $title; ?></h1>
+      <h1><?= $title; ?></h1>
       <img src="<?= $heroImage['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $heroImage['alt'] ?: 'Placeholder image'; ?>" class="block object-cover object-top rounded-lg max-h-52 md:max-h-none nolazy lg:noshow mb-sp-4 hero-image-container">
       <div class="flex items-center gap-sp-4 mb-sp-12 mobile-hero-sub">
         <?php if ($icon) : ?>
@@ -48,7 +48,7 @@ $icon           = get_field('hero_icon');
 <?php if ($style === 'new_image') : ?>
   <div class="grid items-center lg:grid-cols-2 gap-sp-5 py-sp-10 lg:py-0">
     <div class="order-2 lg:order-1 mobile-hero-sub">
-      <h1 class="text-h1-display-base"><?= $title; ?></h1>
+      <h1><?= $title; ?></h1>
       <div class="flex items-center gap-sp-4 mb-sp-10">
         <?php if ($icon) : ?>
           <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health Shield" class="w-10">

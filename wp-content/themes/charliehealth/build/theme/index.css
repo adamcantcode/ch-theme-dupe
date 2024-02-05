@@ -549,24 +549,6 @@ h1, .text-h1-base{
   }
     }
 
-h1.text-h1-display-base, .text-h1-base.text-h1-display-base{
-  margin-bottom: 50px;
-  font-size: 70px;
-  line-height: 90%;
-  letter-spacing: 0;
-  font-weight: 400;
-}
-
-@media (min-width: 1024px) {
-    h1.text-h1-display-base, .text-h1-base.text-h1-display-base{
-    margin-bottom: 50px;
-    font-size: 120px;
-    line-height: 90%;
-    letter-spacing: 0;
-    font-weight: 400;
-  }
-      }
-
 h2, .text-h2-base{
   margin-bottom: 15px;
   font-family: "ABC Arizona", serif;
@@ -3964,6 +3946,23 @@ a.ch-button.button-tertiary.inverted:hover {
   }
 } */
 
+.home.page h1{
+  font-size: 70px;
+  line-height: 90%;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+@media (min-width: 1024px){
+
+  .home.page h1{
+    font-size: 120px;
+    line-height: 90%;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+}
+
 /* END Home */
 
 /* Outcomes */
@@ -4036,133 +4035,143 @@ a.ch-button.button-tertiary.inverted:hover {
 
 /* IOP */
 
-.page-id-435 main > section .hero-cta .fix-order {
+/* .page-id-435 {
+  main > section {
+    .hero-cta {
+      .fix-order {
         display: grid;
-      }
-
-.page-id-435 main > section .hero-cta .fix-order .mobile-hero-sub {
+        .mobile-hero-sub {
           order: 3;
         }
-
-.page-id-435 main > section .hero-cta .fix-order .hero-heading {
+        .hero-heading {
           order: 2;
         }
-
-.page-id-435 main > section .hero-cta .fix-order .hero-image-buttons {
+        .hero-image-buttons {
           order: 4;
         }
-
-.page-id-435 main > section .hero-cta .fix-order picture,
-        .page-id-435 main > section .hero-cta .fix-order .hero-image-container {
+        picture,
+        .hero-image-container {
           order: 1;
-        }
-
-.page-id-435 main > section .hero-cta .fix-order picture img, .page-id-435 main > section .hero-cta .fix-order .hero-image-container img {
+          img {
             max-height: unset;
             border-radius: unset;
           }
-
-.page-id-435 main > section .hero-cta h2,
-      .page-id-435 main > section .hero-cta p.not-heading-h2{
-  font-family: "ABC Arizona", serif;
+        }
+      }
+      h2,
+      p.not-heading-h2 {
+        @apply font-heading-serif;
         font-size: 20px;
         line-height: 110%;
         letter-spacing: 0.2px;
         margin-bottom: 0;
-}
-
-.page-id-435 main > section h1{
-  font-family: "ABC Social", sans-serif;
+      }
+    }
+    h1 {
+      @apply font-heading;
       font-size: 42px;
       line-height: 110%;
       letter-spacing: 0.42px;
-}
-
-.page-id-435 main > section h2,
-    .page-id-435 main > section .not-heading-h2{
-  font-family: "ABC Arizona", serif;
+    }
+    h2,
+    .not-heading-h2 {
+      @apply font-heading-serif;
       font-size: 32px;
       line-height: 110%;
       letter-spacing: 0.32px;
-}
-
-.page-id-435 main > section h3 {
+    }
+    h3 {
       font-size: 20px;
     }
-
-.page-id-435 main > section .step-items-container h3 {
+    .step-items-container {
+      h3 {
         font-size: 28px;
       }
-
-.page-id-435 main > section h4,
-    .page-id-435 main > section .not-heading-h4 {
+    }
+    h4,
+    .not-heading-h4 {
       font-size: 18px;
       margin-bottom: 0;
     }
-
-.page-id-435 main > section p {
+    p {
       font-size: 14px;
       margin-bottom: 10px;
     }
-
-@media (min-width: 1024px) {
-        .page-id-435 main > section .hero-cta .mobile-hero-sub {
+  }
+}
+@screen lg {
+  .page-id-435 {
+    main > section {
+      .hero-cta {
+        .mobile-hero-sub {
           order: 1;
         }
-      .page-id-435 main > section p,
-      .page-id-435 main > section ol > li,
-      .page-id-435 main > section ul > li {
+      }
+      p,
+      ol > li,
+      ul > li {
         font-size: 14px;
         line-height: 160%;
         letter-spacing: 0.14px;
       }
-        .page-id-435 main > section p a, .page-id-435 main > section li > a {
+      p,
+      li > {
+        a {
           font-size: 14px;
           line-height: 160%;
           letter-spacing: 0.14px;
         }
-      .page-id-435 main > section p {
+      }
+      p {
         margin-bottom: 24px;
       }
 
-      .page-id-435 main > section h1 {
+      h1 {
         font-size: 64px;
         line-height: 110%;
         letter-spacing: 0.64px;
       }
-      .page-id-435 main > section h2,
-      .page-id-435 main > section .not-heading-h2 {
+      h2,
+      .not-heading-h2 {
         font-size: 40px;
         line-height: 110%;
         letter-spacing: 0.4px;
       }
-      .page-id-435 main > section h3 {
+      h3 {
         font-size: 28px;
         line-height: 160%;
         letter-spacing: 0.28px;
       }
-      .page-id-435 main > section h4,
-      .page-id-435 main > section .not-heading-h4 {
+      h4,
+      .not-heading-h4 {
         font-size: 20px;
         line-height: 110%;
         letter-spacing: 0.2px;
         margin-bottom: 0;
       }
-      .page-id-435 .hero-cta p{
-    font-family: "ABC Arizona", serif;
+    }
+  }
+}
+@screen lg {
+  .page-id-435 {
+    .hero-cta {
+      p {
+        @apply font-heading-serif;
         font-size: 20px;
         line-height: 140%;
         letter-spacing: 0.2px;
         max-width: 300px;
         margin-bottom: 0;
-  }
-      .page-id-435 .hero-cta h1 {
+      }
+      h1 {
         font-size: 64px;
         line-height: 110%;
         letter-spacing: 0.64px;
         max-width: 550px;
       }
-}
+    }
+  }
+} */
 
 /* END IOP */
 
@@ -6187,20 +6196,6 @@ ul.alert li {
   .lg\:text-h3-lg{
     font-size: 28px;
     line-height: 110%;
-    letter-spacing: 0;
-    font-weight: 400;
-  }
-
-  .lg\:text-h4{
-    font-size: 18px;
-    line-height: 140%;
-    letter-spacing: 0;
-    font-weight: 400;
-  }
-
-  .lg\:text-h4-lg{
-    font-size: 20px;
-    line-height: 140%;
     letter-spacing: 0;
     font-weight: 400;
   }

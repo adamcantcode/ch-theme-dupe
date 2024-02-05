@@ -57,6 +57,11 @@
     }
   }
 } */
+.home.page {
+  h1 {
+    @apply text-h1-display lg:text-h1-display-lg;
+  }
+}
 /* END Home */
 
 /* Outcomes */
@@ -122,7 +127,7 @@
 /* END Outomes */
 
 /* IOP */
-.page-id-435 {
+/* .page-id-435 {
   main > section {
     .hero-cta {
       .fix-order {
@@ -258,7 +263,7 @@
       }
     }
   }
-}
+} */
 /* END IOP */
 
 /* *** END Custom Pages *** */
