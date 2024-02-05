@@ -495,6 +495,15 @@ h1,
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1:last-child,
+  h2:last-child,
+  h3:last-child,
+  h4:last-child,
+  h5:last-child,
+  h6:last-child{
+  margin-bottom: 0px;
+}
+
 h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a{
   text-decoration-line: none;
         color: inherit;
@@ -514,6 +523,12 @@ p,
   color: rgb(22 26 61 / var(--tw-text-opacity));
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+p:last-child,
+  ul li:last-child,
+  ol li:last-child{
+  margin-bottom: 0px;
 }
 
 h1{
@@ -553,7 +568,7 @@ h1.text-display{
       }
 
 h2{
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   font-family: "ABC Arizona", serif;
   font-size: 35px;
   line-height: 110%;
@@ -563,7 +578,7 @@ h2{
 
 @media (min-width: 1024px) {
   h2{
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     font-size: 40px;
     line-height: 110%;
     letter-spacing: 0;
@@ -6161,16 +6176,16 @@ ul.alert li {
     font-weight: 400;
   }
 
-  .lg\:text-h3{
-    font-size: 25px;
+  .lg\:text-h3-lg{
+    font-size: 28px;
     line-height: 110%;
     letter-spacing: 0;
     font-weight: 400;
   }
 
-  .lg\:text-h3-lg{
-    font-size: 28px;
-    line-height: 110%;
+  .lg\:text-h4{
+    font-size: 18px;
+    line-height: 140%;
     letter-spacing: 0;
     font-weight: 400;
   }
@@ -6180,13 +6195,6 @@ ul.alert li {
     line-height: 140%;
     letter-spacing: 0;
     font-weight: 500;
-  }
-
-  .lg\:text-h4{
-    font-size: 18px;
-    line-height: 140%;
-    letter-spacing: 0;
-    font-weight: 400;
   }
 
   .lg\:\!leading-\[1\.4\]{
@@ -6243,6 +6251,11 @@ ul.alert li {
 
 .\[\&_\*\]\:leading-\[1\.6\] *{
   line-height: 1.6;
+}
+
+.\[\&_\*\]\:\!text-primary *{
+  --tw-text-opacity: 1 !important;
+  color: rgb(22 26 61 / var(--tw-text-opacity)) !important;
 }
 
 .\[\&_\*\]\:text-white *{
