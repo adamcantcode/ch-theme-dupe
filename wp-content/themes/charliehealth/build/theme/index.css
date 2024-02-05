@@ -2283,6 +2283,10 @@ a.ch-button.button-tertiary.inverted:hover {
   align-items: center;
 }
 
+.items-stretch{
+  align-items: stretch;
+}
+
 .justify-start{
   justify-content: flex-start;
 }
@@ -5881,6 +5885,10 @@ ul.alert li {
 
   .lg\:flex-nowrap{
     flex-wrap: nowrap;
+  }
+
+  .lg\:items-start{
+    align-items: flex-start;
   }
 
   .lg\:items-end{
