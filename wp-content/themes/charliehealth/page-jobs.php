@@ -26,9 +26,9 @@ Template Post Type: page
 <?php else : ?>
   <section class="section section-bg-js">
     <div class="container mb-sp-16">
-      <h1 class="text-[14px] leading-[1.6] mb-sp-4"><?= get_the_title(); ?></h1>
+      <h1 class="text-h4-base"><?= get_the_title(); ?></h1>
       <div class="flex flex-col justify-between lg:items-center lg:mb-sp-16 mb-sp-8 lg:flex-row">
-        <h2 class="lg:text-[64px] text-[42px] leading-[1.1] lg:mb-0">Open Roles</h2>
+        <h2 class="mb-0 text-h1-base">Open Roles</h2>
         <div>
           <select id="locationFilter" class="cursor-pointer ch-button button-secondary custom-select">
             <option value="">All Locations</option>
@@ -46,9 +46,9 @@ Template Post Type: page
             <div class="flex justify-center rounded-sm lg:px-sp-14 lg:pt-sp-14 pb-sp-6 px-sp-6">
               <div class="flex flex-col items-center justify-center text-center max-w-[700px]">
                 <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health shield logo" class="w-[3rem] mb-sp-5">
-                <h2 class="text-darkest-blue lg:text-[2.5rem] text-h2-lg lg:leading-tight mb-sp-10 font-heading-serif">Let’s build the solution to the youth mental health crisis together</h2>
+                <h2>Let’s build the solution to the youth mental health crisis together</h2>
                 <div class="flex gap-x-sp-4 items-center md:w-[unset] w-full">
-                  <a href="<?= $link['url']; ?>" class="ch-button button-primary<?= $invert ? ' inverted' : '' ?>"><?= $link['title']; ?></a>
+                  <a href="<?= $link['url']; ?>" class="ch-button button-primary"><?= $link['title']; ?></a>
                 </div>
               </div>
             </div>
@@ -260,13 +260,13 @@ Template Post Type: page
               if (department.jobs.length > 0) {
                 const jobMarkup = department.jobs.map(job => `
                   <div class="relative flex flex-col justify-between transition-all duration-300 border-b lg:flex-row lg:items-center border-primary first:border-t py-sp-6 gap-x-sp-5 job-list-job-js">
-                    <a href="${job.absolute_url}" class="no-underline stretched-link text-[20px] leading-[1.1] mb-sp-2 lg:mb-0">${job.title}</a>
-                    <p class="mb-0 text-[14px] leading-[1.1] location-js lg:text-right">${job.location.name}</p>
+                    <a href="${job.absolute_url}" class="no-underline stretched-link text-h4-base mb-sp-2 lg:mb-0">${job.title}</a>
+                    <p class="location-js lg:text-right">${job.location.name}</p>
                   </div>
                 `).join('');
                 const markup = `
                   <div class="job-departments-js">
-                      <h3 class="text-[40px] leading-[1.1] font-heading my-sp-4">${department.name}</h3>
+                      <h3 class="text-h2-base font-heading my-sp-4">${department.name}</h3>
                   </div>
                   <div class="job-list-js">
                       ${jobMarkup}
