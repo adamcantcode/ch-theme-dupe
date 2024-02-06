@@ -156,7 +156,7 @@
     </div>
   </div>
 </section>
-<section id="postsContainer" class="section-bottom">
+<section id="postsContainer" class="section-bottom bg-off-white">
   <div class="container">
     <h2>Latest</h2>
     <div class="absolute invisible opacity-0 no-posts-js">
@@ -197,19 +197,21 @@
             $featuredImageAltText = 'Charlie Health Logo';
           }
       ?>
-          <div class="relative grid overflow-hidden duration-300 border rounded-sm border-card-border hover:shadow-lg">
-            <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover lg:h-[220px] h-[150px] w-full">
-            <div class="grid p-sp-4">
-              <h3><a href="<?= get_the_permalink(); ?>" class="stretched-link"><?= get_the_title(); ?></a></h3>
-              <p class="mb-sp-4 text-h5 lg:text-h5-lg"><?= $author->post_title; ?></p>
-              <?php
-              $tags = get_the_terms(get_the_ID(), 'post_tag');
-              ?>
+          <div class="relative bg-white rounded-lg group">
+            <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
+              <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
+            </div>
+            <div class="absolute rounded-t-lg top-sp-4 left-sp-4">
+              <?php $tags = get_the_terms(get_the_ID(), 'post_tag');  ?>
               <?php if ($tags) :  ?>
                 <?php foreach ($tags as $tag) : ?>
-                  <div class="grid items-end justify-start grid-flow-col gap-sp-4"><a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="relative z-[6] inline-block no-underline rounded-lg px-sp-4 py-sp-3 text-h6 bg-tag-gray hover:bg-bright-teal"><?= $tag->name; ?></a></div>
+                  <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base"><?= $tag->name; ?></a>
                 <?php endforeach; ?>
               <?php endif; ?>
+            </div>
+            <div class="grid bg-white rounded-b-lg p-sp-4">
+              <h3 class="text-h4-base"><a href="<?= get_the_permalink(); ?>" class="block stretched-link"><?= get_the_title(); ?></a></h3>
+              <p><?= $author->post_title; ?></p>
             </div>
           </div>
       <?php
