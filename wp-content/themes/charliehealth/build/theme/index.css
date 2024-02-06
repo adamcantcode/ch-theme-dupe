@@ -2026,6 +2026,10 @@ a.ch-button.button-tertiary.inverted:hover {
   width: 2rem;
 }
 
+.w-\[650px\]{
+  width: 650px;
+}
+
 .min-w-0{
   min-width: 0px;
 }
