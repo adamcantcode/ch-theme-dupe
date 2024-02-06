@@ -24,7 +24,7 @@ if (!empty($block['align'])) {
 <section <?= $anchor ?: ''; ?>class="<?= $className; ?> testimonial-padding bg-grey-warm section-bg-js">
   <div class="section-horizontal">
     <div class="container">
-      <h2 class="text-[14px] leading-[1.1] lg:mb-sp-14">Hear from the team</h2>
+      <h2 class="!mb-sp-14">Hear from the team</h2>
     </div>
   </div>
   <?php if (have_rows('testimonials')) :  ?>
@@ -41,10 +41,10 @@ if (!empty($block['align'])) {
           ?>
           <div class="!h-auto swiper-slide mb-sp-12">
             <div class="flex !h-full gap-sp-8 pb-sp-8 lg:flex-row flex-col">
-              <div class="text-center bg-white p-sp-8 rounded-[6px] lg:basis-[33%] careers-testimonial-image self-start">
+              <div class="text-center bg-white p-base5-5 rounded-lg lg:basis-[33%] careers-testimonial-image self-start">
                 <img src="<?= $image['url'] ?: placeHolderImage(); ?>" alt="<?= $image['alt']; ?>" class="object-cover rounded-circle aspect-square mb-sp-6">
-                <p class="font-heading-serif text-[14px] leading-[1.6] mb-sp-1"><?= $name; ?></p>
-                <p class="text-[14px] leading-[1.6] mb-0"><?= $title; ?></p>
+                <p class="font-heading-serif mb-base5-1"><?= $name; ?></p>
+                <p><?= $title; ?></p>
                 <?php if ($linkedIn) : ?>
                   <div class="relative inline-block mt-sp-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="none" viewBox="0 0 25 25">
@@ -55,8 +55,8 @@ if (!empty($block['align'])) {
                 <?php endif; ?>
               </div>
               <div class="careers-testimonials-panel lg:basis-[55%]">
-                <p class="lg:text-[28px] text-[20px] leading-[1.4] mb-sp-4 font-heading-serif"><?= $pullQuote; ?></p>
-                <p class="text-[14px] leading-[1.4]"><?= $fullQuote; ?></p>
+                <p class="text-h3-base font-heading-serif"><?= $pullQuote; ?></p>
+                <p><?= $fullQuote; ?></p>
               </div>
             </div>
             <div class="flex swiper-careers-testimonial-border">
@@ -90,7 +90,7 @@ if (!empty($block['align'])) {
           <div class="flex justify-center rounded-sm lg:px-sp-14 lg:pt-sp-14 pb-sp-6 px-sp-6">
             <div class="flex flex-col items-center justify-center text-center max-w-[700px]">
               <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health shield logo" class="w-[3rem] mb-sp-5">
-              <h2 class="text-darkest-blue lg:text-[2.5rem] text-h2-lg lg:leading-tight mb-sp-10 font-heading-serif"><?= $ctaHeadline; ?></h2>
+              <h2><?= $ctaHeadline; ?></h2>
               <?php include(get_template_directory() . '/includes/button-group.php'); ?>
             </div>
           </div>

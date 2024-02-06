@@ -1746,6 +1746,14 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-bottom: 30px;
 }
 
+.\!mb-sp-14{
+  margin-bottom: 4rem !important;
+}
+
+.mb-base5-1{
+  margin-bottom: 5px;
+}
+
 .line-clamp-3{
   overflow: hidden;
   display: -webkit-box;
@@ -2860,6 +2868,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .p-sp-8{
   padding: 2rem;
+}
+
+.p-base5-5{
+  padding: 25px;
 }
 
 .px-3{
@@ -5302,6 +5314,10 @@ ul.alert li {
 
   .lg\:mt-sp-8{
     margin-top: 2rem;
+  }
+
+  .lg\:\!mb-sp-14{
+    margin-bottom: 4rem !important;
   }
 
   .lg\:block{
