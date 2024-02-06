@@ -238,12 +238,12 @@
     <?= do_blocks('<!-- wp:block {"ref":4069} /-->'); ?>
   </div>
 </section>
-<section class="section-top">
+<section class="section">
   <div class="container-sm">
     <?= do_blocks('<!-- wp:block {"ref":1709} /-->'); ?>
   </div>
 </section>
-<section id="researchContainer" class="section">
+<section id="researchContainer" class="section bg-off-white">
   <div class="container">
     <h2>Research</h2>
     <div class="grid lg:grid-cols-3 transition-all duration-300 scale-[0.99] opacity-0 posts-container-research gap-x-sp-8 gap-y-sp-10 mb-sp-10">
@@ -262,9 +262,6 @@
   </div>
 </section>
 <section class="section-bottom">
-  <div class="container">
-    <?= do_blocks('<!-- wp:acf/divider-block {"name":"acf/divider-block"} /-->'); ?>
-  </div>
 </section>
 <?= do_blocks('<!-- wp:block {"ref":12} /-->'); ?>
 <?php
