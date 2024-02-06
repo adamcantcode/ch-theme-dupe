@@ -206,7 +206,7 @@
                       $title = $secondaryLink['title'];
                       $target = $secondaryLink['target'];
                       ?>
-                      <a <?= $url; ?> target="<?= $target; ?>" class="w-full leading-none text-white text-[1rem] no-underline py-sp-4 font-heading"><?= $title; ?></a>
+                      <a <?= $url; ?> target="<?= $target; ?>" class="mb-0 text-white no-underline py-sp-4 text-nav-normal"><?= $title; ?></a>
                     <?php endwhile; ?>
                     <?php if (have_rows('tertiary_menu', 'option')) : ?>
                       <div class="grid gap-x-sp-4 tertiary mt-sp-4">
@@ -222,7 +222,7 @@
                           $title = $topLink['title'];
                           $target = $topLink['target'];
                         ?>
-                          <a <?= $url; ?> target="<?= $target; ?>" class="w-full leading-snug text-[.875rem] no-underline py-sp-4 font-heading <?= empty($url) ? 'text-lavender-200 hover:text-lavender-200' : 'text-white'; ?> "><?= $title; ?></a>
+                          <a <?= $url; ?> target="<?= $target; ?>" class="w-full text-nav-small no-underline py-sp-4 <?= empty($url) ? 'text-lavender-200 hover:text-lavender-200' : 'text-white'; ?> "><?= $title; ?></a>
                         <?php endwhile; ?>
                       </div>
                     <?php endif; ?>
