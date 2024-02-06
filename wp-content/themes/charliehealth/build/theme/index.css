@@ -3302,6 +3302,13 @@ a.ch-button.button-tertiary.inverted:hover {
   line-height: 1rem;
 }
 
+.text-mini{
+  font-size: 12px;
+  line-height: 140%;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
 .font-bold{
   font-weight: 700;
 }
