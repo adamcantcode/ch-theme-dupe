@@ -671,18 +671,15 @@ mark {
     }
   }
 }
-.not-heading-h4 {
-  @apply lg:text-[20px] text-[18px] leading-[1.4];
-}
 
-.faq-block-text-updates .faq-block {
+/* .faq-block-text-updates .faq-block {
   p,
   ul,
   li,
   a {
     @apply !text-[14px] !leading-[1.1];
   }
-}
+} */
 
 .swiper.swiper-careers-testimonial {
   .swiper-slide {

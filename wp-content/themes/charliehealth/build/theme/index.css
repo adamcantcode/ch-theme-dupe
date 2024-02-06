@@ -1973,12 +1973,12 @@ a.ch-button.button-tertiary.inverted:hover {
   width: 50px;
 }
 
-.w-\[555px\]{
-  width: 555px;
-}
-
 .w-\[56px\]{
   width: 56px;
+}
+
+.w-\[650px\]{
+  width: 650px;
 }
 
 .w-\[80px\]{
@@ -2024,10 +2024,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .w-sp-8{
   width: 2rem;
-}
-
-.w-\[650px\]{
-  width: 650px;
 }
 
 .min-w-0{
@@ -3126,10 +3122,6 @@ a.ch-button.button-tertiary.inverted:hover {
   font-weight: 500 !important;
 }
 
-.text-\[\.875rem\]{
-  font-size: .875rem;
-}
-
 .text-\[1\.25rem\]{
   font-size: 1.25rem;
 }
@@ -3148,10 +3140,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .text-\[18px\]{
   font-size: 18px;
-}
-
-.text-\[1rem\]{
-  font-size: 1rem;
 }
 
 .text-\[2\.5rem\]{
@@ -3331,10 +3319,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .leading-\[1\.8rem\]{
   line-height: 1.8rem;
-}
-
-.leading-\[110\%\]{
-  line-height: 110%;
 }
 
 .leading-\[130\%\]{
@@ -4794,25 +4778,14 @@ mark{
   color: currentColor;
 }
 
-.not-heading-h4{
-  font-size: 18px;
-  line-height: 1.4;
-}
-
-@media (min-width: 1024px){
-
-  .not-heading-h4{
-    font-size: 20px;
+/* .faq-block-text-updates .faq-block {
+  p,
+  ul,
+  li,
+  a {
+    @apply !text-[14px] !leading-[1.1];
   }
-}
-
-.faq-block-text-updates .faq-block p,
-  .faq-block-text-updates .faq-block ul,
-  .faq-block-text-updates .faq-block li,
-  .faq-block-text-updates .faq-block a{
-  font-size: 14px !important;
-  line-height: 1.1 !important;
-}
+} */
 
 .swiper.swiper-careers-testimonial .swiper-slide{
   width: 80%;
@@ -4972,6 +4945,11 @@ ul.alert li {
   color: rgb(29 34 95 / var(--tw-text-opacity)) !important;
 }
 
+.hover\:\!text-lavender-200:hover{
+  --tw-text-opacity: 1 !important;
+  color: rgb(231 211 255 / var(--tw-text-opacity)) !important;
+}
+
 .hover\:text-lavender-200:hover{
   --tw-text-opacity: 1;
   color: rgb(231 211 255 / var(--tw-text-opacity));
@@ -4985,11 +4963,6 @@ ul.alert li {
 .hover\:text-white:hover{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.hover\:\!text-lavender-200:hover{
-  --tw-text-opacity: 1 !important;
-  color: rgb(231 211 255 / var(--tw-text-opacity)) !important;
 }
 
 .hover\:shadow-\[inset_0_0_0_2px_\#1d225f\]:hover{
