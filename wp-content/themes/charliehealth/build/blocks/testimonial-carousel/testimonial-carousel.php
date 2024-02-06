@@ -18,11 +18,11 @@
             <div class="flex flex-col h-full lg:grid lg:grid-cols-2 lg:gap-[10rem]">
               <div class="order-2 lg:order-1 lg:mb-sp-16 mb-sp-8">
                 <?php if (get_row_index() === 1) :  ?>
-                  <h2 class="md:mt-sp-14 mb-sp-8 !text-h5 !font-heading">In their words</h2>
+                  <h2 class="text-h4-base font-heading mt-sp-14">In their words</h2>
                 <?php else : ?>
-                  <p class="md:mt-sp-14 mb-sp-8 !text-h5 !font-heading">In their words</p>
+                  <p class="text-h4-base mt-sp-14">In their words</p>
                 <?php endif; ?>
-                <div class="text-[56px] text-primary leading-[1.1] font-heading-serif mb-sp-8 antialiased">“<?= $pull_quote; ?>”</div>
+                <p class="text-h1-base font-heading-serif">“<?= $pull_quote; ?>”</p>
                 <p><?= $full_quote; ?></p>
                 <p class="mb-0 lg:mb-sp-14">— <?= $age; ?> Client</p>
               </div>

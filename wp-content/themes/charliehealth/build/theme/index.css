@@ -549,6 +549,24 @@ h1, .text-h1-base{
   }
     }
 
+h1.text-h1-display-base, .text-h1-base.text-h1-display-base{
+  margin-bottom: 50px;
+  font-size: 70px;
+  line-height: 90%;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+@media (min-width: 1024px) {
+    h1.text-h1-display-base, .text-h1-base.text-h1-display-base{
+    margin-bottom: 50px;
+    font-size: 120px;
+    line-height: 90%;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+      }
+
 h2, .text-h2-base{
   margin-bottom: 15px;
   font-family: "ABC Arizona", serif;
