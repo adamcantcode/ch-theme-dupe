@@ -4983,6 +4983,11 @@ ul.alert li {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.hover\:\!text-lavender-200:hover{
+  --tw-text-opacity: 1 !important;
+  color: rgb(231 211 255 / var(--tw-text-opacity)) !important;
+}
+
 .hover\:shadow-\[inset_0_0_0_2px_\#1d225f\]:hover{
   --tw-shadow: inset 0 0 0 2px #1d225f;
   --tw-shadow-colored: inset 0 0 0 2px var(--tw-shadow-color);

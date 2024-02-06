@@ -56,7 +56,7 @@
 									$sublinkUrl = get_sub_field('footer_sublink')['url'];
 									$sublinkTitle = get_sub_field('footer_sublink')['title'];
 							?>
-									<a href="<?= $sublinkUrl; ?>" class="text-white no-underline font-heading text-nav-normal mb-[14px] last:mb-0 hover:text-lavender-200"><?= $sublinkTitle; ?></a>
+									<a href="<?= $sublinkUrl; ?>" class="text-white no-underline font-heading text-nav-small mb-[14px] last:mb-0 hover:text-lavender-200"><?= $sublinkTitle; ?></a>
 								<?php endwhile; ?>
 							<?php endif; ?>
 						</div>
@@ -139,10 +139,10 @@
 					while (have_rows('secondary_navigation_items', 'option')) : the_row();
 						$link = get_sub_field('secondary_menu_item')
 				?>
-						<a href="<?= $link['url']; ?>" class="text-white no-underline font-heading text-nav-normal mb-sp-3 last:mb-0 hover:text-lavender-200"><?= $link['title']; ?></a>
+						<a href="<?= $link['url']; ?>" class="text-white no-underline font-heading text-mini mb-sp-3 last:mb-0 hover:!text-lavender-200"><?= $link['title']; ?></a>
 				<?php endwhile;
 				endif; ?>
-				<a role="button" onclick="Osano.cm.showDrawer('osano-cm-dom-info-dialog-open')" class="text-white no-underline font-heading text-nav-normal mb-sp-3 last:mb-0 hover:text-lavender-200">Cookie Preferences</a>
+				<a role="button" onclick="Osano.cm.showDrawer('osano-cm-dom-info-dialog-open')" class="text-white no-underline font-heading text-mini mb-sp-3 last:mb-0 hover:!text-lavender-200">Cookie Preferences</a>
 			</div>
 		</div>
 		<div class="container mb-sp-8">
