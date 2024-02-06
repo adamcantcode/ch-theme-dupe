@@ -4,14 +4,14 @@
   <div class="container">
     <div class="grid lg:grid-cols-[2fr,1fr] mb-sp-12">
       <div>
-        <h1 class="text-h1-display-lg">The Library</h1>
+        <h1>The Library</h1>
         <p>Stay up to date on mental health research, wellness techniques, treatment services, and more.</p>
       </div>
       <div>
         <form role="search" method="get" class="relative search-form" action="<?= esc_url(site_url('/search')); ?>">
           <label>
             <span class="screen-reader-text"><?= _x('Search for:', 'label'); ?></span>
-            <input type="search" class="w-full border-none rounded-sm outline-none search-field h-sp-12 lg:h-sp-14 text-h3 lg:text-h3-lg py-sp-4 px-sp-6 focus-visible:border-none" placeholder="Search..." value="" name="query" />
+            <input type="search" class="w-full mb-0 border-none rounded-sm outline-none search-field h-sp-12 lg:h-sp-14 text-h3-base py-sp-4 px-sp-6 focus-visible:border-none" placeholder="Search..." value="" name="query" />
           </label>
           <button type="submit" class="absolute top-0 right-0 flex items-center justify-center h-full transition-colors duration-300 bg-white rounded-sm search-submit aspect-square hover:bg-lightest-purple"><img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/search.svg'); ?>" alt="icon for search" srcset=""></button>
         </form>
@@ -98,8 +98,8 @@
                 <div class="relative grid overflow-hidden rounded-md lg:grid-cols-2">
                   <div class="grid content-between order-2 lg:p-sp-8 p-sp-4 lg:order-1 <?= $audienceClass; ?>">
                     <div>
-                      <a href="<?= get_category_link($featureAs->term_id); ?>" class="relative z-20 inline-block leading-none text-white no-underline transition-all duration-300 bg-transparent border-2 border-white rounded-lg p-sp-3 hover:bg-white hover:!text-dark-blue mb-sp-4 mr-sp-1"><?= $featureAs->name; ?></a>
-                      <h3 class="text-white text-h2 lg:text-h2-lg"><?= get_the_title(); ?></h3>
+                      <a href="<?= get_category_link($featureAs->term_id); ?>" class="relative z-20 inline-block leading-none text-white no-underline transition-all duration-300 bg-transparent border-2 border-white rounded-pill p-sp-3 hover:bg-white hover:!text-dark-blue mb-sp-4 mr-sp-1"><?= $featureAs->name; ?></a>
+                      <h3 class="text-white text-h2-base"><?= get_the_title(); ?></h3>
                     </div>
                     <a href="<?= get_the_permalink(); ?>" class="text-white no-underline stretched-link">Read more <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/arrow-left.svg'); ?>" alt="arrow" class="inline-block rotate-180 h-sp-4 ml-sp-2"></a>
                   </div>
@@ -156,7 +156,7 @@
     </div>
   </div>
 </section>
-<section id="postsContainer" class="section-bottom bg-off-white">
+<section id="postsContainer" class="section bg-off-white">
   <div class="container">
     <h2>Latest</h2>
     <div class="absolute invisible opacity-0 no-posts-js">
