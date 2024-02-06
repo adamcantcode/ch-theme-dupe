@@ -1542,6 +1542,10 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-bottom: 2rem;
 }
 
+.\!mb-sp-14{
+  margin-bottom: 4rem !important;
+}
+
 .\!mb-sp-2{
   margin-bottom: 0.5rem !important;
 }
@@ -1570,8 +1574,16 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-bottom: 8px;
 }
 
+.mb-base5-1{
+  margin-bottom: 5px;
+}
+
 .mb-base5-5{
   margin-bottom: 25px;
+}
+
+.mb-base5-6{
+  margin-bottom: 30px;
 }
 
 .mb-sp-1{
@@ -1736,22 +1748,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
-}
-
-.mb-base5-4{
-  margin-bottom: 20px;
-}
-
-.mb-base5-6{
-  margin-bottom: 30px;
-}
-
-.\!mb-sp-14{
-  margin-bottom: 4rem !important;
-}
-
-.mb-base5-1{
-  margin-bottom: 5px;
 }
 
 .line-clamp-3{
@@ -2846,6 +2842,10 @@ a.ch-button.button-tertiary.inverted:hover {
   padding: 10px;
 }
 
+.p-base5-5{
+  padding: 25px;
+}
+
 .p-sp-2{
   padding: 0.5rem;
 }
@@ -2868,10 +2868,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .p-sp-8{
   padding: 2rem;
-}
-
-.p-base5-5{
-  padding: 25px;
 }
 
 .px-3{
@@ -3174,10 +3170,6 @@ a.ch-button.button-tertiary.inverted:hover {
   font-size: 25px;
 }
 
-.text-\[28px\]{
-  font-size: 28px;
-}
-
 .text-\[32px\]{
   font-size: 32px;
 }
@@ -3188,10 +3180,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .text-\[42px\]{
   font-size: 42px;
-}
-
-.text-\[4rem\]{
-  font-size: 4rem;
 }
 
 .text-\[64px\]{
@@ -3315,10 +3303,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .leading-\[1\.1\]{
   line-height: 1.1;
-}
-
-.leading-\[1\.2\]{
-  line-height: 1.2;
 }
 
 .leading-\[1\.3\]{
@@ -5316,10 +5300,6 @@ ul.alert li {
     margin-top: 2rem;
   }
 
-  .lg\:\!mb-sp-14{
-    margin-bottom: 4rem !important;
-  }
-
   .lg\:block{
     display: block;
   }
@@ -5887,10 +5867,6 @@ ul.alert li {
 
   .lg\:text-\[64px\]{
     font-size: 64px;
-  }
-
-  .lg\:text-\[9\.5rem\]{
-    font-size: 9.5rem;
   }
 
   .lg\:text-h1-display{

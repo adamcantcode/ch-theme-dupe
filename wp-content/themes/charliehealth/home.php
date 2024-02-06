@@ -278,7 +278,7 @@ $subhead = get_field('subhead', 'option');
       </div>
       <img src="<?= $newsletterImage['sizes']['featured-large']; ?>" alt="<?= $newsletterImage['alt']; ?>" class="object-cover w-full h-full noshow lg:block">
       <div class="p-sp-8">
-        <h2 class="lg:text-h1-display-lg text-h1-display"><?= $headline; ?></h2>
+        <h2 class="text-h1-base font-heading"><?= $headline; ?></h2>
         <p class="h-full lg:block"><?= $subhead; ?></p>
         <div id="newsletterPopup" class="newsletter-revamp">
           <script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/newsletter_blog_revamp"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/newsletter_blog_revamp" title="Online Form">Online Form - Newsletter - Blog Revamp</a></noscript>
