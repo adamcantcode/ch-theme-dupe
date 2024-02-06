@@ -1542,14 +1542,6 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-bottom: 2rem;
 }
 
-.\!mb-0{
-  margin-bottom: 0px !important;
-}
-
-.\!mb-sp-1{
-  margin-bottom: 0.25rem !important;
-}
-
 .\!mb-sp-2{
   margin-bottom: 0.5rem !important;
 }
@@ -1698,6 +1690,10 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-top: auto;
 }
 
+.mt-base5-3{
+  margin-top: 15px;
+}
+
 .mt-sp-1{
   margin-top: 0.25rem;
 }
@@ -1740,14 +1736,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
-}
-
-.mt-base5-2{
-  margin-top: 10px;
-}
-
-.mt-base5-3{
-  margin-top: 15px;
 }
 
 .line-clamp-3{
@@ -1813,10 +1801,6 @@ a.ch-button.button-tertiary.inverted:hover {
   height: 125px;
 }
 
-.h-\[130px\]{
-  height: 130px;
-}
-
 .h-\[150px\]{
   height: 150px;
 }
@@ -1859,10 +1843,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .h-\[5px\]{
   height: 5px;
-}
-
-.h-\[85px\]{
-  height: 85px;
 }
 
 .h-\[calc\(100vh-124px\)\]{
@@ -3105,10 +3085,6 @@ a.ch-button.button-tertiary.inverted:hover {
   font-family: "ABC Arizona", serif;
 }
 
-.\!text-\[13px\]{
-  font-size: 13px !important;
-}
-
 .\!text-\[18px\]{
   font-size: 18px !important;
 }
@@ -3206,10 +3182,6 @@ a.ch-button.button-tertiary.inverted:hover {
   font-size: 4rem;
 }
 
-.text-\[56px\]{
-  font-size: 56px;
-}
-
 .text-\[64px\]{
   font-size: 64px;
 }
@@ -3291,6 +3263,13 @@ a.ch-button.button-tertiary.inverted:hover {
   font-weight: 400;
 }
 
+.text-mini{
+  font-size: 12px;
+  line-height: 140%;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
 .text-nav-normal{
   font-size: 18px;
   line-height: 140%;
@@ -3310,19 +3289,8 @@ a.ch-button.button-tertiary.inverted:hover {
   line-height: 1rem;
 }
 
-.text-mini{
-  font-size: 12px;
-  line-height: 140%;
-  letter-spacing: 0;
-  font-weight: 400;
-}
-
 .font-bold{
   font-weight: 700;
-}
-
-.font-normal{
-  font-weight: 400;
 }
 
 .\!leading-\[1\.1\]{
@@ -3403,11 +3371,6 @@ a.ch-button.button-tertiary.inverted:hover {
 .text-lavender-200{
   --tw-text-opacity: 1;
   color: rgb(231 211 255 / var(--tw-text-opacity));
-}
-
-.text-primary{
-  --tw-text-opacity: 1;
-  color: rgb(22 26 61 / var(--tw-text-opacity));
 }
 
 .text-text{
@@ -5115,10 +5078,6 @@ ul.alert li {
 
   .md\:mt-sp-12{
     margin-top: 3rem;
-  }
-
-  .md\:mt-sp-14{
-    margin-top: 4rem;
   }
 
   .md\:block{
