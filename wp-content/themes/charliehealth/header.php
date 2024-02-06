@@ -68,17 +68,23 @@
   if (is_main_site()) {
     if (!empty(get_field('get_started', get_the_ID()))) {
       $getStarted = get_field('get_started', get_the_ID());
-      $clientLogin = get_field('client_login', get_the_ID());
     } else {
       $getStarted = ['url' => '/form', 'target' => '_self', 'title' => 'Get started'];
+    }
+    if (get_field('client_login', get_the_ID())) {
+      $clientLogin = get_field('client_login', get_the_ID());
+    } else {
       $clientLogin = ['url' => 'https://app.charliehealth.com/', 'target' => '_blank', 'title' => 'Client login'];
     }
   } else {
     if (!empty(get_field('get_started', get_the_ID()))) {
       $getStarted = get_field('get_started', get_the_ID());
-      $clientLogin = get_field('client_login', get_the_ID());
     } else {
       $getStarted = ['url' => '/referrals', 'target' => '_self', 'title' => 'Refer a client'];
+    }
+    if (!empty(get_field('client_login', get_the_ID()))) {
+      $clientLogin = get_field('client_login', get_the_ID());
+    } else {
       $clientLogin = ['url' => 'https://app.charliehealth.com/', 'target' => '_blank', 'title' => 'Client login'];
     }
   }
