@@ -121,19 +121,19 @@ $style  = get_field('style');
               $featuredImageAltText = 'Charlie Health Logo';
             }
         ?>
-            <div class="relative bg-white group rounded-[6px]">
-              <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-[6px]">
-                <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover w-full rounded-t-[6px] h-full group-hover:scale-105 transition-all duration-300">
+            <div class="relative bg-white rounded-lg group">
+              <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
+                <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
               </div>
-              <div class="absolute top-sp-4 left-sp-4 rounded-t-[6px]">
+              <div class="absolute rounded-t-lg top-sp-4 left-sp-4">
                 <?php $tags = get_the_terms(get_the_ID(), 'post_tag');  ?>
                 <?php if ($tags) :  ?>
                   <?php foreach ($tags as $tag) : ?>
-                    <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="relative inline-block no-underline rounded-pill px-[15px] py-[10px] text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base"><?= $tag->name; ?></a>
+                    <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base"><?= $tag->name; ?></a>
                   <?php endforeach; ?>
                 <?php endif; ?>
               </div>
-              <div class="grid bg-white p-sp-4 rounded-b-[6px]">
+              <div class="grid bg-white rounded-b-lg p-sp-4">
                 <h3 class="text-h4-base"><a href="<?= get_the_permalink(); ?>" class="block stretched-link"><?= get_the_title(); ?></a></h3>
                 <p><?= $author->post_title; ?></p>
               </div>

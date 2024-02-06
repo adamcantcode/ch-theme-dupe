@@ -916,36 +916,24 @@ function ajaxPagination() {
         }
       }
     }
-
-    // If not press page
-    if (!document.querySelector('body').classList.contains('page-template-page-press')) {
-      if (post._embedded['wp:term']) {
-        var cats = post._embedded['wp:term'][0];
-      }
-      if (post._embedded['wp:term']) {
-        var tags = post._embedded['wp:term'][1];
-      }
-      html = `<div class="relative grid overflow-hidden border rounded-sm border-card-border hover:shadow-lg duration-300">
-                  <img src="${imageUrl}" alt="${imageAlt}" class="object-cover lg:h-[220px] h-[150px] w-full">
-                  <div class="grid p-sp-4">
-                    <h3><a href="${post.link}" class="stretched-link">${post.title.rendered}</a></h3>
-                    <p class="mb-sp-4 text-h5 lg:text-h5-lg">${post.acf.by_author.post_title}</p>
-                    <div class="grid justify-start grid-flow-col gap-sp-4 items-end">`;
-      if (tags) {
-        html += `${tags.map(tag => `<a href="${tag.link}" class="px-sp-4 py-sp-3 no-underline rounded-lg text-h6 bg-tag-gray z-20 relative inline-block hover:bg-bright-teal">${tag.name}</a>`).join('')}`;
-      }
-      html += `</div>
-                    </div>
-                    </div>`;
-    } else {
-      html = `<div class="relative grid lg:grid-cols-[1fr_4fr] grid-cols-[1fr_2fr] overflow-hidden border rounded-sm border-card-border">
-      <img src="${imageUrl}" alt="${imageAlt}" class="object-contain h-[125px] w-full lg:p-sp-6 p-sp-3">
-      <div class="grid p-sp-4">
-        <p class="mb-sp-4">${post.acf.date}</p>
-        <h3 class="mb-0"><a href="${post.acf.link}" target="_blank" class="stretched-link">${post.title.rendered}</a></h3>
-      </div>
-    </div>`;
+    if (post._embedded['wp:term']) {
+      var cats = post._embedded['wp:term'][0];
     }
+    if (post._embedded['wp:term']) {
+      var tags = post._embedded['wp:term'][1];
+    }
+    html = `<div class="relative bg-white rounded-lg group">
+              <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
+                <img src="${imageUrl}" alt="${imageAlt}"  class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
+              </div>
+              <div class="grid bg-white rounded-b-lg p-sp-4">
+                <h3 class="text-h4-base"><a href="${post.link}" class="block stretched-link">${post.title.rendered}</a></h3>
+                <p>${post.acf.by_author.post_title}</p>
+              </div>`;
+    if (tags) {
+      html += `${tags.map(tag => `<div class="absolute rounded-t-lg top-sp-4 left-sp-4"><a href="${tag.link}" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base">${tag.name}</a></div>`).join('')}`;
+    }
+    html += `</div><!--end three-->`;
     return html;
   };
   const clickPages = () => {
