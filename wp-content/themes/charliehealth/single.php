@@ -95,13 +95,13 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
                       break;
                   }
                   ?>
-                  <a href="<?= get_term_link($audience->slug, 'category'); ?>" class="px-4 py-3 no-underline rounded-lg text-h6 bg-tag-gray <?= $audienceClass; ?>"><?= $audience->name; ?></a>
+                  <a href="<?= get_term_link($audience->slug, 'category'); ?>" class="px-4 py-3 no-underline rounded-pill text-p-base bg-tag-gray <?= $audienceClass; ?>"><?= $audience->name; ?></a>
               <?php endforeach;
               endif; ?>
             </div>
             <div class="grid items-end justify-start grid-flow-col gap-sp-4">
               <?php if ($tags) : foreach ($tags as $tag) : ?>
-                  <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="px-4 py-3 no-underline rounded-lg text-h6 bg-tag-gray hover:bg-bright-teal"><?= $tag->name; ?></a>
+                  <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="px-4 py-3 no-underline rounded-pill text-p-base bg-tag-gray"><?= $tag->name; ?></a>
               <?php endforeach;
               endif; ?>
             </div>

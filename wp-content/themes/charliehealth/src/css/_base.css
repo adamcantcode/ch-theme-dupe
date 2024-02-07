@@ -138,7 +138,7 @@
     }
   }
   p, .text-p-base {
-    @apply text-p mb-base5-2;
+    @apply text-p mb-base5-4;
     @screen lg {
       @apply text-p-lg;
     }

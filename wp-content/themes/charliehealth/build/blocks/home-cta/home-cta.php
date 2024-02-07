@@ -8,7 +8,7 @@
     </div>
   </div>
   <div class="flex flex-col items-center justify-between lg:flex-row gap-sp-5">
-    <p class="max-w-[600px] text-white"><?= get_field('details'); ?></p>
+    <p class="max-w-[600px] text-white mb-0"><?= get_field('details'); ?></p>
     <?php include(get_template_directory() . '/includes/button-group.php'); ?>
   </div>
 </div>

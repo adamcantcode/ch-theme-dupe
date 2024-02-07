@@ -651,7 +651,7 @@ h6, .text-h5-base{
     }
 
 p, .text-p-base{
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   font-size: 16px;
   line-height: 160%;
   letter-spacing: 0;
@@ -3942,36 +3942,15 @@ a.ch-button.button-tertiary.inverted:hover {
             }
 
 #articleContent > div > div{
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
-@media (min-width: 1024px){
-
-  #articleContent > div > div{
-    margin-bottom: 30px;
-  }
-}
-
-#articleContent > div > p{
-  margin-bottom: 15px;
-}
-
-@media (min-width: 1024px){
-
-  #articleContent > div > p{
-    margin-bottom: 30px;
-  }
-}
+/* & > p {
+      @apply mb-base5-4;
+    } */
 
 #articleContent > div > figure{
-  margin-bottom: 15px;
-}
-
-@media (min-width: 1024px){
-
-  #articleContent > div > figure{
-    margin-bottom: 30px;
-  }
+  margin-bottom: 20px;
 }
 
 .testimonial-padding{
