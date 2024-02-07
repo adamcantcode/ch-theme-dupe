@@ -65,8 +65,29 @@
   $showBanner = ($enableBanner && $displayOnPage) || ($enableBlogBanner && $isBlogPost) ? true : false;
 
   // Nav button
-  $clientLogin = get_field('client_login', get_the_ID());
-  $getStarted  = get_field('get_started', get_the_ID());
+  if (is_main_site()) {
+    if (!empty(get_field('get_started', get_the_ID()))) {
+      $getStarted = get_field('get_started', get_the_ID());
+    } else {
+      $getStarted = ['url' => '/form', 'target' => '_self', 'title' => 'Get started'];
+    }
+    if (get_field('client_login', get_the_ID())) {
+      $clientLogin = get_field('client_login', get_the_ID());
+    } else {
+      $clientLogin = ['url' => 'https://app.charliehealth.com/', 'target' => '_blank', 'title' => 'Client login'];
+    }
+  } else {
+    if (!empty(get_field('get_started', get_the_ID()))) {
+      $getStarted = get_field('get_started', get_the_ID());
+    } else {
+      $getStarted = ['url' => '/referrals', 'target' => '_self', 'title' => 'Refer a client'];
+    }
+    if (!empty(get_field('client_login', get_the_ID()))) {
+      $clientLogin = get_field('client_login', get_the_ID());
+    } else {
+      $clientLogin = ['url' => 'https://app.charliehealth.com/', 'target' => '_blank', 'title' => 'Client login'];
+    }
+  }
   ?>
   <!-- NOT BLOG -->
   <?php if ($showBanner) : ?>
@@ -145,8 +166,8 @@
         <?php endwhile;
         endif; ?>
         <div class="flex ml-auto content gap-x-sp-2">
-          <a href="<?= !empty($clientLogin['url']) ? $clientLogin['url'] : 'https://app.charliehealth.com/'; ?>" target="<?= !empty($clientLogin['target']) ? $clientLogin['target'] : '_blank'; ?>" class="ch-button button-tertiary-lavender inverted !rounded-[6px]"><?= !empty($clientLogin['title']) ? $clientLogin['title'] : 'Client Login'; ?></a>
-          <a href="<?= !empty($getStarted['url']) ? $getStarted['url'] : '/form'; ?>" target="<?= !empty($getStarted['target']) ? $getStarted['target'] : '_self'; ?>" class="ch-button button-tertiary-lavender !rounded-[6px]"><?= !empty($getStarted['title']) ? $getStarted['title'] : 'Get started'; ?></a>
+          <a href="<?= $clientLogin['url']; ?>" target="<?= $clientLogin['target']; ?>" class="ch-button button-tertiary-lavender inverted !rounded-[6px]"><?= $clientLogin['title']; ?></a>
+          <a href="<?= $getStarted['url'] ?>" target="<?= $getStarted['target']; ?>" class="ch-button button-tertiary-lavender !rounded-[6px]"><?= $getStarted['title'] ?></a>
         </div>
       </div>
       <div class="container flex justify-between lg:noshow py-sp-5">
@@ -234,8 +255,8 @@
         endif; ?>
         <div class="mt-auto mb-sp-8">
           <div class="flex justify-center py-8 gap-x-sp-4 px-sp-5">
-            <a href="<?= !empty($clientLogin['url']) ? $clientLogin['url'] : 'https://app.charliehealth.com/'; ?>" target="<?= !empty($clientLogin['target']) ? $clientLogin['target'] : '_blank'; ?>" class="ch-button button-tertiary-lavender inverted !text-[1rem] !rounded-[6px]"><?= !empty($clientLogin['title']) ? $clientLogin['title'] : 'Client Login'; ?></a>
-            <a href="<?= !empty($getStarted['url']) ? $getStarted['url'] : '/form'; ?>" target="<?= !empty($getStarted['target']) ? $getStarted['target'] : '_self'; ?>" class="ch-button button-tertiary-lavender !text-[1rem] !rounded-[6px]"><?= !empty($getStarted['title']) ? $getStarted['title'] : 'Get started'; ?></a>
+            <a href="<?= $clientLogin['url']; ?>" target="<?= $clientLogin['target']; ?>" class="ch-button button-tertiary-lavender inverted !text-[1rem] !rounded-[6px]"><?= $clientLogin['title']; ?></a>
+            <a href="<?= $getStarted['url']; ?>" target="<?= $getStarted['target']; ?>" class="ch-button button-tertiary-lavender !text-[1rem] !rounded-[6px]"><?= $getStarted['title']; ?></a>
           </div>
         </div>
       </div>

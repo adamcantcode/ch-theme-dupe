@@ -137,6 +137,32 @@
 </script>
 <!-- END Freshpaint TWO -->
 
+<!-- Osano <> Freshpaint -->
+<script>
+  // Main
+  freshpaint.init("16542b5f-ea29-493d-9d25-d062679c7e98", {
+    "consent_management": {
+      "osano": {
+        "category_mapping": {
+          "ANALYTICS": ["Google Analytics 4 Proxy", "Facebook Conversions API"],
+        }
+      },
+      "consent_model": "opt-out"
+    }
+  })
+  // Google Ads
+  freshpaint.init("f26794ad-968d-4b54-bcc8-9b65ade88d89", {
+    "consent_management": {
+      "osano": {
+        "category_mapping": {
+          "ANALYTICS": ["Google Ads Conversion API"],
+        }
+      },
+      "consent_model": "opt-out"
+    }
+  })
+</script>
+
 <!-- Google Tag Manager PROD-->
 <script>
   (function(w, d, s, l, i) {

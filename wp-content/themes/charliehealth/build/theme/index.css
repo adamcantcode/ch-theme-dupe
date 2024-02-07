@@ -1542,6 +1542,10 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-bottom: 2rem;
 }
 
+.\!mb-base5-4{
+  margin-bottom: 20px !important;
+}
+
 .\!mb-sp-14{
   margin-bottom: 4rem !important;
 }
@@ -1706,6 +1710,10 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-top: 15px;
 }
 
+.mt-base5-5{
+  margin-top: 25px;
+}
+
 .mt-sp-1{
   margin-top: 0.25rem;
 }
@@ -1748,22 +1756,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
-}
-
-.mt-base5-2{
-  margin-top: 10px;
-}
-
-.mt-base5-5{
-  margin-top: 25px;
-}
-
-.mb-base5-4{
-  margin-bottom: 20px;
-}
-
-.\!mb-base5-4{
-  margin-bottom: 20px !important;
 }
 
 .line-clamp-3{
@@ -2098,6 +2090,10 @@ a.ch-button.button-tertiary.inverted:hover {
   max-width: 600px;
 }
 
+.max-w-\[640px\]{
+  max-width: 640px;
+}
+
 .max-w-\[700px\]{
   max-width: 700px;
 }
@@ -2120,10 +2116,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .max-w-full{
   max-width: 100%;
-}
-
-.max-w-\[640px\]{
-  max-width: 640px;
 }
 
 .flex-1{
@@ -2351,6 +2343,10 @@ a.ch-button.button-tertiary.inverted:hover {
   gap: 20px;
 }
 
+.gap-base5-8{
+  gap: 40px;
+}
+
 .gap-sp-1{
   gap: 0.25rem;
 }
@@ -2361,10 +2357,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .gap-sp-14{
   gap: 4rem;
-}
-
-.gap-sp-16{
-  gap: 6rem;
 }
 
 .gap-sp-2{
@@ -2389,14 +2381,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .gap-sp-8{
   gap: 2rem;
-}
-
-.\!gap-base5-4{
-  gap: 20px !important;
-}
-
-.gap-base5-8{
-  gap: 40px;
 }
 
 .gap-x-4{
@@ -3893,10 +3877,6 @@ a.ch-button.button-tertiary.inverted:hover {
 .no-scrollbar {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
-  }
-
-.filter-white {
-    filter: contrast(0) brightness(2);
   }
 
 .stretched-link:after {
@@ -5544,6 +5524,10 @@ ul.alert li {
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
+  .lg\:grid-cols-\[1\.25fr_2fr\]{
+    grid-template-columns: 1.25fr 2fr;
+  }
+
   .lg\:grid-cols-\[1\.33fr_1fr\]{
     grid-template-columns: 1.33fr 1fr;
   }
@@ -5634,14 +5618,6 @@ ul.alert li {
 
   .lg\:grid-cols-\[unset\]{
     grid-template-columns: unset;
-  }
-
-  .lg\:grid-cols-\[1\.5fr_2fr\]{
-    grid-template-columns: 1.5fr 2fr;
-  }
-
-  .lg\:grid-cols-\[1\.25fr_2fr\]{
-    grid-template-columns: 1.25fr 2fr;
   }
 
   .lg\:flex-row{
@@ -5903,10 +5879,6 @@ ul.alert li {
 
   .lg\:text-\[28px\]{
     font-size: 28px;
-  }
-
-  .lg\:text-\[2rem\]{
-    font-size: 2rem;
   }
 
   .lg\:text-\[40px\]{

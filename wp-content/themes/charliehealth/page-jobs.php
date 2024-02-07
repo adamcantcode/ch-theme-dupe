@@ -309,7 +309,7 @@ Template Post Type: page
                 jobs.forEach((job, i) => {
                   var jobState = job.querySelector('.location-js').textContent;
 
-                  if (jobState === 'Remote') {
+                  if (jobState === 'Remote ' || jobState === 'Remote') {
                     jobState = 'Remote, United States'
                   }
 
