@@ -35,10 +35,10 @@ if ($horizontalScroll === true) {
               <?php endif; ?>
               <div class="flex flex-col flex-grow p-sp-4 md:p-sp-6 lg:p-sp-8">
                 <?php if ($numbers) : ?>
-                  <h2 class="text-h2-lg mb-sp-5"><?= get_row_index(); ?></h2>
+                  <p class="text-h2-base"><?= get_row_index(); ?></p>
                 <?php endif; ?>
                 <?php if ($title) : ?>
-                  <h3 class="mb-sp-5 last:mb-0">
+                  <h3>
                     <?php if ($link && !$useCTA) : ?>
                       <a href="<?= $link['url']; ?>" target="<?= $link['target'] ?: '_self'; ?>" class="stretched-link">
                       <?php endif; ?>
@@ -49,7 +49,7 @@ if ($horizontalScroll === true) {
                   </h3>
                 <?php endif; ?>
                 <?php if ($details) : ?>
-                  <p class="last:mb-0"><?= $details; ?></p>
+                  <p><?= $details; ?></p>
                 <?php endif; ?>
                 <?php if ($useCTA && $link) : ?>
                   <div class="mt-auto flex gap-x-sp-4 items-center md:w-[unset] w-full">
@@ -72,11 +72,11 @@ if ($horizontalScroll === true) {
           <div class="<?= $borderStyle === 'gradient' ? 'border-gradient' : ' border border-card-border rounded-md'; ?> h-full">
             <div class="p-sp-4 md:p-sp-6 lg:p-sp-8">
               <?php if ($numbers) : ?>
-                <h2 class="text-h2-lg mb-sp-5"><?= get_row_index(); ?></h2>
+                <h2><?= get_row_index(); ?></h2>
               <?php endif; ?>
-              <h3 class="mb-sp-5 last:mb-0"><a href="<?= get_the_permalink($post); ?>" class="stretched-link"><?= get_the_title($post); ?></a></h3>
+              <h3><a href="<?= get_the_permalink($post); ?>" class="stretched-link"><?= get_the_title($post); ?></a></h3>
               <?php if (get_field('short_description', $post)) : ?>
-                <p class="last:mb-0"><?= get_field('short_description', $post); ?></p>
+                <p><?= get_field('short_description', $post); ?></p>
               <?php endif; ?>
             </div>
           </div>

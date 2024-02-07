@@ -153,13 +153,13 @@ if (is_category('families-and-caregivers')) {
   </div>
   </div>
 </section>
-<section id="postsContainer" class="section">
+<section id="postsContainer" class="section bg-grey-cool">
   <div class="container">
     <h2>Latest posts for <?= single_term_title(); ?></h2>
     <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-sp-16 gap-y-sp-8">
       <div class="relative flex flex-wrap items-start overflow-hidden duration-1000 lg:flex-col gap-sp-4 cat-mobile-js lg:overflow-visible max-h-[33vh] lg:max-h-full">
         <h6 class="lg:absolute lg:top-0 lg:right-0">
-          <a role="button" class="flex items-center invisible text-white transition-all duration-300 rounded-lg opacity-0 js-reset group bg-med-blue px-sp-2 py-sp-2">
+          <a role="button" class="flex items-center invisible text-white transition-all duration-300 opacity-0 rounded-pill js-reset group bg-primary px-sp-2 py-sp-2">
             <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/reset.svg'); ?>" alt="reset filters icon" class="transition-all duration-300 pointer-events-none mr-sp-2 w-sp-5 group-hover:rotate-45"><span class="leading-none pointer-events-none">Reset</span>
           </a>
         </h6>
@@ -170,7 +170,7 @@ if (is_category('families-and-caregivers')) {
         ));
         // var_dump($terms);
         foreach ($terms as $term) : ?>
-          <h6 data-tag-id="<?= $term->term_id; ?>" class="inline-block mb-0 leading-none rounded-lg cursor-pointer js-tag-id bg-tag-gray px-sp-4 py-sp-3"><?= $term->name; ?></h5>
+          <h6 data-tag-id="<?= $term->term_id; ?>" class="inline-block mb-0 cursor-pointer rounded-pill js-tag-id px-base5-3 py-base5-2 text-primary bg-transparent border border-primary z-[6] text-p-base"><?= $term->name; ?></h5>
           <?php endforeach; ?>
           <div class="absolute bottom-0 flex justify-center w-full bg-white lg:noshow">
             <a role="button" class="z-10 ch-button button-secondary toggle-button">Show More</a>
@@ -190,12 +190,7 @@ if (is_category('families-and-caregivers')) {
     </div>
   </div>
 </section>
-<section class="section-bottom">
-  <div class="container">
-    <?= do_blocks('<!-- wp:acf/divider-block {"name":"acf/divider-block"} /-->'); ?>
-  </div>
-</section>
-<section class="section-horizontal">
+<section class="section">
   <div class="container">
     <?php // echo do_blocks('<!-- wp:acf/pre-footer-cta-block {"name":"acf/pre-footer-cta-block"} /-->'); 
     ?>

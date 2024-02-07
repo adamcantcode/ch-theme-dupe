@@ -367,9 +367,9 @@
   }
 }
 .js-tag-id {
-  @apply transition-all duration-300 hover:bg-bright-teal;
+  @apply transition-all duration-300 hover:bg-primary hover:text-white;
   &.active {
-    @apply bg-darkest-blue text-white;
+    @apply bg-primary text-white;
   }
 }
 

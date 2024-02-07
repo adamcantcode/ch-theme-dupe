@@ -6,7 +6,7 @@ $group = get_field('group')
 ?>
 <div class="grid lg:grid-cols-[3fr_4fr] lg:mb-sp-14 mb-sp-8 gap-x-sp-4 lg:items-end">
   <div>
-    <p class="text-h5"><?= $eyebrow; ?></p>
+    <p class="mb-0"><?= $eyebrow; ?></p>
     <h2 class="lg:mb-0 !mb-base5-4"><?= $headline; ?></h2>
   </div>
   <div class="lg:justify-self-end">
