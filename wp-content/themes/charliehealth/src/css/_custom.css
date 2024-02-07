@@ -355,12 +355,13 @@
     li {
       @apply m-0 leading-none block;
       &.J-paginationjs-page {
+        @apply font-bold;
         &:not(.active) {
-          @apply opacity-60;
+          @apply opacity-60 font-normal;
         }
       }
       a {
-        @apply cursor-pointer;
+        @apply cursor-pointer no-underline;
       }
     }
   }
