@@ -8,7 +8,7 @@
         <p>Stay up to date on mental health research, wellness techniques, treatment services, and more.</p>
       </div>
       <div>
-        <form role="search" method="get" class="relative search-form" action="<?= esc_url(site_url('/search')); ?>">
+        <form role="search" method="get" class="relative search-form mt-base5-5 lg:mt-0" action="<?= esc_url(site_url('/search')); ?>">
           <label>
             <span class="screen-reader-text"><?= _x('Search for:', 'label'); ?></span>
             <input type="search" class="w-full mb-0 border-none rounded-sm outline-none search-field h-sp-12 lg:h-sp-14 text-h3-base py-sp-4 px-sp-6 focus-visible:border-none" placeholder="Search..." value="" name="query" />
@@ -96,7 +96,7 @@
               ?>
               <div class="swiper-slide">
                 <div class="relative grid overflow-hidden rounded-md lg:grid-cols-2">
-                  <div class="grid content-between order-2 lg:p-sp-8 p-sp-4 lg:order-1 <?= $audienceClass; ?>">
+                  <div class="grid content-between order-2 lg:p-sp-8 p-sp-4 lg:order-1 gap-base5-4 <?= $audienceClass; ?>">
                     <div>
                       <a href="<?= get_category_link($featureAs->term_id); ?>" class="relative z-20 inline-block leading-none text-white no-underline transition-all duration-300 bg-transparent border-2 border-white rounded-pill p-sp-3 hover:bg-white hover:!text-dark-blue mb-sp-4 mr-sp-1"><?= $featureAs->name; ?></a>
                       <h3 class="text-white text-h2-base"><?= get_the_title(); ?></h3>
@@ -231,7 +231,7 @@
     <div class="pagination-container"></div>
   </div>
 </section>
-<section class="bg-off-white section">
+<section class="bg-off-white section-bottom">
   <div class="container">
     <?= do_blocks('<!-- wp:block {"ref":4069} /-->'); ?>
   </div>

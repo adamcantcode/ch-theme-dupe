@@ -7,7 +7,7 @@ $group = get_field('group')
 <div class="grid lg:grid-cols-[3fr_4fr] lg:mb-sp-14 mb-sp-8 gap-x-sp-4 lg:items-end">
   <div>
     <p class="text-h5"><?= $eyebrow; ?></p>
-    <h2 class="lg:mb-0"><?= $headline; ?></h2>
+    <h2 class="lg:mb-0 !mb-base5-4"><?= $headline; ?></h2>
   </div>
   <div class="lg:justify-self-end">
     <?php include(get_template_directory() . '/includes/button-group.php'); ?>
@@ -69,13 +69,13 @@ $group = get_field('group')
         ?>
         <div class="w-full rounded-[1rem] lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col">
           <?php if ($tagBGColor && $age) : ?>
-            <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>"><?= $name; ?></span>
+            <span class="relative z-20 self-start no-underline rounded-pill px-sp-4 py-sp-3 text-p-base mb-sp-8 <?= $tagBGColor; ?>"><?= $name; ?></span>
           <?php endif; ?>
           <?php if ($pullQuote) : ?>
-            <h3 class="leading-tight mb-sp-2 lg:text-[2rem]">“<?= $pullQuote; ?>.”</h3>
+            <h3 class="text-h3-base font-heading-serif">“<?= $pullQuote; ?>.”</h3>
           <?php endif; ?>
-          <p class="leading-snug mb-sp-8"><?= $fullQuote; ?></p>
-          <p class="mb-0">—<?= $attribution; ?></p>
+          <p class="text-p-base"><?= $fullQuote; ?></p>
+          <p class="text-p-base">—<?= $attribution; ?></p>
         </div>
       <?php endwhile; ?>
     <?php endif; ?>
@@ -125,13 +125,13 @@ $group = get_field('group')
             ?>
             <div class="w-full rounded-[1rem] lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col">
               <?php if ($tagBGColor && $age) : ?>
-                <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>"><?= $name; ?></span>
+                <span class="relative z-20 self-start no-underline rounded-pill px-sp-4 py-sp-3 text-p-base mb-sp-8 <?= $tagBGColor; ?>"><?= $name; ?></span>
               <?php endif; ?>
               <?php if ($pullQuote) : ?>
-                <h3 class="leading-tight mb-sp-2 lg:text-[2rem]">“<?= $pullQuote; ?>.”</h3>
+                <p class="text-h3-base font-heading-serif">“<?= $pullQuote; ?>.”</p>
               <?php endif; ?>
-              <p class="leading-snug mb-sp-8"><?= $fullQuote; ?></p>
-              <p class="mb-0">—<?= $attribution; ?></p>
+              <p class="text-p-base"><?= $fullQuote; ?></p>
+              <p class="text-p-base">—<?= $attribution; ?></p>
             </div>
           <?php endforeach; ?>
         </div>
@@ -179,13 +179,13 @@ $group = get_field('group')
                 <div class="!h-auto swiper-slide">
                   <div class="w-full rounded-[1rem] lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col <?= is_admin() && $slideNum > 3 ? 'noshow' : ''; ?>">
                     <?php if ($tagBGColor && $age) : ?>
-                      <span class="relative z-20 self-start no-underline rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 <?= $tagBGColor; ?>"><?= $name; ?></span>
+                      <span class="relative z-20 self-start no-underline rounded-pill px-sp-4 py-sp-3 text-p-base mb-sp-8 <?= $tagBGColor; ?>"><?= $name; ?></span>
                     <?php endif; ?>
                     <?php if ($pullQuote) : ?>
-                      <h3 class="leading-tight mb-sp-2 lg:text-[2rem]">“<?= $pullQuote; ?>.”</h3>
+                      <p class="text-h3-base font-heading-serif">“<?= $pullQuote; ?>.”</p>
                     <?php endif; ?>
-                    <p class="leading-snug mb-sp-8"><?= $fullQuote; ?></p>
-                    <p class="mb-0">—<?= $attribution; ?></p>
+                    <p class="text-p-base"><?= $fullQuote; ?></p>
+                    <p class="text-p-base">—<?= $attribution; ?></p>
                   </div>
                 </div>
               <?php endforeach; ?>
