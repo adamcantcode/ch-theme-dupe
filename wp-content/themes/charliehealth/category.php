@@ -27,7 +27,7 @@ if (is_category('families-and-caregivers')) {
         <h1 class="text-white"><?= single_term_title(); ?></h1>
         <!-- <p>Stay up to date on mental health research, wellness techniques, treatment services, and more.</p> -->
       </div>
-      <div class="grid gap-sp-16">
+      <div class="grid gap-base5-8">
         <form role="search" method="get" class="relative search-form" action="<?= esc_url(site_url('/search')); ?>">
           <label>
             <span class="screen-reader-text"><?= _x('Search for:', 'label'); ?></span>
@@ -122,7 +122,7 @@ if (is_category('families-and-caregivers')) {
                   <div class="relative grid overflow-hidden rounded-md lg:grid-cols-2">
                     <div class="grid content-between order-2 lg:p-sp-8 p-sp-4 lg:order-1 <?= $audienceClass; ?>"">
                     <div>
-                      <h3 class="text-white  text-h2 lg:text-h2-lg"><?= get_the_title(); ?></h3>
+                    <h3 class="text-white text-h2-base"><?= get_the_title(); ?></h3>
                     </div>
                     <a href="<?= get_the_permalink(); ?>" class="text-white no-underline stretched-link">Read more <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/arrow-left.svg'); ?>" alt="arrow icon" class="inline-block rotate-180 h-sp-4 ml-sp-2"></a>
                   </div>
