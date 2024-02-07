@@ -104,7 +104,7 @@
             <?= $subhead; ?>
           </div>
         </div>
-        <div class="mt-sp-6 md:mt-sp-10 lg:mt-sp-14">
+        <div class="grid mt-sp-6 lg:mt-sp-14 gap-base5-4">
           <div>
             <h3>Jump to:</h3>
           </div>

@@ -231,7 +231,7 @@
     <div class="pagination-container"></div>
   </div>
 </section>
-<section class="section-horizontal">
+<section class="section">
   <div class="container-sm">
     <?= do_blocks('<!-- wp:block {"ref":1709} /-->'); ?>
   </div>

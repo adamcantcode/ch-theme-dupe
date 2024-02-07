@@ -3942,7 +3942,36 @@ a.ch-button.button-tertiary.inverted:hover {
             }
 
 #articleContent > div > div{
-  margin-bottom: 1.5rem;
+  margin-bottom: 15px;
+}
+
+@media (min-width: 1024px){
+
+  #articleContent > div > div{
+    margin-bottom: 30px;
+  }
+}
+
+#articleContent > div > p{
+  margin-bottom: 15px;
+}
+
+@media (min-width: 1024px){
+
+  #articleContent > div > p{
+    margin-bottom: 30px;
+  }
+}
+
+#articleContent > div > figure{
+  margin-bottom: 15px;
+}
+
+@media (min-width: 1024px){
+
+  #articleContent > div > figure{
+    margin-bottom: 30px;
+  }
 }
 
 .testimonial-padding{
@@ -4712,10 +4741,6 @@ mark{
       width: 100%;
     }
 
-.margin-adjust > *:last-child{
-  margin-bottom: 0px;
-}
-
 .checklist > div{
   border-radius: 10px;
 }
@@ -5096,10 +5121,6 @@ ul.alert li {
 
   .md\:mb-sp-14{
     margin-bottom: 4rem;
-  }
-
-  .md\:mt-sp-10{
-    margin-top: 2.5rem;
   }
 
   .md\:mt-sp-12{

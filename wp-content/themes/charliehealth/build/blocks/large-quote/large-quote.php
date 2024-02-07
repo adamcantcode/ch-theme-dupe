@@ -27,8 +27,8 @@ if ($customImage) {
     <img src="<?= $image; ?>" alt="<?= $alt; ?>" class="object-cover w-full rounded-md aspect-square">
   </div>
   <div class="<?= $order; ?>">
-    <h3 class="mb-sp-1"><?= get_the_title($person); ?></h3>
-    <h5 class="mb-sp-8"><?= get_field('job_title', $person); ?></h5>
-    <h3 class="lg:text-h1-display text-h3">“<?= $quote; ?>”</h3>
+    <p class="text-h3-base"><?= get_the_title($person); ?></p>
+    <p class="mb-base5-6"><?= get_field('job_title', $person); ?></p>
+    <p class="text-h2-base font-heading-serif">“<?= $quote; ?>”</p>
   </div>
 </div>

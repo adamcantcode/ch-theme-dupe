@@ -32,7 +32,13 @@
 #articleContent {
   & > div {
     & > div {
-      @apply mb-sp-6;
+      @apply mb-base5-3 lg:mb-base5-6;
+    }
+    & > p {
+      @apply mb-base5-3 lg:mb-base5-6;
+    }
+    & > figure {
+      @apply mb-base5-3 lg:mb-base5-6;
     }
   }
 }
@@ -572,14 +578,6 @@ mark {
         rgba(255, 255, 255, 0) 100%
       );
       @apply absolute -top-sp-16 left-0 w-full h-sp-16;
-    }
-  }
-}
-
-.margin-adjust {
-  & > * {
-    &:last-child {
-      @apply mb-0;
     }
   }
 }
