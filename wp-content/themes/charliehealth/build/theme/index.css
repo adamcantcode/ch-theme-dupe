@@ -669,7 +669,7 @@ p, .text-p-base{
 
 ul,
   ol, .text-ul-base, .text-ol-base{
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   display: block;
   padding-left: 2.5rem;
   font-size: 16px;
@@ -3945,9 +3945,29 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-bottom: 20px;
 }
 
-/* & > p {
-      @apply mb-base5-4;
-    } */
+#articleContent > div > p{
+  font-size: 18px;
+}
+
+#articleContent > div > p a{
+  font-size: 18px;
+}
+
+#articleContent > div > ul{
+  font-size: 18px;
+}
+
+#articleContent > div > ol{
+  font-size: 18px;
+}
+
+#articleContent > div > ul > *{
+  font-size: 18px;
+}
+
+#articleContent > div > ol > *{
+  font-size: 18px;
+}
 
 #articleContent > div > figure{
   margin-bottom: 20px;

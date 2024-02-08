@@ -34,9 +34,24 @@
     & > div {
       @apply mb-base5-4;
     }
-    /* & > p {
-      @apply mb-base5-4;
-    } */
+    & > p {
+      @apply text-[18px];
+    }
+    & > p a{
+      @apply text-[18px];
+    }
+    & > ul {
+      @apply text-[18px];
+    }
+    & > ol {
+      @apply text-[18px];
+    }
+    & > ul > *{
+      @apply text-[18px];
+    }
+    & > ol > * {
+      @apply text-[18px];
+    }
     & > figure {
       @apply mb-base5-4;
     }

@@ -145,7 +145,7 @@
   }
   ul,
   ol, .text-ul-base, .text-ol-base {
-    @apply block pl-10 mb-base5-2 text-p;
+    @apply block pl-10 mb-base5-4 text-p;
     @screen lg {
       @apply text-p-lg;
     }
