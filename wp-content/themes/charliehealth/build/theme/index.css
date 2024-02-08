@@ -1285,21 +1285,24 @@ a.ch-button.button-tertiary.inverted:hover {
 }
 
 .breadcrumbs > *{
-  font-size: 14px;
-  line-height: 140%;
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 160%;
   letter-spacing: 0;
   font-weight: 400;
-  line-height: 1;
 }
 
-@media (min-width: 1024px){
-
+@media (min-width: 1024px) {
   .breadcrumbs > *{
     font-size: 16px;
     line-height: 160%;
     letter-spacing: 0;
     font-weight: 400;
   }
+    }
+
+.breadcrumbs > *{
+  line-height: 1;
 }
 
 .breadcrumbs:not(.text-white) > *:not(a){
@@ -1422,6 +1425,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .top-\[100px\]{
   top: 100px;
+}
+
+.top-\[150px\]{
+  top: 150px;
 }
 
 .top-\[46px\]{
@@ -2173,6 +2180,11 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .translate-y-\[-1px\]{
   --tw-translate-y: -1px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.translate-y-base5-3{
+  --tw-translate-y: 15px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -3950,7 +3962,8 @@ a.ch-button.button-tertiary.inverted:hover {
 }
 
 #articleContent > div > p a{
-  font-size: 18px;
+  line-height: inherit;
+  color: inherit;
 }
 
 #articleContent > div > ul{
@@ -4261,30 +4274,23 @@ a.ch-button.button-tertiary.inverted:hover {
 
 /* Card Grid */
 
-.border-gradient {
-  /* @apply before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0 before:border before:border-transparent before:box-border; */
-  /* mask-composite: exclude; */
+.border-gradient{
   position: relative;
   display: flex;
   flex-direction: column;
-}
-
-.border-gradient:before{
-  pointer-events: none;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  border-radius: 10px;
   border-width: 1px;
-  border-color: rgba(0,0,0,0);
+  --tw-border-opacity: 1;
+  border-color: rgb(22 26 61 / var(--tw-border-opacity));
+  /* @apply flex flex-col relative;
+  &:before {
+    @apply absolute top-0 left-0 right-0 bottom-0 rounded-md border border-transparent pointer-events-none;
     content: '';
     background: linear-gradient(90deg, #eadaff, #a698ff) border-box;
     -webkit-mask: linear-gradient(#fff 0 0) padding-box,
       linear-gradient(#fff 0 0);
     -webkit-mask-composite: destination-out;
     mask-composite: exclude;
+  } */
 }
 
 /* Remove bottom margin from last element in sections */
@@ -4303,11 +4309,8 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .divider{
   height: 1px;
-  background-image: linear-gradient(to right, var(--tw-gradient-stops));
-  --tw-gradient-from: #EADAFF var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(234 218 255 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: #A698FF var(--tw-gradient-to-position);
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 26 61 / var(--tw-bg-opacity));
 }
 
 /* Footer badges */

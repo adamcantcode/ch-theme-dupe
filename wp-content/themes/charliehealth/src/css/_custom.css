@@ -38,7 +38,7 @@
       @apply text-[18px];
     }
     & > p a{
-      @apply text-[18px];
+      @apply text-[inherit] leading-[inherit];
     }
     & > ul {
       @apply text-[18px];
@@ -303,9 +303,8 @@
 }
 /* Card Grid */
 .border-gradient {
-  /* @apply before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0 before:border before:border-transparent before:box-border; */
-  /* mask-composite: exclude; */
-  @apply flex flex-col relative;
+  @apply flex flex-col relative border border-primary;
+  /* @apply flex flex-col relative;
   &:before {
     @apply absolute top-0 left-0 right-0 bottom-0 rounded-md border border-transparent pointer-events-none;
     content: '';
@@ -314,7 +313,7 @@
       linear-gradient(#fff 0 0);
     -webkit-mask-composite: destination-out;
     mask-composite: exclude;
-  }
+  } */
 }
 
 /* Remove bottom margin from last element in sections */
@@ -330,7 +329,7 @@
 }
 
 .divider {
-  @apply h-[1px] bg-gradient-to-r from-purple-gradient-start to-purple-gradient-end;
+  @apply h-[1px] bg-primary;
 }
 /* Footer badges */
 .badges {

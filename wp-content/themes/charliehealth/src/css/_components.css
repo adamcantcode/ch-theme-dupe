@@ -95,7 +95,7 @@
   }
   .breadcrumbs {
     & > * {
-      @apply text-h6 lg:text-p-lg leading-none;
+      @apply text-p-base leading-none;
     }
     &:not(.text-white) > *:not(a) {
       @apply text-text;
