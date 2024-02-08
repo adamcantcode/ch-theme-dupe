@@ -2868,10 +2868,6 @@ a.ch-button.button-tertiary.inverted:hover {
   padding: 2rem;
 }
 
-.p-sp-12{
-  padding: 3rem;
-}
-
 .px-3{
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -3893,10 +3889,6 @@ a.ch-button.button-tertiary.inverted:hover {
 .no-scrollbar {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
-  }
-
-.filter-white {
-    filter: contrast(0) brightness(2);
   }
 
 .stretched-link:after {
