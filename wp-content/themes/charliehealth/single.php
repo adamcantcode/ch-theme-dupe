@@ -60,9 +60,9 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
             <p class="mb-0 font-bold ml-sp-2"> <?= $readingTime; ?> min.</p>
           </div>
           <p><?= get_the_excerpt(); ?></p>
-          <p class="mb-0">By: <a href="<?= site_url('/author/') . $author->post_name; ?>"><?= $author->post_title; ?></a></p>
+          <p class="mb-0">By: <a href="<?= get_the_permalink($author->ID); ?>"><?= $author->post_title; ?></a></p>
           <?php if (!empty($medicalReviewer)) : ?>
-            <p class="mb-0">Clinically Reviewed By: <a href="<?= site_url('/medical-reviewer/') . $medicalReviewer->post_name; ?>"><?= $medicalReviewer->post_title; ?></a></p>
+            <p class="mb-0">Clinically Reviewed By: <a href="<?=  get_the_permalink($medicalReviewer->ID); ?>"><?= $medicalReviewer->post_title; ?></a></p>
           <?php endif; ?>
           <?php if (!$updatedDate) : ?>
             <p><?= $date; ?></p>
