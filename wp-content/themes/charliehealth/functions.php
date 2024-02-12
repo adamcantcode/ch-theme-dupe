@@ -111,6 +111,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/top-startup');
   register_block_type(__DIR__ . '/build/blocks/comparison-table');
   register_block_type(__DIR__ . '/build/blocks/crisis-resources');
+  register_block_type(__DIR__ . '/build/blocks/scrolling-cta');
 }
 add_action('init', 'register_acf_blocks', 5);
 
