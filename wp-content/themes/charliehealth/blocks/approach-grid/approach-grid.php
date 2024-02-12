@@ -1,7 +1,12 @@
 <div class="border-2 border-white rounded-[1rem] lg:p-sp-12 p-sp-4 grid lg:grid-cols-[4fr_1fr_7fr] gap-x-sp-5 approach-grid-js mt-s">
   <div class="grid content-between">
     <div class="order-2 lg:order-1">
-      <h2 class="text-white font-heading-serif mb-sp-8">How is our approach different?</h2>
+      <h2 class="text-white font-heading-serif mb-sp-8"><?= get_field('heading'); ?></h2>
+      <?php if (get_field('heading')) : ?>
+        <div class="[&_*]:text-white">
+          <?= get_field('details'); ?>
+        </div>
+      <?php endif; ?>
     </div>
     <div class="order-1 lg:order-2 mb-sp-10 lg:mb-0">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 150 148" class="w-[28px]">
@@ -10,26 +15,32 @@
     </div>
   </div>
   <div></div>
-  <div class="grid grid-cols-2 lg:grid-cols-3 gap-sp-2 grid-approach-items-js auto-rows-fr">
-    <div class="text-center bg-lavender-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
-      <p class="mb-0 leading-[110%] not-heading-h4">Immediate availability</h5>
+  <?php if (have_rows('grid')) :  ?>
+    <?php
+    $bgColors = [
+      1 => 'bg-lavender-300',
+      2 => 'bg-orange-300',
+      3 => 'bg-pale-blue-200',
+      4 => 'bg-yellow-300',
+      5 => 'bg-pale-blue-300',
+      6 => 'bg-white'
+    ]
+    ?>
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-sp-2 grid-approach-items-js auto-rows-fr">
+      <?php while (have_rows('grid')) : the_row(); ?>
+        <?php if (get_sub_field('title')) : ?>
+          <div class="text-center <?= $bgColors[get_row_index()]; ?> rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
+            <p class="mb-0 leading-[110%] not-heading-h4"><?= get_sub_field('title'); ?></h5>
+          </div>
+        <?php endif; ?>
+        <?php if (get_sub_field('link')) : ?>
+          <div class="text-center bg-white rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center relative group">
+            <svg width="27" height="22" viewBox="0 0 27 22" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all mb-sp-2 group-hover:translate-x-[5px] duration-300">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M22.054 9.3431L14.3818 1.67092L16.0527 0L26.6686 10.6159L16.0527 21.2319L14.3818 19.561L22.2366 11.7061L2.08616e-07 11.7061L0 9.34311L22.054 9.3431Z" fill="#161A3D" />
+            </svg><a href="<?= get_sub_field('link')['url']; ?>" target="<?= get_sub_field('link')['target']; ?>" class="no-underline stretched-link mb-0 leading-[110%] not-heading-h4"><?= get_sub_field('link')['title']; ?></a>
+          </div>
+        <?php endif; ?>
+      <?php endwhile; ?>
     </div>
-    <div class="text-center bg-orange-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
-      <p class="mb-0 leading-[110%] not-heading-h4">In-network with insurance</h5>
-    </div>
-    <div class="text-center bg-pale-blue-200 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
-      <p class="mb-0 leading-[110%] not-heading-h4">Personalized treatment</h5>
-    </div>
-    <div class="text-center bg-yellow-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
-      <p class="mb-0 leading-[110%] not-heading-h4">Virtual access</h5>
-    </div>
-    <div class="text-center bg-pale-blue-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
-      <p class="mb-0 leading-[110%] not-heading-h4">Flexible scheduling</h5>
-    </div>
-    <div class="text-center bg-white rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center relative group">
-      <svg width="27" height="22" viewBox="0 0 27 22" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all mb-sp-2 group-hover:translate-x-[5px] duration-300">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M22.054 9.3431L14.3818 1.67092L16.0527 0L26.6686 10.6159L16.0527 21.2319L14.3818 19.561L22.2366 11.7061L2.08616e-07 11.7061L0 9.34311L22.054 9.3431Z" fill="#161A3D" />
-      </svg><a href="/intensive-outpatient-iop/outcomes" class="no-underline stretched-link mb-0 leading-[110%] not-heading-h4">Learn more</a>
-    </div>
-  </div>
+  <?php endif; ?>
 </div>
