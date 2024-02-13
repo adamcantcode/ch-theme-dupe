@@ -45,24 +45,34 @@
   <!-- <pre class="fixed left-0 right-0 w-full text-xs text-center text-white top-4 -z-10-50 opacity-30">Better care, from anywhere ❤️ Carter Barnhart</pre> -->
   <?php
   // Banner
-  $enableBanner = get_field('enable_banner', 'options');
+  $enableBanner     = get_field('enable_banner', 'options');
+  $enableSiteWide   = get_field('enable_site_wide', 'options');
   $enableBlogBanner = get_field('enable_blog_banner', 'options');
-  $displayOnPage = false;
+  $showBanner       = false;
+  $displayOnPage    = false;
+  // If banner
   if ($enableBanner) {
     $link = get_field('link', 'options');
     $pages = get_field('pages', 'options');
-    if ($pages) {
-      $currentPage = get_queried_object_id();
-      if (in_array($currentPage, $pages)) {
-        $displayOnPage = true;
+    // If show on all site pages
+    if ($enableSiteWide) {
+      $showBanner = true;
+    } else {
+      // If only on select pages
+      if ($pages) {
+        $currentPage = get_queried_object_id();
+        if (in_array($currentPage, $pages)) {
+          $displayOnPage = true;
+        }
       }
+      // If on all blog posts
+      if ($enableBlogBanner) {
+        $link = get_field('link', 'options');
+        $isBlogPost = is_singular('post');
+      }
+      $showBanner = ($enableBanner && $displayOnPage) || ($enableBlogBanner && $isBlogPost) ? true : false;
     }
   }
-  if ($enableBlogBanner) {
-    $link = get_field('link', 'options');
-    $isBlogPost = is_singular('post');
-  }
-  $showBanner = ($enableBanner && $displayOnPage) || ($enableBlogBanner && $isBlogPost) ? true : false;
 
   // Nav button
   if (is_main_site()) {
