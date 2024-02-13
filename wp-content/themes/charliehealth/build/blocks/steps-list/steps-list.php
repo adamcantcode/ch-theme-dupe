@@ -1,6 +1,3 @@
-<?php 
-var_dump(get_fields());
-; ?>
 <?php if (have_rows('steps')) : ?>
   <div class="grid grid-cols-1 gap-sp-3">
     <?php while (have_rows('steps')) : the_row(); ?>
