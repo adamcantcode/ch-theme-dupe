@@ -47,10 +47,9 @@ if ($image) {
         </div>
       </div>
     </div>
-    <div class="divider lg:mt-sp-16 md:mt-sp-12 mt-sp-8"></div>
   </div>
 </section>
-<section id="postsContainer" class="section">
+<section id="postsContainer" class="section bg-grey-warm">
   <div class="container">
     <h2 class="mb-sp-12">Articles by <?= get_the_title(); ?></h2>
     <div class="absolute invisible opacity-0 no-posts-js">
@@ -65,7 +64,7 @@ if ($image) {
     <div class="pagination-container"></div>
   </div>
 </section>
-<section id="postsContainerResearch" class="section">
+<section id="postsContainerResearch" class="section bg-grey-warm">
   <div class="container">
     <h2 class="mb-sp-12">Research Articles by <?= get_the_title(); ?></h2>
     <div class="absolute invisible opacity-0 no-posts-js-research">

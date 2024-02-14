@@ -29,7 +29,7 @@ Template Name: Search Page
     <h1 class="leading-normal lg:leading-tight mt-sp-4 lg:mt-0">Search results for: <span class="inline-block px-3 text-white whitespace-pre-wrap rounded-sm bg-med-blue"><?= sanitize_text_field($_GET['query']); ?></span></h1>
   </div>
 </section>
-<section id="postsContainer" class="section">
+<section id="postsContainer" class="section-top">
   <div class="container">
     <div class="absolute invisible opacity-0 no-posts-js">
       <div class="grid items-center grid-cols-1 duration-300 rounded-md justify-items-center bg-cream lg:grid-cols-2 p-sp-4">
@@ -43,7 +43,7 @@ Template Name: Search Page
     <div class="pagination-container"></div>
   </div>
 </section>
-<section class="section-horizontal">
+<section class="section">
   <div class="container">
     <div class="rounded-md border-gradient">
       <div class="items-center justify-between lg:flex p-sp-8">
