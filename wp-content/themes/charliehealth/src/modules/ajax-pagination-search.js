@@ -179,30 +179,53 @@ export default function ajaxPaginationSearch() {
     if (post.tags) {
       var tags = post.tags;
     }
-    html = `<div class="relative grid overflow-hidden border rounded-sm border-card-border hover:shadow-lg duration-300">
+    html = `<div class="relative bg-white rounded-lg group">
+              <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
                 <img src="${
                   post.featured_media ? post.featured_media : imageUrl
-                }" alt="${imageAlt}" class="object-cover lg:h-[220px] h-[150px] w-full">
-                <div class="grid p-sp-4">
-                  <h3><a href="${post.link}" class="stretched-link">${
-      post.title
-    }</a></h3>
-    <p class="mb-sp-4 text-h5 lg:text-h5-lg">${
-      post.acf.by_author.post_title
-    }</p>
-                  <div class="grid justify-start grid-flow-col gap-sp-4 items-end">`;
+                }" alt="${imageAlt}"  class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
+              </div>
+              <div class="grid bg-white rounded-b-lg p-sp-4">
+                <h3 class="text-h4-base"><a href="${
+                  post.link
+                }" class="block stretched-link">${post.title}</a></h3>
+                <p>${post.acf.by_author.post_title}</p>
+              </div>`;
     if (tags) {
       html += `${tags
         .map(
           (tag) =>
-            `<a href="${window.location.origin}/resources/${tag.slug}" class="px-sp-4 py-sp-3 no-underline rounded-lg text-h6 bg-tag-gray z-20 relative inline-block hover:bg-bright-teal">${tag.name}</a>`
+            `<div class="absolute rounded-t-lg top-sp-4 left-sp-4"><a href="${window.location.origin}/resources/${tag.slug}" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base">${tag.name}</a></div>`
         )
         .join('')}`;
     }
-    html += `</div>
-                  </div>
-                  </div>`;
+    html += `</div><!--end three-->`;
     return html;
+
+    // html = `<div class="relative grid overflow-hidden border rounded-sm border-card-border hover:shadow-lg duration-300">
+    //             <img src="${
+    //               post.featured_media ? post.featured_media : imageUrl
+    //             }" alt="${imageAlt}" class="object-cover lg:h-[220px] h-[150px] w-full">
+    //             <div class="grid p-sp-4">
+    //               <h3><a href="${post.link}" class="stretched-link">${
+    //   post.title
+    // }</a></h3>
+    // <p class="mb-sp-4 text-h5 lg:text-h5-lg">${
+    //   post.acf.by_author.post_title
+    // }</p>
+    //               <div class="grid justify-start grid-flow-col gap-sp-4 items-end">`;
+    // if (tags) {
+    //   html += `${tags
+    //     .map(
+    //       (tag) =>
+    //         `<a href="${window.location.origin}/resources/${tag.slug}" class="px-sp-4 py-sp-3 no-underline rounded-lg text-h6 bg-tag-gray z-20 relative inline-block hover:bg-bright-teal">${tag.name}</a>`
+    //     )
+    //     .join('')}`;
+    // }
+    // html += `</div>
+    //               </div>
+    //               </div>`;
+    // return html;
   };
 
   termsClickHandler();
