@@ -9556,10 +9556,11 @@ window.addEventListener('DOMContentLoaded', () => {
   let graphTimeline = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
     scrollTrigger: {
       trigger: '#depressionAnxietyGraph',
-      start: 'top 80%',
-      markers: true
+      start: 'top 80%'
+      // markers: true,
     }
   });
+
   graphTimeline.to('#depressionAnxietyGraph', {
     opacity: 1,
     duration: 1
