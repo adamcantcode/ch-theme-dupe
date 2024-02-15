@@ -56,9 +56,9 @@ if ($style === 'image') {
             <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health Shield" class="w-10">
           <?php endif; ?>
           <p class="!mb-0 !font-heading-serif !text-[20px]"><?= $subtitle; ?></p>
-        <?php endif; ?>
         </div>
-        <?php include(get_template_directory() . '/includes/button-group.php'); ?>
+      <?php endif; ?>
+      <?php include(get_template_directory() . '/includes/button-group.php'); ?>
     </div>
     <div class="flex flex-col justify-between order-1 lg:order-2">
       <img src="<?= $heroImage['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $heroImage['alt'] ?: 'Placeholder image'; ?>" class="object-cover object-top nolazy">
