@@ -39,14 +39,6 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
 <div id="mainArticleContent" class="relative z-10 main-article-content">
   <section class="section">
     <div class="container">
-      <div class="mb-sp-4">
-        <a href="<?= get_post_type_archive_link('post'); ?>" class="flex items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 50 50" fill="none">
-            <path d="M11.9393 26.0607C11.3536 25.4749 11.3536 24.5251 11.9393 23.9393L21.4853 14.3934C22.0711 13.8076 23.0208 13.8076 23.6066 14.3934C24.1924 14.9792 24.1924 15.9289 23.6066 16.5147L15.1213 25L23.6066 33.4853C24.1924 34.0711 24.1924 35.0208 23.6066 35.6066C23.0208 36.1924 22.0711 36.1924 21.4853 35.6066L11.9393 26.0607ZM37 26.5H13V23.5H37V26.5Z" fill="#212984" />
-          </svg>
-          <p class="mb-0 ml-sp-2">Back to The Library</p>
-        </a>
-      </div>
       <div class="grid items-center lg:grid-cols-[4.25fr_5fr] lg:gap-[10rem] gap-sp-8">
         <div>
           <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="rounded-md max-h-[200px] lg:max-h-none object-cover w-full aspect-square nolazy">
@@ -59,10 +51,8 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
             </svg>
             <p class="mb-0 font-bold ml-sp-2"> <?= $readingTime; ?> min.</p>
           </div>
-          <p><?= get_the_excerpt(); ?></p>
-          <p class="mb-0">By: <a href="<?= get_the_permalink($author->ID); ?>"><?= $author->post_title; ?></a></p>
-          <?php if (!empty($medicalReviewer)) : ?>
-            <p class="mb-0">Clinically Reviewed By: <a href="<?=  get_the_permalink($medicalReviewer->ID); ?>"><?= $medicalReviewer->post_title; ?></a></p>
+          <?php if (get_the_excerpt()) : ?>
+            <p><?= get_the_excerpt(); ?></p>
           <?php endif; ?>
           <?php if (!$updatedDate) : ?>
             <p><?= $date; ?></p>
@@ -165,45 +155,6 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
 </div>
 <?php if (!$prefooter) : ?>
   <?= do_blocks('<!-- wp:block {"ref":12} /-->'); ?>
-<?php endif; ?>
-<?php if ($relatedPosts) : ?>
-  <section class="section-bottom">
-    <div class="container">
-      <h2>More like this</h2>
-      <div class="grid lg:grid-cols-3 posts-container gap-x-sp-8 gap-y-sp-10">
-        <?php foreach ($relatedPosts as $post) : ?>
-          <?php
-          if (has_post_thumbnail()) {
-            $featuredImageID = get_post_thumbnail_id();
-            $featuredImage = wp_get_attachment_image_src($featuredImageID, 'card-thumb');
-            $featuredImageAltText = get_post_meta($featuredImageID, '_wp_attachment_image_alt', true);
-
-            $featuredImageUrl = $featuredImage[0];
-            $featuredImageAltText = $featuredImageAltText ?: '';
-          } else {
-            $featuredImageUrl = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
-            $featuredImageAltText = 'Charlie Health Logo';
-          }
-          ?>
-          <div class="relative grid overflow-hidden duration-300 border rounded-sm border-card-border hover:shadow-lg">
-            <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover lg:h-[220px] h-[150px] w-full">
-            <div class="grid p-sp-4">
-              <h3><a href="<?= get_the_permalink($post->ID); ?>" class="stretched-link"><?= $post->post_title; ?></a></h3>
-              <p class="mb-sp-4 text-h5 lg:text-h5-lg"><?= get_field('by_author', ($relatedPost->ID))->post_title ?: 'Charlie Health Editorial Team'; ?></p>
-              <div class="grid items-end justify-start grid-flow-col gap-sp-4">
-                <?php $tags = get_the_terms($post->ID, 'post_tag'); ?>
-                <?php if ($tags) : ?>
-                  <?php foreach ($tags as $tag) : ?>
-                    <a href="<?= get_tag_link($tag->term_id); ?>" class="relative z-[6] inline-block no-underline rounded-lg px-sp-4 py-sp-3 text-h6 bg-tag-gray hover:bg-bright-teal"><?= $tag->name; ?></a>
-                  <?php endforeach; ?>
-                <?php endif; ?>
-              </div>
-            </div>
-          </div>
-        <?php endforeach; ?>
-      </div>
-    </div>
-  </section>
 <?php endif; ?>
 <?= do_blocks('<!-- wp:block {"ref":7353} /-->'); ?>
 
