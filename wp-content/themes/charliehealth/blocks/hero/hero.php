@@ -50,13 +50,15 @@ if ($style === 'image') {
   <div class="grid items-center lg:grid-cols-2 gap-sp-5 py-sp-10 lg:py-0">
     <div class="order-2 lg:order-1 mobile-hero-sub">
       <h1 class="mb-sp-6 lg:text-[64px] text-[42px] leading-[1.1]"><?= $title; ?></h1>
-      <div class="flex items-center gap-sp-4 mb-sp-10">
-        <?php if ($icon) : ?>
-          <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health Shield" class="w-10">
+      <?php if ($subtitle) : ?>
+        <div class="flex items-center gap-sp-4 mb-sp-10">
+          <?php if ($icon) : ?>
+            <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health Shield" class="w-10">
+          <?php endif; ?>
+          <p class="!mb-0 !font-heading-serif !text-[20px]"><?= $subtitle; ?></p>
         <?php endif; ?>
-        <p class="!mb-0 !font-heading-serif !text-[20px]"><?= $subtitle; ?></p>
-      </div>
-      <?php include(get_template_directory() . '/includes/button-group.php'); ?>
+        </div>
+        <?php include(get_template_directory() . '/includes/button-group.php'); ?>
     </div>
     <div class="flex flex-col justify-between order-1 lg:order-2">
       <img src="<?= $heroImage['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $heroImage['alt'] ?: 'Placeholder image'; ?>" class="object-cover object-top nolazy">
