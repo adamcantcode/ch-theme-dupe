@@ -28,16 +28,67 @@
 </script>
 <footer id="footer" class="grid bg-secondary-soft relatve">
 	<div class="section-sm-top section-lg-bottom ">
-		<div class="container ">
-			<div class="flex flex-col justify-between lg:flex-row">
-				<div class="w-full rounded-t-sm lg:rounded-l-sm lg:rounded-r-none py-sp-5 px-sp-6 bg-lavender-100">
-					<p class="mb-0 text-[14px] leading-none">If this is a life-threatening emergency, please call 911 or the <a href="https://988lifeline.org/" target="_blank" class="text-darker-blue text-[14px]">National Suicide Prevention Lifeline</a></p>
-				</div>
-				<div class="rounded-b-sm bg-lavender-300 lg:rounded-r-sm lg:rounded-l-none py-sp-5 px-sp-6">
-					<a href="tel:+988" class="flex items-center no-underline gap-sp-2 text-darker-blue">
-						<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/phone.svg'); ?>" width="25" alt="phone call icon">
-						<div class="text-[14px]">988</div>
-					</a>
+		<div class="container">
+			<div class="rounded-sm lg:flex bg-lavender-300 p-sp-8 mb-sp-12">
+				<?php
+				$removeNewsletterPages = get_field('footer_removal_pages', 'options');
+				$removeNewsletter = false;
+				if (!empty($removeNewsletterPages)) {
+					$currentPage = get_queried_object_id();
+					if (in_array($currentPage, $removeNewsletterPages)) {
+						$removeNewsletter = true;
+					}
+				}
+				?>
+				<?php if (!$removeNewsletter) : ?>
+					<div class="flex-grow">
+						<p class="font-heading !text-[28px]">Sign up for our email newsletter</p>
+						<p class="text-[14px] leading-[130%] noshow">Get mental health updates, research, insights, and resources directly to your inbox.</p>
+						<div id="newsletterFooter" class="w-full lg:w-2/5 newsletter-revamp footer-newsletter">
+							<script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/newsletter_blog_revamp"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/newsletter_blog_revamp" title="Online Form">Online Form - Newsletter - Blog Revamp</a></noscript>
+							<script>
+								var container = document.currentScript.parentNode; // Newsletter container
+								var elementToCut = container.querySelector("#fsSubmitButton5194985"); // Submit button
+								var destinationElement = container.querySelector("#fsCell140490700"); // Email container
+								var newsletterID = container.id; // Newlsetter identifier
+								var newsletterLPField = container.querySelector('#field142799721'); // LP URL field
+								var newsletterIDField = container.querySelector('#field146376375'); // Type field
+								if (elementToCut && destinationElement) {
+									var clonedElement = elementToCut.cloneNode(true);
+									elementToCut.parentNode.removeChild(elementToCut);
+									destinationElement.appendChild(clonedElement);
+								}
+								newsletterIDField.value = newsletterID;
+								newsletterLPField.value = window.location.href;
+								// Remove duplicate default formstack stlyes styles
+								const styles = document.querySelectorAll('footer style');
+								styles.forEach(style => {
+									const clonedStyle = style.cloneNode(true);
+									document.head.appendChild(clonedStyle);
+									style.parentNode.removeChild(style);
+								});
+							</script>
+						</div>
+					</div>
+				<?php endif; ?>
+				<div>
+					<div class="flex gap-sp-1">
+						<a href="https://www.facebook.com/charliehealth" target="_blank">
+							<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/facebook.svg'); ?>" alt="Facebook logo" class="w-[42px] h-[42px] p-[10px]" />
+						</a>
+						<a href="https://www.linkedin.com/company/charlie-health/" target="_blank">
+							<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/linkedin.svg'); ?>" alt="LinkedIn logo" class="w-[42px] h-[42px] p-[10px]" />
+						</a>
+						<a href="https://twitter.com/charliehealth" target="_blank">
+							<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/x-blue.svg'); ?>" alt="Twitter (X) logo" class="w-[42px] h-[42px] p-[10px]" />
+						</a>
+						<a href="https://www.instagram.com/charliehealth/" target="_blank">
+							<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/instagram.svg'); ?>" alt="Instagram logo" class="w-[42px] h-[42px] p-[10px]" />
+						</a>
+						<a href="https://www.tiktok.com/@charliehealth" target="_blank">
+							<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/tik-tok.svg'); ?>" alt="TikTok logo" class="w-[42px] h-[42px] p-[10px]" />
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -64,71 +115,18 @@
 				<?php endif; ?>
 			</div>
 		</div>
-		<div class="container">
-			<?php if (!is_page('newsletter-thank-you')) : ?>
-				<div class="rounded-sm lg:flex bg-primary p-sp-8">
-					<?php
-					$removeNewsletterPages = get_field('footer_removal_pages', 'options');
-					$removeNewsletter = false;
-					if (!empty($removeNewsletterPages)) {
-						$currentPage = get_queried_object_id();
-						if (in_array($currentPage, $removeNewsletterPages)) {
-							$removeNewsletter = true;
-						}
-					}
-					?>
-					<?php if (!$removeNewsletter) : ?>
-						<div class="flex-grow">
-							<p class="text-white font-heading !text-[28px]">Sign up for our email newsletter</p>
-							<p class="text-white text-[14px] leading-[130%] noshow">Get mental health updates, research, insights, and resources directly to your inbox.</p>
-							<div id="newsletterFooter" class="w-full lg:w-2/5 newsletter-revamp footer-newsletter">
-								<script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/newsletter_blog_revamp"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/newsletter_blog_revamp" title="Online Form">Online Form - Newsletter - Blog Revamp</a></noscript>
-								<script>
-									var container = document.currentScript.parentNode; // Newsletter container
-									var elementToCut = container.querySelector("#fsSubmitButton5194985"); // Submit button
-									var destinationElement = container.querySelector("#fsCell140490700"); // Email container
-									var newsletterID = container.id; // Newlsetter identifier
-									var newsletterLPField = container.querySelector('#field142799721'); // LP URL field
-									var newsletterIDField = container.querySelector('#field146376375'); // Type field
-									if (elementToCut && destinationElement) {
-										var clonedElement = elementToCut.cloneNode(true);
-										elementToCut.parentNode.removeChild(elementToCut);
-										destinationElement.appendChild(clonedElement);
-									}
-									newsletterIDField.value = newsletterID;
-									newsletterLPField.value = window.location.href;
-									// Remove duplicate default formstack stlyes styles
-									const styles = document.querySelectorAll('footer style');
-									styles.forEach(style => {
-										const clonedStyle = style.cloneNode(true);
-										document.head.appendChild(clonedStyle);
-										style.parentNode.removeChild(style);
-									});
-								</script>
-							</div>
-						</div>
-					<?php endif; ?>
-					<div>
-						<div class="flex gap-sp-1">
-							<a href="https://www.facebook.com/charliehealth" target="_blank">
-								<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/facebook.svg'); ?>" alt="Facebook logo" class="w-[42px] h-[42px] p-[10px] filter-white" />
-							</a>
-							<a href="https://www.linkedin.com/company/charlie-health/" target="_blank">
-								<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/linkedin.svg'); ?>" alt="LinkedIn logo" class="w-[42px] h-[42px] p-[10px] filter-white" />
-							</a>
-							<a href="https://twitter.com/charliehealth" target="_blank">
-								<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/x.svg'); ?>" alt="Twitter (X) logo" class="w-[42px] h-[42px] p-[10px] filter-white" />
-							</a>
-							<a href="https://www.instagram.com/charliehealth/" target="_blank">
-								<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/instagram.svg'); ?>" alt="Instagram logo" class="w-[42px] h-[42px] p-[10px] filter-white" />
-							</a>
-							<a href="https://www.tiktok.com/@charliehealth" target="_blank">
-								<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/tik-tok.svg'); ?>" alt="TikTok logo" class="w-[42px] h-[42px] p-[10px] filter-white" />
-							</a>
-						</div>
-					</div>
+		<div class="container ">
+			<div class="flex flex-col justify-between lg:flex-row">
+				<div class="w-full rounded-t-sm lg:rounded-l-sm lg:rounded-r-none py-sp-5 px-sp-6 bg-lavender-100">
+					<p class="mb-0 text-[14px] leading-none">If this is a life-threatening emergency, please call 911 or the <a href="https://988lifeline.org/" target="_blank" class="text-darker-blue text-[14px]">National Suicide Prevention Lifeline</a></p>
 				</div>
-			<?php endif; ?>
+				<div class="rounded-b-sm bg-lavender-300 lg:rounded-r-sm lg:rounded-l-none py-sp-5 px-sp-6">
+					<a href="tel:+988" class="flex items-center no-underline gap-sp-2 text-darker-blue">
+						<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/phone.svg'); ?>" width="25" alt="phone call icon">
+						<div class="text-[14px]">988</div>
+					</a>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="section bg-primary">

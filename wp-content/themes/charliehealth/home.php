@@ -231,12 +231,7 @@
     <div class="pagination-container"></div>
   </div>
 </section>
-<section class="bg-off-white section">
-  <div class="container">
-    <?= do_blocks('<!-- wp:block {"ref":4069} /-->'); ?>
-  </div>
-</section>
-<section class="section-top">
+<section class="section-horizontal">
   <div class="container-sm">
     <?= do_blocks('<!-- wp:block {"ref":1709} /-->'); ?>
   </div>

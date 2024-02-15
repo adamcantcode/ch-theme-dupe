@@ -1,15 +1,15 @@
 <div class="rounded-[6px] bg-primary grid lg:grid-cols-[1fr_1fr_1fr_1fr] lg:p-sp-12 p-sp-4 gap-x-sp-10 gap-y-sp-8 lg:gap-y-0 relative hover:bg-primary-200 group transition-all duration-300 !mb-sp-2 lg:mb-0">
   <div>
-    <p class="text-white font-heading-serif !mb-sp-2 not-heading-h2">89%</p>
-    <p class="!mb-0 text-white">of clients reported improvements in self-harm</p>
+    <p class="text-white font-heading-serif lg:text-h2-lg text-h2 not-heading-h2">89%</p>
+    <p class="!mb-0 text-white text-h5">of clients reported improvements in self-harm</p>
   </div>
   <div>
-    <p class="text-white font-heading-serif !mb-sp-2 not-heading-h2">92%</p>
-    <p class="!mb-0 text-white">of clients reported improvements in symptoms associated with anxiety</p>
+    <p class="text-white font-heading-serif lg:text-h2-lg text-h2 not-heading-h2">92%</p>
+    <p class="!mb-0 text-white text-h5">of clients reported improvements in symptoms associated with anxiety</p>
   </div>
   <div>
-    <p class="text-white font-heading-serif !mb-sp-2 not-heading-h2">95%</p>
-    <p class="!mb-0 text-white">of clients reported improvements in symptoms associated with depression</p>
+    <p class="text-white font-heading-serif lg:text-h2-lg text-h2 not-heading-h2">95%</p>
+    <p class="!mb-0 text-white text-h5">of clients reported improvements in symptoms associated with depression</p>
   </div>
   <div class="grid content-between">
     <div class="order-2 ml-auto lg:order-1 mt-sp-8 lg:mt-0">

@@ -3899,10 +3899,6 @@ a.ch-button.button-tertiary.inverted:hover {
     scrollbar-width: none; /* Firefox */
   }
 
-.filter-white {
-    filter: contrast(0) brightness(2);
-  }
-
 .stretched-link:after {
       content: '';
       position: absolute;
