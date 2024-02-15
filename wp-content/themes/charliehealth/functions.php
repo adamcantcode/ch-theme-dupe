@@ -894,3 +894,10 @@ function customize_admin_bar_color_based_on_url()
 }
 add_action('admin_head', 'customize_admin_bar_color_based_on_url');
 add_action('wp_head', 'customize_admin_bar_color_based_on_url');
+
+// Increase public post preview nonce life
+add_filter('ppp_nonce_life', 'my_nonce_life');
+function my_nonce_life()
+{
+  return 14 * DAY_IN_SECONDS;
+}
