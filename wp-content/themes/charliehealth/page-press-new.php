@@ -264,7 +264,7 @@ Template Name: Press page new
 <section class="section">
   <div class="container">
     <div class="grid grid-cols-1 lg:grid-cols-[3fr_9fr] gap-sp-5">
-      <h2 class="lg:mb-12 lg:text-[40px] text-[32px] leading-[1.1]">Press Releases and Company Announcements</h2>
+      <h2 class="lg:mb-12 lg:text-[40px] text-[32px] leading-[1.1]">Press Releases & Company Announcements</h2>
       <div class="">
         <?php
         $args = array(
