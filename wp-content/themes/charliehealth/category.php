@@ -157,7 +157,7 @@ if (is_category('families-and-caregivers')) {
   <div class="container">
     <h2>Latest posts for <?= single_term_title(); ?></h2>
     <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-sp-16 gap-y-sp-8">
-      <div class="relative flex flex-wrap items-start overflow-hidden duration-1000 lg:flex-col gap-sp-4 cat-mobile-js lg:overflow-visible max-h-[33vh] lg:max-h-full">
+      <div class="relative flex flex-wrap lg:flex-nowrap items-start overflow-hidden duration-1000 lg:flex-col gap-sp-4 cat-mobile-js lg:overflow-y-scroll max-h-[33vh] lg:max-h-[1040px]">
         <h6 class="lg:absolute lg:top-0 lg:right-0">
           <a role="button" class="flex items-center invisible text-white transition-all duration-300 opacity-0 rounded-pill js-reset group bg-primary px-sp-2 py-sp-2">
             <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/reset.svg'); ?>" alt="reset filters icon" class="transition-all duration-300 pointer-events-none mr-sp-2 w-sp-5 group-hover:rotate-45"><span class="leading-none pointer-events-none">Reset</span>
