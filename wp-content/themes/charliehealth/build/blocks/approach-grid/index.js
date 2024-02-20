@@ -9562,9 +9562,7 @@ window.addEventListener('DOMContentLoaded', () => {
       duration: 3
     }
   });
-  gridItemStagger.fromTo('.grid-approach-items-js > div', {
-    autoAlpha: 0
-  }, {
+  gridItemStagger.to('.grid-approach-items-js > div', {
     autoAlpha: 1,
     duration: 3,
     stagger: 0.2,

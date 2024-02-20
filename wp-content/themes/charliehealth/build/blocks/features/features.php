@@ -13,7 +13,7 @@ $features = get_field('features');
   <div class="features-block-callout">
     <?= $calloutCopy; ?>
     <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-sp-6 gap-sp-3 lg:mt-sp-8 mt-sp-12">
-      <div class="bg-pale-blue-200 rounded-[6px] p-sp-5 flex flex-col feature-card">
+      <div class="bg-pale-blue-200 rounded-[6px] p-sp-5 flex flex-col feature-card opacity-0">
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="mb-sp-6 lg:mb-sp-12">
           <path d="M18 27H20.5V29.5H18V27Z" fill="#161A3D" />
           <path d="M20.5 12H18V24H20.5V12Z" fill="#161A3D" />
@@ -22,7 +22,7 @@ $features = get_field('features');
         <h3 class="mb-[10px] font-heading leading-[1.1]"><?= $features[1]['heading']; ?></h3>
         <p class="mb-0 text-primary text-[14px] !leading-[1.4]"><?= $features[1]['subheading']; ?></p>
       </div>
-      <div class="bg-lavender-300 rounded-[6px] p-sp-5 flex flex-col feature-card">
+      <div class="bg-lavender-300 rounded-[6px] p-sp-5 flex flex-col feature-card opacity-0">
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="mb-sp-6 lg:mb-sp-12">
           <path d="M28 16H12V13.5H28V16Z" fill="#161A3D" />
           <path d="M12 22H28V19.5H12V22Z" fill="#161A3D" />
@@ -31,7 +31,7 @@ $features = get_field('features');
         <h3 class="mb-[10px] font-heading leading-[1.1]"><?= $features[0]['heading']; ?></h3>
         <p class="mb-0 text-primary text-[14px] !leading-[1.4]"><?= $features[0]['subheading']; ?></p>
       </div>
-      <div class="bg-yellow-300 rounded-[6px] p-sp-5 flex flex-col feature-card">
+      <div class="bg-yellow-300 rounded-[6px] p-sp-5 flex flex-col feature-card opacity-0">
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="mb-sp-6 lg:mb-sp-12">
           <path d="M20 12.25C10.7492 12.25 3.25 19.7492 3.25 29H0.75C0.75 18.3685 9.36852 9.75 20 9.75C30.6315 9.75 39.25 18.3685 39.25 29H36.75C36.75 19.7492 29.2508 12.25 20 12.25Z" fill="#161A3D" />
           <path d="M20 16.75C13.2345 16.75 7.75 22.2345 7.75 29H5.25C5.25 20.8538 11.8538 14.25 20 14.25C28.1462 14.25 34.75 20.8538 34.75 29H32.25C32.25 22.2345 26.7655 16.75 20 16.75Z" fill="#161A3D" />
