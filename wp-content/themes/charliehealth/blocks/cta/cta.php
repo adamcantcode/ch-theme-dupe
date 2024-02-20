@@ -44,8 +44,8 @@ $blockClasses .= $background . ' ';
 <?php endif; ?>
 <?php if ($style === 'value_image') : ?>
   <div class="grid gap-sp-5 grid-cols-1 lg:grid-cols-[4fr_8fr]">
-    <img src="<?= get_field('image')['url']; ?>" alt="<?= get_field('image')['alt']; ?>">
-    <div class="flex justify-center rounded-sm lg:p-sp-14 p-sp-6 mb-sp-6 <?= $blockClasses; ?>">
+    <img src="<?= get_field('image')['url']; ?>" alt="<?= get_field('image')['alt']; ?>" class="order-2 lg:order-1">
+    <div class="flex justify-center rounded-sm lg:p-sp-14 p-sp-6 mb-sp-6 order-1 lg:order-2 <?= $blockClasses; ?>">
       <div class="flex flex-col items-center justify-center text-center">
         <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health shield logo" class="w-[3rem] mb-sp-5">
         <p class="text-darkest-blue lg:text-[2.5rem] text-h2-lg lg:leading-tight mb-sp-5 font-heading-serif"><?= $heading; ?></p>
