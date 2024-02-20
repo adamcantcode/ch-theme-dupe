@@ -13,16 +13,10 @@ window.addEventListener('DOMContentLoaded', () => {
       duration: 3,
     },
   });
-  gridItemStagger.fromTo(
-    '.grid-approach-items-js > div',
-    {
-      autoAlpha: 0,
-    },
-    {
-      autoAlpha: 1,
-      duration: 3,
-      stagger: 0.2,
-      ease: 'power4.out',
-    }
-  );
+  gridItemStagger.to('.grid-approach-items-js > div', {
+    autoAlpha: 1,
+    duration: 3,
+    stagger: 0.2,
+    ease: 'power4.out',
+  });
 });
