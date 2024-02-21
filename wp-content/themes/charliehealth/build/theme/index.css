@@ -1854,6 +1854,10 @@ a.ch-button.button-tertiary.inverted:hover {
   height: 2px;
 }
 
+.h-\[400px\]{
+  height: 400px;
+}
+
 .h-\[42px\]{
   height: 42px;
 }
@@ -1908,10 +1912,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .h-sp-8{
   height: 2rem;
-}
-
-.h-\[400px\]{
-  height: 400px;
 }
 
 .max-h-0{
@@ -3198,6 +3198,10 @@ a.ch-button.button-tertiary.inverted:hover {
   font-size: 32px;
 }
 
+.text-\[35px\]{
+  font-size: 35px;
+}
+
 .text-\[40px\]{
   font-size: 40px;
 }
@@ -3312,10 +3316,6 @@ a.ch-button.button-tertiary.inverted:hover {
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-\[35px\]{
-  font-size: 35px;
 }
 
 .font-bold{
@@ -5469,10 +5469,6 @@ ul.alert li {
     bottom: -50px;
   }
 
-  .lg\:left-0{
-    left: 0px;
-  }
-
   .lg\:left-\[60\%\]{
     left: 60%;
   }
@@ -5489,24 +5485,12 @@ ul.alert li {
     top: 0px;
   }
 
-  .lg\:top-\[-10\%\]{
-    top: -10%;
-  }
-
   .lg\:top-\[-120px\]{
     top: -120px;
   }
 
-  .lg\:top-\[20\%\]{
-    top: 20%;
-  }
-
   .lg\:top-\[32px\]{
     top: 32px;
-  }
-
-  .lg\:top-\[80\%\]{
-    top: 80%;
   }
 
   .lg\:order-1{
@@ -5881,10 +5865,6 @@ ul.alert li {
     grid-template-columns: 2fr 1fr;
   }
 
-  .lg\:grid-cols-\[2fr_3fr_3fr\]{
-    grid-template-columns: 2fr 3fr 3fr;
-  }
-
   .lg\:grid-cols-\[2fr_5fr\]{
     grid-template-columns: 2fr 5fr;
   }
@@ -6231,13 +6211,6 @@ ul.alert li {
   .lg\:text-h1-lg{
     font-size: 3rem;
     line-height: 3rem;
-    letter-spacing: 0;
-    font-weight: 400;
-  }
-
-  .lg\:text-h2{
-    font-size: 1.75rem;
-    line-height: 2.3rem;
     letter-spacing: 0;
     font-weight: 400;
   }
