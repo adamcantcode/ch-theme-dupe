@@ -3989,39 +3989,32 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .single-areas-of-care #mainArticleContent > section .acf-innerblocks-container > p, .single-treatment-modalities #mainArticleContent > section .acf-innerblocks-container > p{
   font-size: 18px;
-          background: red;
 }
 
 .single-areas-of-care #mainArticleContent > section .acf-innerblocks-container > p a, .single-treatment-modalities #mainArticleContent > section .acf-innerblocks-container > p a{
   line-height: inherit;
   color: inherit;
           font-size: inherit;
-          background: red;
 }
 
 .single-areas-of-care #mainArticleContent > section .acf-innerblocks-container > ul, .single-treatment-modalities #mainArticleContent > section .acf-innerblocks-container > ul{
   font-size: 18px;
-          background: red;
 }
 
 .single-areas-of-care #mainArticleContent > section .acf-innerblocks-container > ol, .single-treatment-modalities #mainArticleContent > section .acf-innerblocks-container > ol{
   font-size: 18px;
-          background: red;
 }
 
 .single-areas-of-care #mainArticleContent > section .acf-innerblocks-container > ul > *, .single-treatment-modalities #mainArticleContent > section .acf-innerblocks-container > ul > *{
   font-size: 18px;
-          background: red;
 }
 
 .single-areas-of-care #mainArticleContent > section .acf-innerblocks-container > ol > *, .single-treatment-modalities #mainArticleContent > section .acf-innerblocks-container > ol > *{
   font-size: 18px;
-          background: red;
 }
 
 .single-areas-of-care #mainArticleContent > section .acf-innerblocks-container > figure, .single-treatment-modalities #mainArticleContent > section .acf-innerblocks-container > figure{
   margin-bottom: 20px;
-          background: red;
 }
 
 .testimonial-padding{

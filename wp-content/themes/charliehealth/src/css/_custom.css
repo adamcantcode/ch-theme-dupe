@@ -67,32 +67,25 @@
       .acf-innerblocks-container {
         & > p {
           @apply text-[18px];
-          background: red;
         }
         & > p a {
           @apply text-[inherit] leading-[inherit];
           font-size: inherit;
-          background: red;
         }
         & > ul {
           @apply text-[18px];
-          background: red;
         }
         & > ol {
           @apply text-[18px];
-          background: red;
         }
         & > ul > * {
           @apply text-[18px];
-          background: red;
         }
         & > ol > * {
           @apply text-[18px];
-          background: red;
         }
         & > figure {
           @apply mb-base5-4;
-          background: red;
         }
       }
     }
