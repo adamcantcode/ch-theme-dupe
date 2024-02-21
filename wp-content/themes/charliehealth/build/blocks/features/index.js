@@ -9562,9 +9562,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  gridItemStagger.fromTo('.feature-card', {
-    autoAlpha: 0
-  }, {
+  gridItemStagger.to('.feature-card', {
     autoAlpha: 1,
     duration: 3,
     stagger: 0.5,

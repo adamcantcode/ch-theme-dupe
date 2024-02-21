@@ -111,6 +111,9 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/top-startup');
   register_block_type(__DIR__ . '/build/blocks/comparison-table');
   register_block_type(__DIR__ . '/build/blocks/crisis-resources');
+  register_block_type(__DIR__ . '/build/blocks/scrolling-cta');
+  register_block_type(__DIR__ . '/build/blocks/steps-list');
+  register_block_type(__DIR__ . '/build/blocks/depression-anxiety-graph');
 }
 add_action('init', 'register_acf_blocks', 5);
 
@@ -891,3 +894,10 @@ function customize_admin_bar_color_based_on_url()
 }
 add_action('admin_head', 'customize_admin_bar_color_based_on_url');
 add_action('wp_head', 'customize_admin_bar_color_based_on_url');
+
+// Increase public post preview nonce life
+add_filter('ppp_nonce_life', 'my_nonce_life');
+function my_nonce_life()
+{
+  return 14 * DAY_IN_SECONDS;
+}

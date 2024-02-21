@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "acf/depression-anxiety-graph",
+  "title": "Depression & Anxiety Graph",
+  "description": "Depression & Anxiety Graph animated graph",
+  "category": "custom",
+  "icon": "admin-generic",
+  "style": "file:./index.css",
+  "script": "file:./index.js",
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "depression-anxiety-graph.php"
+  },
+  "supports": {}
+}

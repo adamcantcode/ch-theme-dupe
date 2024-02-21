@@ -63,11 +63,20 @@
       (d = c.getElementsByTagName("script")[0]) ? d.parentNode.insertBefore(b, d): c.head.appendChild(b)
     }
   })(document, window.freshpaint || []);
-  freshpaint.init("16542b5f-ea29-493d-9d25-d062679c7e98");
+  freshpaint.init("16542b5f-ea29-493d-9d25-d062679c7e98", {
+    "consent_management": {
+      "osano": {
+        "category_mapping": {
+          "ANALYTICS": ["Google Analytics 4 Proxy", "Facebook Conversions API"],
+        }
+      },
+      "consent_model": "opt-out"
+    }
+  });
   freshpaint.page();
 </script>
 <!-- END Freshpaint -->
-<!-- Start Freshpaint TWO -->
+<!-- Start Freshpaint Google Ads -->
 <script type="text/javascript">
   (function(c, a) {
     if (!a.__SV) {
@@ -131,27 +140,7 @@
   })(document, window.freshpaint || []);
   freshpaint.init("f26794ad-968d-4b54-bcc8-9b65ade88d89", {
     "api_host": "https://xwsgki5761.execute-api.us-west-2.amazonaws.com/prod",
-    "app_host": "https://d3ctaittqrzqon.cloudfront.net"
-  });
-  freshpaint.page();
-</script>
-<!-- END Freshpaint TWO -->
-
-<!-- Osano <> Freshpaint -->
-<script>
-  // Main
-  freshpaint.init("16542b5f-ea29-493d-9d25-d062679c7e98", {
-    "consent_management": {
-      "osano": {
-        "category_mapping": {
-          "ANALYTICS": ["Google Analytics 4 Proxy", "Facebook Conversions API"],
-        }
-      },
-      "consent_model": "opt-out"
-    }
-  })
-  // Google Ads
-  freshpaint.init("f26794ad-968d-4b54-bcc8-9b65ade88d89", {
+    "app_host": "https://d3ctaittqrzqon.cloudfront.net",
     "consent_management": {
       "osano": {
         "category_mapping": {
@@ -160,8 +149,10 @@
       },
       "consent_model": "opt-out"
     }
-  })
+  });
+  freshpaint.page();
 </script>
+<!-- END Freshpaint Google Ads -->
 
 <!-- Google Tag Manager PROD-->
 <script>
@@ -181,25 +172,6 @@
   })(window, document, 'script', 'dataLayer', 'GTM-P8BB2ZV');
 </script>
 <!-- End Google Tag Manager PROD -->
-
-<!-- Google Tag Manager FRESHPAINT TESTING -->
-<script>
-  (function(w, d, s, l, i) {
-    w[l] = w[l] || [];
-    w[l].push({
-      'gtm.start': new Date().getTime(),
-      event: 'gtm.js'
-    });
-    var f = d.getElementsByTagName(s)[0],
-      j = d.createElement(s),
-      dl = l != 'dataLayer' ? '&l=' + l : '';
-    j.async = true;
-    j.src =
-      'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-    f.parentNode.insertBefore(j, f);
-  })(window, document, 'script', 'dataLayer', 'GTM-WTZ6L3HD');
-</script>
-<!-- End Google Tag Manager FRESHPAINT TESTING -->
 
 <!-- Start VWO Async SmartCode -->
 <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />

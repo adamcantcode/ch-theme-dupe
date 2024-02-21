@@ -49,12 +49,14 @@ $icon           = get_field('hero_icon');
   <div class="grid items-center lg:grid-cols-2 gap-sp-5 py-sp-10 lg:py-0">
     <div class="order-2 lg:order-1 mobile-hero-sub">
       <h1><?= $title; ?></h1>
-      <div class="flex items-center gap-sp-4 mb-sp-10">
-        <?php if ($icon) : ?>
-          <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health Shield" class="w-10">
-        <?php endif; ?>
-        <p class="mb-0 text-h4-base font-heading-serif"><?= $subtitle; ?></p>
-      </div>
+      <?php if ($subtitle) : ?>
+        <div class="flex items-center gap-sp-4 mb-sp-10">
+          <?php if ($icon) : ?>
+            <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health Shield" class="w-10">
+          <?php endif; ?>
+          <p class="mb-0 text-h4-base font-heading-serif"><?= $subtitle; ?></p>
+        </div>
+      <?php endif; ?>
       <?php include(get_template_directory() . '/includes/button-group.php'); ?>
     </div>
     <div class="flex flex-col justify-between order-1 lg:order-2">
