@@ -3310,6 +3310,10 @@ a.ch-button.button-tertiary.inverted:hover {
   line-height: 1rem;
 }
 
+.text-\[35px\]{
+  font-size: 35px;
+}
+
 .font-bold{
   font-weight: 700;
 }
@@ -6223,6 +6227,13 @@ ul.alert li {
   .lg\:text-h1-lg{
     font-size: 3rem;
     line-height: 3rem;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+
+  .lg\:text-h2{
+    font-size: 1.75rem;
+    line-height: 2.3rem;
     letter-spacing: 0;
     font-weight: 400;
   }

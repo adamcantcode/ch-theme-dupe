@@ -20,6 +20,7 @@
                 "value": "Value Prop",
                 "value_image": "Value Prop with image",
                 "full": "Full Width",
+                "large": "Large",
                 "newsletter": "Newsletter",
                 "dbt": "DBT Skills Book",
                 "sad": "SAD Survival Guide"
@@ -154,5 +155,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1706641909
+    "modified": 1708543717
 }
