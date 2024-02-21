@@ -29,6 +29,7 @@
   }
 }
 
+/* BLOG */
 #articleContent {
   & > div {
     & > div {
@@ -37,8 +38,9 @@
     & > p {
       @apply text-[18px];
     }
-    & > p a{
+    & > p a {
       @apply text-[inherit] leading-[inherit];
+      font-size: inherit;
     }
     & > ul {
       @apply text-[18px];
@@ -46,7 +48,7 @@
     & > ol {
       @apply text-[18px];
     }
-    & > ul > *{
+    & > ul > * {
       @apply text-[18px];
     }
     & > ol > * {
@@ -54,6 +56,45 @@
     }
     & > figure {
       @apply mb-base5-4;
+    }
+  }
+}
+/* AOCs and TMs */
+.single-areas-of-care,
+.single-treatment-modalities {
+  #mainArticleContent {
+    & > section {
+      .acf-innerblocks-container {
+        & > p {
+          @apply text-[18px];
+          background: red;
+        }
+        & > p a {
+          @apply text-[inherit] leading-[inherit];
+          font-size: inherit;
+          background: red;
+        }
+        & > ul {
+          @apply text-[18px];
+          background: red;
+        }
+        & > ol {
+          @apply text-[18px];
+          background: red;
+        }
+        & > ul > * {
+          @apply text-[18px];
+          background: red;
+        }
+        & > ol > * {
+          @apply text-[18px];
+          background: red;
+        }
+        & > figure {
+          @apply mb-base5-4;
+          background: red;
+        }
+      }
     }
   }
 }
