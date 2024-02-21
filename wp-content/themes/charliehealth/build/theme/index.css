@@ -1910,6 +1910,10 @@ a.ch-button.button-tertiary.inverted:hover {
   height: 2rem;
 }
 
+.h-\[400px\]{
+  height: 400px;
+}
+
 .max-h-0{
   max-height: 0px;
 }

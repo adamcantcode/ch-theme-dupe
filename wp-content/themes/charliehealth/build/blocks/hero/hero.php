@@ -66,27 +66,15 @@ if ($style === 'image') {
   </div>
 <?php endif; ?>
 <?php if ($style === 'multi_image') : ?>
-  <div class="grid items-center lg:grid-cols-[4fr_8fr] gap-sp-5">
+  <div class="grid items-center lg:grid-cols-[5fr_7fr] gap-sp-5">
     <div class="order-2 lg:order-1">
       <p class="text-[20px] mb-sp-4"><?= $subtitle; ?></p>
       <h1 class="mb-sp-5 lg:text-[64px] text-[42px] leading-[1.1]"><?= $title; ?></h1>
       <?php include(get_template_directory() . '/includes/button-group.php'); ?>
     </div>
-    <div class="order-1 lg:order-2 grid grid-cols-1 lg:grid-cols-[2fr_3fr_3fr] lg:gap-sp-5 h-full">
-      <?php
-      $imageOne   = get_field('image_one');
-      $imageTwo   = get_field('image_two');
-      $imageThree = get_field('image_three');
-      ?>
-      <div class="relative">
-        <img src="<?= $imageOne['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $imageOne['alt'] ?: 'Placeholder image'; ?>" class="lg:absolute lg:left-0 lg:top-[80%] rounded-[16px] nolazy lg:block noshow">
-      </div>
-      <div class="relative">
-        <img src="<?= $imageTwo['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $imageTwo['alt'] ?: 'Placeholder image'; ?>" class="lg:absolute lg:left-0 lg:top-[-10%] rounded-[16px] nolazy">
-      </div>
-      <div class="relative">
-        <img src="<?= $imageThree['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $imageThree['alt'] ?: 'Placeholder image'; ?>" class="lg:absolute lg:left-0 lg:top-[20%] lg:max-w-[400px] rounded-[16px] lg:block noshow nolazy">
-      </div>
+    <div class="order-1 h-full lg:order-2">
+      <?php  $imageOne = get_field('image_one');  ?>
+      <img src="<?= $imageOne['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $imageOne['alt'] ?: 'Placeholder image'; ?>" class="h-[400px] w-full object-cover rounded-sm">
     </div>
   </div>
 <?php endif; ?>
