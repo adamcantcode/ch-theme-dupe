@@ -620,6 +620,7 @@ mark {
 }
 
 .toggle-button:not(.button-primary) {
+  @apply bg-white;
   &:before {
     @apply transition-all duration-300;
   }

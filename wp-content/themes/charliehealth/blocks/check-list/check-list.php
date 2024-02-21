@@ -14,7 +14,7 @@ if ($style !== 'feed') :
             <?php foreach ($items as $key => $value) : ?>
               <div class="flex items-start lg:p-sp-6 p-sp-4 gap-sp-4">
                 <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/check.svg'); ?>" alt="Check mark" class="mt-sp-1">
-                <div class="-mb-sp-6">
+                <div class="[&_*]:mb-0">
                   <?= $value['list_item']; ?>
                 </div>
               </div>
@@ -54,7 +54,7 @@ elseif ($style === 'feed') :
             <?php foreach ($items as $value) : ?>
               <div class="flex items-start lg:p-sp-6 p-sp-4 gap-sp-4">
                 <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/check.svg'); ?>" alt="Check mark" class="mt-sp-1">
-                <div class="-mb-sp-6">
+                <div>
                   <a href="<?= get_the_permalink($value->ID); ?>"><?= $value->post_title; ?></a>
                 </div>
               </div>

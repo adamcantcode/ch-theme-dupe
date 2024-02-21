@@ -12,7 +12,7 @@
       @apply shadow-[inset-0_0_0_2px_transparent] text-white rounded-sm hover:bg-med-blue bg-darkest-blue;
     }
     &.button-secondary {
-      @apply rounded-sm bg-white shadow-[inset_0_0_0_1.5px_#161A3D] text-darker-blue hover:shadow-[inset_0_0_0_1.5px_#1A1F45] hover:bg-[#F8F7F7];
+      @apply rounded-sm bg-transparent shadow-[inset_0_0_0_1.5px_#161A3D] text-darker-blue hover:shadow-[inset_0_0_0_1.5px_#1A1F45] hover:bg-[#F8F7F7];
       &.inverted {
         @apply bg-transparent shadow-[inset_0_0_0_1.5px_#ffffff] text-white hover:shadow-[inset_0_0_0_1.5px_#F8F7F7];
       }
