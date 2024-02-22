@@ -78,125 +78,104 @@ module.exports = {
         deactivated: '#87889A',
       },
       salmon: '#F9E1D4',
-      // 'light-teal': '#C8FFFF',
-      // 'med-bright-teal': '#3EB7B5',
-      // 'med-teal': '#39919D',
-      // 'darkest-teal': '#0B3340',
-      // 'dark-text': '#272A51',
-      // 'light-text': '#6A6C85',
-      // 'med-blue-60': '#5F6387',
-      // 'med-blue-40': '#2A2D4F66',
-      // 'med-blue-20': '#2A2D4F33',
-      // 'orange-gradient-start': '#FFDEDA',
-      // 'orange-gradient-end': '#FFA776',
-      // 'bright-orange': '#FF9F81',
       orange: {
         200: '#F5A890',
         300: '#E07058',
       },
-      // 'med-blue': '#262D70',
-      // 'lightest-blue': '#F5F6F8',
-      // 'light-purple-gradient-start': '#F0EFFC',
-      // 'light-purple-gradient-end': '#FFFFFF',
     },
+    // All borders at 10px
     borderRadius: {
       none: '0',
-      sm: '0.625rem',
-      md: '1.25rem',
-      lg: '2.5rem',
+      sm: '10px',
+      md: '10px',
+      lg: '10px',
+      circle: '50%',
+      pill: '1000px',
     },
     extend: {
       fontSize: {
         h1: [
-          '2rem',
+          '50px',
           {
-            lineHeight: '2rem',
+            lineHeight: '110%',
             letterSpacing: '0',
             fontWeight: '400',
           },
         ],
-        // 'h1-md': [
-        //   '3rem',
-        //   {
-        //     lineHeight: '110%',
-        //     letterSpacing: '-0.03em',
-        //     fontWeight: '400',
-        //   },
-        // ],
         'h1-lg': [
-          '3rem',
+          '64px',
           {
-            lineHeight: '3rem',
+            lineHeight: '110%',
             letterSpacing: '0',
             fontWeight: '400',
           },
         ],
         'h1-display': [
-          '2.25rem',
+          '70px',
           {
-            lineHeight: '2.75rem',
+            lineHeight: '90%',
             letterSpacing: '0',
             fontWeight: '400',
           },
         ],
         'h1-display-lg': [
-          '4rem',
+          '120px',
           {
-            lineHeight: '4.2rem',
+            lineHeight: '90%',
             letterSpacing: '0',
             fontWeight: '400',
           },
         ],
         h2: [
-          '1.75rem',
+          '35px',
           {
-            lineHeight: '2.3rem',
+            lineHeight: '110%',
             letterSpacing: '0',
             fontWeight: '400',
           },
         ],
         'h2-lg': [
-          '2.25rem',
+          '40px',
           {
-            lineHeight: '1.21',
+            lineHeight: '110%',
             letterSpacing: '0',
             fontWeight: '400',
           },
         ],
         h3: [
-          '1.25rem',
+          '25px',
           {
-            lineHeight: '1.625rem',
+            lineHeight: '110%',
             letterSpacing: '0',
             fontWeight: '400',
           },
         ],
         'h3-lg': [
-          '1.5rem',
+          '28px',
           {
-            lineHeight: '2rem',
+            lineHeight: '110%',
             letterSpacing: '0',
             fontWeight: '400',
           },
         ],
         h4: [
-          '1.25rem',
+          '18px',
           {
             lineHeight: '140%',
-            letterSpacing: '1%',
+            letterSpacing: '0',
             fontWeight: '400',
           },
         ],
         'h4-lg': [
-          '1.5rem',
+          '20px',
           {
-            lineHeight: '1.8rem',
+            lineHeight: '140%',
             letterSpacing: '0',
             fontWeight: '400',
           },
         ],
         h5: [
-          '1rem',
+          '16px',
           {
             lineHeight: '140%',
             letterSpacing: '0',
@@ -204,7 +183,7 @@ module.exports = {
           },
         ],
         h6: [
-          '0.875rem',
+          '14px',
           {
             lineHeight: '140%',
             letterSpacing: '0',
@@ -212,33 +191,41 @@ module.exports = {
           },
         ],
         p: [
-          '1rem',
+          '16px',
           {
-            lineHeight: '1.5rem',
+            lineHeight: '160%',
             letterSpacing: '0',
             fontWeight: '400',
           },
         ],
         'p-lg': [
-          '1.125rem',
+          '16px',
           {
-            lineHeight: '1.8rem',
+            lineHeight: '160%',
             letterSpacing: '0',
             fontWeight: '400',
           },
         ],
         'nav-normal': [
-          '0.875rem',
+          '18px',
           {
-            lineHeight: 'normal',
+            lineHeight: '140%',
             letterSpacing: '0',
             fontWeight: '400',
           },
         ],
         'nav-small': [
-          '0.75rem',
+          '16px',
           {
-            lineHeight: 'normal',
+            lineHeight: '140%',
+            letterSpacing: '0',
+            fontWeight: '400',
+          },
+        ],
+        mini: [
+          '12px',
+          {
+            lineHeight: '140%',
             letterSpacing: '0',
             fontWeight: '400',
           },
@@ -258,6 +245,16 @@ module.exports = {
         'sp-12': '3rem',
         'sp-14': '4rem',
         'sp-16': '6rem',
+        'base5-1': '5px',
+        'base5-2': '10px',
+        'base5-3': '15px',
+        'base5-4': '20px',
+        'base5-5': '25px',
+        'base5-6': '30px',
+        'base5-7': '35px',
+        'base5-8': '40px',
+        'base5-9': '45px',
+        'base5-10': '50px',
       },
       transitionProperty: {
         right: 'right',

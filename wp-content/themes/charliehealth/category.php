@@ -27,7 +27,7 @@ if (is_category('families-and-caregivers')) {
         <h1 class="text-white"><?= single_term_title(); ?></h1>
         <!-- <p>Stay up to date on mental health research, wellness techniques, treatment services, and more.</p> -->
       </div>
-      <div class="grid gap-sp-16">
+      <div class="grid gap-base5-8">
         <form role="search" method="get" class="relative search-form" action="<?= esc_url(site_url('/search')); ?>">
           <label>
             <span class="screen-reader-text"><?= _x('Search for:', 'label'); ?></span>
@@ -122,7 +122,7 @@ if (is_category('families-and-caregivers')) {
                   <div class="relative grid overflow-hidden rounded-md lg:grid-cols-2">
                     <div class="grid content-between order-2 lg:p-sp-8 p-sp-4 lg:order-1 <?= $audienceClass; ?>"">
                     <div>
-                      <h3 class="text-white  text-h2 lg:text-h2-lg"><?= get_the_title(); ?></h3>
+                    <h3 class="text-white text-h2-base"><?= get_the_title(); ?></h3>
                     </div>
                     <a href="<?= get_the_permalink(); ?>" class="text-white no-underline stretched-link">Read more <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/arrow-left.svg'); ?>" alt="arrow icon" class="inline-block rotate-180 h-sp-4 ml-sp-2"></a>
                   </div>
@@ -139,7 +139,6 @@ if (is_category('families-and-caregivers')) {
           <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none" class="arrow-slider">
             <rect width="50" height="50" rx="25" fill="#ffffff" class="arrow-slider-bg" />
             <path d="M11.9393 26.0607C11.3536 25.4749 11.3536 24.5251 11.9393 23.9393L21.4853 14.3934C22.0711 13.8076 23.0208 13.8076 23.6066 14.3934C24.1924 14.9792 24.1924 15.9289 23.6066 16.5147L15.1213 25L23.6066 33.4853C24.1924 34.0711 24.1924 35.0208 23.6066 35.6066C23.0208 36.1924 22.0711 36.1924 21.4853 35.6066L11.9393 26.0607ZM37 26.5H13V23.5H37V26.5Z" fill="#212984" class="arrow-slider-arrow" />
-            <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
           </svg>
         </div>
         <div class="!relative swiper-pagination !inset-auto"></div>
@@ -147,7 +146,6 @@ if (is_category('families-and-caregivers')) {
           <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none" class="arrow-slider">
             <rect width="50" height="50" rx="25" fill="#ffffff" class="arrow-slider-bg" />
             <path d="M38.0607 26.0607C38.6464 25.4749 38.6464 24.5251 38.0607 23.9393L28.5147 14.3934C27.9289 13.8076 26.9792 13.8076 26.3934 14.3934C25.8076 14.9792 25.8076 15.9289 26.3934 16.5147L34.8787 25L26.3934 33.4853C25.8076 34.0711 25.8076 35.0208 26.3934 35.6066C26.9792 36.1924 27.9289 36.1924 28.5147 35.6066L38.0607 26.0607ZM13 26.5H37V23.5H13V26.5Z" fill="#212984" class="arrow-slider-arrow" />
-            <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
           </svg>
         </div>
       </div>
@@ -155,13 +153,13 @@ if (is_category('families-and-caregivers')) {
   </div>
   </div>
 </section>
-<section id="postsContainer" class="section">
+<section id="postsContainer" class="section bg-grey-cool">
   <div class="container">
     <h2>Latest posts for <?= single_term_title(); ?></h2>
     <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-sp-16 gap-y-sp-8">
-      <div class="relative flex flex-wrap items-start overflow-hidden duration-1000 lg:flex-col gap-sp-4 cat-mobile-js lg:overflow-visible max-h-[33vh] lg:max-h-full">
+      <div class="relative flex flex-wrap lg:flex-nowrap items-start overflow-hidden duration-1000 lg:flex-col gap-sp-4 cat-mobile-js lg:overflow-y-scroll max-h-[33vh] lg:max-h-[1040px]">
         <h6 class="lg:absolute lg:top-0 lg:right-0">
-          <a role="button" class="flex items-center invisible text-white transition-all duration-300 rounded-lg opacity-0 js-reset group bg-med-blue px-sp-2 py-sp-2">
+          <a role="button" class="flex items-center invisible text-white transition-all duration-300 opacity-0 rounded-pill js-reset group bg-primary px-sp-2 py-sp-2">
             <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/reset.svg'); ?>" alt="reset filters icon" class="transition-all duration-300 pointer-events-none mr-sp-2 w-sp-5 group-hover:rotate-45"><span class="leading-none pointer-events-none">Reset</span>
           </a>
         </h6>
@@ -172,7 +170,7 @@ if (is_category('families-and-caregivers')) {
         ));
         // var_dump($terms);
         foreach ($terms as $term) : ?>
-          <h6 data-tag-id="<?= $term->term_id; ?>" class="inline-block mb-0 leading-none rounded-lg cursor-pointer js-tag-id bg-tag-gray px-sp-4 py-sp-3"><?= $term->name; ?></h5>
+          <h6 data-tag-id="<?= $term->term_id; ?>" class="inline-block mb-0 cursor-pointer rounded-pill js-tag-id px-base5-3 py-base5-2 text-primary bg-transparent border border-primary z-[6] text-p-base"><?= $term->name; ?></h5>
           <?php endforeach; ?>
           <div class="absolute bottom-0 flex justify-center w-full bg-white lg:noshow">
             <a role="button" class="z-10 ch-button button-secondary toggle-button">Show More</a>
@@ -192,12 +190,7 @@ if (is_category('families-and-caregivers')) {
     </div>
   </div>
 </section>
-<section class="section-bottom">
-  <div class="container">
-    <?= do_blocks('<!-- wp:acf/divider-block {"name":"acf/divider-block"} /-->'); ?>
-  </div>
-</section>
-<section class="section-horizontal">
+<section class="section">
   <div class="container">
     <?php // echo do_blocks('<!-- wp:acf/pre-footer-cta-block {"name":"acf/pre-footer-cta-block"} /-->'); 
     ?>

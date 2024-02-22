@@ -29,7 +29,7 @@ Template Name: Search Page
     <h1 class="leading-normal lg:leading-tight mt-sp-4 lg:mt-0">Search results for: <span class="inline-block px-3 text-white whitespace-pre-wrap rounded-sm bg-med-blue"><?= sanitize_text_field($_GET['query']); ?></span></h1>
   </div>
 </section>
-<section id="postsContainer" class="section">
+<section id="postsContainer" class="section-bottom bg-grey-warm">
   <div class="container">
     <div class="absolute invisible opacity-0 no-posts-js">
       <div class="grid items-center grid-cols-1 duration-300 rounded-md justify-items-center bg-cream lg:grid-cols-2 p-sp-4">
@@ -38,19 +38,12 @@ Template Name: Search Page
       </div>
     </div>
     <div class="grid lg:grid-cols-3 transition-all duration-300 scale-[0.99] opacity-0 posts-container gap-x-sp-8 gap-y-sp-10 mb-sp-10">
-      <!-- <div class="relative grid overflow-hidden duration-300 border rounded-sm border-card-border hover:shadow-lg">
-        <img src="https://images.placeholders.dev/? width=800&height=600&text=FPO" alt="" class="object-cover lg:h-[220px] h-[150px] w-full">
-        <div class="grid p-sp-4">
-          <h3><a href="${post.link}" class="stretched-link">${post.title.rendered}</a></h3>
-          <h5>author</h5>
-          <div>tags tags</div>
-        </div>
-      </div> -->
+      <!-- content -->
     </div>
     <div class="pagination-container"></div>
   </div>
 </section>
-<section class="section-horizontal">
+<section class="section">
   <div class="container">
     <div class="rounded-md border-gradient">
       <div class="items-center justify-between lg:flex p-sp-8">

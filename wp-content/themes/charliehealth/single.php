@@ -52,7 +52,7 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
           <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="rounded-md max-h-[200px] lg:max-h-none object-cover w-full aspect-square nolazy">
         </div>
         <div>
-          <h1 class="text-h2 lg:text-h1-display font-heading-serif mb-sp-6"><?= get_the_title(); ?></h1>
+          <h1 class="font-heading-serif text-h2 lg:text-h2-lg"><?= get_the_title(); ?></h1>
           <div class="flex items-center mb-sp-6">
             <svg xmlns="http://www.w3.org/2000/svg" height="22" viewBox="0 -960 960 960" width="22" fill="#46496D" class="inline-block">
               <path d="M352.587-840v-87.413h254.826V-840H352.587Zm83.826 446.696h87.174v-240.718h-87.174v240.718ZM480-65.413q-75.913 0-142.849-29.071-66.937-29.072-117.011-79.055-50.075-49.982-79.173-116.917t-29.098-142.848q0-75.913 29.12-142.837 29.12-66.924 79.185-116.989 50.065-50.066 116.989-79.185 66.924-29.12 142.837-29.12 62.478 0 120.435 20 57.956 20 108.195 58.239l58.87-58.869 61.5 61.5-58.869 58.869q38.239 50.24 58.119 108.077 19.881 57.837 19.881 120.315 0 75.913-29.098 142.848-29.098 66.935-79.173 116.917-50.074 49.983-117.011 79.055Q555.913-65.413 480-65.413Zm0-91q115.043 0 196.087-80.924 81.043-80.924 81.043-195.967 0-115.044-81.043-196.087Q595.043-710.435 480-710.435q-115.043 0-196.087 81.044-81.043 81.043-81.043 196.087 0 115.043 81.043 195.967Q364.957-156.413 480-156.413Zm0-276.891Z" />
@@ -95,13 +95,13 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
                       break;
                   }
                   ?>
-                  <a href="<?= get_term_link($audience->slug, 'category'); ?>" class="px-4 py-3 no-underline rounded-lg text-h6 bg-tag-gray <?= $audienceClass; ?>"><?= $audience->name; ?></a>
+                  <a href="<?= get_term_link($audience->slug, 'category'); ?>" class="px-4 py-3 no-underline rounded-pill text-p-base bg-tag-gray <?= $audienceClass; ?>"><?= $audience->name; ?></a>
               <?php endforeach;
               endif; ?>
             </div>
             <div class="grid items-end justify-start grid-flow-col gap-sp-4">
               <?php if ($tags) : foreach ($tags as $tag) : ?>
-                  <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="px-4 py-3 no-underline rounded-lg text-h6 bg-tag-gray hover:bg-bright-teal"><?= $tag->name; ?></a>
+                  <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="px-4 py-3 no-underline rounded-pill text-p-base bg-tag-gray"><?= $tag->name; ?></a>
               <?php endforeach;
               endif; ?>
             </div>
@@ -110,15 +110,15 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
       </div>
     </div>
   </section>
-  <div class="invisible opacity-0 noshow back-to-top top-[100px] left-sp-10 mb-sp-16 w-fit translate-y-sp-2">
-    <a href="#mainArticleContent" class="no-underline lg:text-h3-lg text-h3-lg font-heading-serif">Back to top</a>
+  <div class="invisible opacity-0 noshow back-to-top top-[150px] left-sp-10 mb-sp-16 w-fit translate-y-base5-3">
+    <a href="#mainArticleContent" class="no-underline text-h3-base font-heading-serif">Back to top</a>
   </div>
   <?php if ($toc) : ?>
     <section class="section-xs">
       <div class="container-sm">
         <div class="rounded-md toc-container bg-light-purple">
           <div class="flex cursor-pointer toc-heading lg:p-sp-8 p-sp-4">
-            <p class="mb-0 text-h3 lg:text-h3-lg font-heading-serif">Table of Contents</p>
+            <p class="mb-0 text-h3-base">Table of Contents</p>
             <div class="flex items-center ml-auto toggle">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="none" viewBox="8 8 8 8" height="12px" width="12px">
                 <path d="M9 12H15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -145,7 +145,7 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
         <div class="divider mb-sp-4"></div>
         <div class="rounded-md references-container">
           <div class="flex duration-300 rounded-md cursor-pointer references-heading lg:p-sp-8 p-sp-4 hover:bg-lightest-purple">
-            <p class="mb-0 font-heading-serif text-h3 lg:text-h3-lg">References</p>
+            <p class="mb-0 text-h3-base">References</p>
             <div class="flex items-center ml-auto toggle">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="none" viewBox="8 8 8 8" height="12px" width="12px">
                 <path d="M9 12H15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -167,7 +167,7 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
   <?= do_blocks('<!-- wp:block {"ref":12} /-->'); ?>
 <?php endif; ?>
 <?php if ($relatedPosts) : ?>
-  <section class="section-bottom">
+  <section class="section bg-grey-cool">
     <div class="container">
       <h2>More like this</h2>
       <div class="grid lg:grid-cols-3 posts-container gap-x-sp-8 gap-y-sp-10">
@@ -185,19 +185,21 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
             $featuredImageAltText = 'Charlie Health Logo';
           }
           ?>
-          <div class="relative grid overflow-hidden duration-300 border rounded-sm border-card-border hover:shadow-lg">
-            <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover lg:h-[220px] h-[150px] w-full">
-            <div class="grid p-sp-4">
-              <h3><a href="<?= get_the_permalink($post->ID); ?>" class="stretched-link"><?= $post->post_title; ?></a></h3>
-              <p class="mb-sp-4 text-h5 lg:text-h5-lg"><?= get_field('by_author', ($relatedPost->ID))->post_title ?: 'Charlie Health Editorial Team'; ?></p>
-              <div class="grid items-end justify-start grid-flow-col gap-sp-4">
-                <?php $tags = get_the_terms($post->ID, 'post_tag'); ?>
-                <?php if ($tags) : ?>
-                  <?php foreach ($tags as $tag) : ?>
-                    <a href="<?= get_tag_link($tag->term_id); ?>" class="relative z-[6] inline-block no-underline rounded-lg px-sp-4 py-sp-3 text-h6 bg-tag-gray hover:bg-bright-teal"><?= $tag->name; ?></a>
-                  <?php endforeach; ?>
-                <?php endif; ?>
-              </div>
+          <div class="relative bg-white rounded-lg group">
+            <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
+              <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
+            </div>
+            <div class="absolute rounded-t-lg top-sp-4 left-sp-4">
+              <?php $tags = get_the_terms(get_the_ID(), 'post_tag');  ?>
+              <?php if ($tags) :  ?>
+                <?php foreach ($tags as $tag) : ?>
+                  <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base"><?= $tag->name; ?></a>
+                <?php endforeach; ?>
+              <?php endif; ?>
+            </div>
+            <div class="grid bg-white rounded-b-lg p-sp-4">
+              <h3 class="text-h4-base"><a href="<?= get_the_permalink(); ?>" class="block stretched-link"><?= get_the_title(); ?></a></h3>
+              <p><?= $author->post_title; ?></p>
             </div>
           </div>
         <?php endforeach; ?>

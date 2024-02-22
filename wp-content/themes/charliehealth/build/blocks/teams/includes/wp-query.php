@@ -12,17 +12,8 @@ $featuredImageAltText = $featuredImageAltText ?: 'Headshot of ' . get_the_title(
 ?>
 <div class="grid justify-items-start gap-sp-1">
   <div>
-    <img src="<?= $featuredImage[0]; ?>" alt="<?= $featuredImageAltText; ?>" class="rounded-[50%] mb-5">
-    <h4 class="mb-sp-2"><?= get_the_title($postID); ?></h4>
-    <h5><?= $title; ?></h5>
+    <img src="<?= $featuredImage[0]; ?>" alt="<?= $featuredImageAltText; ?>" class="mb-5 rounded-circle">
+    <p class="text-h4-base"><?= get_the_title($postID); ?></p>
+    <p class="text-p-base"><?= $title; ?></p>
   </div>
-  <?php /*; ?>
-  <h5><?= $state; ?></h5>
-  <a href="tel:+<?= $phone; ?>" class="inline-block no-underline break-all">
-    <h5><?= $phone; ?></h5>
-  </a>
-  <a href="mailto:<?= $email; ?>" class="inline-block no-underline break-all">
-    <h5><?= $email; ?></h5>
-  </a>
-  <?php */ ?>
 </div>

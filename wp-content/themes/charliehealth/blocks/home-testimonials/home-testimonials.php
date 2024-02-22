@@ -3,14 +3,14 @@ $heading = get_field('heading');
 ?>
 
 <div class="lg:mb-sp-14 mb-sp-10">
-  <span class="relative z-20 self-start bg-yellow-300 rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8">Parents</span>
-  <span class="relative z-20 self-start rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 bg-lavender-300">Young Adults</span>
-  <span class="relative z-20 self-start rounded-lg px-sp-4 py-sp-3 text-h6 mb-sp-8 bg-pale-blue-300">Teens</span>
+  <div class="relative z-20 inline-block bg-yellow-300 rounded-pill px-sp-4 py-sp-3 text-h5-base">Parents</div>
+  <div class="relative z-20 inline-block bg-lavender-300 rounded-pill px-sp-4 py-sp-3 text-h5-base">Young Adults</div>
+  <div class="relative z-20 inline-block bg-pale-blue-300 rounded-pill px-sp-4 py-sp-3 text-h5-base">Teens</div>
 </div>
 <div class="grid grid-cols-1 lg:gap-sp-5 gap-0 lg:grid-cols-[minmax(0,_7fr)_minmax(0,_1fr)_minmax(0,_4fr)] home-testimonials relative">
   <div class="min-w-0">
-    <h2 class="lg:!mb-sp-14 mb-sp-8"><?= $heading; ?></h2>
-    <div class="grid gap-y-sp-4">
+    <h2 class="lg:mb-sp-14 mb-sp-8"><?= $heading; ?></h2>
+    <div class="grid gap-y-sp-8">
       <?php if (have_rows('testimonials')) : ?>
         <?php while (have_rows('testimonials')) : the_row(); ?>
           <?php
@@ -32,11 +32,11 @@ $heading = get_field('heading');
           ?>
           <div class="grid grid-cols-1 lg:grid-cols-[2.33fr_4fr] lg:gap-sp-10 gap-sp-3">
             <div class="flex gap-x-sp-6">
-              <div class="rounded-[50%] h-[15px] w-[15px] mt-sp-2 <?= $dotColor; ?>"></div>
-              <div class="font-heading-serif text-primary text-[20px] leading-[1.4] antialiased flex-1">“<?= get_sub_field('pull_quote'); ?>”</div>
+              <div class="rounded-circle h-[15px] w-[15px] mt-sp-2 <?= $dotColor; ?>"></div>
+              <p class="flex-1 font-heading-serif text-h4-base">“<?= get_sub_field('pull_quote'); ?>”</p>
             </div>
             <div>
-              <div class="testimonial-paragraphs ml-[40px] lg:ml-0">
+              <div class="ml-[40px] lg:ml-0">
                 <?= get_sub_field('full_quote'); ?>
               </div>
             </div>

@@ -1,26 +1,25 @@
 <?php
-// var_dump($block);
-
-$style = get_field('hero_style');
-$breadcrumbs = get_field('hero_breadcrumbs');
-$title = get_field('hero_title') ?: get_the_title();
-$subtitle = get_field('hero_subtitle');
+$style          = get_field('hero_style');
+$breadcrumbs    = get_field('hero_breadcrumbs');
+$title          = get_field('hero_title') ?: get_the_title();
+$subtitle       = get_field('hero_subtitle');
 $subtitleEditor = get_field('hero_subtitle_editor');
-$heroImage = get_field('hero_image');
-$icon = get_field('hero_icon');
+$heroImage      = get_field('hero_image');
+$icon           = get_field('hero_icon');
 
-if ($style === 'image') {
-  $titleClass = 'text-display mb-sp-8 noshow lg:block';
-  $gridClass = 'grid lg:grid-cols-2 gap-sp-4 items-center';
-  $orderClass = 'order-2 lg:order-1';
-  $orderClassTwo = 'order-1 lg:order-2';
-} elseif ($style === 'details') {
-  $gridClass = 'grid lg:grid-cols-2 gap-sp-4 items-start';
-  $titleClass = '';
-  $orderClass = 'order-1';
-  $orderClassTwo = 'order-1 lg:order-2';
-}
-// var_dump($style);
+/** NOTE Not sure if we can remove */
+
+// if ($style === 'image') {
+//   $titleClass    = 'text-display mb-sp-8 noshow lg:block';
+//   $gridClass     = 'grid lg:grid-cols-2 gap-sp-4 items-center';
+//   $orderClass    = 'order-2 lg:order-1';
+//   $orderClassTwo = 'order-1 lg:order-2';
+// } elseif ($style === 'details') {
+//   $gridClass     = 'grid lg:grid-cols-2 gap-sp-4 items-start';
+//   $titleClass    = '';
+//   $orderClass    = 'order-1';
+//   $orderClassTwo = 'order-1 lg:order-2';
+// }
 ?>
 
 <?php if ($breadcrumbs) : ?>
@@ -29,13 +28,13 @@ if ($style === 'image') {
 <?php if ($style === 'image') : ?>
   <div class="grid items-center lg:grid-cols-2 lg:gap-sp-16 hero-cta">
     <div class="order-2 lg:order-1 fix-order">
-      <h1 class="text-display mb-sp-6 lg:block hero-heading"><?= $title; ?></h1>
+      <h1><?= $title; ?></h1>
       <img src="<?= $heroImage['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $heroImage['alt'] ?: 'Placeholder image'; ?>" class="block object-cover object-top rounded-lg max-h-52 md:max-h-none nolazy lg:noshow mb-sp-4 hero-image-container">
       <div class="flex items-center gap-sp-4 mb-sp-12 mobile-hero-sub">
         <?php if ($icon) : ?>
           <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health Shield" class="w-10">
         <?php endif; ?>
-        <p class="mb-0 lg:text-h3 font-heading-serif"><?= $subtitle; ?></p>
+        <p class="mb-0 text-h4-base font-heading-serif"><?= $subtitle; ?></p>
       </div>
       <div class="hero-image-buttons">
         <?php include(get_template_directory() . '/includes/button-group.php'); ?>
@@ -49,13 +48,13 @@ if ($style === 'image') {
 <?php if ($style === 'new_image') : ?>
   <div class="grid items-center lg:grid-cols-2 gap-sp-5 py-sp-10 lg:py-0">
     <div class="order-2 lg:order-1 mobile-hero-sub">
-      <h1 class="mb-sp-6 lg:text-[64px] text-[42px] leading-[1.1]"><?= $title; ?></h1>
+      <h1><?= $title; ?></h1>
       <?php if ($subtitle) : ?>
         <div class="flex items-center gap-sp-4 mb-sp-10">
           <?php if ($icon) : ?>
             <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health Shield" class="w-10">
           <?php endif; ?>
-          <p class="!mb-0 !font-heading-serif !text-[20px]"><?= $subtitle; ?></p>
+          <p class="mb-0 text-h4-base font-heading-serif"><?= $subtitle; ?></p>
         </div>
       <?php endif; ?>
       <?php include(get_template_directory() . '/includes/button-group.php'); ?>
@@ -68,8 +67,8 @@ if ($style === 'image') {
 <?php if ($style === 'multi_image') : ?>
   <div class="grid items-center lg:grid-cols-[5fr_7fr] gap-sp-5">
     <div class="order-2 lg:order-1">
-      <p class="text-[20px] mb-sp-4"><?= $subtitle; ?></p>
-      <h1 class="mb-sp-5 lg:text-[64px] text-[42px] leading-[1.1]"><?= $title; ?></h1>
+      <p class="text-h4-base"><?= $subtitle; ?></p>
+      <h1><?= $title; ?></h1>
       <?php include(get_template_directory() . '/includes/button-group.php'); ?>
     </div>
     <div class="order-1 h-full lg:order-2">
@@ -94,7 +93,7 @@ if ($style === 'image') {
   <div class="rounded-md border-gradient">
     <div class="grid items-center lg:grid-cols-2">
       <img src="<?= $heroImage['sizes']['featured-large'] ?: placeHolderImage(600, 600); ?>" alt="<?= $heroImage['alt'] ?: 'Placeholder image'; ?>" class="object-cover lg:rounded-l-md lg:rounded-tr-none rounded-t-md min-h-full lg:h-[400px] h-[200px] w-full nolazy">
-      <div class="p-sp-4 lg:p-sp-8 margin-adjust">
+      <div class="p-sp-4 lg:p-sp-8">
         <?= $subtitleEditor; ?>
         <?php include(get_template_directory() . '/includes/button-group.php'); ?>
       </div>
@@ -114,7 +113,7 @@ if ($style === 'image') {
         <?php if ($icon) : ?>
           <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health Shield" class="w-10">
         <?php endif; ?>
-        <p class="mb-0 font-heading-serif lg:text-h2-lg text-h2"><?= $subtitle; ?></p>
+        <p class="mb-0 text-h4-base font-heading-serif"><?= $subtitle; ?></p>
       </div>
       <div class="">
         <?= $subtitleEditor; ?>
@@ -124,9 +123,9 @@ if ($style === 'image') {
   </div>
 <?php endif; ?>
 <?php if (have_rows('hero_jump_buttons_jump_buttons')) : ?>
-  <div class="mt-sp-6 md:mt-sp-10 lg:mt-sp-14">
+  <div class="grid mt-sp-6 lg:mt-sp-14 gap-base5-4">
     <div>
-      <p class="lg:text-h3-lg text-h3 font-heading-serif">Jump to:</p>
+      <p class="text-h3 lg:text-h3-lg font-heading-serif">Jump to:</p>
     </div>
     <div class="flex overflow-auto gap-sp-5 custom-scroll">
       <?php while (have_rows('hero_jump_buttons_jump_buttons')) : the_row();

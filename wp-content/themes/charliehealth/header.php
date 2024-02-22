@@ -102,7 +102,7 @@
   <!-- NOT BLOG -->
   <?php if ($showBanner) : ?>
     <div class="z-[9999] w-full lg:h-sp-8 h-sp-14 bg-primary-200 flex justify-center items-center fixed<?= is_user_logged_in() ? ' lg:top-[32px] top-[46px]' : ' top-0'; ?>">
-      <div class="w-sp-2 h-sp-2 bg-orange-300 rounded-[50%] ml-sp-5 flex-none"></div>
+      <div class="flex-none bg-orange-300 w-sp-2 h-sp-2 rounded-circle ml-sp-5"></div>
       <a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>" class="inline-block">
         <p class="text-white px-sp-2 font-heading text-[14px] leading-normal mb-0"><?= $link['title']; ?></p>
       </a>
@@ -135,7 +135,7 @@
             <div class="relative topLevelNavItem">
               <a <?= $url; ?> target="<?= $target; ?>" class="block text-white no-underline px-sp-3 py-sp-6 font-heading hover:text-lavender-200 text-nav-normal ml-sp-4<?= empty($url) ? ' cursor-default' : ''; ?>"><?= $title; ?></a>
               <?php if (have_rows('secondary_menu', 'option')) : ?>
-                <div class="absolute w-[555px] grid grid-cols-2 opacity-0 invisible secondLevelNav transition-all duration-150 translate-x-1 origin-right pb-[5px]">
+                <div class="absolute w-[650px] grid grid-cols-2 opacity-0 invisible secondLevelNav transition-all duration-150 translate-x-1 origin-right pb-[5px]">
                   <div class="flex flex-col px-sp-8 py-sp-5 bg-secondary-soft">
                     <?php while (have_rows('secondary_menu', 'option')) : the_row(); ?>
                       <?php
@@ -237,7 +237,7 @@
                       $title = $secondaryLink['title'];
                       $target = $secondaryLink['target'];
                       ?>
-                      <a <?= $url; ?> target="<?= $target; ?>" class="w-full leading-none text-white text-[1rem] no-underline py-sp-4 font-heading"><?= $title; ?></a>
+                      <a <?= $url; ?> target="<?= $target; ?>" class="mb-0 text-white no-underline py-sp-4 text-nav-normal"><?= $title; ?></a>
                     <?php endwhile; ?>
                     <?php if (have_rows('tertiary_menu', 'option')) : ?>
                       <div class="grid gap-x-sp-4 tertiary mt-sp-4">
@@ -253,7 +253,7 @@
                           $title = $topLink['title'];
                           $target = $topLink['target'];
                         ?>
-                          <a <?= $url; ?> target="<?= $target; ?>" class="w-full leading-snug text-[.875rem] no-underline py-sp-4 font-heading <?= empty($url) ? 'text-lavender-200 hover:text-lavender-200' : 'text-white'; ?> "><?= $title; ?></a>
+                          <a <?= $url; ?> target="<?= $target; ?>" class="w-full text-nav-small no-underline py-sp-4 <?= empty($url) ? 'text-lavender-200 hover:text-lavender-200' : 'text-white'; ?> "><?= $title; ?></a>
                         <?php endwhile; ?>
                       </div>
                     <?php endif; ?>

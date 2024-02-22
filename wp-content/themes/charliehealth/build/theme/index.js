@@ -57,12 +57,10 @@ function ajaxPaginationResearchAuthors() {
       prevText: `<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none" class="arrow-slider">
       <rect width="50" height="50" rx="25" fill="#ffffff" class="arrow-slider-bg" />
       <path d="M11.9393 26.0607C11.3536 25.4749 11.3536 24.5251 11.9393 23.9393L21.4853 14.3934C22.0711 13.8076 23.0208 13.8076 23.6066 14.3934C24.1924 14.9792 24.1924 15.9289 23.6066 16.5147L15.1213 25L23.6066 33.4853C24.1924 34.0711 24.1924 35.0208 23.6066 35.6066C23.0208 36.1924 22.0711 36.1924 21.4853 35.6066L11.9393 26.0607ZM37 26.5H13V23.5H37V26.5Z" fill="#212984" class="arrow-slider-arrow" />
-      <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
     </svg>`,
       nextText: `<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none" class="arrow-slider">
       <rect width="50" height="50" rx="25" fill="#ffffff" class="arrow-slider-bg" />
       <path d="M38.0607 26.0607C38.6464 25.4749 38.6464 24.5251 38.0607 23.9393L28.5147 14.3934C27.9289 13.8076 26.9792 13.8076 26.3934 14.3934C25.8076 14.9792 25.8076 15.9289 26.3934 16.5147L34.8787 25L26.3934 33.4853C25.8076 34.0711 25.8076 35.0208 26.3934 35.6066C26.9792 36.1924 27.9289 36.1924 28.5147 35.6066L38.0607 26.0607ZM13 26.5H37V23.5H13V26.5Z" fill="#212984" class="arrow-slider-arrow" />
-      <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
     </svg>`,
       callback: function (data, pagination) {
         // Add hrefs to pagianted links
@@ -233,36 +231,24 @@ function ajaxPaginationResearchAuthors() {
         }
       }
     }
-
-    // If not press page
-    if (!document.querySelector('body').classList.contains('page-template-page-press')) {
-      if (post._embedded['wp:term']) {
-        var cats = post._embedded['wp:term'][0];
-      }
-      if (post._embedded['wp:term']) {
-        var tags = post._embedded['wp:term'][1];
-      }
-      html = `<div class="relative grid overflow-hidden border rounded-sm border-card-border hover:shadow-lg duration-300">
-                  <img src="${imageUrl}" alt="${imageAlt}" class="object-cover lg:h-[220px] h-[150px] w-full">
-                  <div class="grid p-sp-4">
-                    <h3><a href="${post.link}" class="stretched-link">${post.title.rendered}</a></h3>
-                    <p class="mb-sp-4 text-h5 lg:text-h5-lg">${post.acf.by_author.post_title}</p>
-                    <div class="grid justify-start grid-flow-col gap-sp-4 items-end">`;
-      if (tags) {
-        html += `${tags.map(tag => `<a href="${tag.link}" class="px-sp-4 py-sp-3 no-underline rounded-lg text-h6 bg-tag-gray z-20 relative inline-block hover:bg-bright-teal">${tag.name}</a>`).join('')}`;
-      }
-      html += `</div>
-                    </div>
-                    </div>`;
-    } else {
-      html = `<div class="relative grid lg:grid-cols-[1fr_4fr] grid-cols-[1fr_2fr] overflow-hidden border rounded-sm border-card-border">
-      <img src="${imageUrl}" alt="${imageAlt}" class="object-contain h-[125px] w-full lg:p-sp-6 p-sp-3">
-      <div class="grid p-sp-4">
-        <p class="mb-sp-4">${post.acf.date}</p>
-        <h3 class="mb-0"><a href="${post.acf.link}" target="_blank" class="stretched-link">${post.title.rendered}</a></h3>
-      </div>
-    </div>`;
+    if (post._embedded['wp:term']) {
+      var cats = post._embedded['wp:term'][0];
     }
+    if (post._embedded['wp:term']) {
+      var tags = post._embedded['wp:term'][1];
+    }
+    html = `<div class="relative bg-white rounded-lg group">
+              <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
+                <img src="${imageUrl}" alt="${imageAlt}"  class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
+              </div>
+              <div class="grid bg-white rounded-b-lg p-sp-4">
+                <h3 class="text-h4-base"><a href="${post.link}" class="block stretched-link">${post.title.rendered}</a></h3>
+                <p>${post.acf.by_author.post_title}</p>
+              </div>`;
+    if (tags) {
+      html += `${tags.map(tag => `<div class="absolute rounded-t-lg top-sp-4 left-sp-4"><a href="${tag.link}" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base">${tag.name}</a></div>`).join('')}`;
+    }
+    html += `</div><!--end three-->`;
     return html;
   };
   termsClickHandler();
@@ -327,12 +313,10 @@ function ajaxPaginationResearch() {
       prevText: `<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none" class="arrow-slider">
       <rect width="50" height="50" rx="25" fill="#ffffff" class="arrow-slider-bg" />
       <path d="M11.9393 26.0607C11.3536 25.4749 11.3536 24.5251 11.9393 23.9393L21.4853 14.3934C22.0711 13.8076 23.0208 13.8076 23.6066 14.3934C24.1924 14.9792 24.1924 15.9289 23.6066 16.5147L15.1213 25L23.6066 33.4853C24.1924 34.0711 24.1924 35.0208 23.6066 35.6066C23.0208 36.1924 22.0711 36.1924 21.4853 35.6066L11.9393 26.0607ZM37 26.5H13V23.5H37V26.5Z" fill="#212984" class="arrow-slider-arrow" />
-      <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
     </svg>`,
       nextText: `<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none" class="arrow-slider">
       <rect width="50" height="50" rx="25" fill="#ffffff" class="arrow-slider-bg" />
       <path d="M38.0607 26.0607C38.6464 25.4749 38.6464 24.5251 38.0607 23.9393L28.5147 14.3934C27.9289 13.8076 26.9792 13.8076 26.3934 14.3934C25.8076 14.9792 25.8076 15.9289 26.3934 16.5147L34.8787 25L26.3934 33.4853C25.8076 34.0711 25.8076 35.0208 26.3934 35.6066C26.9792 36.1924 27.9289 36.1924 28.5147 35.6066L38.0607 26.0607ZM13 26.5H37V23.5H13V26.5Z" fill="#212984" class="arrow-slider-arrow" />
-      <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
     </svg>`,
       callback: function (data, pagination) {
         // Add hrefs to pagianted links
@@ -460,33 +444,22 @@ function ajaxPaginationResearch() {
         }
       }
     }
-    // If not press page
-    if (!document.querySelector('body').classList.contains('page-template-page-press')) {
-      // var cats = post._embedded['wp:term'][0];
-      if (post._embedded['wp:term']) {
-        var tags = post._embedded['wp:term'][0];
-      }
-      html = `<div class="relative grid overflow-hidden border rounded-sm border-card-border hover:shadow-lg duration-300">
-                  <img src="${imageUrl}" alt="${imageAlt}" class="object-cover lg:h-[220px] h-[150px] w-full">
-                  <div class="grid p-sp-4">
-                    <h3><a href="${post.link}" class="stretched-link">${post.title.rendered}</a></h3>
-                    <p class="mb-sp-4 text-h5 lg:text-h5-lg">${post.acf.by_author.post_title}</p>
-                    <div class="grid justify-start grid-flow-col gap-sp-4 items-end">`;
-      if (tags) {
-        html += `${tags.map(tag => `<a href="${tag.link}" class="px-sp-4 py-sp-3 no-underline rounded-lg text-h6 bg-tag-gray z-20 relative inline-block hover:bg-bright-teal">${tag.name}</a>`).join('')}`;
-      }
-      html += `</div>
-      </div>
-      </div>`;
-    } else {
-      html = `<div class="relative grid lg:grid-cols-[1fr_4fr] grid-cols-[1fr_2fr] overflow-hidden border rounded-sm border-card-border">
-      <img src="${imageUrl}" alt="${imageAlt}" class="object-contain h-[125px] w-full lg:p-sp-6 p-sp-3">
-      <div class="grid p-sp-4">
-      <p class="mb-sp-4 text-h5 lg:text-h5-lg">${post.acf.date}</p>
-        <h3 class="mb-0"><a href="${post.acf.link}" target="_blank" class="stretched-link">${post.title.rendered}</a></h3>
-      </div>
-    </div>`;
+    // var cats = post._embedded['wp:term'][0];
+    if (post._embedded['wp:term']) {
+      var tags = post._embedded['wp:term'][0];
     }
+    html = `<div class="relative bg-white rounded-lg group">
+              <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
+                <img src="${imageUrl}" alt="${imageAlt}"  class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
+              </div>
+              <div class="grid bg-white rounded-b-lg p-sp-4">
+                <h3 class="text-h4-base"><a href="${post.link}" class="block stretched-link">${post.title.rendered}</a></h3>
+                <p>${post.acf.by_author.post_title}</p>
+              </div>`;
+    if (tags) {
+      html += `${tags.map(tag => `<div class="absolute rounded-t-lg top-sp-4 left-sp-4"><a href="${tag.link}" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base">${tag.name}</a></div>`).join('')}`;
+    }
+    html += `</div><!--end three-->`;
     return html;
   };
   const clickPages = () => {
@@ -549,12 +522,10 @@ function ajaxPaginationSearch() {
       prevText: `<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none" class="arrow-slider">
       <rect width="50" height="50" rx="25" fill="#ffffff" class="arrow-slider-bg" />
       <path d="M11.9393 26.0607C11.3536 25.4749 11.3536 24.5251 11.9393 23.9393L21.4853 14.3934C22.0711 13.8076 23.0208 13.8076 23.6066 14.3934C24.1924 14.9792 24.1924 15.9289 23.6066 16.5147L15.1213 25L23.6066 33.4853C24.1924 34.0711 24.1924 35.0208 23.6066 35.6066C23.0208 36.1924 22.0711 36.1924 21.4853 35.6066L11.9393 26.0607ZM37 26.5H13V23.5H37V26.5Z" fill="#212984" class="arrow-slider-arrow" />
-      <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
     </svg>`,
       nextText: `<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none" class="arrow-slider">
       <rect width="50" height="50" rx="25" fill="#ffffff" class="arrow-slider-bg" />
       <path d="M38.0607 26.0607C38.6464 25.4749 38.6464 24.5251 38.0607 23.9393L28.5147 14.3934C27.9289 13.8076 26.9792 13.8076 26.3934 14.3934C25.8076 14.9792 25.8076 15.9289 26.3934 16.5147L34.8787 25L26.3934 33.4853C25.8076 34.0711 25.8076 35.0208 26.3934 35.6066C26.9792 36.1924 27.9289 36.1924 28.5147 35.6066L38.0607 26.0607ZM13 26.5H37V23.5H13V26.5Z" fill="#212984" class="arrow-slider-arrow" />
-      <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
     </svg>`,
       callback: function (data, pagination) {
         // Add hrefs to pagianted links
@@ -664,20 +635,46 @@ function ajaxPaginationSearch() {
     if (post.tags) {
       var tags = post.tags;
     }
-    html = `<div class="relative grid overflow-hidden border rounded-sm border-card-border hover:shadow-lg duration-300">
-                <img src="${post.featured_media ? post.featured_media : imageUrl}" alt="${imageAlt}" class="object-cover lg:h-[220px] h-[150px] w-full">
-                <div class="grid p-sp-4">
-                  <h3><a href="${post.link}" class="stretched-link">${post.title}</a></h3>
-    <p class="mb-sp-4 text-h5 lg:text-h5-lg">${post.acf.by_author.post_title}</p>
-                  <div class="grid justify-start grid-flow-col gap-sp-4 items-end">`;
+    html = `<div class="relative bg-white rounded-lg group">
+              <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
+                <img src="${post.featured_media ? post.featured_media : imageUrl}" alt="${imageAlt}"  class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
+              </div>
+              <div class="grid bg-white rounded-b-lg p-sp-4">
+                <h3 class="text-h4-base"><a href="${post.link}" class="block stretched-link">${post.title}</a></h3>
+                <p>${post.acf.by_author.post_title}</p>
+              </div>`;
     if (tags) {
-      html += `${tags.map(tag => `<a href="${window.location.origin}/resources/${tag.slug}" class="px-sp-4 py-sp-3 no-underline rounded-lg text-h6 bg-tag-gray z-20 relative inline-block hover:bg-bright-teal">${tag.name}</a>`).join('')}`;
+      html += `${tags.map(tag => `<div class="absolute rounded-t-lg top-sp-4 left-sp-4"><a href="${window.location.origin}/resources/${tag.slug}" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base">${tag.name}</a></div>`).join('')}`;
     }
-    html += `</div>
-                  </div>
-                  </div>`;
+    html += `</div><!--end three-->`;
     return html;
+
+    // html = `<div class="relative grid overflow-hidden border rounded-sm border-card-border hover:shadow-lg duration-300">
+    //             <img src="${
+    //               post.featured_media ? post.featured_media : imageUrl
+    //             }" alt="${imageAlt}" class="object-cover lg:h-[220px] h-[150px] w-full">
+    //             <div class="grid p-sp-4">
+    //               <h3><a href="${post.link}" class="stretched-link">${
+    //   post.title
+    // }</a></h3>
+    // <p class="mb-sp-4 text-h5 lg:text-h5-lg">${
+    //   post.acf.by_author.post_title
+    // }</p>
+    //               <div class="grid justify-start grid-flow-col gap-sp-4 items-end">`;
+    // if (tags) {
+    //   html += `${tags
+    //     .map(
+    //       (tag) =>
+    //         `<a href="${window.location.origin}/resources/${tag.slug}" class="px-sp-4 py-sp-3 no-underline rounded-lg text-h6 bg-tag-gray z-20 relative inline-block hover:bg-bright-teal">${tag.name}</a>`
+    //     )
+    //     .join('')}`;
+    // }
+    // html += `</div>
+    //               </div>
+    //               </div>`;
+    // return html;
   };
+
   termsClickHandler();
   initPagination();
 }
@@ -740,12 +737,10 @@ function ajaxPagination() {
       prevText: `<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none" class="arrow-slider">
       <rect width="50" height="50" rx="25" fill="#ffffff" class="arrow-slider-bg" />
       <path d="M11.9393 26.0607C11.3536 25.4749 11.3536 24.5251 11.9393 23.9393L21.4853 14.3934C22.0711 13.8076 23.0208 13.8076 23.6066 14.3934C24.1924 14.9792 24.1924 15.9289 23.6066 16.5147L15.1213 25L23.6066 33.4853C24.1924 34.0711 24.1924 35.0208 23.6066 35.6066C23.0208 36.1924 22.0711 36.1924 21.4853 35.6066L11.9393 26.0607ZM37 26.5H13V23.5H37V26.5Z" fill="#212984" class="arrow-slider-arrow" />
-      <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
     </svg>`,
       nextText: `<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none" class="arrow-slider">
       <rect width="50" height="50" rx="25" fill="#ffffff" class="arrow-slider-bg" />
       <path d="M38.0607 26.0607C38.6464 25.4749 38.6464 24.5251 38.0607 23.9393L28.5147 14.3934C27.9289 13.8076 26.9792 13.8076 26.3934 14.3934C25.8076 14.9792 25.8076 15.9289 26.3934 16.5147L34.8787 25L26.3934 33.4853C25.8076 34.0711 25.8076 35.0208 26.3934 35.6066C26.9792 36.1924 27.9289 36.1924 28.5147 35.6066L38.0607 26.0607ZM13 26.5H37V23.5H13V26.5Z" fill="#212984" class="arrow-slider-arrow" />
-      <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#2A2D4F" stroke-opacity="0.4" />
     </svg>`,
       callback: function (data, pagination) {
         // Add hrefs to pagianted links
@@ -916,36 +911,24 @@ function ajaxPagination() {
         }
       }
     }
-
-    // If not press page
-    if (!document.querySelector('body').classList.contains('page-template-page-press')) {
-      if (post._embedded['wp:term']) {
-        var cats = post._embedded['wp:term'][0];
-      }
-      if (post._embedded['wp:term']) {
-        var tags = post._embedded['wp:term'][1];
-      }
-      html = `<div class="relative grid overflow-hidden border rounded-sm border-card-border hover:shadow-lg duration-300">
-                  <img src="${imageUrl}" alt="${imageAlt}" class="object-cover lg:h-[220px] h-[150px] w-full">
-                  <div class="grid p-sp-4">
-                    <h3><a href="${post.link}" class="stretched-link">${post.title.rendered}</a></h3>
-                    <p class="mb-sp-4 text-h5 lg:text-h5-lg">${post.acf.by_author.post_title}</p>
-                    <div class="grid justify-start grid-flow-col gap-sp-4 items-end">`;
-      if (tags) {
-        html += `${tags.map(tag => `<a href="${tag.link}" class="px-sp-4 py-sp-3 no-underline rounded-lg text-h6 bg-tag-gray z-20 relative inline-block hover:bg-bright-teal">${tag.name}</a>`).join('')}`;
-      }
-      html += `</div>
-                    </div>
-                    </div>`;
-    } else {
-      html = `<div class="relative grid lg:grid-cols-[1fr_4fr] grid-cols-[1fr_2fr] overflow-hidden border rounded-sm border-card-border">
-      <img src="${imageUrl}" alt="${imageAlt}" class="object-contain h-[125px] w-full lg:p-sp-6 p-sp-3">
-      <div class="grid p-sp-4">
-        <p class="mb-sp-4">${post.acf.date}</p>
-        <h3 class="mb-0"><a href="${post.acf.link}" target="_blank" class="stretched-link">${post.title.rendered}</a></h3>
-      </div>
-    </div>`;
+    if (post._embedded['wp:term']) {
+      var cats = post._embedded['wp:term'][0];
     }
+    if (post._embedded['wp:term']) {
+      var tags = post._embedded['wp:term'][1];
+    }
+    html = `<div class="relative bg-white rounded-lg group">
+              <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
+                <img src="${imageUrl}" alt="${imageAlt}"  class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
+              </div>
+              <div class="grid bg-white rounded-b-lg p-sp-4">
+                <h3 class="text-h4-base"><a href="${post.link}" class="block stretched-link">${post.title.rendered}</a></h3>
+                <p>${post.acf.by_author.post_title}</p>
+              </div>`;
+    if (tags) {
+      html += `${tags.map(tag => `<div class="absolute rounded-t-lg top-sp-4 left-sp-4"><a href="${tag.link}" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base">${tag.name}</a></div>`).join('')}`;
+    }
+    html += `</div><!--end three-->`;
     return html;
   };
   const clickPages = () => {

@@ -48,16 +48,7 @@
         </div>
       </div>
       <div class="grid lg:grid-cols-3 transition-all duration-300 scale-[0.99] opacity-0 posts-container gap-x-sp-8 gap-y-sp-10 mb-sp-10">
-        <!-- `<div class="relative grid overflow-hidden duration-300 border rounded-sm border-card-border hover:shadow-lg">
-          <img src="https://images.placeholders.dev/?width=800&height=600&text=FPO" alt="" class="object-cover lg:h-[220px] h-[150px] w-full">
-          <div class="grid p-sp-4">
-            <h3><a href="${post.link}" class="stretched-link">${post.title.rendered}</a></h3>
-            <h5>author</h5>
-            <div class="grid items-end justify-start grid-flow-col gap-sp-4">
-              ${tags.map((tag) => `<a href="${tag.link}" class="relative z-20 inline-block no-underline rounded-lg px-sp-4 py-sp-3 text-h6 bg-tag-gray hover:bg-bright-teal">${tag.name}</a>`).join('')}
-            </div>
-          </div>
-        </div>` -->
+        <!-- Content -->
       </div>
       <div class="pagination-container"></div>
     </div>
@@ -98,13 +89,13 @@
         </div>
         <div class="grid items-start lg:grid-cols-2 gap-sp-8">
           <div class="order-1">
-            <h1 class="mb-0"><?= $title; ?></h1>
+            <h1><?= $title; ?></h1>
           </div>
           <div class="flex flex-col justify-between order-1 lg:order-2">
             <?= $subhead; ?>
           </div>
         </div>
-        <div class="mt-sp-6 md:mt-sp-10 lg:mt-sp-14">
+        <div class="grid mt-sp-6 lg:mt-sp-14 gap-base5-4">
           <div>
             <h3>Jump to:</h3>
           </div>
@@ -178,11 +169,13 @@
                     }
                   ?>
                     <div class="!h-auto swiper-slide">
-                      <div class="relative flex flex-col h-full overflow-hidden duration-300 border rounded-sm border-card-border hover:shadow-lg">
-                        <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover lg:h-[220px] h-[150px] w-full">
-                        <div class="flex flex-col flex-1 bg-white p-sp-4">
-                          <h3><a href="<?= get_the_permalink(); ?>" class="stretched-link"><?= get_the_title(); ?></a></h3>
-                          <h5 class="mb-0"><?= $author->post_title; ?></h5>
+                      <div class="relative h-full bg-white rounded-lg group">
+                        <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
+                          <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
+                        </div>
+                        <div class="grid bg-white rounded-b-lg p-sp-4">
+                          <h3 class="text-h4-base"><a href="<?= get_the_permalink(); ?>" class="block stretched-link"><?= get_the_title(); ?></a></h3>
+                          <p><?= $author->post_title; ?></p>
                         </div>
                       </div>
                     </div>
@@ -270,11 +263,13 @@
                     }
                   ?>
                     <div class="!h-auto swiper-slide">
-                      <div class="relative flex flex-col h-full overflow-hidden duration-300 border rounded-sm border-card-border hover:shadow-lg">
-                        <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover lg:h-[220px] h-[150px] w-full">
-                        <div class="flex flex-col flex-1 bg-white p-sp-4">
-                          <h3><a href="<?= get_the_permalink(); ?>" class="stretched-link"><?= get_the_title(); ?></a></h3>
-                          <h5 class="mb-0"><?= $author->post_title; ?></h5>
+                      <div class="relative h-full bg-white rounded-lg group">
+                        <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
+                          <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
+                        </div>
+                        <div class="grid bg-white rounded-b-lg p-sp-4">
+                          <h3 class="text-h4-base"><a href="<?= get_the_permalink(); ?>" class="block stretched-link"><?= get_the_title(); ?></a></h3>
+                          <p><?= $author->post_title; ?></p>
                         </div>
                       </div>
                     </div>
@@ -323,11 +318,13 @@
               $featuredImageAltText = 'Charlie Health Logo';
             }
             ?>
-            <div class="relative grid overflow-hidden duration-300 border rounded-sm border-card-border hover:shadow-lg">
-              <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover lg:h-[220px] h-[150px] w-full">
-              <div class="grid p-sp-4">
-                <h3><a href="<?= get_the_permalink($relatedResearchPost->ID); ?>" class="stretched-link"><?= $relatedResearchPost->post_title; ?></a></h3>
-                <p class="mb-sp-4 text-h5 lg:text-h5-lg"><?= $author = get_field('by_author')->post_title ?: 'Charlie Health Editorial Team'; ?></p>
+            <div class="relative bg-white border rounded-lg group">
+              <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
+                <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
+              </div>
+              <div class="grid bg-white rounded-b-lg p-sp-4">
+                <h3 class="text-h4-base"><a href="<?= $relatedResearchPost->post_title; ?>" class="block stretched-link"><?= get_the_title(); ?></a></h3>
+                <p><?= $author = get_field('by_author')->post_title ?: 'Charlie Health Editorial Team'; ?></p>
               </div>
             </div>
           </div>

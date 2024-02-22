@@ -77,7 +77,7 @@
   h4,
   h5,
   h6 {
-    @apply text-darker-blue font-heading antialiased;
+    @apply text-darker-blue font-heading antialiased last:mb-0;
     & > {
       a {
         @apply no-underline;
@@ -93,65 +93,59 @@
   p,
   ul li,
   ol li {
-    @apply text-darker-blue font-body antialiased;
+    @apply text-darker-blue font-body antialiased last:mb-0;
   }
-  h1 {
-    @apply mb-sp-6 text-h1;
-    @screen md {
-      @apply mb-sp-8 text-h1;
-    }
+  h1, .text-h1-base {
+    @apply mb-sp-5 text-h1;
     @screen lg {
-      @apply mb-sp-10 text-h1-lg;
+      @apply mb-base5-5 text-h1-lg;
     }
-    &.text-display {
-      @apply text-h1-display;
+    &.text-h1-display-base {
+      @apply mb-base5-10 text-h1-display;
       @screen lg {
-        @apply text-h1-display-lg;
+        @apply mb-base5-10 text-h1-display-lg;
       }
     }
   }
-  h2 {
-    @apply text-h2 mb-sp-5;
-    @screen md {
-      @apply mb-sp-6;
-    }
+  h2, .text-h2-base {
+    @apply text-h2 mb-base5-3 font-heading-serif;
     @screen lg {
-      @apply text-h2-lg mb-sp-8;
+      @apply text-h2-lg mb-base5-5;
     }
   }
-  h3 {
-    @apply font-heading-serif text-h3 mb-sp-4;
+  h3, .text-h3-base {
+    @apply text-h3 mb-base5-3;
     @screen lg {
-      @apply mb-sp-8 text-h3-lg;
+      @apply text-h3-lg mb-base5-4;
     }
   }
-  h4 {
-    @apply text-h4 mb-sp-2;
+  h4, .text-h4-base {
+    @apply text-h4 mb-base5-2;
     @screen lg {
-      @apply mb-sp-6 text-h4-lg;
+      @apply text-h4-lg mb-base5-2;
     }
   }
-  h5 {
-    @apply text-h5 mb-sp-1;
+  h5, .text-h5-base {
+    @apply text-h5 mb-base5-1;
     @screen lg {
-      @apply mb-sp-2;
+      @apply mb-base5-2;
     }
   }
-  h6 {
-    @apply text-h6 mb-sp-1;
+  h6, .text-h5-base {
+    @apply text-h6 mb-base5-1;
     @screen lg {
       @apply mb-sp-2;
     }
   }
-  p {
-    @apply text-p mb-sp-6;
+  p, .text-p-base {
+    @apply text-p mb-base5-4;
     @screen lg {
       @apply text-p-lg;
     }
   }
   ul,
-  ol {
-    @apply block pl-10 mb-sp-6 text-p;
+  ol, .text-ul-base, .text-ol-base {
+    @apply block pl-10 mb-base5-4 text-p;
     @screen lg {
       @apply text-p-lg;
     }
@@ -163,7 +157,7 @@
     @apply list-decimal;
   }
   li {
-    @apply my-1 leading-7 list-item;
+    @apply my-1 leading-[160%] list-item;
   }
   a {
     @apply underline transition-colors duration-300 text-p text-dark-blue hover:text-dark-blue;
@@ -187,7 +181,7 @@
     }
   }
   blockquote {
-    @apply py-8 my-8 border-solid border-y-4 border-purple-gradient-start mb-sp-6;
+    @apply py-8 my-8 border-solid border-y-4 border-purple-gradient-start mb-base5-5;
   }
   blockquote > p {
     @apply font-heading-serif text-4xl leading-10 text-dark-blue;
@@ -199,7 +193,7 @@
     @apply mb-0;
   }
   hr {
-    @apply mb-10;
+    @apply mb-base5-8;
   }
   img {
     /* @apply mb-10 rounded-lg; */
@@ -220,7 +214,7 @@
   }
 
   figure {
-    @apply mb-sp-6;
+    @apply mb-base5-5;
     @screen lg {
       @apply text-p-lg;
     }
