@@ -11,7 +11,7 @@ Template Post Type: page
 <?php if (isset($_GET['gh_jid'])) : ?>
   <section class="section-top">
     <div class="container">
-      <h1 class="text-[64px] leading-[1.1] lg:mb-0">Apply</h1>
+      <h1>Apply</h1>
     </div>
   </section>
   <section class="section-horizontal">
@@ -28,7 +28,7 @@ Template Post Type: page
     <div class="container mb-sp-16">
       <h1 class="text-h4-base"><?= get_the_title(); ?></h1>
       <div class="flex flex-col justify-between lg:items-center lg:mb-sp-16 mb-sp-8 lg:flex-row">
-        <h2 class="mb-0 text-h1-base">Open Roles</h2>
+        <h2 class="text-h1-base">Open Roles</h2>
         <div>
           <select id="locationFilter" class="cursor-pointer ch-button button-secondary custom-select">
             <option value="">All Locations</option>
@@ -266,9 +266,9 @@ Template Post Type: page
                 `).join('');
                 const markup = `
                   <div class="job-departments-js">
-                      <h3 class="text-h2-base font-heading my-sp-4">${department.name}</h3>
+                      <h3 class="text-h2-base font-heading">${department.name}</h3>
                   </div>
-                  <div class="job-list-js">
+                  <div class="job-list-js mt-sp-5 lg:mt-0">
                       ${jobMarkup}
                   </div>
                 `;

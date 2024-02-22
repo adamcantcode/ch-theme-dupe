@@ -1940,10 +1940,6 @@ a.ch-button.button-tertiary.inverted:hover {
   max-height: 50px;
 }
 
-.max-h-\[50vh\]{
-  max-height: 50vh;
-}
-
 .max-h-\[600px\]{
   max-height: 600px;
 }
@@ -1954,10 +1950,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .max-h-\[80vh\]{
   max-height: 80vh;
-}
-
-.max-h-\[66vh\]{
-  max-height: 66vh;
 }
 
 .min-h-\[100vh\]{
@@ -3231,10 +3223,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .text-\[42px\]{
   font-size: 42px;
-}
-
-.text-\[64px\]{
-  font-size: 64px;
 }
 
 .text-h1{
