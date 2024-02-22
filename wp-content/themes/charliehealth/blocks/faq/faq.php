@@ -43,7 +43,7 @@ $faqButton = get_field('faq_button');
                   </span>
                 </div>
                 <div class="overflow-hidden transition-all duration-500 ease-in-out accordion-content max-h-0">
-                  <div class="lg:pr-sp-14 pr-sp-6 lg:mb-sp-8">
+                  <div class="lg:pr-sp-14 pr-sp-6 lg:mb-sp-8 mb-sp-6">
                     <div class="[&_*]:text-h5"><?= $content; ?></div>
                   </div>
                 </div>
