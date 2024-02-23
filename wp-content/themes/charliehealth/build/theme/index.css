@@ -2907,6 +2907,10 @@ a.ch-button.button-tertiary.inverted:hover {
   padding: 2rem;
 }
 
+.p-base5-3{
+  padding: 15px;
+}
+
 .px-3{
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -5862,6 +5866,10 @@ ul.alert li {
 
   .lg\:p-sp-8{
     padding: 2rem;
+  }
+
+  .lg\:p-base5-5{
+    padding: 25px;
   }
 
   .lg\:px-0{
