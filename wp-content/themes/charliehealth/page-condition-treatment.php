@@ -34,9 +34,6 @@ $toc             = get_field('toc') ?: '';
 $prefooter       = get_field('prefooter_cta') ?: '';
 $references      = get_field('references') ?: '';
 
-$audiences = get_the_terms(get_the_ID(), 'category');
-$tags      = get_the_terms(get_the_ID(), 'post_tag');
-
 $wordCount      = str_word_count(strip_tags(get_the_content()));
 $wordsPerMinute = 238;
 $readingTime    = ceil($wordCount / $wordsPerMinute);
@@ -76,36 +73,6 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
             <a href="https://www.facebook.com/sharer/sharer.php?u=<?= $fullUrl; ?>" onclick="window.open(this.href,'targetWindow','resizable=yes,width=600,height=300'); return false;" class="ml-sp-4"><img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/facebook.svg'); ?>" alt="Facebook logo">
             </a>
             <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?= $fullUrl; ?>" class="ml-sp-4"><img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/linkedin.svg'); ?>" alt="LinkedIn logo"></a>
-          </div>
-          <div class="grid gap-sp-4">
-            <div class="grid items-end justify-start grid-flow-col gap-sp-6">
-              <?php if ($audiences) : foreach ($audiences as $audience) : ?>
-                  <?php
-                  switch ($audience->slug) {
-                    case 'teens-and-young-adults':
-                      $audienceClass = 'teens-and-young-adults';
-                      break;
-                    case 'families-and-caregivers':
-                      $audienceClass = 'families-and-caregivers';
-                      break;
-                    case 'providers':
-                      $audienceClass = 'providers';
-                      break;
-                    default:
-                      $audienceClass = '';
-                      break;
-                  }
-                  ?>
-                  <a href="<?= get_term_link($audience->slug, 'category'); ?>" class="px-4 py-3 no-underline rounded-pill text-p-base bg-tag-gray <?= $audienceClass; ?>"><?= $audience->name; ?></a>
-              <?php endforeach;
-              endif; ?>
-            </div>
-            <div class="grid items-end justify-start grid-flow-col gap-sp-4">
-              <?php if ($tags) : foreach ($tags as $tag) : ?>
-                  <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="px-4 py-3 no-underline rounded-pill text-p-base bg-tag-gray"><?= $tag->name; ?></a>
-              <?php endforeach;
-              endif; ?>
-            </div>
           </div>
         </div>
       </div>
