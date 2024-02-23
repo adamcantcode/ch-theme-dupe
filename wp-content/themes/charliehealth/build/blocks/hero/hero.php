@@ -72,8 +72,8 @@ $icon           = get_field('hero_icon');
       <?php include(get_template_directory() . '/includes/button-group.php'); ?>
     </div>
     <div class="order-1 h-full lg:order-2">
-      <?php  $imageOne = get_field('image_one');  ?>
-      <img src="<?= $imageOne['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $imageOne['alt'] ?: 'Placeholder image'; ?>" class="h-[400px] w-full object-cover rounded-sm">
+      <?php  $imageOne = get_field('image_one'); ?>
+      <img src="<?= $imageOne['url'] ?: placeHolderImage(600, 400); ?>" alt="<?= $imageOne['alt'] ?: 'Placeholder image'; ?>" class="h-[400px] w-full object-cover rounded-sm">
     </div>
   </div>
 <?php endif; ?>
