@@ -3310,14 +3310,14 @@ a.ch-button.button-tertiary.inverted:hover {
 }
 
 .text-nav-normal{
-  font-size: 18px;
+  font-size: 16px;
   line-height: 140%;
   letter-spacing: 0;
   font-weight: 400;
 }
 
 .text-nav-small{
-  font-size: 16px;
+  font-size: 14px;
   line-height: 140%;
   letter-spacing: 0;
   font-weight: 400;

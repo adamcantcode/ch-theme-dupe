@@ -207,7 +207,7 @@ module.exports = {
           },
         ],
         'nav-normal': [
-          '18px',
+          '16px',
           {
             lineHeight: '140%',
             letterSpacing: '0',
@@ -215,7 +215,7 @@ module.exports = {
           },
         ],
         'nav-small': [
-          '16px',
+          '14px',
           {
             lineHeight: '140%',
             letterSpacing: '0',
