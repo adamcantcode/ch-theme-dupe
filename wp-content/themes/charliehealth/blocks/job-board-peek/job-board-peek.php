@@ -1,7 +1,7 @@
 <div id="jobListings">
   <div class="grid grid-cols-1 gap-x-sp-8 lg:grid-cols-[3fr_9fr] mt-sp-16 first:mt-0 job-departments-section-js transition-all duration-300">
     <div class="job-departments-js">
-      <h6>Clinical</h6>
+      <h6><?= get_the_title(); ?></h6>
       <h3 class="text-[40px] leading-[1.1] font-heading my-sp-4">Open roles at Charlie Health</h3>
     </div>
     <div>
