@@ -1792,6 +1792,10 @@ a.ch-button.button-tertiary.inverted:hover {
   display: grid;
 }
 
+.contents{
+  display: contents;
+}
+
 .hidden{
   display: none;
 }

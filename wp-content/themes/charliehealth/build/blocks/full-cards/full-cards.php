@@ -5,7 +5,7 @@
     $link    = get_sub_field('headline'); 
     $subhead = get_sub_field('subhead'); 
     ?>
-      <div class="relative bg-white rounded-sm group lg:p-sp-8 p-sp-4">
+      <div class="relative flex flex-col justify-between bg-white rounded-sm group lg:p-sp-8 p-sp-4">
         <div class="flex justify-between gap-base5-4">
           <h3 class="flex-1 text-h2-base font-heading"><?= $link['title']; ?></h3>
           <svg width="21" height="15" viewBox="0 0 21 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all group-hover:translate-x-sp-2">
@@ -13,7 +13,7 @@
           </svg>
         </div>
         <p class="mb-0"><?= $subhead; ?></p>
-        <a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>" class="stretched-link"></a>
+        <a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>" class="stretched-link contents"></a>
       </div>
   <?php endwhile;
   endif; ?>
