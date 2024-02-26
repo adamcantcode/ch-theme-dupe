@@ -38,9 +38,6 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8BB2ZV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <!-- Google Tag Manager (noscript) FRESHPAINT TESTING-->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WTZ6L3HD" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) FRESHPAINT TESTING-->
   <?php wp_body_open(); ?>
   <!-- <pre class="fixed left-0 right-0 w-full text-xs text-center text-white top-4 -z-10-50 opacity-30">Better care, from anywhere ❤️ Carter Barnhart</pre> -->
   <?php
