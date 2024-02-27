@@ -1585,6 +1585,10 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-bottom: 5px;
 }
 
+.mb-base5-10{
+  margin-bottom: 50px;
+}
+
 .mb-base5-5{
   margin-bottom: 25px;
 }
@@ -1662,6 +1666,10 @@ a.ch-button.button-tertiary.inverted:hover {
 }
 
 .mr-\[10px\]{
+  margin-right: 10px;
+}
+
+.mr-base5-2{
   margin-right: 10px;
 }
 
@@ -1763,18 +1771,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
-}
-
-.mr-base5-4{
-  margin-right: 20px;
-}
-
-.mr-base5-2{
-  margin-right: 10px;
-}
-
-.mb-base5-10{
-  margin-bottom: 50px;
 }
 
 .line-clamp-3{
@@ -3072,16 +3068,6 @@ a.ch-button.button-tertiary.inverted:hover {
   padding-bottom: 2rem;
 }
 
-.px-base5-2{
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.py-base5-3{
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-
 .\!pb-0{
   padding-bottom: 0px !important;
 }
@@ -3451,6 +3437,11 @@ a.ch-button.button-tertiary.inverted:hover {
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-pale-blue-200{
+  --tw-text-opacity: 1;
+  color: rgb(173 176 225 / var(--tw-text-opacity));
 }
 
 .underline{
@@ -5901,6 +5892,10 @@ ul.alert li {
 
   .lg\:p-sp-8{
     padding: 2rem;
+  }
+
+  .lg\:p-base5-6{
+    padding: 30px;
   }
 
   .lg\:px-0{
