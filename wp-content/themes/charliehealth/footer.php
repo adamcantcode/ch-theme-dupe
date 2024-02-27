@@ -1,4 +1,4 @@
-<div id="stickCTA" class="noshow">
+<div id="stickyCTA" class="noshow">
 	<div class="sticky-cta-js bg-white px-sp-5 py-[10px] fixed bottom-[-100%] w-full opacity-0 invisible transition-all duration-500 z-50 md:noshow">
 		<a href="tel:+18664848218" class="w-full ch-button button-primary" target="_self">1 (866) 484-8218</a>
 	</div>
@@ -24,7 +24,7 @@
 				stickyCTA.classList.remove('bottom-0');
 			}
 		});
-	})
+	});
 </script>
 <footer id="footer" class="grid bg-secondary-soft relatve">
 	<div class="section-sm-top section-lg-bottom ">
