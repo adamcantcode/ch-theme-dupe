@@ -6,7 +6,7 @@
     </div>
     <div>
       <div class="job-list-js"></div>
-      <div class="grid justify-end mt-sp-8">
+      <div class="grid lg:justify-end mt-sp-8">
         <?php include(get_template_directory() . '/includes/button-group.php'); ?>
       </div>
     </div>
