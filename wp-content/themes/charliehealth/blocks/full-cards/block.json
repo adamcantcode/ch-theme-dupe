@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "acf/full-cards-block",
+  "title": "Full cards",
+  "description": "Cards with links",
+  "style": "file:./index.css",
+  "script": "file:./index.js",
+  "category": "custom",
+  "icon": "columns",
+  "apiVersion": 2,
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "full-cards.php"
+  },
+  "supports": {}
+}

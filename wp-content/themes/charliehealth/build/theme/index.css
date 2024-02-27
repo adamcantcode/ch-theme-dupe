@@ -1792,6 +1792,10 @@ a.ch-button.button-tertiary.inverted:hover {
   display: grid;
 }
 
+.contents{
+  display: contents;
+}
+
 .hidden{
   display: none;
 }
@@ -1858,6 +1862,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .h-\[2px\]{
   height: 2px;
+}
+
+.h-\[400px\]{
+  height: 400px;
 }
 
 .h-\[42px\]{
@@ -2873,6 +2881,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .p-\[10px\]{
   padding: 10px;
+}
+
+.p-base5-3{
+  padding: 15px;
 }
 
 .p-base5-5{
@@ -5017,6 +5029,11 @@ ul.alert li {
   background-color: rgb(248 248 255 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-pale-blue-100:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(214 215 240 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-primary-200:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(30 34 91 / var(--tw-bg-opacity));
@@ -5231,10 +5248,6 @@ ul.alert li {
     bottom: -50px;
   }
 
-  .lg\:left-0{
-    left: 0px;
-  }
-
   .lg\:left-\[60\%\]{
     left: 60%;
   }
@@ -5251,24 +5264,12 @@ ul.alert li {
     top: 0px;
   }
 
-  .lg\:top-\[-10\%\]{
-    top: -10%;
-  }
-
   .lg\:top-\[-120px\]{
     top: -120px;
   }
 
-  .lg\:top-\[20\%\]{
-    top: 20%;
-  }
-
   .lg\:top-\[32px\]{
     top: 32px;
-  }
-
-  .lg\:top-\[80\%\]{
-    top: 80%;
   }
 
   .lg\:order-1{
@@ -5647,10 +5648,6 @@ ul.alert li {
     grid-template-columns: 2fr 1fr;
   }
 
-  .lg\:grid-cols-\[2fr_3fr_3fr\]{
-    grid-template-columns: 2fr 3fr 3fr;
-  }
-
   .lg\:grid-cols-\[2fr_5fr\]{
     grid-template-columns: 2fr 5fr;
   }
@@ -5862,6 +5859,10 @@ ul.alert li {
 
   .lg\:p-0{
     padding: 0px;
+  }
+
+  .lg\:p-base5-5{
+    padding: 25px;
   }
 
   .lg\:p-sp-12{

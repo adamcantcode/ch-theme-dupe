@@ -86,7 +86,7 @@ $style  = get_field('style');
           </div>
           <div class="grid bg-white rounded-b-lg p-sp-4">
             <h3 class="text-h4-base"><a href="<?= get_the_permalink($customPost->ID); ?>" class="block stretched-link"><?= $customPost->post_title; ?></a></h3>
-            <p><?= get_field('by_author', ($relatedPost->ID))->post_title ?: 'Charlie Health Editorial Team'; ?></p>
+            <p><?= get_field('by_author', ($customPost->ID))->post_title ?: 'Charlie Health Editorial Team'; ?></p>
           </div>
         </div>
       <?php endforeach; ?>
