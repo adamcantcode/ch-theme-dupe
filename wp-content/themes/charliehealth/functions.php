@@ -116,6 +116,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/depression-anxiety-graph');
   register_block_type(__DIR__ . '/build/blocks/full-cards');
   register_block_type(__DIR__ . '/build/blocks/job-board-peek');
+  register_block_type(__DIR__ . '/build/blocks/check-list-items');
 }
 add_action('init', 'register_acf_blocks', 5);
 

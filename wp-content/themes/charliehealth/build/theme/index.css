@@ -1765,6 +1765,18 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-top: 2rem;
 }
 
+.mr-base5-4{
+  margin-right: 20px;
+}
+
+.mr-base5-2{
+  margin-right: 10px;
+}
+
+.mb-base5-10{
+  margin-bottom: 50px;
+}
+
 .line-clamp-3{
   overflow: hidden;
   display: -webkit-box;
@@ -3058,6 +3070,16 @@ a.ch-button.button-tertiary.inverted:hover {
 .py-sp-8{
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.px-base5-2{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.py-base5-3{
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .\!pb-0{
