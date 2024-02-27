@@ -38,14 +38,19 @@ $group = get_field('group')
         <?php
         $anonymous = get_field('anonymous', get_the_ID());
         if ($anonymous === false) {
-          $attribution = abbreviateAfterFirstWord(get_field('attribution', get_the_ID()));
+          if (empty(get_field('title', get_the_ID()))) {
+            $attribution = abbreviateAfterFirstWord(get_field('attribution', get_the_ID()));
+          }
+          $attribution = get_field('attribution', get_the_ID());
         } else {
           $attribution = 'Charlie Health Alum';
         }
         $pullQuote = get_field('pull-quote', get_the_ID());
         $fullQuote = get_field('full_quote', get_the_ID());
-        $age = get_field('age', get_the_ID());
-        $group = get_the_terms(get_the_ID(), 'testimonials-group')[0]->slug;
+        $title     = get_field('title', get_the_ID());
+        $location  = get_field('location', get_the_ID());
+        $age       = get_field('age', get_the_ID());
+        $group     = get_the_terms(get_the_ID(), 'testimonials-group')[0]->slug;
 
         switch ($group) {
           case 'young-adult':
@@ -75,7 +80,13 @@ $group = get_field('group')
             <h3 class="text-h3-base font-heading-serif">“<?= $pullQuote; ?>.”</h3>
           <?php endif; ?>
           <p class="text-p-base"><?= $fullQuote; ?></p>
-          <p class="text-p-base">—<?= $attribution; ?></p>
+          <p class="mb-0 text-p-base">—<?= $attribution; ?></p>
+          <?php if ($title) : ?>
+            <p class="mb-0 text-p-base"><?= $title; ?></p>
+          <?php endif; ?>
+          <?php if ($location) : ?>
+            <p class="mb-0 text-p-base"><?= $location; ?></p>
+          <?php endif; ?>
         </div>
       <?php endwhile; ?>
     <?php endif; ?>
@@ -94,14 +105,19 @@ $group = get_field('group')
 
             $anonymous = get_field('anonymous', $postID);
             if ($anonymous === false) {
-              $attribution = abbreviateAfterFirstWord(get_field('attribution', $postID));
+              if (empty(get_field('title', $postID))) {
+                $attribution = abbreviateAfterFirstWord(get_field('attribution', $postID));
+              }
+              $attribution = get_field('attribution', $postID);
             } else {
               $attribution = 'Charlie Health Alum';
             }
             $pullQuote = get_field('pull-quote', $postID);
             $fullQuote = get_field('full_quote', $postID);
-            $age = get_field('age', $postID);
-            $group = get_the_terms($postID, 'testimonials-group')[0]->slug;
+            $title     = get_field('title', $postID);
+            $location  = get_field('location', $postID);
+            $age       = get_field('age', $postID);
+            $group     = get_the_terms($postID, 'testimonials-group')[0]->slug;
 
             switch ($group) {
               case 'young-adult':
@@ -131,7 +147,13 @@ $group = get_field('group')
                 <p class="text-h3-base font-heading-serif">“<?= $pullQuote; ?>.”</p>
               <?php endif; ?>
               <p class="text-p-base"><?= $fullQuote; ?></p>
-              <p class="text-p-base">—<?= $attribution; ?></p>
+              <p class="mb-0 text-p-base">—<?= $attribution; ?></p>
+              <?php if ($title) : ?>
+                <p class="mb-0 text-p-base"><?= $title; ?></p>
+              <?php endif; ?>
+              <?php if ($location) : ?>
+                <p class="mb-0 text-p-base"><?= $location; ?></p>
+              <?php endif; ?>
             </div>
           <?php endforeach; ?>
         </div>
@@ -147,14 +169,19 @@ $group = get_field('group')
 
                 $anonymous = get_field('anonymous', $postID);
                 if ($anonymous === false) {
-                  $attribution = abbreviateAfterFirstWord(get_field('attribution', $postID));
+                  if (empty(get_field('title', $postID))) {
+                    $attribution = abbreviateAfterFirstWord(get_field('attribution', $postID));
+                  }
+                  $attribution = get_field('attribution', $postID);
                 } else {
                   $attribution = 'Charlie Health Alum';
                 }
                 $pullQuote = get_field('pull-quote', $postID);
                 $fullQuote = get_field('full_quote', $postID);
-                $age = get_field('age', $postID);
-                $group = get_the_terms($postID, 'testimonials-group')[0]->slug;
+                $title     = get_field('title', $postID);
+                $location  = get_field('location', $postID);
+                $age       = get_field('age', $postID);
+                $group     = get_the_terms($postID, 'testimonials-group')[0]->slug;
 
                 switch ($group) {
                   case 'young-adult':
@@ -185,7 +212,13 @@ $group = get_field('group')
                       <p class="text-h3-base font-heading-serif">“<?= $pullQuote; ?>.”</p>
                     <?php endif; ?>
                     <p class="text-p-base"><?= $fullQuote; ?></p>
-                    <p class="text-p-base">—<?= $attribution; ?></p>
+                    <p class="mb-0 text-p-base">—<?= $attribution; ?></p>
+                    <?php if ($title) : ?>
+                      <p class="mb-0 text-p-base"><?= $title; ?></p>
+                    <?php endif; ?>
+                    <?php if ($location) : ?>
+                      <p class="mb-0 text-p-base"><?= $location; ?></p>
+                    <?php endif; ?>
                   </div>
                 </div>
               <?php endforeach; ?>
