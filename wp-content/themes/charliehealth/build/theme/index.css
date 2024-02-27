@@ -2879,6 +2879,10 @@ a.ch-button.button-tertiary.inverted:hover {
   padding: 10px;
 }
 
+.p-base5-3{
+  padding: 15px;
+}
+
 .p-base5-5{
   padding: 25px;
 }
@@ -2905,10 +2909,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .p-sp-8{
   padding: 2rem;
-}
-
-.p-base5-3{
-  padding: 15px;
 }
 
 .px-3{
@@ -5039,6 +5039,11 @@ ul.alert li {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-pale-blue-100:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(214 215 240 / var(--tw-bg-opacity));
+}
+
 .hover\:\!text-\[\#35919c\]:hover{
   --tw-text-opacity: 1 !important;
   color: rgb(53 145 156 / var(--tw-text-opacity)) !important;
@@ -5852,6 +5857,10 @@ ul.alert li {
     padding: 0px;
   }
 
+  .lg\:p-base5-5{
+    padding: 25px;
+  }
+
   .lg\:p-sp-12{
     padding: 3rem;
   }
@@ -5866,10 +5875,6 @@ ul.alert li {
 
   .lg\:p-sp-8{
     padding: 2rem;
-  }
-
-  .lg\:p-base5-5{
-    padding: 25px;
   }
 
   .lg\:px-0{
