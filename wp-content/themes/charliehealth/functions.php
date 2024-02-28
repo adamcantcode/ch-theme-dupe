@@ -55,6 +55,7 @@ add_action('pre_get_posts', function () {
 
         if ('page-condition-treatment.php' === $template_slug) {
           add_editor_style('editor-styles-posts.css');
+          add_post_type_support( 'page', 'excerpt' );
         }
       }
     }
