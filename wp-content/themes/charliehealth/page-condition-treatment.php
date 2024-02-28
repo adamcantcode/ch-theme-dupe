@@ -1,7 +1,7 @@
 <?php
 /*
 Template Name: Condition Treatment
-Template Post Type: treatment-modalities, areas-of-care
+Template Post Type: treatment-modalities, areas-of-care, page
 */
 ?>
 

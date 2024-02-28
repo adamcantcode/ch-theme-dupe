@@ -46,7 +46,7 @@ add_action('pre_get_posts', function () {
       add_editor_style('editor-styles-posts.css');
     }
 
-    $post_types_to_style_tm_aoc = ['treatment-modalities', 'areas-of-care'];
+    $post_types_to_style_tm_aoc = ['treatment-modalities', 'areas-of-care', 'page'];
     if (in_array($typenow, $post_types_to_style_tm_aoc)) {
       // Check for the "Condition Treatment" page template
       if (isset($_GET['post'])) {
