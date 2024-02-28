@@ -24,19 +24,6 @@ if (has_post_thumbnail()) {
   $featuredImageUrl     = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
   $featuredImageAltText = 'Charlie Health Logo';
 }
-
-$author          = get_field('by_author');
-$medicalReviewer = get_field('medical_reviewer');
-$date            = get_field('date') ?: '';
-$updatedDate     = get_field('select_updated_date') ?: '';
-$relatedPosts    = get_field('related_posts') ?: '';
-$toc             = get_field('toc') ?: '';
-$prefooter       = get_field('prefooter_cta') ?: '';
-$references      = get_field('references') ?: '';
-
-$wordCount      = str_word_count(strip_tags(get_the_content()));
-$wordsPerMinute = 238;
-$readingTime    = ceil($wordCount / $wordsPerMinute);
 ?>
 
 <div id="progressBar" class="fixed z-20 transition-all duration-700 rounded-r-sm bg-purple-gradient-end h-[5px] left-0"></div>
@@ -49,24 +36,7 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
         </div>
         <div>
           <h1 class="font-heading-serif text-h2 lg:text-h2-lg"><?= get_the_title(); ?></h1>
-          <div class="flex items-center mb-sp-6">
-            <svg xmlns="http://www.w3.org/2000/svg" height="22" viewBox="0 -960 960 960" width="22" fill="#46496D" class="inline-block">
-              <path d="M352.587-840v-87.413h254.826V-840H352.587Zm83.826 446.696h87.174v-240.718h-87.174v240.718ZM480-65.413q-75.913 0-142.849-29.071-66.937-29.072-117.011-79.055-50.075-49.982-79.173-116.917t-29.098-142.848q0-75.913 29.12-142.837 29.12-66.924 79.185-116.989 50.065-50.066 116.989-79.185 66.924-29.12 142.837-29.12 62.478 0 120.435 20 57.956 20 108.195 58.239l58.87-58.869 61.5 61.5-58.869 58.869q38.239 50.24 58.119 108.077 19.881 57.837 19.881 120.315 0 75.913-29.098 142.848-29.098 66.935-79.173 116.917-50.074 49.983-117.011 79.055Q555.913-65.413 480-65.413Zm0-91q115.043 0 196.087-80.924 81.043-80.924 81.043-195.967 0-115.044-81.043-196.087Q595.043-710.435 480-710.435q-115.043 0-196.087 81.044-81.043 81.043-81.043 196.087 0 115.043 81.043 195.967Q364.957-156.413 480-156.413Zm0-276.891Z" />
-            </svg>
-            <p class="mb-0 font-bold ml-sp-2"> <?= $readingTime; ?> min.</p>
-          </div>
           <p><?= get_the_excerpt(); ?></p>
-          <?php if (!empty($author)) : ?>
-            <p class="mb-0">By: <a href="<?= get_the_permalink($author->ID); ?>"><?= $author->post_title; ?></a></p>
-          <?php endif; ?>
-          <?php if (!empty($medicalReviewer)) : ?>
-            <p class="mb-0">Clinically Reviewed By: <a href="<?= get_the_permalink($medicalReviewer->ID); ?>"><?= $medicalReviewer->post_title; ?></a></p>
-          <?php endif; ?>
-          <?php if (!$updatedDate) : ?>
-            <p><?= $date; ?></p>
-          <?php elseif ($updatedDate) : ?>
-            <p>Updated: <?= $date; ?></p>
-          <?php endif; ?>
           <div class="flex items-start">
             <p class="font-heading-serif">Share:</p>
             <a role="button" class="js-share-button ml-sp-4"><img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/share.svg'); ?>" alt="share icon"></a>
@@ -89,31 +59,10 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
   <article id="articleContent" class="section">
     <div class="container-sm">
       <?php the_content(); ?>
-      <?php if ($references) : ?>
-        <div class="divider mb-sp-4"></div>
-        <div class="rounded-md references-container">
-          <div class="flex duration-300 rounded-md cursor-pointer references-heading lg:p-sp-8 p-sp-4 hover:bg-lightest-purple">
-            <p class="mb-0 text-h3-base">References</p>
-            <div class="flex items-center ml-auto toggle">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="none" viewBox="8 8 8 8" height="12px" width="12px">
-                <path d="M9 12H15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                <path d="M12 9L12 15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
-            </div>
-          </div>
-          <div class="overflow-hidden transition-all duration-500 ease-in-out references-content max-h-0">
-            <div class="pt-0 lg:pt-0 lg:p-sp-8 p-sp-4 gap-sp-1 mt-sp-4">
-              <?= $references; ?>
-            </div>
-          </div>
-        </div>
-      <?php endif; ?>
     </div>
   </article>
 </div>
-<?php if (!$prefooter) : ?>
-  <?= do_blocks('<!-- wp:block {"ref":12} /-->'); ?>
-<?php endif; ?>
+<?= do_blocks('<!-- wp:block {"ref":12} /-->'); ?>
 <?= do_blocks('<!-- wp:block {"ref":7353} /-->'); ?>
 
 <?php get_footer(); ?>
