@@ -44,7 +44,7 @@
     },
     "description": "",
     "public": true,
-    "hierarchical": false,
+    "hierarchical": true,
     "exclude_from_search": false,
     "publicly_queryable": true,
     "show_ui": true,
@@ -64,6 +64,9 @@
     "supports": [
         "title",
         "editor",
+        "excerpt",
+        "revisions",
+        "page-attributes",
         "thumbnail"
     ],
     "taxonomies": "",
@@ -80,5 +83,5 @@
     "can_export": true,
     "delete_with_user": false,
     "register_meta_box_cb": "",
-    "modified": 1684258208
+    "modified": 1709143471
 }
