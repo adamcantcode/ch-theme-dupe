@@ -30,17 +30,35 @@ add_editor_style('/build/theme/index.css');
  *  Add separate editor styles on BlogPosts and Research Posts
  */
 add_action('pre_get_posts', function () {
-  if (
-    false !== stristr($_SERVER['REQUEST_URI'], 'post-new.php') && get_post_type() === 'post'
-    || false !== stristr($_SERVER['REQUEST_URI'], 'post.php') && get_post_type() === 'post'
-  ) {
-    add_editor_style('editor-styles-posts.css');
+  global $pagenow, $typenow;
+
+  // Ensure this code only runs in the admin area
+  if (!is_admin()) {
+    return;
   }
-  if (
-    false !== stristr($_SERVER['REQUEST_URI'], 'post-new.php') && get_post_type() === 'research'
-    || false !== stristr($_SERVER['REQUEST_URI'], 'post.php') && get_post_type() === 'research'
-  ) {
-    add_editor_style('editor-styles-posts.css');
+
+  // Check if we are on the post editing screen
+  if ('post-new.php' === $pagenow || 'post.php' === $pagenow) {
+
+    // Add editor styles for specific post types
+    $post_types_to_style = ['post', 'research', 'press'];
+    if (in_array($typenow, $post_types_to_style)) {
+      add_editor_style('editor-styles-posts.css');
+    }
+
+    $post_types_to_style_tm_aoc = ['treatment-modalities', 'areas-of-care', 'page'];
+    if (in_array($typenow, $post_types_to_style_tm_aoc)) {
+      // Check for the "Condition Treatment" page template
+      if (isset($_GET['post'])) {
+        $post_id = $_GET['post'];
+        $template_slug = get_page_template_slug($post_id);
+
+        if ('page-condition-treatment.php' === $template_slug) {
+          add_editor_style('editor-styles-posts.css');
+          add_post_type_support( 'page', 'excerpt' );
+        }
+      }
+    }
   }
 });
 

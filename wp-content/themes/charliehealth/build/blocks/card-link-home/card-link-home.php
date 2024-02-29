@@ -6,11 +6,7 @@ $subheading     = get_field('subheading');
 $cardHeading    = get_field('card_heading');
 $cardSubheading = get_field('card_subheading');
 ?>
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-sp-5">
-  <div>
-    <h2 class="lg:!text-[20px] !text-[18px] !leading-[1.4] !font-heading lg:max-w-[400px]"><span class="lg:text-[56px] text-[40px] block !font-heading-serif"><?= $heading; ?></span><?= $subheading; ?></h2>
-    <?php include(get_template_directory() . '/includes/button-group.php'); ?>
-  </div>
+<div class="grid items-center grid-cols-1 lg:grid-cols-2 gap-base5-4">
   <div>
     <div class="bg-primary-200 rounded-[16px] grid lg:grid-cols-[1fr_2fr] grid-cols-1 lg:py-sp-12 py-sp-8 px-sp-8 gap-sp-8 items-end relative group [&_*]:text-white [&_*]:hover:text-white">
       <div>
@@ -24,5 +20,8 @@ $cardSubheading = get_field('card_subheading');
         <p><?= $cardSubheading; ?></p>
       </div>
     </div>
+  </div>
+  <div class="lg:max-w-[400px] ml-auto">
+    <InnerBlocks />
   </div>
 </div>

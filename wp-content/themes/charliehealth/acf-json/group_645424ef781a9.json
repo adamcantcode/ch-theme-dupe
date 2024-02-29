@@ -49,6 +49,11 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "areas-of-care"
+            },
+            {
+                "param": "post_template",
+                "operator": "!=",
+                "value": "page-condition-treatment.php"
             }
         ]
     ],
@@ -61,5 +66,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1683487364
+    "modified": 1709139295
 }
