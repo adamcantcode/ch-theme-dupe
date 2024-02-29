@@ -323,7 +323,7 @@
                 <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
               </div>
               <div class="grid bg-white rounded-b-lg p-sp-4">
-                <h3 class="text-h4-base"><a href="<?= $relatedResearchPost->post_title; ?>" class="block stretched-link"><?= get_the_title(); ?></a></h3>
+                <h3 class="text-h4-base"><a href="<?= get_the_permalink($relatedResearchPost->ID); ?>" class="block stretched-link"><?= get_the_title(); ?></a></h3>
                 <p><?= $author = get_field('by_author')->post_title ?: 'Charlie Health Editorial Team'; ?></p>
               </div>
             </div>
