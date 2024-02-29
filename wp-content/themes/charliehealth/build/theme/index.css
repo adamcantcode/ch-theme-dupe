@@ -2121,6 +2121,10 @@ a.ch-button.button-tertiary.inverted:hover {
   max-width: 700px;
 }
 
+.max-w-\[720px\]{
+  max-width: 720px;
+}
+
 .max-w-\[72px\]{
   max-width: 72px;
 }
@@ -2139,10 +2143,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .max-w-full{
   max-width: 100%;
-}
-
-.max-w-\[720px\]{
-  max-width: 720px;
 }
 
 .flex-1{

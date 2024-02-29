@@ -59,7 +59,7 @@ $icon           = get_field('hero_icon');
       <?php endif; ?>
       <?php include(get_template_directory() . '/includes/button-group.php'); ?>
     </div>
-    <div class="flex flex-col justify-between order-1 lg:order-2">
+    <div class="flex flex-col items-center order-1 lg:order-2">
       <img src="<?= $heroImage['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $heroImage['alt'] ?: 'Placeholder image'; ?>" class="object-cover object-top nolazy">
     </div>
   </div>
