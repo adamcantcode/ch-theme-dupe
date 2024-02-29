@@ -5,8 +5,8 @@ $headline = get_field('headline');
 $group = get_field('group')
 ?>
 <div class="grid lg:grid-cols-[3fr_4fr] lg:mb-sp-14 mb-sp-8 gap-x-sp-4 lg:items-end">
-  <div>
-    <p class="mb-0"><?= $eyebrow; ?></p>
+  <div class="lg:max-w-[75%]">
+    <p class="text-h4-base"><?= $eyebrow; ?></p>
     <h2 class="lg:mb-0 !mb-base5-4"><?= $headline; ?></h2>
   </div>
   <div class="lg:justify-self-end">

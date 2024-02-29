@@ -3424,6 +3424,11 @@ a.ch-button.button-tertiary.inverted:hover {
   color: rgb(231 211 255 / var(--tw-text-opacity));
 }
 
+.text-pale-blue-200{
+  --tw-text-opacity: 1;
+  color: rgb(173 176 225 / var(--tw-text-opacity));
+}
+
 .text-primary{
   --tw-text-opacity: 1;
   color: rgb(22 26 61 / var(--tw-text-opacity));
@@ -3437,11 +3442,6 @@ a.ch-button.button-tertiary.inverted:hover {
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-pale-blue-200{
-  --tw-text-opacity: 1;
-  color: rgb(173 176 225 / var(--tw-text-opacity));
 }
 
 .underline{
@@ -5589,6 +5589,22 @@ ul.alert li {
     max-width: none;
   }
 
+  .lg\:max-w-\[33\.3\%\]{
+    max-width: 33.3%;
+  }
+
+  .lg\:max-w-\[50\%\]{
+    max-width: 50%;
+  }
+
+  .lg\:max-w-\[66\%\]{
+    max-width: 66%;
+  }
+
+  .lg\:max-w-\[75\%\]{
+    max-width: 75%;
+  }
+
   .lg\:basis-\[33\%\]{
     flex-basis: 33%;
   }
@@ -5878,6 +5894,10 @@ ul.alert li {
     padding: 25px;
   }
 
+  .lg\:p-base5-6{
+    padding: 30px;
+  }
+
   .lg\:p-sp-12{
     padding: 3rem;
   }
@@ -5892,10 +5912,6 @@ ul.alert li {
 
   .lg\:p-sp-8{
     padding: 2rem;
-  }
-
-  .lg\:p-base5-6{
-    padding: 30px;
   }
 
   .lg\:px-0{
