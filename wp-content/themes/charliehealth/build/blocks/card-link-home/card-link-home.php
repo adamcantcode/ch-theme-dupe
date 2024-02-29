@@ -8,7 +8,7 @@ $cardSubheading = get_field('card_subheading');
 ?>
 <div class="grid items-center grid-cols-1 lg:grid-cols-2 gap-base5-4">
   <div>
-    <div class="bg-primary-200 rounded-[16px] grid lg:grid-cols-[1fr_2fr] grid-cols-1 lg:py-sp-12 py-sp-8 px-sp-8 gap-sp-8 items-end relative group [&_*]:text-white [&_*]:hover:text-white">
+    <div class="bg-primary-200 rounded-[16px] grid lg:grid-cols-[1fr_2fr] grid-cols-1 lg:py-sp-12 py-sp-8 px-sp-8 gap-sp-8 items-center relative group [&_*]:text-white [&_*]:hover:text-white">
       <div>
         <img src="<?= $image['url']; ?>" alt="" <?= $image['alt']; ?>" class="rounded-[3px] shadow-[5px_5px_0_#ADB0E1] max-w-[150px] lg:max-w-full">
       </div>
