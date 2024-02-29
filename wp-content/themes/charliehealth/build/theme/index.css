@@ -3483,6 +3483,12 @@ a.ch-button.button-tertiary.inverted:hover {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.shadow-\[5px_5px_0_\#ADB0E1\]{
+  --tw-shadow: 5px 5px 0 #ADB0E1;
+  --tw-shadow-colored: 5px 5px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .outline-none{
   outline: 2px solid transparent;
   outline-offset: 2px;
