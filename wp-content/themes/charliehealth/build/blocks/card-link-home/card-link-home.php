@@ -6,7 +6,7 @@ $subheading     = get_field('subheading');
 $cardHeading    = get_field('card_heading');
 $cardSubheading = get_field('card_subheading');
 ?>
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-base5-4">
+<div class="grid items-center grid-cols-1 lg:grid-cols-2 gap-base5-4">
   <div>
     <div class="bg-primary-200 rounded-[16px] grid lg:grid-cols-[1fr_2fr] grid-cols-1 lg:py-sp-12 py-sp-8 px-sp-8 gap-sp-8 items-end relative group [&_*]:text-white [&_*]:hover:text-white">
       <div>
@@ -21,7 +21,7 @@ $cardSubheading = get_field('card_subheading');
       </div>
     </div>
   </div>
-  <div class="lg:max-w-[400px]">
+  <div class="lg:max-w-[400px] ml-auto">
     <InnerBlocks />
   </div>
 </div>
