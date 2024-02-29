@@ -3156,10 +3156,6 @@ a.ch-button.button-tertiary.inverted:hover {
   font-family: "ABC Arizona", serif;
 }
 
-.\!text-\[18px\]{
-  font-size: 18px !important;
-}
-
 .\!text-\[1rem\]{
   font-size: 1rem !important;
 }
@@ -3227,10 +3223,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .text-\[32px\]{
   font-size: 32px;
-}
-
-.text-\[40px\]{
-  font-size: 40px;
 }
 
 .text-\[42px\]{
@@ -5560,10 +5552,6 @@ ul.alert li {
     max-width: 335px;
   }
 
-  .lg\:max-w-\[400px\]{
-    max-width: 400px;
-  }
-
   .lg\:max-w-\[670px\]{
     max-width: 670px;
   }
@@ -5574,6 +5562,10 @@ ul.alert li {
 
   .lg\:max-w-none{
     max-width: none;
+  }
+
+  .lg\:max-w-\[400px\]{
+    max-width: 400px;
   }
 
   .lg\:basis-\[33\%\]{
