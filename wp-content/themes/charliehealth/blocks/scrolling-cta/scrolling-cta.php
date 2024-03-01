@@ -31,7 +31,7 @@ if (!empty($block['align'])) {
               <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health shield logo" class="w-[3rem] mb-sp-5">
               <p class="text-h2-base"><?= get_field('heading'); ?></p>
               <?php if (!empty(get_field('subhead'))) : ?>
-                <p class="text-h3-base"><?= get_field('subhead'); ?></p>
+                <p class="text-h3-base mb-base5-5"><?= get_field('subhead'); ?></p>
               <?php endif; ?>
               <?php include(get_template_directory() . '/includes/button-group.php'); ?>
             </div>
