@@ -5552,6 +5552,10 @@ ul.alert li {
     max-width: 335px;
   }
 
+  .lg\:max-w-\[400px\]{
+    max-width: 400px;
+  }
+
   .lg\:max-w-\[670px\]{
     max-width: 670px;
   }
@@ -5562,10 +5566,6 @@ ul.alert li {
 
   .lg\:max-w-none{
     max-width: none;
-  }
-
-  .lg\:max-w-\[400px\]{
-    max-width: 400px;
   }
 
   .lg\:basis-\[33\%\]{

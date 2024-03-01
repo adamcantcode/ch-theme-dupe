@@ -118,6 +118,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/fifty-fifty-grid-graph');
   register_block_type(__DIR__ . '/build/blocks/tri-grid');
   register_block_type(__DIR__ . '/build/blocks/features');
+  register_block_type(__DIR__ . '/build/blocks/features-cards');
   register_block_type(__DIR__ . '/build/blocks/home-testimonials');
   register_block_type(__DIR__ . '/build/blocks/card-link-home');
   register_block_type(__DIR__ . '/build/blocks/how-it-works');
