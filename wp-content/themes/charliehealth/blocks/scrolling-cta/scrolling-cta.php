@@ -22,7 +22,7 @@ if (!empty($block['align'])) {
       <InnerBlocks />
     </div>
   </div>
-  <div class="section section-bg-js-cta">
+  <div class="section-xs section-bg-js-cta">
     <div class="container">
       <div class="flex flex-col justify-center pin-cta-js lg:h-[50vh] lg:mt-0 mt-sp-16 pb-sp-14 lg:pb-0">
         <div class="pin-cta-js-motion">

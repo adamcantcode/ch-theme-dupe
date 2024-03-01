@@ -13,9 +13,8 @@ window.addEventListener('DOMContentLoaded', () => {
       trigger: '.section-bg-js-cta',
       start: 'top 70%',
       endTrigger: '.pin-cta-js-motion',
-      end: 'top 30%',
+      end: 'top 50%',
       scrub: true,
-      // markers: true,
     },
   });
   sectionBg.fromTo(
