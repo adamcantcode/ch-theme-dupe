@@ -8,9 +8,9 @@ $cardSubheading = get_field('card_subheading');
 ?>
 <div class="grid items-center grid-cols-1 lg:grid-cols-2 gap-base5-4">
   <div>
-    <div class="bg-primary-200 rounded-[16px] grid lg:grid-cols-[1fr_2fr] grid-cols-1 lg:py-sp-12 py-sp-8 px-sp-8 gap-sp-8 items-end relative group [&_*]:text-white [&_*]:hover:text-white">
+    <div class="bg-primary-200 rounded-[16px] grid lg:grid-cols-[1fr_2fr] grid-cols-1 lg:py-sp-12 py-sp-8 px-sp-8 gap-sp-8 items-center relative group [&_*]:text-white [&_*]:hover:text-white">
       <div>
-        <img src="<?= $image['url']; ?>" alt="" <?= $image['alt']; ?>" class="rounded-[3px] shadow-[5px_5px_0_white] max-w-[150px] lg:max-w-full">
+        <img src="<?= $image['url']; ?>" alt="" <?= $image['alt']; ?>" class="rounded-[3px] shadow-[5px_5px_0_#ADB0E1] max-w-[150px] lg:max-w-full">
       </div>
       <div>
         <h3><a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>" class="stretched-link"><?= $cardHeading; ?><svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="inline-block transition-all duration-300 middle ml-sp-2 group-hover:translate-x-sp-2">

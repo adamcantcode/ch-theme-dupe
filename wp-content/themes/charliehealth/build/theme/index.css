@@ -1585,6 +1585,10 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-bottom: 5px;
 }
 
+.mb-base5-10{
+  margin-bottom: 50px;
+}
+
 .mb-base5-5{
   margin-bottom: 25px;
 }
@@ -1662,6 +1666,10 @@ a.ch-button.button-tertiary.inverted:hover {
 }
 
 .mr-\[10px\]{
+  margin-right: 10px;
+}
+
+.mr-base5-2{
   margin-right: 10px;
 }
 
@@ -2111,6 +2119,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .max-w-\[700px\]{
   max-width: 700px;
+}
+
+.max-w-\[720px\]{
+  max-width: 720px;
 }
 
 .max-w-\[72px\]{
@@ -3408,6 +3420,11 @@ a.ch-button.button-tertiary.inverted:hover {
   color: rgb(231 211 255 / var(--tw-text-opacity));
 }
 
+.text-pale-blue-200{
+  --tw-text-opacity: 1;
+  color: rgb(173 176 225 / var(--tw-text-opacity));
+}
+
 .text-primary{
   --tw-text-opacity: 1;
   color: rgb(22 26 61 / var(--tw-text-opacity));
@@ -3454,8 +3471,8 @@ a.ch-button.button-tertiary.inverted:hover {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.shadow-\[5px_5px_0_white\]{
-  --tw-shadow: 5px 5px 0 white;
+.shadow-\[5px_5px_0_\#ADB0E1\]{
+  --tw-shadow: 5px 5px 0 #ADB0E1;
   --tw-shadow-colored: 5px 5px 0 var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
@@ -3564,16 +3581,16 @@ a.ch-button.button-tertiary.inverted:hover {
 /* Default Section padding */
 
 .section{
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
 
 @media (min-width: 480px) {
   .section{
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
     }
 
@@ -3589,12 +3606,12 @@ a.ch-button.button-tertiary.inverted:hover {
 .section-top{
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-  padding-top: 2.5rem;
+  padding-top: 4rem;
 }
 
 @media (min-width: 480px) {
     .section-top{
-    padding-top: 3rem;
+    padding-top: 4rem;
   }
       }
 
@@ -3609,12 +3626,12 @@ a.ch-button.button-tertiary.inverted:hover {
 .section-bottom{
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-  padding-bottom: 2.5rem;
+  padding-bottom: 4rem;
 }
 
 @media (min-width: 480px) {
     .section-bottom{
-    padding-bottom: 3rem;
+    padding-bottom: 4rem;
   }
       }
 
@@ -5560,6 +5577,10 @@ ul.alert li {
     max-width: 670px;
   }
 
+  .lg\:max-w-\[75\%\]{
+    max-width: 75%;
+  }
+
   .lg\:max-w-full{
     max-width: 100%;
   }
@@ -5855,6 +5876,10 @@ ul.alert li {
 
   .lg\:p-base5-5{
     padding: 25px;
+  }
+
+  .lg\:p-base5-6{
+    padding: 30px;
   }
 
   .lg\:p-sp-12{

@@ -10,26 +10,26 @@
   }
   /* Default Section padding */
   .section {
-    @apply py-sp-10 px-sp-5;
+    @apply py-sp-14 px-sp-5;
     @screen md {
-      @apply py-sp-12;
+      @apply py-sp-14;
     }
     @screen lg {
       @apply py-sp-16 px-sp-10;
     }
     &-top {
-      @apply pt-sp-10 px-sp-5;
+      @apply pt-sp-14 px-sp-5;
       @screen md {
-        @apply pt-sp-12;
+        @apply pt-sp-14;
       }
       @screen lg {
         @apply pt-sp-16 px-sp-10;
       }
     }
     &-bottom {
-      @apply pb-sp-10 px-sp-5;
+      @apply pb-sp-14 px-sp-5;
       @screen md {
-        @apply pb-sp-12;
+        @apply pb-sp-14;
       }
       @screen lg {
         @apply pb-sp-16 px-sp-10;
@@ -152,9 +152,9 @@
       }
     }
     &-vertical {
-      @apply py-10;
+      @apply py-14;
       @screen md {
-        @apply py-sp-12;
+        @apply py-sp-14;
       }
       @screen lg {
         @apply py-sp-16;

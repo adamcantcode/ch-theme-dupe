@@ -9482,18 +9482,6 @@ var gsapWithCSS = _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin
 TweenMaxWithCSS = gsapWithCSS.core.Tween;
 
 
-/***/ }),
-
-/***/ "./blocks/scrolling-cta/index.css":
-/*!****************************************!*\
-  !*** ./blocks/scrolling-cta/index.css ***!
-  \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
 /***/ })
 
 /******/ 	});
@@ -9555,34 +9543,30 @@ __webpack_require__.r(__webpack_exports__);
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!***************************************!*\
-  !*** ./blocks/scrolling-cta/index.js ***!
-  \***************************************/
+/*!*****************************************!*\
+  !*** ./blocks/blue-full-cards/index.js ***!
+  \*****************************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ "./blocks/scrolling-cta/index.css");
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
-/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
 
 
-// GSAP
-
-
-gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger);
+gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
 window.addEventListener('DOMContentLoaded', () => {
-  // Bakground color change
-  let sectionBg = gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.timeline({
+  let gridItemStagger = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
     scrollTrigger: {
-      trigger: '.section-bg-js-cta',
-      start: 'top 70%',
-      endTrigger: '.pin-cta-js-motion',
-      end: 'top 50%',
-      scrub: true
+      trigger: '.approach-grid-js',
+      start: 'top 80%',
+      // markers: true,
+      // scrub: true,
+      duration: 3
     }
   });
-  sectionBg.fromTo('.section-bg-js', {
-    background: 'linear-gradient(180deg, rgba(247,245,241,1) 0%, rgba(143,146,205,0) 100%)'
-  }, {
-    background: 'linear-gradient(180deg,rgba(247,245,241,1) 0%, rgba(143,146,205,1) 100%)'
+  gridItemStagger.to('.grid-approach-items-js > div', {
+    autoAlpha: 1,
+    duration: 3,
+    stagger: 0.2,
+    ease: 'power4.out'
   });
 });
 })();

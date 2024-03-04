@@ -28,6 +28,9 @@ if ($style === 'value') {
 }
 if (!empty($block['backgroundColor'])) {
   $background = 'bg-' . $block['backgroundColor'];
+  if($background === 'bg-darker-blue') {
+    $blockClasses .= '[&_*]:text-white ';
+  }
 }
 $blockClasses .= $background . ' ';
 ?>
@@ -70,7 +73,7 @@ $blockClasses .= $background . ' ';
 <?php if ($style === 'full') : ?>
   <div class="lg:grid lg:grid-cols-2 justify-between rounded-md lg:p-sp-6 p-sp-4 items-center gap-sp-8 flex flex-col lg:flex-row <?= $blockClasses; ?>">
     <div>
-      <p class="text-h2 font-heading"><?= $heading; ?></p>
+      <p class="text-h2-base"><?= $heading; ?></p>
       <?php if ($subhead) : ?>
         <p class="mb-0 mt-sp-4"><?= $subhead; ?></p>
       <?php endif; ?>
