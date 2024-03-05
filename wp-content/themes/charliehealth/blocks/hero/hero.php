@@ -65,7 +65,7 @@ $icon           = get_field('hero_icon');
   </div>
 <?php endif; ?>
 <?php if ($style === 'insurance') : ?>
-  <div class="grid items-start lg:grid-cols-[7fr_1fr_4fr] gap-base5-4">
+  <div class="grid items-end lg:grid-cols-[7fr_1fr_4fr] gap-base5-4">
     <div>
       <h1><?= $title; ?></h1>
       <?php if ($subtitleEditor) : ?>
