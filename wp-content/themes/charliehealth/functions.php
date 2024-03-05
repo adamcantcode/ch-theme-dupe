@@ -575,7 +575,7 @@ function hide_menus_on_multisite()
     remove_menu_page('edit.php?post_type=research');
     remove_menu_page('edit.php?post_type=team-members');
     remove_menu_page('edit.php?post_type=treatment-modalities');
-    // remove_menu_page('edit.php?post_type=testimonial');
+    remove_menu_page('edit.php?post_type=insurance');
   } else {
     remove_menu_page('edit.php?post_type=region');
     remove_menu_page('edit.php?post_type=outreach-team-member');
@@ -631,6 +631,7 @@ function custom_menu_order($menu_ord)
     'edit.php?post_type=medical-reviewer', // Medical Reviewer
     'edit.php?post_type=areas-of-care', // Areas of Care
     'edit.php?post_type=treatment-modalities', // Treatment Modalities
+    'edit.php?post_type=insurance', // Insurance
     // 'edit.php?post_type=referral', // Referrals
     'edit.php?post_type=press', // Press
     'edit.php?post_type=team-members', // Team
