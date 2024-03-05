@@ -2145,6 +2145,10 @@ a.ch-button.button-tertiary.inverted:hover {
   max-width: 100%;
 }
 
+.max-w-\[300px\]{
+  max-width: 300px;
+}
+
 .flex-1{
   flex: 1 1 0%;
 }
@@ -2413,6 +2417,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .gap-sp-8{
   gap: 2rem;
+}
+
+.gap-base5-2{
+  gap: 10px;
 }
 
 .gap-x-4{
@@ -2925,6 +2933,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .p-sp-8{
   padding: 2rem;
+}
+
+.p-base5-6{
+  padding: 30px;
 }
 
 .px-3{
@@ -5209,6 +5221,10 @@ ul.alert li {
 
   .md\:max-w-\[430px\]{
     max-width: 430px;
+  }
+
+  .md\:max-w-\[300px\]{
+    max-width: 300px;
   }
 
   .md\:grid-cols-2{
