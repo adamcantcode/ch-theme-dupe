@@ -2069,6 +2069,10 @@ a.ch-button.button-tertiary.inverted:hover {
   width: 2rem;
 }
 
+.w-\[1\.5px\]{
+  width: 1.5px;
+}
+
 .min-w-0{
   min-width: 0px;
 }
@@ -2301,6 +2305,30 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .grid-cols-\[2fr_1fr\]{
   grid-template-columns: 2fr 1fr;
+}
+
+.grid-cols-\[1fr_1\.5px_1fr\]{
+  grid-template-columns: 1fr 1.5px 1fr;
+}
+
+.grid-cols-\[1_fr_\.5fr_1fr\]{
+  grid-template-columns: 1 fr .5fr 1fr;
+}
+
+.grid-cols-\[1_fr_0\.5fr_1fr\]{
+  grid-template-columns: 1 fr 0.5fr 1fr;
+}
+
+.grid-cols-\[1fr_0\.5fr_1fr\]{
+  grid-template-columns: 1fr 0.5fr 1fr;
+}
+
+.grid-cols-\[1fr_0\.5fr_1\.5fr\]{
+  grid-template-columns: 1fr 0.5fr 1.5fr;
+}
+
+.grid-cols-\[1fr_0\.75fr_1\.5fr\]{
+  grid-template-columns: 1fr 0.75fr 1.5fr;
 }
 
 .flex-row{
@@ -5727,6 +5755,18 @@ ul.alert li {
 
   .lg\:grid-cols-\[unset\]{
     grid-template-columns: unset;
+  }
+
+  .lg\:grid-cols-\[7f_5fr\]{
+    grid-template-columns: 7f 5fr;
+  }
+
+  .lg\:grid-cols-\[7fr_5fr\]{
+    grid-template-columns: 7fr 5fr;
+  }
+
+  .lg\:grid-cols-\[7fr_1fr_4fr\]{
+    grid-template-columns: 7fr 1fr 4fr;
   }
 
   .lg\:flex-row{
