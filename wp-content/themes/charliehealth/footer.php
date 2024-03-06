@@ -48,11 +48,11 @@
 							<script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/newsletter_blog_revamp"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/newsletter_blog_revamp" title="Online Form">Online Form - Newsletter - Blog Revamp</a></noscript>
 							<script>
 								var container = document.currentScript.parentNode; // Newsletter container
-								var elementToCut = container.querySelector("#fsSubmitButton5194985"); // Submit button
-								var destinationElement = container.querySelector("#fsCell140490700"); // Email container
+								var elementToCut = container.querySelector("#newsletterFooter #fsSubmitButton5194985"); // Submit button
+								var destinationElement = container.querySelector("#newsletterFooter #fsCell140490700"); // Email container
 								var newsletterID = container.id; // Newlsetter identifier
-								var newsletterLPField = container.querySelector('#field142799721'); // LP URL field
-								var newsletterIDField = container.querySelector('#field146376375'); // Type field
+								var newsletterLPField = container.querySelector('#newsletterFooter #field142799721'); // LP URL field
+								var newsletterIDField = container.querySelector('#newsletterFooter #field146376375'); // Type field
 								if (elementToCut && destinationElement) {
 									var clonedElement = elementToCut.cloneNode(true);
 									elementToCut.parentNode.removeChild(elementToCut);
@@ -60,6 +60,14 @@
 								}
 								newsletterIDField.value = newsletterID;
 								newsletterLPField.value = window.location.href;
+
+								document.querySelector('#newsletterFooter #field140490700').addEventListener('keydown', function(event) {
+									if (event.key === 'Enter') {
+										console.log('keydown');
+										document.querySelector('#newsletterFooter #fsSubmitButton5194985').click();
+									}
+								});
+
 								// Remove duplicate default formstack stlyes styles
 								const styles = document.querySelectorAll('footer style');
 								styles.forEach(style => {

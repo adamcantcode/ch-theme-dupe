@@ -258,11 +258,11 @@ $subhead = get_field('subhead', 'option');
           <script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/newsletter_blog_revamp"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/newsletter_blog_revamp" title="Online Form">Online Form - Newsletter - Blog Revamp</a></noscript>
           <script>
             var container = document.currentScript.parentNode; // Newsletter container
-            var elementToCut = container.querySelector("#fsSubmitButton5194985"); // Submit button
-            var destinationElement = container.querySelector("#fsCell140490700"); // Email container
+            var elementToCut = container.querySelector("#newsletterPopup #fsSubmitButton5194985"); // Submit button
+            var destinationElement = container.querySelector("#newsletterPopup #fsCell140490700"); // Email container
             var newsletterID = container.id; // Newlsetter identifier
-            var newsletterLPField = container.querySelector('#field142799721'); // LP URL field
-            var newsletterIDField = container.querySelector('#field146376375'); // Type field
+            var newsletterLPField = container.querySelector('#newsletterPopup #field142799721'); // LP URL field
+            var newsletterIDField = container.querySelector('#newsletterPopup #field146376375'); // Type field
 
             if (elementToCut && destinationElement) {
               var clonedElement = elementToCut.cloneNode(true);
@@ -272,6 +272,13 @@ $subhead = get_field('subhead', 'option');
 
             newsletterIDField.value = newsletterID;
             newsletterLPField.value = window.location.href;
+
+            document.querySelector('#newsletterPopup #field140490700').addEventListener('keydown', function(event) {
+              if (event.key === 'Enter') {
+                console.log('keydown');
+                document.querySelector('#newsletterPopup #fsSubmitButton5194985').click();
+              }
+            });
           </script>
         </div>
         <h5>You can unsubscribe anytime.</h5>
