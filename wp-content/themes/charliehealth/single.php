@@ -257,9 +257,7 @@ $subhead = get_field('subhead', 'option');
 </div>
 <div class="nlscript">
   <!-- <script>
-    console.log('run1');
     window.addEventListener('DOMContentLoaded', () => {
-      console.log('run');
       // Function to create a cookie
       function createCookie(name, value, days) {
         var expires = '';
@@ -289,7 +287,6 @@ $subhead = get_field('subhead', 'option');
   
       // Function to handle the scroll event
       function handleScroll() {
-        console.log('handle scroll');
         var scrollPosition =
           window.pageYOffset || document.documentElement.scrollTop;
         var windowHeight = window.innerHeight;
@@ -305,7 +302,6 @@ $subhead = get_field('subhead', 'option');
           createCookie('newsletter_popup', 'true', 1);
   
           modal.addEventListener('click', (event) => {
-            console.log(event.target.id === 'newsletterPopupBlogPost');
             if (event.target.id === 'newsletterPopupBlogPost') {
               modal.classList.toggle('modal-fade');
             }
