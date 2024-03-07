@@ -116,6 +116,7 @@ $group = get_field('group')
             $fullQuote = get_field('full_quote', $postID);
             $title     = get_field('title', $postID);
             $location  = get_field('location', $postID);
+            $insurance = get_field('location', $postID);
             $age       = get_field('age', $postID);
             $group     = get_the_terms($postID, 'testimonials-group')[0]->slug;
 
@@ -147,7 +148,7 @@ $group = get_field('group')
                 <p class="text-h3-base font-heading-serif">“<?= $pullQuote; ?>.”</p>
               <?php endif; ?>
               <p class="text-p-base"><?= $fullQuote; ?></p>
-              <p class="mb-0 text-p-base">—<?= $attribution; ?></p>
+              <p class="mb-0 text-p-base">—<?= $attribution; ?><?= $insurace ? ", $insurace member" : ''; ?></p>
               <?php if ($title) : ?>
                 <p class="mb-0 text-p-base"><?= $title; ?></p>
               <?php endif; ?>
