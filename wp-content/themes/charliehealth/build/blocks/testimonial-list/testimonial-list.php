@@ -112,13 +112,14 @@ $group = get_field('group')
             } else {
               $attribution = 'Charlie Health Alum';
             }
-            $pullQuote = get_field('pull-quote', $postID);
-            $fullQuote = get_field('full_quote', $postID);
-            $title     = get_field('title', $postID);
-            $location  = get_field('location', $postID);
-            $insurance = get_field('location', $postID);
-            $age       = get_field('age', $postID);
-            $group     = get_the_terms($postID, 'testimonials-group')[0]->slug;
+            $pullQuote     = get_field('pull-quote', $postID);
+            $fullQuote     = get_field('full_quote', $postID);
+            $title         = get_field('title', $postID);
+            $location      = get_field('location', $postID);
+            $showInsurance = get_field('display_insurance', $postID);
+            $insurance     = get_field('insurance', $postID);
+            $age           = get_field('age', $postID);
+            $group         = get_the_terms($postID, 'testimonials-group')[0]->slug;
 
             switch ($group) {
               case 'young-adult':
@@ -148,7 +149,11 @@ $group = get_field('group')
                 <p class="text-h3-base font-heading-serif">“<?= $pullQuote; ?>.”</p>
               <?php endif; ?>
               <p class="text-p-base"><?= $fullQuote; ?></p>
-              <p class="mb-0 text-p-base">—<?= $attribution; ?><?= $insurace ? ", $insurace member" : ''; ?></p>
+              <?php if ($showInsurance) : ?>
+                <p class="mb-0 text-p-base">—<?= $attribution; ?>, <?= $insurance; ?> member</p>
+                <?php else : ?>
+                  <p class="mb-0 text-p-base">—<?= $attribution; ?></p>
+              <?php endif; ?>
               <?php if ($title) : ?>
                 <p class="mb-0 text-p-base"><?= $title; ?></p>
               <?php endif; ?>

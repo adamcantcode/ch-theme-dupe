@@ -158,6 +158,34 @@
             "min": 3,
             "max": "",
             "elements": ""
+        },
+        {
+            "key": "field_65ea0adde8b17",
+            "label": "Display insurance",
+            "name": "display_insurance",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_64b80249ab929",
+                        "operator": "==",
+                        "value": "custom"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -178,5 +206,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1692290839
+    "modified": 1709837057
 }
