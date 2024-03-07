@@ -240,6 +240,13 @@
                 "operator": "==",
                 "value": "acf\/testimonials-careers-block"
             }
+        ],
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/testimonials-slider-block"
+            }
         ]
     ],
     "menu_order": 0,
@@ -251,5 +258,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1704494711
+    "modified": 1709843168
 }
