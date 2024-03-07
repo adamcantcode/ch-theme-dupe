@@ -95,6 +95,7 @@ $group = get_field('group')
   <?php else :
   $customPosts = get_field('testimonials');
   $slideNum = 0;
+  $showInsurance = get_field('display_insurance', $postID);
   if ($customPosts) : ?>
     <div class="relative">
       <?php if (count($customPosts) <= 3) : ?>
@@ -116,7 +117,6 @@ $group = get_field('group')
             $fullQuote     = get_field('full_quote', $postID);
             $title         = get_field('title', $postID);
             $location      = get_field('location', $postID);
-            $showInsurance = get_field('display_insurance', $postID);
             $insurance     = get_field('insurance', $postID);
             $age           = get_field('age', $postID);
             $group         = get_the_terms($postID, 'testimonials-group')[0]->slug;
@@ -149,7 +149,7 @@ $group = get_field('group')
                 <p class="text-h3-base font-heading-serif">“<?= $pullQuote; ?>.”</p>
               <?php endif; ?>
               <p class="text-p-base"><?= $fullQuote; ?></p>
-              <?php if ($showInsurance) : ?>
+              <?php if ($showInsurance && $insurance) : ?>
                 <p class="mb-0 text-p-base">—<?= $attribution; ?>, <?= $insurance; ?> member</p>
                 <?php else : ?>
                   <p class="mb-0 text-p-base">—<?= $attribution; ?></p>
