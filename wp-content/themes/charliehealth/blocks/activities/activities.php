@@ -186,6 +186,8 @@
 <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 <script>
   window.addEventListener('DOMContentLoaded', () => {
+    const loadMoreButton = document.querySelector('.load-more-js');
+
     // Isotope settings
     const grid = document.querySelector('.grid-test');
     const iso = new Isotope(grid, {
@@ -248,10 +250,22 @@
 
       // Log the filtered elements to the console
       if (filteredElements.length < 6) {
-        document.querySelector('.load-more-js').classList.add('noshow');
+        loadMoreButton.classList.add('noshow');
       } else {
-        document.querySelector('.load-more-js').classList.remove('noshow');
+        loadMoreButton.classList.remove('noshow');
       }
     });
+    loadMoreButton.addEventListener('click', () => {
+      const loadMoreItems = itemsAll.filter(item => {
+        return item.classList.contains('noshow');
+      })
+      loadMoreItems.slice(0, 6).forEach(item => {
+        item.classList.remove('noshow');
+        iso.arrange();
+        if (loadMoreItems.length < 1) {
+          loadMoreButton.classList.add('noshow');
+        }
+      });
+    })
   });
 </script>
