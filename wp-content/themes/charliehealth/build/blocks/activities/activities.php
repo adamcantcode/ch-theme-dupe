@@ -5,7 +5,7 @@
     <button data-filter=".thing2">thing2</button>
     <button data-filter=".thing3">thing3</button>
   </div>
-  <div class="min-h-screen">
+  <div class="">
     <div class="flex grid-test">
       <div class="w-full grid-sizer lg:w-[calc(33.33%_-_13px)]"></div>
       <div class="relative w-full bg-white rounded-lg group grid-item thing lg:w-[calc(33.33%_-_13px)]">
@@ -178,14 +178,17 @@
       </div>
     </div>
   </div>
+  <div class="grid justify-end">
+    <a role="button" class="w-full ch-button button-primary justify-self-center lg:w-auto load-more-js">Load more</a>
+  </div>
 </section>
 
 <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     // Isotope settings
-    var grid = document.querySelector('.grid-test');
-    var iso = new Isotope(grid, {
+    const grid = document.querySelector('.grid-test');
+    const iso = new Isotope(grid, {
       initLayout: false, // Don't initialize to start
       columnWidth: '.grid-sizer',
       layoutMode: 'masonry',
@@ -195,7 +198,7 @@
     });
 
     // Initial state
-    var itemsAll = iso.getItemElements();
+    const itemsAll = iso.getItemElements();
     // Hide after 6
     itemsAll.forEach((item, index) => {
       if (index > 6) {
@@ -206,12 +209,12 @@
     iso.arrange();
 
     // Filter
-    var filterButtonGroup = document.querySelector('.filter-button-group');
+    const filterButtonGroup = document.querySelector('.filter-button-group');
     filterButtonGroup.addEventListener('click', function(event) {
       // Check if the clicked element is a button
       if (event.target.tagName === 'BUTTON') {
         // Get the filter value from the data-filter attribute
-        var filterValue = event.target.getAttribute('data-filter');
+        const filterValue = event.target.getAttribute('data-filter');
 
         // Update Isotope with the new filter
         iso.arrange({
@@ -219,27 +222,36 @@
         });
       }
 
-      // Handle visiblity due to load more
-      console.log('test');
-      var itemsAll = iso.getItemElements()
-      var itemsFilters = iso.getFilteredItemElements();
+      // Handle visibility due to load more
+      const itemsAll = iso.getItemElements();
+      const itemsFilters = iso.getFilteredItemElements();
 
       // Unhide all
       itemsAll.forEach(item => {
         item.classList.remove('active', 'noshow');
-        console.log(item + 'unhide');
       });
 
       // Hide after 6
       itemsFilters.forEach((item, index) => {
         item.classList.add('active');
-        console.log(item + 'active');
         if (index > 6) {
           item.classList.add('noshow');
-          console.log(item + 'hide');
         }
       });
-      iso.arrange()
+      iso.arrange();
+      // Load more
+      // Check if more than 5 active and visible
+      // Get all items
+      const filteredElements = itemsAll.filter(element => {
+        return element.classList.contains('active');
+      });
+
+      // Log the filtered elements to the console
+      if (filteredElements.length < 6) {
+        document.querySelector('.load-more-js').classList.add('noshow');
+      } else {
+        document.querySelector('.load-more-js').classList.remove('noshow');
+      }
     });
   });
 </script>
