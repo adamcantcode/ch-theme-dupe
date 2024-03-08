@@ -15,7 +15,7 @@
   <div>
     <div class="flex grid-test">
       <div class="w-full grid-sizer lg:w-[calc(33.33%_-_13px)]"></div>
-      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing lg:w-[calc(33.33%_-_13px)]">
+      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing type lg:w-[calc(33.33%_-_13px)]">
         <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
           <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
         </div>
@@ -48,10 +48,10 @@
         </div>
         <div class="grid bg-white rounded-b-lg p-sp-4">
           <h3 class="text-h4-base"><a href="#" class="block stretched-link">ONE</a></h3>
-          <p>TYPE</p>
+          <p>TYPE TWO</p>
         </div>
       </div>
-      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing2 lg:w-[calc(33.33%_-_13px)]">
+      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing2 type2 lg:w-[calc(33.33%_-_13px)]">
         <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
           <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
         </div>
@@ -232,10 +232,16 @@
         typeFilters = ['*'];
       }
 
-      console.log(typeFilters);
+      // Generate all possible combinations of topics and types
+      const combinedFilters = [];
+      topicFilters.forEach(topic => {
+        typeFilters.forEach(type => {
+          combinedFilters.push(`${topic}${type}`);
+        });
+      });
 
-      // Now use topicFilters and typeFilters to create the combined filter
-      const combinedFilter = `${topicFilters.join(',')}${typeFilters.join(',')}`;
+      // Now use combinedFilters to create the final combined filter
+      const combinedFilter = combinedFilters.join(',');
 
       console.log(combinedFilter);
 
