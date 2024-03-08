@@ -25,7 +25,7 @@
       }
       // $date = get_field('date');
   ?>
-      <div class="relative rounded-[6px] overflow-hidden bg-white group not-loaded noshow opacity-0 child-posts-js transition-all duration-500 border border-primary">
+      <div class="relative rounded-[6px] overflow-hidden bg-white group not-loaded child-posts-js transition-all duration-500 border border-primary <?= is_admin() ? '' : 'noshow opacity-0'; ?>">
         <div class="h-[170px] relative overflow-hidden">
           <img src="<?= $featuredImageUrl ?: placeHolderImage(); ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover object-top w-full h-full transition-all duration-300 bg-cover group-hover:scale-105">
         </div>
@@ -38,9 +38,11 @@
   endif;
   ?>
 </div>
-<div class="flex">
-  <a role="button" class="w-full ml-auto ch-button button-primary justify-self-center lg:w-auto child-load-more-js lg:mt-sp-10 mt-sp-5 mb-sp-5 lg:mb-0">Load more</a>
-</div>
+<?php if (!is_admin()) : ?>
+  <div class="flex">
+    <a role="button" class="w-full ml-auto ch-button button-primary justify-self-center lg:w-auto child-load-more-js lg:mt-sp-10 mt-sp-5 mb-sp-5 lg:mb-0">Load more</a>
+  </div>
+<?php endif; ?>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const loadMoreChildPages = document.querySelector('.child-load-more-js');
