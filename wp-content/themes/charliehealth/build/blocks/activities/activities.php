@@ -199,6 +199,7 @@
     // Isotope settings
     const grid = document.querySelector('.grid-test');
     const iso = new Isotope(grid, {
+      itemSelector: '.grid-item',
       initLayout: false, // Don't initialize to start
       columnWidth: '.grid-sizer',
       layoutMode: 'masonry',
@@ -253,7 +254,14 @@
       const searchValue = searchInput.value.toLowerCase();
 
       iso.arrange({
-        filter: itemElement => itemElement.textContent.toLowerCase().includes(searchValue)
+        filter: function(itemElement) {
+          const textContentElement = document.querySelector('.grid-item h3 a');
+          if (textContentElement) {
+            const textContent = textContentElement.textContent.toLowerCase();
+            return textContent.includes(searchValue);
+          }
+          return false; // Return false if the text content element is not found
+        }
       });
 
       // Handle visibility due to load more
