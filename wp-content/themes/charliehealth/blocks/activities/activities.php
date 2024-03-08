@@ -1,9 +1,16 @@
 <section class="section bg-grey-warm">
   <div class="button-group filter-button-group">
-    <label><input type="checkbox" value="*" />All</label>
-    <label><input type="checkbox" value=".thing" />Thing</label>
-    <label><input type="checkbox" value=".thing2" />Thing Two</label>
-    <label><input type="checkbox" value=".thing3" />Thing Three</label>
+    <!-- <label><input type="checkbox" value="*" class="topic-filter" />All</label> -->
+    <label><input type="checkbox" value=".thing" class="topic-filter" />Thing</label>
+    <label><input type="checkbox" value=".thing2" class="topic-filter" />Thing Two</label>
+    <label><input type="checkbox" value=".thing3" class="topic-filter" />Thing Three</label>
+    <!-- <label><input type="checkbox" value="*" class="type-filter" />All</label> -->
+    <label><input type="checkbox" value=".type" class="type-filter" />Type</label>
+    <label><input type="checkbox" value=".type2" class="type-filter" />Type Two</label>
+    <label><input type="checkbox" value=".type3" class="type-filter" />Type Three</label>
+  </div>
+  <div>
+    <input type="text" class="search-input" />
   </div>
   <div>
     <div class="flex grid-test">
@@ -13,14 +20,14 @@
           <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
         </div>
         <div class="absolute rounded-t-lg top-sp-4 left-sp-4">
-          <a href"#" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base">TOPIC</a>
+          <a href"#" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base">type</a>
         </div>
         <div class="grid bg-white rounded-b-lg p-sp-4">
           <h3 class="text-h4-base"><a href="#" class="block stretched-link">ONE</a></h3>
           <p>TYPE</p>
         </div>
       </div>
-      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing lg:w-[calc(33.33%_-_13px)]">
+      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing type lg:w-[calc(33.33%_-_13px)]">
         <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
           <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
         </div>
@@ -32,7 +39,7 @@
           <p>TYPE</p>
         </div>
       </div>
-      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing lg:w-[calc(33.33%_-_13px)]">
+      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing type2 lg:w-[calc(33.33%_-_13px)]">
         <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
           <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
         </div>
@@ -187,6 +194,7 @@
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     const loadMoreButton = document.querySelector('.load-more-js');
+    const searchInput = document.querySelector('.search-input');
 
     // Isotope settings
     const grid = document.querySelector('.grid-test');
@@ -212,17 +220,29 @@
 
     // Filter
     const filterButtonGroup = document.querySelector('.filter-button-group');
-    filterButtonGroup.addEventListener('click', function(event) {
-      // Check if the clicked element is a button
-      if (event.target.type === 'checkbox') {
-        // Get the filter value from the data-filter attribute
-        const filterValue = event.target.value;
+    filterButtonGroup.addEventListener('change', function(event) {
+      var topicFilters = Array.from(document.querySelectorAll('.topic-filter:checked')).map(input => input.value);
+      var typeFilters = Array.from(document.querySelectorAll('.type-filter:checked')).map(input => input.value);
 
-        // Update Isotope with the new filter
-        iso.arrange({
-          filter: filterValue
-        });
+      if (topicFilters.length === 0) {
+        topicFilters = ['*'];
       }
+
+      if (typeFilters.length === 0) {
+        typeFilters = ['*'];
+      }
+
+      console.log(typeFilters);
+
+      // Now use topicFilters and typeFilters to create the combined filter
+      const combinedFilter = `${topicFilters.join(',')}${typeFilters.join(',')}`;
+
+      console.log(combinedFilter);
+
+      // Update Isotope with the new filter
+      iso.arrange({
+        filter: combinedFilter
+      });
 
       // Handle visibility due to load more
       const itemsAll = iso.getItemElements();
@@ -241,12 +261,12 @@
         }
       });
       iso.arrange();
-      
+
       // Load more
       const filteredElements = itemsAll.filter(element => {
         return element.classList.contains('active');
       });
-      
+
       // Check if more than 5 active and visible
       if (filteredElements.length < 6) {
         loadMoreButton.classList.add('noshow');
@@ -254,6 +274,49 @@
         loadMoreButton.classList.remove('noshow');
       }
     });
+
+    // Search
+    searchInput.addEventListener('input', function() {
+      const searchValue = searchInput.value.toLowerCase();
+
+      iso.arrange({
+        filter: function(itemElement) {
+          const textContent = itemElement.textContent.toLowerCase();
+          return textContent.includes(searchValue);
+        }
+      });
+
+      // Handle visibility due to load more
+      const itemsAll = iso.getItemElements();
+      const itemsFilters = iso.getFilteredItemElements();
+
+      // Unhide all
+      itemsAll.forEach(item => {
+        item.classList.remove('active', 'noshow');
+      });
+
+      // Hide after 6
+      itemsFilters.forEach((item, index) => {
+        item.classList.add('active');
+        if (index > 6) {
+          item.classList.add('noshow');
+        }
+      });
+      iso.arrange();
+
+      // Load more
+      const filteredElements = itemsAll.filter(element => {
+        return element.classList.contains('active');
+      });
+
+      // Check if more than 5 active and visible
+      if (filteredElements.length < 6) {
+        loadMoreButton.classList.add('noshow');
+      } else {
+        loadMoreButton.classList.remove('noshow');
+      }
+    });
+
     loadMoreButton.addEventListener('click', () => {
       const loadMoreItems = itemsAll.filter(item => {
         return item.classList.contains('noshow');
@@ -265,6 +328,6 @@
           loadMoreButton.classList.add('noshow');
         }
       });
-    })
+    });
   });
 </script>
