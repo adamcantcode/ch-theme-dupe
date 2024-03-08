@@ -192,7 +192,7 @@
 
 <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 <script>
-  window.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', () => {
     const loadMoreButton = document.querySelector('.load-more-js');
     const searchInput = document.querySelector('.search-input');
 
@@ -209,36 +209,33 @@
 
     // Initial state
     const itemsAll = iso.getItemElements();
+
     // Hide after 6
     itemsAll.forEach((item, index) => {
       if (index > 6) {
         item.classList.add('noshow');
       }
     });
+
     // Initialize
     iso.arrange();
 
     // Filter
     const filterButtonGroup = document.querySelector('.filter-button-group');
-    filterButtonGroup.addEventListener('change', function(event) {
-      var topicFilters = Array.from(document.querySelectorAll('.topic-filter:checked')).map(input => input.value);
-      var typeFilters = Array.from(document.querySelectorAll('.type-filter:checked')).map(input => input.value);
+    filterButtonGroup.addEventListener('change', updateFilter);
 
-      if (topicFilters.length === 0) {
-        topicFilters = ['*'];
-      }
+    // Search
+    searchInput.addEventListener('input', updateSearch);
 
-      if (typeFilters.length === 0) {
-        typeFilters = ['*'];
-      }
+    // Load more
+    loadMoreButton.addEventListener('click', loadMoreItems);
+
+    function updateFilter() {
+      const topicFilters = getCheckedValues('.topic-filter');
+      const typeFilters = getCheckedValues('.type-filter');
 
       // Generate all possible combinations of topics and types
-      const combinedFilters = [];
-      topicFilters.forEach(topic => {
-        typeFilters.forEach(type => {
-          combinedFilters.push(`${topic}${type}`);
-        });
-      });
+      const combinedFilters = generateCombinedFilters(topicFilters, typeFilters);
 
       // Now use combinedFilters to create the final combined filter
       const combinedFilter = combinedFilters.join(',');
@@ -249,92 +246,78 @@
       });
 
       // Handle visibility due to load more
-      const itemsAll = iso.getItemElements();
-      const itemsFilters = iso.getFilteredItemElements();
+      handleVisibilityAfterFilter();
+    }
 
-      // Unhide all
-      itemsAll.forEach(item => {
-        item.classList.remove('active', 'noshow');
-      });
-
-      // Hide after 6
-      itemsFilters.forEach((item, index) => {
-        item.classList.add('active');
-        if (index > 5) {
-          item.classList.add('noshow');
-        }
-      });
-      iso.arrange();
-
-      // Load more
-      const filteredElements = itemsAll.filter(element => {
-        return element.classList.contains('active');
-      });
-
-      // Check if more than 5 active and visible
-      if (filteredElements.length < 6) {
-        loadMoreButton.classList.add('noshow');
-      } else {
-        loadMoreButton.classList.remove('noshow');
-      }
-    });
-
-    // Search
-    searchInput.addEventListener('input', function() {
+    function updateSearch() {
       const searchValue = searchInput.value.toLowerCase();
 
       iso.arrange({
-        filter: function(itemElement) {
-          const textContent = itemElement.textContent.toLowerCase();
-          return textContent.includes(searchValue);
-        }
+        filter: itemElement => itemElement.textContent.toLowerCase().includes(searchValue)
       });
 
       // Handle visibility due to load more
-      const itemsAll = iso.getItemElements();
-      const itemsFilters = iso.getFilteredItemElements();
+      handleVisibilityAfterFilter();
+    }
 
-      // Unhide all
-      itemsAll.forEach(item => {
-        item.classList.remove('active', 'noshow');
-      });
-
-      // Hide after 6
-      itemsFilters.forEach((item, index) => {
-        item.classList.add('active');
-        if (index > 5) {
-          item.classList.add('noshow');
-        }
-      });
-      iso.arrange();
-
-      // Load more
-      const filteredElements = itemsAll.filter(element => {
-        return element.classList.contains('active');
-      });
-
-      // Check if more than 5 active and visible
-      if (filteredElements.length < 6) {
-        loadMoreButton.classList.add('noshow');
-      } else {
-        loadMoreButton.classList.remove('noshow');
-      }
-    });
-
-    loadMoreButton.addEventListener('click', () => {
-      const loadMoreItems = itemsAll.filter(item => {
-        return item.classList.contains('noshow');
-      })
+    function loadMoreItems() {
+      const loadMoreItems = itemsAll.filter(item => item.classList.contains('noshow'));
       loadMoreItems.slice(0, 6).forEach(item => {
         item.classList.remove('noshow');
         iso.arrange();
       });
-      const loadMoreItemsAgain = itemsAll.filter(item => {
-        return item.classList.contains('noshow');
-      })
-      if (loadMoreItemsAgain.length < 1) {
+
+      if (itemsAll.filter(item => item.classList.contains('noshow')).length < 1) {
         loadMoreButton.classList.add('noshow');
       }
-    });
+    }
+
+    function getCheckedValues(selector) {
+      return Array.from(document.querySelectorAll(`${selector}:checked`)).map(input => input.value);
+    }
+
+    function generateCombinedFilters(topicFilters, typeFilters) {
+      if (topicFilters.length === 0) {
+        topicFilters = ['*'];
+      }
+
+      if (typeFilters.length === 0) {
+        typeFilters = ['*'];
+      }
+
+      const combinedFilters = [];
+      topicFilters.forEach(topic => {
+        typeFilters.forEach(type => {
+          combinedFilters.push(`${topic}${type}`);
+        });
+      });
+
+      return combinedFilters;
+    }
+
+    function handleVisibilityAfterFilter() {
+      const itemsFilters = iso.getFilteredItemElements();
+
+      // Unhide all
+      itemsAll.forEach(item => {
+        item.classList.remove('active', 'noshow');
+      });
+
+      // Hide after 6
+      itemsFilters.forEach((item, index) => {
+        item.classList.add('active');
+        if (index > 5) {
+          item.classList.add('noshow');
+        }
+      });
+
+      iso.arrange();
+
+      // Load more
+      const filteredElements = itemsAll.filter(element => element.classList.contains('active'));
+
+      // Check if more than 5 active and visible
+      loadMoreButton.classList.toggle('noshow', filteredElements.length < 6);
+    }
   });
 </script>
