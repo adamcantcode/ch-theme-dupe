@@ -2616,6 +2616,11 @@ a.ch-button.button-tertiary.inverted:hover {
   border-style: none;
 }
 
+.border-\[\#CFCFD7\]{
+  --tw-border-opacity: 1;
+  border-color: rgb(207 207 215 / var(--tw-border-opacity));
+}
+
 .border-card-border{
   --tw-border-opacity: 1;
   border-color: rgb(212 213 220 / var(--tw-border-opacity));
