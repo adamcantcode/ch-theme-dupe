@@ -1,14 +1,14 @@
 <section class="section bg-grey-warm">
   <div class="button-group filter-button-group">
-    <button data-filter="*">show all</button>
-    <button data-filter=".thing">thing</button>
-    <button data-filter=".thing2">thing2</button>
-    <button data-filter=".thing3">thing3</button>
+    <label><input type="checkbox" value="*" />All</label>
+    <label><input type="checkbox" value=".thing" />Thing</label>
+    <label><input type="checkbox" value=".thing2" />Thing Two</label>
+    <label><input type="checkbox" value=".thing3" />Thing Three</label>
   </div>
-  <div class="">
+  <div>
     <div class="flex grid-test">
       <div class="w-full grid-sizer lg:w-[calc(33.33%_-_13px)]"></div>
-      <div class="relative w-full bg-white rounded-lg group grid-item thing lg:w-[calc(33.33%_-_13px)]">
+      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing lg:w-[calc(33.33%_-_13px)]">
         <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
           <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
         </div>
@@ -20,7 +20,7 @@
           <p>TYPE</p>
         </div>
       </div>
-      <div class="relative w-full bg-white rounded-lg group grid-item thing lg:w-[calc(33.33%_-_13px)]">
+      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing lg:w-[calc(33.33%_-_13px)]">
         <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
           <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
         </div>
@@ -32,7 +32,7 @@
           <p>TYPE</p>
         </div>
       </div>
-      <div class="relative w-full bg-white rounded-lg group grid-item thing lg:w-[calc(33.33%_-_13px)]">
+      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing lg:w-[calc(33.33%_-_13px)]">
         <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
           <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
         </div>
@@ -44,7 +44,7 @@
           <p>TYPE</p>
         </div>
       </div>
-      <div class="relative w-full bg-white rounded-lg group grid-item thing2 lg:w-[calc(33.33%_-_13px)]">
+      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing2 lg:w-[calc(33.33%_-_13px)]">
         <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
           <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
         </div>
@@ -56,7 +56,7 @@
           <p>TYPE</p>
         </div>
       </div>
-      <div class="relative w-full bg-white rounded-lg group grid-item thing2 lg:w-[calc(33.33%_-_13px)]">
+      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing2 lg:w-[calc(33.33%_-_13px)]">
         <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
           <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
         </div>
@@ -68,7 +68,7 @@
           <p>TYPE</p>
         </div>
       </div>
-      <div class="relative w-full bg-white rounded-lg group grid-item thing2 lg:w-[calc(33.33%_-_13px)]">
+      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing2 lg:w-[calc(33.33%_-_13px)]">
         <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
           <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
         </div>
@@ -80,7 +80,7 @@
           <p>TYPE</p>
         </div>
       </div>
-      <div class="relative w-full bg-white rounded-lg group grid-item thing3 lg:w-[calc(33.33%_-_13px)]">
+      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing3 lg:w-[calc(33.33%_-_13px)]">
         <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
           <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
         </div>
@@ -92,7 +92,7 @@
           <p>TYPE</p>
         </div>
       </div>
-      <div class="relative w-full bg-white rounded-lg group grid-item thing3 lg:w-[calc(33.33%_-_13px)]">
+      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing3 lg:w-[calc(33.33%_-_13px)]">
         <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
           <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
         </div>
@@ -104,7 +104,7 @@
           <p>TYPE</p>
         </div>
       </div>
-      <div class="relative w-full bg-white rounded-lg group grid-item thing3 lg:w-[calc(33.33%_-_13px)]">
+      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing3 lg:w-[calc(33.33%_-_13px)]">
         <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
           <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
         </div>
@@ -116,7 +116,7 @@
           <p>TYPE</p>
         </div>
       </div>
-      <div class="relative w-full bg-white rounded-lg group grid-item thing lg:w-[calc(33.33%_-_13px)]">
+      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing lg:w-[calc(33.33%_-_13px)]">
         <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
           <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
         </div>
@@ -128,7 +128,7 @@
           <p>TYPE</p>
         </div>
       </div>
-      <div class="relative w-full bg-white rounded-lg group grid-item thing lg:w-[calc(33.33%_-_13px)]">
+      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing lg:w-[calc(33.33%_-_13px)]">
         <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
           <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
         </div>
@@ -140,7 +140,7 @@
           <p>TYPE</p>
         </div>
       </div>
-      <div class="relative w-full bg-white rounded-lg group grid-item thing2 lg:w-[calc(33.33%_-_13px)]">
+      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing2 lg:w-[calc(33.33%_-_13px)]">
         <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
           <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
         </div>
@@ -152,7 +152,7 @@
           <p>TYPE</p>
         </div>
       </div>
-      <div class="relative w-full bg-white rounded-lg group grid-item thing2 lg:w-[calc(33.33%_-_13px)]">
+      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing2 lg:w-[calc(33.33%_-_13px)]">
         <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
           <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
         </div>
@@ -164,7 +164,7 @@
           <p>TYPE</p>
         </div>
       </div>
-      <div class="relative w-full bg-white rounded-lg group grid-item thing3 lg:w-[calc(33.33%_-_13px)]">
+      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing3 lg:w-[calc(33.33%_-_13px)]">
         <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
           <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
         </div>
@@ -214,9 +214,9 @@
     const filterButtonGroup = document.querySelector('.filter-button-group');
     filterButtonGroup.addEventListener('click', function(event) {
       // Check if the clicked element is a button
-      if (event.target.tagName === 'BUTTON') {
+      if (event.target.type === 'checkbox') {
         // Get the filter value from the data-filter attribute
-        const filterValue = event.target.getAttribute('data-filter');
+        const filterValue = event.target.value;
 
         // Update Isotope with the new filter
         iso.arrange({
@@ -241,14 +241,13 @@
         }
       });
       iso.arrange();
+      
       // Load more
-      // Check if more than 5 active and visible
-      // Get all items
       const filteredElements = itemsAll.filter(element => {
         return element.classList.contains('active');
       });
-
-      // Log the filtered elements to the console
+      
+      // Check if more than 5 active and visible
       if (filteredElements.length < 6) {
         loadMoreButton.classList.add('noshow');
       } else {
