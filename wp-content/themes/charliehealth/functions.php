@@ -136,7 +136,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/job-board-peek');
   register_block_type(__DIR__ . '/build/blocks/check-list-items');
   register_block_type(__DIR__ . '/build/blocks/blue-full-cards');
-  register_block_type(__DIR__ . '/build/blocks/child-pages-cards');
+  register_block_type(__DIR__ . '/build/blocks/child-pages');
 }
 add_action('init', 'register_acf_blocks', 5);
 
