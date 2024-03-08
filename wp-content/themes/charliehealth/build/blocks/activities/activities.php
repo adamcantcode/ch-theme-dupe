@@ -243,8 +243,6 @@
       // Now use combinedFilters to create the final combined filter
       const combinedFilter = combinedFilters.join(',');
 
-      console.log(combinedFilter);
-
       // Update Isotope with the new filter
       iso.arrange({
         filter: combinedFilter
@@ -262,7 +260,7 @@
       // Hide after 6
       itemsFilters.forEach((item, index) => {
         item.classList.add('active');
-        if (index > 6) {
+        if (index > 5) {
           item.classList.add('noshow');
         }
       });
@@ -304,7 +302,7 @@
       // Hide after 6
       itemsFilters.forEach((item, index) => {
         item.classList.add('active');
-        if (index > 6) {
+        if (index > 5) {
           item.classList.add('noshow');
         }
       });
@@ -330,10 +328,13 @@
       loadMoreItems.slice(0, 6).forEach(item => {
         item.classList.remove('noshow');
         iso.arrange();
-        if (loadMoreItems.length < 1) {
-          loadMoreButton.classList.add('noshow');
-        }
       });
+      const loadMoreItemsAgain = itemsAll.filter(item => {
+        return item.classList.contains('noshow');
+      })
+      if (loadMoreItemsAgain.length < 1) {
+        loadMoreButton.classList.add('noshow');
+      }
     });
   });
 </script>
