@@ -179,7 +179,7 @@
           <a href"#" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base">TOPIC</a>
         </div>
         <div class="grid bg-white rounded-b-lg p-sp-4">
-          <h3 class="text-h4-base"><a href="#" class="block stretched-link">THREE</a></h3>
+          <h3 class="text-h4-base"><a href="#" class="block stretched-link">zv</a></h3>
           <p>TYPE</p>
         </div>
       </div>
@@ -251,9 +251,19 @@
     }
 
     function updateSearch() {
+      console.log('run');
+      updateFilter();
       const searchValue = searchInput.value.trim().toLowerCase();
       const data = Isotope.data(grid);
-      const currentFilteredItems = data.filteredItems;
+      var currentFilteredItems = data.filteredItems;
+
+      if (searchValue === '') {
+        // If the search input is empty, reset the filter to show all items
+        updateFilter();
+        return;
+      }
+
+      console.log(currentFilteredItems);
 
       iso.arrange({
         filter: function() {
@@ -264,7 +274,10 @@
           // Check if item matches the current filter
           const matchesCurrentFilter = currentFilteredItems.some(item => item.element === itemElem);
 
-          // Check if item matches the search query
+          if (!matchesCurrentFilter) {
+            return false; // Skip items not matching the current filter
+          }
+
           searchableElements.forEach(searchableElement => {
             const text = searchableElement.textContent.toLowerCase();
             if (text.includes(searchValue)) {
@@ -273,7 +286,7 @@
             }
           });
 
-          return matchesCurrentFilter && match;
+          return match;
         }
       });
 
