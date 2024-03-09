@@ -203,6 +203,8 @@
       initLayout: false, // Don't initialize to start
       columnWidth: '.grid-sizer',
       layoutMode: 'masonry',
+      stagger: 50,
+      transitionDuration: 300,
       masonry: {
         gutter: 20
       }
@@ -213,7 +215,7 @@
 
     // Hide after 6
     itemsAll.forEach((item, index) => {
-      if (index > 6) {
+      if (index > 5) {
         item.classList.add('noshow');
       }
     });
@@ -255,7 +257,7 @@
       updateFilter();
       const searchValue = searchInput.value.trim().toLowerCase();
       const data = Isotope.data(grid);
-      var currentFilteredItems = data.filteredItems;
+      const currentFilteredItems = data.filteredItems;
 
       if (searchValue === '') {
         // If the search input is empty, reset the filter to show all items
