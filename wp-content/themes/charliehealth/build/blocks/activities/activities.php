@@ -47,7 +47,7 @@
           <a href"#" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base">TOPIC</a>
         </div>
         <div class="grid bg-white rounded-b-lg p-sp-4">
-          <h3 class="text-h4-base"><a href="#" class="block stretched-link">ONE</a></h3>
+          <h3 class="text-h4-base"><a href="#" class="block stretched-link">ONE tesing</a></h3>
           <p>TYPE TWO</p>
         </div>
       </div>
@@ -252,12 +252,19 @@
 
     function updateSearch() {
       const searchValue = searchInput.value.trim().toLowerCase();
+      const data = Isotope.data(grid);
+      const currentFilteredItems = data.filteredItems;
+
       iso.arrange({
         filter: function() {
           const itemElem = this;
-          console.log(itemElem);
           const searchableElements = itemElem.querySelectorAll('h3 a');
           let match = false;
+
+          // Check if item matches the current filter
+          const matchesCurrentFilter = currentFilteredItems.some(item => item.element === itemElem);
+
+          // Check if item matches the search query
           searchableElements.forEach(searchableElement => {
             const text = searchableElement.textContent.toLowerCase();
             if (text.includes(searchValue)) {
@@ -265,9 +272,11 @@
               return; // Exit loop on first match
             }
           });
-          return match;
+
+          return matchesCurrentFilter && match;
         }
       });
+
       handleVisibilityAfterFilter();
     }
 
