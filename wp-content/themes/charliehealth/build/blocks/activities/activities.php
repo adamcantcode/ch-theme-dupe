@@ -251,20 +251,23 @@
     }
 
     function updateSearch() {
-      const searchValue = searchInput.value.toLowerCase();
-
+      const searchValue = searchInput.value.trim().toLowerCase();
       iso.arrange({
-        filter: function(itemElement) {
-          const textContentElement = document.querySelector('.grid-item h3 a');
-          if (textContentElement) {
-            const textContent = textContentElement.textContent.toLowerCase();
-            return textContent.includes(searchValue);
-          }
-          return false; // Return false if the text content element is not found
+        filter: function() {
+          const itemElem = this;
+          console.log(itemElem);
+          const searchableElements = itemElem.querySelectorAll('h3 a');
+          let match = false;
+          searchableElements.forEach(searchableElement => {
+            const text = searchableElement.textContent.toLowerCase();
+            if (text.includes(searchValue)) {
+              match = true;
+              return; // Exit loop on first match
+            }
+          });
+          return match;
         }
       });
-
-      // Handle visibility due to load more
       handleVisibilityAfterFilter();
     }
 
