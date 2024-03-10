@@ -2,6 +2,26 @@
 $filterTopics = get_terms('topic');
 $filterTypes  = get_terms('resource-type');
 ?>
+<div class="grid lg:grid-cols-3 gap-base5-4">
+  <div data-topic-featured=".topic-one" class="flex items-center justify-between rounded-md cursor-pointer topic-filter-featured text-h4-base py-base5-4 px-base5-5 bg-pale-blue-100">
+    <p class="inline-block mb-0">test one</p>
+    <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0862 0.281473L19.5226 6.39729C19.979 6.77258 19.979 7.38106 19.5226 7.75636L12.0862 13.8722C11.6299 14.2475 10.89 14.2475 10.4337 13.8722C9.97731 13.4969 9.97731 12.8884 10.4337 12.5131L15.8753 8.03783H0V6.11582H15.8753L10.4337 1.64054C9.97731 1.26525 9.97731 0.65677 10.4337 0.281473C10.89 -0.0938243 11.6299 -0.0938243 12.0862 0.281473Z" fill="#161A3D" />
+    </svg>
+  </div>
+  <div data-topic-featured=".topic-two" class="flex items-center justify-between rounded-md cursor-pointer topic-filter-featured text-h4-base py-base5-4 px-base5-5 bg-lavender-100">
+    <p class="inline-block mb-0">test two</p>
+    <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0862 0.281473L19.5226 6.39729C19.979 6.77258 19.979 7.38106 19.5226 7.75636L12.0862 13.8722C11.6299 14.2475 10.89 14.2475 10.4337 13.8722C9.97731 13.4969 9.97731 12.8884 10.4337 12.5131L15.8753 8.03783H0V6.11582H15.8753L10.4337 1.64054C9.97731 1.26525 9.97731 0.65677 10.4337 0.281473C10.89 -0.0938243 11.6299 -0.0938243 12.0862 0.281473Z" fill="#161A3D" />
+    </svg>
+  </div>
+  <div data-topic-featured=".topic-three" class="flex items-center justify-between bg-yellow-300 rounded-md cursor-pointer topic-filter-featured text-h4-base py-base5-4 px-base5-5">
+    <p class="inline-block mb-0">test three</p>
+    <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0862 0.281473L19.5226 6.39729C19.979 6.77258 19.979 7.38106 19.5226 7.75636L12.0862 13.8722C11.6299 14.2475 10.89 14.2475 10.4337 13.8722C9.97731 13.4969 9.97731 12.8884 10.4337 12.5131L15.8753 8.03783H0V6.11582H15.8753L10.4337 1.64054C9.97731 1.26525 9.97731 0.65677 10.4337 0.281473C10.89 -0.0938243 11.6299 -0.0938243 12.0862 0.281473Z" fill="#161A3D" />
+    </svg>
+  </div>
+</div>
 <div class="grid lg:grid-cols-[1fr_3fr] min-h-screen">
   <div>
     <div class="grid button-group filter-button-group">
@@ -136,6 +156,28 @@ $filterTypes  = get_terms('resource-type');
 
     // Check if more than 9 active and visible initial
     loadMoreButton.classList.toggle('noshow', itemsAll.length < 9);
+
+    // Featured topics button
+    const featuredTopics = document.querySelectorAll('.topic-filter-featured');
+
+    featuredTopics.forEach(topicButton => {
+      const topicValue = topicButton.getAttribute('data-topic-featured');
+
+      topicButton.addEventListener('click', function() {
+        const allCheckboxes = document.querySelectorAll('.topic-filter');
+
+        allCheckboxes.forEach(checkbox => {
+          if (checkbox.checked) {
+            checkbox.click();
+          }
+        });
+
+        const checkbox = document.querySelector(`.topic-filter[value='${topicValue}']`);
+        if (!checkbox.checked) {
+          checkbox.click();
+        }
+      })
+    });
 
     function updateFilter() {
       const topicFilters = getCheckedValues('.topic-filter');
