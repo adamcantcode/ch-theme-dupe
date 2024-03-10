@@ -201,9 +201,9 @@
   document.addEventListener('DOMContentLoaded', () => {
     const loadMoreButton = document.querySelector('.load-more-js');
     const searchInput = document.querySelector('.search-input');
+    const grid = document.querySelector('.grid-test');
 
     // Isotope settings
-    const grid = document.querySelector('.grid-test');
     const iso = new Isotope(grid, {
       itemSelector: '.grid-item',
       initLayout: false, // Don't initialize to start
@@ -251,12 +251,8 @@
     function updateFilter() {
       const topicFilters = getCheckedValues('.topic-filter');
       const typeFilters = getCheckedValues('.type-filter');
-
-      // Generate all possible combinations of topics and types
-      const combinedFilters = generateCombinedFilters(topicFilters, typeFilters);
-
-      // Now use combinedFilters to create the final combined filter
-      const combinedFilter = combinedFilters.join(',');
+      const combinedFilters = generateCombinedFilters(topicFilters, typeFilters); // Generate all possible combinations of topics and types
+      const combinedFilter = combinedFilters.join(','); // Now use combinedFilters to create the final combined filter
 
       // Update Isotope with the new filter
       iso.arrange({
@@ -268,28 +264,23 @@
     }
 
     function updateSearch() {
-      console.log('run');
       updateFilter();
       const searchValue = searchInput.value.trim().toLowerCase();
       const data = Isotope.data(grid);
       const currentFilteredItems = data.filteredItems;
 
+      // If the search input is empty, reset the filter to show all items
       if (searchValue === '') {
-        // If the search input is empty, reset the filter to show all items
         updateFilter();
         return;
       }
-
-      console.log(currentFilteredItems);
 
       iso.arrange({
         filter: function() {
           const itemElem = this;
           const searchableElements = itemElem.querySelectorAll('h3 a');
           let match = false;
-
-          // Check if item matches the current filter
-          const matchesCurrentFilter = currentFilteredItems.some(item => item.element === itemElem);
+          const matchesCurrentFilter = currentFilteredItems.some(item => item.element === itemElem); // Check if item matches the current filter
 
           if (!matchesCurrentFilter) {
             return false; // Skip items not matching the current filter
@@ -353,7 +344,7 @@
         item.classList.remove('active', 'noshow');
       });
 
-      // Hide after 6
+      // Hide after 9
       itemsFilters.forEach((item, index) => {
         item.classList.add('active');
         if (index > 8) {
@@ -366,7 +357,7 @@
       // Load more
       const filteredElements = itemsAll.filter(element => element.classList.contains('active'));
 
-      // Check if more than 5 active and visible
+      // Check if more than 9 active and visible
       loadMoreButton.classList.toggle('noshow', filteredElements.length < 9);
     }
   });
