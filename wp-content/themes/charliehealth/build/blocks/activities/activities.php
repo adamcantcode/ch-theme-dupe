@@ -1,17 +1,21 @@
+<?php
+$filterTopics = get_terms('topic');
+$filterTypes  = get_terms('resource-type');
+?>
 <div class="grid lg:grid-cols-[1fr_3fr]">
   <div>
     <div class="grid button-group filter-button-group">
       <div class="grid">
         <p>Resource topic</p>
-        <label class="flex items-center cursor-pointer text-p-base gap-base5-2"><input type="checkbox" value=".topic-one" class="topic-filter" />Topic One</label>
-        <label class="flex items-center cursor-pointer text-p-base gap-base5-2"><input type="checkbox" value=".topic-two" class="topic-filter" />Topic Two</label>
-        <label class="flex items-center cursor-pointer text-p-base gap-base5-2"><input type="checkbox" value=".topic-three" class="topic-filter" />Topic Three</label>
+        <?php foreach ($filterTopics as $filterTopic) : ?>
+          <label class="flex items-center cursor-pointer text-p-base gap-base5-2"><input type="checkbox" value=".<?= $filterTopic->slug; ?>" class="topic-filter" /><?= $filterTopic->name; ?></label>
+        <?php endforeach; ?>
       </div>
       <div class="grid">
         <p>Resource type</p>
-        <label class="flex items-center cursor-pointer text-p-base gap-base5-2"><input type="checkbox" value=".type-one" class="type-filter" />Type</label>
-        <label class="flex items-center cursor-pointer text-p-base gap-base5-2"><input type="checkbox" value=".type-two" class="type-filter" />Type Two</label>
-        <label class="flex items-center cursor-pointer text-p-base gap-base5-2"><input type="checkbox" value=".type-three" class="type-filter" />Type Three</label>
+        <?php foreach ($filterTypes as $filterType) : ?>
+          <label class="flex items-center cursor-pointer text-p-base gap-base5-2"><input type="checkbox" value=".<?= $filterType->slug; ?>" class="type-filter" /><?= $filterType->name; ?></label>
+        <?php endforeach; ?>
       </div>
     </div>
     <div>
