@@ -3,15 +3,15 @@
     <div class="grid button-group filter-button-group">
       <div class="grid">
         <p>Resource topic</p>
-        <label class="flex items-center cursor-pointer text-p-base gap-base5-2"><input type="checkbox" value=".thing" class="topic-filter" />Thing</label>
-        <label class="flex items-center cursor-pointer text-p-base gap-base5-2"><input type="checkbox" value=".thing2" class="topic-filter" />Thing Two</label>
-        <label class="flex items-center cursor-pointer text-p-base gap-base5-2"><input type="checkbox" value=".thing3" class="topic-filter" />Thing Three</label>
+        <label class="flex items-center cursor-pointer text-p-base gap-base5-2"><input type="checkbox" value=".topic-one" class="topic-filter" />Topic One</label>
+        <label class="flex items-center cursor-pointer text-p-base gap-base5-2"><input type="checkbox" value=".topic-two" class="topic-filter" />Topic Two</label>
+        <label class="flex items-center cursor-pointer text-p-base gap-base5-2"><input type="checkbox" value=".topic-three" class="topic-filter" />Topic Three</label>
       </div>
       <div class="grid">
         <p>Resource type</p>
-        <label class="flex items-center cursor-pointer text-p-base gap-base5-2"><input type="checkbox" value=".type" class="type-filter" />Type</label>
-        <label class="flex items-center cursor-pointer text-p-base gap-base5-2"><input type="checkbox" value=".type2" class="type-filter" />Type Two</label>
-        <label class="flex items-center cursor-pointer text-p-base gap-base5-2"><input type="checkbox" value=".type3" class="type-filter" />Type Three</label>
+        <label class="flex items-center cursor-pointer text-p-base gap-base5-2"><input type="checkbox" value=".type-one" class="type-filter" />Type</label>
+        <label class="flex items-center cursor-pointer text-p-base gap-base5-2"><input type="checkbox" value=".type-two" class="type-filter" />Type Two</label>
+        <label class="flex items-center cursor-pointer text-p-base gap-base5-2"><input type="checkbox" value=".type-three" class="type-filter" />Type Three</label>
       </div>
     </div>
     <div>
@@ -21,174 +21,56 @@
   <div>
     <div class="flex grid-test">
       <div class="w-full grid-sizer lg:w-[calc(33.33%_-15px)]"></div>
-      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing type lg:w-[calc(33.33%_-15px)]">
-        <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
-          <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
-        </div>
-        <div class="absolute rounded-t-lg top-sp-4 left-sp-4">
-          <a href"#" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base">type</a>
-        </div>
-        <div class="grid bg-white rounded-b-lg p-sp-4">
-          <h3 class="text-h4-base"><a href="#" class="block stretched-link">ONE</a></h3>
-          <p>TYPE</p>
-        </div>
-      </div>
-      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing type lg:w-[calc(33.33%_-15px)]">
-        <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
-          <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
-        </div>
-        <div class="absolute rounded-t-lg top-sp-4 left-sp-4">
-          <a href"#" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base">TOPIC</a>
-        </div>
-        <div class="grid bg-white rounded-b-lg p-sp-4">
-          <h3 class="text-h4-base"><a href="#" class="block stretched-link">ONE</a></h3>
-          <p>TYPE</p>
-        </div>
-      </div>
-      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing type2 lg:w-[calc(33.33%_-15px)]">
-        <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
-          <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
-        </div>
-        <div class="absolute rounded-t-lg top-sp-4 left-sp-4">
-          <a href"#" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base">TOPIC</a>
-        </div>
-        <div class="grid bg-white rounded-b-lg p-sp-4">
-          <h3 class="text-h4-base"><a href="#" class="block stretched-link">ONE tesing</a></h3>
-          <p>TYPE TWO</p>
-        </div>
-      </div>
-      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing2 type2 lg:w-[calc(33.33%_-15px)]">
-        <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
-          <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
-        </div>
-        <div class="absolute rounded-t-lg top-sp-4 left-sp-4">
-          <a href"#" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base">TOPIC</a>
-        </div>
-        <div class="grid bg-white rounded-b-lg p-sp-4">
-          <h3 class="text-h4-base"><a href="#" class="block stretched-link">TWO</a></h3>
-          <p>TYPE</p>
-        </div>
-      </div>
-      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing2 lg:w-[calc(33.33%_-15px)]">
-        <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
-          <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
-        </div>
-        <div class="absolute rounded-t-lg top-sp-4 left-sp-4">
-          <a href"#" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base">TOPIC</a>
-        </div>
-        <div class="grid bg-white rounded-b-lg p-sp-4">
-          <h3 class="text-h4-base"><a href="#" class="block stretched-link">TWO</a></h3>
-          <p>TYPE</p>
-        </div>
-      </div>
-      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing2 lg:w-[calc(33.33%_-15px)]">
-        <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
-          <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
-        </div>
-        <div class="absolute rounded-t-lg top-sp-4 left-sp-4">
-          <a href"#" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base">TOPIC</a>
-        </div>
-        <div class="grid bg-white rounded-b-lg p-sp-4">
-          <h3 class="text-h4-base"><a href="#" class="block stretched-link">TWO</a></h3>
-          <p>TYPE</p>
-        </div>
-      </div>
-      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing3 lg:w-[calc(33.33%_-15px)]">
-        <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
-          <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
-        </div>
-        <div class="absolute rounded-t-lg top-sp-4 left-sp-4">
-          <a href"#" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base">TOPIC</a>
-        </div>
-        <div class="grid bg-white rounded-b-lg p-sp-4">
-          <h3 class="text-h4-base"><a href="#" class="block stretched-link">THREE</a></h3>
-          <p>TYPE</p>
-        </div>
-      </div>
-      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing3 lg:w-[calc(33.33%_-15px)]">
-        <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
-          <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
-        </div>
-        <div class="absolute rounded-t-lg top-sp-4 left-sp-4">
-          <a href"#" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base">TOPIC</a>
-        </div>
-        <div class="grid bg-white rounded-b-lg p-sp-4">
-          <h3 class="text-h4-base"><a href="#" class="block stretched-link">An Analysis of Risk Factors for Suicidal Thoughts and Outcomes at Charlie Health</a></h3>
-          <p>TYPE</p>
-        </div>
-      </div>
-      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing3 lg:w-[calc(33.33%_-15px)]">
-        <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
-          <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
-        </div>
-        <div class="absolute rounded-t-lg top-sp-4 left-sp-4">
-          <a href"#" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base">TOPIC</a>
-        </div>
-        <div class="grid bg-white rounded-b-lg p-sp-4">
-          <h3 class="text-h4-base"><a href="#" class="block stretched-link">THREE</a></h3>
-          <p>TYPE</p>
-        </div>
-      </div>
-      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing lg:w-[calc(33.33%_-15px)]">
-        <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
-          <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
-        </div>
-        <div class="absolute rounded-t-lg top-sp-4 left-sp-4">
-          <a href"#" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base">TOPIC</a>
-        </div>
-        <div class="grid bg-white rounded-b-lg p-sp-4">
-          <h3 class="text-h4-base"><a href="#" class="block stretched-link">ONE</a></h3>
-          <p>TYPE</p>
-        </div>
-      </div>
-      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing lg:w-[calc(33.33%_-15px)]">
-        <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
-          <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
-        </div>
-        <div class="absolute rounded-t-lg top-sp-4 left-sp-4">
-          <a href"#" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base">TOPIC</a>
-        </div>
-        <div class="grid bg-white rounded-b-lg p-sp-4">
-          <h3 class="text-h4-base"><a href="#" class="block stretched-link">ONE</a></h3>
-          <p>TYPE</p>
-        </div>
-      </div>
-      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing2 lg:w-[calc(33.33%_-15px)]">
-        <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
-          <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
-        </div>
-        <div class="absolute rounded-t-lg top-sp-4 left-sp-4">
-          <a href"#" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base">TOPIC</a>
-        </div>
-        <div class="grid bg-white rounded-b-lg p-sp-4">
-          <h3 class="text-h4-base"><a href="#" class="block stretched-link">TWO</a></h3>
-          <p>TYPE</p>
-        </div>
-      </div>
-      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing2 lg:w-[calc(33.33%_-15px)]">
-        <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
-          <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
-        </div>
-        <div class="absolute rounded-t-lg top-sp-4 left-sp-4">
-          <a href"#" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base">TOPIC</a>
-        </div>
-        <div class="grid bg-white rounded-b-lg p-sp-4">
-          <h3 class="text-h4-base"><a href="#" class="block stretched-link">TWO</a></h3>
-          <p>TYPE</p>
-        </div>
-      </div>
-      <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item thing3 lg:w-[calc(33.33%_-15px)]">
-        <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
-          <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
-        </div>
-        <div class="absolute rounded-t-lg top-sp-4 left-sp-4">
-          <a href"#" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base">TOPIC</a>
-        </div>
-        <div class="grid bg-white rounded-b-lg p-sp-4">
-          <h3 class="text-h4-base"><a href="#" class="block stretched-link">zv</a></h3>
-          <p>TYPE</p>
-        </div>
-      </div>
+      <?php
+      $args = array(
+        'post_type'      => 'activities',
+        'posts_per_page' => -1,
+        'order'          => 'DESC',
+        'orderby'        => 'date',
+        'post_status'    => 'publish'
+      );
+
+      $query = new WP_Query($args);
+
+      if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
+          <?php
+          $topics = get_the_terms(get_the_ID(), 'topic');
+          $types  = get_the_terms(get_the_ID(), 'resource-type');
+          if (is_array($topics)) {
+            $topicName = $topics[0]->name;
+            $topic = [];
+            foreach ($topics as $topicSlug) {
+              $topic[] = $topicSlug->slug;
+            }
+          }
+          if (is_array($types)) {
+            $typeName = $types[0]->name;
+            $type = [];
+            foreach ($types as $typesSlug) {
+              $type[] = $typesSlug->slug;
+            }
+          }
+          ?>
+          <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item lg:w-[calc(33.33%_-15px)] <?= implode(' ', $topic); ?> <?= implode(' ', $type); ?>">
+            <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
+              <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
+            </div>
+            <div class="absolute rounded-t-lg top-sp-4 left-sp-4">
+              <?php if ($type) : ?>
+                <p href"#" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base"><?= $typeName; ?></p>
+              <?php endif; ?>
+            </div>
+            <div class="grid bg-white rounded-b-lg p-sp-4">
+              <h3 class="text-h4-base"><a href="#" class="block stretched-link"><?= get_the_title(); ?></a></h3>
+              <?php if ($topic) : ?>
+                <p><?= $topicName; ?></p>
+              <?php endif; ?>
+            </div>
+          </div>
+      <?php endwhile;
+        wp_reset_query();
+      endif;
+      ?>
     </div>
     <div class="grid justify-end">
       <a role="button" class="w-full ch-button button-primary justify-self-center lg:w-auto load-more-js">Load more</a>
