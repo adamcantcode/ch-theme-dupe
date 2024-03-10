@@ -574,6 +574,7 @@ function hide_menus_on_multisite()
     remove_menu_page('edit.php?post_type=research');
     remove_menu_page('edit.php?post_type=team-members');
     remove_menu_page('edit.php?post_type=treatment-modalities');
+    remove_menu_page('edit.php?post_type=activities');
     // remove_menu_page('edit.php?post_type=testimonial');
   } else {
     remove_menu_page('edit.php?post_type=region');
@@ -627,6 +628,7 @@ function custom_menu_order($menu_ord)
     'edit.php', // Posts
     'edit.php?post_type=research', // Research
     'edit.php?post_type=authors', // Authors
+    'edit.php?post_type=activities', // Activites
     'edit.php?post_type=medical-reviewer', // Medical Reviewer
     'edit.php?post_type=areas-of-care', // Areas of Care
     'edit.php?post_type=treatment-modalities', // Treatment Modalities

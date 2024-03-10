@@ -15,7 +15,7 @@
       </div>
     </div>
     <div>
-      <input type="text" class="search-input" />
+      <input type="text" class="search-input" placeholder="Search..." />
     </div>
   </div>
   <div>
