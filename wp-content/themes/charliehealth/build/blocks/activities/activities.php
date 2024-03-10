@@ -2,7 +2,7 @@
 $filterTopics = get_terms('topic');
 $filterTypes  = get_terms('resource-type');
 ?>
-<div class="grid lg:grid-cols-[1fr_3fr]">
+<div class="grid lg:grid-cols-[1fr_3fr] min-h-screen">
   <div>
     <div class="grid button-group filter-button-group">
       <div class="grid">
@@ -59,13 +59,13 @@ $filterTypes  = get_terms('resource-type');
             <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
               <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
             </div>
-            <div class="absolute rounded-t-lg top-sp-4 left-sp-4">
-              <?php if ($type) : ?>
-                <p href"#" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base"><?= $typeName; ?></p>
-              <?php endif; ?>
-            </div>
+            <?php if ($type) : ?>
+              <div class="absolute rounded-t-lg top-sp-4 left-sp-4">
+                <p class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base cursor-pointer"><?= $typeName; ?></p>
+              </div>
+            <?php endif; ?>
             <div class="grid bg-white rounded-b-lg p-sp-4">
-              <h3 class="text-h4-base"><a href="#" class="block stretched-link"><?= get_the_title(); ?></a></h3>
+              <h3 class="text-h4-base"><a href="<?= get_the_permalink(); ?>" class="block stretched-link"><?= get_the_title(); ?></a></h3>
               <?php if ($topic) : ?>
                 <p><?= $topicName; ?></p>
               <?php endif; ?>
@@ -133,6 +133,9 @@ $filterTypes  = get_terms('resource-type');
 
     // Load more
     loadMoreButton.addEventListener('click', loadMoreItems);
+
+    // Check if more than 9 active and visible initial
+    loadMoreButton.classList.toggle('noshow', itemsAll.length < 9);
 
     function updateFilter() {
       const topicFilters = getCheckedValues('.topic-filter');
