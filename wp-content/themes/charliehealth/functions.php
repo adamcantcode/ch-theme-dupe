@@ -708,6 +708,7 @@ add_filter('should_load_separate_core_block_assets', '__return_true');
 // $test = '!text-[20px]'
 // $test = 'font-heading-serif lg:text-[40px] text-[32px] leading-[1.1] overflow-y-hidden'
 // $test = 'lg:-mb-base5-10'
+// $test = 'lg:!-mb-base5-10'
 
 // $test = '!text-h2-lg !text-h2 !font-heading !font-heading-serif !text-h5'
 // $test = 'bg-pale-blue-100'

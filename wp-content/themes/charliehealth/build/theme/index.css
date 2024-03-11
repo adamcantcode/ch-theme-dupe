@@ -5479,6 +5479,10 @@ ul.alert li {
     margin-bottom: -50px;
   }
 
+  .lg\:\!-mb-base5-10{
+    margin-bottom: -50px !important;
+  }
+
   .lg\:block{
     display: block;
   }
