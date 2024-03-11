@@ -139,7 +139,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/blue-full-cards');
   register_block_type(__DIR__ . '/build/blocks/insurance-cost');
   register_block_type(__DIR__ . '/build/blocks/testimonials-slider');
-  register_block_type(__DIR__ . '/build/blocks/therapists-slider');
+  register_block_type(__DIR__ . '/build/blocks/therapists');
 }
 add_action('init', 'register_acf_blocks', 5);
 

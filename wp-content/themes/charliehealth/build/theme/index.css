@@ -1597,6 +1597,10 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-bottom: 30px;
 }
 
+.mb-base5-8{
+  margin-bottom: 40px;
+}
+
 .mb-sp-1{
   margin-bottom: 0.25rem;
 }
@@ -1729,6 +1733,10 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-top: 25px;
 }
 
+.mt-base5-8{
+  margin-top: 40px;
+}
+
 .mt-sp-1{
   margin-top: 0.25rem;
 }
@@ -1771,22 +1779,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
-}
-
-.mb-base5-4{
-  margin-bottom: 20px;
-}
-
-.mb-base5-8{
-  margin-bottom: 40px;
-}
-
-.mt-base5-4{
-  margin-top: 20px;
-}
-
-.mt-base5-8{
-  margin-top: 40px;
 }
 
 .line-clamp-3{
@@ -2000,6 +1992,10 @@ a.ch-button.button-tertiary.inverted:hover {
   width: 18px !important;
 }
 
+.w-1\/2{
+  width: 50%;
+}
+
 .w-10{
   width: 2.5rem;
 }
@@ -2087,14 +2083,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .w-sp-8{
   width: 2rem;
-}
-
-.w-\[50\%\]{
-  width: 50%;
-}
-
-.w-1\/2{
-  width: 50%;
 }
 
 .min-w-0{
@@ -2267,6 +2255,12 @@ a.ch-button.button-tertiary.inverted:hover {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.scale-90{
+  --tw-scale-x: .9;
+  --tw-scale-y: .9;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .scale-95{
   --tw-scale-x: .95;
   --tw-scale-y: .95;
@@ -2276,12 +2270,6 @@ a.ch-button.button-tertiary.inverted:hover {
 .scale-\[0\.99\]{
   --tw-scale-x: 0.99;
   --tw-scale-y: 0.99;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.scale-90{
-  --tw-scale-x: .9;
-  --tw-scale-y: .9;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -3192,10 +3180,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .align-middle{
   vertical-align: middle;
-}
-
-.align-text-bottom{
-  vertical-align: text-bottom;
 }
 
 .align-super{
@@ -5387,6 +5371,14 @@ ul.alert li {
     margin-bottom: 6rem;
   }
 
+  .lg\:\!-mb-base5-10{
+    margin-bottom: -50px !important;
+  }
+
+  .lg\:-mb-base5-10{
+    margin-bottom: -50px;
+  }
+
   .lg\:mb-0{
     margin-bottom: 0px;
   }
@@ -5473,14 +5465,6 @@ ul.alert li {
 
   .lg\:mt-sp-8{
     margin-top: 2rem;
-  }
-
-  .lg\:-mb-base5-10{
-    margin-bottom: -50px;
-  }
-
-  .lg\:\!-mb-base5-10{
-    margin-bottom: -50px !important;
   }
 
   .lg\:block{
