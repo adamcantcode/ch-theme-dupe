@@ -24,7 +24,7 @@
                 <?php endif; ?>
                 <p class="text-h1-base font-heading-serif">“<?= $pull_quote; ?>”</p>
                 <p><?= $full_quote; ?></p>
-                <p class="mb-0 lg:mb-sp-14">— <?= $age; ?> Client</p>
+                <p class="mb-0 lg:mb-sp-14">— <?= $age; ?></p>
               </div>
               <div class="relative order-1 lg:order-2 mt-sp-14 lg:mt-auto mb-sp-8 lg:mb-0">
                 <img src="<?= $illo['url']; ?>" alt="<?= $illo['alt']; ?>" class="object-cover">
