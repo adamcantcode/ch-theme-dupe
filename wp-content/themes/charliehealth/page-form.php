@@ -32,7 +32,7 @@ Template Post Type: page
                     disclaimerContainer.style.display = 'none';
                   }, 300);
                 } else {
-                  disclaimerContainer.style.display = 'block';
+                  disclaimerContainer.style.display = 'none';
                 }
               }, 300);
             })
