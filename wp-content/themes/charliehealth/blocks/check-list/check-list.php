@@ -34,11 +34,13 @@ if ($style !== 'feed') :
 elseif ($style === 'feed') :
   $postType = get_field('post_type');
   $args = array(
-    'post_type' => $postType,
-    'numberposts' => -1,
+    'post_type'      => $postType,
+    'numberposts'    => -1,
+    'depth'          => 1, 
+    'post_parent'    => 0,
     'posts_per_page' => -1,
-    'order' => 'ASC',
-    'orderby' => 'title',
+    'order'          => 'ASC',
+    'orderby'        => 'title',
   );
   $query = new WP_Query($args);
   $listItems = $query->posts;
