@@ -79,7 +79,7 @@ $group = get_field('group')
           <?php if ($pullQuote) : ?>
             <h3 class="text-h3-base font-heading-serif">“<?= $pullQuote; ?>.”</h3>
           <?php endif; ?>
-          <p class="text-p-base"><?= $fullQuote; ?></p>
+          <p class="text-p-base noshow lg:block"><?= $fullQuote; ?></p>
           <p class="mb-0 text-p-base">—<?= $attribution; ?></p>
           <?php if ($title) : ?>
             <p class="mb-0 text-p-base"><?= $title; ?></p>
@@ -148,7 +148,7 @@ $group = get_field('group')
               <?php if ($pullQuote) : ?>
                 <p class="text-h3-base font-heading-serif">“<?= $pullQuote; ?>.”</p>
               <?php endif; ?>
-              <p class="text-p-base"><?= $fullQuote; ?></p>
+              <p class="text-p-base noshow lg:block"><?= $fullQuote; ?></p>
               <?php if ($showInsurance && $insurance) : ?>
                 <p class="mb-0 text-p-base">—<?= $attribution; ?>, <?= $insurance; ?> member</p>
                 <?php else : ?>
