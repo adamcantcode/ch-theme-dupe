@@ -1773,6 +1773,22 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-top: 2rem;
 }
 
+.mb-base5-4{
+  margin-bottom: 20px;
+}
+
+.mb-base5-8{
+  margin-bottom: 40px;
+}
+
+.mt-base5-4{
+  margin-top: 20px;
+}
+
+.mt-base5-8{
+  margin-top: 40px;
+}
+
 .line-clamp-3{
   overflow: hidden;
   display: -webkit-box;
@@ -2071,6 +2087,14 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .w-sp-8{
   width: 2rem;
+}
+
+.w-\[50\%\]{
+  width: 50%;
+}
+
+.w-1\/2{
+  width: 50%;
 }
 
 .min-w-0{
@@ -3164,6 +3188,14 @@ a.ch-button.button-tertiary.inverted:hover {
   vertical-align: middle;
 }
 
+.align-text-bottom{
+  vertical-align: text-bottom;
+}
+
+.align-super{
+  vertical-align: super;
+}
+
 .align-\[initial\]{
   vertical-align: initial;
 }
@@ -3255,6 +3287,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .text-\[42px\]{
   font-size: 42px;
+}
+
+.text-\[50\%\]{
+  font-size: 50%;
 }
 
 .text-h1{
