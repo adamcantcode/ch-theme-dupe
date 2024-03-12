@@ -10,5 +10,5 @@
   <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full">
     <a href="/form" class="ch-button button-primary">Get started</a>
   </div>
-  <p class="text-mini">Enter your insurance details to verify your coverage today</p>
+  <p class="text-mini">Reach out to our team to verify your coverage today</p>
 </div>
