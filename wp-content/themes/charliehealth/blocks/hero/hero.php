@@ -46,7 +46,7 @@ $icon           = get_field('hero_icon');
   </div>
 <?php endif; ?>
 <?php if ($style === 'new_image') : ?>
-  <div class="grid items-center lg:grid-cols-2 gap-sp-5 py-sp-10 lg:py-0">
+  <div class="grid items-center lg:grid-cols-2 gap-sp-5">
     <div class="order-2 lg:order-1 mobile-hero-sub">
       <h1><?= $title; ?></h1>
       <?php if ($subtitle) : ?>
