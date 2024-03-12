@@ -31,6 +31,13 @@ $filterTypes  = get_terms('resource-type');
 </section>
 <section class="section bg-grey-cool">
   <div class="container">
+    <div class="grid lg:grid-cols-[1fr_1fr_2fr]">
+      <h2>Charlie Health resources</h2>
+      <div></div>
+      <div>
+        <input type="text" class="w-full bg-white border rounded-md search-input-js border-primary py-base5-2 px-base5-2" placeholder="Search..." />
+      </div>
+    </div>
     <div class="grid lg:grid-cols-[1fr_3fr] min-h-screen gap-base5-4">
       <div>
         <div class="grid button-group filter-button-group">
@@ -47,12 +54,9 @@ $filterTypes  = get_terms('resource-type');
             <?php endforeach; ?>
           </div>
         </div>
-        <div>
-          <input type="text" class="search-input" placeholder="Search..." />
-        </div>
       </div>
       <div>
-        <div class="flex grid-test">
+        <div class="flex grid-resources">
           <div class="w-full grid-sizer lg:w-[calc(33.33%_-15px)]"></div>
           <?php
           $args = array(
@@ -117,8 +121,8 @@ $filterTypes  = get_terms('resource-type');
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const loadMoreButton = document.querySelector('.load-more-js');
-    const searchInput = document.querySelector('.search-input');
-    const grid = document.querySelector('.grid-test');
+    const searchInput = document.querySelector('.search-input-js');
+    const grid = document.querySelector('.grid-resources');
 
     // Isotope settings
     const iso = new Isotope(grid, {
