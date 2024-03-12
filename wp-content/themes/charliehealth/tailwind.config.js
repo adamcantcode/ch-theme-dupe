@@ -61,6 +61,7 @@ module.exports = {
         300: '#8F92CD',
       },
       yellow: {
+        100: '#FEE3C7',
         300: '#FDBF7C',
       },
       secondary: {
