@@ -1553,6 +1553,16 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-bottom: 2rem;
 }
 
+.mx-base5-3{
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.mx-base5-2{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .\!mb-base5-4{
   margin-bottom: 20px !important;
 }
@@ -2222,6 +2232,11 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .translate-y-sp-2{
   --tw-translate-y: 0.5rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.-translate-y-full{
+  --tw-translate-y: -100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 

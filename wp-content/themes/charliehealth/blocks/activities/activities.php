@@ -35,23 +35,31 @@ $filterTypes  = get_terms('resource-type');
       <h2>Charlie Health resources</h2>
       <div></div>
       <div>
-        <input type="text" class="w-full bg-white border rounded-md search-input-js border-primary py-base5-2 px-base5-2" placeholder="Search..." />
+        <input type="text" class="w-full bg-white border rounded-md search-input-js border-primary py-base5-2 px-base5-3" placeholder="Search..." />
       </div>
     </div>
     <div class="grid lg:grid-cols-[1fr_3fr] min-h-screen gap-base5-4">
       <div>
-        <div class="grid button-group filter-button-group">
-          <div class="grid">
-            <p>Resource topic</p>
-            <?php foreach ($filterTopics as $filterTopic) : ?>
-              <label class="flex items-center cursor-pointer text-p-base gap-base5-2"><input type="checkbox" value=".<?= $filterTopic->slug; ?>" class="topic-filter" /><?= $filterTopic->name; ?></label>
-            <?php endforeach; ?>
-          </div>
-          <div class="grid">
-            <p>Resource type</p>
-            <?php foreach ($filterTypes as $filterType) : ?>
-              <label class="flex items-center cursor-pointer text-p-base gap-base5-2"><input type="checkbox" value=".<?= $filterType->slug; ?>" class="type-filter" /><?= $filterType->name; ?></label>
-            <?php endforeach; ?>
+        <div class="flex items-center justify-between transition-all border rounded-md cursor-pointer py-base5-2 px-base5-3 border-primary filters-js">
+          <p class="inline-block mb-0">Filters</p>
+          <svg width="17" height="11" viewBox="0 0 17 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all duration-500 down-arrow-js">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M1.50015 0.585938L8.50015 7.58594L15.5002 0.585938L16.9144 2.00015L8.50015 10.4144L0.0859375 2.00015L1.50015 0.585938Z" fill="#161A3D" />
+          </svg>
+        </div>
+        <div class="overflow-hidden">
+          <div class="grid transition-all duration-500 -translate-y-full bg-white filter-button-group-js rounded-b-md mx-base5-2 p-base5-4 gap-base5-2">
+            <div class="grid gap-base5-2">
+              <p class="mb-0">Resource topic</p>
+              <?php foreach ($filterTopics as $filterTopic) : ?>
+                <label class="flex items-center mb-0 antialiased cursor-pointer text-p-base gap-base5-2"><input type="checkbox" value=".<?= $filterTopic->slug; ?>" class="topic-filter" /><?= $filterTopic->name; ?></label>
+              <?php endforeach; ?>
+            </div>
+            <div class="grid gap-base5-2">
+              <p class="mb-0">Resource type</p>
+              <?php foreach ($filterTypes as $filterType) : ?>
+                <label class="flex items-center mb-0 antialiased cursor-pointer text-p-base gap-base5-2"><input type="checkbox" value=".<?= $filterType->slug; ?>" class="type-filter" /><?= $filterType->name; ?></label>
+              <?php endforeach; ?>
+            </div>
           </div>
         </div>
       </div>
@@ -160,7 +168,7 @@ $filterTypes  = get_terms('resource-type');
     iso.arrange();
 
     // Filter
-    const filterButtonGroup = document.querySelector('.filter-button-group');
+    const filterButtonGroup = document.querySelector('.filter-button-group-js');
     filterButtonGroup.addEventListener('change', updateFilter);
 
     // Search
@@ -306,5 +314,13 @@ $filterTypes  = get_terms('resource-type');
       // Check if more than 9 active and visible
       loadMoreButton.classList.toggle('noshow', filteredElements.length < 9);
     }
+
+    // Filter dropdown
+    const filterButton = document.querySelector('.filters-js');
+
+    filterButton.addEventListener('click', function(e) {
+      filterButtonGroup.classList.toggle('-translate-y-full');
+      document.querySelector('.down-arrow-js').classList.toggle('rotate-180');
+    })
   });
 </script>
