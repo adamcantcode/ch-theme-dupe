@@ -3394,6 +3394,10 @@ a.ch-button.button-tertiary.inverted:hover {
   font-weight: 700;
 }
 
+.normal-case{
+  text-transform: none;
+}
+
 .\!leading-\[1\.1\]{
   line-height: 1.1 !important;
 }
