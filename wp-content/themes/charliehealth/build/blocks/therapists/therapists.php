@@ -6,7 +6,7 @@
       $name  = get_sub_field('name');
       $title = get_sub_field('title');
       ?>
-      <div class="text-center bg-white rounded-lg p-base5-5">
+      <div class="text-center bg-white rounded-lg p-base5-5 lg:max-w-[300px]">
         <img src="<?= $image['url'] ?: placeHolderImage(); ?>" alt="<?= $image['alt']; ?>" class="object-cover rounded-circle aspect-square mb-sp-6">
         <p class="font-heading-serif mb-base5-1"><?= $name; ?></p>
         <p><?= $title; ?></p>

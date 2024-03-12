@@ -5651,6 +5651,10 @@ ul.alert li {
     max-width: none;
   }
 
+  .lg\:max-w-\[300px\]{
+    max-width: 300px;
+  }
+
   .lg\:basis-\[33\%\]{
     flex-basis: 33%;
   }
@@ -5991,11 +5995,6 @@ ul.alert li {
   .lg\:px-sp-8{
     padding-left: 2rem;
     padding-right: 2rem;
-  }
-
-  .lg\:py-0{
-    padding-top: 0px;
-    padding-bottom: 0px;
   }
 
   .lg\:py-sp-12{
