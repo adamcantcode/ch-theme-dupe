@@ -2646,6 +2646,10 @@ a.ch-button.button-tertiary.inverted:hover {
   border-left-width: 1px;
 }
 
+.border-t-2{
+  border-top-width: 2px;
+}
+
 .border-none{
   border-style: none;
 }
@@ -3172,6 +3176,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .pt-sp-7{
   padding-top: 1.75rem;
+}
+
+.pt-sp-6{
+  padding-top: 1.5rem;
 }
 
 .text-center{
@@ -5041,6 +5049,15 @@ ul.alert li {
   border-top-width: 2px;
 }
 
+.first\:border-b-2:first-child{
+  border-bottom-width: 2px;
+}
+
+.first\:border-primary:first-child{
+  --tw-border-opacity: 1;
+  border-color: rgb(22 26 61 / var(--tw-border-opacity));
+}
+
 .first\:pt-sp-6:first-child{
   padding-top: 1.5rem;
 }
@@ -5627,6 +5644,10 @@ ul.alert li {
     max-width: 250px;
   }
 
+  .lg\:max-w-\[300px\]{
+    max-width: 300px;
+  }
+
   .lg\:max-w-\[335px\]{
     max-width: 335px;
   }
@@ -5649,10 +5670,6 @@ ul.alert li {
 
   .lg\:max-w-none{
     max-width: none;
-  }
-
-  .lg\:max-w-\[300px\]{
-    max-width: 300px;
   }
 
   .lg\:basis-\[33\%\]{
