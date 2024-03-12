@@ -39,8 +39,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Dropdown animation
   const toggleDropdown = (contentWrappperInstance) => {
-    const toggleButton =
-      contentWrappperInstance.querySelector('.toggle-button-testimonial');
+    const toggleButton = contentWrappperInstance.querySelector(
+      '.toggle-button-testimonial'
+    );
 
     contentWrappperInstance.style.paddingBottom =
       toggleButton.clientHeight + 20 + 'px';
@@ -75,4 +76,13 @@ window.addEventListener('DOMContentLoaded', () => {
       handleResize(contentWrappperInstance);
     });
   }
+
+  window.addEventListener('resize', function () {
+    const contentWrappper = document.querySelectorAll(
+      '.collapsible-content-wrapper'
+    );
+    contentWrappper.forEach((contentWrappperInstance) => {
+      handleResize(contentWrappperInstance);
+    });
+  });
 });

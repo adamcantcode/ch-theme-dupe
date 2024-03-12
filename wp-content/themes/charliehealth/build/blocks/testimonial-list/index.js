@@ -10689,6 +10689,12 @@ window.addEventListener('DOMContentLoaded', () => {
       handleResize(contentWrappperInstance);
     });
   }
+  window.addEventListener('resize', function () {
+    const contentWrappper = document.querySelectorAll('.collapsible-content-wrapper');
+    contentWrappper.forEach(contentWrappperInstance => {
+      handleResize(contentWrappperInstance);
+    });
+  });
 });
 })();
 
