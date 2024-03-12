@@ -149,10 +149,16 @@ $group = get_field('group')
                 <p class="text-h3-base font-heading-serif">“<?= $pullQuote; ?>.”</p>
               <?php endif; ?>
               <p class="text-p-base noshow lg:block"><?= $fullQuote; ?></p>
+              <div class="relative overflow-hidden transition-all duration-1000 max-h-0 collapsible-content-wrapper lg:noshow">
+                <p class="text-p-base"><?= $fullQuote; ?></p>
+                <div class="absolute bottom-0 flex justify-center w-full bg-white">
+                  <a role="button" class="z-10 ch-button button-secondary toggle-button-testimonial mb-base5-4">View full quote</a>
+                </div>
+              </div>
               <?php if ($showInsurance && $insurance) : ?>
                 <p class="mb-0 text-p-base">—<?= $attribution; ?>, <?= $insurance; ?> member</p>
-                <?php else : ?>
-                  <p class="mb-0 text-p-base">—<?= $attribution; ?></p>
+              <?php else : ?>
+                <p class="mb-0 text-p-base">—<?= $attribution; ?></p>
               <?php endif; ?>
               <?php if ($title) : ?>
                 <p class="mb-0 text-p-base"><?= $title; ?></p>
