@@ -31,7 +31,7 @@ $filterTypes  = get_terms('resource-type');
 </section>
 <section class="section bg-grey-cool">
   <div class="container">
-    <div class="grid lg:grid-cols-[1fr_1fr_2fr]">
+    <div class="grid lg:grid-cols-[1fr_1fr_2fr] gap-base5-4">
       <h2>Charlie Health resources</h2>
       <div></div>
       <div>
@@ -79,33 +79,63 @@ $filterTypes  = get_terms('resource-type');
 
           if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
               <?php
+              // Image
+              if (has_post_thumbnail()) {
+                $featuredImageID      = get_post_thumbnail_id();
+                $featuredImage        = wp_get_attachment_image_src($featuredImageID, 'card-thumb');
+                $featuredImageAltText = get_post_meta($featuredImageID, '_wp_attachment_image_alt', true);
+
+                $featuredImageUrl     = $featuredImage[0];
+                $featuredImageAltText = $featuredImageAltText ?: '';
+              } else {
+                $featuredImageUrl     = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
+                $featuredImageAltText = 'Charlie Health Logo';
+              }
+
+              // Tags
               $topics = get_the_terms(get_the_ID(), 'topic');
               $types  = get_the_terms(get_the_ID(), 'resource-type');
               if (is_array($topics)) {
                 $topicName = $topics[0]->name;
-                $topic = [];
+                $topic     = [];
                 foreach ($topics as $topicSlug) {
                   $topic[] = $topicSlug->slug;
                 }
               }
               if (is_array($types)) {
                 $typeName = $types[0]->name;
-                $type = [];
+                $type     = [];
                 foreach ($types as $typesSlug) {
                   $type[] = $typesSlug->slug;
                 }
               }
-              $media = get_field('media', get_the_ID()) ?: '';
-              $gated = get_field('gated', get_the_ID());
-              if ($gated) {
-                $link = home_url('/gated/?pdf_link=') . $media;
+
+              // Link
+              // Check for submission cookie
+              $media = get_field('media', get_the_ID()) ?: false;
+              if (isset($_COOKIE['gatedSubmission'])) {
+                if ($media) {
+                  $link = $media;
+                } else {
+                  $link = get_the_permalink(get_the_ID());
+                }
               } else {
-                $link = $media;
+                if ($media) {
+                  // Remove part of link so that it can't be copied at least
+                  $stripped = strstr($media, '/wp-content/uploads/');
+                  $media    = substr($stripped, strlen('/wp-content/uploads/'));
+                }
+                $gated = get_field('gated', get_the_ID());
+                if ($gated) {
+                  $link = home_url('/gated/?pdf_link=') . $media;
+                } elseif (!$media) {
+                  $link = get_the_permalink(get_the_ID());
+                }
               }
               ?>
               <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item lg:w-[calc(33.33%_-15px)] <?= implode(' ', $topic); ?> <?= implode(' ', $type); ?>">
                 <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
-                  <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
+                  <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
                 </div>
                 <?php if ($topic) : ?>
                   <div class="absolute rounded-t-lg top-sp-4 left-sp-4">
