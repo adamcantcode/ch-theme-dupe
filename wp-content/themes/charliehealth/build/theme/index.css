@@ -1528,6 +1528,11 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-right: auto;
 }
 
+.mx-base5-2{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .mx-sp-4{
   margin-left: 1rem;
   margin-right: 1rem;
@@ -1551,16 +1556,6 @@ a.ch-button.button-tertiary.inverted:hover {
 .my-sp-8{
   margin-top: 2rem;
   margin-bottom: 2rem;
-}
-
-.mx-base5-3{
-  margin-left: 15px;
-  margin-right: 15px;
-}
-
-.mx-base5-2{
-  margin-left: 10px;
-  margin-right: 10px;
 }
 
 .\!mb-base5-4{
@@ -2210,6 +2205,11 @@ a.ch-button.button-tertiary.inverted:hover {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.-translate-y-full{
+  --tw-translate-y: -100%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .translate-x-1{
   --tw-translate-x: 0.25rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2232,11 +2232,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .translate-y-sp-2{
   --tw-translate-y: 0.5rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.-translate-y-full{
-  --tw-translate-y: -100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -2935,6 +2930,10 @@ a.ch-button.button-tertiary.inverted:hover {
   padding: 15px;
 }
 
+.p-base5-4{
+  padding: 20px;
+}
+
 .p-base5-5{
   padding: 25px;
 }
@@ -2961,14 +2960,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .p-sp-8{
   padding: 2rem;
-}
-
-.p-base5-4{
-  padding: 20px;
-}
-
-.p-base5-2{
-  padding: 10px;
 }
 
 .px-3{
@@ -3119,11 +3110,6 @@ a.ch-button.button-tertiary.inverted:hover {
 .py-sp-8{
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-
-.px-base5-2{
-  padding-left: 10px;
-  padding-right: 10px;
 }
 
 .\!pb-0{
