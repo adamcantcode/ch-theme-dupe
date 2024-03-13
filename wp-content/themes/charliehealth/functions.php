@@ -137,6 +137,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/check-list-items');
   register_block_type(__DIR__ . '/build/blocks/blue-full-cards');
   register_block_type(__DIR__ . '/build/blocks/activities');
+  register_block_type(__DIR__ . '/build/blocks/gated-content');
 }
 add_action('init', 'register_acf_blocks', 5);
 
