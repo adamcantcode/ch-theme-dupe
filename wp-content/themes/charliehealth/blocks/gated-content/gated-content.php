@@ -30,7 +30,7 @@
 
         // Append the pdf_link query parameter to the form action URL
         var formAction = document.getElementById('fsForm5683263').action;
-        var updatedFormAction = formAction + '?pdf_link=' + encodedPdfLink;
+        var updatedFormAction = formAction + '?pdf_link=' + window.location.origin + '/wp-content/uploads/' + encodedPdfLink;
 
         // Update the form action attribute with the new URL
         document.getElementById('fsForm5683263').action = updatedFormAction;

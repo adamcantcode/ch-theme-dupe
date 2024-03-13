@@ -96,6 +96,12 @@ $filterTypes  = get_terms('resource-type');
                 }
               }
               $media = get_field('media', get_the_ID()) ?: '';
+              if ($media) {
+                // Remove part of link so that it can't be copied at least
+                $stripped = strstr($media, '/wp-content/uploads/');
+                $media =  substr($stripped, strlen('/wp-content/uploads/'));
+              }
+              var_dump($media);
               $gated = get_field('gated', get_the_ID());
               if ($gated) {
                 $link = home_url('/gated/?pdf_link=') . $media;
