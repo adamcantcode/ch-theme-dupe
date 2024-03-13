@@ -109,18 +109,28 @@ $filterTypes  = get_terms('resource-type');
                   $type[] = $typesSlug->slug;
                 }
               }
+
               // Link
+              // Check for submission cookie
               $media = get_field('media', get_the_ID()) ?: false;
-              if ($media) {
-                // Remove part of link so that it can't be copied at least
-                $stripped = strstr($media, '/wp-content/uploads/');
-                $media    = substr($stripped, strlen('/wp-content/uploads/'));
-              }
-              $gated = get_field('gated', get_the_ID());
-              if ($gated) {
-                $link = home_url('/gated/?pdf_link=') . $media;
-              } elseif (!$media) {
-                $link = get_the_permalink(get_the_ID());
+              if (isset($_COOKIE['gatedSubmission'])) {
+                if ($media) {
+                  $link = $media;
+                } else {
+                  $link = get_the_permalink(get_the_ID());
+                }
+              } else {
+                if ($media) {
+                  // Remove part of link so that it can't be copied at least
+                  $stripped = strstr($media, '/wp-content/uploads/');
+                  $media    = substr($stripped, strlen('/wp-content/uploads/'));
+                }
+                $gated = get_field('gated', get_the_ID());
+                if ($gated) {
+                  $link = home_url('/gated/?pdf_link=') . $media;
+                } elseif (!$media) {
+                  $link = get_the_permalink(get_the_ID());
+                }
               }
               ?>
               <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item lg:w-[calc(33.33%_-15px)] <?= implode(' ', $topic); ?> <?= implode(' ', $type); ?>">
