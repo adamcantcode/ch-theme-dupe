@@ -36,18 +36,13 @@
         // Update the form action attribute with the new URL
         gatedForm.action = updatedFormAction;
 
-        // Create cookie
-        function createCookie(name, value, days) {
+        gatedForm.addEventListener('submit', (event) => {
           var expires = "";
-          if (days) {
-            var date = new Date();
-            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-            expires = "; expires=" + date.toUTCString();
-          }
-          document.cookie = name + "=" + value + expires + "; path=/";
-        }
-
-        gatedForm.addEventListener('submit', createCookie("gatedSubmission", "true", 7));
+          var date = new Date();
+          date.setTime(date.getTime() + (7 * 24 * 60 * 60 * 1000));
+          expires = "; expires=" + date.toUTCString();
+          document.cookie = "gatedSubmission=true" + expires + "; path=/";
+        });
       </script>
     </div>
     <h6>By entering your email you agree to receive marketing communications from Charlie Health. You can unsubscribe anytime.</h6>
