@@ -96,20 +96,26 @@ $filterTypes  = get_terms('resource-type');
                 }
               }
               $media = get_field('media', get_the_ID()) ?: '';
+              $gated = get_field('gated', get_the_ID());
+              if ($gated) {
+                $link = home_url('/gated/?pdf_link=') . $media;
+              } else {
+                $link = $media;
+              }
               ?>
               <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item lg:w-[calc(33.33%_-15px)] <?= implode(' ', $topic); ?> <?= implode(' ', $type); ?>">
                 <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
                   <img src="<?= placeHolderImage(); ?>" alt="#" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
                 </div>
-                <?php if ($type) : ?>
+                <?php if ($topic) : ?>
                   <div class="absolute rounded-t-lg top-sp-4 left-sp-4">
-                    <p class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base cursor-pointer"><?= $typeName; ?></p>
+                    <p class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base cursor-pointer"><?= $topicName; ?></p>
                   </div>
                 <?php endif; ?>
                 <div class="grid bg-white rounded-b-lg p-sp-4">
-                  <h3 class="text-h4-base"><a href="<?= home_url('/gated/?pdf_link='); ?><?= $media; ?>" class="block stretched-link"><?= get_the_title(); ?></a></h3>
-                  <?php if ($topic) : ?>
-                    <p><?= $topicName; ?></p>
+                  <h3 class="text-h4-base"><a href="<?= $link; ?>" class="block stretched-link"><?= get_the_title(); ?></a></h3>
+                  <?php if ($type) : ?>
+                    <p><?= $typeName; ?></p>
                   <?php endif; ?>
                 </div>
               </div>
