@@ -95,6 +95,7 @@ $filterTypes  = get_terms('resource-type');
                   $type[] = $typesSlug->slug;
                 }
               }
+              $media = get_field('media', get_the_ID()) ?: '';
               ?>
               <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item lg:w-[calc(33.33%_-15px)] <?= implode(' ', $topic); ?> <?= implode(' ', $type); ?>">
                 <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
@@ -106,7 +107,7 @@ $filterTypes  = get_terms('resource-type');
                   </div>
                 <?php endif; ?>
                 <div class="grid bg-white rounded-b-lg p-sp-4">
-                  <h3 class="text-h4-base"><a href="<?= get_the_permalink(); ?>" class="block stretched-link"><?= get_the_title(); ?></a></h3>
+                  <h3 class="text-h4-base"><a href="<?= home_url('/gated/?pdf_link='); ?><?= $media; ?>" class="block stretched-link"><?= get_the_title(); ?></a></h3>
                   <?php if ($topic) : ?>
                     <p><?= $topicName; ?></p>
                   <?php endif; ?>

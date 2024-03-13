@@ -20,31 +20,24 @@
 
         document.querySelector('#gatedFormInContent #field161791549').addEventListener('keydown', function(event) {
           if (event.key === 'Enter') {
-            console.log('keydown');
             document.querySelector('#gatedFormInContent #fsSubmitButton5683263').click();
           }
         });
 
         const gatedForm = document.getElementById('fsForm5683263'); // Gated form ID
-        console.log(gatedForm);
 
         function handleFormSubmission(event) {
-          console.log('submit');
           setTimeout(() => {
-            console.log('start send');
             const urlParams = new URLSearchParams(window.location.search);
             const pdfLink = urlParams.get('pdf_link'); // PDF query param from previous page
 
-            console.log(pdfLink);
-            
             // Redirect to the URL specified by the pdf_link query parameter
             if (pdfLink) {
-              console.log('send');
               window.location.href = pdfLink;
             } else {
               return;
             }
-          }, 2000);
+          }, 100);
         }
         // Add form submission event listener
         gatedForm.addEventListener('submit', handleFormSubmission);
