@@ -24,23 +24,16 @@
           }
         });
 
-        const gatedForm = document.getElementById('fsForm5683263'); // Gated form ID
+        const urlParams = new URLSearchParams(window.location.search);
+        const pdfLink = urlParams.get('pdf_link');
+        var encodedPdfLink = encodeURIComponent(pdfLink);
 
-        function handleFormSubmission(event) {
-          setTimeout(() => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const pdfLink = urlParams.get('pdf_link'); // PDF query param from previous page
+        // Append the pdf_link query parameter to the form action URL
+        var formAction = document.getElementById('fsForm5683263').action;
+        var updatedFormAction = formAction + '?pdf_link=' + encodedPdfLink;
 
-            // Redirect to the URL specified by the pdf_link query parameter
-            if (pdfLink) {
-              window.location.href = pdfLink;
-            } else {
-              return;
-            }
-          }, 100);
-        }
-        // Add form submission event listener
-        gatedForm.addEventListener('submit', handleFormSubmission);
+        // Update the form action attribute with the new URL
+        document.getElementById('fsForm5683263').action = updatedFormAction;
       </script>
     </div>
     <h6>By entering your email you agree to receive marketing communications from Charlie Health. You can unsubscribe anytime.</h6>
