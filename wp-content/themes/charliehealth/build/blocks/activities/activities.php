@@ -111,27 +111,22 @@ $filterTypes  = get_terms('resource-type');
               }
 
               // Link
-              // Check for submission cookie
+              // If no cookie
               $media = get_field('media', get_the_ID()) ?: false;
-              if (isset($_COOKIE['gatedSubmission'])) {
-                if ($media) {
-                  $link = $media;
-                } else {
-                  $link = get_the_permalink(get_the_ID());
-                }
-              } else {
-                if ($media) {
-                  // Remove part of link so that it can't be copied at least
-                  $stripped = strstr($media, '/wp-content/uploads/');
-                  $media    = substr($stripped, strlen('/wp-content/uploads/'));
-                }
-                $gated = get_field('gated', get_the_ID());
-                if ($gated) {
-                  $link = home_url('/gated/?pdf_link=') . $media;
-                } elseif (!$media) {
-                  $link = get_the_permalink(get_the_ID());
-                }
+              if ($media) {
+                // Remove part of link so that it can't be copied at least
+                $stripped = strstr($media, '/wp-content/uploads/');
+                $media    = substr($stripped, strlen('/wp-content/uploads/'));
               }
+              $gated = get_field('gated', get_the_ID());
+              if ($gated) {
+                $link = home_url('/gated/?pdf_link=') . $media;
+              } elseif (!$media) {
+                $link = get_the_permalink(get_the_ID());
+              }
+
+              // If cookie
+              $successLink = $media ? home_url('/wp-content/uploads/') . $media : get_the_permalink(get_the_ID());
               ?>
               <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item lg:w-[calc(33.33%_-15px)] <?= implode(' ', $topic); ?> <?= implode(' ', $type); ?>">
                 <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
@@ -143,7 +138,7 @@ $filterTypes  = get_terms('resource-type');
                   </div>
                 <?php endif; ?>
                 <div class="grid bg-white rounded-b-lg p-sp-4">
-                  <h3 class="text-h4-base"><a href="<?= $link; ?>" class="block stretched-link"><?= get_the_title(); ?></a></h3>
+                  <h3 class="text-h4-base"><a href="<?= $link; ?>" class="block stretched-link success-link-js" data-success-link="<?= $successLink ?>"><?= get_the_title(); ?></a></h3>
                   <?php if ($type) : ?>
                     <p><?= $typeName; ?></p>
                   <?php endif; ?>
@@ -359,5 +354,23 @@ $filterTypes  = get_terms('resource-type');
       filterButtonGroup.classList.toggle('-translate-y-full');
       document.querySelector('.down-arrow-js').classList.toggle('rotate-180');
     })
+
+    function checkCookie(name) {
+      var cookies = document.cookie.split(';');
+      for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].trim();
+        if (cookie.indexOf(name + "=") === 0) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    if (checkCookie("gatedSubmission")) {
+      const successLinks = document.querySelectorAll('.success-link-js');
+      successLinks.forEach(link => {
+        link.href = link.getAttribute('data-success-link');
+      });
+    }
   });
 </script>
