@@ -311,6 +311,13 @@
                 "operator": "==",
                 "value": "event"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "activities"
+            }
         ]
     ],
     "menu_order": 0,
@@ -322,5 +329,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1707412234
+    "modified": 1710365147
 }

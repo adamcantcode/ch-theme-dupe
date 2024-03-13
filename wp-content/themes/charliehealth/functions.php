@@ -41,7 +41,7 @@ add_action('pre_get_posts', function () {
   if ('post-new.php' === $pagenow || 'post.php' === $pagenow) {
 
     // Add editor styles for specific post types
-    $post_types_to_style = ['post', 'research', 'press'];
+    $post_types_to_style = ['post', 'research', 'press', 'activities'];
     if (in_array($typenow, $post_types_to_style)) {
       add_editor_style('editor-styles-posts.css');
     }

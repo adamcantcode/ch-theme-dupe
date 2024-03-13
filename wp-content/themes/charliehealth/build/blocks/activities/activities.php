@@ -79,6 +79,20 @@ $filterTypes  = get_terms('resource-type');
 
           if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
               <?php
+              // Image
+              if (has_post_thumbnail()) {
+                $featuredImageID      = get_post_thumbnail_id();
+                $featuredImage        = wp_get_attachment_image_src($featuredImageID, 'card-thumb');
+                $featuredImageAltText = get_post_meta($featuredImageID, '_wp_attachment_image_alt', true);
+
+                $featuredImageUrl     = $featuredImage[0];
+                $featuredImageAltText = $featuredImageAltText ?: '';
+              } else {
+                $featuredImageUrl     = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
+                $featuredImageAltText = 'Charlie Health Logo';
+              }
+
+              // Tags
               $topics = get_the_terms(get_the_ID(), 'topic');
               $types  = get_the_terms(get_the_ID(), 'resource-type');
               if (is_array($topics)) {
@@ -95,29 +109,18 @@ $filterTypes  = get_terms('resource-type');
                   $type[] = $typesSlug->slug;
                 }
               }
-              $media = get_field('media', get_the_ID()) ?: '';
+              // Link
+              $media = get_field('media', get_the_ID()) ?: false;
               if ($media) {
-                  // Remove part of link so that it can't be copied at least
+                // Remove part of link so that it can't be copied at least
                 $stripped = strstr($media, '/wp-content/uploads/');
                 $media    = substr($stripped, strlen('/wp-content/uploads/'));
               }
               $gated = get_field('gated', get_the_ID());
               if ($gated) {
                 $link = home_url('/gated/?pdf_link=') . $media;
-              } else {
-                $link = $media;
-              }
-
-              if (has_post_thumbnail()) {
-                $featuredImageID      = get_post_thumbnail_id();
-                $featuredImage        = wp_get_attachment_image_src($featuredImageID, 'card-thumb');
-                $featuredImageAltText = get_post_meta($featuredImageID, '_wp_attachment_image_alt', true);
-
-                $featuredImageUrl     = $featuredImage[0];
-                $featuredImageAltText = $featuredImageAltText ?: '';
-              } else {
-                $featuredImageUrl     = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
-                $featuredImageAltText = 'Charlie Health Logo';
+              } elseif (!$media) {
+                $link = get_the_permalink(get_the_ID());
               }
               ?>
               <div class="relative w-full mb-base5-4 bg-white rounded-lg group grid-item lg:w-[calc(33.33%_-15px)] <?= implode(' ', $topic); ?> <?= implode(' ', $type); ?>">

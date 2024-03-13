@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   if (
     body.classList.contains('single-post') ||
+    body.classList.contains('single-activities') ||
     body.classList.contains('single-research')
   ) {
     toc();
