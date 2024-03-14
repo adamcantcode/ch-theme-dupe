@@ -124,8 +124,12 @@ $filterTypes  = get_terms('resource-type');
               $gated = get_field('gated', get_the_ID());
               if ($gated) {
                 $link = home_url('/gated/?pdf_link=') . $media;
-              } elseif (!$media) {
-                $link = get_the_permalink(get_the_ID());
+              } else {
+                if ($media) {
+                  $link = home_url('/wp-content/uploads/') . $media;
+                } else {
+                  $link = get_the_permalink(get_the_ID());
+                }
               }
 
               // If cookie
@@ -148,7 +152,7 @@ $filterTypes  = get_terms('resource-type');
                 </div>
               </div>
           <?php endwhile;
-            wp_reset_query();
+            wp_reset_postdata();
           endif;
           ?>
         </div>

@@ -90,7 +90,7 @@ $group = get_field('group')
         </div>
       <?php endwhile; ?>
     <?php endif; ?>
-    <?php wp_reset_query(); ?>
+    <?php wp_reset_postdata(); ?>
   </div>
   <?php else :
   $customPosts = get_field('testimonials');

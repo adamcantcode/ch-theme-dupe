@@ -36,7 +36,7 @@ $customPosts = get_field('areas_of_care');
               </a>
             </div>
         <?php endwhile;
-          wp_reset_query();
+          wp_reset_postdata();
         endif;
         ?>
       <?php elseif ($style === 'custom') : global $post; ?>

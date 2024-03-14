@@ -84,7 +84,7 @@
             </div>
           <?php endwhile; ?>
         <?php endif; ?>
-        <?php wp_reset_query(); ?>
+        <?php wp_reset_postdata(); ?>
       </div>
     <?php else : ?>
       <div class="grid items-center justify-center w-full h-full bg-darker-blue">
