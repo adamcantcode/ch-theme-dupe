@@ -85,6 +85,26 @@
             "append": ""
         },
         {
+            "key": "field_65e9fe50787f6",
+            "label": "Insurance",
+            "name": "insurance",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_65de4f4e98851",
             "label": "Title",
             "name": "title",
@@ -163,5 +183,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1709068254
+    "modified": 1709833828
 }

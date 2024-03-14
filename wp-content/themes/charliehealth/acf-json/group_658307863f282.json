@@ -81,7 +81,7 @@
             "layout": "block",
             "pagination": 0,
             "min": 3,
-            "max": 3,
+            "max": 0,
             "collapsed": "field_658308a743263",
             "button_label": "Add Feature",
             "rows_per_page": 20,
@@ -127,25 +127,6 @@
                     "prepend": "",
                     "append": "",
                     "parent_repeater": "field_6583089a43262"
-                },
-                {
-                    "key": "field_65833a72d3843",
-                    "label": "Color",
-                    "name": "color",
-                    "aria-label": "",
-                    "type": "color_picker",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "enable_opacity": 0,
-                    "return_format": "string",
-                    "parent_repeater": "field_6583089a43262"
                 }
             ]
         }
@@ -168,5 +149,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1703099019
+    "modified": 1709332125
 }

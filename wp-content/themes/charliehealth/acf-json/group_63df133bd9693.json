@@ -22,7 +22,8 @@
                 "multi_image": "Multi-image",
                 "cover": "Hero Cover Image",
                 "details": "Details",
-                "container": "Container"
+                "container": "Container",
+                "insurance": "Insurance"
             },
             "default_value": false,
             "return_format": "value",
@@ -490,5 +491,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1704402636
+    "modified": 1709651501
 }

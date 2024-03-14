@@ -79,7 +79,7 @@ $group = get_field('group')
           <?php if ($pullQuote) : ?>
             <h3 class="text-h3-base font-heading-serif">“<?= $pullQuote; ?>.”</h3>
           <?php endif; ?>
-          <p class="text-p-base"><?= $fullQuote; ?></p>
+          <p class="text-p-base noshow lg:block"><?= $fullQuote; ?></p>
           <p class="mb-0 text-p-base">—<?= $attribution; ?></p>
           <?php if ($title) : ?>
             <p class="mb-0 text-p-base"><?= $title; ?></p>
@@ -95,6 +95,7 @@ $group = get_field('group')
   <?php else :
   $customPosts = get_field('testimonials');
   $slideNum = 0;
+  $showInsurance = get_field('display_insurance', $postID);
   if ($customPosts) : ?>
     <div class="relative">
       <?php if (count($customPosts) <= 3) : ?>
@@ -112,12 +113,13 @@ $group = get_field('group')
             } else {
               $attribution = 'Charlie Health Alum';
             }
-            $pullQuote = get_field('pull-quote', $postID);
-            $fullQuote = get_field('full_quote', $postID);
-            $title     = get_field('title', $postID);
-            $location  = get_field('location', $postID);
-            $age       = get_field('age', $postID);
-            $group     = get_the_terms($postID, 'testimonials-group')[0]->slug;
+            $pullQuote     = get_field('pull-quote', $postID);
+            $fullQuote     = get_field('full_quote', $postID);
+            $title         = get_field('title', $postID);
+            $location      = get_field('location', $postID);
+            $insurance     = get_field('insurance', $postID);
+            $age           = get_field('age', $postID);
+            $group         = get_the_terms($postID, 'testimonials-group')[0]->slug;
 
             switch ($group) {
               case 'young-adult':
@@ -146,8 +148,18 @@ $group = get_field('group')
               <?php if ($pullQuote) : ?>
                 <p class="text-h3-base font-heading-serif">“<?= $pullQuote; ?>.”</p>
               <?php endif; ?>
-              <p class="text-p-base"><?= $fullQuote; ?></p>
-              <p class="mb-0 text-p-base">—<?= $attribution; ?></p>
+              <p class="text-p-base noshow lg:block"><?= $fullQuote; ?></p>
+              <div class="relative overflow-hidden transition-all duration-1000 max-h-0 collapsible-content-wrapper lg:noshow">
+                <p class="text-p-base"><?= $fullQuote; ?></p>
+                <div class="absolute bottom-0 flex justify-center w-full bg-white">
+                  <a role="button" class="z-10 normal-case ch-button button-secondary toggle-button-testimonial mb-base5-4">View full quote</a>
+                </div>
+              </div>
+              <?php if ($showInsurance && $insurance) : ?>
+                <p class="mb-0 text-p-base">—<?= $attribution; ?>, <?= $insurance; ?> member</p>
+              <?php else : ?>
+                <p class="mb-0 text-p-base">—<?= $attribution; ?></p>
+              <?php endif; ?>
               <?php if ($title) : ?>
                 <p class="mb-0 text-p-base"><?= $title; ?></p>
               <?php endif; ?>
