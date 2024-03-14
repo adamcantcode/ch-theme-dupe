@@ -69,9 +69,9 @@
 								});
 
 								// Remove duplicate default formstack stlyes styles
-								var fsNewsletterStyles = document.querySelectorAll('footer style');
-								fsNewsletterStyles.forEach(style => {
-									var clonedStyle = style.cloneNode(true);
+								const styles = document.querySelectorAll('footer style');
+								styles.forEach(style => {
+									const clonedStyle = style.cloneNode(true);
 									document.head.appendChild(clonedStyle);
 									style.parentNode.removeChild(style);
 								});
