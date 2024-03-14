@@ -379,5 +379,10 @@ $filterTypes  = get_terms('resource-type');
         link.href = link.getAttribute('data-success-link');
       });
     }
+
+    // Refresh wage when leaving so that it updates when back button is clicked after viewing guide
+    window.addEventListener('unload', function() {
+      window.location.reload(true);
+    });
   });
 </script>
