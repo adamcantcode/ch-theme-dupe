@@ -43,6 +43,22 @@
           expires = "; expires=" + date.toUTCString();
           document.cookie = "gatedSubmission=true" + expires + "; path=/";
         });
+
+        // If cookie, redirect to /activites
+        function checkCookie(name) {
+          var cookies = document.cookie.split(';');
+          for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i].trim();
+            if (cookie.indexOf(name + "=") === 0) {
+              return true;
+            }
+          }
+          return false;
+        }
+
+        if (checkCookie("gatedSubmission")) {
+          window.location = window.location.origin + '/activities'
+        }
       </script>
     </div>
     <h6>By entering your email you agree to receive marketing communications from Charlie Health. You can unsubscribe anytime.</h6>
