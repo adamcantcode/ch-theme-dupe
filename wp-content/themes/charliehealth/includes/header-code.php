@@ -512,11 +512,11 @@
         element.value = getCookie('fbclid');
       });
     }
-    if (document.cookie.indexOf('msclkid' + '=') > -1) {
-      waitForElement('field161464166', (element) => {
-        element.value = getCookie('msclkid');
-      });
-    }
+    // if (document.cookie.indexOf('msclkid' + '=') > -1) {
+    //   waitForElement('field161464166', (element) => {
+    //     element.value = getCookie('msclkid');
+    //   });
+    // }
     // Get userIP
     waitForElement('field155080834', (element) => {
       fetch('https://api.ipify.org/?format=json').then(results => results.json()).then(data =>
