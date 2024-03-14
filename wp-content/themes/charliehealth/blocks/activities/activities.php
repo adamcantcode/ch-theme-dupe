@@ -72,7 +72,10 @@ $filterTypes  = get_terms('resource-type');
             'posts_per_page' => -1,
             'order'          => 'DESC',
             'orderby'        => 'date',
-            'post_status'    => 'publish'
+            'post_status'    => 'publish',
+            'cache_results' => false,
+            'update_post_meta_cache' => false,
+            'update_post_term_cache' => false,
           );
 
           $query = new WP_Query($args);
