@@ -79,7 +79,7 @@ if ($pdfLink) {
           }
         </script>
       </div>
-      <h6>By entering your email you agree to receive marketing communications from Charlie Health. You can unsubscribe anytime.</h6>
+      <h6 class="text-mini">By entering your email you agree to receive marketing communications from Charlie Health. You can unsubscribe anytime.</h6>
     </div>
   </div>
 </div>

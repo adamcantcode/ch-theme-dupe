@@ -7,6 +7,7 @@ $filterTypes  = get_terms('resource-type');
     <div class="grid gap-base5-4 lg:grid-cols-[1fr_3fr]">
       <h2 class="text-white">Popular topics</h2>
       <div class="grid lg:grid-cols-3 gap-base5-4">
+        <?php var_dump(get_field('popular_topics')); ?>
         <div data-topic-featured=".topic-one" class="flex items-center justify-between transition-all rounded-md cursor-pointer topic-filter-featured text-h4-base py-base5-4 px-base5-5 hover:contrast-75 bg-lavender-100">
           <p class="inline-block mb-0 text-h4-base">test one</p>
           <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
