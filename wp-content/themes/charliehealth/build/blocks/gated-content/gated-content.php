@@ -51,6 +51,9 @@ if ($pdfLink) {
             date.setTime(date.getTime() + (7 * 24 * 60 * 60 * 1000));
             expires = "; expires=" + date.toUTCString();
             document.cookie = "gatedSubmission=true" + expires + "; path=/";
+            window.addEventListener('unload', function() {
+              window.location.reload(true);
+            });
           });
 
           // If cookie, redirect to /activites
