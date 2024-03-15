@@ -18,7 +18,7 @@
             },
             "taxonomy": "topic",
             "add_term": 0,
-            "save_terms": 0,
+            "save_terms": 1,
             "load_terms": 1,
             "return_format": "object",
             "field_type": "checkbox",
@@ -44,5 +44,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1710525201
+    "modified": 1710525695
 }

@@ -1,36 +1,44 @@
 <?php
 $filterTopics = get_terms('topic');
 $filterTypes  = get_terms('resource-type');
+$popularTopics = get_field('popular_topics');
+$index = 0;
 ?>
 <section class="section bg-primary">
   <div class="container">
     <div class="grid gap-base5-4 lg:grid-cols-[1fr_3fr]">
       <h2 class="text-white">Popular topics</h2>
       <div class="grid lg:grid-cols-3 gap-base5-4">
-        <?php var_dump(get_field('popular_topics')); ?>
-        <div data-topic-featured=".topic-one" class="flex items-center justify-between transition-all rounded-md cursor-pointer topic-filter-featured text-h4-base py-base5-4 px-base5-5 hover:contrast-75 bg-lavender-100">
-          <p class="inline-block mb-0 text-h4-base">test one</p>
-          <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0862 0.281473L19.5226 6.39729C19.979 6.77258 19.979 7.38106 19.5226 7.75636L12.0862 13.8722C11.6299 14.2475 10.89 14.2475 10.4337 13.8722C9.97731 13.4969 9.97731 12.8884 10.4337 12.5131L15.8753 8.03783H0V6.11582H15.8753L10.4337 1.64054C9.97731 1.26525 9.97731 0.65677 10.4337 0.281473C10.89 -0.0938243 11.6299 -0.0938243 12.0862 0.281473Z" fill="#161A3D" />
-          </svg>
-        </div>
-        <div data-topic-featured=".topic-two" class="flex items-center justify-between transition-all rounded-md cursor-pointer topic-filter-featured text-h4-base py-base5-4 px-base5-5 hover:contrast-75 bg-pale-blue-100">
-          <p class="inline-block mb-0 text-h4-base">test two</p>
-          <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0862 0.281473L19.5226 6.39729C19.979 6.77258 19.979 7.38106 19.5226 7.75636L12.0862 13.8722C11.6299 14.2475 10.89 14.2475 10.4337 13.8722C9.97731 13.4969 9.97731 12.8884 10.4337 12.5131L15.8753 8.03783H0V6.11582H15.8753L10.4337 1.64054C9.97731 1.26525 9.97731 0.65677 10.4337 0.281473C10.89 -0.0938243 11.6299 -0.0938243 12.0862 0.281473Z" fill="#161A3D" />
-          </svg>
-        </div>
-        <div data-topic-featured=".topic-three" class="flex items-center justify-between transition-all bg-yellow-100 rounded-md cursor-pointer topic-filter-featured text-h4-base py-base5-4 px-base5-5 hover:contrast-75">
-          <p class="inline-block mb-0 text-h4-base">test three</p>
-          <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0862 0.281473L19.5226 6.39729C19.979 6.77258 19.979 7.38106 19.5226 7.75636L12.0862 13.8722C11.6299 14.2475 10.89 14.2475 10.4337 13.8722C9.97731 13.4969 9.97731 12.8884 10.4337 12.5131L15.8753 8.03783H0V6.11582H15.8753L10.4337 1.64054C9.97731 1.26525 9.97731 0.65677 10.4337 0.281473C10.89 -0.0938243 11.6299 -0.0938243 12.0862 0.281473Z" fill="#161A3D" />
-          </svg>
-        </div>
+        <?php foreach ($popularTopics as $topic) : ?>
+          <?php
+          $index++;
+          switch ($index) {
+            case 1:
+              $topicColor = 'bg-lavender-100';
+              break;
+            case 2:
+              $topicColor = 'bg-pale-blue-100';
+              break;
+            case 3:
+              $topicColor = 'bg-yellow-100';
+              break;
+            default:
+              $topicColor = 'bg-lavender-100';
+              break;
+          }
+          ?>
+          <a href="#resourcesSection" data-topic-featured=".<?= $topic->slug; ?>" class="flex items-center justify-between transition-all rounded-md topic-filter-featured text-h4-base no-underline py-base5-4 px-base5-5 hover:contrast-75 <?= $topicColor; ?>">
+            <p class="inline-block mb-0 text-h4-base"><?= $topic->name; ?></p>
+            <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0862 0.281473L19.5226 6.39729C19.979 6.77258 19.979 7.38106 19.5226 7.75636L12.0862 13.8722C11.6299 14.2475 10.89 14.2475 10.4337 13.8722C9.97731 13.4969 9.97731 12.8884 10.4337 12.5131L15.8753 8.03783H0V6.11582H15.8753L10.4337 1.64054C9.97731 1.26525 9.97731 0.65677 10.4337 0.281473C10.89 -0.0938243 11.6299 -0.0938243 12.0862 0.281473Z" fill="#161A3D" />
+            </svg>
+          </a>
+        <?php endforeach; ?>
       </div>
     </div>
   </div>
 </section>
-<section class="section bg-grey-cool">
+<section class="section bg-grey-cool" id="resourcesSection">
   <div class="container">
     <div class="grid lg:grid-cols-[1fr_1fr_2fr] gap-base5-4">
       <h2>Charlie Health resources</h2>
