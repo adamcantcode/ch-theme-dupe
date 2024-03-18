@@ -1,5 +1,5 @@
 <?php if (have_rows('therapists')) : ?>
-  <div class="grid justify-center lg:auto-cols-auto lg:grid-flow-col gap-base5-4">
+  <div class="grid justify-center lg:grid-cols-3 gap-base5-4">
     <?php while (have_rows('therapists')) : the_row(); ?>
       <?php
       $image = get_sub_field('headshot');
