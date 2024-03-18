@@ -12,5 +12,13 @@
     "mode": "preview",
     "renderTemplate": "scrolling-cta.php"
   },
-  "supports": {}
+  "supports": {
+    "color": {
+      "background": true,
+      "text": false,
+      "enableContrastChecker": false,
+      "gradients": false,
+      "link": false
+    }
+  }
 }

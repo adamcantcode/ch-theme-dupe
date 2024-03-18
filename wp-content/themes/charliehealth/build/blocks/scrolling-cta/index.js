@@ -9569,6 +9569,8 @@ __webpack_require__.r(__webpack_exports__);
 
 gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger);
 window.addEventListener('DOMContentLoaded', () => {
+  const sectionContainer = document.querySelector('.section-bg-js');
+
   // Bakground color change
   let sectionBg = gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.timeline({
     scrollTrigger: {
@@ -9579,10 +9581,16 @@ window.addEventListener('DOMContentLoaded', () => {
       scrub: true
     }
   });
+  var gradientBG = 'rgba(255,255,255,1)';
+  console.log(sectionContainer);
+  console.log(sectionContainer.classList.contains('bg-white'));
+  if (sectionContainer.classList.contains('bg-white')) {
+    gradientBG = 'rgba(255,255,255,1)';
+  }
   sectionBg.fromTo('.section-bg-js', {
-    background: 'linear-gradient(180deg, rgba(247,245,241,1) 0%, rgba(143,146,205,0) 100%)'
+    background: `linear-gradient(180deg, ${gradientBG} 0%, rgba(143,146,205,0) 100%)`
   }, {
-    background: 'linear-gradient(180deg,rgba(247,245,241,1) 0%, rgba(143,146,205,1) 100%)'
+    background: `linear-gradient(180deg, ${gradientBG} 0%, rgba(143,146,205,1) 100%)`
   });
 });
 })();

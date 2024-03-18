@@ -51,6 +51,9 @@ if ($pdfLink) {
             date.setTime(date.getTime() + (7 * 24 * 60 * 60 * 1000));
             expires = "; expires=" + date.toUTCString();
             document.cookie = "gatedSubmission=true" + expires + "; path=/";
+            window.addEventListener('unload', function() {
+              window.location.reload(true);
+            });
           });
 
           // If cookie, redirect to /activites
@@ -76,7 +79,7 @@ if ($pdfLink) {
           }
         </script>
       </div>
-      <h6>By entering your email you agree to receive marketing communications from Charlie Health. You can unsubscribe anytime.</h6>
+      <h6 class="text-mini">By entering your email you agree to receive marketing communications from Charlie Health. You can unsubscribe anytime.</h6>
     </div>
   </div>
 </div>
