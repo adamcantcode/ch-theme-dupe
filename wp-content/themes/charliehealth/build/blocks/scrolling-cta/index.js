@@ -9581,7 +9581,7 @@ window.addEventListener('DOMContentLoaded', () => {
       scrub: true
     }
   });
-  var gradientBG = 'rgba(255,255,255,1)';
+  var gradientBG = 'rgba(247,245,241,1)';
   console.log(sectionContainer);
   console.log(sectionContainer.classList.contains('bg-white'));
   if (sectionContainer.classList.contains('bg-white')) {
