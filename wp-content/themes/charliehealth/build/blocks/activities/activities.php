@@ -266,7 +266,6 @@ $index = 0;
     }
 
     function updateSearch() {
-      updateFilter();
       const searchValue = searchInput.value.trim().toLowerCase();
       const data = Isotope.data(grid);
       const currentFilteredItems = data.filteredItems;
@@ -307,8 +306,9 @@ $index = 0;
       const loadMoreItems = itemsAll.filter(item => item.classList.contains('noshow'));
       loadMoreItems.slice(0, 6).forEach(item => {
         item.classList.remove('noshow');
-        iso.arrange();
       });
+
+      iso.arrange();
 
       if (itemsAll.filter(item => item.classList.contains('noshow')).length < 1) {
         loadMoreButton.classList.add('noshow');
@@ -356,10 +356,10 @@ $index = 0;
 
       // Load more
       const filteredElements = itemsAll.filter(element => element.classList.contains('active'));
-      
+
       // Check if more than 9 active and visible
       loadMoreButton.classList.toggle('noshow', filteredElements.length < 9);
-      
+
       iso.arrange();
     }
 
