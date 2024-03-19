@@ -208,4 +208,117 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
   </section>
 <?php endif; ?>
 <?= do_blocks('<!-- wp:block {"ref":7353} /-->'); ?>
+<?php
+$newsletterImage = get_field('image', 'option');
+$headline = get_field('headline', 'option');
+$subhead = get_field('subhead', 'option');
+?>
+<div id="newsletterPopupBlogPost" class="bg-[rgba(0,0,0,.5)] fixed top-0 left-0 w-full h-full z-50 grid items-center justify-center center transition-all duration-300 modal-fade">
+  <div class="transition-all duration-300 section-xs">
+    <div class="grid lg:grid-cols-[1fr,2fr] bg-cream container max-h-[80vh] overflow-auto rounded-md items-center relative">
+      <div class="absolute top-0 right-0 cursor-pointer">
+        <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/close-x.svg'); ?>" alt="close button" class="w-full duration-300 modal-close p-sp-4 hover:brightness-0">
+      </div>
+      <img src="<?= $newsletterImage['sizes']['featured-large']; ?>" alt="<?= $newsletterImage['alt']; ?>" class="object-cover w-full h-full noshow lg:block">
+      <div class="p-sp-8">
+        <h2 class="text-h1-base font-heading"><?= $headline; ?></h2>
+        <p class="h-full lg:block"><?= $subhead; ?></p>
+        <div id="newsletterPopupBlogPost" class="newsletter-revamp">
+          <script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/newsletter_blog_revamp"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/newsletter_blog_revamp" title="Online Form">Online Form - Newsletter - Blog Revamp</a></noscript>
+          <script>
+            var container = document.currentScript.parentNode; // Newsletter container
+            var elementToCut = container.querySelector("#newsletterPopupBlogPost #fsSubmitButton5194985"); // Submit button
+            var destinationElement = container.querySelector("#newsletterPopupBlogPost #fsCell140490700"); // Email container
+            var newsletterID = container.id; // Newlsetter identifier
+            var newsletterLPField = container.querySelector('#newsletterPopupBlogPost #field142799721'); // LP URL field
+            var newsletterIDField = container.querySelector('#newsletterPopupBlogPost #field146376375'); // Type field
+
+            if (elementToCut && destinationElement) {
+              var clonedElement = elementToCut.cloneNode(true);
+              elementToCut.parentNode.removeChild(elementToCut);
+              destinationElement.appendChild(clonedElement);
+            }
+
+            newsletterIDField.value = newsletterID;
+            newsletterLPField.value = window.location.href;
+
+            document.querySelector('#newsletterPopupBlogPost #field140490700').addEventListener('keydown', function(event) {
+              if (event.key === 'Enter') {
+                console.log('keydown');
+                document.querySelector('#newsletterPopupBlogPost #fsSubmitButton5194985').click();
+              }
+            });
+          </script>
+        </div>
+        <h5>You can unsubscribe anytime.</h5>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    // Function to create a cookie
+    function createCookie(name, value, days) {
+      var expires = '';
+      if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+        expires = '; expires=' + date.toUTCString();
+      }
+      document.cookie = name + '=' + value + expires + '; path=/';
+    }
+
+    // Function to check if the cookie exists
+    function getCookie(name) {
+      var nameEQ = name + '=';
+      var cookies = document.cookie.split(';');
+      for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        while (cookie.charAt(0) === ' ') {
+          cookie = cookie.substring(1, cookie.length);
+        }
+        if (cookie.indexOf(nameEQ) === 0) {
+          return cookie.substring(nameEQ.length, cookie.length);
+        }
+      }
+      return null;
+    }
+
+    // Function to handle the scroll event
+    function handleScroll() {
+      var scrollPosition =
+        window.pageYOffset || document.documentElement.scrollTop;
+      var windowHeight = window.innerHeight;
+      var scrollThreshold = windowHeight * 1.5; // Adjust this value as needed
+
+      // Check if the user has scrolled past the threshold and the cookie doesn't exist
+      if (scrollPosition > scrollThreshold && !getCookie('newsletter_popup')) {
+        // Change the class of an element
+        var modal = document.getElementById('newsletterPopupBlogPost');
+        modal.classList.toggle('modal-fade');
+
+        // Create the cookie to prevent further pop-ups
+        createCookie('newsletter_popup', 'true', 1);
+
+        modal.addEventListener('click', (event) => {
+          if (event.target.id === 'newsletterPopupBlogPost') {
+            modal.classList.toggle('modal-fade');
+          }
+        });
+
+        const closeButton = modal.querySelector('.modal-close');
+
+        closeButton.addEventListener('click', () => {
+          modal.classList.toggle('modal-fade');
+        });
+
+        // Remove the scroll event listener
+        window.removeEventListener('scroll', handleScroll);
+      }
+    }
+
+    // Attach the scroll event listener
+    window.addEventListener('scroll', handleScroll);
+  });
+</script>
 <?php get_footer(); ?>
