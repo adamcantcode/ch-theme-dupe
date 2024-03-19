@@ -40,7 +40,7 @@ $index = 0;
 </section>
 <section class="section bg-grey-cool" id="resourcesSection">
   <div class="container">
-    <div class="grid lg:grid-cols-[1fr_1fr_2fr] gap-base5-4">
+    <div class="grid lg:grid-cols-[1fr_1fr_2fr] gap-base5-4 mb-base5-4 lg:mb-0">
       <h2>Charlie Health resources</h2>
       <div></div>
       <div>
@@ -55,7 +55,7 @@ $index = 0;
             <path fill-rule="evenodd" clip-rule="evenodd" d="M1.50015 0.585938L8.50015 7.58594L15.5002 0.585938L16.9144 2.00015L8.50015 10.4144L0.0859375 2.00015L1.50015 0.585938Z" fill="#161A3D" />
           </svg>
         </div>
-        <div class="overflow-hidden">
+        <div class="overflow-hidden transition-all max-h-0">
           <div class="grid transition-all duration-500 -translate-y-full bg-white filter-button-group-js rounded-b-md mx-base5-2 p-base5-4 gap-base5-2">
             <div class="grid gap-base5-2">
               <p class="mb-0">Resource topic</p>
@@ -73,7 +73,7 @@ $index = 0;
         </div>
       </div>
       <div>
-        <div class="flex grid-resources">
+        <div class="flex transition-all opacity-0 grid-resources">
           <div class="w-full grid-sizer lg:w-[calc(33.33%_-15px)]"></div>
           <?php
           $args = array(
@@ -354,13 +354,13 @@ $index = 0;
         }
       });
 
-      iso.arrange();
-
       // Load more
       const filteredElements = itemsAll.filter(element => element.classList.contains('active'));
-
+      
       // Check if more than 9 active and visible
       loadMoreButton.classList.toggle('noshow', filteredElements.length < 9);
+      
+      iso.arrange();
     }
 
     // Filter dropdown
@@ -368,6 +368,7 @@ $index = 0;
 
     filterButton.addEventListener('click', function(e) {
       filterButtonGroup.classList.toggle('-translate-y-full');
+      filterButtonGroup.parentElement.classList.toggle('max-h-0');
       document.querySelector('.down-arrow-js').classList.toggle('rotate-180');
     })
 
@@ -392,6 +393,11 @@ $index = 0;
     // Refresh wage when leaving so that it updates when back button is clicked after viewing guide
     window.addEventListener('unload', function() {
       window.location.reload(true);
+    });
+
+    // Prevent visibility of items before initilization
+    window.addEventListener('load', function() {
+      grid.classList.remove('opacity-0');
     });
   });
 </script>
