@@ -73,7 +73,7 @@ $index = 0;
         </div>
       </div>
       <div>
-        <div class="flex grid-resources">
+        <div class="flex transition-all opacity-0 grid-resources">
           <div class="w-full grid-sizer lg:w-[calc(33.33%_-15px)]"></div>
           <?php
           $args = array(
@@ -354,13 +354,13 @@ $index = 0;
         }
       });
 
-      iso.arrange();
-
       // Load more
       const filteredElements = itemsAll.filter(element => element.classList.contains('active'));
-
+      
       // Check if more than 9 active and visible
       loadMoreButton.classList.toggle('noshow', filteredElements.length < 9);
+      
+      iso.arrange();
     }
 
     // Filter dropdown
@@ -392,6 +392,11 @@ $index = 0;
     // Refresh wage when leaving so that it updates when back button is clicked after viewing guide
     window.addEventListener('unload', function() {
       window.location.reload(true);
+    });
+
+    // Prevent visibility of items before initilization
+    window.addEventListener('load', function() {
+      grid.classList.remove('opacity-0');
     });
   });
 </script>
