@@ -1,4 +1,11 @@
 <?php
+  $background = 'bg-lavender-300';
+if (!empty($block['backgroundColor'])) {
+  $background = 'bg-' . $block['backgroundColor'];
+  if ($background === 'bg-darker-blue') {
+    $background .= ' [&_*]:text-white ';
+  }
+}
 $pdfLink = get_field('pdf_link') ?: null;
 if ($pdfLink) {
   // Remove part of link so that it can't be copied at least
@@ -7,7 +14,7 @@ if ($pdfLink) {
 };
 ?>
 <div class="gated-guide-container-js">
-  <div class="grid lg:grid-cols-[1fr_2fr] rounded-md p-sp-6 lg:gap-sp-8 bg-grey-cool">
+  <div class="grid lg:grid-cols-[1fr_2fr] rounded-md p-sp-6 lg:gap-sp-8 <?= $background; ?>">
     <div>
       <h2 class="mb-0">Download the guide</h2>
     </div>
