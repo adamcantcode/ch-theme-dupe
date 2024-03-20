@@ -48,7 +48,7 @@ if ($pdfLink) {
           gatedForm.addEventListener('submit', (event) => {
             var expires = "";
             var date = new Date();
-            date.setTime(date.getTime() + (7 * 24 * 60 * 60 * 1000));
+            date.setTime(date.getTime() + (365 * 24 * 60 * 60 * 1000));
             expires = "; expires=" + date.toUTCString();
             document.cookie = "gatedSubmission=true" + expires + "; path=/";
             window.addEventListener('unload', function() {

@@ -56,7 +56,7 @@ $index = 0;
           </svg>
         </div>
         <div class="overflow-hidden transition-all max-h-0">
-          <div class="grid transition-all duration-500 -translate-y-full bg-white filter-button-group-js rounded-b-md mx-base5-2 p-base5-4 gap-base5-2">
+          <div class="z-20 grid transition-all duration-500 -translate-y-full bg-white shadow-sm filter-button-group-js rounded-b-md mx-base5-2 p-base5-4 gap-base5-2">
             <div class="grid gap-base5-2">
               <p class="mb-0">Resource topic</p>
               <?php foreach ($filterTopics as $filterTopic) : ?>
@@ -70,6 +70,7 @@ $index = 0;
               <?php endforeach; ?>
             </div>
           </div>
+          <a role="button" id="resetButton" class="z-10 invisible block text-center text-white no-underline opacity-0 bg-primary-100 hover:bg-primary-200 mx-base5-4 py-base5-1 px-base5-4 rounded-b-md">Reset</a>
         </div>
       </div>
       <div>
@@ -266,7 +267,6 @@ $index = 0;
     }
 
     function updateSearch() {
-      updateFilter();
       const searchValue = searchInput.value.trim().toLowerCase();
       const data = Isotope.data(grid);
       const currentFilteredItems = data.filteredItems;
@@ -307,8 +307,9 @@ $index = 0;
       const loadMoreItems = itemsAll.filter(item => item.classList.contains('noshow'));
       loadMoreItems.slice(0, 6).forEach(item => {
         item.classList.remove('noshow');
-        iso.arrange();
       });
+
+      iso.arrange();
 
       if (itemsAll.filter(item => item.classList.contains('noshow')).length < 1) {
         loadMoreButton.classList.add('noshow');
@@ -356,10 +357,10 @@ $index = 0;
 
       // Load more
       const filteredElements = itemsAll.filter(element => element.classList.contains('active'));
-      
+
       // Check if more than 9 active and visible
       loadMoreButton.classList.toggle('noshow', filteredElements.length < 9);
-      
+
       iso.arrange();
     }
 
@@ -398,6 +399,37 @@ $index = 0;
     // Prevent visibility of items before initilization
     window.addEventListener('load', function() {
       grid.classList.remove('opacity-0');
+    });
+
+    // Reset
+    const checkboxes = document.querySelectorAll('.filter-button-group-js input[type="checkbox"]');
+    const resetButton = document.querySelector('#resetButton');
+
+    function checkIfAnyChecked() {
+      let anyChecked = false;
+      checkboxes.forEach(function(checkbox) {
+        if (checkbox.checked) {
+          anyChecked = true;
+          return;
+        }
+      });
+
+      if (anyChecked) {
+        resetButton.classList.remove('opacity-0', 'invisible');
+      } else {
+        resetButton.classList.add('opacity-0', 'invisible');
+      }
+    }
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', checkIfAnyChecked);
+    });
+    resetButton.addEventListener('click', () => {
+      checkboxes.forEach(function(checkbox) {
+        if (checkbox.checked) {
+          checkbox.checked = false;
+          updateFilter();
+        }
+      });
     });
   });
 </script>
