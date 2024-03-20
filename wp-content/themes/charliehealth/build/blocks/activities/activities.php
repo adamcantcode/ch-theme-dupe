@@ -44,7 +44,7 @@ $index = 0;
       <h2>Charlie Health resources</h2>
       <div></div>
       <div>
-        <input type="text" class="w-full bg-white border rounded-md search-input-js border-primary py-base5-2 px-base5-3" placeholder="Search..." />
+        <input autocomplete="false" type="text" class="w-full bg-white border rounded-md search-input-js border-primary py-base5-2 px-base5-3" placeholder="Search..." />
       </div>
     </div>
     <div class="grid lg:grid-cols-[1fr_3fr] min-h-screen gap-base5-4">
