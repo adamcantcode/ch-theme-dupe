@@ -19,7 +19,6 @@ if ($pdfLink) {
       <h2 class="mb-0">Download the guide</h2>
     </div>
     <div>
-      <p class="noshow lg:block">Submit the form here to receive our guide</p>
       <div id="gatedFormInContent" class="newsletter-revamp">
         <script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/all_gated"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/all_gated" title="Online Form">Online Form - [TEST] ALL GATED</a></noscript>
         <script>
