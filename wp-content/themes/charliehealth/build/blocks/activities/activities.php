@@ -392,7 +392,7 @@ $index = 0;
     }
 
     // Refresh wage when leaving so that it updates when back button is clicked after viewing guide
-    window.addEventListener('unload', function() {
+    window.addEventListener('beforeunload', function() {
       window.location.reload(true);
     });
 
