@@ -23590,39 +23590,45 @@ document.addEventListener('DOMContentLoaded', () => {
   // Function to create a cookie that stores URL if URL has params and if cookie doesn't exist
   function createCookieIfNeeded() {
     if (document.cookie.indexOf('urlWithParams=') === -1 && window.location.search) {
-      console.log('create cookie');
+      console.log('Creating cookie');
       document.cookie = 'urlWithParams=' + encodeURIComponent(window.location.href) + '; domain=wpch.local; path=/';
     } else {
-      console.log('dont create cookie');
+      console.log('Cookie already exists or no params in URL');
     }
   }
 
-  // Function to get params from cookie and append to URL before page load if URL does not already have params and JotForm iframe exists on the page
+  // Function to get params from cookie and append to URL if URL does not already have params and JotForm iframe exists on the page
   function appendParamsIfNeeded() {
     var urlParams = new URLSearchParams(window.location.search);
     if (urlParams.toString() === '') {
-      console.log('does not have params');
+      console.log('URL does not have params');
       // Check if URL doesn't already have params
       var jotformIframes = document.querySelectorAll('iframe[src*="jotform"]');
       if (jotformIframes.length > 0) {
-        console.log('has jotform');
+        console.log('Found JotForm iframe');
         // Check if JotForm iframe exists
         var cookieValue = getCookie('urlWithParams');
-        console.log(cookieValue);
+        console.log('Cookie value:', cookieValue);
         if (cookieValue) {
           var params = decodeURIComponent(cookieValue).split('?')[1];
-          console.log(params);
+          console.log('Params from cookie:', params);
           if (params) {
             var newURL = window.location.href + (window.location.search ? '&' : '?') + params;
-            window.location.href = newURL;
+            console.log('New URL:', newURL);
+            window.location.href = newURL; // Reload the page with the new URL
+          } else {
+            console.log('No params found in cookie');
           }
+        } else {
+          console.log('No cookie found');
         }
+      } else {
+        console.log('No JotForm iframe found');
       }
     } else {
-      console.log('has params');
+      console.log('URL already has params:', window.location.search);
     }
   }
-  console.log();
 
   // Helper function to get cookie value
   function getCookie(name) {
