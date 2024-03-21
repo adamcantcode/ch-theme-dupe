@@ -23587,6 +23587,53 @@ document.addEventListener('DOMContentLoaded', () => {
    * needs to load last (or at least after TOC) in order for all links to be scrollable
    */
   (0,_modules_anchor_scroll__WEBPACK_IMPORTED_MODULE_4__["default"])();
+  // Function to create a cookie that stores URL if URL has params and if cookie doesn't exist
+  function createCookieIfNeeded() {
+    if (document.cookie.indexOf('urlWithParams=') === -1 && window.location.search) {
+      console.log('create cookie');
+      document.cookie = 'urlWithParams=' + encodeURIComponent(window.location.href) + '; domain=wpch.local; path=/';
+    } else {
+      console.log('dont create cookie');
+    }
+  }
+
+  // Function to get params from cookie and append to URL before page load if URL does not already have params and JotForm iframe exists on the page
+  function appendParamsIfNeeded() {
+    var urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.toString() === '') {
+      console.log('does not have params');
+      // Check if URL doesn't already have params
+      var jotformIframes = document.querySelectorAll('iframe[src*="jotform"]');
+      if (jotformIframes.length > 0) {
+        console.log('has jotform');
+        // Check if JotForm iframe exists
+        var cookieValue = getCookie('urlWithParams');
+        console.log(cookieValue);
+        if (cookieValue) {
+          var params = decodeURIComponent(cookieValue).split('?')[1];
+          console.log(params);
+          if (params) {
+            var newURL = window.location.href + (window.location.search ? '&' : '?') + params;
+            window.location.href = newURL;
+          }
+        }
+      }
+    } else {
+      console.log('has params');
+    }
+  }
+  console.log();
+
+  // Helper function to get cookie value
+  function getCookie(name) {
+    var value = '; ' + document.cookie;
+    var parts = value.split('; ' + name + '=');
+    if (parts.length === 2) return parts.pop().split(';').shift();
+  }
+
+  // Call the functions
+  createCookieIfNeeded();
+  appendParamsIfNeeded();
 });
 })();
 
