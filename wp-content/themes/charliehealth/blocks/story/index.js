@@ -1,3 +1,5 @@
+import './index.css';
+
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -12,7 +14,12 @@ window.addEventListener('DOMContentLoaded', () => {
     },
   });
 
-  story.to('', {
+  story.to('#story', {
     autoAlpha: 1,
+    duration: 2,
+  });
+  story.to('html', {
+    '--myScale': 1,
+    duration: 1,
   });
 });
