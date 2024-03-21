@@ -746,6 +746,11 @@ mark {
     &.swiper-slide-prev {
     }
   }
+  &.no-quotes {
+    .swiper-slide {
+      @apply lg:w-[25%] w-[80%];
+    }
+  }
 }
 
 /* Custom Select */

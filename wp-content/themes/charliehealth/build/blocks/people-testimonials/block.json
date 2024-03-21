@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "acf/people-testimonials-block",
+  "title": "People Testimonials",
+  "description": "A carousel for people testimonials",
+  "style": "file:./index.css",
+  "script": "file:./index.js",
+  "category": "custom",
+  "icon": "editor-quote",
+  "apiVersion": 2,
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "people-testimonials.php"
+  },
+  "supports": {}
+}
