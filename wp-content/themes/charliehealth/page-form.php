@@ -9,14 +9,14 @@ Template Post Type: page
 
 <div class="section">
   <div class="container">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-sp-8">
+    <div class="grid grid-cols-1">
       <div>
-        <script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/test_charlie_health_webform_copy_1"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/test_charlie_health_webform_copy_1" title="Online Form">Online Form - [LIVE] Charlie Health Webform 2.0</a></noscript>
+        <script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/self_serve_admissions"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/self_serve_admissions" title="Online Form">Online Form - [PROD] Charlie Health Intake Form</a></noscript>
         <script>
           document.addEventListener("DOMContentLoaded", function() {
             const newDisclaimerText = 'We may employ third-party tools to analyze usage data on our website, including your submission of this form. We make reasonable efforts to obscure or de-identify protected health information from our analytics providers whenever feasible.'
             const disclaimerContainer = document.querySelectorAll('.field-auto-capture')[0];
-            const progressBar = document.querySelector('#fsSubmit4865954');
+            const progressBar = document.querySelector('#fsSubmit5700521');
 
             progressBar.insertAdjacentElement('afterend', disclaimerContainer);
             disclaimerContainer.style.display = 'none';
@@ -27,7 +27,7 @@ Template Post Type: page
 
             document.querySelector('.fsPagination').addEventListener('click', function() {
               setTimeout(() => {
-                if (document.querySelector('#fsPage4865954-2').classList.contains('fsHiddenPage')) {
+                if (document.querySelector('#fsPage5700521-2').classList.contains('fsHiddenPage')) {
                   setTimeout(() => {
                     disclaimerContainer.style.display = 'none';
                   }, 300);
@@ -51,7 +51,7 @@ Template Post Type: page
 
             document.querySelector('.fsPagination').addEventListener('click', function() {
               setTimeout(() => {
-                if (document.querySelector('#fsPage4865954-3').classList.contains('fsHiddenPage')) {
+                if (document.querySelector('#fsPage5700521-3').classList.contains('fsHiddenPage')) {
                   setTimeout(() => {
                     clonedElement.style.display = 'none';
                   }, 300);
@@ -63,11 +63,6 @@ Template Post Type: page
 
           });
         </script>
-        <div style="text-align:right; font-size:x-small;">
-        </div>
-      </div>
-      <div class="grid items-center">
-        <img src="https://www.charliehealth.com/wp-content/uploads/2023/11/Device_Laptop.png.webp" alt="Illustration of Charlie Health client using laptop for Virtual IOP Therapy">
       </div>
     </div>
   </div>
