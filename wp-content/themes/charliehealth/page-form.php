@@ -9,7 +9,7 @@ Template Post Type: page
 
 <div class="section">
   <div class="container">
-    <div class="grid grid-cols-1">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-sp-8">
       <div>
         <script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/self_serve_admissions"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/self_serve_admissions" title="Online Form">Online Form - [PROD] Charlie Health Intake Form</a></noscript>
         <script>
@@ -63,6 +63,9 @@ Template Post Type: page
 
           });
         </script>
+      </div>
+      <div class="grid items-center">
+        <img src="https://www.charliehealth.com/wp-content/uploads/2023/11/Device_Laptop.png.webp" alt="Illustration of Charlie Health client using laptop for Virtual IOP Therapy">
       </div>
     </div>
   </div>
