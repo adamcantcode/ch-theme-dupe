@@ -256,11 +256,11 @@
       s = t.createElement(r);
     s.async = 1, s.src = n,
       c = t.getElementsByTagName(r)[0], c.parentNode.insertBefore(s, c)
-  })(document, window, "https://analytics.formstack.com/js/fsa.js", "script", "FSATracker");
+  })(document, window, "https://www.formstack.com/js/fsa.js", "script", "FSATracker");
 
   FSATracker.init({
     "account": "1047166",
-    "endpoint": "https://analytics.formstack.com"
+    "endpoint": "https://www.formstack.com"
   });
 </script>
 <!-- Formstack END -->
