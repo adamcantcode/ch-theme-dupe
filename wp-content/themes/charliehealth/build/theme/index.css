@@ -3166,6 +3166,11 @@ a.ch-button.button-tertiary.inverted:hover {
   padding-bottom: 2rem;
 }
 
+.py-base5-3{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
 .\!pb-0{
   padding-bottom: 0px !important;
 }
@@ -3228,6 +3233,14 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .pt-sp-7{
   padding-top: 1.75rem;
+}
+
+.pb-base5-3{
+  padding-bottom: 15px;
+}
+
+.pb-base5-4{
+  padding-bottom: 20px;
 }
 
 .text-center{
