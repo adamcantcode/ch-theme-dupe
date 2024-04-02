@@ -18,8 +18,23 @@ $features = get_field('features');
           $bg = 'bg-pale-blue-200';
           break;
       }
+      switch ($icon) {
+        case 'phone':
+          $icon = site_url('/wp-content/themes/charliehealth/resources/images/icons/phone.svg');
+          break;
+        case 'rainbow':
+          $icon = site_url('/wp-content/themes/charliehealth/resources/images/icons/rainbow.svg');
+          break;
+        case 'person':
+          $icon = site_url('/wp-content/themes/charliehealth/resources/images/icons/person-blue.svg');
+          break;
+          default:
+          $icon = site_url('/wp-content/themes/charliehealth/resources/images/icons/person-blue.svg');
+          break;
+      }
     ?>
       <div class="<?= $bg; ?> rounded-[6px] p-sp-5 flex flex-col feature-card opacity-0">
+        <img src="<?= $icon; ?>" alt="icon" class="mb-sp-6 lg:mb-sp-12">
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="mb-sp-6 lg:mb-sp-12">
           <path d="M18 27H20.5V29.5H18V27Z" fill="#161A3D" />
           <path d="M20.5 12H18V24H20.5V12Z" fill="#161A3D" />
