@@ -1958,6 +1958,10 @@ a.ch-button.button-tertiary.inverted:hover {
   height: 2rem;
 }
 
+.h-\[40px\]{
+  height: 40px;
+}
+
 .max-h-0{
   max-height: 0px;
 }
@@ -2111,6 +2115,10 @@ a.ch-button.button-tertiary.inverted:hover {
   width: 2rem;
 }
 
+.w-\[40px\]{
+  width: 40px;
+}
+
 .min-w-0{
   min-width: 0px;
 }
@@ -2185,6 +2193,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .max-w-full{
   max-width: 100%;
+}
+
+.max-w-\[40px\]{
+  max-width: 40px;
 }
 
 .flex-1{
