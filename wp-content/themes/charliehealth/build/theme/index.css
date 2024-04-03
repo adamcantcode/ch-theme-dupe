@@ -1958,10 +1958,6 @@ a.ch-button.button-tertiary.inverted:hover {
   height: 2rem;
 }
 
-.h-\[40px\]{
-  height: 40px;
-}
-
 .max-h-0{
   max-height: 0px;
 }
@@ -2115,10 +2111,6 @@ a.ch-button.button-tertiary.inverted:hover {
   width: 2rem;
 }
 
-.w-\[40px\]{
-  width: 40px;
-}
-
 .min-w-0{
   min-width: 0px;
 }
@@ -2149,6 +2141,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .max-w-\[37\.5rem\]{
   max-width: 37.5rem;
+}
+
+.max-w-\[40px\]{
+  max-width: 40px;
 }
 
 .max-w-\[50\%\]{
@@ -2193,10 +2189,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .max-w-full{
   max-width: 100%;
-}
-
-.max-w-\[40px\]{
-  max-width: 40px;
 }
 
 .flex-1{
@@ -2330,6 +2322,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .grid-flow-col{
   grid-auto-flow: column;
+}
+
+.grid-flow-dense{
+  grid-auto-flow: dense;
 }
 
 .auto-rows-fr{
@@ -2486,6 +2482,14 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .gap-sp-8{
   gap: 2rem;
+}
+
+.gap-base5-3{
+  gap: 15px;
+}
+
+.gap-base5-10{
+  gap: 50px;
 }
 
 .gap-x-4{
@@ -3178,11 +3182,6 @@ a.ch-button.button-tertiary.inverted:hover {
   padding-bottom: 2rem;
 }
 
-.py-base5-3{
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-
 .\!pb-0{
   padding-bottom: 0px !important;
 }
@@ -3197,6 +3196,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .pb-base5-2{
   padding-bottom: 10px;
+}
+
+.pb-base5-4{
+  padding-bottom: 20px;
 }
 
 .pb-sp-0{
@@ -3245,14 +3248,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .pt-sp-7{
   padding-top: 1.75rem;
-}
-
-.pb-base5-3{
-  padding-bottom: 15px;
-}
-
-.pb-base5-4{
-  padding-bottom: 20px;
 }
 
 .text-center{
@@ -5892,6 +5887,14 @@ ul.alert li {
     grid-template-columns: unset;
   }
 
+  .lg\:grid-cols-\[1fr_1\.5fr\]{
+    grid-template-columns: 1fr 1.5fr;
+  }
+
+  .lg\:grid-cols-\[1fr_1\.25fr\]{
+    grid-template-columns: 1fr 1.25fr;
+  }
+
   .lg\:flex-row{
     flex-direction: row;
   }
@@ -6082,6 +6085,11 @@ ul.alert li {
     padding-right: 0px;
   }
 
+  .lg\:px-base5-8{
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
   .lg\:px-sp-10{
     padding-left: 2.5rem;
     padding-right: 2.5rem;
@@ -6100,6 +6108,11 @@ ul.alert li {
   .lg\:px-sp-8{
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .lg\:py-base5-10{
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 
   .lg\:py-sp-12{
