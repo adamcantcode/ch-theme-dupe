@@ -5571,6 +5571,10 @@ ul.alert li {
     display: block;
   }
 
+  .lg\:inline-block{
+    display: inline-block;
+  }
+
   .lg\:flex{
     display: flex;
   }

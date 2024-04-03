@@ -17,10 +17,10 @@ if (!empty($block['backgroundColor'])) {
     <div>
       <p class="text-h4-base mb-base5-5">Other related areas of care may include</p>
       <?php if (have_rows('links')) :  ?>
-        <div class="flex gap-base5-3">
+        <div class="flex flex-wrap gap-base5-3">
           <?php while (have_rows('links')) : the_row(); ?>
             <?php $link = get_sub_field('link'); ?>
-            <div class="inline-block">
+            <div class="lg:inline-block flex w-full lg:w-[unset]">
               <a href="<?= $link['url']; ?>" class="ch-button button-secondary <?= $inverted ? 'inverted' : ''; ?>" target="<?= $link['target'] ?>"><?= $link['title']; ?></a>
             </div>
           <?php endwhile; ?>
