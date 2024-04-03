@@ -3,10 +3,12 @@ if (!empty($block['backgroundColor'])) {
   $background = 'bg-' . $block['backgroundColor'];
   if ($background === 'bg-darker-blue') {
     $background .= ' [&_*]:text-white ';
+    $inverted = true;
   }
 } else {
   $background = 'bg-darker-blue';
   $background .= ' [&_*]:text-white';
+  $inverted = true;
 }
 ?>
 <div class="rounded-md <?= $background; ?>">
@@ -19,7 +21,7 @@ if (!empty($block['backgroundColor'])) {
           <?php while (have_rows('links')) : the_row(); ?>
             <?php $link = get_sub_field('link'); ?>
             <div class="inline-block">
-              <a href="<?= $link['url']; ?>" class="ch-button button-secondary inverted" target="<?= $link['target'] ?>"><?= $link['title']; ?></a>
+              <a href="<?= $link['url']; ?>" class="ch-button button-secondary <?= $inverted ? 'inverted' : ''; ?>" target="<?= $link['target'] ?>"><?= $link['title']; ?></a>
             </div>
           <?php endwhile; ?>
         </div>
