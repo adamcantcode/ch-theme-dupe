@@ -1,4 +1,4 @@
-<div class="grid justify-between lg:grid-cols-2 gap-sp-5">
+<div class="grid justify-between gap-base5-4">
   <?php if (have_rows('links')) : ?>
     <?php while (have_rows('links')) : the_row(); ?>
     <?php 

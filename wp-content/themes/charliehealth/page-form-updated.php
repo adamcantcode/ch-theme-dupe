@@ -10,7 +10,7 @@ Template Post Type: page
 <div class="section">
   <div class="container">
     <div class="grid grid-cols-1">
-      <script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/charlie_health_pre_admission_copy"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/charlie_health_pre_admission_copy" title="Online Form">Online Form - [TEST] Self-serve admissions</a></noscript>
+      <script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/self_serve_admissions"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/self_serve_admissions" title="Online Form">Online Form - [PROD] Charlie Health Intake Form</a></noscript>
     </div>
   </div>
 </div>
