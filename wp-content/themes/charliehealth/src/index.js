@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // NOTE Also placed in rocket-skip-js
   // navigationMenu();
   if (
-    body.classList.contains('single-areas-of-care') ||
     body.classList.contains('single-treatment-modalities') ||
     body.classList.contains('single-post')
   ) {

@@ -2324,10 +2324,6 @@ a.ch-button.button-tertiary.inverted:hover {
   grid-auto-flow: column;
 }
 
-.grid-flow-dense{
-  grid-auto-flow: dense;
-}
-
 .auto-rows-fr{
   grid-auto-rows: minmax(0, 1fr);
 }
@@ -2440,6 +2436,10 @@ a.ch-button.button-tertiary.inverted:hover {
   gap: 10px;
 }
 
+.gap-base5-3{
+  gap: 15px;
+}
+
 .gap-base5-4{
   gap: 20px;
 }
@@ -2482,14 +2482,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .gap-sp-8{
   gap: 2rem;
-}
-
-.gap-base5-3{
-  gap: 15px;
-}
-
-.gap-base5-10{
-  gap: 50px;
 }
 
 .gap-x-4{
@@ -5803,6 +5795,10 @@ ul.alert li {
     grid-template-columns: 1fr 2fr;
   }
 
+  .lg\:grid-cols-\[1fr_1\.25fr\]{
+    grid-template-columns: 1fr 1.25fr;
+  }
+
   .lg\:grid-cols-\[1fr_1\.33fr\]{
     grid-template-columns: 1fr 1.33fr;
   }
@@ -5889,14 +5885,6 @@ ul.alert li {
 
   .lg\:grid-cols-\[unset\]{
     grid-template-columns: unset;
-  }
-
-  .lg\:grid-cols-\[1fr_1\.5fr\]{
-    grid-template-columns: 1fr 1.5fr;
-  }
-
-  .lg\:grid-cols-\[1fr_1\.25fr\]{
-    grid-template-columns: 1fr 1.25fr;
   }
 
   .lg\:flex-row{
