@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.cookie =
         'urlWithParams=' +
         encodeURIComponent(window.location.href) +
-        '; domain=; path=/';
+        '; domain=.charliehealth.com; path=/';
     } else {
       console.log('Cookie already exists or no params in URL');
     }
@@ -107,13 +107,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // Function to get params from cookie and append to URL if URL does not already have params and JotForm iframe exists on the page
   function appendParamsIfNeeded() {
     var urlParams = new URLSearchParams(window.location.search);
+    // Check if URL doesn't already have params
     if (urlParams.toString() === '') {
       console.log('URL does not have params');
-      // Check if URL doesn't already have params
       var jotformIframes = document.querySelectorAll('iframe[src*="jotform"]');
+      // Check if JotForm iframe exists
       if (jotformIframes.length > 0) {
         console.log('Found JotForm iframe');
-        // Check if JotForm iframe exists
         var cookieValue = getCookie('urlWithParams');
         console.log('Cookie value:', cookieValue);
         if (cookieValue) {
@@ -148,6 +148,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Call the functions
-  createCookieIfNeeded();
-  appendParamsIfNeeded();
+  if (!document.body.classList.contains('logged-in')) {
+    createCookieIfNeeded();
+    appendParamsIfNeeded();
+  }
 });
