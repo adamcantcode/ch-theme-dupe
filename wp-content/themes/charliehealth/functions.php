@@ -145,6 +145,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/therapists');
   register_block_type(__DIR__ . '/build/blocks/people-testimonials');
   register_block_type(__DIR__ . '/build/blocks/story');
+  register_block_type(__DIR__ . '/build/blocks/bubble-quote');
 }
 add_action('init', 'register_acf_blocks', 5);
 
