@@ -44,7 +44,7 @@ $index = 0;
       <h2>Charlie Health resources</h2>
       <div></div>
       <div>
-        <input autocomplete="false" type="text" class="w-full bg-white border rounded-md search-input-js border-primary py-base5-2 px-base5-3" placeholder="Search..." />
+        <input autocomplete="false" type="search" class="w-full bg-white border rounded-md search-input-js border-primary py-base5-2 px-base5-3" placeholder="Search..." />
       </div>
     </div>
     <div class="grid lg:grid-cols-[1fr_3fr] min-h-screen gap-base5-4">
@@ -73,7 +73,7 @@ $index = 0;
           <a role="button" id="resetButton" class="z-10 invisible block text-center text-white no-underline opacity-0 bg-primary-100 hover:bg-primary-200 mx-base5-4 py-base5-1 px-base5-4 rounded-b-md">Reset</a>
         </div>
       </div>
-      <div>
+      <div class="overflow-hidden">
         <div class="flex transition-all opacity-0 grid-resources">
           <div class="w-full grid-sizer lg:w-[calc(33.33%_-15px)]"></div>
           <?php
