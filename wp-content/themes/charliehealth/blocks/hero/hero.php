@@ -41,7 +41,9 @@ $icon           = get_field('hero_icon');
       </div>
     </div>
     <div class="flex flex-col justify-between order-1 lg:order-2">
-      <img src="<?= $heroImage['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $heroImage['alt'] ?: 'Placeholder image'; ?>" class="object-cover object-top rounded-lg max-h-52 md:max-h-none nolazy noshow lg:block">
+      <?php if ($heroImage) : ?>
+        <img src="<?= $heroImage['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $heroImage['alt'] ?: 'Placeholder image'; ?>" class="object-cover object-top rounded-lg max-h-52 md:max-h-none nolazy noshow lg:block">
+      <?php endif; ?>
     </div>
   </div>
 <?php endif; ?>
