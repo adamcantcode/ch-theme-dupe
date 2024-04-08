@@ -648,12 +648,12 @@ var simplemaps_usmap_mapdata={
         "NJ",
         "MD"
       ],
-      zoomable: "no",
       color: "#1D225F",
       url: "/regions/mid-atlantic",
       name: "Mid-Atlantic <img src=\"https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
       description: "Learn more",
-      hover_color: "#101334"
+      hover_color: "#101334",
+      zoomable: "no"
     },
     "5": {
       states: [
@@ -708,7 +708,8 @@ var simplemaps_usmap_mapdata={
     "9": {
       states: [
         "IA",
-        "MO"
+        "MO",
+        "NE"
       ],
       name: "Central <img src=\"https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
       color: "#1D225F",
