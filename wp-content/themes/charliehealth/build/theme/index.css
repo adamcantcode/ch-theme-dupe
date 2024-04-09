@@ -1455,6 +1455,10 @@ a.ch-button.button-tertiary.inverted:hover {
   top: 2rem;
 }
 
+.-left-1\/2{
+  left: -50%;
+}
+
 .-z-50{
   z-index: -50;
 }
@@ -1489,6 +1493,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .z-\[9999\]{
   z-index: 9999;
+}
+
+.-z-10{
+  z-index: -10;
 }
 
 .order-1{
@@ -1964,6 +1972,10 @@ a.ch-button.button-tertiary.inverted:hover {
   height: 2rem;
 }
 
+.h-5\/6{
+  height: 83.333333%;
+}
+
 .max-h-0{
   max-height: 0px;
 }
@@ -2117,6 +2129,10 @@ a.ch-button.button-tertiary.inverted:hover {
   width: 2rem;
 }
 
+.w-0{
+  width: 0px;
+}
+
 .min-w-0{
   min-width: 0px;
 }
@@ -2197,6 +2213,14 @@ a.ch-button.button-tertiary.inverted:hover {
   max-width: 100%;
 }
 
+.max-w-\[412px\]{
+  max-width: 412px;
+}
+
+.max-w-\[425px\]{
+  max-width: 425px;
+}
+
 .flex-1{
   flex: 1 1 0%;
 }
@@ -2223,6 +2247,10 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .origin-right{
   transform-origin: right;
+}
+
+.origin-left{
+  transform-origin: left;
 }
 
 .-translate-x-1\/2{
@@ -2311,6 +2339,11 @@ a.ch-button.button-tertiary.inverted:hover {
 .scale-\[0\.99\]{
   --tw-scale-x: 0.99;
   --tw-scale-y: 0.99;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.scale-x-0{
+  --tw-scale-x: 0;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 

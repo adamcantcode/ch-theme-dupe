@@ -18,12 +18,3 @@ html {
   transform: scaleX(var(--myScale));
   transform-origin: left;
 }
-.highlightbg-1:after {
-  background: #dac1fb;
-}
-.highlightbg-2:after {
-  background: #8f92cd;
-}
-.highlightbg-3:after {
-  background: #fdbf7c;
-}

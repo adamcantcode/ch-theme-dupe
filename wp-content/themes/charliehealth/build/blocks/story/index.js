@@ -9570,17 +9570,18 @@ window.addEventListener('DOMContentLoaded', () => {
   let story = gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.timeline({
     scrollTrigger: {
       trigger: '#story',
-      start: 'top 80%',
-      markers: true
+      start: 'top 80%'
     }
   });
   story.to('#story', {
     autoAlpha: 1,
-    duration: 2
-  });
-  story.to('html', {
-    '--myScale': 1,
     duration: 1
+  });
+  story.to('.highlight-bg-js', {
+    scaleX: 1,
+    duration: 0.9,
+    stagger: 0.3,
+    ease: 'power4.inOut'
   });
 });
 })();
