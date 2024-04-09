@@ -1563,6 +1563,16 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-bottom: 2rem;
 }
 
+.my-base5-2{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.my-base5-4{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .\!mb-base5-4{
   margin-bottom: 20px !important;
 }
@@ -3495,6 +3505,10 @@ a.ch-button.button-tertiary.inverted:hover {
   line-height: 130%;
 }
 
+.leading-\[140\%\]{
+  line-height: 140%;
+}
+
 .leading-none{
   line-height: 1;
 }
@@ -3509,10 +3523,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .leading-tight{
   line-height: 1.25;
-}
-
-.leading-\[140\%\]{
-  line-height: 140%;
 }
 
 .text-\[\#87889A\]{
