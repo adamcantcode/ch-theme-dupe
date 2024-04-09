@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "acf/press-posts",
+  "title": "Press Posts",
+  "description": "List the 4 latest 'In the News' press posts",
+  "category": "custom",
+  "icon": "chart-area",
+  "style": "file:./index.css",
+  "script": "file:./index.js",
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "press-posts.php"
+  },
+  "supports": {}
+}

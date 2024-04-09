@@ -1363,6 +1363,10 @@ a.ch-button.button-tertiary.inverted:hover {
   bottom: 0px !important;
 }
 
+.-left-base5-4{
+  left: -20px;
+}
+
 .-top-1\/2{
   top: -50%;
 }
@@ -1455,12 +1459,8 @@ a.ch-button.button-tertiary.inverted:hover {
   top: 2rem;
 }
 
-.-left-1\/2{
-  left: -50%;
-}
-
-.-left-base5-4{
-  left: -20px;
+.-z-10{
+  z-index: -10;
 }
 
 .-z-50{
@@ -1497,10 +1497,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .z-\[9999\]{
   z-index: 9999;
-}
-
-.-z-10{
-  z-index: -10;
 }
 
 .order-1{
@@ -1560,6 +1556,11 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-right: 1.25rem;
 }
 
+.my-base5-4{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .my-sp-10{
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
@@ -1573,16 +1574,6 @@ a.ch-button.button-tertiary.inverted:hover {
 .my-sp-8{
   margin-top: 2rem;
   margin-bottom: 2rem;
-}
-
-.my-base5-2{
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.my-base5-4{
-  margin-top: 20px;
-  margin-bottom: 20px;
 }
 
 .\!mb-base5-4{
@@ -1880,6 +1871,10 @@ a.ch-button.button-tertiary.inverted:hover {
   height: 66.666667%;
 }
 
+.h-5\/6{
+  height: 83.333333%;
+}
+
 .h-\[1\.5px\]{
   height: 1.5px;
 }
@@ -1974,10 +1969,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .h-sp-8{
   height: 2rem;
-}
-
-.h-5\/6{
-  height: 83.333333%;
 }
 
 .max-h-0{
@@ -2133,10 +2124,6 @@ a.ch-button.button-tertiary.inverted:hover {
   width: 2rem;
 }
 
-.w-0{
-  width: 0px;
-}
-
 .min-w-0{
   min-width: 0px;
 }
@@ -2169,8 +2156,8 @@ a.ch-button.button-tertiary.inverted:hover {
   max-width: 37.5rem;
 }
 
-.max-w-\[400px\]{
-  max-width: 400px;
+.max-w-\[425px\]{
+  max-width: 425px;
 }
 
 .max-w-\[50\%\]{
@@ -2217,14 +2204,6 @@ a.ch-button.button-tertiary.inverted:hover {
   max-width: 100%;
 }
 
-.max-w-\[412px\]{
-  max-width: 412px;
-}
-
-.max-w-\[425px\]{
-  max-width: 425px;
-}
-
 .flex-1{
   flex: 1 1 0%;
 }
@@ -2249,12 +2228,12 @@ a.ch-button.button-tertiary.inverted:hover {
   transform-origin: center;
 }
 
-.origin-right{
-  transform-origin: right;
-}
-
 .origin-left{
   transform-origin: left;
+}
+
+.origin-right{
+  transform-origin: right;
 }
 
 .-translate-x-1\/2{
@@ -3377,10 +3356,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .text-\[20px\]{
   font-size: 20px;
-}
-
-.text-\[25px\]{
-  font-size: 25px;
 }
 
 .text-\[32px\]{
@@ -6292,19 +6267,11 @@ ul.alert li {
   margin-bottom: 0px;
 }
 
-.\[\&_\*\]\:text-\[14px\] *{
-  font-size: 14px;
-}
-
 .\[\&_\*\]\:text-h5 *{
   font-size: 16px;
   line-height: 140%;
   letter-spacing: 0;
   font-weight: 500;
-}
-
-.\[\&_\*\]\:leading-\[1\.6\] *{
-  line-height: 1.6;
 }
 
 .\[\&_\*\]\:\!text-primary *{
@@ -6320,10 +6287,6 @@ ul.alert li {
 .\[\&_\*\]\:hover\:text-white:hover *{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.\[\&_p\]\:mb-sp-3 p{
-  margin-bottom: 0.75rem;
 }
 /*!*******************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/@wordpress/scripts/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/swiper/swiper-bundle.min.css ***!
