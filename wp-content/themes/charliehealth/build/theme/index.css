@@ -1812,6 +1812,10 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-top: 2rem;
 }
 
+.mb-base5-3{
+  margin-bottom: 15px;
+}
+
 .line-clamp-3{
   overflow: hidden;
   display: -webkit-box;
