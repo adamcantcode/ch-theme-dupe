@@ -1816,6 +1816,18 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-bottom: 15px;
 }
 
+.ml-base5-3{
+  margin-left: 15px;
+}
+
+.mt-base5-2{
+  margin-top: 10px;
+}
+
+.ml-base5-2{
+  margin-left: 10px;
+}
+
 .line-clamp-3{
   overflow: hidden;
   display: -webkit-box;
