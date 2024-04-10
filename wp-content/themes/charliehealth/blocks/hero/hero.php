@@ -30,9 +30,9 @@ $icon           = get_field('hero_icon');
     <div class="order-2 lg:order-1 fix-order">
       <h1><?= $title; ?></h1>
       <img src="<?= $heroImage['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $heroImage['alt'] ?: 'Placeholder image'; ?>" class="block object-cover object-top rounded-lg max-h-52 md:max-h-none nolazy lg:noshow mb-sp-4 hero-image-container">
-      <div class="flex items-center gap-sp-4 mb-sp-12 mobile-hero-sub">
+      <div class="flex items-start gap-sp-4 mb-sp-12 mobile-hero-sub">
         <?php if ($icon) : ?>
-          <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health Shield" class="w-10">
+          <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health Shield" class="w-10 noshow lg:block mt-base5-1">
         <?php endif; ?>
         <p class="mb-0 text-h4-base font-heading-serif"><?= $subtitle; ?></p>
       </div>
