@@ -1,6 +1,5 @@
 <div class="grid grid-cols-1 gap-sp-5 lg:grid-cols-4">
-  <h2 class="self-center text-white">Our values</h2>
-  <?php include(get_template_directory() . '/includes/button-group.php'); ?>
+  <InnerBlocks />
   <?php if (have_rows('value_block')) : while (have_rows('value_block')) : the_row(); ?>
       <?php
       switch (get_row_index()) {
