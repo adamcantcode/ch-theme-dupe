@@ -131,7 +131,7 @@
                     "maxlength": "",
                     "rows": "",
                     "placeholder": "",
-                    "new_lines": "",
+                    "new_lines": "wpautop",
                     "parent_repeater": "field_65fc1782777d0"
                 },
                 {
@@ -211,5 +211,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1711022117
+    "modified": 1712849973
 }
