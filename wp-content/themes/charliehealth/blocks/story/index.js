@@ -19,8 +19,15 @@ window.addEventListener('DOMContentLoaded', () => {
   });
   story.to('.highlight-bg-js', {
     scaleX: 1,
+    transformOrigin: 'left center',
     duration: 0.9,
     stagger: 0.3,
     ease: 'power4.inOut',
   });
+  story.to('.color-change-js', {
+    color: '#161A3D',
+    duration: 0.9,
+    stagger: 0.3,
+    ease: 'power4.inOut',
+  },"-=1.5");
 });
