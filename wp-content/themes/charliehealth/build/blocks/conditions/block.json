@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "acf/conditions-block",
+  "title": "Conidtions Module",
+  "description": "List related conditions with links",
+  "style": "file:./index.css",
+  "script": "file:./index.js",
+  "category": "custom",
+  "icon": "columns",
+  "apiVersion": 2,
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "conditions.php"
+  },
+  "supports": {
+    "color": {
+      "background": true,
+      "text": false,
+      "enableContrastChecker": false,
+      "gradients": false,
+      "link": false
+    }
+  }
+}

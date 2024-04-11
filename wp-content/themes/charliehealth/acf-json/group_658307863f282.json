@@ -87,6 +87,36 @@
             "rows_per_page": 20,
             "sub_fields": [
                 {
+                    "key": "field_660d443f3e076",
+                    "label": "Icon",
+                    "name": "icon",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "person": "Person",
+                        "rainbow": "Rainbow",
+                        "phone": "Phone",
+                        "alert": "Alert",
+                        "clipboard": "Clipboard"
+                    },
+                    "default_value": "person",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_6583089a43262"
+                },
+                {
                     "key": "field_658308a743263",
                     "label": "Heading",
                     "name": "heading",
@@ -149,5 +179,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1709332125
+    "modified": 1712145578
 }

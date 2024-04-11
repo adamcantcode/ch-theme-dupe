@@ -1,0 +1,1 @@
+{"version":3,"file":"info-accordion/index.css","mappings":";;;AAAA;EACE,wBAAwB;AAC1B,C","sources":["webpack://charliehealth/./blocks/info-accordion/index.css"],"sourcesContent":[".iop-overview * {\n  color: #FFFFFF!important;\n}"],"names":[],"sourceRoot":""}
