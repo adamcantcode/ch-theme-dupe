@@ -3601,11 +3601,6 @@ a.ch-button.button-tertiary.inverted:hover {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-yellow-300{
-  --tw-text-opacity: 1;
-  color: rgb(253 191 124 / var(--tw-text-opacity));
-}
-
 .underline{
   text-decoration-line: underline;
 }
