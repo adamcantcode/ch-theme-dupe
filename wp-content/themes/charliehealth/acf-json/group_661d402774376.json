@@ -1,0 +1,47 @@
+{
+    "key": "group_661d402774376",
+    "title": "Partner Testimonials Block",
+    "fields": [
+        {
+            "key": "field_661d4027c0541",
+            "label": "Partner Testimonials Reviews",
+            "name": "partner_testimonials_reviews",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_64b86c5ea3ce3"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/partner-testimonial-review-block"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1713193198
+}

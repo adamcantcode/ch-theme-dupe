@@ -104,6 +104,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/card-hiring');
   register_block_type(__DIR__ . '/build/blocks/collapsible-content');
   register_block_type(__DIR__ . '/build/blocks/testimonial-review');
+  register_block_type(__DIR__ . '/build/blocks/review-testimonial-review');
   register_block_type(__DIR__ . '/build/blocks/testimonial-list');
   register_block_type(__DIR__ . '/build/blocks/posts-list-in-content');
   register_block_type(__DIR__ . '/build/blocks/testimonial-carousel');
@@ -145,6 +146,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/therapists');
   register_block_type(__DIR__ . '/build/blocks/info-accordion');
   register_block_type(__DIR__ . '/build/blocks/conditions');
+  register_block_type(__DIR__ . '/build/blocks/partner-testimonial-review');
 }
 add_action('init', 'register_acf_blocks', 5);
 
@@ -648,6 +650,7 @@ function custom_menu_order($menu_ord)
     'edit.php?post_type=press', // Press
     'edit.php?post_type=team-members', // Team
     'edit.php?post_type=testimonial', // Testimonials
+    'edit.php?post_type=partner-testimonial', // Partner Testimonials
     'separator1', // First separator
     'edit.php?post_type=region', // Regions
     'edit.php?post_type=outreach-team-member', // Outreach Members
