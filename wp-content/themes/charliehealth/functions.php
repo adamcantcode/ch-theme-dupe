@@ -145,6 +145,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/therapists');
   register_block_type(__DIR__ . '/build/blocks/info-accordion');
   register_block_type(__DIR__ . '/build/blocks/conditions');
+  register_block_type(__DIR__ . '/build/blocks/insurance-tabs');
 }
 add_action('init', 'register_acf_blocks', 5);
 
