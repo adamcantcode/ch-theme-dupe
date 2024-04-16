@@ -6,10 +6,10 @@
 
   <div class="grid lg:grid-cols-[1fr,2fr] grid-cols-1 relative lg:gap-x-sp-8">
     <div class="lg:sticky self-start top-[8rem]">
-      <p class="font-heading-serif text-h1-display lg:text-h1-display-lg"><?= $stat ?></p>
+      <p class="text-h1-base"><?= $stat ?></p>
       <div class="grid items-start grid-cols-2 gap-4 lg:block">
-        <p class="text-h4-base lg:max-w-[250px]"><?= $statDetails; ?></p>
-        <a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>" class="ch-button button-secondary"><?= $link['title']; ?></a>
+        <p class="text-h4-base lg:max-w-[255px]"><?= $statDetails; ?></p>
+        <a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>" class="ch-button button-secondary lg:mt-base5-4"><?= $link['title']; ?></a>
       </div>
     </div>
     <?php if (!is_admin()) : ?>
@@ -50,7 +50,7 @@
         <code class="text-white">NOT VISIBLE IN EDITOR -- CHECK PREVIEW</code>
       </div>
     <?php endif; ?>
-    <div class="grid lg:col-start-2">
+    <div class="grid lg:col-start-2 lg:justify-end">
       <a role="button" class="w-full ch-button button-secondary justify-self-center lg:w-auto load-more-js">Load more</a>
     </div>
   </div>
