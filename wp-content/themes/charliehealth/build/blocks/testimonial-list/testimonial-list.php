@@ -38,8 +38,7 @@ $group = get_field('group')
         <?php
         $anonymous = get_field('anonymous', get_the_ID());
         if ($anonymous === false) {
-          $attribution = get_field('attribution', get_the_ID()) ?: get_the_title(get_the_ID());
-          $attribution = abbreviateAfterFirstWord($attribution);
+          $attribution = get_field('attribution', get_the_ID()) ?: abbreviateAfterFirstWord(get_the_title(get_the_ID()));
         } else {
           $attribution = 'Charlie Health Alum';
         }
@@ -104,8 +103,7 @@ $group = get_field('group')
 
             $anonymous = get_field('anonymous', $postID);
             if ($anonymous === false) {
-              $attribution = get_field('attribution', $postID) ?: get_the_title($postID);
-              $attribution = abbreviateAfterFirstWord($attribution);
+              $attribution = get_field('attribution', get_the_ID()) ?: abbreviateAfterFirstWord(get_the_title(get_the_ID()));
             } else {
               $attribution = 'Charlie Health Alum';
             }
@@ -177,8 +175,7 @@ $group = get_field('group')
 
                 $anonymous = get_field('anonymous', $postID);
                 if ($anonymous === false) {
-                  $attribution = get_field('attribution', $postID) ?: get_the_title($postID);
-                  $attribution = abbreviateAfterFirstWord($attribution);
+                  $attribution = get_field('attribution', get_the_ID()) ?: abbreviateAfterFirstWord(get_the_title(get_the_ID()));
                 } else {
                   $attribution = 'Charlie Health Alum';
                 }

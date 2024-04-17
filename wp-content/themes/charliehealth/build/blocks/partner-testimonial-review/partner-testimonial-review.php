@@ -30,8 +30,7 @@
           <?php while ($query->have_posts()) : $query->the_post(); ?>
             <?php
             $count++;
-            $attribution = get_field('attribution', get_the_ID()) ?: get_the_title(get_the_ID());
-            $attribution = abbreviateAfterFirstWord($attribution);
+            $attribution = get_field('attribution', get_the_ID()) ?: abbreviateAfterFirstWord(get_the_title(get_the_ID()));
             $pullQuote   = get_field('pull-quote', get_the_ID());
             $fullQuote   = get_field('full_quote', get_the_ID());
             ?>
