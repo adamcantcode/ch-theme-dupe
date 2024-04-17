@@ -1,13 +1,13 @@
 <div class="flex">
-  <div data-insurer-option="aetna" class="active">Aetna</div>
-  <div data-insurer-option="insurer" class="">insurer</div>
-  <div data-insurer-option="insurer" class="">insurer</div>
-  <div data-insurer-option="insurer" class="">insurer</div>
+  <a role="button" data-insurer-option="aetna" class="no-underline active">Aetna</a>
+  <a role="button" data-insurer-option="insurer" class="no-underline active">Insurer</a>
+  <a role="button" data-insurer-option="insurer" class="no-underline active">Insurer</a>
+  <a role="button" data-insurer-option="insurer" class="no-underline active">Insurer</a>
   <div>& more</div>
 </div>
 <div>
   <div data-insurer-tab="aetna">
-    <div class="grid lg:grid-cols-2">
+    <div class="grid lg:grid-cols-2 gap-base5-4">
       <div class="flex flex-col bg-white rounded-md md:max-w-[300px] p-base5-6 gap-base5-2 mx-auto">
         <div class="flex items-center gap-base5-4">
           <p class="flex-1 text-h4-base">Your copay could be as low as</p>
