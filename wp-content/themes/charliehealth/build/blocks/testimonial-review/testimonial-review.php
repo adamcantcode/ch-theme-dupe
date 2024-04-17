@@ -43,14 +43,18 @@
             $count++;
             $anonymous = get_field('anonymous', get_the_ID());
             if ($anonymous === false) {
-              $attribution = abbreviateAfterFirstWord(get_field('attribution', get_the_ID()));
+              $attribution = get_field('attribution', get_the_ID()) ?: get_the_title(get_the_ID());
+              $attribution = abbreviateAfterFirstWord($attribution);
             } else {
               $attribution = 'Charlie Health Alum';
             }
             $pullQuote = get_field('pull-quote', get_the_ID());
             $fullQuote = get_field('full_quote', get_the_ID());
             $age = get_field('age', get_the_ID());
-            $group = get_the_terms(get_the_ID(), 'testimonials-group')[0]->slug;
+            $group = null;
+            if (get_the_terms(get_the_ID(), 'testimonials-group')) {
+              $group = get_the_terms(get_the_ID(), 'testimonials-group')[0]->slug;
+            }
 
             switch ($group) {
               case 'young-adult':
