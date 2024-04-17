@@ -42,7 +42,30 @@ if (!empty($block['align'])) {
           <div class="!h-auto swiper-slide mb-sp-12">
             <div class="flex !h-full gap-sp-8 pb-sp-8 lg:flex-row flex-col">
               <div class="text-center bg-white p-base5-5 rounded-lg lg:basis-[33%] careers-testimonial-image self-start">
-                <img src="<?= $image['url'] ?: placeHolderImage(); ?>" alt="<?= $image['alt']; ?>" class="object-cover rounded-circle aspect-square mb-sp-6">
+                <video id="myVideo" width="410" height="582" autoplay muted loop>
+                  <source src="/wp-content/themes/charliehealth/resources/videos/careers/testvideo.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+
+                <script>
+                  document.addEventListener("DOMContentLoaded", function() {
+                    var video = document.getElementById("myVideo");
+
+                    // Function to unmute the video
+                    function playUnmuted() {
+                      video.muted = false;
+                      video.pause();
+                      video.currentTime = 0;
+                      video.load();
+                      // Remove the event listener to prevent the video from being muted again
+                      video.removeEventListener("click", playUnmuted);
+                    }
+
+                    // Add event listener to play the video with sound when clicked
+                    video.addEventListener("click", playUnmuted);
+                  });
+                </script>
+
                 <p class="font-heading-serif mb-base5-1"><?= $name; ?></p>
                 <p><?= $title; ?></p>
                 <?php if ($linkedIn) : ?>
