@@ -1353,6 +1353,7 @@ a.insurance-tabs.active:hover {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 500ms;
+    grid-area: 1 / -1;
 }
 
 .insurance-panel.active{
@@ -2594,6 +2595,10 @@ a.insurance-tabs.active:hover {
 
 .overflow-hidden{
   overflow: hidden;
+}
+
+.overflow-scroll{
+  overflow: scroll;
 }
 
 .overflow-y-auto{

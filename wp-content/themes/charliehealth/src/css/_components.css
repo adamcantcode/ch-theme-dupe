@@ -104,11 +104,12 @@
   .insurance-tabs {
     @apply no-underline border rounded-pill hover:bg-primary hover:text-white px-base5-5 py-base5-3 border-primary transition-all duration-500;
     &.active {
-      @apply bg-primary text-white
+      @apply bg-primary text-white;
     }
   }
   .insurance-panel {
     @apply opacity-0 invisible transition-all duration-500;
+    grid-area: 1 / -1;
     &.active {
       @apply opacity-100 visible;
     }
