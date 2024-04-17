@@ -5562,6 +5562,10 @@ ul.alert li {
     margin-top: auto;
   }
 
+  .lg\:mt-base5-4{
+    margin-top: 20px;
+  }
+
   .lg\:mt-sp-10{
     margin-top: 2.5rem;
   }
@@ -5740,6 +5744,10 @@ ul.alert li {
 
   .lg\:max-w-\[250px\]{
     max-width: 250px;
+  }
+
+  .lg\:max-w-\[255px\]{
+    max-width: 255px;
   }
 
   .lg\:max-w-\[300px\]{

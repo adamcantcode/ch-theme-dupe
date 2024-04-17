@@ -1,0 +1,49 @@
+{
+    "key": "group_661d3f4f7efb7",
+    "title": "Partner Testimonials",
+    "fields": [
+        {
+            "key": "field_661d3f4f7d1ee",
+            "label": "Partner Testimoinals",
+            "name": "partner_testimoinals",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "field_64b5a33e16c5c",
+                "field_64b5a50716c5d",
+                "field_64b6eaa04d890"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "partner-testimonial"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1713192986
+}

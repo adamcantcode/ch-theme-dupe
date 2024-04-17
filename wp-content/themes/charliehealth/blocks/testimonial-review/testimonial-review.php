@@ -91,7 +91,7 @@
         <code class="text-white">NOT VISIBLE IN EDITOR -- CHECK PREVIEW</code>
       </div>
     <?php endif; ?>
-    <div class="grid lg:col-start-2">
+    <div class="grid lg:col-start-2 lg:justify-end">
       <a role="button" class="w-full ch-button button-secondary justify-self-center lg:w-auto load-more-js">Load more</a>
     </div>
   </div>
