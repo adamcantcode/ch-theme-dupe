@@ -5471,11 +5471,6 @@ ul.alert li {
     margin-right: auto;
   }
 
-  .lg\:mx-sp-16{
-    margin-left: 6rem;
-    margin-right: 6rem;
-  }
-
   .lg\:mx-sp-6{
     margin-left: 1.5rem;
     margin-right: 1.5rem;
@@ -5484,6 +5479,11 @@ ul.alert li {
   .lg\:my-sp-16{
     margin-top: 6rem;
     margin-bottom: 6rem;
+  }
+
+  .lg\:mx-sp-16{
+    margin-left: 6rem;
+    margin-right: 6rem;
   }
 
   .lg\:\!-mb-base5-10{
