@@ -5965,6 +5965,10 @@ ul.alert li {
     grid-template-columns: unset;
   }
 
+  .lg\:grid-cols-\[1\.5fr_2fr\]{
+    grid-template-columns: 1.5fr 2fr;
+  }
+
   .lg\:flex-row{
     flex-direction: row;
   }
