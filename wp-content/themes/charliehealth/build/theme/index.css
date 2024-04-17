@@ -1310,6 +1310,56 @@ a.ch-button.button-tertiary.inverted:hover {
   color: rgb(70 73 109 / var(--tw-text-opacity));
 }
 
+.insurance-tabs{
+  border-radius: 1000px;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(22 26 61 / var(--tw-border-opacity));
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-decoration-line: none;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
+.insurance-tabs:hovera:hover {
+        color: #ffffff;
+      }
+
+.insurance-tabs:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 26 61 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+a.insurance-tabs.active:hover {
+        color: #ffffff;
+      }
+
+.insurance-tabs.active{
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 26 61 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.insurance-panel{
+  visibility: hidden;
+  opacity: 0;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
+.insurance-panel.active{
+  visibility: visible;
+  opacity: 1;
+}
+
 /* .site-main {
   @apply transition-transform duration-500;
   &.active {
@@ -2482,10 +2532,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .gap-sp-8{
   gap: 2rem;
-}
-
-.gap-base5-10{
-  gap: 50px;
 }
 
 .gap-x-4{
