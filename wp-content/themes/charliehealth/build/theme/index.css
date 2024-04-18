@@ -2597,10 +2597,6 @@ a.insurance-tabs.active:hover {
   overflow: hidden;
 }
 
-.overflow-scroll{
-  overflow: scroll;
-}
-
 .overflow-y-auto{
   overflow-y: auto;
 }
@@ -5869,6 +5865,10 @@ ul.alert li {
     grid-template-columns: 1.5fr 1fr;
   }
 
+  .lg\:grid-cols-\[1\.5fr_2fr\]{
+    grid-template-columns: 1.5fr 2fr;
+  }
+
   .lg\:grid-cols-\[1fr\2c 2fr\]{
     grid-template-columns: 1fr 2fr;
   }
@@ -5963,10 +5963,6 @@ ul.alert li {
 
   .lg\:grid-cols-\[unset\]{
     grid-template-columns: unset;
-  }
-
-  .lg\:grid-cols-\[1\.5fr_2fr\]{
-    grid-template-columns: 1.5fr 2fr;
   }
 
   .lg\:flex-row{

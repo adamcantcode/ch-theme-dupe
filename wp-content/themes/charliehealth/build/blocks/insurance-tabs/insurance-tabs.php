@@ -1,31 +1,31 @@
-<?php if (have_rows('insurer')) :  ?>
+<?php $insurers = get_field('insurance_carrier'); ?>
+<?php if ($insurers) :  ?>
   <div class="flex items-center overflow-auto mb-base5-6 gap-base5-3">
-    <?php while (have_rows('insurer')) : the_row(); ?>
+    <?php foreach ($insurers as $index => $insurer) : ?>
       <?php
-      $carrier = get_sub_field('insurance_carrier');
-      $name = $carrier->post_title;
-      $active = '';
-      if (get_row_index() === 1) {
+      $name = $insurer->post_title;
+      $active = false;
+      if (get_the_ID() === $insurer->ID) {
         $active = 'active';
       }
       ?>
       <a role="button" data-insurer-option="<?= strtolower($name); ?>" class="insurance-tabs <?= $active; ?>"><?= $name; ?></a>
-    <?php endwhile; ?>
+    <?php endforeach; ?>
     <div>
       <p>& more</p>
     </div>
   </div>
 <?php endif; ?>
-<?php if (have_rows('insurer')) :  ?>
+<?php if ($insurers) :  ?>
   <div class="grid">
-    <?php while (have_rows('insurer')) : the_row(); ?>
+    <?php foreach ($insurers as $index => $insurer) : ?>
       <?php
-      $carrier  = get_sub_field('insurance_carrier');
-      $lowCopay = get_sub_field('low_copay');
-      $avgCopay = get_sub_field('average_copay');
-      $name     = $carrier->post_title;
-      $active   = '';
-      if (get_row_index() === 1) {
+      $lowCopay    = get_field('low_copay', $insurer->ID);
+      $avgCopay    = get_field('average_copay', $insurer->ID);
+      $description = get_field('description', $insurer->ID);
+      $name        = $insurer->post_title;
+      $active = false;
+      if (get_the_ID() === $insurer->ID) {
         $active = 'active';
       }
       ?>
@@ -47,16 +47,21 @@
           </div>
           <div>
             <h2>Charlie Health partners with <?= $name; ?></h2>
-            <?= get_sub_field('details'); ?>
-            <a href="<?= get_the_permalink($carrier->ID); ?>" class="ch-button button-primary">Explore <?= $name; ?></a>
+            <?= $description; ?>
+            <a href="<?= get_the_permalink($insurer->ID); ?>" class="ch-button button-primary">Explore <?= $name; ?></a>
           </div>
         </div>
       </div>
-    <?php endwhile; ?>
+    <?php endforeach; ?>
   </div>
 <?php endif; ?>
 <script>
   const tabs = document.querySelectorAll('[data-insurer-option]');
+  
+  if (!document.querySelectorAll('[data-insurer-option].active').length) {
+    document.querySelector('[data-insurer-option]').classList.add('active')
+    document.querySelector('[data-insurer-panel]').classList.add('active')
+  }
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
