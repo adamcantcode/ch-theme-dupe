@@ -61,6 +61,19 @@ Template Post Type: page
               }, 300);
             })
 
+            // Scroll to top on button click
+            const formButtons = document.querySelectorAll('form button');
+
+            formButtons.forEach(button => {
+              button.addEventListener('click', () => {
+                setTimeout(() => {
+                  window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                  });
+                }, 300);
+              });
+            });
           });
         </script>
       </div>
