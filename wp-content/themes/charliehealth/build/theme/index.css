@@ -5562,6 +5562,10 @@ ul.alert li {
     margin-top: auto;
   }
 
+  .lg\:mt-base5-4{
+    margin-top: 20px;
+  }
+
   .lg\:mt-sp-10{
     margin-top: 2.5rem;
   }
@@ -5580,10 +5584,6 @@ ul.alert li {
 
   .lg\:mt-sp-8{
     margin-top: 2rem;
-  }
-
-  .lg\:mt-base5-4{
-    margin-top: 20px;
   }
 
   .lg\:block{
@@ -5746,6 +5746,10 @@ ul.alert li {
     max-width: 250px;
   }
 
+  .lg\:max-w-\[255px\]{
+    max-width: 255px;
+  }
+
   .lg\:max-w-\[300px\]{
     max-width: 300px;
   }
@@ -5772,10 +5776,6 @@ ul.alert li {
 
   .lg\:max-w-none{
     max-width: none;
-  }
-
-  .lg\:max-w-\[255px\]{
-    max-width: 255px;
   }
 
   .lg\:basis-\[33\%\]{
