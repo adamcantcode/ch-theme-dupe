@@ -420,6 +420,7 @@
     }
   });
 
+  // Formstack attribution
   if (window.location.href.indexOf('form') > -1) {
     // Get organic LP
     if (document.cookie.indexOf('organicLP' + '=') > -1) {
@@ -452,6 +453,40 @@
     });
     // Get user_agent
     waitForElement('field163080841', (element) => {
+      element.value = window.navigator.userAgent;
+    });
+  } else if (window.location.href.indexOf('form-b') > -1) {
+    // Form b
+    if (document.cookie.indexOf('organicLP' + '=') > -1) {
+      if (!params) {
+        waitForElement('field164195958', (element) => {
+          element.value = getCookie('organicLP');
+        });
+      }
+    }
+    // Get fbclid
+    if (document.cookie.indexOf('fbclid' + '=') > -1) {
+      waitForElement('field164195960', (element) => {
+        element.value = getCookie('fbclid');
+      });
+    }
+    if (document.cookie.indexOf('msclkid' + '=') > -1) {
+      waitForElement('field164195961', (element) => {
+        element.value = getCookie('msclkid');
+      });
+    }
+    // Get userIP
+    waitForElement('field164195959', (element) => {
+      fetch('https://api.ipify.org/?format=json').then(results => results.json()).then(data =>
+        document.querySelector('#field164195959').value = data.ip
+      );
+    });
+    // Get fbp
+    waitForElement('id="field164195962"', (element) => {
+      element.value = getCookie('_fbp');
+    });
+    // Get user_agent
+    waitForElement('field164195963', (element) => {
       element.value = window.navigator.userAgent;
     });
   }
