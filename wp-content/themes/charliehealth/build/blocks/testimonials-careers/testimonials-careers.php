@@ -42,10 +42,11 @@ if (!empty($block['align'])) {
           <div class="!h-auto swiper-slide mb-sp-12">
             <div class="flex !h-full gap-sp-8 pb-sp-8 lg:flex-row flex-col">
               <div class="text-center bg-white p-base5-5 rounded-lg lg:basis-[33%] careers-testimonial-image self-start">
-                <video id="myVideo" autoplay muted loop class="cursor-pointer">
-                  <source src="/wp-content/themes/charliehealth/resources/videos/careers/portrait.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
+                <!-- <div style="padding:41.89% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/937930247?autoplay=1&loop=1&title=0&byline=0&portrait=0&quality=auto&pip=0&muted=1&" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
+                <script src="https://player.vimeo.com/api/player.js"></script> -->
+
+                <div style="padding:177.78% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/937930247?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&title=0&byline=0&portrait=0&quality=auto&pip=0&muted=1" frameborder="0" allow="autoplay; fullscreen; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="portrait"></iframe></div>
+                <script src="https://player.vimeo.com/api/player.js"></script>
 
                 <p class="font-heading-serif mb-base5-1"><?= $name; ?></p>
                 <p><?= $title; ?></p>
@@ -105,31 +106,31 @@ if (!empty($block['align'])) {
 </section>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var video = document.querySelector("#myVideo");
-    console.log(video);
+  // document.addEventListener("DOMContentLoaded", function() {
+  //   var video = document.querySelector("#myVideo");
+  //   console.log(video);
 
-    // Function to unmute the video
-    function playUnmuted() {
-      this.muted = false;
-      this.pause();
-      this.currentTime = 0;
-      this.play();
-      // Remove the event listener to prevent the video from being muted again
-      this.removeEventListener("click", playUnmuted);
-      this.addEventListener("click", playPause);
-    }
+  //   // Function to unmute the video
+  //   function playUnmuted() {
+  //     this.muted = false;
+  //     this.pause();
+  //     this.currentTime = 0;
+  //     this.play();
+  //     // Remove the event listener to prevent the video from being muted again
+  //     this.removeEventListener("click", playUnmuted);
+  //     this.addEventListener("click", playPause);
+  //   }
 
-    function playPause() {
-      console.log('play/pause');
-      if (this.paused) {
-        this.play();
-      } else {
-        this.pause();
-      }
-    }
+  //   function playPause() {
+  //     console.log('play/pause');
+  //     if (this.paused) {
+  //       this.play();
+  //     } else {
+  //       this.pause();
+  //     }
+  //   }
 
-    // Add event listener to play the video with sound when clicked
-    video.addEventListener("click", playUnmuted);
-  });
+  //   // Add event listener to play the video with sound when clicked
+  //   video.addEventListener("click", playUnmuted);
+  // });
 </script>
