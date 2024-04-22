@@ -7,7 +7,7 @@
   <div class="grid lg:grid-cols-[1fr,2fr] grid-cols-1 relative lg:gap-x-sp-8">
     <div class="lg:sticky self-start top-[8rem]">
       <p class="text-h1-base"><?= $stat ?></p>
-      <div class="grid items-start grid-cols-2 gap-4 lg:block">
+      <div class="grid items-start grid-cols-2 gap-4 lg:block mb-base5-4">
         <p class="text-h4-base lg:max-w-[255px]"><?= $statDetails; ?></p>
         <a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>" class="ch-button button-secondary lg:mt-base5-4"><?= $link['title']; ?></a>
       </div>
@@ -30,7 +30,11 @@
           <?php while ($query->have_posts()) : $query->the_post(); ?>
             <?php
             $count++;
-            $attribution = get_field('attribution', get_the_ID()) ?: abbreviateAfterFirstWord(get_the_title(get_the_ID()));
+            if (get_field('anonymous', get_the_ID())) {
+              $attribution = 'Charlie Health Partner';
+            } else {
+              $attribution = get_field('attribution', get_the_ID()) ?: abbreviateAfterFirstWord(get_the_title(get_the_ID()));
+            }
             $pullQuote   = get_field('pull-quote', get_the_ID());
             $fullQuote   = get_field('full_quote', get_the_ID());
             ?>

@@ -18,7 +18,7 @@
   <div class="grid lg:grid-cols-[1fr,2fr] grid-cols-1 relative lg:gap-x-sp-8">
     <div class="lg:sticky self-start top-[8rem]">
       <p class="font-heading-serif text-h1-display lg:text-h1-display-lg"><?= $stat ?></p>
-      <div class="grid items-start grid-cols-2 gap-4 lg:block">
+      <div class="grid items-start grid-cols-2 gap-4 lg:block mb-base5-4">
         <p class="text-h4-base lg:max-w-[250px]"><?= $statDetails; ?></p>
         <a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>" class="ch-button button-secondary"><?= $link['title']; ?></a>
       </div>

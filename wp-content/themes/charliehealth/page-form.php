@@ -61,8 +61,22 @@ Template Post Type: page
               }, 300);
             })
 
+            // Scroll to top on button click
+            const formButtons = document.querySelectorAll('form button');
+
+            formButtons.forEach(button => {
+              button.addEventListener('click', () => {
+                setTimeout(() => {
+                  window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                  });
+                }, 300);
+              });
+            });
           });
         </script>
+        <p>If you’d prefer to speak with our team directly, please call <a href="tel:+18664848218">1 (866) 484-8218</a></p>
       </div>
       <div class="grid items-center">
         <img src="https://www.charliehealth.com/wp-content/uploads/2023/11/Device_Laptop.png.webp" alt="Illustration of Charlie Health client using laptop for Virtual IOP Therapy">

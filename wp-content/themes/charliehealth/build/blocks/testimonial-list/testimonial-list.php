@@ -92,7 +92,7 @@ $group = get_field('group')
   <?php else :
   $customPosts = get_field('testimonials');
   $slideNum = 0;
-  $showInsurance = get_field('display_insurance', $postID);
+  $showInsurance = get_field('display_insurance', get_the_ID());
   if ($customPosts) : ?>
     <div class="relative">
       <?php if (count($customPosts) <= 3) : ?>
@@ -103,7 +103,7 @@ $group = get_field('group')
 
             $anonymous = get_field('anonymous', $postID);
             if ($anonymous === false) {
-              $attribution = get_field('attribution', get_the_ID()) ?: abbreviateAfterFirstWord(get_the_title(get_the_ID()));
+              $attribution = get_field('attribution', $postID) ?: abbreviateAfterFirstWord(get_the_title($postID));
             } else {
               $attribution = 'Charlie Health Alum';
             }
@@ -175,7 +175,7 @@ $group = get_field('group')
 
                 $anonymous = get_field('anonymous', $postID);
                 if ($anonymous === false) {
-                  $attribution = get_field('attribution', get_the_ID()) ?: abbreviateAfterFirstWord(get_the_title(get_the_ID()));
+                  $attribution = get_field('attribution', $postID) ?: abbreviateAfterFirstWord(get_the_title($postID));
                 } else {
                   $attribution = 'Charlie Health Alum';
                 }
