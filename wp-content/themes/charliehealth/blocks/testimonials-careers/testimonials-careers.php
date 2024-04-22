@@ -45,7 +45,7 @@ if (!empty($block['align'])) {
                 <!-- <div style="padding:41.89% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/937930247?autoplay=1&loop=1&title=0&byline=0&portrait=0&quality=auto&pip=0&muted=1&" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
                 <script src="https://player.vimeo.com/api/player.js"></script> -->
 
-                <div style="padding:177.78% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/937930247?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&title=0&byline=0&portrait=0&quality=auto&pip=0&muted=1" frameborder="0" allow="autoplay; fullscreen; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="portrait"></iframe></div>
+                <div style="padding:177.78% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/937930247?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=0&loop=1&title=0&byline=0&portrait=0&quality=auto&pip=0&muted=1" frameborder="0" allow="autoplay; fullscreen; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="portrait"></iframe></div>
                 <script src="https://player.vimeo.com/api/player.js"></script>
 
                 <p class="font-heading-serif mb-base5-1"><?= $name; ?></p>
@@ -133,4 +133,20 @@ if (!empty($block['align'])) {
   //   // Add event listener to play the video with sound when clicked
   //   video.addEventListener("click", playUnmuted);
   // });
+  document.addEventListener("DOMContentLoaded", function() {
+    // Your code to execute on the initial scroll
+    console.log("User has started scrolling!");
+    hasScrolled = true;
+    var iframe = document.querySelector('iframe');
+    var player = new Vimeo.Player(iframe);
+
+    player.on('play', function() {
+      console.log('Played the video');
+    });
+
+    player.getVideoTitle().then(function(title) {
+      console.log('title:', title);
+    });
+    player.play();
+  })
 </script>
