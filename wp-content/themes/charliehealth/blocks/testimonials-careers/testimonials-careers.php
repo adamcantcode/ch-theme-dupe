@@ -42,29 +42,10 @@ if (!empty($block['align'])) {
           <div class="!h-auto swiper-slide mb-sp-12">
             <div class="flex !h-full gap-sp-8 pb-sp-8 lg:flex-row flex-col">
               <div class="text-center bg-white p-base5-5 rounded-lg lg:basis-[33%] careers-testimonial-image self-start">
-                <video id="myVideo" width="410" height="582" autoplay muted loop>
-                  <source src="/wp-content/themes/charliehealth/resources/videos/careers/testvideo.mp4" type="video/mp4">
+                <video id="myVideo" autoplay muted loop class="cursor-pointer">
+                  <source src="/wp-content/themes/charliehealth/resources/videos/careers/portrait.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
-
-                <script>
-                  document.addEventListener("DOMContentLoaded", function() {
-                    var video = document.getElementById("myVideo");
-
-                    // Function to unmute the video
-                    function playUnmuted() {
-                      video.muted = false;
-                      video.pause();
-                      video.currentTime = 0;
-                      video.load();
-                      // Remove the event listener to prevent the video from being muted again
-                      video.removeEventListener("click", playUnmuted);
-                    }
-
-                    // Add event listener to play the video with sound when clicked
-                    video.addEventListener("click", playUnmuted);
-                  });
-                </script>
 
                 <p class="font-heading-serif mb-base5-1"><?= $name; ?></p>
                 <p><?= $title; ?></p>
@@ -122,3 +103,33 @@ if (!empty($block['align'])) {
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var video = document.querySelector("#myVideo");
+    console.log(video);
+
+    // Function to unmute the video
+    function playUnmuted() {
+      this.muted = false;
+      this.pause();
+      this.currentTime = 0;
+      this.play();
+      // Remove the event listener to prevent the video from being muted again
+      this.removeEventListener("click", playUnmuted);
+      this.addEventListener("click", playPause);
+    }
+
+    function playPause() {
+      console.log('play/pause');
+      if (this.paused) {
+        this.play();
+      } else {
+        this.pause();
+      }
+    }
+
+    // Add event listener to play the video with sound when clicked
+    video.addEventListener("click", playUnmuted);
+  });
+</script>
