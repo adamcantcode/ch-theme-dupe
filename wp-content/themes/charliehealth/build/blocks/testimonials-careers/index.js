@@ -20138,8 +20138,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // Init settings for first video
 const iframeFirst = document.querySelector('iframe');
-var player = new Vimeo.Player(iframeFirst);
-player.play();
+if (iframeFirst) {
+  var player = new Vimeo.Player(iframeFirst);
+  player.play();
+}
 
 // on load, init swiper
 window.addEventListener('load', () => {
@@ -20170,20 +20172,24 @@ window.addEventListener('load', () => {
         }, 1);
       },
       slideChange: function () {
-        const currentSlide = swiper.slides[swiper.activeIndex].querySelector('iframe');
-        const currentPlayer = new Vimeo.Player(currentSlide);
+        if (iframeFirst) {
+          const currentSlide = swiper.slides[swiper.activeIndex].querySelector('iframe');
+          const currentPlayer = new Vimeo.Player(currentSlide);
 
-        // Pause all videos
-        swiper.slides.forEach(slide => {
-          slide = slide.querySelector('iframe');
-          const player = new Vimeo.Player(slide);
-          player.pause();
-        });
+          // Pause all videos
+          swiper.slides.forEach(slide => {
+            slide = slide.querySelector('iframe');
+            if (slide) {
+              const player = new Vimeo.Player(slide);
+              player.pause();
+            }
+          });
 
-        // Play current slide video, unmute
-        currentPlayer.play();
-        if (unmuted) {
-          currentPlayer.setVolume(1);
+          // Play current slide video, unmute
+          currentPlayer.play();
+          if (unmuted) {
+            currentPlayer.setVolume(1);
+          }
         }
       }
     }
@@ -20192,15 +20198,17 @@ window.addEventListener('load', () => {
   // Handle first interaction/unmute
   swiper.slides.forEach(slide => {
     slide = slide.querySelector('iframe');
-    const player = new Vimeo.Player(slide);
-    player.on('volumechange', function (data) {
-      if (data.volume !== 0) {
-        if (!unmuted) {
-          player.setCurrentTime(0);
+    if (slide) {
+      const player = new Vimeo.Player(slide);
+      player.on('volumechange', function (data) {
+        if (data.volume !== 0) {
+          if (!unmuted) {
+            player.setCurrentTime(0);
+          }
+          unmuted = true;
         }
-        unmuted = true;
-      }
-    });
+      });
+    }
   });
 });
 })();

@@ -33,6 +33,7 @@ if (!empty($block['align'])) {
         <?php while (have_rows('testimonials')) : the_row(); ?>
           <?php
           $image     = get_sub_field('image');
+          $video     = get_sub_field('video_code');
           $name      = get_sub_field('name');
           $title     = get_sub_field('title');
           $pullQuote = get_sub_field('pull_quote');
@@ -42,12 +43,12 @@ if (!empty($block['align'])) {
           <div class="!h-auto swiper-slide mb-sp-12">
             <div class="flex !h-full gap-sp-8 pb-sp-8 lg:flex-row flex-col">
               <div class="text-center bg-white p-base5-5 rounded-lg lg:basis-[33%] careers-testimonial-image self-start">
-                <!-- <div style="padding:41.89% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/937930247?autoplay=1&loop=1&title=0&byline=0&portrait=0&quality=auto&pip=0&muted=1&" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
-                <script src="https://player.vimeo.com/api/player.js"></script> -->
-
-                <div style="padding:177.78% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/937983007?&autoplay=0&loop=1&muted=1" frameborder="0" allow="autoplay; fullscreen; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="portrait"></iframe></div>
-                <script src="https://player.vimeo.com/api/player.js"></script>
-
+                <?php if ($video) : ?>
+                  <div style="padding:177.78% 0 0 0;position:relative;" class="mb-base5-2"><iframe src="https://player.vimeo.com/video/<?= $video; ?>?&autoplay=0&loop=1&muted=1" frameborder="0" allow="autoplay; fullscreen; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="portrait"></iframe></div>
+                  <script src="https://player.vimeo.com/api/player.js"></script>
+                <?php else : ?>
+                  <img src="<?= $image['url'] ?: placeHolderImage(); ?>" alt="<?= $image['alt']; ?>" class="object-cover rounded-circle aspect-square mb-sp-6">
+                <?php endif; ?>
                 <p class="font-heading-serif mb-base5-1"><?= $name; ?></p>
                 <p><?= $title; ?></p>
                 <?php if ($linkedIn) : ?>

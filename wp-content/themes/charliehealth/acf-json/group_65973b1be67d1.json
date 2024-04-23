@@ -69,6 +69,29 @@
                     "parent_repeater": "field_6597420f7e944"
                 },
                 {
+                    "key": "field_6628013063466",
+                    "label": "Video Code",
+                    "name": "video_code",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "min": "",
+                    "max": "",
+                    "placeholder": "",
+                    "step": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_6597420f7e944"
+                },
+                {
                     "key": "field_659742757e946",
                     "label": "Name",
                     "name": "name",
@@ -258,5 +281,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1709843168
+    "modified": 1713898415
 }
