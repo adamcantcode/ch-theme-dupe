@@ -20135,6 +20135,14 @@ window.addEventListener('DOMContentLoaded', () => {
     background: 'linear-gradient(180deg,rgba(247,245,241,1) 0%, rgba(143,146,205,1) 100%)'
   });
 });
+
+// Your code to execute on the initial scroll
+const iframeFirst = document.querySelector('iframe');
+var player = new Vimeo.Player(iframeFirst);
+player.on('play', function () {
+  console.log('Played the video');
+});
+player.play();
 window.addEventListener('load', () => {
   var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper.swiper-careers-testimonial', {
     slidesPerView: 'auto',
@@ -20159,9 +20167,26 @@ window.addEventListener('load', () => {
           document.querySelector('.swiper-button-next-testimonial').click();
           clearTimeout();
         }, 1);
+      },
+      beforeSlideChangeStart: function () {
+        const currentSlide = swiper.slides[swiper.activeIndex].querySelector('iframe');
+        if (swiper.slides[swiper.activeIndex + 1].length > 0) {
+          var nextSlide = swiper.slides[swiper.activeIndex + 1].querySelector('iframe');
+        } else {
+          var nextSlide = false;
+        }
+        var currentPlayer = new Vimeo.Player(currentSlide);
+        currentPlayer.pause();
+        if (nextSlide) {
+          var currentPlayer = new Vimeo.Player(nextSlide);
+          currentPlayer.play();
+        }
       }
     }
   });
+
+  // swiper.on('init	', () => {
+  // });
 });
 })();
 
