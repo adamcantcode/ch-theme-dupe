@@ -20139,9 +20139,6 @@ window.addEventListener('DOMContentLoaded', () => {
 // Init settings for first video
 const iframeFirst = document.querySelector('iframe');
 var player = new Vimeo.Player(iframeFirst);
-player.on('play', function () {
-  console.log('Played the video');
-});
 player.play();
 
 // on load, init swiper
@@ -20186,9 +20183,7 @@ window.addEventListener('load', () => {
         // Play current slide video, unmute
         currentPlayer.play();
         if (unmuted) {
-          console.log(unmuted);
           currentPlayer.setVolume(1);
-          console.log(currentPlayer.getVolume());
         }
       }
     }
