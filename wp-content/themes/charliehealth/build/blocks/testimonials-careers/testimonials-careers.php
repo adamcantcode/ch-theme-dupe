@@ -42,10 +42,15 @@ if (!empty($block['align'])) {
           ?>
           <div class="!h-auto swiper-slide mb-sp-12">
             <div class="flex !h-full gap-sp-8 pb-sp-8 lg:flex-row flex-col">
-              <div class="text-center bg-white p-base5-5 rounded-lg lg:basis-[33%] careers-testimonial-image self-start">
+              <div class="text-center bg-white p-base5-5 rounded-lg lg:basis-[33%] careers-testimonial-image self-start w-full">
                 <?php if ($video) : ?>
                   <div style="padding:177.78% 0 0 0;position:relative;" class="mb-base5-2"><iframe src="https://player.vimeo.com/video/<?= $video; ?>?&autoplay=0&loop=1&muted=1" frameborder="0" allow="autoplay; fullscreen; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="portrait"></iframe></div>
                   <script src="https://player.vimeo.com/api/player.js"></script>
+                  <style>
+                    .careers-testimonial-image iframe {
+                      border-radius: 10px;
+                    }
+                  </style>
                 <?php else : ?>
                   <img src="<?= $image['url'] ?: placeHolderImage(); ?>" alt="<?= $image['alt']; ?>" class="object-cover rounded-circle aspect-square mb-sp-6">
                 <?php endif; ?>

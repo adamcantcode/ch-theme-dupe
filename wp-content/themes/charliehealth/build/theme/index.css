@@ -1603,6 +1603,10 @@ a.ch-button.button-tertiary.inverted:hover {
   margin-bottom: 50px;
 }
 
+.mb-base5-2{
+  margin-bottom: 10px;
+}
+
 .mb-base5-4{
   margin-bottom: 20px;
 }
@@ -1801,10 +1805,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
-}
-
-.mb-base5-2{
-  margin-bottom: 10px;
 }
 
 .line-clamp-3{
