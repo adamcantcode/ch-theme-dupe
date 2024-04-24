@@ -1,5 +1,5 @@
 <?php if (have_rows('services')) : ?>
-  <div class="flex flex-wrap gap-base5-4 mb-base5-10 check-list-item-js">
+  <div class="flex flex-wrap justify-center gap-base5-4 mb-base5-10 check-list-item-js">
     <?php while (have_rows('services')) : the_row(); ?>
       <div class="flex rounded-pill bg-primary-100 p-base5-3 check-list-item <?= !is_admin() ? 'opacity-0 scale-90' : ''; ?>">
         <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-base5-2">
