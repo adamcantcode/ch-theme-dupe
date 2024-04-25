@@ -9484,10 +9484,10 @@ TweenMaxWithCSS = gsapWithCSS.core.Tween;
 
 /***/ }),
 
-/***/ "./blocks/testimonials-careers/index.css":
-/*!***********************************************!*\
-  !*** ./blocks/testimonials-careers/index.css ***!
-  \***********************************************/
+/***/ "./blocks/testimonials-videos/index.css":
+/*!**********************************************!*\
+  !*** ./blocks/testimonials-videos/index.css ***!
+  \**********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -20095,11 +20095,11 @@ _core_core_js__WEBPACK_IMPORTED_MODULE_0__["default"].use(modules);
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!**********************************************!*\
-  !*** ./blocks/testimonials-careers/index.js ***!
-  \**********************************************/
+/*!*********************************************!*\
+  !*** ./blocks/testimonials-videos/index.js ***!
+  \*********************************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ "./blocks/testimonials-careers/index.css");
+/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ "./blocks/testimonials-videos/index.css");
 /* harmony import */ var swiper_bundle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/bundle */ "./node_modules/swiper/swiper-bundle.esm.js");
 /* harmony import */ var swiper_css_bundle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper/css/bundle */ "./node_modules/swiper/swiper-bundle.min.css");
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
@@ -20135,7 +20135,17 @@ window.addEventListener('DOMContentLoaded', () => {
     background: 'linear-gradient(180deg,rgba(247,245,241,1) 0%, rgba(143,146,205,1) 100%)'
   });
 });
+
+// Init settings for first video
+const firstVideo = document.querySelector('.careers-video-js');
+if (firstVideo) {
+  var player = new Vimeo.Player(firstVideo);
+  player.play();
+}
+
+// on load, init swiper
 window.addEventListener('load', () => {
+  var unmuted = false;
   var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper.swiper-careers-testimonial', {
     slidesPerView: 'auto',
     spaceBetween: 20,
@@ -20153,13 +20163,51 @@ window.addEventListener('load', () => {
       prevEl: '.swiper-button-prev-testimonial'
     },
     on: {
+      // fix for slider end glitch
       reachEnd: function () {
         this.snapGrid = [...this.slidesGrid];
         setTimeout(() => {
           document.querySelector('.swiper-button-next-testimonial').click();
           clearTimeout();
         }, 1);
+      },
+      slideChange: function () {
+        if (firstVideo) {
+          const currentSlide = swiper.slides[swiper.activeIndex].querySelector('.careers-video-js');
+          const currentPlayer = new Vimeo.Player(currentSlide);
+
+          // Pause all videos
+          swiper.slides.forEach(slide => {
+            slide = slide.querySelector('.careers-video-js');
+            if (slide) {
+              const player = new Vimeo.Player(slide);
+              player.pause();
+            }
+          });
+
+          // Play current slide video, unmute
+          currentPlayer.play();
+          if (unmuted) {
+            currentPlayer.setVolume(1);
+          }
+        }
       }
+    }
+  });
+
+  // Handle first interaction/unmute
+  swiper.slides.forEach(slide => {
+    slide = slide.querySelector('.careers-video-js');
+    if (slide) {
+      const player = new Vimeo.Player(slide);
+      player.on('volumechange', function (data) {
+        if (data.volume !== 0) {
+          if (!unmuted) {
+            player.setCurrentTime(0);
+          }
+          unmuted = true;
+        }
+      });
     }
   });
 });
