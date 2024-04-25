@@ -5,7 +5,7 @@
           $title       = get_sub_field('title');
           $description = get_sub_field('description');
       ?>
-          <div class="accordion-item-iop bg-white rounded-[6px] mb-sp-2 lg:mb-sp-4">
+          <div class="accordion-item-iop bg-pale-blue-100 rounded-[6px] mb-sp-2 lg:mb-sp-4">
             <div class="flex justify-between cursor-pointer accordion-header-iop py-base5-4 px-sp-6">
               <h3 class="mb-0 font-heading-serif"><?= $title; ?></h3>
               <div class="flex items-center ml-sp-5 toggle">
