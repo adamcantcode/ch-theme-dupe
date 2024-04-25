@@ -277,11 +277,11 @@ window.addEventListener('DOMContentLoaded', () => {
           gsap.from(`.animate-container-${index}`, {
             scrollTrigger: {
               trigger: `.animate-container-${index}`,
-              start: 'top 95%',
+              start: 'top 80%',
               toggleActions: 'play reverse play reverse'
             },
             yPercent: 10,
-            scaleX: 0.99,
+            scaleX: 0.95,
             opacity: 0,
             duration: 1,
             ease: 'power4.out'
