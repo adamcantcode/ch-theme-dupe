@@ -20137,9 +20137,9 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 // Init settings for first video
-const iframeFirst = document.querySelector('iframe');
-if (iframeFirst) {
-  var player = new Vimeo.Player(iframeFirst);
+const firstVideo = document.querySelector('.careers-video-js');
+if (firstVideo) {
+  var player = new Vimeo.Player(firstVideo);
   player.play();
 }
 
@@ -20172,13 +20172,13 @@ window.addEventListener('load', () => {
         }, 1);
       },
       slideChange: function () {
-        if (iframeFirst) {
-          const currentSlide = swiper.slides[swiper.activeIndex].querySelector('iframe');
+        if (firstVideo) {
+          const currentSlide = swiper.slides[swiper.activeIndex].querySelector('.careers-video-js');
           const currentPlayer = new Vimeo.Player(currentSlide);
 
           // Pause all videos
           swiper.slides.forEach(slide => {
-            slide = slide.querySelector('iframe');
+            slide = slide.querySelector('.careers-video-js');
             if (slide) {
               const player = new Vimeo.Player(slide);
               player.pause();
@@ -20197,7 +20197,7 @@ window.addEventListener('load', () => {
 
   // Handle first interaction/unmute
   swiper.slides.forEach(slide => {
-    slide = slide.querySelector('iframe');
+    slide = slide.querySelector('.careers-video-js');
     if (slide) {
       const player = new Vimeo.Player(slide);
       player.on('volumechange', function (data) {
