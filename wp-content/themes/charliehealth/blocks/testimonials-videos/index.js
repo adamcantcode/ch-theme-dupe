@@ -48,7 +48,7 @@ if (firstVideo) {
 // on load, init swiper
 window.addEventListener('load', () => {
   var unmuted = false;
-  var swiper = new Swiper('.swiper.swiper-careers-testimonial', {
+  var swiper = new Swiper('.swiper.swiper-videos-testimonial', {
     slidesPerView: 'auto',
     spaceBetween: 20,
     slideToClickedSlide: true,
@@ -56,7 +56,7 @@ window.addEventListener('load', () => {
     loop: false,
     breakpoints: {
       1024: {
-        slidesPerView: 'auto',
+        slidesPerView: 2,
         spaceBetween: 20,
       },
     },
