@@ -292,18 +292,19 @@
       @apply opacity-20;
     }
     .swiper-slide {
+      /* @apply lg:w-[75%] w-[80%]; */
       .videos-testimonials-panel {
-        @apply noshow;
+        /* @apply noshow; */
       }
       .videos-testimonials-video {
-        @apply w-full lg:w-1/4;
+        @apply w-full lg:w-1/3;
       }
       &.swiper-slide-active {
         .videos-testimonials-panel {
-          @apply block;
+          /* @apply block; */
         }
         .videos-testimonials-video {
-          @apply w-full lg:w-1/3;
+          /* @apply w-full lg:w-2/3; */
         }
       }
     }

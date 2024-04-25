@@ -20154,7 +20154,7 @@ window.addEventListener('load', () => {
     loop: false,
     breakpoints: {
       1024: {
-        slidesPerView: 2,
+        slidesPerView: 'auto',
         spaceBetween: 20
       }
     },
