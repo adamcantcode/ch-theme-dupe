@@ -42,11 +42,12 @@ switch ($order) {
     <?php endif; ?>
   <?php else : ?>
     <?php if ($image) : ?>
-      <img src="<?= $image['sizes']['featured-large']; ?>" alt="<?= $image['alt']; ?>" class="object-cover object-top rounded-md flex-grow <?= $imageOrder; ?>">
+      <div class="object-cover object-top rounded-md flex-grow <?= $imageOrder; ?>">
+        <img src="<?= $image['sizes']['featured-large']; ?>" alt="<?= $image['alt']; ?>">
+      </div>
     <?php endif; ?>
   <?php endif; ?>
   <div class="flex-grow <?= $detailsOrder; ?>">
     <InnerBlocks />
   </div>
 </div>
-<!-- Slider main container -->
