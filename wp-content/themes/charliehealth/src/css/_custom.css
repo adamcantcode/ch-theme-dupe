@@ -287,6 +287,29 @@
       }
     }
   }
+  &.swiper-videos-testimonial {
+    .swiper-button-disabled {
+      @apply opacity-20;
+    }
+    .swiper-slide {
+      @apply lg:w-[1000px] w-[80%] opacity-30 transition-opacity duration-300;
+      .videos-testimonials-panel {
+        /* @apply noshow; */
+      }
+      .videos-testimonials-video {
+        /* @apply w-full lg:w-[400px]; */
+      }
+      &.swiper-slide-active {
+        @apply opacity-100;
+        .videos-testimonials-panel {
+          /* @apply block; */
+        }
+        .videos-testimonials-video {
+          /* @apply w-full lg:w-[400px]; */
+        }
+      }
+    }
+  }
   &.swiper-blog-carousel {
     .swiper-pagination-bullet {
       @apply bg-transparent border-2 border-purple-gradient-end opacity-100;
@@ -733,7 +756,6 @@ mark {
     @apply !text-[14px] !leading-[1.1];
   }
 } */
-
 .swiper.swiper-careers-testimonial {
   .swiper-slide {
     @apply lg:w-[75%] w-[80%];

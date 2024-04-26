@@ -1,9 +1,9 @@
 {
-    "key": "group_65973b1be67d1",
-    "title": "Career Testimonials and CTA",
+    "key": "group_662aa14c607ab",
+    "title": "Video Testimonials",
     "fields": [
         {
-            "key": "field_659742057e943",
+            "key": "field_662aa14c45824",
             "label": "Testimonials",
             "name": "",
             "aria-label": "",
@@ -21,7 +21,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_6597420f7e944",
+            "key": "field_662aa18b45826",
             "label": "Testimonials",
             "name": "testimonials",
             "aria-label": "",
@@ -43,33 +43,7 @@
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_6597421e7e945",
-                    "label": "Image",
-                    "name": "image",
-                    "aria-label": "",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": "",
-                    "preview_size": "medium",
-                    "parent_repeater": "field_6597420f7e944"
-                },
-                {
-                    "key": "field_6628013063466",
+                    "key": "field_662aa1a345827",
                     "label": "Video Code",
                     "name": "video_code",
                     "aria-label": "",
@@ -89,10 +63,10 @@
                     "step": "",
                     "prepend": "",
                     "append": "",
-                    "parent_repeater": "field_6597420f7e944"
+                    "parent_repeater": "field_662aa18b45826"
                 },
                 {
-                    "key": "field_659742757e946",
+                    "key": "field_662aa1b645828",
                     "label": "Name",
                     "name": "name",
                     "aria-label": "",
@@ -110,10 +84,10 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "parent_repeater": "field_6597420f7e944"
+                    "parent_repeater": "field_662aa18b45826"
                 },
                 {
-                    "key": "field_6597427a7e947",
+                    "key": "field_662aa1c645829",
                     "label": "Title",
                     "name": "title",
                     "aria-label": "",
@@ -131,11 +105,11 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "parent_repeater": "field_6597420f7e944"
+                    "parent_repeater": "field_662aa18b45826"
                 },
                 {
-                    "key": "field_6597427f7e948",
-                    "label": "Pull quote",
+                    "key": "field_662aa2324582a",
+                    "label": "Pull Quote",
                     "name": "pull_quote",
                     "aria-label": "",
                     "type": "text",
@@ -152,32 +126,11 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "parent_repeater": "field_6597420f7e944"
+                    "parent_repeater": "field_662aa18b45826"
                 },
                 {
-                    "key": "field_659742967e949",
-                    "label": "Full quote",
-                    "name": "full_quote",
-                    "aria-label": "",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "placeholder": "",
-                    "new_lines": "br",
-                    "parent_repeater": "field_6597420f7e944"
-                },
-                {
-                    "key": "field_65988660bb2ce",
-                    "label": "Linkedin",
+                    "key": "field_662aa24d4582b",
+                    "label": "LinkedIn",
                     "name": "linkedin",
                     "aria-label": "",
                     "type": "url",
@@ -191,12 +144,12 @@
                     },
                     "default_value": "",
                     "placeholder": "",
-                    "parent_repeater": "field_6597420f7e944"
+                    "parent_repeater": "field_662aa18b45826"
                 }
             ]
         },
         {
-            "key": "field_659741fb7e942",
+            "key": "field_662aa17a45825",
             "label": "CTA",
             "name": "",
             "aria-label": "",
@@ -214,7 +167,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_65973b1ce1682",
+            "key": "field_662aa2754582c",
             "label": "Headline",
             "name": "headline",
             "aria-label": "",
@@ -234,7 +187,7 @@
             "append": ""
         },
         {
-            "key": "field_65973b82e1683",
+            "key": "field_662aa27c4582d",
             "label": "Buttons",
             "name": "buttons",
             "aria-label": "",
@@ -261,14 +214,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/testimonials-careers-block"
-            }
-        ],
-        [
-            {
-                "param": "block",
-                "operator": "==",
-                "value": "acf\/testimonials-slider-block"
+                "value": "acf\/testimonials-videos-block"
             }
         ]
     ],
@@ -281,5 +227,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1713898415
+    "modified": 1714070180
 }
