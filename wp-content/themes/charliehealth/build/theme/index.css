@@ -2038,6 +2038,10 @@ a.ch-button.button-tertiary.inverted:hover {
   width: 2.5rem;
 }
 
+.w-2\/3{
+  width: 66.666667%;
+}
+
 .w-\[1\.5px\]{
   width: 1.5px;
 }
@@ -2121,10 +2125,6 @@ a.ch-button.button-tertiary.inverted:hover {
 
 .w-sp-8{
   width: 2rem;
-}
-
-.w-2\/3{
-  width: 66.666667%;
 }
 
 .min-w-0{

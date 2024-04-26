@@ -97,19 +97,6 @@ window.addEventListener('load', () => {
           }
         }
       },
-      afterInit: function () {
-        console.log(this);
-        this.slides.forEach((slide) => {
-          if (slide != this.slides[this.activeIndex]) {
-            slide
-              .querySelector('.videos-testimonials-panel')
-              .classList.add('noshow');
-            slide
-              .querySelector('.videos-testimonials-video')
-              .classList.add('!w-1/3');
-          }
-        });
-      },
     },
   });
 
