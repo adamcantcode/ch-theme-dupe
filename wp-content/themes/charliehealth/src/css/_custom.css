@@ -297,7 +297,7 @@
         /* @apply noshow; */
       }
       .videos-testimonials-video {
-        @apply w-full lg:w-[400px];
+        /* @apply w-full lg:w-[400px]; */
       }
       &.swiper-slide-active {
         .videos-testimonials-panel {

@@ -2376,6 +2376,10 @@ a.ch-button.button-tertiary.inverted:hover {
   grid-template-columns: 2fr 1fr;
 }
 
+.grid-cols-\[1fr_2\.5fr\]{
+  grid-template-columns: 1fr 2.5fr;
+}
+
 .flex-row{
   flex-direction: row;
 }
@@ -4467,16 +4471,9 @@ a.ch-button.button-tertiary.inverted:hover {
         /* @apply noshow; */
       }
 
-.swiper.swiper-videos-testimonial .swiper-slide .videos-testimonials-video{
-  width: 100%;
-}
-
-@media (min-width: 1024px){
-
-  .swiper.swiper-videos-testimonial .swiper-slide .videos-testimonials-video{
-    width: 400px;
-  }
-}
+.swiper.swiper-videos-testimonial .swiper-slide .videos-testimonials-video {
+        /* @apply w-full lg:w-[400px]; */
+      }
 
 .swiper.swiper-videos-testimonial .swiper-slide.swiper-slide-active .videos-testimonials-panel {
           /* @apply block; */
