@@ -47,7 +47,7 @@ Template Post Type: page
             const clonedChildElement = clonedElement.querySelector('.field-auto-capture__message__text');
             clonedChildElement.classList.remove(clonedChildElement.classList);
 
-            clonedChildElement.innerText = "By entering your phone number and email address in this form, you agree to receive text messages and emails from us. Standard message and data rates may apply.";
+            clonedChildElement.innerText = "By entering your phone number and email address in this form, you agree to receive automated text messages and emails from us. Standard message and data rates may apply.";
 
             document.querySelector('.fsPagination').addEventListener('click', function() {
               setTimeout(() => {
