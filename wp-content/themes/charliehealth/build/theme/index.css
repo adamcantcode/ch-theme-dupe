@@ -5649,6 +5649,10 @@ ul.alert li {
     margin-top: 2rem;
   }
 
+  .lg\:mb-base5-10{
+    margin-bottom: 50px;
+  }
+
   .lg\:block{
     display: block;
   }
@@ -5979,6 +5983,10 @@ ul.alert li {
 
   .lg\:grid-cols-\[unset\]{
     grid-template-columns: unset;
+  }
+
+  .lg\:grid-cols-\[1fr_2\.5fr\]{
+    grid-template-columns: 1fr 2.5fr;
   }
 
   .lg\:flex-row{

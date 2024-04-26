@@ -38,15 +38,15 @@ if (!empty($block['align'])) {
           $pullQuote = get_sub_field('pull_quote');
           $linkedIn  = get_sub_field('linkedin');
           ?>
-          <div class="!h-auto swiper-slide mb-sp-12">
-            <div class="grid gap-sp-8 pb-sp-8 grid-cols-[1fr_2.5fr]">
+          <div class="!h-auto swiper-slide lg:mb-sp-12">
+            <div class="grid gap-sp-8 pb-sp-8 lg:grid-cols-[1fr_2.5fr]">
               <div class="videos-testimonials-video">
                 <div style="padding:177.78% 0 0 0;position:relative;" class="mb-base5-2"><iframe src="https://player.vimeo.com/video/<?= $video; ?>?&autoplay=0&loop=1&muted=1&autopause=1" frameborder="0" allow="autoplay; fullscreen; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="portrait" class="rounded-sm careers-video-js"></iframe></div>
                 <script src="https://player.vimeo.com/api/player.js"></script>
               </div>
               <div class="videos-testimonials-panel">
-                <div class="w-2/3">
-                  <p class="text-h3-base font-heading mb-base5-10 pb-base5-6">“<?= $pullQuote; ?>”</p>
+                <div class="lg:w-2/3">
+                  <p class="text-h3-base font-heading lg:mb-base5-10 pb-base5-6">“<?= $pullQuote; ?>”</p>
                   <p class="text-h3-base mb-base5-1"><?= $name; ?></p>
                   <p class="mb-base5-1"><?= $title; ?></p>
                   <?php if ($linkedIn) : ?>
