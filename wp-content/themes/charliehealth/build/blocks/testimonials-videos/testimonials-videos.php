@@ -47,7 +47,7 @@ if (!empty($block['align'])) {
               <div class="videos-testimonials-panel">
                 <div class="w-2/3">
                   <p class="text-h3-base font-heading mb-base5-10 pb-base5-6">“<?= $pullQuote; ?>”</p>
-                  <p class="text-h3-base mb-base5-2"><?= $name; ?></p>
+                  <p class="text-h3-base mb-base5-1"><?= $name; ?></p>
                   <p class="mb-base5-1"><?= $title; ?></p>
                   <?php if ($linkedIn) : ?>
                     <div class="relative inline-block">
