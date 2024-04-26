@@ -76,7 +76,9 @@ window.addEventListener('load', () => {
       slideChange: function () {
         if (firstVideo) {
           const currentSlide =
-            swiper.slides[swiper.activeIndex].querySelector('.careers-video-js');
+            swiper.slides[swiper.activeIndex].querySelector(
+              '.careers-video-js'
+            );
           const currentPlayer = new Vimeo.Player(currentSlide);
 
           // Pause all videos
@@ -94,6 +96,19 @@ window.addEventListener('load', () => {
             currentPlayer.setVolume(1);
           }
         }
+      },
+      afterInit: function () {
+        console.log(this);
+        this.slides.forEach((slide) => {
+          if (slide != this.slides[this.activeIndex]) {
+            slide
+              .querySelector('.videos-testimonials-panel')
+              .classList.add('noshow');
+            slide
+              .querySelector('.videos-testimonials-video')
+              .classList.add('!w-1/3');
+          }
+        });
       },
     },
   });
