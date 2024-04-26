@@ -292,7 +292,7 @@
       @apply opacity-20;
     }
     .swiper-slide {
-      @apply lg:w-[1000px] w-[80%];
+      @apply lg:w-[1000px] w-[80%] opacity-30 transition-opacity duration-300;
       .videos-testimonials-panel {
         /* @apply noshow; */
       }
@@ -300,6 +300,7 @@
         /* @apply w-full lg:w-[400px]; */
       }
       &.swiper-slide-active {
+        @apply opacity-100;
         .videos-testimonials-panel {
           /* @apply block; */
         }
