@@ -20,6 +20,7 @@ import mobileCats from './modules/mobile-cats';
 import navigationMenu from './modules/navigation-menu';
 import tagPage from './modules/tag-page';
 import stickyCTA from './modules/sticky-cta';
+import fadeUpIn from './modules/fade-up-in';
 
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
@@ -79,6 +80,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   if (body.classList.contains('page-template-page-press')) {
     ajaxPagination();
+  }
+  if (
+    document.querySelector('section .acf-innerblocks-container .fade-up-in')
+  ) {
+    fadeUpIn();
   }
   // if (document.querySelector('meta[property="og:title"]').content === 'hp1') {
   //   stickyCTA();

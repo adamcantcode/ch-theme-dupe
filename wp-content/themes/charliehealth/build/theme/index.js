@@ -1076,6 +1076,55 @@ function revealBackToTop() {
 
 /***/ }),
 
+/***/ "./src/modules/fade-up-in.js":
+/*!***********************************!*\
+  !*** ./src/modules/fade-up-in.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ fadeUpIn)
+/* harmony export */ });
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+
+
+gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
+function fadeUpIn() {
+  const containers = document.querySelectorAll('section .acf-innerblocks-container .fade-up-in');
+  console.log(containers);
+  containers.forEach((container, index) => {
+    container.classList.add(`animate-container-${index}`);
+    gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from(`.animate-container-${index}`, {
+      scrollTrigger: {
+        trigger: `.animate-container-${index}`,
+        start: 'top 80%',
+        toggleActions: 'play reverse play reverse'
+      },
+      yPercent: 10,
+      scaleX: 0.95,
+      opacity: 0,
+      duration: 1,
+      ease: 'power4.out'
+    });
+  });
+  // TODO make sure this is not too taxing
+  document.addEventListener('click', () => {
+    setTimeout(() => {
+      gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.refresh(true);
+    }, 500);
+  });
+  document.addEventListener('resize', () => {
+    setTimeout(() => {
+      gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.refresh(true);
+    }, 500);
+  });
+}
+
+/***/ }),
+
 /***/ "./src/modules/featured-blog-slider.js":
 /*!*********************************************!*\
   !*** ./src/modules/featured-blog-slider.js ***!
@@ -23508,6 +23557,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_navigation_menu__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./modules/navigation-menu */ "./src/modules/navigation-menu.js");
 /* harmony import */ var _modules_tag_page__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./modules/tag-page */ "./src/modules/tag-page.js");
 /* harmony import */ var _modules_sticky_cta__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./modules/sticky-cta */ "./src/modules/sticky-cta.js");
+/* harmony import */ var _modules_fade_up_in__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./modules/fade-up-in */ "./src/modules/fade-up-in.js");
+
 
 
 
@@ -23579,6 +23630,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   if (body.classList.contains('page-template-page-press')) {
     (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__["default"])();
+  }
+  if (document.querySelector('section .acf-innerblocks-container .fade-up-in')) {
+    (0,_modules_fade_up_in__WEBPACK_IMPORTED_MODULE_21__["default"])();
   }
   // if (document.querySelector('meta[property="og:title"]').content === 'hp1') {
   //   stickyCTA();
