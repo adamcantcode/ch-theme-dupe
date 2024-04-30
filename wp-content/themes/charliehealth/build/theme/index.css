@@ -2959,6 +2959,11 @@ a.ch-button.button-tertiary.inverted:hover {
   --tw-gradient-to: rgba(0,0,0,0) var(--tw-gradient-to-position);
 }
 
+.box-decoration-clone{
+  -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
+}
+
 .bg-cover{
   background-size: cover;
 }
