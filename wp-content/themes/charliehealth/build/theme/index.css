@@ -5202,10 +5202,6 @@ ul.alert li {
   padding-top: 1.5rem;
 }
 
-.last\:col-start-\[span_2\]:last-child{
-  grid-column-start: span 2;
-}
-
 .last\:mb-0:last-child{
   margin-bottom: 0px;
 }
@@ -6322,9 +6318,6 @@ ul.alert li {
   }
   .lg\:noshow{
     display: none;
-  }
-  .lg\:last\:col-start-auto:last-child{
-    grid-column-start: auto;
   }
   .group:nth-last-child(-n+2) .lg\:group-\[\&\:nth-last-child\(-n\+2\)\]\:border-none{
     border-style: none;
