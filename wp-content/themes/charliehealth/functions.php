@@ -55,7 +55,7 @@ add_action('pre_get_posts', function () {
 
         if ('page-condition-treatment.php' === $template_slug) {
           add_editor_style('editor-styles-posts.css');
-          add_post_type_support( 'page', 'excerpt' );
+          add_post_type_support('page', 'excerpt');
         }
       }
     }
@@ -946,3 +946,35 @@ function my_nonce_life()
 {
   return 14 * DAY_IN_SECONDS;
 }
+
+
+function fetch_and_store_data_from_api()
+{
+  // Make the API request
+  $response = wp_remote_get('https://sheetdb.io/api/v1/uhculw0aybn5q');
+
+  // Check if the request was successful
+  if (is_array($response) && !is_wp_error($response)) {
+    // Get the body of the response
+    $data = wp_remote_retrieve_body($response);
+
+    // Convert JSON data to PHP array
+    // $data = json_decode($data, true);
+
+    // Check if data is valid
+    if ($data) {
+      // Store the data in WordPress
+      update_option('my_api_data', $data);
+    }
+  }
+}
+
+// Schedule the function to run once daily
+add_action('wp', 'schedule_fetch_and_store_data');
+function schedule_fetch_and_store_data()
+{
+  if (!wp_next_scheduled('fetch_and_store_data_event_5')) {
+    wp_schedule_event(time(), 'daily', 'fetch_and_store_data_event_5');
+  }
+}
+add_action('fetch_and_store_data_event_5', 'fetch_and_store_data_from_api');
