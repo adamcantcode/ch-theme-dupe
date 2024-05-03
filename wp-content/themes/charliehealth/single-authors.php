@@ -19,7 +19,7 @@ if ($image) {
 }
 ?>
 
-<section class="!pb-0 section">
+<section class="section">
   <div class="container">
     <h1 class="mb-sp-12">Authors</h1>
     <div class="grid lg:grid-cols-[4.25fr_5fr] lg:gap-[10rem] gap-sp-8">
