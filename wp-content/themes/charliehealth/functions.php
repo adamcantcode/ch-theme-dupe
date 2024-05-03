@@ -947,20 +947,31 @@ function my_nonce_life()
   return 14 * DAY_IN_SECONDS;
 }
 
-
 function fetch_and_store_data_from_api()
 {
+  // API credentials
+  $api_username = 'c0dp9db6';
+  $api_password = '2nmrrva90fxuq78cj7yu';
+
+  // Prepare authentication header
+  $auth_header = 'Basic ' . base64_encode($api_username . ':' . $api_password);
+
+  // Request headers
+  $headers = array(
+    'Authorization' => $auth_header,
+  );
+
+  // API endpoint
+  $api_url = 'https://sheetdb.io/api/v1/uhculw0aybn5q';
+
   // Make the API request
-  $response = wp_remote_get('https://sheetdb.io/api/v1/uhculw0aybn5q');
+  $response = wp_remote_get($api_url, array('headers' => $headers));
 
   // Check if the request was successful
   if (is_array($response) && !is_wp_error($response)) {
     // Get the body of the response
     $data = wp_remote_retrieve_body($response);
-
-    // Convert JSON data to PHP array
-    // $data = json_decode($data, true);
-
+    $data;
     // Check if data is valid
     if ($data) {
       // Store the data in WordPress
@@ -973,8 +984,12 @@ function fetch_and_store_data_from_api()
 add_action('wp', 'schedule_fetch_and_store_data');
 function schedule_fetch_and_store_data()
 {
-  if (!wp_next_scheduled('fetch_and_store_data_event_5')) {
-    wp_schedule_event(time(), 'daily', 'fetch_and_store_data_event_5');
+  // 4am
+  $dst_in_effect = date('I');
+  $hour_utc = $dst_in_effect ? 9 : 8;
+  $timestamp = mktime($hour_utc, 0, 0, date('n'), date('j'), date('Y'));
+  if (!wp_next_scheduled('fetch_and_store_data_event_6')) {
+    wp_schedule_event($timestamp, 'daily', 'fetch_and_store_data_event_6');
   }
 }
-add_action('fetch_and_store_data_event_5', 'fetch_and_store_data_from_api');
+add_action('fetch_and_store_data_event_6', 'fetch_and_store_data_from_api');
