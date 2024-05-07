@@ -6,34 +6,40 @@ Template Post Type: page
 ?>
 
 <?php get_header(); ?>
+<section class="section bg-primary">
+  <div class="container">
+    <div class="flex gap-base5-4">
+      <div class="relative custom-dropdown" id="stateDropdown">
+        <input type="text" placeholder="Select State" id="stateInput" class="dropdown-input">
+        <ul class="dropdown-options"></ul>
+      </div>
+      <div class="relative custom-dropdown" id="insuranceProviderDropdown">
+        <input type="text" placeholder="Select Insurance Provider" id="insuranceProviderInput" class="dropdown-input">
+        <ul class="dropdown-options"></ul>
+      </div>
+      <div class="relative custom-dropdown" id="insuranceTypeDropdown">
+        <input type="text" placeholder="Select Insurance Type" id="insuranceProviderInput" class="dropdown-input">
+        <ul class="dropdown-options">
+          <li value="Commercial">Commercial</li>
+          <li value="Medicaid">Medicaid</li>
+        </ul>
+      </div>
+    </div>
 
-<div class="relative custom-dropdown" id="stateDropdown">
-  <input type="text" placeholder="Select State" id="stateInput" class="">
-  <ul class="dropdown-options absolute top-full left-0 bg-white list-none noshow z-[1]"></ul>
-</div>
-
-<div class="relative custom-dropdown" id="insuranceProviderDropdown">
-  <input type="text" placeholder="Select Insurance Provider" id="insuranceProviderInput" class="">
-  <ul class="dropdown-options absolute top-full left-0 bg-white list-none noshow z-[1]"></ul>
-</div>
-
-<div class="relative custom-dropdown" id="insuranceTypeDropdown">
-  <input type="text" placeholder="Select Insurance Type" id="insuranceProviderInput" class="">
-  <ul class="dropdown-options absolute top-full left-0 bg-white list-none noshow z-[1]">
-    <li value="Commercial">Commercial</li>
-    <li value="Medicaid">Medicaid</li>
-  </ul>
-</div>
-
-<p id="coverageStatus"></p>
+    <p id="coverageStatus" class="text-white"></p>
+  </div>
+</section>
 
 <script>
   const data = <?= get_option('my_api_data'); ?>;
+
+  console.log(data);
 
   // Function to populate dropdown options
   function populateDropdown(dropdown, options) {
     const dropdownOptions = dropdown.querySelector('.dropdown-options');
     dropdownOptions.innerHTML = '';
+    options.sort(); // Sort the options alphabetically
     options.forEach(option => {
       const optionElement = document.createElement('li');
       optionElement.textContent = option;
@@ -63,7 +69,8 @@ Template Post Type: page
 
   // Function to filter insurance providers based on selected state
   function filterInsuranceProviders(state) {
-    return data.filter(item => item.State === state).map(item => item['Insurance Provider']);
+    const insuranceProviders = data.filter(item => item.State === state).map(item => item['Insurance Provider']);
+    return [...new Set(insuranceProviders)].sort();
   }
 
   // Function to check coverage status based on selected options
@@ -72,6 +79,10 @@ Template Post Type: page
     const selectedInsuranceProvider = document.getElementById('insuranceProviderDropdown').querySelector('input').value;
     const selectedInsuranceType = document.getElementById('insuranceTypeDropdown').querySelector('input').value;
     const selectedInsurance = data.find(item => item.State === selectedState && item['Insurance Provider'] === selectedInsuranceProvider && item['Insurance Type'] === selectedInsuranceType);
+    console.log(selectedState);
+    console.log(selectedInsuranceProvider);
+    console.log(selectedInsuranceType);
+    console.log(selectedInsurance);
     if (selectedInsurance) {
       const coverageStatus = selectedInsurance['Network Status'] === 'INN' ? 'Covered' : 'Not Covered';
       document.getElementById('coverageStatus').textContent = `Coverage Status: ${coverageStatus}`;

@@ -1310,6 +1310,60 @@ a.ch-button.button-tertiary.inverted:hover {
   color: rgb(70 73 109 / var(--tw-text-opacity));
 }
 
+a.dropdown-input:hover {
+        color: #ffffff;
+      }
+
+.dropdown-input{
+  z-index: 1;
+  display: inline-block;
+  border-radius: 10px;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+  background-color: rgba(0,0,0,0);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: left;
+  font-size: 18px;
+  text-transform: capitalize;
+  line-height: 140%;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+@media (min-width: 1024px){
+
+  .dropdown-input{
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+
+.dropdown-options{
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  z-index: 1;
+  list-style-type: none;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding-left: 20px;
+  padding-right: 20px;
+  display: none;
+}
+
+.dropdown-options li{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
 /* .site-main {
   @apply transition-transform duration-500;
   &.active {
@@ -3631,6 +3685,11 @@ a.ch-button.button-tertiary.inverted:hover {
 .outline-none{
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+.blur{
+  --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .brightness-75{
