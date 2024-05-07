@@ -10,19 +10,37 @@ Template Post Type: page
   <div class="container">
     <div class="flex gap-base5-4">
       <div class="relative custom-dropdown" id="stateDropdown">
-        <input type="text" placeholder="Select State" id="stateInput" class="dropdown-input">
-        <ul class="dropdown-options"></ul>
+        <div class="dropdown-header" onclick="toggleDropdown('stateDropdown')">
+          <input type="text" placeholder="Select State" id="stateInput" class="dropdown-input" readonly>
+          <span class="arrow-down"></span>
+        </div>
+        <div class="dropdown-content noshow">
+          <input type="text" class="search-input" id="stateSearchInput" placeholder="Search...">
+          <ul class="dropdown-options"></ul>
+        </div>
       </div>
       <div class="relative custom-dropdown" id="insuranceProviderDropdown">
-        <input type="text" placeholder="Select Insurance Provider" id="insuranceProviderInput" class="dropdown-input">
-        <ul class="dropdown-options"></ul>
+        <div class="dropdown-header" onclick="toggleDropdown('insuranceProviderDropdown')">
+          <input type="text" placeholder="Select Insurance Provider" id="insuranceProviderInput" class="dropdown-input" readonly>
+          <span class="arrow-down"></span>
+        </div>
+        <div class="dropdown-content noshow">
+          <input type="text" class="search-input" id="insuranceProviderSearchInput" placeholder="Search...">
+          <ul class="dropdown-options"></ul>
+        </div>
       </div>
       <div class="relative custom-dropdown" id="insuranceTypeDropdown">
-        <input type="text" placeholder="Select Insurance Type" id="insuranceProviderInput" class="dropdown-input">
-        <ul class="dropdown-options">
-          <li value="Commercial">Commercial</li>
-          <li value="Medicaid">Medicaid</li>
-        </ul>
+        <div class="dropdown-header" onclick="toggleDropdown('insuranceTypeDropdown')">
+          <input type="text" placeholder="Select Insurance Type" id="insuranceTypeInput" class="dropdown-input" readonly>
+          <span class="arrow-down"></span>
+        </div>
+        <div class="dropdown-content noshow">
+          <input type="text" class="search-input" id="insuranceTypeSearchInput" placeholder="Search...">
+          <ul class="dropdown-options">
+            <li value="Commercial">Commercial</li>
+            <li value="Medicaid">Medicaid</li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -35,18 +53,27 @@ Template Post Type: page
 
   console.log(data);
 
+  // Function to toggle dropdown visibility
+  function toggleDropdown(dropdownId) {
+    const dropdown = document.getElementById(dropdownId);
+    const dropdownOptions = dropdown.querySelector('.dropdown-options');
+    const dropdownContent = dropdown.querySelector('.dropdown-content');
+    dropdownOptions.style.display = dropdownOptions.style.display === 'block' ? 'none' : 'block';
+    dropdownContent.style.display = dropdownOptions.style.display;
+  }
+
   // Function to populate dropdown options
   function populateDropdown(dropdown, options) {
     const dropdownOptions = dropdown.querySelector('.dropdown-options');
+    const searchInput = dropdown.querySelector('.search-input');
     dropdownOptions.innerHTML = '';
     options.sort(); // Sort the options alphabetically
     options.forEach(option => {
       const optionElement = document.createElement('li');
       optionElement.textContent = option;
-      optionElement.value = option;
       optionElement.addEventListener('click', () => {
         dropdown.querySelector('input').value = option;
-        dropdownOptions.style.display = 'none';
+        toggleDropdown(dropdown.id);
         if (dropdown.id === 'stateDropdown') {
           const insuranceProviders = filterInsuranceProviders(option);
           populateDropdown(document.getElementById('insuranceProviderDropdown'), insuranceProviders);
@@ -60,6 +87,21 @@ Template Post Type: page
       });
       dropdownOptions.appendChild(optionElement);
     });
+
+    // Add event listener to search input
+    searchInput.addEventListener('input', function() {
+      const searchText = this.value.toLowerCase();
+      const optionElements = dropdownOptions.querySelectorAll('li');
+      optionElements.forEach(optionElement => {
+        const optionText = optionElement.textContent.toLowerCase();
+        if (optionText.includes(searchText)) {
+          optionElement.style.display = 'block';
+        } else {
+          optionElement.style.display = 'none';
+        }
+      });
+    });
+
   }
 
   // Function to filter unique values
@@ -103,27 +145,23 @@ Template Post Type: page
   }
 
   // Add event listeners for input focus and blur to show/hide dropdown options
-  document.querySelectorAll('.custom-dropdown input[type="text"]').forEach(input => {
-    input.addEventListener('focus', function() {
-      const dropdownOptions = this.parentNode.querySelector('.dropdown-options');
-      const options = Array.from(dropdownOptions.children);
-      options.forEach(option => {
-        option.style.display = 'block';
-      });
+  document.querySelectorAll('.custom-dropdown .dropdown-header').forEach(header => {
+    header.addEventListener('click', function() {
+      const dropdown = this.parentNode;
+      const dropdownOptions = dropdown.querySelector('.dropdown-options');
+      const dropdownContent = dropdown.querySelector('.dropdown-content');
       dropdownOptions.style.display = 'block';
+      dropdownContent.style.display = 'block';
     });
-    input.addEventListener('input', function() {
-      const dropdownOptions = this.parentNode.querySelector('.dropdown-options');
-      const searchText = this.value.toLowerCase();
-      const options = Array.from(dropdownOptions.children);
-      options.forEach(option => {
-        if (option.textContent.toLowerCase().includes(searchText)) {
-          option.style.display = 'block';
-        } else {
-          option.style.display = 'none';
-        }
-      });
-      dropdownOptions.style.display = 'block';
+  });
+
+  document.addEventListener('click', function(event) {
+    const dropdowns = document.querySelectorAll('.custom-dropdown');
+    dropdowns.forEach(dropdown => {
+      if (!dropdown.contains(event.target)) {
+        dropdown.querySelector('.dropdown-options').style.display = 'none';
+        dropdown.querySelector('.dropdown-content').style.display = 'none';
+      }
     });
   });
 
