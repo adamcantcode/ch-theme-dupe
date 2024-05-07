@@ -950,8 +950,8 @@ function my_nonce_life()
 function fetch_and_store_data_from_api()
 {
   // API credentials
-  $api_username = 'c0dp9db6';
-  $api_password = '2nmrrva90fxuq78cj7yu';
+  $api_username = 'mztp11ui';
+  $api_password = '171wgoyoy1bcx413gfq8';
 
   // Prepare authentication header
   $auth_header = 'Basic ' . base64_encode($api_username . ':' . $api_password);
@@ -962,7 +962,7 @@ function fetch_and_store_data_from_api()
   );
 
   // API endpoint
-  $api_url = 'https://sheetdb.io/api/v1/uhculw0aybn5q';
+  $api_url = 'https://sheetdb.io/api/v1/j9noe825wd4sj?sheet=Payor%20Marketing%20Overview';
 
   // Make the API request
   $response = wp_remote_get($api_url, array('headers' => $headers));
@@ -988,8 +988,8 @@ function schedule_fetch_and_store_data()
   $dst_in_effect = date('I');
   $hour_utc = $dst_in_effect ? 9 : 8;
   $timestamp = mktime($hour_utc, 0, 0, date('n'), date('j'), date('Y'));
-  if (!wp_next_scheduled('fetch_and_store_data_event_6')) {
-    wp_schedule_event($timestamp, 'daily', 'fetch_and_store_data_event_6');
+  if (!wp_next_scheduled('fetch_and_store_data_event_8')) {
+    wp_schedule_event($timestamp, 'daily', 'fetch_and_store_data_event_8');
   }
 }
-add_action('fetch_and_store_data_event_6', 'fetch_and_store_data_from_api');
+add_action('fetch_and_store_data_event_8', 'fetch_and_store_data_from_api');
