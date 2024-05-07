@@ -8,10 +8,10 @@ Template Post Type: page
 <?php get_header(); ?>
 <section class="section bg-primary">
   <div class="container">
-    <div class="flex gap-base5-4">
+    <div class="flex justify-center gap-base5-4">
       <div class="relative custom-dropdown" id="stateDropdown">
         <div class="dropdown-header" onclick="toggleDropdown('stateDropdown')">
-          <input type="text" placeholder="Select State" id="stateInput" class="dropdown-input" readonly>
+          <input type="text" placeholder="State" id="stateInput" class="dropdown-input" readonly>
           <span class="arrow-down"></span>
         </div>
         <div class="dropdown-content noshow">
@@ -21,7 +21,7 @@ Template Post Type: page
       </div>
       <div class="relative custom-dropdown" id="insuranceProviderDropdown">
         <div class="dropdown-header" onclick="toggleDropdown('insuranceProviderDropdown')">
-          <input type="text" placeholder="Select Insurance Provider" id="insuranceProviderInput" class="dropdown-input" readonly>
+          <input type="text" placeholder="Insurance Provider" id="insuranceProviderInput" class="dropdown-input" readonly>
           <span class="arrow-down"></span>
         </div>
         <div class="dropdown-content noshow">
@@ -31,11 +31,10 @@ Template Post Type: page
       </div>
       <div class="relative custom-dropdown" id="insuranceTypeDropdown">
         <div class="dropdown-header" onclick="toggleDropdown('insuranceTypeDropdown')">
-          <input type="text" placeholder="Select Insurance Type" id="insuranceTypeInput" class="dropdown-input" readonly>
+          <input type="text" placeholder="Insurance Type" id="insuranceTypeInput" class="dropdown-input" readonly>
           <span class="arrow-down"></span>
         </div>
         <div class="dropdown-content noshow">
-          <input type="text" class="search-input" id="insuranceTypeSearchInput" placeholder="Search...">
           <ul class="dropdown-options">
             <li value="Commercial">Commercial</li>
             <li value="Medicaid">Medicaid</li>
@@ -121,10 +120,6 @@ Template Post Type: page
     const selectedInsuranceProvider = document.getElementById('insuranceProviderDropdown').querySelector('input').value;
     const selectedInsuranceType = document.getElementById('insuranceTypeDropdown').querySelector('input').value;
     const selectedInsurance = data.find(item => item.State === selectedState && item['Insurance Provider'] === selectedInsuranceProvider && item['Insurance Type'] === selectedInsuranceType);
-    console.log(selectedState);
-    console.log(selectedInsuranceProvider);
-    console.log(selectedInsuranceType);
-    console.log(selectedInsurance);
     if (selectedInsurance) {
       const coverageStatus = selectedInsurance['Network Status'] === 'INN' ? 'Covered' : 'Not Covered';
       document.getElementById('coverageStatus').textContent = `Coverage Status: ${coverageStatus}`;
@@ -138,9 +133,9 @@ Template Post Type: page
   populateDropdown(document.getElementById('stateDropdown'), states);
 
   // Function to hide dropdown options
-  function hideDropdownOptions() {
-    document.querySelectorAll('.dropdown-options').forEach(dropdownOptions => {
-      dropdownOptions.style.display = 'none';
+  function hideDropdownContent() {
+    document.querySelectorAll('.dropdown-content').forEach(dropdownContent => {
+      dropdownContent.style.display = 'none';
     });
   }
 
@@ -171,7 +166,7 @@ Template Post Type: page
       const insuranceTypeInput = document.getElementById('insuranceTypeDropdown').querySelector('input');
       insuranceTypeInput.value = option.textContent;
       updateCoverage();
-      hideDropdownOptions();
+      hideDropdownContent();
     });
   });
 

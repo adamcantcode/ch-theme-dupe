@@ -1317,6 +1317,8 @@ a.dropdown-input:hover {
 .dropdown-input{
   z-index: 1;
   display: inline-block;
+  width: 100%;
+  cursor: pointer;
   border-radius: 10px;
   border-width: 1px;
   --tw-border-opacity: 1;
@@ -1345,20 +1347,45 @@ a.dropdown-input:hover {
   }
 }
 
-.dropdown-options{
+.dropdown-content{
   position: absolute;
   top: 100%;
   left: 0px;
   z-index: 1;
-  list-style-type: none;
+  width: 100%;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 10px;
   display: none;
 }
 
-.dropdown-options li{
+.dropdown-content .search-input{
+  width: 100%;
+  border-radius: 10px;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(22 26 61 / var(--tw-border-opacity));
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNyIgaGVpZ2h0PSIyNSIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDI3IDI1Ij48cGF0aCBzdHJva2U9IiMxRDIyNUYiIHN0cm9rZS13aWR0aD0iMyIgZD0iTTE5LjAxOTYgMTAuMTE4NmMwIDQuNjQxLTMuODgxOCA4LjQ3NDgtOC43NTk4IDguNDc0OC00Ljg3ODAxIDAtOC43NTk4LTMuODMzOC04Ljc1OTgtOC40NzQ4IDAtNC42NDA5NSAzLjg4MTc5LTguNDc0OCA4Ljc1OTgtOC40NzQ4IDQuODc4IDAgOC43NTk4IDMuODMzODUgOC43NTk4IDguNDc0OFpNMTYuNTcwMyAxNS42NjAybDguNDMwNiA4LjE5NjMiLz48L3N2Zz4=);
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+      background-position: 95% center;
+      background-repeat: no-repeat;
+}
+
+.dropdown-content .dropdown-options{
+  margin-bottom: 0px;
+  max-height: 25vh;
+  list-style-type: none;
+  overflow: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.dropdown-content .dropdown-options li{
   margin-top: 10px;
   margin-bottom: 10px;
   cursor: pointer;
