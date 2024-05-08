@@ -1,5 +1,6 @@
-<section class="section">
+<section class="section bg-primary">
   <div class="container">
+    <h2 class="text-center text-white">Verify your insurance coverage with Charlie Health now</h2>
     <div class="flex justify-center gap-base5-4">
       <div class="relative custom-dropdown" id="stateDropdown">
         <div class="dropdown-header" onclick="toggleDropdown('stateDropdown')">
@@ -37,9 +38,14 @@
   </div>
 </section>
 
-<section class="section noshow" id="coverageStatusCTA">
+<section class="section noshow bg-primary-100" id="coverageStatusCTA">
   <div class="container">
-    <p id="coverageStatus" class="text-white"></p>
+    <h2 id="covered" class="text-center text-white">You’re covered! Get started today</h2>
+    <h2 id="notCovered" class="text-center text-white">Contact us directly to further verify your insurance coverage</h2>
+    <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
+      <a href="/form" class="ch-button button-primary inverted">Get started</a>
+      <a href="tel:+18664848218" class="ch-button button-secondary inverted">1 (866) 484-8218</a>
+    </div>
   </div>
 </section>
 
@@ -118,10 +124,14 @@
     const selectedInsurance = data.find(item => item.State === selectedState && item['Insurance Provider'] === selectedInsuranceProvider && item['Insurance Type'] === selectedInsuranceType);
     if (selectedInsurance) {
       document.querySelector('#coverageStatusCTA').classList.remove('noshow');
-      const coverageStatus = selectedInsurance['Network Status'] === 'INN' ? 'Covered' : 'Not Covered';
-      document.getElementById('coverageStatus').textContent = `Coverage Status: ${coverageStatus}`;
-    } else {
-      document.getElementById('coverageStatus').textContent = 'Coverage Status: Not available';
+      const coverageStatus = selectedInsurance['Network Status'] === 'INN' ? true : false;
+      if(coverageStatus) {
+        document.querySelector('#covered').classList.remove('noshow');
+        document.querySelector('#notCovered').classList.add('noshow');
+      } else {
+        document.querySelector('#covered').classList.add('noshow');
+        document.querySelector('#notCovered').classList.remove('noshow');
+      }
     }
   }
 
