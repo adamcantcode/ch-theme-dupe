@@ -1,7 +1,7 @@
 /******/ (() => { // webpackBootstrap
 var __webpack_exports__ = {};
 /*!****************************************!*\
-  !*** ./blocks/insurance-cost/index.js ***!
+  !*** ./blocks/insurance-tabs/index.js ***!
   \****************************************/
 
 /******/ })()

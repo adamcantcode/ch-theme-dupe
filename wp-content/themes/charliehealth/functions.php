@@ -150,6 +150,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/gradient-section');
   register_block_type(__DIR__ . '/build/blocks/testimonials-videos');
   register_block_type(__DIR__ . '/build/blocks/insurance-providers');
+  register_block_type(__DIR__ . '/build/blocks/insurance-tabs');
 }
 add_action('init', 'register_acf_blocks', 5);
 
