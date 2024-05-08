@@ -1,12 +1,4 @@
-<?php
-/*
-Template Name: Testing fetch
-Template Post Type: page
-*/
-?>
-
-<?php get_header(); ?>
-<section class="section bg-primary">
+<section class="section">
   <div class="container">
     <div class="flex justify-center gap-base5-4">
       <div class="relative custom-dropdown" id="stateDropdown">
@@ -42,14 +34,17 @@ Template Post Type: page
         </div>
       </div>
     </div>
+  </div>
+</section>
 
+<section class="section noshow" id="coverageStatusCTA">
+  <div class="container">
     <p id="coverageStatus" class="text-white"></p>
   </div>
 </section>
 
 <script>
   const data = <?= get_option('my_api_data'); ?>;
-
   console.log(data);
 
   // Function to toggle dropdown visibility
@@ -78,11 +73,12 @@ Template Post Type: page
           populateDropdown(document.getElementById('insuranceProviderDropdown'), insuranceProviders);
           document.getElementById('insuranceProviderDropdown').querySelector('input').value = '';
           document.getElementById('insuranceTypeDropdown').querySelector('input').value = '';
+          document.querySelector('#coverageStatusCTA').classList.add('noshow');
         }
         if (dropdown.id === 'insuranceProviderDropdown') {
           document.getElementById('insuranceTypeDropdown').querySelector('input').value = '';
+          document.querySelector('#coverageStatusCTA').classList.add('noshow');
         }
-        // updateCoverage();
       });
       dropdownOptions.appendChild(optionElement);
     });
@@ -121,6 +117,7 @@ Template Post Type: page
     const selectedInsuranceType = document.getElementById('insuranceTypeDropdown').querySelector('input').value;
     const selectedInsurance = data.find(item => item.State === selectedState && item['Insurance Provider'] === selectedInsuranceProvider && item['Insurance Type'] === selectedInsuranceType);
     if (selectedInsurance) {
+      document.querySelector('#coverageStatusCTA').classList.remove('noshow');
       const coverageStatus = selectedInsurance['Network Status'] === 'INN' ? 'Covered' : 'Not Covered';
       document.getElementById('coverageStatus').textContent = `Coverage Status: ${coverageStatus}`;
     } else {
@@ -180,5 +177,3 @@ Template Post Type: page
     });
   });
 </script>
-
-<?php get_footer(); ?>

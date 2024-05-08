@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "acf/insurance-providers-block",
+  "title": "Insurance Providers Block",
+  "description": "Interactive element for insurance provider coverage checking",
+  "style": "file:./index.css",
+  "script": "file:./index.js",
+  "category": "custom",
+  "icon": "columns",
+  "apiVersion": 2,
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "insurance-providers.php"
+  },
+  "supports": {}
+}
