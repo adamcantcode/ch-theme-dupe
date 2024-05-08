@@ -105,16 +105,16 @@
     @apply text-[18px] inline-block lg:px-[25px] px-[10px] py-[15px] transition-all leading-[140%] capitalize z-[1] border border-white text-white bg-transparent rounded-md text-left w-full cursor-pointer;
   }
   .dropdown-content {
-    @apply absolute top-full left-0 bg-white noshow z-[1] p-base5-2 w-full rounded-b-md;
+    @apply absolute top-[calc(100%_+_10px)] left-0 bg-white noshow z-[1] p-base5-1 w-full rounded-md;
     .search-input {
       @apply px-base5-3 py-base5-2 border-2 border-primary rounded-md w-full bg-[url('/resources/images/icons/search.svg')];
       background-position: 95% center;
       background-repeat: no-repeat;
     }
     .dropdown-options {
-      @apply list-none px-base5-3 mb-0 max-h-[25vh] overflow-auto;
+      @apply list-none mb-0 p-0 max-h-[25vh] overflow-auto;
       li {
-        @apply cursor-pointer my-base5-2;
+        @apply cursor-pointer py-base5-1 px-base5-3 m-0 rounded-md transition-all hover:bg-grey-cool ;
       }
     }
   }
