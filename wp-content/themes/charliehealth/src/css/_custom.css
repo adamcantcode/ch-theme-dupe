@@ -622,7 +622,7 @@
 }
 
 mark {
-  @apply py-sp-1 px-sp-3 rounded-[6px];
+  @apply py-sp-1 px-sp-3 rounded-[6px] box-decoration-clone;
 }
 
 .toc-underline {

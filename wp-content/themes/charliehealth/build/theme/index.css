@@ -5137,6 +5137,8 @@ a.providers:hover {
 
 mark{
   border-radius: 6px;
+  -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   padding-left: 0.75rem;
