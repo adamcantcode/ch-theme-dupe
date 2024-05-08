@@ -1325,9 +1325,9 @@ a.dropdown-input:hover {
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
   background-color: rgba(0,0,0,0);
   padding-left: 10px;
-  padding-right: 10px;
   padding-top: 15px;
   padding-bottom: 15px;
+  padding-right: 50px !important;
   text-align: left;
   font-size: 18px;
   text-transform: capitalize;
@@ -1339,6 +1339,21 @@ a.dropdown-input:hover {
   transition-duration: 150ms;
 }
 
+.dropdown-input::-moz-placeholder{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.dropdown-input::placeholder{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.dropdown-input:focus{
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
 @media (min-width: 1024px){
 
   .dropdown-input{
@@ -1347,11 +1362,15 @@ a.dropdown-input:hover {
   }
 }
 
+.dropdown-input:disabled{
+  opacity: 0.5;
+}
+
 .dropdown-content{
   position: absolute;
   top: calc(100% + 10px);
   left: 0px;
-  z-index: 1;
+  z-index: 10;
   width: 100%;
   border-radius: 10px;
   --tw-bg-opacity: 1;
@@ -1371,9 +1390,17 @@ a.dropdown-input:hover {
   padding-right: 15px;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.dropdown-content .search-input:focus{
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.dropdown-content .search-input {
       background-position: 95% center;
       background-repeat: no-repeat;
-}
+    }
 
 .dropdown-content .dropdown-options{
   margin-bottom: 0px;
@@ -1551,6 +1578,10 @@ a.insurance-tabs.active:hover {
 
 .right-0{
   right: 0px;
+}
+
+.right-\[25px\]{
+  right: 25px;
 }
 
 .right-sp-6{

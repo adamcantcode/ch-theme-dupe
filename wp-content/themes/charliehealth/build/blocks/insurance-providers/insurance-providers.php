@@ -1,11 +1,13 @@
 <section class="section bg-primary">
   <div class="container">
     <h2 class="text-center text-white">Verify your insurance coverage with Charlie Health now</h2>
-    <div class="flex justify-center gap-base5-4">
+    <div class="flex flex-col justify-center lg:flex-row gap-base5-4">
       <div class="relative custom-dropdown" id="stateDropdown">
-        <div class="dropdown-header" onclick="toggleDropdown('stateDropdown')">
+        <div class="flex items-center dropdown-header" onclick="toggleDropdown('stateDropdown')">
           <input type="text" placeholder="State" id="stateInput" class="dropdown-input" readonly>
-          <span class="arrow-down"></span>
+          <svg width="17" height="11" viewBox="0 0 17 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute right-[25px]">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M1.50015 0.585938L8.50015 7.58594L15.5002 0.585938L16.9144 2.00015L8.50015 10.4144L0.0859375 2.00015L1.50015 0.585938Z" fill="white" />
+          </svg>
         </div>
         <div class="dropdown-content noshow">
           <input type="text" class="search-input" id="stateSearchInput" placeholder="Search...">
@@ -13,9 +15,11 @@
         </div>
       </div>
       <div class="relative custom-dropdown" id="insuranceProviderDropdown">
-        <div class="dropdown-header" onclick="toggleDropdown('insuranceProviderDropdown')">
-          <input type="text" placeholder="Insurance Provider" id="insuranceProviderInput" class="dropdown-input" readonly>
-          <span class="arrow-down"></span>
+        <div class="flex items-center dropdown-header" onclick="toggleDropdown('insuranceProviderDropdown')">
+          <input type="text" placeholder="Insurance Provider" id="insuranceProviderInput" class="dropdown-input" readonly disabled>
+          <svg width="17" height="11" viewBox="0 0 17 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute right-[25px]">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M1.50015 0.585938L8.50015 7.58594L15.5002 0.585938L16.9144 2.00015L8.50015 10.4144L0.0859375 2.00015L1.50015 0.585938Z" fill="white" />
+          </svg>
         </div>
         <div class="dropdown-content noshow">
           <input type="text" class="search-input" id="insuranceProviderSearchInput" placeholder="Search...">
@@ -23,9 +27,11 @@
         </div>
       </div>
       <div class="relative custom-dropdown" id="insuranceTypeDropdown">
-        <div class="dropdown-header" onclick="toggleDropdown('insuranceTypeDropdown')">
-          <input type="text" placeholder="Insurance Type" id="insuranceTypeInput" class="dropdown-input" readonly>
-          <span class="arrow-down"></span>
+        <div class="flex items-center dropdown-header" onclick="toggleDropdown('insuranceTypeDropdown')">
+          <input type="text" placeholder="Insurance Type" id="insuranceTypeInput" class="dropdown-input" readonly disabled>
+          <svg width="17" height="11" viewBox="0 0 17 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute right-[25px]">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M1.50015 0.585938L8.50015 7.58594L15.5002 0.585938L16.9144 2.00015L8.50015 10.4144L0.0859375 2.00015L1.50015 0.585938Z" fill="white" />
+          </svg>
         </div>
         <div class="dropdown-content noshow">
           <ul class="dropdown-options">
@@ -77,13 +83,18 @@
         if (dropdown.id === 'stateDropdown') {
           const insuranceProviders = filterInsuranceProviders(option);
           populateDropdown(document.getElementById('insuranceProviderDropdown'), insuranceProviders);
+
           document.getElementById('insuranceProviderDropdown').querySelector('input').value = '';
+          document.getElementById('insuranceProviderDropdown').querySelector('input').removeAttribute('disabled');
+          document.getElementById('insuranceTypeDropdown').querySelector('input').setAttribute('disabled', 'disabled');
           document.getElementById('insuranceTypeDropdown').querySelector('input').value = '';
           document.querySelector('#coverageStatusCTA').classList.add('noshow');
         }
         if (dropdown.id === 'insuranceProviderDropdown') {
           document.getElementById('insuranceTypeDropdown').querySelector('input').value = '';
+          document.getElementById('insuranceTypeDropdown').querySelector('input').removeAttribute('disabled');
           document.querySelector('#coverageStatusCTA').classList.add('noshow');
+          document.getElementById('insuranceProviderDropdown').focus();
         }
       });
       dropdownOptions.appendChild(optionElement);
@@ -125,7 +136,7 @@
     if (selectedInsurance) {
       document.querySelector('#coverageStatusCTA').classList.remove('noshow');
       const coverageStatus = selectedInsurance['Network Status'] === 'INN' ? true : false;
-      if(coverageStatus) {
+      if (coverageStatus) {
         document.querySelector('#covered').classList.remove('noshow');
         document.querySelector('#notCovered').classList.add('noshow');
       } else {
@@ -152,6 +163,8 @@
       const dropdown = this.parentNode;
       const dropdownOptions = dropdown.querySelector('.dropdown-options');
       const dropdownContent = dropdown.querySelector('.dropdown-content');
+
+      dropdown.querySelector('.search-input').focus();
       dropdownOptions.style.display = 'block';
       dropdownContent.style.display = 'block';
     });
