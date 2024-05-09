@@ -16,6 +16,14 @@
 <?php $boardCode = get_field('board_code'); ?>
 <script>
   window.addEventListener('DOMContentLoaded', () => {
+
+    // Get src
+    const urlParams = new URLSearchParams(window.location.search);
+
+    if (urlParams.has('gh_src')) {
+      var ghSrcValue = urlParams.get('gh_src');
+    }
+
     var requestOptions = {
       method: 'GET',
       redirect: 'follow'
@@ -31,7 +39,7 @@
           if (data.jobs.length > 0) {
             const jobMarkup = data.jobs.slice(0, 5).map(job => `
                   <div class="relative flex flex-col justify-between transition-all duration-300 border-b lg:flex-row lg:items-center border-primary first:border-t py-sp-6 gap-x-sp-5 job-list-job-js">
-                    <a href="${job.absolute_url}" class="no-underline stretched-link text-[20px] leading-[1.1] mb-sp-2 lg:mb-0">${job.title}</a>
+                    <a href="${job.absolute_url}${ghSrcValue ? '&gh_src=' + ghSrcValue : ''}" class="no-underline stretched-link text-[20px] leading-[1.1] mb-sp-2 lg:mb-0">${job.title}</a>
                     <p class="mb-0 text-[14px] leading-[1.1] location-js lg:text-right">${job.location.name}</p>
                   </div>
                 `).join('');

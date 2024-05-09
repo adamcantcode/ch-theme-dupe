@@ -81,6 +81,13 @@ Template Post Type: page
         );
       }
 
+      // Get source
+      const urlParams = new URLSearchParams(window.location.search);
+
+      if (urlParams.has('gh_src')) {
+        var ghSrcValue = urlParams.get('gh_src');
+      }
+      
       var requestOptions = {
         method: 'GET',
         redirect: 'follow'
@@ -260,7 +267,7 @@ Template Post Type: page
               if (department.jobs.length > 0) {
                 const jobMarkup = department.jobs.map(job => `
                   <div class="relative flex flex-col justify-between transition-all duration-300 border-b lg:flex-row lg:items-center border-primary first:border-t py-sp-6 gap-x-sp-5 job-list-job-js">
-                    <a href="${job.absolute_url}" class="no-underline stretched-link text-h4-base mb-sp-2 lg:mb-0">${job.title}</a>
+                    <a href="${job.absolute_url}${ghSrcValue ? '&gh_src=' + ghSrcValue : ''}" class="no-underline stretched-link text-h4-base mb-sp-2 lg:mb-0">${job.title}</a>
                     <p class="location-js lg:text-right">${job.location.name}</p>
                   </div>
                 `).join('');
