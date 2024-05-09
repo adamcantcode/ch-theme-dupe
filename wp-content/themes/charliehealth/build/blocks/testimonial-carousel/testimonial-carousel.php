@@ -1,9 +1,9 @@
 <div class="relative">
-  <div class="absolute -translate-y-[40%]">
+  <!-- <div class="absolute -translate-y-[40%]">
     <svg width="54" height="62" viewBox="0 0 54 62" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0.820824 2.83575C0.820823 1.29615 2.48749 0.333897 3.82082 1.1037L52.9361 29.4604C54.2694 30.2302 54.2694 32.1547 52.9361 32.9245L3.82083 61.2812C2.48749 62.051 0.820824 61.0888 0.820824 59.5492L0.820824 2.83575Z" fill="#F7F5F1" />
     </svg>
-  </div>
+  </div> -->
   <?php if (have_rows('testimonials')) : ?>
     <div class="swiper swiper-testimonial-carousel-big">
       <div class="swiper-wrapper">
