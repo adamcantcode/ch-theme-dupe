@@ -289,7 +289,7 @@ $subhead = get_field('subhead', 'option');
       var scrollPosition =
         window.pageYOffset || document.documentElement.scrollTop;
       var windowHeight = window.innerHeight;
-      var scrollThreshold = windowHeight * 1.5; // Adjust this value as needed
+      var scrollThreshold = windowHeight * 2.5; // Adjust this value as needed
 
       // Check if the user has scrolled past the threshold and the cookie doesn't exist
       if (scrollPosition > scrollThreshold && !getCookie('newsletter_popup')) {
