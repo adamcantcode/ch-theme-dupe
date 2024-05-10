@@ -41,16 +41,13 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="section noshow bg-primary-100" id="coverageStatusCTA">
-  <div class="container">
-    <h2 id="covered" class="text-center text-white">You’re covered! Get started today</h2>
-    <h2 id="notCovered" class="text-center text-white">Contact us directly to further verify your insurance coverage</h2>
-    <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
-      <a href="/form" class="ch-button button-primary inverted">Get started</a>
-      <a href="tel:+18664848218" class="ch-button button-secondary inverted">1 (866) 484-8218</a>
+    <div id="coverageStatusCTA" class="transition-all duration-500 opacity-0 mt-base5-10 noshow">
+      <h2 id="covered" class="text-center text-white">You’re covered! Get started today</h2>
+      <h2 id="notCovered" class="text-center text-white">Contact us directly to further verify your insurance coverage</h2>
+      <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
+        <a href="/form" class="ch-button button-primary inverted">Get started</a>
+        <a href="tel:+18664848218" class="ch-button button-secondary inverted">1 (866) 484-8218</a>
+      </div>
     </div>
   </div>
 </section>
@@ -89,11 +86,13 @@
           document.getElementById('insuranceTypeDropdown').querySelector('input').setAttribute('disabled', 'disabled');
           document.getElementById('insuranceTypeDropdown').querySelector('input').value = '';
           document.querySelector('#coverageStatusCTA').classList.add('noshow');
+          document.querySelector('#coverageStatusCTA').classList.add('opacity-0')
         }
         if (dropdown.id === 'insuranceProviderDropdown') {
           document.getElementById('insuranceTypeDropdown').querySelector('input').value = '';
           document.getElementById('insuranceTypeDropdown').querySelector('input').removeAttribute('disabled');
           document.querySelector('#coverageStatusCTA').classList.add('noshow');
+          document.querySelector('#coverageStatusCTA').classList.add('opacity-0')
           document.getElementById('insuranceProviderDropdown').focus();
         }
       });
@@ -135,6 +134,9 @@
     const selectedInsurance = data.find(item => item.State === selectedState && item['Insurance Provider'] === selectedInsuranceProvider && item['Insurance Type'] === selectedInsuranceType);
     if (selectedInsurance) {
       document.querySelector('#coverageStatusCTA').classList.remove('noshow');
+      setTimeout(function() {
+        document.querySelector('#coverageStatusCTA').classList.remove('opacity-0');
+      }, 10);
       const coverageStatus = selectedInsurance['Network Status'] === 'INN' ? true : false;
       if (coverageStatus) {
         document.querySelector('#covered').classList.remove('noshow');
@@ -164,7 +166,9 @@
       const dropdownOptions = dropdown.querySelector('.dropdown-options');
       const dropdownContent = dropdown.querySelector('.dropdown-content');
 
-      dropdown.querySelector('.search-input').focus();
+      if (dropdown.querySelector('.search-input')) {
+        dropdown.querySelector('.search-input').focus();
+      }
       dropdownOptions.style.display = 'block';
       dropdownContent.style.display = 'block';
     });

@@ -1363,6 +1363,7 @@ a.dropdown-input:hover {
 }
 
 .dropdown-input:disabled{
+  cursor: not-allowed;
   opacity: 0.5;
 }
 
@@ -1922,6 +1923,10 @@ a.insurance-tabs.active:hover {
 
 .mt-base5-1{
   margin-top: 5px;
+}
+
+.mt-base5-10{
+  margin-top: 50px;
 }
 
 .mt-base5-3{
