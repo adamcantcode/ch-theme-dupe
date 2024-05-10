@@ -5139,8 +5139,6 @@ mark{
   border-radius: 6px;
   -webkit-box-decoration-break: clone;
           box-decoration-break: clone;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
@@ -5846,12 +5844,12 @@ ul.alert li {
     aspect-ratio: auto;
   }
 
-  .lg\:h-\[167px\]{
-    height: 167px;
+  .lg\:h-\[160\%\]{
+    height: 160%;
   }
 
-  .lg\:h-\[170\%\]{
-    height: 170%;
+  .lg\:h-\[167px\]{
+    height: 167px;
   }
 
   .lg\:h-\[220px\]{
@@ -5904,14 +5902,6 @@ ul.alert li {
 
   .lg\:h-sp-8{
     height: 2rem;
-  }
-
-  .lg\:h-\[150\%\]{
-    height: 150%;
-  }
-
-  .lg\:h-\[160\%\]{
-    height: 160%;
   }
 
   .lg\:max-h-\[1040px\]{
