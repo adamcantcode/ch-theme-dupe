@@ -4222,8 +4222,8 @@ a.ch-button.button-tertiary.inverted:hover {
 @media (min-width: 1024px) {
 
 .testimonial-padding{
-    padding-top: 6rem;
     padding-bottom: 6rem;
+    padding-top: 2.5rem;
   }
 
 .alignleft {

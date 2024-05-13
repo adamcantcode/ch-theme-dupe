@@ -103,7 +103,7 @@
     @apply py-sp-12;
   }
   @screen lg {
-    @apply py-sp-16;
+    @apply pb-sp-16 pt-sp-10;
   }
 }
 .alignleft {
