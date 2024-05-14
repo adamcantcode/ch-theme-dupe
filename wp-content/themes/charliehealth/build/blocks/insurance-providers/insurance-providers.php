@@ -73,31 +73,33 @@
     dropdownOptions.innerHTML = '';
     options.sort(); // Sort the options alphabetically
     options.forEach(option => {
-      const optionElement = document.createElement('li');
-      optionElement.textContent = option;
-      optionElement.addEventListener('click', () => {
-        dropdown.querySelector('input').value = option;
-        toggleDropdown(dropdown.id);
-        if (dropdown.id === 'stateDropdown') {
-          const insuranceProviders = filterInsuranceProviders(option);
-          populateDropdown(document.getElementById('insuranceProviderDropdown'), insuranceProviders);
+      if (option !== 'Foreign') {
+        const optionElement = document.createElement('li');
+        optionElement.textContent = option;
+        optionElement.addEventListener('click', () => {
+          dropdown.querySelector('input').value = option;
+          toggleDropdown(dropdown.id);
+          if (dropdown.id === 'stateDropdown') {
+            const insuranceProviders = filterInsuranceProviders(option);
+            populateDropdown(document.getElementById('insuranceProviderDropdown'), insuranceProviders);
 
-          document.getElementById('insuranceProviderDropdown').querySelector('input').value = '';
-          document.getElementById('insuranceProviderDropdown').querySelector('input').removeAttribute('disabled');
-          document.getElementById('insuranceTypeDropdown').querySelector('input').setAttribute('disabled', 'disabled');
-          document.getElementById('insuranceTypeDropdown').querySelector('input').value = '';
-          document.querySelector('#coverageStatusCTA').classList.add('noshow');
-          document.querySelector('#coverageStatusCTA').classList.add('opacity-0')
-        }
-        if (dropdown.id === 'insuranceProviderDropdown') {
-          document.getElementById('insuranceTypeDropdown').querySelector('input').value = '';
-          document.getElementById('insuranceTypeDropdown').querySelector('input').removeAttribute('disabled');
-          document.querySelector('#coverageStatusCTA').classList.add('noshow');
-          document.querySelector('#coverageStatusCTA').classList.add('opacity-0')
-          document.getElementById('insuranceProviderDropdown').focus();
-        }
-      });
-      dropdownOptions.appendChild(optionElement);
+            document.getElementById('insuranceProviderDropdown').querySelector('input').value = '';
+            document.getElementById('insuranceProviderDropdown').querySelector('input').removeAttribute('disabled');
+            document.getElementById('insuranceTypeDropdown').querySelector('input').setAttribute('disabled', 'disabled');
+            document.getElementById('insuranceTypeDropdown').querySelector('input').value = '';
+            document.querySelector('#coverageStatusCTA').classList.add('noshow');
+            document.querySelector('#coverageStatusCTA').classList.add('opacity-0')
+          }
+          if (dropdown.id === 'insuranceProviderDropdown') {
+            document.getElementById('insuranceTypeDropdown').querySelector('input').value = '';
+            document.getElementById('insuranceTypeDropdown').querySelector('input').removeAttribute('disabled');
+            document.querySelector('#coverageStatusCTA').classList.add('noshow');
+            document.querySelector('#coverageStatusCTA').classList.add('opacity-0')
+            document.getElementById('insuranceProviderDropdown').focus();
+          }
+        });
+        dropdownOptions.appendChild(optionElement);
+      }
     });
 
     // Add event listener to search input
