@@ -5174,6 +5174,24 @@ ul.alert li {
         color: #ffffff;
       }
 
+.\[\&_\*\]\:text-h3-base *{
+  margin-bottom: 15px;
+  font-size: 25px;
+  line-height: 110%;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+@media (min-width: 1024px) {
+  .\[\&_\*\]\:text-h3-base *{
+    margin-bottom: 20px;
+    font-size: 28px;
+    line-height: 110%;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+    }
+
 .\[\&_\*\]\:text-white *a:hover {
         color: #ffffff;
       }
@@ -6349,6 +6367,10 @@ ul.alert li {
 
 .\[\&_\*\]\:mb-0 *{
   margin-bottom: 0px;
+}
+
+.\[\&_\*\]\:font-heading-serif *{
+  font-family: "ABC Arizona", serif;
 }
 
 .\[\&_\*\]\:text-\[14px\] *{

@@ -41,11 +41,13 @@ if (!empty($block['align'])) {
       <div class="container lg:px-sp-10 swiper-wrapper px-[20px]">
         <?php while ($query->have_posts()) : $query->the_post(); ?>
           <?php
-          $post = get_the_ID();
-          $image = get_the_post_thumbnail_url($post);
-          $title = get_the_title($post);
-          $bio = get_field('ccac_page_bio');
-          $link = get_the_permalink($post);
+          $post     = get_the_ID();
+          $image    = get_the_post_thumbnail_url($post);
+          $name     = get_the_title($post);
+          $pronouns = get_field('pronouns', $post);
+          $title    = get_field('title', $post);
+          $bio      = get_field('ccac_page_bio', $post);
+          $link     = get_the_permalink($post);
 
           if ($image) {
             $imageID = get_post_thumbnail_id();
@@ -60,11 +62,13 @@ if (!empty($block['align'])) {
             <div class="flex !h-full gap-sp-8 pb-sp-8 lg:flex-row flex-col">
               <div class="text-center bg-white p-base5-5 rounded-lg lg:basis-[33%] careers-testimonial-image self-start">
                 <img src="<?= $image ?>" alt="<?= $imageAlt ?>" class="object-cover rounded-circle aspect-square mb-sp-6">
-                <p class="font-heading-serif mb-base5-1"><?= $name; ?></p>
+                <p class="font-heading-serif mb-base5-1"><?= $name; ?> <?= $pronouns; ?></p>
                 <p><?= $title; ?></p>
               </div>
               <div class="careers-testimonials-panel lg:basis-[55%]">
-                <p class="text-h3-base font-heading-serif"><?= $bio; ?></p>
+                <div class="[&_*]:text-h3-base [&_*]:font-heading-serif mb-base5-4">
+                  <?= $bio; ?>
+                </div>
                 <p><a href="<?= $link; ?>">Read more</a></p>
               </div>
             </div>

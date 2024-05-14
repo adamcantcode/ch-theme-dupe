@@ -27,7 +27,7 @@
             "label": "Pronouns",
             "name": "pronouns",
             "aria-label": "",
-            "type": "checkbox",
+            "type": "radio",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -38,15 +38,15 @@
             },
             "choices": {
                 "(he\/him)": "(he\/him)",
-                "(she\/her)": "(she\/her)"
+                "(she\/her)": "(she\/her)",
+                "(they\/them)": "(they\/them)"
             },
-            "default_value": [],
+            "default_value": "",
             "return_format": "value",
-            "allow_custom": 1,
-            "save_custom": 0,
-            "layout": "vertical",
-            "toggle": 0,
-            "custom_choice_button_text": "Add new choice"
+            "allow_null": 0,
+            "other_choice": 1,
+            "save_other_choice": 0,
+            "layout": "vertical"
         },
         {
             "key": "field_6643a6af5150a",
@@ -94,7 +94,7 @@
             "name": "areas_of_expertise",
             "aria-label": "",
             "type": "text",
-            "instructions": "",
+            "instructions": "Enter a list of comma separated values. For example: <code>school-based therapy, trauma-informed care, DBT, CBT, curriculum development, group facilitation<\/code>",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -127,5 +127,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1715713570
+    "modified": 1715715821
 }
