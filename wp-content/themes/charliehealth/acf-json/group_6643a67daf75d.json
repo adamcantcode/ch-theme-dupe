@@ -1,13 +1,13 @@
 {
-    "key": "group_643c4bebe758b",
-    "title": "Author\/Reviewer",
+    "key": "group_6643a67daf75d",
+    "title": "Clinical Content Advisory Council",
     "fields": [
         {
-            "key": "field_643c4bec37b73",
-            "label": "Biography",
-            "name": "bio",
+            "key": "field_6643a67d51508",
+            "label": "Title",
+            "name": "title",
             "aria-label": "",
-            "type": "wysiwyg",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -17,36 +17,17 @@
                 "id": ""
             },
             "default_value": "",
-            "tabs": "all",
-            "toolbar": "basic",
-            "media_upload": 0,
-            "delay": 0
-        },
-        {
-            "key": "field_643c4ea637b76",
-            "label": "Email",
-            "name": "email",
-            "aria-label": "",
-            "type": "email",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
+            "maxlength": "",
             "placeholder": "",
             "prepend": "",
             "append": ""
         },
         {
-            "key": "field_643c4eba37b77",
-            "label": "Twitter",
-            "name": "twitter",
+            "key": "field_6643b5af91436",
+            "label": "Pronouns",
+            "name": "pronouns",
             "aria-label": "",
-            "type": "url",
+            "type": "checkbox",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -55,15 +36,24 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": ""
+            "choices": {
+                "(he\/him)": "(he\/him)",
+                "(she\/her)": "(she\/her)"
+            },
+            "default_value": [],
+            "return_format": "value",
+            "allow_custom": 1,
+            "save_custom": 0,
+            "layout": "vertical",
+            "toggle": 0,
+            "custom_choice_button_text": "Add new choice"
         },
         {
-            "key": "field_643c4f3037b78",
-            "label": "Facebook",
-            "name": "facebook",
+            "key": "field_6643a6af5150a",
+            "label": "Author Page Bio",
+            "name": "author_page_bio",
             "aria-label": "",
-            "type": "url",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -73,14 +63,17 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": ""
+            "maxlength": "",
+            "rows": "",
+            "placeholder": "",
+            "new_lines": "wpautop"
         },
         {
-            "key": "field_643c4ff737b7a",
-            "label": "LinkedIn",
-            "name": "linkedin",
+            "key": "field_6643a6ce5150b",
+            "label": "CCAC Page Bio",
+            "name": "ccac_page_bio",
             "aria-label": "",
-            "type": "url",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -90,7 +83,30 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": ""
+            "maxlength": "",
+            "rows": "",
+            "placeholder": "",
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_6643a6f05150c",
+            "label": "Areas of Expertise",
+            "name": "areas_of_expertise",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -98,20 +114,18 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "authors"
+                "value": "medical-reviewer"
             }
         ]
     ],
     "menu_order": 0,
-    "position": "normal",
+    "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [
-        "slug"
-    ],
+    "hide_on_screen": "",
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1715709558
+    "modified": 1715713570
 }
