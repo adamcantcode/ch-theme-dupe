@@ -149,6 +149,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/partner-testimonial-review');
   register_block_type(__DIR__ . '/build/blocks/gradient-section');
   register_block_type(__DIR__ . '/build/blocks/testimonials-videos');
+  register_block_type(__DIR__ . '/build/blocks/testimonials-council-members');
 }
 add_action('init', 'register_acf_blocks', 5);
 
