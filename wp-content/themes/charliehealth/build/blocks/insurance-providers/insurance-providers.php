@@ -35,7 +35,7 @@
         </div>
         <div class="dropdown-content noshow">
           <ul class="dropdown-options">
-            <li value="Commercial">Commercial</li>
+            <li value="Commercial">Commercial/private</li>
             <li value="Medicaid">Medicaid</li>
           </ul>
         </div>
@@ -133,7 +133,10 @@
   function updateCoverage() {
     const selectedState = document.getElementById('stateDropdown').querySelector('input').value;
     const selectedInsuranceProvider = document.getElementById('insuranceProviderDropdown').querySelector('input').value;
-    const selectedInsuranceType = document.getElementById('insuranceTypeDropdown').querySelector('input').value;
+    var selectedInsuranceType = document.getElementById('insuranceTypeDropdown').querySelector('input').value;
+    if (selectedInsuranceType === 'Commercial/private') {
+      selectedInsuranceType = 'Commercial';
+    }
     const selectedInsurance = data.find(item => item.State === selectedState && item['Insurance Provider'] === selectedInsuranceProvider && item['Insurance Type'] === selectedInsuranceType);
     if (selectedInsurance) {
       document.querySelector('#coverageStatusCTA').classList.remove('noshow');
