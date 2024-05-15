@@ -4,7 +4,7 @@
     <div class="flex flex-col justify-center lg:flex-row gap-base5-4">
       <div class="relative custom-dropdown" id="stateDropdown">
         <div class="flex items-center dropdown-header" onclick="toggleDropdown('stateDropdown')">
-          <input type="text" placeholder="State" id="stateInput" class="dropdown-input" readonly>
+          <input type="text" placeholder="State of residence" id="stateInput" class="dropdown-input" readonly>
           <svg width="17" height="11" viewBox="0 0 17 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute right-[25px]">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M1.50015 0.585938L8.50015 7.58594L15.5002 0.585938L16.9144 2.00015L8.50015 10.4144L0.0859375 2.00015L1.50015 0.585938Z" fill="white" />
           </svg>
