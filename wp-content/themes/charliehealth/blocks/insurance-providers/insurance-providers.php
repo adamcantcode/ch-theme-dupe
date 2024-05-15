@@ -1,4 +1,4 @@
-<section class="section bg-primary">
+<section class="section bg-primary <?= $block['className']; ?>">
   <div class="container">
     <h2 class="text-center text-white">Verify your insurance coverage with Charlie Health now</h2>
     <div class="flex flex-col justify-center lg:flex-row gap-base5-4">
