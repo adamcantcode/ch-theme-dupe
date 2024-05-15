@@ -991,8 +991,8 @@ function schedule_fetch_and_store_data()
   $dst_in_effect = date('I');
   $hour_utc = $dst_in_effect ? 9 : 8;
   $timestamp = mktime($hour_utc, 0, 0, date('n'), date('j'), date('Y'));
-  if (!wp_next_scheduled('fetch_and_store_data_event_8')) {
-    wp_schedule_event($timestamp, 'daily', 'fetch_and_store_data_event_8');
+  if (!wp_next_scheduled('fetch_and_store_data_event_10')) {
+    wp_schedule_event($timestamp, 'daily', 'fetch_and_store_data_event_10');
   }
 }
-add_action('fetch_and_store_data_event_8', 'fetch_and_store_data_from_api');
+add_action('fetch_and_store_data_event_10', 'fetch_and_store_data_from_api');
