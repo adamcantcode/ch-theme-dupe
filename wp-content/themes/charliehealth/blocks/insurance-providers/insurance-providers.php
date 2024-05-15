@@ -14,18 +14,6 @@
           <ul class="dropdown-options"></ul>
         </div>
       </div>
-      <div class="relative custom-dropdown" id="insuranceProviderDropdown">
-        <div class="flex items-center dropdown-header" onclick="toggleDropdown('insuranceProviderDropdown')">
-          <input type="text" placeholder="Insurance Provider" id="insuranceProviderInput" class="dropdown-input" readonly disabled>
-          <svg width="17" height="11" viewBox="0 0 17 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute right-[25px]">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M1.50015 0.585938L8.50015 7.58594L15.5002 0.585938L16.9144 2.00015L8.50015 10.4144L0.0859375 2.00015L1.50015 0.585938Z" fill="white" />
-          </svg>
-        </div>
-        <div class="dropdown-content noshow">
-          <input type="text" class="search-input" id="insuranceProviderSearchInput" placeholder="Search...">
-          <ul class="dropdown-options"></ul>
-        </div>
-      </div>
       <div class="relative custom-dropdown" id="insuranceTypeDropdown">
         <div class="flex items-center dropdown-header" onclick="toggleDropdown('insuranceTypeDropdown')">
           <input type="text" placeholder="Insurance Type" id="insuranceTypeInput" class="dropdown-input" readonly disabled>
@@ -38,6 +26,18 @@
             <li value="Commercial">Commercial/private</li>
             <li value="Medicaid">Medicaid</li>
           </ul>
+        </div>
+      </div>
+      <div class="relative custom-dropdown" id="insuranceProviderDropdown">
+        <div class="flex items-center dropdown-header" onclick="toggleDropdown('insuranceProviderDropdown')">
+          <input type="text" placeholder="Insurance Provider" id="insuranceProviderInput" class="dropdown-input" readonly disabled>
+          <svg width="17" height="11" viewBox="0 0 17 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute right-[25px]">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M1.50015 0.585938L8.50015 7.58594L15.5002 0.585938L16.9144 2.00015L8.50015 10.4144L0.0859375 2.00015L1.50015 0.585938Z" fill="white" />
+          </svg>
+        </div>
+        <div class="dropdown-content noshow">
+          <input type="text" class="search-input" id="insuranceProviderSearchInput" placeholder="Search...">
+          <ul class="dropdown-options"></ul>
         </div>
       </div>
     </div>
@@ -56,7 +56,6 @@
 <script>
   const data = <?= get_option('my_api_data'); ?>;
   console.log(data);
-
   // Function to toggle dropdown visibility
   function toggleDropdown(dropdownId) {
     const dropdown = document.getElementById(dropdownId);
@@ -80,22 +79,31 @@
           dropdown.querySelector('input').value = option;
           toggleDropdown(dropdown.id);
           if (dropdown.id === 'stateDropdown') {
-            const insuranceProviders = filterInsuranceProviders(option);
+            const selectedState = option;
+            const LOBs = getUniqueValues(data.filter(item => item.State === selectedState), 'LOB');
+            populateDropdown(document.getElementById('insuranceTypeDropdown'), LOBs);
+
+            document.getElementById('insuranceTypeDropdown').querySelector('input').value = '';
+            document.getElementById('insuranceTypeDropdown').querySelector('input').removeAttribute('disabled');
+            document.getElementById('insuranceProviderDropdown').querySelector('input').setAttribute('disabled', 'disabled');
+            document.getElementById('insuranceProviderDropdown').querySelector('input').value = '';
+            document.querySelector('#coverageStatusCTA').classList.add('noshow');
+            document.querySelector('#coverageStatusCTA').classList.add('opacity-0');
+          }
+          if (dropdown.id === 'insuranceTypeDropdown') {
+            const selectedState = document.getElementById('stateDropdown').querySelector('input').value;
+            const selectedInsuranceType = option;
+            const insuranceProviders = filterInsuranceProviders(selectedState, selectedInsuranceType);
             populateDropdown(document.getElementById('insuranceProviderDropdown'), insuranceProviders);
 
             document.getElementById('insuranceProviderDropdown').querySelector('input').value = '';
             document.getElementById('insuranceProviderDropdown').querySelector('input').removeAttribute('disabled');
-            document.getElementById('insuranceTypeDropdown').querySelector('input').setAttribute('disabled', 'disabled');
-            document.getElementById('insuranceTypeDropdown').querySelector('input').value = '';
             document.querySelector('#coverageStatusCTA').classList.add('noshow');
-            document.querySelector('#coverageStatusCTA').classList.add('opacity-0')
+            document.querySelector('#coverageStatusCTA').classList.add('opacity-0');
+            document.getElementById('insuranceProviderDropdown').focus();
           }
           if (dropdown.id === 'insuranceProviderDropdown') {
-            document.getElementById('insuranceTypeDropdown').querySelector('input').value = '';
-            document.getElementById('insuranceTypeDropdown').querySelector('input').removeAttribute('disabled');
-            document.querySelector('#coverageStatusCTA').classList.add('noshow');
-            document.querySelector('#coverageStatusCTA').classList.add('opacity-0')
-            document.getElementById('insuranceProviderDropdown').focus();
+            updateCoverage();
           }
         });
         dropdownOptions.appendChild(optionElement);
@@ -103,19 +111,20 @@
     });
 
     // Add event listener to search input
-    searchInput.addEventListener('input', function() {
-      const searchText = this.value.toLowerCase();
-      const optionElements = dropdownOptions.querySelectorAll('li');
-      optionElements.forEach(optionElement => {
-        const optionText = optionElement.textContent.toLowerCase();
-        if (optionText.includes(searchText)) {
-          optionElement.style.display = 'block';
-        } else {
-          optionElement.style.display = 'none';
-        }
+    if (searchInput) {
+      searchInput.addEventListener('input', function() {
+        const searchText = this.value.toLowerCase();
+        const optionElements = dropdownOptions.querySelectorAll('li');
+        optionElements.forEach(optionElement => {
+          const optionText = optionElement.textContent.toLowerCase();
+          if (optionText.includes(searchText)) {
+            optionElement.style.display = 'block';
+          } else {
+            optionElement.style.display = 'none';
+          }
+        });
       });
-    });
-
+    }
   }
 
   // Function to filter unique values
@@ -123,9 +132,9 @@
     return [...new Set(arr.map(item => item[key]))];
   }
 
-  // Function to filter insurance providers based on selected state
-  function filterInsuranceProviders(state) {
-    const insuranceProviders = data.filter(item => item.State === state).map(item => item['Insurance Provider']);
+  // Function to filter insurance providers based on selected state and LOB
+  function filterInsuranceProviders(state, insuranceType) {
+    const insuranceProviders = data.filter(item => item.State === state && item.LOB === insuranceType).map(item => item['Insurance Provider']);
     return [...new Set(insuranceProviders)].sort();
   }
 
@@ -133,11 +142,8 @@
   function updateCoverage() {
     const selectedState = document.getElementById('stateDropdown').querySelector('input').value;
     const selectedInsuranceProvider = document.getElementById('insuranceProviderDropdown').querySelector('input').value;
-    var selectedInsuranceType = document.getElementById('insuranceTypeDropdown').querySelector('input').value;
-    if (selectedInsuranceType === 'Commercial/private') {
-      selectedInsuranceType = 'Commercial';
-    }
-    const selectedInsurance = data.find(item => item.State === selectedState && item['Insurance Provider'] === selectedInsuranceProvider && item['Insurance Type'] === selectedInsuranceType);
+    const selectedInsuranceType = document.getElementById('insuranceTypeDropdown').querySelector('input').value;
+    const selectedInsurance = data.find(item => item.State === selectedState && item['Insurance Provider'] === selectedInsuranceProvider && item['LOB'] === selectedInsuranceType);
     if (selectedInsurance) {
       document.querySelector('#coverageStatusCTA').classList.remove('noshow');
       setTimeout(function() {
@@ -153,10 +159,6 @@
       }
     }
   }
-
-  // Populate state dropdown with unique values
-  const states = getUniqueValues(data, 'State');
-  populateDropdown(document.getElementById('stateDropdown'), states);
 
   // Function to hide dropdown options
   function hideDropdownContent() {
@@ -174,11 +176,22 @@
 
       if (dropdown.querySelector('.search-input')) {
         dropdown.querySelector('.search-input').focus();
+        dropdownOptions.style.display = 'block';
+        dropdownContent.style.display = 'block';
       }
-      dropdownOptions.style.display = 'block';
-      dropdownContent.style.display = 'block';
     });
   });
+
+  // Add event listeners for insurance provider dropdown
+  document.querySelectorAll('#insuranceProviderDropdown .dropdown-options li').forEach(option => {
+    option.addEventListener('click', () => {
+      const insuranceProviderInput = document.getElementById('insuranceProviderDropdown').querySelector('input');
+      insuranceProviderInput.value = option.textContent;
+      updateCoverage(); // Call updateCoverage after insurance provider is selected
+      hideDropdownContent();
+    });
+  });
+
 
   document.addEventListener('click', function(event) {
     const dropdowns = document.querySelectorAll('.custom-dropdown');
@@ -190,23 +203,7 @@
     });
   });
 
-  // Add event listeners for insurance type dropdown
-  document.querySelectorAll('#insuranceTypeDropdown .dropdown-options li').forEach(option => {
-    option.addEventListener('click', () => {
-      const insuranceTypeInput = document.getElementById('insuranceTypeDropdown').querySelector('input');
-      insuranceTypeInput.value = option.textContent;
-      updateCoverage();
-      hideDropdownContent();
-    });
-  });
-
-  // Hide dropdowns when anything outside of them is clicked
-  document.addEventListener('click', function(event) {
-    const dropdowns = document.querySelectorAll('.custom-dropdown');
-    dropdowns.forEach(dropdown => {
-      if (!dropdown.contains(event.target)) {
-        dropdown.querySelector('.dropdown-options').style.display = 'none';
-      }
-    });
-  });
+  // Populate state dropdown with unique values
+  const states = getUniqueValues(data, 'State');
+  populateDropdown(document.getElementById('stateDropdown'), states);
 </script>
