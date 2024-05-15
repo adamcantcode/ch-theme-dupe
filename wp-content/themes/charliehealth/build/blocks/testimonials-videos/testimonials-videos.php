@@ -23,8 +23,8 @@ if (!empty($block['align'])) {
 
 <section <?= $anchor ?: ''; ?>class="<?= $className; ?> section">
   <div class="container">
-    <div class="grid lg:grid-cols-[1fr_2fr] grid-cols-1 gap-base5-4">
-      <div class="lg:w-[410px]">
+    <div class="grid lg:grid-cols-[2fr_2fr] grid-cols-1 gap-base5-4">
+      <div class="lg:w-[500px]">
         <InnerBlocks />
       </div>
       <div>
@@ -40,7 +40,7 @@ if (!empty($block['align'])) {
                 $linkedIn  = get_sub_field('linkedin');
                 ?>
                 <div class="!h-auto swiper-slide mb-sp-12">
-                  <div class="grid gap-sp-8 pb-sp-8 lg:grid-cols-[3fr_4.5fr]">
+                  <div class="grid gap-sp-8 pb-sp-8 lg:grid-cols-[3fr_3fr]">
                     <div class="videos-testimonials-video">
                       <div style="padding:177.78% 0 0 0;position:relative;" class="mb-base5-2"><iframe src="https://player.vimeo.com/video/<?= $video; ?>?&autoplay=0&loop=1&muted=1&autopause=1" frameborder="0" allow="autoplay; fullscreen; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="portrait" class="rounded-sm careers-video-js"></iframe></div>
                       <script src="https://player.vimeo.com/api/player.js"></script>
