@@ -38,11 +38,10 @@ if ($image) {
         </div>
       </div>
     </div>
-    <div class="rounded-md bg-grey-cool p-base5-4 lg:p-[80px]">
-      <h3><?= $name; ?>'s clinical areas of expertise</h3>
-      <?php if ($expertise) :
-        $expertise = explode(",", $expertise);
-      ?>
+    <?php if ($expertise) : ?>
+      <div class="rounded-md bg-grey-cool p-base5-4 lg:p-[80px]">
+        <h3><?= $name; ?>'s clinical areas of expertise</h3>
+        <?php $expertise = explode(",", $expertise);  ?>
         <div class="flex flex-wrap justify-start gap-base5-4">
           <?php foreach ($expertise as $item) : ?>
             <div class="flex bg-white rounded-pill p-base5-3 check-list-item">
@@ -53,8 +52,8 @@ if ($image) {
             </div>
           <?php endforeach; ?>
         </div>
-      <?php endif; ?>
-    </div>
+      </div>
+    <?php endif; ?>
   </div>
 </section>
 <section class="section bg-grey-cool">
