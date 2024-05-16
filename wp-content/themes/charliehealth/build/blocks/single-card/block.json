@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "acf/single-card-block",
+  "title": "Single Card",
+  "description": "Features card",
+  "style": "file:./index.css",
+  "script": "file:./index.js",
+  "category": "custom",
+  "icon": "columns",
+  "apiVersion": 2,
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "single-card.php"
+  },
+  "supports": {
+    "color": {
+      "background": true,
+      "text": false,
+      "enableContrastChecker": false,
+      "gradients": false,
+      "link": false
+    }
+  }
+}
