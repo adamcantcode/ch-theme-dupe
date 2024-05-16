@@ -23,6 +23,26 @@
             "append": ""
         },
         {
+            "key": "field_664635ef39885",
+            "label": "Credentials",
+            "name": "credentials",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_6643b5af91436",
             "label": "Pronouns",
             "name": "pronouns",
@@ -127,5 +147,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1715715821
+    "modified": 1715877372
 }

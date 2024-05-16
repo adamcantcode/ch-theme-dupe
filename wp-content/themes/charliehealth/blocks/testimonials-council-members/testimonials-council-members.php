@@ -46,6 +46,7 @@ if (!empty($block['align'])) {
           $name     = get_the_title($post);
           $pronouns = get_field('pronouns', $post);
           $title    = get_field('title', $post);
+          $creds    = get_field('credentials', $post);
           $bio      = get_field('ccac_page_bio', $post);
           $link     = get_the_permalink($post);
 
@@ -63,7 +64,7 @@ if (!empty($block['align'])) {
               <div class="text-center bg-white p-base5-5 rounded-lg lg:basis-[33%] careers-testimonial-image self-start">
                 <img src="<?= $image ?>" alt="<?= $imageAlt ?>" class="object-cover rounded-circle aspect-square mb-sp-6">
                 <p class="font-heading-serif mb-base5-1"><?= $name; ?> <?= $pronouns; ?></p>
-                <p><?= $title; ?></p>
+                <p><?= $title; ?> <?= $creds ? " ($creds)" : ''; ?></p>
               </div>
               <div class="careers-testimonials-panel lg:basis-[55%]">
                 <div class="[&_*]:text-h3-base [&_*]:font-heading-serif mb-base5-4">

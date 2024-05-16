@@ -23621,10 +23621,6 @@ document.addEventListener('DOMContentLoaded', () => {
     (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__["default"])();
     (0,_modules_ajax_pagination_authors__WEBPACK_IMPORTED_MODULE_12__["default"])();
   }
-  if (body.classList.contains('single-medical-reviewer')) {
-    (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__["default"])();
-    (0,_modules_ajax_pagination_authors__WEBPACK_IMPORTED_MODULE_12__["default"])();
-  }
   if (body.classList.contains('page-template-searchpage')) {
     (0,_modules_ajax_pagination_search__WEBPACK_IMPORTED_MODULE_13__["default"])();
   }
