@@ -55,7 +55,7 @@ add_action('pre_get_posts', function () {
 
         if ('page-condition-treatment.php' === $template_slug) {
           add_editor_style('editor-styles-posts.css');
-          add_post_type_support( 'page', 'excerpt' );
+          add_post_type_support('page', 'excerpt');
         }
       }
     }
@@ -151,6 +151,9 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/testimonials-videos');
   register_block_type(__DIR__ . '/build/blocks/testimonials-council-members');
   register_block_type(__DIR__ . '/build/blocks/single-card');
+  register_block_type(__DIR__ . '/build/blocks/insurance-providers');
+  register_block_type(__DIR__ . '/build/blocks/insurance-tabs');
+  register_block_type(__DIR__ . '/build/blocks/bg-text-overlay');
 }
 add_action('init', 'register_acf_blocks', 5);
 
@@ -948,3 +951,50 @@ function my_nonce_life()
 {
   return 14 * DAY_IN_SECONDS;
 }
+
+function fetch_and_store_data_from_api()
+{
+  // API credentials
+  $api_username = 'mztp11ui';
+  $api_password = '171wgoyoy1bcx413gfq8';
+
+  // Prepare authentication header
+  $auth_header = 'Basic ' . base64_encode($api_username . ':' . $api_password);
+
+  // Request headers
+  $headers = array(
+    'Authorization' => $auth_header,
+  );
+
+  // API endpoint
+  $api_url = 'https://sheetdb.io/api/v1/j9noe825wd4sj?sheet=Payor%20Marketing%20Overview';
+
+  // Make the API request
+  $response = wp_remote_get($api_url, array('headers' => $headers));
+
+  // Check if the request was successful
+  if (is_array($response) && !is_wp_error($response)) {
+    // Get the body of the response
+    $data = wp_remote_retrieve_body($response);
+    $data;
+    // Check if data is valid
+    if ($data) {
+      // Store the data in WordPress
+      update_option('my_api_data', $data);
+    }
+  }
+}
+
+// Schedule the function to run once daily
+add_action('wp', 'schedule_fetch_and_store_data');
+function schedule_fetch_and_store_data()
+{
+  // 4am
+  $dst_in_effect = date('I');
+  $hour_utc = $dst_in_effect ? 9 : 8;
+  $timestamp = mktime($hour_utc, 0, 0, date('n'), date('j'), date('Y'));
+  if (!wp_next_scheduled('fetch_and_store_data_event_10')) {
+    wp_schedule_event($timestamp, 'daily', 'fetch_and_store_data_event_10');
+  }
+}
+add_action('fetch_and_store_data_event_10', 'fetch_and_store_data_from_api');
