@@ -455,6 +455,18 @@
     waitForElement('field165061491', (element) => {
       element.value = window.navigator.userAgent;
     });
+    // Insurance test version
+    if (document.cookie.indexOf('_vis_opt_exp_52_combi' + '=') > -1) {
+      waitForElement('[field166107543]', (element) => {
+        if (getCookie('_vis_opt_exp_52_combi') === '1') {
+          element.value = 'control';
+        } else if (getCookie('_vis_opt_exp_52_combi') === '2') {
+          element.value = 'variant';
+        } else {
+          element.value = 'other';
+        }
+      });
+    }
   } else if (window.location.href.indexOf('form') > -1) {
     // Get organic LP
     if (document.cookie.indexOf('organicLP' + '=') > -1) {
@@ -491,10 +503,10 @@
     });
     // Insurance test version
     if (document.cookie.indexOf('_vis_opt_exp_52_combi' + '=') > -1) {
-      waitForElement('[elem]', (element) => {
-        if (getCookie('_vis_opt_exp_52_combi') == 1) {
+      waitForElement('[field166107526]', (element) => {
+        if (getCookie('_vis_opt_exp_52_combi') === '1') {
           element.value = 'control';
-        } else if (getCookie('_vis_opt_exp_52_combi') == 2) {
+        } else if (getCookie('_vis_opt_exp_52_combi') === '2') {
           element.value = 'variant';
         } else {
           element.value = 'other';
