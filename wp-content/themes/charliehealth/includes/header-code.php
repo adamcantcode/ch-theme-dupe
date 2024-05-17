@@ -489,6 +489,18 @@
     waitForElement('field163080841', (element) => {
       element.value = window.navigator.userAgent;
     });
+    // Insurance test version
+    if (document.cookie.indexOf('_vis_opt_exp_52_combi' + '=') > -1) {
+      waitForElement('[elem]', (element) => {
+        if (getCookie('_vis_opt_exp_52_combi') == 1) {
+          element.value = 'control';
+        } else if (getCookie('_vis_opt_exp_52_combi') == 2) {
+          element.value = 'variant';
+        } else {
+          element.value = 'other';
+        }
+      });
+    }
   }
 </script>
 <!-- Attribution Fix END -->
