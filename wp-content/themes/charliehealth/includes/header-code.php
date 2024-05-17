@@ -457,7 +457,7 @@
     });
     // Insurance test version
     if (document.cookie.indexOf('_vis_opt_exp_52_combi' + '=') > -1) {
-      waitForElement('[field166107543]', (element) => {
+      waitForElement('field166107543', (element) => {
         if (getCookie('_vis_opt_exp_52_combi') === '1') {
           element.value = 'control';
         } else if (getCookie('_vis_opt_exp_52_combi') === '2') {
@@ -503,7 +503,7 @@
     });
     // Insurance test version
     if (document.cookie.indexOf('_vis_opt_exp_52_combi' + '=') > -1) {
-      waitForElement('[field166107526]', (element) => {
+      waitForElement('field166107526', (element) => {
         if (getCookie('_vis_opt_exp_52_combi') === '1') {
           element.value = 'control';
         } else if (getCookie('_vis_opt_exp_52_combi') === '2') {
