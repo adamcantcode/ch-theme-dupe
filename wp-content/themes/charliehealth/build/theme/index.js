@@ -1076,6 +1076,72 @@ function revealBackToTop() {
 
 /***/ }),
 
+/***/ "./src/modules/careers-tracking.js":
+/*!*****************************************!*\
+  !*** ./src/modules/careers-tracking.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ careersTracking)
+/* harmony export */ });
+function careersTracking() {
+  // Create a URLSearchParams object from the query string
+  const careersParams = new URLSearchParams(window.location.search);
+
+  // Get the values of utm_source and utm_medium
+  const utmSource = careersParams.get('utm_source');
+  const utmMedium = careersParams.get('utm_medium');
+  const ghMap = {
+    linkedinOrganic: 'a0a8b3ae4us',
+    instagramOrganic: '35ddfa714us',
+    facebookOrganic: '052412f84us',
+    metaPaid: '98215cc84us',
+    email: '837aa8f74us'
+  };
+
+  // Update urls function
+  function updateUrls(ghCode) {
+    // Get all anchor elements on the page
+    const anchors = document.querySelectorAll('a');
+
+    // Iterate over each anchor element
+    anchors.forEach(anchor => {
+      // Check if the href attribute ends with 'openings'
+      if (anchor.href.endsWith('openings')) {
+        // Update the href attribute to append '?gh_src=ghCode'
+        anchor.href += `?gh_src=${ghCode}`;
+      }
+    });
+  }
+
+  // Check if the values match the desired criteria
+  if (utmSource === 'linkedin' && utmMedium === 'organic') {
+    const ghCode = ghMap.linkedinOrganic;
+    updateUrls(ghCode);
+  }
+  if (utmSource === 'instagram' && utmMedium === 'organic') {
+    const ghCode = ghMap.instagramOrganic;
+    updateUrls(ghCode);
+  }
+  if (utmSource === 'facebook' && utmMedium === 'organic') {
+    const ghCode = ghMap.facebookOrganic;
+    updateUrls(ghCode);
+  }
+  if (utmSource === 'meta' && utmMedium === 'paid') {
+    const ghCode = ghMap.metaPaid;
+    updateUrls(ghCode);
+  }
+  if (utmSource === 'email') {
+    const ghCode = ghMap.email;
+    updateUrls(ghCode);
+  }
+}
+
+/***/ }),
+
 /***/ "./src/modules/fade-up-in.js":
 /*!***********************************!*\
   !*** ./src/modules/fade-up-in.js ***!
@@ -23558,6 +23624,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_tag_page__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./modules/tag-page */ "./src/modules/tag-page.js");
 /* harmony import */ var _modules_sticky_cta__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./modules/sticky-cta */ "./src/modules/sticky-cta.js");
 /* harmony import */ var _modules_fade_up_in__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./modules/fade-up-in */ "./src/modules/fade-up-in.js");
+/* harmony import */ var _modules_careers_tracking__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./modules/careers-tracking */ "./src/modules/careers-tracking.js");
+
 
 
 
@@ -23633,6 +23701,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   if (document.querySelector('section .acf-innerblocks-container .fade-up-in')) {
     (0,_modules_fade_up_in__WEBPACK_IMPORTED_MODULE_21__["default"])();
+  }
+  if (window.location.pathname.startsWith('/careers')) {
+    if (!window.location.pathname.endsWith('openings')) {
+      (0,_modules_careers_tracking__WEBPACK_IMPORTED_MODULE_22__["default"])();
+    }
   }
   // if (document.querySelector('meta[property="og:title"]').content === 'hp1') {
   //   stickyCTA();

@@ -21,6 +21,7 @@ import navigationMenu from './modules/navigation-menu';
 import tagPage from './modules/tag-page';
 import stickyCTA from './modules/sticky-cta';
 import fadeUpIn from './modules/fade-up-in';
+import careersTracking from './modules/careers-tracking';
 
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
@@ -85,6 +86,11 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('section .acf-innerblocks-container .fade-up-in')
   ) {
     fadeUpIn();
+  }
+  if(window.location.pathname.startsWith('/careers')) {
+    if (!window.location.pathname.endsWith('openings')) {
+      careersTracking();
+    }
   }
   // if (document.querySelector('meta[property="og:title"]').content === 'hp1') {
   //   stickyCTA();
@@ -157,4 +163,5 @@ document.addEventListener('DOMContentLoaded', () => {
     createCookieIfNeeded();
     appendParamsIfNeeded();
   }
+
 });
