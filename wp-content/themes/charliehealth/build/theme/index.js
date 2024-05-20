@@ -1091,13 +1091,18 @@ function careersTracking() {
   // Update urls function
   function updateUrls(ghCode) {
     // Get links
-    const anchors = document.querySelectorAll('a');
-    anchors.forEach(anchor => {
-      // if link is openings
-      if (anchor.href.endsWith('openings')) {
-        anchor.href += `?gh_src=${ghCode}`;
-      }
-    });
+    setTimeout(() => {
+      const anchors = document.querySelectorAll('a');
+      anchors.forEach(anchor => {
+        // if link is openings
+        if (anchor.href.endsWith('openings')) {
+          anchor.href += `?gh_src=${ghCode}`;
+        }
+        if (anchor.href.includes('gh_jid')) {
+          anchor.href += `&gh_src=${ghCode}`;
+        }
+      });
+    }, 1000);
   }
   // Reference cookie function
   function getCookie(name) {
