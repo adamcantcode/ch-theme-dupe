@@ -1119,24 +1119,19 @@ function careersTracking() {
 
   // Check if the values match the desired criteria
   if (utmSource === 'linkedin' && utmMedium === 'organic') {
-    const ghCode = ghMap.linkedinOrganic;
-    updateUrls(ghCode);
+    updateUrls(ghMap.linkedinOrganic);
   }
   if (utmSource === 'instagram' && utmMedium === 'organic') {
-    const ghCode = ghMap.instagramOrganic;
-    updateUrls(ghCode);
+    updateUrls(ghMap.instagramOrganic);
   }
   if (utmSource === 'facebook' && utmMedium === 'organic') {
-    const ghCode = ghMap.facebookOrganic;
-    updateUrls(ghCode);
+    updateUrls(ghMap.facebookOrganic);
   }
   if (utmSource === 'meta' && utmMedium === 'paid') {
-    const ghCode = ghMap.metaPaid;
-    updateUrls(ghCode);
+    updateUrls(ghMap.metaPaid);
   }
   if (utmSource === 'email') {
-    const ghCode = ghMap.email;
-    updateUrls(ghCode);
+    updateUrls(ghMap.email);
   }
 }
 
