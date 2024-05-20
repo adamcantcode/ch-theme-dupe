@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.cookie =
         'urlWithParams=' +
         encodeURIComponent(window.location.href) +
-        '; domain=.wpch.local; path=/';
+        '; domain=.charliehealth.com; path=/';
     } else {
       console.log('Cookie already exists or no params in URL');
     }

@@ -23716,7 +23716,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function createCookieIfNeeded() {
     if (document.cookie.indexOf('urlWithParams=') === -1 && window.location.search) {
       console.log('Creating cookie');
-      document.cookie = 'urlWithParams=' + encodeURIComponent(window.location.href) + '; domain=.wpch.local; path=/';
+      document.cookie = 'urlWithParams=' + encodeURIComponent(window.location.href) + '; domain=.charliehealth.com; path=/';
     } else {
       console.log('Cookie already exists or no params in URL');
     }
