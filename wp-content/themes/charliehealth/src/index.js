@@ -87,11 +87,11 @@ document.addEventListener('DOMContentLoaded', () => {
   ) {
     fadeUpIn();
   }
-  if(window.location.pathname.startsWith('/careers')) {
-    if (!window.location.pathname.endsWith('openings')) {
-      careersTracking();
-    }
-  }
+  // if(window.location.pathname.startsWith('/careers')) {
+  //   if (!window.location.pathname.endsWith('openings')) {
+  //     careersTracking();
+  //   }
+  // }
   // if (document.querySelector('meta[property="og:title"]').content === 'hp1') {
   //   stickyCTA();
   // }
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.cookie =
         'urlWithParams=' +
         encodeURIComponent(window.location.href) +
-        '; domain=.charliehealth.com; path=/';
+        '; domain=.wpch.local; path=/';
     } else {
       console.log('Cookie already exists or no params in URL');
     }
@@ -163,5 +163,49 @@ document.addEventListener('DOMContentLoaded', () => {
     createCookieIfNeeded();
     appendParamsIfNeeded();
   }
+  
+  // Careers tracking
+  // Update urls if params are present
+  if (window.location.pathname.startsWith('/careers')) {
+    if (!window.location.pathname.endsWith('openings')) {
+      // Update urls function
+      function updateUrls(ghCode) {
+        // Get links
+        const anchors = document.querySelectorAll('a');
 
+        anchors.forEach((anchor) => {
+          // if link is openings
+          if (anchor.href.endsWith('openings')) {
+            anchor.href += `?gh_src=${ghCode}`;
+          }
+        });
+      }
+      const ghMap = {
+        linkedinOrganic: 'a0a8b3ae4us',
+        instagramOrganic: '35ddfa714us',
+        facebookOrganic: '052412f84us',
+        metaPaid: '98215cc84us',
+        email: '837aa8f74us',
+      };
+      // get params
+      const cookieParams = decodeURIComponent(getCookie('urlWithParams'));
+      const careersParams = new URLSearchParams(cookieParams.split('?')[1]);
+      const utmSource = careersParams.get('utm_source');
+      const utmMedium = careersParams.get('utm_medium');
+
+      if (utmSource === 'linkedin' && utmMedium === 'organic') {
+        updateUrls(ghMap.linkedinOrganic);
+      } else if (utmSource === 'instagram' && utmMedium === 'organic') {
+        updateUrls(ghMap.instagramOrganic);
+      } else if (utmSource === 'facebook' && utmMedium === 'organic') {
+        updateUrls(ghMap.facebookOrganic);
+      }
+      if (utmSource === 'meta' && utmMedium === 'paid') {
+        updateUrls(ghMap.metaPaid);
+      }
+      if (utmSource === 'email') {
+        updateUrls(ghMap.email);
+      }
+    }
+  }
 });
