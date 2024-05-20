@@ -1,11 +1,5 @@
 export default function careersTracking() {
-  // Create a URLSearchParams object from the query string
-  const careersParams = new URLSearchParams(window.location.search);
-
-  // Get the values of utm_source and utm_medium
-  const utmSource = careersParams.get('utm_source');
-  const utmMedium = careersParams.get('utm_medium');
-
+  // gh codes
   const ghMap = {
     linkedinOrganic: 'a0a8b3ae4us',
     instagramOrganic: '35ddfa714us',
@@ -13,23 +7,25 @@ export default function careersTracking() {
     metaPaid: '98215cc84us',
     email: '837aa8f74us',
   };
+  // get params
+  const careersParams = new URLSearchParams(window.location.search);
+  const utmSource = careersParams.get('utm_source');
+  const utmMedium = careersParams.get('utm_medium');
 
   // Update urls function
   function updateUrls(ghCode) {
-    // Get all anchor elements on the page
+    // Get links
     const anchors = document.querySelectorAll('a');
 
-    // Iterate over each anchor element
     anchors.forEach((anchor) => {
-      // Check if the href attribute ends with 'openings'
+      // if link is openings
       if (anchor.href.endsWith('openings')) {
-        // Update the href attribute to append '?gh_src=ghCode'
         anchor.href += `?gh_src=${ghCode}`;
       }
     });
   }
 
-  // Check if the values match the desired criteria
+  // Update urls if params are present
   if (utmSource === 'linkedin' && utmMedium === 'organic') {
     updateUrls(ghMap.linkedinOrganic);
   }
