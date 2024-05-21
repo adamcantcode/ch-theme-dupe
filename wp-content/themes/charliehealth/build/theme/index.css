@@ -1985,6 +1985,10 @@ a.insurance-tabs.active:hover {
   margin-top: 2rem;
 }
 
+.mr-base5-10{
+  margin-right: 50px;
+}
+
 .line-clamp-3{
   overflow: hidden;
   display: -webkit-box;
@@ -2726,6 +2730,15 @@ a.insurance-tabs.active:hover {
 
 .gap-y-sp-8{
   row-gap: 2rem;
+}
+
+.gap-x-base5-5{
+  -moz-column-gap: 25px;
+       column-gap: 25px;
+}
+
+.gap-y-base5-2{
+  row-gap: 10px;
 }
 
 .self-start{
