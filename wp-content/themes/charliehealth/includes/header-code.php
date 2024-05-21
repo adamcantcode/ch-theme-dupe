@@ -459,11 +459,9 @@
     if (document.cookie.indexOf('_vis_opt_exp_52_combi' + '=') > -1) {
       waitForElement('field166107543', (element) => {
         if (getCookie('_vis_opt_exp_52_combi') === '1') {
-          element.value = 'control';
+          element.value = 'control - Insurance Map vs Interactive';
         } else if (getCookie('_vis_opt_exp_52_combi') === '2') {
-          element.value = 'variant';
-        } else {
-          element.value = 'other';
+          element.value = 'variant - Insurance Map vs Interactive';
         }
       });
     }
@@ -505,11 +503,9 @@
     if (document.cookie.indexOf('_vis_opt_exp_52_combi' + '=') > -1) {
       waitForElement('field166107526', (element) => {
         if (getCookie('_vis_opt_exp_52_combi') === '1') {
-          element.value = 'control';
+          element.value = 'control - Insurance Map vs Interactive';
         } else if (getCookie('_vis_opt_exp_52_combi') === '2') {
-          element.value = 'variant';
-        } else {
-          element.value = 'other';
+          element.value = 'variant - Insurance Map vs Interactive';
         }
       });
     }
