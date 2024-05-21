@@ -33,6 +33,13 @@ if (!empty($block['align'])) {
     'posts_per_page' => -1,
     'orderby'        => 'date',
     'order'          => 'DESC',
+    'meta_query'     => array(
+      array(
+        'key'     => 'ccac_page_bio', // ACF field key
+        'value'   => '', // Ensuring the field has some value
+        'compare' => '!=', // Not empty value comparison
+      ),
+    ),
   );
 
   $query = new WP_Query($args); ?>
