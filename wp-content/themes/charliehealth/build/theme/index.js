@@ -1102,7 +1102,7 @@ function careersTracking() {
           anchor.href += `&gh_src=${ghCode}`;
         }
       });
-    }, 1000);
+    }, 300);
   }
   // Reference cookie function
   function getCookie(name) {
