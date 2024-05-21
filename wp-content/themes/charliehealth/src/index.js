@@ -72,10 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
     ajaxPagination();
     ajaxPaginationResearchAuthors();
   }
-  if (body.classList.contains('single-medical-reviewer')) {
-    ajaxPagination();
-    ajaxPaginationResearchAuthors();
-  }
   if (body.classList.contains('page-template-searchpage')) {
     ajaxPaginationSearch();
   }

@@ -1,11 +1,12 @@
 <?php
 get_header();
 
-$bio      = get_field('bio');
-$email    = get_field('email');
-$twitter  = get_field('twitter');
-$facebook = get_field('facebook');
-$linkedin = get_field('linkedin');
+$name      = get_the_title();
+$pronouns  = get_field('pronouns');
+$title     = get_field('title');
+$creds     = get_field('credentials');
+$bio       = get_field('author_page_bio');
+$expertise = get_field('areas_of_expertise');
 
 $image = get_the_post_thumbnail_url();
 
@@ -17,67 +18,104 @@ if ($image) {
   $image = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
   $imageAlt = 'Charlie Health Logo';
 }
-
 ?>
 
 <section class="section">
   <div class="container">
-    <h1 class="mb-sp-12">Authors</h1>
-    <div class="grid lg:grid-cols-[4.25fr_5fr] lg:gap-[10rem] gap-sp-8">
-      <img src="<?= $image; ?>" srcset="<?= $imageSrcset; ?>" alt="<?= $imageAlt; ?>" class="object-cover w-full rounded-md aspect-square">
+    <div class="inline-block mb-base5-4">
+      <h4>Clinical Content Advisory Council</h4>
+      <h1>Clinical reviewers</h1>
+    </div>
+    <div class="grid lg:grid-cols-[3fr_9fr] gap-base5-8 mb-base5-8 mt-base5-10">
       <div>
-        <h2><?= get_the_title(); ?></h2>
-        <?= $bio; ?>
-        <div class="social">
-          <?php if ($twitter) : ?>
-            <a href="<?= $twitter; ?>" target="_blank">
-              <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/twitter.svg'); ?>" alt="Twitter logo" class="w-[25px] h-[25px]" />
-            </a>
-          <?php endif; ?>
-          <?php if ($facebook) : ?>
-            <a href="<?= $facebook; ?>" target="_blank">
-              <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/facebook.svg'); ?>" alt="Facebook logo" class="w-[25px] h-[25px]" />
-            </a>
-          <?php endif; ?>
-          <?php if ($linkedin) : ?>
-            <a href="<?= $linkedin; ?>" target="_blank">
-              <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/linkedin.svg'); ?>" alt="LinkedIn logo" class="w-[25px] h-[25px]" />
-            </a>
-          <?php endif; ?>
-          <!-- TODO add email -->
+        <img src="<?= $image; ?>" srcset="<?= $imageSrcset; ?>" alt="<?= $imageAlt; ?>" class="object-cover w-full rounded-circle aspect-square">
+      </div>
+      <div>
+        <h2><?= $name; ?>, <?= $creds; ?> <span class="text-h4-base"><?= $pronouns; ?></span></h2>
+        <h3><?= $title; ?></h3>
+        <div>
+          <?= $bio; ?>
         </div>
       </div>
     </div>
+    <?php if ($expertise) : ?>
+      <div class="rounded-md bg-grey-cool p-base5-4 lg:p-[80px]">
+        <h3><?= $name; ?>'s clinical areas of expertise</h3>
+        <?php $expertise = explode(",", $expertise);  ?>
+        <div class="flex flex-wrap justify-start gap-base5-4">
+          <?php foreach ($expertise as $item) : ?>
+            <div class="flex bg-white rounded-pill p-base5-3 check-list-item">
+              <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-base5-2">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3627 18.9406L10.368 18.9459L8.95379 20.3602L2.08594 13.4923L3.50015 12.0781L8.94847 17.5264L21.4964 4.97852L22.9106 6.39273L10.3627 18.9406Z" fill="#161a3d"></path>
+              </svg>
+              <p class="text-primary text-h4-base"><?= ucfirst(trim($item)); ?></p>
+            </div>
+          <?php endforeach; ?>
+        </div>
+      </div>
+    <?php endif; ?>
   </div>
 </section>
-<section id="postsContainer" class="section bg-grey-warm">
+<section class="section bg-grey-cool">
   <div class="container">
-    <h2 class="mb-sp-12">Articles by <?= get_the_title(); ?></h2>
-    <div class="absolute invisible opacity-0 no-posts-js">
-      <div class="grid items-center grid-cols-1 duration-300 rounded-md justify-items-center bg-cream lg:grid-cols-2 p-sp-4">
-        <h4 class="mb-0">We couldn’t find what you’re looking for.</h4>
-        <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/not-found.svg'); ?>" alt="not found icon">
+    <div>
+      <div class="grid lg:grid-cols-[3fr_9fr] gap-x-sp-5 gap-y-sp-10">
+        <div>
+          <h4>From the Library</h4>
+          <h2>Articles featuring our Clinical Content Advisory Council</h2>
+          <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full">
+            <a href="/blog" class="ch-button button-secondary">Read more</a>
+          </div>
+        </div>
+        <div class="grid lg:grid-cols-3 gap-sp-5">
+          <?php
+          $args = array(
+            'post_type'      => 'post',
+            'posts_per_page' => 3,
+            'meta_key'       => 'date',
+            'orderby'        => 'meta_value',
+            'order'          => 'DESC',
+            'meta_type'      => 'DATE',
+          );
+
+          $query = new WP_Query($args);
+          if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
+              $author = get_field('by_author', get_the_ID());
+              if (has_post_thumbnail()) {
+                $featuredImageID = get_post_thumbnail_id();
+                $featuredImage = wp_get_attachment_image_src($featuredImageID, 'card-thumb');
+                $featuredImageAltText = get_post_meta($featuredImageID, '_wp_attachment_image_alt', true);
+
+                $featuredImageUrl = $featuredImage[0];
+                $featuredImageAltText = $featuredImageAltText ?: '';
+              } else {
+                $featuredImageUrl = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
+                $featuredImageAltText = 'Charlie Health Logo';
+              }
+          ?>
+              <div class="relative bg-white rounded-lg group">
+                <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
+                  <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
+                </div>
+                <div class="absolute rounded-t-lg top-sp-4 left-sp-4">
+                  <?php $tags = get_the_terms(get_the_ID(), 'post_tag');  ?>
+                  <?php if ($tags) :  ?>
+                    <?php foreach ($tags as $tag) : ?>
+                      <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base"><?= $tag->name; ?></a>
+                    <?php endforeach; ?>
+                  <?php endif; ?>
+                </div>
+                <div class="grid bg-white rounded-b-lg p-sp-4">
+                  <h3 class="text-h4-base"><a href="<?= get_the_permalink(); ?>" class="block stretched-link"><?= get_the_title(); ?></a></h3>
+                  <p><?= $author->post_title; ?></p>
+                </div>
+              </div>
+          <?php endwhile;
+            wp_reset_postdata();
+          endif; ?>
+        </div>
       </div>
     </div>
-    <div class="grid lg:grid-cols-3 transition-all duration-300 scale-[0.99] opacity-0 posts-container gap-x-sp-8 gap-y-sp-10 mb-sp-10">
-      <!-- Content -->
-    </div>
-    <div class="pagination-container"></div>
-  </div>
-</section>
-<section id="postsContainerResearch" class="section bg-grey-warm">
-  <div class="container">
-    <h2 class="mb-sp-12">Research Articles by <?= get_the_title(); ?></h2>
-    <div class="absolute invisible opacity-0 no-posts-js-research">
-      <div class="grid items-center grid-cols-1 duration-300 rounded-md justify-items-center bg-cream lg:grid-cols-2 p-sp-4">
-        <h4 class="mb-0">We couldn’t find what you’re looking for.</h4>
-        <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/not-found.svg'); ?>" alt="not found icon">
-      </div>
-    </div>
-    <div class="grid lg:grid-cols-3 transition-all duration-300 scale-[0.99] opacity-0 posts-container-research gap-x-sp-8 gap-y-sp-10 mb-sp-10">
-      <!-- Content -->
-    </div>
-    <div class="pagination-container-research"></div>
   </div>
 </section>
 

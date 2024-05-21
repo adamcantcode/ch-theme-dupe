@@ -149,6 +149,8 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/partner-testimonial-review');
   register_block_type(__DIR__ . '/build/blocks/gradient-section');
   register_block_type(__DIR__ . '/build/blocks/testimonials-videos');
+  register_block_type(__DIR__ . '/build/blocks/testimonials-council-members');
+  register_block_type(__DIR__ . '/build/blocks/single-card');
   register_block_type(__DIR__ . '/build/blocks/insurance-providers');
   register_block_type(__DIR__ . '/build/blocks/insurance-tabs');
   register_block_type(__DIR__ . '/build/blocks/bg-text-overlay');

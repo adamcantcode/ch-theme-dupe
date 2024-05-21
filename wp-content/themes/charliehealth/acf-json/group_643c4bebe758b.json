@@ -100,13 +100,6 @@
                 "operator": "==",
                 "value": "authors"
             }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "medical-reviewer"
-            }
         ]
     ],
     "menu_order": 0,
@@ -120,5 +113,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1681678527
+    "modified": 1715709558
 }
