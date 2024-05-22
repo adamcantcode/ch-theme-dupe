@@ -4,7 +4,7 @@
   $link         = get_field('link');
   ?>
 
-  <div class="lg:pb-sp-16 pb-sp-6 noshowlg: grid lg:grid-cols-[1fr_2fr] grid-cols-1 relative">
+  <div class="lg:pb-sp-16 pb-sp-6 grid lg:grid-cols-[1fr_2fr] grid-cols-1 relative">
     <div></div>
     <div class="lg:flex">
       <p class="flex-none mb-0 mr-base5-10">Read reviews from:</p>
@@ -26,7 +26,7 @@
           <p class="mb-0">Clinical</p>
         </div>
         <div class="flex items-center">
-          <div class="flex-[0_0_auto] h-sp-3 w-sp-3 mr-sp-2 rounded-circle bg-grey-deactivated"></div>
+          <div class="flex-[0_0_auto] h-sp-3 w-sp-3 mr-sp-2 rounded-circle bg-grey-demension"></div>
           <p class="mb-0">Clinical Outreach</p>
         </div>
       </div>
@@ -34,18 +34,21 @@
   </div>
   <div class="grid lg:grid-cols-[1fr_2fr] grid-cols-1 relative lg:gap-x-sp-8">
     <div class="lg:sticky self-start top-[8rem]">
-      <p class="text-h1-base"><?= $stat ?></p>
+      <p class="lg:text-h1-display text-h1-base"><?= $stat ?></p>
       <div class="grid items-start gap-4 lg:grid-cols-2 lg:block lg:mb-0 mb-base5-4">
-        <p class="text-h4-base lg:max-w-[250px]"><?= $statDetails; ?></p>
+        <?php if ($statDetails) : ?>
+          <p class="text-h4-base lg:max-w-[250px]"><?= $statDetails; ?></p>
+        <?php endif; ?>
         <a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>" class="ch-button button-secondary"><?= $link['title']; ?></a>
       </div>
     </div>
     <?php if (!is_admin()) : ?>
-      <?php if (have_rows('testimonials')) : ?>
+      <?php if (have_rows('testimonials')) : $count = 0; ?>
         <div class="masonry-js">
           <div class="lg:w-[calc(50%-16px)] opacity-0 scale-95 w-full grid-sizer"></div>
           <?php while (have_rows('testimonials')) : the_row(); ?>
             <?php
+            $count++;
             $team  = get_sub_field('team');
             $name  = get_sub_field('name');
             $title = get_sub_field('title');
@@ -66,24 +69,24 @@
                 $tagBGColor = 'bg-orange-200';
                 break;
               case 'Clinical Outreach':
-                $tagBGColor = 'bg-grey-deactivated';
+                $tagBGColor = 'bg-grey-demension';
                 break;
               default:
                 $tagBGColor = '';
                 break;
             }
             ?>
-            <div class="lg:w-[calc(50%-16px)] opacity-0 scale-95 w-full mb-sp-8 rounded-lg lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col">
+            <div class="lg:w-[calc(50%-16px)] opacity-0 scale-95 w-full mb-sp-8 rounded-lg lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col<?= $count > 6 ? ' noshow' : ''; ?>">
               <span class="relative z-20 self-start no-underline rounded-pill px-sp-4 py-sp-3 text-p-base mb-sp-8 <?= $tagBGColor; ?>"><?= $team; ?></span>
+              <?php if ($quote) : ?>
+                <h3>“<?= substr($quote, -1) !== '.' ? $quote .= '.' : $quote; ?>”</h3>
+              <?php endif; ?>
               <?php if ($video) : ?>
                 <div style="padding:177.78% 0 0 0;position:relative;" class="mb-base5-2"><iframe src="https://player.vimeo.com/video/<?= $video; ?>?loop=1&muted=1&autopause=1" frameborder="0" allow="autoplay; fullscreen; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="portrait" class="rounded-sm careers-video-js"></iframe></div>
                 <script src="https://player.vimeo.com/api/player.js"></script>
               <?php endif; ?>
               <h3 class="mb-0"><?= $name; ?></h3>
               <p><?= $title; ?></p>
-              <?php if ($quote) : ?>
-                <h3>“<?= substr($quote, -1) !== '.' ? $quote .= '.' : $quote; ?>”</h3>
-              <?php endif; ?>
             </div>
           <?php endwhile; ?>
         </div>
