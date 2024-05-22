@@ -215,42 +215,24 @@ $subhead = get_field('subhead', 'option');
 ?>
 <div id="newsletterPopupBlogPost" class="bg-[rgba(0,0,0,.5)] fixed top-0 left-0 w-full h-full z-50 grid items-center justify-center center transition-all duration-300 modal-fade">
   <div class="transition-all duration-300 section-xs">
-    <div class="grid lg:grid-cols-[1fr,2fr] bg-cream container max-h-[80vh] overflow-auto rounded-md items-center relative">
+    <div class="container relative rounded-md bg-cream">
       <div class="absolute top-0 right-0 cursor-pointer">
-        <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/close-x.svg'); ?>" alt="close button" class="w-full duration-300 modal-close p-sp-4 hover:brightness-0">
+        <img src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/close-x.svg" alt="close button" class="w-full duration-300 modal-close p-sp-4 hover:brightness-0">
       </div>
-      <img src="<?= $newsletterImage['sizes']['featured-large']; ?>" alt="<?= $newsletterImage['alt']; ?>" class="object-cover w-full h-full noshow lg:block">
       <div class="p-sp-8">
-        <h2 class="text-h1-base font-heading"><?= $headline; ?></h2>
-        <p class="h-full lg:block"><?= $subhead; ?></p>
-        <div id="newsletterPopupBlogPost" class="newsletter-revamp">
-          <script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/newsletter_blog_revamp"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/newsletter_blog_revamp" title="Online Form">Online Form - Newsletter - Blog Revamp</a></noscript>
-          <script>
-            var container = document.currentScript.parentNode; // Newsletter container
-            var elementToCut = container.querySelector("#newsletterPopupBlogPost #fsSubmitButton5194985"); // Submit button
-            var destinationElement = container.querySelector("#newsletterPopupBlogPost #fsCell140490700"); // Email container
-            var newsletterID = container.id; // Newlsetter identifier
-            var newsletterLPField = container.querySelector('#newsletterPopupBlogPost #field142799721'); // LP URL field
-            var newsletterIDField = container.querySelector('#newsletterPopupBlogPost #field146376375'); // Type field
-
-            if (elementToCut && destinationElement) {
-              var clonedElement = elementToCut.cloneNode(true);
-              elementToCut.parentNode.removeChild(elementToCut);
-              destinationElement.appendChild(clonedElement);
-            }
-
-            newsletterIDField.value = newsletterID;
-            newsletterLPField.value = window.location.href;
-
-            document.querySelector('#newsletterPopupBlogPost #field140490700').addEventListener('keydown', function(event) {
-              if (event.key === 'Enter') {
-                console.log('keydown');
-                document.querySelector('#newsletterPopupBlogPost #fsSubmitButton5194985').click();
-              }
-            });
-          </script>
+        <div class="flex justify-center rounded-sm lg:p-sp-14 p-sp-6 mb-sp-6 bg-cream ">
+          <div class="flex flex-col items-center justify-center text-center max-w-[640px]">
+            <img src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg" alt="Charlie Health shield logo" class="w-[3rem] mb-sp-5">
+            <p class="text-h2-base">Ready to get started with Charlie Health?
+            </p>
+            <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full ">
+              <a href="https://www.charliehealth.com/form" class="ch-button button-primary" target="_blank">Get Started
+              </a>
+              <a href="tel:+18668052001" class="ch-button button-secondary" target="_self">1 (866) 805-2001
+              </a>
+            </div>
+          </div>
         </div>
-        <h5>You can unsubscribe anytime.</h5>
       </div>
     </div>
   </div>
