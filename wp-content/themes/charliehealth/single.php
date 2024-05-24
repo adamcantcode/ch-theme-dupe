@@ -223,13 +223,10 @@ $subhead = get_field('subhead', 'option');
         <div class="flex justify-center rounded-sm lg:p-sp-14 p-sp-6 mb-sp-6 bg-cream ">
           <div class="flex flex-col items-center justify-center text-center max-w-[640px]">
             <img src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg" alt="Charlie Health shield logo" class="w-[3rem] mb-sp-5">
-            <p class="text-h2-base">Ready to get started with Charlie Health?
-            </p>
+            <p class="text-h2-base"> Need additional mental health support? Charlie Health can help</p>
             <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full ">
-              <a href="https://www.charliehealth.com/form" class="ch-button button-primary" target="_blank">Get Started
-              </a>
-              <a href="tel:+18668052001" class="ch-button button-secondary" target="_self">1 (866) 805-2001
-              </a>
+              <a href="https://www.charliehealth.com/form" class="ch-button button-primary">Get Started</a>
+              <a href="https://www.charliehealth.com/intensive-outpatient-iop" class="ch-button button-secondary">Learn More</a>
             </div>
           </div>
         </div>
