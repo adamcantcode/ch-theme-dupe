@@ -83,11 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
   ) {
     fadeUpIn();
   }
-  if(window.location.pathname.startsWith('/careers')) {
-    if (!window.location.pathname.endsWith('openings')) {
-      careersTracking();
-    }
-  }
   // if (document.querySelector('meta[property="og:title"]').content === 'hp1') {
   //   stickyCTA();
   // }
@@ -159,5 +154,10 @@ document.addEventListener('DOMContentLoaded', () => {
     createCookieIfNeeded();
     appendParamsIfNeeded();
   }
-  
+
+  if (window.location.pathname.startsWith('/careers')) {
+    if (!window.location.pathname.endsWith('openings')) {
+      careersTracking();
+    }
+  }
 });
