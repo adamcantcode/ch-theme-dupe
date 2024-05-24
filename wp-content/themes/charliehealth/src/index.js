@@ -156,8 +156,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (window.location.pathname.startsWith('/careers')) {
-    if (!window.location.pathname.endsWith('openings')) {
+    // if (!window.location.pathname.endsWith('openings')) {
       careersTracking();
-    }
+    // }
   }
 });

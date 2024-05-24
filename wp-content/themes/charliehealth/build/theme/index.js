@@ -23759,9 +23759,9 @@ document.addEventListener('DOMContentLoaded', () => {
     appendParamsIfNeeded();
   }
   if (window.location.pathname.startsWith('/careers')) {
-    if (!window.location.pathname.endsWith('openings')) {
-      (0,_modules_careers_tracking__WEBPACK_IMPORTED_MODULE_22__["default"])();
-    }
+    // if (!window.location.pathname.endsWith('openings')) {
+    (0,_modules_careers_tracking__WEBPACK_IMPORTED_MODULE_22__["default"])();
+    // }
   }
 });
 })();
