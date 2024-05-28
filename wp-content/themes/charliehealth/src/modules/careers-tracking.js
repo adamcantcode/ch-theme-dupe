@@ -33,7 +33,7 @@ export default function careersTracking() {
     const cookieParams = decodeURIComponent(getCookie('urlWithParams'));
     const careersParams = new URLSearchParams(cookieParams.split('?')[1]);
     var utmSource = careersParams.get('utm_source');
-    var utmMedium = careersParams.get('utm_medium').toLowerCase();
+    var utmMedium = careersParams.get('utm_medium');
 
     if (utmSource) {
       utmSource = utmSource.toLowerCase();
