@@ -14,6 +14,9 @@ $className = '';
 if (!empty($block['align'])) {
   $className .= ' align' . esc_attr($block['align']);
 }
+if (!empty($block['className'])) {
+  $className .= ' ' . esc_attr($block['className']);
+}
 // $background = 'bg-grey-warm';
 // if (!empty($block['backgroundColor'])) {
 //   $background = 'bg-' . $block['backgroundColor'];
