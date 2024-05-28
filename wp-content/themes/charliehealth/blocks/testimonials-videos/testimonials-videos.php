@@ -38,6 +38,11 @@ if (!empty($block['align'])) {
                 $title     = get_sub_field('title');
                 $pullQuote = get_sub_field('pull_quote');
                 $linkedIn  = get_sub_field('linkedin');
+
+                if (!empty($pullQuote) && substr($pullQuote, -1) !== '.') {
+                  // Add a period to the end of the string
+                  $pullQuote .= '.';
+                }
                 ?>
                 <div class="!h-auto swiper-slide mb-sp-12">
                   <div class="grid gap-sp-8 pb-sp-8 lg:grid-cols-[3fr_3fr]">
