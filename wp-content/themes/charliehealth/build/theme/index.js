@@ -1120,8 +1120,14 @@ function careersTracking() {
   setTimeout(() => {
     const cookieParams = decodeURIComponent(getCookie('urlWithParams'));
     const careersParams = new URLSearchParams(cookieParams.split('?')[1]);
-    const utmSource = careersParams.get('utm_source').toLowerCase();
-    const utmMedium = careersParams.get('utm_medium').toLowerCase();
+    var utmSource = careersParams.get('utm_source');
+    var utmMedium = careersParams.get('utm_medium').toLowerCase();
+    if (utmSource) {
+      utmSource = utmSource.toLowerCase();
+    }
+    if (utmMedium) {
+      utmMedium = utmMedium.toLowerCase();
+    }
     if (utmSource === 'linkedin' && utmMedium === 'organic') {
       updateUrls(ghMap.linkedinOrganic);
     } else if (utmSource === 'instagram' && utmMedium === 'organic') {
