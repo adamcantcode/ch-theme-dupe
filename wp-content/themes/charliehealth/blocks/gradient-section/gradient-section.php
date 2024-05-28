@@ -23,6 +23,6 @@ if (!empty($block['align'])) {
 // }
 ?>
 
-<section <?= $anchor ?: ''; ?>class="<?= $className; ?> bg-primary section-bg-js">
+<section <?= $anchor ?: ''; ?>class="<?= $className; ?> bg-primary section-bg-bg-js">
   <InnerBlocks />
 </section>

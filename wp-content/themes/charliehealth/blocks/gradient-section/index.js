@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // Bakground color change
   let sectionBg = gsap.timeline({
     scrollTrigger: {
-      trigger: '.section-bg-js',
+      trigger: '.section-bg-bg-js',
       start: 'top bottom',
       end: 'bottom bottom',
       scrub: true,
@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
     },
   });
   sectionBg.fromTo(
-    '.section-bg-js',
+    '.section-bg-bg-js',
     {
       background: `linear-gradient(180deg, rgba(22, 26, 61, 1) 0%, rgba(22, 26, 61, 1) 100%)`,
     },
