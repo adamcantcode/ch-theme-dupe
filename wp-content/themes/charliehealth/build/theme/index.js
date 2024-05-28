@@ -1120,8 +1120,8 @@ function careersTracking() {
   setTimeout(() => {
     const cookieParams = decodeURIComponent(getCookie('urlWithParams'));
     const careersParams = new URLSearchParams(cookieParams.split('?')[1]);
-    const utmSource = careersParams.get('utm_source');
-    const utmMedium = careersParams.get('utm_medium');
+    const utmSource = careersParams.get('utm_source').toLowerCase();
+    const utmMedium = careersParams.get('utm_medium').toLowerCase();
     if (utmSource === 'linkedin' && utmMedium === 'organic') {
       updateUrls(ghMap.linkedinOrganic);
     } else if (utmSource === 'instagram' && utmMedium === 'organic') {
@@ -1129,10 +1129,10 @@ function careersTracking() {
     } else if (utmSource === 'facebook' && utmMedium === 'organic') {
       updateUrls(ghMap.facebookOrganic);
     }
-    if (utmSource === 'meta' && utmMedium === 'paid') {
+    if (utmSource === 'meta' && utmMedium === 'paidsocial') {
       updateUrls(ghMap.metaPaid);
     }
-    if (utmSource === 'email') {
+    if (utmMedium === 'email') {
       updateUrls(ghMap.email);
     }
   }, 500);
