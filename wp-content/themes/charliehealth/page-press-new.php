@@ -104,13 +104,14 @@ Template Name: Press page new
         'meta_key'       => 'date',
         'orderby'        => 'meta_value',
         'order'          => 'DESC',
-        // 'meta_query'     => array(
-        //   array(
-        //     'key'     => 'featured',
-        //     'value'   => false,
-        //     'compare' => '=',
-        //   )
-        // ),
+        'meta_query'     => array(
+          array(
+            'key'     => 'featured', // ACF field key
+            'value'   => '1',         // '1' for true
+            'compare' => '!=',        // Not equal to true
+            'type'    => 'NUMERIC',   // Assuming the field stores numeric values
+          ),
+        ),
         'tax_query'      => array(
           array(
             'taxonomy' => 'press-type',
