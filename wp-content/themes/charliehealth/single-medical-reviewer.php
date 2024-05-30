@@ -23,7 +23,7 @@ if ($image) {
 <section class="section">
   <div class="container">
     <div class="inline-block mb-base5-4">
-      <h4>Clinical Content Advisory Council</h4>
+      <h4><a href="/clinical-content-advisory-council" class="underline">Clinical Content Advisory Council</a></h4>
       <h1>Clinical reviewers</h1>
     </div>
     <div class="grid lg:grid-cols-[3fr_9fr] gap-base5-8 mb-base5-8 mt-base5-10">
