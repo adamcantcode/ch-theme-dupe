@@ -43,11 +43,13 @@
       </div>
     </div>
     <?php if (!is_admin()) : ?>
-      <?php if (have_rows('testimonials')) : $count = 0; ?>
-        <?php $rows = array();
+      <?php if (have_rows('testimonials')) : ?>
+        <?php
+        $count = 0;
+        $rows = array();
 
         while (have_rows('testimonials')) : the_row();
-          $rows[] = get_row();
+          $rows[] = get_row(true);
         endwhile;
 
         $first_four = array_slice($rows, 0, 6);
@@ -63,11 +65,11 @@
             <?php
             the_row($row);
             $count++;
-            $team  = get_sub_field('team');
-            $name  = get_sub_field('name');
-            $title = get_sub_field('title');
-            $video = get_sub_field('video_code');
-            $quote = get_sub_field('quote');
+            $team  = $row['team'];
+            $name  = $row['name'];
+            $title = $row['title'];
+            $video = $row['video_code'];
+            $quote = $row['quote'];
 
             switch ($team) {
               case 'Corporate':
