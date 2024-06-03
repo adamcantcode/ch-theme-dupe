@@ -44,10 +44,24 @@
     </div>
     <?php if (!is_admin()) : ?>
       <?php if (have_rows('testimonials')) : $count = 0; ?>
+        <?php $rows = array();
+
+        while (have_rows('testimonials')) : the_row();
+          $rows[] = get_row();
+        endwhile;
+
+        $first_four = array_slice($rows, 0, 6);
+        $rest = array_slice($rows, 6);
+
+        shuffle($rest);
+
+        $final_rows = array_merge($first_four, $rest);
+        ?>
         <div class="masonry-js">
           <div class="lg:w-[calc(50%-16px)] opacity-0 scale-95 w-full grid-sizer"></div>
-          <?php while (have_rows('testimonials')) : the_row(); ?>
+          <?php foreach ($final_rows as $row) :  ?>
             <?php
+            the_row($row);
             $count++;
             $team  = get_sub_field('team');
             $name  = get_sub_field('name');
@@ -88,7 +102,7 @@
               <h3 class="mb-0"><?= $name; ?></h3>
               <p><?= $title; ?></p>
             </div>
-          <?php endwhile; ?>
+          <?php endforeach; ?>
         </div>
       <?php endif; ?>
     <?php else : ?>
