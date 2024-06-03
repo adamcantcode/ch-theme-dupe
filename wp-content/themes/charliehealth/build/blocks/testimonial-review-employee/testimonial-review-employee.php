@@ -79,7 +79,7 @@
             <div class="lg:w-[calc(50%-16px)] opacity-0 scale-95 w-full mb-sp-8 rounded-lg lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col<?= $count > 6 ? ' noshow' : ''; ?>">
               <span class="relative z-20 self-start no-underline rounded-pill px-sp-4 py-sp-3 text-p-base mb-sp-8 <?= $tagBGColor; ?>"><?= $team; ?></span>
               <?php if ($quote) : ?>
-                <h3>“<?= substr($quote, -1) !== '.' ? $quote .= '.' : $quote; ?>”</h3>
+                <h3 class="font-heading-serif">“<?= substr($quote, -1) !== '.' ? $quote .= '.' : $quote; ?>”</h3>
               <?php endif; ?>
               <?php if ($video) : ?>
                 <div style="padding:177.78% 0 0 0;position:relative;" class="mb-base5-2"><iframe src="https://player.vimeo.com/video/<?= $video; ?>?loop=1&muted=1&autopause=1" frameborder="0" allow="autoplay; fullscreen; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="portrait" class="rounded-sm careers-video-js"></iframe></div>
