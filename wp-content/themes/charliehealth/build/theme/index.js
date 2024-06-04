@@ -23735,9 +23735,15 @@ document.addEventListener('DOMContentLoaded', () => {
           var params = decodeURIComponent(cookieValue).split('?')[1];
           console.log('Params from cookie:', params);
           if (params) {
-            var newURL = window.location.href + (window.location.search ? '&' : '?') + params;
-            console.log('New URL:', newURL);
-            window.location.href = newURL; // Reload the page with the new URL
+            const paramPairs = params.split('&');
+            const hasPageId = paramPairs.some(pair => pair.startsWith('page_id='));
+            console.log(hasPageId);
+            console.log(paramPairs);
+            if (!hasPageId) {
+              var newURL = window.location.href + (window.location.search ? '&' : '?') + params;
+              console.log('New URL:', newURL);
+              window.location.href = newURL; // Reload the page with the new URL
+            }
           } else {
             console.log('No params found in cookie');
           }
