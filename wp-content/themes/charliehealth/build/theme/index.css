@@ -734,6 +734,10 @@ a.text-white:hover {
         color: #ffffff;
       }
 
+a.\!text-white:hover {
+        color: #ffffff !important;
+      }
+
 a.text-nav-normal:hover{
   --tw-text-opacity: 1;
   color: rgb(231 211 255 / var(--tw-text-opacity));
@@ -3783,6 +3787,11 @@ a.insurance-tabs.active:hover {
 .\!text-\[\#87889B\]{
   --tw-text-opacity: 1 !important;
   color: rgb(135 136 155 / var(--tw-text-opacity)) !important;
+}
+
+.\!text-white{
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
 }
 
 .underline{
