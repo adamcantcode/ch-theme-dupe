@@ -1993,6 +1993,10 @@ a.insurance-tabs.active:hover {
   margin-right: 20px;
 }
 
+.mt-base5-2{
+  margin-top: 10px;
+}
+
 .line-clamp-3{
   overflow: hidden;
   display: -webkit-box;
