@@ -6492,6 +6492,10 @@ ul.alert li {
     padding-top: 4rem;
   }
 
+  .lg\:pb-base5-10{
+    padding-bottom: 50px;
+  }
+
   .lg\:text-right{
     text-align: right;
   }

@@ -4,7 +4,7 @@
   $link         = get_field('link');
   ?>
 
-  <div class="lg:pb-sp-16 pb-sp-6 grid lg:grid-cols-[1fr_2fr] grid-cols-1 relative">
+  <div class="lg:pb-base5-10 pb-sp-6 grid lg:grid-cols-[1fr_2fr] grid-cols-1 relative">
     <div></div>
     <div class="lg:flex">
       <p class="flex-none mb-0 mr-base5-10">Read reviews from:</p>
