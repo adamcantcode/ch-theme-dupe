@@ -3736,6 +3736,10 @@ a.insurance-tabs.active:hover {
   color: rgb(135 136 154 / var(--tw-text-opacity));
 }
 
+.text-\[inherit\]{
+  color: inherit;
+}
+
 .text-darker-blue{
   --tw-text-opacity: 1;
   color: rgb(22 26 61 / var(--tw-text-opacity));
@@ -3769,6 +3773,16 @@ a.insurance-tabs.active:hover {
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.\!text-\[\#87889A\]{
+  --tw-text-opacity: 1 !important;
+  color: rgb(135 136 154 / var(--tw-text-opacity)) !important;
+}
+
+.\!text-\[\#87889B\]{
+  --tw-text-opacity: 1 !important;
+  color: rgb(135 136 155 / var(--tw-text-opacity)) !important;
 }
 
 .underline{
@@ -6468,6 +6482,10 @@ ul.alert li {
     padding-bottom: 0px;
   }
 
+  .lg\:pb-base5-10{
+    padding-bottom: 50px;
+  }
+
   .lg\:pb-sp-16{
     padding-bottom: 6rem;
   }
@@ -6490,10 +6508,6 @@ ul.alert li {
 
   .lg\:pt-sp-14{
     padding-top: 4rem;
-  }
-
-  .lg\:pb-base5-10{
-    padding-bottom: 50px;
   }
 
   .lg\:text-right{
