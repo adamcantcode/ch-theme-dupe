@@ -50,7 +50,7 @@
 					</div>
 				<?php endif; ?>
 				<div>
-					<div class="flex gap-sp-1">
+					<div class="flex gap-sp-1 mt-base5-2 lg:mt-0">
 						<a href="https://www.facebook.com/charliehealth" target="_blank">
 							<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/facebook.svg'); ?>" alt="Facebook logo" class="w-[42px] h-[42px] p-[10px]" />
 						</a>
