@@ -27,5 +27,11 @@
 
       xhr.send(formData);
     });
+
+    // Additional listener to ensure button click triggers form submit
+    var submitButton = form.querySelector('input[type="submit"]');
+    submitButton.addEventListener('click', function() {
+      form.dispatchEvent(new Event('submit', { 'bubbles': true, 'cancelable': true }));
+    });
   });
 </script>
