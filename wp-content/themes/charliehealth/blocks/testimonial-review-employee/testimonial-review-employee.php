@@ -51,17 +51,12 @@
         while (have_rows('testimonials')) : the_row();
           $rows[] = get_row(true);
         endwhile;
+        shuffle($rows);
 
-        $first_four = array_slice($rows, 0, 6);
-        $rest = array_slice($rows, 6);
-
-        shuffle($rest);
-
-        $final_rows = array_merge($first_four, $rest);
         ?>
         <div class="masonry-js">
           <div class="lg:w-[calc(50%-16px)] opacity-0 scale-95 w-full grid-sizer"></div>
-          <?php foreach ($final_rows as $row) :  ?>
+          <?php foreach ($rows as $row) :  ?>
             <?php
             the_row($row);
             $count++;
