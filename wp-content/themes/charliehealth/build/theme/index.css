@@ -730,12 +730,12 @@ a:hover{
   }
     }
 
-a.text-white:hover {
-        color: #ffffff;
-      }
-
 a.\!text-white:hover {
         color: #ffffff !important;
+      }
+
+a.text-white:hover {
+        color: #ffffff;
       }
 
 a.text-nav-normal:hover{
@@ -1935,6 +1935,10 @@ a.insurance-tabs.active:hover {
 
 .mt-base5-10{
   margin-top: 50px;
+}
+
+.mt-base5-2{
+  margin-top: 10px;
 }
 
 .mt-base5-3{
@@ -3544,6 +3548,10 @@ a.insurance-tabs.active:hover {
   font-size: 14px;
 }
 
+.text-\[16px\]{
+  font-size: 16px;
+}
+
 .text-\[18px\]{
   font-size: 18px;
 }
@@ -3735,13 +3743,14 @@ a.insurance-tabs.active:hover {
   line-height: 1.25;
 }
 
+.\!text-white{
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
+}
+
 .text-\[\#87889A\]{
   --tw-text-opacity: 1;
   color: rgb(135 136 154 / var(--tw-text-opacity));
-}
-
-.text-\[inherit\]{
-  color: inherit;
 }
 
 .text-darker-blue{
@@ -3777,21 +3786,6 @@ a.insurance-tabs.active:hover {
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.\!text-\[\#87889A\]{
-  --tw-text-opacity: 1 !important;
-  color: rgb(135 136 154 / var(--tw-text-opacity)) !important;
-}
-
-.\!text-\[\#87889B\]{
-  --tw-text-opacity: 1 !important;
-  color: rgb(135 136 155 / var(--tw-text-opacity)) !important;
-}
-
-.\!text-white{
-  --tw-text-opacity: 1 !important;
-  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
 }
 
 .underline{
@@ -5423,6 +5417,16 @@ ul.alert li {
 .\[\&_\*\]\:hover\:text-white:hover *a:hover {
         color: #ffffff;
       }
+
+.placeholder\:text-grey-deactivated::-moz-placeholder{
+  --tw-text-opacity: 1;
+  color: rgb(135 136 154 / var(--tw-text-opacity));
+}
+
+.placeholder\:text-grey-deactivated::placeholder{
+  --tw-text-opacity: 1;
+  color: rgb(135 136 154 / var(--tw-text-opacity));
+}
 
 .first\:mt-0:first-child{
   margin-top: 0px;

@@ -254,34 +254,10 @@ $subhead = get_field('subhead', 'option');
       <div class="p-sp-8">
         <h2 class="text-h1-base font-heading"><?= $headline; ?></h2>
         <p class="h-full lg:block"><?= $subhead; ?></p>
-        <div id="newsletterPopup" class="newsletter-revamp">
-          <script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/newsletter_blog_revamp"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/newsletter_blog_revamp" title="Online Form">Online Form - Newsletter - Blog Revamp</a></noscript>
-          <script>
-            var container = document.currentScript.parentNode; // Newsletter container
-            var elementToCut = container.querySelector("#newsletterPopup #fsSubmitButton5194985"); // Submit button
-            var destinationElement = container.querySelector("#newsletterPopup #fsCell140490700"); // Email container
-            var newsletterID = container.id; // Newlsetter identifier
-            var newsletterLPField = container.querySelector('#newsletterPopup #field142799721'); // LP URL field
-            var newsletterIDField = container.querySelector('#newsletterPopup #field146376375'); // Type field
-
-            if (elementToCut && destinationElement) {
-              var clonedElement = elementToCut.cloneNode(true);
-              elementToCut.parentNode.removeChild(elementToCut);
-              destinationElement.appendChild(clonedElement);
-            }
-
-            newsletterIDField.value = newsletterID;
-            newsletterLPField.value = window.location.href;
-
-            document.querySelector('#newsletterPopup #field140490700').addEventListener('keydown', function(event) {
-              if (event.key === 'Enter') {
-                console.log('keydown');
-                document.querySelector('#newsletterPopup #fsSubmitButton5194985').click();
-              }
-            });
-          </script>
+        <div id="newsletterPopup">
+          <?php include('wp-content/themes/charliehealth/includes/newsletter-form.php'); ?>
         </div>
-        <h5>You can unsubscribe anytime.</h5>
+        <h5 class="mt-base5-2">You can unsubscribe anytime.</h5>
       </div>
     </div>
   </div>

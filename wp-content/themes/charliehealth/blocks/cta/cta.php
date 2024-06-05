@@ -91,33 +91,9 @@ $blockClasses .= $background . ' ';
         <p class="noshow lg:block"><?= $subhead; ?></p>
       <?php endif; ?>
       <div id="newsletterInContent" class="newsletter-revamp">
-        <script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/newsletter_blog_revamp"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/newsletter_blog_revamp" title="Online Form">Online Form - Newsletter - Blog Revamp</a></noscript>
-        <script>
-          var container = document.currentScript.parentNode; // Newsletter container
-          var elementToCut = container.querySelector("#newsletterInContent #fsSubmitButton5194985"); // Submit button
-          var destinationElement = container.querySelector("#newsletterInContent #fsCell140490700"); // Email container
-          var newsletterID = container.id; // Newlsetter identifier
-          var newsletterLPField = container.querySelector('#newsletterInContent #field142799721'); // LP URL field
-          var newsletterIDField = container.querySelector('#newsletterInContent #field146376375'); // Type field
-
-          if (elementToCut && destinationElement) {
-            var clonedElement = elementToCut.cloneNode(true);
-            elementToCut.parentNode.removeChild(elementToCut);
-            destinationElement.appendChild(clonedElement);
-          }
-
-          newsletterIDField.value = newsletterID;
-          newsletterLPField.value = window.location.href;
-
-          document.querySelector('#newsletterInContent #field140490700').addEventListener('keydown', function(event) {
-            if (event.key === 'Enter') {
-              console.log('keydown');
-              document.querySelector('#newsletterInContent #fsSubmitButton5194985').click();
-            }
-          });
-        </script>
+        <?php include('wp-content/themes/charliehealth/includes/newsletter-form.php'); ?>
       </div>
-      <h5>You can unsubscribe anytime.</h5>
+      <h5 class="mt-base5-2">You can unsubscribe anytime.</h5>
     </div>
   </div>
 <?php endif; ?>
