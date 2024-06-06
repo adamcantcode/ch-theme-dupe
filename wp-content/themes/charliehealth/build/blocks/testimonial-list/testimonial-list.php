@@ -46,33 +46,9 @@ $group = get_field('group')
         $fullQuote = get_field('full_quote', get_the_ID());
         $title     = get_field('title', get_the_ID());
         $location  = get_field('location', get_the_ID());
-        $age       = get_field('age', get_the_ID());
-        $group     = get_the_terms(get_the_ID(), 'testimonials-group')[0]->slug;
-
-        switch ($group) {
-          case 'young-adult':
-            $tagBGColor = 'bg-young-adult';
-            $name = 'Young Adult';
-            break;
-          case 'teen':
-            $tagBGColor = 'bg-teen';
-            $name = 'Teen';
-            break;
-          case 'parent':
-            $tagBGColor = 'bg-parent';
-            $name = 'Parent';
-            break;
-          default:
-            $tagBGColor = '';
-            $name = '';
-            break;
-        }
 
         ?>
         <div class="w-full rounded-[1rem] lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col">
-          <?php if ($tagBGColor && $age) : ?>
-            <span class="relative z-20 self-start no-underline rounded-pill px-sp-4 py-sp-3 text-p-base mb-sp-8 <?= $tagBGColor; ?>"><?= $name; ?></span>
-          <?php endif; ?>
           <?php if ($pullQuote) : ?>
             <h3 class="text-h3-base font-heading-serif">“<?= $pullQuote; ?>.”</h3>
           <?php endif; ?>
@@ -112,33 +88,9 @@ $group = get_field('group')
             $title         = get_field('title', $postID);
             $location      = get_field('location', $postID);
             $insurance     = get_field('insurance', $postID);
-            $age           = get_field('age', $postID);
-            $group         = get_the_terms($postID, 'testimonials-group')[0]->slug;
-
-            switch ($group) {
-              case 'young-adult':
-                $tagBGColor = 'bg-young-adult';
-                $name = 'Young Adult';
-                break;
-              case 'teen':
-                $tagBGColor = 'bg-teen';
-                $name = 'Teen';
-                break;
-              case 'parent':
-                $tagBGColor = 'bg-parent';
-                $name = 'Parent';
-                break;
-              default:
-                $tagBGColor = '';
-                $name = '';
-                break;
-            }
 
             ?>
             <div class="w-full rounded-[1rem] lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col">
-              <?php if ($tagBGColor && $age) : ?>
-                <span class="relative z-20 self-start no-underline rounded-pill px-sp-4 py-sp-3 text-p-base mb-sp-8 <?= $tagBGColor; ?>"><?= $name; ?></span>
-              <?php endif; ?>
               <?php if ($pullQuote) : ?>
                 <p class="text-h3-base font-heading-serif">“<?= $pullQuote; ?>.”</p>
               <?php endif; ?>
@@ -183,34 +135,10 @@ $group = get_field('group')
                 $fullQuote = get_field('full_quote', $postID);
                 $title     = get_field('title', $postID);
                 $location  = get_field('location', $postID);
-                $age       = get_field('age', $postID);
-                $group     = get_the_terms($postID, 'testimonials-group')[0]->slug;
-
-                switch ($group) {
-                  case 'young-adult':
-                    $tagBGColor = 'bg-young-adult';
-                    $name = 'Young Adult';
-                    break;
-                  case 'teen':
-                    $tagBGColor = 'bg-teen';
-                    $name = 'Teen';
-                    break;
-                  case 'parent':
-                    $tagBGColor = 'bg-parent';
-                    $name = 'Parent';
-                    break;
-                  default:
-                    $tagBGColor = '';
-                    $name = '';
-                    break;
-                }
 
                 ?>
                 <div class="!h-auto swiper-slide">
                   <div class="w-full rounded-[1rem] lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col <?= is_admin() && $slideNum > 3 ? 'noshow' : ''; ?>">
-                    <?php if ($tagBGColor && $age) : ?>
-                      <span class="relative z-20 self-start no-underline rounded-pill px-sp-4 py-sp-3 text-p-base mb-sp-8 <?= $tagBGColor; ?>"><?= $name; ?></span>
-                    <?php endif; ?>
                     <?php if ($pullQuote) : ?>
                       <p class="text-h3-base font-heading-serif">“<?= $pullQuote; ?>.”</p>
                     <?php endif; ?>

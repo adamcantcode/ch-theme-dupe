@@ -4,17 +4,6 @@
   $link = get_field('link');
   ?>
 
-  <div class="lg:pb-sp-16 pb-sp-6 noshow lg:grid">
-    <div class="flex items-center justify-self-end">
-      <p class="inline-block mb-0">Read reviews from:</p>
-      <div class="h-sp-3 w-sp-3 mr-sp-2 ml-sp-8 rounded-circle bg-teen"></div>
-      <p class="mb-0">Teens</p>
-      <div class="h-sp-3 w-sp-3 mr-sp-2 ml-sp-8 rounded-circle bg-young-adult"></div>
-      <p class="mb-0">Young Adults</p>
-      <div class="h-sp-3 w-sp-3 mr-sp-2 ml-sp-8 rounded-circle bg-parent"></div>
-      <p class="mb-0">Parents</p>
-    </div>
-  </div>
   <div class="grid lg:grid-cols-[1fr,2fr] grid-cols-1 relative lg:gap-x-sp-8">
     <div class="lg:sticky self-start top-[8rem]">
       <p class="font-heading-serif text-h1-display lg:text-h1-display-lg"><?= $stat ?></p>
@@ -49,36 +38,9 @@
             }
             $pullQuote = get_field('pull-quote', get_the_ID());
             $fullQuote = get_field('full_quote', get_the_ID());
-            $age = get_field('age', get_the_ID());
-            $group = null;
-            if (get_the_terms(get_the_ID(), 'testimonials-group')) {
-              $group = get_the_terms(get_the_ID(), 'testimonials-group')[0]->slug;
-            }
-
-            switch ($group) {
-              case 'young-adult':
-                $tagBGColor = 'bg-young-adult';
-                $name = 'Young Adult';
-                break;
-              case 'teen':
-                $tagBGColor = 'bg-teen';
-                $name = 'Teen';
-                break;
-              case 'parent':
-                $tagBGColor = 'bg-parent';
-                $name = 'Parent';
-                break;
-              default:
-                $tagBGColor = '';
-                $name = '';
-                break;
-            }
 
             ?>
             <div class="lg:w-[calc(50%-16px)] opacity-0 scale-95 w-full mb-sp-8 rounded-lg lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col<?= $count > 6 ? ' noshow' : ''; ?>">
-              <?php if ($tagBGColor && $age) : ?>
-                <span class="relative z-20 self-start no-underline rounded-pill px-sp-4 py-sp-3 text-p-base mb-sp-8 <?= $tagBGColor; ?>"><?= $name; ?></span>
-              <?php endif; ?>
               <?php if ($pullQuote) : ?>
                 <p class="text-h3-base font-heading-serif">“<?= $pullQuote; ?>.”</p>
               <?php endif; ?>
