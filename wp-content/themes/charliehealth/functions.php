@@ -144,6 +144,10 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/insurance-cost');
   register_block_type(__DIR__ . '/build/blocks/testimonials-slider');
   register_block_type(__DIR__ . '/build/blocks/therapists');
+  register_block_type(__DIR__ . '/build/blocks/people-testimonials');
+  register_block_type(__DIR__ . '/build/blocks/story');
+  register_block_type(__DIR__ . '/build/blocks/bubble-quote');
+  register_block_type(__DIR__ . '/build/blocks/press-posts');
   register_block_type(__DIR__ . '/build/blocks/info-accordion');
   register_block_type(__DIR__ . '/build/blocks/conditions');
   register_block_type(__DIR__ . '/build/blocks/partner-testimonial-review');

@@ -1537,6 +1537,10 @@ a.insurance-tabs.active:hover {
   bottom: 0px !important;
 }
 
+.-left-base5-4{
+  left: -20px;
+}
+
 .-top-1\/2{
   top: -50%;
 }
@@ -1633,6 +1637,10 @@ a.insurance-tabs.active:hover {
   top: 2rem;
 }
 
+.-z-10{
+  z-index: -10;
+}
+
 .-z-50{
   z-index: -50;
 }
@@ -1724,6 +1732,11 @@ a.insurance-tabs.active:hover {
 .mx-sp-5{
   margin-left: 1.25rem;
   margin-right: 1.25rem;
+}
+
+.my-base5-4{
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .my-sp-10{
@@ -1847,6 +1860,10 @@ a.insurance-tabs.active:hover {
 
 .ml-auto{
   margin-left: auto;
+}
+
+.ml-base5-2{
+  margin-left: 10px;
 }
 
 .ml-sp-2{
@@ -2058,6 +2075,10 @@ a.insurance-tabs.active:hover {
 
 .h-2\/3{
   height: 66.666667%;
+}
+
+.h-5\/6{
+  height: 83.333333%;
 }
 
 .h-\[1\.5px\]{
@@ -2345,6 +2366,10 @@ a.insurance-tabs.active:hover {
   max-width: 40px;
 }
 
+.max-w-\[425px\]{
+  max-width: 425px;
+}
+
 .max-w-\[50\%\]{
   max-width: 50%;
 }
@@ -2411,6 +2436,10 @@ a.insurance-tabs.active:hover {
 
 .origin-center{
   transform-origin: center;
+}
+
+.origin-left{
+  transform-origin: left;
 }
 
 .origin-right{
@@ -2503,6 +2532,11 @@ a.insurance-tabs.active:hover {
 .scale-\[0\.99\]{
   --tw-scale-x: 0.99;
   --tw-scale-y: 0.99;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.scale-x-0{
+  --tw-scale-x: 0;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -3060,11 +3094,6 @@ a.insurance-tabs.active:hover {
   background-color: rgb(143 146 205 / var(--tw-bg-opacity));
 }
 
-.bg-parent{
-  --tw-bg-opacity: 1;
-  background-color: rgb(253 191 124 / var(--tw-bg-opacity));
-}
-
 .bg-primary{
   --tw-bg-opacity: 1;
   background-color: rgb(22 26 61 / var(--tw-bg-opacity));
@@ -3100,11 +3129,6 @@ a.insurance-tabs.active:hover {
   background-color: rgb(248 247 247 / var(--tw-bg-opacity));
 }
 
-.bg-teen{
-  --tw-bg-opacity: 1;
-  background-color: rgb(143 146 205 / var(--tw-bg-opacity));
-}
-
 .bg-transparent{
   background-color: rgba(0,0,0,0);
 }
@@ -3122,11 +3146,6 @@ a.insurance-tabs.active:hover {
 .bg-yellow-300{
   --tw-bg-opacity: 1;
   background-color: rgb(253 191 124 / var(--tw-bg-opacity));
-}
-
-.bg-young-adult{
-  --tw-bg-opacity: 1;
-  background-color: rgb(218 193 251 / var(--tw-bg-opacity));
 }
 
 .bg-\[linear-gradient\(\#fead80\2c \#e2deca_50\%\2c \#bdc6fc\)\]{
@@ -3245,6 +3264,11 @@ a.insurance-tabs.active:hover {
 .px-\[20px\]{
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.px-base5-2{
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .px-base5-3{
@@ -3556,10 +3580,6 @@ a.insurance-tabs.active:hover {
   font-size: 20px;
 }
 
-.text-\[25px\]{
-  font-size: 25px;
-}
-
 .text-\[32px\]{
   font-size: 32px;
 }
@@ -3717,6 +3737,10 @@ a.insurance-tabs.active:hover {
 
 .leading-\[130\%\]{
   line-height: 130%;
+}
+
+.leading-\[140\%\]{
+  line-height: 140%;
 }
 
 .leading-none{
@@ -5361,6 +5385,17 @@ mark{
 .swiper.swiper-careers-testimonial .swiper-slide.swiper-slide-prev {
     }
 
+.swiper.swiper-careers-testimonial.no-quotes .swiper-slide{
+  width: 80%;
+}
+
+@media (min-width: 1024px){
+
+  .swiper.swiper-careers-testimonial.no-quotes .swiper-slide{
+    width: 25%;
+  }
+}
+
 /* Custom Select */
 
 .custom-select {
@@ -5620,14 +5655,6 @@ ul.alert li {
 }
 
 @media (min-width: 480px){
-
-  .md\:order-1{
-    order: 1;
-  }
-
-  .md\:order-2{
-    order: 2;
-  }
 
   .md\:mx-sp-14{
     margin-left: 4rem;
@@ -6634,19 +6661,11 @@ ul.alert li {
   font-family: "ABC Arizona", serif;
 }
 
-.\[\&_\*\]\:text-\[14px\] *{
-  font-size: 14px;
-}
-
 .\[\&_\*\]\:text-h5 *{
   font-size: 16px;
   line-height: 140%;
   letter-spacing: 0;
   font-weight: 500;
-}
-
-.\[\&_\*\]\:leading-\[1\.6\] *{
-  line-height: 1.6;
 }
 
 .\[\&_\*\]\:\!text-primary *{
@@ -6662,10 +6681,6 @@ ul.alert li {
 .\[\&_\*\]\:hover\:text-white:hover *{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.\[\&_p\]\:mb-sp-3 p{
-  margin-bottom: 0.75rem;
 }
 /*!*******************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/@wordpress/scripts/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/swiper/swiper-bundle.min.css ***!

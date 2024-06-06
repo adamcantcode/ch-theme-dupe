@@ -8,23 +8,23 @@ $order = get_field('order');
 
 switch ($order) {
   case 'LR':
-    $imageOrder = 'md:order-1';
-    $detailsOrder = 'md:order-2';
+    $imageOrder = 'lg:order-1';
+    $detailsOrder = 'lg:order-2';
     break;
   case 'RL':
-    $imageOrder = 'md:order-2';
-    $detailsOrder = 'md:order-1';
+    $imageOrder = 'lg:order-2';
+    $detailsOrder = 'lg:order-1';
     break;
   default:
-    $imageOrder = 'md:order-1';
-    $detailsOrder = 'md:order-2';
+    $imageOrder = 'lg:order-1';
+    $detailsOrder = 'lg:order-2';
     break;
 }
 ?>
 <div class="grid items-center grid-cols-1 gap-4 just md:gap-32 md:grid-cols-2 last:mb-0 md:mb-sp-14 mb-sp-12">
   <?php if ($style === 'slider') : ?>
     <?php if (have_rows('fifty_fifty_slides')) : ?>
-      <div>
+      <div class="<?= $imageOrder; ?>">
         <div class="swiper swiper-fifty-fifty">
           <div class="items-center swiper-wrapper">
             <?php while (have_rows('fifty_fifty_slides')) : the_row();
