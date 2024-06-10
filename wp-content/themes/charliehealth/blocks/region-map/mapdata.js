@@ -788,6 +788,17 @@ var simplemaps_usmap_mapdata={
       description: "Learn more",
       url: "/regions/pennsylvania",
       zoomable: "no"
+    },
+    "16": {
+      states: [
+        "VA"
+      ],
+      name: "Virginia <img src=\"https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
+      color: "#1D225F",
+      hover_color: "#101334",
+      description: "Learn more",
+      url: "/regions/virginia",
+      zoomable: "no"
     }
   }
 };
