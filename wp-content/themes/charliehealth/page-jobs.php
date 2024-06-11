@@ -192,8 +192,9 @@ Template Post Type: page
       }
 
       function populateStateDropdown() {
-        let states = Array.from(new Set(departmentsData.departments.flatMap(dep => dep.jobs.flatMap(job => {
-          let location = job.location.name;
+        // Collect all unique states
+        let statesSet = new Set(departmentsData.departments.flatMap(dep => dep.jobs.flatMap(job => {
+          let location = job.location.name.trim();
           if (location.includes('Remote')) {
             return 'Remote';
           } else if (location.includes('United States')) {
@@ -201,31 +202,51 @@ Template Post Type: page
           } else {
             let locationParts = location.split(', ');
             if (locationParts.length === 2) {
-              return stateFullNameToAbbreviation(locationParts[1]);
+              return stateFullNameToAbbreviation(locationParts[1].trim());
             } else {
-              return locationParts[0];
+              return locationParts[0].trim();
             }
           }
-        }))));
+        })));
 
-        // Ensure 'Remote' and 'United States' are properly handled and remove duplicates
-        states = states.filter((location, index) => location !== undefined && states.indexOf(location) === index);
+        // Convert the set to an array and sort it alphabetically
+        let states = Array.from(statesSet).sort((a, b) => a.localeCompare(b));
 
+        // Clean up state names and remove any duplicates
+        let cleanedStates = [...new Set(states.map(state => state.trim()))];
+
+        // Remove any duplicates and ensure "Remote" is placed correctly
         let dropdown = document.getElementById('locationFilter');
+        dropdown.innerHTML = ''; // Clear existing options
 
-        // Sort the array and place 'Remote' first
-        states.sort((a, b) => (a === 'Remote' ? -1 : b === 'Remote' ? 1 : 0));
+        // Add 'All Locations' as the first option
+        let allLocationsOption = document.createElement('option');
+        allLocationsOption.value = '';
+        allLocationsOption.textContent = 'All Locations';
+        dropdown.appendChild(allLocationsOption);
 
-        states.forEach(state => {
+        // Add 'Remote' as the second option if it exists
+        let remoteIndex = cleanedStates.indexOf('Remote');
+        if (remoteIndex !== -1) {
+          cleanedStates.splice(remoteIndex, 1);
+          let remoteOption = document.createElement('option');
+          remoteOption.value = 'Remote';
+          remoteOption.textContent = 'Remote';
+          dropdown.appendChild(remoteOption);
+        }
+
+        // Add the remaining sorted states
+        cleanedStates.forEach(state => {
           if (state !== null && state !== undefined && !state.includes('or')) {
             let option = document.createElement('option');
-            let fullState = state.length == 2 ? stateAbbreviationToFullName(state) : state;
+            let fullState = state.length === 2 ? stateAbbreviationToFullName(state) : state;
             option.value = state;
             option.textContent = fullState;
             dropdown.appendChild(option);
           }
         });
       }
+
 
       const createJobListings = () => {
         const jobListingsContainer = document.getElementById('jobListings');
