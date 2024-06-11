@@ -60,59 +60,6 @@ Template Post Type: page
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const stateMap = {
-        'AL': 'Alabama',
-        'AK': 'Alaska',
-        'AZ': 'Arizona',
-        'AR': 'Arkansas',
-        'CA': 'California',
-        'CO': 'Colorado',
-        'CT': 'Connecticut',
-        'DE': 'Delaware',
-        'FL': 'Florida',
-        'GA': 'Georgia',
-        'HI': 'Hawaii',
-        'ID': 'Idaho',
-        'IL': 'Illinois',
-        'IN': 'Indiana',
-        'IA': 'Iowa',
-        'KS': 'Kansas',
-        'KY': 'Kentucky',
-        'LA': 'Louisiana',
-        'ME': 'Maine',
-        'MD': 'Maryland',
-        'MA': 'Massachusetts',
-        'MI': 'Michigan',
-        'MN': 'Minnesota',
-        'MS': 'Mississippi',
-        'MO': 'Missouri',
-        'MT': 'Montana',
-        'NE': 'Nebraska',
-        'NV': 'Nevada',
-        'NH': 'New Hampshire',
-        'NJ': 'New Jersey',
-        'NM': 'New Mexico',
-        'NY': 'New York',
-        'NC': 'North Carolina',
-        'ND': 'North Dakota',
-        'OH': 'Ohio',
-        'OK': 'Oklahoma',
-        'OR': 'Oregon',
-        'PA': 'Pennsylvania',
-        'RI': 'Rhode Island',
-        'SC': 'South Carolina',
-        'SD': 'South Dakota',
-        'TN': 'Tennessee',
-        'TX': 'Texas',
-        'UT': 'Utah',
-        'VT': 'Vermont',
-        'VA': 'Virginia',
-        'WA': 'Washington',
-        'WV': 'West Virginia',
-        'WI': 'Wisconsin',
-        'WY': 'Wyoming',
-      };
-
       const boardCode = '<?= $boardCode; ?>';
       const ghSrcValue = new URLSearchParams(window.location.search).get('gh_src');
       let departmentsData = null;
@@ -130,57 +77,155 @@ Template Post Type: page
         }
       };
 
-      const stateAbbreviationToFullName = (abbreviation) => stateMap[abbreviation.toUpperCase()] || 'Remote';
+      function stateAbbreviationToFullName(abbreviation) {
+        const stateMap = {
+          'AL': 'Alabama',
+          'AK': 'Alaska',
+          'AZ': 'Arizona',
+          'AR': 'Arkansas',
+          'CA': 'California',
+          'CO': 'Colorado',
+          'CT': 'Connecticut',
+          'DE': 'Delaware',
+          'FL': 'Florida',
+          'GA': 'Georgia',
+          'HI': 'Hawaii',
+          'ID': 'Idaho',
+          'IL': 'Illinois',
+          'IN': 'Indiana',
+          'IA': 'Iowa',
+          'KS': 'Kansas',
+          'KY': 'Kentucky',
+          'LA': 'Louisiana',
+          'ME': 'Maine',
+          'MD': 'Maryland',
+          'MA': 'Massachusetts',
+          'MI': 'Michigan',
+          'MN': 'Minnesota',
+          'MS': 'Mississippi',
+          'MO': 'Missouri',
+          'MT': 'Montana',
+          'NE': 'Nebraska',
+          'NV': 'Nevada',
+          'NH': 'New Hampshire',
+          'NJ': 'New Jersey',
+          'NM': 'New Mexico',
+          'NY': 'New York',
+          'NC': 'North Carolina',
+          'ND': 'North Dakota',
+          'OH': 'Ohio',
+          'OK': 'Oklahoma',
+          'OR': 'Oregon',
+          'PA': 'Pennsylvania',
+          'RI': 'Rhode Island',
+          'SC': 'South Carolina',
+          'SD': 'South Dakota',
+          'TN': 'Tennessee',
+          'TX': 'Texas',
+          'UT': 'Utah',
+          'VT': 'Vermont',
+          'VA': 'Virginia',
+          'WA': 'Washington',
+          'WV': 'West Virginia',
+          'WI': 'Wisconsin',
+          'WY': 'Wyoming',
+        };
 
-      const stateFullNameToAbbreviation = (fullName) => {
-        const entries = Object.entries(stateMap);
-        for (const [abbr, name] of entries) {
-          if (name === fullName) {
-            return abbr;
-          }
-        }
-        return fullName;
-      };
+        return stateMap[abbreviation.toUpperCase()] || 'Remote';
+      }
+
+      function stateFullNameToAbbreviation(fullName) {
+        const stateMap = {
+          'Alabama': 'AL',
+          'Alaska': 'AK',
+          'Arizona': 'AZ',
+          'Arkansas': 'AR',
+          'California': 'CA',
+          'Colorado': 'CO',
+          'Connecticut': 'CT',
+          'Delaware': 'DE',
+          'Florida': 'FL',
+          'Georgia': 'GA',
+          'Hawaii': 'HI',
+          'Idaho': 'ID',
+          'Illinois': 'IL',
+          'Indiana': 'IN',
+          'Iowa': 'IA',
+          'Kansas': 'KS',
+          'Kentucky': 'KY',
+          'Louisiana': 'LA',
+          'Maine': 'ME',
+          'Maryland': 'MD',
+          'Massachusetts': 'MA',
+          'Michigan': 'MI',
+          'Minnesota': 'MN',
+          'Mississippi': 'MS',
+          'Missouri': 'MO',
+          'Montana': 'MT',
+          'Nebraska': 'NE',
+          'Nevada': 'NV',
+          'New Hampshire': 'NH',
+          'New Jersey': 'NJ',
+          'New Mexico': 'NM',
+          'New York': 'NY',
+          'North Carolina': 'NC',
+          'North Dakota': 'ND',
+          'Ohio': 'OH',
+          'Oklahoma': 'OK',
+          'Oregon': 'OR',
+          'Pennsylvania': 'PA',
+          'Rhode Island': 'RI',
+          'South Carolina': 'SC',
+          'South Dakota': 'SD',
+          'Tennessee': 'TN',
+          'Texas': 'TX',
+          'Utah': 'UT',
+          'Vermont': 'VT',
+          'Virginia': 'VA',
+          'Washington': 'WA',
+          'West Virginia': 'WV',
+          'Wisconsin': 'WI',
+          'Wyoming': 'WY',
+        };
+
+        return stateMap[fullName] || fullName;
+      }
 
       function populateStateDropdown() {
         let states = Array.from(new Set(departmentsData.departments.flatMap(dep => dep.jobs.flatMap(job => {
-          if (job.location.name.endsWith("United States") || job.location.name.endsWith("USA")) {
-            // Handle 'City, United States' and 'Remote, United States'
-            if (job.location.name.split(', ')[0] === 'Remote') {
-              return job.location.name.split(', ')[1];
-            } else {
-              return stateFullNameToAbbreviation(job.location.name.split(', ')[0]);
-            }
+          let location = job.location.name;
+          if (location.includes('Remote')) {
+            return 'Remote';
+          } else if (location.includes('United States')) {
+            return location.split(' / ').map(part => stateFullNameToAbbreviation(part.split(', ')[0].trim()));
           } else {
-            return job.location.name.split(', ')[1];
+            let locationParts = location.split(', ');
+            if (locationParts.length === 2) {
+              return stateFullNameToAbbreviation(locationParts[1]);
+            } else {
+              return locationParts[0];
+            }
           }
         }))));
 
-        var dropdown = document.getElementById('locationFilter');
+        // Ensure 'Remote' and 'United States' are properly handled and remove duplicates
+        states = states.filter((location, index) => location !== undefined && states.indexOf(location) === index);
 
-        // Update 'United States' to 'Remote' if found
-        const indexOfUS = states.indexOf('United States');
-        if (indexOfUS !== -1) {
-          states[indexOfUS] = 'Remote';
-        }
-
-        // Remove undefined from the array
-        states = states.filter(location => location !== undefined);
+        let dropdown = document.getElementById('locationFilter');
 
         // Sort the array and place 'Remote' first
         states.sort((a, b) => (a === 'Remote' ? -1 : b === 'Remote' ? 1 : 0));
 
         states.forEach(state => {
           if (state !== null && state !== undefined && !state.includes('or')) {
-            var option = document.createElement('option');
-            var fullState = state.length == 2 ? stateAbbreviationToFullName(state) : state;
+            let option = document.createElement('option');
+            let fullState = state.length == 2 ? stateAbbreviationToFullName(state) : state;
             option.value = state;
             option.textContent = fullState;
             dropdown.appendChild(option);
           }
         });
       }
-
 
       const createJobListings = () => {
         const jobListingsContainer = document.getElementById('jobListings');
@@ -215,48 +260,52 @@ Template Post Type: page
         });
       };
 
-      const filterJobListingsByState = () => {
+      function filterJobListingsByState() {
         createJobListings();
-        const selectedState = document.getElementById('locationFilter').value;
-        const jobListings = document.querySelectorAll('.job-departments-section-js');
+        let selectedState = document.getElementById('locationFilter').value;
+        let jobListings = document.getElementById('jobListings').querySelectorAll('.job-departments-section-js');
 
         jobListings.forEach(departmentContainer => {
-          const jobsInDepartment = departmentContainer.querySelectorAll('.job-list-js');
+          let jobsInDepartment = departmentContainer.querySelectorAll('.job-list-js');
           let allHidden = true;
 
           jobsInDepartment.forEach(jobElement => {
-            const jobs = jobElement.querySelectorAll('.job-list-job-js');
+            let jobs = jobElement.querySelectorAll('.job-list-job-js');
 
             jobs.forEach(job => {
-              let jobState = job.querySelector('.location-js').textContent;
+              let jobState = job.querySelector('.location-js').textContent.trim();
 
-              if (jobState === 'Remote ' || jobState === 'Remote') {
-                jobState = 'Remote, United States';
+              if (jobState === 'Remote' || jobState === 'Remote, United States') {
+                jobState = 'Remote';
               }
 
-              if (jobState.split(', ')[1]?.length === 2) {
-                jobState = jobState.split(', ')[1];
+              let stateMatches = [];
+              if (jobState.includes('United States')) {
+                stateMatches = jobState.split(' / ').map(part => part.split(', ')[0].trim());
               } else {
-                jobState = jobState.split(', ')[0];
+                let locationParts = jobState.split(', ');
+                if (locationParts.length === 2) {
+                  stateMatches.push(stateFullNameToAbbreviation(locationParts[1].trim()));
+                } else {
+                  stateMatches.push(locationParts[0].trim());
+                }
               }
 
-              switch (jobState) {
-                case 'United States':
-                  jobState = 'Remote';
-                  break;
-                case undefined:
-                  jobState = job.querySelector('.location-js').textContent.split(', ')[0];
-                  break;
-                default:
-                  break;
-              }
+              stateMatches = stateMatches.map(state => {
+                if (state.length === 2) {
+                  return stateAbbreviationToFullName(state);
+                } else {
+                  return state;
+                }
+              });
 
-              if (!selectedState || jobState === selectedState || stateFullNameToAbbreviation(jobState) === selectedState) {
+              let matchFound = stateMatches.some(state => state === selectedState || stateFullNameToAbbreviation(state) === selectedState);
+
+              if (!selectedState || matchFound) {
                 job.classList.remove('noshow');
                 allHidden = false;
               } else {
                 job.classList.add('noshow');
-                job.remove();
               }
             });
 
@@ -274,7 +323,7 @@ Template Post Type: page
         });
 
         ScrollTrigger.refresh();
-      };
+      }
 
       const initializeAnimation = () => {
         const sectionBg = gsap.timeline({
