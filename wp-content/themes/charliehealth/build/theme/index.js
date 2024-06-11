@@ -1110,6 +1110,7 @@ function careersTracking() {
   }
   // gh sources
   const ghMap = {
+    linkedinProfile: '9a77be284us',
     linkedinOrganic: 'a0a8b3ae4us',
     instagramOrganic: '35ddfa714us',
     facebookOrganic: '052412f84us',
@@ -1122,13 +1123,19 @@ function careersTracking() {
     const careersParams = new URLSearchParams(cookieParams.split('?')[1]);
     var utmSource = careersParams.get('utm_source');
     var utmMedium = careersParams.get('utm_medium');
+    var utmCampaign = careersParams.get('utm_campaign');
     if (utmSource) {
       utmSource = utmSource.toLowerCase();
     }
     if (utmMedium) {
       utmMedium = utmMedium.toLowerCase();
     }
-    if (utmSource === 'linkedin' && utmMedium === 'organic') {
+    if (utmCampaign) {
+      utmCampaign = utmCampaign.toLowerCase();
+    }
+    if (utmSource === 'linkedin' && utmMedium === 'organic' && utmCampaign === 'cta-button') {
+      updateUrls(ghMap.linkedinProfile);
+    } else if (utmSource === 'linkedin' && utmMedium === 'organic') {
       updateUrls(ghMap.linkedinOrganic);
     } else if (utmSource === 'instagram' && utmMedium === 'organic') {
       updateUrls(ghMap.instagramOrganic);
