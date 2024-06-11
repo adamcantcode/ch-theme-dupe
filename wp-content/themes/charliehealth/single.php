@@ -194,7 +194,7 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
               <?php $tags = get_the_terms(get_the_ID(), 'post_tag');  ?>
               <?php if ($tags) :  ?>
                 <?php foreach ($tags as $tag) : ?>
-                  <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base"><?= $tag->name; ?></a>
+                  <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-primary bg-white group-hover:bg-white-hover border border-white z-[6] text-h5-base"><?= $tag->name; ?></a>
                 <?php endforeach; ?>
               <?php endif; ?>
             </div>

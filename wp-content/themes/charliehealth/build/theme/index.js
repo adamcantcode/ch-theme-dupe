@@ -246,7 +246,7 @@ function ajaxPaginationResearchAuthors() {
                 <p>${post.acf.by_author.post_title}</p>
               </div>`;
     if (tags) {
-      html += `${tags.map(tag => `<div class="absolute rounded-t-lg top-sp-4 left-sp-4"><a href="${tag.link}" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base">${tag.name}</a></div>`).join('')}`;
+      html += `${tags.map(tag => `<div class="absolute rounded-t-lg top-sp-4 left-sp-4"><a href="${tag.link}" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-primary bg-white group-hover:bg-white-hover border border-white z-[6] text-h5-base">${tag.name}</a></div>`).join('')}`;
     }
     html += `</div><!--end three-->`;
     return html;
@@ -457,7 +457,7 @@ function ajaxPaginationResearch() {
                 <p>${post.acf.by_author.post_title}</p>
               </div>`;
     if (tags) {
-      html += `${tags.map(tag => `<div class="absolute rounded-t-lg top-sp-4 left-sp-4"><a href="${tag.link}" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base">${tag.name}</a></div>`).join('')}`;
+      html += `${tags.map(tag => `<div class="absolute rounded-t-lg top-sp-4 left-sp-4"><a href="${tag.link}" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-primary bg-white group-hover:bg-white-hover border border-white z-[6] text-h5-base">${tag.name}</a></div>`).join('')}`;
     }
     html += `</div><!--end three-->`;
     return html;
@@ -644,7 +644,7 @@ function ajaxPaginationSearch() {
                 <p>${post.acf.by_author.post_title}</p>
               </div>`;
     if (tags) {
-      html += `${tags.map(tag => `<div class="absolute rounded-t-lg top-sp-4 left-sp-4"><a href="${window.location.origin}/resources/${tag.slug}" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base">${tag.name}</a></div>`).join('')}`;
+      html += `${tags.map(tag => `<div class="absolute rounded-t-lg top-sp-4 left-sp-4"><a href="${window.location.origin}/resources/${tag.slug}" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-primary bg-white group-hover:bg-white-hover border border-white z-[6] text-h5-base">${tag.name}</a></div>`).join('')}`;
     }
     html += `</div><!--end three-->`;
     return html;
@@ -926,7 +926,7 @@ function ajaxPagination() {
                 <p>${post.acf.by_author.post_title}</p>
               </div>`;
     if (tags) {
-      html += `${tags.map(tag => `<div class="absolute rounded-t-lg top-sp-4 left-sp-4"><a href="${tag.link}" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base">${tag.name}</a></div>`).join('')}`;
+      html += `${tags.map(tag => `<div class="absolute rounded-t-lg top-sp-4 left-sp-4"><a href="${tag.link}" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-primary bg-white group-hover:bg-white-hover border border-white z-[6] text-h5-base">${tag.name}</a></div>`).join('')}`;
     }
     html += `</div><!--end three-->`;
     return html;

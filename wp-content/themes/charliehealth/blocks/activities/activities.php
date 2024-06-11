@@ -151,7 +151,7 @@ $index = 0;
                 </div>
                 <?php if ($topic) : ?>
                   <div class="absolute rounded-t-lg top-sp-4 left-sp-4">
-                    <p class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-white bg-transparent group-hover:bg-white group-hover:!text-primary border border-white z-[6] text-h5-base cursor-pointer"><?= $topicName; ?></p>
+                    <p class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-primary bg-white group-hover:bg-white-hover border border-white z-[6] text-h5-base cursor-pointer"><?= $topicName; ?></p>
                   </div>
                 <?php endif; ?>
                 <div class="grid bg-white rounded-b-lg p-sp-4">
