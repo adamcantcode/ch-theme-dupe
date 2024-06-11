@@ -101,6 +101,14 @@
       @apply text-text;
     }
   }
+  .breadcrumbs-careers {
+    & > * {
+      @apply text-h4-base;
+    }
+    &:not(.text-white) > *:not(a) {
+      @apply text-primary;
+    }
+  }
   .dropdown-input {
     @apply text-[18px] inline-block lg:px-[25px] px-[10px] py-[15px] !pr-base5-10 transition-all leading-[140%] capitalize z-[1] border border-white text-white bg-transparent rounded-md text-left w-full cursor-pointer focus:outline-none placeholder:text-white;
   }

@@ -26,7 +26,7 @@ Template Post Type: page
 <?php else : ?>
   <section class="section section-bg-js">
     <div class="container mb-sp-16">
-      <h1 class="text-h4-base"><?= get_the_title(); ?></h1>
+    <?php include('wp-content/themes/charliehealth/includes/breadcrumbs.php'); ?>
       <div class="flex flex-col justify-between lg:items-center lg:mb-sp-16 mb-sp-8 lg:flex-row">
         <h2 class="text-h1-base">Open Roles</h2>
         <div>
@@ -87,7 +87,7 @@ Template Post Type: page
       if (urlParams.has('gh_src')) {
         var ghSrcValue = urlParams.get('gh_src');
       }
-      
+
       var requestOptions = {
         method: 'GET',
         redirect: 'follow'
