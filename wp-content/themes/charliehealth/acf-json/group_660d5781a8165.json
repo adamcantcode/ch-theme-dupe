@@ -3,6 +3,26 @@
     "title": "Conditions",
     "fields": [
         {
+            "key": "field_666a0ceb7271d",
+            "label": "Block or Buttons",
+            "name": "block_row",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "Buttons",
+            "ui_off_text": "Block",
+            "ui": 1
+        },
+        {
             "key": "field_660d578252c14",
             "label": "Links",
             "name": "links",
@@ -62,5 +82,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1712150507
+    "modified": 1718226337
 }
