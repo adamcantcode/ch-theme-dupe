@@ -1,4 +1,4 @@
-<div class="border-2 border-white rounded-[1rem] lg:p-sp-12 p-sp-4 grid lg:grid-cols-[4fr_8fr] gap-x-sp-5 approach-grid-js">
+<div class="border-2 border-white rounded-[1rem] lg:p-sp-12 p-sp-4 grid lg:grid-cols-[4fr_8fr] gap-x-sp-5  bg-primaryapproach-grid-js">
   <div class="grid content-between">
     <div class="order-2 lg:order-1">
       <h2 class="text-white font-heading-serif mb-sp-8"><?= get_field('heading'); ?></h2>
