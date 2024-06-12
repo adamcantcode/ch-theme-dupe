@@ -5453,6 +5453,10 @@ ul.alert li {
         color: #ffffff;
       }
 
+.\[\&_\*\]\:\!text-white *a:hover {
+        color: #ffffff !important;
+      }
+
 .\[\&_\*\]\:hover\:text-white:hover *a:hover {
         color: #ffffff;
       }
@@ -6687,6 +6691,11 @@ ul.alert li {
 .\[\&_\*\]\:text-white *{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.\[\&_\*\]\:\!text-white *{
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
 }
 
 .\[\&_\*\]\:hover\:text-white:hover *{

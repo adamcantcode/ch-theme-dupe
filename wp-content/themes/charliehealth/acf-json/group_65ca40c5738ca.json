@@ -43,6 +43,26 @@
             "delay": 0
         },
         {
+            "key": "field_6669fc2664376",
+            "label": "Grid BG Colors",
+            "name": "grid_bg",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "Solid Blue",
+            "ui_off_text": "Color Palette",
+            "ui": 1
+        },
+        {
             "key": "field_65ca416251b7d",
             "label": "Grid",
             "name": "grid",
@@ -137,5 +157,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1707754627
+    "modified": 1718221935
 }

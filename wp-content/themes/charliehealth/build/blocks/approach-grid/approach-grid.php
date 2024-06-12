@@ -16,16 +16,27 @@
   </div>
   <?php if (have_rows('grid')) :  ?>
     <?php
-    $bgColors = [
-      1 => 'bg-lavender-300',
-      2 => 'bg-orange-300',
-      3 => 'bg-pale-blue-200',
-      4 => 'bg-yellow-300',
-      5 => 'bg-pale-blue-300',
-      6 => 'bg-white'
-    ]
+    if (!get_field('grid_bg')) {
+      $bgColors = [
+        1 => 'bg-lavender-300',
+        2 => 'bg-orange-300',
+        3 => 'bg-pale-blue-200',
+        4 => 'bg-yellow-300',
+        5 => 'bg-pale-blue-300',
+        6 => 'bg-white'
+      ];
+    } else {
+      $bgColors = [
+        1 => 'bg-primary-100',
+        2 => 'bg-primary-100',
+        3 => 'bg-primary-100',
+        4 => 'bg-primary-100',
+        5 => 'bg-primary-100',
+        6 => 'bg-primary-100'
+      ];
+    }
     ?>
-    <div class="grid grid-cols-2 lg:grid-cols-3 gap-sp-2 grid-approach-items-js auto-rows-fr">
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-sp-2 grid-approach-items-js auto-rows-fr <?= get_field('grid_bg') ? '[&_*]:!text-white' : ''; ?>">
       <?php while (have_rows('grid')) : the_row(); ?>
         <?php if (get_sub_field('title')) : ?>
           <div class="text-center <?= $bgColors[get_row_index()]; ?> rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center opacity-0">
@@ -33,9 +44,9 @@
           </div>
         <?php endif; ?>
         <?php if (get_sub_field('link')) : ?>
-          <div class="text-center bg-white rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center relative group opacity-0">
+          <div class="text-center <?= get_field('grid_bg') ? '[&_*]:!text-white bg-primary-100' : 'bg-white';?> rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center relative group opacity-0">
             <svg width="27" height="22" viewBox="0 0 27 22" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all mb-sp-2 group-hover:translate-x-[5px] duration-300">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M22.054 9.3431L14.3818 1.67092L16.0527 0L26.6686 10.6159L16.0527 21.2319L14.3818 19.561L22.2366 11.7061L2.08616e-07 11.7061L0 9.34311L22.054 9.3431Z" fill="#161A3D" />
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M22.054 9.3431L14.3818 1.67092L16.0527 0L26.6686 10.6159L16.0527 21.2319L14.3818 19.561L22.2366 11.7061L2.08616e-07 11.7061L0 9.34311L22.054 9.3431Z" fill="<?= get_field('grid_bg') ? '#FFFFFF' : '#161A3D'; ?>" />
             </svg><a href="<?= get_sub_field('link')['url']; ?>" target="<?= get_sub_field('link')['target']; ?>" class="no-underline stretched-link text-h4-base"><?= get_sub_field('link')['title']; ?></a>
           </div>
         <?php endif; ?>
