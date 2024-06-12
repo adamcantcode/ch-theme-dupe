@@ -70,6 +70,23 @@ $blockClasses .= $background . ' ';
     </div>
   </div>
 <?php endif; ?>
+<?php if ($style === 'quote') : ?>
+  <div <?= $blockClasses; ?>">
+    <div class="grid lg:grid-cols-[6fr_1fr_5fr] gap-base5-4 items-center">
+      <div>
+        <h4>In their words</h4>
+        <h2>“<?= $heading; ?>”</h2>
+        <p><?= $subhead; ?></p>
+      </div>
+      <div class="h-full mx-auto">
+        <div class="h-full w-[2px] bg-primary"></div>
+      </div>
+      <div>
+        <InnerBlocks/>
+      </div>
+    </div>
+  </div>
+<?php endif; ?>
 <?php if ($style === 'full') : ?>
   <div class="lg:grid lg:grid-cols-2 justify-between rounded-md lg:p-sp-6 p-sp-4 items-center gap-sp-8 flex flex-col lg:flex-row <?= $blockClasses; ?>">
     <div>

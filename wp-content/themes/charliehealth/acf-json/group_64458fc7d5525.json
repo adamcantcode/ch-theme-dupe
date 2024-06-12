@@ -23,7 +23,8 @@
                 "large": "Large",
                 "newsletter": "Newsletter",
                 "dbt": "DBT Skills Book",
-                "sad": "SAD Survival Guide"
+                "sad": "SAD Survival Guide",
+                "quote": "Quote"
             },
             "default_value": "value",
             "return_format": "value",

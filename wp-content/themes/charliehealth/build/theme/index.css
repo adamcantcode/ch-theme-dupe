@@ -2330,6 +2330,10 @@ a.insurance-tabs.active:hover {
   width: 2rem;
 }
 
+.w-\[2px\]{
+  width: 2px;
+}
+
 .min-w-0{
   min-width: 0px;
 }
@@ -3890,6 +3894,14 @@ a.insurance-tabs.active:hover {
 
 .transition-colors{
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition{
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -6269,6 +6281,10 @@ ul.alert li {
 
   .lg\:grid-cols-\[unset\]{
     grid-template-columns: unset;
+  }
+
+  .lg\:grid-cols-\[6fr_1fr_5fr\]{
+    grid-template-columns: 6fr 1fr 5fr;
   }
 
   .lg\:flex-row{
