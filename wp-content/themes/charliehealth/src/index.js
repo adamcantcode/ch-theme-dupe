@@ -56,6 +56,9 @@ document.addEventListener('DOMContentLoaded', () => {
     ajaxPagination();
     ajaxPaginationResearch();
   }
+  if (body.classList.contains('page-template-page-research')) {
+    featuredBlogSlider();
+  }
   if (body.classList.contains('category')) {
     featuredBlogSlider();
     ajaxPagination();
