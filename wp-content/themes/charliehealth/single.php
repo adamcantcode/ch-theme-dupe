@@ -68,7 +68,7 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
           <p class="mb-0">By: <a href="<?= get_the_permalink($author->ID); ?>"><?= $author->post_title; ?></a></p>
           <?php if (!empty($medicalReviewer)) : ?>
             <p class="mb-0">Clinically Reviewed By: <a href="<?= get_the_permalink($medicalReviewer->ID); ?>"><?= $medicalReviewer->post_title; ?></a></p>
-            <p><a href="https://www.charliehealth.com/clinical-content-advisory-council">Learn more about Clinical Review Process</a></p>
+            <p><a href="https://www.charliehealth.com/clinical-content-advisory-council">Learn more about our Clinical Review Process</a></p>
           <?php endif; ?>
           <div class="flex items-start">
             <p class="font-heading-serif">Share:</p>
