@@ -233,18 +233,18 @@ $subhead = get_field('subhead', 'option');
         </div>
       </div>
     </div>
-    <div class="relative rounded-md container-sm bg-cream noshow">
-      <div class="absolute top-0 right-0 cursor-pointer">
-        <img src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/close-x.svg" alt="close button" class="w-full duration-300 modal-close p-sp-4 hover:brightness-0">
+    <div class="relative rounded-md container-sm bg-cream !max-w-[950px] noshow">
+      <div class="absolute top-0 right-0 z-10 cursor-pointer">
+        <img src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/close-x.svg" alt="close button" class="w-full duration-300 modal-close p-sp-4 hover:brightness-0 invert lg:invert-0">
       </div>
-      <div class="grid lg:grid-cols-[1fr_2fr] items-center">
-        <div class="relative">
-          <img src="https://placehold.co/400x600/EEE/31343C" alt="" class="object-cover w-full h-full lg:rounded-tl-md lg:rounded-tr-none lg:rounded-bl-md rounded-t-md max-h-[20vh] lg:max-h-none">
+      <div class="grid lg:grid-cols-[1fr_2fr] items-center lg:h-[500px]">
+        <div class="relative h-full">
+          <img src="https://www.charliehealth.com/wp-content/uploads/2024/06/young-adult-1.png.webp" alt="A young adult lie awake in bed contemplating virtual therapy at Charlie Health for depression" class="object-cover w-full h-full lg:rounded-tl-md lg:rounded-tr-none lg:rounded-bl-md rounded-t-md max-h-[20vh] lg:max-h-none object-[20%]">
           <img src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/logos/shield.svg" alt="Charlie Health shield logo" class="w-[2rem] absolute lg:bottom-base5-5 lg:left-base5-5 bottom-base5-3 left-base5-3">
         </div>
         <div class="lg:p-base5-10 p-base5-3">
           <div class="flex flex-col justify-center">
-            <p class="text-h2-base font-heading">Get additional mental health support now.<br>No waitlists.</p>
+            <p class="text-h2-base lg:text-[52px] text-[32px] font-heading">Get additional mental health support now.<br>No waitlists.</p>
             <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full ">
               <a href="https://www.charliehealth.com/form" class="ch-button button-primary">Get Started</a>
               <a href="https://www.charliehealth.com/intensive-outpatient-iop" class="ch-button button-secondary">Learn More</a>

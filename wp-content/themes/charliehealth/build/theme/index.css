@@ -1557,8 +1557,8 @@ a.insurance-tabs.active:hover {
   bottom: -100%;
 }
 
-.bottom-base5-5{
-  bottom: 25px;
+.bottom-base5-3{
+  bottom: 15px;
 }
 
 .bottom-sp-4{
@@ -1577,8 +1577,8 @@ a.insurance-tabs.active:hover {
   left: 50%;
 }
 
-.left-base5-5{
-  left: 25px;
+.left-base5-3{
+  left: 15px;
 }
 
 .left-sp-10{
@@ -1643,14 +1643,6 @@ a.insurance-tabs.active:hover {
 
 .top-sp-8{
   top: 2rem;
-}
-
-.bottom-base5-3{
-  bottom: 15px;
-}
-
-.left-base5-3{
-  left: 15px;
 }
 
 .-z-10{
@@ -2205,6 +2197,10 @@ a.insurance-tabs.active:hover {
   max-height: 200px;
 }
 
+.max-h-\[20vh\]{
+  max-height: 20vh;
+}
+
 .max-h-\[300px\]{
   max-height: 300px;
 }
@@ -2231,10 +2227,6 @@ a.insurance-tabs.active:hover {
 
 .max-h-\[80vh\]{
   max-height: 80vh;
-}
-
-.max-h-\[20vh\]{
-  max-height: 20vh;
 }
 
 .min-h-\[100vh\]{
@@ -2287,6 +2279,10 @@ a.insurance-tabs.active:hover {
 
 .w-\[2px\]{
   width: 2px;
+}
+
+.w-\[2rem\]{
+  width: 2rem;
 }
 
 .w-\[3rem\]{
@@ -2351,10 +2347,6 @@ a.insurance-tabs.active:hover {
 }
 
 .w-sp-8{
-  width: 2rem;
-}
-
-.w-\[2rem\]{
   width: 2rem;
 }
 
@@ -2440,6 +2432,14 @@ a.insurance-tabs.active:hover {
 
 .max-w-full{
   max-width: 100%;
+}
+
+.max-w-\[950px\]{
+  max-width: 950px;
+}
+
+.\!max-w-\[950px\]{
+  max-width: 950px !important;
 }
 
 .flex-1{
@@ -2926,11 +2926,6 @@ a.insurance-tabs.active:hover {
   border-top-right-radius: 10px;
 }
 
-.rounded-l-md{
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-}
-
 .border{
   border-width: 1px;
 }
@@ -3025,6 +3020,10 @@ a.insurance-tabs.active:hover {
 
 .bg-\[rgba\(0\2c 0\2c 0\2c \.5\)\]{
   background-color: rgba(0,0,0,.5);
+}
+
+.bg-\[rgba\(0\2c 0\2c 0\2c \.7\)\]{
+  background-color: rgba(0,0,0,.7);
 }
 
 .bg-cream{
@@ -3181,10 +3180,6 @@ a.insurance-tabs.active:hover {
   background-color: rgb(253 191 124 / var(--tw-bg-opacity));
 }
 
-.bg-\[rgba\(0\2c 0\2c 0\2c \.7\)\]{
-  background-color: rgba(0,0,0,.7);
-}
-
 .bg-\[linear-gradient\(\#fead80\2c \#e2deca_50\%\2c \#bdc6fc\)\]{
   background-image: linear-gradient(#fead80,#e2deca 50%,#bdc6fc);
 }
@@ -3235,6 +3230,11 @@ a.insurance-tabs.active:hover {
      object-position: top;
 }
 
+.object-\[20\%\]{
+  -o-object-position: 20%;
+     object-position: 20%;
+}
+
 .p-10{
   padding: 2.5rem;
 }
@@ -3281,10 +3281,6 @@ a.insurance-tabs.active:hover {
 
 .p-sp-8{
   padding: 2rem;
-}
-
-.p-base5-10{
-  padding: 50px;
 }
 
 .px-3{
@@ -5775,8 +5771,16 @@ ul.alert li {
     bottom: -50px;
   }
 
+  .lg\:bottom-base5-5{
+    bottom: 25px;
+  }
+
   .lg\:left-\[60\%\]{
     left: 60%;
+  }
+
+  .lg\:left-base5-5{
+    left: 25px;
   }
 
   .lg\:left-sp-12{
@@ -5801,14 +5805,6 @@ ul.alert li {
 
   .lg\:top-\[32px\]{
     top: 32px;
-  }
-
-  .lg\:bottom-base5-5{
-    bottom: 25px;
-  }
-
-  .lg\:left-base5-5{
-    left: 25px;
   }
 
   .lg\:order-1{
@@ -6252,10 +6248,6 @@ ul.alert li {
     grid-template-columns: 1fr 4fr;
   }
 
-  .lg\:grid-cols-\[1rf_2fr\]{
-    grid-template-columns: 1rf 2fr;
-  }
-
   .lg\:grid-cols-\[2\.33fr_4fr\]{
     grid-template-columns: 2.33fr 4fr;
   }
@@ -6468,16 +6460,16 @@ ul.alert li {
     border-bottom-right-radius: 10px;
   }
 
-  .lg\:rounded-tr-none{
-    border-top-right-radius: 0;
-  }
-
   .lg\:rounded-bl-md{
     border-bottom-left-radius: 10px;
   }
 
   .lg\:rounded-tl-md{
     border-top-left-radius: 10px;
+  }
+
+  .lg\:rounded-tr-none{
+    border-top-right-radius: 0;
   }
 
   .lg\:border-b{
@@ -6505,6 +6497,10 @@ ul.alert li {
     padding: 80px;
   }
 
+  .lg\:p-base5-10{
+    padding: 50px;
+  }
+
   .lg\:p-base5-5{
     padding: 25px;
   }
@@ -6527,10 +6523,6 @@ ul.alert li {
 
   .lg\:p-sp-8{
     padding: 2rem;
-  }
-
-  .lg\:p-base5-10{
-    padding: 50px;
   }
 
   .lg\:px-0{
@@ -6684,12 +6676,21 @@ ul.alert li {
     font-weight: 500;
   }
 
+  .lg\:text-\[52px\]{
+    font-size: 52px;
+  }
+
   .lg\:leading-\[1\.2\]{
     line-height: 1.2;
   }
 
   .lg\:leading-tight{
     line-height: 1.25;
+  }
+
+  .lg\:invert-0{
+    --tw-invert: invert(0);
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
   }
   .lg\:noshow{
     display: none;
