@@ -39,7 +39,7 @@ window.addEventListener('load', () => {
         setTimeout(() => {
           document.querySelector('.swiper-button-next-testimonial').click();
           clearTimeout();
-        }, 1);
+        }, 1000);
       },
       slideChange: function () {
         if (firstVideo) {
