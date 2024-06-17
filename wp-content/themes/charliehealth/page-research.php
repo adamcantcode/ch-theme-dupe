@@ -22,83 +22,85 @@ Template Name: Research Page
 </section>
 <section class="section">
   <div class="container">
-    <h2>Featured</h2>
-    <div>
-      <?php
-      $featured_args = array(
-        'post_type'      => 'research',
-        'meta_key'       => 'main_featured',
-        'meta_value'     => true,
-        'posts_per_page' => 3
-      );
-
-      $featured_query = new WP_Query($featured_args);
-
-      $posts = $featured_query->posts;
-
-      // If there are fewer than 3 featured posts, supplement with the most recent posts
-      if ($featured_query->found_posts < 3) {
-        $remaining_posts_count = 3 - $featured_query->found_posts;
-
-        $recent_args = array(
+    <div class="grid lg:grid-cols-[3fr_9fr] gap-base5-4">
+      <h2 class="min-w-0">Latest mental health research & clinical outcomes</h2>
+      <div class="min-w-0">
+        <?php
+        $featured_args = array(
           'post_type'      => 'research',
-          'posts_per_page' => $remaining_posts_count,
-          'post__not_in'   => wp_list_pluck($posts, 'ID') // Exclude the already fetched posts
+          'meta_key'       => 'main_featured',
+          'meta_value'     => true,
+          'posts_per_page' => 3
         );
 
-        $recent_query = new WP_Query($recent_args);
+        $featured_query = new WP_Query($featured_args);
 
-        $posts = array_merge($posts, $recent_query->posts);
-      }
+        $posts = $featured_query->posts;
 
-      $query = new WP_Query($args);
-      ?>
-      <div class="relative swiper swiper-featured-blog lg:h-[400px]">
-        <div class="swiper-wrapper">
-          <?php if ($posts) : foreach ($posts as $post) : ?>
-              <?php
-              setup_postdata($post);
-              $featureAs = get_field('feature_as');
+        // If there are fewer than 3 featured posts, supplement with the most recent posts
+        if ($featured_query->found_posts < 3) {
+          $remaining_posts_count = 3 - $featured_query->found_posts;
 
-              if (has_post_thumbnail()) {
-                $featuredImageID = get_post_thumbnail_id();
-                $featuredImage = wp_get_attachment_image_src($featuredImageID, 'featured-large');
-                $featuredImageAltText = get_post_meta($featuredImageID, '_wp_attachment_image_alt', true);
+          $recent_args = array(
+            'post_type'      => 'research',
+            'posts_per_page' => $remaining_posts_count,
+            'post__not_in'   => wp_list_pluck($posts, 'ID') // Exclude the already fetched posts
+          );
 
-                $featuredImageUrl = $featuredImage[0];
-                $featuredImageAltText = $featuredImageAltText ?: '';
-              } else {
-                $featuredImageUrl = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
-                $featuredImageAltText = 'Charlie Health Logo';
-              }
-              ?>
-              <div class="swiper-slide">
-                <div class="relative grid overflow-hidden rounded-md lg:grid-cols-2">
-                  <div class="grid content-between order-2 lg:p-sp-8 p-sp-4 lg:order-1 gap-base5-4 bg-lavender-200">
-                    <div>
-                      <a href="<?= get_category_link($featureAs->term_id); ?>" class="relative z-20 inline-block leading-none no-underline transition-all duration-300 bg-white border-2 border-white !text-primary rounded-pill p-sp-3 mb-sp-4 mr-sp-1"><?= $featureAs->name; ?></a>
-                      <h3 class="text-h2-base"><?= get_the_title(); ?></h3>
+          $recent_query = new WP_Query($recent_args);
+
+          $posts = array_merge($posts, $recent_query->posts);
+        }
+
+        $query = new WP_Query($args);
+        ?>
+        <div class="relative swiper swiper-featured-blog lg:h-[400px]">
+          <div class="swiper-wrapper">
+            <?php if ($posts) : foreach ($posts as $post) : ?>
+                <?php
+                setup_postdata($post);
+                $featureAs = get_field('feature_as');
+
+                if (has_post_thumbnail()) {
+                  $featuredImageID = get_post_thumbnail_id();
+                  $featuredImage = wp_get_attachment_image_src($featuredImageID, 'featured-large');
+                  $featuredImageAltText = get_post_meta($featuredImageID, '_wp_attachment_image_alt', true);
+
+                  $featuredImageUrl = $featuredImage[0];
+                  $featuredImageAltText = $featuredImageAltText ?: '';
+                } else {
+                  $featuredImageUrl = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
+                  $featuredImageAltText = 'Charlie Health Logo';
+                }
+                ?>
+                <div class="swiper-slide">
+                  <div class="relative grid overflow-hidden rounded-md lg:grid-cols-2">
+                    <div class="grid content-between order-2 lg:p-sp-8 p-sp-4 lg:order-1 gap-base5-4 bg-lavender-200">
+                      <div>
+                        <a href="<?= get_category_link($featureAs->term_id); ?>" class="relative z-20 inline-block leading-none no-underline transition-all duration-300 bg-white border-2 border-white !text-primary rounded-pill p-sp-3 mb-sp-4 mr-sp-1"><?= $featureAs->name; ?></a>
+                        <h3 class="text-h2-base"><?= get_the_title(); ?></h3>
+                      </div>
+                      <a href="<?= get_the_permalink(); ?>" class="no-underline stretched-link">Read more <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg'); ?>" alt="arrow" class="inline-block h-sp-4 ml-sp-2"></a>
                     </div>
-                    <a href="<?= get_the_permalink(); ?>" class="no-underline stretched-link">Read more <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg'); ?>" alt="arrow" class="inline-block h-sp-4 ml-sp-2"></a>
+                    <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="order-1 object-cover lg:order-2 lg:h-[400px] w-full nolazy">
                   </div>
-                  <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="order-1 object-cover lg:order-2 lg:h-[400px] w-full nolazy">
                 </div>
-              </div>
-          <?php endforeach;
-            wp_reset_postdata();
-          endif; ?>
-        </div>
-        <div class="bottom-0 right-0 z-10 grid items-center grid-cols-3 lg:absolute justify-items-center gap-sp-4 lg:p-sp-8 mt-sp-8">
-          <div class="swiper-button-prev-arrow">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none" class="arrow-slider">
-              <path d="M11.9393 26.0607C11.3536 25.4749 11.3536 24.5251 11.9393 23.9393L21.4853 14.3934C22.0711 13.8076 23.0208 13.8076 23.6066 14.3934C24.1924 14.9792 24.1924 15.9289 23.6066 16.5147L15.1213 25L23.6066 33.4853C24.1924 34.0711 24.1924 35.0208 23.6066 35.6066C23.0208 36.1924 22.0711 36.1924 21.4853 35.6066L11.9393 26.0607ZM37 26.5H13V23.5H37V26.5Z" fill="#fff" class="arrow-slider-arrow" />
-            </svg>
+            <?php endforeach;
+              wp_reset_postdata();
+            endif; ?>
           </div>
-          <div class="!relative swiper-pagination !inset-auto"></div>
-          <div class="swiper-button-next-arrow">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none" class="arrow-slider">
-              <path d="M38.0607 26.0607C38.6464 25.4749 38.6464 24.5251 38.0607 23.9393L28.5147 14.3934C27.9289 13.8076 26.9792 13.8076 26.3934 14.3934C25.8076 14.9792 25.8076 15.9289 26.3934 16.5147L34.8787 25L26.3934 33.4853C25.8076 34.0711 25.8076 35.0208 26.3934 35.6066C26.9792 36.1924 27.9289 36.1924 28.5147 35.6066L38.0607 26.0607ZM13 26.5H37V23.5H13V26.5Z" fill="#fff" class="arrow-slider-arrow" />
-            </svg>
+          <div class="bottom-0 right-0 z-10 grid items-center grid-cols-3 lg:absolute justify-items-center gap-sp-4 lg:p-sp-8 mt-sp-8">
+            <div class="swiper-button-prev-arrow">
+              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none" class="arrow-slider">
+                <path d="M11.9393 26.0607C11.3536 25.4749 11.3536 24.5251 11.9393 23.9393L21.4853 14.3934C22.0711 13.8076 23.0208 13.8076 23.6066 14.3934C24.1924 14.9792 24.1924 15.9289 23.6066 16.5147L15.1213 25L23.6066 33.4853C24.1924 34.0711 24.1924 35.0208 23.6066 35.6066C23.0208 36.1924 22.0711 36.1924 21.4853 35.6066L11.9393 26.0607ZM37 26.5H13V23.5H37V26.5Z" fill="#fff" class="arrow-slider-arrow" />
+              </svg>
+            </div>
+            <div class="!relative swiper-pagination !inset-auto"></div>
+            <div class="swiper-button-next-arrow">
+              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none" class="arrow-slider">
+                <path d="M38.0607 26.0607C38.6464 25.4749 38.6464 24.5251 38.0607 23.9393L28.5147 14.3934C27.9289 13.8076 26.9792 13.8076 26.3934 14.3934C25.8076 14.9792 25.8076 15.9289 26.3934 16.5147L34.8787 25L26.3934 33.4853C25.8076 34.0711 25.8076 35.0208 26.3934 35.6066C26.9792 36.1924 27.9289 36.1924 28.5147 35.6066L38.0607 26.0607ZM13 26.5H37V23.5H13V26.5Z" fill="#fff" class="arrow-slider-arrow" />
+              </svg>
+            </div>
           </div>
         </div>
       </div>
