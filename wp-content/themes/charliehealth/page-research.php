@@ -13,7 +13,7 @@ Template Name: Research Page
       <div>
         <h1>Research</h1>
         <div class="flex items-start gap-sp-4 mb-sp-12 mobile-hero-sub">
-          <img src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg" alt="Charlie Health Shield" class="w-10 noshow lg:block mt-base5-1"/>
+          <img src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg" alt="Charlie Health Shield" class="w-10 noshow lg:block mt-base5-1" />
           <p class="mb-0 text-h4-base font-heading-serif">Innovative research on client outcomes and analysis of emerging mental health trends</p>
         </div>
       </div>
@@ -25,18 +25,39 @@ Template Name: Research Page
     <h2>Featured</h2>
     <div>
       <?php
-      $args = array(
-        'post_type' => 'research',
-        // 'meta_key'      => 'main_featured',
-        // 'meta_value'    => true
+      $featured_args = array(
+        'post_type'      => 'research',
+        'meta_key'       => 'main_featured',
+        'meta_value'     => true,
+        'posts_per_page' => 3
       );
+
+      $featured_query = new WP_Query($featured_args);
+
+      $posts = $featured_query->posts;
+
+      // If there are fewer than 3 featured posts, supplement with the most recent posts
+      if ($featured_query->found_posts < 3) {
+        $remaining_posts_count = 3 - $featured_query->found_posts;
+
+        $recent_args = array(
+          'post_type'      => 'research',
+          'posts_per_page' => $remaining_posts_count,
+          'post__not_in'   => wp_list_pluck($posts, 'ID') // Exclude the already fetched posts
+        );
+
+        $recent_query = new WP_Query($recent_args);
+
+        $posts = array_merge($posts, $recent_query->posts);
+      }
 
       $query = new WP_Query($args);
       ?>
       <div class="relative swiper swiper-featured-blog lg:h-[400px]">
         <div class="swiper-wrapper">
-          <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
+          <?php if ($posts) : foreach ($posts as $post) : ?>
               <?php
+              setup_postdata($post);
               $featureAs = get_field('feature_as');
 
               if (has_post_thumbnail()) {
@@ -63,7 +84,7 @@ Template Name: Research Page
                   <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="order-1 object-cover lg:order-2 lg:h-[400px] w-full nolazy">
                 </div>
               </div>
-          <?php endwhile;
+          <?php endforeach;
             wp_reset_postdata();
           endif; ?>
         </div>
