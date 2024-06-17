@@ -10656,11 +10656,12 @@ window.addEventListener('load', () => {
       // fix for slider end glitch
       reachEnd: function () {
         this.snapGrid = [...this.slidesGrid];
-        setTimeout(() => {
-          document.querySelector('.swiper-button-next-testimonial').click();
-          clearTimeout();
-        }, 1000);
+        // setTimeout(() => {
+        //   document.querySelector('.swiper-button-next-testimonial').click();
+        //   clearTimeout();
+        // }, 10000);
       },
+
       slideChange: function () {
         if (firstVideo) {
           const currentSlide = swiper.slides[swiper.activeIndex].querySelector('.careers-video-js');
