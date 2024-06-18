@@ -1114,7 +1114,7 @@ function careersTracking() {
   const ghMap = {
     linkedinProfile: '9a77be284us',
     linkedinOrganic: 'a0a8b3ae4us',
-    linkedinPaid: '9a77be284us',
+    linkedinPaid: 'bf069a914us',
     instagramOrganic: '35ddfa714us',
     facebookOrganic: '052412f84us',
     metaPaid: '98215cc84us',
@@ -1141,7 +1141,7 @@ function careersTracking() {
     } else if (utmSource === 'linkedin' && utmMedium === 'organic') {
       updateUrls(ghMap.linkedinOrganic);
     } else if (utmSource === 'linkedin' && utmMedium === 'paidsocial' && utmCampaign === 'conversationcompany') {
-      updateUrls(ghMap.linkedinOrganic);
+      updateUrls(ghMap.linkedinPaid);
     } else if (utmSource === 'instagram' && utmMedium === 'organic') {
       updateUrls(ghMap.instagramOrganic);
     } else if (utmSource === 'facebook' && utmMedium === 'organic') {
