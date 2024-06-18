@@ -57,11 +57,7 @@ export default function careersTracking() {
       updateUrls(ghMap.linkedinProfile);
     } else if (utmSource === 'linkedin' && utmMedium === 'organic') {
       updateUrls(ghMap.linkedinOrganic);
-    } else if (
-      utmSource === 'linkedin' &&
-      utmMedium === 'paidsocial' &&
-      utmCampaign === 'conversationcompany'
-    ) {
+    } else if (utmSource === 'linkedin' && utmMedium === 'paidsocial') {
       updateUrls(ghMap.linkedinPaid);
     } else if (utmSource === 'instagram' && utmMedium === 'organic') {
       updateUrls(ghMap.instagramOrganic);
