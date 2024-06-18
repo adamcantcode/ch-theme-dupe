@@ -1,10 +1,10 @@
 export default function careersTracking() {
   // Update urls function
   function updateUrls(ghCode) {
-    if(!location.href.includes('gh_src')) {
+    if (!location.href.includes('gh_src')) {
       // Get links
       const anchors = document.querySelectorAll('a');
-  
+
       anchors.forEach((anchor) => {
         // if link is openings
         if (anchor.href.endsWith('openings')) {
@@ -26,6 +26,7 @@ export default function careersTracking() {
   const ghMap = {
     linkedinProfile: '9a77be284us',
     linkedinOrganic: 'a0a8b3ae4us',
+    linkedinPaid: '9a77be284us',
     instagramOrganic: '35ddfa714us',
     facebookOrganic: '052412f84us',
     metaPaid: '98215cc84us',
@@ -48,19 +49,27 @@ export default function careersTracking() {
     if (utmCampaign) {
       utmCampaign = utmCampaign.toLowerCase();
     }
-    if (utmSource === 'linkedin' && utmMedium === 'organic' && utmCampaign === 'cta-button') {
+    if (
+      utmSource === 'linkedin' &&
+      utmMedium === 'organic' &&
+      utmCampaign === 'cta-button'
+    ) {
       updateUrls(ghMap.linkedinProfile);
     } else if (utmSource === 'linkedin' && utmMedium === 'organic') {
       updateUrls(ghMap.linkedinOrganic);
+    } else if (
+      utmSource === 'linkedin' &&
+      utmMedium === 'paidsocial' &&
+      utmCampaign === 'conversationcompany'
+    ) {
+      updateUrls(ghMap.linkedinPaid);
     } else if (utmSource === 'instagram' && utmMedium === 'organic') {
       updateUrls(ghMap.instagramOrganic);
     } else if (utmSource === 'facebook' && utmMedium === 'organic') {
       updateUrls(ghMap.facebookOrganic);
-    }
-    if (utmSource === 'meta' && utmMedium === 'paidsocial') {
+    } else if (utmSource === 'meta' && utmMedium === 'paidsocial') {
       updateUrls(ghMap.metaPaid);
-    }
-    if (utmMedium === 'email') {
+    } else if (utmMedium === 'email') {
       updateUrls(ghMap.email);
     }
   }, 500);
