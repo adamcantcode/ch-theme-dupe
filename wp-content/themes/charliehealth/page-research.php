@@ -52,14 +52,17 @@ Template Name: Research Page
           $posts = array_merge($posts, $recent_query->posts);
         }
 
-        $query = new WP_Query($args);
+        // $query = new WP_Query($args);
         ?>
         <div class="relative swiper swiper-featured-blog lg:h-[400px]">
           <div class="swiper-wrapper">
             <?php if ($posts) : foreach ($posts as $post) : ?>
                 <?php
                 setup_postdata($post);
-                $featureAs = get_field('feature_as');
+                $tags = get_the_terms($post, 'research-tag');
+                $tagName = $tags[0]->name;
+                $tagLink = get_term_link($tags[0]->slug, 'research-tag');
+                var_dump($tags);
 
                 if (has_post_thumbnail()) {
                   $featuredImageID = get_post_thumbnail_id();
@@ -77,7 +80,7 @@ Template Name: Research Page
                   <div class="relative grid overflow-hidden rounded-md lg:grid-cols-2">
                     <div class="grid content-between order-2 lg:p-sp-8 p-sp-4 lg:order-1 gap-base5-4 bg-lavender-200">
                       <div>
-                        <a href="<?= get_category_link($featureAs->term_id); ?>" class="relative z-20 inline-block leading-none no-underline transition-all duration-300 bg-white border-2 border-white !text-primary rounded-pill p-sp-3 mb-sp-4 mr-sp-1"><?= $featureAs->name; ?></a>
+                        <a href="<?= $t ?>" class="relative z-20 inline-block leading-none no-underline transition-all duration-300 bg-white border-2 border-white !text-primary rounded-pill p-sp-3 mb-sp-4 mr-sp-1"><?= $tagName; ?></a>
                         <h3 class="text-h2-base"><?= get_the_title(); ?></h3>
                       </div>
                       <a href="<?= get_the_permalink(); ?>" class="no-underline stretched-link">Read more <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg'); ?>" alt="arrow" class="inline-block h-sp-4 ml-sp-2"></a>
@@ -134,10 +137,10 @@ Template Name: Research Page
                   <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
                 </div>
                 <div class="absolute rounded-t-lg top-sp-4 left-sp-4">
-                  <?php $tags = get_the_terms(get_the_ID(), 'post_tag');  ?>
+                  <?php $tags = get_the_terms(get_the_ID(), 'research-tag');  ?>
                   <?php if ($tags) :  ?>
                     <?php foreach ($tags as $tag) : ?>
-                      <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-primary bg-white group-hover:bg-white-hover border border-white z-[6] text-h5-base"><?= $tag->name; ?></a>
+                      <a href="<?= get_term_link($tag->slug, 'research-tag'); ?>" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-primary bg-white group-hover:bg-white-hover border border-white z-[6] text-h5-base"><?= $tag->name; ?></a>
                     <?php endforeach; ?>
                   <?php endif; ?>
                 </div>
@@ -159,7 +162,7 @@ Template Name: Research Page
     <h2>Tag Spotlight</h2>
     <div class="grid items-center overflow-auto gap-sp-3 lg:gap-sp-6 lg:flex lg:items-stretch custom-scroll">
       <?php
-      $tags = get_tags();
+      $tags = get_tags('research-tag');
       if ($tags) :  ?>
         <?php foreach ($tags as $tag) :
           $spotlight = get_field('spotlight_tag', $tag);
@@ -225,10 +228,10 @@ Template Name: Research Page
               <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
             </div>
             <div class="absolute rounded-t-lg top-sp-4 left-sp-4">
-              <?php $tags = get_the_terms(get_the_ID(), 'post_tag');  ?>
+              <?php $tags = get_the_terms(get_the_ID(), 'research-tag');  ?>
               <?php if ($tags) :  ?>
                 <?php foreach ($tags as $tag) : ?>
-                  <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-primary bg-white group-hover:bg-white-hover border border-white z-[6] text-h5-base"><?= $tag->name; ?></a>
+                  <a href="<?= get_term_link($tag->slug, 'research-tag'); ?>" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-primary bg-white group-hover:bg-white-hover border border-white z-[6] text-h5-base"><?= $tag->name; ?></a>
                 <?php endforeach; ?>
               <?php endif; ?>
             </div>
