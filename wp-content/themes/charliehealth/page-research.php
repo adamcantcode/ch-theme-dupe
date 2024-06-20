@@ -59,10 +59,11 @@ Template Name: Research Page
             <?php if ($posts) : foreach ($posts as $post) : ?>
                 <?php
                 setup_postdata($post);
-                $tags = get_the_terms($post, 'research-tag');
-                $tagName = $tags[0]->name;
-                $tagLink = get_term_link($tags[0]->slug, 'research-tag');
-                var_dump($tags);
+                $tags = get_the_terms($post->id, 'research-tag');
+                if($tags) {
+                  $tagName = $tags[0]->name;
+                  $tagLink = get_term_link($tags[0]->term_id, 'research-tag');
+                }
 
                 if (has_post_thumbnail()) {
                   $featuredImageID = get_post_thumbnail_id();
@@ -80,7 +81,9 @@ Template Name: Research Page
                   <div class="relative grid overflow-hidden rounded-md lg:grid-cols-2">
                     <div class="grid content-between order-2 lg:p-sp-8 p-sp-4 lg:order-1 gap-base5-4 bg-lavender-200">
                       <div>
-                        <a href="<?= $t ?>" class="relative z-20 inline-block leading-none no-underline transition-all duration-300 bg-white border-2 border-white !text-primary rounded-pill p-sp-3 mb-sp-4 mr-sp-1"><?= $tagName; ?></a>
+                        <?php if ($tagLink) : ?>
+                          <a href="<?= $tagLink; ?>" class="relative z-20 inline-block leading-none no-underline transition-all duration-300 bg-white border-2 border-white !text-primary rounded-pill p-sp-3 mb-sp-4 mr-sp-1"><?= $tagName; ?></a>
+                        <?php endif; ?>
                         <h3 class="text-h2-base"><?= get_the_title(); ?></h3>
                       </div>
                       <a href="<?= get_the_permalink(); ?>" class="no-underline stretched-link">Read more <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg'); ?>" alt="arrow" class="inline-block h-sp-4 ml-sp-2"></a>
