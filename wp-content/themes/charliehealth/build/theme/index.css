@@ -2450,12 +2450,24 @@ a.insurance-tabs.active:hover {
   flex: none;
 }
 
+.flex-initial{
+  flex: 0 1 auto;
+}
+
+.flex-shrink-0{
+  flex-shrink: 0;
+}
+
 .flex-grow{
   flex-grow: 1;
 }
 
 .basis-\[100\%\]{
   flex-basis: 100%;
+}
+
+.basis-auto{
+  flex-basis: auto;
 }
 
 .origin-center{
@@ -2574,6 +2586,10 @@ a.insurance-tabs.active:hover {
 
 .cursor-pointer{
   cursor: pointer;
+}
+
+.resize{
+  resize: both;
 }
 
 .grid-flow-col{
@@ -2738,6 +2754,10 @@ a.insurance-tabs.active:hover {
 
 .gap-sp-8{
   gap: 2rem;
+}
+
+.gap-base5-10{
+  gap: 50px;
 }
 
 .gap-x-4{
@@ -3855,6 +3875,10 @@ a.insurance-tabs.active:hover {
 
 .opacity-\[\.75\]{
   opacity: .75;
+}
+
+.opacity-50{
+  opacity: 0.5;
 }
 
 .shadow-\[3px_3px_0px_0px_rgba\(255\2c 255\2c 255\2c 1\)\]{
@@ -6313,6 +6337,14 @@ ul.alert li {
 
   .lg\:grid-cols-\[unset\]{
     grid-template-columns: unset;
+  }
+
+  .lg\:grid-cols-\[4_fr_2fr_4fr\]{
+    grid-template-columns: 4 fr 2fr 4fr;
+  }
+
+  .lg\:grid-cols-\[4fr_2fr_4fr\]{
+    grid-template-columns: 4fr 2fr 4fr;
   }
 
   .lg\:flex-row{
