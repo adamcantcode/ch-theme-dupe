@@ -3221,11 +3221,6 @@ a.insurance-tabs.active:hover {
      object-fit: cover;
 }
 
-.object-\[20\%\]{
-  -o-object-position: 20%;
-     object-position: 20%;
-}
-
 .object-top{
   -o-object-position: top;
      object-position: top;
@@ -6620,10 +6615,6 @@ ul.alert li {
 
   .lg\:text-\[40px\]{
     font-size: 40px;
-  }
-
-  .lg\:text-\[52px\]{
-    font-size: 52px;
   }
 
   .lg\:text-\[56px\]{
