@@ -180,5 +180,72 @@
     });
   </script>
 </section>
+<section class="bg-primary-200 section [&_*]:text-white">
+  <div class="container">
+    <div class="acf-innerblocks-container">
+      <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-2 wp-block-columns-is-layout-flex">
+        <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:42%">
+          <h2>Who is IOP for?</h2>
+        </div>
+        <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:56%">
+          <h3>Young people experiencing a mental health crisis: </h3>
+          <p>It is designed for individuals who need more treatment and support than can be provided through traditional outpatient services, but who do not require the level of care provided through residential or inpatient treatment.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section ">
+  <div class="container">
+    <div class="acf-innerblocks-container">
+      <div class="grid lg:grid-cols-[3fr_1fr_8fr] gap-x-sp-5">
+        <div>
+          <div class="mb-base5-5">
+            <h2>The core mental health conditions we treat in [LOCATION]</h2>
+          </div>
+        </div>
+        <div></div>
+        <div>
+          <div class="overflow-hidden transition-all duration-500 ease-in-out view-all-js" style="max-height: 523px;">
+            <div class="relative first:border-t-2 first:border-primary first:pt-sp-6">
+              <a href="https://www.charliehealth.com/areas-of-care/anxiety" class="stretched-link no-underline pb-sp-6 border-b-2 border-primary grid lg:grid-cols-[3fr_3.5fr] mb-sp-6 gap-x-sp-5 items-center list-item-height-js group" data-uw-rm-brl="PR" data-uw-original-href="https://www.charliehealth.com/areas-of-care/anxiety">
+                <div class="flex items-center mb-sp-2 lg:mb-0">
+                  <h3 class="inline-block text-h4-base">Anxiety disorders<svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="group-hover:translate-x-[5px] transition-all duration-300 ml-sp-4 inline-block align-baseline flex-none">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3431 0.278417L16.7071 6.32784C17.0976 6.69906 17.0976 7.30094 16.7071 7.67216L10.3431 13.7216C9.95262 14.0928 9.31946 14.0928 8.92893 13.7216C8.53841 13.3504 8.53841 12.7485 8.92893 12.3773L13.5858 7.95058H0V6.04942H13.5858L8.92893 1.62273C8.53841 1.25151 8.53841 0.64964 8.92893 0.278417C9.31946 -0.0928058 9.95262 -0.0928058 10.3431 0.278417Z" fill="#161A3D"></path>
+                    </svg>
+                  </h3>
+                </div>
+                <p>Generalized anxiety, social anxiety, panic attacks, panic disorder, agoraphobia</p>
+              </a>
+            </div>
+            <div class="relative first:border-t-2 first:border-primary first:pt-sp-6">
+              <a href="https://www.charliehealth.com/areas-of-care/depression" class="stretched-link no-underline pb-sp-6 border-b-2 border-primary grid lg:grid-cols-[3fr_3.5fr] mb-sp-6 gap-x-sp-5 items-center list-item-height-js group" data-uw-rm-brl="PR" data-uw-original-href="https://www.charliehealth.com/areas-of-care/depression">
+                <div class="flex items-center mb-sp-2 lg:mb-0">
+                  <h3 class="inline-block text-h4-base">Depression<svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="group-hover:translate-x-[5px] transition-all duration-300 ml-sp-4 inline-block align-baseline flex-none">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3431 0.278417L16.7071 6.32784C17.0976 6.69906 17.0976 7.30094 16.7071 7.67216L10.3431 13.7216C9.95262 14.0928 9.31946 14.0928 8.92893 13.7216C8.53841 13.3504 8.53841 12.7485 8.92893 12.3773L13.5858 7.95058H0V6.04942H13.5858L8.92893 1.62273C8.53841 1.25151 8.53841 0.64964 8.92893 0.278417C9.31946 -0.0928058 9.95262 -0.0928058 10.3431 0.278417Z" fill="#161A3D"></path>
+                    </svg>
+                  </h3>
+                </div>
+                <p>Major depression, melancholic depression, atypical depression, seasonal affective disorder, persistent depressive disorder</p>
+              </a>
+            </div>
+            <div class="relative first:border-t-2 first:border-primary first:pt-sp-6">
+              <a href="https://www.charliehealth.com/areas-of-care/trauma" class="stretched-link no-underline pb-sp-6 border-b-2 border-primary grid lg:grid-cols-[3fr_3.5fr] mb-sp-6 gap-x-sp-5 items-center list-item-height-js group" data-uw-rm-brl="PR" data-uw-original-href="https://www.charliehealth.com/areas-of-care/trauma">
+                <div class="flex items-center mb-sp-2 lg:mb-0">
+                  <h3 class="inline-block text-h4-base">Trauma<svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="group-hover:translate-x-[5px] transition-all duration-300 ml-sp-4 inline-block align-baseline flex-none">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3431 0.278417L16.7071 6.32784C17.0976 6.69906 17.0976 7.30094 16.7071 7.67216L10.3431 13.7216C9.95262 14.0928 9.31946 14.0928 8.92893 13.7216C8.53841 13.3504 8.53841 12.7485 8.92893 12.3773L13.5858 7.95058H0V6.04942H13.5858L8.92893 1.62273C8.53841 1.25151 8.53841 0.64964 8.92893 0.278417C9.31946 -0.0928058 9.95262 -0.0928058 10.3431 0.278417Z" fill="#161A3D"></path>
+                    </svg>
+                  </h3>
+                </div>
+                <p>Acute trauma, chronic trauma, complex trauma, post-traumatic stress disorder</p>
+              </a>
+            </div>
+          </div>
+          <a href="/areas-of-care" class="float-right ch-button button-secondary view-all-button-js mt-sp-8 w-full lg:w-[unset]">View All</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <?php get_footer(); ?>
