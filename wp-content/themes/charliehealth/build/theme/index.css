@@ -2656,6 +2656,10 @@ a.insurance-tabs.active:hover {
   align-items: flex-start;
 }
 
+.\!items-start{
+  align-items: flex-start !important;
+}
+
 .items-end{
   align-items: flex-end;
 }

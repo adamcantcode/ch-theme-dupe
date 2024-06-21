@@ -183,7 +183,7 @@
 <section class="bg-primary-200 section [&_*]:text-white">
   <div class="container">
     <div class="acf-innerblocks-container">
-      <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-2 wp-block-columns-is-layout-flex">
+      <div class="!items-start wp-block-columns is-layout-flex wp-container-core-columns-is-layout-2 wp-block-columns-is-layout-flex">
         <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:42%">
           <h2>Who is IOP for?</h2>
         </div>
@@ -242,6 +242,42 @@
             </div>
           </div>
           <a href="/areas-of-care" class="float-right ch-button button-secondary view-all-button-js mt-sp-8 w-full lg:w-[unset]">View All</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="bg-off-white section ">
+  <div class="container">
+    <div class="acf-innerblocks-container">
+      <div class="!items-start wp-block-columns is-layout-flex wp-container-core-columns-is-layout-4 wp-block-columns-is-layout-flex">
+        <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:33%">
+          <h2 class="wp-block-heading" id="h-life-saving-mental-health-treatment-when-you-need-it-most">Life-saving mental health treatment when you need it most</h2>
+          <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full ">
+            <a href="https://www.charliehealth.com/intensive-outpatient-iop" class="ch-button button-secondary" target="_self" data-uw-rm-brl="PR" data-uw-original-href="https://www.charliehealth.com/intensive-outpatient-iop">Learn More About IOP</a>
+          </div>
+        </div>
+        <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"></div>
+        <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:58%">
+          <p class="text-h4-base">Young people in crisis are struggling to find the mental health treatment they need. At Charlie Health, we’re creating serious, effective, and accessible solutions.</p>
+          <p class="text-h4-base">Our treatment programs, including our virtual Intensive Outpatient Program (IOP), combine personalized care with peer connection to foster long-term healing.</p>
+          <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-sp-6 gap-sp-3 lg:mt-sp-8 mt-sp-12 [&amp;_*]:!text-primary">
+            <div class="bg-pale-blue-200 rounded-[6px] p-sp-5 flex flex-col feature-card opacity-0" style="opacity: 1; visibility: inherit;">
+              <img decoding="async" src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/person-blue.svg" alt="icon" class="mb-sp-6 lg:mb-sp-12 max-w-[40px] max-h-[40px]" data-uw-rm-alt-original="icon" role="img" data-uw-rm-alt="ALT">
+              <h3>Immediate Access</h3>
+              <p>Get started with Charlie Health in as little as 24 hours</p>
+            </div>
+            <div class="bg-lavender-300 rounded-[6px] p-sp-5 flex flex-col feature-card opacity-0" style="opacity: 1; visibility: inherit;">
+              <img decoding="async" src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/person-blue.svg" alt="icon" class="mb-sp-6 lg:mb-sp-12 max-w-[40px] max-h-[40px]" data-uw-rm-alt-original="icon" role="img" data-uw-rm-alt="ALT">
+              <h3>Flexible Scheduling</h3>
+              <p>Morning, afternoon, and evening options on Mon-Sat</p>
+            </div>
+            <div class="bg-yellow-300 rounded-[6px] p-sp-5 flex flex-col feature-card opacity-0" style="opacity: 1; visibility: inherit;">
+              <img decoding="async" src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/person-blue.svg" alt="icon" class="mb-sp-6 lg:mb-sp-12 max-w-[40px] max-h-[40px]" data-uw-rm-alt-original="icon" role="img" data-uw-rm-alt="ALT">
+              <h3>Exceptional Outcomes</h3>
+              <p>Measured care to optimize the treatment experience</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
