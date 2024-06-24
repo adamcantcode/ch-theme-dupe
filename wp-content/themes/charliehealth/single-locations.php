@@ -191,7 +191,7 @@ $conditions = get_field('conditions');
 <section class="bg-primary-200 section [&_*]:text-white">
   <div class="container">
     <div class="acf-innerblocks-container">
-      <div class="!items-start wp-block-columns is-layout-flex wp-container-core-columns-is-layout-2 wp-block-columns-is-layout-flex">
+      <div class="!items-start wp-block-columns is-layout-flex wp-container-core-columns-is-layout-2 wp-block-columns-is-layout-flex flex-col lg:flex-row">
         <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:42%">
           <h2>Who is IOP for?</h2>
         </div>
@@ -237,10 +237,10 @@ $conditions = get_field('conditions');
     </div>
   </div>
 </section>
-<section class="bg-off-white section ">
+<section class="bg-off-white section">
   <div class="container">
     <div class="acf-innerblocks-container">
-      <div class="!items-start wp-block-columns is-layout-flex wp-container-core-columns-is-layout-4 wp-block-columns-is-layout-flex">
+      <div class="!items-start wp-block-columns is-layout-flex wp-container-core-columns-is-layout-4 wp-block-columns-is-layout-flex flex-col lg:flex-row">
         <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:33%">
           <h2 class="wp-block-heading" id="h-life-saving-mental-health-treatment-when-you-need-it-most">Life-saving mental health treatment when you need it most</h2>
           <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full ">
@@ -253,17 +253,17 @@ $conditions = get_field('conditions');
           <p class="text-h4-base">Our treatment programs, including our virtual Intensive Outpatient Program (IOP), combine personalized care with peer connection to foster long-term healing.</p>
           <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-sp-6 gap-sp-3 lg:mt-sp-8 mt-sp-12 [&amp;_*]:!text-primary">
             <div class="bg-pale-blue-200 rounded-[6px] p-sp-5 flex flex-col feature-card opacity-0" style="opacity: 1; visibility: inherit;">
-              <img decoding="async" src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/person-blue.svg" alt="icon" class="mb-sp-6 lg:mb-sp-12 max-w-[40px] max-h-[40px]" data-uw-rm-alt-original="icon" role="img" data-uw-rm-alt="ALT">
+              <img decoding="async" src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/warning.svg" alt="charlie health therapy alert icon" class="mb-sp-6 lg:mb-sp-12 max-w-[40px] max-h-[40px]">
               <h3>Immediate Access</h3>
               <p>Get started with Charlie Health in as little as 24 hours</p>
             </div>
             <div class="bg-lavender-300 rounded-[6px] p-sp-5 flex flex-col feature-card opacity-0" style="opacity: 1; visibility: inherit;">
-              <img decoding="async" src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/person-blue.svg" alt="icon" class="mb-sp-6 lg:mb-sp-12 max-w-[40px] max-h-[40px]" data-uw-rm-alt-original="icon" role="img" data-uw-rm-alt="ALT">
+              <img decoding="async" src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/clipboard-blue.svg" alt="charlie health iop stats icon" class="mb-sp-6 lg:mb-sp-12 max-w-[40px] max-h-[40px]">
               <h3>Flexible Scheduling</h3>
               <p>Morning, afternoon, and evening options on Mon-Sat</p>
             </div>
             <div class="bg-yellow-300 rounded-[6px] p-sp-5 flex flex-col feature-card opacity-0" style="opacity: 1; visibility: inherit;">
-              <img decoding="async" src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/person-blue.svg" alt="icon" class="mb-sp-6 lg:mb-sp-12 max-w-[40px] max-h-[40px]" data-uw-rm-alt-original="icon" role="img" data-uw-rm-alt="ALT">
+              <img decoding="async" src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/rainbow.svg" alt="charlie health virtual therapy rainbow icon" class="mb-sp-6 lg:mb-sp-12 max-w-[40px] max-h-[40px]">
               <h3>Exceptional Outcomes</h3>
               <p>Measured care to optimize the treatment experience</p>
             </div>
@@ -307,43 +307,51 @@ $conditions = get_field('conditions');
         </div>
         <div class="relative">
           <div class="relative grid items-start grid-cols-1 lg:grid-cols-3 gap-sp-8">
-            <div class="w-full rounded-[1rem] lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col">
-              <p class="text-h3-base font-heading-serif">“The definition of the light at the end of the tunnel.”</p>
-              <p class="text-p-base noshow lg:block">When it came to mental health, Charlie Health was the right answer. It’s not easy finding the right providers for mental health, especially for all our needs, but Charlie Health is the definition of the light at the end of the tunnel. It’s going to get better with Charlie Health. </p>
-              <div class="relative overflow-hidden transition-all duration-1000 max-h-0 collapsible-content-wrapper lg:noshow" style="padding-bottom: 20px;">
-                <p class="text-p-base">When it came to mental health, Charlie Health was the right answer. It’s not easy finding the right providers for mental health, especially for all our needs, but Charlie Health is the definition of the light at the end of the tunnel. It’s going to get better with Charlie Health. </p>
-                <div class="absolute bottom-0 flex justify-center w-full bg-white">
-                  <a role="button" class="z-10 normal-case ch-button button-secondary toggle-button-testimonial mb-base5-4" data-uw-rm-kbnav="role" tabindex="0">View full quote</a>
+            <?php
+            $args = array(
+              'numberposts' => 3,
+              'posts_per_page' => 3,
+              'post_type' => 'testimonial',
+              'orderby' => 'rand',
+            );
+            $query = new WP_Query($args);
+            ?>
+            <?php if ($query->have_posts()) : ?>
+              <?php while ($query->have_posts()) : $query->the_post(); ?>
+                <?php
+                $anonymous = get_field('anonymous', get_the_ID());
+                if ($anonymous === false) {
+                  $attribution = get_field('attribution', get_the_ID()) ?: abbreviateAfterFirstWord(get_the_title(get_the_ID()));
+                } else {
+                  $attribution = 'Charlie Health Alum';
+                }
+                $pullQuote = get_field('pull-quote', get_the_ID());
+                $fullQuote = get_field('full_quote', get_the_ID());
+                $title     = get_field('title', get_the_ID());
+                $location  = get_field('location', get_the_ID());
+
+                ?>
+                <div class="w-full rounded-[1rem] lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col">
+                  <?php if ($pullQuote) : ?>
+                    <h3 class="text-h3-base font-heading-serif">“<?= $pullQuote; ?>.”</h3>
+                  <?php endif; ?>
+                  <p class="text-p-base noshow lg:block"><?= $fullQuote; ?></p>
+                  <p class="mb-0 text-p-base">—<?= $attribution; ?></p>
+                  <?php if ($title) : ?>
+                    <p class="mb-0 text-p-base"><?= $title; ?></p>
+                  <?php endif; ?>
+                  <?php if ($location) : ?>
+                    <p class="mb-0 text-p-base"><?= $location; ?></p>
+                  <?php endif; ?>
                 </div>
-              </div>
-              <p class="mb-0 text-p-base">—Ace A.</p>
-            </div>
-            <div class="w-full rounded-[1rem] lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col">
-              <p class="text-h3-base font-heading-serif">“Charlie Health gave me a different perspective on my mental health.”</p>
-              <p class="text-p-base noshow lg:block">I learned about Charlie Health after going to the emergency room when I was feeling suicidal. The social worker there told me about the program, and it sounded like the best option because I figured something intensive would be good for me. My individual therapist at Charlie Health gave me a different perspective on my mental health and pointed out some coping skills that I already had. I also really liked the group aspect. Having other people around was very helpful. I learned a lot from their contributions.</p>
-              <div class="relative overflow-hidden transition-all duration-1000 max-h-0 collapsible-content-wrapper lg:noshow" style="padding-bottom: 20px;">
-                <p class="text-p-base">I learned about Charlie Health after going to the emergency room when I was feeling suicidal. The social worker there told me about the program, and it sounded like the best option because I figured something intensive would be good for me. My individual therapist at Charlie Health gave me a different perspective on my mental health and pointed out some coping skills that I already had. I also really liked the group aspect. Having other people around was very helpful. I learned a lot from their contributions.</p>
-                <div class="absolute bottom-0 flex justify-center w-full bg-white">
-                  <a role="button" class="z-10 normal-case ch-button button-secondary toggle-button-testimonial mb-base5-4" data-uw-rm-kbnav="role" tabindex="0">View full quote</a>
-                </div>
-              </div>
-              <p class="mb-0 text-p-base">—Charlie Health Alum</p>
-            </div>
-            <div class="w-full rounded-[1rem] lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col">
-              <p class="text-h3-base font-heading-serif">“I finally met people I could connect with .”</p>
-              <p class="text-p-base noshow lg:block">I never wanted treatment because I didn’t want to get better. But after signing up for Charlie Health and engaging in group, I finally met people I could connect with. Opening up and sharing was hard, but once I gained a connection with them, I was staying for them. Charlie Health is an amazing support system that help me get through some of the hardest parts of my life.</p>
-              <div class="relative overflow-hidden transition-all duration-1000 max-h-0 collapsible-content-wrapper lg:noshow" style="padding-bottom: 20px;">
-                <p class="text-p-base">I never wanted treatment because I didn’t want to get better. But after signing up for Charlie Health and engaging in group, I finally met people I could connect with. Opening up and sharing was hard, but once I gained a connection with them, I was staying for them. Charlie Health is an amazing support system that help me get through some of the hardest parts of my life.</p>
-                <div class="absolute bottom-0 flex justify-center w-full bg-white">
-                  <a role="button" class="z-10 normal-case ch-button button-secondary toggle-button-testimonial mb-base5-4" data-uw-rm-kbnav="role" tabindex="0">View full quote</a>
-                </div>
-              </div>
-              <p class="mb-0 text-p-base">—Charlie Health Alum</p>
-            </div>
+              <?php endwhile; ?>
+            <?php endif; ?>
+            <?php wp_reset_postdata(); ?>
           </div>
         </div>
       </div>
     </div>
+  </div>
   </div>
   <div class="section-xs section-bg-js-cta">
     <div class="container">
