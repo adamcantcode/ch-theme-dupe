@@ -5,6 +5,7 @@ $location = get_the_title();
 $heading = get_field('page_heading');
 $negativeStat = get_field('negative_stat_heading');
 $outcomesStat = get_field('outcomes_stat');
+$conditions = get_field('conditions');
 ?>
 
 <section class="section">
@@ -35,7 +36,7 @@ $outcomesStat = get_field('outcomes_stat');
           <path d="M31.6254 15.7893L29.4569 13.6208L17.5917 25.4861L12.4361 20.3305L10.2677 22.499L17.5944 29.8257L19.7628 27.6572L19.7601 27.6545L31.6254 15.7893Z" fill="#161A3D" />
           <path fill-rule="evenodd" clip-rule="evenodd" d="M41.6484 20.9141C41.6484 32.2704 32.4423 41.4766 21.0859 41.4766C9.72958 41.4766 0.523438 32.2704 0.523438 20.9141C0.523438 9.55771 9.72958 0.351562 21.0859 0.351562C32.4423 0.351562 41.6484 9.55771 41.6484 20.9141ZM38.7109 20.9141C38.7109 30.6481 30.82 38.5391 21.0859 38.5391C11.3519 38.5391 3.46094 30.6481 3.46094 20.9141C3.46094 11.18 11.3519 3.28906 21.0859 3.28906C30.82 3.28906 38.7109 11.18 38.7109 20.9141Z" fill="#161A3D" />
         </svg>
-        <h2 class="text-h3-base">outcomesStat</h2>
+        <h2 class="text-h3-base"><?= $outcomesStat; ?></h2>
       </div>
     </div>
     <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
@@ -208,45 +209,27 @@ $outcomesStat = get_field('outcomes_stat');
       <div class="grid lg:grid-cols-[3fr_1fr_8fr] gap-x-sp-5">
         <div>
           <div class="mb-base5-5">
-            <h2>The core mental health conditions we treat in [LOCATION]</h2>
+            <h2>The core mental health conditions we treat in <?= $location; ?></h2>
           </div>
         </div>
         <div></div>
         <div>
           <div class="overflow-hidden transition-all duration-500 ease-in-out view-all-js" style="max-height: 523px;">
-            <div class="relative first:border-t-2 first:border-primary first:pt-sp-6">
-              <a href="https://www.charliehealth.com/areas-of-care/anxiety" class="stretched-link no-underline pb-sp-6 border-b-2 border-primary grid lg:grid-cols-[3fr_3.5fr] mb-sp-6 gap-x-sp-5 items-center list-item-height-js group" data-uw-rm-brl="PR" data-uw-original-href="https://www.charliehealth.com/areas-of-care/anxiety">
-                <div class="flex items-center mb-sp-2 lg:mb-0">
-                  <h3 class="inline-block text-h4-base">Anxiety disorders<svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="group-hover:translate-x-[5px] transition-all duration-300 ml-sp-4 inline-block align-baseline flex-none">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3431 0.278417L16.7071 6.32784C17.0976 6.69906 17.0976 7.30094 16.7071 7.67216L10.3431 13.7216C9.95262 14.0928 9.31946 14.0928 8.92893 13.7216C8.53841 13.3504 8.53841 12.7485 8.92893 12.3773L13.5858 7.95058H0V6.04942H13.5858L8.92893 1.62273C8.53841 1.25151 8.53841 0.64964 8.92893 0.278417C9.31946 -0.0928058 9.95262 -0.0928058 10.3431 0.278417Z" fill="#161A3D"></path>
-                    </svg>
-                  </h3>
-                </div>
-                <p>Generalized anxiety, social anxiety, panic attacks, panic disorder, agoraphobia</p>
-              </a>
-            </div>
-            <div class="relative first:border-t-2 first:border-primary first:pt-sp-6">
-              <a href="https://www.charliehealth.com/areas-of-care/depression" class="stretched-link no-underline pb-sp-6 border-b-2 border-primary grid lg:grid-cols-[3fr_3.5fr] mb-sp-6 gap-x-sp-5 items-center list-item-height-js group" data-uw-rm-brl="PR" data-uw-original-href="https://www.charliehealth.com/areas-of-care/depression">
-                <div class="flex items-center mb-sp-2 lg:mb-0">
-                  <h3 class="inline-block text-h4-base">Depression<svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="group-hover:translate-x-[5px] transition-all duration-300 ml-sp-4 inline-block align-baseline flex-none">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3431 0.278417L16.7071 6.32784C17.0976 6.69906 17.0976 7.30094 16.7071 7.67216L10.3431 13.7216C9.95262 14.0928 9.31946 14.0928 8.92893 13.7216C8.53841 13.3504 8.53841 12.7485 8.92893 12.3773L13.5858 7.95058H0V6.04942H13.5858L8.92893 1.62273C8.53841 1.25151 8.53841 0.64964 8.92893 0.278417C9.31946 -0.0928058 9.95262 -0.0928058 10.3431 0.278417Z" fill="#161A3D"></path>
-                    </svg>
-                  </h3>
-                </div>
-                <p>Major depression, melancholic depression, atypical depression, seasonal affective disorder, persistent depressive disorder</p>
-              </a>
-            </div>
-            <div class="relative first:border-t-2 first:border-primary first:pt-sp-6">
-              <a href="https://www.charliehealth.com/areas-of-care/trauma" class="stretched-link no-underline pb-sp-6 border-b-2 border-primary grid lg:grid-cols-[3fr_3.5fr] mb-sp-6 gap-x-sp-5 items-center list-item-height-js group" data-uw-rm-brl="PR" data-uw-original-href="https://www.charliehealth.com/areas-of-care/trauma">
-                <div class="flex items-center mb-sp-2 lg:mb-0">
-                  <h3 class="inline-block text-h4-base">Trauma<svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="group-hover:translate-x-[5px] transition-all duration-300 ml-sp-4 inline-block align-baseline flex-none">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3431 0.278417L16.7071 6.32784C17.0976 6.69906 17.0976 7.30094 16.7071 7.67216L10.3431 13.7216C9.95262 14.0928 9.31946 14.0928 8.92893 13.7216C8.53841 13.3504 8.53841 12.7485 8.92893 12.3773L13.5858 7.95058H0V6.04942H13.5858L8.92893 1.62273C8.53841 1.25151 8.53841 0.64964 8.92893 0.278417C9.31946 -0.0928058 9.95262 -0.0928058 10.3431 0.278417Z" fill="#161A3D"></path>
-                    </svg>
-                  </h3>
-                </div>
-                <p>Acute trauma, chronic trauma, complex trauma, post-traumatic stress disorder</p>
-              </a>
-            </div>
+            <?php foreach ($conditions as $post) : ?>
+              <?php setup_postdata($post); ?>
+              <div class="relative first:border-t-2 first:border-primary first:pt-sp-6">
+                <a href="<?= get_the_permalink(); ?>" class="stretched-link no-underline pb-sp-6 border-b-2 border-primary grid lg:grid-cols-[3fr_3.5fr] mb-sp-6 gap-x-sp-5 items-center list-item-height-js group" data-uw-rm-brl="PR" data-uw-original-href="https://www.charliehealth.com/areas-of-care/anxiety">
+                  <div class="flex items-center mb-sp-2 lg:mb-0">
+                    <h3 class="inline-block text-h4-base"><?= ucfirst(strtolower(get_the_title())); ?><svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="group-hover:translate-x-[5px] transition-all duration-300 ml-sp-4 inline-block align-baseline flex-none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3431 0.278417L16.7071 6.32784C17.0976 6.69906 17.0976 7.30094 16.7071 7.67216L10.3431 13.7216C9.95262 14.0928 9.31946 14.0928 8.92893 13.7216C8.53841 13.3504 8.53841 12.7485 8.92893 12.3773L13.5858 7.95058H0V6.04942H13.5858L8.92893 1.62273C8.53841 1.25151 8.53841 0.64964 8.92893 0.278417C9.31946 -0.0928058 9.95262 -0.0928058 10.3431 0.278417Z" fill="#161A3D"></path>
+                      </svg>
+                    </h3>
+                  </div>
+                  <p><?= the_field('short_description', get_the_ID()); ?></p>
+                </a>
+              </div>
+            <?php wp_reset_postdata();
+            endforeach; ?>
           </div>
           <a href="/areas-of-care" class="float-right ch-button button-secondary view-all-button-js mt-sp-8 w-full lg:w-[unset]">View All</a>
         </div>
