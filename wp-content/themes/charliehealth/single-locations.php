@@ -10,6 +10,19 @@ $conditions = get_field('conditions');
 
 <section class="section">
   <div class="container-md">
+    <div class="breadcrumbs mb-sp-5 lg:mb-sp-6">
+      <p class="inline-block text-primary">Locations</p>
+      <?php
+      $parentPages = get_post_ancestors($currentID);
+      $parentPages = array_reverse($parentPages);
+      foreach ($parentPages as $parent_id) : ?>
+        <span>/</span>
+        <a href="<?= get_permalink($parent_id); ?>"><?= get_the_title($parent_id); ?></a>
+      <?php endforeach; ?>
+
+      <span>/</span>
+      <span><?= get_the_title(); ?></span>
+    </div>
     <h1 class="text-center">Online therapy in <mark style="background-color:#DAC1FB"><?= $location; ?></mark></h1>
     <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
       <a href="/form" class="ch-button button-primary" target="_self">Get Started</a>
