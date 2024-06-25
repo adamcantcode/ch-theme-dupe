@@ -74,6 +74,52 @@ Template Post Type: page
                 }, 300);
               });
             });
+
+            // Add email from session storage
+
+            function waitForElement(selector, callback) {
+              var element = document.querySelector(selector);
+              if (element && window.getComputedStyle(element).display !== 'none') {
+                callback(element);
+              } else {
+                setTimeout(() => waitForElement(selector, callback), 500);
+              }
+            }
+
+            const storedEmail = sessionStorage.getItem('introQuestionEmail');
+            const textField = document.getElementById('field162592077');
+            
+            if (storedEmail && textField) {
+              waitForElement("#fsPage5700521-3", (element) => {
+
+                // Set the value directly
+                textField.value = storedEmail;
+
+                // Dispatch 'input' event to simulate user input
+                textField.dispatchEvent(new Event('input', {
+                  bubbles: true,
+                  cancelable: true
+                }));
+
+                // Dispatch 'change' event to simulate value change
+                textField.dispatchEvent(new Event('change', {
+                  bubbles: true,
+                  cancelable: true
+                }));
+
+                // Dispatch 'blur' event to simulate losing focus
+                textField.dispatchEvent(new Event('blur', {
+                  bubbles: true,
+                  cancelable: true
+                }));
+
+                // Optionally, you can trigger a 'focusout' event if necessary
+                textField.dispatchEvent(new Event('focusout', {
+                  bubbles: true,
+                  cancelable: true
+                }));
+              });
+            }
           });
         </script>
         <p>If you’d prefer to speak with our team directly, please call <a href="tel:+18664848218">1 (866) 484-8218</a></p>

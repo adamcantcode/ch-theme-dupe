@@ -74,6 +74,39 @@ Template Post Type: page
                 }, 300);
               });
             });
+            // Add email from session storage
+            function waitForElement(selector, callback) {
+              var element = document.querySelector(selector);
+              if (element && window.getComputedStyle(element).display !== 'none') {
+                callback(element);
+              } else {
+                setTimeout(() => waitForElement(selector, callback), 500);
+              }
+            }
+
+            const storedEmail = sessionStorage.getItem('introQuestionEmail');
+            const textField = document.getElementById('field165061503');
+
+            if (storedEmail) {
+              waitForElement("#fsPage5754402-3", (element) => {
+
+                textField.value = storedEmail;
+
+                // Create and dispatch a 'change' event
+                const changeEvent = new Event('change', {
+                  bubbles: true,
+                  cancelable: true,
+                });
+                textField.dispatchEvent(changeEvent);
+
+                // Create and dispatch a 'blur' event
+                const blurEvent = new Event('blur', {
+                  bubbles: true,
+                  cancelable: true,
+                });
+                textField.dispatchEvent(blurEvent);
+              })
+            }
           });
         </script>
         <p>If you’d prefer to speak with our team directly, please call <a href="tel:+18664848218">1 (866) 484-8218</a></p>
