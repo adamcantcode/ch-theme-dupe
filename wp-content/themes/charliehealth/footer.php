@@ -1,19 +1,19 @@
-<div id="stickyCTA">
-	<div class="sticky-cta-js bg-white px-sp-5 py-[10px] fixed bottom-[-100%] w-full opacity-0 invisible transition-all duration-500 z-50 md:noshow">
-		<a href="tel:+18664848218" class="w-full ch-button button-primary" target="_self">1 (866) 484-8218</a>
+<?php if (get_field('show_mobile_sticky_button')) : ?>
+	<div id="stickyCTA">
+		<div class="sticky-cta-js bg-white px-sp-5 py-[10px] fixed bottom-[-100%] w-full opacity-0 invisible transition-all duration-500 z-50 md:noshow">
+			<a href="tel:+18664848218" class="w-full ch-button button-primary" target="_self">1 (866) 484-8218</a>
+		</div>
 	</div>
-</div>
-<script>
-	document.addEventListener('DOMContentLoaded', function() {
-		if (window.location.href.includes("/page/")) {
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
 			var stickyCTA = document.querySelector('.sticky-cta-js');
 			var footer = document.querySelector('footer');
 			var triggerOffset = window.innerHeight;
-	
+
 			window.addEventListener('scroll', function() {
 				var scrollPosition = window.scrollY;
 				var footerOffset = footer.offsetTop - triggerOffset;
-	
+
 				if (scrollPosition > triggerOffset && scrollPosition < footerOffset) {
 					stickyCTA.classList.remove('opacity-0', 'invisible', 'bottom-[-100%]');
 					stickyCTA.classList.add('bottom-0');
@@ -25,11 +25,9 @@
 					stickyCTA.classList.remove('bottom-0');
 				}
 			});
-			console.log("URL contains /page/");
-		}
-
-	});
-</script>
+		});
+	</script>
+<?php endif; ?>
 <footer id="footer" class="grid bg-secondary-soft relatve">
 	<div class="section-sm-top section-lg-bottom ">
 		<div class="container">
