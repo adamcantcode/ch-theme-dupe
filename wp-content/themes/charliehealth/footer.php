@@ -131,14 +131,18 @@
 			<p class="text-[#87889A] text-[12px] leading-snug mb-sp-[12px]"><em>You have a right to access your medical records. Records of the care you receive from Charlie Health will be shared with your primary care provider (PCP) via an electronic patient record system or provided in a different manner unless you opt out.</em></p>
 		</div>
 		<div class="container">
-			<div class="grid lg:grid-cols-2 grid-cols-[2fr_1fr]">
+			<div class="grid lg:grid-cols-2 grid-cols-[2fr_1fr] gap-base5-4">
 				<div class="flex items-center">
 					<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield.svg'); ?>" alt="Charlie health shield logo" class="w-sp-8" />
 					<span class="text-white text-[12px] ml-sp-4">© <?= date('Y'); ?> Charlie Health, Inc. All rights reserved.</span>
 				</div>
-				<a href="https://www.jointcommission.org/" target="_blank">
-					<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/gold-seal.webp'); ?>" alt="The Joint Commission logo that links to the Joint Commission homepage" class="ml-auto w-[56px]">
-				</a>
+				<div class="flex items-center justify-end legit-script-img gap-base5-2">
+					<script src="https://static.legitscript.com/seals/7088078.js"></script>
+					<a href="https://www.jointcommission.org/" target="_blank">
+						<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/gold-seal.webp'); ?>" alt="The Joint Commission logo that links to the Joint Commission homepage" class="ml-auto">
+					</a>
+				</div>
+				<style>.legit-script-img img {width: 50px}</style>
 			</div>
 		</div>
 	</div>
