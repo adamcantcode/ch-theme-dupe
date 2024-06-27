@@ -212,8 +212,8 @@ $conditions = get_field('conditions');
           <h2>Who is IOP for?</h2>
         </div>
         <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:56%">
-          <h3>Young people experiencing a mental health crisis: </h3>
-          <p>It is designed for individuals who need more treatment and support than can be provided through traditional outpatient services, but who do not require the level of care provided through residential or inpatient treatment.</p>
+          <h3>Young people with ongoing mental health issues or in a mental health crisis:</h3>
+          <p>IOP is designed for individuals who need more treatment andsupport than can be provided through once-weekly therapy, but who do not require the level of care provided through residential or inpatient treatment.</p>
         </div>
       </div>
     </div>
