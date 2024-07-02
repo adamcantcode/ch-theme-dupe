@@ -11,12 +11,12 @@ Template Post Type: page
   <div class="container">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-sp-8">
       <div>
-      <script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/self_serve_admissions_copy_2"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/self_serve_admissions_copy_2" title="Online Form">Online Form - UPDATE TESTING [PROD] Charlie Health Intake Form</a></noscript>
+      <script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/self_serve_admissions"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/self_serve_admissions" title="Online Form">Online Form - [PROD] Charlie Health Intake Form</a></noscript>
         <script>
           document.addEventListener("DOMContentLoaded", function() {
             const newDisclaimerText = 'We may employ third-party tools to analyze usage data on our website, including your submission of this form. We make reasonable efforts to obscure or de-identify protected health information from our analytics providers whenever feasible.'
             const disclaimerContainer = document.querySelectorAll('.field-auto-capture')[0];
-            const progressBar = document.querySelector('#fsSubmit5831039');
+            const progressBar = document.querySelector('#fsSubmit5700521');
 
             progressBar.insertAdjacentElement('afterend', disclaimerContainer);
             disclaimerContainer.style.display = 'none';
@@ -28,7 +28,7 @@ Template Post Type: page
 
             document.querySelector('.fsPagination').addEventListener('click', function() {
               setTimeout(() => {
-                if (document.querySelector('#fsPage5831039-2').classList.contains('fsHidden')) {
+                if (document.querySelector('#fsPage5700521-2').classList.contains('fsHidden')) {
                   setTimeout(() => {
                     disclaimerContainer.style.display = 'none';
                   }, 300);
@@ -52,7 +52,7 @@ Template Post Type: page
 
             document.querySelector('.fsPagination').addEventListener('click', function() {
               setTimeout(() => {
-                if (document.querySelector('#fsPage5831039-4').classList.contains('fsHidden')) {
+                if (document.querySelector('#fsPage5700521-3').classList.contains('fsHidden')) {
                   setTimeout(() => {
                     clonedElement.style.display = 'none';
                   }, 300);
