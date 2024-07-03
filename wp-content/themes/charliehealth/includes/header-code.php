@@ -423,94 +423,105 @@
 
     // Formstack attribution
     if (window.location.href.indexOf('form-b') > -1) {
-      // Form b
-      if (document.cookie.indexOf('organicLP' + '=') > -1) {
-        if (!params) {
-          waitForElement('field165061486', (element) => {
-            element.value = getCookie('organicLP');
-          });
-        }
-      }
-      // Get fbclid
-      if (document.cookie.indexOf('fbclid' + '=') > -1) {
-        waitForElement('label165061488', (element) => {
-          element.value = getCookie('fbclid');
-        });
-      }
-      if (document.cookie.indexOf('msclkid' + '=') > -1) {
-        waitForElement('field165061489', (element) => {
-          element.value = getCookie('msclkid');
-        });
-      }
-      // Get userIP
-      waitForElement('field165061487', (element) => {
-        fetch('https://api.ipify.org/?format=json').then(results => results.json()).then(data =>
-          document.querySelector('#field165061487').value = data.ip
-        );
-      });
-      // Get fbp
-      waitForElement('field165061490', (element) => {
-        element.value = getCookie('_fbp');
-      });
-      // Get user_agent
-      waitForElement('field165061491', (element) => {
-        element.value = window.navigator.userAgent;
-      });
-      // Insurance test version
-      if (document.cookie.indexOf('_vis_opt_exp_52_combi' + '=') > -1) {
-        waitForElement('field166107543', (element) => {
-          if (getCookie('_vis_opt_exp_52_combi') === '1') {
-            element.value = 'control - Insurance Map vs Interactive';
-          } else if (getCookie('_vis_opt_exp_52_combi') === '2') {
-            element.value = 'variant - Insurance Map vs Interactive';
+      waitForElement('fsNextButton5754402', (element) => {
+        document.querySelector('.fsNextButton').addEventListener('click', function() {
+
+          // Form b
+          if (document.cookie.indexOf('organicLP' + '=') > -1) {
+            if (!params) {
+              waitForElement('field165061486', (element) => {
+                element.value = getCookie('organicLP');
+              });
+            }
           }
-        });
-      }
+          // Get fbclid
+          if (document.cookie.indexOf('fbclid' + '=') > -1) {
+            waitForElement('field165061488', (element) => {
+              element.value = getCookie('fbclid');
+            });
+          }
+          if (document.cookie.indexOf('msclkid' + '=') > -1) {
+            waitForElement('field165061489', (element) => {
+              element.value = getCookie('msclkid');
+            });
+          }
+          // Get userIP
+          waitForElement('field165061487', (element) => {
+            fetch('https://api.ipify.org/?format=json').then(results => results.json()).then(data =>
+              document.querySelector('#field165061487').value = data.ip
+            );
+          });
+          // Get fbp
+          waitForElement('field165061490', (element) => {
+            element.value = getCookie('_fbp');
+          });
+          // Get user_agent
+          waitForElement('field165061491', (element) => {
+            element.value = window.navigator.userAgent;
+          });
+          // Insurance test version
+          if (document.cookie.indexOf('_vis_opt_exp_52_combi' + '=') > -1) {
+            waitForElement('field166107543', (element) => {
+              if (getCookie('_vis_opt_exp_52_combi') === '1') {
+                element.value = 'control - Insurance Map vs Interactive';
+              } else if (getCookie('_vis_opt_exp_52_combi') === '2') {
+                element.value = 'variant - Insurance Map vs Interactive';
+              }
+            });
+          }
+        })
+      })
+
     } else if (window.location.href.indexOf('form') > -1) {
-      // Get organic LP
-      if (document.cookie.indexOf('organicLP' + '=') > -1) {
-        if (!params) {
-          waitForElement('field162592063', (element) => {
-            element.value = getCookie('organicLP');
-          });
-        }
-      }
-      // Get fbclid
-      if (document.cookie.indexOf('fbclid' + '=') > -1) {
-        waitForElement('field162592064', (element) => {
-          element.value = getCookie('fbclid');
-        });
-      }
-      if (document.cookie.indexOf('msclkid' + '=') > -1) {
-        waitForElement('field163156163', (element) => {
-          element.value = getCookie('msclkid');
-        });
-      }
-      // Get userIP
-      waitForElement('field163080837', (element) => {
-        fetch('https://api.ipify.org/?format=json').then(results => results.json()).then(data =>
-          document.querySelector('#field163080837').value = data.ip
-        );
-      });
-      // Get fbp
-      waitForElement('field162592065', (element) => {
-        element.value = getCookie('_fbp');
-      });
-      // Get user_agent
-      waitForElement('field163080841', (element) => {
-        element.value = window.navigator.userAgent;
-      });
-      // Insurance test version
-      if (document.cookie.indexOf('_vis_opt_exp_52_combi' + '=') > -1) {
-        waitForElement('field166107526', (element) => {
-          if (getCookie('_vis_opt_exp_52_combi') === '1') {
-            element.value = 'control - Insurance Map vs Interactive';
-          } else if (getCookie('_vis_opt_exp_52_combi') === '2') {
-            element.value = 'variant - Insurance Map vs Interactive';
+      waitForElement('fsNextButton5700521', (element) => {
+        document.querySelector('.fsNextButton').addEventListener('click', function() {
+          // Get organic LP
+          if (document.cookie.indexOf('organicLP' + '=') > -1) {
+            if (!params) {
+              waitForElement('field162592063', (element) => {
+                element.value = getCookie('organicLP');
+              });
+            }
           }
-        });
-      }
+          // Get fbclid
+          if (document.cookie.indexOf('fbclid' + '=') > -1) {
+            waitForElement('field162592064', (element) => {
+              element.value = getCookie('fbclid');
+            });
+          }
+          if (document.cookie.indexOf('msclkid' + '=') > -1) {
+            waitForElement('field163156163', (element) => {
+              element.value = getCookie('msclkid');
+            });
+          }
+          // Get userIP
+          waitForElement('field163080837', (element) => {
+            fetch('https://api.ipify.org/?format=json').then(results => results.json()).then(data =>
+              document.querySelector('#field163080837').value = data.ip
+            );
+          });
+          // Get fbp
+          waitForElement('field162592065', (element) => {
+            element.value = getCookie('_fbp');
+          });
+          // Get user_agent
+          waitForElement('field163080841', (element) => {
+            element.value = window.navigator.userAgent;
+          });
+          // Insurance test version
+          if (document.cookie.indexOf('_vis_opt_exp_52_combi' + '=') > -1) {
+            waitForElement('field166107526', (element) => {
+              if (getCookie('_vis_opt_exp_52_combi') === '1') {
+                element.value = 'control - Insurance Map vs Interactive';
+              } else if (getCookie('_vis_opt_exp_52_combi') === '2') {
+                element.value = 'variant - Insurance Map vs Interactive';
+              }
+            });
+          }
+        })
+      })
     }
+
   });
 </script>
 <!-- Attribution Fix END -->
