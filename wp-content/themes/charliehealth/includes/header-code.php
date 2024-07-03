@@ -423,8 +423,8 @@
 
     // Formstack attribution
     if (window.location.href.indexOf('form-b') > -1) {
-      waitForElement('fsSubmitButton5754402', (element) => {
-        document.querySelector('.fsSubmitButton').addEventListener('click', function() {
+      waitForElement('fsForm5754402', (element) => {
+        document.querySelector('form').addEventListener('submit', function() {
 
           // Form b
           if (document.cookie.indexOf('organicLP' + '=') > -1) {
@@ -473,8 +473,9 @@
       })
 
     } else if (window.location.href.indexOf('form') > -1) {
-      waitForElement('fsSubmitButton5700521', (element) => {
-        document.querySelector('.fsSubmitButton').addEventListener('click', function() {
+      waitForElement('fsForm5700521', (element) => {
+        document.querySelector('form').addEventListener('submit', function() {
+          console.log('submit');
           // Get organic LP
           if (document.cookie.indexOf('organicLP' + '=') > -1) {
             if (!params) {
@@ -518,6 +519,9 @@
               }
             });
           }
+          console.log(document.querySelector('#field163080841').value);
+          console.log(document.querySelector('#field162592064').value);
+          console.log(document.querySelector('#field165061488').value);
         })
       })
     }
