@@ -54,7 +54,7 @@ $icon           = get_field('hero_icon');
     <div class="order-2 lg:order-1 mobile-hero-sub">
       <h1><?= $title; ?></h1>
       <?php if ($subtitle) : ?>
-        <div class="flex items-start gap-sp-4 mb-sp-10">
+        <div class="flex items-center gap-sp-4 mb-sp-10">
           <?php if ($icon) : ?>
             <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health Shield" class="w-10 mt-base5-1">
           <?php endif; ?>
