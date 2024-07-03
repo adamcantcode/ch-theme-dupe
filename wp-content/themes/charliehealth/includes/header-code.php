@@ -423,7 +423,7 @@
 
     // Formstack attribution
     if (window.location.href.indexOf('form-b') > -1) {
-      waitForElement('fsNextButton5754402', (element) => {
+      waitForElement('fsSubmitButton5754402', (element) => {
         document.querySelector('.fsSubmitButton').addEventListener('click', function() {
 
           // Form b
@@ -473,7 +473,7 @@
       })
 
     } else if (window.location.href.indexOf('form') > -1) {
-      waitForElement('fsNextButton5700521', (element) => {
+      waitForElement('fsSubmitButton5700521', (element) => {
         document.querySelector('.fsSubmitButton').addEventListener('click', function() {
           // Get organic LP
           if (document.cookie.indexOf('organicLP' + '=') > -1) {
