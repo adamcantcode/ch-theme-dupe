@@ -424,7 +424,7 @@
     // Formstack attribution
     if (window.location.href.indexOf('form-b') > -1) {
       waitForElement('fsNextButton5754402', (element) => {
-        document.querySelector('.fsNextButton').addEventListener('click', function() {
+        document.querySelector('.fsSubmitButton').addEventListener('click', function() {
 
           // Form b
           if (document.cookie.indexOf('organicLP' + '=') > -1) {
@@ -474,7 +474,7 @@
 
     } else if (window.location.href.indexOf('form') > -1) {
       waitForElement('fsNextButton5700521', (element) => {
-        document.querySelector('.fsNextButton').addEventListener('click', function() {
+        document.querySelector('.fsSubmitButton').addEventListener('click', function() {
           // Get organic LP
           if (document.cookie.indexOf('organicLP' + '=') > -1) {
             if (!params) {
