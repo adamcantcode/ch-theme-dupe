@@ -299,216 +299,218 @@
 
 <!-- Formstack attribution fix -->
 <script>
-  // List of coockies generated when link has UTM Params
-  const existingCookies = [
-    'gclid',
-    'fbclid',
-    'utm_campaign',
-    'keyword',
-    'msclkid',
-  ];
-  // List of search engines to check for
-  const searchEngines = [
-    'google.com',
-    'bing.com',
-    'yahoo.com',
-    'duckduckgo.com',
-    'ecosia.org',
-  ];
-  // Set variable for existing cookies to false
-  var cookies = false;
-  var params = false;
+  document.addEventListener('DOMContentLoaded', function() {
+    // List of coockies generated when link has UTM Params
+    const existingCookies = [
+      'gclid',
+      'fbclid',
+      'utm_campaign',
+      'keyword',
+      'msclkid',
+    ];
+    // List of search engines to check for
+    const searchEngines = [
+      'google.com',
+      'bing.com',
+      'yahoo.com',
+      'duckduckgo.com',
+      'ecosia.org',
+    ];
+    // Set variable for existing cookies to false
+    var cookies = false;
+    var params = false;
 
-  if (window.location.search !== '') {
-    params = true;
-  }
-
-  // Check for existing cookies
-  existingCookies.forEach((cookie) => {
-    if (document.cookie.indexOf(cookie + '=') > -1) {
-      // If any exist set to true
-      cookies = true;
-    } else {
-      return;
+    if (window.location.search !== '') {
+      params = true;
     }
-  });
 
-  // Wait for formtack cookie to exist--does not exist on page laod
-  function waitForCookie(name, callback) {
-    const intervalId = setInterval(() => {
-      const cookieValue = getCookie(name);
-      if (cookieValue) {
-        clearInterval(intervalId);
-        callback(cookieValue);
+    // Check for existing cookies
+    existingCookies.forEach((cookie) => {
+      if (document.cookie.indexOf(cookie + '=') > -1) {
+        // If any exist set to true
+        cookies = true;
+      } else {
+        return;
       }
-    }, 1000);
-  }
+    });
 
-  // Get cookie by name
-  function getCookie(name) {
-    const cookieValue = document.cookie.match(
-      '(^|;)\\s*' + name + '\\s*=\\s*([^;]+)'
-    );
-    return cookieValue ? cookieValue.pop() : '';
-  }
-
-  // Wait for FS feilds to exist
-  function waitForElement(id, callback) {
-    const targetNode = document.getElementById(id);
-
-    if (targetNode) {
-      callback(targetNode);
-      return;
+    // Wait for formtack cookie to exist--does not exist on page laod
+    function waitForCookie(name, callback) {
+      const intervalId = setInterval(() => {
+        const cookieValue = getCookie(name);
+        if (cookieValue) {
+          clearInterval(intervalId);
+          callback(cookieValue);
+        }
+      }, 1000);
     }
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.addedNodes) {
-          const node = Array.from(mutation.addedNodes).find((n) => n.id === id);
-          if (node) {
-            observer.disconnect();
-            callback(node);
+
+    // Get cookie by name
+    function getCookie(name) {
+      const cookieValue = document.cookie.match(
+        '(^|;)\\s*' + name + '\\s*=\\s*([^;]+)'
+      );
+      return cookieValue ? cookieValue.pop() : '';
+    }
+
+    // Wait for FS feilds to exist
+    function waitForElement(id, callback) {
+      const targetNode = document.getElementById(id);
+
+      if (targetNode) {
+        callback(targetNode);
+        return;
+      }
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          if (mutation.addedNodes) {
+            const node = Array.from(mutation.addedNodes).find((n) => n.id === id);
+            if (node) {
+              observer.disconnect();
+              callback(node);
+            }
+          }
+        });
+      });
+
+      observer.observe(document.documentElement, {
+        childList: true,
+        subtree: true,
+      });
+    }
+
+    waitForCookie('FSAC', (cookieValue) => {
+      // If no FS UTM param cookies, and no PARAMS at all
+      if (!cookies && !params) {
+        // If no UTM params AND no FS UTM cookie AND last page is search engine
+        // Will not be paid, will not be direct, will not be organic with params
+        searchEngines.forEach((engine) => {
+          if (document.referrer.includes(engine)) {
+            var niceName = engine.split('.');
+            var myCookieValue = getCookie('FSAC');
+            var values = myCookieValue.split('utm');
+            document.cookie =
+              'FSAC=' +
+              values[0] +
+              'utmcsr%3D' +
+              niceName[0] +
+              ' organic' +
+              '%7Cutmccn%3D(not set)%7Cutmcmd%3Dorganic;' +
+              'path=/;domain=charliehealth.com';
+            document.cookie =
+              'organicLP=' + window.location + ';path=/;domain=charliehealth.com';
+            return;
+          }
+        });
+        // Is not any of the search engines
+        if (!searchEngines.some(searchEngine => document.referrer.includes(searchEngine))) {
+          // Is not direct and referrer is not same site
+          if (document.referrer !== '' && !document.referrer.includes('charliehealth.com')) {
+            var source = document.referrer;
+            var myCookieValue = getCookie('FSAC');
+            var values = myCookieValue.split('utm');
+            document.cookie =
+              'FSAC=' +
+              values[0] +
+              'utmcsr%3D' +
+              source +
+              '%7Cutmccn%3D(not set)%7Cutmcmd%3Dreferral;' +
+              'path=/;domain=charliehealth.com';
           }
         }
-      });
+      }
     });
 
-    observer.observe(document.documentElement, {
-      childList: true,
-      subtree: true,
-    });
-  }
-
-  waitForCookie('FSAC', (cookieValue) => {
-    // If no FS UTM param cookies, and no PARAMS at all
-    if (!cookies && !params) {
-      // If no UTM params AND no FS UTM cookie AND last page is search engine
-      // Will not be paid, will not be direct, will not be organic with params
-      searchEngines.forEach((engine) => {
-        if (document.referrer.includes(engine)) {
-          var niceName = engine.split('.');
-          var myCookieValue = getCookie('FSAC');
-          var values = myCookieValue.split('utm');
-          document.cookie =
-            'FSAC=' +
-            values[0] +
-            'utmcsr%3D' +
-            niceName[0] +
-            ' organic' +
-            '%7Cutmccn%3D(not set)%7Cutmcmd%3Dorganic;' +
-            'path=/;domain=charliehealth.com';
-          document.cookie =
-            'organicLP=' + window.location + ';path=/;domain=charliehealth.com';
-          return;
+    // Formstack attribution
+    if (window.location.href.indexOf('form-b') > -1) {
+      // Form b
+      if (document.cookie.indexOf('organicLP' + '=') > -1) {
+        if (!params) {
+          waitForElement('field165061486', (element) => {
+            element.value = getCookie('organicLP');
+          });
         }
+      }
+      // Get fbclid
+      if (document.cookie.indexOf('fbclid' + '=') > -1) {
+        waitForElement('label165061488', (element) => {
+          element.value = getCookie('fbclid');
+        });
+      }
+      if (document.cookie.indexOf('msclkid' + '=') > -1) {
+        waitForElement('field165061489', (element) => {
+          element.value = getCookie('msclkid');
+        });
+      }
+      // Get userIP
+      waitForElement('field165061487', (element) => {
+        fetch('https://api.ipify.org/?format=json').then(results => results.json()).then(data =>
+          document.querySelector('#field165061487').value = data.ip
+        );
       });
-      // Is not any of the search engines
-      if (!searchEngines.some(searchEngine => document.referrer.includes(searchEngine))) {
-        // Is not direct and referrer is not same site
-        if (document.referrer !== '' && !document.referrer.includes('charliehealth.com')) {
-          var source = document.referrer;
-          var myCookieValue = getCookie('FSAC');
-          var values = myCookieValue.split('utm');
-          document.cookie =
-            'FSAC=' +
-            values[0] +
-            'utmcsr%3D' +
-            source +
-            '%7Cutmccn%3D(not set)%7Cutmcmd%3Dreferral;' +
-            'path=/;domain=charliehealth.com';
+      // Get fbp
+      waitForElement('field165061490', (element) => {
+        element.value = getCookie('_fbp');
+      });
+      // Get user_agent
+      waitForElement('field165061491', (element) => {
+        element.value = window.navigator.userAgent;
+      });
+      // Insurance test version
+      if (document.cookie.indexOf('_vis_opt_exp_52_combi' + '=') > -1) {
+        waitForElement('field166107543', (element) => {
+          if (getCookie('_vis_opt_exp_52_combi') === '1') {
+            element.value = 'control - Insurance Map vs Interactive';
+          } else if (getCookie('_vis_opt_exp_52_combi') === '2') {
+            element.value = 'variant - Insurance Map vs Interactive';
+          }
+        });
+      }
+    } else if (window.location.href.indexOf('form') > -1) {
+      // Get organic LP
+      if (document.cookie.indexOf('organicLP' + '=') > -1) {
+        if (!params) {
+          waitForElement('field162592063', (element) => {
+            element.value = getCookie('organicLP');
+          });
         }
+      }
+      // Get fbclid
+      if (document.cookie.indexOf('fbclid' + '=') > -1) {
+        waitForElement('field162592064', (element) => {
+          element.value = getCookie('fbclid');
+        });
+      }
+      if (document.cookie.indexOf('msclkid' + '=') > -1) {
+        waitForElement('field163156163', (element) => {
+          element.value = getCookie('msclkid');
+        });
+      }
+      // Get userIP
+      waitForElement('field163080837', (element) => {
+        fetch('https://api.ipify.org/?format=json').then(results => results.json()).then(data =>
+          document.querySelector('#field163080837').value = data.ip
+        );
+      });
+      // Get fbp
+      waitForElement('field162592065', (element) => {
+        element.value = getCookie('_fbp');
+      });
+      // Get user_agent
+      waitForElement('field163080841', (element) => {
+        element.value = window.navigator.userAgent;
+      });
+      // Insurance test version
+      if (document.cookie.indexOf('_vis_opt_exp_52_combi' + '=') > -1) {
+        waitForElement('field166107526', (element) => {
+          if (getCookie('_vis_opt_exp_52_combi') === '1') {
+            element.value = 'control - Insurance Map vs Interactive';
+          } else if (getCookie('_vis_opt_exp_52_combi') === '2') {
+            element.value = 'variant - Insurance Map vs Interactive';
+          }
+        });
       }
     }
   });
-
-  // Formstack attribution
-  if (window.location.href.indexOf('form-b') > -1) {
-    // Form b
-    if (document.cookie.indexOf('organicLP' + '=') > -1) {
-      if (!params) {
-        waitForElement('field165061486', (element) => {
-          element.value = getCookie('organicLP');
-        });
-      }
-    }
-    // Get fbclid
-    if (document.cookie.indexOf('fbclid' + '=') > -1) {
-      waitForElement('label165061488', (element) => {
-        element.value = getCookie('fbclid');
-      });
-    }
-    if (document.cookie.indexOf('msclkid' + '=') > -1) {
-      waitForElement('field165061489', (element) => {
-        element.value = getCookie('msclkid');
-      });
-    }
-    // Get userIP
-    waitForElement('field165061487', (element) => {
-      fetch('https://api.ipify.org/?format=json').then(results => results.json()).then(data =>
-        document.querySelector('#field165061487').value = data.ip
-      );
-    });
-    // Get fbp
-    waitForElement('field165061490', (element) => {
-      element.value = getCookie('_fbp');
-    });
-    // Get user_agent
-    waitForElement('field165061491', (element) => {
-      element.value = window.navigator.userAgent;
-    });
-    // Insurance test version
-    if (document.cookie.indexOf('_vis_opt_exp_52_combi' + '=') > -1) {
-      waitForElement('field166107543', (element) => {
-        if (getCookie('_vis_opt_exp_52_combi') === '1') {
-          element.value = 'control - Insurance Map vs Interactive';
-        } else if (getCookie('_vis_opt_exp_52_combi') === '2') {
-          element.value = 'variant - Insurance Map vs Interactive';
-        }
-      });
-    }
-  } else if (window.location.href.indexOf('form') > -1) {
-    // Get organic LP
-    if (document.cookie.indexOf('organicLP' + '=') > -1) {
-      if (!params) {
-        waitForElement('field162592063', (element) => {
-          element.value = getCookie('organicLP');
-        });
-      }
-    }
-    // Get fbclid
-    if (document.cookie.indexOf('fbclid' + '=') > -1) {
-      waitForElement('field162592064', (element) => {
-        element.value = getCookie('fbclid');
-      });
-    }
-    if (document.cookie.indexOf('msclkid' + '=') > -1) {
-      waitForElement('field163156163', (element) => {
-        element.value = getCookie('msclkid');
-      });
-    }
-    // Get userIP
-    waitForElement('field163080837', (element) => {
-      fetch('https://api.ipify.org/?format=json').then(results => results.json()).then(data =>
-        document.querySelector('#field163080837').value = data.ip
-      );
-    });
-    // Get fbp
-    waitForElement('field162592065', (element) => {
-      element.value = getCookie('_fbp');
-    });
-    // Get user_agent
-    waitForElement('field163080841', (element) => {
-      element.value = window.navigator.userAgent;
-    });
-    // Insurance test version
-    if (document.cookie.indexOf('_vis_opt_exp_52_combi' + '=') > -1) {
-      waitForElement('field166107526', (element) => {
-        if (getCookie('_vis_opt_exp_52_combi') === '1') {
-          element.value = 'control - Insurance Map vs Interactive';
-        } else if (getCookie('_vis_opt_exp_52_combi') === '2') {
-          element.value = 'variant - Insurance Map vs Interactive';
-        }
-      });
-    }
-  }
 </script>
 <!-- Attribution Fix END -->
