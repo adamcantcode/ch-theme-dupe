@@ -469,8 +469,6 @@
               }
             });
           }
-          console.log(document.querySelector('#field162592064').value);
-          console.log(document.querySelector('#field165061488').value);
         })
       })
 
@@ -521,8 +519,6 @@
               }
             });
           }
-          console.log(document.querySelector('#field163080841').value);
-          console.log(document.querySelector('#field165061491').value);
         })
       })
     }
