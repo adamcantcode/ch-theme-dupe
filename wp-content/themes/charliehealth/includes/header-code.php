@@ -300,6 +300,7 @@
 <!-- Formstack attribution fix -->
 <script>
   document.addEventListener('DOMContentLoaded', function() {
+
     const existingCookies = ['gclid', 'fbclid', 'utm_campaign', 'keyword', 'msclkid'];
     const searchEngines = ['google.com', 'bing.com', 'yahoo.com', 'duckduckgo.com', 'ecosia.org'];
     let cookies = false;
@@ -330,30 +331,6 @@
       return cookieValue ? cookieValue.pop() : '';
     }
 
-    function waitForElement(id, callback) {
-      const targetNode = document.getElementById(id);
-      if (targetNode) {
-        callback(targetNode);
-        return;
-      }
-      const observer = new MutationObserver(mutations => {
-        mutations.forEach(mutation => {
-          if (mutation.addedNodes) {
-            const node = Array.from(mutation.addedNodes).find(n => n.id === id);
-            if (node) {
-              observer.disconnect();
-              callback(node);
-            }
-          }
-        });
-      });
-
-      observer.observe(document.documentElement, {
-        childList: true,
-        subtree: true
-      });
-    }
-
     waitForCookie('FSAC', cookieValue => {
       if (!cookies && !params) {
         searchEngines.forEach(engine => {
@@ -379,62 +356,69 @@
 
     function setHiddenFields(form, fieldIds) {
       if (document.cookie.indexOf('organicLP=') > -1 && !params) {
-        form.querySelector(fieldIds.organicLP).value = getCookie('organicLP');
+        form.getField(fieldIds.organicLP).setValue(getCookie('organicLP'));
       }
       if (document.cookie.indexOf('fbclid=') > -1) {
-        form.querySelector(fieldIds.fbclid).value = getCookie('fbclid');
+        form.getField(fieldIds.fbclid).setValue(getCookie('fbclid'));
       }
       if (document.cookie.indexOf('msclkid=') > -1) {
-        form.querySelector(fieldIds.msclkid).value = getCookie('msclkid');
+        form.getField(fieldIds.msclkid).setValue(getCookie('msclkid'));
       }
       fetch('https://api.ipify.org/?format=json')
         .then(results => results.json())
         .then(data => {
-          form.querySelector(fieldIds.userIP).value = data.ip;
+          form.getField(fieldIds.userIP).setValue(data.ip);
         });
-      form.querySelector(fieldIds.fbp).value = getCookie('_fbp');
-      form.querySelector(fieldIds.userAgent).value = window.navigator.userAgent;
+      form.getField(fieldIds.fbp).setValue(getCookie('_fbp'));
+      form.getField(fieldIds.userAgent).setValue(window.navigator.userAgent);
       if (document.cookie.indexOf('_vis_opt_exp_52_combi=') > -1) {
-        const insuranceField = form.querySelector(fieldIds.insurance);
         const experimentValue = getCookie('_vis_opt_exp_52_combi');
         if (experimentValue === '1') {
-          insuranceField.value = 'control - Insurance Map vs Interactive';
+          form.getField(fieldIds.insurance).setValue('control - Insurance Map vs Interactive');
         } else if (experimentValue === '2') {
-          insuranceField.value = 'variant - Insurance Map vs Interactive';
+          form.getField(fieldIds.insurance).setValue('variant - Insurance Map vs Interactive');
         }
       }
     }
 
     function initializeForm(formId, fieldIds) {
-      waitForElement(formId, form => {
-        form.addEventListener('input', function() {
+      var form = window.fsApi().getForm(5700521);
+      form.registerFormEventListener({
+        type: 'change',
+        onFormEvent: function(event) {
+          console.log('change');
           setHiddenFields(form, fieldIds);
-        });
-        form.addEventListener('submit', function() {
-          setHiddenFields(form, fieldIds);
-        });
+          return Promise.resolve(event);
+        }
       });
+      // form.registerFormEventListener({
+      //   type: 'submit',
+      //   onFormEvent: function(event) {
+      //     setHiddenFields(form, fieldIds);
+      //     return Promise.resolve(event);
+      //   }
+      // });
     }
 
     if (window.location.href.indexOf('form-b') > -1) {
-      initializeForm('fsForm5754402', {
-        organicLP: '#field165061486',
-        fbclid: '#field165061488',
-        msclkid: '#field165061489',
-        userIP: '#field165061487',
-        fbp: '#field165061490',
-        userAgent: '#field165061491',
-        insurance: '#field166107543'
+      initializeForm('5754402', {
+        organicLP: '165061486',
+        fbclid: '165061488',
+        msclkid: '165061489',
+        userIP: '165061487',
+        fbp: '165061490',
+        userAgent: '165061491',
+        insurance: '166107543'
       });
     } else if (window.location.href.indexOf('form') > -1) {
-      initializeForm('fsForm5700521', {
-        organicLP: '#field162592063',
-        fbclid: '#field162592064',
-        msclkid: '#field163156163',
-        userIP: '#field163080837',
-        fbp: '#field162592065',
-        userAgent: '#field163080841',
-        insurance: '#field166107526'
+      initializeForm('5700521', {
+        organicLP: '162592063',
+        fbclid: '162592064',
+        msclkid: '163156163',
+        userIP: '163080837',
+        fbp: '162592065',
+        userAgent: '163080841',
+        insurance: '166107526'
       });
     }
   });
