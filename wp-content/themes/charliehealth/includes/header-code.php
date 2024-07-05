@@ -382,7 +382,8 @@
     }
 
     function initializeForm(formId, fieldIds) {
-      var form = window.fsApi().getForm(5700521);
+      formId = document.querySelector('form').id.replace(/^fsForm/, '');
+      var form = window.fsApi().getForm(formId);
       form.registerFormEventListener({
         type: 'change',
         onFormEvent: function(event) {
