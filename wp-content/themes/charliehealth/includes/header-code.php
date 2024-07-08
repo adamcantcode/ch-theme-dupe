@@ -385,10 +385,30 @@
       formId = document.querySelector('form').id.replace(/^fsForm/, '');
       var form = window.fsApi().getForm(formId);
       form.registerFormEventListener({
-        type: 'change',
+        type: 'change-page',
         onFormEvent: function(event) {
-          console.log('change');
+          console.log('change-page');
           setHiddenFields(form, fieldIds);
+          return Promise.resolve(event);
+        }
+      });
+      form.registerFormEventListener({
+        type: 'change-page',
+        onFormEvent: function(event) {
+          const storedEmail = sessionStorage.getItem('introQuestionEmail');
+          const emailFields = {
+            mainForm: '162592077',
+            testForm: '165061503'
+          }
+          if (storedEmail) {
+            if (form.getField(emailFields.mainForm)) {
+              form.getField(emailFields.mainForm).setValue(storedEmail);
+              console.log(form.getField(emailFields.mainForm).setValue(storedEmail));
+            } else if (form.getField(emailFields.testForm)) {
+              form.getField(emailFields.testForm).setValue(storedEmail);
+              console.log(form.getField(emailFields.testForm).setValue(storedEmail));
+            }
+          }
           return Promise.resolve(event);
         }
       });
