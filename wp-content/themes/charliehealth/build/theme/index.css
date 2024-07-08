@@ -1970,6 +1970,10 @@ a.insurance-tabs.active:hover {
   margin-top: 15px;
 }
 
+.mt-base5-4{
+  margin-top: 20px;
+}
+
 .mt-base5-5{
   margin-top: 25px;
 }
@@ -2020,10 +2024,6 @@ a.insurance-tabs.active:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
-}
-
-.mt-base5-4{
-  margin-top: 20px;
 }
 
 .line-clamp-3{
@@ -6402,6 +6402,10 @@ ul.alert li {
     gap: 150px;
   }
 
+  .lg\:gap-base5-8{
+    gap: 40px;
+  }
+
   .lg\:gap-sp-10{
     gap: 2.5rem;
   }
@@ -6428,14 +6432,6 @@ ul.alert li {
 
   .lg\:gap-sp-8{
     gap: 2rem;
-  }
-
-  .lg\:gap-base5-4{
-    gap: 20px;
-  }
-
-  .lg\:gap-base5-8{
-    gap: 40px;
   }
 
   .lg\:gap-x-sp-16{

@@ -136,24 +136,6 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
             </svg>
             <p class="mb-0 font-bold ml-sp-2"> <?= $readingTime; ?> min.</p>
           </div>
-          <?php if ($toc) : ?>
-            <div>
-              <div class="rounded-md toc-container bg-light-purple mt-base5-4">
-                <div class="flex cursor-pointer toc-heading lg:p-sp-8 p-sp-4">
-                  <p class="mb-0 text-h3-base">Table of Contents</p>
-                  <div class="flex items-center ml-auto toggle">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="none" viewBox="8 8 8 8" height="12px" width="12px">
-                      <path d="M9 12H15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                      <path d="M12 9L12 15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
-                  </div>
-                </div>
-                <div class="overflow-hidden transition-all duration-500 ease-in-out toc-content max-h-0">
-                  <div id="toc" class="flex flex-col items-start pt-0 lg:pt-0 lg:p-sp-8 p-sp-4 gap-sp-1"></div>
-                </div>
-              </div>
-            </div>
-          <?php endif; ?>
         </div>
         <div>
           <p><?= get_the_excerpt(); ?></p>
@@ -190,13 +172,24 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
               endif; ?>
             </div>
           </div>
-          <div class="flex items-start">
-            <p class="font-heading-serif">Share:</p>
-            <a role="button" class="js-share-button ml-sp-4"><img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/share.svg'); ?>" alt="share icon"></a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=<?= $fullUrl; ?>" onclick="window.open(this.href,'targetWindow','resizable=yes,width=600,height=300'); return false;" class="ml-sp-4"><img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/facebook.svg'); ?>" alt="Facebook logo">
-            </a>
-            <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?= $fullUrl; ?>" class="ml-sp-4"><img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/linkedin.svg'); ?>" alt="LinkedIn logo"></a>
-          </div>
+          <?php if ($toc) : ?>
+            <div>
+              <div class="rounded-md toc-container bg-light-purple mt-base5-4">
+                <div class="flex cursor-pointer toc-heading lg:p-sp-8 p-sp-4">
+                  <p class="mb-0 text-h3-base">Table of Contents</p>
+                  <div class="flex items-center ml-auto toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="none" viewBox="8 8 8 8" height="12px" width="12px">
+                      <path d="M9 12H15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M12 9L12 15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="overflow-hidden transition-all duration-500 ease-in-out toc-content max-h-0">
+                  <div id="toc" class="flex flex-col items-start pt-0 lg:pt-0 lg:p-sp-8 p-sp-4 gap-sp-1"></div>
+                </div>
+              </div>
+            </div>
+          <?php endif; ?>
         </div>
       </div>
     </div>
