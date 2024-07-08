@@ -2022,6 +2022,10 @@ a.insurance-tabs.active:hover {
   margin-top: 2rem;
 }
 
+.mt-base5-4{
+  margin-top: 20px;
+}
+
 .line-clamp-3{
   overflow: hidden;
   display: -webkit-box;
@@ -6424,6 +6428,14 @@ ul.alert li {
 
   .lg\:gap-sp-8{
     gap: 2rem;
+  }
+
+  .lg\:gap-base5-4{
+    gap: 20px;
+  }
+
+  .lg\:gap-base5-8{
+    gap: 40px;
   }
 
   .lg\:gap-x-sp-16{
