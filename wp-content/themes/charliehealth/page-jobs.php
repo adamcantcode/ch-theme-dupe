@@ -378,10 +378,10 @@ Template Post Type: page
           if (mutation.attributeName === 'height') {
             const newHeight = parseInt(mutation.target.getAttribute('height'), 10);
             if (newHeight < 500) {
-              console.log('Height is less than 500px!');
-              window.location.href = 'https://www.charliehealth.com';
+              console.log('H < 500 ');
+              window.location.href = 'https://www.charliehealth.com/job-application-thank-you';
             } else {
-              console.log('Height is greater than 500px!');
+              console.log('h >= 500');
             }
           }
         });
