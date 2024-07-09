@@ -300,24 +300,7 @@ $subhead = get_field('subhead', 'option');
 ?>
 <div id="newsletterPopupBlogPost" class="bg-[rgba(0,0,0,.7)] fixed top-0 left-0 w-full h-full z-50 grid items-center justify-center center transition-all duration-300 modal-fade">
   <div class="transition-all duration-300 section-xs">
-    <div class="container relative rounded-md bg-cream">
-      <div class="absolute top-0 right-0 cursor-pointer">
-        <img src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/close-x.svg" alt="close button" class="w-full duration-300 modal-close p-sp-4 hover:brightness-0">
-      </div>
-      <div class="p-sp-8">
-        <div class="flex justify-center rounded-sm lg:p-sp-14 p-sp-6 mb-sp-6 bg-cream ">
-          <div class="flex flex-col items-center justify-center text-center max-w-[640px]">
-            <img src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg" alt="Charlie Health shield logo" class="w-[3rem] mb-sp-5">
-            <p class="text-h2-base"> Need additional mental health support? Charlie Health can help</p>
-            <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full ">
-              <a href="https://www.charliehealth.com/form" class="ch-button button-primary">Get Started</a>
-              <a href="https://www.charliehealth.com/intensive-outpatient-iop" class="ch-button button-secondary">Learn More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="relative rounded-md container-sm bg-cream !max-w-[950px] noshow">
+    <div class="relative rounded-md container-sm bg-cream !max-w-[950px]">
       <div class="absolute top-0 right-0 z-10 cursor-pointer">
         <img src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/close-x.svg" alt="close button" class="w-full duration-300 modal-close p-sp-4 hover:brightness-0 invert lg:invert-0">
       </div>
