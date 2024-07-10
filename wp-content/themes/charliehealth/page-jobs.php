@@ -23,6 +23,39 @@ Template Post Type: page
       </div>
     </div>
   </section>
+  <script>
+    // Submission redirect
+    const iframe = document.querySelector('#grnhse_iframe');
+
+    // Function to handle changes in iframe attributes
+    const handleAttributeChange = (mutationsList, observer) => {
+      mutationsList.forEach((mutation) => {
+        if (mutation.attributeName === 'height') {
+          const newHeight = parseInt(mutation.target.getAttribute('height'), 10);
+          if (newHeight < 500) {
+            console.log('H < 500 ');
+            window.location.href = 'https://www.charliehealth.com/job-application-thank-you';
+          } else {
+            console.log('h >= 500');
+          }
+        }
+      });
+    };
+
+    // Options for the observer (which attributes to observe)
+    const config = {
+      attributes: true
+    };
+
+    // Create a new observer
+    const observer = new MutationObserver(handleAttributeChange);
+
+    // Start observing the target node for configured mutations
+    observer.observe(iframe, config);
+
+    // To disconnect the observer later (if needed)
+    // observer.disconnect();
+  </script>
 <?php else : ?>
   <section class="section section-bg-js">
     <div class="container mb-sp-16">
@@ -368,38 +401,6 @@ Template Post Type: page
 
       fetchDepartments();
       document.getElementById('locationFilter').addEventListener('change', filterJobListingsByState);
-
-      // Submission redirect
-      const iframe = document.querySelector('#grnhse_iframe');
-
-      // Function to handle changes in iframe attributes
-      const handleAttributeChange = (mutationsList, observer) => {
-        mutationsList.forEach((mutation) => {
-          if (mutation.attributeName === 'height') {
-            const newHeight = parseInt(mutation.target.getAttribute('height'), 10);
-            if (newHeight < 500) {
-              console.log('H < 500 ');
-              window.location.href = 'https://www.charliehealth.com/job-application-thank-you';
-            } else {
-              console.log('h >= 500');
-            }
-          }
-        });
-      };
-
-      // Options for the observer (which attributes to observe)
-      const config = {
-        attributes: true
-      };
-
-      // Create a new observer
-      const observer = new MutationObserver(handleAttributeChange);
-
-      // Start observing the target node for configured mutations
-      observer.observe(iframe, config);
-
-      // To disconnect the observer later (if needed)
-      // observer.disconnect();
 
     });
   </script>
