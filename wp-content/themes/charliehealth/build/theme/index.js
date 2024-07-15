@@ -1118,7 +1118,9 @@ function careersTracking() {
     instagramOrganic: '35ddfa714us',
     facebookOrganic: '052412f84us',
     metaPaid: '98215cc84us',
-    email: '837aa8f74us'
+    email: '837aa8f74us',
+    emailOutreach: '5c46ab874us',
+    handshake: '960a9c544us'
   };
   // get params
   setTimeout(() => {
@@ -1150,6 +1152,10 @@ function careersTracking() {
       updateUrls(ghMap.metaPaid);
     } else if (utmMedium === 'email') {
       updateUrls(ghMap.email);
+    } else if (utmSource === 'universityrecruiting' && utmMedium === 'emailoutreach') {
+      updateUrls(ghMap.emailOutreach);
+    } else if (utmSource === 'job_board' && utmMedium === 'handshake') {
+      updateUrls(ghMap.handshake);
     }
   }, 500);
 }
