@@ -97,6 +97,7 @@
   }
   ?>
   <!-- NOT BLOG -->
+   <div id="emptyDiv"></div>
   <?php if ($showBanner) : ?>
     <div class="z-[9999] w-full lg:h-sp-8 h-sp-14 bg-primary-200 flex justify-center items-center fixed<?= is_user_logged_in() ? ' lg:top-[32px] top-[46px]' : ' top-0'; ?>">
       <div class="flex-none bg-orange-300 w-sp-2 h-sp-2 rounded-circle ml-sp-5"></div>
