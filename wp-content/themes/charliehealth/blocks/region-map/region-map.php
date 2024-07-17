@@ -7,7 +7,7 @@
       alert(simplemaps_usmap_mapdata.state_specific[id].name);
     }
   </script>
-  <div>
+  <div id="outreachReps">
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-sp-8 lg:gap-y-sp-16">
       <?php
       $args = array(
@@ -37,7 +37,7 @@
           <div class="grid justify-items-start gap-sp-1 outreach-member-js noshow" data-state="<?= $state; ?>">
             <div class="cursor-pointer" data-modal-id="<?= $id; ?>">
               <img src="<?= $headshot['url'] ?: site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="rounded-circle mb-sp-4 w-[240px] hover:shadow-lg duration-300">
-              <h4 class="underline"><?= get_the_title(); ?></h4>
+              <h4 class="underline"><?= get_the_title($id); ?></h4>
             </div>
             <h5 class="mb-0"><?= $title; ?></h5>
             <h5 class="mb-0"></h5>
@@ -130,16 +130,22 @@ endif;
     const selected = simplemaps_usmap_mapdata.state_specific[id].name;
     const outreachMembers = document.querySelectorAll('.outreach-member-js');
 
-    console.log(selected);
-
     outreachMembers.forEach(member => {
       const state = member.getAttribute('data-state');
-      
+
       member.classList.add('noshow');
       if (state && state.includes(selected)) {
         // Do something with the matching member
-        console.log(member);
         member.classList.remove('noshow');
+        const targetElement = document.getElementById('outreachReps');
+        const yOffset = -200; // Offset of 200px
+        const yPosition = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+        window.scrollTo({
+          top: yPosition,
+          behavior: 'smooth'
+        });
+
       }
     });
 
