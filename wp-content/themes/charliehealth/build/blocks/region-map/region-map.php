@@ -25,6 +25,7 @@
           $id = get_the_ID();
           $title = get_field('title', $id);
           $state = get_field('state', $id);
+          $state = implode(' ', $state);
           $phone = get_field('phone', $id);
           $email = get_field('email', $id);
           $headshot = get_field('headshot', $id);
@@ -33,7 +34,7 @@
           } else {
             $altText = 'Headshot of ' . get_the_title($id);
           } ?>
-          <div class="grid justify-items-start gap-sp-1">
+          <div class="grid justify-items-start gap-sp-1 outreach-member-js noshow" data-state="<?= $state; ?>">
             <div class="cursor-pointer" data-modal-id="<?= $id; ?>">
               <img src="<?= $headshot['url'] ?: site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="rounded-circle mb-sp-4 w-[240px] hover:shadow-lg duration-300">
               <h4 class="underline"><?= get_the_title(); ?></h4>
@@ -123,6 +124,28 @@ if ($modalQuery->have_posts()) : while ($modalQuery->have_posts()) : $modalQuery
   wp_reset_postdata();
 endif;
 ?>
+<!-- STATE SELECTION -->
+<script type="text/javascript">
+  simplemaps_usmap.hooks.click_state = function(id) {
+    const selected = simplemaps_usmap_mapdata.state_specific[id].name;
+    const outreachMembers = document.querySelectorAll('.outreach-member-js');
+
+    console.log(selected);
+
+    outreachMembers.forEach(member => {
+      const state = member.getAttribute('data-state');
+      
+      member.classList.add('noshow');
+      if (state && state.includes(selected)) {
+        // Do something with the matching member
+        console.log(member);
+        member.classList.remove('noshow');
+      }
+    });
+
+  }
+</script>
+<!-- MODALS -->
 <script>
   const members = document.querySelectorAll('div[data-modal-id]');
   const modals = document.querySelectorAll('div[data-modal]');
