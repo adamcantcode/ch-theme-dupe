@@ -1,42 +1,57 @@
-<?php
+<div class="container-md">
+  <div id="map"></div>
+  <script type="text/javascript" src="<?= site_url('/wp-content/themes/charliehealth/blocks/region-map/mapdata.js'); ?>"></script>
+  <script type="text/javascript" src="<?= site_url('/wp-content/themes/charliehealth/blocks/region-map/usmap.js'); ?>"></script>
+  <script>
+    simplemaps_usmap.hooks.click_state = function(id) {
+      alert(simplemaps_usmap_mapdata.state_specific[id].name);
+    }
+  </script>
+  <div>
+    <?php $args = array(
+      'post_type'      => 'outreach-team-member',
+      'numberposts'    => -1,
+      'posts_per_page' => -1,
+      'order'          => 'ASC',
+    );
 
-?>
-<div class="grid lg:grid-cols-[1fr_2fr]">
-  <?php
-  $args = array(
-    'post_type'      => 'outreach-team-member',
-    'meta_key'       => 'is_director',
-    'meta_value'     => '1',
-    'posts_per_page' => -1
-  );
+    $query = new WP_Query($args);
 
-  $query = new WP_Query($args);
-  ?>
-  <div class="order-2 lg:order-1 max-h-[600px] overflow-y-scroll custom-scroll-vertical">
-    <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
-        <?php
-        $region = get_field('region', get_the_ID());
-        $email  = get_field('email', get_the_ID());
-        $phone  = get_field('phone', get_the_ID());
-        ?>
-        <?php foreach ($region as $rd) : ?>
-          <?php
-          $subregion = get_field('subregion_subregion', get_the_ID());
-          $regionTitle = !empty($subregion) && isset($subregion[0]) ? $subregion[0] : $rd->post_title;
-          ?>
-          <div class="border rounded-md border-card-border lg:p-sp-8 p-sp-4 hover:shadow-[inset_0_0_0_2px_#1d225f] shadow-[inset_0_0_0_2px_transparent] duration-300 relative mb-sp-8">
-            <h3><a href="<?= site_url('regions/' . $rd->post_name); ?>" class="stretched-link"><?= $regionTitle; ?></a></h3>
-            <h5><?= get_the_title(); ?></h5>
-            <h5>Regional Director</h5>
-            <h5><a href="mailto:<?= $email; ?>" class="relative z-10"><?= $email; ?></a></h5>
-            <h5 class="mb-0"><a href="tel:+<?= $phone; ?>" class="relative z-10"><?= $phone; ?></a></h5>
+    if ($query->have_posts()) :
+      while ($query->have_posts()) :
+        $query->the_post();
+        $id = get_the_ID();
+        $title = get_field('title', $id);
+        $state = get_field('state', $id);
+        $phone = get_field('phone', $id);
+        $email = get_field('email', $id);
+        $headshot = get_field('headshot', $id);
+        if ($headshot) {
+          $altText = $headshot['alt'];
+        } else {
+          $altText = 'Headshot of ' . get_the_title($id);
+        } ?>
+        <div class="grid justify-items-start gap-sp-1">
+          <div class="cursor-pointer" data-modal-id="<?= $id; ?>">
+            <img src="<?= $headshot['url'] ?: site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="rounded-circle mb-sp-4 w-[240px] hover:shadow-lg duration-300">
+            <h4 class="underline"><?= get_the_title(); ?></h4>
           </div>
-        <?php endforeach; ?>
-    <?php endwhile;
+          <h5 class="mb-0"><?= $title; ?></h5>
+          <h5 class="mb-0"></h5>
+          <?php if ($phone) : ?>
+            <a href="tel:+<?= $phone; ?>" class="inline-block no-underline break-all">
+              <h5 class="mb-0"><?= $phone; ?></h5>
+            </a>
+          <?php endif; ?>
+          <a href="mailto:<?= $email; ?>" class="inline-block no-underline break-all">
+            <h5 class="mb-0"><?= $email; ?></h5>
+          </a>
+        </div>
+    <?php
+      endwhile;
       wp_reset_postdata();
+    else :
+      echo 'No posts found.';
     endif; ?>
   </div>
-  <div id="map" class="order-1 lg:order-2"></div>
 </div>
-<script type="text/javascript" src="<?= site_url('/wp-content/themes/charliehealth/blocks/region-map/mapdata.js'); ?>"></script>
-<script type="text/javascript" src="<?= site_url('/wp-content/themes/charliehealth/blocks/region-map/usmap.js'); ?>"></script>
