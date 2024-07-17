@@ -29,18 +29,19 @@
           $phone = get_field('phone', $id);
           $email = get_field('email', $id);
           $headshot = get_field('headshot', $id);
+          $director = get_field('is_director', $id);
+          $director = $director ? 'border-pale-blue-200' : 'border-[#EFEFFD]';
           if ($headshot) {
             $altText = $headshot['alt'];
           } else {
             $altText = 'Headshot of ' . get_the_title($id);
           } ?>
-          <div class="grid justify-items-start gap-sp-1 outreach-member-js noshow" data-state="<?= $state; ?>">
+          <div class="border-2 <?= $director; ?> rounded-md justify-items-start gap-sp-1 p-base5-2 outreach-member-js hover:shadow-lg duration-300 noshow" data-state="<?= $state; ?>">
             <div class="cursor-pointer" data-modal-id="<?= $id; ?>">
-              <img src="<?= $headshot['url'] ?: site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="rounded-circle mb-sp-4 w-[240px] hover:shadow-lg duration-300">
+              <img src="<?= $headshot['url'] ?: site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="rounded-circle mb-sp-4 w-[240px]">
               <h4 class="underline"><?= get_the_title($id); ?></h4>
             </div>
             <h5 class="mb-0"><?= $title; ?></h5>
-            <h5 class="mb-0"></h5>
             <?php if ($phone) : ?>
               <a href="tel:+<?= $phone; ?>" class="inline-block no-underline break-all">
                 <h5 class="mb-0"><?= $phone; ?></h5>
@@ -56,6 +57,9 @@
       else :
         echo 'No posts found.';
       endif; ?>
+    </div>
+    <div id="noReps" class="noshow">
+      <h2>none</h2>
     </div>
   </div>
 </div>
@@ -80,7 +84,7 @@ if ($modalQuery->have_posts()) : while ($modalQuery->have_posts()) : $modalQuery
 ?>
     <div class="bg-[rgba(0,0,0,.5)] fixed top-0 left-0 w-full h-full z-50 grid items-center justify-center center transition-all duration-300 modal-fade" data-modal="<?= $id; ?>">
       <div class="transition-all duration-300 m-sp-4">
-        <div class="grid lg:grid-cols-[1.5fr,1fr] gap-sp-8 section-xs bg-cream container max-h-[80vh] overflow-auto rounded-md items-center relative">
+        <div class="grid lg:grid-cols-[1.5fr,1fr] gap-sp-8 section-xs bg-cream container max-h-[66vh] overflow-auto rounded-md items-center relative">
           <div class="absolute top-0 right-0 cursor-pointer">
             <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/close-x.svg'); ?>" alt="close button" class="w-full duration-300 modal-close p-sp-4 hover:brightness-0">
           </div>
@@ -88,7 +92,6 @@ if ($modalQuery->have_posts()) : while ($modalQuery->have_posts()) : $modalQuery
             <div class="grid justify-items-start gap-sp-1">
               <h4 class="mb-0"><?= get_the_title($id); ?></h4>
               <h5 class="mb-0"><?= $title; ?></h5>
-              <h5 class="mb-0"></h5>
               <?php if ($phone) : ?>
                 <a href="tel:+<?= $phone; ?>" class="no-underline break-all">
                   <h5 class="mb-0"><?= $phone; ?></h5>
@@ -129,24 +132,25 @@ endif;
   simplemaps_usmap.hooks.click_state = function(id) {
     const selected = simplemaps_usmap_mapdata.state_specific[id].name;
     const outreachMembers = document.querySelectorAll('.outreach-member-js');
+    const noReps = document.querySelector('#noReps');
 
     outreachMembers.forEach(member => {
       const state = member.getAttribute('data-state');
 
       member.classList.add('noshow');
+
       if (state && state.includes(selected)) {
-        // Do something with the matching member
-        member.classList.remove('noshow');
         const targetElement = document.getElementById('outreachReps');
         const yOffset = -200; // Offset of 200px
         const yPosition = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+        member.classList.remove('noshow');
 
         window.scrollTo({
           top: yPosition,
           behavior: 'smooth'
         });
-
-      }
+      } 
     });
 
   }
