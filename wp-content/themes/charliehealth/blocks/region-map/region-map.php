@@ -1,66 +1,59 @@
-<div class="container-md">
-  <div id="map"></div>
-  <script type="text/javascript" src="<?= site_url('/wp-content/themes/charliehealth/blocks/region-map/mapdata.js'); ?>"></script>
-  <script type="text/javascript" src="<?= site_url('/wp-content/themes/charliehealth/blocks/region-map/usmap.js'); ?>"></script>
-  <script>
-    simplemaps_usmap.hooks.click_state = function(id) {
-      alert(simplemaps_usmap_mapdata.state_specific[id].name);
-    }
-  </script>
-  <div id="outreachReps">
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-sp-8 lg:gap-y-sp-16">
-      <?php
-      $args = array(
-        'post_type'      => 'outreach-team-member',
-        'numberposts'    => -1,
-        'posts_per_page' => -1,
-        'order'          => 'ASC',
-      );
+<div id="map"></div>
+<script type="text/javascript" src="<?= site_url('/wp-content/themes/charliehealth/blocks/region-map/mapdata.js'); ?>"></script>
+<script type="text/javascript" src="<?= site_url('/wp-content/themes/charliehealth/blocks/region-map/usmap.js'); ?>"></script>
+<div id="outreachReps" class="my-base5-10">
+  <div id="noReps" class="noshow mb-base5-10">
+    <h2></h2>
+  </div>
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-sp-8 lg:gap-y-sp-16">
+    <?php
+    $args = array(
+      'post_type'      => 'outreach-team-member',
+      'numberposts'    => -1,
+      'posts_per_page' => -1,
+      'order'          => 'ASC',
+    );
 
-      $query = new WP_Query($args);
+    $query = new WP_Query($args);
 
-      if ($query->have_posts()) :
-        while ($query->have_posts()) :
-          $query->the_post();
-          $id = get_the_ID();
-          $title = get_field('title', $id);
-          $state = get_field('state', $id);
-          $state = implode(' ', $state);
-          $phone = get_field('phone', $id);
-          $email = get_field('email', $id);
-          $headshot = get_field('headshot', $id);
-          $director = get_field('is_director', $id);
-          $director = $director ? 'border-pale-blue-200' : 'border-[#EFEFFD]';
-          if ($headshot) {
-            $altText = $headshot['alt'];
-          } else {
-            $altText = 'Headshot of ' . get_the_title($id);
-          } ?>
-          <div class="border-2 <?= $director; ?> rounded-md justify-items-start gap-sp-1 p-base5-2 outreach-member-js hover:shadow-lg duration-300 noshow" data-state="<?= $state; ?>">
-            <div class="cursor-pointer" data-modal-id="<?= $id; ?>">
-              <img src="<?= $headshot['url'] ?: site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="rounded-circle mb-sp-4 w-[240px]">
-              <h4 class="underline"><?= get_the_title($id); ?></h4>
-            </div>
-            <h5 class="mb-0"><?= $title; ?></h5>
-            <?php if ($phone) : ?>
-              <a href="tel:+<?= $phone; ?>" class="inline-block no-underline break-all">
-                <h5 class="mb-0"><?= $phone; ?></h5>
-              </a>
-            <?php endif; ?>
-            <a href="mailto:<?= $email; ?>" class="inline-block no-underline break-all">
-              <h5 class="mb-0"><?= $email; ?></h5>
-            </a>
+    if ($query->have_posts()) :
+      while ($query->have_posts()) :
+        $query->the_post();
+        $id = get_the_ID();
+        $title = get_field('title', $id);
+        $state = get_field('state', $id);
+        $state = implode(' ', $state);
+        $phone = get_field('phone', $id);
+        $email = get_field('email', $id);
+        $headshot = get_field('headshot', $id);
+        $director = get_field('is_director', $id);
+        $director = $director ? 'border-pale-blue-200' : 'border-[#EFEFFD]';
+        if ($headshot) {
+          $altText = $headshot['alt'];
+        } else {
+          $altText = 'Headshot of ' . get_the_title($id);
+        } ?>
+        <div class="border-2 <?= $director; ?> rounded-md justify-items-start gap-sp-1 p-base5-2 outreach-member-js hover:shadow-lg duration-300 noshow" data-state="<?= $state; ?>">
+          <div class="cursor-pointer" data-modal-id="<?= $id; ?>">
+            <img src="<?= $headshot['url'] ?: site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="rounded-circle mb-sp-4 w-[240px] mx-auto">
+            <h4 class="underline"><?= get_the_title($id); ?></h4>
           </div>
-      <?php
-        endwhile;
-        wp_reset_postdata();
-      else :
-        echo 'No posts found.';
-      endif; ?>
-    </div>
-    <div id="noReps" class="noshow">
-      <h2>none</h2>
-    </div>
+          <h5 class="mb-0"><?= $title; ?></h5>
+          <?php if ($phone) : ?>
+            <a href="tel:+<?= $phone; ?>" class="inline-block no-underline break-all">
+              <h5 class="mb-0"><?= $phone; ?></h5>
+            </a>
+          <?php endif; ?>
+          <a href="mailto:<?= $email; ?>" class="inline-block no-underline break-all">
+            <h5 class="mb-0"><?= $email; ?></h5>
+          </a>
+        </div>
+    <?php
+      endwhile;
+      wp_reset_postdata();
+    else :
+      echo 'No posts found.';
+    endif; ?>
   </div>
 </div>
 <?php
@@ -144,15 +137,22 @@ endif;
         const yOffset = -200; // Offset of 200px
         const yPosition = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
+        noReps.classList.remove('noshow');
+        noReps.querySelector('h2').innerHTML = `${selected} Clinical Outreach Representatives`;
         member.classList.remove('noshow');
 
         window.scrollTo({
           top: yPosition,
           behavior: 'smooth'
         });
-      } 
+      }
     });
 
+    const allHaveNoShow = Array.from(outreachMembers).every(member => member.classList.contains('noshow'));
+
+    if (allHaveNoShow) {
+      noReps.querySelector('h2').innerHTML = `No Representatives`;
+    }
   }
 </script>
 <!-- MODALS -->
