@@ -35,7 +35,7 @@
         <div class="border-2 border-[#EFEFFD] rounded-md justify-items-start gap-sp-1 p-base5-2 outreach-member-js<?= $director ? ' is-director-js' : ''; ?> hover:shadow-lg duration-300 noshow" data-state="<?= $state; ?>">
           <div class="cursor-pointer" data-modal-id="<?= $id; ?>">
             <img src="<?= $headshot['url'] ?: site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="rounded-circle mb-sp-4 w-[240px] mx-auto">
-            <h4 class="underline"><?= get_the_title($id); ?></h4>
+            <h4 id="repName" class="underline"><?= get_the_title($id); ?></h4>
           </div>
           <h5 class="mb-0"><?= $title; ?></h5>
           <?php if ($phone) : ?>
@@ -120,70 +120,82 @@ if ($modalQuery->have_posts()) : while ($modalQuery->have_posts()) : $modalQuery
 endif;
 ?>
 <script type="text/javascript">
-  document.addEventListener('DOMContentLoaded', function() {
-    // Director Order
-    var list = document.getElementById('outreachRepsList');
-    var elements = list.querySelectorAll('.outreach-member-js.is-director-js');
+  document.addEventListener('DOMContentLoaded', () => {
+    const list = document.getElementById('outreachRepsList');
+    const allMembers = Array.from(list.getElementsByClassName('outreach-member-js'));
+    const regionalDirectors = list.querySelectorAll('.outreach-member-js.is-director-js');
 
-    elements.forEach(function(element) {
+    const getLastName = (element) => {
+      const repName = element.querySelector('#repName').textContent; // Assume id contains the name
+      const nameParts = repName.split(' ');
+      return nameParts[nameParts.length - 1]; // Return the last part as the last name
+    };
+
+    allMembers.sort((a, b) => {
+      const lastNameA = getLastName(a).toLowerCase();
+      const lastNameB = getLastName(b).toLowerCase();
+      if (lastNameA < lastNameB) return -1;
+      if (lastNameA > lastNameB) return 1;
+      return 0;
+    });
+
+    allMembers.forEach(element => list.appendChild(element));
+
+    regionalDirectors.forEach(element => {
       list.insertBefore(element, list.firstChild);
     });
 
-    // State Selection
-    simplemaps_usmap.hooks.click_state = function(id) {
+    simplemaps_usmap.hooks.click_state = id => {
       const selected = simplemaps_usmap_mapdata.state_specific[id].name;
       const outreachMembers = document.querySelectorAll('.outreach-member-js');
       const noReps = document.querySelector('#noReps');
+      const targetElement = document.getElementById('outreachReps');
+      const yOffset = -200;
+      const yPosition = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      let hasVisibleMembers = false;
 
       outreachMembers.forEach(member => {
         const state = member.getAttribute('data-state');
-
         member.classList.add('noshow');
 
         if (state && state.includes(selected)) {
-          const targetElement = document.getElementById('outreachReps');
-          const yOffset = -200; // Offset of 200px
-          const yPosition = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
           noReps.classList.remove('noshow');
-          noReps.querySelector('h2').innerHTML = `${selected} Clinical Outreach Representatives`;
+          noReps.querySelector('h2').textContent = `${selected} Clinical Outreach Representatives`;
           member.classList.remove('noshow');
 
-          window.scrollTo({
-            top: yPosition,
-            behavior: 'smooth'
-          });
+          hasVisibleMembers = true;
         }
       });
 
-      const allHaveNoShow = Array.from(outreachMembers).every(member => member.classList.contains('noshow'));
-
-      if (allHaveNoShow) {
-        noReps.querySelector('h2').innerHTML = `No Representatives`;
+      if (!hasVisibleMembers) {
+        noReps.querySelector('h2').textContent = 'No Representatives';
       }
-    }
+      window.scrollTo({
+        top: yPosition,
+        behavior: 'smooth'
+      });
+    };
 
-    // Modals
     const members = document.querySelectorAll('div[data-modal-id]');
     const modals = document.querySelectorAll('div[data-modal]');
 
-    members.forEach((member) => {
+    members.forEach(member => {
       const id = member.getAttribute('data-modal-id');
       member.addEventListener('click', () => {
-        let modal = document.querySelector(`div[data-modal="${id}"]`);
+        const modal = document.querySelector(`div[data-modal="${id}"]`);
         modal.classList.toggle('modal-fade');
       });
     });
 
-    modals.forEach((modal) => {
-      modal.addEventListener('click', (event) => {
+    modals.forEach(modal => {
+      modal.addEventListener('click', event => {
         if (event.target.getAttribute('data-modal')) {
           modal.classList.toggle('modal-fade');
         }
       });
 
       const closeButton = modal.querySelector('.modal-close');
-
       closeButton.addEventListener('click', () => {
         modal.classList.toggle('modal-fade');
       });
