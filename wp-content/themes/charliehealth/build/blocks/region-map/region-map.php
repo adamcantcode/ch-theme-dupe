@@ -2,8 +2,12 @@
 <script type="text/javascript" src="<?= site_url('/wp-content/themes/charliehealth/blocks/region-map/mapdata.js'); ?>"></script>
 <script type="text/javascript" src="<?= site_url('/wp-content/themes/charliehealth/blocks/region-map/usmap.js'); ?>"></script>
 <div id="outreachReps" class="my-base5-10">
-  <div id="noReps" class="noshow mb-base5-10">
+  <div id="repsContent" class="noshow mb-base5-10">
     <h2></h2>
+  </div>
+  <div id="repsForm" class="noshow">
+    <h4 class="mb-0">Submit your email to be notified when someone becomes available.</h4>
+    <script type="text/javascript" src="https://form.jotform.com/jsform/241994594430061"></script>
   </div>
   <div id="outreachRepsList" class="grid grid-cols-2 lg:grid-cols-4 gap-sp-8 lg:gap-y-sp-16">
     <?php
@@ -148,7 +152,8 @@ endif;
     simplemaps_usmap.hooks.click_state = id => {
       const selected = simplemaps_usmap_mapdata.state_specific[id].name;
       const outreachMembers = document.querySelectorAll('.outreach-member-js');
-      const noReps = document.querySelector('#noReps');
+      const repsContent = document.querySelector('#repsContent');
+      const repsForm = document.querySelector('#repsForm');
       const targetElement = document.getElementById('outreachReps');
       const yOffset = -200;
       const yPosition = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
@@ -160,8 +165,9 @@ endif;
 
         if (state && state.includes(selected)) {
 
-          noReps.classList.remove('noshow');
-          noReps.querySelector('h2').textContent = `${selected} Clinical Outreach Representatives`;
+          repsContent.classList.remove('noshow');
+          repsForm.classList.add('noshow');
+          repsContent.querySelector('h2').textContent = `${selected} Clinical Outreach Representatives`;
           member.classList.remove('noshow');
 
           hasVisibleMembers = true;
@@ -169,7 +175,8 @@ endif;
       });
 
       if (!hasVisibleMembers) {
-        noReps.querySelector('h2').textContent = 'No Representatives';
+        repsContent.querySelector('h2').textContent = `There are currently no representatives in ${selected}`;
+        repsForm.classList.remove('noshow');
       }
       window.scrollTo({
         top: yPosition,
