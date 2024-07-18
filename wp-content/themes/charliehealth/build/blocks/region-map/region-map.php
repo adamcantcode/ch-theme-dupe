@@ -5,7 +5,7 @@
   <div id="noReps" class="noshow mb-base5-10">
     <h2></h2>
   </div>
-  <div class="grid grid-cols-2 lg:grid-cols-4 gap-sp-8 lg:gap-y-sp-16">
+  <div id="outreachRepsList" class="grid grid-cols-2 lg:grid-cols-4 gap-sp-8 lg:gap-y-sp-16">
     <?php
     $args = array(
       'post_type'      => 'outreach-team-member',
@@ -27,13 +27,12 @@
         $email = get_field('email', $id);
         $headshot = get_field('headshot', $id);
         $director = get_field('is_director', $id);
-        $director = $director ? 'border-pale-blue-200' : 'border-[#EFEFFD]';
         if ($headshot) {
           $altText = $headshot['alt'];
         } else {
           $altText = 'Headshot of ' . get_the_title($id);
         } ?>
-        <div class="border-2 <?= $director; ?> rounded-md justify-items-start gap-sp-1 p-base5-2 outreach-member-js hover:shadow-lg duration-300 noshow" data-state="<?= $state; ?>">
+        <div class="border-2 border-[#EFEFFD] rounded-md justify-items-start gap-sp-1 p-base5-2 outreach-member-js<?= $director ? ' is-director-js' : ''; ?> hover:shadow-lg duration-300 noshow" data-state="<?= $state; ?>">
           <div class="cursor-pointer" data-modal-id="<?= $id; ?>">
             <img src="<?= $headshot['url'] ?: site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="rounded-circle mb-sp-4 w-[240px] mx-auto">
             <h4 class="underline"><?= get_the_title($id); ?></h4>
@@ -120,65 +119,74 @@ if ($modalQuery->have_posts()) : while ($modalQuery->have_posts()) : $modalQuery
   wp_reset_postdata();
 endif;
 ?>
-<!-- STATE SELECTION -->
 <script type="text/javascript">
-  simplemaps_usmap.hooks.click_state = function(id) {
-    const selected = simplemaps_usmap_mapdata.state_specific[id].name;
-    const outreachMembers = document.querySelectorAll('.outreach-member-js');
-    const noReps = document.querySelector('#noReps');
+  document.addEventListener('DOMContentLoaded', function() {
+    // Director Order
+    var list = document.getElementById('outreachRepsList');
+    var elements = list.querySelectorAll('.outreach-member-js.is-director-js');
 
-    outreachMembers.forEach(member => {
-      const state = member.getAttribute('data-state');
-
-      member.classList.add('noshow');
-
-      if (state && state.includes(selected)) {
-        const targetElement = document.getElementById('outreachReps');
-        const yOffset = -200; // Offset of 200px
-        const yPosition = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-        noReps.classList.remove('noshow');
-        noReps.querySelector('h2').innerHTML = `${selected} Clinical Outreach Representatives`;
-        member.classList.remove('noshow');
-
-        window.scrollTo({
-          top: yPosition,
-          behavior: 'smooth'
-        });
-      }
+    elements.forEach(function(element) {
+      list.insertBefore(element, list.firstChild);
     });
 
-    const allHaveNoShow = Array.from(outreachMembers).every(member => member.classList.contains('noshow'));
+    // State Selection
+    simplemaps_usmap.hooks.click_state = function(id) {
+      const selected = simplemaps_usmap_mapdata.state_specific[id].name;
+      const outreachMembers = document.querySelectorAll('.outreach-member-js');
+      const noReps = document.querySelector('#noReps');
 
-    if (allHaveNoShow) {
-      noReps.querySelector('h2').innerHTML = `No Representatives`;
+      outreachMembers.forEach(member => {
+        const state = member.getAttribute('data-state');
+
+        member.classList.add('noshow');
+
+        if (state && state.includes(selected)) {
+          const targetElement = document.getElementById('outreachReps');
+          const yOffset = -200; // Offset of 200px
+          const yPosition = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+          noReps.classList.remove('noshow');
+          noReps.querySelector('h2').innerHTML = `${selected} Clinical Outreach Representatives`;
+          member.classList.remove('noshow');
+
+          window.scrollTo({
+            top: yPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+
+      const allHaveNoShow = Array.from(outreachMembers).every(member => member.classList.contains('noshow'));
+
+      if (allHaveNoShow) {
+        noReps.querySelector('h2').innerHTML = `No Representatives`;
+      }
     }
-  }
-</script>
-<!-- MODALS -->
-<script>
-  const members = document.querySelectorAll('div[data-modal-id]');
-  const modals = document.querySelectorAll('div[data-modal]');
 
-  members.forEach((member) => {
-    const id = member.getAttribute('data-modal-id');
-    member.addEventListener('click', () => {
-      let modal = document.querySelector(`div[data-modal="${id}"]`);
-      modal.classList.toggle('modal-fade');
-    });
-  });
+    // Modals
+    const members = document.querySelectorAll('div[data-modal-id]');
+    const modals = document.querySelectorAll('div[data-modal]');
 
-  modals.forEach((modal) => {
-    modal.addEventListener('click', (event) => {
-      if (event.target.getAttribute('data-modal')) {
+    members.forEach((member) => {
+      const id = member.getAttribute('data-modal-id');
+      member.addEventListener('click', () => {
+        let modal = document.querySelector(`div[data-modal="${id}"]`);
         modal.classList.toggle('modal-fade');
-      }
+      });
     });
 
-    const closeButton = modal.querySelector('.modal-close');
+    modals.forEach((modal) => {
+      modal.addEventListener('click', (event) => {
+        if (event.target.getAttribute('data-modal')) {
+          modal.classList.toggle('modal-fade');
+        }
+      });
 
-    closeButton.addEventListener('click', () => {
-      modal.classList.toggle('modal-fade');
+      const closeButton = modal.querySelector('.modal-close');
+
+      closeButton.addEventListener('click', () => {
+        modal.classList.toggle('modal-fade');
+      });
     });
   });
 </script>
