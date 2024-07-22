@@ -23,7 +23,6 @@ $medicalReviewer = get_field('medical_reviewer');
 $date            = get_field('date') ?: '';
 $updatedDate     = get_field('select_updated_date') ?: '';
 $relatedPosts    = get_field('related_posts') ?: '';
-$toc             = get_field('toc') ?: '';
 $prefooter       = get_field('prefooter_cta') ?: '';
 $references      = get_field('references') ?: '';
 
@@ -77,26 +76,6 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
   <div class="invisible opacity-0 noshow back-to-top top-[150px] left-sp-10 mb-sp-16 w-fit translate-y-base5-3">
     <a href="#mainArticleContent" class="no-underline text-h3-base font-heading-serif">Back to top</a>
   </div>
-  <?php if ($toc) : ?>
-    <section class="section-xs">
-      <div class="container-sm">
-        <div class="rounded-md toc-container bg-light-purple">
-          <div class="flex cursor-pointer toc-heading lg:p-sp-8 p-sp-4">
-            <p class="mb-0 text-h3-base">Table of Contents</p>
-            <div class="flex items-center ml-auto toggle">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="none" viewBox="8 8 8 8" height="12px" width="12px">
-                <path d="M9 12H15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                <path d="M12 9L12 15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
-            </div>
-          </div>
-          <div class="overflow-hidden transition-all duration-500 ease-in-out toc-content max-h-0">
-            <div id="toc" class="flex flex-col items-start pt-0 lg:pt-0 lg:p-sp-8 p-sp-4 gap-sp-1"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-  <?php endif; ?>
   <section class="section-horizontal">
     <div class="container">
       <div class="divider"></div>
@@ -127,9 +106,6 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
     </div>
   </article>
 </div>
-<?php if (!$prefooter) : ?>
-  <?= do_blocks('<!-- wp:block {"ref":12} /-->'); ?>
-<?php endif; ?>
 <?php if ($relatedPosts) : ?>
   <section class="section bg-grey-cool">
     <div class="container">
@@ -171,5 +147,4 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
     </div>
   </section>
 <?php endif; ?>
-<?= do_blocks('<!-- wp:block {"ref":7353} /-->'); ?>
 <?php get_footer(); ?>
