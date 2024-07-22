@@ -112,7 +112,7 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
     </div>
   </section>
   <!-- A/B TEST CONTENT -->
-  <section class="section noshow">
+  <!-- <section class="section noshow">
     <div class="container">
       <div class="mb-sp-4">
         <a href="<?= get_post_type_archive_link('post'); ?>" class="flex items-center">
@@ -193,7 +193,7 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- END A/B TEST CONTENT -->
   <div class="invisible opacity-0 noshow back-to-top top-[150px] left-sp-10 mb-sp-16 w-fit translate-y-base5-3">
     <a href="#mainArticleContent" class="no-underline text-h3-base font-heading-serif">Back to top</a>
