@@ -362,10 +362,6 @@ $subhead = get_field('subhead', 'option');
   
         // Check if the user has scrolled past the threshold and the cookie doesn't exist
         if (scrollPosition > scrollThreshold && !getCookie('newsletter_popup')) {
-          // VWO Launch Campaign
-          window.VWO = window.VWO || [];
-          window.VWO.push(['activate', false, [83], true]);
-  
           // Change the class of an element
           var modal = document.getElementById('newsletterPopupBlogPost');
           modal.classList.toggle('modal-fade');
@@ -430,9 +426,6 @@ $subhead = get_field('subhead', 'option');
   
     //     // Check if the cookie doesn't exist and enough time has passed
     //     if (!getCookie('newsletter_popup')) {
-    //       // VWO Launch Campaign
-    //       window.VWO = window.VWO || [];
-    //       window.VWO.push(['activate', false, [83], true]);
   
     //       // Change the class of an element
     //       var modal = document.getElementById('newsletterPopupBlogPost');
