@@ -1742,6 +1742,11 @@ a.insurance-tabs.active:hover {
   margin-right: 1.25rem;
 }
 
+.my-base5-10{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
 .my-base5-4{
   margin-top: 20px;
   margin-bottom: 20px;
@@ -1760,11 +1765,6 @@ a.insurance-tabs.active:hover {
 .my-sp-8{
   margin-top: 2rem;
   margin-bottom: 2rem;
-}
-
-.my-base5-10{
-  margin-top: 50px;
-  margin-bottom: 50px;
 }
 
 .\!mb-base5-4{
@@ -2984,11 +2984,6 @@ a.insurance-tabs.active:hover {
 .border-card-border{
   --tw-border-opacity: 1;
   border-color: rgb(212 213 220 / var(--tw-border-opacity));
-}
-
-.border-pale-blue-200{
-  --tw-border-opacity: 1;
-  border-color: rgb(173 176 225 / var(--tw-border-opacity));
 }
 
 .border-primary{

@@ -125,14 +125,15 @@ endif;
 ?>
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', () => {
+    // Order all
     const list = document.getElementById('outreachRepsList');
     const allMembers = Array.from(list.getElementsByClassName('outreach-member-js'));
     const regionalDirectors = list.querySelectorAll('.outreach-member-js.is-director-js');
 
     const getLastName = (element) => {
-      const repName = element.querySelector('#repName').textContent; // Assume id contains the name
+      const repName = element.querySelector('#repName').textContent;
       const nameParts = repName.split(' ');
-      return nameParts[nameParts.length - 1]; // Return the last part as the last name
+      return nameParts[nameParts.length - 1];
     };
 
     allMembers.sort((a, b) => {
@@ -145,6 +146,7 @@ endif;
 
     allMembers.forEach(element => list.appendChild(element));
 
+    // Cut/paste RDs to top so they are always listed first
     regionalDirectors.forEach(element => {
       list.insertBefore(element, list.firstChild);
     });
@@ -161,10 +163,12 @@ endif;
 
       outreachMembers.forEach(member => {
         const state = member.getAttribute('data-state');
+
+        // Hide all
         member.classList.add('noshow');
 
         if (state && state.includes(selected)) {
-
+          // Show if selected
           repsContent.classList.remove('noshow');
           repsForm.classList.add('noshow');
           repsContent.querySelector('h2').textContent = `${selected} Clinical Outreach Representatives`;
@@ -174,16 +178,19 @@ endif;
         }
       });
 
+      // If none, display text and form
       if (!hasVisibleMembers) {
         repsContent.querySelector('h2').textContent = `There are currently no representatives in ${selected}`;
         repsForm.classList.remove('noshow');
       }
+
       window.scrollTo({
         top: yPosition,
         behavior: 'smooth'
       });
     };
 
+    // Modal logic
     const members = document.querySelectorAll('div[data-modal-id]');
     const modals = document.querySelectorAll('div[data-modal]');
 
