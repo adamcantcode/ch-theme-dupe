@@ -28,7 +28,7 @@
             "name": "title",
             "aria-label": "",
             "type": "text",
-            "instructions": "You can override the default title here. The default will be the Tag name + \"Resources for Teens & Young Adults\"",
+            "instructions": "You can override the default title here. The default will be the Tag name + \"Resources\"",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -38,7 +38,7 @@
             },
             "default_value": "",
             "maxlength": "",
-            "placeholder": "{TAG} Resources for Teens & Young Adults",
+            "placeholder": "{TAG} Resources",
             "prepend": "",
             "append": ""
         },
