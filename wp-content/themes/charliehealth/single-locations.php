@@ -67,7 +67,7 @@ $conditions = get_field('conditions');
     <div class="acf-innerblocks-container">
       <div class="grid lg:grid-cols-[4fr_1fr_7fr] gap-x-sp-5 iop-overview">
         <div>
-          <h2>What is <span class="rounded-md bg-primary-100 px-sp-4 py-[4px]">IOP?</span></h2>
+          <h2>What is <mark class="bg-primary-100">IOP?</mark></h2>
           <p>Intensive outpatient programming (IOP) is a level of behavioral healthcare that is typically more structured and intensive than traditional weekly therapy.</p>
           <p>The goal of IOP is to provide individuals with the support and treatment they need to manage their mental health issues and achieve lasting recovery, while still allowing them to maintain their daily routines and responsibilities.</p>
         </div>

@@ -6,7 +6,7 @@ $details = get_field('details');
 
 <div class="grid lg:grid-cols-[4fr_1fr_7fr] gap-x-sp-5 iop-overview">
   <div>
-    <h2><?= $heading; ?> <span class="rounded-md bg-primary-100 px-sp-4 py-[4px]"><?= $highlight; ?></span></h2>
+    <h2><?= $heading; ?> <mark class="bg-primary-100"><?= $highlight; ?></mark></h2>
     <?= $details; ?>
   </div>
   <div></div>
