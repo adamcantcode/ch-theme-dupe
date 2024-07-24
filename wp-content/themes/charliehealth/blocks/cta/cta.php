@@ -26,13 +26,12 @@ if ($style === 'value') {
 } else {
   $background = 'bg-cream';
 }
+$imgUrl = '/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg';
 if (!empty($block['backgroundColor'])) {
   $background = 'bg-' . $block['backgroundColor'];
   if ($background === 'bg-darker-blue') {
     $blockClasses .= '[&_*]:text-white ';
     $imgUrl = '/wp-content/themes/charliehealth/resources/images/logos/shield.svg';
-  } else {
-    $imgUrl = '/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg';
   }
 }
 $blockClasses .= $background . ' ';
