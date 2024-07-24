@@ -280,7 +280,7 @@ $conditions = get_field('conditions');
             <div class="bg-lavender-300 rounded-[6px] p-sp-5 flex flex-col feature-card opacity-0" style="opacity: 1; visibility: inherit;">
               <img decoding="async" src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/clipboard-blue.svg" alt="charlie health iop stats icon" class="mb-sp-6 lg:mb-sp-12 max-w-[40px] max-h-[40px]">
               <h3>Flexible Scheduling</h3>
-              <p>Morning, afternoon, and evening options on Mon-Sat, virtually or in person</p>
+              <p>Morning, afternoon, and evening options on Mon-Sat, virtually or in-person</p>
             </div>
             <div class="bg-yellow-300 rounded-[6px] p-sp-5 flex flex-col feature-card opacity-0" style="opacity: 1; visibility: inherit;">
               <img decoding="async" src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/rainbow.svg" alt="charlie health virtual therapy rainbow icon" class="mb-sp-6 lg:mb-sp-12 max-w-[40px] max-h-[40px]">
