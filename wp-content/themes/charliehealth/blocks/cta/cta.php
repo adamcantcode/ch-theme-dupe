@@ -30,6 +30,9 @@ if (!empty($block['backgroundColor'])) {
   $background = 'bg-' . $block['backgroundColor'];
   if ($background === 'bg-darker-blue') {
     $blockClasses .= '[&_*]:text-white ';
+    $imgUrl = '/wp-content/themes/charliehealth/resources/images/logos/shield.svg';
+  } else {
+    $imgUrl = '/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg';
   }
 }
 $blockClasses .= $background . ' ';
@@ -38,7 +41,7 @@ $blockClasses .= $background . ' ';
 <?php if ($style === 'value') : ?>
   <div class="flex justify-center rounded-sm lg:p-sp-14 p-sp-6 mb-sp-6 <?= $blockClasses; ?>">
     <div class="flex flex-col items-center justify-center text-center max-w-[640px]">
-      <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health shield logo" class="w-[3rem] mb-sp-5">
+      <img src="<?= site_url($imgUrl); ?>" alt="Charlie Health shield logo" class="w-[3rem] mb-sp-5">
       <p class="text-h2-base"><?= $heading; ?></p>
       <p class="mb-base5-6"><?= $subhead; ?></p>
       <?php include(get_template_directory() . '/includes/button-group.php'); ?>
