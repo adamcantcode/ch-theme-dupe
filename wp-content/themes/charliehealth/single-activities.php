@@ -85,7 +85,6 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
     <div class="container-sm">
       <?php the_content(); ?>
       <?php if ($references) : ?>
-        <div class="divider mb-sp-4"></div>
         <div class="rounded-md references-container">
           <div class="flex duration-300 rounded-md cursor-pointer references-heading lg:p-sp-8 p-sp-4 hover:bg-lightest-purple">
             <p class="mb-0 text-h3-base">References</p>
