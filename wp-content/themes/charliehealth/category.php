@@ -4,7 +4,7 @@ $bgColor = '';
 if (is_category('for-a-loved-one')) {
   $bgColor = 'bg-noise-orange';
   $audienceClass = 'families-and-caregivers-slider';
-} elseif (is_category('for-myelf')) {
+} elseif (is_category('for-myself')) {
   $bgColor = 'bg-noise-purple';
   $audienceClass = 'teens-and-young-adults-slider';
 } elseif (is_category('for-providers')) {
@@ -49,7 +49,7 @@ if (is_category('for-a-loved-one')) {
               if ($term->slug === 'for-a-loved-one') {
                 $bgColor = 'bg-noise-orange';
                 $icon = 'families';
-              } elseif ($term->slug === 'for-myelf') {
+              } elseif ($term->slug === 'for-myself') {
                 $bgColor = 'bg-noise-purple';
                 $icon = 'person';
               } elseif ($term->slug === 'for-providers') {
