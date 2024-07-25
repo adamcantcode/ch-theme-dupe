@@ -82,13 +82,13 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
               <?php if ($audiences) : foreach ($audiences as $audience) : ?>
                   <?php
                   switch ($audience->slug) {
-                    case 'teens-and-young-adults':
+                    case 'for-myself':
                       $audienceClass = 'teens-and-young-adults';
                       break;
-                    case 'families-and-caregivers':
+                    case 'for-a-loved-one':
                       $audienceClass = 'families-and-caregivers';
                       break;
-                    case 'providers':
+                    case 'for-providers':
                       $audienceClass = 'providers';
                       break;
                     default:
@@ -149,13 +149,13 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
               <?php if ($audiences) : foreach ($audiences as $audience) : ?>
                   <?php
                   switch ($audience->slug) {
-                    case 'teens-and-young-adults':
+                    case 'for-myself':
                       $audienceClass = 'teens-and-young-adults';
                       break;
-                    case 'families-and-caregivers':
+                    case 'for-a-loved-one':
                       $audienceClass = 'families-and-caregivers';
                       break;
-                    case 'providers':
+                    case 'for-providers':
                       $audienceClass = 'providers';
                       break;
                     default:

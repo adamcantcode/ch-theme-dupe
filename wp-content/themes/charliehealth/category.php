@@ -1,13 +1,13 @@
 <?php get_header(); ?>
 <?php
 $bgColor = '';
-if (is_category('families-and-caregivers')) {
+if (is_category('for-a-loved-one')) {
   $bgColor = 'bg-noise-orange';
   $audienceClass = 'families-and-caregivers-slider';
-} elseif (is_category('teens-and-young-adults')) {
+} elseif (is_category('for-myelf')) {
   $bgColor = 'bg-noise-purple';
   $audienceClass = 'teens-and-young-adults-slider';
-} elseif (is_category('providers')) {
+} elseif (is_category('for-providers')) {
   $bgColor = 'bg-noise-blue';
   $audienceClass = 'providers-slider';
 }
@@ -46,13 +46,13 @@ if (is_category('families-and-caregivers')) {
             // Skip term if is equal to current archive
             if ($term->slug !== get_queried_object()->slug) :  ?>
               <?php
-              if ($term->slug === 'families-and-caregivers') {
+              if ($term->slug === 'for-a-loved-one') {
                 $bgColor = 'bg-noise-orange';
                 $icon = 'families';
-              } elseif ($term->slug === 'teens-and-young-adults') {
+              } elseif ($term->slug === 'for-myelf') {
                 $bgColor = 'bg-noise-purple';
                 $icon = 'person';
-              } elseif ($term->slug === 'providers') {
+              } elseif ($term->slug === 'for-providers') {
                 $bgColor = 'bg-noise-blue';
                 $icon = 'clipboard';
               }

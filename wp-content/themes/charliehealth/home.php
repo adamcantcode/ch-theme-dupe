@@ -68,13 +68,13 @@
               <?php
               $featureAs = get_field('feature_as');
               switch ($featureAs->slug) {
-                case 'teens-and-young-adults':
+                case 'for-myself':
                   $audienceClass = 'teens-and-young-adults-slider';
                   break;
-                case 'families-and-caregivers':
+                case 'for-a-loved-one':
                   $audienceClass = 'families-and-caregivers-slider';
                   break;
-                case 'providers':
+                case 'for-providers':
                   $audienceClass = 'providers-slider';
                   break;
                 default:
