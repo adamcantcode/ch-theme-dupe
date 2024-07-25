@@ -25,13 +25,13 @@
       ));
       foreach ($terms as $term) : ?>
         <?php
-        if ($term->slug === 'families-and-caregivers') {
+        if ($term->slug === 'for-a-loved-one') {
           $bgColor = 'bg-noise-orange';
           $icon = 'families';
-        } elseif ($term->slug === 'teens-and-young-adults') {
+        } elseif ($term->slug === 'for-myself') {
           $bgColor = 'bg-noise-purple';
           $icon = 'person';
-        } elseif ($term->slug === 'providers') {
+        } elseif ($term->slug === 'for-providers') {
           $bgColor = 'bg-noise-blue';
           $icon = 'clipboard';
         }
