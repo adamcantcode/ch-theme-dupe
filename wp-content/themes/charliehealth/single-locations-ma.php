@@ -95,7 +95,7 @@ $conditions = get_field('conditions');
                   </div>
                   <div class="overflow-hidden transition-all duration-500 ease-in-out accordion-content max-h-0" style="">
                     <div class="px-base5-5 pb-base5-2">
-                      <p>By bringing young people with similar mental health challenges together, we’re able to create group environments where clients can learn how to build connections and foster long-term healing.</p>
+                      <p>By bringing people with similar mental health challenges together, we’re able to create group environments where clients can learn how to build connections and foster long-term healing.</p>
                     </div>
                   </div>
                 </div>
@@ -195,7 +195,7 @@ $conditions = get_field('conditions');
           <h2>Who is Charlie Health for?</h2>
         </div>
         <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:56%">
-          <h3>Young people with ongoing mental health issues or in a mental health crisis:</h3>
+          <h3>People with ongoing mental health issues or in a mental health crisis:</h3>
           <p>Charlie Health is designed for individuals who need more treatment and support than can be provided through once-weekly therapy, but who do not require the level of care provided through residential or inpatient treatment.</p>
         </div>
       </div>
@@ -245,7 +245,7 @@ $conditions = get_field('conditions');
         </div>
         <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"></div>
         <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:58%">
-          <p class="text-h4-base">Young people in crisis are struggling to find the mental health treatment they need. At Charlie Health, we’re creating serious, effective, and accessible solutions.</p>
+          <p class="text-h4-base">People in crisis are struggling to find the mental health treatment they need. At Charlie Health, we’re creating serious, effective, and accessible solutions.</p>
           <p class="text-h4-base">Our treatment programs combine personalized care with peer connection to foster long-term healing.</p>
           <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-sp-6 gap-sp-3 lg:mt-sp-8 mt-sp-12 [&amp;_*]:!text-primary">
             <div class="bg-pale-blue-200 rounded-[6px] p-sp-5 flex flex-col feature-card opacity-0" style="opacity: 1; visibility: inherit;">

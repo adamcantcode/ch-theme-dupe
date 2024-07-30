@@ -88,9 +88,9 @@ $conditions = get_field('conditions');
                   </div>
                   <div class="overflow-hidden transition-all duration-500 ease-in-out accordion-content max-h-0" style="">
                     <div class="px-base5-5 pb-base5-2">
-                      <p>By bringing young people with similar mental health challenges together, we’re able to create group environments where clients can learn how to build connections and foster long-term healing.</p>
+                      <p>By bringing people with similar mental health challenges together, we’re able to create group environments where clients can learn how to build connections and foster long-term healing.</p>
                       <p>
-                        <a href="https://www.charliehealth.com/intensive-outpatient-iop/groups" class="no-underline hover:text-white" aria-label="By bringing young people with similar mental health challenges together, we’re able to create group environments where clients can learn how to build connections and foster long-term healing Learn More" uw-rm-vague-link-id="https://www.charliehealth.com/intensive-outpatient-iop/groups$learn more" data-uw-rm-vglnk="" data-uw-rm-brl="PR" data-uw-original-href="https://www.charliehealth.com/intensive-outpatient-iop/groups">Learn More<span class="inline-block align-middle ml-sp-2">
+                        <a href="https://www.charliehealth.com/intensive-outpatient-iop/groups" class="no-underline hover:text-white" aria-label="By bringing people with similar mental health challenges together, we’re able to create group environments where clients can learn how to build connections and foster long-term healing Learn More" uw-rm-vague-link-id="https://www.charliehealth.com/intensive-outpatient-iop/groups$learn more" data-uw-rm-vglnk="" data-uw-rm-brl="PR" data-uw-original-href="https://www.charliehealth.com/intensive-outpatient-iop/groups">Learn More<span class="inline-block align-middle ml-sp-2">
                             <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3431 0.278417L16.7071 6.32784C17.0976 6.69906 17.0976 7.30094 16.7071 7.67216L10.3431 13.7216C9.95262 14.0928 9.31946 14.0928 8.92893 13.7216C8.53841 13.3504 8.53841 12.7485 8.92893 12.3773L13.5858 7.95058H0V6.04942H13.5858L8.92893 1.62273C8.53841 1.25151 8.53841 0.64964 8.92893 0.278417C9.31946 -0.0928058 9.95262 -0.0928058 10.3431 0.278417Z" fill="white"></path>
                             </svg>
@@ -212,7 +212,7 @@ $conditions = get_field('conditions');
           <h2>Who is IOP for?</h2>
         </div>
         <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:56%">
-          <h3>Young people with ongoing mental health issues or in a mental health crisis:</h3>
+          <h3>People with ongoing mental health issues or in a mental health crisis:</h3>
           <p>IOP is designed for individuals who need more treatment andsupport than can be provided through once-weekly therapy, but who do not require the level of care provided through residential or inpatient treatment.</p>
         </div>
       </div>
@@ -265,7 +265,7 @@ $conditions = get_field('conditions');
         </div>
         <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"></div>
         <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:58%">
-          <p class="text-h4-base">Young people in crisis are struggling to find the mental health treatment they need. At Charlie Health, we’re creating serious, effective, and accessible solutions.</p>
+          <p class="text-h4-base">People in crisis are struggling to find the mental health treatment they need. At Charlie Health, we’re creating serious, effective, and accessible solutions.</p>
           <p class="text-h4-base">Our treatment programs, including our virtual Intensive Outpatient Program (IOP), combine personalized care with peer connection to foster long-term healing.</p>
           <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-sp-6 gap-sp-3 lg:mt-sp-8 mt-sp-12 [&amp;_*]:!text-primary">
             <div class="bg-pale-blue-200 rounded-[6px] p-sp-5 flex flex-col feature-card opacity-0" style="opacity: 1; visibility: inherit;">
