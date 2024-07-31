@@ -246,6 +246,7 @@ $subhead = get_field('subhead', 'option');
 <div id="popupScripts">
   <script>
     window.addEventListener('DOMContentLoaded', () => {
+      console.log('loaded');
       // Function to create a cookie
       function createCookie(name, value, days) {
         var expires = '';
