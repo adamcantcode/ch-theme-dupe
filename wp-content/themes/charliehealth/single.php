@@ -212,7 +212,6 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
     </div>
   </section>
 <?php endif; ?>
-<?= do_blocks('<!-- wp:block {"ref":7353} /-->'); ?>
 <?php
 $newsletterImage = get_field('image', 'option');
 $headline = get_field('headline', 'option');
