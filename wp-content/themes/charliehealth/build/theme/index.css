@@ -1970,10 +1970,6 @@ a.insurance-tabs.active:hover {
   margin-top: 15px;
 }
 
-.mt-base5-4{
-  margin-top: 20px;
-}
-
 .mt-base5-5{
   margin-top: 25px;
 }
@@ -2440,6 +2436,14 @@ a.insurance-tabs.active:hover {
 
 .max-w-full{
   max-width: 100%;
+}
+
+.max-w-\[680\]{
+  max-width: 680;
+}
+
+.max-w-\[680px\]{
+  max-width: 680px;
 }
 
 .flex-1{
@@ -6399,10 +6403,6 @@ ul.alert li {
 
   .lg\:gap-\[150px\]{
     gap: 150px;
-  }
-
-  .lg\:gap-base5-8{
-    gap: 40px;
   }
 
   .lg\:gap-sp-10{
