@@ -275,7 +275,7 @@ $subhead = get_field('subhead', 'option');
       }
 
       // Function to handle the scroll event
-      function handleScroll() {
+      window.handleScrollVWO = function(event) {
         var scrollPosition =
           window.pageYOffset || document.documentElement.scrollTop;
         var windowHeight = window.innerHeight;
@@ -311,13 +311,14 @@ $subhead = get_field('subhead', 'option');
           });
 
           // Remove the scroll event listener
-          window.removeEventListener('scroll', handleScroll);
+          window.removeEventListener('scroll', handleScrollVWO);
         }
       }
 
       // Attach the scroll event listener
-      window.addEventListener('scroll', handleScroll);
+      window.addEventListener('scroll', handleScrollVWO);
     });
   </script>
+
 </div>
 <?php get_footer(); ?>
