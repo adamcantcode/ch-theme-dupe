@@ -2950,6 +2950,11 @@ a.insurance-tabs.active:hover {
   border-width: 2px;
 }
 
+.border-y-2{
+  border-top-width: 2px;
+  border-bottom-width: 2px;
+}
+
 .border-b{
   border-bottom-width: 1px;
 }
@@ -3452,6 +3457,11 @@ a.insurance-tabs.active:hover {
 .py-sp-8{
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.py-base5-5{
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 .pb-\[37px\]{

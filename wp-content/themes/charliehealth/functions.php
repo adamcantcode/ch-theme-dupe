@@ -159,6 +159,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/insurance-tabs');
   register_block_type(__DIR__ . '/build/blocks/bg-text-overlay');
   register_block_type(__DIR__ . '/build/blocks/testimonial-review-employee');
+  register_block_type(__DIR__ . '/build/blocks/contact-us');
 }
 add_action('init', 'register_acf_blocks', 5);
 
