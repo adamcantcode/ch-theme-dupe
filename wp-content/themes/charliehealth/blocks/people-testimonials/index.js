@@ -19,8 +19,6 @@ window.addEventListener('load', () => {
     slideToClickedSlide: true,
     speed: 1000,
     loop: false,
-    observer: true,
-    observeParents: true,
     breakpoints: {
       1024: {
         slidesPerView: 'auto',
@@ -39,73 +37,6 @@ window.addEventListener('load', () => {
           clearTimeout();
         }, 1);
       },
-      click: function (swiper, event) {
-        // Check if the active slide is the last one
-        if (swiper.activeIndex === swiper.slides.length - 1) {
-          // Recalculate the position
-          swiper.slidePrev(0, false);
-          setTimeout(() => {
-            swiper.slideNext(0, false);
-          }, 20);
-        }
-      },
     },
-  });
-
-  // Get each set of cards
-  const contentWrappper = document.querySelectorAll(
-    '.collapsible-content-wrapper'
-  );
-
-  // Check window size
-  const handleResize = (contentWrappperInstance) => {
-    toggleDropdown(contentWrappperInstance);
-  };
-
-  // Dropdown animation
-  const toggleDropdown = (contentWrappperInstance) => {
-    const toggleButton = contentWrappperInstance.querySelector(
-      '.toggle-button-testimonial'
-    );
-
-    contentWrappperInstance.style.paddingBottom =
-      toggleButton.clientHeight + 20 + 'px';
-
-    toggleButton.addEventListener('click', (e) => {
-      e.preventDefault();
-      if (contentWrappperInstance.style.height) {
-        contentWrappperInstance.style.height = 250 + 'px';
-        toggleButton.textContent = 'View full quote';
-        toggleButton.classList.remove('button-primary');
-        toggleButton.classList.add('button-secondary');
-      } else {
-        contentWrappperInstance.style.height =
-          contentWrappperInstance.scrollHeight + 'px';
-        toggleButton.remove();
-      }
-    });
-  };
-
-  // Remove padding just in case
-  const removePadding = (contentWrappperInstance) => {
-    if (contentWrappperInstance.style) {
-      contentWrappperInstance.style.paddingBottom = 'unset';
-    }
-  };
-
-  // Only run if card wrapper exist ($style === 'feed')
-  if (contentWrappper) {
-    contentWrappper.forEach((contentWrappperInstance) => {
-      handleResize(contentWrappperInstance);
-    });
-  }
-
-  window.addEventListener('resize', function () {
-    const contentWrappper = document.querySelectorAll(
-      '.collapsible-content-wrapper'
-    );
-    contentWrappper.forEach((contentWrappperInstance) => {
-      handleResize(contentWrappperInstance);
-    });
   });
 });
