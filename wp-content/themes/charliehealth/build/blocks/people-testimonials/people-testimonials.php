@@ -61,9 +61,12 @@ $quotes = get_field('quotes');
                 <?php endif; ?>
               </div>
               <?php if ($quotes) : ?>
-                <div class="careers-testimonials-panel lg:basis-[55%]">
+                <div class="careers-testimonials-panel lg:basis-[55%] relative overflow-hidden h-[250px] collapsible-content-wrapper">
                   <p class="text-h3-base font-heading-serif"><?= $pullQuote; ?></p>
                   <p><?= $fullQuote; ?></p>
+                  <div class="absolute bottom-0 flex justify-center w-full bg-grey-warm p-base5-2">
+                    <a role="button" class="z-10 normal-case ch-button button-secondary toggle-button-testimonial mb-base5-4">View full quote</a>
+                  </div>
                 </div>
               <?php endif; ?>
             </div>
