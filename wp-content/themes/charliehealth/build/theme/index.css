@@ -829,6 +829,11 @@ main {
     /* @apply overflow-hidden */
   }
 
+button, [type='submit']{
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 26 61 / var(--tw-bg-opacity));
+}
+
 *, ::before, ::after{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;

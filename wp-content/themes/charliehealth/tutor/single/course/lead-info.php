@@ -44,7 +44,7 @@ if ( is_null( $course_rating ) ) {
 		</div>
 	<?php endif; ?>
 
-	<h1 class="tutor-course-details-title tutor-fs-4 tutor-fw-bold tutor-color-black tutor-mt-12 tutor-mb-0">
+	<h1 class="tutor-course-details-title tutor-mt-12 tutor-mb-0">
 		<?php do_action( 'tutor_course/single/title/before' ); ?>
 		<span><?php the_title(); ?></span>
 	</h1>
@@ -88,8 +88,6 @@ if ( is_null( $course_rating ) ) {
 									array( 'a' => array( 'href' => true ) )
 								);
 							?>
-						<?php else : ?>
-							<?php esc_html_e( 'Uncategorized', 'tutor' ); ?>
 						<?php endif; ?>
 					</div>
 				</div>

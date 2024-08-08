@@ -230,4 +230,7 @@
   main {
     /* @apply overflow-hidden */
   }
+  button, [type='submit'] {
+    @apply bg-primary
+  }
 }
