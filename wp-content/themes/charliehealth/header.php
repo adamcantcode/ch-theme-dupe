@@ -270,4 +270,4 @@
       </div>
     </nav>
   </header>
-  <main id="primary" class="site-main <?= $showBanner ? 'lg:mt-[98px] mt-[124px]' : 'mt-[60px]'; ?>">
+  <main id="primary" class="site-main <?= $showBanner ? 'lg:mt-[98px] mt-[124px]' : 'mt-[60px] lg:mt-[70px]'; ?>">

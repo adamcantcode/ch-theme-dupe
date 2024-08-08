@@ -65,6 +65,7 @@ $footer_links = array(
 );
 
 do_action( 'tutor_dashboard/before/wrap' );
+var_dump(is_current_user_subscriber());
 ?>
 
 <div class="tutor-wrap tutor-wrap-parent tutor-dashboard tutor-frontend-dashboard tutor-dashboard-student tutor-pb-80">

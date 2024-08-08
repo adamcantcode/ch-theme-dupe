@@ -31,7 +31,7 @@ do_action( 'tutor/template/login/before/wrap' );
 
 		<div class="tutor-login-form-wrapper">
 			<div class="tutor-fs-5 tutor-color-black tutor-mb-32">
-				<?php esc_html_e( 'Hi, Welcome back!', 'tutor' ); ?>
+				<?php esc_html_e( 'Please login to continue', 'tutor' ); ?>
 			</div>
 			<?php
 				// load form template.
@@ -42,6 +42,11 @@ do_action( 'tutor/template/login/before/wrap' );
 				);
 				?>
 		</div>
+		<script>
+			window.addEventListener('load', () => {
+				document.querySelector('#mo_saml_button').remove();
+			})
+		</script>
 		<?php do_action( 'tutor_after_login_form_wrapper' ); ?>
 	</div>
 </div>

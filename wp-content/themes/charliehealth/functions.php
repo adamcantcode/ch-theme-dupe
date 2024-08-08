@@ -1011,7 +1011,7 @@ add_action('after_setup_theme', 'hide_admin_bar_for_subscribers');
 
 function hide_admin_bar_for_subscribers()
 {
-  if (current_user_can('subscriber')) {
-    // show_admin_bar(false);
+  if (is_current_user_subscriber()) {
+    show_admin_bar(false);
   }
 }
