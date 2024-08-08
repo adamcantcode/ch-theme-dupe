@@ -250,11 +250,11 @@ $login_url    = tutor_utils()->get_option( 'enable_tutor_native_login', null, tr
 			} else {
 				ob_start();
 				?>
-					<div class="tutor-course-single-pricing">
+					<!-- <div class="tutor-course-single-pricing">
 						<span class="tutor-fs-4 tutor-fw-bold tutor-color-black">
-							<?php esc_html_e( 'Free', 'tutor' ); ?>
+							<?php // esc_html_e( 'Free', 'tutor' ); ?>
 						</span>
-					</div>
+					</div> -->
 
 					<div class="tutor-course-single-btn-group <?php echo is_user_logged_in() ? '' : 'tutor-course-entry-box-login'; ?>" data-login_url="<?php echo esc_url( $login_url ); ?>">
 						<form class="tutor-enrol-course-form" method="post">

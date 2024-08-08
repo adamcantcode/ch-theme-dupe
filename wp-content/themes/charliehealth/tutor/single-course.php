@@ -38,7 +38,9 @@ if ( ! is_user_logged_in() && ! $is_public && $student_must_login_to_view_course
 		<?php ( isset( $is_enrolled ) && $is_enrolled ) ? tutor_course_enrolled_lead_info() : tutor_course_lead_info(); ?>
 		<div class="tutor-row tutor-gx-xl-5">
 			<main class="tutor-col-xl-8">
-				<?php tutor_utils()->has_video_in_single() ? tutor_course_video() : get_tutor_course_thumbnail(); ?>
+				<div class="rounded-md [&_img]:rounded-md">
+					<?php tutor_utils()->has_video_in_single() ? tutor_course_video() : get_tutor_course_thumbnail(); ?>
+				</div>
 				<?php do_action( 'tutor_course/single/before/inner-wrap' ); ?>
 
 				<?php if ( $is_mobile && 'top' === $enrollment_box_position ) : ?>
@@ -87,7 +89,7 @@ if ( ! is_user_logged_in() && ! $is_public && $student_must_login_to_view_course
 					<?php endif ?>
 
 					<div class="tutor-single-course-sidebar-more tutor-mt-24">
-						<?php tutor_course_instructors_html(); ?>
+						<?php // tutor_course_instructors_html(); ?>
 						<?php tutor_course_requirements_html(); ?>
 						<?php tutor_course_tags_html(); ?>
 						<?php tutor_course_target_audience_html(); ?>
