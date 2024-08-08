@@ -1005,3 +1005,13 @@ function schedule_fetch_and_store_data()
   }
 }
 add_action('fetch_and_store_data_event_10', 'fetch_and_store_data_from_api');
+
+// Hide admin bar if subscriber
+add_action('after_setup_theme', 'hide_admin_bar_for_subscribers');
+
+function hide_admin_bar_for_subscribers()
+{
+  if (current_user_can('subscriber')) {
+    // show_admin_bar(false);
+  }
+}

@@ -97,9 +97,9 @@
   }
   ?>
   <!-- NOT BLOG -->
-   <div id="emptyDiv"></div>
+  <div id="emptyDiv"></div>
   <?php if ($showBanner) : ?>
-    <div class="z-[9999] w-full lg:h-sp-8 h-sp-14 bg-yellow-300 flex justify-center items-center fixed<?= is_user_logged_in() ? ' lg:top-[32px] top-[46px]' : ' top-0'; ?>">
+    <div class="z-[9999] w-full lg:h-sp-8 h-sp-14 bg-yellow-300 flex justify-center items-center fixed<?= is_user_logged_in() && !is_current_user_subscriber() ? ' lg:top-[32px] top-[46px]' : ' top-0'; ?>">
       <div class="flex-none bg-orange-300 w-sp-2 h-sp-2 rounded-circle ml-sp-5"></div>
       <a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>" class="inline-block">
         <p class="px-sp-2 font-heading text-[14px] leading-normal mb-0"><?= $link['title']; ?></p>
@@ -109,7 +109,7 @@
       </svg>
     </div>
   <?php endif; ?>
-  <header class="fixed z-[100] w-screen bg-darker-blue<?= $showBanner ? ' lg:mt-sp-8 mt-sp-14' : ''; ?> <?= is_user_logged_in() ? ' lg:top-[32px] top-[46px]' : ' top-0'; ?>">
+  <header class="fixed z-[100] w-screen bg-darker-blue<?= $showBanner ? ' lg:mt-sp-8 mt-sp-14' : ''; ?> <?= is_user_logged_in() && !is_current_user_subscriber() ? ' lg:top-[32px] top-[46px]' : ' top-0'; ?>">
     <nav class="section-horizontal">
       <div class="container items-center lg:flex noshow">
         <div class="mr-sp-6">
