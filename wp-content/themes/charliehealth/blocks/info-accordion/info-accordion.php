@@ -3,6 +3,10 @@ $background = 'bg-pale-blue-100';
 if (!empty($block['backgroundColor'])) {
   $background = 'bg-' . $block['backgroundColor'];
 }
+$fontColor = '';
+if ($background === 'bg-darker-blue' || $background === 'bg-primary-100' || $background === 'bg-primary-200' || $background === 'bg-black-blue') {
+  $fontColor = '[&_*]:text-white';
+};
 ?>
 <div class="iop-overview-accordion">
   <div class="accordion">
@@ -11,7 +15,7 @@ if (!empty($block['backgroundColor'])) {
           $title       = get_sub_field('title');
           $description = get_sub_field('description');
       ?>
-          <div class="accordion-item-iop rounded-[6px] mb-sp-2 lg:mb-sp-4 <?= $background; ?>">
+          <div class="accordion-item-iop rounded-[6px] mb-sp-2 lg:mb-sp-4 <?= $background; ?> <?= $fontColor; ?> ">
             <div class="flex justify-between cursor-pointer accordion-header-iop py-base5-4 px-sp-6">
               <h3 class="mb-0 font-heading-serif"><?= $title; ?></h3>
               <div class="flex items-center ml-sp-5 toggle">
