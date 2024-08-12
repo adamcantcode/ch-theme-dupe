@@ -20,3 +20,12 @@ function abbreviateAfterFirstWord($inputString)
     return $inputString;
   }
 }
+
+function is_current_user_subscriber()
+{
+  // Get the current user object
+  $current_user = wp_get_current_user();
+
+  // Check if the user has the 'Subscriber' role
+  return in_array('subscriber', (array) $current_user->roles);
+}
