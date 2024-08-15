@@ -2035,6 +2035,10 @@ a.insurance-tabs.active:hover {
   margin-top: 2rem;
 }
 
+.mb-\[125px\]{
+  margin-bottom: 125px;
+}
+
 .line-clamp-3{
   overflow: hidden;
   display: -webkit-box;
@@ -5872,8 +5876,8 @@ ul.alert li {
     bottom: -50px;
   }
 
-  .lg\:bottom-base5-10{
-    bottom: 50px;
+  .lg\:bottom-\[100px\]{
+    bottom: 100px;
   }
 
   .lg\:bottom-base5-5{
@@ -5914,10 +5918,6 @@ ul.alert li {
 
   .lg\:top-\[32px\]{
     top: 32px;
-  }
-
-  .lg\:bottom-\[100px\]{
-    bottom: 100px;
   }
 
   .lg\:order-1{
@@ -6447,6 +6447,10 @@ ul.alert li {
 
   .lg\:grid-cols-\[minmax\(0\2c _7fr\)_minmax\(0\2c _1fr\)_minmax\(0\2c _4fr\)\]{
     grid-template-columns: minmax(0, 7fr) minmax(0, 1fr) minmax(0, 4fr);
+  }
+
+  .lg\:grid-cols-\[repeat\(auto-fill\2c _minmax\(200px\2c _1fr\)\)\]{
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 
   .lg\:grid-cols-\[unset\]{
