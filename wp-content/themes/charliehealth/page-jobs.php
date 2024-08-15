@@ -70,6 +70,7 @@ Template Post Type: page
           const data = await response.json();
           departmentsData = data;
           populateStateDropdown();
+          applyStateFilterFromHash(); // Apply the filter if hash exists
           createJobListings();
           initializeAnimation();
         } catch (error) {
@@ -128,7 +129,7 @@ Template Post Type: page
           'WA': 'Washington',
           'WV': 'West Virginia',
           'WI': 'Wisconsin',
-          'WY': 'Wyoming',
+          'WY': 'Wyoming'
         };
 
         return stateMap[abbreviation.toUpperCase()] || 'Remote';
@@ -185,7 +186,7 @@ Template Post Type: page
           'Washington': 'WA',
           'West Virginia': 'WV',
           'Wisconsin': 'WI',
-          'Wyoming': 'WY',
+          'Wyoming': 'WY'
         };
 
         return stateMap[fullName] || fullName;
@@ -247,7 +248,6 @@ Template Post Type: page
         });
       }
 
-
       const createJobListings = () => {
         const jobListingsContainer = document.getElementById('jobListings');
         jobListingsContainer.innerHTML = '';
@@ -255,19 +255,19 @@ Template Post Type: page
         departmentsData.departments.forEach(department => {
           if (department.jobs.length > 0) {
             const jobMarkup = department.jobs.map(job => `
-              <div class="relative flex flex-col justify-between transition-all duration-300 border-b lg:flex-row lg:items-center border-primary first:border-t py-sp-6 gap-x-sp-5 job-list-job-js">
-                <a href="${job.absolute_url}${ghSrcValue ? '&gh_src=' + ghSrcValue : ''}" class="no-underline stretched-link text-h4-base mb-sp-2 lg:mb-0">${job.title}</a>
-                <p class="location-js lg:text-right">${job.location.name}</p>
-              </div>
-            `).join('');
+          <div class="relative flex flex-col justify-between transition-all duration-300 border-b lg:flex-row lg:items-center border-primary first:border-t py-sp-6 gap-x-sp-5 job-list-job-js">
+            <a href="${job.absolute_url}${ghSrcValue ? '&gh_src=' + ghSrcValue : ''}" class="no-underline stretched-link text-h4-base mb-sp-2 lg:mb-0">${job.title}</a>
+            <p class="location-js lg:text-right">${job.location.name}</p>
+          </div>
+        `).join('');
             const markup = `
-              <div class="job-departments-js">
-                <h3 class="text-h2-base font-heading">${department.name}</h3>
-              </div>
-              <div class="job-list-js mt-sp-5 lg:mt-0">
-                ${jobMarkup}
-              </div>
-            `;
+          <div class="job-departments-js">
+            <h3 class="text-h2-base font-heading">${department.name}</h3>
+          </div>
+          <div class="job-list-js mt-sp-5 lg:mt-0">
+            ${jobMarkup}
+          </div>
+        `;
 
             const jobsContainer = document.createElement('div');
             jobsContainer.className = 'grid grid-cols-1 gap-x-sp-8 lg:grid-cols-[3fr_9fr] mt-sp-16 first:mt-0 job-departments-section-js transition-all duration-300 opacity-0';
@@ -366,46 +366,67 @@ Template Post Type: page
         );
       };
 
+      const applyStateFilterFromHash = () => {
+        const hash = window.location.hash.substring(1); // Remove the '#'
+        if (hash) {
+          const dropdown = document.getElementById('locationFilter');
+          const stateName = stateFullNameToAbbreviation(decodeURIComponent(hash));
+
+          // Set the dropdown value to the state name or abbreviation
+          if (dropdown.querySelector(`option[value="${stateName}"]`)) {
+            let option = dropdown.querySelector(`option[value="${stateName}"]`);
+
+            dropdown.value = hash;
+            dropdown.selectedIndex = Array.prototype.indexOf.call(dropdown.options, option);
+            setTimeout(() => {
+              dropdown.focus();
+              dropdown.blur();
+              filterJobListingsByState();
+            }, 300);
+
+          }
+        }
+      };
+
       fetchDepartments();
       document.getElementById('locationFilter').addEventListener('change', filterJobListingsByState);
-
     });
   </script>
 <?php endif; ?>
 <?php get_footer(); ?>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      setTimeout(() => {
-        const iframe = document.querySelector('#grnhse_iframe');
-        if (iframe) {
-          // Function to handle changes in iframe attributes
-          const handleAttributeChange = (mutationsList, observer) => {
-            mutationsList.forEach((mutation) => {
-              if (mutation.attributeName === 'height') {
-                const newHeight = parseInt(mutation.target.getAttribute('height'), 10);
-                if (newHeight < 500) {
-                  console.log('H < 500 ');
-                  window.location.href = 'https://www.charliehealth.com/job-application-thank-you';
-                } else {
-                  console.log('h >= 500');
-                }
+  document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(() => {
+      const iframe = document.querySelector('#grnhse_iframe');
+      if (iframe) {
+        // Function to handle changes in iframe attributes
+        const handleAttributeChange = (mutationsList, observer) => {
+          mutationsList.forEach((mutation) => {
+            if (mutation.attributeName === 'height') {
+              const newHeight = parseInt(mutation.target.getAttribute('height'), 10);
+              if (newHeight < 500) {
+                console.log('H < 500 ');
+                window.location.href = 'https://www.charliehealth.com/job-application-thank-you';
+              } else {
+                console.log('h >= 500');
               }
-            });
-          };
-  
-          // Options for the observer (which attributes to observe)
-          const config = {
-            attributes: true
-          };
-  
-          // Create a new observer
-          const observer = new MutationObserver(handleAttributeChange);
-  
-          // Start observing the target node for configured mutations
-          observer.observe(iframe, config);
-        } else {
-          console.error('Iframe with id "grnhse_iframe" not found.');
-        }  
-      }, 5000);
-    });
-  </script>
+            }
+          });
+        };
+
+        // Options for the observer (which attributes to observe)
+        const config = {
+          attributes: true
+        };
+
+        // Create a new observer
+        const observer = new MutationObserver(handleAttributeChange);
+
+        // Start observing the target node for configured mutations
+        observer.observe(iframe, config);
+      } else {
+        console.error('Iframe with id "grnhse_iframe" not found.');
+      }
+    }, 5000);
+  });
+</script>
