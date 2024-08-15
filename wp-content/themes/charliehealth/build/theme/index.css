@@ -5916,6 +5916,10 @@ ul.alert li {
     top: 32px;
   }
 
+  .lg\:bottom-\[100px\]{
+    bottom: 100px;
+  }
+
   .lg\:order-1{
     order: 1;
   }
