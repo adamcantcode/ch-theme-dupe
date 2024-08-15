@@ -370,7 +370,7 @@ Template Post Type: page
         const hash = window.location.hash.substring(1); // Remove the '#'
         if (hash) {
           const dropdown = document.getElementById('locationFilter');
-          const stateName = stateFullNameToAbbreviation(decodeURIComponent(hash));
+          const stateName = decodeURIComponent(hash);
 
           // Set the dropdown value to the state name or abbreviation
           if (dropdown.querySelector(`option[value="${stateName}"]`)) {
