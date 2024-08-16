@@ -28,7 +28,7 @@
 		});
 	</script>
 <?php endif; ?>
-<div id="chatBubbleWrapper" class="">
+<div id="chatBubbleWrapper" class="noshow">
 	<div id="chatBubbleContainer" class="fixed lg:bottom-[100px] lg:right-[100px] bottom-base5-2 right-base5-2 z-[92147483647] grid justify-items-end gap-base5-5">
 		<div id="chatBubbleContent" class="grid invisible transition-all border-2 border-white rounded-md opacity-0 translate-y-base5-4">
 			<div class="bg-primary-100 py-base5-3 px-base5-5 rounded-t-md">
