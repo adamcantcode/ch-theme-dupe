@@ -1694,6 +1694,10 @@ a.insurance-tabs.active:hover {
   z-index: 6;
 }
 
+.z-\[92147483647\]{
+  z-index: 92147483647;
+}
+
 .z-\[9999\]{
   z-index: 9999;
 }
@@ -2033,10 +2037,6 @@ a.insurance-tabs.active:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
-}
-
-.mb-\[125px\]{
-  margin-bottom: 125px;
 }
 
 .line-clamp-3{
@@ -6447,10 +6447,6 @@ ul.alert li {
 
   .lg\:grid-cols-\[minmax\(0\2c _7fr\)_minmax\(0\2c _1fr\)_minmax\(0\2c _4fr\)\]{
     grid-template-columns: minmax(0, 7fr) minmax(0, 1fr) minmax(0, 4fr);
-  }
-
-  .lg\:grid-cols-\[repeat\(auto-fill\2c _minmax\(200px\2c _1fr\)\)\]{
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 
   .lg\:grid-cols-\[unset\]{
