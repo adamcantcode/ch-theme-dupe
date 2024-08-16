@@ -225,7 +225,7 @@ $conditions = get_field('conditions');
       <div class="grid lg:grid-cols-[3fr_1fr_8fr] gap-x-sp-5">
         <div>
           <div class="mb-base5-5">
-            <h2>The core mental health conditions we treat in <?= $location; ?></h2>
+            <h2>The top mental health conditions we treat in <?= $location; ?></h2>
           </div>
         </div>
         <div></div>
