@@ -64,8 +64,8 @@
 					chatBubbleContent.classList.toggle('translate-y-base5-4')
 					chatBubbleButton.querySelector('.open').classList.toggle('noshow')
 					chatBubbleButton.querySelector('.close').classList.toggle('noshow')
-					chatBubbleButton.classList.toggle('.bubble-is-open');
-					chatBubbleButton.classList.toggle('.bubble-is-closed');
+					chatBubbleButton.classList.toggle('bubble-is-open');
+					chatBubbleButton.classList.toggle('bubble-is-closed');
 				})
 			}, 1000);
 		});
