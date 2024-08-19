@@ -7,7 +7,7 @@ Template Name: Research Page
 
 <?php get_header(); ?>
 
-<section class="section bg-grey-cool">
+<section class="section">
   <div class="container">
     <div class="grid lg:grid-cols-2">
       <div>
@@ -60,7 +60,7 @@ Template Name: Research Page
                 <?php
                 setup_postdata($post);
                 $tags = get_the_terms($post->id, 'research-tag');
-                if($tags) {
+                if ($tags) {
                   $tagName = $tags[0]->name;
                   $tagLink = get_term_link($tags[0]->term_id, 'research-tag');
                 }
@@ -135,7 +135,7 @@ Template Name: Research Page
                 $featuredImageAltText = 'Charlie Health Logo';
               }
           ?>
-              <div class="relative bg-white rounded-lg group">
+              <div class="relative transition-all bg-white rounded-lg opacity-0 group research-posts-js not-loaded noshow">
                 <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
                   <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
                 </div>
@@ -156,6 +156,34 @@ Template Name: Research Page
             wp_reset_postdata();
           endif; ?>
         </div>
+        <div class="flex">
+          <a role="button" class="w-full ml-auto ch-button button-primary justify-self-center lg:w-auto research-load-more-js lg:mt-sp-10 mt-sp-5 mb-sp-5 lg:mb-0">Load more</a>
+        </div>
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            const loadMoreResearch = document.querySelector('.research-load-more-js');
+            const posts = document.querySelectorAll('.research-posts-js.not-loaded');
+            const firstFourPosts = Array.from(posts).slice(0, 6);
+
+            firstFourPosts.forEach(post => {
+              post.classList.remove('noshow', 'not-loaded', 'opacity-0');
+            });
+
+            loadMoreResearch.addEventListener('click', function() {
+              let posts = document.querySelectorAll('.research-posts-js.not-loaded');
+              let firstFourPosts = Array.from(posts).slice(0, 6);
+              firstFourPosts.forEach(post => {
+                post.classList.remove('noshow', 'not-loaded');
+                setTimeout(() => {
+                  post.classList.remove('opacity-0');
+                }, 10);
+              });
+              if (document.querySelectorAll('.research-posts-js.not-loaded').length === 0) {
+                loadMoreResearch.remove()
+              }
+            })
+          })
+        </script>
       </div>
     </div>
   </div>
