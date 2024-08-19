@@ -20,6 +20,32 @@ Template Name: Research Page
     </div>
   </div>
 </section>
+<section class="section bg-primary">
+  <div class="container">
+    <h2 class="text-center text-white">Learn more about</h2>
+    <div class="flex flex-wrap justify-center gap-base5-4">
+      <?php
+      $terms = get_terms(array(
+        'taxonomy' => 'research-tag',
+        'hide_empty' => false,
+      ));
+
+      if (!empty($terms) && !is_wp_error($terms)) {
+        foreach ($terms as $term) {
+          $term_link = get_term_link($term);
+          $term_name = $term->name;
+      ?>
+          <div class="lg:inline-block flex w-full lg:w-[unset]">
+            <a href="<?= $term_link; ?>" class="flex text-white no-underline transition-all bg-transparent border-2 border-white rounded-pill p-base5-3 check-list-item text-h4-base hover:!text-primary hover:bg-white"><?= $term_name; ?></a>
+          </div>
+      <?php
+        }
+      }
+      ?>
+    </div>
+
+  </div>
+</section>
 <section class="section bg-grey-cool">
   <div class="container">
     <div class="grid lg:grid-cols-[3fr_9fr] gap-base5-4">
@@ -193,5 +219,6 @@ Template Name: Research Page
     <?= do_blocks('<!-- wp:block {"ref":1709} /-->'); ?>
   </div>
 </section>
+<?= do_blocks('<!-- wp:block {"ref":12135} /-->'); ?>
 
 <?php get_footer(); ?>

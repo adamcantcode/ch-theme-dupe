@@ -5732,6 +5732,11 @@ ul.alert li {
   color: rgb(231 211 255 / var(--tw-text-opacity)) !important;
 }
 
+.hover\:\!text-primary:hover{
+  --tw-text-opacity: 1 !important;
+  color: rgb(22 26 61 / var(--tw-text-opacity)) !important;
+}
+
 .hover\:text-lavender-200:hover{
   --tw-text-opacity: 1;
   color: rgb(231 211 255 / var(--tw-text-opacity));
