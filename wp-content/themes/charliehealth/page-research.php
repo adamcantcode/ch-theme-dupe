@@ -27,7 +27,7 @@ Template Name: Research Page
       <?php
       $terms = get_terms(array(
         'taxonomy' => 'research-tag',
-        'hide_empty' => false,
+        'hide_empty' => true,
       ));
 
       if (!empty($terms) && !is_wp_error($terms)) {
