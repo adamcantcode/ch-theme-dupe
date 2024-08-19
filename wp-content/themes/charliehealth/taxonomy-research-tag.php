@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Research Page
+Template Name: Research Tag Page
 */
 
 ?>
