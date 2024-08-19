@@ -1,7 +1,12 @@
 <div class="grid lg:justify-around justify-items-center items-center grid-cols-2 lg:grid-cols-[unset] lg:grid-flow-col lg:gap-sp-8 gap-sp-2">
   <?php if (have_rows('images')) :
     while (have_rows('images')) : the_row(); ?>
-      <img src="<?= get_sub_field('image')['sizes']['card-thumb']; ?>" alt="<?= get_sub_field('image')['alt'] ?>" class="object-contain aspect-video">
+      <div class="relative transition-all<?= get_sub_field('link') ? ' hover:opacity-70' : ''; ?>">
+        <img src="<?= get_sub_field('image')['sizes']['card-thumb']; ?>" alt="<?= get_sub_field('image')['alt'] ?>" class="object-contain aspect-video">
+        <?php if (get_sub_field('link')) : ?>
+          <a href="<?= get_sub_field('link')['url']; ?>" target="<?= get_sub_field('link')['target']; ?>" class="stretched-link"></a>
+        <?php endif; ?>
+      </div>
   <?php endwhile;
   endif; ?>
 </div>

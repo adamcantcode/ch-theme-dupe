@@ -159,6 +159,8 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/insurance-tabs');
   register_block_type(__DIR__ . '/build/blocks/bg-text-overlay');
   register_block_type(__DIR__ . '/build/blocks/testimonial-review-employee');
+  register_block_type(__DIR__ . '/build/blocks/contact-us');
+  register_block_type(__DIR__ . '/build/blocks/locations-hub');
 }
 add_action('init', 'register_acf_blocks', 5);
 
@@ -734,6 +736,7 @@ add_filter('should_load_separate_core_block_assets', '__return_true');
 // $test = 'lg:-mb-base5-10'
 // $test = 'lg:!-mb-base5-10'
 // $test = 'box-decoration-clone'
+// $test = 'rounded-md lg:p-base5-7 bg-grey-warm mb-base5-7 p-base5-3'
 
 // $test = '!text-h2-lg !text-h2 !font-heading !font-heading-serif !text-h5'
 // $test = 'bg-pale-blue-100'
@@ -1003,3 +1006,13 @@ function schedule_fetch_and_store_data()
   }
 }
 add_action('fetch_and_store_data_event_10', 'fetch_and_store_data_from_api');
+
+// Hide admin bar if subscriber
+add_action('after_setup_theme', 'hide_admin_bar_for_subscribers');
+
+function hide_admin_bar_for_subscribers()
+{
+  if (is_current_user_subscriber()) {
+    show_admin_bar(false);
+  }
+}

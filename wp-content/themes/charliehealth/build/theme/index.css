@@ -829,6 +829,11 @@ main {
     /* @apply overflow-hidden */
   }
 
+button, [type='submit']{
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 26 61 / var(--tw-bg-opacity));
+}
+
 *, ::before, ::after{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -1557,6 +1562,10 @@ a.insurance-tabs.active:hover {
   bottom: -100%;
 }
 
+.bottom-base5-2{
+  bottom: 10px;
+}
+
 .bottom-base5-3{
   bottom: 15px;
 }
@@ -1599,6 +1608,10 @@ a.insurance-tabs.active:hover {
 
 .right-\[25px\]{
   right: 25px;
+}
+
+.right-base5-2{
+  right: 10px;
 }
 
 .right-sp-6{
@@ -1679,6 +1692,10 @@ a.insurance-tabs.active:hover {
 
 .z-\[6\]{
   z-index: 6;
+}
+
+.z-\[92147483647\]{
+  z-index: 92147483647;
 }
 
 .z-\[9999\]{
@@ -1816,6 +1833,10 @@ a.insurance-tabs.active:hover {
 
 .mb-base5-6{
   margin-bottom: 30px;
+}
+
+.mb-base5-7{
+  margin-bottom: 35px;
 }
 
 .mb-base5-8{
@@ -2039,6 +2060,10 @@ a.insurance-tabs.active:hover {
 
 .flex{
   display: flex;
+}
+
+.table{
+  display: table;
 }
 
 .grid{
@@ -2297,10 +2322,6 @@ a.insurance-tabs.active:hover {
   width: 50px;
 }
 
-.w-\[56px\]{
-  width: 56px;
-}
-
 .w-\[650px\]{
   width: 650px;
 }
@@ -2390,10 +2411,6 @@ a.insurance-tabs.active:hover {
   max-width: 40px;
 }
 
-.max-w-\[425px\]{
-  max-width: 425px;
-}
-
 .max-w-\[50\%\]{
   max-width: 50%;
 }
@@ -2408,6 +2425,10 @@ a.insurance-tabs.active:hover {
 
 .max-w-\[640px\]{
   max-width: 640px;
+}
+
+.max-w-\[680px\]{
+  max-width: 680px;
 }
 
 .max-w-\[700px\]{
@@ -2450,12 +2471,20 @@ a.insurance-tabs.active:hover {
   flex: none;
 }
 
+.flex-shrink-0{
+  flex-shrink: 0;
+}
+
 .flex-grow{
   flex-grow: 1;
 }
 
 .basis-\[100\%\]{
   flex-basis: 100%;
+}
+
+.basis-auto{
+  flex-basis: auto;
 }
 
 .origin-center{
@@ -2507,6 +2536,11 @@ a.insurance-tabs.active:hover {
 
 .translate-y-base5-3{
   --tw-translate-y: 15px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.translate-y-base5-4{
+  --tw-translate-y: 20px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -2576,6 +2610,10 @@ a.insurance-tabs.active:hover {
   cursor: pointer;
 }
 
+.resize{
+  resize: both;
+}
+
 .grid-flow-col{
   grid-auto-flow: column;
 }
@@ -2636,6 +2674,10 @@ a.insurance-tabs.active:hover {
   align-content: space-between;
 }
 
+.\!items-start{
+  align-items: flex-start !important;
+}
+
 .items-start{
   align-items: flex-start;
 }
@@ -2676,6 +2718,10 @@ a.insurance-tabs.active:hover {
   justify-items: start;
 }
 
+.justify-items-end{
+  justify-items: end;
+}
+
 .justify-items-center{
   justify-items: center;
 }
@@ -2698,6 +2744,10 @@ a.insurance-tabs.active:hover {
 
 .gap-base5-4{
   gap: 20px;
+}
+
+.gap-base5-5{
+  gap: 25px;
 }
 
 .gap-base5-8{
@@ -2928,6 +2978,11 @@ a.insurance-tabs.active:hover {
 
 .border-2{
   border-width: 2px;
+}
+
+.border-y-2{
+  border-top-width: 2px;
+  border-bottom-width: 2px;
 }
 
 .border-b{
@@ -3369,11 +3424,6 @@ a.insurance-tabs.active:hover {
   padding-bottom: 11px;
 }
 
-.py-\[4px\]{
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
 .py-\[6px\]{
   padding-top: 6px;
   padding-bottom: 6px;
@@ -3389,9 +3439,19 @@ a.insurance-tabs.active:hover {
   padding-bottom: 10px;
 }
 
+.py-base5-3{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
 .py-base5-4{
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+.py-base5-5{
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 .py-sp-1{
@@ -3509,6 +3569,10 @@ a.insurance-tabs.active:hover {
 
 .text-center{
   text-align: center;
+}
+
+.text-right{
+  text-align: right;
 }
 
 .align-baseline{
@@ -3727,8 +3791,16 @@ a.insurance-tabs.active:hover {
   font-weight: 700;
 }
 
+.lowercase{
+  text-transform: lowercase;
+}
+
 .normal-case{
   text-transform: none;
+}
+
+.italic{
+  font-style: italic;
 }
 
 .\!leading-\[1\.1\]{
@@ -3858,8 +3930,18 @@ a.insurance-tabs.active:hover {
   opacity: 0.3;
 }
 
+.opacity-50{
+  opacity: 0.5;
+}
+
 .opacity-\[\.75\]{
   opacity: .75;
+}
+
+.shadow{
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .shadow-\[3px_3px_0px_0px_rgba\(255\2c 255\2c 255\2c 1\)\]{
@@ -3898,6 +3980,11 @@ a.insurance-tabs.active:hover {
 
 .brightness-75{
   --tw-brightness: brightness(.75);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.drop-shadow{
+  --tw-drop-shadow: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
@@ -5469,6 +5556,29 @@ ul.alert li {
     list-style-image: url("data:image/svg+xml,%3Csvg width=%2712%27 height=%2712%27 viewBox=%270 0 24 1%27 fill=%27none%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cg transform=%27translate%280, -10%29 scale%281%29%27%3E%3Cpath fill-rule=%27evenodd%27 clip-rule=%27evenodd%27 d=%27M5.07324 15.9992C7.28192 19.8247 12.1736 21.1354 15.9992 18.9268C19.8247 16.7181 21.1354 11.8264 18.9268 8.00083C16.7181 4.17529 11.8264 2.86456 8.00083 5.07324C4.17529 7.28192 2.86456 12.1736 5.07324 15.9992ZM3.34119 16.9992C6.10215 21.7813 12.217 23.4198 16.9992 20.6588C21.7813 17.8978 23.4198 11.783 20.6588 7.00083C17.8978 2.21871 11.783 0.580229 7.00083 3.34119C2.21871 6.10215 0.580229 12.217 3.34119 16.9992Z%27 fill=%27%23161A3D%27/%3E%3Cpath fill-rule=%27evenodd%27 clip-rule=%27evenodd%27 d=%27M11 13V7H13V13H11Z%27 fill=%27%23161A3D%27/%3E%3Cpath d=%27M11 15H13V17H11V15Z%27 fill=%27%23161A3D%27/%3E%3C/g%3E%3C/svg%3E");
   }
 
+.tutor-page-wrap{
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 480px) {
+  .tutor-page-wrap{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+    }
+
+@media (min-width: 1024px) {
+  .tutor-page-wrap{
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+    }
+
 .hover\:text-white:hovera:hover {
         color: #ffffff;
       }
@@ -5637,6 +5747,10 @@ ul.alert li {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.hover\:opacity-70:hover{
+  opacity: 0.7;
+}
+
 .hover\:shadow-\[inset_0_0_0_2px_\#1d225f\]:hover{
   --tw-shadow: inset 0 0 0 2px #1d225f;
   --tw-shadow-colored: inset 0 0 0 2px var(--tw-shadow-color);
@@ -5788,6 +5902,10 @@ ul.alert li {
     bottom: -50px;
   }
 
+  .lg\:bottom-\[100px\]{
+    bottom: 100px;
+  }
+
   .lg\:bottom-base5-5{
     bottom: 25px;
   }
@@ -5806,6 +5924,10 @@ ul.alert li {
 
   .lg\:right-0{
     right: 0px;
+  }
+
+  .lg\:right-\[100px\]{
+    right: 100px;
   }
 
   .lg\:top-0{
@@ -5944,6 +6066,10 @@ ul.alert li {
     margin-top: 50vh;
   }
 
+  .lg\:mt-\[70px\]{
+    margin-top: 70px;
+  }
+
   .lg\:mt-\[98px\]{
     margin-top: 98px;
   }
@@ -6020,6 +6146,10 @@ ul.alert li {
     height: 300px;
   }
 
+  .lg\:h-\[30px\]{
+    height: 30px;
+  }
+
   .lg\:h-\[400px\]{
     height: 400px;
   }
@@ -6086,6 +6216,10 @@ ul.alert li {
 
   .lg\:w-\[300px\]{
     width: 300px;
+  }
+
+  .lg\:w-\[30px\]{
+    width: 30px;
   }
 
   .lg\:w-\[500px\]{
@@ -6313,6 +6447,10 @@ ul.alert li {
     grid-template-columns: 4fr 1fr 7fr;
   }
 
+  .lg\:grid-cols-\[4fr_2fr_4fr\]{
+    grid-template-columns: 4fr 2fr 4fr;
+  }
+
   .lg\:grid-cols-\[4fr_8fr\]{
     grid-template-columns: 4fr 8fr;
   }
@@ -6524,6 +6662,10 @@ ul.alert li {
 
   .lg\:p-base5-6{
     padding: 30px;
+  }
+
+  .lg\:p-base5-7{
+    padding: 35px;
   }
 
   .lg\:p-sp-12{
@@ -6768,6 +6910,10 @@ ul.alert li {
 .\[\&_\*\]\:hover\:text-white:hover *{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.\[\&_img\]\:rounded-md img{
+  border-radius: 10px;
 }
 /*!*******************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/@wordpress/scripts/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/swiper/swiper-bundle.min.css ***!

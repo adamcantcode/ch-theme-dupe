@@ -1,31 +1,76 @@
-<div id="stickyCTA" class="noshow">
-	<div class="sticky-cta-js bg-white px-sp-5 py-[10px] fixed bottom-[-100%] w-full opacity-0 invisible transition-all duration-500 z-50 md:noshow">
-		<a href="tel:+18664848218" class="w-full ch-button button-primary" target="_self">1 (866) 484-8218</a>
+<?php if (get_field('show_mobile_sticky_button')) : ?>
+	<div id="stickyCTA">
+		<div class="sticky-cta-js bg-white px-sp-5 py-[10px] fixed bottom-[-100%] w-full opacity-0 invisible transition-all duration-500 z-50 md:noshow">
+			<a href="tel:+18664848218" class="w-full ch-button button-primary" target="_self">1 (866) 484-8218</a>
+		</div>
 	</div>
-</div>
-<script>
-	document.addEventListener('DOMContentLoaded', function() {
-		var stickyCTA = document.querySelector('.sticky-cta-js');
-		var footer = document.querySelector('footer');
-		var triggerOffset = window.innerHeight;
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			var stickyCTA = document.querySelector('.sticky-cta-js');
+			var footer = document.querySelector('footer');
+			var triggerOffset = window.innerHeight;
 
-		window.addEventListener('scroll', function() {
-			var scrollPosition = window.scrollY;
-			var footerOffset = footer.offsetTop - triggerOffset;
+			window.addEventListener('scroll', function() {
+				var scrollPosition = window.scrollY;
+				var footerOffset = footer.offsetTop - triggerOffset;
 
-			if (scrollPosition > triggerOffset && scrollPosition < footerOffset) {
-				stickyCTA.classList.remove('opacity-0', 'invisible', 'bottom-[-100%]');
-				stickyCTA.classList.add('bottom-0');
-			} else if (scrollPosition >= footerOffset) {
-				stickyCTA.classList.add('opacity-0', 'invisible', 'bottom-[-100%]');
-				stickyCTA.classList.remove('bottom-0');
-			} else {
-				stickyCTA.classList.add('opacity-0', 'invisible', 'bottom-[-100%]');
-				stickyCTA.classList.remove('bottom-0');
-			}
+				if (scrollPosition > triggerOffset && scrollPosition < footerOffset) {
+					stickyCTA.classList.remove('opacity-0', 'invisible', 'bottom-[-100%]');
+					stickyCTA.classList.add('bottom-0');
+				} else if (scrollPosition >= footerOffset) {
+					stickyCTA.classList.add('opacity-0', 'invisible', 'bottom-[-100%]');
+					stickyCTA.classList.remove('bottom-0');
+				} else {
+					stickyCTA.classList.add('opacity-0', 'invisible', 'bottom-[-100%]');
+					stickyCTA.classList.remove('bottom-0');
+				}
+			});
 		});
-	});
-</script>
+	</script>
+<?php endif; ?>
+<div id="chatBubbleWrapper" class="noshow">
+	<div id="chatBubbleContainer" class="fixed lg:bottom-[100px] lg:right-[100px] bottom-base5-2 right-base5-2 z-[92147483647] grid justify-items-end gap-base5-5">
+		<div id="chatBubbleContent" class="grid invisible transition-all border-2 border-white rounded-md opacity-0 translate-y-base5-4">
+			<div class="bg-primary-100 py-base5-3 px-base5-5 rounded-t-md">
+				<h3 class="text-white">How can we help?</h3>
+			</div>
+			<div class="grid bg-primary p-base5-5 gap-base5-2 rounded-b-md">
+				<a href="https://www.charliehealth.com/insurance" class="ch-button button-secondary inverted !rounded-[6px]">Learn more about insurance</a>
+				<a href="https://www.charliehealth.com/faqs" class="ch-button button-secondary inverted !rounded-[6px]">FAQs</a>
+				<a href="https://www.charliehealth.com/form" class="ch-button button-primary inverted !rounded-[6px]">I'm ready to get started</a>
+			</div>
+		</div>
+		<div id="chatBubbleButton" class="rounded-[100%] p-base5-3 bg-lavender-300 inline-block text-right cursor-pointer transition-all opacity-0 translate-y-base5-4 bubble-is-closed">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#161A3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lg:w-[30px] lg:h-[30px] w-[25px] h-[25px] open">
+				<path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+			</svg>
+			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="lg:w-[30px] lg:h-[30px] w-[25px] h-[25px] close noshow">
+				<path fill="#161A3D" fill-rule="evenodd" d="M5.293 5.293a1 1 0 0 1 1.414 0L12 10.586l5.293-5.293a1 1 0 1 1 1.414 1.414L13.414 12l5.293 5.293a1 1 0 0 1-1.414 1.414L12 13.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L10.586 12 5.293 6.707a1 1 0 0 1 0-1.414Z" clip-rule="evenodd" />
+			</svg>
+		</div>
+	</div>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			setTimeout(() => {
+				const chatBubbleContent = document.querySelector('#chatBubbleContent');
+				const chatBubbleButton = document.querySelector('#chatBubbleButton');
+
+				chatBubbleButton.classList.toggle('opacity-0')
+				chatBubbleButton.classList.toggle('translate-y-base5-4')
+
+				chatBubbleButton.addEventListener('click', function() {
+					chatBubbleContent.classList.toggle('invisible')
+					chatBubbleContent.classList.toggle('opacity-0')
+					chatBubbleContent.classList.toggle('translate-y-base5-4')
+					chatBubbleButton.querySelector('.open').classList.toggle('noshow')
+					chatBubbleButton.querySelector('.close').classList.toggle('noshow')
+					chatBubbleButton.classList.toggle('bubble-is-open');
+					chatBubbleButton.classList.toggle('bubble-is-closed');
+				})
+			}, 1000);
+		});
+	</script>
+</div>
 <footer id="footer" class="grid bg-secondary-soft relatve">
 	<div class="section-sm-top section-lg-bottom ">
 		<div class="container">
@@ -129,14 +174,22 @@
 			<p class="text-[#87889A] text-[12px] leading-snug mb-sp-[12px]"><em>You have a right to access your medical records. Records of the care you receive from Charlie Health will be shared with your primary care provider (PCP) via an electronic patient record system or provided in a different manner unless you opt out.</em></p>
 		</div>
 		<div class="container">
-			<div class="grid lg:grid-cols-2 grid-cols-[2fr_1fr]">
+			<div class="grid lg:grid-cols-2 grid-cols-[2fr_1fr] gap-base5-4">
 				<div class="flex items-center">
 					<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield.svg'); ?>" alt="Charlie health shield logo" class="w-sp-8" />
 					<span class="text-white text-[12px] ml-sp-4">© <?= date('Y'); ?> Charlie Health, Inc. All rights reserved.</span>
 				</div>
-				<a href="https://www.jointcommission.org/" target="_blank">
-					<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/gold-seal.webp'); ?>" alt="The Joint Commission logo that links to the Joint Commission homepage" class="ml-auto w-[56px]">
-				</a>
+				<div class="flex items-center justify-end legit-script-img gap-base5-2">
+					<script src="https://static.legitscript.com/seals/7088078.js"></script>
+					<a href="https://www.jointcommission.org/" target="_blank">
+						<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/gold-seal.webp'); ?>" alt="The Joint Commission logo that links to the Joint Commission homepage" class="ml-auto">
+					</a>
+				</div>
+				<style>
+					.legit-script-img img {
+						width: 50px
+					}
+				</style>
 			</div>
 		</div>
 	</div>

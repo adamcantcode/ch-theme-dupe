@@ -18,14 +18,15 @@ if (has_post_thumbnail()) {
   $featuredImageAltText = 'Charlie Health Logo';
 }
 
-$author          = get_field('by_author');
-$medicalReviewer = get_field('medical_reviewer');
-$date            = get_field('date') ?: '';
-$updatedDate     = get_field('select_updated_date') ?: '';
-$relatedPosts    = get_field('related_posts') ?: '';
-$toc             = get_field('toc') ?: '';
-$prefooter       = get_field('prefooter_cta') ?: '';
-$references      = get_field('references') ?: '';
+$author                = get_field('by_author');
+$medicalReviewer       = get_field('medical_reviewer');
+$customMedicalReviewer = get_field('custom_medical_review');
+$date                  = get_field('date') ?: '';
+$updatedDate           = get_field('select_updated_date') ?: '';
+$relatedPosts          = get_field('related_posts') ?: '';
+$toc                   = get_field('toc') ?: '';
+$prefooter             = get_field('prefooter_cta') ?: '';
+$references            = get_field('references') ?: '';
 
 $audiences = get_the_terms(get_the_ID(), 'category');
 $tags      = get_the_terms(get_the_ID(), 'post_tag');
@@ -69,6 +70,9 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
           <?php if (!empty($medicalReviewer)) : ?>
             <p class="mb-0">Clinically Reviewed By: <a href="<?= get_the_permalink($medicalReviewer->ID); ?>"><?= $medicalReviewer->post_title; ?></a></p>
             <p><a href="https://www.charliehealth.com/clinical-content-advisory-council">Learn more about our Clinical Review Process</a></p>
+          <?php elseif (!empty($customMedicalReviewer)) : ?>
+            <p class="mb-0">Clinically Reviewed By: <a href="<?= $customMedicalReviewer['url']; ?>" target="<?= $customMedicalReviewer['target']; ?>"><?= $customMedicalReviewer['title']; ?></a></p>
+            <p><a href="https://www.charliehealth.com/clinical-content-advisory-council">Learn more about our Clinical Review Process</a></p>
           <?php endif; ?>
           <div class="flex items-start">
             <p class="font-heading-serif">Share:</p>
@@ -82,13 +86,13 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
               <?php if ($audiences) : foreach ($audiences as $audience) : ?>
                   <?php
                   switch ($audience->slug) {
-                    case 'teens-and-young-adults':
+                    case 'for-myself':
                       $audienceClass = 'teens-and-young-adults';
                       break;
-                    case 'families-and-caregivers':
+                    case 'for-a-loved-one':
                       $audienceClass = 'families-and-caregivers';
                       break;
-                    case 'providers':
+                    case 'for-providers':
                       $audienceClass = 'providers';
                       break;
                     default:
@@ -208,7 +212,6 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
     </div>
   </section>
 <?php endif; ?>
-<?= do_blocks('<!-- wp:block {"ref":7353} /-->'); ?>
 <?php
 $newsletterImage = get_field('image', 'option');
 $headline = get_field('headline', 'option');
@@ -216,24 +219,7 @@ $subhead = get_field('subhead', 'option');
 ?>
 <div id="newsletterPopupBlogPost" class="bg-[rgba(0,0,0,.7)] fixed top-0 left-0 w-full h-full z-50 grid items-center justify-center center transition-all duration-300 modal-fade">
   <div class="transition-all duration-300 section-xs">
-    <div class="container relative rounded-md bg-cream">
-      <div class="absolute top-0 right-0 cursor-pointer">
-        <img src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/close-x.svg" alt="close button" class="w-full duration-300 modal-close p-sp-4 hover:brightness-0">
-      </div>
-      <div class="p-sp-8">
-        <div class="flex justify-center rounded-sm lg:p-sp-14 p-sp-6 mb-sp-6 bg-cream ">
-          <div class="flex flex-col items-center justify-center text-center max-w-[640px]">
-            <img src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg" alt="Charlie Health shield logo" class="w-[3rem] mb-sp-5">
-            <p class="text-h2-base"> Need additional mental health support? Charlie Health can help</p>
-            <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full ">
-              <a href="https://www.charliehealth.com/form" class="ch-button button-primary">Get Started</a>
-              <a href="https://www.charliehealth.com/intensive-outpatient-iop" class="ch-button button-secondary">Learn More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="relative rounded-md container-sm bg-cream !max-w-[950px] noshow">
+    <div class="relative rounded-md container-sm bg-cream !max-w-[950px]">
       <div class="absolute top-0 right-0 z-10 cursor-pointer">
         <img src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/close-x.svg" alt="close button" class="w-full duration-300 modal-close p-sp-4 hover:brightness-0 invert lg:invert-0">
       </div>
@@ -256,70 +242,58 @@ $subhead = get_field('subhead', 'option');
     </div>
   </div>
 </div>
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    // Function to create a cookie
-    function createCookie(name, value, days) {
-      var expires = '';
-      if (days) {
-        var date = new Date();
-        date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-        expires = '; expires=' + date.toUTCString();
-      }
-      document.cookie = name + '=' + value + expires + '; path=/';
-    }
-
-    // Function to check if the cookie exists
-    function getCookie(name) {
-      var nameEQ = name + '=';
-      var cookies = document.cookie.split(';');
-      for (var i = 0; i < cookies.length; i++) {
-        var cookie = cookies[i];
-        while (cookie.charAt(0) === ' ') {
-          cookie = cookie.substring(1, cookie.length);
+<div id="popupScripts">
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      // Function to create a cookie
+      function createCookie(name, value, days) {
+        var expires = '';
+        if (days) {
+          var date = new Date();
+          date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+          expires = '; expires=' + date.toUTCString();
         }
-        if (cookie.indexOf(nameEQ) === 0) {
-          return cookie.substring(nameEQ.length, cookie.length);
-        }
+        document.cookie = name + '=' + value + expires + '; path=/';
       }
-      return null;
-    }
 
-    // Function to handle the scroll event
-    function handleScroll() {
-      var scrollPosition =
-        window.pageYOffset || document.documentElement.scrollTop;
-      var windowHeight = window.innerHeight;
-      var scrollThreshold = windowHeight * 2.5; // Adjust this value as needed
-
-      // Check if the user has scrolled past the threshold and the cookie doesn't exist
-      if (scrollPosition > scrollThreshold && !getCookie('newsletter_popup')) {
-        // Change the class of an element
-        var modal = document.getElementById('newsletterPopupBlogPost');
-        modal.classList.toggle('modal-fade');
-
-        // Create the cookie to prevent further pop-ups
-        createCookie('newsletter_popup', 'true', 1);
-
-        modal.addEventListener('click', (event) => {
-          if (event.target.id === 'newsletterPopupBlogPost') {
-            modal.classList.toggle('modal-fade');
+      // Function to check if the cookie exists
+      function getCookie(name) {
+        var nameEQ = name + '=';
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+          var cookie = cookies[i];
+          while (cookie.charAt(0) === ' ') {
+            cookie = cookie.substring(1, cookie.length);
           }
-        });
-
-        const closeButton = modal.querySelector('.modal-close');
-
-        closeButton.addEventListener('click', () => {
-          modal.classList.toggle('modal-fade');
-        });
-
-        // Remove the scroll event listener
-        window.removeEventListener('scroll', handleScroll);
+          if (cookie.indexOf(nameEQ) === 0) {
+            return cookie.substring(nameEQ.length, cookie.length);
+          }
+        }
+        return null;
       }
-    }
 
-    // Attach the scroll event listener
-    window.addEventListener('scroll', handleScroll);
-  });
-</script>
+      function handleTiming() {
+        if (!getCookie('newsletter_popup')) {
+          var modal = document.getElementById('newsletterPopupBlogPost');
+
+          modal.classList.toggle('modal-fade');
+          createCookie('newsletter_popup', 'true', 1);
+          modal.addEventListener('click', (event) => {
+            if (event.target.id === 'newsletterPopupBlogPost') {
+              modal.classList.toggle('modal-fade');
+            }
+          });
+          const closeButton = modal.querySelector('.modal-close');
+          closeButton.addEventListener('click', () => {
+            modal.classList.toggle('modal-fade');
+          });
+        }
+      }
+      setTimeout(() => {
+        handleTiming();
+      }, 8000);
+    });
+  </script>
+
+</div>
 <?php get_footer(); ?>

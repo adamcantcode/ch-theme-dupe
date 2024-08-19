@@ -97,18 +97,19 @@
   }
   ?>
   <!-- NOT BLOG -->
+  <div id="emptyDiv"></div>
   <?php if ($showBanner) : ?>
-    <div class="z-[9999] w-full lg:h-sp-8 h-sp-14 bg-primary-200 flex justify-center items-center fixed<?= is_user_logged_in() ? ' lg:top-[32px] top-[46px]' : ' top-0'; ?>">
+    <div class="z-[9999] w-full lg:h-sp-8 h-sp-14 bg-yellow-300 flex justify-center items-center fixed<?= is_user_logged_in() && !is_current_user_subscriber() ? ' lg:top-[32px] top-[46px]' : ' top-0'; ?>">
       <div class="flex-none bg-orange-300 w-sp-2 h-sp-2 rounded-circle ml-sp-5"></div>
       <a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>" class="inline-block">
-        <p class="text-white px-sp-2 font-heading text-[14px] leading-normal mb-0"><?= $link['title']; ?></p>
+        <p class="px-sp-2 font-heading text-[14px] leading-normal mb-0"><?= $link['title']; ?></p>
       </a>
       <svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="none" class="flex-none mr-sp-5">
-        <path d="M11.4419 5.44194C11.686 5.19787 11.686 4.80214 11.4419 4.55806L7.46447 0.580583C7.22039 0.336506 6.82466 0.336506 6.58058 0.580583C6.33651 0.824661 6.33651 1.22039 6.58058 1.46447L10.1161 5L6.58058 8.53553C6.3365 8.77961 6.3365 9.17534 6.58058 9.41942C6.82466 9.6635 7.22039 9.6635 7.46447 9.41942L11.4419 5.44194ZM-5.46392e-08 5.625L11 5.625L11 4.375L5.46392e-08 4.375L-5.46392e-08 5.625Z" fill="white" />
+        <path d="M11.4419 5.44194C11.686 5.19787 11.686 4.80214 11.4419 4.55806L7.46447 0.580583C7.22039 0.336506 6.82466 0.336506 6.58058 0.580583C6.33651 0.824661 6.33651 1.22039 6.58058 1.46447L10.1161 5L6.58058 8.53553C6.3365 8.77961 6.3365 9.17534 6.58058 9.41942C6.82466 9.6635 7.22039 9.6635 7.46447 9.41942L11.4419 5.44194ZM-5.46392e-08 5.625L11 5.625L11 4.375L5.46392e-08 4.375L-5.46392e-08 5.625Z" fill="#161A3D" />
       </svg>
     </div>
   <?php endif; ?>
-  <header class="fixed z-[100] w-screen bg-darker-blue<?= $showBanner ? ' lg:mt-sp-8 mt-sp-14' : ''; ?> <?= is_user_logged_in() ? ' lg:top-[32px] top-[46px]' : ' top-0'; ?>">
+  <header class="fixed z-[100] w-screen bg-darker-blue<?= $showBanner ? ' lg:mt-sp-8 mt-sp-14' : ''; ?> <?= is_user_logged_in() && !is_current_user_subscriber() ? ' lg:top-[32px] top-[46px]' : ' top-0'; ?>">
     <nav class="section-horizontal">
       <div class="container items-center lg:flex noshow">
         <div class="mr-sp-6">
@@ -269,4 +270,4 @@
       </div>
     </nav>
   </header>
-  <main id="primary" class="site-main <?= $showBanner ? 'lg:mt-[98px] mt-[124px]' : 'mt-[60px]'; ?>">
+  <main id="primary" class="site-main <?= $showBanner ? 'lg:mt-[98px] mt-[124px]' : 'mt-[60px] lg:mt-[70px]'; ?>">

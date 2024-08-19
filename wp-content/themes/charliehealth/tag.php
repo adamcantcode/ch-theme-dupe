@@ -68,7 +68,7 @@
   if (strpos($niceTitle, 'Resources') !== false) {
     $niceTitle = get_queried_object()->name;
   }
-  $title        = get_field('title', get_queried_object()) ? get_field('title', get_queried_object()) : single_term_title('', false) . ' Resources for Teens & Young Adults';
+  $title        = get_field('title', get_queried_object()) ? get_field('title', get_queried_object()) : single_term_title('', false) . ' Resources';
   $subhead      = get_field('subhead', get_queried_object());
   $sectionOne   = get_field('section_1', get_queried_object());
   $sectionTwo   = get_field('section_2', get_queried_object());
