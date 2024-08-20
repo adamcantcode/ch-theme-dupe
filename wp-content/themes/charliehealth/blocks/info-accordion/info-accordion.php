@@ -6,7 +6,7 @@ if (!empty($block['backgroundColor'])) {
 $fontColor = '';
 $fill = '#161A3D';
 if ($background === 'bg-darker-blue' || $background === 'bg-primary-100' || $background === 'bg-primary-200' || $background === 'bg-black-blue') {
-  $fontColor = '[&_*]:text-white';
+  $fontColor = '[&_*]:!text-white';
   $fill = '#ffffff';
 };
 ?>
