@@ -1016,3 +1016,31 @@ function hide_admin_bar_for_subscribers()
     show_admin_bar(false);
   }
 }
+
+function force_social_title_to_seo_title() {
+  if (is_singular()) {
+      global $post;
+
+      // Get the raw Yoast SEO title with variables
+      $raw_seo_title = get_post_meta($post->ID, '_yoast_wpseo_title', true);
+
+      // If no custom SEO title is set, use the post title
+      if (empty($raw_seo_title)) {
+          $raw_seo_title = '%%title%% %%page%% %%sep%% %%sitename%%';
+      }
+
+      // Replace the variables with their actual values
+      $seo_title = wpseo_replace_vars($raw_seo_title, $post);
+
+      // Set the Facebook Open Graph title
+      add_filter('wpseo_opengraph_title', function() use ($seo_title) {
+          return $seo_title;
+      });
+
+      // Set the Twitter Card title (and X title)
+      add_filter('wpseo_twitter_title', function() use ($seo_title) {
+          return $seo_title;
+      });
+  }
+}
+add_action('wp', 'force_social_title_to_seo_title');
