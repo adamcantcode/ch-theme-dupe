@@ -8,11 +8,11 @@
             "name": "date",
             "aria-label": "",
             "type": "date_picker",
-            "instructions": "Include a date for post visibility and ordering on the main <a href=\"\/blog\" target=\"_blank\">\/blog page<\/a>.",
+            "instructions": "Include a date for post visibility and ordering on the Main page.",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -30,7 +30,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -50,7 +50,7 @@
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -75,14 +75,7 @@
             "type": "post_object",
             "instructions": "Select an author from <a href=\"\/wp-admin\/edit.php?post_type=medical-reviewer\" target=\"_blank\">Medical Reviewers<\/a> or add a new one.",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_66a8f192339dc",
-                        "operator": "==empty"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "50",
                 "class": "",
@@ -103,20 +96,13 @@
         },
         {
             "key": "field_66a8f192339dc",
-            "label": "Custom Medical Review",
+            "label": "Custom Medical Reviewer",
             "name": "custom_medical_review",
             "aria-label": "",
             "type": "link",
-            "instructions": "",
+            "instructions": "Use this field for custom links to author's sites.",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_64540ac2e7dc7",
-                        "operator": "==empty"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "50",
                 "class": "",
@@ -179,11 +165,11 @@
         },
         {
             "key": "field_64540758e7dc3",
-            "label": "Featured on Blog",
+            "label": "Featured on Main Page",
             "name": "main_featured",
             "aria-label": "",
             "type": "true_false",
-            "instructions": "Display post in featured slider on <a href=\"\/blog\" target=\"_blank\">\/blog page<\/a>",
+            "instructions": "Display post in featured slider on Main page",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -298,27 +284,27 @@
             "ui_on_text": "",
             "ui_off_text": "",
             "ui": 1
+        },
+        {
+            "key": "field_65b7f30b34523",
+            "label": "Hide pre-footer CTA",
+            "name": "prefooter_cta",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Select whether or not the CTA after the main content displays",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
             },
-            {
-                "key": "field_65b7f30b34523",
-                "label": "Hide pre-footer CTA",
-                "name": "prefooter_cta",
-                "aria-label": "",
-                "type": "true_false",
-                "instructions": "Select whether or not the CTA after the main content displays",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "50",
-                    "class": "",
-                    "id": ""
-                },
-                "message": "",
-                "default_value": 0,
-                "ui_on_text": "",
-                "ui_off_text": "",
-                "ui": 1
-            }
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        }
     ],
     "location": [
         [
@@ -359,5 +345,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1722349186
+    "modified": 1724259053
 }
