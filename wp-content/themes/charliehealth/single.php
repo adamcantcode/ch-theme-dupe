@@ -277,6 +277,14 @@ $subhead = get_field('subhead', 'option');
           var modal = document.getElementById('newsletterPopupBlogPost');
 
           modal.classList.toggle('modal-fade');
+
+          // Trigger VWO Event for Modal Open
+          window.VWO = window.VWO || [];
+          VWO.event = VWO.event || function() {
+            VWO.push(["event"].concat([].slice.call(arguments)))
+          };
+
+          VWO.event("modalOpen");
           createCookie('newsletter_popup', 'true', 1);
           modal.addEventListener('click', (event) => {
             if (event.target.id === 'newsletterPopupBlogPost') {
