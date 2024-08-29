@@ -42,4 +42,38 @@ $next_link       = $next_is_locked || ! $next_id ? '#' : get_the_permalink( $nex
 		</a>
 	</div>
 </div>
+<!-- JavaScript to handle form submission and redirection -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+		var nextButton = document.querySelector('.tutor-single-course-content-next a.tutor-btn');
+
+    if (nextButton) {
+      nextButton.addEventListener('click', function(event) {
+        event.preventDefault();
+
+        var completeForm = document.querySelector('.tutor-topbar-complete-btn form');
+
+        if (completeForm) {
+          var formData = new FormData(completeForm);
+          var xhr = new XMLHttpRequest();
+          xhr.open('POST', completeForm.action, true);
+
+          xhr.onload = function() {
+            if (xhr.status === 200) {
+              // Assuming the form submission was successful, proceed to the next lesson
+              window.location.href = nextButton.href;
+              console.error('Form submission failed:', xhr.statusText);
+            }
+          };
+
+          xhr.send(formData);
+        } else {
+          // If form is not found, just follow the link
+          window.location.href = nextButton.href;
+        }
+      });
+    }
+  });
+</script>
+
 <?php endif; ?>
