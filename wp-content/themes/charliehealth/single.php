@@ -225,7 +225,7 @@ $subhead = get_field('subhead', 'option');
       </div>
       <div class="grid lg:grid-cols-[1fr_2fr] items-center lg:h-[500px]">
         <div class="relative h-full">
-          <img src="https://www.charliehealth.com/wp-content/uploads/2024/06/woman-on-couch.png.webp" alt="A young adult on a couch contemplating virtual therapy for depression at Charlie Health" class="object-cover w-full h-full lg:rounded-tl-md lg:rounded-tr-none lg:rounded-bl-md rounded-t-md max-h-[20vh] lg:max-h-none">
+          <img src="https://www.charliehealth.com/wp-content/uploads/2024/08/Clinician_07-1.png.webp" alt="A young adult on a couch contemplating virtual therapy for depression at Charlie Health" class="object-cover w-full h-full lg:rounded-tl-md lg:rounded-tr-none lg:rounded-bl-md rounded-t-md max-h-[20vh] lg:max-h-none">
           <img src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/logos/shield.svg" alt="Charlie Health shield logo" class="w-[2rem] absolute lg:bottom-base5-5 lg:left-base5-5 bottom-base5-3 left-base5-3">
         </div>
         <div class="lg:p-base5-10 p-base5-3">
