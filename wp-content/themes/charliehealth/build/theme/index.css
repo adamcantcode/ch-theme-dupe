@@ -2487,6 +2487,12 @@ a.insurance-tabs.active:hover {
   flex-basis: auto;
 }
 
+.border-spacing-1{
+  --tw-border-spacing-x: 0.25rem;
+  --tw-border-spacing-y: 0.25rem;
+  border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+}
+
 .origin-center{
   transform-origin: center;
 }
@@ -3033,6 +3039,11 @@ a.insurance-tabs.active:hover {
 .border-white{
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
+.border-grey-demension{
+  --tw-border-opacity: 1;
+  border-color: rgb(207 207 215 / var(--tw-border-opacity));
 }
 
 .border-opacity-25{
