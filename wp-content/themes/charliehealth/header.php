@@ -241,6 +241,11 @@
                       $target = $secondaryLink['target'];
                       ?>
                       <a <?= $url; ?> target="<?= $target; ?>" class="mb-0 text-white no-underline py-sp-4 text-nav-normal"><?= $title; ?></a>
+                      <?php if (have_rows('nested_items', 'option')) : ?>
+                        <?php while (have_rows('nested_items', 'option')) : the_row(); ?>
+                          <a href="<?= get_sub_field('nested_item')['url']; ?>" target="<?= get_sub_field('nested_item')['target']; ?>" class="text-white no-underline font-heading text-nav-small py-sp-4 ml-base5-3 hover:text-lavender-200"><?= get_sub_field('nested_item')['title']; ?></a>
+                        <?php endwhile; ?>
+                      <?php endif; ?>
                     <?php endwhile; ?>
                     <?php if (have_rows('tertiary_menu', 'option')) : ?>
                       <div class="grid gap-x-sp-4 tertiary mt-sp-4">
