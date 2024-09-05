@@ -6578,6 +6578,10 @@ ul.alert li {
     gap: 2rem;
   }
 
+  .lg\:gap-base5-2{
+    gap: 10px;
+  }
+
   .lg\:gap-x-sp-16{
     -moz-column-gap: 6rem;
          column-gap: 6rem;
