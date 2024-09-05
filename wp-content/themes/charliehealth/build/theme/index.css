@@ -1895,6 +1895,10 @@ a.insurance-tabs.active:hover {
   margin-left: 10px;
 }
 
+.ml-base5-3{
+  margin-left: 15px;
+}
+
 .ml-sp-2{
   margin-left: 0.5rem;
 }
@@ -2037,10 +2041,6 @@ a.insurance-tabs.active:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
-}
-
-.ml-base5-3{
-  margin-left: 15px;
 }
 
 .line-clamp-3{
@@ -3798,10 +3798,6 @@ a.insurance-tabs.active:hover {
 
 .font-bold{
   font-weight: 700;
-}
-
-.uppercase{
-  text-transform: uppercase;
 }
 
 .lowercase{
@@ -6558,6 +6554,10 @@ ul.alert li {
     gap: 150px;
   }
 
+  .lg\:gap-base5-2{
+    gap: 10px;
+  }
+
   .lg\:gap-sp-10{
     gap: 2.5rem;
   }
@@ -6584,10 +6584,6 @@ ul.alert li {
 
   .lg\:gap-sp-8{
     gap: 2rem;
-  }
-
-  .lg\:gap-base5-2{
-    gap: 10px;
   }
 
   .lg\:gap-x-sp-16{
