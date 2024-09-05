@@ -148,6 +148,11 @@
                       $target = $secondaryLink['target'];
                       ?>
                       <a <?= $url; ?> target="<?= $target; ?>" class="text-white no-underline font-heading text-nav-normal hover:text-lavender-200 py-sp-3"><?= $title; ?></a>
+                      <?php if (have_rows('nested_items', 'option')) : ?>
+                        <?php while (have_rows('nested_items', 'option')) : the_row(); ?>
+                          <a href="<?= get_sub_field('nested_item')['url']; ?>" target="<?= get_sub_field('nested_item')['target']; ?>" class="no-underline font-heading text-nav-small py-[6px] ml-base5-3 text-white hover:text-lavender-200"><?= get_sub_field('nested_item')['title']; ?></a>
+                        <?php endwhile; ?>
+                      <?php endif; ?>
                     <?php endwhile; ?>
                   </div>
                   <?php if (have_rows('tertiary_menu', 'option')) : ?>

@@ -2039,6 +2039,10 @@ a.insurance-tabs.active:hover {
   margin-top: 2rem;
 }
 
+.ml-base5-3{
+  margin-left: 15px;
+}
+
 .line-clamp-3{
   overflow: hidden;
   display: -webkit-box;
@@ -3794,6 +3798,10 @@ a.insurance-tabs.active:hover {
 
 .font-bold{
   font-weight: 700;
+}
+
+.uppercase{
+  text-transform: uppercase;
 }
 
 .lowercase{
