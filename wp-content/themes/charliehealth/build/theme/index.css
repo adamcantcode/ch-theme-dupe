@@ -1895,6 +1895,10 @@ a.insurance-tabs.active:hover {
   margin-left: 10px;
 }
 
+.ml-base5-3{
+  margin-left: 15px;
+}
+
 .ml-sp-2{
   margin-left: 0.5rem;
 }
@@ -3009,6 +3013,11 @@ a.insurance-tabs.active:hover {
 .border-card-border{
   --tw-border-opacity: 1;
   border-color: rgb(212 213 220 / var(--tw-border-opacity));
+}
+
+.border-grey-demension{
+  --tw-border-opacity: 1;
+  border-color: rgb(207 207 215 / var(--tw-border-opacity));
 }
 
 .border-primary{
@@ -4438,22 +4447,11 @@ a.insurance-tabs.active:hover {
 
 /* *** Custom Pages *** */
 
-.home.page h1{
-  font-size: 70px;
-  line-height: 90%;
-  letter-spacing: 0;
-  font-weight: 400;
-}
-
-@media (min-width: 1024px){
-
-  .home.page h1{
-    font-size: 120px;
-    line-height: 90%;
-    letter-spacing: 0;
-    font-weight: 400;
+/* .home.page {
+  h1 {
+    @apply text-h1-display lg:text-h1-display-lg;
   }
-}
+} */
 
 /* *** END Custom Pages *** */
 
@@ -6543,6 +6541,10 @@ ul.alert li {
 
   .lg\:gap-\[150px\]{
     gap: 150px;
+  }
+
+  .lg\:gap-base5-2{
+    gap: 10px;
   }
 
   .lg\:gap-sp-10{
