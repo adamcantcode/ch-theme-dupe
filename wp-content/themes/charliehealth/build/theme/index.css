@@ -4447,22 +4447,11 @@ a.insurance-tabs.active:hover {
 
 /* *** Custom Pages *** */
 
-.home.page h1{
-  font-size: 70px;
-  line-height: 90%;
-  letter-spacing: 0;
-  font-weight: 400;
-}
-
-@media (min-width: 1024px){
-
-  .home.page h1{
-    font-size: 120px;
-    line-height: 90%;
-    letter-spacing: 0;
-    font-weight: 400;
+/* .home.page {
+  h1 {
+    @apply text-h1-display lg:text-h1-display-lg;
   }
-}
+} */
 
 /* *** END Custom Pages *** */
 
