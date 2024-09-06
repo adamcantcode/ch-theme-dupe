@@ -3,7 +3,7 @@
 <?= the_content(); ?>
 
 <?php if (is_front_page()) : ?>
-  <div class="noshow">
+  <div class="noshow homepagepopup">
     <div id="homepagePopup" class="bg-[rgba(0,0,0,.7)] fixed top-0 left-0 w-full h-full z-50 grid items-center justify-center center transition-all duration-300 modal-fade">
       <div class="transition-all duration-300 section-xs">
         <div class="relative rounded-md container-sm bg-cream !max-w-[950px]">
@@ -13,7 +13,7 @@
           <div class="grid lg:grid-cols-[1fr_2fr] items-center lg:h-[500px]">
             <div class="relative h-full">
               <img src="https://www.charliehealth.com/wp-content/uploads/2024/08/Clinician_07-1.png.webp" alt="A young adult on a couch contemplating virtual therapy for depression at Charlie Health" class="object-cover w-full h-full lg:rounded-tl-md lg:rounded-tr-none lg:rounded-bl-md rounded-t-md max-h-[20vh] lg:max-h-none">
-              <img src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/logos/shield.svg" alt="Charlie Health shield logo" class="w-[2rem] absolute lg:bottom-base5-5 lg:left-base5-5 bottom-base5-3 left-base5-3">
+              <img src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg" alt="Charlie Health shield logo" class="w-[2rem] absolute lg:bottom-base5-5 lg:left-base5-5 bottom-base5-3 left-base5-3">
             </div>
             <div class="lg:p-base5-10 p-base5-3">
               <div class="flex flex-col justify-center">
@@ -87,7 +87,7 @@
           let exitIntentShown = false;
   
           function handleMouseLeave(event) {
-            if (!exitIntentShown && event.clientY <= 0) {
+            if (!exitIntentShown && event.clientY <= 0 && !document.querySelector('.homepagepopup').classList.contains('noshow')) {
               handleOpen();
               exitIntentShown = true;
             }
@@ -95,7 +95,6 @@
           document.addEventListener('mouseleave', handleMouseLeave);
         });
       </script>
-  
     </div>
   </div>
 <?php endif; ?>
