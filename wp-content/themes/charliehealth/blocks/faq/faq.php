@@ -14,28 +14,28 @@ $columnCount = get_field('faq_column_count');
 $faqItems = get_field('faq_items');
 $faqButton = get_field('faq_button');
 
-function sentenceCaseWithDynamicAcronyms($string)
-{
-  // Use a regex to match acronyms
-  preg_match_all('/\b[A-Z]{2,}\b/', $string, $acronyms);
+// function sentenceCaseWithDynamicAcronyms($string)
+// {
+//   // Use a regex to match acronyms
+//   preg_match_all('/\b[A-Z]{2,}\b/', $string, $acronyms);
 
-  // Convert the entire string to lowercase
-  $string = strtolower($string);
+//   // Convert the entire string to lowercase
+//   $string = strtolower($string);
 
-  // Preserve the acronyms by re-inserting them into the lowercase string
-  if (!empty($acronyms[0])) {
-    foreach ($acronyms[0] as $acronym) {
-      $string = preg_replace('/\b' . strtolower($acronym) . '\b/', $acronym, $string);
-    }
-  }
+//   // Preserve the acronyms by re-inserting them into the lowercase string
+//   if (!empty($acronyms[0])) {
+//     foreach ($acronyms[0] as $acronym) {
+//       $string = preg_replace('/\b' . strtolower($acronym) . '\b/', $acronym, $string);
+//     }
+//   }
 
-  return $string;
-}
+//   return $string;
+// }
 ?>
 <?php if ($faqButton) : ?>
   <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] lg:gap-sp-12 gap-sp-8">
     <div class="grid lg:block">
-      <h2>FAQs for <?= sentenceCaseWithDynamicAcronyms(get_the_title()); ?></h2>
+      <h2>FAQs for <?= get_the_title(); ?></h2>
       <a href="<?= site_url('/faqs'); ?>" class="ch-button button-secondary">See All FAQs</a>
     </div>
     <div>
