@@ -152,6 +152,45 @@ $icon           = get_field('hero_icon');
     </div>
   </div>
 <?php endif; ?>
+<?php if ($style === 'treatment') : ?>
+  <div class="grid items-start lg:grid-cols-[7fr_5fr] lg:gap-base5-4 gap-base5-8">
+    <div class="order-1">
+      <h1><?= $title; ?></h1>
+      <?php include(get_template_directory() . '/includes/button-group.php'); ?>
+    </div>
+    <div class="relative order-1 lg:order-2 lg:pl-base5-10">
+      <div class="absolute bg-gradient-to-b from-[#D6D7F0] to-pale-blue-200 left-0 top-[-145px] w-[500%] pseudo-bg noshow lg:block"></div>
+      <svg width="44" height="43" viewBox="0 0 44 43" fill="none" xmlns="http://www.w3.org/2000/svg" class="relative mb-base5-8">
+        <path d="M43.6987 5.24185C43.4437 2.48006 41.172 0.293056 38.4147 0.146393C34.7331 -0.0487978 9.26753 -0.0487978 5.58269 0.146393C2.82862 0.293056 0.556941 2.48006 0.300873 5.24401C-0.884906 18.215 1.43778 28.2248 7.20729 34.9929C13.4114 42.2742 21.3389 42.9525 21.8011 42.986L21.9743 43L22.1868 42.9903C22.479 42.9698 28.5343 42.4964 34.2178 37.5886L34.5918 37.2586C35.3726 36.5534 36.107 35.7968 36.7901 34.9939C42.5629 28.2323 44.8855 18.2248 43.6987 5.24185ZM3.09744 13.5876C3.01024 10.8997 3.094 8.2089 3.3482 5.53194C3.40994 4.90337 3.70467 4.32208 4.17272 3.90571L19.3382 14.35L12.0258 19.4185L3.09744 13.5876ZM9.28347 21.3198L4.85911 24.3857C4.14664 22.137 3.65513 19.8222 3.39176 17.4753L9.28347 21.3198ZM22.0614 16.2243L29.2292 21.1602L21.9413 25.8814L14.8224 21.2378L22.0614 16.2243ZM24.7783 14.3425L39.8322 3.90894C40.2968 4.32384 40.5898 4.90164 40.6524 5.52655C40.9082 8.2052 40.9934 10.8978 40.9074 13.5876L32.0407 19.3366L24.7783 14.3425ZM40.6099 17.4699C40.3509 19.776 39.8727 22.0512 39.1819 24.2638L34.7915 21.2443L40.6099 17.4699ZM35.4631 3.17671L22.0561 12.4672L8.56201 3.17563C11.7549 3.1271 16.8763 3.1023 21.9987 3.1023C27.1212 3.1023 32.2712 3.1271 35.4631 3.17671ZM6.00239 27.3545L12.079 23.1487L19.1033 27.7309L10.0719 33.5866C9.88698 33.386 9.70317 33.1801 9.52147 32.9665C8.09221 31.2747 6.90731 29.3851 6.00239 27.3545ZM22.0242 39.8888H22.0157C21.7788 39.8726 17.0898 39.5049 12.3999 35.7574L21.936 29.575L31.5179 35.8297C27.0149 39.3852 22.5364 39.8468 22.0242 39.8888ZM34.4792 32.9644C34.2744 33.2052 34.068 33.4371 33.8597 33.66L24.774 27.7287L31.9822 23.0582L38.0514 27.237C37.1389 29.3109 35.9357 31.24 34.4792 32.9644Z" fill="#161A3D" />
+      </svg>
+
+      <div class="relative">
+        <?= $subtitleEditor; ?>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      function setPseudoBgDimensions() {
+        const pseudoBg = document.querySelector('.pseudo-bg');
+        const parentSection = pseudoBg.closest('section'); // Assuming parent is a section
+
+        if (parentSection) {
+          // Set the height of .pseudo-bg to the height of the parent section
+          pseudoBg.style.height = `${parentSection.offsetHeight}px`;
+
+          // Get the distance between the left side of the element and the left edge of the screen
+          const distanceToLeft = pseudoBg.getBoundingClientRect().left;
+          pseudoBg.style.width = `${distanceToLeft}px`;
+        }
+      }
+
+      // Call the function on page load and window resize
+      setPseudoBgDimensions();
+      window.addEventListener('resize', setPseudoBgDimensions);
+    });
+  </script>
+<?php endif; ?>
 <?php if (have_rows('hero_jump_buttons_jump_buttons')) : ?>
   <div class="grid mt-sp-6 lg:mt-sp-14 gap-base5-4">
     <div>

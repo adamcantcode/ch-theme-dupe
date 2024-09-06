@@ -1630,6 +1630,10 @@ a.insurance-tabs.active:hover {
   top: 1rem;
 }
 
+.top-\[-145px\]{
+  top: -145px;
+}
+
 .top-\[100px\]{
   top: 100px;
 }
@@ -2320,6 +2324,10 @@ a.insurance-tabs.active:hover {
 
 .w-\[42px\]{
   width: 42px;
+}
+
+.w-\[500\%\]{
+  width: 500%;
 }
 
 .w-\[50px\]{
@@ -3248,8 +3256,18 @@ a.insurance-tabs.active:hover {
   background-image: linear-gradient(to right,#fead80,#e2deca 50%,#bdc6fc);
 }
 
+.bg-gradient-to-b{
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+}
+
 .bg-gradient-to-r{
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+.from-\[\#D6D7F0\]{
+  --tw-gradient-from: #D6D7F0 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(214 215 240 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
 .from-white{
@@ -3260,6 +3278,10 @@ a.insurance-tabs.active:hover {
 
 .from-85\%{
   --tw-gradient-from-position: 85%;
+}
+
+.to-pale-blue-200{
+  --tw-gradient-to: #ADB0E1 var(--tw-gradient-to-position);
 }
 
 .to-transparent{
@@ -6487,6 +6509,10 @@ ul.alert li {
     grid-template-columns: 7fr 1fr 4fr;
   }
 
+  .lg\:grid-cols-\[7fr_5fr\]{
+    grid-template-columns: 7fr 5fr;
+  }
+
   .lg\:grid-cols-\[8fr_4fr\]{
     grid-template-columns: 8fr 4fr;
   }
@@ -6545,6 +6571,10 @@ ul.alert li {
 
   .lg\:gap-base5-2{
     gap: 10px;
+  }
+
+  .lg\:gap-base5-4{
+    gap: 20px;
   }
 
   .lg\:gap-sp-10{
@@ -6763,6 +6793,10 @@ ul.alert li {
 
   .lg\:pb-sp-16{
     padding-bottom: 6rem;
+  }
+
+  .lg\:pl-base5-10{
+    padding-left: 50px;
   }
 
   .lg\:pl-sp-12{
