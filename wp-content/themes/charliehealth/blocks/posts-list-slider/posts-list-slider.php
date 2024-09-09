@@ -43,7 +43,7 @@ if ($query->have_posts()) : ?>
         </div>
       </div>
     </div>
-    <div class="">
+    <div class="flex justify-end gap-base5-4 mt-base5-4">
       <div class="swiper-button-prev-arrow-carousel swiper-gpt">
         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none" class="arrow-slider">
           <rect width="50" height="50" rx="25" fill="#ffffff" class="arrow-slider-bg" />
