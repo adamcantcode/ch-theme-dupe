@@ -1995,6 +1995,10 @@ a.insurance-tabs.active:hover {
   margin-top: 15px;
 }
 
+.mt-base5-4{
+  margin-top: 20px;
+}
+
 .mt-base5-5{
   margin-top: 25px;
 }
@@ -2045,10 +2049,6 @@ a.insurance-tabs.active:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
-}
-
-.mt-base5-4{
-  margin-top: 20px;
 }
 
 .line-clamp-3{
@@ -3362,6 +3362,16 @@ a.insurance-tabs.active:hover {
 
 .p-sp-8{
   padding: 2rem;
+}
+
+.\!px-\[20px\]{
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+.\!py-\[12px\]{
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
 }
 
 .px-3{

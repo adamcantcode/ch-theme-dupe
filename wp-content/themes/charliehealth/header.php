@@ -189,6 +189,9 @@
             <?php include('resources/images/logos/charlie-health_shield-title.php'); ?>
           </a>
         </div>
+        <div class="noshow">
+          <a href="<?= $getStarted['url']; ?>" target="<?= $getStarted['target']; ?>" class="ch-button button-tertiary-lavender !text-[1rem] !rounded-[6px] !py-[12px] !px-[20px]"><?= $getStarted['title']; ?></a>
+        </div>
         <div class="flex flex-col items-end justify-between w-sp-8 mobile-menu-js">
           <div class="w-full h-[1.5px] bg-white relative transition-all duration-100 delay-75 top-0 origin-center mt-[-1px]"></div>
           <div class="w-full h-[1.5px] bg-white relative transition-all duration-200 origin-center"></div>
