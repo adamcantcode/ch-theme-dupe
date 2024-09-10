@@ -606,7 +606,7 @@ function hide_menus_on_multisite()
     remove_menu_page('edit.php?post_type=locations');
   } else {
     remove_menu_page('edit.php?post_type=region');
-    remove_menu_page('edit.php?post_type=outreach-team-member');
+    // remove_menu_page('edit.php?post_type=outreach-team-member');
     remove_menu_page('edit.php?post_type=event');
   }
 }
