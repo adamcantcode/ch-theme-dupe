@@ -24,12 +24,12 @@ if (!empty($block['backgroundColor'])) {
 ?>
 
 <section <?= $anchor ?: ''; ?>class="<?= $className; ?> <?= $background; ?> section-bg-js">
-  <div class="section">
+  <div class="section-top">
     <div class="container">
       <InnerBlocks />
     </div>
   </div>
-  <div class="section-xs section-bg-js-cta">
+  <div class="section-bottom section-bg-js-cta">
     <div class="container">
       <div class="flex flex-col justify-center pin-cta-js lg:h-[50vh] lg:mt-0 mt-sp-16 pb-sp-14 lg:pb-0">
         <div class="pin-cta-js-motion">
