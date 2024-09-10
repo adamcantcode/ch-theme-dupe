@@ -162,6 +162,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/contact-us');
   register_block_type(__DIR__ . '/build/blocks/locations-hub');
   register_block_type(__DIR__ . '/build/blocks/posts-list-slider');
+  register_block_type(__DIR__ . '/build/blocks/pill-list');
 }
 add_action('init', 'register_acf_blocks', 5);
 

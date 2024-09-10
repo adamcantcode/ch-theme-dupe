@@ -640,7 +640,7 @@
 }
 
 mark {
-  @apply px-sp-3 rounded-[6px] box-decoration-clone;
+  @apply px-[.3em] rounded-[6px] box-decoration-clone;
 }
 
 .toc-underline {

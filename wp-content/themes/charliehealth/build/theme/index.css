@@ -5376,8 +5376,8 @@ mark{
   border-radius: 6px;
   -webkit-box-decoration-break: clone;
           box-decoration-break: clone;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: .3em;
+  padding-right: .3em;
 }
 
 .toc-underline{
@@ -5731,6 +5731,11 @@ ul.alert li {
 .hover\:bg-pale-blue-100:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(214 215 240 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-primary:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 26 61 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-primary-200:hover{
