@@ -2,17 +2,15 @@ var simplemaps_usmap_mapdata={
   main_settings: {
    //General settings
     width: "responsive", //'700' or 'responsive'
-    background_color: "#F0EFFC",
-    background_transparent: "no",
-    border_color: "#F0EFFC",
+    background_color: "#FFFFFF",
+    background_transparent: "yes",
+    border_color: "#ADB0E1",
     popups: "detect",
-    
-    //State defaults
-    state_description: "Call us: 1 (866) - 959-1162",
-    state_color: "#1d225f",
-    state_hover_color: "#101334",
-    state_url: "tel:+1-866-959-1162",
-    border_size: "1.5",
+    state_description: "",
+    state_color: "#272D6C",
+    state_hover_color: "#1E225B",
+    state_url: "",
+    border_size: "1",
     all_states_inactive: "no",
     all_states_zoomable: "no",
     
@@ -32,217 +30,215 @@ var simplemaps_usmap_mapdata={
     all_locations_hidden: "no",
     
     //Label defaults
-    label_color: "#d5ddec",
+    label_color: "#fff",
     label_hover_color: "#d5ddec",
-    label_size: "22",
-    label_font: "Arial",
+    label_size: "16",
+    label_font: "'GT America'",
     hide_labels: "no",
     hide_eastern_labels: "no",
     manual_zoom: "no",
     back_image: "no",
     initial_back: "no",
-    initial_zoom: "-1",
+    initial_zoom: -1,
     initial_zoom_solo: "no",
     region_opacity: 1,
-    region_hover_opacity: 1,
+    region_hover_opacity: 0.6,
     zoom_out_incrementally: "yes",
     zoom_percentage: 0.99,
     zoom_time: 0.5,
     
     //Popup settings
     popup_color: "white",
-    popup_opacity: 1,
+    popup_opacity: 0.9,
     popup_shadow: 1,
-    popup_corners: 10,
-    popup_font: "16px/1.6 'GT America', Arial, Helvetica, sans-serif",
-    popup_nocss: "yes",
+    popup_corners: 5,
+    popup_font: "12px/1.5 Verdana, Arial, Helvetica, sans-serif",
+    popup_nocss: "no",
     
     //Advanced settings
     div: "map",
     auto_load: "yes",
-    url_new_tab: "no",
+    url_new_tab: "yes",
     images_directory: "/static/lib/simplemaps/map_images/",
     fade_time: 0.1,
     import_labels: "no",
-    link_text: "View",
+    link_text: "View Website",
     state_image_url: "",
     state_image_position: "",
-    location_image_url: "",
-    border_hover_color: "",
-    border_hover_size: ""
+    location_image_url: ""
   },
   state_specific: {
     HI: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Hawaii"
     },
     AK: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Alaska"
     },
     FL: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Florida"
     },
     NH: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "New Hampshire"
     },
     VT: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Vermont"
     },
     ME: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Maine"
     },
     RI: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Rhode Island"
     },
     NY: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "New York"
     },
     PA: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Pennsylvania"
     },
     NJ: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "New Jersey"
     },
     DE: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Delaware"
     },
     MD: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Maryland"
     },
     VA: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Virginia"
     },
     WV: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "West Virginia"
     },
     OH: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Ohio"
     },
     IN: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Indiana"
     },
     IL: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Illinois"
     },
     CT: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Connecticut"
     },
     WI: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Wisconsin"
     },
     NC: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "North Carolina"
     },
     DC: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "District of Columbia"
     },
     MA: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Massachusetts"
     },
     TN: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Tennessee"
     },
     AR: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Arkansas"
     },
     MO: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Missouri"
     },
     GA: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Georgia"
     },
     SC: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "South Carolina"
     },
     KY: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Kentucky"
     },
     AL: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Alabama"
     },
     LA: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Louisiana"
     },
     MS: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Mississippi"
     },
     IA: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Iowa"
     },
     MN: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Minnesota"
     },
     OK: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Oklahoma"
     },
     TX: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Texas"
     },
     NM: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "New Mexico"
     },
     KS: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Kansas"
     },
     NE: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Nebraska"
     },
     SD: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "South Dakota"
     },
     ND: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "North Dakota"
     },
     WY: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Wyoming"
     },
     MT: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Montana"
     },
     CO: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Colorado"
     },
     UT: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Utah"
     },
     AZ: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Arizona"
     },
     NV: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Nevada"
     },
     OR: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Oregon"
     },
     WA: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Washington"
     },
     CA: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "California"
     },
     MI: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Michigan"
     },
     ID: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />"
+      name: "Idaho"
     },
     GU: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
+      name: "Guam",
       hide: "yes"
     },
     VI: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
+      name: "Virgin Islands",
       hide: "yes"
     },
     PR: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
+      name: "Puerto Rico",
       hide: "yes"
     },
     MP: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
+      name: "Northern Mariana Islands",
       hide: "yes"
     },
     AS: {
-      name: "Admissions <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
+      name: "American Samoa",
       hide: "yes"
     }
   },
@@ -254,7 +250,7 @@ var simplemaps_usmap_mapdata={
       y: "183",
       pill: "yes",
       width: 45,
-      display: "none"
+      display: "all"
     },
     VT: {
       parent_id: "VT",
@@ -262,7 +258,7 @@ var simplemaps_usmap_mapdata={
       y: "243",
       pill: "yes",
       width: 45,
-      display: "none"
+      display: "all"
     },
     RI: {
       parent_id: "RI",
@@ -270,7 +266,7 @@ var simplemaps_usmap_mapdata={
       y: "273",
       pill: "yes",
       width: 45,
-      display: "none"
+      display: "all"
     },
     NJ: {
       parent_id: "NJ",
@@ -278,7 +274,7 @@ var simplemaps_usmap_mapdata={
       y: "273",
       pill: "yes",
       width: 45,
-      display: "none"
+      display: "all"
     },
     DE: {
       parent_id: "DE",
@@ -286,7 +282,7 @@ var simplemaps_usmap_mapdata={
       y: "303",
       pill: "yes",
       width: 45,
-      display: "none"
+      display: "all"
     },
     MD: {
       parent_id: "MD",
@@ -294,7 +290,7 @@ var simplemaps_usmap_mapdata={
       y: "303",
       pill: "yes",
       width: 45,
-      display: "none"
+      display: "all"
     },
     DC: {
       parent_id: "DC",
@@ -302,7 +298,7 @@ var simplemaps_usmap_mapdata={
       y: "332",
       pill: "yes",
       width: 45,
-      display: "none"
+      display: "all"
     },
     MA: {
       parent_id: "MA",
@@ -310,7 +306,7 @@ var simplemaps_usmap_mapdata={
       y: "213",
       pill: "yes",
       width: 45,
-      display: "none"
+      display: "all"
     },
     CT: {
       parent_id: "CT",
@@ -318,487 +314,247 @@ var simplemaps_usmap_mapdata={
       y: "243",
       pill: "yes",
       width: 45,
-      display: "none"
+      display: "all"
     },
     HI: {
       parent_id: "HI",
       x: 305,
       y: 565,
-      pill: "yes",
-      display: "none"
+      pill: "yes"
     },
     AK: {
       parent_id: "AK",
       x: "113",
-      y: "495",
-      display: "none"
+      y: "495"
     },
     FL: {
       parent_id: "FL",
       x: "773",
-      y: "510",
-      display: "none"
+      y: "510"
     },
     ME: {
       parent_id: "ME",
       x: "893",
-      y: "85",
-      display: "none"
+      y: "85"
     },
     NY: {
       parent_id: "NY",
       x: "815",
-      y: "158",
-      display: "none"
+      y: "158"
     },
     PA: {
       parent_id: "PA",
       x: "786",
-      y: "210",
-      display: "none"
+      y: "210"
     },
     VA: {
       parent_id: "VA",
       x: "790",
-      y: "282",
-      display: "none"
+      y: "282"
     },
     WV: {
       parent_id: "WV",
       x: "744",
-      y: "270",
-      display: "none"
+      y: "270"
     },
     OH: {
       parent_id: "OH",
       x: "700",
-      y: "240",
-      display: "none"
+      y: "240"
     },
     IN: {
       parent_id: "IN",
       x: "650",
-      y: "250",
-      display: "none"
+      y: "250"
     },
     IL: {
       parent_id: "IL",
       x: "600",
-      y: "250",
-      display: "none"
+      y: "250"
     },
     WI: {
       parent_id: "WI",
       x: "575",
-      y: "155",
-      display: "none"
+      y: "155"
     },
     NC: {
       parent_id: "NC",
       x: "784",
-      y: "326",
-      display: "none"
+      y: "326"
     },
     TN: {
       parent_id: "TN",
       x: "655",
-      y: "340",
-      display: "none"
+      y: "340"
     },
     AR: {
       parent_id: "AR",
       x: "548",
-      y: "368",
-      display: "none"
+      y: "368"
     },
     MO: {
       parent_id: "MO",
       x: "548",
-      y: "293",
-      display: "none"
+      y: "293"
     },
     GA: {
       parent_id: "GA",
       x: "718",
-      y: "405",
-      display: "none"
+      y: "405"
     },
     SC: {
       parent_id: "SC",
       x: "760",
-      y: "371",
-      display: "none"
+      y: "371"
     },
     KY: {
       parent_id: "KY",
       x: "680",
-      y: "300",
-      display: "none"
+      y: "300"
     },
     AL: {
       parent_id: "AL",
       x: "655",
-      y: "405",
-      display: "none"
+      y: "405"
     },
     LA: {
       parent_id: "LA",
       x: "550",
-      y: "435",
-      display: "none"
+      y: "435"
     },
     MS: {
       parent_id: "MS",
       x: "600",
-      y: "405",
-      display: "none"
+      y: "405"
     },
     IA: {
       parent_id: "IA",
       x: "525",
-      y: "210",
-      display: "none"
+      y: "210"
     },
     MN: {
       parent_id: "MN",
       x: "506",
-      y: "124",
-      display: "none"
+      y: "124"
     },
     OK: {
       parent_id: "OK",
       x: "460",
-      y: "360",
-      display: "none"
+      y: "360"
     },
     TX: {
       parent_id: "TX",
       x: "425",
-      y: "435",
-      display: "none"
+      y: "435"
     },
     NM: {
       parent_id: "NM",
       x: "305",
-      y: "365",
-      display: "none"
+      y: "365"
     },
     KS: {
       parent_id: "KS",
       x: "445",
-      y: "290",
-      display: "none"
+      y: "290"
     },
     NE: {
       parent_id: "NE",
       x: "420",
-      y: "225",
-      display: "none"
+      y: "225"
     },
     SD: {
       parent_id: "SD",
       x: "413",
-      y: "160",
-      display: "none"
+      y: "160"
     },
     ND: {
       parent_id: "ND",
       x: "416",
-      y: "96",
-      display: "none"
+      y: "96"
     },
     WY: {
       parent_id: "WY",
       x: "300",
-      y: "180",
-      display: "none"
+      y: "180"
     },
     MT: {
       parent_id: "MT",
       x: "280",
-      y: "95",
-      display: "none"
+      y: "95"
     },
     CO: {
       parent_id: "CO",
       x: "320",
-      y: "275",
-      display: "none"
+      y: "275"
     },
     UT: {
       parent_id: "UT",
       x: "223",
-      y: "260",
-      display: "none"
+      y: "260"
     },
     AZ: {
       parent_id: "AZ",
       x: "205",
-      y: "360",
-      display: "none"
+      y: "360"
     },
     NV: {
       parent_id: "NV",
       x: "140",
-      y: "235",
-      display: "none"
+      y: "235"
     },
     OR: {
       parent_id: "OR",
       x: "100",
-      y: "120",
-      display: "none"
+      y: "120"
     },
     WA: {
       parent_id: "WA",
       x: "130",
-      y: "55",
-      display: "none"
+      y: "55"
     },
     ID: {
       parent_id: "ID",
       x: "200",
-      y: "150",
-      display: "none"
+      y: "150"
     },
     CA: {
       parent_id: "CA",
       x: "79",
-      y: "285",
-      display: "none"
+      y: "285"
     },
     MI: {
       parent_id: "MI",
       x: "663",
-      y: "185",
-      display: "none"
+      y: "185"
     },
     PR: {
       parent_id: "PR",
       x: "620",
-      y: "545",
-      display: "none"
+      y: "545"
     },
     GU: {
       parent_id: "GU",
       x: "550",
-      y: "540",
-      display: "none"
+      y: "540"
     },
     VI: {
       parent_id: "VI",
       x: "680",
-      y: "519",
-      display: "none"
+      y: "519"
     },
     MP: {
       parent_id: "MP",
       x: "570",
-      y: "575",
-      display: "none"
+      y: "575"
     },
     AS: {
       parent_id: "AS",
       x: "665",
-      y: "580",
-      display: "none"
+      y: "580"
     }
   },
   legend: {
     entries: []
   },
-  regions: {
-    "0": {
-      states: [
-        "TX"
-      ],
-      name: "Texas <img src=\"https://uploads-ssl.webflow.com/6419ee21f050c995caf04566/6419ee21f050c96434f04841_Arrow%203%20(Stroke).svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
-      zoomable: "no",
-      color: "#1D225F",
-      description: "Learn more",
-      hover_color: "#101334",
-      url: "/regions/texas"
-    },
-    "1": {
-      states: [
-        "FL",
-        "SC"
-      ],
-      name: "Southeast <img src=\"https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
-      zoomable: "no",
-      color: "#1D225F",
-      url: "/regions/southeast",
-      description: "Learn more",
-      hover_color: "#101334"
-    },
-    "3": {
-      states: [
-        "CA"
-      ],
-      name: "California <img src=\"https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
-      zoomable: "no",
-      color: "#1D225F",
-      url: "/regions/california",
-      description: "Learn more",
-      hover_color: "#101334"
-    },
-    "4": {
-      states: [
-        "DE",
-        "NJ",
-        "MD"
-      ],
-      color: "#1D225F",
-      url: "/regions/mid-atlantic",
-      name: "Mid-Atlantic <img src=\"https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
-      description: "Learn more",
-      hover_color: "#101334",
-      zoomable: "no"
-    },
-    "5": {
-      states: [
-        "NY"
-      ],
-      name: "Northeast <img src=\"https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
-      url: "/regions/northeast",
-      zoomable: "no",
-      color: "#1D225F",
-      description: "Learn more",
-      hover_color: "#101334"
-    },
-    "6": {
-      states: [
-        "OR",
-        "ID",
-        "WY"
-      ],
-      name: "Pacific Northwest <img src=\"https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
-      zoomable: "no",
-      color: "#1D225F",
-      url: "/regions/pacific-northwest",
-      description: "Learn more",
-      hover_color: "#101334"
-    },
-    "7": {
-      states: [
-        "OH",
-        "MI"
-      ],
-      name: "Midwest <img src=\"https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
-      zoomable: "no",
-      color: "#1D225F",
-      url: "/regions/midwest",
-      description: "Learn more",
-      hover_color: "#101334"
-    },
-    "8": {
-      states: [
-        "WA",
-        "MT",
-        "ND",
-        "AK"
-      ],
-      name: "Mountain <img src=\"https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
-      color: "#1D225F",
-      hover_color: "#101334",
-      description: "Learn more",
-      url: "/regions/mountain",
-      zoomable: "no"
-    },
-    "9": {
-      states: [
-        "IA",
-        "MO",
-        "NE"
-      ],
-      name: "Central <img src=\"https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
-      color: "#1D225F",
-      hover_color: "#101334",
-      description: "Learn more",
-      url: "/regions/central",
-      zoomable: "no"
-    },
-    "10": {
-      states: [
-        "IL",
-        "IN",
-        "WI"
-      ],
-      name: "Heartland <img src=\"https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
-      color: "#1D225F",
-      hover_color: "#101334",
-      description: "Learn more",
-      url: "/regions/heartland",
-      zoomable: "no"
-    },
-    "11": {
-      states: [
-        "TN",
-        "NC"
-      ],
-      name: "Smoky Mountains <img src=\"https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
-      color: "#1D225F",
-      hover_color: "#101334",
-      description: "Learn more",
-      url: "/regions/smoky-mountains",
-      zoomable: "no"
-    },
-    "12": {
-      states: [
-        "UT",
-        "CO"
-      ],
-      name: "Rockies <img src=\"https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
-      color: "#1D225F",
-      hover_color: "#101334",
-      description: "Learn more",
-      url: "/regions/rockies",
-      zoomable: "no"
-    },
-    "13": {
-      states: [
-        "GA"
-      ],
-      name: "Georgia <img src=\"https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
-      color: "#1D225F",
-      hover_color: "#101334",
-      description: "Learn more",
-      url: "/regions/georgia",
-      zoomable: "no"
-    },
-    "14": {
-      states: [
-        "AZ",
-        "NV"
-      ],
-      name: "Desert <img src=\"https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
-      color: "#1D225F",
-      hover_color: "#101334",
-      description: "Learn more",
-      url: "/regions/desert",
-      zoomable: "no"
-    },
-    "15": {
-      states: [
-        "PA"
-      ],
-      name: "Pennsylvania <img src=\"https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
-      color: "#1D225F",
-      hover_color: "#101334",
-      description: "Learn more",
-      url: "/regions/pennsylvania",
-      zoomable: "no"
-    },
-    "16": {
-      states: [
-        "VA"
-      ],
-      name: "Virginia <img src=\"https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg\" alt=\"arrow\" style=\"margin-left: 1.5rem\" />",
-      color: "#1D225F",
-      hover_color: "#101334",
-      description: "Learn more",
-      url: "/regions/virginia",
-      zoomable: "no"
-    }
-  }
+  regions: {}
 };
