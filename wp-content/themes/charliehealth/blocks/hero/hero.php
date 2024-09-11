@@ -30,7 +30,7 @@ $icon           = get_field('hero_icon');
     <div class="order-2 lg:order-1 fix-order">
       <h1><?= $title; ?></h1>
       <?php if ($heroImage) : ?>
-        <img src="<?= $heroImage['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $heroImage['alt'] ?: 'Placeholder image'; ?>" class="block object-cover object-top rounded-lg max-h-52 md:max-h-none nolazy lg:noshow mb-sp-4 hero-image-container">
+        <img src="<?= $heroImage['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $heroImage['alt'] ?: 'Placeholder image'; ?>" class="block object-cover object-top rounded-lg nolazy lg:noshow mb-sp-4 hero-image-container">
       <?php endif; ?>
       <div class="flex items-center gap-sp-4 mb-sp-12 mobile-hero-sub">
         <?php if ($icon) : ?>
@@ -44,7 +44,7 @@ $icon           = get_field('hero_icon');
     </div>
     <div class="flex flex-col justify-between order-1 lg:order-2">
       <?php if ($heroImage) : ?>
-        <img src="<?= $heroImage['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $heroImage['alt'] ?: 'Placeholder image'; ?>" class="object-cover object-top rounded-lg max-h-52 md:max-h-none nolazy noshow lg:block">
+        <img src="<?= $heroImage['sizes']['featured-large'] ?: placeHolderImage(600, 400); ?>" alt="<?= $heroImage['alt'] ?: 'Placeholder image'; ?>" class="object-cover object-top rounded-lg nolazy noshow lg:block">
       <?php endif; ?>
     </div>
   </div>
