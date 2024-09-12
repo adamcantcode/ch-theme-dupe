@@ -1,9 +1,4 @@
 <?php
-$style = get_field('style');
-$numbers = get_field('card_grid_numbers');
-$borderStyle = get_field('card_grid_border_style');
-$horizontalScroll = get_field('card_grid_horizontal_scroll');
-$useCTA = get_field('card_grid_use_cta');
 $posts = get_field('posts');
 
 if ($horizontalScroll === true) {
@@ -15,76 +10,35 @@ if ($horizontalScroll === true) {
   $gridClasses = 'grid items-center grid-cols-1 gap-sp-8 lg:gap-sp-6 lg:grid-cols-3';
   $borderClasses = 'grid items-center grid-cols-1 gap-sp-8 lg:gap-sp-6 lg:grid-cols-3';
 }
-
-// var_dump(get_intermediate_image_sizes());
+$parent_posts = new WP_Query(array(
+  'post_type' => 'treatment-modalities',
+  'post_parent' => 0,  // Get only top-level (parent) posts
+  'posts_per_page' => -1, // Retrieve all posts
+  'orderby' => 'title',
+  'order' => 'ASC'
+));
 ?>
-<?php if ($style !== 'feed') : ?>
-  <?php if (have_rows('card_grid_cards')) : ?>
-    <div id="<?= $block['id']; ?>" class="<?= $scrollClasses; ?>">
-      <div class="<?= $gridClasses; ?>">
-        <?php while (have_rows('card_grid_cards')) : the_row();
-          $title = get_sub_field('card_grid_title');
-          $details = get_sub_field('card_grid_details');
-          $image = get_sub_field('image');
-          $link = get_sub_field('card_link');
-        ?>
-          <div class="w-[calc(100vw-2.5rem)] lg:w-full h-full rounded-md border border-primary<?= $link && !$useCTA ? ' hover:shadow-lg duration-300 rounded-md' : ''; ?>">
-            <div class="h-full">
-              <?php if ($image) : ?>
-                <img src="<?= $image['sizes']['card-thumb'] ?>" alt="<?= $image['alt']; ?>" class="object-cover w-full rounded-t-md lg:h-[250px] h-[200px]">
-              <?php endif; ?>
-              <div class="flex flex-col flex-grow p-sp-4 md:p-sp-6 lg:p-sp-8">
-                <?php if ($numbers) : ?>
-                  <p class="text-h2-base"><?= get_row_index(); ?></p>
-                <?php endif; ?>
-                <?php if ($title) : ?>
-                  <h3>
-                    <?php if ($link && !$useCTA) : ?>
-                      <a href="<?= $link['url']; ?>" target="<?= $link['target'] ?: '_self'; ?>" class="stretched-link">
-                      <?php endif; ?>
-                      <?= $title; ?>
-                      <?php if ($link && !$useCTA) : ?>
-                      </a>
-                    <?php endif; ?>
-                  </h3>
-                <?php endif; ?>
-                <?php if ($details) : ?>
-                  <p><?= $details; ?></p>
-                <?php endif; ?>
-                <?php if ($useCTA && $link) : ?>
-                  <div class="mt-auto flex gap-x-sp-4 items-center md:w-[unset] w-full">
-                    <a href="<?= $link['url']; ?>" class="ch-button button-primary" target="<?= $link['target'] ?: '_self'; ?>"><?= $link['title'] ?: 'Learn more'; ?></a>
-                  </div>
-                <?php endif; ?>
-              </div>
-            </div>
-          </div>
-        <?php endwhile; ?>
-      </div>
-    </div>
-  <?php endif; ?>
-<?php endif; ?>
-<?php if ($style === 'feed') : ?>
-  <div id="<?= $block['id']; ?>" class="<?= $scrollClasses; ?>">
-    <div class="<?= $gridClasses; ?> card-wrapper relative lg:overflow-visible overflow-hidden transition-all duration-1000 lg:max-h-full max-h-[70vh]">
-      <?php foreach ($posts as $post) : ?>
-        <div class="w-[calc(100vw-2.5rem)] lg:w-full rounded-md hover:shadow-lg transition-all duration-300 h-full border border-primary relative">
-          <div class="h-full">
-            <div class="p-sp-4 md:p-sp-6 lg:p-sp-8">
-              <?php if ($numbers) : ?>
-                <h2><?= get_row_index(); ?></h2>
-              <?php endif; ?>
-              <h3><a href="<?= get_the_permalink($post); ?>" class="stretched-link"><?= get_the_title($post); ?></a></h3>
-              <?php if (get_field('short_description', $post)) : ?>
-                <p><?= get_field('short_description', $post); ?></p>
-              <?php endif; ?>
-            </div>
+
+<div id="<?= $block['id']; ?>">
+  <div class="grid lg:grid-cols-4 gap-base5-4 card-wrapper relative lg:overflow-visible overflow-hidden transition-all duration-1000 lg:max-h-full max-h-[70vh]">
+    <?php if ($parent_posts->have_posts()) : while ($parent_posts->have_posts()) : $parent_posts->the_post(); ?>
+        <div class="hover:bg-primary bg-primary-100 [&_*]:text-white [&_*]:hover:text-white rounded-md relative transition-all hover:-translate-y-base5-1">
+          <div class="flex flex-col h-full p-base5-4">
+            <h3><a href="<?= get_the_permalink(); ?>" class="stretched-link"><?= get_the_title(); ?></a></h3>
+            <?php if (get_field('short_description', get_the_ID())) : ?>
+              <p><?= get_field('short_description', get_the_ID()); ?></p>
+            <?php endif; ?>
+            <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-auto ml-auto">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3431 0.278417L16.7071 6.32784C17.0976 6.69906 17.0976 7.30093 16.7071 7.67216L10.3431 13.7216C9.95262 14.0928 9.31946 14.0928 8.92893 13.7216C8.53841 13.3504 8.53841 12.7485 8.92893 12.3773L13.5858 7.95058H0V6.04942H13.5858L8.92893 1.62273C8.53841 1.25151 8.53841 0.64964 8.92893 0.278417C9.31946 -0.0928057 9.95262 -0.0928057 10.3431 0.278417Z" fill="white" />
+            </svg>
+
           </div>
         </div>
-      <?php endforeach; ?>
-      <div class="absolute bottom-0 flex justify-center w-full bg-white lg:noshow">
-        <a role="button" class="z-10 ch-button button-secondary toggle-button">Show More</a>
-      </div>
+    <?php endwhile;
+      wp_reset_postdata();
+    endif;; ?>
+    <div class="absolute bottom-0 flex justify-center w-full bg-white lg:noshow">
+      <a role="button" class="z-10 ch-button button-secondary toggle-button">Show More</a>
     </div>
   </div>
-<?php endif; ?>
+</div>
