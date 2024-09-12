@@ -19,7 +19,7 @@
       "background": true,
       "text": false,
       "enableContrastChecker": false,
-      "gradients": false,
+      "gradients": true,
       "link": false
     },
     "spacing": {

@@ -739,6 +739,8 @@ add_filter('should_load_separate_core_block_assets', '__return_true');
 // $test = 'lg:!-mb-base5-10'
 // $test = 'box-decoration-clone'
 // $test = 'rounded-md lg:p-base5-7 bg-grey-warm mb-base5-7 p-base5-3'
+// $test = 'bg-gradient-to-b from-primary-100 to-primary-200'
+// $test = 'bg-gradient-to-b from-primary-200 to-primary'
 
 // $test = '!text-h2-lg !text-h2 !font-heading !font-heading-serif !text-h5'
 // $test = 'bg-pale-blue-100'

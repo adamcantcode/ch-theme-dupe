@@ -119,6 +119,11 @@ if (!empty($block['backgroundColor'])) {
   $blockClasses .= $background . ' ';
 }
 
+if (!empty($block['gradient'])) {
+  $background = $block['gradient'];
+  $blockClasses .= $background . ' ';
+}
+
 // TODO rethink alignment in case someone tries to mess with the default of full;
 // if (!empty($block['align'])) {
 //   switch ($block['align']) {
