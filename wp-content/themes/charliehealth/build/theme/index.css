@@ -5781,6 +5781,11 @@ ul.alert li {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-primary-black-blue:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(18 20 42 / var(--tw-bg-opacity));
+}
+
 .hover\:\!text-\[\#35919c\]:hover{
   --tw-text-opacity: 1 !important;
   color: rgb(53 145 156 / var(--tw-text-opacity)) !important;
