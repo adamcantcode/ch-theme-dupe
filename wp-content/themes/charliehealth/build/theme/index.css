@@ -6560,6 +6560,10 @@ ul.alert li {
     grid-template-columns: unset;
   }
 
+  .lg\:grid-cols-\[9fr_3fr\]{
+    grid-template-columns: 9fr 3fr;
+  }
+
   .lg\:flex-row{
     flex-direction: row;
   }
