@@ -2231,10 +2231,6 @@ a.insurance-tabs.active:hover {
   max-height: 0px;
 }
 
-.max-h-52{
-  max-height: 13rem;
-}
-
 .max-h-\[200px\]{
   max-height: 200px;
 }
@@ -5901,10 +5897,6 @@ ul.alert li {
 
   .md\:block{
     display: block;
-  }
-
-  .md\:max-h-none{
-    max-height: none;
   }
 
   .md\:w-\[unset\]{
