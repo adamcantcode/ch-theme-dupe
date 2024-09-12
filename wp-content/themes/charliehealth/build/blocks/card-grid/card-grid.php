@@ -1,17 +1,8 @@
 <?php
-$posts = get_field('posts');
+$post_type = get_field('post_type');
 
-if ($horizontalScroll === true) {
-  $scrollClasses = 'overflow-auto w-full max-w-[80rem] custom-scroll';
-  $gridClasses = 'grid items-center grid-flow-col gap-sp-3 lg:gap-sp-6 lg:grid-cols-3';
-  $borderClasses = 'grid items-center grid-flow-col gap-sp-3 lg:gap-sp-6 lg:grid-cols-3';
-} else {
-  $scrollClasses = '';
-  $gridClasses = 'grid items-center grid-cols-1 gap-sp-8 lg:gap-sp-6 lg:grid-cols-3';
-  $borderClasses = 'grid items-center grid-cols-1 gap-sp-8 lg:gap-sp-6 lg:grid-cols-3';
-}
 $parent_posts = new WP_Query(array(
-  'post_type' => 'treatment-modalities',
+  'post_type' => $post_type ?: 'areas-of-care',
   'post_parent' => 0,  // Get only top-level (parent) posts
   'posts_per_page' => -1, // Retrieve all posts
   'orderby' => 'title',
