@@ -639,7 +639,7 @@
   }
 }
 
-mark {
+mark:not(.has-inline-color.has-lavender-300-color) {
   @apply px-[.3em] rounded-[6px] box-decoration-clone;
 }
 

@@ -2460,10 +2460,6 @@ a.insurance-tabs.active:hover {
   max-width: 72px;
 }
 
-.max-w-\[80rem\]{
-  max-width: 80rem;
-}
-
 .max-w-\[850px\]{
   max-width: 850px;
 }
@@ -3280,12 +3276,6 @@ a.insurance-tabs.active:hover {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
-.from-white{
-  --tw-gradient-from: #FFFFFF var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
 .from-primary-100{
   --tw-gradient-from: #272D6C var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(39 45 108 / 0) var(--tw-gradient-to-position);
@@ -3298,6 +3288,12 @@ a.insurance-tabs.active:hover {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.from-white{
+  --tw-gradient-from: #FFFFFF var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
 .from-85\%{
   --tw-gradient-from-position: 85%;
 }
@@ -3306,16 +3302,16 @@ a.insurance-tabs.active:hover {
   --tw-gradient-to: #ADB0E1 var(--tw-gradient-to-position);
 }
 
-.to-transparent{
-  --tw-gradient-to: rgba(0,0,0,0) var(--tw-gradient-to-position);
+.to-primary{
+  --tw-gradient-to: #161A3D var(--tw-gradient-to-position);
 }
 
 .to-primary-200{
   --tw-gradient-to: #1E225B var(--tw-gradient-to-position);
 }
 
-.to-primary{
-  --tw-gradient-to: #161A3D var(--tw-gradient-to-position);
+.to-transparent{
+  --tw-gradient-to: rgba(0,0,0,0) var(--tw-gradient-to-position);
 }
 
 .box-decoration-clone{
@@ -5396,7 +5392,7 @@ a.providers:hover {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-mark{
+mark:not(.has-inline-color.has-lavender-300-color){
   border-radius: 6px;
   -webkit-box-decoration-break: clone;
           box-decoration-break: clone;
@@ -5772,6 +5768,11 @@ ul.alert li {
   background-color: rgb(30 34 91 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-primary-black-blue:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(18 20 42 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-transparent:hover{
   background-color: rgba(0,0,0,0);
 }
@@ -5779,11 +5780,6 @@ ul.alert li {
 .hover\:bg-white:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-primary-black-blue:hover{
-  --tw-bg-opacity: 1;
-  background-color: rgb(18 20 42 / var(--tw-bg-opacity));
 }
 
 .hover\:\!text-\[\#35919c\]:hover{
@@ -6552,16 +6548,16 @@ ul.alert li {
     grid-template-columns: 8fr 4fr;
   }
 
+  .lg\:grid-cols-\[9fr_3fr\]{
+    grid-template-columns: 9fr 3fr;
+  }
+
   .lg\:grid-cols-\[minmax\(0\2c _7fr\)_minmax\(0\2c _1fr\)_minmax\(0\2c _4fr\)\]{
     grid-template-columns: minmax(0, 7fr) minmax(0, 1fr) minmax(0, 4fr);
   }
 
   .lg\:grid-cols-\[unset\]{
     grid-template-columns: unset;
-  }
-
-  .lg\:grid-cols-\[9fr_3fr\]{
-    grid-template-columns: 9fr 3fr;
   }
 
   .lg\:flex-row{
