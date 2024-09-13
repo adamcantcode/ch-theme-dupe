@@ -6560,6 +6560,18 @@ ul.alert li {
     grid-template-columns: unset;
   }
 
+  .lg\:grid-cols-\[6fr_7fr\]{
+    grid-template-columns: 6fr 7fr;
+  }
+
+  .lg\:grid-cols-\[6fr_8fr\]{
+    grid-template-columns: 6fr 8fr;
+  }
+
+  .lg\:grid-cols-\[7fr5fr\]{
+    grid-template-columns: 7fr5fr;
+  }
+
   .lg\:flex-row{
     flex-direction: row;
   }
