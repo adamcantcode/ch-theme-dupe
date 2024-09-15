@@ -3,6 +3,46 @@
     "title": "Approach Grid",
     "fields": [
         {
+            "key": "field_66e769d6253bd",
+            "label": "Light or Dark",
+            "name": "light_or_dark",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "Light",
+            "ui_off_text": "Dark",
+            "ui": 1
+        },
+        {
+            "key": "field_6669fc2664376",
+            "label": "Grid BG Colors",
+            "name": "grid_bg",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "Solid",
+            "ui_off_text": "Color",
+            "ui": 1
+        },
+        {
             "key": "field_65ca40c551b7b",
             "label": "Heading",
             "name": "heading",
@@ -43,11 +83,11 @@
             "delay": 0
         },
         {
-            "key": "field_6669fc2664376",
-            "label": "Grid BG Colors",
-            "name": "grid_bg",
+            "key": "field_66e76d02140ed",
+            "label": "Image",
+            "name": "image",
             "aria-label": "",
-            "type": "true_false",
+            "type": "image",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -56,11 +96,16 @@
                 "class": "",
                 "id": ""
             },
-            "message": "",
-            "default_value": 0,
-            "ui_on_text": "Solid Blue",
-            "ui_off_text": "Color Palette",
-            "ui": 1
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
         },
         {
             "key": "field_65ca416251b7d",
@@ -157,5 +202,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1718221935
+    "modified": 1726442904
 }

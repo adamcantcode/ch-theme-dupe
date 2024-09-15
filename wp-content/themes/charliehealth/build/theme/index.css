@@ -6560,18 +6560,6 @@ ul.alert li {
     grid-template-columns: unset;
   }
 
-  .lg\:grid-cols-\[6fr_7fr\]{
-    grid-template-columns: 6fr 7fr;
-  }
-
-  .lg\:grid-cols-\[6fr_8fr\]{
-    grid-template-columns: 6fr 8fr;
-  }
-
-  .lg\:grid-cols-\[7fr5fr\]{
-    grid-template-columns: 7fr5fr;
-  }
-
   .lg\:flex-row{
     flex-direction: row;
   }
@@ -7010,6 +6998,11 @@ ul.alert li {
 .\[\&_\*\]\:text-white *{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.\[\&_\*\]\:text-primary *{
+  --tw-text-opacity: 1;
+  color: rgb(22 26 61 / var(--tw-text-opacity));
 }
 
 .\[\&_\*\]\:hover\:text-white:hover *{
