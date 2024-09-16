@@ -820,3 +820,6 @@ ul.alert {
 .tutor-page-wrap {
   @apply section;
 }
+.tutor-lesson-wrapper p > iframe[src*='youtube.com'] {
+  @apply w-full h-full aspect-video;
+}

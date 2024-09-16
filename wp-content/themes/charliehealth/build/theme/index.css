@@ -5639,6 +5639,12 @@ ul.alert li {
   }
     }
 
+.tutor-lesson-wrapper p > iframe[src*='youtube.com']{
+  aspect-ratio: 16 / 9;
+  height: 100%;
+  width: 100%;
+}
+
 .hover\:text-white:hovera:hover {
         color: #ffffff;
       }
@@ -6995,14 +7001,14 @@ ul.alert li {
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
 }
 
-.\[\&_\*\]\:text-white *{
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
 .\[\&_\*\]\:text-primary *{
   --tw-text-opacity: 1;
   color: rgb(22 26 61 / var(--tw-text-opacity));
+}
+
+.\[\&_\*\]\:text-white *{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .\[\&_\*\]\:hover\:text-white:hover *{
