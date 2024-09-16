@@ -8,7 +8,7 @@ $fill = $lightDark ? '#161A3D' : '#ffffff';
 <div class="border-2 <?= $border; ?> rounded-[1rem] lg:p-sp-12 p-sp-4 grid lg:grid-cols-[4fr_8fr] gap-x-sp-5 approach-grid-js">
   <div class="grid content-between">
     <div class="order-2 lg:order-1">
-      <h2 class="$text font-heading-serif mb-sp-8"><?= get_field('heading'); ?></h2>
+      <h2 class="<?= $text; ?> font-heading-serif mb-sp-8"><?= get_field('heading'); ?></h2>
       <?php if (get_field('heading')) : ?>
         <div>
           <?= get_field('details'); ?>
