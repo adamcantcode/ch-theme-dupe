@@ -110,7 +110,7 @@ Template Name: Research Page
                         <?php if ($tagLink) : ?>
                           <a href="<?= $tagLink; ?>" class="relative z-20 inline-block leading-none no-underline transition-all duration-300 bg-white border-2 border-white !text-primary rounded-pill p-sp-3 mb-sp-4 mr-sp-1"><?= $tagName; ?></a>
                         <?php endif; ?>
-                        <h3 class="text-h2-base"><?= get_the_title(); ?></h3>
+                        <h3 class="font-heading-serif"><?= get_the_title(); ?></h3>
                       </div>
                       <a href="<?= get_the_permalink(); ?>" class="no-underline stretched-link">Read more <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg'); ?>" alt="arrow" class="inline-block h-sp-4 ml-sp-2"></a>
                     </div>
