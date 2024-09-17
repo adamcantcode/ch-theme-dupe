@@ -42,7 +42,7 @@
             }
             document.cookie = name + '=' + value + expires + '; path=/';
           }
-  
+
           // Function to check if the cookie exists
           function getCookie(name) {
             var nameEQ = name + '=';
@@ -58,19 +58,23 @@
             }
             return null;
           }
-  
+
           function handleOpen() {
             if (!getCookie('homepage_popup_exit_intent')) {
+              // Trigger campaign in VWO
+              window.VWO = window.VWO || [];
+              window.VWO.push(['activate', false, [109], true]);
+
               var modal = document.getElementById('homepagePopup');
-  
+
               modal.classList.toggle('modal-fade');
-  
+
               // Trigger VWO Event for Modal Open
               window.VWO = window.VWO || [];
               VWO.event = VWO.event || function() {
                 VWO.push(["event"].concat([].slice.call(arguments)))
               };
-  
+
               VWO.event("modalOpen");
               createCookie('homepage_popup_exit_intent', 'true', 1);
               modal.addEventListener('click', (event) => {
@@ -85,7 +89,7 @@
             }
           }
           let exitIntentShown = false;
-  
+
           function handleMouseLeave(event) {
             if (!exitIntentShown && event.clientY <= 0 && !document.querySelector('.homepagepopup').classList.contains('noshow')) {
               handleOpen();
