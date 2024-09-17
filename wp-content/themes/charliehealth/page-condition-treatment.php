@@ -48,9 +48,6 @@ if (has_post_thumbnail()) {
       </div>
     </div>
   </section>
-  <div class="invisible opacity-0 noshow back-to-top top-[150px] left-sp-10 mb-sp-16 w-fit translate-y-base5-3">
-    <a href="#mainArticleContent" class="no-underline text-h3-base font-heading-serif">Back to top</a>
-  </div>
   <section class="section-horizontal">
     <div class="container">
       <div class="divider"></div>

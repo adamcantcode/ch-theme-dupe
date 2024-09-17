@@ -31,10 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
   animations();
   // NOTE Also placed in rocket-skip-js
   // navigationMenu();
-  if (
-    body.classList.contains('single-treatment-modalities') ||
-    body.classList.contains('single-post')
-  ) {
+  if (body.classList.contains('single-post')) {
     revealBackToTop();
   }
   if (body.classList.contains('single-region')) {
