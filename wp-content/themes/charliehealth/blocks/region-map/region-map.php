@@ -38,7 +38,7 @@
         } ?>
         <div class="border-2 border-[#EFEFFD] rounded-md justify-items-start gap-sp-1 p-base5-2 outreach-member-js<?= $director ? ' is-director-js' : ''; ?> hover:shadow-lg duration-300 noshow" data-state="<?= $state; ?>">
           <div class="cursor-pointer" data-modal-id="<?= $id; ?>">
-            <img src="<?= $headshot['url'] ?: site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="rounded-circle mb-sp-4 w-[240px] mx-auto">
+            <img src="<?= $headshot['url'] ?? site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="rounded-circle mb-sp-4 w-[240px] mx-auto">
             <h4 id="repName" class="underline"><?= get_the_title($id); ?></h4>
           </div>
           <h5 class="mb-0"><?= $title; ?></h5>
@@ -113,7 +113,7 @@ if ($modalQuery->have_posts()) : while ($modalQuery->have_posts()) : $modalQuery
             <?php endif; ?>
           </div>
           <div class="grid items-center justify-center order-1 lg:order-2">
-            <img src="<?= $headshot['url'] ?: site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png');; ?>" alt="<?= $altText ?>" class="rounded-circle">
+            <img src="<?= $headshot['url'] ?? site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png');; ?>" alt="<?= $altText ?>" class="rounded-circle">
           </div>
         </div>
       </div>
