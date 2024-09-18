@@ -369,21 +369,24 @@ Template Post Type: page
       const applyStateFilterFromHash = () => {
         const hash = window.location.hash.substring(1); // Remove the '#'
         if (hash) {
+          // Extract only the state part before any '?' which might be UTM parameters
+          const stateHash = hash.split('?')[0]; // Get the part before '?'
+          const stateName = decodeURIComponent(stateHash);
+
           const dropdown = document.getElementById('locationFilter');
-          const stateName = decodeURIComponent(hash);
 
           // Set the dropdown value to the state name or abbreviation
           if (dropdown.querySelector(`option[value="${stateName}"]`)) {
             let option = dropdown.querySelector(`option[value="${stateName}"]`);
 
-            dropdown.value = hash;
+            dropdown.value = stateName;
             dropdown.selectedIndex = Array.prototype.indexOf.call(dropdown.options, option);
+
             setTimeout(() => {
               dropdown.focus();
               dropdown.blur();
               filterJobListingsByState();
             }, 300);
-
           }
         }
       };
