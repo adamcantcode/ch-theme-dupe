@@ -31,6 +31,7 @@ export default function careersTracking() {
     facebookOrganic: '052412f84us',
     metaPaid: '98215cc84us',
     emailOutreach: '5c46ab874us',
+    gtmRecruiting: '0efdd7fe4us',
     universityRecruiting: '2bbdf2b94us',
     handshake: '960a9c544us',
     jobDigest: 'c10ecf634us',
@@ -73,6 +74,8 @@ export default function careersTracking() {
       updateUrls(ghMap.emailOutreach);
     } else if (utmSource === 'universityrecruiting' && utmMedium === 'emailpilot') {
       updateUrls(ghMap.universityRecruiting);
+    } else if (utmSource === 'gtmnewsletter' && utmMedium === 'email') {
+      updateUrls(ghMap.gtmRecruiting);
     } else if (utmSource === 'job_board' && utmMedium === 'handshake') {
       updateUrls(ghMap.handshake);
     } else if (utmMedium === 'job_digest') {
