@@ -110,7 +110,7 @@ $blockClasses .= $background . ' ';
         <p class="noshow lg:block"><?= $subhead; ?></p>
       <?php endif; ?>
       <div id="newsletterInContent" class="newsletter-revamp">
-        <?php include('wp-content/themes/charliehealth/includes/newsletter-form.php'); ?>
+        <?php include(get_template_directory() . '/includes/newsletter-form.php'); ?>
       </div>
       <h5 class="mt-base5-2">You can unsubscribe anytime.</h5>
     </div>
