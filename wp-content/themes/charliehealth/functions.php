@@ -104,7 +104,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/card-hiring');
   register_block_type(__DIR__ . '/build/blocks/collapsible-content');
   register_block_type(__DIR__ . '/build/blocks/testimonial-review');
-  register_block_type(__DIR__ . '/build/blocks/review-testimonial-review');
+  // register_block_type(__DIR__ . '/build/blocks/review-testimonial-review');
   register_block_type(__DIR__ . '/build/blocks/testimonial-list');
   register_block_type(__DIR__ . '/build/blocks/posts-list-in-content');
   register_block_type(__DIR__ . '/build/blocks/testimonial-carousel');
