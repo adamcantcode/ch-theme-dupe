@@ -39,7 +39,7 @@ $quotes = get_field('quotes');
           <div class="!h-auto swiper-slide mb-sp-12">
             <div class="flex !h-full gap-sp-8 pb-sp-8 lg:flex-row flex-col">
               <div class="text-center bg-white p-base5-5 rounded-lg careers-testimonial-image self-start <?= $quotes ? 'lg:basis-[33%]' : '' ?>">
-                <img src="<?= $image['url'] ?: placeHolderImage(); ?>" alt="<?= $image['alt']; ?>" class="object-cover rounded-circle aspect-square mb-sp-6">
+                <img src="<?= $image['url'] ?? placeHolderImage(); ?>" alt="<?= $image['alt'] ?? ''; ?>" class="object-cover rounded-circle aspect-square mb-sp-6">
                 <p class="font-heading-serif mb-base5-1"><?= $name; ?></p>
                 <p><?= $title; ?></p>
                 <?php if ($linkedIn) : ?>
