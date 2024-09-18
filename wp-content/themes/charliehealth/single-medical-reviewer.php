@@ -28,7 +28,7 @@ if ($image) {
     </div>
     <div class="grid lg:grid-cols-[3fr_9fr] gap-base5-8 mb-base5-8 mt-base5-10">
       <div>
-        <img src="<?= $image; ?>" srcset="<?= $imageSrcset; ?>" alt="<?= $imageAlt; ?>" class="object-cover w-full rounded-circle aspect-square">
+        <img src="<?= $image; ?>" srcset="<?= $imageSrcset ?? ''; ?>" alt="<?= $imageAlt; ?>" class="object-cover w-full rounded-circle aspect-square">
       </div>
       <div>
         <h2><?= $name; ?>, <?= $creds; ?> <span class="text-h4-base"><?= $pronouns; ?></span></h2>
