@@ -22,69 +22,79 @@ if ($pdfLink) {
       <div id="gatedFormInContent" class="newsletter-revamp">
         <script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/all_gated"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/all_gated" title="Online Form">Online Form - [TEST] ALL GATED</a></noscript>
         <script>
-          window.addEventListener('load', function() {
-            var gatedContent = document.currentScript.parentNode; // Gated container
-            var elementToCutGated = gatedContent.querySelector("#gatedFormInContent #fsSubmitButton5683263"); // Submit button
-            var destinationElementGated = gatedContent.querySelector("#gatedFormInContent #fsCell161791549"); // Email container
-            var newsletterIDGated = gatedContent.id; // Gated identifier
+          document.addEventListener('DOMContentLoaded', function() {
+            // Reference the gated content directly by its ID or class
+            const gatedContent = document.getElementById('gatedFormInContent');
 
-            if (elementToCutGated && destinationElementGated) {
-              var clonedElementDBT = elementToCutGated.cloneNode(true);
-              elementToCutGated.parentNode.removeChild(elementToCutGated);
-              destinationElementGated.appendChild(clonedElementDBT);
+            if (!gatedContent) {
+              console.error("Gated content not found.");
+              return;
             }
 
-            document.querySelector('#gatedFormInContent #field161791549').addEventListener('keydown', function(event) {
+            const submitButton = gatedContent.querySelector("#fsSubmitButton5683263"); // Submit button
+            const emailContainer = gatedContent.querySelector("#fsCell161791549"); // Email container
+            const gatedForm = document.getElementById('fsForm5683263');
+            const pdfLink = new URLSearchParams(window.location.search).get('pdf_link') || '<?= $pdfLink; ?>';
+            const encodedPdfLink = encodeURIComponent(pdfLink);
+
+            // Move submit button to email container
+            if (submitButton && emailContainer) {
+              const clonedSubmitButton = submitButton.cloneNode(true);
+              submitButton.remove();
+              emailContainer.appendChild(clonedSubmitButton);
+            }
+
+            // Handle enter key for submission
+            const emailField = gatedContent.querySelector('#field161791549');
+            emailField?.addEventListener('keydown', function(event) {
               if (event.key === 'Enter') {
-                document.querySelector('#gatedFormInContent #fsSubmitButton5683263').click();
+                gatedContent.querySelector('#fsSubmitButton5683263').click();
               }
             });
 
-            const gatedForm = document.getElementById('fsForm5683263');
-            const urlParams = new URLSearchParams(window.location.search);
-            const pdfLink = urlParams.get('pdf_link') ? urlParams.get('pdf_link') : '<?= $pdfLink; ?>';
-            var encodedPdfLink = encodeURIComponent(pdfLink);
+            // Update form action with the encoded PDF link
+            gatedForm.action = `${gatedForm.action}?pdf_link=${window.location.origin}/wp-content/uploads/${encodedPdfLink}`;
 
-            // Append the pdf_link query parameter to the form action URL
-            var formAction = gatedForm.action;
-            var updatedFormAction = formAction + '?pdf_link=' + window.location.origin + '/wp-content/uploads/' + encodedPdfLink;
+            // Handle form submission
+            gatedForm.addEventListener('submit', handleFormSubmit);
 
-            // Update the form action attribute with the new URL
-            gatedForm.action = updatedFormAction;
+            function handleFormSubmit(event) {
+              setCookie('gatedSubmission', 'true', 365);
+              window.addEventListener('unload', () => window.location.reload(true));
+            }
 
-            gatedForm.addEventListener('submit', (event) => {
-              var expires = "";
-              var date = new Date();
-              date.setTime(date.getTime() + (365 * 24 * 60 * 60 * 1000));
-              expires = "; expires=" + date.toUTCString();
-              document.cookie = "gatedSubmission=true" + expires + "; path=/";
-              window.addEventListener('unload', function() {
-                window.location.reload(true);
-              });
-            });
+            // Redirect if cookie exists
+            if (window.location.href.includes('/gated')) {
+              if (getCookie('gatedSubmission')) {
+                window.location = `${window.location.origin}/activities`;
+              }
+            } else {
+              if (getCookie('gatedSubmission')) {
+                document.querySelector('.gated-guide-container-js').innerHTML = `
+          <object data="<?= get_field('pdf_link'); ?>" style="width:100%;height:600px" type="application/pdf"></object>`;
+              }
+            }
 
-            // If cookie, redirect to /activites
-            function checkCookie(name) {
-              var cookies = document.cookie.split(';');
-              for (var i = 0; i < cookies.length; i++) {
-                var cookie = cookies[i].trim();
-                if (cookie.indexOf(name + "=") === 0) {
+            // Set cookie
+            function setCookie(name, value, days) {
+              const date = new Date();
+              date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+              const expires = `; expires=${date.toUTCString()}`;
+              document.cookie = `${name}=${value}${expires}; path=/`;
+            }
+
+            // Get cookie by name
+            function getCookie(name) {
+              const cookies = document.cookie.split(';');
+              for (let cookie of cookies) {
+                cookie = cookie.trim();
+                if (cookie.startsWith(name + '=')) {
                   return true;
                 }
               }
               return false;
             }
-
-            if (window.location.href.includes('/gated')) {
-              if (checkCookie("gatedSubmission")) {
-                window.location = window.location.origin + '/activities'
-              }
-            } else {
-              if (checkCookie("gatedSubmission")) {
-                document.querySelector('.gated-guide-container-js').innerHTML = `<object data="<?= get_field('pdf_link'); ?>" style="width:100%;height:600px" type="application/pdf"></object>`
-              }
-            }
-          })
+          });
         </script>
       </div>
       <h6 class="text-mini">By entering your email you agree to receive marketing communications from Charlie Health. You can unsubscribe anytime.</h6>
