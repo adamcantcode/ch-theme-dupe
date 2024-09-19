@@ -1891,8 +1891,7 @@ __webpack_require__.r(__webpack_exports__);
 function toc() {
   const toc = document.querySelector('#toc');
   if (toc) {
-    // const content = document.querySelector('#articleContent > div');
-    const headings = document.querySelectorAll('#articleContent > div > h2');
+    const headings = document.querySelectorAll('#theContent > h2');
     headings.forEach(heading => {
       var headoingText = sanitizeForId(heading.innerText);
       heading.id = headoingText;
@@ -23684,9 +23683,9 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_modules_animations__WEBPACK_IMPORTED_MODULE_3__["default"])();
   // NOTE Also placed in rocket-skip-js
   // navigationMenu();
-  if (body.classList.contains('single-post')) {
-    (0,_modules_back_to_top__WEBPACK_IMPORTED_MODULE_5__["default"])();
-  }
+  // if (body.classList.contains('single-post')) {
+  //   revealBackToTop();
+  // }
   if (body.classList.contains('single-region')) {
     (0,_modules_outreach_modals__WEBPACK_IMPORTED_MODULE_6__["default"])();
   }

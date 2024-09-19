@@ -115,9 +115,6 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
       </div>
     </div>
   </section>
-  <div class="invisible opacity-0 noshow back-to-top top-[150px] left-sp-10 mb-sp-16 w-fit translate-y-base5-3">
-    <a href="#mainArticleContent" class="no-underline text-h3-base font-heading-serif">Back to top</a>
-  </div>
   <?php if ($toc) : ?>
     <section class="section-xs">
       <div class="container-sm">
@@ -145,26 +142,28 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
   </section>
   <article id="articleContent" class="section">
     <div class="container-sm">
-      <?php the_content(); ?>
-      <?php if ($references) : ?>
-        <div class="divider mb-sp-4"></div>
-        <div class="rounded-md references-container">
-          <div class="flex duration-300 rounded-md cursor-pointer references-heading lg:p-sp-8 p-sp-4 hover:bg-lightest-purple">
-            <p class="mb-0 text-h3-base">References</p>
-            <div class="flex items-center ml-auto toggle">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="none" viewBox="8 8 8 8" height="12px" width="12px">
-                <path d="M9 12H15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                <path d="M12 9L12 15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
+      <div id="theContent">
+        <?php the_content(); ?>
+        <?php if ($references) : ?>
+          <div class="divider mb-sp-4"></div>
+          <div class="rounded-md references-container">
+            <div class="flex duration-300 rounded-md cursor-pointer references-heading lg:p-sp-8 p-sp-4 hover:bg-lightest-purple">
+              <p class="mb-0 text-h3-base">References</p>
+              <div class="flex items-center ml-auto toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="none" viewBox="8 8 8 8" height="12px" width="12px">
+                  <path d="M9 12H15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M12 9L12 15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="overflow-hidden transition-all duration-500 ease-in-out references-content max-h-0">
+              <div class="pt-0 lg:pt-0 lg:p-sp-8 p-sp-4 gap-sp-1 mt-sp-4">
+                <?= $references; ?>
+              </div>
             </div>
           </div>
-          <div class="overflow-hidden transition-all duration-500 ease-in-out references-content max-h-0">
-            <div class="pt-0 lg:pt-0 lg:p-sp-8 p-sp-4 gap-sp-1 mt-sp-4">
-              <?= $references; ?>
-            </div>
-          </div>
-        </div>
-      <?php endif; ?>
+        <?php endif; ?>
+      </div>
     </div>
   </article>
 </div>

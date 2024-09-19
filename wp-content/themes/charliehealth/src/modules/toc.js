@@ -1,8 +1,7 @@
 export default function toc() {
   const toc = document.querySelector('#toc');
   if (toc) {
-    // const content = document.querySelector('#articleContent > div');
-    const headings = document.querySelectorAll('#articleContent > div > h2');
+    const headings = document.querySelectorAll('#theContent > h2');
 
     headings.forEach((heading) => {
       var headoingText = sanitizeForId(heading.innerText);
