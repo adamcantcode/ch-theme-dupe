@@ -16,15 +16,15 @@ if (firstVideo) {
 // on load, init swiper
 window.addEventListener('load', () => {
   var unmuted = false;
-  var swiper = new Swiper('.swiper.swiper-videos-testimonial', {
-    slidesPerView: 'auto',
+  var swiper = new Swiper('.swiper.swiper-videos-testimonial-no-quote', {
+    slidesPerView: 1,
     spaceBetween: 20,
     slideToClickedSlide: true,
     speed: 1000,
     loop: false,
     breakpoints: {
       1024: {
-        slidesPerView: 'auto',
+        slidesPerView: 3,
         spaceBetween: 40,
       },
     },

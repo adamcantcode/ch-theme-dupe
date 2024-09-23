@@ -216,6 +216,13 @@
                 "operator": "==",
                 "value": "acf\/testimonials-videos-block"
             }
+        ],
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/testimonials-videos-no-quote-block"
+            }
         ]
     ],
     "menu_order": 0,
@@ -227,5 +234,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1714070180
+    "modified": 1727100056
 }
