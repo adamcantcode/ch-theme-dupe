@@ -163,6 +163,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/locations-hub');
   register_block_type(__DIR__ . '/build/blocks/posts-list-slider');
   register_block_type(__DIR__ . '/build/blocks/pill-list');
+  register_block_type(__DIR__ . '/build/blocks/testimonials-videos-no-quote');
 }
 add_action('init', 'register_acf_blocks', 5);
 
