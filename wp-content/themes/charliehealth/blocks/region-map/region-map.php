@@ -26,6 +26,9 @@
         $id = get_the_ID();
         $title = get_field('title', $id);
         $state = get_field('state', $id);
+        if (!is_array($state)) {
+          $state = [$state]; // Convert to array if it's a string or not an array
+        }
         $state = implode(' ', $state);
         $phone = get_field('phone', $id);
         $email = get_field('email', $id);
