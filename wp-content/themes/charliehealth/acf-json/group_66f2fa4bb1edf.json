@@ -1,0 +1,71 @@
+{
+    "key": "group_66f2fa4bb1edf",
+    "title": "Enable Banner",
+    "fields": [
+        {
+            "key": "field_66f2fa4c2c419",
+            "label": "Enable Banner",
+            "name": "enable_banner",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "Enabled",
+            "ui_off_text": "Disabled",
+            "ui": 1
+        },
+        {
+            "key": "field_66f2fa5b2c41a",
+            "label": "Banner Link",
+            "name": "banner_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_66f2fa4c2c419",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1727200120
+}
