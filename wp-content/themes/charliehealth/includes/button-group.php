@@ -22,14 +22,20 @@ if (!empty($linkTwo)) {
   $linkTwoTarget = $linkTwo['target'];
 }
 $align = '';
-if ($block['align']) {
-  if ($block['align'] === 'left') {
-    $align = 'justify-start';
-  } elseif ($block['align'] === 'right') {
-    $align = 'justify-end';
+if (isset($block) && $block) {
+  if (isset($block['align'])) {
+    if ($block['align'] === 'left') {
+      $align = 'justify-start';
+    } elseif ($block['align'] === 'right') {
+      $align = 'justify-end';
+    } else {
+      $align = 'justify-center';
+    }
   } else {
-    $align = 'justify-center';
+    $align = 'justify-start';
   }
+} else {
+  $align = 'justify-start';
 }
 if (isset($style)) {
   if ($style === 'full') {
