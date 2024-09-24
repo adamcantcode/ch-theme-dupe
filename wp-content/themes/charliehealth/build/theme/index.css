@@ -1562,10 +1562,6 @@ a.insurance-tabs.active:hover {
   bottom: -100%;
 }
 
-.bottom-base5-2{
-  bottom: 10px;
-}
-
 .bottom-base5-3{
   bottom: 15px;
 }
@@ -1608,10 +1604,6 @@ a.insurance-tabs.active:hover {
 
 .right-\[25px\]{
   right: 25px;
-}
-
-.right-base5-2{
-  right: 10px;
 }
 
 .right-sp-6{
@@ -1696,10 +1688,6 @@ a.insurance-tabs.active:hover {
 
 .z-\[6\]{
   z-index: 6;
-}
-
-.z-\[92147483647\]{
-  z-index: 92147483647;
 }
 
 .z-\[9999\]{
@@ -2552,11 +2540,6 @@ a.insurance-tabs.active:hover {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.translate-y-base5-4{
-  --tw-translate-y: 20px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .translate-y-sp-2{
   --tw-translate-y: 0.5rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2731,10 +2714,6 @@ a.insurance-tabs.active:hover {
   justify-items: start;
 }
 
-.justify-items-end{
-  justify-items: end;
-}
-
 .justify-items-center{
   justify-items: center;
 }
@@ -2757,10 +2736,6 @@ a.insurance-tabs.active:hover {
 
 .gap-base5-4{
   gap: 20px;
-}
-
-.gap-base5-5{
-  gap: 25px;
 }
 
 .gap-base5-8{
@@ -3510,11 +3485,6 @@ a.insurance-tabs.active:hover {
   padding-bottom: 10px;
 }
 
-.py-base5-3{
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-
 .py-base5-4{
   padding-top: 20px;
   padding-bottom: 20px;
@@ -3640,10 +3610,6 @@ a.insurance-tabs.active:hover {
 
 .text-center{
   text-align: center;
-}
-
-.text-right{
-  text-align: right;
 }
 
 .align-baseline{
@@ -5985,10 +5951,6 @@ ul.alert li {
     bottom: -50px;
   }
 
-  .lg\:bottom-\[100px\]{
-    bottom: 100px;
-  }
-
   .lg\:bottom-base5-5{
     bottom: 25px;
   }
@@ -6007,10 +5969,6 @@ ul.alert li {
 
   .lg\:right-0{
     right: 0px;
-  }
-
-  .lg\:right-\[100px\]{
-    right: 100px;
   }
 
   .lg\:top-0{
@@ -6225,10 +6183,6 @@ ul.alert li {
     height: 300px;
   }
 
-  .lg\:h-\[30px\]{
-    height: 30px;
-  }
-
   .lg\:h-\[400px\]{
     height: 400px;
   }
@@ -6295,10 +6249,6 @@ ul.alert li {
 
   .lg\:w-\[300px\]{
     width: 300px;
-  }
-
-  .lg\:w-\[30px\]{
-    width: 30px;
   }
 
   .lg\:w-\[500px\]{

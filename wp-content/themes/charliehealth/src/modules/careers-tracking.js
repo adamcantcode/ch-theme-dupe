@@ -36,6 +36,7 @@ export default function careersTracking() {
     handshake: '960a9c544us',
     jobDigest: 'c10ecf634us',
     email: '837aa8f74us',
+    linkedinOrganicCB: '2f1230dd4us',
   };
   // get params
   setTimeout(() => {
@@ -60,6 +61,8 @@ export default function careersTracking() {
       utmCampaign === 'cta-button'
     ) {
       updateUrls(ghMap.linkedinProfile);
+    } else if (utmSource === 'linkedin-cb') {
+      updateUrls(ghMap.linkedinOrganicCB);
     } else if (utmSource === 'linkedin' && utmMedium === 'organic') {
       updateUrls(ghMap.linkedinOrganic);
     } else if (utmSource === 'linkedin' && utmMedium === 'paidsocial') {

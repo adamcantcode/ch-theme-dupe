@@ -1123,7 +1123,8 @@ function careersTracking() {
     universityRecruiting: '2bbdf2b94us',
     handshake: '960a9c544us',
     jobDigest: 'c10ecf634us',
-    email: '837aa8f74us'
+    email: '837aa8f74us',
+    linkedinOrganicCB: '2f1230dd4us'
   };
   // get params
   setTimeout(() => {
@@ -1143,6 +1144,8 @@ function careersTracking() {
     }
     if (utmSource === 'linkedin' && utmMedium === 'organic' && utmCampaign === 'cta-button') {
       updateUrls(ghMap.linkedinProfile);
+    } else if (utmSource === 'linkedin-cb') {
+      updateUrls(ghMap.linkedinOrganicCB);
     } else if (utmSource === 'linkedin' && utmMedium === 'organic') {
       updateUrls(ghMap.linkedinOrganic);
     } else if (utmSource === 'linkedin' && utmMedium === 'paidsocial') {
