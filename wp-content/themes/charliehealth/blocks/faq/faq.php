@@ -11,6 +11,11 @@ if (!empty($block['className'])) {
 }
 
 $columnCount = get_field('faq_column_count');
+$title = get_the_title();
+if(!empty(get_field('faq_heading'))) {
+  $title = get_field('faq_heading');
+}
+
 $faqItems = get_field('faq_items');
 $faqButton = get_field('faq_button');
 
@@ -35,7 +40,7 @@ $faqButton = get_field('faq_button');
 <?php if ($faqButton) : ?>
   <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] lg:gap-sp-12 gap-sp-8">
     <div class="grid lg:block">
-      <h2>FAQs for <?= get_the_title(); ?></h2>
+      <h2>FAQs for <?= $title; ?></h2>
       <a href="<?= site_url('/faqs'); ?>" class="ch-button button-secondary">See All FAQs</a>
     </div>
     <div>

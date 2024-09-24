@@ -49,6 +49,27 @@
             "ui_off_text": ""
         },
         {
+            "key": "field_66f2c31353147",
+            "label": "FAQ Heading",
+            "name": "faq_heading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_642c60e56af41",
             "label": "FAQ Items",
             "name": "faq_items",
@@ -133,5 +154,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1683666303
+    "modified": 1727185704
 }
