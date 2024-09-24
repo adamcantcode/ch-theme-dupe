@@ -42,33 +42,10 @@
   <!-- <pre class="fixed left-0 right-0 w-full text-xs text-center text-white top-4 -z-10-50 opacity-30">Better care, from anywhere ❤️ Carter Barnhart</pre> -->
   <?php
   // Banner
-  $enableBanner     = get_field('enable_banner', 'options');
-  $enableSiteWide   = get_field('enable_site_wide', 'options');
-  $enableBlogBanner = get_field('enable_blog_banner', 'options');
-  $showBanner       = false;
-  $displayOnPage    = false;
-  // If banner
+  $enableBanner = get_field('enable_banner', get_the_ID());
+
   if ($enableBanner) {
-    $link = get_field('link', 'options');
-    $pages = get_field('pages', 'options');
-    // If show on all site pages
-    if ($enableSiteWide) {
-      $showBanner = true;
-    } else {
-      // If only on select pages
-      if ($pages) {
-        $currentPage = get_queried_object_id();
-        if (in_array($currentPage, $pages)) {
-          $displayOnPage = true;
-        }
-      }
-      // If on all blog posts
-      if ($enableBlogBanner) {
-        $link = get_field('link', 'options');
-        $isBlogPost = is_singular('post');
-      }
-      $showBanner = ($enableBanner && $displayOnPage) || ($enableBlogBanner && $isBlogPost) ? true : false;
-    }
+    $link = get_field('banner_link', get_the_ID());
   }
 
   // Nav button
@@ -98,18 +75,18 @@
   ?>
   <!-- NOT BLOG -->
   <div id="emptyDiv"></div>
-  <?php if ($showBanner) : ?>
-    <div class="z-[9999] w-full lg:h-sp-8 h-sp-14 bg-yellow-300 flex justify-center items-center fixed<?= is_user_logged_in() && !is_current_user_subscriber() ? ' lg:top-[32px] top-[46px]' : ' top-0'; ?>">
+  <?php if ($enableBanner) : ?>
+    <div class="banner-js z-[9999] py-base5-1 w-full bg-yellow-300 flex justify-center items-center fixed<?= is_user_logged_in() && !is_current_user_subscriber() ? ' lg:top-[32px] top-[46px]' : ' top-0'; ?>">
       <div class="flex-none bg-orange-300 w-sp-2 h-sp-2 rounded-circle ml-sp-5"></div>
-      <a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>" class="inline-block">
-        <p class="px-sp-2 font-heading text-[14px] leading-normal mb-0"><?= $link['title']; ?></p>
+      <a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>" class="inline-block no-underline">
+        <p class="mb-0 leading-normal px-sp-2 font-heading"><?= $link['title']; ?></p>
       </a>
       <svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="none" class="flex-none mr-sp-5">
         <path d="M11.4419 5.44194C11.686 5.19787 11.686 4.80214 11.4419 4.55806L7.46447 0.580583C7.22039 0.336506 6.82466 0.336506 6.58058 0.580583C6.33651 0.824661 6.33651 1.22039 6.58058 1.46447L10.1161 5L6.58058 8.53553C6.3365 8.77961 6.3365 9.17534 6.58058 9.41942C6.82466 9.6635 7.22039 9.6635 7.46447 9.41942L11.4419 5.44194ZM-5.46392e-08 5.625L11 5.625L11 4.375L5.46392e-08 4.375L-5.46392e-08 5.625Z" fill="#161A3D" />
       </svg>
     </div>
   <?php endif; ?>
-  <header class="fixed z-[100] w-screen bg-darker-blue<?= $showBanner ? ' lg:mt-sp-8 mt-sp-14' : ''; ?> <?= is_user_logged_in() && !is_current_user_subscriber() ? ' lg:top-[32px] top-[46px]' : ' top-0'; ?>">
+  <header class="fixed z-[100] w-screen bg-darker-blue<?= is_user_logged_in() && !is_current_user_subscriber() ? ' lg:top-[32px] top-[46px]' : ' top-0'; ?>">
     <nav class="section-horizontal">
       <div class="container items-center lg:flex noshow">
         <div class="mr-sp-6">
@@ -198,7 +175,7 @@
           <div class="w-full h-[1.5px] bg-white relative transition-all duration-100 delay-75 top-0 origin-center"></div>
         </div>
       </div>
-      <div class="bg-secondary-soft fixed panel-js <?= $showBanner ? 'h-[calc(100vh-124px)]' : 'h-[calc(100vh-60px)]' ?> w-full left-0 overflow-y-scroll opacity-0 invisible pointer-events-none transition-all duration-300 flex flex-col pt-sp-3">
+      <div class="fixed left-0 flex flex-col invisible w-full overflow-y-scroll transition-all duration-300 opacity-0 pointer-events-none bg-secondary-soft panel-js pt-sp-3">
         <?php if (have_rows('navigation_item_new', 'option')) :
           while (have_rows('navigation_item_new', 'option')) : the_row(); ?>
             <?php
@@ -283,4 +260,63 @@
       </div>
     </nav>
   </header>
-  <main id="primary" class="site-main <?= $showBanner ? 'lg:mt-[98px] mt-[124px]' : 'mt-[60px] lg:mt-[70px]'; ?>">
+  <main id="primary" class="site-main mt-[60px] lg:mt-[70px]">
+    <script>
+      // Function to set the top margin of the header
+      function setHeaderMargin() {
+        const banner = document.querySelector('.banner-js');
+        const header = document.querySelector('header');
+
+        if (banner && header) {
+          const bannerHeight = banner.offsetHeight;
+          header.style.marginTop = `${bannerHeight}px`;
+        }
+      }
+
+      // Function to set the top margin of the main element based on the combined height of header and banner-js
+      function setMainMargin() {
+        const banner = document.querySelector('.banner-js');
+        const header = document.querySelector('header');
+        const main = document.querySelector('main');
+
+        if (banner && header && main) {
+          const totalHeight = banner.offsetHeight + header.offsetHeight;
+          main.style.marginTop = `${totalHeight}px`;
+        } else {
+          const totalHeight = header.offsetHeight;
+          main.style.marginTop = `${totalHeight}px`;
+        }
+      }
+
+      // Function to set the height of the .panel-js element
+      function setPanelHeight() {
+        const banner = document.querySelector('.banner-js');
+        const header = document.querySelector('header');
+        const panel = document.querySelector('.panel-js');
+
+        if (banner && header && panel) {
+          const totalHeight = banner.offsetHeight + header.offsetHeight;
+          const viewportHeight = window.innerHeight;
+          const panelHeight = viewportHeight - totalHeight;
+          panel.style.height = `${panelHeight}px`;
+        } else if (header && panel) {
+          
+          const totalHeight = header.offsetHeight;
+          const viewportHeight = window.innerHeight;
+          const panelHeight = viewportHeight - totalHeight;
+          console.log(totalHeight);
+          panel.style.height = `${panelHeight}px`;
+        }
+      }
+
+      setHeaderMargin();
+      setMainMargin();
+      setPanelHeight()
+
+      window.addEventListener('load', setHeaderMargin);
+      window.addEventListener('resize', setHeaderMargin);
+      window.addEventListener('load', setMainMargin);
+      window.addEventListener('resize', setMainMargin);
+      window.addEventListener('load', setPanelHeight);
+      window.addEventListener('resize', setPanelHeight);
+    </script>
