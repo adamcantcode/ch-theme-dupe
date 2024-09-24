@@ -28,8 +28,10 @@ if (isset($block) && $block) {
       $align = 'justify-start';
     } elseif ($block['align'] === 'right') {
       $align = 'justify-end';
-    } else {
+    } elseif (($block['align'] === 'center')) {
       $align = 'justify-center';
+    } else {
+      $align = 'justify-start';
     }
   } else {
     $align = 'justify-start';
