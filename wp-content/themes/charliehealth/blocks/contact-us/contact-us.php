@@ -1,6 +1,7 @@
 <div class="grid lg:grid-cols-[4fr_8fr] gap-base5-4">
   <div>
     <h2><?= get_field('headline'); ?></h2>
+    <InnerBlocks/>
   </div>
   <div class="border-y-2 border-primary py-base5-5">
     <?php if (have_rows('contact_info')) : ?>
