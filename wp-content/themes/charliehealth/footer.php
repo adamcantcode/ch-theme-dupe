@@ -45,7 +45,7 @@
 						<img src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/close-x.svg" alt="close button" class="w-full duration-300 modal-close p-sp-4 hover:brightness-0 invert lg:invert-0">
 					</div>
 					<div class="grid lg:grid-cols-[1fr_2fr] items-center lg:h-[500px]">
-						<div class="relative h-full bg-primary">
+						<div class="relative h-full rounded-bl-none bg-primary rounded-tl-md lg:rounded-bl-md rounded-tr-md lg:rounded-tr-none">
 							<img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="object-contain w-full h-full lg:rounded-tl-md lg:rounded-tr-none lg:rounded-bl-md rounded-t-md max-h-[20vh] lg:max-h-none">
 							<img src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg" alt="Charlie Health shield logo" class="w-[2rem] absolute lg:bottom-base5-5 lg:left-base5-5 bottom-base5-3 left-base5-3">
 						</div>

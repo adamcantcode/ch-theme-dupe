@@ -2948,6 +2948,18 @@ a.insurance-tabs.active:hover {
   border-top-right-radius: 10px;
 }
 
+.rounded-bl-none{
+  border-bottom-left-radius: 0;
+}
+
+.rounded-tl-md{
+  border-top-left-radius: 10px;
+}
+
+.rounded-tr-md{
+  border-top-right-radius: 10px;
+}
+
 .border{
   border-width: 1px;
 }
