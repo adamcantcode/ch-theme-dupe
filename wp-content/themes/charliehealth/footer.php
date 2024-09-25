@@ -37,7 +37,7 @@
 		$image['alt'] = get_field('image')['alt'];
 	}
 	?>
-	<div class="page-modal-popup">
+	<div class="page-modal-popup noshow">
 		<div id="pageModalPopup" class="bg-[rgba(0,0,0,.7)] fixed top-0 left-0 w-full h-full z-50 grid items-center justify-center center transition-all duration-300 modal-fade">
 			<div class="transition-all duration-300 section-xs">
 				<div class="relative rounded-md container-sm bg-cream !max-w-[950px]">
@@ -132,7 +132,9 @@
 						}
 					}
 					setTimeout(() => {
-						handleOpen();
+						if(!document.querySelector('.page-modal-popup').classList.contains('noshow')) {
+							handleOpen();
+						}
 					}, 8000);
 				});
 			</script>
