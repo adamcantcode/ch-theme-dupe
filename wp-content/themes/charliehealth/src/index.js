@@ -22,6 +22,7 @@ import tagPage from './modules/tag-page';
 import stickyCTA from './modules/sticky-cta';
 import fadeUpIn from './modules/fade-up-in';
 import careersTracking from './modules/careers-tracking';
+import userPagesTracker from './modules/user-pages-tracker';
 
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
@@ -168,4 +169,6 @@ document.addEventListener('DOMContentLoaded', () => {
     careersTracking();
     // }
   }
+
+  userPagesTracker();
 });
