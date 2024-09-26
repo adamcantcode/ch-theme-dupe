@@ -5611,6 +5611,10 @@ ul.alert li {
   width: 100%;
 }
 
+#theContent > div{
+  margin-bottom: 20px;
+}
+
 .hover\:text-white:hovera:hover {
         color: #ffffff;
       }
