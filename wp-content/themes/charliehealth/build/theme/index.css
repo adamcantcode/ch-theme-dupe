@@ -1522,10 +1522,6 @@ a.insurance-tabs.active:hover {
   position: absolute;
 }
 
-.\!absolute{
-  position: absolute !important;
-}
-
 .\!relative{
   position: relative !important;
 }
@@ -2640,14 +2636,6 @@ a.insurance-tabs.active:hover {
 
 .grid-cols-\[2fr_1fr\]{
   grid-template-columns: 2fr 1fr;
-}
-
-.grid-cols-\[3fr_9fr\]{
-  grid-template-columns: 3fr 9fr;
-}
-
-.grid-cols-\[4fr_8fr\]{
-  grid-template-columns: 4fr 8fr;
 }
 
 .flex-row{
@@ -5999,16 +5987,16 @@ ul.alert li {
     top: 32px;
   }
 
+  .lg\:top-sp-16{
+    top: 6rem;
+  }
+
   .lg\:order-1{
     order: 1;
   }
 
   .lg\:order-2{
     order: 2;
-  }
-
-  .lg\:order-3{
-    order: 3;
   }
 
   .lg\:col-span-1{

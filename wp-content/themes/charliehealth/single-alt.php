@@ -127,29 +127,31 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
   <article id="articleContent" class="section-bottom">
     <div class="container">
       <div class="grid lg:grid-cols-[4fr_8fr] gap-base5-4">
-        <div class="order-2 min-w-full lg:order-1">
-          <?php if ($toc) : ?>
-            <div class="rounded-md toc-container bg-light-purple mb-base5-4">
-              <div class="flex cursor-pointer toc-heading lg:p-sp-8 p-sp-4">
-                <p class="mb-0 text-h3-base">Table of Contents</p>
-                <div class="flex items-center ml-auto toggle">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="none" viewBox="8 8 8 8" height="12px" width="12px">
-                    <path d="M9 12H15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                    <path d="M12 9L12 15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
+        <div class="relative min-w-full">
+          <div class="lg:sticky lg:top-sp-16">
+            <?php if ($toc) : ?>
+              <div class="rounded-md toc-container bg-light-purple mb-base5-4">
+                <div class="flex cursor-pointer toc-heading lg:p-sp-8 p-sp-4">
+                  <p class="mb-0 text-h3-base">Table of Contents</p>
+                  <div class="flex items-center ml-auto toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="none" viewBox="8 8 8 8" height="12px" width="12px">
+                      <path d="M9 12H15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M12 9L12 15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="overflow-hidden transition-all duration-500 ease-in-out toc-content max-h-0">
+                  <div id="toc" class="flex flex-col items-start pt-0 lg:pt-0 lg:p-sp-8 p-sp-4 gap-sp-1"></div>
                 </div>
               </div>
-              <div class="overflow-hidden transition-all duration-500 ease-in-out toc-content max-h-0">
-                <div id="toc" class="flex flex-col items-start pt-0 lg:pt-0 lg:p-sp-8 p-sp-4 gap-sp-1"></div>
-              </div>
+            <?php endif; ?>
+            <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center flex-wrap">
+              <a href="/form" class="ch-button button-primary" target="_self">Get Started</a>
+              <a href="tel:+18664848218" class="ch-button button-secondary" target="_self">1 (866) 484-8218</a>
             </div>
-          <?php endif; ?>
-          <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center flex-wrap">
-            <a href="/form" class="ch-button button-primary" target="_self">Get Started</a>
-            <a href="tel:+18664848218" class="ch-button button-secondary" target="_self">1 (866) 484-8218</a>
           </div>
         </div>
-        <div id="theContent" class="order-1 min-w-full lg:order-2">
+        <div id="theContent" class="min-w-full">
           <?php the_content(); ?>
           <?php if ($references) : ?>
             <div class="divider mb-sp-4"></div>
