@@ -1626,7 +1626,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 function progressBar() {
   function calculateHeaderHeight() {
-    var articleContent = document.querySelector('#articleContent .container-sm');
+    var articleContent = document.querySelector('#articleContent .container-sm') || document.querySelector('#articleContent .container');
     let headerHeight = document.querySelector('header').clientHeight;
     var wpadmin = document.querySelector('#wpadminbar');
     if (wpadmin) {
