@@ -192,7 +192,7 @@
 					while (have_rows('footer_navigation_item_new', 'option')) : the_row();
 						$heading = get_sub_field('footer_column_heading')
 				?>
-						<div class="flex flex-col lg:mb-0 mb-sp-6 <?= get_row_index() === 4 ? 'mt-[-124px] lg:mt-0' : ''; ?> ">
+						<div class="flex flex-col lg:mb-0 mb-sp-6">
 							<p class="font-heading text-nav-normal mb-sp-4 last:mb-0 text-lavender-200"><?= $heading; ?></p>
 							<?php
 							if (have_rows('footer_submenu_items', 'option')) :
