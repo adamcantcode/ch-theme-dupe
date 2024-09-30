@@ -1,21 +1,32 @@
 <section class="relative overflow-hidden section temp-section-js">
   <div class="absolute z-0 w-0 h-0 transition-all duration-1000 ease-in-out opacity-0 left-1/2 color-expand-js rounded-circle"></div>
-  <div class="container-md">
+  <div class="container relative mb-base5-10 z-1">
+    <div class="grid grid-cols-[9fr_3fr]">
+      <div>
+        <h1>Virtual mental health treatment made for you</h1>
+        <h4>Group and individual sessions, multiple times per week</h4>
+        <h4>Covered by insurance </h4>
+        <h4>Flexible scheduling</h4>
+      </div>
+      <div></div>
+    </div>
+  </div>
+  <div class="relative container-md z-1">
     <div class="grid grid-cols-3 gap-base5-4">
-      <div class="relative grid bg-yellow-100 color-hover-item-js z-1">
-        <img src="<?= placeHolderImage(); ?>" alt="alt">
+      <div class="relative grid bg-yellow-100 rounded-md p-base5-5 color-hover-item-js">
+        <img src="<?= placeHolderImage(); ?>" alt="alt" class="mb-base5-5">
         <h2>Agelabel</h2>
         <h4>## - ##</h4>
         <a href="/form" class="stretched-link">Get started</a>
       </div>
-      <div class="relative grid color-hover-item-js z-1 bg-lavender-100">
-        <img src="<?= placeHolderImage(); ?>" alt="alt">
+      <div class="relative grid rounded-md p-base5-5 color-hover-item-js bg-lavender-100">
+        <img src="<?= placeHolderImage(); ?>" alt="alt" class="mb-base5-5">
         <h2>Agelabel</h2>
         <h4>## - ##</h4>
         <a href="/form" class="stretched-link">Get started</a>
       </div>
-      <div class="relative grid color-hover-item-js z-1 bg-pale-blue-100">
-        <img src="<?= placeHolderImage(); ?>" alt="alt">
+      <div class="relative grid rounded-md p-base5-5 color-hover-item-js bg-pale-blue-100">
+        <img src="<?= placeHolderImage(); ?>" alt="alt" class="mb-base5-5">
         <h2>Agelabel</h2>
         <h4>## - ##</h4>
         <a href="/form" class="stretched-link">Get started</a>
