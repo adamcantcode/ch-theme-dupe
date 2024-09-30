@@ -1,5 +1,5 @@
 <section class="relative overflow-hidden section temp-section-js">
-  <div class="absolute z-0 w-0 h-0 transition-all duration-700 opacity-0 color-expand-js rounded-circle"></div>
+  <div class="absolute z-0 w-0 h-0 transition-all duration-1000 ease-in-out opacity-0 left-1/2 color-expand-js rounded-circle"></div>
   <div class="container-md">
     <div class="grid grid-cols-3 gap-base5-4">
       <div class="relative grid bg-yellow-100 color-hover-item-js z-1">
@@ -29,12 +29,11 @@
     item.addEventListener('mouseenter', function(event) {
 
       const expandElement = document.querySelector('.color-expand-js');
-      const section = document.querySelector('.temp-section-js');
 
-      // Calculate the size of the expanding circle based on the section dimensions
-      const circleSize = Math.max(section.clientWidth, section.clientHeight) * 1.5;
+      // Calculate the size of the expanding circle
+      const circleSize = Math.max(window.innerWidth, window.innerHeight) * 2;
 
-      // Get the cursor position relative to the section
+      // Get the cursor position directly (relative to the viewport)
       const offsetX = event.clientX;
       const offsetY = event.clientY;
 
@@ -47,10 +46,10 @@
         }
       });
 
-      // Set the size and position of the expanding circle based on cursor position
+      // Set the size and position of the expanding circle directly at the cursor's position
       expandElement.style.width = `${circleSize}px`;
       expandElement.style.height = `${circleSize}px`;
-      expandElement.style.left = `${offsetX - circleSize / 2}px`; // Adjust position based on cursor position
+      expandElement.style.left = `${offsetX - circleSize / 2}px`; // Center the circle based on cursor position
       expandElement.style.top = `${offsetY - circleSize / 2}px`;
       expandElement.style.opacity = `1`;
 
