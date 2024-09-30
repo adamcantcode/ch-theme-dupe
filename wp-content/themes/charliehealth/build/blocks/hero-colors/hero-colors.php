@@ -1,34 +1,35 @@
 <section class="relative overflow-hidden section temp-section-js">
   <div class="absolute z-0 w-0 h-0 transition-all duration-1000 ease-in-out opacity-0 left-1/2 color-expand-js rounded-circle"></div>
   <div class="container relative mb-base5-10 z-1">
-    <div class="grid grid-cols-[9fr_3fr]">
+    <div class="grid grid-cols-[8fr_4fr]">
       <div>
         <h1>Virtual mental health treatment made for you</h1>
+      </div>
+      <div>
         <h4>Group and individual sessions, multiple times per week</h4>
-        <h4>Covered by insurance </h4>
+        <h4>Covered by insurance</h4>
         <h4>Flexible scheduling</h4>
       </div>
-      <div></div>
     </div>
   </div>
   <div class="relative container-md z-1">
     <div class="grid grid-cols-3 gap-base5-4">
-      <div class="relative grid bg-yellow-100 rounded-md p-base5-5 color-hover-item-js">
+      <div class="relative grid text-center bg-yellow-100 rounded-md p-base5-5 color-hover-item-js">
         <img src="<?= placeHolderImage(); ?>" alt="alt" class="mb-base5-5">
-        <h2>Agelabel</h2>
-        <h4>## - ##</h4>
+        <h2>Teens</h2>
+        <h4>11 - 17</h4>
         <a href="/form" class="stretched-link">Get started</a>
       </div>
-      <div class="relative grid rounded-md p-base5-5 color-hover-item-js bg-lavender-100">
+      <div class="relative grid text-center rounded-md p-base5-5 color-hover-item-js bg-lavender-100">
         <img src="<?= placeHolderImage(); ?>" alt="alt" class="mb-base5-5">
-        <h2>Agelabel</h2>
-        <h4>## - ##</h4>
+        <h2>Young adults</h2>
+        <h4>18 - 34</h4>
         <a href="/form" class="stretched-link">Get started</a>
       </div>
-      <div class="relative grid rounded-md p-base5-5 color-hover-item-js bg-pale-blue-100">
+      <div class="relative grid text-center rounded-md p-base5-5 color-hover-item-js bg-pale-blue-100">
         <img src="<?= placeHolderImage(); ?>" alt="alt" class="mb-base5-5">
-        <h2>Agelabel</h2>
-        <h4>## - ##</h4>
+        <h2>Adults</h2>
+        <h4>34+</h4>
         <a href="/form" class="stretched-link">Get started</a>
       </div>
     </div>
