@@ -164,6 +164,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/posts-list-slider');
   register_block_type(__DIR__ . '/build/blocks/pill-list');
   register_block_type(__DIR__ . '/build/blocks/testimonials-videos-no-quote');
+  register_block_type(__DIR__ . '/build/blocks/hero-colors');
 }
 add_action('init', 'register_acf_blocks', 5);
 
@@ -722,6 +723,7 @@ add_filter('should_load_separate_core_block_assets', '__return_true');
 /* TEMP COLORS
 // $test = 'bg-lightest-teal'
 // $test = 'bg-dark-teal'
+// $test = 'bg-yellow-200'
 // $test = 'bg-primary-black-blue'
 // $test = 'bg-darker-blue'
 // $test = 'bg-primary-100'
