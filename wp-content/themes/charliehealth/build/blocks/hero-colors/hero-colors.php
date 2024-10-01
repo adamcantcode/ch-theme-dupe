@@ -1,5 +1,5 @@
 <section class="relative overflow-hidden section temp-section-js">
-  <div class="absolute z-0 w-0 h-0 transition-all duration-1000 ease-in-out opacity-0 left-1/2 color-expand-js rounded-circle"></div>
+  <div class="absolute z-0 origin-center color-expand-js rounded-circle"></div>
   <div class="container relative mb-base5-10 z-1">
     <div class="grid grid-cols-[8fr_4fr]">
       <div>
@@ -36,20 +36,35 @@
   </div>
 </section>
 
+<style>
+  .color-expand-js {
+    transition: all 700ms;
+    opacity: 0;
+    transform: scale(0);
+  }
+</style>
+
 <script>
+  const expandElement = document.querySelector('.color-expand-js');
+
+  // Set the initial size of the circle based on the viewport size
+  const circleSize = Math.max(window.innerWidth, window.innerHeight) * 2;
+  expandElement.style.width = `${circleSize}px`;
+  expandElement.style.height = `${circleSize}px`;
+
+  // Make the circle follow the cursor
+  document.addEventListener('mousemove', function(event) {
+    const cursorX = event.clientX;
+    const cursorY = event.clientY;
+
+    // Update the position of the circle to follow the cursor
+    expandElement.style.left = `${cursorX - circleSize / 2}px`;
+    expandElement.style.top = `${cursorY - circleSize / 2}px`;
+  });
+
   document.querySelectorAll('.color-hover-item-js').forEach(item => {
-    item.addEventListener('mouseenter', function(event) {
-
-      const expandElement = document.querySelector('.color-expand-js');
-
-      // Calculate the size of the expanding circle
-      const circleSize = Math.max(window.innerWidth, window.innerHeight) * 2;
-
-      // Get the cursor position directly (relative to the viewport)
-      const offsetX = event.clientX;
-      const offsetY = event.clientY;
-
-      // Check for and replace class ending in '-100' with '-200'
+    item.addEventListener('mouseenter', function() {
+      // Update the background class from -100 to -200
       item.classList.forEach(className => {
         if (className.endsWith('-100')) {
           expandElement.classList.remove(className);
@@ -58,27 +73,19 @@
         }
       });
 
-      // Set the size and position of the expanding circle directly at the cursor's position
-      expandElement.style.width = `${circleSize}px`;
-      expandElement.style.height = `${circleSize}px`;
-      expandElement.style.left = `${offsetX - circleSize / 2}px`; // Center the circle based on cursor position
-      expandElement.style.top = `${offsetY - circleSize / 2}px`;
-      expandElement.style.opacity = `1`;
+      expandElement.style.transform = 'scale(1)';
+      expandElement.style.opacity = '1';
 
-      // Trigger the expansion
-      expandElement.classList.add('expand');
     });
 
     item.addEventListener('mouseleave', function() {
-      const expandElement = document.querySelector('.color-expand-js');
-      // Shrink the circle back down
-      expandElement.classList.remove('expand');
-      expandElement.style.width = '0px';
-      expandElement.style.height = '0px';
-      expandElement.style.opacity = '0';
-
       // Reset background classes
       expandElement.classList.remove('bg-yellow-200', 'bg-lavender-200', 'bg-pale-blue-200');
+
+      // Shrink the circle back down (scale to 0 and fade out)
+      expandElement.style.transform = 'scale(0)';
+      expandElement.style.opacity = '0';
+
     });
   });
 </script>
