@@ -1,4 +1,4 @@
-<section class="relative overflow-hidden section temp-section-js noshow">
+<section class="relative overflow-hidden section temp-section-js">
   <div class="absolute z-0 origin-center color-expand-js rounded-circle"></div>
   <div class="container relative mb-base5-10 z-">
     <h1 class="max-w-[950px]">Virtual mental health treatment made for you</h1>
@@ -16,30 +16,30 @@
   </div>
   <div class="relative container-md z-1">
     <div class="grid lg:grid-cols-3 gap-base5-4">
-      <div class="relative grid items-center grid-cols-2 bg-yellow-100 rounded-md lg:text-center p-base5-5 color-hover-item-js lg:grid-cols-1">
+      <div class="relative grid items-end grid-cols-[.75fr_1fr_1fr] bg-yellow-100 rounded-md gap-base5-2 lg:text-center lg:p-base5-5 p-base5-2 color-hover-item-js lg:grid-cols-1">
+        <img src="https://www.charliehealth.com/wp-content/uploads/2024/10/module1.png" alt="alt" class="self-center lg:mb-base5-5 lg:block max-h-[170px] mx-auto">
         <div>
-          <img src="https://www.charliehealth.com/wp-content/uploads/2024/10/module1.png" alt="alt" class="mb-base5-5 noshow lg:block max-h-[170px] mx-auto">
-          <h2>Teens</h2>
+          <h2 class="mb-base5-2">Teens</h2>
           <h4>11 - 17</h4>
         </div>
         <div class="justify-self-end lg:justify-self-auto">
           <a href="/form" class="stretched-link">Get started</a>
         </div>
       </div>
-      <div class="relative grid items-center grid-cols-2 rounded-md lg:text-center p-base5-5 color-hover-item-js bg-lavender-100 lg:grid-cols-1">
+      <div class="relative grid items-end grid-cols-[.75fr_1fr_1fr] rounded-md gap-base5-2 lg:text-center lg:p-base5-5 p-base5-2 color-hover-item-js bg-lavender-100 lg:grid-cols-1">
+        <img src="https://www.charliehealth.com/wp-content/uploads/2024/10/module2.png" alt="alt" class="self-center lg:mb-base5-5 lg:block max-h-[170px] mx-auto">
         <div>
-          <img src="https://www.charliehealth.com/wp-content/uploads/2024/10/module2.png" alt="alt" class="mb-base5-5 noshow lg:block max-h-[170px] mx-auto">
-          <h2>Young adults</h2>
+          <h2 class="mb-base5-2">Young adults</h2>
           <h4>18 - 34</h4>
         </div>
         <div class="justify-self-end lg:justify-self-auto">
           <a href="/form" class="stretched-link">Get started</a>
         </div>
       </div>
-      <div class="relative grid items-center grid-cols-2 rounded-md lg:text-center p-base5-5 color-hover-item-js bg-pale-blue-100 lg:grid-cols-1">
+      <div class="relative grid items-end grid-cols-[.75fr_1fr_1fr] rounded-md gap-base5-2 lg:text-center lg:p-base5-5 p-base5-2 color-hover-item-js bg-pale-blue-100 lg:grid-cols-1">
+        <img src="https://www.charliehealth.com/wp-content/uploads/2024/10/Jen-1-2.png" alt="alt" class="self-center lg:mb-base5-5 lg:block max-h-[170px] mx-auto">
         <div>
-          <img src="https://www.charliehealth.com/wp-content/uploads/2024/10/Jen-1-2.png" alt="alt" class="mb-base5-5 noshow lg:block max-h-[170px] mx-auto">
-          <h2>Adults</h2>
+          <h2 class="mb-base5-2">Adults</h2>
           <h4>34+</h4>
         </div>
         <div class="justify-self-end lg:justify-self-auto">
@@ -47,6 +47,9 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="container text-center mt-base5-10">
+    <p>or call now: <a href="tel:+18664848218" class="" target="_self">1 (866) 484-8218</a></p>
   </div>
 </section>
 

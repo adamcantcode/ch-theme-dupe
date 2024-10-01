@@ -2646,6 +2646,10 @@ a.insurance-tabs.active:hover {
   grid-template-columns: 2fr 1fr;
 }
 
+.grid-cols-\[\.75fr_1fr_1fr\]{
+  grid-template-columns: .75fr 1fr 1fr;
+}
+
 .flex-row{
   flex-direction: row;
 }
@@ -6170,6 +6174,10 @@ ul.alert li {
 
   .lg\:mt-sp-8{
     margin-top: 2rem;
+  }
+
+  .lg\:mb-base5-5{
+    margin-bottom: 25px;
   }
 
   .lg\:block{
