@@ -1,4 +1,4 @@
-<section class="relative overflow-hidden section temp-section-js">
+<section class="relative overflow-hidden section temp-section-js noshow">
   <div class="absolute z-0 origin-center color-expand-js rounded-circle"></div>
   <div class="container relative mb-base5-10 z-">
     <h1 class="max-w-[950px]">Virtual mental health treatment made for you</h1>
