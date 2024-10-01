@@ -1,22 +1,24 @@
 <section class="relative overflow-hidden section temp-section-js">
   <div class="absolute z-0 origin-center color-expand-js rounded-circle"></div>
-  <div class="container relative mb-base5-10 z-1">
-    <div class="grid grid-cols-[8fr_4fr]">
-      <div>
-        <h1>Virtual mental health treatment made for you</h1>
-      </div>
-      <div>
-        <h4>Group and individual sessions, multiple times per week</h4>
-        <h4>Covered by insurance</h4>
-        <h4>Flexible scheduling</h4>
-      </div>
+  <div class="container relative mb-base5-10 z-">
+    <h1 class="max-w-[950px]">Virtual mental health treatment made for you</h1>
+    <div class="flex flex-col lg:flex-row lg:gap-base5-10">
+      <h4><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="inline">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M9.86659 18.9387L9.87191 18.944L8.4577 20.3582L1.58984 13.4903L3.00406 12.0761L8.45238 17.5245L21.0003 4.97656L22.4145 6.39078L9.86659 18.9387Z" fill="#161A3D" />
+        </svg> Group and individual sessions, multiple times per week</h4>
+      <h4><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="inline">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M9.86659 18.9387L9.87191 18.944L8.4577 20.3582L1.58984 13.4903L3.00406 12.0761L8.45238 17.5245L21.0003 4.97656L22.4145 6.39078L9.86659 18.9387Z" fill="#161A3D" />
+        </svg> Covered by insurance</h4>
+      <h4><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="inline">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M9.86659 18.9387L9.87191 18.944L8.4577 20.3582L1.58984 13.4903L3.00406 12.0761L8.45238 17.5245L21.0003 4.97656L22.4145 6.39078L9.86659 18.9387Z" fill="#161A3D" />
+        </svg> Flexible scheduling</h4>
     </div>
   </div>
   <div class="relative container-md z-1">
     <div class="grid lg:grid-cols-3 gap-base5-4">
       <div class="relative grid items-center grid-cols-2 bg-yellow-100 rounded-md lg:text-center p-base5-5 color-hover-item-js lg:grid-cols-1">
         <div>
-          <img src="<?= placeHolderImage(); ?>" alt="alt" class="mb-base5-5 noshow lg:block">
+          <img src="https://www.charliehealth.com/wp-content/uploads/2024/10/module1.png" alt="alt" class="mb-base5-5 noshow lg:block max-h-[170px] mx-auto">
           <h2>Teens</h2>
           <h4>11 - 17</h4>
         </div>
@@ -26,7 +28,7 @@
       </div>
       <div class="relative grid items-center grid-cols-2 rounded-md lg:text-center p-base5-5 color-hover-item-js bg-lavender-100 lg:grid-cols-1">
         <div>
-          <img src="<?= placeHolderImage(); ?>" alt="alt" class="mb-base5-5 noshow lg:block">
+          <img src="https://www.charliehealth.com/wp-content/uploads/2024/10/module2.png" alt="alt" class="mb-base5-5 noshow lg:block max-h-[170px] mx-auto">
           <h2>Young adults</h2>
           <h4>18 - 34</h4>
         </div>
@@ -36,7 +38,7 @@
       </div>
       <div class="relative grid items-center grid-cols-2 rounded-md lg:text-center p-base5-5 color-hover-item-js bg-pale-blue-100 lg:grid-cols-1">
         <div>
-          <img src="<?= placeHolderImage(); ?>" alt="alt" class="mb-base5-5 noshow lg:block">
+          <img src="https://www.charliehealth.com/wp-content/uploads/2024/10/Jen-1-2.png" alt="alt" class="mb-base5-5 noshow lg:block max-h-[170px] mx-auto">
           <h2>Adults</h2>
           <h4>34+</h4>
         </div>

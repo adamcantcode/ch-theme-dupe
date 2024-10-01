@@ -2247,6 +2247,14 @@ a.insurance-tabs.active:hover {
   max-height: 80vh;
 }
 
+.max-h-\[290px\]{
+  max-height: 290px;
+}
+
+.max-h-\[170px\]{
+  max-height: 170px;
+}
+
 .min-h-\[100vh\]{
   min-height: 100vh;
 }
@@ -2458,6 +2466,10 @@ a.insurance-tabs.active:hover {
 
 .max-w-full{
   max-width: 100%;
+}
+
+.max-w-\[950px\]{
+  max-width: 950px;
 }
 
 .flex-1{
@@ -2792,6 +2804,10 @@ a.insurance-tabs.active:hover {
 
 .gap-sp-8{
   gap: 2rem;
+}
+
+.gap-base5-10{
+  gap: 50px;
 }
 
 .gap-x-4{
@@ -6649,6 +6665,10 @@ ul.alert li {
 
   .lg\:gap-sp-8{
     gap: 2rem;
+  }
+
+  .lg\:gap-base5-10{
+    gap: 50px;
   }
 
   .lg\:gap-x-sp-16{
