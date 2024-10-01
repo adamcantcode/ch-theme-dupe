@@ -19,7 +19,7 @@
       <div class="relative grid items-end grid-cols-[.75fr_1fr_1fr] bg-yellow-100 rounded-md gap-base5-2 lg:text-center lg:p-base5-5 p-base5-2 color-hover-item-js lg:grid-cols-1">
         <img src="https://www.charliehealth.com/wp-content/uploads/2024/10/module1.png" alt="alt" class="self-center lg:mb-base5-5 lg:block max-h-[170px] mx-auto">
         <div>
-          <h2 class="mb-base5-2">Teens</h2>
+          <h2 class="mb-base5-1">Teens</h2>
           <h4>11 - 17</h4>
         </div>
         <div class="justify-self-end lg:justify-self-auto">
@@ -29,7 +29,7 @@
       <div class="relative grid items-end grid-cols-[.75fr_1fr_1fr] rounded-md gap-base5-2 lg:text-center lg:p-base5-5 p-base5-2 color-hover-item-js bg-lavender-100 lg:grid-cols-1">
         <img src="https://www.charliehealth.com/wp-content/uploads/2024/10/module2.png" alt="alt" class="self-center lg:mb-base5-5 lg:block max-h-[170px] mx-auto">
         <div>
-          <h2 class="mb-base5-2">Young adults</h2>
+          <h2 class="mb-base5-1">Young adults</h2>
           <h4>18 - 34</h4>
         </div>
         <div class="justify-self-end lg:justify-self-auto">
@@ -39,7 +39,7 @@
       <div class="relative grid items-end grid-cols-[.75fr_1fr_1fr] rounded-md gap-base5-2 lg:text-center lg:p-base5-5 p-base5-2 color-hover-item-js bg-pale-blue-100 lg:grid-cols-1">
         <img src="https://www.charliehealth.com/wp-content/uploads/2024/10/Jen-1-2.png" alt="alt" class="self-center lg:mb-base5-5 lg:block max-h-[170px] mx-auto">
         <div>
-          <h2 class="mb-base5-2">Adults</h2>
+          <h2 class="mb-base5-1">Adults</h2>
           <h4>34+</h4>
         </div>
         <div class="justify-self-end lg:justify-self-auto">
