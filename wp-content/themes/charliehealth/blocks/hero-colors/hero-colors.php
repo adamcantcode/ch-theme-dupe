@@ -48,7 +48,7 @@
       </div>
     </div>
   </div>
-  <div class="container text-center mt-base5-10">
+  <div class="container relative text-center mt-base5-10 z-1">
     <p>or call now: <a href="tel:+18664848218" class="" target="_self">1 (866) 484-8218</a></p>
   </div>
 </section>
