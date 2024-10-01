@@ -2849,6 +2849,10 @@ a.insurance-tabs.active:hover {
   align-self: center;
 }
 
+.justify-self-end{
+  justify-self: end;
+}
+
 .justify-self-center{
   justify-self: center;
 }
@@ -6563,6 +6567,10 @@ ul.alert li {
     grid-template-columns: unset;
   }
 
+  .lg\:grid-cols-1{
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
   .lg\:flex-row{
     flex-direction: row;
   }
@@ -6655,6 +6663,10 @@ ul.alert li {
 
   .lg\:gap-y-sp-16{
     row-gap: 6rem;
+  }
+
+  .lg\:justify-self-auto{
+    justify-self: auto;
   }
 
   .lg\:justify-self-end{
@@ -6855,6 +6867,10 @@ ul.alert li {
 
   .lg\:pt-sp-14{
     padding-top: 4rem;
+  }
+
+  .lg\:text-center{
+    text-align: center;
   }
 
   .lg\:text-right{
