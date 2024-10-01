@@ -2829,6 +2829,10 @@ a.insurance-tabs.active:hover {
   align-self: flex-start;
 }
 
+.self-end{
+  align-self: flex-end;
+}
+
 .self-center{
   align-self: center;
 }
