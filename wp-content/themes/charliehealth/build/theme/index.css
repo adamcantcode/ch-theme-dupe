@@ -2203,12 +2203,12 @@ a.insurance-tabs.active:hover {
   height: 2rem;
 }
 
-.h-\[2000px\]{
-  height: 2000px;
-}
-
 .max-h-0{
   max-height: 0px;
+}
+
+.max-h-\[170px\]{
+  max-height: 170px;
 }
 
 .max-h-\[200px\]{
@@ -2247,14 +2247,6 @@ a.insurance-tabs.active:hover {
   max-height: 80vh;
 }
 
-.max-h-\[290px\]{
-  max-height: 290px;
-}
-
-.max-h-\[170px\]{
-  max-height: 170px;
-}
-
 .min-h-\[100vh\]{
   min-height: 100vh;
 }
@@ -2273,10 +2265,6 @@ a.insurance-tabs.active:hover {
 
 .\!w-\[18px\]{
   width: 18px !important;
-}
-
-.w-0{
-  width: 0px;
 }
 
 .w-1\/2{
@@ -2380,10 +2368,6 @@ a.insurance-tabs.active:hover {
   width: 2rem;
 }
 
-.w-\[2000px\]{
-  width: 2000px;
-}
-
 .min-w-0{
   min-width: 0px;
 }
@@ -2464,12 +2448,12 @@ a.insurance-tabs.active:hover {
   max-width: 85px;
 }
 
-.max-w-full{
-  max-width: 100%;
-}
-
 .max-w-\[950px\]{
   max-width: 950px;
+}
+
+.max-w-full{
+  max-width: 100%;
 }
 
 .flex-1{
@@ -2486,10 +2470,6 @@ a.insurance-tabs.active:hover {
 
 .flex-shrink-0{
   flex-shrink: 0;
-}
-
-.shrink{
-  flex-shrink: 1;
 }
 
 .flex-grow{
@@ -2666,18 +2646,6 @@ a.insurance-tabs.active:hover {
   grid-template-columns: 2fr 1fr;
 }
 
-.grid-cols-\[9fr_3fr\]{
-  grid-template-columns: 9fr 3fr;
-}
-
-.grid-cols-\[6fr_8fr\]{
-  grid-template-columns: 6fr 8fr;
-}
-
-.grid-cols-\[8fr_4fr\]{
-  grid-template-columns: 8fr 4fr;
-}
-
 .flex-row{
   flex-direction: row;
 }
@@ -2804,10 +2772,6 @@ a.insurance-tabs.active:hover {
 
 .gap-sp-8{
   gap: 2rem;
-}
-
-.gap-base5-10{
-  gap: 50px;
 }
 
 .gap-x-4{
@@ -4092,6 +4056,14 @@ a.insurance-tabs.active:hover {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
+.transition{
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .transition-all{
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -4100,20 +4072,6 @@ a.insurance-tabs.active:hover {
 
 .transition-colors{
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.transition-transform{
-  transition-property: transform;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.transition{
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -6423,6 +6381,10 @@ ul.alert li {
     grid-auto-flow: column;
   }
 
+  .lg\:grid-cols-1{
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
   .lg\:grid-cols-12{
     grid-template-columns: repeat(12, minmax(0, 1fr));
   }
@@ -6583,10 +6545,6 @@ ul.alert li {
     grid-template-columns: unset;
   }
 
-  .lg\:grid-cols-1{
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
-
   .lg\:flex-row{
     flex-direction: row;
   }
@@ -6631,6 +6589,10 @@ ul.alert li {
     gap: 150px;
   }
 
+  .lg\:gap-base5-10{
+    gap: 50px;
+  }
+
   .lg\:gap-base5-2{
     gap: 10px;
   }
@@ -6665,10 +6627,6 @@ ul.alert li {
 
   .lg\:gap-sp-8{
     gap: 2rem;
-  }
-
-  .lg\:gap-base5-10{
-    gap: 50px;
   }
 
   .lg\:gap-x-sp-16{
