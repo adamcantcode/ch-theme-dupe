@@ -35,7 +35,7 @@ $conditions   = get_field('conditions');
   <div class="container pb-base5-8">
     <div class="grid items-end lg:grid-cols-[9fr_1fr_2fr] gap-base5-4">
       <div>
-        <h1 class="text-white"><span class="text-lavender-300">[Plan name/keyword]</span> in [location]</h1>
+        <h1 class="text-white"><span class="text-lavender-300"><?= get_field('insurer'); ?></span> in <?= get_field('state'); ?></h1>
         <h3 class="text-white mb-base5-10">Comprehensive virtual mental health treatment with Charlie Health, covered by insurance</h3>
         <div class="grid items-center grid-cols-[1fr_0.75fr_1.5fr] justify-items-center lg:noshow w-1/2 mb-base5-8 mt-base5-8">
           <svg width="66" height="65" viewBox="0 0 66 65" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-1/2">
@@ -66,11 +66,11 @@ $conditions   = get_field('conditions');
       <div class="flex flex-col rounded-md md:max-w-[300px] p-base5-6 gap-base5-2 mx-auto bg-lavender-200">
         <div class="flex items-center gap-base5-4">
           <p class="flex-1 text-h4-base">Your copay could be as low as</p>
-          <p class="text-h2-base"><span class="text-[50%] align-super">$</span>0</p>
+          <p class="text-h2-base"><span class="text-[50%] align-super">$</span><?= get_field('copay'); ?></p>
         </div>
         <div class="flex items-center gap-base5-4">
           <p class="flex-1 text-p-base">Average Aetna member copay</p>
-          <p class="text-h3-base font-heading-serif"><span class="text-[50%] align-super">$</span>40</p>
+          <p class="text-h3-base font-heading-serif"><span class="text-[50%] align-super">$</span><?= get_field('average_copay'); ?></p>
         </div>
         <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full">
           <a href="/form" class="ch-button button-primary">Get started</a>
@@ -78,7 +78,7 @@ $conditions   = get_field('conditions');
         <p class="text-mini">Enter your insurance details to verify your coverage today</p>
       </div>
       <div class="[&_*]:text-white">
-        <h2>How we work with [Plan name/keyword]</h2>
+        <h2>How we work with <?= get_the_title(); ?></h2>
         <p>occaecat do consectetur magna laboris duis sunt enim consequat sit elit veniam nisi occaecat dolore sunt deserunt qui veniam consectetur ad consequat deserunt qui nulla do laborum amet cillum officia sunt ad labore do dolor commodo eu laborum anim ipsum sit aliquip non tempor non minim esse labore laborum in proident deserunt labore elit esse non minim tempor pariatur velit laborum incididunt sint aute ea consequat laboris dolor veniam voluptate sit mollit officia cillum qui ea irure do eiusmod ipsum veniam est ex non ex consequat anim cupidatat quis deserunt nulla ex reprehenderit enim nisi enim eiusmod occaecat cillum occaecat</p>
       </div>
     </div>
@@ -138,7 +138,7 @@ $conditions   = get_field('conditions');
     <div class="border-2 border-white rounded-[1rem] lg:p-sp-12 p-sp-4 grid lg:grid-cols-[4fr_8fr] gap-x-sp-5 approach-grid-js">
       <div class="grid content-between">
         <div class="order-2 lg:order-1 [&_*]:text-white">
-          <h2 class="font-heading-serif mb-sp-8">Types of virtual mental health treatment covered by [plan] in [state]</h2>
+          <h2 class="font-heading-serif mb-sp-8">Types of virtual mental health treatment covered by <?= get_the_title(); ?></h2>
           <div></div>
         </div>
         <div class="order-1 lg:order-2 mb-sp-10 lg:mb-0">
@@ -171,7 +171,7 @@ $conditions   = get_field('conditions');
 </section>
 <section class="section-bottom bg-darker-blue">
   <div class="container-md">
-    <h2 class="text-center text-white">How to get started with <mark class="text-white bg-primary-100">[plan]-covered</mark> treatment with Charlie Health in <mark class="text-white bg-primary-100">[state]</mark></h2>
+    <h2 class="text-center text-white">How to get started with <mark class="text-white bg-primary-100"><?= get_field('insurer'); ?>-covered</mark> treatment with Charlie Health in <mark class="text-white bg-primary-100"><?= get_field('state'); ?></mark></h2>
   </div>
 </section>
 <section class="bg-darker-blue section-horizontal">
