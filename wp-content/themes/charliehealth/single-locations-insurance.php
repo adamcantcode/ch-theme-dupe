@@ -69,7 +69,7 @@ $conditions   = get_field('conditions');
           <p class="text-h2-base"><span class="text-[50%] align-super">$</span><?= get_field('copay'); ?></p>
         </div>
         <div class="flex items-center gap-base5-4">
-          <p class="flex-1 text-p-base">Average Aetna member copay</p>
+          <p class="flex-1 text-p-base">Average <?= get_field('insurer'); ?> member copay</p>
           <p class="text-h3-base font-heading-serif"><span class="text-[50%] align-super">$</span><?= get_field('average_copay'); ?></p>
         </div>
         <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full">
