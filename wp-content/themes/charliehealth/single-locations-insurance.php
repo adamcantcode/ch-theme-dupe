@@ -35,7 +35,7 @@ $conditions   = get_field('conditions');
   <div class="container pb-base5-8">
     <div class="grid items-end lg:grid-cols-[9fr_1fr_2fr] gap-base5-4">
       <div>
-        <h1 class="text-white"><span class="text-lavender-300"><?= get_field('insurer'); ?></span> in <?= get_field('state'); ?></h1>
+        <h1 class="text-white"><span class="text-lavender-300"><?= get_field('insurer'); ?></span> in <?= get_field('state'); ?><?= get_field('lob') === 'Medicaid' ? ' Medicaid' : ''; ?></h1>
         <h3 class="text-white mb-base5-10">Comprehensive virtual mental health treatment with Charlie Health, covered by insurance</h3>
         <div class="grid items-center grid-cols-[1fr_0.75fr_1.5fr] justify-items-center lg:noshow w-1/2 mb-base5-8 mt-base5-8">
           <svg width="66" height="65" viewBox="0 0 66 65" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-1/2">
@@ -171,7 +171,7 @@ $conditions   = get_field('conditions');
 </section>
 <section class="section-bottom bg-darker-blue">
   <div class="container-md">
-    <h2 class="text-center text-white">How to get started with <mark class="text-white bg-primary-100"><?= get_field('insurer'); ?>-covered</mark> treatment with Charlie Health in <mark class="text-white bg-primary-100"><?= get_field('state'); ?></mark></h2>
+    <h2 class="text-center text-white">How to get started with <mark class="text-white bg-primary-100"><?= get_field('insurer'); ?>-covered</mark> treatment with Charlie Health in <mark class="text-white bg-primary-100"><?= get_field('state'); ?><?= get_field('lob') === 'Medicaid' ? ' Medicaid' : ''; ?></mark></h2>
   </div>
 </section>
 <section class="bg-darker-blue section-horizontal">
