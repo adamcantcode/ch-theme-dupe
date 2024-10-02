@@ -84,6 +84,50 @@ $conditions   = get_field('conditions');
     </div>
   </div>
 </section>
+<section class="section bg-grey-warm">
+  <div class="container">
+    <div class="grid lg:grid-cols-[6fr_1fr_5fr] gap-base5-4 items-center">
+      <div>
+        <?php
+        $args = array(
+          'post_type'      => 'testimonial',
+          'posts_per_page' => 1,
+          'orderby'        => 'rand'
+        );
+
+        $random_testimonial = new WP_Query($args);
+        $heading = '';
+        $subhead = '';
+
+        if ($random_testimonial->have_posts()) {
+          while ($random_testimonial->have_posts()) {
+            $random_testimonial->the_post();
+            $heading = get_field('pull-quote');
+            $subhead = get_field('full_quote');
+          }
+          wp_reset_postdata();
+        }
+        ?>
+
+        <h4>In their words</h4>
+
+        <?php if (!empty($heading)) : ?>
+          <h2>“<?= esc_html($heading); ?>”</h2>
+        <?php endif; ?>
+
+        <?php if (!empty($subhead)) : ?>
+          <p><?= esc_html($subhead); ?></p>
+        <?php endif; ?>
+      </div>
+      <div class="h-full mx-auto">
+        <div class="h-full w-[2px] bg-primary"></div>
+      </div>
+      <div>
+        <InnerBlocks />
+      </div>
+    </div>
+  </div>
+</section>
 <section class="section bg-grey-cool">
   <div class="container-md">
     <div class="grid lg:grid-cols-[4fr_2fr_4fr] justify-items-center gap-base5-4 mb-base5-10">
