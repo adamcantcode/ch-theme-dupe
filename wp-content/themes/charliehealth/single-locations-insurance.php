@@ -32,7 +32,7 @@ $conditions   = get_field('conditions');
       <span><?= get_the_title(); ?></span>
     </div>
   </div>
-  <div class="container">
+  <div class="container pb-base5-8">
     <div class="grid items-end lg:grid-cols-[7fr_1fr_4fr] gap-base5-4">
       <div>
         <h1 class="text-white"><span class="text-lavender-300">[Plan name/keyword]</span> in [location]</h1>
@@ -42,7 +42,7 @@ $conditions   = get_field('conditions');
             <path d="M64.8859 7.82136C64.5073 3.71078 61.1342 0.455708 57.0401 0.237419C51.5734 -0.053098 13.7609 -0.053098 8.28945 0.237419C4.20008 0.455708 0.826974 3.71078 0.44675 7.82457C-1.31395 27.1303 2.13488 42.0285 10.7017 52.1019C19.9139 62.9393 31.685 63.9489 32.3713 63.9987L32.6285 64.0195L32.944 64.0051C33.3779 63.9746 42.3691 63.27 50.8082 55.9653L51.3636 55.4742C52.523 54.4245 53.6134 53.2986 54.6278 52.1035C63.1994 42.0398 66.6482 27.1447 64.8859 7.82136ZM4.59923 20.243C4.46975 16.2424 4.59412 12.2374 4.97157 8.25312C5.06325 7.31757 5.50087 6.45239 6.19585 5.83268L28.7142 21.3777L17.8566 28.9216L4.59923 20.243ZM13.7845 31.7513L7.21504 36.3145C6.15713 32.9676 5.42732 29.5224 5.03625 26.0292L13.7845 31.7513ZM32.7579 24.1673L43.401 31.5137L32.5796 38.5407L22.009 31.6293L32.7579 24.1673ZM36.792 21.3665L59.1447 5.83749C59.8347 6.45501 60.2697 7.315 60.3627 8.24509C60.7425 12.2319 60.869 16.2395 60.7413 20.243L47.5755 28.7996L36.792 21.3665ZM60.2996 26.0212C59.915 29.4535 59.2049 32.84 58.1792 36.1331L51.6602 31.6389L60.2996 26.0212ZM52.6573 4.74765L32.75 18.5753L12.7133 4.74605C17.4543 4.67382 25.0587 4.6369 32.6648 4.6369C40.2708 4.6369 47.9179 4.67382 52.6573 4.74765ZM8.91264 40.7332L17.9354 34.4735L28.3656 41.2934L14.9552 50.0089C14.6807 49.7104 14.4077 49.4038 14.1379 49.086C12.0157 46.5679 10.2563 43.7555 8.91264 40.7332ZM32.7026 59.3889H32.69C32.3382 59.3648 25.3758 58.8175 18.4119 53.2399L32.5717 44.0381L46.7993 53.3475C40.113 58.6394 33.4631 59.3263 32.7026 59.3889ZM51.1963 49.0828C50.8923 49.4413 50.5858 49.7863 50.2765 50.1181L36.7857 41.2902L47.4887 34.3387L56.5005 40.5583C55.1457 43.6451 53.3591 46.5163 51.1963 49.0828Z" fill="#ffffff"></path>
           </svg>
           <div class="h-full w-[1.5px] bg-white"></div>
-          <img decoding="async" src="https://www.charliehealth.com/wp-content/uploads/2024/03/Aetna_Logo_ss_Violet_RGB_Coated-1.svg" alt="Logo for Aetna" class="object-cover object-top nolazy" data-uw-rm-alt-original="Logo for Aetna" role="img" data-uw-rm-alt="ALT">
+          <img src="https://www.charliehealth.com/wp-content/uploads/2024/03/Aetna_Logo_ss_Violet_RGB_Coated-1.svg" alt="Logo for Aetna" class="object-cover object-top nolazy">
         </div>
         <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-start">
           <a href="/form" class="ch-button button-primary inverted" target="_self">Get Started</a>
@@ -56,6 +56,28 @@ $conditions   = get_field('conditions');
         </svg>
         <div class="h-full w-[1.5px] bg-white"></div>
         <img src="https://www.charliehealth.com/wp-content/uploads/2024/03/Aetna_Logo_ss_Violet_RGB_Coated-1.svg" alt="Logo for Aetna" class="object-cover object-top nolazy">
+      </div>
+    </div>
+  </div>
+  <div class="container-md pt-base5-8">
+    <div class="grid grid-cols-[4fr_6fr] gap-sp-16">
+      <div class="flex flex-col bg-white rounded-md md:max-w-[300px] p-base5-6 gap-base5-2 mx-auto">
+        <div class="flex items-center gap-base5-4">
+          <p class="flex-1 text-h4-base">Your copay could be as low as</p>
+          <p class="text-h2-base"><span class="text-[50%] align-super">$</span>[##]</p>
+        </div>
+        <div class="flex items-center gap-base5-4">
+          <p class="flex-1 text-h4-base">Average Aetna member copay</p>
+          <p class="text-h2-base"><span class="text-[50%] align-super">$</span>[###]</p>
+        </div>
+        <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full">
+          <a href="/form" class="ch-button button-primary">Get started</a>
+        </div>
+        <p class="text-mini">Enter your insurance details to verify your coverage today</p>
+      </div>
+      <div class="[&_*]:text-white">
+        <h2>How we work with [Plan name/keyword]</h2>
+        <p>occaecat do consectetur magna laboris duis sunt enim consequat sit elit veniam nisi occaecat dolore sunt deserunt qui veniam consectetur ad consequat deserunt qui nulla do laborum amet cillum officia sunt ad labore do dolor commodo eu laborum anim ipsum sit aliquip non tempor non minim esse labore laborum in proident deserunt labore elit esse non minim tempor pariatur velit laborum incididunt sint aute ea consequat laboris dolor veniam voluptate sit mollit officia cillum qui ea irure do eiusmod ipsum veniam est ex non ex consequat anim cupidatat quis deserunt nulla ex reprehenderit enim nisi enim eiusmod occaecat cillum occaecat</p>
       </div>
     </div>
   </div>
