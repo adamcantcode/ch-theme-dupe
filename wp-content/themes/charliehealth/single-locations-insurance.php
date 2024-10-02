@@ -148,19 +148,19 @@ $conditions   = get_field('conditions');
         </div>
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 gap-sp-2 grid-approach-items-js ">
-        <div class="relative text-center bg-lavender-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center ">
+        <div class="relative text-center opacity-0 invisible bg-lavender-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center ">
           <p><a href="/intensive-outpatient-iop/groups" class="no-underline text-primary stretched-link text-h4-base">Group sessions</a></p>
         </div>
-        <div class="relative text-center bg-orange-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center ">
+        <div class="relative text-center opacity-0 invisible bg-orange-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center ">
           <p><a href="/intensive-outpatient-iop/individual-therapy" class="no-underline text-primary stretched-link text-h4-base">Individual therapy sessions</a></p>
         </div>
-        <div class="relative text-center bg-pale-blue-200 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center col-start-1 row-start-2">
+        <div class="relative text-center opacity-0 invisible bg-pale-blue-200 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center col-start-1 row-start-2">
           <p><a href="/intensive-outpatient-iop/psychiatry-and-medication-management" class="no-underline text-primary stretched-link text-h4-base">Psychiatry sessions</a></p>
         </div>
-        <div class="relative text-center bg-yellow-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center col-start-2 row-start-2">
+        <div class="relative text-center opacity-0 invisible bg-yellow-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center col-start-2 row-start-2">
           <p><a href="/intensive-outpatient-iop/family-therapy" class="no-underline text-primary stretched-link text-h4-base">Family therapy sessions</a></p>
         </div>
-        <div class="text-center bg-white rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center relative group row-span-2 col-start-3 row-start-1">
+        <div class="text-center bg-white opacity-0 invisible rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center relative group row-span-2 col-start-3 row-start-1">
           <svg width="27" height="22" viewBox="0 0 27 22" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all mb-sp-2 group-hover:translate-x-[5px] duration-300">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M22.054 9.3431L14.3818 1.67092L16.0527 0L26.6686 10.6159L16.0527 21.2319L14.3818 19.561L22.2366 11.7061L2.08616e-07 11.7061L0 9.34311L22.054 9.3431Z" fill="#161A3D"></path>
           </svg><a href="/intensive-outpatient-iop" class="mb-0 no-underline stretched-link text-h4-base">Learn more</a>
@@ -9849,21 +9849,6 @@ $conditions   = get_field('conditions');
 
 
           /***/
-        }),
-
-      /***/
-      "./blocks/scrolling-cta/index.css":
-        /*!****************************************!*\
-          !*** ./blocks/scrolling-cta/index.css ***!
-          \****************************************/
-        /***/
-        ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-          __webpack_require__.r(__webpack_exports__);
-          // extracted by mini-css-extract-plugin
-
-
-          /***/
         })
 
       /******/
@@ -9969,44 +9954,31 @@ $conditions   = get_field('conditions');
     // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
     (() => {
       /*!***************************************!*\
-        !*** ./blocks/scrolling-cta/index.js ***!
+        !*** ./blocks/approach-grid/index.js ***!
         \***************************************/
       __webpack_require__.r(__webpack_exports__);
       /* harmony import */
-      var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__( /*! ./index.css */ "./blocks/scrolling-cta/index.css");
+      var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__( /*! gsap */ "./node_modules/gsap/index.js");
       /* harmony import */
-      var gsap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__( /*! gsap */ "./node_modules/gsap/index.js");
-      /* harmony import */
-      var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__( /*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+      var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__( /*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
 
 
-      // GSAP
-
-
-      gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger);
+      gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
       window.addEventListener('DOMContentLoaded', () => {
-        const sectionContainer = document.querySelector('.section-bg-js');
-
-        // Bakground color change
-        let sectionBg = gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.timeline({
+        let gridItemStagger = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
           scrollTrigger: {
-            trigger: '.section-bg-js-cta',
-            start: 'top 70%',
-            endTrigger: '.pin-cta-js-motion',
-            end: 'top 50%',
-            scrub: true
+            trigger: '.approach-grid-js',
+            start: 'top 80%',
+            // markers: true,
+            // scrub: true,
+            duration: 3
           }
         });
-        var gradientBG = 'rgba(247,245,241,1)';
-        console.log(sectionContainer);
-        console.log(sectionContainer.classList.contains('bg-white'));
-        if (sectionContainer.classList.contains('bg-white')) {
-          gradientBG = 'rgba(255,255,255,1)';
-        }
-        sectionBg.fromTo('.section-bg-js', {
-          background: `linear-gradient(180deg, ${gradientBG} 0%, rgba(143,146,205,0) 100%)`
-        }, {
-          background: `linear-gradient(180deg, ${gradientBG} 0%, rgba(143,146,205,1) 100%)`
+        gridItemStagger.to('.grid-approach-items-js > div', {
+          autoAlpha: 1,
+          duration: 3,
+          stagger: 0.2,
+          ease: 'power4.out'
         });
       });
     })();
