@@ -33,7 +33,7 @@ $conditions   = get_field('conditions');
     </div>
   </div>
   <div class="container pb-base5-8">
-    <div class="grid items-end lg:grid-cols-[7fr_1fr_4fr] gap-base5-4">
+    <div class="grid items-end lg:grid-cols-[9fr_1fr_2fr] gap-base5-4">
       <div>
         <h1 class="text-white"><span class="text-lavender-300">[Plan name/keyword]</span> in [location]</h1>
         <h3 class="text-white mb-base5-10">Comprehensive virtual mental health treatment with Charlie Health, covered by insurance</h3>
@@ -59,16 +59,18 @@ $conditions   = get_field('conditions');
       </div>
     </div>
   </div>
+</section>
+<section class="bg-gradient-to-b from-primary-200 to-primary section-bottom">
   <div class="container-md pt-base5-8">
     <div class="grid grid-cols-[4fr_6fr] gap-sp-16">
-      <div class="flex flex-col bg-white rounded-md md:max-w-[300px] p-base5-6 gap-base5-2 mx-auto">
+      <div class="flex flex-col rounded-md md:max-w-[300px] p-base5-6 gap-base5-2 mx-auto bg-lavender-200">
         <div class="flex items-center gap-base5-4">
           <p class="flex-1 text-h4-base">Your copay could be as low as</p>
-          <p class="text-h2-base"><span class="text-[50%] align-super">$</span>[##]</p>
+          <p class="text-h2-base"><span class="text-[50%] align-super">$</span>0</p>
         </div>
         <div class="flex items-center gap-base5-4">
-          <p class="flex-1 text-h4-base">Average Aetna member copay</p>
-          <p class="text-h2-base"><span class="text-[50%] align-super">$</span>[###]</p>
+          <p class="flex-1 text-p-base">Average Aetna member copay</p>
+          <p class="text-h3-base font-heading-serif"><span class="text-[50%] align-super">$</span>40</p>
         </div>
         <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full">
           <a href="/form" class="ch-button button-primary">Get started</a>

@@ -6590,6 +6590,14 @@ ul.alert li {
     grid-template-columns: unset;
   }
 
+  .lg\:grid-cols-\[9fr_1fr_12fr\]{
+    grid-template-columns: 9fr 1fr 12fr;
+  }
+
+  .lg\:grid-cols-\[9fr_1fr_2fr\]{
+    grid-template-columns: 9fr 1fr 2fr;
+  }
+
   .lg\:flex-row{
     flex-direction: row;
   }
