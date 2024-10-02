@@ -123,7 +123,12 @@ $conditions   = get_field('conditions');
         <div class="h-full w-[2px] bg-primary"></div>
       </div>
       <div>
-        <InnerBlocks />
+        <h3>Reach out to start your healing journey today</h3>
+        <p>Fill out our form or call us directly to learn if Charlie Health is right for you or a loved one. We’re available 24/7.</p>
+        <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-start">
+          <a href="/form" class="ch-button button-primary" target="_self">Get Started</a>
+          <a href="tel:+18664848218" class="ch-button button-secondary" target="_self">1 (866) 484-8218</a>
+        </div>
       </div>
     </div>
   </div>
