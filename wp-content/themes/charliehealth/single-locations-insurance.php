@@ -91,8 +91,7 @@ $logo = isset($logos[$insurer]) ? $logos[$insurer] : "";
       </div>
       <div class="[&_*]:text-white">
         <h2>How we work with <?= get_the_title(); ?></h2>
-        <p>occaecat do consectetur magna laboris duis sunt enim consequat sit elit veniam nisi occaecat dolore sunt deserunt qui veniam consectetur ad consequat deserunt qui nulla do laborum amet cillum officia sunt ad labore do dolor commodo eu laborum anim ipsum sit aliquip non tempor non minim esse labore laborum in proident deserunt labore elit esse non minim tempor pariatur velit laborum incididunt sint aute ea consequat laboris dolor veniam voluptate sit mollit officia cillum qui ea irure do eiusmod ipsum veniam est ex non ex consequat anim cupidatat quis deserunt nulla ex reprehenderit enim nisi enim eiusmod occaecat cillum occaecat</p>
-      </div>
+        <?= get_field('insurer_copy'); ?>
     </div>
   </div>
 </section>
