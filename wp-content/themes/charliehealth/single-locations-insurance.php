@@ -74,7 +74,7 @@ $logo = isset($logos[$insurer]) ? $logos[$insurer] : "";
 </section>
 <section class="bg-gradient-to-b from-primary-200 to-primary section-bottom">
   <div class="container-md pt-base5-8">
-    <div class="grid lg:grid-cols-[4fr_6fr] gap-sp-16">
+    <div class="grid items-start lg:grid-cols-[4fr_6fr] gap-sp-16">
       <div class="flex flex-col rounded-md md:max-w-[300px] p-base5-6 gap-base5-2 mx-auto bg-lavender-200">
         <div class="flex items-center gap-base5-4">
           <p class="flex-1 text-h4-base">Your copay could be as low as</p>
