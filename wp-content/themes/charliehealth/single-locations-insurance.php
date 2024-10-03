@@ -18,7 +18,7 @@ $conditions   = get_field('conditions');
 <section class="bg-gradient-to-b from-primary-100 to-primary-200 section">
   <div class="container">
     <div class="breadcrumbs mb-sp-5 lg:mb-sp-6 [&_*]:!text-white">
-      <p class="inline-block text-primary"> <a href="<?= home_url('/locations'); ?>">Locations</a></p>
+      <p class="inline-block mb-0 text-primary"> <a href="<?= home_url('/locations'); ?>">Locations</a></p>
       <?php
       $currentID = get_the_ID();
       $parentPages = get_post_ancestors($currentID);
