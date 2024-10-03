@@ -28,7 +28,8 @@
   </div>
 <?php else : ?>
   <?php
-  $link = 'https://www.charliehealth.com/intensive-outpatient-iop/outcomes';
+  $linkUrl = 'https://www.charliehealth.com/intensive-outpatient-iop/outcomes';
+  $linkTitle = 'Explore our outcomes';
   if (!empty(get_field('link'))) {
     $linkUrl = get_field('link')['url'];
     $linkTitle =  get_field('link')['title'];
