@@ -99,6 +99,11 @@
                 "param": "post_template",
                 "operator": "!=",
                 "value": "single-locations-insurance.php"
+            },
+            {
+                "param": "post_type",
+                "operator": "!=",
+                "value": "locations"
             }
         ]
     ],
@@ -121,5 +126,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1727899051
+    "modified": 1728071909
 }
