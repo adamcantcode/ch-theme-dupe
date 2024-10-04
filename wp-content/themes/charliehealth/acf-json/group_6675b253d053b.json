@@ -89,15 +89,16 @@
             "return_format": "object",
             "min": "",
             "max": "",
-            "elements": ""
+            "elements": "",
+            "bidirectional_target": []
         }
     ],
     "location": [
         [
             {
-                "param": "post_type",
-                "operator": "==",
-                "value": "locations"
+                "param": "post_template",
+                "operator": "!=",
+                "value": "single-locations-insurance.php"
             }
         ]
     ],
@@ -120,5 +121,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1718992668
+    "modified": 1727899051
 }

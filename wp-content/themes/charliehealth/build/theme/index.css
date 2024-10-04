@@ -1755,6 +1755,11 @@ a.insurance-tabs.active:hover {
   margin-right: 1.25rem;
 }
 
+.my-base5-1{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 .my-base5-10{
   margin-top: 50px;
   margin-bottom: 50px;
@@ -2754,6 +2759,10 @@ a.insurance-tabs.active:hover {
   gap: 4rem;
 }
 
+.gap-sp-16{
+  gap: 6rem;
+}
+
 .gap-sp-2{
   gap: 0.5rem;
 }
@@ -3585,6 +3594,10 @@ a.insurance-tabs.active:hover {
   padding-bottom: 30px;
 }
 
+.pb-base5-8{
+  padding-bottom: 40px;
+}
+
 .pb-sp-0{
   padding-bottom: 0;
 }
@@ -3619,6 +3632,10 @@ a.insurance-tabs.active:hover {
 
 .pt-\[26px\]{
   padding-top: 26px;
+}
+
+.pt-base5-8{
+  padding-top: 40px;
 }
 
 .pt-sp-0{
@@ -3949,6 +3966,11 @@ a.insurance-tabs.active:hover {
 .text-lavender-200{
   --tw-text-opacity: 1;
   color: rgb(231 211 255 / var(--tw-text-opacity));
+}
+
+.text-lavender-300{
+  --tw-text-opacity: 1;
+  color: rgb(218 193 251 / var(--tw-text-opacity));
 }
 
 .text-pale-blue-200{
@@ -6044,12 +6066,32 @@ ul.alert li {
     grid-column: span 6 / span 6;
   }
 
+  .lg\:col-start-1{
+    grid-column-start: 1;
+  }
+
   .lg\:col-start-2{
     grid-column-start: 2;
   }
 
+  .lg\:col-start-3{
+    grid-column-start: 3;
+  }
+
   .lg\:col-start-4{
     grid-column-start: 4;
+  }
+
+  .lg\:row-span-2{
+    grid-row: span 2 / span 2;
+  }
+
+  .lg\:row-start-1{
+    grid-row-start: 1;
+  }
+
+  .lg\:row-start-2{
+    grid-row-start: 2;
   }
 
   .lg\:mx-auto{
@@ -6065,6 +6107,11 @@ ul.alert li {
   .lg\:mx-sp-6{
     margin-left: 1.5rem;
     margin-right: 1.5rem;
+  }
+
+  .lg\:my-0{
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 
   .lg\:my-sp-16{
@@ -6282,6 +6329,10 @@ ul.alert li {
 
   .lg\:w-\[130px\]{
     width: 130px;
+  }
+
+  .lg\:w-\[2px\]{
+    width: 2px;
   }
 
   .lg\:w-\[300px\]{
@@ -6521,6 +6572,10 @@ ul.alert li {
     grid-template-columns: 4fr 2fr 4fr;
   }
 
+  .lg\:grid-cols-\[4fr_6fr\]{
+    grid-template-columns: 4fr 6fr;
+  }
+
   .lg\:grid-cols-\[4fr_8fr\]{
     grid-template-columns: 4fr 8fr;
   }
@@ -6545,6 +6600,10 @@ ul.alert li {
     grid-template-columns: 8fr 4fr;
   }
 
+  .lg\:grid-cols-\[9fr_1fr_2fr\]{
+    grid-template-columns: 9fr 1fr 2fr;
+  }
+
   .lg\:grid-cols-\[9fr_3fr\]{
     grid-template-columns: 9fr 3fr;
   }
@@ -6555,6 +6614,10 @@ ul.alert li {
 
   .lg\:grid-cols-\[unset\]{
     grid-template-columns: unset;
+  }
+
+  .lg\:grid-rows-2{
+    grid-template-rows: repeat(2, minmax(0, 1fr));
   }
 
   .lg\:flex-row{
