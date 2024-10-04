@@ -77,11 +77,11 @@ $logo = isset($logos[$insurer]) ? $logos[$insurer] : "";
     <div class="grid items-start lg:grid-cols-[4fr_6fr] gap-sp-16">
       <div class="flex flex-col rounded-md md:max-w-[300px] p-base5-6 gap-base5-2 mx-auto bg-lavender-200">
         <div class="flex items-center gap-base5-4">
-          <p class="flex-1 text-h4-base">Your copay could be as low as</p>
+          <p class="flex-1 text-h4-base">Your cost per session could be as low as</p>
           <p class="text-h2-base"><span class="text-[50%] align-super">$</span><?= get_field('copay'); ?></p>
         </div>
         <div class="flex items-center gap-base5-4">
-          <p class="flex-1 text-p-base">Average <?= get_field('insurer'); ?> member copay</p>
+          <p class="flex-1 text-p-base">Average <?= get_field('insurer'); ?> member cost per session</p>
           <p class="text-h3-base font-heading-serif"><span class="text-[50%] align-super">$</span><?= get_field('average_copay'); ?></p>
         </div>
         <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full">
@@ -115,6 +115,7 @@ $logo = isset($logos[$insurer]) ? $logos[$insurer] : "";
             $random_testimonial->the_post();
             $heading = get_field('pull-quote');
             $subhead = get_field('full_quote');
+            $attribution = get_field('attribution');
           }
           wp_reset_postdata();
         }
@@ -129,9 +130,13 @@ $logo = isset($logos[$insurer]) ? $logos[$insurer] : "";
         <?php if (!empty($subhead)) : ?>
           <p><?= esc_html($subhead); ?></p>
         <?php endif; ?>
+
+        <?php if (!empty($attribution)) : ?>
+          <p>— <?= esc_html($attribution); ?></p>
+        <?php endif; ?>
       </div>
-      <div class="h-full mx-auto">
-        <div class="h-full w-[2px] bg-primary"></div>
+      <div class="h-full lg:mx-auto">
+        <div class="lg:h-full h-[2px] lg:w-[2px] w-full bg-primary my-base5-1 lg:my-0"></div>
       </div>
       <div>
         <h3>Reach out to start your healing journey today</h3>
@@ -165,13 +170,13 @@ $logo = isset($logos[$insurer]) ? $logos[$insurer] : "";
         <div class="relative text-center opacity-0 invisible bg-orange-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center ">
           <p><a href="/intensive-outpatient-iop/individual-therapy" class="no-underline text-primary stretched-link text-h4-base">Individual therapy sessions</a></p>
         </div>
-        <div class="relative text-center opacity-0 invisible bg-pale-blue-200 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center col-start-1 row-start-2">
+        <div class="relative text-center opacity-0 invisible bg-pale-blue-200 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center lg:col-start-1 lg:row-start-2">
           <p><a href="/intensive-outpatient-iop/psychiatry-and-medication-management" class="no-underline text-primary stretched-link text-h4-base">Psychiatry sessions</a></p>
         </div>
-        <div class="relative text-center opacity-0 invisible bg-yellow-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center col-start-2 row-start-2">
+        <div class="relative text-center opacity-0 invisible bg-yellow-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center lg:col-start-2 lg:row-start-2">
           <p><a href="/intensive-outpatient-iop/family-therapy" class="no-underline text-primary stretched-link text-h4-base">Family therapy sessions</a></p>
         </div>
-        <div class="text-center bg-white opacity-0 invisible rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center relative group row-span-2 col-start-3 row-start-1">
+        <div class="text-center bg-white opacity-0 invisible rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center relative group lg:row-span-2 lg:col-start-3 lg:row-start-1 col-span-2 lg:col-span-1">
           <svg width="27" height="22" viewBox="0 0 27 22" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all mb-sp-2 group-hover:translate-x-[5px] duration-300">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M22.054 9.3431L14.3818 1.67092L16.0527 0L26.6686 10.6159L16.0527 21.2319L14.3818 19.561L22.2366 11.7061L2.08616e-07 11.7061L0 9.34311L22.054 9.3431Z" fill="#161A3D"></path>
           </svg><a href="/intensive-outpatient-iop" class="mb-0 no-underline stretched-link text-h4-base">Learn more</a>

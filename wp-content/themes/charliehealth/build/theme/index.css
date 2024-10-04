@@ -1804,6 +1804,11 @@ a.insurance-tabs.active:hover {
   margin-bottom: 2rem;
 }
 
+.my-base5-1{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 .\!mb-base5-4{
   margin-bottom: 20px !important;
 }
@@ -2225,6 +2230,10 @@ a.insurance-tabs.active:hover {
 
 .h-sp-8{
   height: 2rem;
+}
+
+.h-1{
+  height: 0.25rem;
 }
 
 .max-h-0{
@@ -2674,18 +2683,6 @@ a.insurance-tabs.active:hover {
   grid-template-columns: 2fr 1fr;
 }
 
-.grid-cols-\[grid-cols-\[3fr_7fr\]\]{
-  grid-template-columns: grid-cols-[3fr 7fr];
-}
-
-.grid-cols-\[3fr_7fr\]{
-  grid-template-columns: 3fr 7fr;
-}
-
-.grid-cols-\[4fr_6fr\]{
-  grid-template-columns: 4fr 6fr;
-}
-
 .flex-row{
   flex-direction: row;
 }
@@ -2762,10 +2759,6 @@ a.insurance-tabs.active:hover {
   gap: 1rem;
 }
 
-.gap-base5-10{
-  gap: 50px;
-}
-
 .gap-base5-2{
   gap: 10px;
 }
@@ -2794,6 +2787,10 @@ a.insurance-tabs.active:hover {
   gap: 4rem;
 }
 
+.gap-sp-16{
+  gap: 6rem;
+}
+
 .gap-sp-2{
   gap: 0.5rem;
 }
@@ -2816,10 +2813,6 @@ a.insurance-tabs.active:hover {
 
 .gap-sp-8{
   gap: 2rem;
-}
-
-.gap-sp-16{
-  gap: 6rem;
 }
 
 .gap-x-4{
@@ -3629,6 +3622,10 @@ a.insurance-tabs.active:hover {
   padding-bottom: 30px;
 }
 
+.pb-base5-8{
+  padding-bottom: 40px;
+}
+
 .pb-sp-0{
   padding-bottom: 0;
 }
@@ -3665,6 +3662,10 @@ a.insurance-tabs.active:hover {
   padding-top: 26px;
 }
 
+.pt-base5-8{
+  padding-top: 40px;
+}
+
 .pt-sp-0{
   padding-top: 0;
 }
@@ -3675,14 +3676,6 @@ a.insurance-tabs.active:hover {
 
 .pt-sp-7{
   padding-top: 1.75rem;
-}
-
-.pb-base5-8{
-  padding-bottom: 40px;
-}
-
-.pt-base5-8{
-  padding-top: 40px;
 }
 
 .text-center{
@@ -6109,6 +6102,26 @@ ul.alert li {
     grid-column-start: 4;
   }
 
+  .lg\:col-start-1{
+    grid-column-start: 1;
+  }
+
+  .lg\:col-start-3{
+    grid-column-start: 3;
+  }
+
+  .lg\:row-span-2{
+    grid-row: span 2 / span 2;
+  }
+
+  .lg\:row-start-1{
+    grid-row-start: 1;
+  }
+
+  .lg\:row-start-2{
+    grid-row-start: 2;
+  }
+
   .lg\:mx-auto{
     margin-left: auto;
     margin-right: auto;
@@ -6127,6 +6140,11 @@ ul.alert li {
   .lg\:my-sp-16{
     margin-top: 6rem;
     margin-bottom: 6rem;
+  }
+
+  .lg\:my-0{
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 
   .lg\:\!-mb-base5-10{
@@ -6385,6 +6403,10 @@ ul.alert li {
     width: 1.25rem;
   }
 
+  .lg\:w-\[2px\]{
+    width: 2px;
+  }
+
   .lg\:min-w-0{
     min-width: 0px;
   }
@@ -6578,6 +6600,10 @@ ul.alert li {
     grid-template-columns: 4fr 2fr 4fr;
   }
 
+  .lg\:grid-cols-\[4fr_6fr\]{
+    grid-template-columns: 4fr 6fr;
+  }
+
   .lg\:grid-cols-\[4fr_8fr\]{
     grid-template-columns: 4fr 8fr;
   }
@@ -6602,6 +6628,10 @@ ul.alert li {
     grid-template-columns: 8fr 4fr;
   }
 
+  .lg\:grid-cols-\[9fr_1fr_2fr\]{
+    grid-template-columns: 9fr 1fr 2fr;
+  }
+
   .lg\:grid-cols-\[9fr_3fr\]{
     grid-template-columns: 9fr 3fr;
   }
@@ -6612,26 +6642,6 @@ ul.alert li {
 
   .lg\:grid-cols-\[unset\]{
     grid-template-columns: unset;
-  }
-
-  .lg\:grid-cols-\[9fr_1fr_12fr\]{
-    grid-template-columns: 9fr 1fr 12fr;
-  }
-
-  .lg\:grid-cols-\[9fr_1fr_2fr\]{
-    grid-template-columns: 9fr 1fr 2fr;
-  }
-
-  .lg\:grid-cols-5{
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-  }
-
-  .lg\:grid-cols-\[4fr_6fr\]{
-    grid-template-columns: 4fr 6fr;
-  }
-
-  .lg\:grid-rows-5{
-    grid-template-rows: repeat(5, minmax(0, 1fr));
   }
 
   .lg\:grid-rows-2{
@@ -6902,6 +6912,11 @@ ul.alert li {
   .lg\:py-sp-6{
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
+  }
+
+  .lg\:py-0{
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 
   .lg\:pb-0{
