@@ -102,7 +102,7 @@
             },
             {
                 "param": "post_type",
-                "operator": "!=",
+                "operator": "==",
                 "value": "locations"
             }
         ]
@@ -126,5 +126,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728071909
+    "modified": 1728074639
 }
