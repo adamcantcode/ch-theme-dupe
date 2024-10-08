@@ -1944,38 +1944,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 function userPagesTracker() {
   const trackPages = () => {
-    // Get the previously visited pages or initialize an empty array
     let visitedPages = JSON.parse(localStorage.getItem('visitedPages')) || [];
-
-    // Capture the current page and the time when the user lands
-    let currentPage = {
-      url: window.location.href,
-      landedAt: new Date().getTime(),
-      // Use timestamp in milliseconds for calculation
-      timeSpent: null // Will be calculated when the user leaves the page
-    };
-
-    // Add the current page to the visitedPages array
-    visitedPages.push(currentPage);
+    visitedPages.push(window.location.href);
     localStorage.setItem('visitedPages', JSON.stringify(visitedPages));
-
-    // Update the timeSpent when the user leaves the page
-    window.addEventListener('beforeunload', () => {
-      let updatedPages = JSON.parse(localStorage.getItem('visitedPages')) || [];
-      let lastPage = updatedPages[updatedPages.length - 1];
-
-      // Calculate the time spent in milliseconds
-      let leaveTime = new Date().getTime();
-      let timeSpentMs = leaveTime - lastPage.landedAt;
-
-      // Convert time spent to minutes, seconds, and milliseconds
-      let minutes = Math.floor(timeSpentMs / 60000);
-      let seconds = Math.floor(timeSpentMs % 60000 / 1000);
-      let milliseconds = timeSpentMs % 1000;
-      lastPage.timeSpent = `${minutes}m ${seconds}s ${milliseconds}ms`;
-      localStorage.setItem('visitedPages', JSON.stringify(updatedPages));
-      console.log('Updated Pages with Time Spent:', updatedPages);
-    });
+    console.log('Visited Pages:', visitedPages);
   };
   trackPages();
 }
@@ -23792,30 +23764,42 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_modules_anchor_scroll__WEBPACK_IMPORTED_MODULE_4__["default"])();
   // Function to create a cookie that stores URL if URL has params and if cookie doesn't exist
   function createCookieIfNeeded() {
-    if (document.cookie.indexOf('urlWithParams=') === -1 && window.location.search) {
-      document.cookie = 'urlWithParams=' + encodeURIComponent(window.location.href) + '; domain=.charliehealth.com; path=/';
+    // Check if the cookie does not exist and if there are no URL parameters
+    if (document.cookie.indexOf('urlWithParams=') === -1 && window.location.search === '') {
+      document.cookie = 'urlWithParams=' + encodeURIComponent(window.location.href) + '; domain=.wpch.local; path=/';
+      console.log('Created cookie');
     }
   }
-
-  // Function to get params from cookie and append to URL if URL does not already have params and JotForm iframe exists on the page
   function appendParamsIfNeeded() {
     var urlParams = new URLSearchParams(window.location.search);
-    // Check if URL doesn't already have params
-    if (urlParams.toString() === '') {
-      var jotformIframes = document.querySelectorAll('iframe[src*="jotform"]');
-      // Check if JotForm iframe exists
-      if (jotformIframes.length > 0) {
-        var cookieValue = getCookie('urlWithParams');
-        if (cookieValue) {
-          var params = decodeURIComponent(cookieValue).split('?')[1];
-          if (params) {
-            const paramPairs = params.split('&');
-            const hasPageId = paramPairs.some(pair => pair.startsWith('page_id='));
-            if (!hasPageId) {
-              var newURL = window.location.href + (window.location.search ? '&' : '?') + params;
-              window.location.href = newURL; // Reload the page with the new URL
-            }
-          }
+    var jotformIframes = document.querySelectorAll('iframe[src*="jotform"]');
+
+    // Check if JotForm iframe exists
+    if (jotformIframes.length > 0) {
+      const visitedPages = localStorage.getItem('visitedPages');
+
+      // Clean up visitedPages if it's not valid JSON
+      let visitedPagesArray = [];
+      if (visitedPages) {
+        try {
+          visitedPagesArray = JSON.parse(visitedPages);
+        } catch (e) {
+          console.error('Invalid JSON in visitedPages:', e);
+        }
+      }
+      const userJourneyParam = `user_journey=${encodeURIComponent(JSON.stringify(visitedPagesArray))}`;
+
+      // Check if URL doesn't have params
+      if (urlParams.toString() === '') {
+        var newURL = window.location.href + (window.location.search ? '&' : '?') + userJourneyParam;
+        window.location.href = newURL; // Reload the page with the new URL
+        console.log('Redirecting to URL with user_journey:', newURL);
+      } else {
+        // If parameters exist, check for user_journey
+        if (!urlParams.has('user_journey')) {
+          var newURL = window.location.href + (window.location.search ? '&' : '?') + userJourneyParam;
+          window.location.href = newURL; // Reload the page with the new URL
+          console.log('Redirecting to URL with added user_journey:', newURL);
         }
       }
     }
