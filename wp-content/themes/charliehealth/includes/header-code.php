@@ -370,15 +370,20 @@
           form.getField(fieldIds.userIP).setValue(data.ip);
         });
       form.getField(fieldIds.fbp).setValue(getCookie('_fbp'));
-      form.getField(fieldIds.userAgent).setValue(window.navigator.userAgent);
+      form.getField(fieldIds.userAgent).setValue(window.navigator.userAgent);      
+      form.getField(fieldIds.userJourney).setValue(localStorage.getItem('visitedPages'));
 
       // VWO Test Version
 
-      if (document.cookie.indexOf('_vis_opt_exp_52_combi=') > -1) {
-        const experimentValue = getCookie('_vis_opt_exp_52_combi');
+      // Look for any cookie that ends with '_combi'
+      const experimentCookie = document.cookie.match(/_vis_opt_exp_\d+_combi=([^;]+)/);
+      if (experimentCookie) {
+        const experimentValue = experimentCookie[1]; // Get the value after the '=' in the cookie
         if (experimentValue === '1') {
+          console.log(experimentValue);
           form.getField(fieldIds.vwoTestVersion).setValue('Control');
         } else if (experimentValue === '2') {
+          console.log(experimentValue);
           form.getField(fieldIds.vwoTestVersion).setValue('Variation');
         }
       }

@@ -14,8 +14,6 @@ export default function userPagesTracker() {
     visitedPages.push(currentPage);
     localStorage.setItem('visitedPages', JSON.stringify(visitedPages));
 
-    console.log('Visited Pages:', visitedPages);
-
     // Update the timeSpent when the user leaves the page
     window.addEventListener('beforeunload', () => {
       let updatedPages = JSON.parse(localStorage.getItem('visitedPages')) || [];

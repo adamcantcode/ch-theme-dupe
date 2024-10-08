@@ -1958,7 +1958,6 @@ function userPagesTracker() {
     // Add the current page to the visitedPages array
     visitedPages.push(currentPage);
     localStorage.setItem('visitedPages', JSON.stringify(visitedPages));
-    console.log('Visited Pages:', visitedPages);
 
     // Update the timeSpent when the user leaves the page
     window.addEventListener('beforeunload', () => {
