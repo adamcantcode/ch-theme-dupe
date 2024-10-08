@@ -93,58 +93,60 @@ document.addEventListener('DOMContentLoaded', () => {
   anchorScroll();
   // Function to create a cookie that stores URL if URL has params and if cookie doesn't exist
   function createCookieIfNeeded() {
-    // Check if the cookie does not exist and if there are no URL parameters
     if (
       document.cookie.indexOf('urlWithParams=') === -1 &&
-      window.location.search === ''
+      window.location.search
     ) {
       document.cookie =
         'urlWithParams=' +
         encodeURIComponent(window.location.href) +
-        '; domain=.wpch.local; path=/';
-      console.log('Created cookie');
+        '; domain=.charliehealth.com; path=/';
     }
   }
 
+  // Function to get params from cookie and append to URL if URL does not already have params and JotForm iframe exists on the page
   function appendParamsIfNeeded() {
     var urlParams = new URLSearchParams(window.location.search);
-    var jotformIframes = document.querySelectorAll('iframe[src*="jotform"]');
+    // Check if URL doesn't already have params
+    if (urlParams.toString() === '') {
+      var jotformIframes = document.querySelectorAll('iframe[src*="jotform"]');
+      // Check if JotForm iframe exists
+      if (jotformIframes.length > 0) {
+        var cookieValue = getCookie('urlWithParams');
+        var visitedPages = localStorage.getItem('visitedPages');
 
-    // Check if JotForm iframe exists
-    if (jotformIframes.length > 0) {
-      const visitedPages = localStorage.getItem('visitedPages');
+        if (cookieValue) {
+          var params = decodeURIComponent(cookieValue).split('?')[1];
 
-      // Clean up visitedPages if it's not valid JSON
-      let visitedPagesArray = [];
-      if (visitedPages) {
-        try {
-          visitedPagesArray = JSON.parse(visitedPages);
-        } catch (e) {
-          console.error('Invalid JSON in visitedPages:', e);
-        }
-      }
+          if (params) {
+            const paramPairs = params.split('&');
+            const hasPageId = paramPairs.some((pair) =>
+              pair.startsWith('page_id=')
+            );
 
-      const userJourneyParam = `user_journey=${encodeURIComponent(
-        JSON.stringify(visitedPagesArray)
-      )}`;
+            if (!hasPageId) {
+              // Check if visitedPages exists and append it to the params
+              if (visitedPages) {
+                try {
+                  // Parse visitedPages JSON and append it as a query parameter
+                  const visitedPagesObj = JSON.parse(visitedPages);
+                  const visitedPagesStr = encodeURIComponent(
+                    JSON.stringify(visitedPagesObj)
+                  );
+                  params += `&visitedPages=${visitedPagesStr}`;
+                } catch (e) {
+                  console.error('Invalid JSON in visitedPages:', e);
+                }
+              }
 
-      // Check if URL doesn't have params
-      if (urlParams.toString() === '') {
-        var newURL =
-          window.location.href +
-          (window.location.search ? '&' : '?') +
-          userJourneyParam;
-        window.location.href = newURL; // Reload the page with the new URL
-        console.log('Redirecting to URL with user_journey:', newURL);
-      } else {
-        // If parameters exist, check for user_journey
-        if (!urlParams.has('user_journey')) {
-          var newURL =
-            window.location.href +
-            (window.location.search ? '&' : '?') +
-            userJourneyParam;
-          window.location.href = newURL; // Reload the page with the new URL
-          console.log('Redirecting to URL with added user_journey:', newURL);
+              var newURL =
+                window.location.href +
+                (window.location.search ? '&' : '?') +
+                params;
+
+              window.location.href = newURL; // Reload the page with the new URL
+            }
+          }
         }
       }
     }
