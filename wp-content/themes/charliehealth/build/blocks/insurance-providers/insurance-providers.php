@@ -55,7 +55,6 @@
 
 <script>
   const data = <?= get_option('my_api_data'); ?>;
-  console.log(data);
   // Function to toggle dropdown visibility
   function toggleDropdown(dropdownId) {
     const dropdown = document.getElementById(dropdownId);

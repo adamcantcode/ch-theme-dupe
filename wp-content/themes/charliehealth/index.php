@@ -83,7 +83,6 @@
 
                   // Trigger close event
                   if (event.target.classList.contains('modal-fade')) {
-                    console.log('trigger close');
                     
                     window.VWO = window.VWO || [];
                     VWO.event = VWO.event || function() {
@@ -97,7 +96,6 @@
               closeButton.addEventListener('click', () => {
                 modal.classList.toggle('modal-fade');
 
-                console.log('trigger close');
                 // Trigger close event
                 window.VWO = window.VWO || [];
                 VWO.event = VWO.event || function() {

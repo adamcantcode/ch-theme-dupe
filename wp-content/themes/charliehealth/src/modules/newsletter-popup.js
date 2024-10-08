@@ -43,7 +43,6 @@ export default function newsletterPopup() {
       createCookie('newsletter_popup', 'true', 1);
 
       modal.addEventListener('click', (event) => {
-        console.log(event.target.id === 'newsletterPopup');
         if (event.target.id === 'newsletterPopup') {
           modal.classList.toggle('modal-fade');
         }

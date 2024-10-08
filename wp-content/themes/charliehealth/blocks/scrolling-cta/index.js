@@ -20,8 +20,6 @@ window.addEventListener('DOMContentLoaded', () => {
     },
   });
   var gradientBG = 'rgba(247,245,241,1)';
-  console.log(sectionContainer);
-  console.log(sectionContainer.classList.contains('bg-white'));
   if (sectionContainer.classList.contains('bg-white')) {
     gradientBG = 'rgba(255,255,255,1)';
   }

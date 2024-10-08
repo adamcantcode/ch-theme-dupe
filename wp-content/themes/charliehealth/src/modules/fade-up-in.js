@@ -7,7 +7,6 @@ export default function fadeUpIn() {
   const containers = document.querySelectorAll(
     'section .acf-innerblocks-container .fade-up-in'
   );
-  console.log(containers);
   containers.forEach((container, index) => {
     container.classList.add(`animate-container-${index}`);
     gsap.from(`.animate-container-${index}`, {

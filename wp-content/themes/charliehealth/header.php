@@ -304,7 +304,6 @@
           const totalHeight = header.offsetHeight;
           const viewportHeight = window.innerHeight;
           const panelHeight = viewportHeight - totalHeight;
-          console.log(totalHeight);
           panel.style.height = `${panelHeight}px`;
         }
       }

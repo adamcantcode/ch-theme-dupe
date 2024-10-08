@@ -387,7 +387,6 @@
       form.registerFormEventListener({
         type: 'change-page',
         onFormEvent: function(event) {
-          console.log('change-page');
           setHiddenFields(form, fieldIds);
           return Promise.resolve(event);
         }
@@ -403,10 +402,8 @@
           if (storedEmail) {
             if (form.getField(emailFields.mainForm)) {
               form.getField(emailFields.mainForm).setValue(storedEmail);
-              console.log(form.getField(emailFields.mainForm).setValue(storedEmail));
             } else if (form.getField(emailFields.testForm)) {
               form.getField(emailFields.testForm).setValue(storedEmail);
-              console.log(form.getField(emailFields.testForm).setValue(storedEmail));
             }
           }
           return Promise.resolve(event);
