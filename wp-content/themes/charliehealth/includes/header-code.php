@@ -371,12 +371,15 @@
         });
       form.getField(fieldIds.fbp).setValue(getCookie('_fbp'));
       form.getField(fieldIds.userAgent).setValue(window.navigator.userAgent);
+
+      // VWO Test Version
+
       if (document.cookie.indexOf('_vis_opt_exp_52_combi=') > -1) {
         const experimentValue = getCookie('_vis_opt_exp_52_combi');
         if (experimentValue === '1') {
-          form.getField(fieldIds.insurance).setValue('control - Insurance Map vs Interactive');
+          form.getField(fieldIds.vwoTestVersion).setValue('Control');
         } else if (experimentValue === '2') {
-          form.getField(fieldIds.insurance).setValue('variant - Insurance Map vs Interactive');
+          form.getField(fieldIds.vwoTestVersion).setValue('Variation');
         }
       }
     }
@@ -391,24 +394,27 @@
           return Promise.resolve(event);
         }
       });
-      form.registerFormEventListener({
-        type: 'change-page',
-        onFormEvent: function(event) {
-          const storedEmail = sessionStorage.getItem('introQuestionEmail');
-          const emailFields = {
-            mainForm: '162592077',
-            testForm: '165061503'
-          }
-          if (storedEmail) {
-            if (form.getField(emailFields.mainForm)) {
-              form.getField(emailFields.mainForm).setValue(storedEmail);
-            } else if (form.getField(emailFields.testForm)) {
-              form.getField(emailFields.testForm).setValue(storedEmail);
-            }
-          }
-          return Promise.resolve(event);
-        }
-      });
+
+      // PRE FORM EMAIL CAPTURE TEST
+
+      // form.registerFormEventListener({
+      //   type: 'change-page',
+      //   onFormEvent: function(event) {
+      //     const storedEmail = sessionStorage.getItem('introQuestionEmail');
+      //     const emailFields = {
+      //       mainForm: '162592077',
+      //       testForm: '165061503'
+      //     }
+      //     if (storedEmail) {
+      //       if (form.getField(emailFields.mainForm)) {
+      //         form.getField(emailFields.mainForm).setValue(storedEmail);
+      //       } else if (form.getField(emailFields.testForm)) {
+      //         form.getField(emailFields.testForm).setValue(storedEmail);
+      //       }
+      //     }
+      //     return Promise.resolve(event);
+      //   }
+      // });
       // form.registerFormEventListener({
       //   type: 'submit',
       //   onFormEvent: function(event) {
@@ -418,17 +424,8 @@
       // });
     }
 
-    if (window.location.href.indexOf('form-b') > -1) {
-      initializeForm('5754402', {
-        organicLP: '165061486',
-        fbclid: '165061488',
-        msclkid: '165061489',
-        userIP: '165061487',
-        fbp: '165061490',
-        userAgent: '165061491',
-        insurance: '166107543'
-      });
-    } else if (window.location.href.indexOf('form') > -1) {
+    // If form page
+    if (window.location.href.indexOf('form') > -1) {
       initializeForm('5700521', {
         organicLP: '162592063',
         fbclid: '162592064',
@@ -436,7 +433,8 @@
         userIP: '163080837',
         fbp: '162592065',
         userAgent: '163080841',
-        insurance: '166107526'
+        vwoTestVersion: '166107526',
+        userJourney: '174755950'
       });
     }
   });
