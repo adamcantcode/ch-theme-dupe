@@ -23799,6 +23799,9 @@ document.addEventListener('DOMContentLoaded', () => {
               window.location.href = newURL; // Reload the page with the new URL
             }
           }
+        } else if (localStorage.getItem('user_journey')) {
+          var newURL = window.location.href + (window.location.search ? '&' : '?') + encodeURIComponent(localStorage.getItem('user_journey'));
+          window.location.href = newURL; // Reload the page with the new URL
         }
       }
     }
