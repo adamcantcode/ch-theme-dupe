@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Check if JotForm iframe exists
       if (jotformIframes.length > 0) {
         var cookieValue = getCookie('urlWithParams');
-        var visitedPages = localStorage.getItem('visitedPages');
+        var user_journey = localStorage.getItem('user_journey');
 
         if (cookieValue) {
           var params = decodeURIComponent(cookieValue).split('?')[1];
@@ -125,17 +125,17 @@ document.addEventListener('DOMContentLoaded', () => {
             );
 
             if (!hasPageId) {
-              // Check if visitedPages exists and append it to the params
-              if (visitedPages) {
+              // Check if user_journey exists and append it to the params
+              if (user_journey) {
                 try {
-                  // Parse visitedPages JSON and append it as a query parameter
-                  const visitedPagesObj = JSON.parse(visitedPages);
-                  const visitedPagesStr = encodeURIComponent(
-                    JSON.stringify(visitedPagesObj)
+                  // Parse user_journey JSON and append it as a query parameter
+                  const user_journeyObj = JSON.parse(user_journey);
+                  const user_journeyStr = encodeURIComponent(
+                    JSON.stringify(user_journeyObj)
                   );
-                  params += `&visitedPages=${visitedPagesStr}`;
+                  params += `&user_journey=${user_journeyStr}`;
                 } catch (e) {
-                  console.error('Invalid JSON in visitedPages:', e);
+                  console.error('Invalid JSON in user_journey:', e);
                 }
               }
 

@@ -1944,10 +1944,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 function userPagesTracker() {
   const trackPages = () => {
-    let visitedPages = JSON.parse(localStorage.getItem('visitedPages')) || [];
-    visitedPages.push(window.location.href);
-    localStorage.setItem('visitedPages', JSON.stringify(visitedPages));
-    console.log('Visited Pages:', visitedPages);
+    let user_journey = JSON.parse(localStorage.getItem('user_journey')) || [];
+    user_journey.push(window.location.href);
+    localStorage.setItem('user_journey', JSON.stringify(user_journey));
   };
   trackPages();
 }
@@ -23778,22 +23777,22 @@ document.addEventListener('DOMContentLoaded', () => {
       // Check if JotForm iframe exists
       if (jotformIframes.length > 0) {
         var cookieValue = getCookie('urlWithParams');
-        var visitedPages = localStorage.getItem('visitedPages');
+        var user_journey = localStorage.getItem('user_journey');
         if (cookieValue) {
           var params = decodeURIComponent(cookieValue).split('?')[1];
           if (params) {
             const paramPairs = params.split('&');
             const hasPageId = paramPairs.some(pair => pair.startsWith('page_id='));
             if (!hasPageId) {
-              // Check if visitedPages exists and append it to the params
-              if (visitedPages) {
+              // Check if user_journey exists and append it to the params
+              if (user_journey) {
                 try {
-                  // Parse visitedPages JSON and append it as a query parameter
-                  const visitedPagesObj = JSON.parse(visitedPages);
-                  const visitedPagesStr = encodeURIComponent(JSON.stringify(visitedPagesObj));
-                  params += `&visitedPages=${visitedPagesStr}`;
+                  // Parse user_journey JSON and append it as a query parameter
+                  const user_journeyObj = JSON.parse(user_journey);
+                  const user_journeyStr = encodeURIComponent(JSON.stringify(user_journeyObj));
+                  params += `&user_journey=${user_journeyStr}`;
                 } catch (e) {
-                  console.error('Invalid JSON in visitedPages:', e);
+                  console.error('Invalid JSON in user_journey:', e);
                 }
               }
               var newURL = window.location.href + (window.location.search ? '&' : '?') + params;
