@@ -6660,6 +6660,10 @@ ul.alert li {
     justify-content: space-around;
   }
 
+  .lg\:gap-32{
+    gap: 8rem;
+  }
+
   .lg\:gap-\[10rem\]{
     gap: 10rem;
   }

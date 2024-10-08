@@ -1192,7 +1192,6 @@ __webpack_require__.r(__webpack_exports__);
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
 function fadeUpIn() {
   const containers = document.querySelectorAll('section .acf-innerblocks-container .fade-up-in');
-  console.log(containers);
   containers.forEach((container, index) => {
     container.classList.add(`animate-container-${index}`);
     gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from(`.animate-container-${index}`, {
@@ -1556,7 +1555,6 @@ function newsletterPopup() {
       // Create the cookie to prevent further pop-ups
       createCookie('newsletter_popup', 'true', 1);
       modal.addEventListener('click', event => {
-        console.log(event.target.id === 'newsletterPopup');
         if (event.target.id === 'newsletterPopup') {
           modal.classList.toggle('modal-fade');
         }
@@ -1929,6 +1927,28 @@ function toc() {
     const tocHeading = document.querySelector('.toc-heading');
     tocHeading.addEventListener('click', toggleAccordion);
   }
+}
+
+/***/ }),
+
+/***/ "./src/modules/user-pages-tracker.js":
+/*!*******************************************!*\
+  !*** ./src/modules/user-pages-tracker.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ userPagesTracker)
+/* harmony export */ });
+function userPagesTracker() {
+  const trackPages = () => {
+    let user_journey = JSON.parse(localStorage.getItem('user_journey')) || [];
+    user_journey.push(window.location.href);
+    localStorage.setItem('user_journey', JSON.stringify(user_journey));
+  };
+  trackPages();
 }
 
 /***/ }),
@@ -23656,6 +23676,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_sticky_cta__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./modules/sticky-cta */ "./src/modules/sticky-cta.js");
 /* harmony import */ var _modules_fade_up_in__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./modules/fade-up-in */ "./src/modules/fade-up-in.js");
 /* harmony import */ var _modules_careers_tracking__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./modules/careers-tracking */ "./src/modules/careers-tracking.js");
+/* harmony import */ var _modules_user_pages_tracker__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./modules/user-pages-tracker */ "./src/modules/user-pages-tracker.js");
+
 
 
 
@@ -23742,10 +23764,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Function to create a cookie that stores URL if URL has params and if cookie doesn't exist
   function createCookieIfNeeded() {
     if (document.cookie.indexOf('urlWithParams=') === -1 && window.location.search) {
-      console.log('Creating cookie');
       document.cookie = 'urlWithParams=' + encodeURIComponent(window.location.href) + '; domain=.charliehealth.com; path=/';
-    } else {
-      console.log('Cookie already exists or no params in URL');
     }
   }
 
@@ -23754,37 +23773,34 @@ document.addEventListener('DOMContentLoaded', () => {
     var urlParams = new URLSearchParams(window.location.search);
     // Check if URL doesn't already have params
     if (urlParams.toString() === '') {
-      console.log('URL does not have params');
       var jotformIframes = document.querySelectorAll('iframe[src*="jotform"]');
       // Check if JotForm iframe exists
       if (jotformIframes.length > 0) {
-        console.log('Found JotForm iframe');
         var cookieValue = getCookie('urlWithParams');
-        console.log('Cookie value:', cookieValue);
+        var user_journey = localStorage.getItem('user_journey');
         if (cookieValue) {
           var params = decodeURIComponent(cookieValue).split('?')[1];
-          console.log('Params from cookie:', params);
           if (params) {
             const paramPairs = params.split('&');
             const hasPageId = paramPairs.some(pair => pair.startsWith('page_id='));
-            console.log(hasPageId);
-            console.log(paramPairs);
             if (!hasPageId) {
+              // Check if user_journey exists and append it to the params
+              if (user_journey) {
+                try {
+                  // Parse user_journey JSON and append it as a query parameter
+                  const user_journeyObj = JSON.parse(user_journey);
+                  const user_journeyStr = encodeURIComponent(JSON.stringify(user_journeyObj));
+                  params += `&user_journey=${user_journeyStr}`;
+                } catch (e) {
+                  console.error('Invalid JSON in user_journey:', e);
+                }
+              }
               var newURL = window.location.href + (window.location.search ? '&' : '?') + params;
-              console.log('New URL:', newURL);
               window.location.href = newURL; // Reload the page with the new URL
             }
-          } else {
-            console.log('No params found in cookie');
           }
-        } else {
-          console.log('No cookie found');
         }
-      } else {
-        console.log('No JotForm iframe found');
       }
-    } else {
-      console.log('URL already has params:', window.location.search);
     }
   }
 
@@ -23805,6 +23821,8 @@ document.addEventListener('DOMContentLoaded', () => {
     (0,_modules_careers_tracking__WEBPACK_IMPORTED_MODULE_22__["default"])();
     // }
   }
+
+  (0,_modules_user_pages_tracker__WEBPACK_IMPORTED_MODULE_23__["default"])();
 });
 })();
 

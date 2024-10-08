@@ -22,6 +22,7 @@ import tagPage from './modules/tag-page';
 import stickyCTA from './modules/sticky-cta';
 import fadeUpIn from './modules/fade-up-in';
 import careersTracking from './modules/careers-tracking';
+import userPagesTracker from './modules/user-pages-tracker';
 
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
@@ -96,13 +97,10 @@ document.addEventListener('DOMContentLoaded', () => {
       document.cookie.indexOf('urlWithParams=') === -1 &&
       window.location.search
     ) {
-      console.log('Creating cookie');
       document.cookie =
         'urlWithParams=' +
         encodeURIComponent(window.location.href) +
         '; domain=.charliehealth.com; path=/';
-    } else {
-      console.log('Cookie already exists or no params in URL');
     }
   }
 
@@ -111,42 +109,46 @@ document.addEventListener('DOMContentLoaded', () => {
     var urlParams = new URLSearchParams(window.location.search);
     // Check if URL doesn't already have params
     if (urlParams.toString() === '') {
-      console.log('URL does not have params');
       var jotformIframes = document.querySelectorAll('iframe[src*="jotform"]');
       // Check if JotForm iframe exists
       if (jotformIframes.length > 0) {
-        console.log('Found JotForm iframe');
         var cookieValue = getCookie('urlWithParams');
-        console.log('Cookie value:', cookieValue);
+        var user_journey = localStorage.getItem('user_journey');
+
         if (cookieValue) {
           var params = decodeURIComponent(cookieValue).split('?')[1];
-          console.log('Params from cookie:', params);
+
           if (params) {
             const paramPairs = params.split('&');
             const hasPageId = paramPairs.some((pair) =>
               pair.startsWith('page_id=')
             );
-            console.log(hasPageId);
-            console.log(paramPairs);
+
             if (!hasPageId) {
+              // Check if user_journey exists and append it to the params
+              if (user_journey) {
+                try {
+                  // Parse user_journey JSON and append it as a query parameter
+                  const user_journeyObj = JSON.parse(user_journey);
+                  const user_journeyStr = encodeURIComponent(
+                    JSON.stringify(user_journeyObj)
+                  );
+                  params += `&user_journey=${user_journeyStr}`;
+                } catch (e) {
+                  console.error('Invalid JSON in user_journey:', e);
+                }
+              }
+
               var newURL =
                 window.location.href +
                 (window.location.search ? '&' : '?') +
                 params;
-              console.log('New URL:', newURL);
+
               window.location.href = newURL; // Reload the page with the new URL
             }
-          } else {
-            console.log('No params found in cookie');
           }
-        } else {
-          console.log('No cookie found');
         }
-      } else {
-        console.log('No JotForm iframe found');
       }
-    } else {
-      console.log('URL already has params:', window.location.search);
     }
   }
 
@@ -168,4 +170,6 @@ document.addEventListener('DOMContentLoaded', () => {
     careersTracking();
     // }
   }
+
+  userPagesTracker();
 });

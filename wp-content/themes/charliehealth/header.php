@@ -12,7 +12,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="#212984">
   <!-- CUSTOM HEADER CODE -->
   <?php
-  if (wp_get_environment_type() === 'production') {
+  if (wp_get_environment_type() === 'production' || 'local') {
     include('wp-content/themes/charliehealth/includes/header-code.php');
   }
   ?>
@@ -304,7 +304,6 @@
           const totalHeight = header.offsetHeight;
           const viewportHeight = window.innerHeight;
           const panelHeight = viewportHeight - totalHeight;
-          console.log(totalHeight);
           panel.style.height = `${panelHeight}px`;
         }
       }
