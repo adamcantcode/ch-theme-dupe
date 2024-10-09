@@ -2,7 +2,7 @@
     "key": "post_type_64306b9bf19e4",
     "title": "Team Members",
     "menu_order": 0,
-    "active": true,
+    "active": false,
     "post_type": "team-members",
     "advanced_configuration": true,
     "import_source": "",
@@ -79,5 +79,6 @@
     "can_export": true,
     "delete_with_user": false,
     "register_meta_box_cb": "",
-    "modified": 1685988897
+    "enter_title_here": "",
+    "modified": 1728482696
 }
