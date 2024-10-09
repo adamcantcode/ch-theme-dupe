@@ -43,30 +43,40 @@
       </div>
     </div>
     <?php if (!is_admin()) : ?>
-      <?php if (have_rows('testimonials')) : ?>
-        <?php
+      <?php
+      $args = array(
+        'post_type'      => 'employee-testimonial',
+        'post_status'    => 'publish',
+        'posts_per_page' => -1,
+      );
+
+      $query = new WP_Query($args);
+
+      if ($query->have_posts()) :
         $count = 0;
         $rows = array();
 
-        while (have_rows('testimonials')) : the_row();
-          $rows[] = get_row(true);
+        // Loop through the posts and collect them into an array
+        while ($query->have_posts()) : $query->the_post();
+          $id     = get_the_ID();
+          $rows[] = array(
+            'name'       => get_the_title($id),
+            'team'       => get_field('team', $id),
+            'title'      => get_field('title', $id),
+            'vimeo_url'  => preg_replace('/\D/', '', get_field('vimeo_url', $id)),
+            'pull_quote' => get_field('pull_quote', $id),
+          );
         endwhile;
         shuffle($rows);
 
-        ?>
+      ?>
         <div class="masonry-js">
           <div class="lg:w-[calc(50%-16px)] opacity-0 scale-95 w-full grid-sizer"></div>
           <?php foreach ($rows as $row) :  ?>
             <?php
-            the_row($row);
             $count++;
-            $team  = $row['team'];
-            $name  = $row['name'];
-            $title = $row['title'];
-            $video = $row['video_code'];
-            $quote = $row['quote'];
 
-            switch ($team) {
+            switch ($row['team']) {
               case 'Corporate':
                 $tagBGColor = 'bg-pale-blue-300';
                 break;
@@ -88,20 +98,21 @@
             }
             ?>
             <div class="lg:w-[calc(50%-16px)] opacity-0 scale-95 w-full mb-sp-8 rounded-lg lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col<?= $count > 6 ? ' noshow' : ''; ?>">
-              <span class="relative z-20 self-start no-underline rounded-pill px-sp-4 py-sp-3 text-p-base mb-sp-8 <?= $tagBGColor; ?>"><?= $team; ?></span>
-              <?php if ($quote) : ?>
-                <h3 class="font-heading-serif">“<?= substr($quote, -1) !== '.' ? $quote .= '.' : $quote; ?>”</h3>
+              <span class="relative z-20 self-start no-underline rounded-pill px-sp-4 py-sp-3 text-p-base mb-sp-8 <?= $tagBGColor; ?>"><?= $row['team']; ?></span>
+              <?php if ($row['pull_quote']) : ?>
+                <h3 class="font-heading-serif">“<?= substr($row['pull_quote'], -1) !== '.' ? $row['pull_quote'] .= '.' : $row['pull_quote']; ?>”</h3>
               <?php endif; ?>
-              <?php if ($video) : ?>
-                <div style="padding:177.78% 0 0 0;position:relative;" class="mb-base5-2"><iframe src="https://player.vimeo.com/video/<?= $video; ?>?loop=1&muted=1&autopause=1" frameborder="0" allow="autoplay; fullscreen; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="portrait" class="rounded-sm careers-video-js"></iframe></div>
+              <?php if ($row['vimeo_url']) : ?>
+                <div style="padding:177.78% 0 0 0;position:relative;" class="mb-base5-2"><iframe src="https://player.vimeo.com/video/<?= $row['vimeo_url']; ?>?loop=1&muted=1&autopause=1" frameborder="0" allow="autoplay; fullscreen; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="portrait" class="rounded-sm careers-video-js"></iframe></div>
                 <script src="https://player.vimeo.com/api/player.js"></script>
               <?php endif; ?>
-              <h4 class="mb-0"><?= $name; ?></h4>
-              <p><?= $title; ?></p>
+              <h4 class="mb-0"><?= $row['name']; ?></h4>
+              <p><?= $row['title']; ?></p>
             </div>
           <?php endforeach; ?>
         </div>
-      <?php endif; ?>
+      <?php endif;
+      wp_reset_postdata(); ?>
     <?php else : ?>
       <div class="grid items-center justify-center w-full h-full bg-darker-blue">
         <code class="text-white">NOT VISIBLE IN EDITOR -- CHECK PREVIEW</code>
