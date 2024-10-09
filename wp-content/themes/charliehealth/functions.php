@@ -658,23 +658,22 @@ function custom_menu_order($menu_ord)
     'edit.php?post_type=page', // Pages
     'edit.php', // Posts
     'edit.php?post_type=research', // Research
-    'edit.php?post_type=authors', // Authors
     'edit.php?post_type=activities', // Activites
+    'edit.php?post_type=authors', // Authors
     'edit.php?post_type=medical-reviewer', // Medical Reviewer
     'edit.php?post_type=areas-of-care', // Areas of Care
     'edit.php?post_type=treatment-modalities', // Treatment Modalities
-    'edit.php?post_type=insurance', // Insurance
-    'edit.php?post_type=locations', // Locations
     // 'edit.php?post_type=referral', // Referrals
-    'edit.php?post_type=press', // Press
-    'edit.php?post_type=team-members', // Team
+    'edit.php?post_type=employee-testimonial', // Team
     'edit.php?post_type=testimonial', // Testimonials
     'edit.php?post_type=partner-testimonial', // Partner Testimonials
-    'separator1', // First separator
-    'edit.php?post_type=region', // Regions
+    // 'edit.php?post_type=region', // Regions
     'edit.php?post_type=outreach-team-member', // Outreach Members
-    'edit.php?post_type=event', // Events
-    'separator2', // Second separator
+    'edit.php?post_type=insurance', // Insurance
+    'edit.php?post_type=locations', // Locations
+    'edit.php?post_type=press', // Press
+    // 'edit.php?post_type=event', // Events
+    'separator1', // First separator
     'upload.php', // Media
   );
 }
