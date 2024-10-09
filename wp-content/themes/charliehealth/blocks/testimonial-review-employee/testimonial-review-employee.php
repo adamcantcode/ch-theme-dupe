@@ -65,6 +65,7 @@
             'title'      => get_field('title', $id),
             'vimeo_url'  => preg_replace('/\D/', '', get_field('vimeo_url', $id)),
             'pull_quote' => get_field('pull_quote', $id),
+            'reviews_page_display' => get_field('reviews_page_display', $id),
           );
         endwhile;
         shuffle($rows);
@@ -99,10 +100,10 @@
             ?>
             <div class="lg:w-[calc(50%-16px)] opacity-0 scale-95 w-full mb-sp-8 rounded-lg lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col<?= $count > 6 ? ' noshow' : ''; ?>">
               <span class="relative z-20 self-start no-underline rounded-pill px-sp-4 py-sp-3 text-p-base mb-sp-8 <?= $tagBGColor; ?>"><?= $row['team']; ?></span>
-              <?php if ($row['pull_quote']) : ?>
+              <?php if ($row['pull_quote']  && ($row['reviews_page_display'] === 'Quote' || $row['reviews_page_display'] === 'Both')) : ?>
                 <h3 class="font-heading-serif">“<?= substr($row['pull_quote'], -1) !== '.' ? $row['pull_quote'] .= '.' : $row['pull_quote']; ?>”</h3>
               <?php endif; ?>
-              <?php if ($row['vimeo_url']) : ?>
+              <?php if ($row['vimeo_url'] && ($row['reviews_page_display'] === 'Video' || $row['reviews_page_display'] === 'Both')) : ?>
                 <div style="padding:177.78% 0 0 0;position:relative;" class="mb-base5-2"><iframe src="https://player.vimeo.com/video/<?= $row['vimeo_url']; ?>?loop=1&muted=1&autopause=1" frameborder="0" allow="autoplay; fullscreen; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="portrait" class="rounded-sm careers-video-js"></iframe></div>
                 <script src="https://player.vimeo.com/api/player.js"></script>
               <?php endif; ?>
