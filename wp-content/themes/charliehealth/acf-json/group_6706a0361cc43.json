@@ -26,7 +26,7 @@
             "default_value": false,
             "return_format": "value",
             "multiple": 0,
-            "allow_null": 0,
+            "allow_null": 1,
             "allow_in_bindings": 0,
             "ui": 0,
             "ajax": 0,
@@ -154,5 +154,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728487884
+    "modified": 1728490975
 }

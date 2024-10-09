@@ -4,8 +4,8 @@
     "fields": [
         {
             "key": "field_6706a50e8aba4",
-            "label": "Employee",
-            "name": "employee",
+            "label": "Employees",
+            "name": "employees",
             "aria-label": "",
             "type": "relationship",
             "instructions": "",
@@ -53,5 +53,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728488866
+    "modified": 1728489006
 }

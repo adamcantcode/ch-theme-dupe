@@ -28,16 +28,18 @@ if (!empty($block['align'])) {
         <InnerBlocks />
       </div>
       <div>
-        <?php if (have_rows('testimonials')) :  ?>
+        <?php $employees = get_field('employees'); ?>
+        <?php if ($employees) :  ?>
           <div class="swiper swiper-videos-testimonial">
             <div class="container lg:px-sp-10 swiper-wrapper px-[20px]">
-              <?php while (have_rows('testimonials')) : the_row(); ?>
+              <?php foreach ($employees as $employee) : ?>
                 <?php
-                $video     = get_sub_field('video_code');
-                $name      = get_sub_field('name');
-                $title     = get_sub_field('title');
-                $pullQuote = get_sub_field('pull_quote');
-                $linkedIn  = get_sub_field('linkedin');
+                $id        = $employee->ID;
+                $name      = get_the_title($id);
+                $video     = preg_replace('/\D/', '', get_field('vimeo_url', $id));
+                $title     = get_field('title', $id);
+                $pullQuote = get_field('pull_quote', $id);
+                $linkedIn  = get_field('linkedin_profile', $id);
 
                 if (!empty($pullQuote) && substr($pullQuote, -1) !== '.') {
                   // Add a period to the end of the string
@@ -70,7 +72,7 @@ if (!empty($block['align'])) {
                     <div class="h-0.5 bg-primary basis-[100%]"></div>
                   </div>
                 </div>
-              <?php endwhile; ?>
+              <?php endforeach; ?>
             </div>
             <div class="container px-[20px] lg:p-0 mb-sp-5 lg:mb-0">
               <div class="w-[50px] relative">
