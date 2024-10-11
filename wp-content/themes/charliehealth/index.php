@@ -21,7 +21,7 @@
                 <p class="text-h4-base lg:mb-base5-10 mb-base5-5">Need additional mental health support? Charlie Health can help. Get started with virtual intensive therapy now.</p>
                 <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full ">
                   <a href="https://www.charliehealth.com/form" class="ch-button button-primary">Get Started</a>
-                  <a href="https://www.charliehealth.com/intensive-outpatient-iop" class="ch-button button-secondary">Learn More</a>
+                  <a href="https://www.charliehealth.com/outreach/referrals" class="ch-button button-secondary">Refer a Patient</a>
                 </div>
               </div>
             </div>
