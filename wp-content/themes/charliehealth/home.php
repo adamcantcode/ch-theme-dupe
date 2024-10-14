@@ -7,9 +7,9 @@ $tags = get_terms(array(
 ));
 
 if (!empty($tags) && !is_wp_error($tags)): ?>
-  <div class="fixed z-10 w-full -translate-x-1/2 bg-yellow-300 left-1/2 tags-list-js">
+  <div class="fixed z-10 w-full -translate-x-1/2 bg-yellow-300 left-1/2 tags-list-js scrollbar-hide">
     <div class="container">
-      <div class="overflow-x-auto">
+      <div class="overflow-x-auto px-base5-4">
         <div class="flex items-start gap-base5-2">
           <?php foreach ($tags as $tag): ?>
             <a href="<?= esc_url(get_term_link($tag->slug, 'post_tag')); ?>"
@@ -34,12 +34,12 @@ if (!empty($tags) && !is_wp_error($tags)): ?>
   </script>
 <?php endif; ?>
 
-<section class="section bg-grey-warm">
+<section class="section bg-grey-cool">
   <div class="container">
-    <div class="grid lg:grid-cols-[7fr,1fr,4fr] mb-sp-12">
+    <div class="grid lg:grid-cols-[7fr,1fr,4fr]">
       <div>
         <h1>The Library</h1>
-        <div class="flex items-center gap-sp-4 mb-sp-12 mobile-hero-sub max-w-[550px]">
+        <div class="flex items-center gap-sp-4 mobile-hero-sub max-w-[550px]">
           <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health Shield" class="w-10 noshow lg:block mt-base5-1">
           <p class="mb-0 text-h4-base font-heading-serif">Stay up to date on mental health research, wellness techniques, treatment services, and more.</p>
         </div>
@@ -55,41 +55,10 @@ if (!empty($tags) && !is_wp_error($tags)): ?>
         </form>
       </div>
     </div>
-    <div class="grid lg:grid-cols-3 gap-sp-4">
-      <?php
-      $terms = get_terms(array(
-        'taxonomy' => 'category',
-        'hide_empty' => false,
-      ));
-      foreach ($terms as $term) : ?>
-        <?php
-        if ($term->slug === 'for-a-loved-one') {
-          $bgColor = 'bg-noise-orange';
-          $icon = 'families';
-        } elseif ($term->slug === 'for-myself') {
-          $bgColor = 'bg-noise-purple';
-          $icon = 'person';
-        } elseif ($term->slug === 'for-providers') {
-          $bgColor = 'bg-noise-blue';
-          $icon = 'clipboard';
-        }
-        ?>
-        <div class="relative flex flex-col rounded-md gap-sp-4 bg-purple-gradient-end p-sp-5  hover:-translate-y-sp-1 duration-200 <?= $bgColor; ?>">
-          <div>
-            <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/' . $icon . '.svg'); ?>" alt="icon of person" class="nolazy">
-          </div>
-          <div class="flex items-center justify-between">
-            <h3 class="mb-0"><a href="<?= get_term_link($term->term_id); ?>" class="text-white stretched-link"><?= $term->name; ?></a></h3>
-            <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/arrow-left.svg'); ?>" alt="arrow icon" class="h-auto rotate-180 w-sp-6 nolazy">
-          </div>
-        </div>
-      <?php endforeach; ?>
-    </div>
   </div>
 </section>
-<section class="section">
+<section class="section bg-grey-cool">
   <div class="container">
-    <h2>Featured</h2>
     <div>
       <?php
       $args = array(
@@ -104,22 +73,12 @@ if (!empty($tags) && !is_wp_error($tags)): ?>
         <div class="swiper-wrapper">
           <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
               <?php
-              $featureAs = get_field('feature_as');
-              switch ($featureAs->slug) {
-                case 'for-myself':
-                  $audienceClass = 'teens-and-young-adults-slider';
-                  break;
-                case 'for-a-loved-one':
-                  $audienceClass = 'families-and-caregivers-slider';
-                  break;
-                case 'for-providers':
-                  $audienceClass = 'providers-slider';
-                  break;
-                default:
-                  $audienceClass = '';
-                  break;
+              $post_tags = get_the_tags();
+              if (! empty($post_tags) && ! is_wp_error($post_tags)) {
+                // Get the first tag (index 0)
+                $first_tag = $post_tags[0];
+                // var_dump($first_tag);
               }
-
               if (has_post_thumbnail()) {
                 $featuredImageID = get_post_thumbnail_id();
                 $featuredImage = wp_get_attachment_image_src($featuredImageID, 'featured-large');
@@ -134,12 +93,14 @@ if (!empty($tags) && !is_wp_error($tags)): ?>
               ?>
               <div class="swiper-slide">
                 <div class="relative grid overflow-hidden rounded-md lg:grid-cols-2">
-                  <div class="grid content-between order-2 lg:p-sp-8 p-sp-4 lg:order-1 gap-base5-4 <?= $audienceClass; ?>">
-                    <div>
-                      <a href="<?= get_category_link($featureAs->term_id); ?>" class="relative z-20 inline-block leading-none text-white no-underline transition-all duration-300 bg-transparent border-2 border-white rounded-pill p-sp-3 hover:bg-white hover:!text-dark-blue mb-sp-4 mr-sp-1"><?= $featureAs->name; ?></a>
-                      <h3 class="text-white text-h2-base"><?= get_the_title(); ?></h3>
-                    </div>
-                    <a href="<?= get_the_permalink(); ?>" class="text-white no-underline stretched-link">Read more <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/arrow-left.svg'); ?>" alt="arrow" class="inline-block rotate-180 h-sp-4 ml-sp-2"></a>
+                  <div class="grid content-between order-2 bg-white lg:p-sp-8 p-sp-4 lg:order-1 gap-base5-4">
+                    <?php if ($first_tag): ?>
+                      <div>
+                        <a href="<?= site_url('/resources/', $first_tag->slug); ?>" class="relative z-20 inline-block leading-none no-underline transition-all duration-300 bg-transparent border-2 text-primary border-primary rounded-pill p-sp-3 hover:bg-primary hover:text-white mb-sp-4 mr-sp-1"><?= $first_tag->name; ?></a>
+                        <h3 class="text-primary text-h2-base"><?= get_the_title(); ?></h3>
+                      </div>
+                    <?php endif; ?>
+                    <a href="<?= get_the_permalink(); ?>" class="no-underline text-primary stretched-link">Read more <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg'); ?>" alt="arrow" class="inline-block h-sp-4 ml-sp-2"></a>
                   </div>
                   <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="order-1 object-cover lg:order-2 lg:h-[400px] w-full nolazy">
                 </div>

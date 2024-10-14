@@ -252,6 +252,20 @@
     picture {
       @apply order-1 lg:order-2;
     }
+    .arrow-slider {
+      .arrow-slider-bg {
+        @apply fill-transparent;
+      }
+      .arrow-slider-arrow {
+        @apply fill-white;
+      }
+    }
+    .swiper-pagination-bullet {
+      @apply bg-transparent border-2 border-white opacity-100;
+      &.swiper-pagination-bullet-active {
+        @apply bg-white;
+      }
+    }
   }
   .swiper-pagination-bullet {
     @apply bg-transparent border-2 border-med-blue opacity-100;
@@ -481,6 +495,15 @@
   }
   &::-webkit-scrollbar-thumb {
     @apply bg-hover-blue cursor-pointer;
+  }
+}
+.scrollbar-hide {
+  /* For Firefox */
+  scrollbar-width: none;
+  /* For Internet Explorer, Edge, Chrome, and Safari */
+  -ms-overflow-style: none;
+  ::-webkit-scrollbar {
+    display: none;
   }
 }
 
@@ -826,6 +849,6 @@ ul.alert {
 
 #theContent {
   & > div {
-    @apply mb-base5-4
+    @apply mb-base5-4;
   }
 }
