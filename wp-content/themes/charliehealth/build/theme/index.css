@@ -2054,6 +2054,14 @@ a.insurance-tabs.active:hover {
   margin-top: 2rem;
 }
 
+.mr-base5-4{
+  margin-right: 20px;
+}
+
+.mr-base5-1{
+  margin-right: 5px;
+}
+
 .line-clamp-3{
   overflow: hidden;
   display: -webkit-box;
@@ -2219,6 +2227,18 @@ a.insurance-tabs.active:hover {
 
 .h-sp-8{
   height: 2rem;
+}
+
+.h-base5-2{
+  height: 10px;
+}
+
+.h-base5-5{
+  height: 25px;
+}
+
+.h-base5-4{
+  height: 20px;
 }
 
 .max-h-0{
@@ -2388,6 +2408,10 @@ a.insurance-tabs.active:hover {
 
 .w-sp-8{
   width: 2rem;
+}
+
+.w-base5-2{
+  width: 10px;
 }
 
 .min-w-0{

@@ -73,11 +73,17 @@ if (!empty($tags) && !is_wp_error($tags)): ?>
         <div class="swiper-wrapper">
           <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
               <?php
+              $author                = get_field('by_author', get_the_ID());
+              $customMedicalReviewer = get_field('custom_medical_review', get_the_ID());
+              if (!empty($customMedicalReviewer)) {
+                $medicalReviewer = $customMedicalReviewer;
+              } else {
+                $medicalReviewer = get_field('medical_reviewer', get_the_ID());
+              }
               $post_tags = get_the_tags();
               if (! empty($post_tags) && ! is_wp_error($post_tags)) {
                 // Get the first tag (index 0)
                 $first_tag = $post_tags[0];
-                // var_dump($first_tag);
               }
               if (has_post_thumbnail()) {
                 $featuredImageID = get_post_thumbnail_id();
@@ -90,6 +96,29 @@ if (!empty($tags) && !is_wp_error($tags)): ?>
                 $featuredImageUrl = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
                 $featuredImageAltText = 'Charlie Health Logo';
               }
+              if (has_post_thumbnail($medicalReviewer)) {
+                $medicalReviewerFeaturedImageID = get_post_thumbnail_id($medicalReviewer->ID);
+                $medicalReviewerFeaturedImage = wp_get_attachment_image_src($medicalReviewerFeaturedImageID, 'featured-large');
+                $medicalReviewerFeaturedImageAltText = get_post_meta($medicalReviewerFeaturedImageID, '_wp_attachment_image_alt', true);
+
+
+                $medicalReviewerFeaturedImageUrl = $medicalReviewerFeaturedImage[0];
+                $medicalReviewerFeaturedImageAltText = $medicalReviewerFeaturedImageAltText ?: '';
+              } else {
+                $medicalReviewerFeaturedImageUrl = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
+                $medicalReviewerFeaturedImageAltText = 'Charlie Health Logo';
+              }
+              if (has_post_thumbnail($author)) {
+                $authorFeaturedImageID = get_post_thumbnail_id($author->ID);
+                $authorFeaturedImage = wp_get_attachment_image_src($authorFeaturedImageID, 'featured-large');
+                $authorFeaturedImageAltText = get_post_meta($authorFeaturedImageID, '_wp_attachment_image_alt', true);
+
+                $authorFeaturedImageUrl = $authorFeaturedImage[0];
+                $authorFeaturedImageAltText = $authorFeaturedImageAltText ?: '';
+              } else {
+                $authorFeaturedImageUrl = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
+                $authorFeaturedImageAltText = 'Charlie Health Logo';
+              }
               ?>
               <div class="swiper-slide">
                 <div class="relative grid overflow-hidden rounded-md lg:grid-cols-[4fr_3fr] h-full">
@@ -98,6 +127,16 @@ if (!empty($tags) && !is_wp_error($tags)): ?>
                       <div>
                         <a href="<?= site_url('/resources/', $first_tag->slug); ?>" class="relative z-20 inline-block leading-none no-underline transition-all duration-300 bg-transparent border-2 text-primary border-primary rounded-pill p-sp-3 hover:bg-primary hover:text-white mb-sp-4 mr-sp-1"><?= $first_tag->name; ?></a>
                         <h3 class="font-heading-serif"><?= get_the_title(); ?></h3>
+                        <?php if (!empty($medicalReviewer)) : ?>
+                          <div class="flex items-center mb-base5-1">
+                            <img src="<?= $medicalReviewerFeaturedImageUrl; ?>" alt="<?= $medicalReviewerFeaturedImageAltText; ?>" class="object-cover h-base5-4 aspect-square rounded-circle mr-base5-1">
+                            <p class="mb-0">Clinically Reviewed By: <a href="<?= get_the_permalink($medicalReviewer->ID); ?>"><?= $medicalReviewer->post_title; ?></a></p>
+                          </div>
+                        <?php endif; ?>
+                        <div class="flex items-center">
+                          <img src="<?= $authorFeaturedImageUrl; ?>" alt="<?= $authorFeaturedImageAltText; ?>" class="object-cover h-base5-4 aspect-square rounded-circle mr-base5-1">
+                          <p class="mb-0">Written By: <a href="<?= get_the_permalink($author->ID); ?>"><?= $author->post_title; ?></a></p>
+                        </div>
                       </div>
                     <?php endif; ?>
                     <a href="<?= get_the_permalink(); ?>" class="no-underline text-primary stretched-link">Read more <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg'); ?>" alt="arrow" class="inline-block h-sp-4 ml-sp-2"></a>
@@ -151,7 +190,7 @@ if (!empty($tags) && !is_wp_error($tags)): ?>
             if ($query->have_posts()) {
               while ($query->have_posts()) {
                 $query->the_post();
-                $author = get_field('by_author', get_the_ID());
+                $date        = get_field('date', get_the_ID()) ?: '';
                 if (has_post_thumbnail()) {
                   $featuredImageID = get_post_thumbnail_id();
                   $featuredImage = wp_get_attachment_image_src($featuredImageID, 'card-thumb');
@@ -166,7 +205,7 @@ if (!empty($tags) && !is_wp_error($tags)): ?>
                 <div class="grid grid-cols-[3fr_1fr] bg-white rounded-lg group relative">
                   <div class="bg-white rounded-l-lg p-base5-3">
                     <h3 class="text-h4-base"><a href="<?= get_the_permalink(); ?>" class="block stretched-link"><?= get_the_title(); ?></a></h3>
-                    <p>Read more <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg'); ?>" alt="arrow" class="inline-block h-base5-3 ml-base5-2"></p>
+                    <p><?= $date; ?></p>
                   </div>
                   <div class="min-h-[100px] overflow-hidden rounded-r-lg">
                     <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover object-center w-full h-full transition-all duration-300 rounded-r-lg group-hover:scale-105">

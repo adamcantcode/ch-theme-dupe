@@ -894,9 +894,7 @@ function ajaxPagination() {
       <h3 class="text-h4-base">
         <a href="${post.link}" class="block stretched-link">${post.title.rendered}</a>
       </h3>
-      <p>Read more 
-        <img src="${window.location.origin}/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg" alt="arrow" class="inline-block h-base5-3 ml-base5-2">
-      </p>
+      <p>${post.acf.date}</p>
     </div>
     <div class="min-h-[100px] overflow-hidden rounded-r-lg">
       <img src="${imageUrl}" alt="${imageAlt}" class="object-cover object-center w-full h-full transition-all duration-300 rounded-r-lg group-hover:scale-105">
