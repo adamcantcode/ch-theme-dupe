@@ -7,7 +7,7 @@ $tags = get_terms(array(
 ));
 
 if (!empty($tags) && !is_wp_error($tags)): ?>
-  <div class="fixed z-10 w-full -translate-x-1/2 bg-yellow-300 left-1/2 tags-list-js scrollbar-hide">
+  <div class="fixed z-10 w-full -translate-x-1/2 bg-lavender-300 left-1/2 tags-list-js scrollbar-hide">
     <div class="container">
       <div class="overflow-x-auto px-base5-4">
         <div class="flex items-start gap-base5-2">
@@ -59,7 +59,7 @@ if (!empty($tags) && !is_wp_error($tags)): ?>
 </section>
 <section class="section bg-grey-cool">
   <div class="container">
-    <div>
+    <div class="grid lg:grid-cols-[7fr,1fr,4fr]">
       <?php
       $args = array(
         'post_type' => 'post',
@@ -92,12 +92,12 @@ if (!empty($tags) && !is_wp_error($tags)): ?>
               }
               ?>
               <div class="swiper-slide">
-                <div class="relative grid overflow-hidden rounded-md lg:grid-cols-2">
+                <div class="relative grid overflow-hidden rounded-md lg:grid-cols-[4fr,3fr]">
                   <div class="grid content-between order-2 bg-white lg:p-sp-8 p-sp-4 lg:order-1 gap-base5-4">
                     <?php if ($first_tag): ?>
                       <div>
                         <a href="<?= site_url('/resources/', $first_tag->slug); ?>" class="relative z-20 inline-block leading-none no-underline transition-all duration-300 bg-transparent border-2 text-primary border-primary rounded-pill p-sp-3 hover:bg-primary hover:text-white mb-sp-4 mr-sp-1"><?= $first_tag->name; ?></a>
-                        <h3 class="text-primary text-h2-base"><?= get_the_title(); ?></h3>
+                        <h3 class="font-heading-serif"><?= get_the_title(); ?></h3>
                       </div>
                     <?php endif; ?>
                     <a href="<?= get_the_permalink(); ?>" class="no-underline text-primary stretched-link">Read more <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg'); ?>" alt="arrow" class="inline-block h-sp-4 ml-sp-2"></a>
@@ -125,31 +125,8 @@ if (!empty($tags) && !is_wp_error($tags)): ?>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<section class="section-bottom">
-  <div class="container">
-    <h2>Tag Spotlight</h2>
-    <div class="grid items-center overflow-auto gap-sp-3 lg:gap-sp-6 lg:flex lg:items-stretch custom-scroll">
-      <?php
-      $tags = get_tags();
-      if ($tags) :  ?>
-        <?php foreach ($tags as $tag) :
-          $spotlight = get_field('spotlight_tag', $tag);
-          if ($spotlight) :
-        ?>
-            <div class="lg:w-[calc(25%-18px)] flex-[0_0_auto] relative hover:shadow-lg duration-300 rounded-md overflow-hidden">
-              <div class="h-full p-sp-4 bg-cream">
-                <h3><a href="<?= get_term_link($tag->term_id); ?>" class="stretched-link"><?= $tag->name; ?></a></h3>
-                <p class="m-0"><?= $tag->description; ?></p>
-              </div>
-            </div>
-      <?php
-          endif;
-        endforeach;
-      endif;
-      ?>
+      <div></div>
+      <div>latest</div>
     </div>
   </div>
 </section>
