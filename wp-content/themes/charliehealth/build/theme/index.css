@@ -1785,6 +1785,21 @@ a.insurance-tabs.active:hover {
   margin-bottom: 2rem;
 }
 
+.mx-base5-5{
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.my-base5-5{
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.my-base5-2{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .\!mb-base5-4{
   margin-bottom: 20px !important;
 }
@@ -2461,6 +2476,10 @@ a.insurance-tabs.active:hover {
   max-width: 100%;
 }
 
+.max-w-\[550px\]{
+  max-width: 550px;
+}
+
 .flex-1{
   flex: 1 1 0%;
 }
@@ -2471,6 +2490,18 @@ a.insurance-tabs.active:hover {
 
 .flex-none{
   flex: none;
+}
+
+.flex-auto{
+  flex: 1 1 auto;
+}
+
+.flex-initial{
+  flex: 0 1 auto;
+}
+
+.flex-\[1_1_auto\]{
+  flex: 1 1 auto;
 }
 
 .flex-shrink-0{
@@ -2609,6 +2640,10 @@ a.insurance-tabs.active:hover {
 
 .resize{
   resize: both;
+}
+
+.auto-cols-auto{
+  grid-auto-columns: auto;
 }
 
 .grid-flow-col{
@@ -2834,6 +2869,12 @@ a.insurance-tabs.active:hover {
   row-gap: 2rem;
 }
 
+.space-x-2 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .self-start{
   align-self: flex-start;
 }
@@ -2860,6 +2901,10 @@ a.insurance-tabs.active:hover {
 
 .overflow-hidden{
   overflow: hidden;
+}
+
+.overflow-x-auto{
+  overflow-x: auto;
 }
 
 .overflow-y-auto{
@@ -6614,6 +6659,10 @@ ul.alert li {
 
   .lg\:grid-cols-\[unset\]{
     grid-template-columns: unset;
+  }
+
+  .lg\:grid-cols-\[7fr\2c 1fr\2c 4fr\]{
+    grid-template-columns: 7fr 1fr 4fr;
   }
 
   .lg\:grid-rows-2{

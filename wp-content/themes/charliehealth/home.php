@@ -1,12 +1,50 @@
 <?php get_header(); ?>
 
-<section class="section bg-cream">
+<?php
+$tags = get_terms(array(
+  'taxonomy' => 'post_tag',
+  'hide_empty' => true, // Only show tags with assigned posts
+));
+
+if (!empty($tags) && !is_wp_error($tags)): ?>
+  <div class="fixed z-10 w-full -translate-x-1/2 bg-yellow-300 left-1/2 tags-list-js">
+    <div class="container">
+      <div class="overflow-x-auto">
+        <div class="flex items-start gap-base5-2">
+          <?php foreach ($tags as $tag): ?>
+            <a href="<?= esc_url(get_term_link($tag->slug, 'post_tag')); ?>"
+              class="flex-shrink-0 no-underline bg-white border border-white rounded-pill px-base5-3 py-base5-2 text-primary group-hover:bg-white-hover text-h5-base my-base5-2">
+              <?= esc_html($tag->name); ?>
+            </a>
+          <?php endforeach; ?>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tagList = document.querySelector('.tags-list-js');
+    const mainElement = document.querySelector('main');
+
+    // Get the existing marginTop of the main element
+    const computedStyle = window.getComputedStyle(mainElement);
+    const existingMarginTop = parseFloat(computedStyle.marginTop);
+
+    // Set the new marginTop based on the height of the tagList and existing marginTop
+    mainElement.style.marginTop = `${tagList.offsetHeight + existingMarginTop}px`;
+  </script>
+<?php endif; ?>
+
+<section class="section bg-grey-warm">
   <div class="container">
-    <div class="grid lg:grid-cols-[2fr,1fr] mb-sp-12">
+    <div class="grid lg:grid-cols-[7fr,1fr,4fr] mb-sp-12">
       <div>
         <h1>The Library</h1>
-        <p>Stay up to date on mental health research, wellness techniques, treatment services, and more.</p>
+        <div class="flex items-center gap-sp-4 mb-sp-12 mobile-hero-sub max-w-[550px]">
+          <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health Shield" class="w-10 noshow lg:block mt-base5-1">
+          <p class="mb-0 text-h4-base font-heading-serif">Stay up to date on mental health research, wellness techniques, treatment services, and more.</p>
+        </div>
       </div>
+      <div></div>
       <div>
         <form role="search" method="get" class="relative search-form mt-base5-5 lg:mt-0" action="<?= esc_url(site_url('/search')); ?>">
           <label>
