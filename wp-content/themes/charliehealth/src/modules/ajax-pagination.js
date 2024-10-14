@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollToPlugin);
 export default function ajaxPagination() {
   const initPagination = (tagID) => {
     const bodyClasses = Array.from(document.body.classList);
-    const postsPerPage = 6;
+    const postsPerPage = 3;
     var [endpoint] = getEndpoint(bodyClasses, tagID);
     renderPagination(postsPerPage, endpoint, tagID);
   };

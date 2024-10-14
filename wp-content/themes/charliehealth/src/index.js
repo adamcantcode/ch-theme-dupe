@@ -51,8 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (body.classList.contains('blog')) {
     newsletterPopup();
     featuredBlogSlider();
-    ajaxPagination();
-    ajaxPaginationResearch();
+    // ajaxPagination();
+    // ajaxPaginationResearch();
   }
   if (body.classList.contains('page-template-page-research')) {
     featuredBlogSlider();

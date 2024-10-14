@@ -703,7 +703,7 @@ gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.registerPlugin(gsap_ScrollToPlugin__WEBPA
 function ajaxPagination() {
   const initPagination = tagID => {
     const bodyClasses = Array.from(document.body.classList);
-    const postsPerPage = 6;
+    const postsPerPage = 3;
     var [endpoint] = getEndpoint(bodyClasses, tagID);
     renderPagination(postsPerPage, endpoint, tagID);
   };
@@ -23744,9 +23744,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (body.classList.contains('blog')) {
     (0,_modules_newsletter_popup__WEBPACK_IMPORTED_MODULE_16__["default"])();
     (0,_modules_featured_blog_slider__WEBPACK_IMPORTED_MODULE_9__["default"])();
-    (0,_modules_ajax_pagination__WEBPACK_IMPORTED_MODULE_10__["default"])();
-    (0,_modules_ajax_pagination_research__WEBPACK_IMPORTED_MODULE_11__["default"])();
+    // ajaxPagination();
+    // ajaxPaginationResearch();
   }
+
   if (body.classList.contains('page-template-page-research')) {
     (0,_modules_featured_blog_slider__WEBPACK_IMPORTED_MODULE_9__["default"])();
   }

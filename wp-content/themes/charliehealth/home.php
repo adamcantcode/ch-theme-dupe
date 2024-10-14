@@ -36,7 +36,7 @@ if (!empty($tags) && !is_wp_error($tags)): ?>
 
 <section class="section bg-grey-cool">
   <div class="container">
-    <div class="grid lg:grid-cols-[7fr,1fr,4fr]">
+    <div class="grid lg:grid-cols-[7fr_1fr_4fr]">
       <div>
         <h1>The Library</h1>
         <div class="flex items-center gap-sp-4 mobile-hero-sub max-w-[550px]">
@@ -59,7 +59,7 @@ if (!empty($tags) && !is_wp_error($tags)): ?>
 </section>
 <section class="section bg-grey-cool">
   <div class="container">
-    <div class="grid lg:grid-cols-[7fr,1fr,4fr]">
+    <div class="grid lg:grid-cols-[7fr_1fr_4fr]">
       <?php
       $args = array(
         'post_type' => 'post',
@@ -69,7 +69,7 @@ if (!empty($tags) && !is_wp_error($tags)): ?>
 
       $query = new WP_Query($args);
       ?>
-      <div class="relative swiper swiper-featured-blog lg:h-[400px]">
+      <div class="relative swiper swiper-featured-blog lg:h-full">
         <div class="swiper-wrapper">
           <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
               <?php
@@ -92,7 +92,7 @@ if (!empty($tags) && !is_wp_error($tags)): ?>
               }
               ?>
               <div class="swiper-slide">
-                <div class="relative grid overflow-hidden rounded-md lg:grid-cols-[4fr,3fr]">
+                <div class="relative grid overflow-hidden rounded-md lg:grid-cols-[4fr_3fr] h-full">
                   <div class="grid content-between order-2 bg-white lg:p-sp-8 p-sp-4 lg:order-1 gap-base5-4">
                     <?php if ($first_tag): ?>
                       <div>
@@ -102,7 +102,7 @@ if (!empty($tags) && !is_wp_error($tags)): ?>
                     <?php endif; ?>
                     <a href="<?= get_the_permalink(); ?>" class="no-underline text-primary stretched-link">Read more <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg'); ?>" alt="arrow" class="inline-block h-sp-4 ml-sp-2"></a>
                   </div>
-                  <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="order-1 object-cover lg:order-2 lg:h-[400px] w-full nolazy">
+                  <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="order-1 object-cover w-full lg:order-2 lg:h-full nolazy">
                 </div>
               </div>
           <?php endwhile;
@@ -126,76 +126,63 @@ if (!empty($tags) && !is_wp_error($tags)): ?>
         </div>
       </div>
       <div></div>
-      <div>latest</div>
-    </div>
-  </div>
-</section>
-<section id="postsContainer" class="section bg-off-white">
-  <div class="container">
-    <h2>Latest</h2>
-    <div class="absolute invisible opacity-0 no-posts-js">
-      <div class="grid items-center grid-cols-1 duration-300 rounded-md justify-items-center bg-cream lg:grid-cols-2 p-sp-4">
-        <h4 class="mb-0">We couldn’t find what you’re looking for.</h4>
-        <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/not-found.svg'); ?>" alt="not found icon">
-      </div>
-    </div>
-    <div class="grid transition-all duration-300 lg:grid-cols-3 posts-container gap-x-sp-8 gap-y-sp-10 mb-sp-10">
-      <?php
-      $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-
-      $args = array(
-        'post_type'      => 'post',
-        'posts_per_page' => 6,
-        'meta_key'       => 'date',
-        'orderby'        => 'meta_value',
-        'order'          => 'DESC',
-        'meta_type'      => 'DATE',
-        'paged'          => $paged,
-      );
-
-      $query = new WP_Query($args);
-
-      if ($query->have_posts()) {
-        while ($query->have_posts()) {
-          $query->the_post();
-          $author = get_field('by_author', get_the_ID());
-          if (has_post_thumbnail()) {
-            $featuredImageID = get_post_thumbnail_id();
-            $featuredImage = wp_get_attachment_image_src($featuredImageID, 'card-thumb');
-            $featuredImageAltText = get_post_meta($featuredImageID, '_wp_attachment_image_alt', true);
-
-            $featuredImageUrl = $featuredImage[0];
-            $featuredImageAltText = $featuredImageAltText ?: '';
-          } else {
-            $featuredImageUrl = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
-            $featuredImageAltText = 'Charlie Health Logo';
-          }
-      ?>
-          <div class="relative bg-white rounded-lg group">
-            <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
-              <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
-            </div>
-            <div class="absolute rounded-t-lg top-sp-4 left-sp-4">
-              <?php $tags = get_the_terms(get_the_ID(), 'post_tag');  ?>
-              <?php if ($tags) :  ?>
-                <?php foreach ($tags as $tag) : ?>
-                  <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-primary bg-white group-hover:bg-white-hover border border-white z-[6] text-h5-base"><?= $tag->name; ?></a>
-                <?php endforeach; ?>
-              <?php endif; ?>
-            </div>
-            <div class="grid bg-white rounded-b-lg p-sp-4">
-              <h3 class="text-h4-base"><a href="<?= get_the_permalink(); ?>" class="block stretched-link"><?= get_the_title(); ?></a></h3>
-              <p><?= $author->post_title; ?></p>
+      <div>
+        <div id="postsContainer">
+          <h2 class="text-h3-base font-heading-serif">The Latest</h2>
+          <div class="absolute invisible opacity-0 no-posts-js">
+            <div class="grid items-center grid-cols-1 duration-300 rounded-md justify-items-center bg-cream lg:grid-cols-2 p-sp-4">
+              <h4 class="mb-0">We couldn’t find what you’re looking for.</h4>
+              <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/not-found.svg'); ?>" alt="not found icon">
             </div>
           </div>
-      <?php
-        }
-      }
-      wp_reset_postdata();
-      ?>
-      <!-- Content -->
+          <div class="grid transition-all duration-300 posts-container gap-base5-2">
+            <?php
+            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+            $args = array(
+              'post_type'      => 'post',
+              'posts_per_page' => 3,
+              'meta_key'       => 'date',
+              'orderby'        => 'meta_value',
+              'order'          => 'DESC',
+              'meta_type'      => 'DATE',
+              'paged'          => $paged,
+            );
+            $query = new WP_Query($args);
+            if ($query->have_posts()) {
+              while ($query->have_posts()) {
+                $query->the_post();
+                $author = get_field('by_author', get_the_ID());
+                if (has_post_thumbnail()) {
+                  $featuredImageID = get_post_thumbnail_id();
+                  $featuredImage = wp_get_attachment_image_src($featuredImageID, 'card-thumb');
+                  $featuredImageAltText = get_post_meta($featuredImageID, '_wp_attachment_image_alt', true);
+                  $featuredImageUrl = $featuredImage[0];
+                  $featuredImageAltText = $featuredImageAltText ?: '';
+                } else {
+                  $featuredImageUrl = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
+                  $featuredImageAltText = 'Charlie Health Logo';
+                }
+            ?>
+                <div class="grid grid-cols-[3fr_1fr] bg-white rounded-lg group relative">
+                  <div class="bg-white rounded-l-lg p-base5-3">
+                    <h3 class="text-h4-base"><a href="<?= get_the_permalink(); ?>" class="block stretched-link"><?= get_the_title(); ?></a></h3>
+                    <p>Read more <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg'); ?>" alt="arrow" class="inline-block h-base5-3 ml-base5-2"></p>
+                  </div>
+                  <div class="min-h-[100px] overflow-hidden rounded-r-lg">
+                    <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover object-center w-full h-full transition-all duration-300 rounded-r-lg group-hover:scale-105">
+                  </div>
+                </div>
+            <?php
+              }
+            }
+            wp_reset_postdata();
+            ?>
+            <!-- Content -->
+          </div>
+          <div class="pagination-container"></div>
+        </div>
+      </div>
     </div>
-    <div class="pagination-container"></div>
   </div>
 </section>
 <section class="section">
@@ -222,7 +209,7 @@ $subhead = get_field('subhead', 'option');
 ?>
 <div id="newsletterPopup" class="bg-[rgba(0,0,0,.5)] fixed top-0 left-0 w-full h-full z-50 grid items-center justify-center center transition-all duration-300 modal-fade">
   <div class="transition-all duration-300 section-xs">
-    <div class="grid lg:grid-cols-[1fr,2fr] bg-cream container max-h-[80vh] overflow-auto rounded-md items-center relative">
+    <div class="grid lg:grid-cols-[1fr_2fr] bg-cream container max-h-[80vh] overflow-auto rounded-md items-center relative">
       <div class="absolute top-0 right-0 cursor-pointer">
         <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/close-x.svg'); ?>" alt="close button" class="w-full duration-300 modal-close p-sp-4 hover:brightness-0">
       </div>
