@@ -13,7 +13,7 @@ if (!empty($tags) && !is_wp_error($tags)): ?>
         <div class="flex items-start gap-base5-2">
           <?php foreach ($tags as $tag): ?>
             <a href="<?= esc_url(get_term_link($tag->slug, 'post_tag')); ?>"
-              class="flex-shrink-0 no-underline bg-white border border-white rounded-pill px-base5-3 py-base5-2 text-primary group-hover:bg-white-hover text-h5-base my-base5-2">
+              class="flex-shrink-0 no-underline bg-white border border-white rounded-pill px-base5-2 py-base5-1 text-primary group-hover:bg-white-hover text-h5-base my-base5-2 text-mini">
               <?= esc_html($tag->name); ?>
             </a>
           <?php endforeach; ?>
