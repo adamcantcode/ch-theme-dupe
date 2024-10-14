@@ -333,6 +333,16 @@
     }
   }
 }
+#postsContainer {
+  .arrow-slider {
+    .arrow-slider-bg {
+      @apply fill-transparent;
+    }
+    .arrow-slider-arrow {
+      @apply fill-primary;
+    }
+  }
+}
 /* FAQ Accordion */
 .faq-block,
 .toc-container,
@@ -447,7 +457,7 @@
 }
 .paginationjs-pages {
   ul {
-    @apply flex gap-sp-4 list-none p-0 m-0;
+    @apply flex gap-base5-4 list-none p-0 m-0;
     li {
       @apply m-0 leading-none block;
       &.J-paginationjs-page {

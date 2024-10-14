@@ -1710,12 +1710,16 @@ a.insurance-tabs.active:hover {
   grid-column: span 2 / span 2;
 }
 
-.float-right{
-  float: right;
+.row-span-3{
+  grid-row: span 3 / span 3;
 }
 
-.m-0{
-  margin: 0px;
+.row-span-4{
+  grid-row: span 4 / span 4;
+}
+
+.float-right{
+  float: right;
 }
 
 .m-auto{
@@ -2185,6 +2189,10 @@ a.insurance-tabs.active:hover {
   height: auto;
 }
 
+.h-base5-3{
+  height: 15px;
+}
+
 .h-full{
   height: 100%;
 }
@@ -2211,18 +2219,6 @@ a.insurance-tabs.active:hover {
 
 .h-sp-8{
   height: 2rem;
-}
-
-.h-8{
-  height: 2rem;
-}
-
-.h-\[100px\]{
-  height: 100px;
-}
-
-.h-base5-3{
-  height: 15px;
 }
 
 .max-h-0{
@@ -2269,6 +2265,10 @@ a.insurance-tabs.active:hover {
   max-height: 80vh;
 }
 
+.min-h-\[100px\]{
+  min-height: 100px;
+}
+
 .min-h-\[100vh\]{
   min-height: 100vh;
 }
@@ -2283,10 +2283,6 @@ a.insurance-tabs.active:hover {
 
 .min-h-screen{
   min-height: 100vh;
-}
-
-.min-h-\[100px\]{
-  min-height: 100px;
 }
 
 .\!w-\[18px\]{
@@ -2391,10 +2387,6 @@ a.insurance-tabs.active:hover {
 }
 
 .w-sp-8{
-  width: 2rem;
-}
-
-.w-8{
   width: 2rem;
 }
 
@@ -2628,17 +2620,6 @@ a.insurance-tabs.active:hover {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-@keyframes spin{
-
-  to{
-    transform: rotate(360deg);
-  }
-}
-
-.animate-spin{
-  animation: spin 1s linear infinite;
-}
-
 .cursor-default{
   cursor: default;
 }
@@ -2697,6 +2678,10 @@ a.insurance-tabs.active:hover {
 
 .grid-cols-\[3fr_1fr\]{
   grid-template-columns: 3fr 1fr;
+}
+
+.grid-rows-4{
+  grid-template-rows: repeat(4, minmax(0, 1fr));
 }
 
 .flex-row{
@@ -3005,6 +2990,16 @@ a.insurance-tabs.active:hover {
   border-bottom-left-radius: 10px;
 }
 
+.rounded-l-lg{
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.rounded-r-lg{
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
 .rounded-r-sm{
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -3023,16 +3018,6 @@ a.insurance-tabs.active:hover {
 .rounded-t-sm{
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-}
-
-.rounded-l-lg{
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-}
-
-.rounded-r-lg{
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
 }
 
 .rounded-bl-none{
@@ -3400,14 +3385,14 @@ a.insurance-tabs.active:hover {
      object-fit: cover;
 }
 
-.object-top{
-  -o-object-position: top;
-     object-position: top;
-}
-
 .object-center{
   -o-object-position: center;
      object-position: center;
+}
+
+.object-top{
+  -o-object-position: top;
+     object-position: top;
 }
 
 .p-10{
@@ -5016,6 +5001,14 @@ a.insurance-tabs.active:hover {
   background-color: rgb(166 152 255 / var(--tw-bg-opacity));
 }
 
+#postsContainer .arrow-slider .arrow-slider-bg{
+  fill: rgba(0,0,0,0);
+}
+
+#postsContainer .arrow-slider .arrow-slider-arrow{
+  fill: #161A3D;
+}
+
 /* FAQ Accordion */
 
 .faq-block .toc-heading:hover .toggle svg, .faq-block .references-heading:hover .toggle svg, .toc-container .toc-heading:hover .toggle svg, .toc-container .references-heading:hover .toggle svg, .references-container .toc-heading:hover .toggle svg, .references-container .references-heading:hover .toggle svg, .iop-overview-accordion .toc-heading:hover .toggle svg, .iop-overview-accordion .references-heading:hover .toggle svg{
@@ -5144,7 +5137,7 @@ a.footer-links > a:hover {
   margin: 0px;
   display: flex;
   list-style-type: none;
-  gap: 1rem;
+  gap: 20px;
   padding: 0px;
 }
 
@@ -6176,6 +6169,10 @@ ul.alert li {
     grid-row: span 2 / span 2;
   }
 
+  .lg\:row-span-4{
+    grid-row: span 4 / span 4;
+  }
+
   .lg\:row-start-1{
     grid-row-start: 1;
   }
@@ -6441,10 +6438,6 @@ ul.alert li {
     width: 80px;
   }
 
-  .lg\:w-\[calc\(25\%-18px\)\]{
-    width: calc(25% - 18px);
-  }
-
   .lg\:w-\[calc\(33\.33\%_-15px\)\]{
     width: calc(33.33% - 15px);
   }
@@ -6662,6 +6655,10 @@ ul.alert li {
     grid-template-columns: 4fr 2fr 4fr;
   }
 
+  .lg\:grid-cols-\[4fr_3fr\]{
+    grid-template-columns: 4fr 3fr;
+  }
+
   .lg\:grid-cols-\[4fr_6fr\]{
     grid-template-columns: 4fr 6fr;
   }
@@ -6676,10 +6673,6 @@ ul.alert li {
 
   .lg\:grid-cols-\[6fr_1fr_5fr\]{
     grid-template-columns: 6fr 1fr 5fr;
-  }
-
-  .lg\:grid-cols-\[7fr\2c 1fr\2c 4fr\]{
-    grid-template-columns: 7fr 1fr 4fr;
   }
 
   .lg\:grid-cols-\[7fr_1fr_4fr\]{
@@ -6710,16 +6703,12 @@ ul.alert li {
     grid-template-columns: unset;
   }
 
-  .lg\:grid-cols-\[4fr\2c 3fr\]{
-    grid-template-columns: 4fr 3fr;
-  }
-
-  .lg\:grid-cols-\[4fr_3fr\]{
-    grid-template-columns: 4fr 3fr;
-  }
-
   .lg\:grid-rows-2{
     grid-template-rows: repeat(2, minmax(0, 1fr));
+  }
+
+  .lg\:grid-rows-4{
+    grid-template-rows: repeat(4, minmax(0, 1fr));
   }
 
   .lg\:flex-row{
@@ -6748,10 +6737,6 @@ ul.alert li {
 
   .lg\:items-center{
     align-items: center;
-  }
-
-  .lg\:items-stretch{
-    align-items: stretch;
   }
 
   .lg\:justify-end{

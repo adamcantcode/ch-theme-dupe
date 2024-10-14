@@ -59,7 +59,7 @@ if (!empty($tags) && !is_wp_error($tags)): ?>
 </section>
 <section class="section bg-grey-cool">
   <div class="container">
-    <div class="grid lg:grid-cols-[7fr_1fr_4fr]">
+    <div class="grid lg:grid-cols-[7fr_1fr_4fr] lg:grid-rows-4">
       <?php
       $args = array(
         'post_type' => 'post',
@@ -69,7 +69,7 @@ if (!empty($tags) && !is_wp_error($tags)): ?>
 
       $query = new WP_Query($args);
       ?>
-      <div class="relative swiper swiper-featured-blog lg:h-full">
+      <div class="relative row-span-3 swiper swiper-featured-blog lg:h-full lg:w-full">
         <div class="swiper-wrapper">
           <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
               <?php
@@ -126,7 +126,7 @@ if (!empty($tags) && !is_wp_error($tags)): ?>
         </div>
       </div>
       <div></div>
-      <div>
+      <div class="lg:row-span-4">
         <div id="postsContainer">
           <h2 class="text-h3-base font-heading-serif">The Latest</h2>
           <div class="absolute invisible opacity-0 no-posts-js">
@@ -179,7 +179,7 @@ if (!empty($tags) && !is_wp_error($tags)): ?>
             ?>
             <!-- Content -->
           </div>
-          <div class="pagination-container"></div>
+          <div class="pagination-container mt-base5-4"></div>
         </div>
       </div>
     </div>

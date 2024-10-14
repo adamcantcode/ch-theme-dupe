@@ -149,31 +149,6 @@ export default function ajaxPagination() {
     });
   };
 
-  const termsClickHandler = () => {
-    var tags = document.querySelectorAll('.js-tag-id');
-    var reset = document.querySelector('.js-reset');
-    tags.forEach((tag) => {
-      tag.addEventListener('click', (e) => {
-        var tagID = e.target.getAttribute('data-tag-id');
-
-        removeTagActive();
-        e.target.classList.add('active');
-        reset.classList.remove('opacity-0', 'invisible');
-        initPagination(tagID);
-        scollToPostsContainer();
-      });
-    });
-
-    if (reset) {
-      reset.addEventListener('click', (e) => {
-        reset.classList.add('opacity-0', 'invisible');
-        removeTagActive();
-        initPagination();
-        scollToPostsContainer();
-      });
-    }
-  };
-
   const getEndpoint = (bodyClasses, tagID) => {
     let endpoint = `${window.location.origin}/wp-json/wp/v2/posts?_embed&_fields=link,title,acf,_links,_embedded&_embed`;
 
@@ -263,29 +238,21 @@ export default function ajaxPagination() {
       }
     }
 
-    if (post._embedded['wp:term']) {
-      var cats = post._embedded['wp:term'][0];
-    }
-    if (post._embedded['wp:term']) {
-      var tags = post._embedded['wp:term'][1];
-    }
-    html = `<div class="relative bg-white rounded-lg group">
-              <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
-                <img src="${imageUrl}" alt="${imageAlt}"  class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
-              </div>
-              <div class="grid bg-white rounded-b-lg p-sp-4">
-                <h3 class="text-h4-base"><a href="${post.link}" class="block stretched-link">${post.title.rendered}</a></h3>
-                <p>${post.acf.by_author.post_title}</p>
-              </div>`;
-    if (tags) {
-      html += `${tags
-        .map(
-          (tag) =>
-            `<div class="absolute rounded-t-lg top-sp-4 left-sp-4"><a href="${tag.link}" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-primary bg-white group-hover:bg-white-hover border border-white z-[6] text-h5-base">${tag.name}</a></div>`
-        )
-        .join('')}`;
-    }
-    html += `</div><!--end three-->`;
+    html = `<div class="grid grid-cols-[3fr_1fr] bg-white rounded-lg group relative">
+    <div class="bg-white rounded-l-lg p-base5-3">
+      <h3 class="text-h4-base">
+        <a href="${post.link}" class="block stretched-link">${post.title.rendered}</a>
+      </h3>
+      <p>Read more 
+        <img src="${window.location.origin}/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg" alt="arrow" class="inline-block h-base5-3 ml-base5-2">
+      </p>
+    </div>
+    <div class="min-h-[100px] overflow-hidden rounded-r-lg">
+      <img src="${imageUrl}" alt="${imageAlt}" class="object-cover object-center w-full h-full transition-all duration-300 rounded-r-lg group-hover:scale-105">
+    </div>`;
+
+    html += `</div><!--end structure-->`;
+
     return html;
   };
 
@@ -297,6 +264,5 @@ export default function ajaxPagination() {
     });
   };
 
-  termsClickHandler();
   initPagination();
 }
