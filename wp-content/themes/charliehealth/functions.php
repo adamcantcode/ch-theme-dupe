@@ -166,6 +166,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/testimonials-videos-no-quote');
   register_block_type(__DIR__ . '/build/blocks/hero-colors');
   register_block_type(__DIR__ . '/build/blocks/testimonials-videos-quotes');
+  register_block_type(__DIR__ . '/build/blocks/posts-list-blog');
 }
 add_action('init', 'register_acf_blocks', 5);
 

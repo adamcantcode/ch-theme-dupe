@@ -1710,14 +1710,6 @@ a.insurance-tabs.active:hover {
   grid-column: span 2 / span 2;
 }
 
-.row-span-3{
-  grid-row: span 3 / span 3;
-}
-
-.row-span-4{
-  grid-row: span 4 / span 4;
-}
-
 .float-right{
   float: right;
 }
@@ -1934,6 +1926,10 @@ a.insurance-tabs.active:hover {
   margin-right: 10px;
 }
 
+.mr-base5-1{
+  margin-right: 5px;
+}
+
 .mr-base5-10{
   margin-right: 50px;
 }
@@ -2052,14 +2048,6 @@ a.insurance-tabs.active:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
-}
-
-.mr-base5-4{
-  margin-right: 20px;
-}
-
-.mr-base5-1{
-  margin-right: 5px;
 }
 
 .line-clamp-3{
@@ -2197,8 +2185,8 @@ a.insurance-tabs.active:hover {
   height: auto;
 }
 
-.h-base5-3{
-  height: 15px;
+.h-base5-4{
+  height: 20px;
 }
 
 .h-full{
@@ -2227,18 +2215,6 @@ a.insurance-tabs.active:hover {
 
 .h-sp-8{
   height: 2rem;
-}
-
-.h-base5-2{
-  height: 10px;
-}
-
-.h-base5-5{
-  height: 25px;
-}
-
-.h-base5-4{
-  height: 20px;
 }
 
 .max-h-0{
@@ -2408,10 +2384,6 @@ a.insurance-tabs.active:hover {
 
 .w-sp-8{
   width: 2rem;
-}
-
-.w-base5-2{
-  width: 10px;
 }
 
 .min-w-0{
@@ -2702,10 +2674,6 @@ a.insurance-tabs.active:hover {
 
 .grid-cols-\[3fr_1fr\]{
   grid-template-columns: 3fr 1fr;
-}
-
-.grid-rows-4{
-  grid-template-rows: repeat(4, minmax(0, 1fr));
 }
 
 .flex-row{
@@ -6193,12 +6161,12 @@ ul.alert li {
     grid-row: span 2 / span 2;
   }
 
-  .lg\:row-span-4{
-    grid-row: span 4 / span 4;
-  }
-
   .lg\:row-span-3{
     grid-row: span 3 / span 3;
+  }
+
+  .lg\:row-span-4{
+    grid-row: span 4 / span 4;
   }
 
   .lg\:row-start-1{

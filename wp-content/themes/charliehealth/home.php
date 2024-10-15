@@ -3,7 +3,7 @@
 <?php
 $tags = get_terms(array(
   'taxonomy' => 'post_tag',
-  'hide_empty' => true, // Only show tags with assigned posts
+  'hide_empty' => true,
 ));
 
 if (!empty($tags) && !is_wp_error($tags)): ?>
