@@ -21,13 +21,13 @@
     </div>
   </div>
 </section>
-<section class="section bg-grey-cool">
+<section class="section-bottom bg-grey-cool">
   <div class="container">
-    <div class="lg:grid lg:grid-cols-[7fr_1fr_4fr] lg:grid-rows-4">
+    <div class="lg:grid lg:grid-cols-[7fr_1fr_4fr]">
       <?php
       $posts = get_field('featured_blogs');
       ?>
-      <div class="relative lg:row-span-3 swiper swiper-featured-blog lg:h-full lg:w-full">
+      <div class="relative swiper swiper-featured-blog lg:h-full lg:w-full">
         <div class="swiper-wrapper">
           <?php if (!empty($posts)) : foreach ($posts as $post) : setup_postdata($post) ?>
               <?php
@@ -123,7 +123,7 @@
         </div>
       </div>
       <div></div>
-      <div class="lg:row-span-4">
+      <div>
         <div id="postsContainer">
           <h2 class="text-h3-base font-heading-serif">The Latest</h2>
           <div class="absolute invisible opacity-0 no-posts-js">
