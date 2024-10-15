@@ -133,12 +133,12 @@
           <div class="mt-auto">
             <?php if (!empty($medicalReviewer) && !is_array($medicalReviewer)) : ?>
               <div class="flex items-center mb-base5-1">
-                <img src="<?= $medicalReviewerFeaturedImageUrl; ?>" alt="<?= $medicalReviewerFeaturedImageAltText; ?>" class="object-cover h-base5-4 aspect-square rounded-circle mr-base5-1">
+                <img src="<?= $medicalReviewerFeaturedImageUrl; ?>" alt="<?= $medicalReviewerFeaturedImageAltText; ?>" class="object-cover w-auto h-base5-4 aspect-square rounded-circle mr-base5-1">
                 <p class="z-10 mb-0 text-mini">Clinically Reviewed By: <a href="<?= get_the_permalink($medicalReviewer->ID); ?>" class="text-mini"><?= $medicalReviewer->post_title; ?></a></p>
               </div>
             <?php endif; ?>
             <div class="flex items-center">
-              <img src="<?= $authorFeaturedImageUrl; ?>" alt="<?= $authorFeaturedImageAltText; ?>" class="object-cover h-base5-4 aspect-square rounded-circle mr-base5-1">
+              <img src="<?= $authorFeaturedImageUrl; ?>" alt="<?= $authorFeaturedImageAltText; ?>" class="object-cover w-auto h-base5-4 aspect-square rounded-circle mr-base5-1">
               <p class="z-10 mb-0 text-mini">Written By: <a href="<?= get_the_permalink($author->ID); ?>" class="text-mini"><?= $author->post_title; ?></a></p>
             </div>
           </div>
