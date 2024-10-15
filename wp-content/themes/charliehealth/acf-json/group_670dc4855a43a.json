@@ -27,7 +27,7 @@
             "add_term": 0,
             "save_terms": 0,
             "load_terms": 0,
-            "return_format": "id",
+            "return_format": "object",
             "field_type": "select",
             "allow_null": 1,
             "allow_in_bindings": 0,
@@ -58,10 +58,8 @@
             },
             "choices": {
                 "post": "Posts",
-                "page": "Pages",
                 "areas-of-care": "Areas of Care",
                 "research": "Research",
-                "activities": "Activities",
                 "treatment-modalities": "Treatment Modalities"
             },
             "default_value": false,
@@ -133,5 +131,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728956483
+    "modified": 1728957778
 }

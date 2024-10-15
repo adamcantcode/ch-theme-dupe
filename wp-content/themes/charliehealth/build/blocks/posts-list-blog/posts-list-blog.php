@@ -1,25 +1,40 @@
-<h2>Latest mental health research & clinical outcomes</h2>
+<?php $numb = rand(1, 100000); ?>
+<InnerBlocks />
 <div class="grid lg:grid-cols-4 gap-sp-5 mt-base5-10">
   <?php
-  // $selected_tag = get_field('acf_field_name');
-  $selected_tag = 'depression';
+  $selectedTag = get_field('tag');
+  $selectedPostType = get_field('post_type');
 
   // Set up the query arguments
   $args = array(
-    'post_type'      => 'post',
+    'post_type'      => 'post', // Default post type
     'posts_per_page' => -1,
     'meta_key'       => 'date',
     'orderby'        => 'meta_value',
     'order'          => 'DESC',
     'meta_type'      => 'DATE',
-    'tax_query'      => array(
+  );
+
+  // Add post type if selected
+  if ($selectedPostType) {
+    $args['post_type'] = $selectedPostType; // Use the selected post type
+
+    // Check if the selected post type is 'areas-of-care' or 'treatment-modalities'
+    if (in_array($selectedPostType, ['areas-of-care', 'treatment-modalities'])) {
+      $args['post_parent__not_in'] = array(0); // Exclude posts with a parent of 0
+    }
+  }
+
+  // Add tax query if selected
+  if ($selectedTag) {
+    $args['tax_query'] = array(
       array(
         'taxonomy' => 'post_tag',
         'field'    => 'slug',
-        'terms'    => $selected_tag,
+        'terms'    => $selectedTag->slug,
       ),
-    ),
-  );
+    );
+  }
 
   $query = new WP_Query($args);
   if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
@@ -68,7 +83,7 @@
         $authorFeaturedImageAltText = 'Charlie Health Logo';
       }
   ?>
-      <div class="relative flex flex-col transition-all bg-white rounded-lg opacity-0 group custom-posts-js not-loaded noshow">
+      <div class="relative flex flex-col transition-all bg-white rounded-lg opacity-0 group custom-posts-js-<?= $numb; ?> not-loaded noshow">
         <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
           <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
         </div>
@@ -93,12 +108,12 @@
   endif; ?>
 </div>
 <div class="flex">
-  <a role="button" class="w-full ml-auto ch-button button-primary justify-self-center lg:w-auto custom-posts-load-more-js lg:mt-sp-10 mt-sp-5 mb-sp-5 lg:mb-0">Load more</a>
+  <a role="button" class="w-full ml-auto ch-button button-primary justify-self-center lg:w-auto custom-posts-load-more-js-<?= $numb; ?> lg:mt-sp-10 mt-sp-5 mb-sp-5 lg:mb-0">Load more</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    const loadMoreResearch = document.querySelector('.custom-posts-load-more-js');
-    const posts = document.querySelectorAll('.custom-posts-js.not-loaded');
+    const loadMoreResearch = document.querySelector('.custom-posts-load-more-js-<?= $numb; ?>');
+    const posts = document.querySelectorAll('.custom-posts-js-<?= $numb; ?>.not-loaded');
     const firstFourPosts = Array.from(posts).slice(0, 8);
 
     firstFourPosts.forEach(post => {
@@ -106,7 +121,7 @@
     });
 
     loadMoreResearch.addEventListener('click', function() {
-      let posts = document.querySelectorAll('.custom-posts-js.not-loaded');
+      let posts = document.querySelectorAll('.custom-posts-js-<?= $numb; ?>.not-loaded');
       let firstFourPosts = Array.from(posts).slice(0, 8);
       firstFourPosts.forEach(post => {
         post.classList.remove('noshow', 'not-loaded');
@@ -114,7 +129,7 @@
           post.classList.remove('opacity-0');
         }, 10);
       });
-      if (document.querySelectorAll('.custom-posts-js.not-loaded').length === 0) {
+      if (document.querySelectorAll('.custom-posts-js-<?= $numb; ?>.not-loaded').length === 0) {
         loadMoreResearch.remove()
       }
     })
