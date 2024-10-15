@@ -4854,13 +4854,13 @@ a.insurance-tabs.active:hover {
   background-color: rgb(33 41 132 / var(--tw-bg-opacity));
 }
 
-.swiper.swiper-featured-blog picture{
+.swiper.swiper-featured-blog .swiper-slide > div picture{
   order: 1;
 }
 
 @media (min-width: 1024px){
 
-  .swiper.swiper-featured-blog picture{
+  .swiper.swiper-featured-blog .swiper-slide > div picture{
     order: 2;
   }
 }

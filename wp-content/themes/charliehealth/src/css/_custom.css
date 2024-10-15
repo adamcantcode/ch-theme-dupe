@@ -249,8 +249,10 @@
     }
   }
   &.swiper-featured-blog {
-    picture {
-      @apply order-1 lg:order-2;
+    .swiper-slide > div {
+      picture {
+        @apply order-1 lg:order-2;
+      }
     }
     .arrow-slider {
       .arrow-slider-bg {
