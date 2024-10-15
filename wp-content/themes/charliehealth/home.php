@@ -59,7 +59,7 @@ if (!empty($tags) && !is_wp_error($tags)): ?>
 </section>
 <section class="section bg-grey-cool">
   <div class="container">
-    <div class="grid lg:grid-cols-[7fr_1fr_4fr] lg:grid-rows-4">
+    <div class="lg:grid lg:grid-cols-[7fr_1fr_4fr] lg:grid-rows-4">
       <?php
       $args = array(
         'post_type' => 'post',
@@ -69,7 +69,7 @@ if (!empty($tags) && !is_wp_error($tags)): ?>
 
       $query = new WP_Query($args);
       ?>
-      <div class="relative row-span-3 swiper swiper-featured-blog lg:h-full lg:w-full">
+      <div class="relative lg:row-span-3 swiper swiper-featured-blog lg:h-full lg:w-full">
         <div class="swiper-wrapper">
           <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
               <?php
@@ -125,23 +125,23 @@ if (!empty($tags) && !is_wp_error($tags)): ?>
                   <div class="grid content-between order-2 bg-white lg:p-sp-8 p-sp-4 lg:order-1 gap-base5-4">
                     <?php if ($first_tag): ?>
                       <div>
-                        <a href="<?= site_url('/resources/', $first_tag->slug); ?>" class="relative z-20 inline-block leading-none no-underline transition-all duration-300 bg-transparent border-2 text-primary border-primary rounded-pill p-sp-3 hover:bg-primary hover:text-white mb-sp-4 mr-sp-1"><?= $first_tag->name; ?></a>
+                        <a href="<?= site_url('/resources/', $first_tag->slug); ?>" class="relative z-10 inline-block leading-none no-underline transition-all duration-300 bg-transparent border-2 text-primary border-primary rounded-pill p-sp-3 hover:bg-primary hover:text-white mb-sp-4 mr-sp-1"><?= $first_tag->name; ?></a>
                         <h3 class="font-heading-serif"><?= get_the_title(); ?></h3>
                         <?php if (!empty($medicalReviewer)) : ?>
                           <div class="flex items-center mb-base5-1">
                             <img src="<?= $medicalReviewerFeaturedImageUrl; ?>" alt="<?= $medicalReviewerFeaturedImageAltText; ?>" class="object-cover h-base5-4 aspect-square rounded-circle mr-base5-1">
-                            <p class="mb-0">Clinically Reviewed By: <a href="<?= get_the_permalink($medicalReviewer->ID); ?>"><?= $medicalReviewer->post_title; ?></a></p>
+                            <p class="z-10 mb-0">Clinically Reviewed By: <a href="<?= get_the_permalink($medicalReviewer->ID); ?>"><?= $medicalReviewer->post_title; ?></a></p>
                           </div>
                         <?php endif; ?>
                         <div class="flex items-center">
                           <img src="<?= $authorFeaturedImageUrl; ?>" alt="<?= $authorFeaturedImageAltText; ?>" class="object-cover h-base5-4 aspect-square rounded-circle mr-base5-1">
-                          <p class="mb-0">Written By: <a href="<?= get_the_permalink($author->ID); ?>"><?= $author->post_title; ?></a></p>
+                          <p class="z-10 mb-0">Written By: <a href="<?= get_the_permalink($author->ID); ?>"><?= $author->post_title; ?></a></p>
                         </div>
                       </div>
                     <?php endif; ?>
                     <a href="<?= get_the_permalink(); ?>" class="no-underline text-primary stretched-link">Read more <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/arrow-right-blue.svg'); ?>" alt="arrow" class="inline-block h-sp-4 ml-sp-2"></a>
                   </div>
-                  <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="order-1 object-cover w-full lg:order-2 lg:h-full nolazy">
+                  <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="order-1 object-cover w-full h-full lg:order-2 nolazy">
                 </div>
               </div>
           <?php endwhile;
@@ -251,7 +251,13 @@ if (!empty($tags) && !is_wp_error($tags)): ?>
 
       $query = new WP_Query($args);
       if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
-          $author = get_field('by_author', get_the_ID());
+          $author                = get_field('by_author', get_the_ID());
+          $customMedicalReviewer = get_field('custom_medical_review', get_the_ID());
+          if (!empty($customMedicalReviewer)) {
+            $medicalReviewer = $customMedicalReviewer;
+          } else {
+            $medicalReviewer = get_field('medical_reviewer', get_the_ID());
+          }
           if (has_post_thumbnail()) {
             $featuredImageID = get_post_thumbnail_id();
             $featuredImage = wp_get_attachment_image_src($featuredImageID, 'card-thumb');
@@ -263,22 +269,51 @@ if (!empty($tags) && !is_wp_error($tags)): ?>
             $featuredImageUrl = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
             $featuredImageAltText = 'Charlie Health Logo';
           }
+
+          if ($medicalReviewer) {
+            if (has_post_thumbnail($medicalReviewer)) {
+              $medicalReviewerFeaturedImageID = get_post_thumbnail_id($medicalReviewer->ID);
+              $medicalReviewerFeaturedImage = wp_get_attachment_image_src($medicalReviewerFeaturedImageID, 'featured-large');
+              $medicalReviewerFeaturedImageAltText = get_post_meta($medicalReviewerFeaturedImageID, '_wp_attachment_image_alt', true);
+
+
+              $medicalReviewerFeaturedImageUrl = $medicalReviewerFeaturedImage[0];
+              $medicalReviewerFeaturedImageAltText = $medicalReviewerFeaturedImageAltText ?: '';
+            } else {
+              $medicalReviewerFeaturedImageUrl = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
+              $medicalReviewerFeaturedImageAltText = 'Charlie Health Logo';
+            }
+          }
+          if (has_post_thumbnail($author)) {
+            $authorFeaturedImageID = get_post_thumbnail_id($author->ID);
+            $authorFeaturedImage = wp_get_attachment_image_src($authorFeaturedImageID, 'featured-large');
+            $authorFeaturedImageAltText = get_post_meta($authorFeaturedImageID, '_wp_attachment_image_alt', true);
+
+            $authorFeaturedImageUrl = $authorFeaturedImage[0];
+            $authorFeaturedImageAltText = $authorFeaturedImageAltText ?: '';
+          } else {
+            $authorFeaturedImageUrl = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
+            $authorFeaturedImageAltText = 'Charlie Health Logo';
+          }
       ?>
-          <div class="relative transition-all bg-white rounded-lg opacity-0 group custom-posts-js not-loaded noshow">
+          <div class="relative flex flex-col transition-all bg-white rounded-lg opacity-0 group custom-posts-js not-loaded noshow">
             <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
               <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
             </div>
-            <div class="absolute rounded-t-lg top-sp-4 left-sp-4">
-              <?php $tags = get_the_terms(get_the_ID(), 'research-tag');  ?>
-              <?php if ($tags) :  ?>
-                <?php foreach ($tags as $tag) : ?>
-                  <a href="<?= get_term_link($tag->slug, 'research-tag'); ?>" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-primary bg-white group-hover:bg-white-hover border border-white z-[6] text-h5-base"><?= $tag->name; ?></a>
-                <?php endforeach; ?>
-              <?php endif; ?>
-            </div>
-            <div class="grid bg-white rounded-b-lg p-sp-4">
+            <div class="flex flex-col flex-1 bg-white rounded-b-lg p-sp-4">
               <h3 class="text-h4-base"><a href="<?= get_the_permalink(); ?>" class="block stretched-link"><?= get_the_title(); ?></a></h3>
-              <p><?= $author->post_title; ?></p>
+              <div class="mt-auto">
+                <?php if (!empty($medicalReviewer)) : ?>
+                  <div class="flex items-center mb-base5-1">
+                    <img src="<?= $medicalReviewerFeaturedImageUrl; ?>" alt="<?= $medicalReviewerFeaturedImageAltText; ?>" class="object-cover h-base5-4 aspect-square rounded-circle mr-base5-1">
+                    <p class="z-10 mb-0 text-mini">Clinically Reviewed By: <a href="<?= get_the_permalink($medicalReviewer->ID); ?>" class="text-mini"><?= $medicalReviewer->post_title; ?></a></p>
+                  </div>
+                <?php endif; ?>
+                <div class="flex items-center">
+                  <img src="<?= $authorFeaturedImageUrl; ?>" alt="<?= $authorFeaturedImageAltText; ?>" class="object-cover h-base5-4 aspect-square rounded-circle mr-base5-1">
+                  <p class="z-10 mb-0 text-mini">Written By: <a href="<?= get_the_permalink($author->ID); ?>" class="text-mini"><?= $author->post_title; ?></a></p>
+                </div>
+              </div>
             </div>
           </div>
       <?php endwhile;
@@ -308,6 +343,84 @@ if (!empty($tags) && !is_wp_error($tags)): ?>
             }, 10);
           });
           if (document.querySelectorAll('.custom-posts-js.not-loaded').length === 0) {
+            loadMoreResearch.remove()
+          }
+        })
+      })
+    </script>
+  </div>
+</section>
+<section class="section bg-grey-cool">
+  <div class="container">
+    <h2>Latest mental health research & clinical outcomes</h2>
+    <div class="grid lg:grid-cols-4 gap-sp-5 mt-base5-10">
+      <?php
+      // $selected_post_type = get_field('acf_field_name');
+      $selected_post_type = 'treatment-modalities';
+
+
+      // Set up the query arguments
+      $args = array(
+        'post_type'      => $selected_post_type,
+        'posts_per_page' => -1,
+        'meta_key'       => 'date',
+        'orderby'        => 'meta_value',
+        'order'          => 'DESC',
+        'meta_type'      => 'DATE',
+        'post_parent__not_in' => array(0),
+      );
+
+      $query = new WP_Query($args);
+      if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
+          $author = get_field('by_author', get_the_ID());
+          if (has_post_thumbnail()) {
+            $featuredImageID = get_post_thumbnail_id();
+            $featuredImage = wp_get_attachment_image_src($featuredImageID, 'card-thumb');
+            $featuredImageAltText = get_post_meta($featuredImageID, '_wp_attachment_image_alt', true);
+
+            $featuredImageUrl = $featuredImage[0];
+            $featuredImageAltText = $featuredImageAltText ?: '';
+          } else {
+            $featuredImageUrl = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
+            $featuredImageAltText = 'Charlie Health Logo';
+          }
+      ?>
+          <div class="relative transition-all bg-white rounded-lg opacity-0 group custom-posts-js-1 not-loaded noshow">
+            <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
+              <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
+            </div>
+            <div class="grid bg-white rounded-b-lg p-sp-4">
+              <h3 class="text-h4-base"><a href="<?= get_the_permalink(); ?>" class="block stretched-link"><?= get_the_title(); ?></a></h3>
+              <p><?= $author->post_title; ?></p>
+            </div>
+          </div>
+      <?php endwhile;
+        wp_reset_postdata();
+      endif; ?>
+    </div>
+    <div class="flex">
+      <a role="button" class="w-full ml-auto ch-button button-primary justify-self-center lg:w-auto custom-posts-load-more-1-js lg:mt-sp-10 mt-sp-5 mb-sp-5 lg:mb-0">Load more</a>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const loadMoreResearch = document.querySelector('.custom-posts-load-more-1-js');
+        const posts = document.querySelectorAll('.custom-posts-js-1.not-loaded');
+        const firstFourPosts = Array.from(posts).slice(0, 8);
+
+        firstFourPosts.forEach(post => {
+          post.classList.remove('noshow', 'not-loaded', 'opacity-0');
+        });
+
+        loadMoreResearch.addEventListener('click', function() {
+          let posts = document.querySelectorAll('.custom-posts-js-1.not-loaded');
+          let firstFourPosts = Array.from(posts).slice(0, 8);
+          firstFourPosts.forEach(post => {
+            post.classList.remove('noshow', 'not-loaded');
+            setTimeout(() => {
+              post.classList.remove('opacity-0');
+            }, 10);
+          });
+          if (document.querySelectorAll('.custom-posts-js-1.not-loaded').length === 0) {
             loadMoreResearch.remove()
           }
         })
