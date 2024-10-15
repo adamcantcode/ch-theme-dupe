@@ -4,6 +4,7 @@
   <?php
   $selectedTag = get_field('tag');
   $selectedPostType = get_field('post_type');
+  $customSelect = get_field('custom_select');
 
   // Set up the query arguments
   $args = array(
@@ -14,6 +15,13 @@
     'order'          => 'DESC',
     'meta_type'      => 'DATE',
   );
+
+  // If $customSelect is set, adjust the query
+  if (!empty($customSelect)) {
+    // Assuming $customSelect is an array of post IDs or slugs
+    $args['post__in'] = $customSelect; // Query only those posts
+    $args['orderby'] = 'post__in'; // Ensure custom select order is maintained
+  }
 
   // Add post type if selected
   if ($selectedPostType) {
@@ -36,6 +44,7 @@
     );
   }
 
+  // Query the posts
   $query = new WP_Query($args);
   if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
       $author                = get_field('by_author', get_the_ID());
