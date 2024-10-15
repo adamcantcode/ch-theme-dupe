@@ -7,7 +7,7 @@ $tags = get_terms(array(
 ));
 
 if (!empty($tags) && !is_wp_error($tags)): ?>
-  <div class="fixed z-20 w-full -translate-x-1/2 bg-lavender-300 left-1/2 tags-list-js scrollbar-hide">
+  <div class="fixed z-20 w-full -translate-x-1/2 bg-lavender-300 left-1/2 tags-list-js scrollbar-hide -mt-[49px]">
     <div class="container">
       <div class="overflow-x-auto px-base5-4">
         <div class="flex items-start gap-base5-2">
@@ -21,17 +21,6 @@ if (!empty($tags) && !is_wp_error($tags)): ?>
       </div>
     </div>
   </div>
-  <script>
-    const tagList = document.querySelector('.tags-list-js');
-    const mainElement = document.querySelector('main');
-
-    // Get the existing marginTop of the main element
-    const computedStyle = window.getComputedStyle(mainElement);
-    const existingMarginTop = parseFloat(computedStyle.marginTop);
-
-    // Set the new marginTop based on the height of the tagList and existing marginTop
-    mainElement.style.marginTop = `${tagList.offsetHeight + existingMarginTop}px`;
-  </script>
 <?php endif; ?>
 
 <?php

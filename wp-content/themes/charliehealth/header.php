@@ -277,12 +277,16 @@
       function setMainMargin() {
         const banner = document.querySelector('.banner-js');
         const header = document.querySelector('header');
+        const tagList = document.querySelector('.tags-list-js');
         const main = document.querySelector('main');
 
         if (banner && header && main) {
           const totalHeight = banner.offsetHeight + header.offsetHeight;
           main.style.marginTop = `${totalHeight}px`;
-        } else {
+        } else if (header && main && tagList) {
+          const totalHeight = header.offsetHeight + tagList.offsetHeight;
+          main.style.marginTop = `${totalHeight}px`;
+        }  else {
           const totalHeight = header.offsetHeight;
           main.style.marginTop = `${totalHeight}px`;
         }

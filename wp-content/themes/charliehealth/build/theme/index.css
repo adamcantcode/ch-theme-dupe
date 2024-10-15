@@ -1654,6 +1654,10 @@ a.insurance-tabs.active:hover {
   top: 2rem;
 }
 
+.top-\[49px\]{
+  top: 49px;
+}
+
 .-z-10{
   z-index: -10;
 }
@@ -1724,6 +1728,10 @@ a.insurance-tabs.active:hover {
 
 .m-sp-6{
   margin: 1.5rem;
+}
+
+.-m-\[49px\]{
+  margin: -49px;
 }
 
 .mx-auto{
@@ -2048,6 +2056,10 @@ a.insurance-tabs.active:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
+}
+
+.-mt-\[49px\]{
+  margin-top: -49px;
 }
 
 .line-clamp-3{
