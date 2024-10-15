@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "acf/blog-hero-block",
+  "title": "Blog Hero",
+  "description": "Blog hero with featured posts",
+  "style": "file:./index.css",
+  "script": "file:./index.js",
+  "category": "custom",
+  "icon": "admin-post",
+  "apiVersion": 2,
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "blog-hero.php"
+  },
+  "supports": {}
+}

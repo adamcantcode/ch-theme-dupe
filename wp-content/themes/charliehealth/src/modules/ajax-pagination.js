@@ -138,7 +138,7 @@ export default function ajaxPagination() {
       scrollTo: '#postsContainer',
       scrollTo: {
         y: '#postsContainer',
-        offsetY: (self) => document.querySelector('header').offsetHeight,
+        offsetY: (self) => document.querySelector('header').offsetHeight + 150,
       },
     });
   };

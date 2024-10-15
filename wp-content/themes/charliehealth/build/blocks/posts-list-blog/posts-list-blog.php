@@ -1,5 +1,6 @@
 <?php $numb = rand(1, 100000); ?>
 <InnerBlocks />
+
 <div class="grid lg:grid-cols-4 gap-sp-5 mt-base5-10">
   <?php
   $selectedTag = get_field('tag');
@@ -130,7 +131,7 @@
         <div class="flex flex-col flex-1 bg-white rounded-b-lg p-sp-4">
           <h3 class="text-h4-base mb-base5-4"><a href="<?= get_the_permalink($post->ID); ?>" class="block stretched-link"><?= get_the_title($post->ID); ?></a></h3>
           <div class="mt-auto">
-            <?php if (!empty($medicalReviewer)) : ?>
+            <?php if (!empty($medicalReviewer) && !is_array($medicalReviewer)) : ?>
               <div class="flex items-center mb-base5-1">
                 <img src="<?= $medicalReviewerFeaturedImageUrl; ?>" alt="<?= $medicalReviewerFeaturedImageAltText; ?>" class="object-cover h-base5-4 aspect-square rounded-circle mr-base5-1">
                 <p class="z-10 mb-0 text-mini">Clinically Reviewed By: <a href="<?= get_the_permalink($medicalReviewer->ID); ?>" class="text-mini"><?= $medicalReviewer->post_title; ?></a></p>
@@ -150,32 +151,34 @@
 <div class="flex">
   <a role="button" class="w-full ml-auto ch-button button-primary justify-self-center lg:w-auto custom-posts-load-more-js-<?= $numb; ?> lg:mt-sp-10 mt-sp-5 mb-sp-5 lg:mb-0">Load more</a>
 </div>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const loadMoreCustomPosts = document.querySelector('.custom-posts-load-more-js-<?= $numb; ?>');
-    const posts = document.querySelectorAll('.custom-posts-js-<?= $numb; ?>.not-loaded');
-    const firstEightPosts = Array.from(posts).slice(0, 8);
+<?php if (!is_admin()) : ?>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const loadMoreCustomPosts = document.querySelector('.custom-posts-load-more-js-<?= $numb; ?>');
+      const posts = document.querySelectorAll('.custom-posts-js-<?= $numb; ?>.not-loaded');
+      const firstEightPosts = Array.from(posts).slice(0, 8);
 
-    firstEightPosts.forEach(post => {
-      post.classList.remove('noshow', 'not-loaded', 'opacity-0');
-    });
-
-    loadMoreCustomPosts.addEventListener('click', function() {
-      let posts = document.querySelectorAll('.custom-posts-js-<?= $numb; ?>.not-loaded');
-      let firstEightPosts = Array.from(posts).slice(0, 8);
       firstEightPosts.forEach(post => {
-        post.classList.remove('noshow', 'not-loaded');
-        setTimeout(() => {
-          post.classList.remove('opacity-0');
-        }, 10);
+        post.classList.remove('noshow', 'not-loaded', 'opacity-0');
       });
-      if (document.querySelectorAll('.custom-posts-js-<?= $numb; ?>.not-loaded').length === 0) {
+
+      loadMoreCustomPosts.addEventListener('click', function() {
+        let posts = document.querySelectorAll('.custom-posts-js-<?= $numb; ?>.not-loaded');
+        let firstEightPosts = Array.from(posts).slice(0, 8);
+        firstEightPosts.forEach(post => {
+          post.classList.remove('noshow', 'not-loaded');
+          setTimeout(() => {
+            post.classList.remove('opacity-0');
+          }, 10);
+        });
+        if (document.querySelectorAll('.custom-posts-js-<?= $numb; ?>.not-loaded').length === 0) {
+          loadMoreCustomPosts.remove()
+        }
+      })
+
+      if (document.querySelectorAll('.custom-posts-js-<?= $numb; ?>.not-loaded').length < 8) {
         loadMoreCustomPosts.remove()
       }
     })
-
-    if (document.querySelectorAll('.custom-posts-js-<?= $numb; ?>.not-loaded').length < 8) {
-      loadMoreCustomPosts.remove()
-    }
-  })
-</script>
+  </script>
+<?php endif; ?>
