@@ -1,13 +1,13 @@
 export default function userPagesTracker() {
   const trackPages = () => {
-    let user_journey = JSON.parse(localStorage.getItem('user_journey')) || [];
+    let user_journey = JSON.parse(localStorage.getItem('user_journey_')) || [];
     let prior_count = parseInt(localStorage.getItem('prior_count')) || 1;
 
     // Get the current URL
     let currentUrl = new URL(window.location.href);
 
     // Check if "user_journey" is a URL parameter
-    if (currentUrl.searchParams.has('user_journey')) {
+    if (currentUrl.searchParams.has('user_journey_')) {
       // Strip all search params
       currentUrl.search = '';
     }
@@ -22,7 +22,7 @@ export default function userPagesTracker() {
 
     // Add the stripped URL (without search params) to user_journey
     user_journey.push(currentUrl.href);
-    localStorage.setItem('user_journey', JSON.stringify(user_journey)); // Save the updated user_journey
+    localStorage.setItem('user_journey_', JSON.stringify(user_journey)); // Save the updated user_journey
   };
 
   trackPages();
