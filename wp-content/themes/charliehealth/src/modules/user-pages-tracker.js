@@ -7,7 +7,7 @@ export default function userPagesTracker() {
     let currentUrl = new URL(window.location.href);
 
     // Check if "user_journey" is a URL parameter
-    if (currentUrl.searchParams.has('user_journey_')) {
+    if (currentUrl.searchParams.has('user_journey')) {
       // Strip all search params
       currentUrl.search = '';
     }
