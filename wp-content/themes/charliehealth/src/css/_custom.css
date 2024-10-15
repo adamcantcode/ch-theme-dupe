@@ -249,6 +249,9 @@
     }
   }
   &.swiper-featured-blog {
+    .swiper-slide > div > div picture {
+      @apply order-1;
+    }
     picture {
       @apply order-1 lg:order-2;
     }

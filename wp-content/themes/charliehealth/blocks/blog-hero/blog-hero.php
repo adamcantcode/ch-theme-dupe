@@ -87,12 +87,12 @@
                         <h3 class="font-heading-serif"><?= get_the_title($post->ID); ?></h3>
                         <?php if (!empty($medicalReviewer)) : ?>
                           <div class="flex items-center mb-base5-1">
-                            <img src="<?= $medicalReviewerFeaturedImageUrl; ?>" alt="<?= $medicalReviewerFeaturedImageAltText; ?>" class="object-cover w-auto h-base5-4 aspect-square rounded-circle mr-base5-1 !order-none">
+                            <img src="<?= $medicalReviewerFeaturedImageUrl; ?>" alt="<?= $medicalReviewerFeaturedImageAltText; ?>" class="object-cover w-auto h-base5-4 aspect-square rounded-circle mr-base5-1">
                             <p class="z-10 mb-0">Clinically Reviewed By: <a href="<?= get_the_permalink($medicalReviewer->ID); ?>"><?= $medicalReviewer->post_title; ?></a></p>
                           </div>
                         <?php endif; ?>
                         <div class="flex items-center">
-                          <img src="<?= $authorFeaturedImageUrl; ?>" alt="<?= $authorFeaturedImageAltText; ?>" class="object-cover w-auto h-base5-4 aspect-square rounded-circle mr-base5-1 !order-none">
+                          <img src="<?= $authorFeaturedImageUrl; ?>" alt="<?= $authorFeaturedImageAltText; ?>" class="object-cover w-auto h-base5-4 aspect-square rounded-circle mr-base5-1">
                           <p class="z-10 mb-0">Written By: <a href="<?= get_the_permalink($author->ID); ?>"><?= $author->post_title; ?></a></p>
                         </div>
                       </div>
