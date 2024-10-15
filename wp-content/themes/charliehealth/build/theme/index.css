@@ -2353,6 +2353,10 @@ a.insurance-tabs.active:hover {
   width: calc(100vw - 2.5rem);
 }
 
+.w-auto{
+  width: auto;
+}
+
 .w-fit{
   width: -moz-fit-content;
   width: fit-content;
@@ -4850,16 +4854,9 @@ a.insurance-tabs.active:hover {
   background-color: rgb(33 41 132 / var(--tw-bg-opacity));
 }
 
-.swiper.swiper-featured-blog picture{
-  order: 1;
-}
-
-@media (min-width: 1024px){
-
-  .swiper.swiper-featured-blog picture{
-    order: 2;
-  }
-}
+.swiper.swiper-featured-blog picture {
+      /* @apply order-1 lg:order-2; */
+    }
 
 .swiper.swiper-featured-blog .arrow-slider .arrow-slider-bg{
   fill: rgba(0,0,0,0);
@@ -6908,6 +6905,10 @@ ul.alert li {
     padding: 50px;
   }
 
+  .lg\:p-base5-3{
+    padding: 15px;
+  }
+
   .lg\:p-base5-5{
     padding: 25px;
   }
@@ -6934,14 +6935,6 @@ ul.alert li {
 
   .lg\:p-sp-8{
     padding: 2rem;
-  }
-
-  .lg\:p-base5-4{
-    padding: 20px;
-  }
-
-  .lg\:p-base5-3{
-    padding: 15px;
   }
 
   .lg\:px-0{
