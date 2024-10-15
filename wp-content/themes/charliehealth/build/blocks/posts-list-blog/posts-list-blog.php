@@ -4,11 +4,34 @@
   <?php
   $selectedTag = get_field('tag');
   $selectedPostType = get_field('post_type');
-  $customSelect = get_field('custom_select');
+  $customSelect = get_field('custom_select'); // Array of post IDs
 
-  // Set up the query arguments
+  $customPosts = array(); // To store the posts from custom select
+  $otherPosts = array(); // To store other posts based on post type and tag
+
+  // Query for custom selected posts if available
+  if (!empty($customSelect) && is_array($customSelect)) {
+    $customArgs = array(
+      'post_type'      => 'post',
+      'post__in'       => $customSelect, // Only get posts in custom select
+      'orderby'        => 'post__in', // Maintain order from custom select
+      'posts_per_page' => -1,
+    );
+
+    $customQuery = new WP_Query($customArgs);
+
+    if ($customQuery->have_posts()) {
+      while ($customQuery->have_posts()) {
+        $customQuery->the_post();
+        $customPosts[] = get_post(); // Store custom selected posts
+      }
+      wp_reset_postdata(); // Reset post data after custom query
+    }
+  }
+
+  // Set up the secondary query arguments for post type and tag
   $args = array(
-    'post_type'      => 'post', // Default post type
+    'post_type'      => $selectedPostType ?: 'post', // Default to 'post' if no post type is selected
     'posts_per_page' => -1,
     'meta_key'       => 'date',
     'orderby'        => 'meta_value',
@@ -16,17 +39,13 @@
     'meta_type'      => 'DATE',
   );
 
-  // If $customSelect is set, adjust the query
-  if (!empty($customSelect)) {
-    // Assuming $customSelect is an array of post IDs or slugs
-    $args['post__in'] = $customSelect; // Query only those posts
-    $args['orderby'] = 'post__in'; // Ensure custom select order is maintained
+  // Exclude custom selected posts from the tag/post type query
+  if (!empty($customSelect) && is_array($customSelect)) {
+    $args['post__not_in'] = $customSelect; // Exclude custom selected posts
   }
 
-  // Add post type if selected
+  // Add additional query for post type
   if ($selectedPostType) {
-    $args['post_type'] = $selectedPostType; // Use the selected post type
-
     // Check if the selected post type is 'areas-of-care' or 'treatment-modalities'
     if (in_array($selectedPostType, ['areas-of-care', 'treatment-modalities'])) {
       $args['post_parent__not_in'] = array(0); // Exclude posts with a parent of 0
@@ -44,18 +63,30 @@
     );
   }
 
-  // Query the posts
-  $query = new WP_Query($args);
-  if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
-      $author                = get_field('by_author', get_the_ID());
-      $customMedicalReviewer = get_field('custom_medical_review', get_the_ID());
+  // Query the other posts
+  $otherQuery = new WP_Query($args);
+  if ($otherQuery->have_posts()) {
+    while ($otherQuery->have_posts()) {
+      $otherQuery->the_post();
+      $otherPosts[] = get_post(); // Store other posts
+    }
+    wp_reset_postdata(); // Reset post data after the secondary query
+  }
+
+  // Merge results, prioritizing custom selected posts
+  $finalPosts = array_merge($customPosts, $otherPosts);
+  if (!empty($finalPosts)) {
+    foreach ($finalPosts as $post) {
+      setup_postdata($post);
+      $author                = get_field('by_author', $post->ID);
+      $customMedicalReviewer = get_field('custom_medical_review', $post->ID);
       if (!empty($customMedicalReviewer)) {
         $medicalReviewer = $customMedicalReviewer;
       } else {
-        $medicalReviewer = get_field('medical_reviewer', get_the_ID());
+        $medicalReviewer = get_field('medical_reviewer', $post->ID);
       }
       if (has_post_thumbnail()) {
-        $featuredImageID = get_post_thumbnail_id();
+        $featuredImageID = get_post_thumbnail_id($post->ID);
         $featuredImage = wp_get_attachment_image_src($featuredImageID, 'card-thumb');
         $featuredImageAltText = get_post_meta($featuredImageID, '_wp_attachment_image_alt', true);
 
@@ -97,7 +128,7 @@
           <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
         </div>
         <div class="flex flex-col flex-1 bg-white rounded-b-lg p-sp-4">
-          <h3 class="text-h4-base"><a href="<?= get_the_permalink(); ?>" class="block stretched-link"><?= get_the_title(); ?></a></h3>
+          <h3 class="text-h4-base mb-base5-4"><a href="<?= get_the_permalink($post->ID); ?>" class="block stretched-link"><?= get_the_title($post->ID); ?></a></h3>
           <div class="mt-auto">
             <?php if (!empty($medicalReviewer)) : ?>
               <div class="flex items-center mb-base5-1">
@@ -112,35 +143,39 @@
           </div>
         </div>
       </div>
-  <?php endwhile;
+  <?php }
     wp_reset_postdata();
-  endif; ?>
+  } ?>
 </div>
 <div class="flex">
   <a role="button" class="w-full ml-auto ch-button button-primary justify-self-center lg:w-auto custom-posts-load-more-js-<?= $numb; ?> lg:mt-sp-10 mt-sp-5 mb-sp-5 lg:mb-0">Load more</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    const loadMoreResearch = document.querySelector('.custom-posts-load-more-js-<?= $numb; ?>');
+    const loadMoreCustomPosts = document.querySelector('.custom-posts-load-more-js-<?= $numb; ?>');
     const posts = document.querySelectorAll('.custom-posts-js-<?= $numb; ?>.not-loaded');
-    const firstFourPosts = Array.from(posts).slice(0, 8);
+    const firstEightPosts = Array.from(posts).slice(0, 8);
 
-    firstFourPosts.forEach(post => {
+    firstEightPosts.forEach(post => {
       post.classList.remove('noshow', 'not-loaded', 'opacity-0');
     });
 
-    loadMoreResearch.addEventListener('click', function() {
+    loadMoreCustomPosts.addEventListener('click', function() {
       let posts = document.querySelectorAll('.custom-posts-js-<?= $numb; ?>.not-loaded');
-      let firstFourPosts = Array.from(posts).slice(0, 8);
-      firstFourPosts.forEach(post => {
+      let firstEightPosts = Array.from(posts).slice(0, 8);
+      firstEightPosts.forEach(post => {
         post.classList.remove('noshow', 'not-loaded');
         setTimeout(() => {
           post.classList.remove('opacity-0');
         }, 10);
       });
       if (document.querySelectorAll('.custom-posts-js-<?= $numb; ?>.not-loaded').length === 0) {
-        loadMoreResearch.remove()
+        loadMoreCustomPosts.remove()
       }
     })
+
+    if (document.querySelectorAll('.custom-posts-js-<?= $numb; ?>.not-loaded').length < 8) {
+      loadMoreCustomPosts.remove()
+    }
   })
 </script>
