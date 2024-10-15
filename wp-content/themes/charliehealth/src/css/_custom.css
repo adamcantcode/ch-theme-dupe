@@ -250,7 +250,7 @@
   }
   &.swiper-featured-blog {
     .swiper-slide > div > div picture {
-      @apply order-1;
+      @apply order-none
     }
     picture {
       @apply order-1 lg:order-2;
