@@ -1104,70 +1104,19 @@ function careersTracking() {
       });
     }
   }
-  // Reference cookie function
-  function getCookie(name) {
-    var value = '; ' + document.cookie;
-    var parts = value.split('; ' + name + '=');
-    if (parts.length === 2) return parts.pop().split(';').shift();
-  }
-  // gh sources
-  const ghMap = {
-    linkedinProfile: '9a77be284us',
-    linkedinOrganic: 'a0a8b3ae4us',
-    linkedinPaid: 'bf069a914us',
-    instagramOrganic: '35ddfa714us',
-    facebookOrganic: '052412f84us',
-    metaPaid: '98215cc84us',
-    emailOutreach: '5c46ab874us',
-    gtmRecruiting: '0efdd7fe4us',
-    universityRecruiting: '2bbdf2b94us',
-    handshake: '960a9c544us',
-    jobDigest: 'c10ecf634us',
-    email: '837aa8f74us',
-    linkedinOrganicCB: '2f1230dd4us'
-  };
+
   // get params
   setTimeout(() => {
-    const cookieParams = decodeURIComponent(getCookie('urlWithParams'));
-    const careersParams = new URLSearchParams(cookieParams.split('?')[1]);
-    var utmSource = careersParams.get('utm_source');
-    var utmMedium = careersParams.get('utm_medium');
-    var utmCampaign = careersParams.get('utm_campaign');
-    if (utmSource) {
-      utmSource = utmSource.toLowerCase();
-    }
-    if (utmMedium) {
-      utmMedium = utmMedium.toLowerCase();
-    }
-    if (utmCampaign) {
-      utmCampaign = utmCampaign.toLowerCase();
-    }
-    if (utmSource === 'linkedin' && utmMedium === 'organic' && utmCampaign === 'cta-button') {
-      updateUrls(ghMap.linkedinProfile);
-    } else if (utmSource === 'linkedin-cb') {
-      updateUrls(ghMap.linkedinOrganicCB);
-    } else if (utmSource === 'linkedin' && utmMedium === 'organic') {
-      updateUrls(ghMap.linkedinOrganic);
-    } else if (utmSource === 'linkedin' && utmMedium === 'paidsocial') {
-      updateUrls(ghMap.linkedinPaid);
-    } else if (utmSource === 'instagram' && utmMedium === 'organic') {
-      updateUrls(ghMap.instagramOrganic);
-    } else if (utmSource === 'facebook' && utmMedium === 'organic') {
-      updateUrls(ghMap.facebookOrganic);
-    } else if (utmSource === 'meta' && utmMedium === 'paidsocial') {
-      updateUrls(ghMap.metaPaid);
-    } else if (utmSource === 'universityrecruiting' && utmMedium === 'emailoutreach') {
-      updateUrls(ghMap.emailOutreach);
-    } else if (utmSource === 'universityrecruiting' && utmMedium === 'emailpilot') {
-      updateUrls(ghMap.universityRecruiting);
-    } else if (utmSource === 'gtmnewsletter' && utmMedium === 'email') {
-      updateUrls(ghMap.gtmRecruiting);
-    } else if (utmSource === 'job_board' && utmMedium === 'handshake') {
-      updateUrls(ghMap.handshake);
-    } else if (utmMedium === 'job_digest') {
-      updateUrls(ghMap.jobDigest);
-    } else if (utmMedium === 'email') {
-      updateUrls(ghMap.email);
+    console.log(JSON.parse(sessionStorage.getItem('user_journey_'))[0]);
+    // Create a URL object to easily manipulate query parameters
+    const url = new URL(JSON.parse(sessionStorage.getItem('user_journey_'))[0]);
+
+    // Get the value of 'gh_src' if it exists
+    const ghSrcValue = url.searchParams.get('gh_src');
+    if (ghSrcValue) {
+      updateUrls(ghSrcValue);
+    } else {
+      console.log('gh_src query parameter not found.');
     }
   }, 500);
 }
@@ -1944,8 +1893,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 function userPagesTracker() {
   const trackPages = () => {
-    let user_journey = JSON.parse(localStorage.getItem('user_journey_')) || [];
-    let prior_count = parseInt(localStorage.getItem('prior_count')) || 1;
+    let user_journey = JSON.parse(sessionStorage.getItem('user_journey_')) || [];
+    let prior_count = parseInt(sessionStorage.getItem('prior_count')) || 1;
 
     // Get the current URL
     let currentUrl = new URL(window.location.href);
@@ -1961,12 +1910,12 @@ function userPagesTracker() {
       user_journey.shift(); // Remove the first page
       user_journey[0] = `${prior_count} prior pages`; // Add the "x prior pages"
       prior_count++; // Increment the counter for next time
-      localStorage.setItem('prior_count', prior_count); // Save the new count
+      sessionStorage.setItem('prior_count', prior_count); // Save the new count
     }
 
     // Add the stripped URL (without search params) to user_journey
     user_journey.push(currentUrl.href);
-    localStorage.setItem('user_journey_', JSON.stringify(user_journey)); // Save the updated user_journey
+    sessionStorage.setItem('user_journey_', JSON.stringify(user_journey)); // Save the updated user_journey
   };
 
   trackPages();
