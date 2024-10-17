@@ -19,17 +19,20 @@ export default function careersTracking() {
 
   // get params
   setTimeout(() => {
-    console.log(JSON.parse(sessionStorage.getItem('user_journey_'))[0]);
-    // Create a URL object to easily manipulate query parameters
-    const url = new URL(JSON.parse(sessionStorage.getItem('user_journey_'))[0]);
+    // Get the 'gh_src' cookie value
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
+    }
 
-    // Get the value of 'gh_src' if it exists
-    const ghSrcValue = url.searchParams.get('gh_src');
+    // Get the gh_src cookie value
+    const gh_srcValue = getCookie('gh_src');
 
-    if (ghSrcValue) {
-      updateUrls(ghSrcValue);
+    if (gh_srcValue) {
+      updateUrls(gh_srcValue); // Use gh_src cookie value to update URLs
     } else {
-      console.log('gh_src query parameter not found.');
+      console.log('gh_src cookie not found.');
     }
   }, 500);
 }
