@@ -1026,30 +1026,50 @@ function hide_admin_bar_for_subscribers()
   }
 }
 
-function force_social_title_to_seo_title() {
+function force_social_title_to_seo_title()
+{
   if (is_singular()) {
-      global $post;
+    global $post;
 
-      // Get the raw Yoast SEO title with variables
-      $raw_seo_title = get_post_meta($post->ID, '_yoast_wpseo_title', true);
+    // Get the raw Yoast SEO title with variables
+    $raw_seo_title = get_post_meta($post->ID, '_yoast_wpseo_title', true);
 
-      // If no custom SEO title is set, use the post title
-      if (empty($raw_seo_title)) {
-          $raw_seo_title = '%%title%% %%page%% %%sep%% %%sitename%%';
-      }
+    // If no custom SEO title is set, use the post title
+    if (empty($raw_seo_title)) {
+      $raw_seo_title = '%%title%% %%page%% %%sep%% %%sitename%%';
+    }
 
-      // Replace the variables with their actual values
-      $seo_title = wpseo_replace_vars($raw_seo_title, $post);
+    // Replace the variables with their actual values
+    $seo_title = wpseo_replace_vars($raw_seo_title, $post);
 
-      // Set the Facebook Open Graph title
-      add_filter('wpseo_opengraph_title', function() use ($seo_title) {
-          return $seo_title;
-      });
+    // Set the Facebook Open Graph title
+    add_filter('wpseo_opengraph_title', function () use ($seo_title) {
+      return $seo_title;
+    });
 
-      // Set the Twitter Card title (and X title)
-      add_filter('wpseo_twitter_title', function() use ($seo_title) {
-          return $seo_title;
-      });
+    // Set the Twitter Card title (and X title)
+    add_filter('wpseo_twitter_title', function () use ($seo_title) {
+      return $seo_title;
+    });
   }
 }
 add_action('wp', 'force_social_title_to_seo_title');
+// FIX TUTORLMS YOAST NO NOINDEXING
+// Function to set noindex for lessons and quizzes
+function noindex_tutor_lms_lesson_and_quiz($robots)
+{
+  if (is_singular('lesson') || is_singular('tutor_quiz')) {
+    return 'noindex, nofollow';
+  } else {
+    return $robots;
+  }
+}
+add_filter('wpseo_robots', 'noindex_tutor_lms_lesson_and_quiz');
+
+// Function to remove lessons and quizzes from Yoast sitemap
+function remove_lesson_and_quiz_from_sitemap($value, $post_type)
+{
+  $post_type_to_exclude = array('lesson', 'tutor_quiz');
+  if (in_array($post_type, $post_type_to_exclude)) return true;
+}
+add_filter('wpseo_sitemap_exclude_post_type', 'remove_lesson_and_quiz_from_sitemap', 10, 2);

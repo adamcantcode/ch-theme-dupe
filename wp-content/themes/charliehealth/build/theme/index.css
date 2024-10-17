@@ -2656,10 +2656,6 @@ a.insurance-tabs.active:hover {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.grid-cols-\[\.75fr_1fr_1fr\]{
-  grid-template-columns: .75fr 1fr 1fr;
-}
-
 .grid-cols-\[1fr_0\.75fr_1\.5fr\]{
   grid-template-columns: 1fr 0.75fr 1.5fr;
 }
@@ -2867,16 +2863,8 @@ a.insurance-tabs.active:hover {
   align-self: flex-start;
 }
 
-.self-end{
-  align-self: flex-end;
-}
-
 .self-center{
   align-self: center;
-}
-
-.justify-self-end{
-  justify-self: end;
 }
 
 .justify-self-center{
@@ -6706,6 +6694,10 @@ ul.alert li {
 
   .lg\:grid-cols-\[unset\]{
     grid-template-columns: unset;
+  }
+
+  .lg\:grid-rows-1{
+    grid-template-rows: repeat(1, minmax(0, 1fr));
   }
 
   .lg\:grid-rows-2{

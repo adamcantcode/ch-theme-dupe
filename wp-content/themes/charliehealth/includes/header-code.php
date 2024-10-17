@@ -371,7 +371,7 @@
         });
       form.getField(fieldIds.fbp).setValue(getCookie('_fbp'));
       form.getField(fieldIds.userAgent).setValue(window.navigator.userAgent);      
-      form.getField(fieldIds.userJourney).setValue(localStorage.getItem('user_journey'));
+      form.getField(fieldIds.userJourney).setValue(sessionStorage.getItem('user_journey_'));
 
       // VWO Test Version
 

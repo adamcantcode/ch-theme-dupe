@@ -1074,70 +1074,22 @@ function careersTracking() {
       });
     }
   }
-  // Reference cookie function
-  function getCookie(name) {
-    var value = '; ' + document.cookie;
-    var parts = value.split('; ' + name + '=');
-    if (parts.length === 2) return parts.pop().split(';').shift();
-  }
-  // gh sources
-  const ghMap = {
-    linkedinProfile: '9a77be284us',
-    linkedinOrganic: 'a0a8b3ae4us',
-    linkedinPaid: 'bf069a914us',
-    instagramOrganic: '35ddfa714us',
-    facebookOrganic: '052412f84us',
-    metaPaid: '98215cc84us',
-    emailOutreach: '5c46ab874us',
-    gtmRecruiting: '0efdd7fe4us',
-    universityRecruiting: '2bbdf2b94us',
-    handshake: '960a9c544us',
-    jobDigest: 'c10ecf634us',
-    email: '837aa8f74us',
-    linkedinOrganicCB: '2f1230dd4us'
-  };
+
   // get params
   setTimeout(() => {
-    const cookieParams = decodeURIComponent(getCookie('urlWithParams'));
-    const careersParams = new URLSearchParams(cookieParams.split('?')[1]);
-    var utmSource = careersParams.get('utm_source');
-    var utmMedium = careersParams.get('utm_medium');
-    var utmCampaign = careersParams.get('utm_campaign');
-    if (utmSource) {
-      utmSource = utmSource.toLowerCase();
+    // Get the 'gh_src' cookie value
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
     }
-    if (utmMedium) {
-      utmMedium = utmMedium.toLowerCase();
-    }
-    if (utmCampaign) {
-      utmCampaign = utmCampaign.toLowerCase();
-    }
-    if (utmSource === 'linkedin' && utmMedium === 'organic' && utmCampaign === 'cta-button') {
-      updateUrls(ghMap.linkedinProfile);
-    } else if (utmSource === 'linkedin-cb') {
-      updateUrls(ghMap.linkedinOrganicCB);
-    } else if (utmSource === 'linkedin' && utmMedium === 'organic') {
-      updateUrls(ghMap.linkedinOrganic);
-    } else if (utmSource === 'linkedin' && utmMedium === 'paidsocial') {
-      updateUrls(ghMap.linkedinPaid);
-    } else if (utmSource === 'instagram' && utmMedium === 'organic') {
-      updateUrls(ghMap.instagramOrganic);
-    } else if (utmSource === 'facebook' && utmMedium === 'organic') {
-      updateUrls(ghMap.facebookOrganic);
-    } else if (utmSource === 'meta' && utmMedium === 'paidsocial') {
-      updateUrls(ghMap.metaPaid);
-    } else if (utmSource === 'universityrecruiting' && utmMedium === 'emailoutreach') {
-      updateUrls(ghMap.emailOutreach);
-    } else if (utmSource === 'universityrecruiting' && utmMedium === 'emailpilot') {
-      updateUrls(ghMap.universityRecruiting);
-    } else if (utmSource === 'gtmnewsletter' && utmMedium === 'email') {
-      updateUrls(ghMap.gtmRecruiting);
-    } else if (utmSource === 'job_board' && utmMedium === 'handshake') {
-      updateUrls(ghMap.handshake);
-    } else if (utmMedium === 'job_digest') {
-      updateUrls(ghMap.jobDigest);
-    } else if (utmMedium === 'email') {
-      updateUrls(ghMap.email);
+
+    // Get the gh_src cookie value
+    const gh_srcValue = getCookie('gh_src');
+    if (gh_srcValue) {
+      updateUrls(gh_srcValue); // Use gh_src cookie value to update URLs
+    } else {
+      console.log('gh_src cookie not found.');
     }
   }, 500);
 }
@@ -1914,8 +1866,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 function userPagesTracker() {
   const trackPages = () => {
-    let user_journey = JSON.parse(localStorage.getItem('user_journey')) || [];
-    let prior_count = parseInt(localStorage.getItem('prior_count')) || 1;
+    let user_journey = JSON.parse(sessionStorage.getItem('user_journey_')) || [];
+    let prior_count = parseInt(sessionStorage.getItem('prior_count')) || 1;
 
     // Get the current URL
     let currentUrl = new URL(window.location.href);
@@ -1931,14 +1883,43 @@ function userPagesTracker() {
       user_journey.shift(); // Remove the first page
       user_journey[0] = `${prior_count} prior pages`; // Add the "x prior pages"
       prior_count++; // Increment the counter for next time
-      localStorage.setItem('prior_count', prior_count); // Save the new count
+      sessionStorage.setItem('prior_count', prior_count); // Save the new count
     }
 
     // Add the stripped URL (without search params) to user_journey
     user_journey.push(currentUrl.href);
-    localStorage.setItem('user_journey', JSON.stringify(user_journey)); // Save the updated user_journey
+    sessionStorage.setItem('user_journey_', JSON.stringify(user_journey)); // Save the updated user_journey
   };
 
+  const gh_src = () => {
+    // Function to get the value of a specific URL parameter
+    function getUrlParameter(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+
+    // Check if the 'gh_src' parameter exists in the URL
+    var ghSrcValue = getUrlParameter('gh_src');
+    if (ghSrcValue) {
+      // Check if the cookie 'gh_src' exists
+      var cookieExists = document.cookie.split('; ').some(cookie => cookie.startsWith('gh_src='));
+
+      // Set the cookie if it does not exist or update if 'gh_src' is in the URL
+      if (ghSrcValue || !cookieExists) {
+        var expires = '';
+        var date = new Date();
+        date.setTime(date.getTime() + 30 * 24 * 60 * 60 * 1000);
+        expires = '; expires=' + date.toUTCString();
+
+        // Use the new value from the URL parameter or keep the existing one
+        var newValue = ghSrcValue || (cookieExists ? document.cookie.split('; ').find(cookie => cookie.startsWith('gh_src=')).split('=')[1] : '');
+
+        // Set or update the cookie
+        document.cookie = 'gh_src=' + newValue + expires + '; path=/';
+      }
+    }
+  };
+  gh_src();
   trackPages();
 }
 
@@ -23768,7 +23749,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Check if JotForm iframe exists
       if (jotformIframes.length > 0) {
         var cookieValue = getCookie('urlWithParams');
-        var user_journey = localStorage.getItem('user_journey');
+        var user_journey = localStorage.getItem('user_journey_');
         if (cookieValue) {
           var params = decodeURIComponent(cookieValue).split('?')[1];
           if (params) {

@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Check if JotForm iframe exists
       if (jotformIframes.length > 0) {
         var cookieValue = getCookie('urlWithParams');
-        var user_journey = localStorage.getItem('user_journey');
+        var user_journey = localStorage.getItem('user_journey_');
 
         if (cookieValue) {
           var params = decodeURIComponent(cookieValue).split('?')[1];
