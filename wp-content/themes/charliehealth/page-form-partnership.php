@@ -7,9 +7,9 @@ Template Post Type: page
 
 <?php get_header(); ?>
 
-<div class="section">
+<div class="section-top">
   <div class="container">
-    <h1 class="text-center">Partnershp Referral Portal</h1>
+    <h1 class="text-center">Partnership Referral Portal</h1>
   </div>
 </div>
 <div class="section">
