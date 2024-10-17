@@ -36,8 +36,8 @@ Template Post Type: page
           var accountID = getQueryParam('RS_Account_ID');
 
           // Get form fields
-          const organizationField = form.getField('174839583'); // Field for What_is_your_organization
-          const accountIDField = form.getField('174840796'); // Field for RS_Account_ID
+          const organizationField = form.getField('174764522'); // Field for What_is_your_organization
+          const accountIDField = form.getField('175265708'); // Field for RS_Account_ID
 
           // If the 'What_is_your_organization' parameter exists, set its value in the form field
           if (organization && organizationField) {
