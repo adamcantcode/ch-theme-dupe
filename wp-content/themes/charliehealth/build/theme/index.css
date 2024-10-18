@@ -1710,14 +1710,6 @@ a.insurance-tabs.active:hover {
   grid-column: span 2 / span 2;
 }
 
-.row-span-2{
-  grid-row: span 2 / span 2;
-}
-
-.row-span-1{
-  grid-row: span 1 / span 1;
-}
-
 .float-right{
   float: right;
 }
@@ -2148,6 +2140,10 @@ a.insurance-tabs.active:hover {
   height: 170px;
 }
 
+.h-\[177\.77vh\]{
+  height: 177.77vh;
+}
+
 .h-\[1px\]{
   height: 1px;
 }
@@ -2383,6 +2379,10 @@ a.insurance-tabs.active:hover {
 
 .min-w-0{
   min-width: 0px;
+}
+
+.min-w-\[177\.77vh\]{
+  min-width: 177.77vh;
 }
 
 .min-w-full{
@@ -2623,10 +2623,6 @@ a.insurance-tabs.active:hover {
   grid-auto-flow: column;
 }
 
-.grid-flow-row-dense{
-  grid-auto-flow: row dense;
-}
-
 .auto-rows-fr{
   grid-auto-rows: minmax(0, 1fr);
 }
@@ -2641,10 +2637,6 @@ a.insurance-tabs.active:hover {
 
 .grid-cols-3{
   grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.grid-cols-\[\.75fr_1fr_1fr\]{
-  grid-template-columns: .75fr 1fr 1fr;
 }
 
 .grid-cols-\[1fr_0\.75fr_1\.5fr\]{
@@ -2665,10 +2657,6 @@ a.insurance-tabs.active:hover {
 
 .grid-cols-\[2fr_1fr\]{
   grid-template-columns: 2fr 1fr;
-}
-
-.grid-rows-2{
-  grid-template-rows: repeat(2, minmax(0, 1fr));
 }
 
 .flex-row{
@@ -2854,16 +2842,8 @@ a.insurance-tabs.active:hover {
   align-self: flex-start;
 }
 
-.self-end{
-  align-self: flex-end;
-}
-
 .self-center{
   align-self: center;
-}
-
-.justify-self-end{
-  justify-self: end;
 }
 
 .justify-self-center{
@@ -6299,6 +6279,10 @@ ul.alert li {
     height: 50vh;
   }
 
+  .lg\:h-\[56\.25vw\]{
+    height: 56.25vw;
+  }
+
   .lg\:h-\[600px\]{
     height: 600px;
   }
@@ -6397,6 +6381,10 @@ ul.alert li {
 
   .lg\:min-w-0{
     min-width: 0px;
+  }
+
+  .lg\:min-w-\[56\.25vh\]{
+    min-width: 56.25vh;
   }
 
   .lg\:max-w-\[225px\]{
@@ -6632,12 +6620,12 @@ ul.alert li {
     grid-template-columns: unset;
   }
 
-  .lg\:grid-rows-2{
-    grid-template-rows: repeat(2, minmax(0, 1fr));
-  }
-
   .lg\:grid-rows-1{
     grid-template-rows: repeat(1, minmax(0, 1fr));
+  }
+
+  .lg\:grid-rows-2{
+    grid-template-rows: repeat(2, minmax(0, 1fr));
   }
 
   .lg\:flex-row{
