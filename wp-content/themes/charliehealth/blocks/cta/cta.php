@@ -73,7 +73,7 @@ $blockClasses .= $background . ' ';
   </div>
 <?php endif; ?>
 <?php if ($style === 'video') : ?>
-  <section class="relative section-bg-video section">
+  <section class="relative section-bg-video section noshow">
     <style>
       .vimeo-container {
         position: absolute;
