@@ -87,19 +87,6 @@ $blockClasses .= $background . ' ';
         /* Behind the overlay and content */
       }
 
-      .vimeo-container iframe {
-        width: 100vw;
-        height: 56.25vw;
-        /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
-        /* min-height: 100vh; */
-        min-width: 177.77vh;
-        /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-
       .overlay {
         position: absolute;
         top: 0;
@@ -114,7 +101,7 @@ $blockClasses .= $background . ' ';
     </style>
     <!-- Video container with full width and height -->
     <div class="vimeo-container">
-      <iframe src="https://player.vimeo.com/video/1019966136?&amp;background=1&amp;autoplay=1&amp;loop=1" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+      <iframe src="https://player.vimeo.com/video/1019966136?&amp;background=1&amp;autoplay=1&amp;loop=1" allowfullscreen="allowfullscreen" frameborder="0" class="w-screen lg:min-w-[56.25vh] min-w-[177.77vh] lg:h-[56.25vw] h-[177.77vh] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></iframe>
     </div>
 
     <!-- Blue overlay -->
