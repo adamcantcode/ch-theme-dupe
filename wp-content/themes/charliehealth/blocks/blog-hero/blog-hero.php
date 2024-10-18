@@ -5,7 +5,7 @@
         <h1>The Library</h1>
         <div class="flex items-center gap-sp-4 mobile-hero-sub max-w-[550px]">
           <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health Shield" class="w-10 noshow lg:block mt-base5-1">
-          <p class="mb-0 text-h4-base font-heading-serif">Stay up to date on mental health research, wellness techniques, treatment services, and more.</p>
+          <p class="mb-0 text-h4-base font-heading-serif">Stay up to date on mental health research, wellness techniques, treatment services, and more</p>
         </div>
       </div>
       <div></div>
