@@ -5656,7 +5656,7 @@ ul.alert li {
   }
     }
 
-.tutor-lesson-wrapper p > iframe[src*='youtube.com']{
+iframe[src*='youtube.com']{
   aspect-ratio: 16 / 9;
   height: 100%;
   width: 100%;
