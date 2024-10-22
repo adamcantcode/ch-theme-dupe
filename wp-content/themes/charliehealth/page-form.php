@@ -12,6 +12,10 @@ Template Post Type: page
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-sp-8">
       <div>
         <script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/self_serve_admissions"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/self_serve_admissions" title="Online Form">Online Form - [PROD] Charlie Health Intake Form</a></noscript>
+        <form name="iterable_optin" action="//links.iterable.com/lists/publicAddSubscriberForm?publicIdString=c82fe3a9-ff97-46b9-abdd-d857ee87bd2c" method="POST" id="iterablePartialSubmissions" class="noshow">
+          <input type="email" name="email" id="iterableEmailInput" onfocus="if(this.value===this.defaultValue){this.value='';}" onblur="if(this.value===''){this.value=this.defaultValue;}">
+          <input type="submit" value="Submit">
+        </form>
         <script>
           'use strict';
 
@@ -71,7 +75,6 @@ Template Post Type: page
           form.registerFormEventListener({
             type: 'ready',
             onFormEvent: function(event) {
-              console.log('Form is ready.');
 
               // Select elements
               const disclaimerContainer = document.querySelector('.field-auto-capture');
@@ -107,7 +110,6 @@ Template Post Type: page
           form.registerFormEventListener({
             type: 'change-page',
             onFormEvent: function(event) {
-              console.log('Page changed.');
 
               // Scroll to top on page change
               window.scrollTo({
@@ -116,6 +118,76 @@ Template Post Type: page
               });
 
               return Promise.resolve(event);
+            }
+          });
+
+          form.registerFormEventListener({
+            type: 'change',
+            onFormEvent: function(event) {
+              const fsEmailInput = '162592077';
+              const iterableEmailInput = document.querySelector('#iterableEmailInput');
+
+              if (event.data.fieldId === fsEmailInput) {
+                const source = form.getField(fsEmailInput);
+
+                iterableEmailInput.value = source.getValue().value;
+                console.log(iterableEmailInput.value);
+                document.querySelector('#iterablePartialSubmissions').dispatchEvent(new Event('submit', {
+                  cancelable: true,
+                  bubbles: true
+                }));
+              }
+
+              // form.registerFormEventListener({
+              //   type: 'error',
+              //   onFormEvent: function(event) {
+              //     console.log('error');
+              //     console.log(event.data.errors);
+
+              //     if (event.data.errors[162592077]) {
+              //       if (event.data.errors[162592077].value.isValidEmail !== false) {
+              //         document.querySelector('#iterablePartialSubmissions').submit();
+              //       }
+              //     }
+
+
+              //     return Promise.resolve(event);
+              //   }
+              // });
+
+              return Promise.resolve(event);
+            }
+          });
+        </script>
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('#iterablePartialSubmissions');
+
+            if (form) {
+              form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent default form submission
+                event.stopImmediatePropagation(); // Prevent other handlers from triggering
+
+                var formData = new FormData(form);
+                var xhr = new XMLHttpRequest();
+
+                xhr.open('POST', form.action, true);
+                xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest'); // AJAX request indicator
+
+                xhr.onload = function() {
+                  if (xhr.status >= 200 && xhr.status < 400) {
+                    form.reset(); // Reset the form after successful submission
+                  } else {
+                    console.error('Submission failed:', xhr.statusText);
+                  }
+                };
+
+                xhr.onerror = function() {
+                  console.error('Request failed');
+                };
+
+                xhr.send(formData);
+              });
             }
           });
         </script>
