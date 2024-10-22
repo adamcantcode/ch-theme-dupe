@@ -102,27 +102,28 @@ Template Post Type: page
                 });
               }
 
-              window.addEventListener("beforeunload", function() {
-                const iterableEmailInput = document.querySelector('#iterableEmailInput');
+              // Partials subs logic
+              // window.addEventListener("beforeunload", function() {
+              //   const iterableEmailInput = document.querySelector('#iterableEmailInput');
 
-                try {
-                  const source = document.querySelector('#field162592077');
+              //   try {
+              //     const source = document.querySelector('#field162592077');
                   
-                  if (source) {
-                    if (iterableEmailInput) {
-                      iterableEmailInput.value = source.value;
-                    }
+              //     if (source) {
+              //       if (iterableEmailInput) {
+              //         iterableEmailInput.value = source.value;
+              //       }
 
-                    // Dispatch the form submission
-                    document.querySelector('#iterablePartialSubmissions').dispatchEvent(new Event('submit', {
-                      cancelable: true,
-                      bubbles: true
-                    }));
-                  }
-                } catch (error) {
-                  console.error("Error processing the form fields: ", error);
-                }
-              });
+              //       // Dispatch the form submission
+              //       document.querySelector('#iterablePartialSubmissions').dispatchEvent(new Event('submit', {
+              //         cancelable: true,
+              //         bubbles: true
+              //       }));
+              //     }
+              //   } catch (error) {
+              //     console.error("Error processing the form fields: ", error);
+              //   }
+              // });
 
               return Promise.resolve(event);
             }
