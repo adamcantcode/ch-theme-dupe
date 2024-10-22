@@ -138,23 +138,6 @@ Template Post Type: page
                 }));
               }
 
-              // form.registerFormEventListener({
-              //   type: 'error',
-              //   onFormEvent: function(event) {
-              //     console.log('error');
-              //     console.log(event.data.errors);
-
-              //     if (event.data.errors[162592077]) {
-              //       if (event.data.errors[162592077].value.isValidEmail !== false) {
-              //         document.querySelector('#iterablePartialSubmissions').submit();
-              //       }
-              //     }
-
-
-              //     return Promise.resolve(event);
-              //   }
-              // });
-
               return Promise.resolve(event);
             }
           });
