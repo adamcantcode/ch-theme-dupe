@@ -132,11 +132,23 @@ Template Post Type: page
 
                 iterableEmailInput.value = source.getValue().value;
                 console.log(iterableEmailInput.value);
-                document.querySelector('#iterablePartialSubmissions').dispatchEvent(new Event('submit', {
-                  cancelable: true,
-                  bubbles: true
-                }));
+                window.addEventListener("beforeunload", function(event) {
+                  document.querySelector('#iterablePartialSubmissions').dispatchEvent(new Event('submit', {
+                    cancelable: true,
+                    bubbles: true
+                  }));
+                });
+
               }
+
+              return Promise.resolve(event);
+            }
+          });
+
+          form.registerFormEventListener({
+            type: 'submit',
+            onFormEvent: function(event) {
+              document.querySelector('#iterableEmailInput').value = '';
 
               return Promise.resolve(event);
             }
