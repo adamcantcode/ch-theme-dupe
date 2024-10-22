@@ -102,6 +102,28 @@ Template Post Type: page
                 });
               }
 
+              window.addEventListener("beforeunload", function() {
+                const iterableEmailInput = document.querySelector('#iterableEmailInput');
+
+                try {
+                  const source = document.querySelector('#field162592077');
+                  
+                  if (source) {
+                    if (iterableEmailInput) {
+                      iterableEmailInput.value = source.value;
+                    }
+
+                    // Dispatch the form submission
+                    document.querySelector('#iterablePartialSubmissions').dispatchEvent(new Event('submit', {
+                      cancelable: true,
+                      bubbles: true
+                    }));
+                  }
+                } catch (error) {
+                  console.error("Error processing the form fields: ", error);
+                }
+              });
+
               return Promise.resolve(event);
             }
           });
@@ -116,30 +138,6 @@ Template Post Type: page
                 top: 0,
                 behavior: 'smooth'
               });
-
-              return Promise.resolve(event);
-            }
-          });
-
-          form.registerFormEventListener({
-            type: 'change',
-            onFormEvent: function(event) {
-              const fsEmailInput = '162592077';
-              const iterableEmailInput = document.querySelector('#iterableEmailInput');
-
-              if (event.data.fieldId === fsEmailInput) {
-                const source = form.getField(fsEmailInput);
-
-                iterableEmailInput.value = source.getValue().value;
-                console.log(iterableEmailInput.value);
-                window.addEventListener("beforeunload", function(event) {
-                  document.querySelector('#iterablePartialSubmissions').dispatchEvent(new Event('submit', {
-                    cancelable: true,
-                    bubbles: true
-                  }));
-                });
-
-              }
 
               return Promise.resolve(event);
             }
