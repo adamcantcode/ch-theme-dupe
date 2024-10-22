@@ -370,21 +370,47 @@
           form.getField(fieldIds.userIP).setValue(data.ip);
         });
       form.getField(fieldIds.fbp).setValue(getCookie('_fbp'));
-      form.getField(fieldIds.userAgent).setValue(window.navigator.userAgent);      
+      form.getField(fieldIds.userAgent).setValue(window.navigator.userAgent);
       form.getField(fieldIds.userJourney).setValue(sessionStorage.getItem('user_journey_'));
 
       // VWO Test Version
 
       // Look for any cookie that ends with '_combi'
       const experimentCookie = document.cookie.match(/_vis_opt_exp_\d+_combi=([^;]+)/);
+
       if (experimentCookie) {
+        var element = document.querySelector('.vwo_loaded');
+
+        if (element) {
+          var classNames = element.className.split(' ');
+
+          // Find all class names that start with 'vwo_loaded_'
+          var targetClasses = classNames.filter(function(className) {
+            return className.startsWith('vwo_loaded_');
+          });
+
+          // Array to store all extracted numbers
+          var extractedNumbers = [];
+
+          // Loop through each matching class and extract the number
+          targetClasses.forEach(function(targetClass) {
+            var match = targetClass.match(/vwo_loaded_(\d+)_\d+/);
+            if (match && match[1]) {
+              extractedNumbers.push(match[1]);
+            }
+          });
+
+          // Join the extracted numbers as a comma-separated string
+          var numbersString = extractedNumbers.length > 0 ? extractedNumbers.join(' & ') : '';
+        }
+
         const experimentValue = experimentCookie[1]; // Get the value after the '=' in the cookie
+
         if (experimentValue === '1') {
-          console.log(experimentValue);
-          form.getField(fieldIds.vwoTestVersion).setValue('Control');
+          form.getField(fieldIds.vwoTestVersion).setValue(numbersString + ' - Control');
+          
         } else if (experimentValue === '2') {
-          console.log(experimentValue);
-          form.getField(fieldIds.vwoTestVersion).setValue('Variation');
+          form.getField(fieldIds.vwoTestVersion).setValue(numbersString + ' - Variation');
         }
       }
     }
