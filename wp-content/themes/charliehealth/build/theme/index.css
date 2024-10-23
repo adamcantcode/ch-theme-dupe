@@ -5753,6 +5753,10 @@ ul.alert li {
   }
     }
 
+a[href='https://www.charliehealth.com/dashboard/retrieve-password']{
+  display: none;
+}
+
 iframe[src*='youtube.com']{
   aspect-ratio: 16 / 9;
   height: 100%;

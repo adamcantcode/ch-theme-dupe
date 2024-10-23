@@ -856,6 +856,9 @@ ul.alert {
 .tutor-page-wrap {
   @apply section;
 }
+a[href='https://www.charliehealth.com/dashboard/retrieve-password'] {
+  @apply noshow;
+}
 iframe[src*='youtube.com'] {
   @apply w-full h-full aspect-video;
 }
