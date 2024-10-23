@@ -374,45 +374,42 @@
       form.getField(fieldIds.userJourney).setValue(sessionStorage.getItem('user_journey_'));
 
       // VWO Test Version
+      waitForCookie('_vis_opt_test_cookie', cookieValue => {
+        // Look for any cookie that ends with '_combi'
+        const experimentCookie = document.cookie.match(/_vis_opt_exp_\d+_combi=([^;]+)/);
 
-      // Look for any cookie that ends with '_combi'
-      const experimentCookie = document.cookie.match(/_vis_opt_exp_\d+_combi=([^;]+)/);
+        if (experimentCookie) {
+          var element = document.querySelector('.vwo_loaded');
 
-      if (experimentCookie) {
-        var element = document.querySelector('.vwo_loaded');
+          if (element) {
+            var classNames = element.className.split(' ');
 
-        if (element) {
-          var classNames = element.className.split(' ');
+            var targetClasses = classNames.filter(function(className) {
+              return className.startsWith('vwo_loaded_');
+            });
 
-          // Find all class names that start with 'vwo_loaded_'
-          var targetClasses = classNames.filter(function(className) {
-            return className.startsWith('vwo_loaded_');
-          });
+            var extractedNumbers = [];
 
-          // Array to store all extracted numbers
-          var extractedNumbers = [];
+            targetClasses.forEach(function(targetClass) {
+              var match = targetClass.match(/vwo_loaded_(\d+)_\d+/);
+              if (match && match[1]) {
+                extractedNumbers.push(match[1]);
+              }
+            });
 
-          // Loop through each matching class and extract the number
-          targetClasses.forEach(function(targetClass) {
-            var match = targetClass.match(/vwo_loaded_(\d+)_\d+/);
-            if (match && match[1]) {
-              extractedNumbers.push(match[1]);
-            }
-          });
+            var numbersString = extractedNumbers.length > 0 ? extractedNumbers.join(' & ') : '';
 
-          // Join the extracted numbers as a comma-separated string
-          var numbersString = extractedNumbers.length > 0 ? extractedNumbers.join(' & ') : '';
+          }
+
+          const experimentValue = experimentCookie[1]; // Get the value after the '=' in the cookie
+
+          if (experimentValue === '1') {
+            form.getField(fieldIds.vwoTestVersion).setValue(numbersString + ' - Control');
+          } else if (experimentValue === '2') {
+            form.getField(fieldIds.vwoTestVersion).setValue(numbersString + ' - Variation');
+          }
         }
-
-        const experimentValue = experimentCookie[1]; // Get the value after the '=' in the cookie
-
-        if (experimentValue === '1') {
-          form.getField(fieldIds.vwoTestVersion).setValue(numbersString + ' - Control');
-          
-        } else if (experimentValue === '2') {
-          form.getField(fieldIds.vwoTestVersion).setValue(numbersString + ' - Variation');
-        }
-      }
+      });
     }
 
     function initializeForm(formId, fieldIds) {
