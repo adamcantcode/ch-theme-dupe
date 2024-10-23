@@ -375,40 +375,40 @@
 
       // VWO Test Version
       waitForCookie('_vis_opt_test_cookie', cookieValue => {
-        // Look for any cookie that ends with '_combi'
-        const experimentCookie = document.cookie.match(/_vis_opt_exp_\d+_combi=([^;]+)/);
+        // Function to get the experiment number from cookies
+        function getExperimentNumbersFromCookies() {
+          const experimentNumbers = [];
+          const cookies = document.cookie.split('; '); // Split the cookie string into individual cookies
+
+          cookies.forEach(cookie => {
+            const match = cookie.match(/_vis_opt_exp_(\d+)_combi/);
+            if (match && match[1]) {
+              experimentNumbers.push(match[1]); // Add the extracted number to the array
+            }
+          });
+
+          return experimentNumbers;
+        }
+
+        const extractedNumbers = getExperimentNumbersFromCookies(); // Get experiment numbers
+
+        // Convert the array to a string
+        const numbersString = extractedNumbers.length > 0 ? extractedNumbers.join(' & ') : '';
+
+        // Get the value from the first matching cookie
+        const experimentCookie = document.cookie.match(/_vis_opt_exp_(\d+)_combi=([^;]+)/);
 
         if (experimentCookie) {
-          var element = document.querySelector('.vwo_loaded');
+          const experimentValue = experimentCookie[2]; // Get the value after the '=' in the cookie
 
-          if (element) {
-            var classNames = element.className.split(' ');
-
-            var targetClasses = classNames.filter(function(className) {
-              return className.startsWith('vwo_loaded_');
-            });
-
-            var extractedNumbers = [];
-
-            targetClasses.forEach(function(targetClass) {
-              var match = targetClass.match(/vwo_loaded_(\d+)_\d+/);
-              if (match && match[1]) {
-                extractedNumbers.push(match[1]);
-              }
-            });
-
-            var numbersString = extractedNumbers.length > 0 ? extractedNumbers.join(' & ') : '';
-
-          }
-
-          const experimentValue = experimentCookie[1]; // Get the value after the '=' in the cookie
-
+          // Assuming form and fieldIds are defined elsewhere
           if (experimentValue === '1') {
             form.getField(fieldIds.vwoTestVersion).setValue(numbersString + ' - Control');
           } else if (experimentValue === '2') {
             form.getField(fieldIds.vwoTestVersion).setValue(numbersString + ' - Variation');
           }
         }
+
       });
     }
 
