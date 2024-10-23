@@ -71,6 +71,22 @@ Template Post Type: page
             }, 300);
           }
 
+          // Prevent first page validation trigger
+          form.registerFormEventListener({
+            type: 'error',
+            onFormEvent: function(event) {
+              console.log(event);
+              if (event.data.page === 1) {
+                if (event.preventDefault) {
+                  event.preventDefault();
+                }
+              }
+
+
+              return Promise.resolve(event);
+            }
+          });
+
           // Register event listener for form ready event
           form.registerFormEventListener({
             type: 'ready',
@@ -108,7 +124,7 @@ Template Post Type: page
 
               //   try {
               //     const source = document.querySelector('#field162592077');
-                  
+
               //     if (source) {
               //       if (iterableEmailInput) {
               //         iterableEmailInput.value = source.value;
