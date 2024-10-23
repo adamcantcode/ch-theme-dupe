@@ -453,7 +453,7 @@
     }
 
     // If form page
-    if (window.location.href.indexOf('form') > -1) {
+    if (window.location.href.indexOf('/form') > -1) {      
       initializeForm('5700521', {
         organicLP: '162592063',
         fbclid: '162592064',

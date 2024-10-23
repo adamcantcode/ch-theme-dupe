@@ -23797,6 +23797,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // }
   }
 
+  if (window.location.href.includes('#form')) {
+    setTimeout(() => {
+      document.getElementById('form').scrollIntoView();
+    }, 1000);
+  }
   (0,_modules_user_pages_tracker__WEBPACK_IMPORTED_MODULE_23__["default"])();
 });
 })();

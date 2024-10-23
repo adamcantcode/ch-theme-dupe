@@ -150,7 +150,8 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (user_journey) {
           var newURL =
             window.location.href +
-            (window.location.search ? '&' : '?') + 'user_journey=' +
+            (window.location.search ? '&' : '?') +
+            'user_journey=' +
             encodeURIComponent(user_journey);
 
           window.location.href = newURL; // Reload the page with the new URL
@@ -176,6 +177,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // if (!window.location.pathname.endsWith('openings')) {
     careersTracking();
     // }
+  }
+
+  if (window.location.href.includes('#form')) {
+    setTimeout(() => {
+      document.getElementById('form').scrollIntoView();
+    }, 1000);
   }
 
   userPagesTracker();
