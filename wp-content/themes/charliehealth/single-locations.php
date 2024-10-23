@@ -292,20 +292,11 @@ $conditions = get_field('conditions');
 <section class="bg-primary-100 section ">
   <div class="container">
     <div class="acf-innerblocks-container">
-      <div class="grid lg:justify-around justify-items-center items-center grid-cols-2 lg:grid-cols-[unset] lg:grid-flow-col lg:gap-sp-8 gap-sp-2">
-        <img decoding="async" src="https://www.charliehealth.com/wp-content/uploads/2023/12/UnitedHealthcare_logo.svg" alt="UHC logo" class="object-contain aspect-video" data-uw-rm-alt-original="UHC logo" role="img" data-uw-rm-alt="ALT">
-        <img decoding="async" src="https://www.charliehealth.com/wp-content/uploads/2023/12/Aetna_Logo_ss_Violet_RGB_Coated.svg" alt="Aetna logo" class="object-contain aspect-video" data-uw-rm-alt-original="Aetna logo" role="img" data-uw-rm-alt="ALT">
-        <img decoding="async" src="https://www.charliehealth.com/wp-content/uploads/2023/12/cigna-3-1.svg" alt="Cigna logo" class="object-contain aspect-video" data-uw-rm-alt-original="Cigna logo" role="img" data-uw-rm-alt="ALT">
-        <img decoding="async" src="https://www.charliehealth.com/wp-content/uploads/2023/12/Humana_logo.svg" alt="Human logo" class="object-contain aspect-video" data-uw-rm-alt-original="Human logo" role="img" data-uw-rm-alt="ALT">
-        <img decoding="async" src="https://www.charliehealth.com/wp-content/uploads/2023/12/bluecrossblueshield.svg" alt="Blue Cross Blue Shield logo" class="object-contain aspect-video" data-uw-rm-alt-original="Blue Cross Blue Shield logo" role="img" data-uw-rm-alt="ALT">
-        <img decoding="async" src="https://www.charliehealth.com/wp-content/uploads/2023/12/Optum_logo_2021.svg" alt="Optum logo" class="object-contain aspect-video" data-uw-rm-alt-original="Optum logo" role="img" data-uw-rm-alt="ALT">
-        <img decoding="async" src="https://www.charliehealth.com/wp-content/uploads/2023/12/US-TRICARE-Logo.svg" alt="US Tricare logo" class="object-contain aspect-video" data-uw-rm-alt-original="US Tricare logo" role="img" data-uw-rm-alt="ALT">
-      </div>
+      <?= do_blocks('<!-- wp:block {"ref":12496} /-->'); ?>
       <p class="has-text-align-center mt-sp-8 mb-sp-8 !text-[20px] has-white-color has-text-color has-link-color wp-elements-0244d5b506b018eae908e0511a0b87bd">We proudly partner with many major insurance providers, including commercial and Medicaid</p>
       <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
         <a href="https://www.charliehealth.com/insurance" class="ch-button button-secondary inverted" target="_self" aria-label="We proudly partner with many major insurance providers, including commercial and Medicaid Learn more" uw-rm-vague-link-id="https://www.charliehealth.com/insurance$learn more" data-uw-rm-vglnk="" data-uw-rm-brl="PR" data-uw-original-href="https://www.charliehealth.com/insurance">Learn more</a>
       </div>
-
     </div>
   </div>
 </section>
