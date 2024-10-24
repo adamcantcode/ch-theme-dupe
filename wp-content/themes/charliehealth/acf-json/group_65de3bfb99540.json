@@ -3,8 +3,31 @@
     "title": "Check List Items",
     "fields": [
         {
+            "key": "field_671a81a40947a",
+            "label": "Style",
+            "name": "style",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Pill": "Pill",
+                "Button": "Button"
+            },
+            "default_value": "",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
             "key": "field_65de3bfc025d6",
-            "label": "Services",
+            "label": "Items",
             "name": "services",
             "aria-label": "",
             "type": "repeater",
@@ -16,7 +39,7 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "table",
+            "layout": "block",
             "pagination": 0,
             "min": 0,
             "max": 0,
@@ -26,7 +49,7 @@
             "sub_fields": [
                 {
                     "key": "field_65de3c0c025d7",
-                    "label": "Service",
+                    "label": "Item",
                     "name": "service",
                     "aria-label": "",
                     "type": "text",
@@ -43,6 +66,23 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
+                    "parent_repeater": "field_65de3bfc025d6"
+                },
+                {
+                    "key": "field_671a8234c5c1a",
+                    "label": "Link",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
                     "parent_repeater": "field_65de3bfc025d6"
                 }
             ]
@@ -66,5 +106,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1709063297
+    "modified": 1729793091
 }
