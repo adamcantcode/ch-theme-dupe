@@ -168,6 +168,20 @@ Template Post Type: page
               return Promise.resolve(event);
             }
           });
+
+          form.registerFormEventListener({
+            type: 'submit',
+            onFormEvent: function(event) {
+              window.VWO = window.VWO || [];
+              VWO.event = VWO.event || function() {
+                VWO.push(["event"].concat([].slice.call(arguments)))
+              };
+
+              VWO.event("formstackFormSubmission");
+
+              return Promise.resolve(event);
+            }
+          });
         </script>
         <script>
           document.addEventListener('DOMContentLoaded', function() {
