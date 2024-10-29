@@ -86,6 +86,10 @@
       } else {
         $medicalReviewer = get_field('medical_reviewer', $post->ID);
       }
+      if ($selectedPostType === 'areas-of-care' || $selectedPostType === 'treatment-modalities') {
+        $author = null;
+        $medicalReviewer = null;
+      }
       if (has_post_thumbnail()) {
         $featuredImageID = get_post_thumbnail_id($post->ID);
         $featuredImage = wp_get_attachment_image_src($featuredImageID, 'card-thumb');
@@ -137,10 +141,12 @@
                 <p class="z-10 mb-0 text-mini">Clinically Reviewed By: <a href="<?= get_the_permalink($medicalReviewer->ID); ?>" class="text-mini"><?= $medicalReviewer->post_title; ?></a></p>
               </div>
             <?php endif; ?>
-            <div class="flex items-center">
-              <img src="<?= $authorFeaturedImageUrl; ?>" alt="<?= $authorFeaturedImageAltText; ?>" class="object-cover w-auto h-base5-4 aspect-square rounded-circle mr-base5-1">
-              <p class="z-10 mb-0 text-mini">Written By: <a href="<?= get_the_permalink($author->ID); ?>" class="text-mini"><?= $author->post_title; ?></a></p>
-            </div>
+            <?php if (!empty($author)) : ?>
+              <div class="flex items-center">
+                <img src="<?= $authorFeaturedImageUrl; ?>" alt="<?= $authorFeaturedImageAltText; ?>" class="object-cover w-auto h-base5-4 aspect-square rounded-circle mr-base5-1">
+                <p class="z-10 mb-0 text-mini">Written By: <a href="<?= get_the_permalink($author->ID); ?>" class="text-mini"><?= $author->post_title; ?></a></p>
+              </div>
+            <?php endif; ?>
           </div>
         </div>
       </div>
