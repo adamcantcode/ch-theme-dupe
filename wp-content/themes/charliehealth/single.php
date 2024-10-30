@@ -178,40 +178,44 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
 <?php if ($relatedPosts) : ?>
   <section class="section bg-grey-cool">
     <div class="container">
-      <h2>More like this</h2>
-      <div class="grid lg:grid-cols-3 posts-container gap-x-sp-8 gap-y-sp-10">
-        <?php foreach ($relatedPosts as $post) : ?>
-          <?php
-          if (has_post_thumbnail()) {
-            $featuredImageID = get_post_thumbnail_id();
-            $featuredImage = wp_get_attachment_image_src($featuredImageID, 'card-thumb');
-            $featuredImageAltText = get_post_meta($featuredImageID, '_wp_attachment_image_alt', true);
-
-            $featuredImageUrl = $featuredImage[0];
-            $featuredImageAltText = $featuredImageAltText ?: '';
-          } else {
-            $featuredImageUrl = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
-            $featuredImageAltText = 'Charlie Health Logo';
-          }
-          ?>
-          <div class="relative bg-white rounded-lg group">
-            <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
-              <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
+      <div class="grid lg:grid-cols-[3fr_9fr] gap-x-sp-5 gap-y-sp-10">
+        <div>
+          <h2>More like this</h2>
+          <a href="/blog" class="ch-button button-primary">Explore more</a>
+        </div>
+        <div class="grid lg:grid-cols-3 gap-sp-5">
+          <?php foreach ($relatedPosts as $post) : ?>
+            <?php
+            if (has_post_thumbnail()) {
+              $featuredImageID = get_post_thumbnail_id();
+              $featuredImage = wp_get_attachment_image_src($featuredImageID, 'card-thumb');
+              $featuredImageAltText = get_post_meta($featuredImageID, '_wp_attachment_image_alt', true);
+              $featuredImageUrl = $featuredImage[0];
+              $featuredImageAltText = $featuredImageAltText ?: '';
+            } else {
+              $featuredImageUrl = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
+              $featuredImageAltText = 'Charlie Health Logo';
+            }
+            ?>
+            <div class="relative bg-white rounded-lg group">
+              <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
+                <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
+              </div>
+              <div class="absolute rounded-t-lg top-sp-4 left-sp-4">
+                <?php $tags = get_the_terms(get_the_ID(), 'post_tag');  ?>
+                <?php if ($tags) :  ?>
+                  <?php foreach ($tags as $tag) : ?>
+                    <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-primary bg-white group-hover:bg-white-hover border border-white z-[6] text-h5-base"><?= $tag->name; ?></a>
+                  <?php endforeach; ?>
+                <?php endif; ?>
+              </div>
+              <div class="grid bg-white rounded-b-lg p-sp-4">
+                <h3 class="text-h4-base"><a href="<?= get_the_permalink(); ?>" class="block stretched-link"><?= get_the_title(); ?></a></h3>
+                <p><?= $author->post_title; ?></p>
+              </div>
             </div>
-            <div class="absolute rounded-t-lg top-sp-4 left-sp-4">
-              <?php $tags = get_the_terms(get_the_ID(), 'post_tag');  ?>
-              <?php if ($tags) :  ?>
-                <?php foreach ($tags as $tag) : ?>
-                  <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-primary bg-white group-hover:bg-white-hover border border-white z-[6] text-h5-base"><?= $tag->name; ?></a>
-                <?php endforeach; ?>
-              <?php endif; ?>
-            </div>
-            <div class="grid bg-white rounded-b-lg p-sp-4">
-              <h3 class="text-h4-base"><a href="<?= get_the_permalink(); ?>" class="block stretched-link"><?= get_the_title(); ?></a></h3>
-              <p><?= $author->post_title; ?></p>
-            </div>
-          </div>
-        <?php endforeach; ?>
+          <?php endforeach; ?>
+        </div>
       </div>
     </div>
   </section>
