@@ -35,33 +35,31 @@
 }
 
 /* BLOG */
-#articleContent {
+#theContent {
   & > div {
-    & > div {
-      @apply mb-base5-4;
-    }
-    & > p {
-      @apply text-[18px];
-    }
-    & > p a {
-      @apply text-[inherit] leading-[inherit];
-      font-size: inherit;
-    }
-    & > ul {
-      @apply text-[18px];
-    }
-    & > ol {
-      @apply text-[18px];
-    }
-    & > ul > * {
-      @apply text-[18px];
-    }
-    & > ol > * {
-      @apply text-[18px];
-    }
-    & > figure {
-      @apply mb-base5-4;
-    }
+    @apply mb-base5-4;
+  }
+  & > p {
+    @apply text-[18px];
+  }
+  & > p a {
+    @apply text-[inherit] leading-[inherit];
+    font-size: inherit;
+  }
+  & > ul {
+    @apply text-[18px];
+  }
+  & > ol {
+    @apply text-[18px];
+  }
+  & > ul > * {
+    @apply text-[18px];
+  }
+  & > ol > * {
+    @apply text-[18px];
+  }
+  & > figure {
+    @apply mb-base5-4;
   }
 }
 /* AOCs and TMs */
@@ -250,7 +248,7 @@
   }
   &.swiper-featured-blog {
     .swiper-slide > div > div picture {
-      @apply order-none
+      @apply order-none;
     }
     picture {
       @apply order-1 lg:order-2;
@@ -856,7 +854,8 @@ ul.alert {
 .tutor-page-wrap {
   @apply section;
 }
-a[href='https://www.charliehealth.com/dashboard/retrieve-password'] {
+a[href='https://www.charliehealth.com/dashboard/retrieve-password']
+{
   @apply noshow;
 }
 iframe[src*='youtube.com'] {

@@ -4624,37 +4624,37 @@ a.insurance-tabs.active:hover {
 
 /* BLOG */
 
-#articleContent > div > div{
+#theContent > div{
   margin-bottom: 20px;
 }
 
-#articleContent > div > p{
+#theContent > p{
   font-size: 18px;
 }
 
-#articleContent > div > p a{
+#theContent > p a{
   line-height: inherit;
   color: inherit;
-      font-size: inherit;
+    font-size: inherit;
 }
 
-#articleContent > div > ul{
+#theContent > ul{
   font-size: 18px;
 }
 
-#articleContent > div > ol{
+#theContent > ol{
   font-size: 18px;
 }
 
-#articleContent > div > ul > *{
+#theContent > ul > *{
   font-size: 18px;
 }
 
-#articleContent > div > ol > *{
+#theContent > ol > *{
   font-size: 18px;
 }
 
-#articleContent > div > figure{
+#theContent > figure{
   margin-bottom: 20px;
 }
 
