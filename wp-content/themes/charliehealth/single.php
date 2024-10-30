@@ -77,7 +77,7 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
     <div class="container">
       <div class="grid lg:grid-cols-[4fr_1fr_7fr]">
         <div class="min-w-0">
-          <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="rounded-md max-h-[200px] lg:max-h-none object-cover w-full aspect-square nolazy">
+          <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="rounded-md max-h-[200px] lg:max-h-none object-cover w-full aspect-square nolazy lg:mb-0 mb-base5-4">
           <div class="lg:top-[125px] noshow sticky lg:block">
             <?php if ($toc) : ?>
               <div class="rounded-md toc-container bg-lavender-100 mt-base5-6">
@@ -108,7 +108,7 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
           <article id="articleContent">
             <div>
               <h1 class="font-heading-serif text-h2 lg:text-h2-lg"><?= get_the_title(); ?></h1>
-              <div class="flex flex-col lg:flex-row gap-base5-4">
+              <div class="flex flex-col lg:flex-row gap-base5-10 mb-base5-2">
                 <div class="flex items-center mb-base5-1">
                   <img src="<?= $authorFeaturedImageUrl; ?>" alt="<?= $authorFeaturedImageAltText; ?>" class="object-cover w-auto h-base5-10 aspect-square rounded-circle mr-base5-2">
                   <p class="z-10 mb-0 text-[18px]">Written By: <a href="<?= get_the_permalink($author->ID); ?>" class="text-[18px]"><?= $author->post_title; ?></a></p>
@@ -130,7 +130,7 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
                   </div>
                 <?php endif; ?>
               </div>
-              <div class="flex items-center gap-base5-10">
+              <div class="flex items-center gap-base5-10 mb-base5-4">
                 <?php if (!$updatedDate) : ?>
                   <p class="mb-0 text-[18px]"><?= $date; ?></p>
                 <?php elseif ($updatedDate) : ?>
@@ -144,7 +144,7 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
                 </div>
               </div>
               <p><?= get_the_excerpt(); ?></p>
-              <div class="grid items-end justify-start grid-flow-col gap-sp-4">
+              <div class="grid items-end justify-start grid-flow-col gap-sp-4 mb-base5-4">
                 <?php if ($tags) : foreach ($tags as $tag) : ?>
                     <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="px-4 py-3 no-underline rounded-pill bg-lavender-200 hover:bg-lavender-300"><?= $tag->name; ?></a>
                 <?php endforeach;
