@@ -1,8 +1,7 @@
 export default function progressBar() {
   function calculateHeaderHeight() {
     var articleContent =
-      document.querySelector('#articleContent .container-sm') ||
-      document.querySelector('#articleContent .container');
+      document.querySelector('#theContent');
     let headerHeight = document.querySelector('header').clientHeight;
     var wpadmin = document.querySelector('#wpadminbar');
 

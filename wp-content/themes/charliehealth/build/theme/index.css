@@ -1590,6 +1590,10 @@ a.insurance-tabs.active:hover {
   left: 15px;
 }
 
+.left-base5-7{
+  left: 35px;
+}
+
 .left-sp-10{
   left: 2.5rem;
 }
@@ -1632,6 +1636,10 @@ a.insurance-tabs.active:hover {
 
 .top-\[100px\]{
   top: 100px;
+}
+
+.top-\[125px\]{
+  top: 125px;
 }
 
 .top-\[150px\]{
@@ -1773,6 +1781,11 @@ a.insurance-tabs.active:hover {
 .my-base5-4{
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.my-base5-8{
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .my-sp-10{
@@ -2010,6 +2023,10 @@ a.insurance-tabs.active:hover {
   margin-top: 25px;
 }
 
+.mt-base5-6{
+  margin-top: 30px;
+}
+
 .mt-base5-8{
   margin-top: 40px;
 }
@@ -2195,6 +2212,10 @@ a.insurance-tabs.active:hover {
 
 .h-auto{
   height: auto;
+}
+
+.h-base5-10{
+  height: 50px;
 }
 
 .h-base5-4{
@@ -2766,6 +2787,10 @@ a.insurance-tabs.active:hover {
 
 .gap-4{
   gap: 1rem;
+}
+
+.gap-base5-10{
+  gap: 50px;
 }
 
 .gap-base5-2{
@@ -5530,7 +5555,7 @@ mark:not(.has-inline-color.has-lavender-300-color){
   display: inline;
 }
 
-.toc-underline:hover {
+.toc-underline:hover, .toc-underline .active {
     background-size: 0 2px, 100% 2px;
   }
 
@@ -5878,6 +5903,11 @@ iframe[src*='youtube.com']{
 .hover\:bg-bright-teal:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(177 252 250 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-lavender-300:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(218 193 251 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-lightest-purple:hover{

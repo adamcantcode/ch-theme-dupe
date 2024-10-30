@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     toc();
     references();
     progressBar();
-    shareButton();
+    // shareButton();
   }
   if (body.classList.contains('blog')) {
     newsletterPopup();

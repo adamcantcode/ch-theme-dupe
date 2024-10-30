@@ -689,7 +689,7 @@ mark:not(.has-inline-color.has-lavender-300-color) {
   background-repeat: no-repeat;
   transition: background-size 700ms;
   display: inline;
-  &:hover {
+  &:hover, .active {
     background-size: 0 2px, 100% 2px;
   }
 }

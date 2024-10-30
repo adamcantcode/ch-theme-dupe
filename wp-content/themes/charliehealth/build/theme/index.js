@@ -1546,7 +1546,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 function progressBar() {
   function calculateHeaderHeight() {
-    var articleContent = document.querySelector('#articleContent .container-sm') || document.querySelector('#articleContent .container');
+    var articleContent = document.querySelector('#theContent');
     let headerHeight = document.querySelector('header').clientHeight;
     var wpadmin = document.querySelector('#wpadminbar');
     if (wpadmin) {
@@ -23690,8 +23690,9 @@ document.addEventListener('DOMContentLoaded', () => {
     (0,_modules_toc__WEBPACK_IMPORTED_MODULE_7__["default"])();
     (0,_modules_references__WEBPACK_IMPORTED_MODULE_14__["default"])();
     (0,_modules_progress_bar__WEBPACK_IMPORTED_MODULE_15__["default"])();
-    (0,_modules_share_button__WEBPACK_IMPORTED_MODULE_8__["default"])();
+    // shareButton();
   }
+
   if (body.classList.contains('blog')) {
     (0,_modules_newsletter_popup__WEBPACK_IMPORTED_MODULE_16__["default"])();
     (0,_modules_featured_blog_slider__WEBPACK_IMPORTED_MODULE_9__["default"])();
