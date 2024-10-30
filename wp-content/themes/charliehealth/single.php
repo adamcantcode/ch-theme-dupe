@@ -70,7 +70,6 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
         <a href="/blog">The Library</a>
         <span>/</span>
         <a href="<?= get_term_link($tags[0]->term_id, 'post_tag'); ?>"><?= $tags[0]->name; ?></a>
-        <span>/</span>
       </div>
     </div>
   </section>
@@ -135,7 +134,7 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
                 <?php if (!$updatedDate) : ?>
                   <p class="mb-0 text-[18px]"><?= $date; ?></p>
                 <?php elseif ($updatedDate) : ?>
-                  <p class="mb-base5-2 text-[18px]">Updated: <?= $date; ?></p>
+                  <p class="mb-0 text-[18px]">Updated: <?= $date; ?></p>
                 <?php endif; ?>
                 <div class="flex items-center">
                   <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
