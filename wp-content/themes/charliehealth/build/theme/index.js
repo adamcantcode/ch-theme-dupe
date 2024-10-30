@@ -1545,39 +1545,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ progressBar)
 /* harmony export */ });
 function progressBar() {
+  const progressBar = document.querySelector('#progressBar');
+  const articleContent = document.querySelector('#theContent');
+  const header = document.querySelector('header');
+  const wpadmin = document.querySelector('#wpadminbar');
   function calculateHeaderHeight() {
-    var articleContent = document.querySelector('#theContent');
-    let headerHeight = document.querySelector('header').clientHeight;
-    var wpadmin = document.querySelector('#wpadminbar');
+    let headerHeight = header.clientHeight;
     if (wpadmin) {
       headerHeight += wpadmin.clientHeight;
     }
-    var progressBar = document.querySelector('#progressBar');
-    progressBar.style.top = headerHeight + 'px';
-    progressBar.style.left = '0';
-    document.body.appendChild(progressBar);
-    updateProgressBar(articleContent, headerHeight, progressBar);
+    progressBar.style.top = `${headerHeight}px`;
+    updateProgressBar(headerHeight);
   }
-  function updateProgressBar(articleContent, headerHeight, progressBar) {
-    var contentHeight = articleContent.scrollHeight + headerHeight;
-    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    var scrollableHeight = contentHeight - headerHeight;
-    var scrollPosition = Math.max(0, scrollTop - headerHeight);
-    var scrollPercent = Math.min(scrollPosition / scrollableHeight * 100, 100);
-    if (scrollPercent === 100) {
-      progressBar.style.opacity = '0';
-    } else {
-      progressBar.style.opacity = '100';
-    }
+  function updateProgressBar(headerHeight) {
+    const contentHeight = articleContent.scrollHeight + headerHeight;
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const scrollableHeight = contentHeight - headerHeight;
+    const scrollPosition = Math.max(0, scrollTop - headerHeight);
+    const scrollPercent = Math.min(scrollPosition / scrollableHeight * 100, 100);
     progressBar.style.width = `${scrollPercent}%`;
+    progressBar.style.opacity = scrollPercent === 100 ? '0' : '1';
   }
-
-  // window.addEventListener('scroll', updateProgressBar);
-  window.addEventListener('scroll', () => {
+  function handleScroll() {
     clearTimeout(window.scrollEndTimer);
-    window.scrollEndTimer = setTimeout(calculateHeaderHeight, 100);
-  });
+    window.scrollEndTimer = setTimeout(() => updateProgressBar(header.clientHeight), 100);
+  }
+  window.addEventListener('scroll', handleScroll);
   window.addEventListener('resize', calculateHeaderHeight);
+
+  // Initial calculation
+  calculateHeaderHeight();
 }
 
 /***/ }),
