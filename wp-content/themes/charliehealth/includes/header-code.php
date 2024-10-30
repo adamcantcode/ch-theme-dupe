@@ -291,6 +291,7 @@
   }
   assignTrackingParameterToCookie('gclid');
   assignTrackingParameterToCookie('fbclid');
+  assignTrackingParameterToCookie('ttclid');
   assignTrackingParameterToCookie('utm_campaign');
   assignTrackingParameterToCookie('keyword');
   assignTrackingParameterToCookie('msclkid');
@@ -301,7 +302,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', function() {
 
-    const existingCookies = ['gclid', 'fbclid', 'utm_campaign', 'keyword', 'msclkid'];
+    const existingCookies = ['gclid', 'fbclid', 'utm_campaign', 'keyword', 'msclkid', 'ttclid'];
     const searchEngines = ['google.com', 'bing.com', 'yahoo.com', 'duckduckgo.com', 'ecosia.org'];
     let cookies = false;
     let params = false;
@@ -363,6 +364,9 @@
       }
       if (document.cookie.indexOf('msclkid=') > -1) {
         form.getField(fieldIds.msclkid).setValue(getCookie('msclkid'));
+      }
+      if (document.cookie.indexOf('ttclid=') > -1) {
+        form.getField(fieldIds.ttclid).setValue(getCookie('ttclid'));
       }
       fetch('https://api.ipify.org/?format=json')
         .then(results => results.json())
@@ -457,6 +461,7 @@
       initializeForm('5700521', {
         organicLP: '162592063',
         fbclid: '162592064',
+        ttclid: '175898270',
         msclkid: '163156163',
         userIP: '163080837',
         fbp: '162592065',

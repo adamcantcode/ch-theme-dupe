@@ -4649,38 +4649,34 @@ a.insurance-tabs.active:hover {
 
 /* BLOG */
 
-#articleContent > div > div{
-  margin-bottom: 20px;
+#theContent > *{
+  margin-bottom: 30px;
 }
 
-#articleContent > div > p{
+#theContent > p{
   font-size: 18px;
 }
 
-#articleContent > div > p a{
+#theContent > p a{
   line-height: inherit;
   color: inherit;
-      font-size: inherit;
+    font-size: inherit;
 }
 
-#articleContent > div > ul{
+#theContent > ul{
   font-size: 18px;
 }
 
-#articleContent > div > ol{
+#theContent > ol{
   font-size: 18px;
 }
 
-#articleContent > div > ul > *{
+#theContent > ul > *{
   font-size: 18px;
 }
 
-#articleContent > div > ol > *{
+#theContent > ol > *{
   font-size: 18px;
-}
-
-#articleContent > div > figure{
-  margin-bottom: 20px;
 }
 
 /* AOCs and TMs */
@@ -5786,10 +5782,6 @@ iframe[src*='youtube.com']{
   aspect-ratio: 16 / 9;
   height: 100%;
   width: 100%;
-}
-
-#theContent > div{
-  margin-bottom: 20px;
 }
 
 .hover\:text-white:hovera:hover {
