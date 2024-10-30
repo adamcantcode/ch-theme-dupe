@@ -79,7 +79,7 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
       <div class="grid lg:grid-cols-[4fr_1fr_7fr]">
         <div class="min-w-0">
           <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="rounded-md max-h-[200px] lg:max-h-none object-cover w-full aspect-square nolazy">
-          <div class="sticky top-[125px]">
+          <div class="lg:top-[125px] noshow sticky lg:block">
             <?php if ($toc) : ?>
               <div class="rounded-md toc-container bg-lavender-100 mt-base5-6">
                 <div class="flex cursor-pointer toc-heading lg:p-base5-6 p-base5-3">
@@ -152,6 +152,30 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
                 endif; ?>
               </div>
               <p><a href="https://www.charliehealth.com/clinical-content-advisory-council">Learn more about our Clinical Review Process</a></p>
+              <div class="lg:noshow">
+                <?php if ($toc) : ?>
+                  <div class="rounded-md toc-container bg-lavender-100 mt-base5-6">
+                    <div class="flex cursor-pointer toc-heading lg:p-base5-6 p-base5-3">
+                      <p class="mb-0 text-h3-base">Table of Contents</p>
+                      <div class="flex items-center ml-auto toggle">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M15.175 14.7297L6.61895 14.7297L6.61895 16.3797H15.175L15.175 24.9356L16.825 24.9356L16.825 16.3797H25.3809L25.3809 14.7297L16.825 14.7297L16.825 6.17362L15.175 6.17362L15.175 14.7297Z" fill="#161A3D" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="overflow-hidden transition-all duration-500 ease-in-out toc-content max-h-0">
+                      <div id="tocMobile" class="flex flex-col items-start pt-0 lg:pt-0 lg:p-sp-8 p-sp-4 gap-sp-1"></div>
+                    </div>
+                  </div>
+                <?php endif; ?>
+                <div class="rounded-md bg-grey-cool mt-base5-6 lg:p-base5-6 p-base5-3">
+                  <h3 class="font-heading-serif">Ready to start your journey?</h3>
+                  <div class="flex flex-col lg:flex-wrap lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
+                    <a href="/form" class="ch-button button-primary">Get Started</a>
+                    <a href="tel:+18664848218" class="ch-button button-secondary">1 (866) 484-8218</a>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="divider my-base5-8 bg-grey-demension"></div>
             <div id="theContent">
@@ -192,7 +216,7 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
       <div class="grid lg:grid-cols-[3fr_9fr] gap-x-sp-5 gap-y-sp-10">
         <div>
           <h2>More like this</h2>
-          <a href="/blog" class="ch-button button-primary">Explore more</a>
+          <a href="/blog" class="ch-button button-secondary">Explore more</a>
         </div>
         <div class="grid lg:grid-cols-3 gap-sp-5">
           <?php foreach ($relatedPosts as $post) : ?>
