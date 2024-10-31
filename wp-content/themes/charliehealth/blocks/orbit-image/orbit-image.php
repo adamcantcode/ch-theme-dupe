@@ -1,4 +1,4 @@
-<div class="grid grid-cols-[4fr_6fr] gap-base5-4">
+<div class="grid grid-cols-[4fr_6fr] gap-base5-4 relative">
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 400 400" width="400" height="400" class="w-full">
     <path stroke="#DAC1FB" stroke-width="2" fill="none" id="cO" d="M51 200a149 149 0 1 0 298 0a149 149 0 1 0 -298 0" />
     <g id="cM">

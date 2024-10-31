@@ -22,7 +22,7 @@ function startOrbit() {
   const circles = ['#cTL', '#cTR', '#cBR', '#cBL'];
 
   // Evenly distribute start positions along the path
-  const startPositions = [0, 0.25, .5, .749]; // Adjusted positions for better spacing
+  const startPositions = [0, 0.25, 0.5, 0.749]; // Adjusted positions for better spacing
 
   circles.forEach((circle, index) => {
     // Set each circle's initial position off-screen

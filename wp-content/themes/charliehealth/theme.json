@@ -129,6 +129,11 @@
           "slug": "bg-gradient-to-b from-primary-200 to-primary",
           "gradient": "linear-gradient(to bottom,#1E225B 50%,#161A3D 50%)",
           "name": "Blue 200 - Blue 300"
+        },
+        {
+          "slug": "custom-bg",
+          "gradient": "linear-gradient(to right,#F7EBFF 50%,#DAC1FB 50%)",
+          "name": "Lavender 100 - Lavender 300"
         }
       ]
     },
