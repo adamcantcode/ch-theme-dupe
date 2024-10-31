@@ -168,6 +168,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/testimonials-videos-quotes');
   register_block_type(__DIR__ . '/build/blocks/posts-list-blog');
   register_block_type(__DIR__ . '/build/blocks/blog-hero');
+  register_block_type(__DIR__ . '/build/blocks/orbit-image');
 }
 add_action('init', 'register_acf_blocks', 5);
 
