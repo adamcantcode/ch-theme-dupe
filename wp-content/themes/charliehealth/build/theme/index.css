@@ -2709,6 +2709,10 @@ a.insurance-tabs.active:hover {
   grid-template-columns: 3fr 1fr;
 }
 
+.grid-cols-\[4fr_6fr\]{
+  grid-template-columns: 4fr 6fr;
+}
+
 .flex-row{
   flex-direction: row;
 }
