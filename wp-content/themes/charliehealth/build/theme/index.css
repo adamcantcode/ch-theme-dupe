@@ -4065,11 +4065,6 @@ a.insurance-tabs.active:hover {
   color: rgb(218 193 251 / var(--tw-text-opacity));
 }
 
-.text-pale-blue-200{
-  --tw-text-opacity: 1;
-  color: rgb(173 176 225 / var(--tw-text-opacity));
-}
-
 .text-primary{
   --tw-text-opacity: 1;
   color: rgb(22 26 61 / var(--tw-text-opacity));
