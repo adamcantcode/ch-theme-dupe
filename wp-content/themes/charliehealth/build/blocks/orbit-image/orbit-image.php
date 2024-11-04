@@ -1,4 +1,4 @@
-<div class="grid grid-cols-[4fr_6fr] gap-base5-4 relative">
+<div class="grid grid-cols-[4fr_6fr] gap-base5-4 relative items-center">
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 400 400" width="400" height="400" class="w-full">
     <path stroke="#DAC1FB" stroke-width="2" fill="none" id="cO" d="M51 200a149 149 0 1 0 298 0a149 149 0 1 0 -298 0" />
     <g id="cM">
@@ -22,5 +22,7 @@
       <image href="https://www.charliehealth.com/wp-content/uploads/2024/10/Clinician_04-small.png" x="140" y="140" width="120" height="120" />
     </g>
   </svg>
-  <div></div>
+  <div>
+    <InnerBlocks />
+  </div>
 </div>
