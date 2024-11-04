@@ -64,12 +64,17 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
 
 <div id="progressBar" class="fixed z-20 transition-all duration-700 rounded-r-sm bg-purple-gradient-end h-[5px] left-0"></div>
 <div id="mainArticleContent" class="relative z-10 main-article-content">
+
   <section class="section-top">
     <div class="container">
       <div class="breadcrumbs mb-sp-5 lg:mb-sp-6">
-        <a href="/blog">The Library</a>
-        <span>/</span>
-        <a href="<?= get_term_link($tags[0]->term_id, 'post_tag'); ?>"><?= $tags[0]->name; ?></a>
+        <?php if (!is_singular('research')) : ?>
+          <a href="/blog">The Library</a>
+        <?php endif; ?>
+        <?php if ($tags[0]->name): ?>
+          <span>/</span>
+          <a href="<?= get_term_link($tags[0]->term_id, 'post_tag'); ?>"><?= $tags[0]->name; ?></a>
+        <?php endif; ?>
       </div>
     </div>
   </section>
