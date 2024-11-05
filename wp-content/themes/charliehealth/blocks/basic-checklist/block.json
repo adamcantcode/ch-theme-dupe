@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "acf/basic-checklist-block",
+  "title": "Basic checklist",
+  "description": "Basic checklist",
+  "style": "file:./index.css",
+  "script": "file:./index.js",
+  "category": "custom",
+  "icon": "columns",
+  "apiVersion": 2,
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "basic-checklist.php"
+  },
+  "supports": {}
+}

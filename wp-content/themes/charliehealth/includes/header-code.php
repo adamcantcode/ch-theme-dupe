@@ -291,6 +291,7 @@
   }
   assignTrackingParameterToCookie('gclid');
   assignTrackingParameterToCookie('fbclid');
+  assignTrackingParameterToCookie('ttclid');
   assignTrackingParameterToCookie('utm_campaign');
   assignTrackingParameterToCookie('keyword');
   assignTrackingParameterToCookie('msclkid');
@@ -301,7 +302,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', function() {
 
-    const existingCookies = ['gclid', 'fbclid', 'utm_campaign', 'keyword', 'msclkid'];
+    const existingCookies = ['gclid', 'fbclid', 'utm_campaign', 'keyword', 'msclkid', 'ttclid'];
     const searchEngines = ['google.com', 'bing.com', 'yahoo.com', 'duckduckgo.com', 'ecosia.org'];
     let cookies = false;
     let params = false;
@@ -364,29 +365,55 @@
       if (document.cookie.indexOf('msclkid=') > -1) {
         form.getField(fieldIds.msclkid).setValue(getCookie('msclkid'));
       }
+      if (document.cookie.indexOf('ttclid=') > -1) {
+        form.getField(fieldIds.ttclid).setValue(getCookie('ttclid'));
+      }
       fetch('https://api.ipify.org/?format=json')
         .then(results => results.json())
         .then(data => {
           form.getField(fieldIds.userIP).setValue(data.ip);
         });
       form.getField(fieldIds.fbp).setValue(getCookie('_fbp'));
-      form.getField(fieldIds.userAgent).setValue(window.navigator.userAgent);      
+      form.getField(fieldIds.userAgent).setValue(window.navigator.userAgent);
       form.getField(fieldIds.userJourney).setValue(sessionStorage.getItem('user_journey_'));
 
       // VWO Test Version
+      waitForCookie('_vis_opt_test_cookie', cookieValue => {
+        // Function to get the experiment number from cookies
+        function getExperimentNumbersFromCookies() {
+          const experimentNumbers = [];
+          const cookies = document.cookie.split('; '); // Split the cookie string into individual cookies
 
-      // Look for any cookie that ends with '_combi'
-      const experimentCookie = document.cookie.match(/_vis_opt_exp_\d+_combi=([^;]+)/);
-      if (experimentCookie) {
-        const experimentValue = experimentCookie[1]; // Get the value after the '=' in the cookie
-        if (experimentValue === '1') {
-          console.log(experimentValue);
-          form.getField(fieldIds.vwoTestVersion).setValue('Control');
-        } else if (experimentValue === '2') {
-          console.log(experimentValue);
-          form.getField(fieldIds.vwoTestVersion).setValue('Variation');
+          cookies.forEach(cookie => {
+            const match = cookie.match(/_vis_opt_exp_(\d+)_combi/);
+            if (match && match[1]) {
+              experimentNumbers.push(match[1]); // Add the extracted number to the array
+            }
+          });
+
+          return experimentNumbers;
         }
-      }
+
+        const extractedNumbers = getExperimentNumbersFromCookies(); // Get experiment numbers
+
+        // Convert the array to a string
+        const numbersString = extractedNumbers.length > 0 ? extractedNumbers.join(' & ') : '';
+
+        // Get the value from the first matching cookie
+        const experimentCookie = document.cookie.match(/_vis_opt_exp_(\d+)_combi=([^;]+)/);
+
+        if (experimentCookie) {
+          const experimentValue = experimentCookie[2]; // Get the value after the '=' in the cookie
+
+          // Assuming form and fieldIds are defined elsewhere
+          if (experimentValue === '1') {
+            form.getField(fieldIds.vwoTestVersion).setValue(numbersString + ' - Control');
+          } else if (experimentValue === '2') {
+            form.getField(fieldIds.vwoTestVersion).setValue(numbersString + ' - Variation');
+          }
+        }
+
+      });
     }
 
     function initializeForm(formId, fieldIds) {
@@ -430,10 +457,11 @@
     }
 
     // If form page
-    if (window.location.href.indexOf('form') > -1) {
+    if (window.location.href.indexOf('/form') > -1) {      
       initializeForm('5700521', {
         organicLP: '162592063',
         fbclid: '162592064',
+        ttclid: '175898270',
         msclkid: '163156163',
         userIP: '163080837',
         fbp: '162592065',

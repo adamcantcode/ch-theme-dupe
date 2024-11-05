@@ -1,24 +1,30 @@
 export default function toc() {
-  const toc = document.querySelector('#toc');
-  if (toc) {
+  const tocContainers = [
+    document.querySelector('#toc'),
+    document.querySelector('#tocMobile'),
+  ];
+
+  if (tocContainers.some((container) => container)) {
     const headings = document.querySelectorAll('#theContent > h2');
 
     headings.forEach((heading) => {
-      var headoingText = sanitizeForId(heading.innerText);
-      heading.id = headoingText;
+      const headingText = sanitizeForId(heading.innerText);
+      heading.id = headingText;
 
-      const tocHeading = document.createElement('a');
+      tocContainers.forEach((tocContainer) => {
+        if (tocContainer) {
+          const tocLink = document.createElement('a');
+          const linkText = document.createTextNode(heading.innerText);
+          tocLink.appendChild(linkText);
+          tocLink.setAttribute('href', `#${heading.id}`);
+          tocLink.classList.add('toc-underline');
 
-      const headingText = document.createTextNode(heading.innerText);
+          const divWrapper = document.createElement('div');
+          divWrapper.appendChild(tocLink);
 
-      tocHeading.appendChild(headingText);
-      tocHeading.setAttribute('href', `#${heading.id}`);
-      tocHeading.classList.add('toc-underline');
-
-      const divWrapper = document.createElement('div');
-      divWrapper.appendChild(tocHeading);
-
-      toc.appendChild(divWrapper);
+          tocContainer.appendChild(divWrapper);
+        }
+      });
     });
 
     function sanitizeForId(text) {
@@ -44,7 +50,9 @@ export default function toc() {
       }
     }
 
-    const tocHeading = document.querySelector('.toc-heading');
-    tocHeading.addEventListener('click', toggleAccordion);
+    const tocHeadings = document.querySelectorAll('.toc-heading');
+    tocHeadings.forEach((tocHeading) => {
+      tocHeading.addEventListener('click', toggleAccordion);
+    });
   }
 }

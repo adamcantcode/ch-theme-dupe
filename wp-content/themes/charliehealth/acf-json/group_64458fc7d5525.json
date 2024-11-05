@@ -18,9 +18,14 @@
             },
             "choices": {
                 "value": "Value Prop",
+                "value_image": "Value Prop with image",
                 "full": "Full Width",
+                "large": "Large",
                 "newsletter": "Newsletter",
-                "newsletter-large": "Newsletter Large"
+                "dbt": "DBT Skills Book",
+                "sad": "SAD Survival Guide",
+                "quote": "Quote",
+                "video": "Video"
             },
             "default_value": "value",
             "return_format": "value",
@@ -119,5 +124,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1726249392
+    "modified": 1729200874
 }

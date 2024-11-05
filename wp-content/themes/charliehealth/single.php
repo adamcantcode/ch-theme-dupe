@@ -20,6 +20,32 @@ if (has_post_thumbnail()) {
 
 $author                = get_field('by_author');
 $medicalReviewer       = get_field('medical_reviewer');
+if ($medicalReviewer) {
+  if (has_post_thumbnail($medicalReviewer)) {
+    $medicalReviewerFeaturedImageID = get_post_thumbnail_id($medicalReviewer->ID);
+    $medicalReviewerFeaturedImage = wp_get_attachment_image_src($medicalReviewerFeaturedImageID, 'featured-large');
+    $medicalReviewerFeaturedImageAltText = get_post_meta($medicalReviewerFeaturedImageID, '_wp_attachment_image_alt', true);
+
+
+    $medicalReviewerFeaturedImageUrl = $medicalReviewerFeaturedImage[0];
+    $medicalReviewerFeaturedImageAltText = $medicalReviewerFeaturedImageAltText ?: '';
+  } else {
+    $medicalReviewerFeaturedImageUrl = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
+    $medicalReviewerFeaturedImageAltText = 'Charlie Health Logo';
+  }
+}
+if (has_post_thumbnail($author)) {
+  $authorFeaturedImageID = get_post_thumbnail_id($author->ID);
+  $authorFeaturedImage = wp_get_attachment_image_src($authorFeaturedImageID, 'featured-large');
+  $authorFeaturedImageAltText = get_post_meta($authorFeaturedImageID, '_wp_attachment_image_alt', true);
+
+  $authorFeaturedImageUrl = $authorFeaturedImage[0];
+  $authorFeaturedImageAltText = $authorFeaturedImageAltText ?: '';
+} else {
+  $authorFeaturedImageUrl = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
+  $authorFeaturedImageAltText = 'Charlie Health Logo';
+}
+
 $customMedicalReviewer = get_field('custom_medical_review');
 $date                  = get_field('date') ?: '';
 $updatedDate           = get_field('select_updated_date') ?: '';
@@ -28,7 +54,7 @@ $toc                   = get_field('toc') ?: '';
 $prefooter             = get_field('prefooter_cta') ?: '';
 $references            = get_field('references') ?: '';
 
-$audiences = get_the_terms(get_the_ID(), 'category');
+// $audiences = get_the_terms(get_the_ID(), 'category');
 $tags      = get_the_terms(get_the_ID(), 'post_tag');
 
 $wordCount      = str_word_count(strip_tags(get_the_content()));
@@ -38,175 +64,197 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
 
 <div id="progressBar" class="fixed z-20 transition-all duration-700 rounded-r-sm bg-purple-gradient-end h-[5px] left-0"></div>
 <div id="mainArticleContent" class="relative z-10 main-article-content">
-  <section class="section">
+
+  <section class="section-top">
     <div class="container">
-      <div class="mb-sp-4">
-        <a href="<?= get_post_type_archive_link('post'); ?>" class="flex items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 50 50" fill="none">
-            <path d="M11.9393 26.0607C11.3536 25.4749 11.3536 24.5251 11.9393 23.9393L21.4853 14.3934C22.0711 13.8076 23.0208 13.8076 23.6066 14.3934C24.1924 14.9792 24.1924 15.9289 23.6066 16.5147L15.1213 25L23.6066 33.4853C24.1924 34.0711 24.1924 35.0208 23.6066 35.6066C23.0208 36.1924 22.0711 36.1924 21.4853 35.6066L11.9393 26.0607ZM37 26.5H13V23.5H37V26.5Z" fill="#212984" />
-          </svg>
-          <p class="mb-0 ml-sp-2">Back to The Library</p>
-        </a>
-      </div>
-      <div class="grid items-center lg:grid-cols-[4.25fr_5fr] lg:gap-[10rem] gap-sp-8">
-        <div>
-          <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="rounded-md max-h-[200px] lg:max-h-none object-cover w-full aspect-square nolazy">
-        </div>
-        <div>
-          <h1 class="font-heading-serif text-h2 lg:text-h2-lg"><?= get_the_title(); ?></h1>
-          <?php if (!$updatedDate) : ?>
-            <p class="mb-base5-2"><?= $date; ?></p>
-          <?php elseif ($updatedDate) : ?>
-            <p class="mb-base5-2">Updated: <?= $date; ?></p>
-          <?php endif; ?>
-          <div class="flex items-center mb-sp-6">
-            <svg xmlns="http://www.w3.org/2000/svg" height="22" viewBox="0 -960 960 960" width="22" fill="#46496D" class="inline-block">
-              <path d="M352.587-840v-87.413h254.826V-840H352.587Zm83.826 446.696h87.174v-240.718h-87.174v240.718ZM480-65.413q-75.913 0-142.849-29.071-66.937-29.072-117.011-79.055-50.075-49.982-79.173-116.917t-29.098-142.848q0-75.913 29.12-142.837 29.12-66.924 79.185-116.989 50.065-50.066 116.989-79.185 66.924-29.12 142.837-29.12 62.478 0 120.435 20 57.956 20 108.195 58.239l58.87-58.869 61.5 61.5-58.869 58.869q38.239 50.24 58.119 108.077 19.881 57.837 19.881 120.315 0 75.913-29.098 142.848-29.098 66.935-79.173 116.917-50.074 49.983-117.011 79.055Q555.913-65.413 480-65.413Zm0-91q115.043 0 196.087-80.924 81.043-80.924 81.043-195.967 0-115.044-81.043-196.087Q595.043-710.435 480-710.435q-115.043 0-196.087 81.044-81.043 81.043-81.043 196.087 0 115.043 81.043 195.967Q364.957-156.413 480-156.413Zm0-276.891Z" />
-            </svg>
-            <p class="mb-0 font-bold ml-sp-2"> <?= $readingTime; ?> min.</p>
-          </div>
-          <p><?= get_the_excerpt(); ?></p>
-          <p class="mb-0">By: <a href="<?= get_the_permalink($author->ID); ?>"><?= $author->post_title; ?></a></p>
-          <?php if (!empty($medicalReviewer)) : ?>
-            <p class="mb-0">Clinically Reviewed By: <a href="<?= get_the_permalink($medicalReviewer->ID); ?>"><?= $medicalReviewer->post_title; ?></a></p>
-            <p><a href="https://www.charliehealth.com/clinical-content-advisory-council">Learn more about our Clinical Review Process</a></p>
-          <?php elseif (!empty($customMedicalReviewer)) : ?>
-            <p class="mb-0">Clinically Reviewed By: <a href="<?= $customMedicalReviewer['url']; ?>" target="<?= $customMedicalReviewer['target']; ?>"><?= $customMedicalReviewer['title']; ?></a></p>
-            <p><a href="https://www.charliehealth.com/clinical-content-advisory-council">Learn more about our Clinical Review Process</a></p>
-          <?php endif; ?>
-          <div class="flex items-start">
-            <p class="font-heading-serif">Share:</p>
-            <a role="button" class="js-share-button ml-sp-4"><img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/share.svg'); ?>" alt="share icon"></a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=<?= $fullUrl; ?>" onclick="window.open(this.href,'targetWindow','resizable=yes,width=600,height=300'); return false;" class="ml-sp-4"><img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/facebook.svg'); ?>" alt="Facebook logo">
-            </a>
-            <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?= $fullUrl; ?>" class="ml-sp-4"><img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/linkedin.svg'); ?>" alt="LinkedIn logo"></a>
-          </div>
-          <div class="grid gap-sp-4">
-            <div class="grid items-end justify-start grid-flow-col gap-sp-6">
-              <?php if ($audiences) : foreach ($audiences as $audience) : ?>
-                  <?php
-                  switch ($audience->slug) {
-                    case 'for-myself':
-                      $audienceClass = 'teens-and-young-adults';
-                      break;
-                    case 'for-a-loved-one':
-                      $audienceClass = 'families-and-caregivers';
-                      break;
-                    case 'for-providers':
-                      $audienceClass = 'providers';
-                      break;
-                    default:
-                      $audienceClass = '';
-                      break;
-                  }
-                  ?>
-                  <a href="<?= get_term_link($audience->slug, 'category'); ?>" class="px-4 py-3 no-underline rounded-pill text-p-base bg-tag-gray <?= $audienceClass; ?>"><?= $audience->name; ?></a>
-              <?php endforeach;
-              endif; ?>
-            </div>
-            <div class="grid items-end justify-start grid-flow-col gap-sp-4">
-              <?php if ($tags) : foreach ($tags as $tag) : ?>
-                  <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="px-4 py-3 no-underline rounded-pill text-p-base bg-tag-gray"><?= $tag->name; ?></a>
-              <?php endforeach;
-              endif; ?>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <?php if ($toc) : ?>
-    <section class="section-xs">
-      <div class="container-sm">
-        <div class="rounded-md toc-container bg-light-purple">
-          <div class="flex cursor-pointer toc-heading lg:p-sp-8 p-sp-4">
-            <p class="mb-0 text-h3-base">Table of Contents</p>
-            <div class="flex items-center ml-auto toggle">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="none" viewBox="8 8 8 8" height="12px" width="12px">
-                <path d="M9 12H15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                <path d="M12 9L12 15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
-            </div>
-          </div>
-          <div class="overflow-hidden transition-all duration-500 ease-in-out toc-content max-h-0">
-            <div id="toc" class="flex flex-col items-start pt-0 lg:pt-0 lg:p-sp-8 p-sp-4 gap-sp-1"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-  <?php endif; ?>
-  <section class="section-horizontal">
-    <div class="container">
-      <div class="divider"></div>
-    </div>
-  </section>
-  <article id="articleContent" class="section">
-    <div class="container-sm">
-      <div id="theContent">
-        <?php the_content(); ?>
-        <?php if ($references) : ?>
-          <div class="divider mb-sp-4"></div>
-          <div class="rounded-md references-container">
-            <div class="flex duration-300 rounded-md cursor-pointer references-heading lg:p-sp-8 p-sp-4 hover:bg-lightest-purple">
-              <p class="mb-0 text-h3-base">References</p>
-              <div class="flex items-center ml-auto toggle">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="none" viewBox="8 8 8 8" height="12px" width="12px">
-                  <path d="M9 12H15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                  <path d="M12 9L12 15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                </svg>
-              </div>
-            </div>
-            <div class="overflow-hidden transition-all duration-500 ease-in-out references-content max-h-0">
-              <div class="pt-0 lg:pt-0 lg:p-sp-8 p-sp-4 gap-sp-1 mt-sp-4">
-                <?= $references; ?>
-              </div>
-            </div>
-          </div>
+      <div class="breadcrumbs mb-sp-5 lg:mb-sp-6">
+        <?php if (!is_singular('research')) : ?>
+          <a href="/blog">The Library</a>
+        <?php endif; ?>
+        <?php if ($tags[0]->name): ?>
+          <span>/</span>
+          <a href="<?= get_term_link($tags[0]->term_id, 'post_tag'); ?>"><?= $tags[0]->name; ?></a>
         <?php endif; ?>
       </div>
     </div>
-  </article>
+  </section>
+  <section class="section-bottom section-xs-top">
+    <div class="container">
+      <div class="grid lg:grid-cols-[4fr_1fr_7fr]">
+        <div class="min-w-0">
+          <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="rounded-md max-h-[200px] lg:max-h-none object-cover w-full aspect-square nolazy lg:mb-0 mb-base5-4">
+          <div class="lg:top-[125px] noshow sticky lg:block">
+            <?php if ($toc) : ?>
+              <div class="rounded-md toc-container bg-lavender-100 mt-base5-6">
+                <div class="flex cursor-pointer toc-heading lg:p-base5-6 p-base5-3">
+                  <p class="mb-0 text-h3-base">Table of Contents</p>
+                  <div class="flex items-center ml-auto toggle">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M15.175 14.7297L6.61895 14.7297L6.61895 16.3797H15.175L15.175 24.9356L16.825 24.9356L16.825 16.3797H25.3809L25.3809 14.7297L16.825 14.7297L16.825 6.17362L15.175 6.17362L15.175 14.7297Z" fill="#161A3D" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="overflow-hidden transition-all duration-500 ease-in-out toc-content max-h-0">
+                  <div id="toc" class="flex flex-col items-start pt-0 lg:pt-0 lg:p-sp-8 p-sp-4 gap-sp-1"></div>
+                </div>
+              </div>
+            <?php endif; ?>
+            <div class="rounded-md bg-grey-cool mt-base5-6 lg:p-base5-6 p-base5-3">
+              <h3 class="font-heading-serif">Ready to start your journey?</h3>
+              <div class="flex flex-col lg:flex-wrap lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
+                <a href="/form" class="ch-button button-primary">Get Started</a>
+                <a href="tel:+18664848218" class="ch-button button-secondary">1 (866) 484-8218</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="min-w-0"></div>
+        <div class="min-w-0">
+          <article id="articleContent">
+            <div>
+              <h1 class="font-heading-serif text-h2 lg:text-h2-lg"><?= get_the_title(); ?></h1>
+              <div class="flex flex-col lg:flex-row lg:gap-base5-10 gap-base5-2 mb-base5-2">
+                <div class="flex items-center mb-base5-1 gap-base5-2">
+                  <img src="<?= $authorFeaturedImageUrl; ?>" alt="<?= $authorFeaturedImageAltText; ?>" class="object-cover w-auto h-base5-10 aspect-square rounded-circle">
+                  <p class="z-10 mb-0 text-[18px]">Written By: <a href="<?= get_the_permalink($author->ID); ?>" class="text-[18px]"><?= $author->post_title; ?></a></p>
+                </div>
+                <?php if (!empty($medicalReviewer)) : ?>
+                  <div class="relative flex items-center gap-base5-2 ">
+                    <img src="<?= $medicalReviewerFeaturedImageUrl; ?>" alt="<?= $medicalReviewerFeaturedImageAltText; ?>" class="object-cover w-auto h-base5-10 aspect-square rounded-circle">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 left-base5-7">
+                      <circle cx="11" cy="11" r="11" fill="white" />
+                      <path d="M15.261 8.81075L14.4305 7.98027L9.88638 12.5244L7.91192 10.55L7.08145 11.3804L9.88741 14.1864L10.7179 13.3559L10.7169 13.3549L15.261 8.81075Z" fill="#8F92CD" />
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M19.0996 10.7734C19.0996 15.1227 15.5739 18.6484 11.2246 18.6484C6.87537 18.6484 3.34961 15.1227 3.34961 10.7734C3.34961 6.42419 6.87537 2.89844 11.2246 2.89844C15.5739 2.89844 19.0996 6.42419 19.0996 10.7734ZM17.9746 10.7734C17.9746 14.5014 14.9525 17.5234 11.2246 17.5234C7.49669 17.5234 4.47461 14.5014 4.47461 10.7734C4.47461 7.04552 7.49669 4.02344 11.2246 4.02344C14.9525 4.02344 17.9746 7.04552 17.9746 10.7734Z" fill="#8F92CD" />
+                    </svg>
+                    <p class="z-10 mb-0 text-[18px]">Clinically Reviewed By: <a href="<?= get_the_permalink($medicalReviewer->ID); ?>" class="text-[18px]"><?= $medicalReviewer->post_title; ?></a></p>
+                  </div>
+                <?php elseif (!empty($customMedicalReviewer)) : ?>
+                  <div class="flex items-center gap-base5-2 ">
+                    <img src="<?= $medicalReviewerFeaturedImageUrl; ?>" alt="<?= $medicalReviewerFeaturedImageAltText; ?>" class="object-cover w-auto h-base5-10 aspect-square rounded-circle">
+                    <p class="z-10 mb-0 text-[18px]">Written By: <a href="<?= $customMedicalReviewer['url']; ?>" class="text-[18px]"><?= $customMedicalReviewer['title']; ?></a></p>
+                  </div>
+                <?php endif; ?>
+              </div>
+              <div class="flex items-center gap-base5-10 mb-base5-4">
+                <?php if (!$updatedDate) : ?>
+                  <p class="mb-0 text-[18px]"><?= $date; ?></p>
+                <?php elseif ($updatedDate) : ?>
+                  <p class="mb-0 text-[18px]">Updated: <?= $date; ?></p>
+                <?php endif; ?>
+                <div class="flex items-center">
+                  <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.3906 5.45312V2.3125H15.4062C15.5094 2.3125 15.5938 2.22812 15.5938 2.125V0.8125C15.5938 0.709375 15.5094 0.625 15.4062 0.625H0.59375C0.490625 0.625 0.40625 0.709375 0.40625 0.8125V2.125C0.40625 2.22812 0.490625 2.3125 0.59375 2.3125H2.60938V5.45312C2.60938 7.36328 3.60312 9.04375 5.10312 10C3.60312 10.9563 2.60938 12.6367 2.60938 14.5469V17.6875H0.59375C0.490625 17.6875 0.40625 17.7719 0.40625 17.875V19.1875C0.40625 19.2906 0.490625 19.375 0.59375 19.375H15.4062C15.5094 19.375 15.5938 19.2906 15.5938 19.1875V17.875C15.5938 17.7719 15.5094 17.6875 15.4062 17.6875H13.3906V14.5469C13.3906 12.6367 12.3969 10.9563 10.8969 10C12.3969 9.04375 13.3906 7.36328 13.3906 5.45312ZM11.7031 14.5469V17.6875H4.29688V14.5469C4.29688 13.5578 4.68125 12.6273 5.38203 11.9289C6.08047 11.2281 7.01094 10.8438 8 10.8438C8.98906 10.8438 9.91953 11.2281 10.618 11.9289C11.3188 12.6273 11.7031 13.5578 11.7031 14.5469ZM11.7031 5.45312C11.7031 6.44219 11.3188 7.37266 10.618 8.07109C9.91953 8.77188 8.98906 9.15625 8 9.15625C7.01094 9.15625 6.08047 8.77188 5.38203 8.07109C5.0367 7.7284 4.76293 7.32048 4.57664 6.87105C4.39035 6.42161 4.29525 5.93963 4.29688 5.45312V2.3125H11.7031V5.45312Z" fill="#161A3D" />
+                  </svg>
+                  <p class="ml-sp-2 text-[18px]"> <?= $readingTime; ?> min.</p>
+                </div>
+              </div>
+              <p><?= get_the_excerpt(); ?></p>
+              <div class="grid items-end justify-start grid-flow-col gap-sp-4 mb-base5-4">
+                <?php if ($tags) : foreach ($tags as $tag) : ?>
+                    <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="px-4 py-3 no-underline rounded-pill bg-lavender-200 hover:bg-lavender-300"><?= $tag->name; ?></a>
+                <?php endforeach;
+                endif; ?>
+              </div>
+              <p><a href="https://www.charliehealth.com/clinical-content-advisory-council">Learn more about our Clinical Review Process</a></p>
+              <div class="lg:noshow">
+                <?php if ($toc) : ?>
+                  <div class="rounded-md toc-container bg-lavender-100 mt-base5-6">
+                    <div class="flex cursor-pointer toc-heading lg:p-base5-6 p-base5-3">
+                      <p class="mb-0 text-h3-base">Table of Contents</p>
+                      <div class="flex items-center ml-auto toggle">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M15.175 14.7297L6.61895 14.7297L6.61895 16.3797H15.175L15.175 24.9356L16.825 24.9356L16.825 16.3797H25.3809L25.3809 14.7297L16.825 14.7297L16.825 6.17362L15.175 6.17362L15.175 14.7297Z" fill="#161A3D" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="overflow-hidden transition-all duration-500 ease-in-out toc-content max-h-0">
+                      <div id="tocMobile" class="flex flex-col items-start pt-0 lg:pt-0 lg:p-sp-8 p-sp-4 gap-sp-1"></div>
+                    </div>
+                  </div>
+                <?php endif; ?>
+                <div class="rounded-md bg-grey-cool mt-base5-6 lg:p-base5-6 p-base5-3">
+                  <h3 class="font-heading-serif">Ready to start your journey?</h3>
+                  <div class="flex flex-col lg:flex-wrap lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
+                    <a href="/form" class="ch-button button-primary">Get Started</a>
+                    <a href="tel:+18664848218" class="ch-button button-secondary">1 (866) 484-8218</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="divider my-base5-8 bg-grey-demension"></div>
+            <div id="theContent">
+              <?php the_content(); ?>
+              <?php if ($references) : ?>
+                <div class="divider mb-sp-4"></div>
+                <div class="rounded-md references-container">
+                  <div class="flex duration-300 rounded-md cursor-pointer references-heading lg:p-sp-8 p-sp-4 hover:bg-lightest-purple">
+                    <p class="mb-0 text-h3-base">References</p>
+                    <div class="flex items-center ml-auto toggle">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="none" viewBox="8 8 8 8" height="12px" width="12px">
+                        <path d="M9 12H15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12 9L12 15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="overflow-hidden transition-all duration-500 ease-in-out references-content max-h-0">
+                    <div class="pt-0 lg:pt-0 lg:p-sp-8 p-sp-4 gap-sp-1 mt-sp-4">
+                      <?= $references; ?>
+                    </div>
+                  </div>
+                </div>
+              <?php endif; ?>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
+</section>
 <?php if (!$prefooter) : ?>
   <?= do_blocks('<!-- wp:block {"ref":12} /-->'); ?>
 <?php endif; ?>
 <?php if ($relatedPosts) : ?>
   <section class="section bg-grey-cool">
     <div class="container">
-      <h2>More like this</h2>
-      <div class="grid lg:grid-cols-3 posts-container gap-x-sp-8 gap-y-sp-10">
-        <?php foreach ($relatedPosts as $post) : ?>
-          <?php
-          if (has_post_thumbnail()) {
-            $featuredImageID = get_post_thumbnail_id();
-            $featuredImage = wp_get_attachment_image_src($featuredImageID, 'card-thumb');
-            $featuredImageAltText = get_post_meta($featuredImageID, '_wp_attachment_image_alt', true);
-
-            $featuredImageUrl = $featuredImage[0];
-            $featuredImageAltText = $featuredImageAltText ?: '';
-          } else {
-            $featuredImageUrl = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
-            $featuredImageAltText = 'Charlie Health Logo';
-          }
-          ?>
-          <div class="relative bg-white rounded-lg group">
-            <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
-              <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
+      <div class="grid lg:grid-cols-[3fr_9fr] gap-x-sp-5 gap-y-sp-10">
+        <div>
+          <h2>More like this</h2>
+          <a href="/blog" class="ch-button button-secondary">Explore more</a>
+        </div>
+        <div class="grid lg:grid-cols-3 gap-sp-5">
+          <?php foreach ($relatedPosts as $post) : ?>
+            <?php
+            if (has_post_thumbnail()) {
+              $featuredImageID = get_post_thumbnail_id();
+              $featuredImage = wp_get_attachment_image_src($featuredImageID, 'card-thumb');
+              $featuredImageAltText = get_post_meta($featuredImageID, '_wp_attachment_image_alt', true);
+              $featuredImageUrl = $featuredImage[0];
+              $featuredImageAltText = $featuredImageAltText ?: '';
+            } else {
+              $featuredImageUrl = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
+              $featuredImageAltText = 'Charlie Health Logo';
+            }
+            ?>
+            <div class="relative bg-white rounded-lg group">
+              <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
+                <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
+              </div>
+              <div class="absolute rounded-t-lg top-sp-4 left-sp-4">
+                <?php $tags = get_the_terms(get_the_ID(), 'post_tag');  ?>
+                <?php if ($tags) :  ?>
+                  <?php foreach ($tags as $tag) : ?>
+                    <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-primary bg-white group-hover:bg-white-hover border border-white z-[6] text-h5-base"><?= $tag->name; ?></a>
+                  <?php endforeach; ?>
+                <?php endif; ?>
+              </div>
+              <div class="grid bg-white rounded-b-lg p-sp-4">
+                <h3 class="text-h4-base"><a href="<?= get_the_permalink(); ?>" class="block stretched-link"><?= get_the_title(); ?></a></h3>
+                <p><?= $author->post_title; ?></p>
+              </div>
             </div>
-            <div class="absolute rounded-t-lg top-sp-4 left-sp-4">
-              <?php $tags = get_the_terms(get_the_ID(), 'post_tag');  ?>
-              <?php if ($tags) :  ?>
-                <?php foreach ($tags as $tag) : ?>
-                  <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-primary bg-white group-hover:bg-white-hover border border-white z-[6] text-h5-base"><?= $tag->name; ?></a>
-                <?php endforeach; ?>
-              <?php endif; ?>
-            </div>
-            <div class="grid bg-white rounded-b-lg p-sp-4">
-              <h3 class="text-h4-base"><a href="<?= get_the_permalink(); ?>" class="block stretched-link"><?= get_the_title(); ?></a></h3>
-              <p><?= $author->post_title; ?></p>
-            </div>
-          </div>
-        <?php endforeach; ?>
+          <?php endforeach; ?>
+        </div>
       </div>
     </div>
   </section>

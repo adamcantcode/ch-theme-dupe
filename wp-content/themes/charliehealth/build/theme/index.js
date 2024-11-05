@@ -703,7 +703,7 @@ gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.registerPlugin(gsap_ScrollToPlugin__WEBPA
 function ajaxPagination() {
   const initPagination = tagID => {
     const bodyClasses = Array.from(document.body.classList);
-    const postsPerPage = 6;
+    const postsPerPage = 3;
     var [endpoint] = getEndpoint(bodyClasses, tagID);
     renderPagination(postsPerPage, endpoint, tagID);
   };
@@ -808,7 +808,7 @@ function ajaxPagination() {
       scrollTo: '#postsContainer',
       scrollTo: {
         y: '#postsContainer',
-        offsetY: self => document.querySelector('header').offsetHeight
+        offsetY: self => document.querySelector('header').offsetHeight + 150
       }
     });
   };
@@ -816,28 +816,6 @@ function ajaxPagination() {
     tags.forEach(tag => {
       tag.classList.remove('active');
     });
-  };
-  const termsClickHandler = () => {
-    var tags = document.querySelectorAll('.js-tag-id');
-    var reset = document.querySelector('.js-reset');
-    tags.forEach(tag => {
-      tag.addEventListener('click', e => {
-        var tagID = e.target.getAttribute('data-tag-id');
-        removeTagActive();
-        e.target.classList.add('active');
-        reset.classList.remove('opacity-0', 'invisible');
-        initPagination(tagID);
-        scollToPostsContainer();
-      });
-    });
-    if (reset) {
-      reset.addEventListener('click', e => {
-        reset.classList.add('opacity-0', 'invisible');
-        removeTagActive();
-        initPagination();
-        scollToPostsContainer();
-      });
-    }
   };
   const getEndpoint = (bodyClasses, tagID) => {
     let endpoint = `${window.location.origin}/wp-json/wp/v2/posts?_embed&_fields=link,title,acf,_links,_embedded&_embed`;
@@ -911,24 +889,17 @@ function ajaxPagination() {
         }
       }
     }
-    if (post._embedded['wp:term']) {
-      var cats = post._embedded['wp:term'][0];
-    }
-    if (post._embedded['wp:term']) {
-      var tags = post._embedded['wp:term'][1];
-    }
-    html = `<div class="relative bg-white rounded-lg group">
-              <div class="lg:h-[167px] h-[150px] overflow-hidden rounded-t-lg">
-                <img src="${imageUrl}" alt="${imageAlt}"  class="object-cover w-full h-full transition-all duration-300 rounded-t-lg group-hover:scale-105">
-              </div>
-              <div class="grid bg-white rounded-b-lg p-sp-4">
-                <h3 class="text-h4-base"><a href="${post.link}" class="block stretched-link">${post.title.rendered}</a></h3>
-                <p>${post.acf.by_author.post_title}</p>
-              </div>`;
-    if (tags) {
-      html += `${tags.map(tag => `<div class="absolute rounded-t-lg top-sp-4 left-sp-4"><a href="${tag.link}" class="relative inline-block no-underline rounded-pill px-base5-3 py-base5-2 text-primary bg-white group-hover:bg-white-hover border border-white z-[6] text-h5-base">${tag.name}</a></div>`).join('')}`;
-    }
-    html += `</div><!--end three-->`;
+    html = `<div class="grid grid-cols-[3fr_1fr] bg-white rounded-lg group relative">
+    <div class="bg-white rounded-l-lg p-base5-3">
+      <h3 class="text-h4-base">
+        <a href="${post.link}" class="block stretched-link">${post.title.rendered}</a>
+      </h3>
+      <p>${post.acf.date}</p>
+    </div>
+    <div class="min-h-[100px] overflow-hidden rounded-r-lg">
+      <img src="${imageUrl}" alt="${imageAlt}" class="object-cover object-center w-full h-full transition-all duration-300 rounded-r-lg group-hover:scale-105">
+    </div>`;
+    html += `</div><!--end structure-->`;
     return html;
   };
   const clickPages = () => {
@@ -936,7 +907,6 @@ function ajaxPagination() {
       jQuery('.posts-container').addClass('opacity-0 scale-[0.99]');
     });
   };
-  termsClickHandler();
   initPagination();
 }
 
@@ -1575,39 +1545,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ progressBar)
 /* harmony export */ });
 function progressBar() {
+  const progressBar = document.querySelector('#progressBar');
+  const articleContent = document.querySelector('#theContent');
+  const header = document.querySelector('header');
+  const wpadmin = document.querySelector('#wpadminbar');
   function calculateHeaderHeight() {
-    var articleContent = document.querySelector('#articleContent .container-sm') || document.querySelector('#articleContent .container');
-    let headerHeight = document.querySelector('header').clientHeight;
-    var wpadmin = document.querySelector('#wpadminbar');
+    let headerHeight = header.clientHeight;
     if (wpadmin) {
       headerHeight += wpadmin.clientHeight;
     }
-    var progressBar = document.querySelector('#progressBar');
-    progressBar.style.top = headerHeight + 'px';
-    progressBar.style.left = '0';
-    document.body.appendChild(progressBar);
-    updateProgressBar(articleContent, headerHeight, progressBar);
+    progressBar.style.top = `${headerHeight}px`;
+    updateProgressBar(headerHeight);
   }
-  function updateProgressBar(articleContent, headerHeight, progressBar) {
-    var contentHeight = articleContent.scrollHeight + headerHeight;
-    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    var scrollableHeight = contentHeight - headerHeight;
-    var scrollPosition = Math.max(0, scrollTop - headerHeight);
-    var scrollPercent = Math.min(scrollPosition / scrollableHeight * 100, 100);
-    if (scrollPercent === 100) {
-      progressBar.style.opacity = '0';
-    } else {
-      progressBar.style.opacity = '100';
-    }
+  function updateProgressBar(headerHeight) {
+    const contentHeight = articleContent.scrollHeight + headerHeight;
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const scrollableHeight = contentHeight - headerHeight;
+    const scrollPosition = Math.max(0, scrollTop - headerHeight);
+    const scrollPercent = Math.min(scrollPosition / scrollableHeight * 100, 100);
     progressBar.style.width = `${scrollPercent}%`;
+    progressBar.style.opacity = scrollPercent === 100 ? '0' : '1';
   }
-
-  // window.addEventListener('scroll', updateProgressBar);
-  window.addEventListener('scroll', () => {
+  function handleScroll() {
     clearTimeout(window.scrollEndTimer);
-    window.scrollEndTimer = setTimeout(calculateHeaderHeight, 100);
-  });
+    window.scrollEndTimer = setTimeout(() => updateProgressBar(header.clientHeight), 100);
+  }
+  window.addEventListener('scroll', handleScroll);
   window.addEventListener('resize', calculateHeaderHeight);
+
+  // Initial calculation
+  calculateHeaderHeight();
 }
 
 /***/ }),
@@ -1842,20 +1809,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ toc)
 /* harmony export */ });
 function toc() {
-  const toc = document.querySelector('#toc');
-  if (toc) {
+  const tocContainers = [document.querySelector('#toc'), document.querySelector('#tocMobile')];
+  if (tocContainers.some(container => container)) {
     const headings = document.querySelectorAll('#theContent > h2');
     headings.forEach(heading => {
-      var headoingText = sanitizeForId(heading.innerText);
-      heading.id = headoingText;
-      const tocHeading = document.createElement('a');
-      const headingText = document.createTextNode(heading.innerText);
-      tocHeading.appendChild(headingText);
-      tocHeading.setAttribute('href', `#${heading.id}`);
-      tocHeading.classList.add('toc-underline');
-      const divWrapper = document.createElement('div');
-      divWrapper.appendChild(tocHeading);
-      toc.appendChild(divWrapper);
+      const headingText = sanitizeForId(heading.innerText);
+      heading.id = headingText;
+      tocContainers.forEach(tocContainer => {
+        if (tocContainer) {
+          const tocLink = document.createElement('a');
+          const linkText = document.createTextNode(heading.innerText);
+          tocLink.appendChild(linkText);
+          tocLink.setAttribute('href', `#${heading.id}`);
+          tocLink.classList.add('toc-underline');
+          const divWrapper = document.createElement('div');
+          divWrapper.appendChild(tocLink);
+          tocContainer.appendChild(divWrapper);
+        }
+      });
     });
     function sanitizeForId(text) {
       let sanitizedText = text.trim();
@@ -1876,8 +1847,10 @@ function toc() {
         accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
       }
     }
-    const tocHeading = document.querySelector('.toc-heading');
-    tocHeading.addEventListener('click', toggleAccordion);
+    const tocHeadings = document.querySelectorAll('.toc-heading');
+    tocHeadings.forEach(tocHeading => {
+      tocHeading.addEventListener('click', toggleAccordion);
+    });
   }
 }
 
@@ -23720,8 +23693,9 @@ document.addEventListener('DOMContentLoaded', () => {
     (0,_modules_toc__WEBPACK_IMPORTED_MODULE_7__["default"])();
     (0,_modules_references__WEBPACK_IMPORTED_MODULE_14__["default"])();
     (0,_modules_progress_bar__WEBPACK_IMPORTED_MODULE_15__["default"])();
-    (0,_modules_share_button__WEBPACK_IMPORTED_MODULE_8__["default"])();
+    // shareButton();
   }
+
   if (body.classList.contains('blog')) {
     (0,_modules_newsletter_popup__WEBPACK_IMPORTED_MODULE_16__["default"])();
     (0,_modules_featured_blog_slider__WEBPACK_IMPORTED_MODULE_9__["default"])();
@@ -23827,6 +23801,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // }
   }
 
+  if (window.location.href.includes('#form')) {
+    setTimeout(() => {
+      document.getElementById('form').scrollIntoView();
+    }, 1000);
+  }
   (0,_modules_user_pages_tracker__WEBPACK_IMPORTED_MODULE_23__["default"])();
 });
 })();

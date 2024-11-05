@@ -11,119 +11,211 @@ Template Post Type: page
   <div class="container">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-sp-8">
       <div>
-      <script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/self_serve_admissions"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/self_serve_admissions" title="Online Form">Online Form - [PROD] Charlie Health Intake Form</a></noscript>
+        <script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/self_serve_admissions"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/self_serve_admissions" title="Online Form">Online Form - [PROD] Charlie Health Intake Form</a></noscript>
+        <form name="iterable_optin" action="//links.iterable.com/lists/publicAddSubscriberForm?publicIdString=c82fe3a9-ff97-46b9-abdd-d857ee87bd2c" method="POST" id="iterablePartialSubmissions" class="noshow">
+          <input type="email" name="email" id="iterableEmailInput" onfocus="if(this.value===this.defaultValue){this.value='';}" onblur="if(this.value===''){this.value=this.defaultValue;}">
+          <input type="submit" value="Submit">
+        </form>
         <script>
-          document.addEventListener("DOMContentLoaded", function() {
-            const newDisclaimerText = 'We may employ third-party tools to analyze usage data on our website, including your submission of this form. We make reasonable efforts to obscure or de-identify protected health information from our analytics providers whenever feasible.'
-            const disclaimerContainer = document.querySelectorAll('.field-auto-capture')[0];
-            const progressBar = document.querySelector('#fsSubmit5700521');
+          'use strict';
 
-            progressBar.insertAdjacentElement('afterend', disclaimerContainer);
-            disclaimerContainer.style.display = 'none';
-            disclaimerContainer.style.padding = "0";
-            disclaimerContainer.querySelector('.field-auto-capture__message p').innerHTML = newDisclaimerText;
-            disclaimerContainer.querySelector('.field-auto-capture__message p').style.fontSize = "12px";
-            disclaimerContainer.querySelector('.field-auto-capture__message p').style.lineHeight = 1.1;
-            disclaimerContainer.querySelector('.field-auto-capture__message p').style.textAlign = "left";
+          // Constants
+          const FORM_ID = 5700521;
+          const DISCLAIMER_TEXT = 'We may employ third-party tools to analyze usage data on our website, including your submission of this form. We make reasonable efforts to obscure or de-identify protected health information from our analytics providers whenever feasible.';
+          const CONSENT_TEXT = 'By entering your phone number and email address in this form, you agree to receive automated text messages and emails from us. Standard message and data rates may apply.';
 
-            document.querySelector('.fsPagination').addEventListener('click', function() {
-              setTimeout(() => {
-                if (document.querySelector('#fsPage5700521-2').classList.contains('fsHidden')) {
-                  setTimeout(() => {
-                    disclaimerContainer.style.display = 'none';
-                  }, 300);
-                } else {
-                  disclaimerContainer.style.display = 'none';
-                }
-              }, 300);
-            })
+          // Initialize form using Formstack API
+          const form = window.fsApi().getForm(FORM_ID);
 
-            const originalElement = document.querySelector('.field-auto-capture');
-            const clonedElement = originalElement.cloneNode(true);
+          // Helper function to update disclaimer styles
+          function updateDisclaimerStyles(element) {
+            if (!element) return;
 
-            clonedElement.className = '';
-
-            originalElement.parentNode.insertBefore(clonedElement, originalElement.nextSibling);
-
-            const clonedChildElement = clonedElement.querySelector('.field-auto-capture__message__text');
-            clonedChildElement.className = '';
-
-            clonedChildElement.innerText = "By entering your phone number and email address in this form, you agree to receive automated text messages and emails from us. Standard message and data rates may apply.";
-
-            document.querySelector('.fsPagination').addEventListener('click', function() {
-              setTimeout(() => {
-                if (document.querySelector('#fsPage5700521-3').classList.contains('fsHidden')) {
-                  setTimeout(() => {
-                    clonedElement.style.display = 'none';
-                  }, 300);
-                } else {
-                  clonedElement.style.display = 'block';
-                }
-              }, 300);
-            })
-
-            // Scroll to top on button click
-            const formButtons = document.querySelectorAll('form button');
-
-            formButtons.forEach(button => {
-              button.addEventListener('click', () => {
-                setTimeout(() => {
-                  window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                  });
-                }, 300);
-              });
-            });
-
-            // Add email from session storage
-
-            function waitForElement(selector, callback) {
-              var element = document.querySelector(selector);
-              if (element && window.getComputedStyle(element).display !== 'none') {
-                callback(element);
-              } else {
-                setTimeout(() => waitForElement(selector, callback), 500);
-              }
+            const paragraph = element.querySelector('.field-auto-capture__message p');
+            if (paragraph) {
+              paragraph.innerHTML = DISCLAIMER_TEXT;
+              paragraph.style.fontSize = '12px';
+              paragraph.style.lineHeight = '1.1';
+              paragraph.style.textAlign = 'left';
             }
 
-            const storedEmail = sessionStorage.getItem('introQuestionEmail');
-            const textField = document.getElementById('field162592077');
+            element.style.display = 'none';
+            element.style.padding = '0';
+          }
 
-            if (storedEmail && textField) {
-              waitForElement("#fsPage5700521-3", (element) => {
+          // Helper function to create consent text element
+          function createConsentElement(originalElement) {
+            if (!originalElement) return null;
 
-                // Set the value directly
-                textField.value = storedEmail;
+            const clonedElement = originalElement.cloneNode(true);
+            clonedElement.className = '';
 
-                // Dispatch 'input' event to simulate user input
-                textField.dispatchEvent(new Event('input', {
-                  bubbles: true,
-                  cancelable: true
-                }));
+            const messageText = clonedElement.querySelector('.field-auto-capture__message__text');
+            if (messageText) {
+              messageText.className = '';
+              messageText.innerText = CONSENT_TEXT;
+            }
 
-                // Dispatch 'change' event to simulate value change
-                textField.dispatchEvent(new Event('change', {
-                  bubbles: true,
-                  cancelable: true
-                }));
+            return clonedElement;
+          }
 
-                // Dispatch 'blur' event to simulate losing focus
-                textField.dispatchEvent(new Event('blur', {
-                  bubbles: true,
-                  cancelable: true
-                }));
+          // Helper function to handle visibility of an element based on page
+          function handlePageVisibility(element, pageId, shouldShow) {
+            if (!element) return;
 
-                // Optionally, you can trigger a 'focusout' event if necessary
-                textField.dispatchEvent(new Event('focusout', {
-                  bubbles: true,
-                  cancelable: true
-                }));
+            const page = document.querySelector(pageId);
+            if (!page) return;
+
+            setTimeout(() => {
+              element.style.display = page.classList.contains('fsHidden') ? 'none' : (shouldShow ? 'block' : 'none');
+            }, 300);
+          }
+
+          // Prevent first page validation trigger
+          form.registerFormEventListener({
+            type: 'error',
+            onFormEvent: function(event) {
+              console.log(event);
+              if (event.data.page === 1) {
+                if (event.preventDefault) {
+                  event.preventDefault();
+                }
+              }
+
+
+              return Promise.resolve(event);
+            }
+          });
+
+          // Register event listener for form ready event
+          form.registerFormEventListener({
+            type: 'ready',
+            onFormEvent: function(event) {
+
+              // Select elements
+              const disclaimerContainer = document.querySelector('.field-auto-capture');
+              const progressBar = document.querySelector('#fsSubmit' + FORM_ID);
+              const originalElement = disclaimerContainer;
+
+              // Insert disclaimer after the progress bar
+              if (progressBar && disclaimerContainer) {
+                progressBar.insertAdjacentElement('afterend', disclaimerContainer);
+                updateDisclaimerStyles(disclaimerContainer);
+              }
+
+              // Create and insert consent text element
+              const consentElement = createConsentElement(originalElement);
+              if (consentElement && originalElement) {
+                originalElement.parentNode.insertBefore(consentElement, originalElement.nextSibling);
+              }
+
+              // Add page navigation listeners for visibility control
+              const pagination = document.querySelector('.fsPagination');
+              if (pagination) {
+                pagination.addEventListener('click', function() {
+                  handlePageVisibility(disclaimerContainer, '#fsPage' + FORM_ID + '-2', true);
+                  handlePageVisibility(consentElement, '#fsPage' + FORM_ID + '-3', true);
+                });
+              }
+
+              // Partials subs logic
+              // window.addEventListener("beforeunload", function() {
+              //   const iterableEmailInput = document.querySelector('#iterableEmailInput');
+
+              //   try {
+              //     const source = document.querySelector('#field162592077');
+
+              //     if (source) {
+              //       if (iterableEmailInput) {
+              //         iterableEmailInput.value = source.value;
+              //       }
+
+              //       // Dispatch the form submission
+              //       document.querySelector('#iterablePartialSubmissions').dispatchEvent(new Event('submit', {
+              //         cancelable: true,
+              //         bubbles: true
+              //       }));
+              //     }
+              //   } catch (error) {
+              //     console.error("Error processing the form fields: ", error);
+              //   }
+              // });
+
+              return Promise.resolve(event);
+            }
+          });
+
+          // Register event listener for page change event
+          form.registerFormEventListener({
+            type: 'change-page',
+            onFormEvent: function(event) {
+
+              // Scroll to top on page change
+              window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+              });
+
+              return Promise.resolve(event);
+            }
+          });
+
+          form.registerFormEventListener({
+            type: 'submit',
+            onFormEvent: function(event) {
+              document.querySelector('#iterableEmailInput').value = '';
+
+              return Promise.resolve(event);
+            }
+          });
+
+          form.registerFormEventListener({
+            type: 'submit',
+            onFormEvent: function(event) {
+              window.VWO = window.VWO || [];
+              VWO.event = VWO.event || function() {
+                VWO.push(["event"].concat([].slice.call(arguments)))
+              };
+
+              VWO.event("formstackFormSubmission");
+
+              return Promise.resolve(event);
+            }
+          });
+        </script>
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('#iterablePartialSubmissions');
+
+            if (form) {
+              form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent default form submission
+                event.stopImmediatePropagation(); // Prevent other handlers from triggering
+
+                var formData = new FormData(form);
+                var xhr = new XMLHttpRequest();
+
+                xhr.open('POST', form.action, true);
+                xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest'); // AJAX request indicator
+
+                xhr.onload = function() {
+                  if (xhr.status >= 200 && xhr.status < 400) {
+                    form.reset(); // Reset the form after successful submission
+                  } else {
+                    console.error('Submission failed:', xhr.statusText);
+                  }
+                };
+
+                xhr.onerror = function() {
+                  console.error('Request failed');
+                };
+
+                xhr.send(formData);
               });
             }
           });
         </script>
-        <p>If you’d prefer to speak with our team directly, please call <a href="tel:+18664848218">1 (866) 484-8218</a></p>
+        <p class="mt-base5-4">If you’d prefer to speak with our team directly, please call <a href="tel:+18664848218">1 (866) 484-8218</a></p>
       </div>
       <div class="grid items-center">
         <img src="https://www.charliehealth.com/wp-content/uploads/2023/11/Device_Laptop.png.webp" alt="Illustration of Charlie Health client using laptop for Virtual IOP Therapy">

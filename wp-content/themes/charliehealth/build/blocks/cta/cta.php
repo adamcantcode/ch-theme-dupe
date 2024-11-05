@@ -72,6 +72,73 @@ $blockClasses .= $background . ' ';
     </div>
   </div>
 <?php endif; ?>
+<?php if ($style === 'video') : ?>
+  <section class="relative section-bg-video section noshow">
+    <style>
+      .vimeo-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
+        overflow: hidden;
+        /* Behind the overlay and content */
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(22, 26, 61, 0.6);
+        /* 60% opacity blue overlay */
+        z-index: 2;
+        /* On top of the video but behind the content */
+      }
+    </style>
+    <!-- Video container with full width and height -->
+    <div class="vimeo-container">
+      <iframe src="https://player.vimeo.com/video/1019966136?&amp;background=1&amp;autoplay=1&amp;loop=1" allowfullscreen="allowfullscreen" frameborder="0" class="w-screen lg:min-w-[56.25vh] min-w-[177.77vh] lg:h-[56.25vw] h-[177.77vh] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></iframe>
+    </div>
+
+    <!-- Blue overlay -->
+    <div class="overlay"></div>
+
+    <!-- Content container -->
+    <div class="container relative z-[2]">
+      <div class="rounded-sm">
+        <p class="text-white lg:text-h1-lg text-h2-lg lg:mb-sp-16 mb-sp-12 font-heading-serif max-w-[850px]">Comprehensive, personalized therapy from home.</p>
+        <div class="flex justify-between">
+          <div class="flex flex-col lg:flex-wrap lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-start">
+            <a href="/form" class="ch-button button-primary inverted" target="_self">Get Started</a>
+            <a href="tel:+18664848218" class="ch-button button-secondary inverted" target="_self">1 (866) 484-8218</a>
+          </div>
+          <img decoding="async" src="https://wpch.local/wp-content/themes/charliehealth/resources/images/logos/shield.svg" alt="Charlie Health shield logo" class="w-[3rem] lg:block noshow">
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    // Get the .section-bg-video element
+    const bgVideoSection = document.querySelector('.section-bg-video');
+
+    if (bgVideoSection) {
+      // Get the closest parent <section> element (the one we want to remove)
+      const parentSection = bgVideoSection.closest('section.bg-primary-black-blue');
+
+      if (parentSection) {
+        // Move the .section-bg-video outside its current parent section
+        parentSection.parentNode.insertBefore(bgVideoSection, parentSection);
+
+        // Now remove the parent section
+        parentSection.remove();
+      }
+    }
+  </script>
+<?php endif; ?>
 <?php if ($style === 'quote') : ?>
   <div <?= $blockClasses; ?>">
     <div class="grid lg:grid-cols-[6fr_1fr_5fr] gap-base5-4 items-center">
