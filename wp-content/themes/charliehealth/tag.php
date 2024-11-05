@@ -26,7 +26,7 @@
 </section>
 <section class="bg-grey-warm section-bottom">
   <div class="container">
-    <div class="grid lg:grid-cols-4 gap-sp-5 mt-base5-10">
+    <div class="grid lg:grid-cols-4 gap-sp-5">
       <?php
       $numb = rand(1, 100000);
       // Set up the secondary query arguments for post type and tag
