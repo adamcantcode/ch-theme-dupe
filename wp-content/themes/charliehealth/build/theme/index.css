@@ -6453,6 +6453,10 @@ iframe[src*='youtube.com']{
     height: 6rem;
   }
 
+  .lg\:h-\[140\%\]{
+    height: 140%;
+  }
+
   .lg\:max-h-\[1040px\]{
     max-height: 1040px;
   }
