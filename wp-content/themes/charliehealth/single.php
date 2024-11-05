@@ -115,12 +115,12 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
               <h1 class="font-heading-serif text-h2 lg:text-h2-lg"><?= get_the_title(); ?></h1>
               <div class="flex flex-col lg:flex-row lg:gap-base5-10 gap-base5-2 mb-base5-2">
                 <div class="flex items-center mb-base5-1 gap-base5-2">
-                  <img src="<?= $authorFeaturedImageUrl; ?>" alt="<?= $authorFeaturedImageAltText; ?>" class="object-cover w-auto h-base5-10 aspect-square rounded-circle">
+                  <img src="<?= $authorFeaturedImageUrl; ?>" alt="<?= $authorFeaturedImageAltText; ?>" class="object-cover w-auto h-base5-10 aspect-square shrink-0 rounded-circle">
                   <p class="z-10 mb-0 text-[18px]">Written By: <a href="<?= get_the_permalink($author->ID); ?>" class="text-[18px]"><?= $author->post_title; ?></a></p>
                 </div>
                 <?php if (!empty($medicalReviewer)) : ?>
                   <div class="relative flex items-center gap-base5-2 ">
-                    <img src="<?= $medicalReviewerFeaturedImageUrl; ?>" alt="<?= $medicalReviewerFeaturedImageAltText; ?>" class="object-cover w-auto h-base5-10 aspect-square rounded-circle">
+                    <img src="<?= $medicalReviewerFeaturedImageUrl; ?>" alt="<?= $medicalReviewerFeaturedImageAltText; ?>" class="object-cover w-auto h-base5-10 aspect-square shrink-0 rounded-circle">
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 left-base5-7">
                       <circle cx="11" cy="11" r="11" fill="white" />
                       <path d="M15.261 8.81075L14.4305 7.98027L9.88638 12.5244L7.91192 10.55L7.08145 11.3804L9.88741 14.1864L10.7179 13.3559L10.7169 13.3549L15.261 8.81075Z" fill="#8F92CD" />
@@ -130,7 +130,7 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
                   </div>
                 <?php elseif (!empty($customMedicalReviewer)) : ?>
                   <div class="flex items-center gap-base5-2 ">
-                    <img src="<?= $medicalReviewerFeaturedImageUrl; ?>" alt="<?= $medicalReviewerFeaturedImageAltText; ?>" class="object-cover w-auto h-base5-10 aspect-square rounded-circle">
+                    <img src="<?= $medicalReviewerFeaturedImageUrl; ?>" alt="<?= $medicalReviewerFeaturedImageAltText; ?>" class="object-cover w-auto h-base5-10 aspect-square shrink-0 rounded-circle">
                     <p class="z-10 mb-0 text-[18px]">Written By: <a href="<?= $customMedicalReviewer['url']; ?>" class="text-[18px]"><?= $customMedicalReviewer['title']; ?></a></p>
                   </div>
                 <?php endif; ?>
