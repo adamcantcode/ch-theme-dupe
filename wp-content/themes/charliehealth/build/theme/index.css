@@ -5536,9 +5536,13 @@ a.providers:hover {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-/* mark:not(.has-inline-color.has-lavender-300-color), mark:not(.has-inline-color.has-pale-blue-200-color), mark:not(.has-inline-color.has-yellow-300-color) {
-  @apply px-[.3em] rounded-[6px] box-decoration-clone;
-} */
+.wp-block-heading mark:not(.has-inline-color.has-lavender-300-color), .wp-block-heading mark:not(.has-inline-color.has-pale-blue-200-color), .wp-block-heading mark:not(.has-inline-color.has-yellow-300-color){
+  border-radius: 6px;
+  -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
+  padding-left: .3em;
+  padding-right: .3em;
+}
 
 .toc-underline{
   text-decoration-line: none;
