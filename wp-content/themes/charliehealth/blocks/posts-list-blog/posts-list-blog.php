@@ -116,7 +116,7 @@
           $medicalReviewerFeaturedImageAltText = 'Charlie Health Logo';
         }
       }
-      if (has_post_thumbnail($author)) {
+      if ($author && isset($author->ID) && has_post_thumbnail($author)) {
         $authorFeaturedImageID = get_post_thumbnail_id($author->ID);
         $authorFeaturedImage = wp_get_attachment_image_src($authorFeaturedImageID, 'featured-large');
         $authorFeaturedImageAltText = get_post_meta($authorFeaturedImageID, '_wp_attachment_image_alt', true);

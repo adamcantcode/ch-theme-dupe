@@ -15,8 +15,8 @@ if ($relatedPost) : ?>
       $featuredImageAltText = 'Charlie Health Logo';
     }
     ?>
-    <div class="relative grid lg:grid-cols-[1fr_2fr] overflow-hidden duration-300 border rounded-sm border-grey-demension hover:shadow-lg">
-      <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover lg:h-[220px] h-[150px] w-full">
+    <div class="relative grid lg:grid-cols-[1fr_2fr] overflow-hidden rounded-sm border-2">
+      <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="object-cover lg:h-full h-[150px] w-full">
       <div class="grid p-sp-4">
         <h3><a <?php if (!(is_admin())) : ?>href="<?= get_the_permalink($relatedPost->ID); ?>" <?php endif; ?> class="stretched-link"><?= $relatedPost->post_title; ?></a></h3>
         <p class="mb-sp-4 text-h5 lg:text-h5-lg"><?= get_field('by_author', ($relatedPost->ID))->post_title ?: 'Charlie Health Editorial Team'; ?></p>
@@ -24,7 +24,7 @@ if ($relatedPost) : ?>
           <?php $tags = get_the_terms($relatedPost->ID, 'post_tag'); ?>
           <?php if ($tags && !is_wp_error($tags)): ?>
             <?php foreach ($tags as $tag) : ?>
-              <a href="<?= get_tag_link($tag->term_id); ?>" class="relative z-[6] inline-block no-underline rounded-lg px-sp-4 py-sp-3 text-h6 bg-tag-gray"><?= $tag->name; ?></a>
+              <a href="<?= get_tag_link($tag->term_id); ?>" class="z-10 no-underline px-base5-3 py-base5-2 rounded-pill bg-lavender-200 hover:bg-lavender-300"><?= $tag->name; ?></a>
             <?php endforeach; ?>
           <?php endif; ?>
         </div>
