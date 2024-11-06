@@ -23,7 +23,7 @@
           <h4>11 - 17</h4>
         </div>
         <div class="col-span-2 text-center lg:col-span-1 lg:justify-self-auto">
-          <a href="/form" class="w-full stretched-link lg:w-auto">Get started</a>
+          <a href="/form" class="w-full stretched-link lg:w-auto ch-button button-primary">Get started</a>
         </div>
       </div>
       <div id="youngAdultIOP" class="relative grid lg:items-end items-center grid-cols-[1fr_2fr] lg:grid-rows-1 rounded-md gap-base5-2 lg:text-center lg:p-base5-5 p-base5-2 color-hover-item-js bg-lavender-100 lg:grid-cols-1">
@@ -33,7 +33,7 @@
           <h4>18 - 34</h4>
         </div>
         <div class="col-span-2 text-center lg:col-span-1 lg:justify-self-auto">
-          <a href="/form" class="w-full stretched-link lg:w-auto">Get started</a>
+          <a href="/form" class="w-full stretched-link lg:w-auto ch-button button-primary">Get started</a>
         </div>
       </div>
       <div id="AdultIOP" class="relative grid lg:items-end items-center grid-cols-[1fr_2fr] lg:grid-rows-1 rounded-md gap-base5-2 lg:text-center lg:p-base5-5 p-base5-2 color-hover-item-js bg-pale-blue-100 lg:grid-cols-1">
@@ -43,13 +43,13 @@
           <h4>34+</h4>
         </div>
         <div class="col-span-2 text-center lg:col-span-1 lg:justify-self-auto">
-          <a href="/form" class="w-full stretched-link lg:w-auto">Get started</a>
+          <a href="/form" class="w-full stretched-link lg:w-auto ch-button button-primary">Get started</a>
         </div>
       </div>
     </div>
   </div>
   <div class="container relative text-center mt-base5-10 z-1">
-    <p>or call now: <a href="tel:+18664848218" class="" target="_self">1 (866) 484-8218</a></p>
+    <p><span class="mr-base5-2">or call now: </span><a href="tel:+18664848218" class="ch-button button-secondary" target="_self">1 (866) 484-8218</a></p>
   </div>
 </section>
 
