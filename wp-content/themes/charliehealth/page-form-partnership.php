@@ -23,7 +23,7 @@ Template Post Type: page
       }
 
       // Get the Formstack form instance
-      var form = window.fsApi().getForm('6000504');
+      var form = window.fsApi().getForm('50220451');
 
       form.registerFormEventListener({
         type: 'ready',
