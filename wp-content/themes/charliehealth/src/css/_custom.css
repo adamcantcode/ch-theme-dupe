@@ -670,7 +670,7 @@
   }
 }
 
-mark:not(.has-inline-color.has-lavender-300-color) {
+.wp-block-heading mark:not(.has-inline-color.has-lavender-300-color), .wp-block-heading mark:not(.has-inline-color.has-pale-blue-200-color), .wp-block-heading mark:not(.has-inline-color.has-yellow-300-color) {
   @apply px-[.3em] rounded-[6px] box-decoration-clone;
 }
 
