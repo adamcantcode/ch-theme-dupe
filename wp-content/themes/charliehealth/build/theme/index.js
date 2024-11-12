@@ -23807,6 +23807,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 1000);
   }
   (0,_modules_user_pages_tracker__WEBPACK_IMPORTED_MODULE_23__["default"])();
+  var marks = document.querySelectorAll('mark.has-inline-color');
+  marks.forEach(function (mark) {
+    if (mark.style.backgroundColor === 'rgba(0, 0, 0, 0)') {
+      mark.style.paddingLeft = '0';
+      mark.style.paddingRight = '0';
+    }
+  });
 });
 })();
 
