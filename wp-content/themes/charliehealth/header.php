@@ -108,7 +108,11 @@
             $target = $topLink['target'];
             ?>
             <div class="relative topLevelNavItem">
-              <a <?= $url; ?> target="<?= $target; ?>" class="block text-white no-underline px-sp-3 py-sp-6 font-heading hover:text-lavender-200 text-nav-normal ml-sp-4<?= empty($url) ? ' cursor-default' : ''; ?>"><?= $title; ?></a>
+              <?php if (!empty($url)) : ?>
+                <a <?= $url; ?> target="<?= $target; ?>" class="block text-white no-underline px-sp-3 py-sp-6 font-heading hover:text-lavender-200 text-nav-normal ml-sp-4"><?= $title; ?></a>
+              <?php else : ?>
+                <a href="javascript:void(0)" role="button" class="block text-white no-underline cursor-default px-sp-3 py-sp-6 font-heading hover:text-lavender-200 text-nav-normal ml-sp-4"><?= $title; ?></a>
+              <?php endif; ?>
               <?php if (have_rows('secondary_menu', 'option')) : ?>
                 <div class="absolute w-[650px] grid grid-cols-2 opacity-0 invisible secondLevelNav transition-all duration-150 translate-x-1 origin-right pb-[5px]">
                   <div class="flex flex-col px-sp-8 py-sp-5 bg-secondary-soft max-h-[70vh] overflow-y-auto">
@@ -191,13 +195,14 @@
             ?>
             <div class="">
               <div class="relative flex items-center justify-between w-full px-sp-5 dropdown-item-js">
-                <a <?= $url; ?> target="<?= $target; ?>" class="w-full leading-snug text-white no-underline py-sp-4 font-heading text-[1.25rem] dropdown-select-js"><?= $title; ?></a>
                 <?php if (empty($url)) : ?>
+                  <a href="javascript:void(0)" role="button" class="w-full leading-snug text-white no-underline py-sp-4 font-heading text-[1.25rem] dropdown-select-js"><?= $title; ?></a>
                   <div class="relative mr-2 transition-all duration-300 open-close-js">
                     <div class="bg-white w-sp-4 h-[1.5px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
                     <div class="bg-white w-sp-4 h-[1.5px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 origin-center rotate-90 transitio duration-300 delay-200"></div>
                   </div>
                 <?php else : ?>
+                  <a <?= $url; ?> target="<?= $target; ?>" class="w-full leading-snug text-white no-underline py-sp-4 font-heading text-[1.25rem] dropdown-select-js"><?= $title; ?></a>
                   <div class="relative">
                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" fill="none" viewBox="0 0 10 18">
                       <path stroke="#fff" stroke-linejoin="round" stroke-width="1.5" d="m1 17 7.29289-7.29289c.39053-.39053.39053-1.02369 0-1.41422L1 .999999" />
@@ -286,7 +291,7 @@
         } else if (header && main && tagList) {
           const totalHeight = header.offsetHeight + tagList.offsetHeight;
           main.style.marginTop = `${totalHeight}px`;
-        }  else {
+        } else {
           const totalHeight = header.offsetHeight;
           main.style.marginTop = `${totalHeight}px`;
         }
@@ -304,7 +309,7 @@
           const panelHeight = viewportHeight - totalHeight;
           panel.style.height = `${panelHeight}px`;
         } else if (header && panel) {
-          
+
           const totalHeight = header.offsetHeight;
           const viewportHeight = window.innerHeight;
           const panelHeight = viewportHeight - totalHeight;
