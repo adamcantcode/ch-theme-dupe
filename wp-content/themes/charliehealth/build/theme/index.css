@@ -2709,10 +2709,6 @@ a.insurance-tabs.active:hover {
   grid-template-columns: 3fr 1fr;
 }
 
-.grid-cols-\[4fr_6fr\]{
-  grid-template-columns: 4fr 6fr;
-}
-
 .flex-row{
   flex-direction: row;
 }
@@ -3386,6 +3382,12 @@ a.insurance-tabs.active:hover {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.from-referrals-blue-100{
+  --tw-gradient-from: #F3F4FF var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(243 244 255 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
 .from-50\%{
   --tw-gradient-from-position: 50%;
 }
@@ -3408,6 +3410,14 @@ a.insurance-tabs.active:hover {
 
 .to-transparent{
   --tw-gradient-to: rgba(0,0,0,0) var(--tw-gradient-to-position);
+}
+
+.to-referrals-blue-200{
+  --tw-gradient-to: #E1E3FC var(--tw-gradient-to-position);
+}
+
+.to-referrals-green-100{
+  --tw-gradient-to: #E8F0E6 var(--tw-gradient-to-position);
 }
 
 .box-decoration-clone{
@@ -4078,6 +4088,11 @@ a.insurance-tabs.active:hover {
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-referrals-green-100{
+  --tw-text-opacity: 1;
+  color: rgb(232 240 230 / var(--tw-text-opacity));
 }
 
 .underline{
