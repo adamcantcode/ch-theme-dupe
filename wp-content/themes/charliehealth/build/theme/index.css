@@ -1915,6 +1915,10 @@ a.insurance-tabs.active:hover {
   margin-left: 40px;
 }
 
+.ml-\[500px\]{
+  margin-left: 500px;
+}
+
 .ml-auto{
   margin-left: auto;
 }
@@ -2073,6 +2077,10 @@ a.insurance-tabs.active:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
+}
+
+.ml-\[200px\]{
+  margin-left: 200px;
 }
 
 .line-clamp-3{
@@ -2386,6 +2394,10 @@ a.insurance-tabs.active:hover {
   width: auto;
 }
 
+.w-base5-8{
+  width: 40px;
+}
+
 .w-fit{
   width: -moz-fit-content;
   width: fit-content;
@@ -2421,10 +2433,6 @@ a.insurance-tabs.active:hover {
 
 .w-sp-8{
   width: 2rem;
-}
-
-.w-base5-8{
-  width: 40px;
 }
 
 .min-w-0{
@@ -3306,6 +3314,16 @@ a.insurance-tabs.active:hover {
   background-color: rgb(166 152 255 / var(--tw-bg-opacity));
 }
 
+.bg-referrals-green-100{
+  --tw-bg-opacity: 1;
+  background-color: rgb(246 249 245 / var(--tw-bg-opacity));
+}
+
+.bg-referrals-green-200{
+  --tw-bg-opacity: 1;
+  background-color: rgb(232 240 230 / var(--tw-bg-opacity));
+}
+
 .bg-secondary-soft{
   --tw-bg-opacity: 1;
   background-color: rgb(26 31 69 / var(--tw-bg-opacity));
@@ -3338,16 +3356,6 @@ a.insurance-tabs.active:hover {
 .bg-yellow-300{
   --tw-bg-opacity: 1;
   background-color: rgb(253 191 124 / var(--tw-bg-opacity));
-}
-
-.bg-referrals-green-100{
-  --tw-bg-opacity: 1;
-  background-color: rgb(246 249 245 / var(--tw-bg-opacity));
-}
-
-.bg-referrals-green-200{
-  --tw-bg-opacity: 1;
-  background-color: rgb(232 240 230 / var(--tw-bg-opacity));
 }
 
 .bg-\[linear-gradient\(\#fead80\2c \#e2deca_50\%\2c \#bdc6fc\)\]{
@@ -3788,6 +3796,14 @@ a.insurance-tabs.active:hover {
 
 .pt-sp-7{
   padding-top: 1.75rem;
+}
+
+.pl-\[200px\]{
+  padding-left: 200px;
+}
+
+.pl-\[400px\]{
+  padding-left: 400px;
 }
 
 .text-center{
@@ -7112,6 +7128,21 @@ iframe[src*='youtube.com']{
     padding-bottom: 1.5rem;
   }
 
+  .lg\:px-\[400px\]{
+    padding-left: 400px;
+    padding-right: 400px;
+  }
+
+  .lg\:px-\[200px\]{
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+
+  .lg\:px-\[100px\]{
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
   .lg\:pb-0{
     padding-bottom: 0px;
   }
@@ -7146,6 +7177,14 @@ iframe[src*='youtube.com']{
 
   .lg\:pt-sp-14{
     padding-top: 4rem;
+  }
+
+  .lg\:pl-\[200px\]{
+    padding-left: 200px;
+  }
+
+  .lg\:pl-\[400px\]{
+    padding-left: 400px;
   }
 
   .lg\:text-center{
