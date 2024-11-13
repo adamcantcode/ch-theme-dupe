@@ -81,7 +81,8 @@ module.exports = {
         deactivated: '#87889A',
       },
       'referrals-green': {
-        100: '#E8F0E6',
+        100: '#F6F9F5',
+        200: '#E8F0E6',
       },
       'referrals-blue': {
         100: '#F3F4FF',

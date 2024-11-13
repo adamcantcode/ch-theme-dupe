@@ -131,9 +131,9 @@
           "name": "Blue 200 - Blue 300"
         },
         {
-          "slug": "bg-gradient-to-b from-white to-referrals-green-100",
+          "slug": "bg-gradient-to-b from-white to-referrals-green-200",
           "gradient": "linear-gradient(to bottom,#FFFFFF 50%,#E8F0E6 50%)",
-          "name": "White - Green 100"
+          "name": "White - Green 200"
         },
         {
           "slug": "bg-gradient-to-b from-referrals-blue-100 to-referrals-blue-200",

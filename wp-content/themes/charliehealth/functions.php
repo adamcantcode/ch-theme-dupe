@@ -173,6 +173,7 @@ function register_acf_blocks()
   // Referrals
   register_block_type(__DIR__ . '/build/blocks/hero-shapes');
   register_block_type(__DIR__ . '/build/blocks/static-positioned-image');
+  register_block_type(__DIR__ . '/build/blocks/referrals-features-cards');
 }
 add_action('init', 'register_acf_blocks', 5);
 
