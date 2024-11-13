@@ -172,6 +172,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/basic-checklist');
   // Referrals
   register_block_type(__DIR__ . '/build/blocks/hero-shapes');
+  register_block_type(__DIR__ . '/build/blocks/static-positioned-image');
 }
 add_action('init', 'register_acf_blocks', 5);
 

@@ -6,7 +6,7 @@ include(get_template_directory() . '/helpers/spacing.php');
 $containerWidth = get_field('container_width') ? '-' . get_field('container_width') : '';
 ?>
 
-<section <?= $anchor; ?>class="relative <?= $blockClasses; ?> <?= !empty($block['className']) ? $block['className'] : ''; ?>">
+<section <?= $anchor; ?>class="<?= $blockClasses; ?> <?= !empty($block['className']) ? $block['className'] : ''; ?>">
   <div class="container<?= $containerWidth; ?>">
     <InnerBlocks />
   </div>

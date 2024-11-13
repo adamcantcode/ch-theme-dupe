@@ -1546,20 +1546,16 @@ a.insurance-tabs.active:hover {
   bottom: 0px !important;
 }
 
+.-left-1\/4{
+  left: -25%;
+}
+
 .-left-base5-4{
   left: -20px;
 }
 
-.-right-\[90px\]{
-  right: -90px;
-}
-
 .-top-1\/2{
   top: -50%;
-}
-
-.-top-\[90px\]{
-  top: -90px;
 }
 
 .bottom-0{
@@ -6166,6 +6162,14 @@ iframe[src*='youtube.com']{
     position: sticky;
   }
 
+  .lg\:-right-\[90px\]{
+    right: -90px;
+  }
+
+  .lg\:-top-\[90px\]{
+    top: -90px;
+  }
+
   .lg\:bottom-0{
     bottom: 0px;
   }
@@ -6216,14 +6220,6 @@ iframe[src*='youtube.com']{
 
   .lg\:top-sp-16{
     top: 6rem;
-  }
-
-  .lg\:-right-\[90px\]{
-    right: -90px;
-  }
-
-  .lg\:-top-\[90px\]{
-    top: -90px;
   }
 
   .lg\:order-1{
