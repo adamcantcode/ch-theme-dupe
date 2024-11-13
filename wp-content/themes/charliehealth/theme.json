@@ -117,6 +117,16 @@
           "slug": "secondary-soft",
           "color": "#1A1F45",
           "name": "Secondary soft"
+        },
+        {
+          "slug": "referrals-green-100",
+          "color": "#F6F9F5",
+          "name": "Green 100"
+        },
+        {
+          "slug": "referrals-green-200",
+          "color": "#E8F0E6",
+          "name": "Green 200"
         }
       ],
       "gradients": [
