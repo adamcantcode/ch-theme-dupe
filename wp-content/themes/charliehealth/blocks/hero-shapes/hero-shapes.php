@@ -1,3 +1,9 @@
+<?php
+$main_image      = get_field('main_image');
+$secondary_image = get_field('secondary_image');
+$tertiary_image  = get_field('tertiary_image');
+?>
+
 <div class="grid lg:grid-cols-2 gap-base5-4">
   <div>
     <InnerBlocks />
@@ -23,13 +29,21 @@
             <path fill="#fff" d="M247.465 82.2639c-30.549 1.629-55.719 25.9201-58.544 56.5951-13.15 144.201 12.584 255.356 76.544 330.457 7.57 8.918 15.706 17.32 24.358 25.153l4.144 3.665c62.971 54.511 130.062 59.77 133.3 59.997l2.354.108 1.919-.156c5.121-.371 92.956-7.905 161.695-88.779 63.925-75.173 89.66-186.351 76.522-330.421-2.837-30.699-28.007-54.9901-58.521-56.6191-40.827-2.168-322.979-2.168-363.771 0Z"></path>
           </mask>
         </defs>
-  
+
         <!-- Shapes with masked images -->
+        <line y1="-0.5" x2="160.18" y2="-0.5" transform="matrix(-1 0 0 1 239.452 225.746)" stroke="#161A3D" />
         <image href="https://placehold.co/350x350/EEE/31343C" x="0" y="250" width="350" height="350" mask="url(#mask1)"></image>
+        <line y1="-0.5" x2="160.18" y2="-0.5" transform="matrix(-0.707107 0.707107 0.707107 0.707107 295.913 402.63)" stroke="#161A3D" />
         <image href="https://placehold.co/350x350/EEE/31343C" x="250" y="0" width="350" height="350" mask="url(#mask2)"></image>
-        <image href="https://placehold.co/130x130/EEE/31343C" x="0" y="158" width="130" height="130" mask="url(#mask3)"></image>
-        <image href="https://placehold.co/130x130/DAC1FB/31343C" x="104" y="456" width="130" height="130" mask="url(#mask4)"></image>
-        <image href="https://placehold.co/500x500/161A3D/FFFFFF" x="180" y="70" width="500" height="500" mask="url(#mask5)"></image>
+        <?php if ($main_image) : ?>
+          <image href="<?= $main_image['url']; ?>" alt="<?= $main_image['alt']; ?>" x="0" y="158" width="130" height="130" mask="url(#mask3)"></image>
+        <?php endif; ?>
+        <?php if ($secondary_image) : ?>
+          <image href="<?= $secondary_image['url']; ?>" x="104" y="456" width="130" height="130" mask="url(#mask4)"></image>
+        <?php endif; ?>
+        <?php if ($tertiatry_image) : ?>
+          <image href="<?= $tertiary_image['url']; ?>" x="180" y="70" width="500" height="500" mask="url(#mask5)"></image>
+        <?php endif; ?>
       </svg>
     </div>
   </div>
