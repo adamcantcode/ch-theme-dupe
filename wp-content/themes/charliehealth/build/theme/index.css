@@ -1911,12 +1911,12 @@ a.insurance-tabs.active:hover {
   margin-bottom: 2rem;
 }
 
-.ml-\[40px\]{
-  margin-left: 40px;
+.ml-\[200px\]{
+  margin-left: 200px;
 }
 
-.ml-\[500px\]{
-  margin-left: 500px;
+.ml-\[40px\]{
+  margin-left: 40px;
 }
 
 .ml-auto{
@@ -2077,10 +2077,6 @@ a.insurance-tabs.active:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
-}
-
-.ml-\[200px\]{
-  margin-left: 200px;
 }
 
 .line-clamp-3{
@@ -3796,14 +3792,6 @@ a.insurance-tabs.active:hover {
 
 .pt-sp-7{
   padding-top: 1.75rem;
-}
-
-.pl-\[200px\]{
-  padding-left: 200px;
-}
-
-.pl-\[400px\]{
-  padding-left: 400px;
 }
 
 .text-center{
@@ -6942,6 +6930,10 @@ iframe[src*='youtube.com']{
     gap: 2rem;
   }
 
+  .lg\:gap-\[100px\]{
+    gap: 100px;
+  }
+
   .lg\:gap-x-sp-16{
     -moz-column-gap: 6rem;
          column-gap: 6rem;
@@ -7128,21 +7120,6 @@ iframe[src*='youtube.com']{
     padding-bottom: 1.5rem;
   }
 
-  .lg\:px-\[400px\]{
-    padding-left: 400px;
-    padding-right: 400px;
-  }
-
-  .lg\:px-\[200px\]{
-    padding-left: 200px;
-    padding-right: 200px;
-  }
-
-  .lg\:px-\[100px\]{
-    padding-left: 100px;
-    padding-right: 100px;
-  }
-
   .lg\:pb-0{
     padding-bottom: 0px;
   }
@@ -7177,14 +7154,6 @@ iframe[src*='youtube.com']{
 
   .lg\:pt-sp-14{
     padding-top: 4rem;
-  }
-
-  .lg\:pl-\[200px\]{
-    padding-left: 200px;
-  }
-
-  .lg\:pl-\[400px\]{
-    padding-left: 400px;
   }
 
   .lg\:text-center{

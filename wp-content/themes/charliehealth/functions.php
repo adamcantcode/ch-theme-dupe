@@ -175,6 +175,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/static-positioned-image');
   register_block_type(__DIR__ . '/build/blocks/referrals-features-cards');
   register_block_type(__DIR__ . '/build/blocks/referrals-testimonials');
+  register_block_type(__DIR__ . '/build/blocks/aoc-tmod-list');
 }
 add_action('init', 'register_acf_blocks', 5);
 
