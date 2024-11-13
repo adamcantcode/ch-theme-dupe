@@ -9,7 +9,7 @@ $tertiary_image  = get_field('tertiary_image');
     <InnerBlocks />
   </div>
   <div class="relative">
-    <div class="absolute w-full -top-[90px] -right-[90px]">
+    <div class="lg:absolute w-full lg:-top-[90px] lg:-right-[90px]">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 674 583">
         <!-- Mask for the first shape -->
         <defs>
@@ -32,17 +32,23 @@ $tertiary_image  = get_field('tertiary_image');
 
         <!-- Shapes with masked images -->
         <line y1="-0.5" x2="160.18" y2="-0.5" transform="matrix(-1 0 0 1 239.452 225.746)" stroke="#161A3D" />
-        <image href="https://placehold.co/350x350/EEE/31343C" x="0" y="250" width="350" height="350" mask="url(#mask1)"></image>
+        <rect x="0" y="250" width="350" height="350" fill="#FFFFFF" mask="url(#mask1)"></rect>
         <line y1="-0.5" x2="160.18" y2="-0.5" transform="matrix(-0.707107 0.707107 0.707107 0.707107 295.913 402.63)" stroke="#161A3D" />
-        <image href="https://placehold.co/350x350/EEE/31343C" x="250" y="0" width="350" height="350" mask="url(#mask2)"></image>
-        <?php if ($main_image) : ?>
-          <image href="<?= $main_image['url']; ?>" alt="<?= $main_image['alt']; ?>" x="0" y="158" width="130" height="130" mask="url(#mask3)"></image>
+        <rect x="250" y="0" width="350" height="350" fill="#FBF1D5" mask="url(#mask2)"></rect>
+        <?php if ($tertiary_image) : ?>
+          <image href="<?= $tertiary_image['url']; ?>" alt="<?= $tertiary_image['alt']; ?>" x="0" y="158" width="130" height="130" mask="url(#mask3)"></image>
+        <?php else : ?>
+          <rect x="0" y="158" width="130" height="130" mask="url(#mask3)"></rect>
         <?php endif; ?>
         <?php if ($secondary_image) : ?>
-          <image href="<?= $secondary_image['url']; ?>" x="104" y="456" width="130" height="130" mask="url(#mask4)"></image>
+          <image href="<?= $secondary_image['url']; ?>" alt="<?= $secondary_image['alt']; ?>" x="104" y="456" width="130" height="130" mask="url(#mask4)"></image>
+        <?php else : ?>
+          <rect x="104" y="456" width="130" height="130" mask="url(#mask4)"></rect>
         <?php endif; ?>
-        <?php if ($tertiatry_image) : ?>
-          <image href="<?= $tertiary_image['url']; ?>" x="180" y="70" width="500" height="500" mask="url(#mask5)"></image>
+        <?php if ($main_image) : ?>
+          <image href="<?= $main_image['url']; ?>" alt="<?= $main_image['alt']; ?>" x="180" y="70" width="500" height="500" mask="url(#mask5)"></image>
+        <?php else : ?>
+          <image x="180" y="70" width="500" height="500" mask="url(#mask5)"></image>
         <?php endif; ?>
       </svg>
     </div>

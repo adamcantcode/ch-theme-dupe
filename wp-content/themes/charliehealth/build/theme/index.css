@@ -6218,6 +6218,14 @@ iframe[src*='youtube.com']{
     top: 6rem;
   }
 
+  .lg\:-right-\[90px\]{
+    right: -90px;
+  }
+
+  .lg\:-top-\[90px\]{
+    top: -90px;
+  }
+
   .lg\:order-1{
     order: 1;
   }
