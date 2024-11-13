@@ -141,6 +141,11 @@
           "name": "Blue 100 - Blue 200"
         },
         {
+          "slug": "bg-gradient-to-b from-referrals-yellow-100 to-referrals-yellow-200",
+          "gradient": "linear-gradient(to bottom,#FBF8F1 50%,#FBF1D5 50%)",
+          "name": "Blue 100 - Blue 200"
+        },
+        {
           "slug": "custom-bg",
           "gradient": "linear-gradient(to right,#F7EBFF 50%,#DAC1FB 50%)",
           "name": "Lavender 100 - Lavender 300"

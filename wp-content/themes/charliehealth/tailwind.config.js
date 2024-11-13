@@ -87,6 +87,10 @@ module.exports = {
         100: '#F3F4FF',
         200: '#E1E3FC',
       },
+      'referrals-yellow': {
+        100: '#FBF8F1',
+        200: '#FBF1D5',
+      },
       salmon: '#F9E1D4',
       orange: {
         200: '#F5A890',
