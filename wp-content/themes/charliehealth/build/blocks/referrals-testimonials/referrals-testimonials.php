@@ -10,43 +10,49 @@
         <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 -translate-y-1/2">
           <circle cx="7.5" cy="7.5" r="7.5" fill="#FDDD7C" />
         </svg>
-        <h2>test</h2>
-        <h3>test</h3>
+        <h3 class="font-heading-serif">“My daughter was acting like herself again.”</h3>
+        <p>I really didn’t know what to do for my daughter before Charlie Health. I’ve always felt I’ve been alone in this. I felt so helpless. Within the first week, my daughter was acting like herself again. Charlie Health has given my daughter and me lifelong tools to navigate her anxiety and panic attacks. I’ve been blown away. I’m very impressed and very happy.</p>
+        <p>—Tasia C.</p>
       </div>
       <div class="!h-auto swiper-slide pt-base5-6">
         <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 -translate-y-1/2">
           <circle cx="7.5" cy="7.5" r="7.5" fill="#FDDD7C" />
         </svg>
-        <h2>test</h2>
-        <h3>test</h3>
+        <h3 class="font-heading-serif">“My daughter was acting like herself again.”</h3>
+        <p>I really didn’t know what to do for my daughter before Charlie Health. I’ve always felt I’ve been alone in this. I felt so helpless. Within the first week, my daughter was acting like herself again. Charlie Health has given my daughter and me lifelong tools to navigate her anxiety and panic attacks. I’ve been blown away. I’m very impressed and very happy.</p>
+        <p>—Tasia C.</p>
       </div>
       <div class="!h-auto swiper-slide pt-base5-6">
         <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 -translate-y-1/2">
           <circle cx="7.5" cy="7.5" r="7.5" fill="#FDDD7C" />
         </svg>
-        <h2>test</h2>
-        <h3>test</h3>
+        <h3 class="font-heading-serif">“My daughter was acting like herself again.”</h3>
+        <p>I really didn’t know what to do for my daughter before Charlie Health. I’ve always felt I’ve been alone in this. I felt so helpless. Within the first week, my daughter was acting like herself again. Charlie Health has given my daughter and me lifelong tools to navigate her anxiety and panic attacks. I’ve been blown away. I’m very impressed and very happy.</p>
+        <p>—Tasia C.</p>
       </div>
       <div class="!h-auto swiper-slide pt-base5-6">
         <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 -translate-y-1/2">
           <circle cx="7.5" cy="7.5" r="7.5" fill="#FDDD7C" />
         </svg>
-        <h2>test</h2>
-        <h3>test</h3>
+        <h3 class="font-heading-serif">“My daughter was acting like herself again.”</h3>
+        <p>I really didn’t know what to do for my daughter before Charlie Health. I’ve always felt I’ve been alone in this. I felt so helpless. Within the first week, my daughter was acting like herself again. Charlie Health has given my daughter and me lifelong tools to navigate her anxiety and panic attacks. I’ve been blown away. I’m very impressed and very happy.</p>
+        <p>—Tasia C.</p>
       </div>
       <div class="!h-auto swiper-slide pt-base5-6">
         <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 -translate-y-1/2">
           <circle cx="7.5" cy="7.5" r="7.5" fill="#FDDD7C" />
         </svg>
-        <h2>test</h2>
-        <h3>test</h3>
+        <h3 class="font-heading-serif">“My daughter was acting like herself again.”</h3>
+        <p>I really didn’t know what to do for my daughter before Charlie Health. I’ve always felt I’ve been alone in this. I felt so helpless. Within the first week, my daughter was acting like herself again. Charlie Health has given my daughter and me lifelong tools to navigate her anxiety and panic attacks. I’ve been blown away. I’m very impressed and very happy.</p>
+        <p>—Tasia C.</p>
       </div>
       <div class="!h-auto swiper-slide pt-base5-6">
         <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 -translate-y-1/2">
           <circle cx="7.5" cy="7.5" r="7.5" fill="#FDDD7C" />
         </svg>
-        <h2>test</h2>
-        <h3>test</h3>
+        <h3 class="font-heading-serif">“My daughter was acting like herself again.”</h3>
+        <p>I really didn’t know what to do for my daughter before Charlie Health. I’ve always felt I’ve been alone in this. I felt so helpless. Within the first week, my daughter was acting like herself again. Charlie Health has given my daughter and me lifelong tools to navigate her anxiety and panic attacks. I’ve been blown away. I’m very impressed and very happy.</p>
+        <p>—Tasia C.</p>
       </div>
       <?php // endwhile; 
       ?>
