@@ -2091,6 +2091,14 @@ a.insurance-tabs.active:hover {
   margin-bottom: 100px;
 }
 
+.mb-\[120px\]{
+  margin-bottom: 120px;
+}
+
+.mb-\[130px\]{
+  margin-bottom: 130px;
+}
+
 .line-clamp-3{
   overflow: hidden;
   display: -webkit-box;
