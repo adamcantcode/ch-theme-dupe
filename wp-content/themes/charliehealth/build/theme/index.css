@@ -2079,6 +2079,18 @@ a.insurance-tabs.active:hover {
   margin-top: 2rem;
 }
 
+.-ml-\[50\%\]{
+  margin-left: -50%;
+}
+
+.-ml-\[50vw\]{
+  margin-left: -50vw;
+}
+
+.mb-\[100px\]{
+  margin-bottom: 100px;
+}
+
 .line-clamp-3{
   overflow: hidden;
   display: -webkit-box;
@@ -2924,6 +2936,10 @@ a.insurance-tabs.active:hover {
   overflow: hidden;
 }
 
+.\!overflow-visible{
+  overflow: visible !important;
+}
+
 .overflow-x-auto{
   overflow-x: auto;
 }
@@ -3088,6 +3104,10 @@ a.insurance-tabs.active:hover {
 
 .border-l{
   border-left-width: 1px;
+}
+
+.border-t{
+  border-top-width: 1px;
 }
 
 .border-none{
@@ -3792,6 +3812,14 @@ a.insurance-tabs.active:hover {
 
 .pt-sp-7{
   padding-top: 1.75rem;
+}
+
+.pt-base5-10{
+  padding-top: 50px;
+}
+
+.pt-base5-6{
+  padding-top: 30px;
 }
 
 .text-center{
@@ -6882,6 +6910,10 @@ iframe[src*='youtube.com']{
     gap: 8rem;
   }
 
+  .lg\:gap-\[100px\]{
+    gap: 100px;
+  }
+
   .lg\:gap-\[10rem\]{
     gap: 10rem;
   }
@@ -6928,10 +6960,6 @@ iframe[src*='youtube.com']{
 
   .lg\:gap-sp-8{
     gap: 2rem;
-  }
-
-  .lg\:gap-\[100px\]{
-    gap: 100px;
   }
 
   .lg\:gap-x-sp-16{

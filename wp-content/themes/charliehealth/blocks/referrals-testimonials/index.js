@@ -8,7 +8,7 @@ import 'swiper/css/bundle';
 
 window.addEventListener('DOMContentLoaded', () => {
   var swiper = new Swiper('.swiper.swiper-referrals-testimonial', {
-    slidesPerView: 3,
+    slidesPerView: 2,
     // centeredSlides: true,
     loop: false,
     pagination: false,

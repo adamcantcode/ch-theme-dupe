@@ -10629,7 +10629,7 @@ __webpack_require__.r(__webpack_exports__);
 
 window.addEventListener('DOMContentLoaded', () => {
   var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper.swiper-referrals-testimonial', {
-    slidesPerView: 3,
+    slidesPerView: 2,
     // centeredSlides: true,
     loop: false,
     pagination: false,
