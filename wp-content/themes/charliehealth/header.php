@@ -32,8 +32,9 @@
   <?php include('wp-content/themes/charliehealth/includes/schema.php'); ?>
   <!-- END CUSTOM SCHEMA -->
 </head>
+<?php $blog = 'blog-' . get_current_blog_id(); ?>
 
-<body <?php body_class('bg-white'); ?>>
+<body <?php body_class('bg-white '. $blog); ?>>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8BB2ZV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
@@ -286,7 +287,7 @@
         } else if (header && main && tagList) {
           const totalHeight = header.offsetHeight + tagList.offsetHeight;
           main.style.marginTop = `${totalHeight}px`;
-        }  else {
+        } else {
           const totalHeight = header.offsetHeight;
           main.style.marginTop = `${totalHeight}px`;
         }
@@ -304,7 +305,7 @@
           const panelHeight = viewportHeight - totalHeight;
           panel.style.height = `${panelHeight}px`;
         } else if (header && panel) {
-          
+
           const totalHeight = header.offsetHeight;
           const viewportHeight = window.innerHeight;
           const panelHeight = viewportHeight - totalHeight;
