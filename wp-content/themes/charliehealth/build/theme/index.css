@@ -1550,12 +1550,20 @@ a.insurance-tabs.active:hover {
   left: -25%;
 }
 
+.-left-\[155px\]{
+  left: -155px;
+}
+
 .-left-base5-4{
   left: -20px;
 }
 
 .-top-1\/2{
   top: -50%;
+}
+
+.-top-base5-10{
+  top: -50px;
 }
 
 .bottom-0{
@@ -1658,24 +1666,16 @@ a.insurance-tabs.active:hover {
   top: calc(50% - 26px);
 }
 
+.top-base5-10{
+  top: 50px;
+}
+
 .top-sp-4{
   top: 1rem;
 }
 
 .top-sp-8{
   top: 2rem;
-}
-
-.-left-base5-10{
-  left: -50px;
-}
-
-.-top-base5-10{
-  top: -50px;
-}
-
-.-left-\[155px\]{
-  left: -155px;
 }
 
 .-z-10{
@@ -1931,8 +1931,8 @@ a.insurance-tabs.active:hover {
   margin-bottom: 2rem;
 }
 
-.ml-\[200px\]{
-  margin-left: 200px;
+.ml-\[300px\]{
+  margin-left: 300px;
 }
 
 .ml-\[40px\]{
@@ -2097,10 +2097,6 @@ a.insurance-tabs.active:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
-}
-
-.ml-\[300px\]{
-  margin-left: 300px;
 }
 
 .line-clamp-3{
@@ -3762,6 +3758,10 @@ a.insurance-tabs.active:hover {
   padding-bottom: 20px;
 }
 
+.pb-base5-5{
+  padding-bottom: 25px;
+}
+
 .pb-base5-6{
   padding-bottom: 30px;
 }
@@ -3824,10 +3824,6 @@ a.insurance-tabs.active:hover {
 
 .pt-sp-7{
   padding-top: 1.75rem;
-}
-
-.pb-base5-5{
-  padding-bottom: 25px;
 }
 
 .text-center{
@@ -4123,6 +4119,11 @@ a.insurance-tabs.active:hover {
   color: rgb(22 26 61 / var(--tw-text-opacity)) !important;
 }
 
+.\!text-referrals-blue-300{
+  --tw-text-opacity: 1 !important;
+  color: rgb(126 135 228 / var(--tw-text-opacity)) !important;
+}
+
 .\!text-white{
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
@@ -4166,16 +4167,6 @@ a.insurance-tabs.active:hover {
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-referrals-blue-300{
-  --tw-text-opacity: 1;
-  color: rgb(126 135 228 / var(--tw-text-opacity));
-}
-
-.\!text-referrals-blue-300{
-  --tw-text-opacity: 1 !important;
-  color: rgb(126 135 228 / var(--tw-text-opacity)) !important;
 }
 
 .underline{
@@ -5923,6 +5914,29 @@ iframe[src*='youtube.com']{
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
+
+section.bg-circle{
+  position: relative;
+}
+
+section.bg-circle:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    left: -10%;
+    width: 1000px;
+    height: 1000px;
+    background-image: url(images/gradient-noise-cirlce_blue.86a98579.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+section.bg-circle > div {
+    z-index: 2;
+  }
 
 .hover\:text-white:hovera:hover {
         color: #ffffff;

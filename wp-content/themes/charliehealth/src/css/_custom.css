@@ -881,6 +881,27 @@ iframe[src*='youtube.com'] {
     @apply font-heading;
   }
   h5 {
-    @apply uppercase text-[20px] tracking-widest ;
+    @apply uppercase text-[20px] tracking-widest;
+  }
+}
+
+section.bg-circle {
+  @apply relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    left: -10%;
+    width: 1000px;
+    height: 1000px;
+    background-image: url('/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/resources/images/bg-images/gradient-noise-cirlce_blue.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  & > div {
+    z-index: 2;
   }
 }
