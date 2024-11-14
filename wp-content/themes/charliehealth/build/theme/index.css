@@ -3810,6 +3810,10 @@ a.insurance-tabs.active:hover {
   padding-top: 1.75rem;
 }
 
+.pb-base5-5{
+  padding-bottom: 25px;
+}
+
 .text-center{
   text-align: center;
 }
@@ -4146,6 +4150,16 @@ a.insurance-tabs.active:hover {
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-referrals-blue-300{
+  --tw-text-opacity: 1;
+  color: rgb(126 135 228 / var(--tw-text-opacity));
+}
+
+.\!text-referrals-blue-300{
+  --tw-text-opacity: 1 !important;
+  color: rgb(126 135 228 / var(--tw-text-opacity)) !important;
 }
 
 .underline{

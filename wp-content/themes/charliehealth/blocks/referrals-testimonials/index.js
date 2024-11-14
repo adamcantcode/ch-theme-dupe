@@ -18,6 +18,6 @@ window.addEventListener('DOMContentLoaded', () => {
     mousewheel: {
       enabled: true,
       releaseOnEdges: true,
-    }
+    },
   });
 });
