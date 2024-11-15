@@ -128,7 +128,11 @@
                       $title = $secondaryLink['title'];
                       $target = $secondaryLink['target'];
                       ?>
-                      <a <?= $url; ?> target="<?= $target; ?>" class="text-white no-underline font-heading text-nav-normal hover:text-lavender-200 py-sp-3"><?= $title; ?></a>
+                      <?php if (empty($url)) : ?>
+                        <a <?= $url; ?> target="<?= $target; ?>" class="text-white no-underline font-heading text-nav-normal hover:text-lavender-200 py-sp-3"><?= $title; ?></a>
+                      <?php else : ?>
+                        <a href="javascript:void(0)" role="button" class="text-white no-underline font-heading text-nav-normal hover:text-lavender-200 py-sp-3"><?= $title; ?></a>
+                      <?php endif; ?>
                       <?php if (have_rows('nested_items', 'option')) : ?>
                         <?php while (have_rows('nested_items', 'option')) : the_row(); ?>
                           <a href="<?= get_sub_field('nested_item')['url']; ?>" target="<?= get_sub_field('nested_item')['target']; ?>" class="no-underline font-heading text-nav-small py-[6px] ml-base5-3 text-white hover:text-lavender-200"><?= get_sub_field('nested_item')['title']; ?></a>
@@ -150,7 +154,11 @@
                         $title = $topLink['title'];
                         $target = $topLink['target'];
                         ?>
-                        <a <?= $url; ?> target="<?= $target; ?>" class="no-underline font-heading text-nav-small py-[6px] <?= $url === '' ? 'text-lavender-200 mt-sp-3 first:mt-0' : 'text-white hover:text-lavender-200'; ?>"><?= $title; ?></a>
+                        <?php if (empty($url)) : ?>
+                          <a href="javascript:void(0)" role="button" class="no-underline font-heading text-nav-small py-[6px] text-lavender-200 mt-sp-3 first:mt-0"><?= $title; ?></a>
+                        <?php else : ?>
+                          <a <?= $url; ?> target="<?= $target; ?>" class="no-underline font-heading text-nav-small py-[6px] text-white hover:text-lavender-200"><?= $title; ?></a>
+                        <?php endif; ?>
                       <?php endwhile; ?>
                     </div>
                   <?php endif; ?>
@@ -225,7 +233,11 @@
                       $title = $secondaryLink['title'];
                       $target = $secondaryLink['target'];
                       ?>
-                      <a <?= $url; ?> target="<?= $target; ?>" class="mb-0 text-white no-underline py-sp-4 text-nav-normal"><?= $title; ?></a>
+                      <?php if (empty($url)) : ?>
+                        <a href="javascript:void(0)" role="button" class="mb-0 text-white no-underline py-sp-4 text-nav-normal"><?= $title; ?></a>
+                      <?php else : ?>
+                        <a <?= $url; ?> target="<?= $target; ?>" class="mb-0 text-white no-underline py-sp-4 text-nav-normal"><?= $title; ?></a>
+                      <?php endif; ?>
                       <?php if (have_rows('nested_items', 'option')) : ?>
                         <?php while (have_rows('nested_items', 'option')) : the_row(); ?>
                           <a href="<?= get_sub_field('nested_item')['url']; ?>" target="<?= get_sub_field('nested_item')['target']; ?>" class="text-white no-underline font-heading text-nav-small py-sp-4 ml-base5-3 hover:text-lavender-200"><?= get_sub_field('nested_item')['title']; ?></a>
@@ -246,7 +258,11 @@
                           $title = $topLink['title'];
                           $target = $topLink['target'];
                         ?>
-                          <a <?= $url; ?> target="<?= $target; ?>" class="w-full text-nav-small no-underline py-sp-4 <?= empty($url) ? 'text-lavender-200 hover:text-lavender-200' : 'text-white'; ?> "><?= $title; ?></a>
+                          <?php if (empty($url)) : ?>
+                            <a href="javascript:void(0)" role="button" class="w-full no-underline text-nav-small py-sp-4 text-lavender-200 hover:text-lavender-200"><?= $title; ?></a>
+                          <?php else : ?>
+                            <a <?= $url; ?> target="<?= $target; ?>" class="w-full text-white no-underline text-nav-small py-sp-4"><?= $title; ?></a>
+                          <?php endif; ?>
                         <?php endwhile; ?>
                       </div>
                     <?php endif; ?>
