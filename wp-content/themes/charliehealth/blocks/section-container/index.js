@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded', () => {
       scrollTrigger: {
         trigger: 'section.bg-circle',
         start: 'top center', // Adjust start position
-        markers: true, // Debug markers
+        // markers: true, // Debug markers
         scrub: true, // Smooth animation tied to scroll
         duration: 1,
       },
