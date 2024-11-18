@@ -80,6 +80,19 @@ module.exports = {
         demension: '#CFCFD7',
         deactivated: '#87889A',
       },
+      'referrals-green': {
+        100: '#F6F9F5',
+        200: '#E8F0E6',
+      },
+      'referrals-blue': {
+        100: '#F3F4FF',
+        200: '#E1E3FC',
+        300: '#7E87E4',
+      },
+      'referrals-yellow': {
+        100: '#FBF8F1',
+        200: '#FBF1D5',
+      },
       salmon: '#F9E1D4',
       orange: {
         200: '#F5A890',

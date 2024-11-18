@@ -170,6 +170,14 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/blog-hero');
   register_block_type(__DIR__ . '/build/blocks/orbit-image');
   register_block_type(__DIR__ . '/build/blocks/basic-checklist');
+  // Referrals
+  register_block_type(__DIR__ . '/build/blocks/hero-shapes');
+  register_block_type(__DIR__ . '/build/blocks/static-positioned-image');
+  register_block_type(__DIR__ . '/build/blocks/referrals-features-cards');
+  register_block_type(__DIR__ . '/build/blocks/referrals-testimonials');
+  register_block_type(__DIR__ . '/build/blocks/aoc-tmod-list');
+  register_block_type(__DIR__ . '/build/blocks/referrals-dropdowns');
+  register_block_type(__DIR__ . '/build/blocks/bg-video-bleed');
 }
 add_action('init', 'register_acf_blocks', 5);
 
@@ -748,6 +756,10 @@ add_filter('should_load_separate_core_block_assets', '__return_true');
 // $test = 'rounded-md lg:p-base5-7 bg-grey-warm mb-base5-7 p-base5-3'
 // $test = 'bg-gradient-to-b from-primary-100 to-primary-200'
 // $test = 'bg-gradient-to-b from-primary-200 to-primary'
+// $test = 'bg-gradient-to-b from-white to-referrals-green-100'
+// $test = 'bg-gradient-to-b from-referrals-blue-100 to-referrals-blue-200'
+// $test = 'bg-referrals-green-200'
+// $test = 'bg-referrals-green-100'
 
 // $test = '!text-h2-lg !text-h2 !font-heading !font-heading-serif !text-h5'
 // $test = 'bg-pale-blue-100'

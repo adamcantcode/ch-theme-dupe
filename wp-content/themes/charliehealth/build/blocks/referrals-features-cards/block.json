@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "acf/referrals-features-cards-block",
+  "title": "Referrals - Features Cards Block",
+  "description": "Referrals - Features cards",
+  "style": "file:./index.css",
+  "script": "file:./index.js",
+  "category": "custom",
+  "icon": "columns",
+  "apiVersion": 2,
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "referrals-features-cards.php"
+  },
+  "supports": {}
+}

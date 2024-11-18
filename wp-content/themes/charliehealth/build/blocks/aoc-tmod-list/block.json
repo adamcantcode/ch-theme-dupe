@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "acf/aoc-tmod-list-block",
+  "title": "AOC TMods List",
+  "description": "List of AOC's and TMods",
+  "style": "file:./index.css",
+  "script": "file:./index.js",
+  "category": "custom",
+  "icon": "columns",
+  "apiVersion": 2,
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "aoc-tmod-list.php"
+  },
+  "supports": {}
+}

@@ -117,6 +117,16 @@
           "slug": "secondary-soft",
           "color": "#1A1F45",
           "name": "Secondary soft"
+        },
+        {
+          "slug": "referrals-green-100",
+          "color": "#F6F9F5",
+          "name": "Green 100"
+        },
+        {
+          "slug": "referrals-green-200",
+          "color": "#E8F0E6",
+          "name": "Green 200"
         }
       ],
       "gradients": [
@@ -129,6 +139,21 @@
           "slug": "bg-gradient-to-b from-primary-200 to-primary",
           "gradient": "linear-gradient(to bottom,#1E225B 50%,#161A3D 50%)",
           "name": "Blue 200 - Blue 300"
+        },
+        {
+          "slug": "bg-gradient-to-b from-white to-referrals-green-200",
+          "gradient": "linear-gradient(to bottom,#FFFFFF 50%,#E8F0E6 50%)",
+          "name": "White - Green 200"
+        },
+        {
+          "slug": "bg-gradient-to-b from-referrals-blue-100 to-referrals-blue-200",
+          "gradient": "linear-gradient(to bottom,#F3F4FF 50%,#E1E3FC 50%)",
+          "name": "Blue 100 - Blue 200"
+        },
+        {
+          "slug": "bg-gradient-to-b from-referrals-yellow-100 to-referrals-yellow-200",
+          "gradient": "linear-gradient(to bottom,#FBF8F1 50%,#FBF1D5 50%)",
+          "name": "Blue 100 - Blue 200"
         },
         {
           "slug": "custom-bg",

@@ -12,5 +12,13 @@
     "mode": "preview",
     "renderTemplate": "card-link-home.php"
   },
-  "supports": {}
+  "supports": {
+    "color": {
+      "background": true,
+      "text": false,
+      "enableContrastChecker": false,
+      "gradients": true,
+      "link": false
+    }
+  }
 }
