@@ -177,6 +177,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/referrals-testimonials');
   register_block_type(__DIR__ . '/build/blocks/aoc-tmod-list');
   register_block_type(__DIR__ . '/build/blocks/referrals-dropdowns');
+  register_block_type(__DIR__ . '/build/blocks/bg-video-bleed');
 }
 add_action('init', 'register_acf_blocks', 5);
 

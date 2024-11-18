@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "acf/bg-video-bleed-block",
+  "title": "Background Video Bleed",
+  "description": "For backgorund video...",
+  "style": "file:./index.css",
+  "script": "file:./index.js",
+  "category": "custom",
+  "icon": "index-card",
+  "apiVersion": 2,
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "bg-video-bleed.php"
+  },
+  "supports": {}
+}
