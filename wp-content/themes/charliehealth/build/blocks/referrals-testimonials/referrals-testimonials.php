@@ -1,6 +1,9 @@
+<div class="ml-[300px] mb-base5-10">
+  <h2>Real stories of hope & healing</h2>
+</div>
 <div class="h-[1px] bg-primary relative left-1/2 w-screen -ml-[50vw]">
 </div>
-<div class="absolute -left-[155px] -top-base5-10 z-10">
+<div class="absolute -left-[155px] top-base5-10 z-10">
   <div class="video-mask-container">
     <div class="video-mask-overlay">
       <iframe src="https://player.vimeo.com/video/1019966136?background=1&autoplay=1&loop=1" allowfullscreen frameborder="0" class="video-iframe"></iframe>
