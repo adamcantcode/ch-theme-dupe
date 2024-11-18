@@ -764,6 +764,7 @@ add_filter('should_load_separate_core_block_assets', '__return_true');
 // $test = '!text-h2-lg !text-h2 !font-heading !font-heading-serif !text-h5'
 // $test = 'bg-pale-blue-100'
 // $test = 'bg-[linear-gradient(315deg,var(--tw-gradient-stops))] from-lavender-100 from-50% to-lavedner-300'
+// $test = 'has-color-font-gradient-yellow'
 
 // mobileMenuX[0].classList.add('top-1/2', '-translate-y-1/2');
 //     mobileMenuX[1].classList.add('scale-0');

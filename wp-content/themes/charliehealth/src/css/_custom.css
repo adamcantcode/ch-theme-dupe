@@ -905,3 +905,9 @@ section.bg-circle {
     z-index: 2;
   }
 }
+
+.has-font-gradient-yellow-color {
+  background: -webkit-linear-gradient(0deg, #FDDD7C, #FFF8E4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

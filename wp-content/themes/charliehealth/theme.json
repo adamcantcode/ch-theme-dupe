@@ -127,6 +127,11 @@
           "slug": "referrals-green-200",
           "color": "#E8F0E6",
           "name": "Green 200"
+        },
+        {
+          "slug": "font-gradient-yellow",
+          "color": "#FDDD7C",
+          "name": "GRADIENT - Yellow White"
         }
       ],
       "gradients": [

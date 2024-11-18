@@ -1931,10 +1931,6 @@ a.insurance-tabs.active:hover {
   margin-left: 300px;
 }
 
-.ml-\[36\%\]{
-  margin-left: 36%;
-}
-
 .ml-\[40px\]{
   margin-left: 40px;
 }
@@ -5937,6 +5933,12 @@ section.bg-circle:before {
 section.bg-circle > div {
     z-index: 2;
   }
+
+.has-font-gradient-yellow-color {
+  background: -webkit-linear-gradient(0deg, #FDDD7C, #FFF8E4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 .hover\:text-white:hovera:hover {
         color: #ffffff;
