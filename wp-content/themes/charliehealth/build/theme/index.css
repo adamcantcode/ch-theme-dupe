@@ -1546,10 +1546,6 @@ a.insurance-tabs.active:hover {
   bottom: 0px !important;
 }
 
-.-left-1\/4{
-  left: -25%;
-}
-
 .-left-\[155px\]{
   left: -155px;
 }
@@ -1929,10 +1925,6 @@ a.insurance-tabs.active:hover {
 
 .ml-\[300px\]{
   margin-left: 300px;
-}
-
-.ml-\[36\%\]{
-  margin-left: 36%;
 }
 
 .ml-\[40px\]{
@@ -5914,6 +5906,12 @@ section.bg-circle:before {
 section.bg-circle > div {
     z-index: 2;
   }
+
+.has-font-gradient-yellow-color {
+  background: -webkit-linear-gradient(0deg, #FDDD7C, #FFF8E4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 .hover\:text-white:hovera:hover {
         color: #ffffff;

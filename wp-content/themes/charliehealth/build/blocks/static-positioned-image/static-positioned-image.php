@@ -1,6 +1,8 @@
 <?php
 $image = get_field('image');
+$x = get_field('x_position');
+$y = get_field('y_position');
 ?>
 <div class="relative w-full h-full lg:block noshow">
-  <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="absolute bottom-0 -left-1/4">
+  <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="absolute" style="left: <?= $x; ?>%; bottom:<?= $y; ?>%">
 </div>
