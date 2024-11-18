@@ -1931,6 +1931,10 @@ a.insurance-tabs.active:hover {
   margin-left: 300px;
 }
 
+.ml-\[36\%\]{
+  margin-left: 36%;
+}
+
 .ml-\[40px\]{
   margin-left: 40px;
 }
@@ -2093,18 +2097,6 @@ a.insurance-tabs.active:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
-}
-
-.ml-\[33\%\]{
-  margin-left: 33%;
-}
-
-.ml-\[40\%\]{
-  margin-left: 40%;
-}
-
-.ml-\[36\%\]{
-  margin-left: 36%;
 }
 
 .line-clamp-3{

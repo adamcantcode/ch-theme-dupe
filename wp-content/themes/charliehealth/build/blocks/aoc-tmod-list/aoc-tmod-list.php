@@ -1,5 +1,7 @@
 <div class="grid lg:grid-cols-2 lg:gap-[100px] gap-base5-10">
   <div>
+    <h4>WHAT WE TREAT</h4>
+    <h2>The core mental health conditions we treat </h2>
     <div class="overflow-hidden transition-all duration-500 ease-in-out view-all-js">
       <?php
       switch_to_blog(1);
@@ -32,6 +34,8 @@
     <a role="button" class="float-right ch-button button-secondary view-all-button-js mt-sp-8 w-full lg:w-[unset]">View All</a>
   </div>
   <div>
+    <h4>WHO WE TREAT</h4>
+    <h2>Our special programming for specific groups</h2>
     <div class="overflow-hidden transition-all duration-500 ease-in-out view-all-tmod-js">
       <?php
       switch_to_blog(1);
