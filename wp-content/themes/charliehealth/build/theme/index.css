@@ -4134,6 +4134,11 @@ a.insurance-tabs.active:hover {
   color: rgb(22 26 61 / var(--tw-text-opacity));
 }
 
+.text-referrals-blue-300{
+  --tw-text-opacity: 1;
+  color: rgb(126 135 228 / var(--tw-text-opacity));
+}
+
 .text-text{
   --tw-text-opacity: 1;
   color: rgb(70 73 109 / var(--tw-text-opacity));

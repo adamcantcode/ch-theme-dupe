@@ -1089,3 +1089,5 @@ function remove_lesson_and_quiz_from_sitemap($value, $post_type)
   if (in_array($post_type, $post_type_to_exclude)) return true;
 }
 add_filter('wpseo_sitemap_exclude_post_type', 'remove_lesson_and_quiz_from_sitemap', 10, 2);
+
+add_post_type_support( 'page', 'excerpt' );
