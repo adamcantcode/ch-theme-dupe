@@ -83,6 +83,7 @@ module.exports = {
       'referrals-green': {
         100: '#F6F9F5',
         200: '#E8F0E6',
+        300: '#BCD7B7',
       },
       'referrals-blue': {
         100: '#F3F4FF',

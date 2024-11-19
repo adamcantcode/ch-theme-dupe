@@ -1,11 +1,6 @@
 <?php get_header(); ?>
 
 <?php
-$protocol = empty($_SERVER['HTTPS']) ? 'http://' : 'https://';
-$domain   = $_SERVER['HTTP_HOST'];
-$path     = $_SERVER['REQUEST_URI'];
-$fullUrl  = $protocol . $domain . $path;
-
 if (has_post_thumbnail()) {
   $featuredImageID      = get_post_thumbnail_id();
   $featuredImage        = wp_get_attachment_image_src($featuredImageID, 'featured-large');
