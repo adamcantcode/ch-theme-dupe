@@ -51,11 +51,6 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
             <div>
               <h1 class="font-heading-serif text-h2 lg:text-h2-lg"><?= get_the_title(); ?></h1>
               <div class="flex items-center gap-base5-10 mb-base5-4">
-                <?php if (!$updatedDate) : ?>
-                  <p class="mb-0 text-[18px]"><?= $date; ?></p>
-                <?php elseif ($updatedDate) : ?>
-                  <p class="mb-0 text-[18px]">Updated: <?= $date; ?></p>
-                <?php endif; ?>
                 <div class="flex items-center">
                   <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M13.3906 5.45312V2.3125H15.4062C15.5094 2.3125 15.5938 2.22812 15.5938 2.125V0.8125C15.5938 0.709375 15.5094 0.625 15.4062 0.625H0.59375C0.490625 0.625 0.40625 0.709375 0.40625 0.8125V2.125C0.40625 2.22812 0.490625 2.3125 0.59375 2.3125H2.60938V5.45312C2.60938 7.36328 3.60312 9.04375 5.10312 10C3.60312 10.9563 2.60938 12.6367 2.60938 14.5469V17.6875H0.59375C0.490625 17.6875 0.40625 17.7719 0.40625 17.875V19.1875C0.40625 19.2906 0.490625 19.375 0.59375 19.375H15.4062C15.5094 19.375 15.5938 19.2906 15.5938 19.1875V17.875C15.5938 17.7719 15.5094 17.6875 15.4062 17.6875H13.3906V14.5469C13.3906 12.6367 12.3969 10.9563 10.8969 10C12.3969 9.04375 13.3906 7.36328 13.3906 5.45312ZM11.7031 14.5469V17.6875H4.29688V14.5469C4.29688 13.5578 4.68125 12.6273 5.38203 11.9289C6.08047 11.2281 7.01094 10.8438 8 10.8438C8.98906 10.8438 9.91953 11.2281 10.618 11.9289C11.3188 12.6273 11.7031 13.5578 11.7031 14.5469ZM11.7031 5.45312C11.7031 6.44219 11.3188 7.37266 10.618 8.07109C9.91953 8.77188 8.98906 9.15625 8 9.15625C7.01094 9.15625 6.08047 8.77188 5.38203 8.07109C5.0367 7.7284 4.76293 7.32048 4.57664 6.87105C4.39035 6.42161 4.29525 5.93963 4.29688 5.45312V2.3125H11.7031V5.45312Z" fill="#161A3D" />
@@ -64,30 +59,6 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
                 </div>
               </div>
               <p class="mb-0"><?= get_the_excerpt(); ?></p>
-              <div class="lg:noshow">
-                <?php if ($toc) : ?>
-                  <div class="rounded-md toc-container bg-lavender-100 mt-base5-6">
-                    <div class="flex cursor-pointer toc-heading lg:p-base5-6 p-base5-3">
-                      <p class="mb-0 text-h3-base">Table of Contents</p>
-                      <div class="flex items-center ml-auto toggle">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M15.175 14.7297L6.61895 14.7297L6.61895 16.3797H15.175L15.175 24.9356L16.825 24.9356L16.825 16.3797H25.3809L25.3809 14.7297L16.825 14.7297L16.825 6.17362L15.175 6.17362L15.175 14.7297Z" fill="#161A3D" />
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="overflow-hidden transition-all duration-500 ease-in-out toc-content max-h-0">
-                      <div id="tocMobile" class="flex flex-col items-start pt-0 lg:pt-0 lg:p-sp-8 p-sp-4 gap-sp-1"></div>
-                    </div>
-                  </div>
-                <?php endif; ?>
-                <div class="rounded-md bg-grey-cool mt-base5-6 lg:p-base5-6 p-base5-3">
-                  <h3 class="font-heading-serif">Ready to start your journey?</h3>
-                  <div class="flex flex-col lg:flex-wrap lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
-                    <a href="/form" class="ch-button button-primary">Get Started</a>
-                    <a href="tel:+18664848218" class="ch-button button-secondary">1 (866) 484-8218</a>
-                  </div>
-                </div>
-              </div>
             </div>
             <div class="divider my-base5-8 bg-grey-demension"></div>
             <div id="theContent">
