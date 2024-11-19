@@ -1839,10 +1839,6 @@ a.insurance-tabs.active:hover {
   margin-bottom: -.75rem;
 }
 
-.mb-\[130px\]{
-  margin-bottom: 130px;
-}
-
 .mb-\[14px\]{
   margin-bottom: 14px;
 }
@@ -1921,10 +1917,6 @@ a.insurance-tabs.active:hover {
 
 .mb-sp-8{
   margin-bottom: 2rem;
-}
-
-.ml-\[300px\]{
-  margin-left: 300px;
 }
 
 .ml-\[40px\]{
@@ -5902,13 +5894,36 @@ section.bg-circle:before {
     left: -10%;
     width: 1000px;
     height: 1000px;
-    background-image: url(images/gradient-noise-cirlce_blue.86a98579.png);
+    background-image: url('https://referrals.charliehealth.com/wp-content/uploads/sites/3/2024/11/gradient-noise-cirlce_blue.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
 
 section.bg-circle > div {
+    z-index: 2;
+  }
+
+section.bg-circle-ricle{
+  position: relative;
+}
+
+section.bg-circle-ricle:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    left: -10%;
+    width: 1000px;
+    height: 1000px;
+    background-image: url('https://referrals.charliehealth.com/wp-content/uploads/sites/3/2024/11/Group-1000003495.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+section.bg-circle-ricle > div {
     z-index: 2;
   }
 
@@ -6367,6 +6382,10 @@ section.bg-circle > div {
     margin-bottom: 3rem;
   }
 
+  .lg\:mb-\[130px\]{
+    margin-bottom: 130px;
+  }
+
   .lg\:mb-\[33vh\]{
     margin-bottom: 33vh;
   }
@@ -6409,6 +6428,10 @@ section.bg-circle > div {
 
   .lg\:ml-0{
     margin-left: 0px;
+  }
+
+  .lg\:ml-\[300px\]{
+    margin-left: 300px;
   }
 
   .lg\:mr-0{
@@ -6457,18 +6480,6 @@ section.bg-circle > div {
 
   .lg\:mt-sp-8{
     margin-top: 2rem;
-  }
-
-  .lg\:ml-\[300px\]{
-    margin-left: 300px;
-  }
-
-  .lg\:mb-\[130px\]{
-    margin-bottom: 130px;
-  }
-
-  .lg\:-ml-\[50vw\]{
-    margin-left: -50vw;
   }
 
   .lg\:block{
