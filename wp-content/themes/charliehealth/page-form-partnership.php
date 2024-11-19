@@ -37,7 +37,7 @@ Template Post Type: page
           // Get form fields
           const organizationField = form.getField('176386366'); // Field for What_is_your_organization
           const accountIDField = form.getField('176386367'); // Field for RS_Account_ID
-          const userJourney = fomr.getField('176386382')
+          const userJourney = form.getField('176386382')
 
           // If the 'What_is_your_organization' parameter exists, set its value in the form field
           if (organization && organizationField) {
