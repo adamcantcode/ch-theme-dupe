@@ -1,4 +1,4 @@
-<div class="section-bg-video">
+<div class="lg:block noshow section-bg-video">
   <style>
     .vimeo-container {
       position: absolute;
