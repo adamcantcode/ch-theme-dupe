@@ -132,6 +132,11 @@
           "slug": "font-gradient-yellow",
           "color": "#FDDD7C",
           "name": "GRADIENT - Yellow White"
+        },
+        {
+          "slug": "referrals-blue-300",
+          "color": "#7E87E4",
+          "name": "Referrlas - Blue 300"
         }
       ],
       "gradients": [
