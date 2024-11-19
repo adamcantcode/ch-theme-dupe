@@ -6459,6 +6459,18 @@ section.bg-circle > div {
     margin-top: 2rem;
   }
 
+  .lg\:ml-\[300px\]{
+    margin-left: 300px;
+  }
+
+  .lg\:mb-\[130px\]{
+    margin-bottom: 130px;
+  }
+
+  .lg\:-ml-\[50vw\]{
+    margin-left: -50vw;
+  }
+
   .lg\:block{
     display: block;
   }

@@ -8,8 +8,8 @@ import 'swiper/css/bundle';
 
 window.addEventListener('DOMContentLoaded', () => {
   var swiper = new Swiper('.swiper.swiper-referrals-testimonial', {
-    slidesPerView: 2.25,
-    spaceBetween: 80,
+    slidesPerView: 1,
+    spaceBetween: 20,
     slideToClickedSlide: true,
     // centeredSlides: true,
     loop: false,
@@ -18,6 +18,12 @@ window.addEventListener('DOMContentLoaded', () => {
     mousewheel: {
       enabled: true,
       releaseOnEdges: true,
+    },
+    breakpoints: {
+      1024: {
+        slidesPerView: '2.25',
+        spaceBetween: 80,
+      },
     },
   });
 });

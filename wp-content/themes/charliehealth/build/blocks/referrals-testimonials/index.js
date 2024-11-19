@@ -10629,8 +10629,8 @@ __webpack_require__.r(__webpack_exports__);
 
 window.addEventListener('DOMContentLoaded', () => {
   var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"]('.swiper.swiper-referrals-testimonial', {
-    slidesPerView: 2.25,
-    spaceBetween: 80,
+    slidesPerView: 1,
+    spaceBetween: 20,
     slideToClickedSlide: true,
     // centeredSlides: true,
     loop: false,
@@ -10639,6 +10639,12 @@ window.addEventListener('DOMContentLoaded', () => {
     mousewheel: {
       enabled: true,
       releaseOnEdges: true
+    },
+    breakpoints: {
+      1024: {
+        slidesPerView: '2.25',
+        spaceBetween: 80
+      }
     }
   });
 });

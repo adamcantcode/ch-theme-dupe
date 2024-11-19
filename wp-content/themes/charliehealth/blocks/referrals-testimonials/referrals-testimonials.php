@@ -1,9 +1,9 @@
-<div class="ml-[300px] mb-base5-10">
+<div class="lg:ml-[300px] mb-base5-10">
   <h2>Real stories of hope & healing</h2>
 </div>
 <div class="h-[1px] bg-primary relative left-1/2 w-screen -ml-[50vw]">
 </div>
-<div class="absolute -left-[155px] top-base5-10 z-10">
+<div class="absolute -left-[155px] top-base5-10 z-10 noshow lg:block">
   <div class="video-mask-container">
     <div class="video-mask-overlay">
       <iframe src="https://player.vimeo.com/video/1019966136?background=1&autoplay=1&loop=1" allowfullscreen frameborder="0" class="video-iframe"></iframe>
@@ -59,7 +59,7 @@
     }
   </script>
 </div>
-<div class="relative ml-[300px] mb-[130px]">
+<div class="relative lg:ml-[300px] lg:mb-[130px] mb-base5-10">
   <?php // if (have_rows('testimonials')) : 
   ?>
   <div class="!overflow-visible swiper swiper-referrals-testimonial">
@@ -76,11 +76,19 @@
       </div>
       <div class="!h-auto swiper-slide pt-base5-6">
         <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 -translate-y-1/2">
-          <circle cx="7.5" cy="7.5" r="7.5" fill="#FDDD7C" />
+          <circle cx="7.5" cy="7.5" r="7.5" fill="#7E87E4" />
         </svg>
-        <h3 class="font-heading-serif">“My daughter was acting like herself again.”</h3>
-        <p>I really didn’t know what to do for my daughter before Charlie Health. I’ve always felt I’ve been alone in this. I felt so helpless. Within the first week, my daughter was acting like herself again. Charlie Health has given my daughter and me lifelong tools to navigate her anxiety and panic attacks. I’ve been blown away. I’m very impressed and very happy.</p>
-        <p>—Tasia C.</p>
+        <h3 class="font-heading-serif">“Charlie Health saved my life.”</h3>
+        <p>Before Charlie Health, I was struggling very much with my anxiety. My therapist told me that she couldn’t help me anymore, so she suggested Charlie Health. I'm really glad I chose to call. I have a new lease on life. My anxiety is at an all-time low and I can function day-to-day in ways I never thought possible. Charlie Health saved my life.</p>
+        <p>—Jessica B.</p>
+      </div>
+      <div class="!h-auto swiper-slide pt-base5-6">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 -translate-y-1/2">
+          <circle cx="7.5" cy="7.5" r="7.5" fill="#8AB682" />
+        </svg>
+        <h3 class="font-heading-serif">“It helped me feel like I was not alone in this world.”</h3>
+        <p>I was very angry and depressed when I first came to Charlie Health, but with help, guidance, listening, and reassurance, it helped me feel like I was not alone in this world. I got the help that I wanted and needed to change my mindset.</p>
+        <p>Kairey M.</p>
       </div>
       <div class="!h-auto swiper-slide pt-base5-6">
         <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 -translate-y-1/2">
@@ -92,27 +100,19 @@
       </div>
       <div class="!h-auto swiper-slide pt-base5-6">
         <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 -translate-y-1/2">
-          <circle cx="7.5" cy="7.5" r="7.5" fill="#FDDD7C" />
+          <circle cx="7.5" cy="7.5" r="7.5" fill="#7E87E4" />
         </svg>
-        <h3 class="font-heading-serif">“My daughter was acting like herself again.”</h3>
-        <p>I really didn’t know what to do for my daughter before Charlie Health. I’ve always felt I’ve been alone in this. I felt so helpless. Within the first week, my daughter was acting like herself again. Charlie Health has given my daughter and me lifelong tools to navigate her anxiety and panic attacks. I’ve been blown away. I’m very impressed and very happy.</p>
-        <p>—Tasia C.</p>
+        <h3 class="font-heading-serif">“Charlie Health saved my life.”</h3>
+        <p>Before Charlie Health, I was struggling very much with my anxiety. My therapist told me that she couldn’t help me anymore, so she suggested Charlie Health. I'm really glad I chose to call. I have a new lease on life. My anxiety is at an all-time low and I can function day-to-day in ways I never thought possible. Charlie Health saved my life.</p>
+        <p>—Jessica B.</p>
       </div>
       <div class="!h-auto swiper-slide pt-base5-6">
         <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 -translate-y-1/2">
-          <circle cx="7.5" cy="7.5" r="7.5" fill="#FDDD7C" />
+          <circle cx="7.5" cy="7.5" r="7.5" fill="#8AB682" />
         </svg>
-        <h3 class="font-heading-serif">“My daughter was acting like herself again.”</h3>
-        <p>I really didn’t know what to do for my daughter before Charlie Health. I’ve always felt I’ve been alone in this. I felt so helpless. Within the first week, my daughter was acting like herself again. Charlie Health has given my daughter and me lifelong tools to navigate her anxiety and panic attacks. I’ve been blown away. I’m very impressed and very happy.</p>
-        <p>—Tasia C.</p>
-      </div>
-      <div class="!h-auto swiper-slide pt-base5-6">
-        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 -translate-y-1/2">
-          <circle cx="7.5" cy="7.5" r="7.5" fill="#FDDD7C" />
-        </svg>
-        <h3 class="font-heading-serif">“My daughter was acting like herself again.”</h3>
-        <p>I really didn’t know what to do for my daughter before Charlie Health. I’ve always felt I’ve been alone in this. I felt so helpless. Within the first week, my daughter was acting like herself again. Charlie Health has given my daughter and me lifelong tools to navigate her anxiety and panic attacks. I’ve been blown away. I’m very impressed and very happy.</p>
-        <p>—Tasia C.</p>
+        <h3 class="font-heading-serif">“It helped me feel like I was not alone in this world.”</h3>
+        <p>I was very angry and depressed when I first came to Charlie Health, but with help, guidance, listening, and reassurance, it helped me feel like I was not alone in this world. I got the help that I wanted and needed to change my mindset.</p>
+        <p>Kairey M.</p>
       </div>
       <?php // endwhile; 
       ?>
