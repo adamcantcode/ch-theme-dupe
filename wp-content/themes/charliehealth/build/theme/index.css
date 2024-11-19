@@ -5904,26 +5904,26 @@ section.bg-circle > div {
     z-index: 2;
   }
 
-section.bg-circle-ricle{
+section.bg-circle-circle{
   position: relative;
 }
 
-section.bg-circle-ricle:before {
+section.bg-circle-circle:before {
     content: '';
     position: absolute;
     top: 50%;
-    z-index: 1;
+    z-index: 0;
     transform: translate(-50%, -50%);
-    left: -10%;
-    width: 1000px;
-    height: 1000px;
+    left: 50%;
+    width: 320px;
+    height: 482px;
     background-image: url('https://referrals.charliehealth.com/wp-content/uploads/sites/3/2024/11/Group-1000003495.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
 
-section.bg-circle-ricle > div {
+section.bg-circle-circle > div {
     z-index: 2;
   }
 
