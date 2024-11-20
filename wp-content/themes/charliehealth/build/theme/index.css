@@ -2310,6 +2310,10 @@ a.insurance-tabs.active:hover {
   min-height: 100vh;
 }
 
+.min-h-\[1px\]{
+  min-height: 1px;
+}
+
 .min-h-\[300px\]{
   min-height: 300px;
 }
@@ -2807,10 +2811,6 @@ a.insurance-tabs.active:hover {
 
 .gap-4{
   gap: 1rem;
-}
-
-.gap-\[55px\]{
-  gap: 55px;
 }
 
 .gap-base5-10{

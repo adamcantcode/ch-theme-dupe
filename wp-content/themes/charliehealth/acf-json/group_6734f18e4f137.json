@@ -42,8 +42,8 @@
                 "id": ""
             },
             "default_value": 0,
-            "min": -100,
-            "max": 100,
+            "min": -100000,
+            "max": 100000,
             "step": "",
             "prepend": "",
             "append": ""
@@ -63,8 +63,8 @@
                 "id": ""
             },
             "default_value": 0,
-            "min": -100,
-            "max": 100,
+            "min": -100000,
+            "max": 100000,
             "step": "",
             "prepend": "",
             "append": ""
@@ -88,5 +88,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1731957804
+    "modified": 1732121623
 }
