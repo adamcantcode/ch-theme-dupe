@@ -1,7 +1,9 @@
 <section class="relative overflow-hidden section temp-section-js">
   <div class="absolute z-0 origin-center color-expand-js rounded-circle"></div>
   <div class="container relative mb-base5-10 z-">
-    <h1 class="max-w-[950px]">Virtual mental health treatment made for you</h1>
+    <div class="max-w-[950px] mb-base5-6">
+      <InnerBlocks />
+    </div>
     <div class="flex flex-col lg:flex-row lg:gap-base5-10">
       <h4><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="inline">
           <path fill-rule="evenodd" clip-rule="evenodd" d="M9.86659 18.9387L9.87191 18.944L8.4577 20.3582L1.58984 13.4903L3.00406 12.0761L8.45238 17.5245L21.0003 4.97656L22.4145 6.39078L9.86659 18.9387Z" fill="#161A3D" />
