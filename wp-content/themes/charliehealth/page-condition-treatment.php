@@ -37,8 +37,9 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
           <img src="<?= $featuredImageUrl; ?>" alt="<?= $featuredImageAltText; ?>" class="rounded-md max-h-[200px] lg:max-h-none object-cover w-full aspect-square nolazy lg:mb-0 mb-base5-4">
           <div class="lg:top-[125px] noshow sticky lg:block">
             <div class="rounded-md bg-grey-cool mt-base5-6 lg:p-base5-6 p-base5-3">
-              <h3 class="font-heading-serif">Ready to start your journey?</h3>
-              <div class="flex flex-col lg:flex-wrap lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
+              <h3 class="font-heading-serif">Personalized intensive therapy from home</h3>
+              <p>Ready to start healing?</p>
+              <div class="flex flex-col lg:flex-wrap lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full">
                 <a href="/form" class="ch-button button-primary">Get Started</a>
                 <a href="tel:+18664848218" class="ch-button button-secondary">1 (866) 484-8218</a>
               </div>
