@@ -27,9 +27,11 @@ $details = get_field('details');
             <div class="overflow-hidden transition-all duration-500 ease-in-out accordion-content max-h-0">
               <div class="px-base5-5 pb-base5-5">
                 <?= $description; ?>
-                <p>
-                  <a href="<?= $link['url']; ?>" class="no-underline !text-referrals-blue-300">Learn More</a>
-                </p>
+                <?php if ($link) : ?>
+                  <p>
+                    <a href="<?= $link['url']; ?>" class="no-underline !text-referrals-blue-300">Learn More</a>
+                  </p>
+                <?php endif; ?>
               </div>
             </div>
           </div>
