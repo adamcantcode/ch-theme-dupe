@@ -2797,12 +2797,20 @@ a.insurance-tabs.active:hover {
   justify-items: center;
 }
 
+.\!gap-\[100px\]{
+  gap: 100px !important;
+}
+
 .gap-0{
   gap: 0px;
 }
 
 .gap-4{
   gap: 1rem;
+}
+
+.gap-\[55px\]{
+  gap: 55px;
 }
 
 .gap-base5-10{
@@ -6466,6 +6474,10 @@ section.bg-circle-circle > div {
     margin-top: 20px;
   }
 
+  .lg\:mt-base5-8{
+    margin-top: 40px;
+  }
+
   .lg\:mt-sp-10{
     margin-top: 2.5rem;
   }
@@ -6917,10 +6929,6 @@ section.bg-circle-circle > div {
 
   .lg\:gap-32{
     gap: 8rem;
-  }
-
-  .lg\:gap-\[100px\]{
-    gap: 100px;
   }
 
   .lg\:gap-\[10rem\]{

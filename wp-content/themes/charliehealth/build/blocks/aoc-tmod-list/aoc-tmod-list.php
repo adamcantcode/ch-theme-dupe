@@ -1,7 +1,7 @@
 <?php $rand = rand(); ?>
 <div>
   <InnerBlocks />
-  <div class="overflow-hidden transition-all duration-500 ease-in-out view-all-js-<?= $rand ?>">
+  <div class="lg:mt-base5-8 mt-base5-6 overflow-hidden transition-all duration-500 ease-in-out view-all-js-<?= $rand ?>">
     <?php if (have_rows('content')) : while (have_rows('content')): the_row() ?>
         <?php
         $link = '';
