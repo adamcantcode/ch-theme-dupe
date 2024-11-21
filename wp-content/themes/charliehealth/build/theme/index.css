@@ -1546,6 +1546,10 @@ a.insurance-tabs.active:hover {
   bottom: 0px !important;
 }
 
+.-bottom-base5-5{
+  bottom: -25px;
+}
+
 .-left-\[155px\]{
   left: -155px;
 }

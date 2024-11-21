@@ -10640,6 +10640,10 @@ window.addEventListener('DOMContentLoaded', () => {
       enabled: true,
       releaseOnEdges: true
     },
+    navigation: {
+      nextEl: '.swiper-button-next-testimonial',
+      prevEl: '.swiper-button-prev-testimonial'
+    },
     breakpoints: {
       1024: {
         slidesPerView: '2.25',
