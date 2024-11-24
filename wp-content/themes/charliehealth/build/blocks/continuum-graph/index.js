@@ -9553,21 +9553,59 @@ __webpack_require__.r(__webpack_exports__);
 
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
 window.addEventListener('DOMContentLoaded', () => {
-  // let gridItemStagger = gsap.timeline({
-  //   scrollTrigger: {
-  //     trigger: '.approach-grid-js',
-  //     start: 'top 80%',
-  //     // markers: true,
-  //     // scrub: true,
-  //     duration: 3,
-  //   },
-  // });
-  // gridItemStagger.to('.grid-approach-items-js > div', {
-  //   autoAlpha: 1,
-  //   duration: 3,
-  //   stagger: 0.2,
-  //   ease: 'power4.out',
-  // });
+  let iopGraph = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline();
+  iopGraph.set('#graphGraph', {
+    scaleX: 0,
+    transformOrigin: 'bottom left'
+  });
+  iopGraph.set('#lineER, #lineOutpatient, #lineInpatient, #lineCH', {
+    scaleY: 0,
+    transformOrigin: 'bottom left'
+  });
+  iopGraph.set('#textER, #textOutpatient, #textInpatient, #textCH, #lineShield', {
+    translateY: '20px',
+    autoAlpha: 0,
+    transformOrigin: 'bottom center'
+  });
+  iopGraph.to('#graphGraph', {
+    scaleX: 1,
+    duration: 3,
+    ease: 'power4.inOut'
+  });
+  iopGraph.to('#lineER, #lineInpatient, #lineOutpatient', {
+    scaleY: 1,
+    duration: 3,
+    stagger: 0.2,
+    ease: 'power4.inOut'
+  }, '>-2');
+  iopGraph.to('#textER, #textOutpatient, #textInpatient', {
+    translateY: 0,
+    duration: 2,
+    stagger: 0.2,
+    ease: 'power4.inOut'
+  }, '<1');
+  iopGraph.to('#textER, #textOutpatient, #textInpatient', {
+    autoAlpha: 0.5,
+    duration: 1.5,
+    stagger: 0.2,
+    ease: 'power4.inOut'
+  }, '<.2');
+  iopGraph.to('#lineCH', {
+    scaleY: 1,
+    duration: 3,
+    stagger: 0.2,
+    ease: 'power4.inOut'
+  }, '>-1');
+  iopGraph.to('#lineShield, #textCH', {
+    translateY: 0,
+    duration: 2,
+    ease: 'power4.inOut'
+  }, '<1');
+  iopGraph.to('#lineShield, #textCH', {
+    autoAlpha: 1,
+    duration: 1.5,
+    ease: 'power4.inOut'
+  }, '<.2');
 });
 })();
 
