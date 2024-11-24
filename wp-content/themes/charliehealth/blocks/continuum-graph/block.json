@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "acf/continuum-graph",
+  "title": "Continuum of Care",
+  "description": "BG image with inner blcoks",
+  "category": "custom",
+  "icon": "screenoptions",
+  "style": "file:./index.css",
+  "script": "file:./index.js",
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "continuum-graph.php"
+  },
+  "supports": {}
+}
