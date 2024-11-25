@@ -132,7 +132,7 @@
 						}
 					}
 					setTimeout(() => {
-						if(!document.querySelector('.page-modal-popup').classList.contains('noshow')) {
+						if (!document.querySelector('.page-modal-popup').classList.contains('noshow')) {
 							handleOpen();
 						}
 					}, 8000);
@@ -141,10 +141,21 @@
 		</div>
 	</div>
 <?php endif; ?>
+<?php
+
+$blog = get_current_blog_id();
+if ($blog === 1) {
+	$nlBG      = 'bg-lavender-300';
+	$nlBGLight = 'bg-lavender-100';
+} else {
+	$nlBG      = 'bg-referrals-green-300';
+	$nlBGLight = 'bg-referrals-green-100';
+}
+?>
 <footer id="footer" class="grid bg-secondary-soft relatve">
 	<div class="section-sm-top section-lg-bottom ">
 		<div class="container">
-			<div class="rounded-sm lg:flex bg-lavender-300 p-sp-8 mb-sp-12">
+			<div class="rounded-sm lg:flex <?= $nlBG; ?> p-sp-8 mb-sp-12">
 				<?php
 				$removeNewsletterPages = get_field('footer_removal_pages', 'options');
 				$removeNewsletter = false;
@@ -210,10 +221,10 @@
 		</div>
 		<div class="container ">
 			<div class="flex flex-col justify-between lg:flex-row">
-				<div class="w-full rounded-t-sm lg:rounded-l-sm lg:rounded-r-none py-sp-5 px-sp-6 bg-lavender-100">
+				<div class="w-full rounded-t-sm lg:rounded-l-sm lg:rounded-r-none py-sp-5 px-sp-6 <?= $nlBGLight; ?>">
 					<p class="mb-0 text-[14px] leading-none">If this is a life-threatening emergency, please call 911 or the <a href="https://988lifeline.org/" target="_blank" class="text-darker-blue text-[14px]">National Suicide Prevention Lifeline</a></p>
 				</div>
-				<div class="rounded-b-sm bg-lavender-300 lg:rounded-r-sm lg:rounded-l-none py-sp-5 px-sp-6">
+				<div class="rounded-b-sm <?= $nlBG; ?> lg:rounded-r-sm lg:rounded-l-none py-sp-5 px-sp-6">
 					<a href="tel:+988" class="flex items-center no-underline gap-sp-2 text-darker-blue">
 						<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/phone.svg'); ?>" width="25" alt="phone call icon">
 						<div class="text-[14px]">988</div>
