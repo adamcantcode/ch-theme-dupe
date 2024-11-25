@@ -3408,6 +3408,11 @@ a.insurance-tabs.active:hover {
   background-color: rgb(232 240 230 / var(--tw-bg-opacity));
 }
 
+.bg-referrals-green-300{
+  --tw-bg-opacity: 1;
+  background-color: rgb(188 215 183 / var(--tw-bg-opacity));
+}
+
 .bg-secondary-soft{
   --tw-bg-opacity: 1;
   background-color: rgb(26 31 69 / var(--tw-bg-opacity));
@@ -3440,11 +3445,6 @@ a.insurance-tabs.active:hover {
 .bg-yellow-300{
   --tw-bg-opacity: 1;
   background-color: rgb(253 191 124 / var(--tw-bg-opacity));
-}
-
-.bg-referrals-green-300{
-  --tw-bg-opacity: 1;
-  background-color: rgb(188 215 183 / var(--tw-bg-opacity));
 }
 
 .bg-\[linear-gradient\(\#fead80\2c \#e2deca_50\%\2c \#bdc6fc\)\]{
@@ -6054,6 +6054,30 @@ section.bg-circle-yellow:before {
   }
 
 section.bg-circle-yellow > div {
+    z-index: 2;
+  }
+
+section.bg-shield{
+  position: relative;
+  z-index: 10;
+}
+
+section.bg-shield:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    z-index: -1;
+    transform: translateY(-50%);
+    right: 0;
+    width: 797px;
+    height: 781px;
+    background-image: url('https://referrals.charliehealth.com/wp-content/uploads/sites/3/2024/11/Logo_Shield.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+section.bg-shield > div {
     z-index: 2;
   }
 

@@ -948,6 +948,27 @@ section.bg-circle-yellow {
   }
 }
 
+section.bg-shield {
+  @apply relative z-10;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    z-index: -1;
+    transform: translateY(-50%);
+    right: 0;
+    width: 797px;
+    height: 781px;
+    background-image: url('https://referrals.charliehealth.com/wp-content/uploads/sites/3/2024/11/Logo_Shield.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  & > div {
+    z-index: 2;
+  }
+}
+
 .has-font-gradient-yellow-color {
   background: -webkit-linear-gradient(0deg, #FDDD7C, #FFF8E4);
   -webkit-background-clip: text;
