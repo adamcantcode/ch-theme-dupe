@@ -7042,6 +7042,10 @@ section.bg-shield > div {
     grid-template-columns: unset;
   }
 
+  .lg\:grid-cols-\[3fr_4fr_4fr\]{
+    grid-template-columns: 3fr 4fr 4fr;
+  }
+
   .lg\:grid-rows-1{
     grid-template-rows: repeat(1, minmax(0, 1fr));
   }
