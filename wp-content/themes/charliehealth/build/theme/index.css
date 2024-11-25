@@ -6133,6 +6133,11 @@ section.bg-circle-circle > div {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.hover\:text-referrals-blue-300:hover{
+  --tw-text-opacity: 1;
+  color: rgb(126 135 228 / var(--tw-text-opacity));
+}
+
 .hover\:opacity-70:hover{
   opacity: 0.7;
 }

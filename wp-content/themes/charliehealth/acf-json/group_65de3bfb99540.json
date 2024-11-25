@@ -18,7 +18,8 @@
             },
             "choices": {
                 "Pill": "Pill",
-                "Button": "Button"
+                "Button": "Button",
+                "Checks": "Checks"
             },
             "default_value": "",
             "return_format": "value",
@@ -106,5 +107,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729793091
+    "modified": 1732496017
 }
