@@ -19,31 +19,35 @@ $tertiary_image  = get_field('tertiary_image');
           <mask id="mask2">
             <path fill="#fff" d="M588.321 160.907C577.629 58.5896 517.037.292236 425.556.292236c-89.106 0-147.321 51.158864-154.45 160.614764H588.321Z"></path>
           </mask>
-          <mask id="mask3">
-            <circle cx="60.2677" cy="60.2677" r="60.2677" transform="matrix(-1 0 0 1 120.535 162.875)" fill="#fff"></circle>
-          </mask>
-          <mask id="mask4">
-            <circle cx="60.2677" cy="60.2677" r="60.2677" transform="matrix(-1 0 0 1 228.654 461.495)" fill="#fff"></circle>
-          </mask>
+          <?php if ($tertiary_image) : ?>
+            <mask id="mask3">
+              <circle cx="60.2677" cy="60.2677" r="60.2677" transform="matrix(-1 0 0 1 120.535 162.875)" fill="#fff"></circle>
+            </mask>
+          <?php endif; ?>
+          <?php if ($secondary_image) : ?>
+            <mask id="mask4">
+              <circle cx="60.2677" cy="60.2677" r="60.2677" transform="matrix(-1 0 0 1 228.654 461.495)" fill="#fff"></circle>
+            </mask>
+          <?php endif; ?>
           <mask id="mask5">
             <path fill="#fff" d="M247.465 82.2639c-30.549 1.629-55.719 25.9201-58.544 56.5951-13.15 144.201 12.584 255.356 76.544 330.457 7.57 8.918 15.706 17.32 24.358 25.153l4.144 3.665c62.971 54.511 130.062 59.77 133.3 59.997l2.354.108 1.919-.156c5.121-.371 92.956-7.905 161.695-88.779 63.925-75.173 89.66-186.351 76.522-330.421-2.837-30.699-28.007-54.9901-58.521-56.6191-40.827-2.168-322.979-2.168-363.771 0Z"></path>
           </mask>
         </defs>
 
         <!-- Shapes with masked images -->
-        <line y1="-0.5" x2="160.18" y2="-0.5" transform="matrix(-1 0 0 1 239.452 225.746)" stroke="#161A3D" />
+        <?php if ($tertiary_image) : ?>
+          <line y1="-0.5" x2="160.18" y2="-0.5" transform="matrix(-1 0 0 1 239.452 225.746)" stroke="#161A3D" />
+        <?php endif; ?>
         <rect x="0" y="250" width="350" height="350" fill="#FFFFFF" mask="url(#mask1)"></rect>
-        <line y1="-0.5" x2="160.18" y2="-0.5" transform="matrix(-0.707107 0.707107 0.707107 0.707107 295.913 402.63)" stroke="#161A3D" />
+        <?php if ($secondary_image) : ?>
+          <line y1="-0.5" x2="160.18" y2="-0.5" transform="matrix(-0.707107 0.707107 0.707107 0.707107 295.913 402.63)" stroke="#161A3D" />
+        <?php endif; ?>
         <rect x="250" y="0" width="350" height="350" fill="#FBF1D5" mask="url(#mask2)"></rect>
         <?php if ($tertiary_image) : ?>
           <image href="<?= $tertiary_image['url']; ?>" alt="<?= $tertiary_image['alt']; ?>" x="0" y="158" width="130" height="130" mask="url(#mask3)"></image>
-        <?php else : ?>
-          <rect x="0" y="158" width="130" height="130" mask="url(#mask3)"></rect>
         <?php endif; ?>
         <?php if ($secondary_image) : ?>
           <image href="<?= $secondary_image['url']; ?>" alt="<?= $secondary_image['alt']; ?>" x="104" y="456" width="130" height="130" mask="url(#mask4)"></image>
-        <?php else : ?>
-          <rect x="104" y="456" width="130" height="130" mask="url(#mask4)"></rect>
         <?php endif; ?>
         <?php if ($main_image) : ?>
           <image href="<?= $main_image['url']; ?>" alt="<?= $main_image['alt']; ?>" x="180" y="70" width="500" height="500" mask="url(#mask5)"></image>
