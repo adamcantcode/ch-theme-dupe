@@ -95,7 +95,8 @@
   ol li {
     @apply text-darker-blue font-body antialiased last:mb-0;
   }
-  h1, .text-h1-base {
+  h1,
+  .text-h1-base {
     @apply mb-sp-5 text-h1;
     @screen lg {
       @apply mb-base5-5 text-h1-lg;
@@ -107,44 +108,52 @@
       }
     }
   }
-  h2, .text-h2-base {
+  h2,
+  .text-h2-base {
     @apply text-h2 mb-base5-3 font-heading-serif;
     @screen lg {
       @apply text-h2-lg mb-base5-5;
     }
   }
-  h3, .text-h3-base {
+  h3,
+  .text-h3-base {
     @apply text-h3 mb-base5-3;
     @screen lg {
       @apply text-h3-lg mb-base5-4;
     }
   }
-  h4, .text-h4-base {
+  h4,
+  .text-h4-base {
     @apply text-h4 mb-base5-2;
     @screen lg {
       @apply text-h4-lg mb-base5-2;
     }
   }
-  h5, .text-h5-base {
+  h5,
+  .text-h5-base {
     @apply text-h5 mb-base5-1;
     @screen lg {
       @apply mb-base5-2;
     }
   }
-  h6, .text-h5-base {
+  h6,
+  .text-h5-base {
     @apply text-h6 mb-base5-1;
     @screen lg {
       @apply mb-sp-2;
     }
   }
-  p, .text-p-base {
+  p,
+  .text-p-base {
     @apply text-p mb-base5-4;
     @screen lg {
       @apply text-p-lg;
     }
   }
   ul,
-  ol, .text-ul-base, .text-ol-base {
+  ol,
+  .text-ul-base,
+  .text-ol-base {
     @apply block pl-10 mb-base5-4 text-p;
     @screen lg {
       @apply text-p-lg;
@@ -171,12 +180,26 @@
     }
     &.text-nav-normal {
       &:hover {
-        @apply text-lavender-200
+        @apply text-lavender-200;
       }
     }
     &.text-nav-small {
       &:hover {
-        @apply text-lavender-200
+        @apply text-lavender-200;
+      }
+    }
+  }
+  .blog-3 {
+    a {
+      &.text-nav-normal {
+        &:hover {
+          @apply text-referrals-green-300;
+        }
+      }
+      &.text-nav-small {
+        &:hover {
+          @apply text-referrals-green-300;
+        }
       }
     }
   }
@@ -230,7 +253,8 @@
   main {
     /* @apply overflow-hidden */
   }
-  button, [type='submit'] {
-    @apply bg-primary
+  button,
+  [type='submit'] {
+    @apply bg-primary;
   }
 }

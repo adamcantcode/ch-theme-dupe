@@ -33,6 +33,14 @@
       @apply rounded-sm bg-transparent border border-bright-teal text-bright-teal px-sp-4 leading-none;
     }
   }
+  .blog-3 {
+    .ch-button.button-tertiary-lavender {
+      @apply text-[18px] inline-block px-[10px] py-[15px] no-underline transition-all duration-300 flex-1 lg:flex-none text-center capitalize z-[1] rounded-sm bg-referrals-green-300 hover:bg-referrals-green-300 hover:text-dark-blue lg:py-sp-3 lg:px-sp-4 font-heading leading-none;
+      &.inverted {
+        @apply bg-transparent shadow-[inset_0_0_0_1px_#BCD7B7] text-referrals-green-300;
+      }
+    }
+  }
   .nav-parent-menu {
     &:hover {
       .nav-sub-menu {
