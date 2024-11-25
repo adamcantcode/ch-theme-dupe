@@ -4651,6 +4651,7 @@ a.insurance-tabs.active:hover {
       }
 
 .section section{
+  overflow: visible !important;
   padding-left: 0px;
   padding-right: 0px;
 }
@@ -5861,6 +5862,7 @@ ul.alert li {
     }
 
 .tutor-page-wrap section{
+  overflow: visible !important;
   padding-left: 0px;
   padding-right: 0px;
 }
