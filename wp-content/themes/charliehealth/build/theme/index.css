@@ -4650,6 +4650,11 @@ a.insurance-tabs.active:hover {
   }
       }
 
+.section section{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 
 .no-scrollbar::-webkit-scrollbar {
@@ -5855,6 +5860,11 @@ ul.alert li {
   }
     }
 
+.tutor-page-wrap section{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 a[href='https://www.charliehealth.com/dashboard/retrieve-password']{
   display: none;
 }
@@ -6128,14 +6138,14 @@ section.bg-circle-circle > div {
   color: rgb(22 26 61 / var(--tw-text-opacity));
 }
 
-.hover\:text-white:hover{
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
 .hover\:text-referrals-blue-300:hover{
   --tw-text-opacity: 1;
   color: rgb(126 135 228 / var(--tw-text-opacity));
+}
+
+.hover\:text-white:hover{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .hover\:opacity-70:hover{

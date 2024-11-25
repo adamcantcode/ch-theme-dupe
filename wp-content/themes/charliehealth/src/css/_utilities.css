@@ -160,6 +160,9 @@
         @apply py-sp-16;
       }
     }
+    section {
+      @apply px-0;
+    }
   }
   /* Hide scrollbar for Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
