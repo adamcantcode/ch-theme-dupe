@@ -9559,10 +9559,11 @@ window.addEventListener('DOMContentLoaded', () => {
       start: 'top center',
       // pin: true,
       scrub: true,
-      end: '+=200',
-      markers: true
+      end: '+=200'
+      // markers: true,
     }
   });
+
   outcomes.set('#text2, #svg1', {
     autoAlpha: 0,
     y: '0'

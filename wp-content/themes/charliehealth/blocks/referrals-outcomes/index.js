@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', () => {
       // pin: true,
       scrub: true,
       end: '+=200',
-      markers: true,
+      // markers: true,
     },
   });
 
