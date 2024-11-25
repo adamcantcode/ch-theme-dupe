@@ -9553,7 +9553,12 @@ __webpack_require__.r(__webpack_exports__);
 
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
 window.addEventListener('DOMContentLoaded', () => {
-  let iopGraph = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline();
+  let iopGraph = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
+    scrollTrigger: {
+      trigger: '#graphAnimation',
+      start: 'top bottom'
+    }
+  });
   iopGraph.set('#graphGraph', {
     scaleX: 0,
     transformOrigin: 'bottom left'

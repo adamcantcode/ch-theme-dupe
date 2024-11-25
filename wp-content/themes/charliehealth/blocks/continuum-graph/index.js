@@ -4,19 +4,21 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 window.addEventListener('DOMContentLoaded', () => {
-  let iopGraph = gsap.timeline();
+  let iopGraph = gsap.timeline({
+    scrollTrigger: {
+      trigger: '#graphAnimation',
+      start: 'top bottom',
+    },
+  });
 
   iopGraph.set('#graphGraph', {
     scaleX: 0,
     transformOrigin: 'bottom left',
   });
-  iopGraph.set(
-    '#lineER, #lineOutpatient, #lineInpatient, #lineCH',
-    {
-      scaleY: 0,
-      transformOrigin: 'bottom left',
-    }
-  );
+  iopGraph.set('#lineER, #lineOutpatient, #lineInpatient, #lineCH', {
+    scaleY: 0,
+    transformOrigin: 'bottom left',
+  });
   iopGraph.set(
     '#textER, #textOutpatient, #textInpatient, #textCH, #lineShield',
     {
