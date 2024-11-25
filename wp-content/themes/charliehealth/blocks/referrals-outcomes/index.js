@@ -1,33 +1,34 @@
-import './index.css';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-// import Swiper bundle with all modules installed
-import Swiper from 'swiper/bundle';
-
-// import styles bundle
-import 'swiper/css/bundle';
+gsap.registerPlugin(ScrollTrigger);
 
 window.addEventListener('DOMContentLoaded', () => {
-  var swiper = new Swiper('.swiper.swiper-referrals-testimonial', {
-    slidesPerView: 1,
-    spaceBetween: 20,
-    slideToClickedSlide: true,
-    // centeredSlides: true,
-    loop: false,
-    pagination: false,
-    navigation: false,
-    mousewheel: {
-      enabled: true,
-      releaseOnEdges: true,
+  let outcomes = gsap.timeline({
+    scrollTrigger: {
+      trigger: '#outcomesContainer',
+      start: 'top center',
+      // pin: true,
+      scrub: true,
+      end: '+=200',
+      markers: true,
     },
-    navigation: {
-      nextEl: '.swiper-button-next-testimonial',
-      prevEl: '.swiper-button-prev-testimonial',
-    },
-    breakpoints: {
-      1024: {
-        slidesPerView: '2.25',
-        spaceBetween: 80,
-      },
-    },
+  });
+
+  outcomes.set('#text2, #svg1', {
+    autoAlpha: 0,
+    y: '0',
+  });
+
+  outcomes.to('#text1, #svg2', {
+    autoAlpha: 0,
+    y: '-20px',
+    // duration: 1.5,
+  });
+
+  outcomes.to('#text2, #svg1', {
+    autoAlpha: 1,
+    y: '-100px',
+    // duration: 1.5,
   });
 });
