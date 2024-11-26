@@ -70,7 +70,7 @@
             </svg>
             <h3 class="font-heading-serif">“<?= get_sub_field('pull_quote'); ?>”</h3>
             <p><?= get_sub_field('full_quote'); ?></p>
-            <p><?= get_sub_field('name'); ?></p>
+            <p>—<?= get_sub_field('name'); ?></p>
           </div>
         <?php endwhile;
         ?>
