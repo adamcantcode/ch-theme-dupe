@@ -24,12 +24,8 @@ $image = get_field('image');
 $articles = get_field('articles');
 ?>
 <div <?= $anchor ?: ''; ?>class="<?= $className; ?> relative grid lg:grid-cols-[1fr_2fr] lg:gap-sp-16 gap-sp-8">
-  <div class="lg:sticky self-start top-[8rem]">
-    <h2><?= $heading; ?></h2>
-    <?= $subhead; ?>
-    <?php if ($image) : ?>
-      <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="lg:w-[300px] w-full mt-base5-3 inline-block">
-    <?php endif; ?>
+  <div>
+    <InnerBlocks />
   </div>
   <div class="sticky-split-info">
     <div class="bg-primary w-full h-[1px]"></div>
