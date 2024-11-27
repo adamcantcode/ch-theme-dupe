@@ -1,4 +1,4 @@
-<div class="lg:ml-[300px] mb-base5-10">
+<div class="lg:ml-[300px] mb-base5-10 relative z-10">
   <h2>Real stories of hope & healing</h2>
 </div>
 <div class="h-[1px] bg-primary relative left-1/2 w-screen -ml-[50vw]">
