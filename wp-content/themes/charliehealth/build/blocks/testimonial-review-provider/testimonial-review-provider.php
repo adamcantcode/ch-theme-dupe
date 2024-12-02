@@ -65,8 +65,13 @@
             <?php if ($row['pull-quote']) : ?>
               <h3 class="font-heading-serif">“<?= $row['pull-quote']; ?>”</h3>
             <?php endif; ?>
-            <h4 class="mb-0"><?= $row['name']; ?></h4>
-            <p><?= $row['title']; ?></p>
+            <?php if ($row['full_quote']) : ?>
+              <p>“<?= $row['full_quote']; ?>”</p>
+            <?php endif; ?>
+            <h4 class="mb-0">—<?= $row['name']; ?></h4>
+            <?php if ($row['title']) : ?>
+              <p><?= $row['title']; ?></p>
+            <?php endif; ?>
           </div>
         <?php endforeach; ?>
       </div>
