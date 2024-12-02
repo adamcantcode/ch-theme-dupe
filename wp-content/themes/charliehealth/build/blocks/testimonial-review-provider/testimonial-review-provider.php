@@ -21,7 +21,7 @@
   <?php if (!is_admin()) : ?>
     <?php
     $args = array(
-      'post_type'      => array('testimonial', 'provider-testimonial'),
+      'post_type'      => array('testimonial', 'partner-testimonial'),
       'post_status'    => 'publish',
       'posts_per_page' => -1,
     );

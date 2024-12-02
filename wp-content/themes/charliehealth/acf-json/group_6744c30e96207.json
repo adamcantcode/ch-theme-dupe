@@ -18,7 +18,7 @@
             },
             "post_type": [
                 "testimonial",
-                "provider-testimonial"
+                "partner-testimonial"
             ],
             "post_status": [
                 "publish"
@@ -52,5 +52,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733150265
+    "modified": 1733174102
 }
