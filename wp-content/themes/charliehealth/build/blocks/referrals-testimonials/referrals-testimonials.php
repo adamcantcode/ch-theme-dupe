@@ -60,10 +60,10 @@
   </script>
 </div>
 <div class="relative lg:ml-[300px] lg:mb-[130px] mb-base5-10">
-  <?php if (have_rows('testimonials')) : ?>
+  <?php if (have_rows('referrals_testimonials')) : ?>
     <div class="!overflow-visible swiper swiper-referrals-testimonial">
       <div class="swiper-wrapper">
-        <?php while (have_rows('testimonials')) : the_row();   ?>
+        <?php while (have_rows('referrals_testimonials')) : the_row();   ?>
           <div class="!h-auto swiper-slide pt-base5-6">
             <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 -translate-y-1/2">
               <circle cx="7.5" cy="7.5" r="7.5" fill="#FDDD7C" />
