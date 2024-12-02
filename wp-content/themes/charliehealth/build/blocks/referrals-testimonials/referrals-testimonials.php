@@ -1,5 +1,17 @@
 <div class="lg:ml-[300px] mb-base5-10 relative z-10">
   <h2>Real stories of hope & healing</h2>
+  <div class="lg:flex">
+    <div class="flex flex-wrap gap-y-base5-2 gap-x-base5-5">
+      <div class="flex items-center">
+        <div class="flex-[0_0_auto] h-sp-3 w-sp-3 mr-sp-2 rounded-circle bg-referrals-blue-300"></div>
+        <p class="mb-0">Provider</p>
+      </div>
+      <div class="flex items-center">
+        <div class="flex-[0_0_auto] h-sp-3 w-sp-3 mr-sp-2 rounded-circle bg-referrals-green-400"></div>
+        <p class="mb-0">Client</p>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="h-[1px] bg-primary relative left-1/2 w-screen -ml-[50vw]">
 </div>
@@ -60,19 +72,40 @@
   </script>
 </div>
 <div class="relative lg:ml-[300px] lg:mb-[130px] mb-base5-10">
-  <?php if (have_rows('referrals_testimonials')) : ?>
+  <?php $referralTestimonials = get_field('referrals_testimonials'); ?>
+  <?php if ($referralTestimonials) : ?>
     <div class="!overflow-visible swiper swiper-referrals-testimonial">
       <div class="swiper-wrapper">
-        <?php while (have_rows('referrals_testimonials')) : the_row();   ?>
+        <?php foreach ($referralTestimonials as $referralTestimonial) : ?>
+          <?php
+          $type = $referralTestimonial->post_type;
+          if ($type === 'testimonial') {
+            $type = '7E87E4';
+          } else {
+            $type = '8AB682';
+          }
+          $postID = $referralTestimonial->ID;
+
+          $anonymous = get_field('anonymous', $postID);
+          if ($anonymous === false) {
+            $attribution = get_field('attribution', $postID) ?: abbreviateAfterFirstWord(get_the_title($postID));
+          } else {
+            $attribution = 'Charlie Health Provider';
+          }
+          $pullQuote     = get_field('pull-quote', $postID);
+          $fullQuote     = get_field('full_quote', $postID);
+          ?>
           <div class="!h-auto swiper-slide pt-base5-6">
             <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 -translate-y-1/2">
-              <circle cx="7.5" cy="7.5" r="7.5" fill="#FDDD7C" />
+              <circle cx="7.5" cy="7.5" r="7.5" fill="#<?= $type ?>" />
             </svg>
-            <h3 class="font-heading-serif">“<?= get_sub_field('pull_quote'); ?>”</h3>
-            <p><?= get_sub_field('full_quote'); ?></p>
-            <p>—<?= get_sub_field('name'); ?></p>
+            <?php if ($pullQuote) : ?>
+              <h3 class="font-heading-serif">“<?= $pullQuote; ?>”</h3>
+            <?php endif; ?>
+            <p><?= $fullQuote; ?></p>
+            <p>—<?= $attribution ?></p>
           </div>
-        <?php endwhile;
+        <?php endforeach;
         ?>
       </div>
     </div>
@@ -86,51 +119,6 @@
         <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3431 0.278417L16.7071 6.32784C17.0976 6.69906 17.0976 7.30094 16.7071 7.67216L10.3431 13.7216C9.95262 14.0928 9.31946 14.0928 8.92893 13.7216C8.53841 13.3504 8.53841 12.7485 8.92893 12.3773L13.5858 7.95058H0V6.04942H13.5858L8.92893 1.62273C8.53841 1.25151 8.53841 0.64964 8.92893 0.278417C9.31946 -0.0928058 9.95262 -0.0928058 10.3431 0.278417Z" fill="#161A3D" />
         </svg>
-      </div>
-    </div>
-  <?php else: ?>
-    <div class="!overflow-visible swiper swiper-referrals-testimonial">
-      <div class="swiper-wrapper">
-        <div class="!h-auto swiper-slide pt-base5-6">
-          <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 -translate-y-1/2">
-            <circle cx="7.5" cy="7.5" r="7.5" fill="#FDDD7C" />
-          </svg>
-          <h3 class="font-heading-serif">“My daughter was acting like herself again.”</h3>
-          <p>I really didn’t know what to do for my daughter before Charlie Health. I’ve always felt I’ve been alone in this. I felt so helpless. Within the first week, my daughter was acting like herself again. Charlie Health has given my daughter and me lifelong tools to navigate her anxiety and panic attacks. I’ve been blown away. I’m very impressed and very happy.</p>
-          <p>—Tasia C.</p>
-        </div>
-        <div class="!h-auto swiper-slide pt-base5-6">
-          <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 -translate-y-1/2">
-            <circle cx="7.5" cy="7.5" r="7.5" fill="#FDDD7C" />
-          </svg>
-          <h3 class="font-heading-serif">“My daughter was acting like herself again.”</h3>
-          <p>I really didn’t know what to do for my daughter before Charlie Health. I’ve always felt I’ve been alone in this. I felt so helpless. Within the first week, my daughter was acting like herself again. Charlie Health has given my daughter and me lifelong tools to navigate her anxiety and panic attacks. I’ve been blown away. I’m very impressed and very happy.</p>
-          <p>—Tasia C.</p>
-        </div>
-        <div class="!h-auto swiper-slide pt-base5-6">
-          <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 -translate-y-1/2">
-            <circle cx="7.5" cy="7.5" r="7.5" fill="#FDDD7C" />
-          </svg>
-          <h3 class="font-heading-serif">“My daughter was acting like herself again.”</h3>
-          <p>I really didn’t know what to do for my daughter before Charlie Health. I’ve always felt I’ve been alone in this. I felt so helpless. Within the first week, my daughter was acting like herself again. Charlie Health has given my daughter and me lifelong tools to navigate her anxiety and panic attacks. I’ve been blown away. I’m very impressed and very happy.</p>
-          <p>—Tasia C.</p>
-        </div>
-        <div class="!h-auto swiper-slide pt-base5-6">
-          <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 -translate-y-1/2">
-            <circle cx="7.5" cy="7.5" r="7.5" fill="#FDDD7C" />
-          </svg>
-          <h3 class="font-heading-serif">“My daughter was acting like herself again.”</h3>
-          <p>I really didn’t know what to do for my daughter before Charlie Health. I’ve always felt I’ve been alone in this. I felt so helpless. Within the first week, my daughter was acting like herself again. Charlie Health has given my daughter and me lifelong tools to navigate her anxiety and panic attacks. I’ve been blown away. I’m very impressed and very happy.</p>
-          <p>—Tasia C.</p>
-        </div>
-        <div class="!h-auto swiper-slide pt-base5-6">
-          <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 -translate-y-1/2">
-            <circle cx="7.5" cy="7.5" r="7.5" fill="#FDDD7C" />
-          </svg>
-          <h3 class="font-heading-serif">“My daughter was acting like herself again.”</h3>
-          <p>I really didn’t know what to do for my daughter before Charlie Health. I’ve always felt I’ve been alone in this. I felt so helpless. Within the first week, my daughter was acting like herself again. Charlie Health has given my daughter and me lifelong tools to navigate her anxiety and panic attacks. I’ve been blown away. I’m very impressed and very happy.</p>
-          <p>—Tasia C.</p>
-        </div>
       </div>
     </div>
   <?php endif; ?>
