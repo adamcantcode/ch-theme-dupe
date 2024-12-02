@@ -3,11 +3,11 @@
   <div class="lg:flex">
     <div class="flex flex-wrap gap-y-base5-2 gap-x-base5-5">
       <div class="flex items-center">
-        <div class="flex-[0_0_auto] h-sp-3 w-sp-3 mr-sp-2 rounded-circle bg-referrals-blue-300"></div>
+        <div class="flex-[0_0_auto] h-sp-3 w-sp-3 mr-sp-2 rounded-circle bg-referrals-green-400"></div>
         <p class="mb-0">Provider</p>
       </div>
       <div class="flex items-center">
-        <div class="flex-[0_0_auto] h-sp-3 w-sp-3 mr-sp-2 rounded-circle bg-referrals-green-400"></div>
+        <div class="flex-[0_0_auto] h-sp-3 w-sp-3 mr-sp-2 rounded-circle bg-referrals-blue-300"></div>
         <p class="mb-0">Client</p>
       </div>
     </div>
