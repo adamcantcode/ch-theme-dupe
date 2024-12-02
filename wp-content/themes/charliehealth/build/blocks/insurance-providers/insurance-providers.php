@@ -45,8 +45,8 @@
       <h3 id="covered" class="text-center text-white mb-base5-10">We are in network with your insurance provider.* <br>Get started today.</h3>
       <h3 id="notCovered" class="text-center text-white mb-base5-10">Contact us directly to further verify your insurance coverage.</h3>
       <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
-        <a href="/form" class="ch-button button-primary inverted">Get started</a>
-        <a href="tel:+18664848218" class="ch-button button-secondary inverted">1 (866) 484-8218</a>
+        <a href="/form" class="ch-button button-primary-ch inverted">Get started</a>
+        <a href="tel:+18664848218" class="ch-button button-secondary-ch inverted">1 (866) 484-8218</a>
       </div>
     </div>
     <h5 class="text-mini"></h5>

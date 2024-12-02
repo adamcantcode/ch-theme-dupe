@@ -8,7 +8,7 @@
       $label = get_sub_field('label');
       $sectionID  = get_sub_field('section_id');
       ?>
-        <a href="#<?= $sectionID; ?>" class="ch-button button-secondary whitespace-nowrap"><?= $label; ?></a>
+        <a href="#<?= $sectionID; ?>" class="ch-button button-secondary-ch whitespace-nowrap"><?= $label; ?></a>
       <?php endwhile; ?>
     <?php endif; ?>
   </div>

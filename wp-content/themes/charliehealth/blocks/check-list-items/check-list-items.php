@@ -55,11 +55,11 @@
         ?>
         <?php if ($link): ?>
           <div class="lg:inline-block flex w-full lg:w-[unset] check-list-item <?= !is_admin() ? 'opacity-0 scale-90' : ''; ?>">
-            <a href="<?= $link['url']; ?>" class="ch-button button-secondary inverted target=" <?= $link['target'] ?>"><?= $link['title']; ?></a>
+            <a href="<?= $link['url']; ?>" class="ch-button button-secondary-ch inverted target=" <?= $link['target'] ?>"><?= $link['title']; ?></a>
           </div>
         <?php else : ?>
           <div class="lg:inline-block flex w-full lg:w-[unset] check-list-item <?= !is_admin() ? 'opacity-0 scale-90' : ''; ?>">
-            <a class="ch-button button-secondary inverted target="><?= $title; ?></a>
+            <a class="ch-button button-secondary-ch inverted target="><?= $title; ?></a>
           </div>
         <?php endif ?>
       <?php endwhile; ?>

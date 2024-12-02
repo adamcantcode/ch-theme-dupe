@@ -167,7 +167,7 @@ $index = 0;
           ?>
         </div>
         <div class="grid justify-end">
-          <a role="button" class="w-full ch-button button-primary justify-self-center lg:w-auto load-more-js">Load more</a>
+          <a role="button" class="w-full ch-button button-primary-ch justify-self-center lg:w-auto load-more-js">Load more</a>
         </div>
       </div>
     </div>

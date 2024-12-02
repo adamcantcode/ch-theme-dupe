@@ -56,6 +56,6 @@ $customPosts = get_field('areas_of_care');
         <?php wp_reset_postdata(); ?>
       <?php endif; ?>
     </div>
-    <a role="button" class="float-right ch-button button-secondary view-all-button-js mt-sp-8 w-full lg:w-[unset]">View All</a>
+    <a role="button" class="float-right ch-button button-secondary-ch view-all-button-js mt-sp-8 w-full lg:w-[unset]">View All</a>
   </div>
 </div>

@@ -29,7 +29,7 @@ $parent_posts = new WP_Query(array(
       wp_reset_postdata();
     endif;; ?>
     <div class="absolute bottom-0 flex justify-center w-full bg-white lg:noshow">
-      <a role="button" class="z-10 ch-button button-secondary toggle-button">Show More</a>
+      <a role="button" class="z-10 ch-button button-secondary-ch toggle-button">Show More</a>
     </div>
   </div>
 </div>

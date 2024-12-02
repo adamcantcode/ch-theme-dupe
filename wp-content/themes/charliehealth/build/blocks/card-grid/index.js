@@ -84,8 +84,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
       // Update button styles and text accordingly
       toggleButton.textContent = isExpanded ? 'Show more' : 'Show less';
-      toggleButton.classList.toggle('button-primary', !isExpanded);
-      toggleButton.classList.toggle('button-secondary', isExpanded);
+      toggleButton.classList.toggle('button-primary-ch', !isExpanded);
+      toggleButton.classList.toggle('button-secondary-ch', isExpanded);
     });
   };
 

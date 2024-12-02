@@ -40,7 +40,7 @@
 </div>
 <?php if (!is_admin()) : ?>
   <div class="flex">
-    <a role="button" class="w-full ml-auto ch-button button-primary justify-self-center lg:w-auto child-load-more-js lg:mt-sp-10 mt-sp-5 mb-sp-5 lg:mb-0">Load more</a>
+    <a role="button" class="w-full ml-auto ch-button button-primary-ch justify-self-center lg:w-auto child-load-more-js lg:mt-sp-10 mt-sp-5 mb-sp-5 lg:mb-0">Load more</a>
   </div>
 <?php endif; ?>
 <script>

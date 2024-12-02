@@ -690,12 +690,12 @@
   }
 }
 
-.toggle-button:not(.button-primary) {
+.toggle-button:not(.button-primary-ch) {
   @apply bg-white;
   &:before {
     @apply transition-all duration-300;
   }
-  &:not(.button-primary) {
+  &:not(.button-primary-ch) {
     &:before {
       content: '';
       background: rgb(248, 247, 247);

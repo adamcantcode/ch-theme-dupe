@@ -41,14 +41,14 @@
               <p class="text-h2-base"><span class="text-[50%] align-super">$</span><?= $avgCopay; ?></p>
             </div>
             <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full">
-              <a href="/form" class="ch-button button-secondary">Get started</a>
+              <a href="/form" class="ch-button button-secondary-ch">Get started</a>
             </div>
             <p class="text-mini">Reach out to our team to verify your coverage today</p>
           </div>
           <div>
             <h2>Charlie Health partners with <?= $name; ?></h2>
             <?= $description; ?>
-            <a href="<?= get_the_permalink($insurer->ID); ?>" class="ch-button button-primary">Explore <?= $name; ?></a>
+            <a href="<?= get_the_permalink($insurer->ID); ?>" class="ch-button button-primary-ch">Explore <?= $name; ?></a>
           </div>
         </div>
       </div>

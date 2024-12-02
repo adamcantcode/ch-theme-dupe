@@ -64,7 +64,7 @@ if ($image) {
           <h4>From the Library</h4>
           <h2>Articles featuring our Clinical Content Advisory Council</h2>
           <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full">
-            <a href="/blog" class="ch-button button-secondary">Read more</a>
+            <a href="/blog" class="ch-button button-secondary-ch">Read more</a>
           </div>
         </div>
         <div class="grid lg:grid-cols-3 gap-sp-5">

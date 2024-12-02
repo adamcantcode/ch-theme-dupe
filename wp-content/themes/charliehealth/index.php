@@ -20,8 +20,8 @@
                 <p class="text-h1-base lg:text-h1-lg text-h2">Get the mental health treatment you <mark class="bg-yellow-100 rounded-lg">deserve</mark></p>
                 <p class="text-h4-base lg:mb-base5-10 mb-base5-5">Need additional mental health support? Charlie Health can help. Get started with virtual intensive therapy now.</p>
                 <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full ">
-                  <a href="https://www.charliehealth.com/form" class="ch-button button-primary">Get Started</a>
-                  <a href="https://www.charliehealth.com/outreach/referrals" class="ch-button button-secondary">Refer a Patient</a>
+                  <a href="https://www.charliehealth.com/form" class="ch-button button-primary-ch">Get Started</a>
+                  <a href="https://www.charliehealth.com/outreach/referrals" class="ch-button button-secondary-ch">Refer a Patient</a>
                 </div>
               </div>
             </div>
@@ -138,8 +138,8 @@
                 <p class="text-h4-base lg:mb-base5-10 mb-base5-5">Virtual intensive mental health treatment for individuals in need of more than once-weekly therapy
                 </p>
                 <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full ">
-                  <a href="https://referrals.charliehealth.com/referrals" class="ch-button button-primary">Refer now</a>
-                  <a href="https://referrals.charliehealth.com/iop" class="ch-button button-secondary">Learn more</a>
+                  <a href="https://referrals.charliehealth.com/referrals" class="ch-button button-primary-ch">Refer now</a>
+                  <a href="https://referrals.charliehealth.com/iop" class="ch-button button-secondary-ch">Learn more</a>
                 </div>
               </div>
             </div>

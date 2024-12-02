@@ -20,13 +20,13 @@ export default function mobileCats() {
       if (catsWrapper.style.maxHeight) {
         catsWrapper.style.maxHeight = null;
         toggleEvent.target.textContent = 'Show more';
-        toggleEvent.target.classList.remove('button-primary');
-        toggleEvent.target.classList.add('button-secondary');
+        toggleEvent.target.classList.remove('button-primary-ch');
+        toggleEvent.target.classList.add('button-secondary-ch');
       } else {
         catsWrapper.style.maxHeight = catsWrapper.scrollHeight + 'px';
         toggleEvent.target.textContent = 'Show less';
-        toggleEvent.target.classList.add('button-primary');
-        toggleEvent.target.classList.remove('button-secondary');
+        toggleEvent.target.classList.add('button-primary-ch');
+        toggleEvent.target.classList.remove('button-secondary-ch');
       }
     });
   };
@@ -39,8 +39,8 @@ export default function mobileCats() {
       catsWrapper.style.paddingBottom = 'unset';
       catsWrapper.style.maxHeight = null;
       toggleButton.textContent = 'Show more';
-      toggleButton.classList.remove('button-primary');
-      toggleButton.classList.add('button-secondary');
+      toggleButton.classList.remove('button-primary-ch');
+      toggleButton.classList.add('button-secondary-ch');
     }
   };
 

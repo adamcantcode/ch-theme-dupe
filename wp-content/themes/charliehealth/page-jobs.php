@@ -30,7 +30,7 @@ Template Post Type: page
       <div class="flex flex-col justify-between lg:items-center lg:mb-sp-16 mb-sp-8 lg:flex-row">
         <h2 class="text-h1-base">Open Roles</h2>
         <div>
-          <select id="locationFilter" class="cursor-pointer ch-button button-secondary custom-select">
+          <select id="locationFilter" class="cursor-pointer ch-button button-secondary-ch custom-select">
             <option value="">All Locations</option>
           </select>
         </div>
@@ -47,7 +47,7 @@ Template Post Type: page
                 <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health shield logo" class="w-[3rem] mb-sp-5">
                 <h2>Let’s build the solution to the youth mental health crisis together</h2>
                 <div class="flex gap-x-sp-4 items-center md:w-[unset] w-full">
-                  <a href="<?= $link['url']; ?>" class="ch-button button-primary"><?= $link['title']; ?></a>
+                  <a href="<?= $link['url']; ?>" class="ch-button button-primary-ch"><?= $link['title']; ?></a>
                 </div>
               </div>
             </div>

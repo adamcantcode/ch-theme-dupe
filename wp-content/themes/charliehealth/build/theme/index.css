@@ -992,11 +992,11 @@ button,
   }
 }
 
-a.ch-button.button-primary:hover {
+a.ch-button.button-primary-ch:hover {
         color: #ffffff;
       }
 
-.ch-button.button-primary{
+.ch-button.button-primary-ch{
   border-radius: 10px;
   --tw-bg-opacity: 1;
   background-color: rgb(22 26 61 / var(--tw-bg-opacity));
@@ -1007,12 +1007,12 @@ a.ch-button.button-primary:hover {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.ch-button.button-primary:hover{
+.ch-button.button-primary-ch:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(39 45 108 / var(--tw-bg-opacity));
 }
 
-.ch-button.button-primary.inverted{
+.ch-button.button-primary-ch.inverted{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
@@ -1020,7 +1020,7 @@ a.ch-button.button-primary:hover {
   text-decoration-line: none;
 }
 
-.ch-button.button-primary.inverted:hover{
+.ch-button.button-primary-ch.inverted:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(248 247 247 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
@@ -1029,11 +1029,11 @@ a.ch-button.button-primary:hover {
 
 /* Possibly not used */
 
-a.ch-button.button-primary-dark:hover {
+a.ch-button.button-primary-ch-dark:hover {
         color: #ffffff;
       }
 
-.ch-button.button-primary-dark{
+.ch-button.button-primary-ch-dark{
   border-radius: 10px;
   --tw-bg-opacity: 1;
   background-color: rgb(22 26 61 / var(--tw-bg-opacity));
@@ -1044,12 +1044,12 @@ a.ch-button.button-primary-dark:hover {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.ch-button.button-primary-dark:hover{
+.ch-button.button-primary-ch-dark:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(33 41 132 / var(--tw-bg-opacity));
 }
 
-.ch-button.button-secondary{
+.ch-button.button-secondary-ch{
   border-radius: 10px;
   background-color: rgba(0,0,0,0);
   --tw-text-opacity: 1;
@@ -1059,7 +1059,7 @@ a.ch-button.button-primary-dark:hover {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.ch-button.button-secondary:hover{
+.ch-button.button-secondary-ch:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(248 247 247 / var(--tw-bg-opacity));
   --tw-shadow: inset 0 0 0 1.5px #1A1F45;
@@ -1067,11 +1067,11 @@ a.ch-button.button-primary-dark:hover {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-a.ch-button.button-secondary.inverted:hover {
+a.ch-button.button-secondary-ch.inverted:hover {
         color: #ffffff;
       }
 
-.ch-button.button-secondary.inverted{
+.ch-button.button-secondary-ch.inverted{
   background-color: rgba(0,0,0,0);
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1080,7 +1080,7 @@ a.ch-button.button-secondary.inverted:hover {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.ch-button.button-secondary.inverted:hover{
+.ch-button.button-secondary-ch.inverted:hover{
   --tw-shadow: inset 0 0 0 1.5px #F8F7F7;
   --tw-shadow-colored: inset 0 0 0 1.5px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -1824,6 +1824,11 @@ a.insurance-tabs.active:hover {
   margin: 1.5rem;
 }
 
+.-my-base5-6{
+  margin-top: -30px;
+  margin-bottom: -30px;
+}
+
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
@@ -1887,16 +1892,6 @@ a.insurance-tabs.active:hover {
 .my-sp-8{
   margin-top: 2rem;
   margin-bottom: 2rem;
-}
-
-.-mx-base5-6{
-  margin-left: -30px;
-  margin-right: -30px;
-}
-
-.-my-base5-6{
-  margin-top: -30px;
-  margin-bottom: -30px;
 }
 
 .\!mb-base5-4{
@@ -2109,10 +2104,6 @@ a.insurance-tabs.active:hover {
 
 .mt-base5-2{
   margin-top: 10px;
-}
-
-.mt-base5-3{
-  margin-top: 15px;
 }
 
 .mt-base5-4{
@@ -2458,10 +2449,6 @@ a.insurance-tabs.active:hover {
   width: 2rem;
 }
 
-.w-\[335px\]{
-  width: 335px;
-}
-
 .w-\[3rem\]{
   width: 3rem;
 }
@@ -2587,6 +2574,10 @@ a.insurance-tabs.active:hover {
   max-width: 500px;
 }
 
+.max-w-\[525px\]{
+  max-width: 525px;
+}
+
 .max-w-\[550px\]{
   max-width: 550px;
 }
@@ -2619,20 +2610,8 @@ a.insurance-tabs.active:hover {
   max-width: 850px;
 }
 
-.max-w-\[85px\]{
-  max-width: 85px;
-}
-
 .max-w-\[950px\]{
   max-width: 950px;
-}
-
-.max-w-\[250px\]{
-  max-width: 250px;
-}
-
-.max-w-\[525px\]{
-  max-width: 525px;
 }
 
 .flex-1{
@@ -4289,12 +4268,6 @@ a.insurance-tabs.active:hover {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.shadow-\[3px_3px_0px_0px_rgba\(255\2c 255\2c 255\2c 1\)\]{
-  --tw-shadow: 3px 3px 0px 0px rgba(255,255,255,1);
-  --tw-shadow-colored: 3px 3px 0px 0px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
 .shadow-\[5px_5px_0_\#ADB0E1\]{
   --tw-shadow: 5px 5px 0 #ADB0E1;
   --tw-shadow-colored: 5px 5px 0 var(--tw-shadow-color);
@@ -5739,18 +5712,18 @@ a.providers:hover {
     background-size: 0 2px, 100% 2px;
   }
 
-.toggle-button:not(.button-primary){
+.toggle-button:not(.button-primary-ch){
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.toggle-button:not(.button-primary):before{
+.toggle-button:not(.button-primary-ch):before{
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
 }
 
-.toggle-button:not(.button-primary):not(.button-primary):before {
+.toggle-button:not(.button-primary-ch):not(.button-primary-ch):before {
       content: '';
       background: rgb(248, 247, 247);
       background: linear-gradient(
@@ -6768,10 +6741,6 @@ section.bg-shield > div {
 
   .lg\:w-\[2px\]{
     width: 2px;
-  }
-
-  .lg\:w-\[300px\]{
-    width: 300px;
   }
 
   .lg\:w-\[500px\]{

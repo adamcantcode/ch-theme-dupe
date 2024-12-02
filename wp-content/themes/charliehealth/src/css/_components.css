@@ -1,17 +1,17 @@
 @layer components {
   .ch-button {
     @apply text-[18px] inline-block lg:px-[25px] px-[10px] py-[15px] no-underline transition-all duration-300 flex-1 lg:flex-none text-center leading-[140%] capitalize z-[1];
-    &.button-primary {
+    &.button-primary-ch {
       @apply shadow-[inset-0_0_0_2px_transparent] text-white rounded-sm bg-darker-blue hover:bg-primary-100;
       &.inverted {
         @apply bg-white text-darker-blue hover:bg-white-hover hover:text-darker-blue  no-underline;
       }
     }
     /* Possibly not used */
-    &.button-primary-dark {
+    &.button-primary-ch-dark {
       @apply shadow-[inset-0_0_0_2px_transparent] text-white rounded-sm hover:bg-med-blue bg-darkest-blue;
     }
-    &.button-secondary {
+    &.button-secondary-ch {
       @apply rounded-sm bg-transparent shadow-[inset_0_0_0_1.5px_#161A3D] text-darker-blue hover:shadow-[inset_0_0_0_1.5px_#1A1F45] hover:bg-[#F8F7F7];
       &.inverted {
         @apply bg-transparent shadow-[inset_0_0_0_1.5px_#ffffff] text-white hover:shadow-[inset_0_0_0_1.5px_#F8F7F7];

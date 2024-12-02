@@ -9,7 +9,7 @@
       <p class="text-h1-base"><?= $stat ?></p>
       <div class="grid items-start grid-cols-2 gap-4 lg:block mb-base5-4">
         <p class="text-h4-base lg:max-w-[255px]"><?= $statDetails; ?></p>
-        <a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>" class="ch-button button-secondary lg:mt-base5-4"><?= $link['title']; ?></a>
+        <a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>" class="ch-button button-secondary-ch lg:mt-base5-4"><?= $link['title']; ?></a>
       </div>
     </div>
     <?php if (!is_admin()) : ?>
@@ -55,6 +55,6 @@
       </div>
     <?php endif; ?>
     <div class="grid lg:col-start-2 lg:justify-end">
-      <a role="button" class="w-full ch-button button-secondary justify-self-center lg:w-auto load-more-js">Load more</a>
+      <a role="button" class="w-full ch-button button-secondary-ch justify-self-center lg:w-auto load-more-js">Load more</a>
     </div>
   </div>

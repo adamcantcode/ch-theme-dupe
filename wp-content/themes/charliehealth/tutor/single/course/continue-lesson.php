@@ -36,7 +36,7 @@ global $wp_query;
 			$lesson_url = tutor_utils()->get_course_first_lesson();
 			if ( $lesson_url ) {
 				?>
-				<a href="<?php echo esc_url( $lesson_url ); ?>" class="tutor-button tutor-button-primary">
+				<a href="<?php echo esc_url( $lesson_url ); ?>" class="tutor-button tutor-button-primary-ch">
 					<?php esc_html_e( 'Continue to lesson', 'tutor' ); ?>
 				</a>
 				<?php

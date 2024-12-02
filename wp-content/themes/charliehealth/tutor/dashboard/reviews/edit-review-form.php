@@ -22,7 +22,7 @@
 			<textarea name="review" placeholder="<?php esc_html_e( 'write a review', 'tutor' ); ?>"><?php echo wp_kses_post( stripslashes( esc_textarea( $rating->review ) ) ); ?></textarea>
 		</div>
 		<div class="tutor-form-group">
-			<button type="submit" class="tutor-button tutor-button-primary"><?php esc_html_e( 'Update Review', 'tutor' ); ?></button>
+			<button type="submit" class="tutor-button tutor-button-primary-ch"><?php esc_html_e( 'Update Review', 'tutor' ); ?></button>
 		</div>
 	</div>
 </form>

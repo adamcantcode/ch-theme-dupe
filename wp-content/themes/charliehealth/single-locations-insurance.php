@@ -55,8 +55,8 @@ $logo = isset($logos[$insurer]) ? $logos[$insurer] : "";
           <?php endif; ?>
         </div>
         <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-start">
-          <a href="/form" class="ch-button button-primary inverted" target="_self">Get Started</a>
-          <a href="tel:+18664848218" class="ch-button button-secondary inverted" target="_self">1 (866) 484-8218</a>
+          <a href="/form" class="ch-button button-primary-ch inverted" target="_self">Get Started</a>
+          <a href="tel:+18664848218" class="ch-button button-secondary-ch inverted" target="_self">1 (866) 484-8218</a>
         </div>
       </div>
       <div></div>
@@ -85,7 +85,7 @@ $logo = isset($logos[$insurer]) ? $logos[$insurer] : "";
           <p class="text-h3-base font-heading-serif"><span class="text-[50%] align-super">$</span><?= get_field('average_copay'); ?></p>
         </div>
         <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full">
-          <a href="/form" class="ch-button button-primary">Get started</a>
+          <a href="/form" class="ch-button button-primary-ch">Get started</a>
         </div>
         <p class="text-mini">Enter your insurance details to verify your coverage today</p>
       </div>
@@ -142,8 +142,8 @@ $logo = isset($logos[$insurer]) ? $logos[$insurer] : "";
         <h3>Reach out to start your healing journey today</h3>
         <p>Fill out our form or call us directly to learn if Charlie Health is right for you or a loved one. We’re available 24/7.</p>
         <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-start">
-          <a href="/form" class="ch-button button-primary" target="_self">Get Started</a>
-          <a href="tel:+18664848218" class="ch-button button-secondary" target="_self">1 (866) 484-8218</a>
+          <a href="/form" class="ch-button button-primary-ch" target="_self">Get Started</a>
+          <a href="tel:+18664848218" class="ch-button button-secondary-ch" target="_self">1 (866) 484-8218</a>
         </div>
       </div>
     </div>
@@ -203,8 +203,8 @@ $logo = isset($logos[$insurer]) ? $logos[$insurer] : "";
     <p class="text-white lg:text-h1-lg text-h2-lg lg:mb-sp-16 mb-sp-12 font-heading-serif max-w-[850px]">Comprehensive, personalized therapy from home.</p>
     <div class="flex justify-between">
       <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-start">
-        <a href="/form" class="ch-button button-primary inverted">Get Started</a>
-        <a href="tel:+18664848218" class="ch-button button-secondary inverted" target="_self">1 (866) 484-8218</a>
+        <a href="/form" class="ch-button button-primary-ch inverted">Get Started</a>
+        <a href="tel:+18664848218" class="ch-button button-secondary-ch inverted" target="_self">1 (866) 484-8218</a>
       </div>
       <img src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/logos/shield.svg" alt="Charlie Health shield logo" class="w-[3rem] lg:block noshow">
     </div>

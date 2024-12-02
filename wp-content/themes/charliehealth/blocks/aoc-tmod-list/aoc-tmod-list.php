@@ -21,7 +21,7 @@
     <?php endwhile;
     endif; ?>
   </div>
-  <a role="button" class="float-right ch-button button-secondary view-all-button-js-<?= $rand ?> mt-sp-8 w-full lg:w-[unset]">View All</a>
+  <a role="button" class="float-right ch-button button-secondary-ch view-all-button-js-<?= $rand ?> mt-sp-8 w-full lg:w-[unset]">View All</a>
 </div>
 <script>
   window.addEventListener('DOMContentLoaded', () => {

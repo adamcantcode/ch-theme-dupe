@@ -37,7 +37,7 @@
         <?php if (get_sub_field('link')) : ?>
           <p>
             <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full">
-              <a href="<?= get_sub_field('link')['url']; ?>" class="ch-button button-secondary"><?= get_sub_field('link')['title']; ?></a>
+              <a href="<?= get_sub_field('link')['url']; ?>" class="ch-button button-secondary-ch"><?= get_sub_field('link')['title']; ?></a>
             </div>
           </p>
         <?php endif; ?>

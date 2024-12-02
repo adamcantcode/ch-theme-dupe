@@ -28,8 +28,8 @@ $conditions = get_field('conditions');
   <div class="container-md">
     <h1 class="text-center">Online therapy in <mark style="background-color:#DAC1FB"><?= $location; ?></mark></h1>
     <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
-      <a href="/form" class="ch-button button-primary" target="_self">Get Started</a>
-      <a href="tel:+18668052001" class="ch-button button-secondary" target="_self">1 (866) 805-2001</a>
+      <a href="/form" class="ch-button button-primary-ch" target="_self">Get Started</a>
+      <a href="tel:+18668052001" class="ch-button button-secondary-ch" target="_self">1 (866) 805-2001</a>
     </div>
   </div>
 </section>
@@ -56,8 +56,8 @@ $conditions = get_field('conditions');
       </div>
     </div>
     <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
-      <a href="/form" class="ch-button button-primary" target="_self">Get Started</a>
-      <a href="tel:+18668052001" class="ch-button button-secondary" target="_self">1 (866) 805-2001</a>
+      <a href="/form" class="ch-button button-primary-ch" target="_self">Get Started</a>
+      <a href="tel:+18668052001" class="ch-button button-secondary-ch" target="_self">1 (866) 805-2001</a>
     </div>
   </div>
   </div>
@@ -247,7 +247,7 @@ $conditions = get_field('conditions');
             <?php wp_reset_postdata();
             endforeach; ?>
           </div>
-          <a href="/areas-of-care" class="float-right ch-button button-secondary view-all-button-js mt-sp-8 w-full lg:w-[unset]">View All</a>
+          <a href="/areas-of-care" class="float-right ch-button button-secondary-ch view-all-button-js mt-sp-8 w-full lg:w-[unset]">View All</a>
         </div>
       </div>
     </div>
@@ -260,7 +260,7 @@ $conditions = get_field('conditions');
         <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:33%">
           <h2 class="wp-block-heading" id="h-life-saving-mental-health-treatment-when-you-need-it-most">Life-saving mental health treatment when you need it most</h2>
           <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full ">
-            <a href="https://www.charliehealth.com/intensive-outpatient-iop" class="ch-button button-secondary" target="_self" data-uw-rm-brl="PR" data-uw-original-href="https://www.charliehealth.com/intensive-outpatient-iop">Learn More About IOP</a>
+            <a href="https://www.charliehealth.com/intensive-outpatient-iop" class="ch-button button-secondary-ch" target="_self" data-uw-rm-brl="PR" data-uw-original-href="https://www.charliehealth.com/intensive-outpatient-iop">Learn More About IOP</a>
           </div>
         </div>
         <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"></div>
@@ -295,7 +295,7 @@ $conditions = get_field('conditions');
       <?= do_blocks('<!-- wp:block {"ref":12496} /-->'); ?>
       <p class="has-text-align-center mt-sp-8 mb-sp-8 !text-[20px] has-white-color has-text-color has-link-color wp-elements-0244d5b506b018eae908e0511a0b87bd">We proudly partner with many major insurance providers, including commercial and Medicaid</p>
       <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
-        <a href="https://www.charliehealth.com/insurance" class="ch-button button-secondary inverted" target="_self" aria-label="We proudly partner with many major insurance providers, including commercial and Medicaid Learn more" uw-rm-vague-link-id="https://www.charliehealth.com/insurance$learn more" data-uw-rm-vglnk="" data-uw-rm-brl="PR" data-uw-original-href="https://www.charliehealth.com/insurance">Learn more</a>
+        <a href="https://www.charliehealth.com/insurance" class="ch-button button-secondary-ch inverted" target="_self" aria-label="We proudly partner with many major insurance providers, including commercial and Medicaid Learn more" uw-rm-vague-link-id="https://www.charliehealth.com/insurance$learn more" data-uw-rm-vglnk="" data-uw-rm-brl="PR" data-uw-original-href="https://www.charliehealth.com/insurance">Learn more</a>
       </div>
     </div>
   </div>
@@ -369,8 +369,8 @@ $conditions = get_field('conditions');
               <img decoding="async" src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg" alt="Charlie Health shield logo" class="w-[3rem] mb-sp-5" data-uw-rm-alt-original="Charlie Health shield logo" role="img" data-uw-rm-alt="ALT">
               <p class="text-h2-base">Get started with Charlie Health</p>
               <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full ">
-                <a href="https://www.charliehealth.com/talkspace" class="ch-button button-primary" target="_self" data-uw-rm-brl="PR" data-uw-original-href="https://www.charliehealth.com/talkspace">Get started</a>
-                <a href="tel:+18665750249" class="ch-button button-secondary" target="_self" aria-label="call +18665750249" uw-rm-vague-link-id="tel:+18665750249$call +18665750249" data-uw-rm-vglnk="">1 (866) 575-0249</a>
+                <a href="https://www.charliehealth.com/talkspace" class="ch-button button-primary-ch" target="_self" data-uw-rm-brl="PR" data-uw-original-href="https://www.charliehealth.com/talkspace">Get started</a>
+                <a href="tel:+18665750249" class="ch-button button-secondary-ch" target="_self" aria-label="call +18665750249" uw-rm-vague-link-id="tel:+18665750249$call +18665750249" data-uw-rm-vglnk="">1 (866) 575-0249</a>
               </div>
             </div>
           </div>

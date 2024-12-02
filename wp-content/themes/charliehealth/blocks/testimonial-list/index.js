@@ -51,14 +51,14 @@ window.addEventListener('DOMContentLoaded', () => {
       if (contentWrappperInstance.style.maxHeight) {
         contentWrappperInstance.style.maxHeight = null;
         toggleButton.textContent = 'View full quote';
-        toggleButton.classList.remove('button-primary');
-        toggleButton.classList.add('button-secondary');
+        toggleButton.classList.remove('button-primary-ch');
+        toggleButton.classList.add('button-secondary-ch');
       } else {
         contentWrappperInstance.style.maxHeight =
           contentWrappperInstance.scrollHeight + 'px';
         toggleButton.textContent = 'Show less';
-        toggleButton.classList.add('button-primary');
-        toggleButton.classList.remove('button-secondary');
+        toggleButton.classList.add('button-primary-ch');
+        toggleButton.classList.remove('button-secondary-ch');
       }
     });
   };

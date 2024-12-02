@@ -52,4 +52,4 @@
   endif;
   ?>
 </div>
-<div class="flex"><a href="/press" class="w-full ml-auto ch-button button-primary justify-self-center lg:w-auto expert-load-more-js lg:mt-sp-10 mt-sp-5">View all</a></div>
+<div class="flex"><a href="/press" class="w-full ml-auto ch-button button-primary-ch justify-self-center lg:w-auto expert-load-more-js lg:mt-sp-10 mt-sp-5">View all</a></div>

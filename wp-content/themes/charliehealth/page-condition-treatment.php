@@ -40,8 +40,8 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
               <h3 class="font-heading-serif">Personalized intensive therapy from home</h3>
               <p>Ready to start healing?</p>
               <div class="flex flex-col lg:flex-wrap lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full">
-                <a href="/form" class="ch-button button-primary">Get Started</a>
-                <a href="tel:+18664848218" class="ch-button button-secondary">1 (866) 484-8218</a>
+                <a href="/form" class="ch-button button-primary-ch">Get Started</a>
+                <a href="tel:+18664848218" class="ch-button button-secondary-ch">1 (866) 484-8218</a>
               </div>
             </div>
           </div>
@@ -94,8 +94,8 @@ $subhead = get_field('subhead', 'option');
             <p class="text-h1-base lg:text-h1-lg text-h2">Get the mental health treatment you <mark class="bg-yellow-100 rounded-lg">deserve</mark></p>
             <p class="text-h4-base lg:mb-base5-10 mb-base5-5">Need additional mental health support? Charlie Health can help. Get started with virtual intensive therapy now.</p>
             <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full ">
-              <a href="https://www.charliehealth.com/form" class="ch-button button-primary">Get Started</a>
-              <a href="https://www.charliehealth.com/intensive-outpatient-iop" class="ch-button button-secondary">Learn More</a>
+              <a href="https://www.charliehealth.com/form" class="ch-button button-primary-ch">Get Started</a>
+              <a href="https://www.charliehealth.com/intensive-outpatient-iop" class="ch-button button-secondary-ch">Learn More</a>
             </div>
           </div>
         </div>

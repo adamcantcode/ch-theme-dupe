@@ -98,7 +98,7 @@ $group = get_field('group')
               <div class="relative overflow-hidden transition-all duration-1000 max-h-0 collapsible-content-wrapper lg:noshow">
                 <p class="text-p-base"><?= $fullQuote; ?></p>
                 <div class="absolute bottom-0 flex justify-center w-full bg-white">
-                  <a role="button" class="z-10 normal-case ch-button button-secondary toggle-button-testimonial mb-base5-4">View full quote</a>
+                  <a role="button" class="z-10 normal-case ch-button button-secondary-ch toggle-button-testimonial mb-base5-4">View full quote</a>
                 </div>
               </div>
               <?php if ($showInsurance && $insurance) : ?>

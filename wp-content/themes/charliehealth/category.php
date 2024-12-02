@@ -173,7 +173,7 @@ if (is_category('for-a-loved-one')) {
           <h6 data-tag-id="<?= $term->term_id; ?>" class="inline-block mb-0 cursor-pointer rounded-pill js-tag-id px-base5-3 py-base5-2 text-primary bg-transparent border border-primary z-[6] text-p-base"><?= $term->name; ?></h5>
           <?php endforeach; ?>
           <div class="absolute bottom-0 flex justify-center w-full bg-white lg:noshow">
-            <a role="button" class="z-10 ch-button button-secondary toggle-button">Show More</a>
+            <a role="button" class="z-10 ch-button button-secondary-ch toggle-button">Show More</a>
           </div>
       </div>
       <div class="col-span-2">

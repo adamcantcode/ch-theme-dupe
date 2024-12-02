@@ -113,8 +113,8 @@ $blockClasses .= $background . ' ';
         <p class="text-white lg:text-h1-lg text-h2-lg lg:mb-sp-16 mb-sp-12 font-heading-serif max-w-[850px]">Comprehensive, personalized therapy from home.</p>
         <div class="flex justify-between">
           <div class="flex flex-col lg:flex-wrap lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-start">
-            <a href="/form" class="ch-button button-primary inverted" target="_self">Get Started</a>
-            <a href="tel:+18664848218" class="ch-button button-secondary inverted" target="_self">1 (866) 484-8218</a>
+            <a href="/form" class="ch-button button-primary-ch inverted" target="_self">Get Started</a>
+            <a href="tel:+18664848218" class="ch-button button-secondary-ch inverted" target="_self">1 (866) 484-8218</a>
           </div>
           <img decoding="async" src="https://wpch.local/wp-content/themes/charliehealth/resources/images/logos/shield.svg" alt="Charlie Health shield logo" class="w-[3rem] lg:block noshow">
         </div>
@@ -197,7 +197,7 @@ $blockClasses .= $background . ' ';
         <?php $rand = random_int(1, 10000); ?>
         <form id="iterable_optin_<?= $rand; ?>" action="//links.iterable.com/lists/publicAddSubscriberForm?publicIdString=f399c731-e9b4-4208-9766-75bbca297d9a" method="POST" class="flex flex-col w-full lg:flex-row gap-base5-2 email">
           <input type="email" name="email" onfocus="if(this.value===this.defaultValue){this.value='';}" onblur="if(this.value===''){this.value=this.defaultValue;}" placeholder="Email" class="w-full bg-white rounded-md px-base5-3 py-base5-2 text-primary placeholder:text-grey-deactivated">
-          <input type="submit" value="Subscribe" class="cursor-pointer ch-button button-secondary inverted px-base5-3 py-base5-2 text-[16px]">
+          <input type="submit" value="Subscribe" class="cursor-pointer ch-button button-secondary-ch inverted px-base5-3 py-base5-2 text-[16px]">
         </form>
         <h4 id="responseMessage_<?= $rand; ?>" class="noshow">Thank you for signing up!</h4>
         <script>

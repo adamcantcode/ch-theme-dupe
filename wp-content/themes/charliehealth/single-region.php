@@ -98,8 +98,8 @@ $nonDirectorArgs = array(
         <div class="p-sp-8">
           <?= $regionInformation; ?>
           <div class="flex gap-x-sp-4 items-center md:w-[unset] w-full">
-            <a href="#refForm" class="ch-button button-primary">Refer a Client</a>
-            <a href="#team" class="ch-button button-secondary">View Team</a>
+            <a href="#refForm" class="ch-button button-primary-ch">Refer a Client</a>
+            <a href="#team" class="ch-button button-secondary-ch">View Team</a>
           </div>
         </div>
       </div>

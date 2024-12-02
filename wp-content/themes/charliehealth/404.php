@@ -12,7 +12,7 @@
       <div class="w-full divider my-sp-8"></div>
       <p>We can't seem to find the page you're looking for.<br> Please visit our Home Page for more information.</p>
       <div class="flex gap-x-sp-4 items-center md:w-[unset] w-full">
-        <a href="/" class="ch-button button-secondary">Home</a>
+        <a href="/" class="ch-button button-secondary-ch">Home</a>
       </div>
     </div>
   </div>

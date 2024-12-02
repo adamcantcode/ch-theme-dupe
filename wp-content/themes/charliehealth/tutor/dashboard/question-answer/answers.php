@@ -104,7 +104,7 @@ $profile_url = tutils()->profile_url( $question->user_id );
 						?>
 					</div>
 					<div class="tutor-form-group">
-						<button type="submit" class="tutor-button tutor-button-primary" name="tutor_question_search_btn"><?php esc_html_e( 'Reply', 'tutor' ); ?> </button>
+						<button type="submit" class="tutor-button tutor-button-primary-ch" name="tutor_question_search_btn"><?php esc_html_e( 'Reply', 'tutor' ); ?> </button>
 					</div>
 				</form>
 			</div>

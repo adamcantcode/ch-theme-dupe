@@ -34,7 +34,7 @@ if (strpos($areasOfCare, '/areas-of-care/') !== false) {
               <?php $link = get_sub_field('link'); ?>
               <?php if ($link) : ?>
                 <div class="lg:inline-block flex w-full lg:w-[unset]">
-                  <a href="<?= $link['url']; ?>" class="ch-button button-secondary <?= $inverted ? 'inverted' : ''; ?>" target="<?= $link['target'] ?>"><?= $link['title']; ?></a>
+                  <a href="<?= $link['url']; ?>" class="ch-button button-secondary-ch <?= $inverted ? 'inverted' : ''; ?>" target="<?= $link['target'] ?>"><?= $link['title']; ?></a>
                 </div>
               <?php endif; ?>
             <?php endwhile; ?>
@@ -49,7 +49,7 @@ if (strpos($areasOfCare, '/areas-of-care/') !== false) {
       <?php while (have_rows('links')) : the_row(); ?>
         <?php $link = get_sub_field('link'); ?>
         <div class="lg:inline-block flex w-full lg:w-[unset]">
-          <a href="<?= $link['url']; ?>" class="ch-button button-secondary <?= $inverted ? 'inverted' : ''; ?>" target="<?= $link['target'] ?>"><?= $link['title']; ?></a>
+          <a href="<?= $link['url']; ?>" class="ch-button button-secondary-ch <?= $inverted ? 'inverted' : ''; ?>" target="<?= $link['target'] ?>"><?= $link['title']; ?></a>
         </div>
       <?php endwhile; ?>
     </div>
