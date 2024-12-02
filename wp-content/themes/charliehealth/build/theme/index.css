@@ -3415,6 +3415,11 @@ a.insurance-tabs.active:hover {
   background-color: rgb(188 215 183 / var(--tw-bg-opacity));
 }
 
+.bg-referrals-green-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(138 182 130 / var(--tw-bg-opacity));
+}
+
 .bg-secondary-soft{
   --tw-bg-opacity: 1;
   background-color: rgb(26 31 69 / var(--tw-bg-opacity));
@@ -3447,11 +3452,6 @@ a.insurance-tabs.active:hover {
 .bg-yellow-300{
   --tw-bg-opacity: 1;
   background-color: rgb(253 191 124 / var(--tw-bg-opacity));
-}
-
-.bg-referrals-green-400{
-  --tw-bg-opacity: 1;
-  background-color: rgb(138 182 130 / var(--tw-bg-opacity));
 }
 
 .bg-\[linear-gradient\(\#fead80\2c \#e2deca_50\%\2c \#bdc6fc\)\]{

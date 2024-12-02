@@ -1,7 +1,7 @@
 <div class="lg:pb-base5-10 pb-sp-6 grid lg:grid-cols-[1fr_2fr] grid-cols-1 relative">
   <div></div>
   <div class="lg:flex">
-    <p class="flex-none mb-0 mr-base5-10">Read reviews from:</p>
+    <p class="flex-none mb-0 ml-auto mr-base5-10">Read reviews from:</p>
     <div class="flex flex-wrap gap-y-base5-2 gap-x-base5-5">
       <div class="flex items-center">
         <div class="flex-[0_0_auto] h-sp-3 w-sp-3 mr-sp-2 rounded-circle bg-referrals-green-400"></div>
