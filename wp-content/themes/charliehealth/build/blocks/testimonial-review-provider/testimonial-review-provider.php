@@ -68,7 +68,7 @@
             <?php if ($row['full_quote']) : ?>
               <p>“<?= $row['full_quote']; ?>”</p>
             <?php endif; ?>
-            <h4 class="mb-0">—<?= $row['name']; ?></h4>
+            <p>—<?= $row['name']; ?></p>
             <?php if ($row['title']) : ?>
               <p><?= $row['title']; ?></p>
             <?php endif; ?>
