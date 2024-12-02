@@ -606,8 +606,8 @@ function my_custom_fonts()
 function hide_menus_on_multisite()
 {
   global $pagenow;
-  // Check if it's the admin area and site ID is 2
-  if (is_admin() && get_current_blog_id() !== 1) {
+  // Check if it's the admin area and site ID is 3
+  if (is_admin() && get_current_blog_id() === 3) {
     // Remove specific menus
     remove_menu_page('edit.php');
     remove_menu_page('edit.php?post_type=areas-of-care');
@@ -620,8 +620,13 @@ function hide_menus_on_multisite()
     remove_menu_page('edit.php?post_type=treatment-modalities');
     remove_menu_page('edit.php?post_type=activities');
     // remove_menu_page('edit.php?post_type=testimonial');
+    remove_menu_page('edit.php?post_type=employee-testimonial');
+    remove_menu_page('edit.php?post_type=partner-testimonial');
+    remove_menu_page('edit.php?post_type=outreach-team-member');
     remove_menu_page('edit.php?post_type=insurance');
     remove_menu_page('edit.php?post_type=locations');
+    remove_menu_page('edit.php?post_type=event');
+    remove_menu_page('edit.php?post_type=region');
   } else {
     remove_menu_page('edit.php?post_type=region');
     // remove_menu_page('edit.php?post_type=outreach-team-member');
