@@ -687,6 +687,7 @@ function custom_menu_order($menu_ord)
     'edit.php?post_type=employee-testimonial', // Team
     'edit.php?post_type=testimonial', // Testimonials
     'edit.php?post_type=partner-testimonial', // Partner Testimonials
+    'edit.php?post_type=provider-testimonial', // Partner Testimonials
     // 'edit.php?post_type=region', // Regions
     'edit.php?post_type=outreach-team-member', // Outreach Members
     'edit.php?post_type=insurance', // Insurance
