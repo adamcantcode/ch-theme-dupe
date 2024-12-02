@@ -36,7 +36,7 @@
       while ($query->have_posts()) : $query->the_post();
         $id     = get_the_ID();
         $rows[] = array(
-          'name'       => get_field('attribution', $id),
+          'name'       => get_field('attribution', $id) ?: get_the_title($id),
           'title'      => get_field('title', $id),
           'pull-quote' => get_field('pull-quote', $id),
           'full_quote' => get_field('full_quote', $id),
