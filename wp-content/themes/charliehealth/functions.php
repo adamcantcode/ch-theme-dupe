@@ -622,7 +622,7 @@ function hide_menus_on_multisite()
     remove_menu_page('edit.php?post_type=activities');
     // remove_menu_page('edit.php?post_type=testimonial');
     remove_menu_page('edit.php?post_type=employee-testimonial');
-    remove_menu_page('edit.php?post_type=partner-testimonial');
+    // remove_menu_page('edit.php?post_type=partner-testimonial');
     remove_menu_page('edit.php?post_type=outreach-team-member');
     remove_menu_page('edit.php?post_type=insurance');
     remove_menu_page('edit.php?post_type=locations');
