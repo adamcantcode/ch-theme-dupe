@@ -6058,6 +6058,29 @@ section.bg-circle-yellow > div {
     z-index: 2;
   }
 
+section.bg-circle-green{
+  position: relative;
+}
+
+section.bg-circle-green:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    left: -10%;
+    width: 1000px;
+    height: 1000px;
+    background-image: url('https://referrals.charliehealth.com/wp-content/uploads/sites/3/2024/12/Ellipse-610-1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+section.bg-circle-green > div {
+    z-index: 2;
+  }
+
 section.bg-shield{
   position: relative;
   z-index: 10;
