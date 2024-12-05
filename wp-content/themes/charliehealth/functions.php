@@ -182,6 +182,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/referrals-cards');
   register_block_type(__DIR__ . '/build/blocks/referrals-outcomes');
   register_block_type(__DIR__ . '/build/blocks/testimonial-review-provider');
+  register_block_type(__DIR__ . '/build/blocks/referrals-testimonials-again');
 }
 add_action('init', 'register_acf_blocks', 5);
 
