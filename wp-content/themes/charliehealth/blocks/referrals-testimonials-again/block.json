@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "acf/referrals-testimonials-again-block",
+  "title": "Referrals - Testimonial Carousel V2",
+  "description": "Carousel for slides of testimonials",
+  "style": "file:./index.css",
+  "script": "file:./index.js",
+  "category": "custom",
+  "icon": "slides",
+  "apiVersion": 2,
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "referrals-testimonials-again.php"
+  },
+  "supports": {}
+}
