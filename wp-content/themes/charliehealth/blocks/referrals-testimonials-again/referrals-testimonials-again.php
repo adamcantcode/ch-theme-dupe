@@ -1,5 +1,4 @@
 <div>
-  <h2>Real stories of hope & healing</h2>
   <div class="lg:flex mb-base5-10">
     <div class="flex flex-wrap gap-y-base5-2 gap-x-base5-5">
       <div class="flex items-center">
