@@ -34,7 +34,7 @@
 </head>
 <?php $blog = 'blog-' . get_current_blog_id(); ?>
 
-<body <?php body_class('bg-white '. $blog); ?>>
+<body <?php body_class('bg-white ' . $blog); ?>>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8BB2ZV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
@@ -161,7 +161,9 @@
         <?php endwhile;
         endif; ?>
         <div class="flex ml-auto content gap-x-sp-2">
-          <a href="<?= $clientLogin['url']; ?>" target="<?= $clientLogin['target']; ?>" class="ch-button button-tertiary-lavender inverted !rounded-[6px]"><?= $clientLogin['title']; ?></a>
+          <?php if (is_main_site()) : ?>
+            <a href="<?= $clientLogin['url']; ?>" target="<?= $clientLogin['target']; ?>" class="ch-button button-tertiary-lavender inverted !rounded-[6px]"><?= $clientLogin['title']; ?></a>
+          <?php endif; ?>
           <a href="<?= $getStarted['url'] ?>" target="<?= $getStarted['target']; ?>" class="ch-button button-tertiary-lavender !rounded-[6px]"><?= $getStarted['title'] ?></a>
         </div>
       </div>
@@ -259,7 +261,9 @@
         endif; ?>
         <div>
           <div class="flex justify-center py-8 gap-x-sp-4 px-sp-5">
-            <a href="<?= $clientLogin['url']; ?>" target="<?= $clientLogin['target']; ?>" class="ch-button button-tertiary-lavender inverted !text-[1rem] !rounded-[6px]"><?= $clientLogin['title']; ?></a>
+            <?php if (is_main_site()) : ?>
+              <a href="<?= $clientLogin['url']; ?>" target="<?= $clientLogin['target']; ?>" class="ch-button button-tertiary-lavender inverted !text-[1rem] !rounded-[6px]"><?= $clientLogin['title']; ?></a>
+            <?php endif; ?>
             <a href="<?= $getStarted['url']; ?>" target="<?= $getStarted['target']; ?>" class="ch-button button-tertiary-lavender !text-[1rem] !rounded-[6px]"><?= $getStarted['title']; ?></a>
           </div>
         </div>
