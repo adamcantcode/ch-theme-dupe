@@ -3,7 +3,7 @@
     .vimeo-container {
       position: absolute;
       top: -35%;
-      left: -40%;
+      left: -25%;
       width: 70%;
       height: 170%;
       z-index: 1;
