@@ -891,7 +891,7 @@ section.bg-circle {
     content: '';
     position: absolute;
     top: 50%;
-    z-index: 1;
+    z-index: 0;
     transform: translate(-50%, -50%);
     left: -10%;
     width: 1000px;
@@ -933,7 +933,7 @@ section.bg-circle-yellow {
     content: '';
     position: absolute;
     top: 50%;
-    z-index: 1;
+    z-index: 0;
     transform: translate(-50%, -50%);
     left: -10%;
     width: 1000px;

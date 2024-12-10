@@ -1624,12 +1624,20 @@ a.insurance-tabs.active:hover {
   bottom: 0px !important;
 }
 
+.-bottom-base5-10{
+  bottom: -50px;
+}
+
 .-bottom-base5-5{
   bottom: -25px;
 }
 
 .-left-\[155px\]{
   left: -155px;
+}
+
+.-left-base5-10{
+  left: -50px;
 }
 
 .-left-base5-4{
@@ -1750,14 +1758,6 @@ a.insurance-tabs.active:hover {
 
 .top-sp-8{
   top: 2rem;
-}
-
-.-bottom-base5-10{
-  bottom: -50px;
-}
-
-.-left-base5-10{
-  left: -50px;
 }
 
 .-z-10{
@@ -2172,10 +2172,6 @@ a.insurance-tabs.active:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
-}
-
-.mr-base5-4{
-  margin-right: 20px;
 }
 
 .line-clamp-3{
@@ -6009,7 +6005,7 @@ section.bg-circle:before {
     content: '';
     position: absolute;
     top: 50%;
-    z-index: 1;
+    z-index: 0;
     transform: translate(-50%, -50%);
     left: -10%;
     width: 1000px;
@@ -6055,7 +6051,7 @@ section.bg-circle-yellow:before {
     content: '';
     position: absolute;
     top: 50%;
-    z-index: 1;
+    z-index: 0;
     transform: translate(-50%, -50%);
     left: -10%;
     width: 1000px;
