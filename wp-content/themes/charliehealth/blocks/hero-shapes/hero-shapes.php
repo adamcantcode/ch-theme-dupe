@@ -1,9 +1,8 @@
 <?php
 $main_image      = get_field('main_image');
 $secondary_image = get_field('secondary_image');
-$tertiary_image = get_field('tertiary_image');
-$video          = get_field('tertiary_image');
-$video = true;
+$tertiary_image  = get_field('tertiary_image');
+$video           = get_field('vimeo_url');
 ?>
 
 <div class="grid lg:grid-cols-2 gap-base5-4">
@@ -15,7 +14,7 @@ $video = true;
       <?php if ($video) : ?>
         <div class="video-mask-container-v2 noshow lg:block">
           <div class="video-mask-overlay-v2">
-            <iframe src="https://player.vimeo.com/video/1031203133?background=1&autoplay=1&loop=1" allowfullscreen frameborder="0" class="video-iframe-v2"></iframe>
+            <iframe src="https://player.vimeo.com/video/<?= $video; ?>?background=1&autoplay=1&loop=1" allowfullscreen frameborder="0" class="video-iframe-v2"></iframe>
             <style>
               .video-mask-container-v2 {
                 position: relative;

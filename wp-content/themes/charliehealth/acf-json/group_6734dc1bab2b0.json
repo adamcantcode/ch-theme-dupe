@@ -10,7 +10,14 @@
             "type": "image",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_67585fe104d60",
+                        "operator": "==empty"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -76,6 +83,35 @@
             "max_size": "",
             "mime_types": "",
             "preview_size": "medium"
+        },
+        {
+            "key": "field_67585fe104d60",
+            "label": "Vimeo ID",
+            "name": "vimeo_url",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6734dc1c05079",
+                        "operator": "==empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": 0,
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -96,5 +132,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1731517605
+    "modified": 1733845293
 }
