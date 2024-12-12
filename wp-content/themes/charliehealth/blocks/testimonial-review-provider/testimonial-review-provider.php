@@ -20,41 +20,86 @@
   </div>
   <?php if (!is_admin()) : ?>
     <?php
-    $args = array(
-      'post_type'      => array('testimonial', 'partner-testimonial'),
+    // Query for 'testimonial' posts
+    $args_testimonial = array(
+      'post_type'      => 'testimonial',
       'post_status'    => 'publish',
       'posts_per_page' => -1,
     );
+    $query_testimonial = new WP_Query($args_testimonial);
 
-    $query = new WP_Query($args);
+    // Query for 'partner-testimonial' posts
+    $args_partner_testimonial = array(
+      'post_type'      => 'partner-testimonial',
+      'post_status'    => 'publish',
+      'posts_per_page' => -1,
+    );
+    $query_partner_testimonial = new WP_Query($args_partner_testimonial);
 
-    if ($query->have_posts()) :
-      $count = 0;
-      $rows = array();
+    $testimonial_rows = array();
+    $partner_testimonial_rows = array();
 
-      // Loop through the posts and collect them into an array
-      while ($query->have_posts()) : $query->the_post();
-        $id     = get_the_ID();
-        $rows[] = array(
+    // Collect 'testimonial' posts into an array
+    if ($query_testimonial->have_posts()) :
+      while ($query_testimonial->have_posts()) : $query_testimonial->the_post();
+        $id = get_the_ID();
+        $testimonial_rows[] = array(
           'name'       => get_field('attribution', $id) ?: get_the_title($id),
           'title'      => get_field('title', $id),
           'pull-quote' => get_field('pull-quote', $id),
           'full_quote' => get_field('full_quote', $id),
-          'type'       =>  get_post_type($id),
+          'type'       => get_post_type($id),
         );
       endwhile;
-      shuffle($rows);
+    endif;
 
+    // Collect 'partner-testimonial' posts into an array
+    if ($query_partner_testimonial->have_posts()) :
+      while ($query_partner_testimonial->have_posts()) : $query_partner_testimonial->the_post();
+        $id = get_the_ID();
+        $partner_testimonial_rows[] = array(
+          'name'       => get_field('attribution', $id) ?: get_the_title($id),
+          'title'      => get_field('title', $id),
+          'pull-quote' => get_field('pull-quote', $id),
+          'full_quote' => get_field('full_quote', $id),
+          'type'       => get_post_type($id),
+        );
+      endwhile;
+    endif;
+
+    // Shuffle both arrays to randomize order within each post type
+    shuffle($testimonial_rows);
+    shuffle($partner_testimonial_rows);
+
+    // Interleave the two arrays (alternating between testimonial and partner-testimonial)
+    $merged_rows = array();
+    $max_count = max(count($testimonial_rows), count($partner_testimonial_rows));
+
+    for ($i = 0; $i < $max_count; $i++) {
+      if (isset($testimonial_rows[$i])) {
+        $merged_rows[] = $testimonial_rows[$i];
+      }
+      if (isset($partner_testimonial_rows[$i])) {
+        $merged_rows[] = $partner_testimonial_rows[$i];
+      }
+    }
+
+    // Shuffle the merged array for final randomness
+    shuffle($merged_rows);
     ?>
+
+    <?php if (!empty($merged_rows)) : ?>
       <div class="masonry-js">
         <div class="lg:w-[calc(50%-16px)] opacity-0 scale-95 w-full grid-sizer"></div>
-        <?php foreach ($rows as $row) :  ?>
+        <?php $count = 0; ?>
+        <?php foreach ($merged_rows as $row) : ?>
           <?php
           $count++;
 
+          // Set background color and type based on post type
           if ($row['type'] === 'testimonial') {
             $tagBGColor = 'bg-referrals-blue-300';
-            $type = 'Client';
+            $type = 'Alumni';
           } else {
             $tagBGColor = 'bg-referrals-green-400';
             $type = 'Provider';
@@ -75,8 +120,8 @@
           </div>
         <?php endforeach; ?>
       </div>
-    <?php endif;
-    wp_reset_postdata(); ?>
+    <?php endif; ?>
+    <?php wp_reset_postdata(); ?>
   <?php else : ?>
     <div class="grid items-center justify-center w-full h-full bg-darker-blue">
       <code class="text-white">NOT VISIBLE IN EDITOR -- CHECK PREVIEW</code>
