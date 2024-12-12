@@ -57,6 +57,6 @@
         </linearGradient>
       </defs>
     </svg>
-    <h3 id="text2" class="invisible opacity-0">Life-changing mental health improvements to scores mean that our program works type of copy will go here </h3>
+    <h3 id="text2" class="invisible opacity-0">Life-changing mental health improvements across a variety of symptoms</h3>
   </div>
 </div>
