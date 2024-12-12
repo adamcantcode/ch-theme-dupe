@@ -71,11 +71,14 @@
     shuffle($testimonial_rows);
     shuffle($partner_testimonial_rows);
 
-    // Interleave the two arrays (alternating between testimonial and partner-testimonial)
+    // Merge and alternate the two arrays
     $merged_rows = array();
-    $max_count = max(count($testimonial_rows), count($partner_testimonial_rows));
+    $testimonial_count = count($testimonial_rows);
+    $partner_count = count($partner_testimonial_rows);
+    $max_count = max($testimonial_count, $partner_count);
 
     for ($i = 0; $i < $max_count; $i++) {
+      // Alternate between the two arrays if there's an item available in either
       if (isset($testimonial_rows[$i])) {
         $merged_rows[] = $testimonial_rows[$i];
       }
@@ -84,7 +87,7 @@
       }
     }
 
-    // Shuffle the merged array for final randomness
+    // Shuffle the merged array to randomize final order
     shuffle($merged_rows);
     ?>
 
