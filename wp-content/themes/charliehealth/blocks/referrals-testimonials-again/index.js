@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', () => {
     slidesPerView: 1,
     spaceBetween: 20,
     slideToClickedSlide: true,
-    // centeredSlides: true,
+    grabCursor: true,
     loop: false,
     pagination: false,
     mousewheel: {
