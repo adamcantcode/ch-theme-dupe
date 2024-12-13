@@ -139,7 +139,7 @@
                 </p>
                 <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full ">
                   <a href="https://referrals.charliehealth.com/referrals" class="ch-button button-primary-ch">Refer now</a>
-                  <a href="https://referrals.charliehealth.com/iop" class="ch-button button-secondary-ch">Learn more</a>
+                  <a href="https://referrals.charliehealth.com/intensive-outpatient-program" class="ch-button button-secondary-ch">Learn more</a>
                 </div>
               </div>
             </div>
