@@ -6020,6 +6020,29 @@ section.bg-circle > div {
     z-index: 2;
   }
 
+section.bg-circle-right{
+  position: relative;
+}
+
+section.bg-circle-right:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    z-index: 0;
+    transform: translate(50%, -50%) rotate(180deg);
+    right: 0;
+    width: 1000px;
+    height: 1000px;
+    background-image: url('https://referrals.charliehealth.com/wp-content/uploads/sites/3/2024/11/gradient-noise-cirlce_blue.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+section.bg-circle-right > div {
+    z-index: 2;
+  }
+
 section.bg-circle-circle{
   position: relative;
 }
