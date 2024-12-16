@@ -5705,7 +5705,9 @@ a.providers:hover {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.wp-block-heading mark:not(.has-inline-color.has-lavender-300-color), .wp-block-heading mark:not(.has-inline-color.has-pale-blue-200-color), .wp-block-heading mark:not(.has-inline-color.has-yellow-300-color){
+.wp-block-heading mark:not(.has-inline-color.has-lavender-300-color),
+.wp-block-heading mark:not(.has-inline-color.has-pale-blue-200-color),
+.wp-block-heading mark:not(.has-inline-color.has-yellow-300-color){
   border-radius: 6px;
   -webkit-box-decoration-break: clone;
           box-decoration-break: clone;
@@ -6041,6 +6043,7 @@ section.bg-circle-right:before {
 
 section.bg-circle-right > div {
     z-index: 2;
+    position: relative;
   }
 
 section.bg-circle-circle{
@@ -6137,7 +6140,7 @@ section.bg-shield > div {
   }
 
 .has-font-gradient-yellow-color {
-  background: -webkit-linear-gradient(0deg, #FDDD7C, #FFF8E4);
+  background: -webkit-linear-gradient(0deg, #fddd7c, #fff8e4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

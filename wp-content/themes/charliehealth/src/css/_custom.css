@@ -670,7 +670,9 @@
   }
 }
 
-.wp-block-heading mark:not(.has-inline-color.has-lavender-300-color), .wp-block-heading mark:not(.has-inline-color.has-pale-blue-200-color), .wp-block-heading mark:not(.has-inline-color.has-yellow-300-color) {
+.wp-block-heading mark:not(.has-inline-color.has-lavender-300-color),
+.wp-block-heading mark:not(.has-inline-color.has-pale-blue-200-color),
+.wp-block-heading mark:not(.has-inline-color.has-yellow-300-color) {
   @apply px-[.3em] rounded-[6px] box-decoration-clone;
 }
 
@@ -924,6 +926,7 @@ section.bg-circle-right {
   }
   & > div {
     z-index: 2;
+    @apply relative;
   }
 }
 
@@ -1012,7 +1015,7 @@ section.bg-shield {
 }
 
 .has-font-gradient-yellow-color {
-  background: -webkit-linear-gradient(0deg, #FDDD7C, #FFF8E4);
+  background: -webkit-linear-gradient(0deg, #fddd7c, #fff8e4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
