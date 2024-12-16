@@ -21,13 +21,12 @@
                 "Behavioral Health Operations": "Behavioral Health Operations",
                 "Tech": "Tech",
                 "Clinical": "Clinical",
-                "Clinical Outreach": "Clinical Outreach"
+                "Clinical Outreach": "Outreach"
             },
             "default_value": false,
             "return_format": "value",
             "multiple": 0,
             "allow_null": 1,
-            "allow_in_bindings": 0,
             "ui": 0,
             "ajax": 0,
             "placeholder": ""
@@ -154,5 +153,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728490975
+    "modified": 1734381068
 }

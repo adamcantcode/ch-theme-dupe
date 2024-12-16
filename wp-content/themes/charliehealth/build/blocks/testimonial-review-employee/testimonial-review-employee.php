@@ -27,7 +27,7 @@
         </div>
         <div class="flex items-center">
           <div class="flex-[0_0_auto] h-sp-3 w-sp-3 mr-sp-2 rounded-circle bg-grey-demension"></div>
-          <p class="mb-0">Clinical Outreach</p>
+          <p class="mb-0">Outreach</p>
         </div>
       </div>
     </div>
@@ -97,9 +97,13 @@
                 $tagBGColor = '';
                 break;
             }
+            $team = $row['team'];
+            if($team === 'Clinical Outreach') {
+              $team = 'Outreach';
+            }
             ?>
             <div class="lg:w-[calc(50%-16px)] opacity-0 scale-95 w-full mb-sp-8 rounded-lg lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col<?= $count > 6 ? ' noshow' : ''; ?>">
-              <span class="relative z-20 self-start no-underline rounded-pill px-sp-4 py-sp-3 text-p-base mb-sp-8 <?= $tagBGColor; ?>"><?= $row['team']; ?></span>
+              <span class="relative z-20 self-start no-underline rounded-pill px-sp-4 py-sp-3 text-p-base mb-sp-8 <?= $tagBGColor; ?>"><?= $team; ?></span>
               <?php if ($row['pull_quote']  && ($row['reviews_page_display'] === 'Quote' || $row['reviews_page_display'] === 'Both')) : ?>
                 <h3 class="font-heading-serif">“<?= substr($row['pull_quote'], -1) !== '.' ? $row['pull_quote'] .= '.' : $row['pull_quote']; ?>”</h3>
               <?php endif; ?>
