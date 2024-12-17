@@ -13,10 +13,10 @@
   // Query for custom selected posts if available
   if (!empty($customSelect) && is_array($customSelect)) {
     $customArgs = array(
-      'post_type'      => 'post',
+      'post_type'      => $selectedPostType ?: 'post',
       'post__in'       => $customSelect, // Only get posts in custom select
       'orderby'        => 'post__in', // Maintain order from custom select
-      'posts_per_page' => -1,
+      'posts_per_page' => 30,
     );
 
     $customQuery = new WP_Query($customArgs);
@@ -33,7 +33,7 @@
   // Set up the secondary query arguments for post type and tag
   $args = array(
     'post_type'      => $selectedPostType ?: 'post', // Default to 'post' if no post type is selected
-    'posts_per_page' => -1,
+    'posts_per_page' => 30,
     'meta_key'       => 'date',
     'orderby'        => 'meta_value',
     'order'          => 'DESC',
