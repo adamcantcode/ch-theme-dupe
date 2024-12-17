@@ -172,7 +172,6 @@
             <?php
               }
             }
-            wp_reset_postdata();
             ?>
             <!-- Content -->
           </div>
