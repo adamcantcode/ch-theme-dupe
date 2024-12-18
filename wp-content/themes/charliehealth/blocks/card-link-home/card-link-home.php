@@ -3,7 +3,7 @@ $link           = get_field('link');
 $image          = get_field('image');
 $cardHeading    = get_field('card_heading');
 $cardSubheading = get_field('card_subheading');
-if ($block['gradient']) {
+if (!empty($block['gradient'])) {
   $bg = $block['gradient'];
 } else {
   $bg = 'bg-primary-200 [&_*]:text-white [&_*]:hover:text-white';
