@@ -1103,3 +1103,12 @@ function remove_lesson_and_quiz_from_sitemap($value, $post_type)
   if (in_array($post_type, $post_type_to_exclude)) return true;
 }
 add_filter('wpseo_sitemap_exclude_post_type', 'remove_lesson_and_quiz_from_sitemap', 10, 2);
+
+// Schema pro roles, allow editor
+add_filter('wp_schema_pro_role', 'function_name');
+function function_name($roles)
+{
+  $new_roles = array('editor');
+  $roles = array_merge($roles, $new_roles);
+  return $roles;
+}
