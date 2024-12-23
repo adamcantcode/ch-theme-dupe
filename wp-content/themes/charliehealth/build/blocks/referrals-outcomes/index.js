@@ -9556,10 +9556,10 @@ window.addEventListener('DOMContentLoaded', () => {
   let outcomes = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
     scrollTrigger: {
       trigger: '#outcomesContainer',
-      start: 'top center',
-      // pin: true,
+      start: 'top 30%',
+      pin: true,
       scrub: true,
-      end: '+=200'
+      end: '+=300'
       // markers: true,
     }
   });
@@ -9568,16 +9568,19 @@ window.addEventListener('DOMContentLoaded', () => {
     autoAlpha: 0,
     y: '0'
   });
-  outcomes.to('#text1, #svg2', {
-    autoAlpha: 0,
-    y: '-20px'
-    // duration: 1.5,
+  outcomes.set('#text1, #svg2', {
+    autoAlpha: 1,
+    y: '0'
   });
-
+  outcomes.to('#text1, #svg2', {
+    y: '0'
+  });
+  outcomes.to('#text1, #svg2', {
+    autoAlpha: 0
+  });
   outcomes.to('#text2, #svg1', {
     autoAlpha: 1,
-    y: '-100px'
-    // duration: 1.5,
+    y: '-50px'
   });
 });
 })();
