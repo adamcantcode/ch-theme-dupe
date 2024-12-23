@@ -6818,6 +6818,10 @@ section.bg-shield > div {
     width: 600px;
   }
 
+  .lg\:w-\[71\%\]{
+    width: 71%;
+  }
+
   .lg\:w-\[80px\]{
     width: 80px;
   }
@@ -6844,6 +6848,14 @@ section.bg-shield > div {
 
   .lg\:w-sp-5{
     width: 1.25rem;
+  }
+
+  .lg\:w-\[72\%\]{
+    width: 72%;
+  }
+
+  .lg\:w-\[70\%\]{
+    width: 70%;
   }
 
   .lg\:min-w-0{
@@ -7017,10 +7029,6 @@ section.bg-shield > div {
 
   .lg\:grid-cols-\[3fr_4fr\]{
     grid-template-columns: 3fr 4fr;
-  }
-
-  .lg\:grid-cols-\[3fr_4fr_4fr\]{
-    grid-template-columns: 3fr 4fr 4fr;
   }
 
   .lg\:grid-cols-\[3fr_6fr_3fr\]{
