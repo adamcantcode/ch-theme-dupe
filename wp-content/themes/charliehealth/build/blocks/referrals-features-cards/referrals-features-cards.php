@@ -3,6 +3,7 @@
     <?php while (have_rows('cards')): the_row(); ?>
       <?php
       $icon     = get_sub_field('icon');
+      $image    = get_sub_field('image');
       $headline = get_sub_field('headline');
       $subhead  = get_sub_field('subhead');
       $bg       = 'transparent';
@@ -22,11 +23,19 @@
           break;
       }
       ?>
-      <div class="<?= $bg; ?> rounded-sm p-base5-4 flex flex-col border border-primary referrals-feature-card <?= !is_admin() ? 'opacity-0' : ''; ?>">
-        <img src="<?= site_url("/wp-content/themes/charliehealth/resources/images/icons/$icon"); ?>" alt="icon" class="mb-base5-5 w-base5-8">
-        <h3 class="font-heading-serif"><?= $headline; ?></h3>
-        <p><?= $subhead; ?></p>
-      </div>
+      <?php if (!$image) : ?>
+        <div class="<?= $bg; ?> rounded-sm p-base5-4 flex flex-col border border-primary referrals-feature-card <?= !is_admin() ? 'opacity-0' : ''; ?>">
+          <img src="<?= site_url("/wp-content/themes/charliehealth/resources/images/icons/$icon"); ?>" alt="icon" class="mb-base5-5 w-base5-8">
+          <h3 class="font-heading-serif"><?= $headline; ?></h3>
+          <p><?= $subhead; ?></p>
+        </div>
+      <?php else: ?>
+        <div class="<?= $bg; ?> rounded-sm p-base5-4 flex flex-col border border-primary text-center referrals-feature-card <?= !is_admin() ? 'opacity-0' : ''; ?>">
+          <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="w-full mb-base5-2">
+          <h3 class="font-heading-serif mb-base5-2"><?= $headline; ?></h3>
+          <p><?= $subhead; ?></p>
+        </div>
+      <?php endif; ?>
     <?php endwhile; ?>
   </div>
 <?php endif; ?>
