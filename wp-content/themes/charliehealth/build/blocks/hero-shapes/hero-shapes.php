@@ -37,7 +37,7 @@ $video           = get_field('vimeo_url');
               /* Video iframe styling */
               .video-iframe-v2 {
                 width: 100vw;
-                height: 100vh;
+                height: 100%;
                 max-width: unset;
                 object-fit: cover;
                 position: absolute;
