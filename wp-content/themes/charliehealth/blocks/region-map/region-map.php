@@ -174,7 +174,7 @@ endif;
           // Show if selected
           repsContent.classList.remove('noshow');
           repsForm.classList.add('noshow');
-          repsContent.querySelector('h2').textContent = `${selected} Clinical Outreach Representatives`;
+          repsContent.querySelector('h2').textContent = `${selected} Outreach Representatives`;
           member.classList.remove('noshow');
 
           hasVisibleMembers = true;
