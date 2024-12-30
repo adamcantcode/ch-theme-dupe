@@ -126,7 +126,7 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
                   </div>
                 <?php elseif (!empty($customMedicalReviewer)) : ?>
                   <div class="flex items-center gap-base5-2 ">
-                    <img src="<?= $medicalReviewerFeaturedImageUrl; ?>" alt="<?= $medicalReviewerFeaturedImageAltText; ?>" class="object-cover w-auto h-base5-10 aspect-square shrink-0 rounded-circle">
+                    <img src="<?= site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp'); ?>" alt="Charlie Health Logo" class="object-cover w-auto h-base5-10 aspect-square shrink-0 rounded-circle">
                     <p class="z-10 mb-0 text-[18px]">Written By: <a href="<?= $customMedicalReviewer['url']; ?>" class="text-[18px]"><?= $customMedicalReviewer['title']; ?></a></p>
                   </div>
                 <?php endif; ?>
