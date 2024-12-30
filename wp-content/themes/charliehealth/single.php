@@ -66,7 +66,7 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
         <?php if (!is_singular('research')) : ?>
           <a href="/blog">The Library</a>
         <?php endif; ?>
-        <?php if ($tags[0]->name): ?>
+        <?php if (isset($tags[0]) && $tags[0]->name): ?>
           <span>/</span>
           <a href="<?= get_term_link($tags[0]->term_id, 'post_tag'); ?>"><?= $tags[0]->name; ?></a>
         <?php endif; ?>
