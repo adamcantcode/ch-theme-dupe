@@ -8,6 +8,8 @@
   <link rel="icon" type="image/x-icon" href="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/charlie-health-favicon.ico'); ?>">
   <link rel="icon" type="image/png" href="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/charlie-health-favicon.png'); ?>">
   <link rel="apple-touch-icon" href="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/charlie-health-favicon.png'); ?>">
+  <link rel="apple-touch-icon" href="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/apple-touch-icon-120x120-precomposed.png'); ?>">
+  <link rel="apple-touch-icon" href="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/apple-touch-icon-120x120.png'); ?>">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="#212984">
   <!-- CUSTOM HEADER CODE -->
