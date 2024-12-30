@@ -26,7 +26,8 @@
     "blocks-build": "wp-scripts build --webpack-src-dir=blocks --webpack-copy-php --output-path=build/blocks",
     "dev": "npm-run-all --parallel blocks-start theme-start",
     "build": "npm-run-all --parallel blocks-build theme-build",
-    "sync": "browser-sync start --proxy 'https://wpch.local' --reload-delay 200 --files=['**/*.css', 'wp-content/themes/**/*.php']"
+    "sync": "browser-sync start --proxy 'https://wpch.local' --reload-delay 200 --files=['**/*.css', 'wp-content/themes/**/*.php']",
+    "test": "npm-run-all --parallel blocks-start theme-start sync"
   },
   "dependencies": {
     "gsap": "^3.11.5",
