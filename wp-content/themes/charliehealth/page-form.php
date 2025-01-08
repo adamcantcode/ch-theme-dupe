@@ -67,22 +67,6 @@ Template Post Type: page
             }, 300);
           }
 
-          // Prevent first page validation trigger
-          form.registerFormEventListener({
-            type: 'error',
-            onFormEvent: function(event) {
-              console.log(event);
-              if (event.data.page === 1) {
-                if (event.preventDefault) {
-                  event.preventDefault();
-                }
-              }
-
-
-              return Promise.resolve(event);
-            }
-          });
-
           // Register event listener for form ready event
           form.registerFormEventListener({
             type: 'ready',
@@ -108,6 +92,8 @@ Template Post Type: page
               // Add page navigation listeners for visibility control
               const pagination = document.querySelector('.fsPagination');
               if (pagination) {
+                handlePageVisibility(disclaimerContainer, '#fsPage' + FORM_ID + '-1', true);
+                handlePageVisibility(consentElement, '#fsPage' + FORM_ID + '-2', true);
                 pagination.addEventListener('click', function() {
                   handlePageVisibility(disclaimerContainer, '#fsPage' + FORM_ID + '-1', true);
                   handlePageVisibility(consentElement, '#fsPage' + FORM_ID + '-2', true);
