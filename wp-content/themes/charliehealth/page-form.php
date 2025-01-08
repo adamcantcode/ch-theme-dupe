@@ -109,8 +109,8 @@ Template Post Type: page
               const pagination = document.querySelector('.fsPagination');
               if (pagination) {
                 pagination.addEventListener('click', function() {
-                  handlePageVisibility(disclaimerContainer, '#fsPage' + FORM_ID + '-2', true);
-                  handlePageVisibility(consentElement, '#fsPage' + FORM_ID + '-3', true);
+                  handlePageVisibility(disclaimerContainer, '#fsPage' + FORM_ID + '-1', true);
+                  handlePageVisibility(consentElement, '#fsPage' + FORM_ID + '-2', true);
                 });
               }
 
