@@ -1,1 +1,1 @@
-{"version":3,"file":"hero-shapes/index.js","mappings":";;;;;AAAA;;AAGA,wB","sources":["webpack://charliehealth/./blocks/hero-shapes/index.js"],"sourcesContent":["// import './index.css'\n\n\n// console.log('block1')"],"names":[],"sourceRoot":""}
+{"version":3,"file":"hero-shapes/index.js","mappings":";;;;AAAA;;AAGA,wB","sources":["webpack://charliehealth/./blocks/hero-shapes/index.js"],"sourcesContent":["// import './index.css'\n\n\n// console.log('block1')"],"names":[],"sourceRoot":""}

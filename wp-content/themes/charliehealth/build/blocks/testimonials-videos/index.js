@@ -10611,7 +10611,7 @@ _core_core_js__WEBPACK_IMPORTED_MODULE_0__["default"].use(modules);
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+// This entry needs to be wrapped in an IIFE because it needs to be isolated against other modules in the chunk.
 (() => {
 /*!*********************************************!*\
   !*** ./blocks/testimonials-videos/index.js ***!
@@ -10661,7 +10661,6 @@ window.addEventListener('load', () => {
         //   clearTimeout();
         // }, 10000);
       },
-
       slideChange: function () {
         if (firstVideo) {
           const currentSlide = swiper.slides[swiper.activeIndex].querySelector('.careers-video-js');
