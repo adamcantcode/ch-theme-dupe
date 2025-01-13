@@ -8,7 +8,7 @@
             "name": "date",
             "aria-label": "",
             "type": "date_picker",
-            "instructions": "Include a date for post visibility and ordering on the main <a href=\"\/blog\" target=\"_blank\">\/blog page<\/a>.",
+            "instructions": "Include a display date for post visibility and ordering on the main <a href=\"\/blog\" target=\"_blank\">\/blog page<\/a>.",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -18,7 +18,8 @@
             },
             "display_format": "F j, Y",
             "return_format": "F j, Y",
-            "first_day": 0
+            "first_day": 0,
+            "allow_in_bindings": 1
         },
         {
             "key": "field_64a332247c8b5",
@@ -100,7 +101,8 @@
             "return_format": "object",
             "multiple": 0,
             "allow_null": 1,
-            "ui": 1
+            "ui": 1,
+            "bidirectional_target": []
         },
         {
             "key": "field_66a8f192339dc",
@@ -182,7 +184,7 @@
         },
         {
             "key": "field_64583c0da9ff0",
-            "label": "Show Table of Contents",
+            "label": "Table of Contents",
             "name": "toc",
             "aria-label": "",
             "type": "true_false",
@@ -196,17 +198,18 @@
             },
             "message": "",
             "default_value": 1,
-            "ui_on_text": "",
-            "ui_off_text": "",
+            "allow_in_bindings": 1,
+            "ui_on_text": "Show",
+            "ui_off_text": "Hide",
             "ui": 1
         },
         {
             "key": "field_65b7f30b34523",
-            "label": "Hide pre-footer CTA",
+            "label": "Pre-footer CTA",
             "name": "prefooter_cta",
             "aria-label": "",
             "type": "true_false",
-            "instructions": "Select whether or not the CTA after the main content displays",
+            "instructions": "Select whether or not the CTA after the main content displays.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -216,8 +219,9 @@
             },
             "message": "",
             "default_value": 0,
-            "ui_on_text": "",
-            "ui_off_text": "",
+            "allow_in_bindings": 1,
+            "ui_on_text": "Hide",
+            "ui_off_text": "Show",
             "ui": 1
         }
     ],
@@ -243,13 +247,13 @@
                 "value": "event"
             }
         ],
-            [
-                {
-                    "param": "post_type",
-                    "operator": "==",
-                    "value": "activities"
-                }
-            ]
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "activities"
+            }
+        ]
     ],
     "menu_order": 0,
     "position": "normal",
@@ -260,5 +264,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1724259053
+    "modified": 1736792414
 }
