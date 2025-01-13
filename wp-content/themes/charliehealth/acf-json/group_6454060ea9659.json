@@ -8,11 +8,11 @@
             "name": "date",
             "aria-label": "",
             "type": "date_picker",
-            "instructions": "Include a date for post visibility and ordering on the Main page.",
+            "instructions": "Include a date for post visibility and ordering on the main <a href=\"\/blog\" target=\"_blank\">\/blog page<\/a>.",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -30,7 +30,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -50,7 +50,7 @@
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -65,7 +65,8 @@
             "return_format": "object",
             "multiple": 0,
             "allow_null": 0,
-            "ui": 1
+            "ui": 1,
+            "bidirectional_target": []
         },
         {
             "key": "field_64540ac2e7dc7",
@@ -75,9 +76,16 @@
             "type": "post_object",
             "instructions": "Select an author from <a href=\"\/wp-admin\/edit.php?post_type=medical-reviewer\" target=\"_blank\">Medical Reviewers<\/a> or add a new one.",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_66a8f045466a4",
+                        "operator": "==empty"
+                    }
+                ]
+            ],
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -100,15 +108,23 @@
             "name": "custom_medical_review",
             "aria-label": "",
             "type": "link",
-            "instructions": "Use this field for custom links to author's sites.",
+            "instructions": "Add a link to external Medical Reviewers",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_64540ac2e7dc7",
+                        "operator": "==empty"
+                    }
+                ]
+            ],
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
-            "return_format": "array"
+            "return_format": "array",
+            "allow_in_bindings": 1
         },
         {
             "key": "field_64540ccafa2f1",
@@ -120,7 +136,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -141,7 +157,8 @@
             "max": 3,
             "elements": [
                 "featured_image"
-            ]
+            ],
+            "bidirectional_target": []
         },
         {
             "key": "field_6462caf24bf4b",
@@ -153,7 +170,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -162,108 +179,6 @@
             "toolbar": "full",
             "media_upload": 0,
             "delay": 0
-        },
-        {
-            "key": "field_64540758e7dc3",
-            "label": "Featured on Main Page",
-            "name": "main_featured",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "Display post in featured slider on Main page",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "ui_on_text": "",
-            "ui_off_text": "",
-            "ui": 1
-        },
-        {
-            "key": "field_647d64592d0a2",
-            "label": "Feature as",
-            "name": "feature_as",
-            "aria-label": "",
-            "type": "taxonomy",
-            "instructions": "This determines which <i>Audience<\/i> tag is displayed while featured.",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_64540758e7dc3",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "taxonomy": "category",
-            "add_term": 0,
-            "save_terms": 0,
-            "load_terms": 0,
-            "return_format": "object",
-            "field_type": "radio",
-            "allow_null": 0,
-            "multiple": 0
-        },
-        {
-            "key": "field_645407d0e7dc5",
-            "label": "Featured on Audience page",
-            "name": "category_featured",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "Display post in featured slider on each respective <code>\/audience\/{audience-category}<\/code> page",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "ui_on_text": "",
-            "ui_off_text": "",
-            "ui": 1
-        },
-        {
-            "key": "field_647d6b699d5eb",
-            "label": "Feature on",
-            "name": "feature_on",
-            "aria-label": "",
-            "type": "taxonomy",
-            "instructions": "You may select multiple Audience pages for the post to be featured on.",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_645407d0e7dc5",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "taxonomy": "category",
-            "add_term": 0,
-            "save_terms": 0,
-            "load_terms": 0,
-            "return_format": "object",
-            "field_type": "checkbox",
-            "multiple": 0,
-            "allow_null": 0
         },
         {
             "key": "field_64583c0da9ff0",
@@ -275,7 +190,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -295,7 +210,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -328,13 +243,13 @@
                 "value": "event"
             }
         ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "activities"
-            }
-        ]
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "activities"
+                }
+            ]
     ],
     "menu_order": 0,
     "position": "normal",
