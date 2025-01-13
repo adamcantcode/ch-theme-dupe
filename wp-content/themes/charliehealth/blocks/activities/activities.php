@@ -177,21 +177,38 @@ $index = 0;
 <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const loadMoreButton = document.querySelector('.load-more-js');
-    const searchInput = document.querySelector('.search-input-js');
-    const grid = document.querySelector('.grid-resources');
+    // Cache DOM elements
+    const elements = {
+      loadMoreButton: document.querySelector('.load-more-js'),
+      searchInput: document.querySelector('.search-input-js'),
+      grid: document.querySelector('.grid-resources'),
+      filterButtonGroup: document.querySelector('.filter-button-group-js'),
+      filterButton: document.querySelector('.filters-js'),
+      resetButton: document.querySelector('#resetButton'),
+      downArrow: document.querySelector('.down-arrow-js'),
+      checkboxes: document.querySelectorAll('.filter-button-group-js input[type="checkbox"]'),
+      featuredTopics: document.querySelectorAll('.topic-filter-featured')
+    };
 
-    // Isotope settings
-    const iso = new Isotope(grid, {
+    // Configuration object
+    const config = {
+      itemsPerPage: 9,
+      loadMoreIncrement: 6,
+      transitionDuration: 500,
+      gutterSize: 20
+    };
+
+    // Initialize Isotope with optimized settings
+    const iso = new Isotope(elements.grid, {
       itemSelector: '.grid-item',
-      initLayout: false, // Don't initialize to start
+      initLayout: false,
       columnWidth: '.grid-sizer',
       layoutMode: 'fitRows',
-      stagger: 0, // Prevents weirdness
-      transitionDuration: 500,
+      stagger: 0,
+      transitionDuration: config.transitionDuration,
       percentPosition: true,
       fitRows: {
-        gutter: 20
+        gutter: config.gutterSize
       },
       hiddenStyle: {
         opacity: 0,
@@ -203,233 +220,167 @@ $index = 0;
       }
     });
 
-    // Initial state
+    // Cache all items
     const itemsAll = iso.getItemElements();
 
-    // Hide after 9
-    itemsAll.forEach((item, index) => {
-      if (index > 8) {
-        item.classList.add('noshow');
+    // Utility functions
+    const utils = {
+      getCheckedValues: selector => Array.from(document.querySelectorAll(`${selector}:checked`)).map(input => input.value),
+
+      generateCombinedFilters: (topicFilters, typeFilters) => {
+        const topics = topicFilters.length === 0 ? ['*'] : topicFilters;
+        const types = typeFilters.length === 0 ? ['*'] : typeFilters;
+        return topics.flatMap(topic => types.map(type => `${topic}${type}`));
+      },
+
+      checkCookie: name => document.cookie.split(';').some(cookie =>
+        cookie.trim().startsWith(name + "=")),
+
+      debounce: (func, wait) => {
+        let timeout;
+        return function executedFunction(...args) {
+          const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+          };
+          clearTimeout(timeout);
+          timeout = setTimeout(later, wait);
+        };
       }
-    });
+    };
 
-    // Initialize
-    iso.arrange();
+    // State management
+    const state = {
+      initialize() {
+        // Hide items after initial count
+        itemsAll.forEach((item, index) => {
+          if (index > config.itemsPerPage - 1) item.classList.add('noshow');
+        });
 
-    // Filter
-    const filterButtonGroup = document.querySelector('.filter-button-group-js');
-    filterButtonGroup.addEventListener('change', updateFilter);
+        elements.loadMoreButton.classList.toggle('noshow', itemsAll.length < config.itemsPerPage);
+        elements.grid.classList.remove('opacity-0');
+        iso.arrange();
+      },
 
-    // Search
-    searchInput.addEventListener('input', updateSearch);
+      handleVisibilityAfterFilter() {
+        const itemsFilters = iso.getFilteredItemElements();
 
-    // Load more
-    loadMoreButton.addEventListener('click', loadMoreItems);
+        // Reset visibility states
+        itemsAll.forEach(item => item.classList.remove('active', 'noshow'));
 
-    // Check if more than 9 active and visible initial
-    loadMoreButton.classList.toggle('noshow', itemsAll.length < 9);
+        // Apply new visibility states
+        itemsFilters.forEach((item, index) => {
+          item.classList.add('active');
+          if (index > config.itemsPerPage - 1) item.classList.add('noshow');
+        });
 
-    // Featured topics button
-    const featuredTopics = document.querySelectorAll('.topic-filter-featured');
+        const filteredElements = itemsAll.filter(element => element.classList.contains('active'));
+        elements.loadMoreButton.classList.toggle('noshow', filteredElements.length < config.itemsPerPage);
 
-    featuredTopics.forEach(topicButton => {
+        iso.arrange();
+      }
+    };
+
+    // Event handlers
+    const handlers = {
+      updateFilter() {
+        const topicFilters = utils.getCheckedValues('.topic-filter');
+        const typeFilters = utils.getCheckedValues('.type-filter');
+        const combinedFilter = utils.generateCombinedFilters(topicFilters, typeFilters).join(',');
+
+        iso.arrange({
+          filter: combinedFilter
+        });
+        state.handleVisibilityAfterFilter();
+      },
+
+      updateSearch: utils.debounce(function() {
+        const searchValue = elements.searchInput.value.trim().toLowerCase();
+        const currentFilteredItems = Isotope.data(elements.grid).filteredItems;
+
+        if (!searchValue) {
+          handlers.updateFilter();
+          return;
+        }
+
+        iso.arrange({
+          filter: function() {
+            if (!currentFilteredItems.some(item => item.element === this)) return false;
+
+            return Array.from(this.querySelectorAll('h3 a'))
+              .some(element => element.textContent.toLowerCase().includes(searchValue));
+          }
+        });
+
+        state.handleVisibilityAfterFilter();
+      }, 300),
+
+      loadMoreItems() {
+        const hiddenItems = itemsAll.filter(item => item.classList.contains('noshow'));
+        hiddenItems.slice(0, config.loadMoreIncrement).forEach(item => item.classList.remove('noshow'));
+
+        iso.arrange();
+
+        if (hiddenItems.length <= config.loadMoreIncrement) {
+          elements.loadMoreButton.classList.add('noshow');
+        }
+      },
+
+      toggleFilters() {
+        elements.filterButtonGroup.classList.toggle('-translate-y-full');
+        elements.filterButtonGroup.parentElement.classList.toggle('max-h-0');
+        elements.downArrow.classList.toggle('rotate-180');
+      },
+
+      handleReset() {
+        elements.checkboxes.forEach(checkbox => {
+          if (checkbox.checked) {
+            checkbox.checked = false;
+            handlers.updateFilter();
+          }
+        });
+        elements.resetButton.classList.add('opacity-0', 'invisible');
+      },
+
+      checkResetButtonVisibility() {
+        const anyChecked = Array.from(elements.checkboxes).some(checkbox => checkbox.checked);
+        elements.resetButton.classList.toggle('opacity-0', !anyChecked);
+        elements.resetButton.classList.toggle('invisible', !anyChecked);
+      }
+    };
+
+    // Initialize featured topics
+    elements.featuredTopics.forEach(topicButton => {
       const topicValue = topicButton.getAttribute('data-topic-featured');
 
-      topicButton.addEventListener('click', function() {
-        const allCheckboxes = document.querySelectorAll('.topic-filter');
+      topicButton.addEventListener('click', () => {
+        elements.checkboxes.forEach(checkbox => checkbox.checked && checkbox.click());
 
-        allCheckboxes.forEach(checkbox => {
-          if (checkbox.checked) {
-            checkbox.click();
-          }
-        });
-
-        const checkbox = document.querySelector(`.topic-filter[value='${topicValue}']`);
-        if (!checkbox.checked) {
-          checkbox.click();
-        }
-      })
+        const targetCheckbox = document.querySelector(`.topic-filter[value='${topicValue}']`);
+        if (!targetCheckbox.checked) targetCheckbox.click();
+      });
     });
 
-    function updateFilter() {
-      const topicFilters = getCheckedValues('.topic-filter');
-      const typeFilters = getCheckedValues('.type-filter');
-      const combinedFilters = generateCombinedFilters(topicFilters, typeFilters); // Generate all possible combinations of topics and types
-      const combinedFilter = combinedFilters.join(','); // Now use combinedFilters to create the final combined filter
-
-      // Update Isotope with the new filter
-      iso.arrange({
-        filter: combinedFilter
-      });
-
-      // Handle visibility due to load more
-      handleVisibilityAfterFilter();
-    }
-
-    function updateSearch() {
-      const searchValue = searchInput.value.trim().toLowerCase();
-      const data = Isotope.data(grid);
-      const currentFilteredItems = data.filteredItems;
-
-      // If the search input is empty, reset the filter to show all items
-      if (searchValue === '') {
-        updateFilter();
-        return;
-      }
-
-      iso.arrange({
-        filter: function() {
-          const itemElem = this;
-          const searchableElements = itemElem.querySelectorAll('h3 a');
-          let match = false;
-          const matchesCurrentFilter = currentFilteredItems.some(item => item.element === itemElem); // Check if item matches the current filter
-
-          if (!matchesCurrentFilter) {
-            return false; // Skip items not matching the current filter
-          }
-
-          searchableElements.forEach(searchableElement => {
-            const text = searchableElement.textContent.toLowerCase();
-            if (text.includes(searchValue)) {
-              match = true;
-              return; // Exit loop on first match
-            }
-          });
-
-          return match;
-        }
-      });
-
-      handleVisibilityAfterFilter();
-    }
-
-    function loadMoreItems() {
-      const loadMoreItems = itemsAll.filter(item => item.classList.contains('noshow'));
-      loadMoreItems.slice(0, 6).forEach(item => {
-        item.classList.remove('noshow');
-      });
-
-      iso.arrange();
-
-      if (itemsAll.filter(item => item.classList.contains('noshow')).length < 1) {
-        loadMoreButton.classList.add('noshow');
-      }
-    }
-
-    function getCheckedValues(selector) {
-      return Array.from(document.querySelectorAll(`${selector}:checked`)).map(input => input.value);
-    }
-
-    function generateCombinedFilters(topicFilters, typeFilters) {
-      if (topicFilters.length === 0) {
-        topicFilters = ['*'];
-      }
-
-      if (typeFilters.length === 0) {
-        typeFilters = ['*'];
-      }
-
-      const combinedFilters = [];
-      topicFilters.forEach(topic => {
-        typeFilters.forEach(type => {
-          combinedFilters.push(`${topic}${type}`);
-        });
-      });
-
-      return combinedFilters;
-    }
-
-    function handleVisibilityAfterFilter() {
-      const itemsFilters = iso.getFilteredItemElements();
-
-      // Unhide all
-      itemsAll.forEach(item => {
-        item.classList.remove('active', 'noshow');
-      });
-
-      // Hide after 9
-      itemsFilters.forEach((item, index) => {
-        item.classList.add('active');
-        if (index > 8) {
-          item.classList.add('noshow');
-        }
-      });
-
-      // Load more
-      const filteredElements = itemsAll.filter(element => element.classList.contains('active'));
-
-      // Check if more than 9 active and visible
-      loadMoreButton.classList.toggle('noshow', filteredElements.length < 9);
-
-      iso.arrange();
-    }
-
-    // Filter dropdown
-    const filterButton = document.querySelector('.filters-js');
-
-    filterButton.addEventListener('click', function(e) {
-      filterButtonGroup.classList.toggle('-translate-y-full');
-      filterButtonGroup.parentElement.classList.toggle('max-h-0');
-      document.querySelector('.down-arrow-js').classList.toggle('rotate-180');
-    })
-
-    function checkCookie(name) {
-      var cookies = document.cookie.split(';');
-      for (var i = 0; i < cookies.length; i++) {
-        var cookie = cookies[i].trim();
-        if (cookie.indexOf(name + "=") === 0) {
-          return true;
-        }
-      }
-      return false;
-    }
-
-    if (checkCookie("gatedSubmission")) {
-      const successLinks = document.querySelectorAll('.success-link-js');
-      successLinks.forEach(link => {
+    // Handle gated content
+    if (utils.checkCookie("gatedSubmission")) {
+      document.querySelectorAll('.success-link-js').forEach(link => {
         link.href = link.getAttribute('data-success-link');
       });
     }
 
-    // Refresh wage when leaving so that it updates when back button is clicked after viewing guide
-    window.addEventListener('beforeunload', function() {
-      window.location.reload(true);
-    });
+    // Event listeners
+    elements.filterButtonGroup.addEventListener('change', handlers.updateFilter);
+    elements.searchInput.addEventListener('input', handlers.updateSearch);
+    elements.loadMoreButton.addEventListener('click', handlers.loadMoreItems);
+    elements.filterButton.addEventListener('click', handlers.toggleFilters);
+    elements.resetButton.addEventListener('click', handlers.handleReset);
+    elements.checkboxes.forEach(checkbox =>
+      checkbox.addEventListener('change', handlers.checkResetButtonVisibility));
 
-    // Prevent visibility of items before initilization
-    window.addEventListener('load', function() {
-      grid.classList.remove('opacity-0');
-    });
+    // Handle page refresh on navigation
+    window.addEventListener('beforeunload', () => window.location.reload(true));
 
-    // Reset
-    const checkboxes = document.querySelectorAll('.filter-button-group-js input[type="checkbox"]');
-    const resetButton = document.querySelector('#resetButton');
-
-    function checkIfAnyChecked() {
-      let anyChecked = false;
-      checkboxes.forEach(function(checkbox) {
-        if (checkbox.checked) {
-          anyChecked = true;
-          return;
-        }
-      });
-
-      if (anyChecked) {
-        resetButton.classList.remove('opacity-0', 'invisible');
-      } else {
-        resetButton.classList.add('opacity-0', 'invisible');
-      }
-    }
-    checkboxes.forEach(checkbox => {
-      checkbox.addEventListener('change', checkIfAnyChecked);
-    });
-    resetButton.addEventListener('click', () => {
-      checkboxes.forEach(function(checkbox) {
-        if (checkbox.checked) {
-          checkbox.checked = false;
-          updateFilter();
-        }
-      });
-    });
+    // Initialize the grid
+    state.initialize();
   });
 </script>
