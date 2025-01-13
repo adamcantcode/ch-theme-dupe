@@ -680,6 +680,7 @@ function custom_menu_order($menu_ord)
     'edit.php?post_type=page', // Pages
     'edit.php', // Posts
     'edit.php?post_type=research', // Research
+    'edit.php?post_type=press', // Press
     'edit.php?post_type=activities', // Activites
     'edit.php?post_type=authors', // Authors
     'edit.php?post_type=medical-reviewer', // Medical Reviewer
@@ -694,7 +695,6 @@ function custom_menu_order($menu_ord)
     'edit.php?post_type=outreach-team-member', // Outreach Members
     'edit.php?post_type=insurance', // Insurance
     'edit.php?post_type=locations', // Locations
-    'edit.php?post_type=press', // Press
     // 'edit.php?post_type=event', // Events
     'separator1', // First separator
     'upload.php', // Media
@@ -1112,3 +1112,12 @@ function function_name($roles)
   $roles = array_merge($roles, $new_roles);
   return $roles;
 }
+
+
+add_action('init', function () {
+  global $wp_taxonomies;
+  unregister_taxonomy_for_object_type('category', 'post');
+  if (taxonomy_exists('category'))
+    unset($wp_taxonomies['category']);
+  unregister_taxonomy('category');
+});
