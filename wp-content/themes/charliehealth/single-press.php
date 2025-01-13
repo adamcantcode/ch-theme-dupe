@@ -27,7 +27,6 @@ $toc             = get_field('toc') ?: '';
 $prefooter       = get_field('prefooter_cta') ?: '';
 $references      = get_field('references') ?: '';
 
-$audiences = get_the_terms(get_the_ID(), 'category');
 $tags      = get_the_terms(get_the_ID(), 'post_tag');
 
 $wordCount      = str_word_count(strip_tags(get_the_content()));
@@ -67,28 +66,6 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
             <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?= $fullUrl; ?>" class="ml-sp-4"><img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/linkedin.svg'); ?>" alt="LinkedIn logo"></a>
           </div>
           <div class="grid gap-sp-4">
-            <div class="grid items-end justify-start grid-flow-col gap-sp-6">
-              <?php if ($audiences) : foreach ($audiences as $audience) : ?>
-                  <?php
-                  switch ($audience->slug) {
-                    case 'for-myself':
-                      $audienceClass = 'teens-and-young-adults';
-                      break;
-                    case 'for-a-loved-one':
-                      $audienceClass = 'families-and-caregivers';
-                      break;
-                    case 'for-providers':
-                      $audienceClass = 'providers';
-                      break;
-                    default:
-                      $audienceClass = '';
-                      break;
-                  }
-                  ?>
-                  <a href="<?= get_term_link($audience->slug, 'category'); ?>" class="px-4 py-3 no-underline rounded-lg text-h6 bg-tag-gray <?= $audienceClass; ?>"><?= $audience->name; ?></a>
-              <?php endforeach;
-              endif; ?>
-            </div>
             <div class="grid items-end justify-start grid-flow-col gap-sp-4">
               <?php if ($tags) : foreach ($tags as $tag) : ?>
                   <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="px-4 py-3 no-underline rounded-lg text-h6 bg-tag-gray hover:bg-bright-teal"><?= $tag->name; ?></a>

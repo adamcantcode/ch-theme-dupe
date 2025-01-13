@@ -537,36 +537,36 @@ function wpai_image_mime_type($mime_type, $image_filepath)
 /**
  * Rename Category (taxononomy) to Audience
  */
-function renamce_categoery_to_audience()
-{
-  $singular_name = 'Audience';
-  $plural_name = 'Audiences';
+// function renamce_categoery_to_audience()
+// {
+//   $singular_name = 'Audience';
+//   $plural_name = 'Audiences';
 
-  $labels = array(
-    'name'          => $plural_name,
-    'menu_name'        => $plural_name,
-    'singular_name'      => $singular_name,
-    'search_items'      => 'Search ' . $plural_name,
-    'popular_items'      => 'Popular ' . $plural_name,
-    'all_items'        => 'All ' . $plural_name,
-    'parent_item'        => 'Parent ' . $singular_name,
-    'parent_item_colon'    => 'Parent ' . $singular_name . ':',
-    'edit_item'        => 'Edit ' . $singular_name,
-    'view_item'        => 'View ' . $singular_name,
-    'update_item'        => 'Update ' . $singular_name,
-    'add_new_item'      => 'Add New ' . $singular_name,
-    'new_item_name'      => 'New ' . $singular_name . ' Name',
-    'separate_items_with_commas' => 'Separate ' . $plural_name . ' with commas',
-    'add_or_remove_items'    => 'Add or remove ' . $plural_name,
-    'back_to_items'      => '← Back to ' . $plural_name,
-    'items_list_navigation'   => $plural_name . ' list navigation',
-    'items_list'        => $plural_name . ' list',
-  );
+//   $labels = array(
+//     'name'          => $plural_name,
+//     'menu_name'        => $plural_name,
+//     'singular_name'      => $singular_name,
+//     'search_items'      => 'Search ' . $plural_name,
+//     'popular_items'      => 'Popular ' . $plural_name,
+//     'all_items'        => 'All ' . $plural_name,
+//     'parent_item'        => 'Parent ' . $singular_name,
+//     'parent_item_colon'    => 'Parent ' . $singular_name . ':',
+//     'edit_item'        => 'Edit ' . $singular_name,
+//     'view_item'        => 'View ' . $singular_name,
+//     'update_item'        => 'Update ' . $singular_name,
+//     'add_new_item'      => 'Add New ' . $singular_name,
+//     'new_item_name'      => 'New ' . $singular_name . ' Name',
+//     'separate_items_with_commas' => 'Separate ' . $plural_name . ' with commas',
+//     'add_or_remove_items'    => 'Add or remove ' . $plural_name,
+//     'back_to_items'      => '← Back to ' . $plural_name,
+//     'items_list_navigation'   => $plural_name . ' list navigation',
+//     'items_list'        => $plural_name . ' list',
+//   );
 
-  global $wp_taxonomies;
-  $wp_taxonomies['category']->labels = (object) array_merge((array) $wp_taxonomies['category']->labels, $labels);
-}
-add_action('init', 'renamce_categoery_to_audience');
+//   global $wp_taxonomies;
+//   $wp_taxonomies['category']->labels = (object) array_merge((array) $wp_taxonomies['category']->labels, $labels);
+// }
+// add_action('init', 'renamce_categoery_to_audience');
 
 /**
  * Remove WP Logo in admin bar
@@ -1113,7 +1113,7 @@ function function_name($roles)
   return $roles;
 }
 
-
+// Remove cats
 add_action('init', function () {
   global $wp_taxonomies;
   unregister_taxonomy_for_object_type('category', 'post');

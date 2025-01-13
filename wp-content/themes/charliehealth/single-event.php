@@ -26,7 +26,6 @@ $relatedPosts = get_field('related_posts') ?: '';
 $toc = get_field('toc') ?: '';
 // $references = get_field('references') ?: '';
 
-// $audiences = get_the_terms(get_the_ID(), 'category');
 // $tags = get_the_terms(get_the_ID(), 'post_tag');
 
 // $wordCount = str_word_count(strip_tags(get_the_content()));
