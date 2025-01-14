@@ -3,26 +3,6 @@
     "title": "Banner",
     "fields": [
         {
-            "key": "field_6512eab0b20d0",
-            "label": "Enable Banner",
-            "name": "enable_banner",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
             "key": "field_65ca9cb772e82",
             "label": "Enable Site-wide",
             "name": "enable_site_wide",
@@ -31,39 +11,6 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_6554ef4f3eb55",
-            "label": "Enable Blog Banner",
-            "name": "enable_blog_banner",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_6512eab0b20d0",
-                        "operator": "==",
-                        "value": "1"
-                    },
-                    {
-                        "field": "field_65ca9cb772e82",
-                        "operator": "!=",
-                        "value": "1"
-                    }
-                ]
-            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -98,51 +45,6 @@
                 "id": ""
             },
             "return_format": "array"
-        },
-        {
-            "key": "field_6512ec2b71e6d",
-            "label": "Pages",
-            "name": "pages",
-            "aria-label": "",
-            "type": "relationship",
-            "instructions": "Select which pages should display the banner.",
-            "required": 1,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_6512eab0b20d0",
-                        "operator": "==",
-                        "value": "1"
-                    },
-                    {
-                        "field": "field_65ca9cb772e82",
-                        "operator": "!=",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "page",
-                "areas-of-care",
-                "treatment-modalities",
-                "post",
-                "research"
-            ],
-            "post_status": "",
-            "taxonomy": "",
-            "filters": [
-                "search",
-                "post_type"
-            ],
-            "return_format": "id",
-            "min": "",
-            "max": "",
-            "elements": ""
         }
     ],
     "location": [
@@ -163,5 +65,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1707777383
+    "modified": 1736880611
 }

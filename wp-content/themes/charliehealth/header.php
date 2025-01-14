@@ -46,9 +46,14 @@
   <?php
   // Banner
   $enableBanner = get_field('enable_banner', get_the_ID());
+  $enableSitewideBanner = get_field('enable_site_wide', 'option');
 
   if ($enableBanner) {
     $link = get_field('banner_link', get_the_ID());
+    $enableSitewideBanner = false;
+  } elseif ($enableSitewideBanner) {
+    $enableBanner = true;
+    $link = get_field('link', 'option');
   }
 
   // Nav button
