@@ -1,4 +1,4 @@
-<div class="grid grid-cols-2 lg:flex lg:gap-base5-2 gap-base5-4">
+<div class="grid grid-cols-2 lg:flex lg:gap-base5-10 gap-base5-4">
   <?php if (have_rows('images')) :
     while (have_rows('images')) : the_row(); ?>
     <?php 
