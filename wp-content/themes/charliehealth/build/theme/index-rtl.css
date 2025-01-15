@@ -2321,6 +2321,10 @@ a.insurance-tabs.active:hover {
   height: 5px;
 }
 
+.h-\[66vh\]{
+  height: 66vh;
+}
+
 .h-auto{
   height: auto;
 }
@@ -3472,6 +3476,11 @@ a.insurance-tabs.active:hover {
 .bg-yellow-300{
   --tw-bg-opacity: 1;
   background-color: rgb(253 191 124 / var(--tw-bg-opacity, 1));
+}
+
+.bg-grey-deactivated{
+  --tw-bg-opacity: 1;
+  background-color: rgb(135 136 154 / var(--tw-bg-opacity, 1));
 }
 
 .bg-\[linear-gradient\(\#fead80\2c \#e2deca_50\%\2c \#bdc6fc\)\]{
@@ -7165,10 +7174,6 @@ section.bg-shield > div {
 
   .lg\:gap-base5-10{
     gap: 50px;
-  }
-
-  .lg\:gap-base5-2{
-    gap: 10px;
   }
 
   .lg\:gap-base5-4{
