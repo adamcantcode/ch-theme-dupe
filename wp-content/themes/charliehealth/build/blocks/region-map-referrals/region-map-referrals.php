@@ -226,4 +226,4 @@
     <p class="text-center text-white">MAP NOT VISIBLE IN EDITOR</p>
   </div>
 <?php endif; ?>
-<?php switch_to_blog(1); ?>
+<?php restore_current_blog(); ?>
