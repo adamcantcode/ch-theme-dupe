@@ -41,7 +41,7 @@
         } else {
           $altText = 'Headshot of ' . get_the_title($id);
         } ?>
-        <div class="border-2 border-[#EFEFFD] rounded-md justify-items-start gap-sp-1 p-base5-2 outreach-member-js<?= $director ? ' is-director-js' : ''; ?> hover:shadow-lg duration-300 noshow" data-state="<?= $state; ?>">
+        <div class="border-2 border-primary rounded-md justify-items-start gap-sp-1 p-base5-2 outreach-member-js<?= $director ? ' is-director-js' : ''; ?> hover:shadow-lg duration-300 noshow" data-state="<?= $state; ?>">
           <div class="cursor-pointer" data-modal-id="<?= $id; ?>">
             <img src="<?= $headshot['url'] ?? site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="w-full mx-auto rounded-circle mb-sp-4">
             <h4 id="repName" class="underline"><?= get_the_title($id); ?></h4>
