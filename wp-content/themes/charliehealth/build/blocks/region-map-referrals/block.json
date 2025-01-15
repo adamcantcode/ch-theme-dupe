@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "acf/region-map-referrals-block",
+  "title": "Region Map - Referrals",
+  "description": "Outreach map",
+  "style": "file:./index.css",
+  "script": "file:./index.js",
+  "category": "custom",
+  "icon": "admin-site",
+  "apiVersion": 2,
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "region-map-referrals.php"
+  },
+  "supports": {}
+}
