@@ -1,8 +1,8 @@
 <?php switch_to_blog(1); ?>
 
 <div id="map"></div>
-<script type="text/javascript" src="<?= site_url('/wp-content/themes/charliehealth/blocks/region-map/mapdata.js'); ?>"></script>
-<script type="text/javascript" src="<?= site_url('/wp-content/themes/charliehealth/blocks/region-map/usmap.js'); ?>"></script>
+<script type="text/javascript" src="<?= site_url('/wp-content/themes/charliehealth/blocks/region-map-referrals/mapdata.js'); ?>"></script>
+<script type="text/javascript" src="<?= site_url('/wp-content/themes/charliehealth/blocks/region-map-referrals/usmap.js'); ?>"></script>
 <div id="outreachReps" class="my-base5-10">
   <div id="repsContent" class="noshow mb-base5-10">
     <h2></h2>
