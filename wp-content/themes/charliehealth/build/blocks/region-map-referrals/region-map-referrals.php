@@ -43,17 +43,17 @@
         } ?>
         <div class="border-2 border-[#EFEFFD] rounded-md justify-items-start gap-sp-1 p-base5-2 outreach-member-js<?= $director ? ' is-director-js' : ''; ?> hover:shadow-lg duration-300 noshow" data-state="<?= $state; ?>">
           <div class="cursor-pointer" data-modal-id="<?= $id; ?>">
-            <img src="<?= $headshot['url'] ?? site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="rounded-circle mb-sp-4 w-[240px] mx-auto">
+            <img src="<?= $headshot['url'] ?? site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="w-full mx-auto rounded-circle mb-sp-4">
             <h4 id="repName" class="underline"><?= get_the_title($id); ?></h4>
           </div>
-          <h5 class="mb-0"><?= $title; ?></h5>
+          <p class="mb-0"><?= $title; ?></p>
           <?php if ($phone) : ?>
             <a href="tel:+<?= $phone; ?>" class="inline-block no-underline break-all">
-              <h5 class="mb-0"><?= $phone; ?></h5>
+              <p class="mb-0"><?= $phone; ?></p>
             </a>
           <?php endif; ?>
           <a href="mailto:<?= $email; ?>" class="inline-block no-underline break-all">
-            <h5 class="mb-0"><?= $email; ?></h5>
+            <p class="mb-0"><?= $email; ?></p>
           </a>
         </div>
     <?php
@@ -92,18 +92,18 @@ if ($modalQuery->have_posts()) : while ($modalQuery->have_posts()) : $modalQuery
           <div class="grid order-2 gap-sp-8 lg:order-1">
             <div class="grid justify-items-start gap-sp-1">
               <h4 class="mb-0"><?= get_the_title($id); ?></h4>
-              <h5 class="mb-0"><?= $title; ?></h5>
+              <passthru class="mb-0"><?= $title; ?></passthru>
               <?php if ($phone) : ?>
                 <a href="tel:+<?= $phone; ?>" class="no-underline break-all">
-                  <h5 class="mb-0"><?= $phone; ?></h5>
+                  <passthru class="mb-0"><?= $phone; ?></passthru>
                 </a>
               <?php endif; ?>
               <a href="mailto:<?= $email; ?>" class="no-underline break-all">
-                <h5 class="mb-0"><?= $email; ?></h5>
+                <passthru class="mb-0"><?= $email; ?></passthru>
               </a>
               <?php if ($calendly) : ?>
                 <a href="<?= $calendly; ?>" target="_blank" class="">
-                  <h5 class="mb-0">Let's chat</h5>
+                  <passthru class="mb-0">Let's chat</passthru>
                 </a>
               <?php endif; ?>
             </div>
@@ -112,7 +112,7 @@ if ($modalQuery->have_posts()) : while ($modalQuery->have_posts()) : $modalQuery
             <?php endif; ?>
             <?php if ($fact) : ?>
               <div>
-                <h5>Fun Fact</h5>
+                <passthru>Fun Fact</passthru>
                 <p class="mb-0 text-h5"><?= $fact; ?></p>
               </div>
             <?php endif; ?>
