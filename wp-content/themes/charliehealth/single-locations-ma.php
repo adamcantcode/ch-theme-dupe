@@ -281,9 +281,9 @@ $conditions = get_field('conditions');
         <img decoding="async" src="https://www.charliehealth.com/wp-content/uploads/2023/12/Optum_logo_2021.svg" alt="Optum logo" class="object-contain aspect-video" data-uw-rm-alt-original="Optum logo" role="img" data-uw-rm-alt="ALT">
         <img decoding="async" src="https://www.charliehealth.com/wp-content/uploads/2023/12/US-TRICARE-Logo.svg" alt="US Tricare logo" class="object-contain aspect-video" data-uw-rm-alt-original="US Tricare logo" role="img" data-uw-rm-alt="ALT">
       </div>
-      <p class="has-text-align-center mt-sp-8 mb-sp-8 !text-[20px] has-white-color has-text-color has-link-color wp-elements-0244d5b506b018eae908e0511a0b87bd">We proudly partner with many major insurance providers, including commercial and Medicaid</p>
+      <p class="has-text-align-center mt-sp-8 mb-sp-8 !text-[20px] has-white-color has-text-color has-link-color wp-elements-0244d5b506b018eae908e0511a0b87bd">We proudly partner with many major insurance providers, including commercial, Medicaid, and TRICARE</p>
       <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
-        <a href="https://www.charliehealth.com/insurance" class="ch-button button-secondary-ch inverted" target="_self" aria-label="We proudly partner with many major insurance providers, including commercial and Medicaid Learn more" uw-rm-vague-link-id="https://www.charliehealth.com/insurance$learn more" data-uw-rm-vglnk="" data-uw-rm-brl="PR" data-uw-original-href="https://www.charliehealth.com/insurance">Learn more</a>
+        <a href="https://www.charliehealth.com/insurance" class="ch-button button-secondary-ch inverted" target="_self" aria-label="We proudly partner with many major insurance providers, including commercial, Medicaid, and TRICARE" uw-rm-vague-link-id="https://www.charliehealth.com/insurance$learn more" data-uw-rm-vglnk="" data-uw-rm-brl="PR" data-uw-original-href="https://www.charliehealth.com/insurance">Learn more</a>
       </div>
 
     </div>
