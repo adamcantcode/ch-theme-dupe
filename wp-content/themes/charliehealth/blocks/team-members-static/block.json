@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "acf/team-members-static-block",
+  "title": "Team Members List - Referrals",
+  "description": "List of team members and contact info",
+  "style": "file:./index.css",
+  "script": "file:./index.js",
+  "category": "custom",
+  "icon": "admin-site",
+  "apiVersion": 2,
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "team-members-static.php"
+  },
+  "supports": {}
+}

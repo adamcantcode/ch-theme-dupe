@@ -184,6 +184,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/testimonial-review-provider');
   register_block_type(__DIR__ . '/build/blocks/referrals-testimonials-again');
   register_block_type(__DIR__ . '/build/blocks/region-map-referrals');
+  register_block_type(__DIR__ . '/build/blocks/team-members-static');
 }
 add_action('init', 'register_acf_blocks', 5);
 
