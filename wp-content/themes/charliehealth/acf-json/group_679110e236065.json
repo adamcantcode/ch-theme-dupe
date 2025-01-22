@@ -25,6 +25,33 @@
             "rows_per_page": 20,
             "sub_fields": [
                 {
+                    "key": "field_679111d571dc2",
+                    "label": "Headshot",
+                    "name": "headshot",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "preview_size": "medium",
+                    "parent_repeater": "field_679111e971dc3"
+                },
+                {
                     "key": "field_679110e271dbe",
                     "label": "Name",
                     "name": "name",
@@ -69,6 +96,28 @@
                     "parent_repeater": "field_679111e971dc3"
                 },
                 {
+                    "key": "field_6791113e71dc1",
+                    "label": "Phone",
+                    "name": "phone",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 1,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_679111e971dc3"
+                },
+                {
                     "key": "field_6791112771dc0",
                     "label": "Email",
                     "name": "email",
@@ -87,57 +136,6 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "parent_repeater": "field_679111e971dc3"
-                },
-                {
-                    "key": "field_6791113e71dc1",
-                    "label": "Phone",
-                    "name": "phone",
-                    "aria-label": "",
-                    "type": "number",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "min": "",
-                    "max": "",
-                    "allow_in_bindings": 0,
-                    "placeholder": "",
-                    "step": "",
-                    "prepend": "",
-                    "append": "",
-                    "parent_repeater": "field_679111e971dc3"
-                },
-                {
-                    "key": "field_679111d571dc2",
-                    "label": "Headshot",
-                    "name": "headshot",
-                    "aria-label": "",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": "",
-                    "allow_in_bindings": 0,
-                    "preview_size": "medium",
                     "parent_repeater": "field_679111e971dc3"
                 }
             ]
@@ -161,5 +159,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1737560630
+    "modified": 1737561434
 }
