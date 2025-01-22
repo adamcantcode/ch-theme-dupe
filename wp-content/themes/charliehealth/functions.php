@@ -1116,10 +1116,10 @@ function function_name($roles)
 }
 
 // Remove cats
-add_action('init', function () {
-  global $wp_taxonomies;
-  unregister_taxonomy_for_object_type('category', 'post');
-  if (taxonomy_exists('category'))
-    unset($wp_taxonomies['category']);
-  unregister_taxonomy('category');
-});
+// add_action('init', function () {
+//   global $wp_taxonomies;
+//   unregister_taxonomy_for_object_type('category', 'post');
+//   if (taxonomy_exists('category'))
+//     unset($wp_taxonomies['category']);
+//   unregister_taxonomy('category');
+// });
