@@ -84,14 +84,23 @@
   <!-- NOT BLOG -->
   <div id="emptyDiv"></div>
   <?php if ($enableBanner) : ?>
-    <div class="banner-js z-[9999] py-base5-1 w-full bg-yellow-300 flex justify-center items-center fixed<?= is_user_logged_in() && !is_current_user_subscriber() ? ' lg:top-[32px] top-[46px]' : ' top-0'; ?>">
-      <div class="flex-none bg-orange-300 w-sp-2 h-sp-2 rounded-circle ml-sp-5"></div>
-      <a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>" class="inline-block no-underline">
-        <p class="mb-0 leading-normal px-sp-2 font-heading"><?= $link['title']; ?></p>
-      </a>
-      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="none" class="flex-none mr-sp-5">
-        <path d="M11.4419 5.44194C11.686 5.19787 11.686 4.80214 11.4419 4.55806L7.46447 0.580583C7.22039 0.336506 6.82466 0.336506 6.58058 0.580583C6.33651 0.824661 6.33651 1.22039 6.58058 1.46447L10.1161 5L6.58058 8.53553C6.3365 8.77961 6.3365 9.17534 6.58058 9.41942C6.82466 9.6635 7.22039 9.6635 7.46447 9.41942L11.4419 5.44194ZM-5.46392e-08 5.625L11 5.625L11 4.375L5.46392e-08 4.375L-5.46392e-08 5.625Z" fill="#161A3D" />
+    <div class="banner-js z-[9999] w-full fixed bg-yellow-300 <?= is_user_logged_in() && !is_current_user_subscriber() ? ' lg:top-[32px] top-[46px]' : ' top-0'; ?>">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 14 14" class="absolute -translate-y-1/2 cursor-pointer top-1/2 left-base5-5 banner-close-btn">
+        <g fill="#000000" opacity="1">
+          <rect width="1.63633" height="17.4542" x=".34375" y="1.15698" rx=".818166" transform="rotate(-45 .34375 1.15698)" />
+          <rect width="1.63633" height="17.4542" x="12.3418" y=".0661621" rx=".818166" transform="rotate(45 12.3418 .0661621)" />
+        </g>
       </svg>
+      <div class="container">
+        <div class="flex items-center justify-center w-full py-base5-1">
+          <a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>" class="inline-block no-underline">
+            <p class="mb-0 leading-normal px-sp-2 font-heading"><?= $link['title']; ?></p>
+          </a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="none" class="flex-none">
+            <path d="M11.4419 5.44194C11.686 5.19787 11.686 4.80214 11.4419 4.55806L7.46447 0.580583C7.22039 0.336506 6.82466 0.336506 6.58058 0.580583C6.33651 0.824661 6.33651 1.22039 6.58058 1.46447L10.1161 5L6.58058 8.53553C6.3365 8.77961 6.3365 9.17534 6.58058 9.41942C6.82466 9.6635 7.22039 9.6635 7.46447 9.41942L11.4419 5.44194ZM-5.46392e-08 5.625L11 5.625L11 4.375L5.46392e-08 4.375L-5.46392e-08 5.625Z" fill="#161A3D" />
+          </svg>
+        </div>
+      </div>
     </div>
   <?php endif; ?>
   <header class="fixed z-[100] w-screen bg-darker-blue<?= is_user_logged_in() && !is_current_user_subscriber() ? ' lg:top-[32px] top-[46px]' : ' top-0'; ?>">
@@ -279,6 +288,40 @@
   </header>
   <main id="primary" class="site-main mt-[60px] lg:mt-[70px]">
     <script>
+      // Utility functions to manage cookies
+      function setCookie(name, value, hours) {
+        const date = new Date();
+        date.setTime(date.getTime() + hours * 60 * 60 * 1000); // Convert hours to milliseconds
+        const expires = `expires=${date.toUTCString()}`;
+        document.cookie = `${name}=${value}; ${expires}; path=/`;
+      }
+
+      function getCookie(name) {
+        const cookieArr = document.cookie.split(';');
+        for (let i = 0; i < cookieArr.length; i++) {
+          const cookie = cookieArr[i].trim();
+          if (cookie.indexOf(name + '=') === 0) {
+            return cookie.substring(name.length + 1);
+          }
+        }
+        return null;
+      }
+
+      // Function to check if banner should be shown
+      function checkBannerVisibility() {
+        const banner = document.querySelector('.banner-js');
+        const bannerCookie = getCookie('hideBanner');
+
+        if (bannerCookie) {
+          // Hide the banner if the cookie exists
+          if (banner) banner.style.display = 'none';
+        } else {
+          // Show the banner and set up the close button functionality
+          if (banner) banner.style.display = 'block';
+          setupCloseBannerButton();
+        }
+      }
+
       // Function to set the top margin of the header
       function setHeaderMargin() {
         const banner = document.querySelector('.banner-js');
@@ -287,6 +330,8 @@
         if (banner && header) {
           const bannerHeight = banner.offsetHeight;
           header.style.marginTop = `${bannerHeight}px`;
+        } else if (header) {
+          header.style.marginTop = '0px';
         }
       }
 
@@ -303,7 +348,7 @@
         } else if (header && main && tagList) {
           const totalHeight = header.offsetHeight + tagList.offsetHeight;
           main.style.marginTop = `${totalHeight}px`;
-        } else {
+        } else if (header && main) {
           const totalHeight = header.offsetHeight;
           main.style.marginTop = `${totalHeight}px`;
         }
@@ -321,7 +366,6 @@
           const panelHeight = viewportHeight - totalHeight;
           panel.style.height = `${panelHeight}px`;
         } else if (header && panel) {
-
           const totalHeight = header.offsetHeight;
           const viewportHeight = window.innerHeight;
           const panelHeight = viewportHeight - totalHeight;
@@ -329,14 +373,41 @@
         }
       }
 
+      // Function to hide the banner, set a 24-hour cookie, and recalculate margins/heights
+      function closeBanner() {
+        const banner = document.querySelector('.banner-js');
+        if (banner) {
+          banner.style.display = 'none'; // Hide the banner
+          setCookie('hideBanner', 'true', 24); // Set a cookie for 24 hours
+          setHeaderMargin(); // Recalculate margins for the header
+          setMainMargin(); // Recalculate margins for the main element
+          setPanelHeight(); // Recalculate the panel height
+        }
+      }
+
+      // Attach the closeBanner functionality to the close button
+      function setupCloseBannerButton() {
+        const closeButton = document.querySelector('.banner-close-btn'); // Adjust selector as needed
+        if (closeButton) {
+          closeButton.addEventListener('click', closeBanner);
+        }
+      }
+
+      // Initial setup
+      checkBannerVisibility();
       setHeaderMargin();
       setMainMargin();
-      setPanelHeight()
+      setPanelHeight();
 
-      window.addEventListener('load', setHeaderMargin);
-      window.addEventListener('resize', setHeaderMargin);
-      window.addEventListener('load', setMainMargin);
-      window.addEventListener('resize', setMainMargin);
-      window.addEventListener('load', setPanelHeight);
-      window.addEventListener('resize', setPanelHeight);
+      // Recalculate on load and resize
+      window.addEventListener('load', () => {
+        setHeaderMargin();
+        setMainMargin();
+        setPanelHeight();
+      });
+      window.addEventListener('resize', () => {
+        setHeaderMargin();
+        setMainMargin();
+        setPanelHeight();
+      });
     </script>

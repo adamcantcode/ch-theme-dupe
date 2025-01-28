@@ -1700,6 +1700,10 @@ a.insurance-tabs.active:hover {
   left: 15px;
 }
 
+.left-base5-5{
+  left: 25px;
+}
+
 .left-base5-7{
   left: 35px;
 }
@@ -2084,10 +2088,6 @@ a.insurance-tabs.active:hover {
 
 .mr-sp-2{
   margin-right: 0.5rem;
-}
-
-.mr-sp-5{
-  margin-right: 1.25rem;
 }
 
 .mr-sp-6{
