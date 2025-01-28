@@ -270,14 +270,13 @@
   const TRACKING_CONFIG = {
     cookieName: 'tracking_data',
     expirationDays: 365,
-    parameters: ['gclid', 'fbclid', 'ttclid', 'keyword', 'msclkid', 'organicLP'],
+    parameters: ['gclid', 'fbclid', 'ttclid', 'msclkid', 'keyword'],
     dynamicPrefix: 'utm_', // Match any parameter starting with this prefix
   };
 
   // Helper function to get URL parameter value
   const getUrlParameter = (name) => {
     const match = RegExp(`[?&]${name}=([^&]*)`).exec(window.location.search);
-    console.log(match);
     return match ? decodeURIComponent(match[1].replace(/\+/g, ' ')) : null;
   };
 
@@ -353,12 +352,7 @@
   // Get tracking data (decoded object)
   const getTrackingData = (config) => getCookie(config.cookieName) || {};
 
-  // Initialize tracking on page load
-  document.addEventListener('DOMContentLoaded', () => {
-    collectTrackingData(TRACKING_CONFIG);
-  });
-
-  // Example usage:
-  const trackingData = getTrackingData(TRACKING_CONFIG);
+  // Immediately collect and log tracking data
+  const trackingData = collectTrackingData(TRACKING_CONFIG);
   console.log(trackingData);
 </script>
