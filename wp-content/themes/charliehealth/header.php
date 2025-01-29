@@ -84,14 +84,14 @@
   <!-- NOT BLOG -->
   <div id="emptyDiv"></div>
   <?php if ($enableBanner) : ?>
-    <div class="banner-js z-[9999] w-full fixed bg-yellow-300 <?= is_user_logged_in() && !is_current_user_subscriber() ? ' lg:top-[32px] top-[46px]' : ' top-0'; ?>">
-      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 14 14" class="absolute -translate-y-1/2 cursor-pointer top-1/2 lg:left-base5-5 left-base5-1 banner-close-btn">
+    <div class="banner-js z-[9999] w-full fixed bg-primary transition-all <?= is_user_logged_in() && !is_current_user_subscriber() ? ' lg:top-[32px] top-[46px]' : ' top-0'; ?>">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 14 14" class="absolute transition-all -translate-y-1/2 opacity-0 cursor-pointer top-1/2 lg:left-base5-5 left-base5-1 banner-close-btn">
         <g fill="#000000" opacity="1">
           <rect width="1.63633" height="17.4542" x=".34375" y="1.15698" rx=".818166" transform="rotate(-45 .34375 1.15698)" />
           <rect width="1.63633" height="17.4542" x="12.3418" y=".0661621" rx=".818166" transform="rotate(45 12.3418 .0661621)" />
         </g>
       </svg>
-      <div class="container">
+      <div class="container transition-all opacity-0">
         <div class="flex items-center justify-center w-full py-base5-1 lg:px-0 px-base5-4">
           <a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>" class="inline-block no-underline">
             <p class="mb-0 leading-normal px-sp-2 font-heading"><?= $link['title']; ?></p>
@@ -310,6 +310,8 @@
       // Function to check if banner should be shown
       function checkBannerVisibility() {
         const banner = document.querySelector('.banner-js');
+        const bannerSVG = banner.querySelector('.banner-close-btn');
+        const bannerText = banner.querySelector('.container');
         const bannerCookie = getCookie('hideBanner');
 
         if (bannerCookie) {
@@ -317,7 +319,15 @@
           if (banner) banner.style.display = 'none';
         } else {
           // Show the banner and set up the close button functionality
-          if (banner) banner.style.display = 'block';
+          if (banner) {
+            banner.style.display = 'block';
+            setTimeout(() => {
+              banner.classList.remove('bg-primary');
+              banner.classList.add('bg-yellow-300');
+              bannerSVG.classList.remove('opacity-0');
+              bannerText.classList.remove('opacity-0');
+            }, 1000);
+          };
           setupCloseBannerButton();
         }
       }
