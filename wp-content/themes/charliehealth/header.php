@@ -77,7 +77,7 @@
     if (!empty(get_field('client_login', get_the_ID()))) {
       $clientLogin = get_field('client_login', get_the_ID());
     } else {
-      $clientLogin = ['url' => 'https://app.charliehealth.com/', 'target' => '_blank', 'title' => 'Client login'];
+      $clientLogin = ['url' => 'mailto:referrals@charliehealth.com', 'target' => '_self', 'title' => 'Email Us'];
     }
   }
   ?>
@@ -177,10 +177,8 @@
         <?php endwhile;
         endif; ?>
         <div class="flex ml-auto content gap-x-sp-2">
-          <?php if (is_main_site()) : ?>
-            <a href="<?= $clientLogin['url']; ?>" target="<?= $clientLogin['target']; ?>" class="ch-button button-tertiary-lavender inverted !rounded-[6px]"><?= $clientLogin['title']; ?></a>
-          <?php endif; ?>
           <a href="<?= $getStarted['url'] ?>" target="<?= $getStarted['target']; ?>" class="ch-button button-tertiary-lavender !rounded-[6px]"><?= $getStarted['title'] ?></a>
+          <a href="<?= $clientLogin['url']; ?>" target="<?= $clientLogin['target']; ?>" class="ch-button button-tertiary-lavender inverted !rounded-[6px]"><?= $clientLogin['title']; ?></a>
         </div>
       </div>
       <div class="container flex justify-between lg:noshow py-sp-5">
