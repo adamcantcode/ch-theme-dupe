@@ -85,18 +85,18 @@
   <div id="emptyDiv"></div>
   <?php if ($enableBanner) : ?>
     <div class="banner-js z-[9999] w-full fixed bg-yellow-300 <?= is_user_logged_in() && !is_current_user_subscriber() ? ' lg:top-[32px] top-[46px]' : ' top-0'; ?>">
-      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 14 14" class="absolute -translate-y-1/2 cursor-pointer top-1/2 left-base5-5 banner-close-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 14 14" class="absolute -translate-y-1/2 cursor-pointer top-1/2 lg:left-base5-5 left-base5-1 banner-close-btn">
         <g fill="#000000" opacity="1">
           <rect width="1.63633" height="17.4542" x=".34375" y="1.15698" rx=".818166" transform="rotate(-45 .34375 1.15698)" />
           <rect width="1.63633" height="17.4542" x="12.3418" y=".0661621" rx=".818166" transform="rotate(45 12.3418 .0661621)" />
         </g>
       </svg>
       <div class="container">
-        <div class="flex items-center justify-center w-full py-base5-1">
+        <div class="flex items-center justify-center w-full py-base5-1 lg:px-0 px-base5-4">
           <a href="<?= $link['url']; ?>" target="<?= $link['target']; ?>" class="inline-block no-underline">
             <p class="mb-0 leading-normal px-sp-2 font-heading"><?= $link['title']; ?></p>
           </a>
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="none" class="flex-none">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="15" viewBox="0 0 12 10" fill="none" class="flex-none">
             <path d="M11.4419 5.44194C11.686 5.19787 11.686 4.80214 11.4419 4.55806L7.46447 0.580583C7.22039 0.336506 6.82466 0.336506 6.58058 0.580583C6.33651 0.824661 6.33651 1.22039 6.58058 1.46447L10.1161 5L6.58058 8.53553C6.3365 8.77961 6.3365 9.17534 6.58058 9.41942C6.82466 9.6635 7.22039 9.6635 7.46447 9.41942L11.4419 5.44194ZM-5.46392e-08 5.625L11 5.625L11 4.375L5.46392e-08 4.375L-5.46392e-08 5.625Z" fill="#161A3D" />
           </svg>
         </div>
