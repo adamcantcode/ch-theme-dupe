@@ -388,8 +388,8 @@
             const match = cookie.match(/_vis_opt_exp_(\d+)_combi=([^;]+)/);
             if (match && match[1] && match[2]) {
               const experimentNumber = match[1];
-              const experimentValue = match[2];
-              const label = experimentValue === '1' ? 'Control' : 'Variation'; // Determine label
+              const experimentValue = parseInt(match[2], 10); // Convert to integer for comparison
+              const label = experimentValue === 1 ? 'Control' : `Variation ${experimentValue - 1}`; // Adjust label for variations
               experimentDetails.push(`${experimentNumber} - ${label}`); // Format as "number - label"
             }
           });
@@ -414,7 +414,7 @@
         type: 'change-page',
         onFormEvent: function(event) {
           setHiddenFields(form, fieldIds);
-          
+
           return Promise.resolve(event);
         }
       });
