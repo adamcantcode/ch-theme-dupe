@@ -310,8 +310,8 @@
       // Function to check if banner should be shown
       function checkBannerVisibility() {
         const banner = document.querySelector('.banner-js');
-        const bannerSVG = banner.querySelector('.banner-close-btn');
-        const bannerText = banner.querySelector('.container');
+        const bannerSVG = document.querySelector('.banner-close-btn');
+        const bannerText = document.querySelector('.banner-js .container');
         const bannerCookie = getCookie('hideBanner');
 
         if (bannerCookie) {
