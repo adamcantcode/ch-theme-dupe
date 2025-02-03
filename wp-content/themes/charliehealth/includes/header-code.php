@@ -268,7 +268,7 @@
 <script>
   // Configuration of parameters we want to track
   const TRACKING_CONFIG = {
-    cookieName: 'tracking_data',
+    cookieName: '_ch_trkr',
     expirationDays: 365,
     parameters: ['gclid', 'fbclid', 'ttclid', 'msclkid', 'keyword'],
     dynamicPrefix: 'utm_', // Match any parameter starting with this prefix
