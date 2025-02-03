@@ -31,9 +31,14 @@ Template Post Type: page
         onFormEvent: function(event) {
           console.log('Form is ready');
 
-          // Get query parameter values
-          var organization = getQueryParam('What_is_your_organization');
-          var accountID = getQueryParam('RS_Account_ID');
+          // Hard code ipad accounts
+          if (window.location.pathname.includes('/memorial-hermann-medical-center')) {
+            var organization = 'Memorial_Hermann_-_TMC_(Adult)';
+            var accountID = '0015e00000NXWyoAAH';
+          } else if (window.location.pathname.includes('/memorial-hermann-katy-hospital')) {
+            var organization = 'Memorial_Hermann_Katy_Hospital';
+            var accountID = '0015e00000icrkPAAQ';
+          }
 
           // Get form fields
           const organizationField = form.getField('178370347'); // Field for What_is_your_organization

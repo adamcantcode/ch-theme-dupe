@@ -1696,6 +1696,10 @@ a.insurance-tabs.active:hover {
   right: 50%;
 }
 
+.left-base5-1{
+  right: 5px;
+}
+
 .left-base5-3{
   right: 15px;
 }
@@ -2086,10 +2090,6 @@ a.insurance-tabs.active:hover {
   margin-left: 0.5rem;
 }
 
-.mr-sp-5{
-  margin-left: 1.25rem;
-}
-
 .mr-sp-6{
   margin-left: 1.5rem;
 }
@@ -2349,10 +2349,6 @@ a.insurance-tabs.active:hover {
   height: 4rem;
 }
 
-.h-sp-2{
-  height: 0.5rem;
-}
-
 .h-sp-3{
   height: 0.75rem;
 }
@@ -2520,10 +2516,6 @@ a.insurance-tabs.active:hover {
 
 .w-screen{
   width: 100vw;
-}
-
-.w-sp-2{
-  width: 0.5rem;
 }
 
 .w-sp-3{
@@ -5730,9 +5722,9 @@ a.providers:hover {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
-.wp-block-heading mark:not(.has-inline-color.has-lavender-300-color),
-.wp-block-heading mark:not(.has-inline-color.has-pale-blue-200-color),
-.wp-block-heading mark:not(.has-inline-color.has-yellow-300-color){
+mark:not(.has-inline-color.has-lavender-300-color),
+mark:not(.has-inline-color.has-pale-blue-200-color),
+mark:not(.has-inline-color.has-yellow-300-color){
   border-radius: 6px;
   -webkit-box-decoration-break: clone;
           box-decoration-break: clone;
@@ -5745,8 +5737,12 @@ a.providers:hover {
 
   background: linear-gradient(to left, transparent, transparent),
     linear-gradient(to left, #1d225f, #1d225f);
-  background-size: 100% 2px, 0 2px;
-  background-position: 0% 100%, 100% 100%;
+  background-size:
+    100% 2px,
+    0 2px;
+  background-position:
+    0% 100%,
+    100% 100%;
   background-repeat: no-repeat;
   transition: background-size 700ms;
   display: inline;
@@ -5754,7 +5750,9 @@ a.providers:hover {
 
 .toc-underline:hover,
   .toc-underline .active {
-    background-size: 0 2px, 100% 2px;
+    background-size:
+      0 2px,
+      100% 2px;
   }
 
 .toggle-button:not(.button-primary-ch){

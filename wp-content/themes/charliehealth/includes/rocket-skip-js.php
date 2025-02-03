@@ -181,4 +181,12 @@
       }
     });
   }
+  var marks = document.querySelectorAll('mark.has-inline-color');
+
+  marks.forEach(function(mark) {
+    if (mark.style.backgroundColor === 'rgba(0, 0, 0, 0)') {
+      mark.style.paddingLeft = '0';
+      mark.style.paddingRight = '0';
+    }
+  });
 </script>
