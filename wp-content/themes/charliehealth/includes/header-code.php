@@ -538,7 +538,7 @@
     const initTracking = (config) => {
       // Collect and log tracking data
       const trackingData = collectTrackingData(config);
-      console.log('Tracking Data:', trackingData);
+      // console.log('Tracking Data:', trackingData);
 
       // Optional: Return tracking data for further use
       return trackingData;
