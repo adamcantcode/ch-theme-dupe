@@ -265,6 +265,146 @@
 </script>
 <!-- Formstack END -->
 
+<!-- FS + Off-label -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+
+    const existingCookies = ['gclid', 'fbclid', 'utm_campaign', 'keyword', 'msclkid', 'ttclid'];
+    const searchEngines = ['google.com', 'bing.com', 'yahoo.com', 'duckduckgo.com', 'ecosia.org'];
+    let cookies = false;
+    let params = false;
+
+    if (window.location.search !== '') {
+      params = true;
+    }
+
+    existingCookies.forEach(cookie => {
+      if (document.cookie.indexOf(cookie + '=') > -1) {
+        cookies = true;
+      }
+    });
+
+    function waitForCookie(name, callback) {
+      const intervalId = setInterval(() => {
+        const cookieValue = getCookie(name);
+        if (cookieValue) {
+          clearInterval(intervalId);
+          callback(cookieValue);
+        }
+      }, 1000);
+    }
+
+    function getCookie(name) {
+      const cookieValue = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+      return cookieValue ? cookieValue.pop() : '';
+    }
+
+    waitForCookie('FSAC', cookieValue => {
+      if (!cookies && !params) {
+        searchEngines.forEach(engine => {
+          if (document.referrer.includes(engine)) {
+            var niceName = engine.split('.');
+            var myCookieValue = getCookie('FSAC');
+            var values = myCookieValue.split('utm');
+            document.cookie = 'FSAC=' + values[0] + 'utmcsr%3D' + niceName[0] + ' organic' + '%7Cutmccn%3D(not set)%7Cutmcmd%3Dorganic; path=/; domain=charliehealth.com';
+            document.cookie = 'organicLP=' + window.location + ';path=/;domain=charliehealth.com';
+            return;
+          }
+        });
+        if (!searchEngines.some(searchEngine => document.referrer.includes(searchEngine))) {
+          if (document.referrer !== '' && !document.referrer.includes('charliehealth.com')) {
+            var source = document.referrer;
+            var myCookieValue = getCookie('FSAC');
+            var values = myCookieValue.split('utm');
+            document.cookie = 'FSAC=' + values[0] + 'utmcsr%3D' + source + '%7Cutmccn%3D(not set)%7Cutmcmd%3Dreferral; path=/; domain=charliehealth.com';
+          }
+        }
+      }
+    });
+
+    function setHiddenFields(form, fieldIds) {
+      if (document.cookie.indexOf('organicLP=') > -1 && !params) {
+        form.getField(fieldIds.organicLP).setValue(getCookie('organicLP'));
+      }
+      if (document.cookie.indexOf('fbclid=') > -1) {
+        form.getField(fieldIds.fbclid).setValue(getCookie('fbclid'));
+      }
+      if (document.cookie.indexOf('msclkid=') > -1) {
+        form.getField(fieldIds.msclkid).setValue(getCookie('msclkid'));
+      }
+      if (document.cookie.indexOf('ttclid=') > -1) {
+        form.getField(fieldIds.ttclid).setValue(getCookie('ttclid'));
+      }
+      fetch('https://api.ipify.org/?format=json')
+        .then(results => results.json())
+        .then(data => {
+          form.getField(fieldIds.userIP).setValue(data.ip);
+        });
+      form.getField(fieldIds.fbp).setValue(getCookie('_fbp'));
+      form.getField(fieldIds.userAgent).setValue(window.navigator.userAgent);
+      form.getField(fieldIds.userJourney).setValue(sessionStorage.getItem('user_journey_'));
+
+      // VWO Test Version
+      waitForCookie('_vis_opt_test_cookie', cookieValue => {
+        // Function to get experiment details from cookies
+        function getExperimentDetailsFromCookies() {
+          const experimentDetails = [];
+          const cookies = document.cookie.split('; '); // Split the cookie string into individual cookies
+
+          cookies.forEach(cookie => {
+            const match = cookie.match(/_vis_opt_exp_(\d+)_combi=([^;]+)/);
+            if (match && match[1] && match[2]) {
+              const experimentNumber = match[1];
+              const experimentValue = parseInt(match[2], 10); // Convert to integer for comparison
+              const label = experimentValue === 1 ? 'Control' : `Variation ${experimentValue - 1}`; // Adjust label for variations
+              experimentDetails.push(`${experimentNumber} - ${label}`); // Format as "number - label"
+            }
+          });
+
+          return experimentDetails;
+        }
+
+        const experimentDetails = getExperimentDetailsFromCookies(); // Get experiment details
+
+        // Convert the array to a string
+        const detailsString = experimentDetails.join(' & ');
+
+        form.getField(fieldIds.vwoTestVersion).setValue(detailsString);
+      });
+
+    }
+
+    function initializeForm(formId, fieldIds) {
+      formId = document.querySelector('form').id.replace(/^fsForm/, '');
+      var form = window.fsApi().getForm(formId);
+      form.registerFormEventListener({
+        type: 'change-page',
+        onFormEvent: function(event) {
+          setHiddenFields(form, fieldIds);
+
+          return Promise.resolve(event);
+        }
+      });
+    }
+
+    // If form page
+    if (window.location.href.indexOf('/form') > -1) {
+      initializeForm('5700521', {
+        organicLP: '162592063',
+        fbclid: '162592064',
+        ttclid: '175898270',
+        msclkid: '163156163',
+        userIP: '163080837',
+        fbp: '162592065',
+        userAgent: '163080841',
+        vwoTestVersion: '166107526',
+        userJourney: '174755950'
+      });
+    }
+  });
+</script>
+<!-- FS + Off-label END -->
+<!-- CH Attribution-->
 <script>
   // Configuration of parameters we want to track
   const TRACKING_CONFIG = {
@@ -374,3 +514,4 @@
   // Immediately initialize tracking when script loads
   const initialTrackingData = initTracking(TRACKING_CONFIG);
 </script>
+<!-- CH Attribution END -->
