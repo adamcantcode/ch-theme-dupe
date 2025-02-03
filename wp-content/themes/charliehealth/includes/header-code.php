@@ -285,18 +285,26 @@
     const expires = new Date();
     expires.setTime(expires.getTime() + expirationDays * 24 * 60 * 60 * 1000);
 
-    const encodedData = btoa(JSON.stringify(data));
-    document.cookie = `${name}=${encodedData}; expires=${expires.toUTCString()}; path=/`;
+    try {
+      const encodedData = encodeURIComponent(JSON.stringify(data));
+      document.cookie = `${name}=${encodedData}; expires=${expires.toUTCString()}; path=/; SameSite=Lax`;
+    } catch (error) {
+      console.error('Error setting cookie:', error);
+    }
   };
 
   // Helper function to get a cookie's value
   const getCookie = (name) => {
-    const match = document.cookie.match(new RegExp(`${name}=([^;]+)`));
-    if (match) {
+    const cookieMatch = document.cookie
+      .split('; ')
+      .find(row => row.startsWith(`${name}=`));
+
+    if (cookieMatch) {
       try {
-        return JSON.parse(atob(match[1]));
-      } catch (e) {
-        console.error('Error decoding cookie:', e);
+        const cookieValue = cookieMatch.split('=')[1];
+        return JSON.parse(decodeURIComponent(cookieValue));
+      } catch (error) {
+        console.error('Error parsing cookie:', error);
         return null;
       }
     }
@@ -312,14 +320,14 @@
   const collectTrackingData = (config) => {
     const existingData = getCookie(config.cookieName) || {};
     const allUrlParams = getAllUrlParameters();
-    let hasNewData = false;
+    let dataUpdated = false;
 
     // Update data with explicitly defined parameters
     config.parameters.forEach((param) => {
       const value = allUrlParams[param];
       if (value && existingData[param] !== value) {
         existingData[param] = value;
-        hasNewData = true;
+        dataUpdated = true;
       }
     });
 
@@ -330,19 +338,18 @@
         existingData[param] !== allUrlParams[param]
       ) {
         existingData[param] = allUrlParams[param];
-        hasNewData = true;
+        dataUpdated = true;
       }
     });
 
     // Add referrer if not already present
     if (!existingData.referrer && document.referrer) {
       existingData.referrer = document.referrer;
-      hasNewData = true;
+      dataUpdated = true;
     }
 
-    // Add last updated timestamp if there's new data
-    if (hasNewData) {
-      existingData.lastUpdated = new Date().toISOString();
+    // Only set cookie if data has been updated
+    if (dataUpdated) {
       setCookie(config.cookieName, existingData, config.expirationDays);
     }
 
@@ -350,9 +357,20 @@
   };
 
   // Get tracking data (decoded object)
-  const getTrackingData = (config) => getCookie(config.cookieName) || {};
+  const getTrackingData = (config) => {
+    return getCookie(config.cookieName) || {};
+  };
 
-  // Immediately collect and log tracking data
-  const trackingData = collectTrackingData(TRACKING_CONFIG);
-  console.log(trackingData);
+  // Function to initialize tracking
+  const initTracking = (config) => {
+    // Collect and log tracking data
+    const trackingData = collectTrackingData(config);
+    console.log('Tracking Data:', trackingData);
+
+    // Optional: Return tracking data for further use
+    return trackingData;
+  };
+
+  // Immediately initialize tracking when script loads
+  const initialTrackingData = initTracking(TRACKING_CONFIG);
 </script>
