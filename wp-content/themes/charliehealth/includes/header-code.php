@@ -428,7 +428,7 @@
 
       try {
         const encodedData = encodeURIComponent(JSON.stringify(data));
-        document.cookie = `${name}=${encodedData}; expires=${expires.toUTCString()}; path=/; SameSite=Lax`;
+        document.cookie = `${name}=${encodedData}; expires=${expires.toUTCString()}; path=/; domain=.charliehealth.com; SameSite=Lax`;
       } catch (error) {
         console.error('Error setting cookie:', error);
       }
