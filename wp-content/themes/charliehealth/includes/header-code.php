@@ -456,6 +456,25 @@
     return Object.fromEntries(new URLSearchParams(window.location.search));
   };
 
+  // Function to get VWO experiment details
+  const getVWOCookieDetails = () => {
+    const experimentDetails = [];
+    const cookies = document.cookie.split('; ');
+
+    cookies.forEach(cookie => {
+      const match = cookie.match(/_vis_opt_exp_(\d+)_combi=([^;]+)/);
+
+      if (match && match[1] && match[2]) {
+        const experimentNumber = match[1];
+        const experimentValue = parseInt(match[2], 10);
+        const label = experimentValue === 1 ? 'Control' : `Variation ${experimentValue - 1}`;
+        experimentDetails.push(`${experimentNumber} - ${label}`);
+      }
+    });    
+
+    return experimentDetails.join(' & '); // Format as "123 - Variation 1 & 456 - Control"
+  };
+
   // Collect tracking data and update the cookie
   const collectTrackingData = (config) => {
     const existingData = getCookie(config.cookieName) || {};
@@ -496,6 +515,13 @@
     let currentUrl = window.location.href;
     if (existingData.user_journey[existingData.user_journey.length - 1] !== currentUrl) {
       existingData.user_journey.push(currentUrl);
+      dataUpdated = true;
+    }
+
+    // Track VWO test version
+    const vwoTestVersion = getVWOCookieDetails();
+    if (vwoTestVersion && existingData.vwo_test_version !== vwoTestVersion) {
+      existingData.vwo_test_version = vwoTestVersion;
       dataUpdated = true;
     }
 
