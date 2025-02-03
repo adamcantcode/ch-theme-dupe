@@ -410,7 +410,7 @@
   const TRACKING_CONFIG = {
     cookieName: '_ch_trkr',
     expirationDays: 365,
-    parameters: ['gclid', 'fbclid', 'ttclid', 'msclkid', 'keyword'],
+    parameters: ['gclid', 'fbclid', 'ttclid', 'msclkid', 'keyword', 'vwo_test_version', 'user_journey'],
     dynamicPrefix: 'utm_', // Match any parameter starting with this prefix
   };
 
@@ -485,6 +485,17 @@
     // Add referrer if not already present
     if (!existingData.referrer && document.referrer) {
       existingData.referrer = document.referrer;
+      dataUpdated = true;
+    }
+
+    // Track user journey (array of visited URLs)
+    if (!Array.isArray(existingData.user_journey)) {
+      existingData.user_journey = [];
+    }
+
+    let currentUrl = window.location.href;
+    if (existingData.user_journey[existingData.user_journey.length - 1] !== currentUrl) {
+      existingData.user_journey.push(currentUrl);
       dataUpdated = true;
     }
 
