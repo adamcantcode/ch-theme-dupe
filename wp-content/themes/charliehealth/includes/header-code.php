@@ -406,149 +406,147 @@
 <!-- FS + Off-label END -->
 <!-- CH Attribution-->
 <script>
-  // Configuration of parameters we want to track
-  const TRACKING_CONFIG = {
-    cookieName: '_ch_trkr',
-    expirationDays: 365,
-    parameters: ['gclid', 'fbclid', 'ttclid', 'msclkid', 'keyword', 'vwo_test_version', 'user_journey'],
-    dynamicPrefix: 'utm_', // Match any parameter starting with this prefix
-  };
+  (() => {
+    // Configuration of parameters we want to track
+    const TRACKING_CONFIG = {
+      cookieName: '_ch_trkr',
+      expirationDays: 365,
+      parameters: ['gclid', 'fbclid', 'ttclid', 'msclkid', 'keyword', 'vwo_test_version', 'user_journey'],
+      dynamicPrefix: 'utm_', // Match any parameter starting with this prefix
+    };
 
-  // Helper function to get URL parameter value
-  const getUrlParameter = (name) => {
-    const match = RegExp(`[?&]${name}=([^&]*)`).exec(window.location.search);
-    return match ? decodeURIComponent(match[1].replace(/\+/g, ' ')) : null;
-  };
+    // Helper function to get URL parameter value
+    const getUrlParameter = (name) => {
+      const match = RegExp(`[?&]${name}=([^&]*)`).exec(window.location.search);
+      return match ? decodeURIComponent(match[1].replace(/\+/g, ' ')) : null;
+    };
 
-  // Helper function to set a cookie
-  const setCookie = (name, data, expirationDays) => {
-    const expires = new Date();
-    expires.setTime(expires.getTime() + expirationDays * 24 * 60 * 60 * 1000);
+    // Helper function to set a cookie
+    const setCookie = (name, data, expirationDays) => {
+      const expires = new Date();
+      expires.setTime(expires.getTime() + expirationDays * 24 * 60 * 60 * 1000);
 
-    try {
-      const encodedData = encodeURIComponent(JSON.stringify(data));
-      document.cookie = `${name}=${encodedData}; expires=${expires.toUTCString()}; path=/; SameSite=Lax`;
-    } catch (error) {
-      console.error('Error setting cookie:', error);
-    }
-  };
-
-  // Helper function to get a cookie's value
-  const getCookie = (name) => {
-    const cookieMatch = document.cookie
-      .split('; ')
-      .find(row => row.startsWith(`${name}=`));
-
-    if (cookieMatch) {
       try {
-        const cookieValue = cookieMatch.split('=')[1];
-        return JSON.parse(decodeURIComponent(cookieValue));
+        const encodedData = encodeURIComponent(JSON.stringify(data));
+        document.cookie = `${name}=${encodedData}; expires=${expires.toUTCString()}; path=/; SameSite=Lax`;
       } catch (error) {
-        console.error('Error parsing cookie:', error);
-        return null;
+        console.error('Error setting cookie:', error);
       }
-    }
-    return null;
-  };
+    };
 
-  // Helper function to collect all URL parameters
-  const getAllUrlParameters = () => {
-    return Object.fromEntries(new URLSearchParams(window.location.search));
-  };
+    // Helper function to get a cookie's value
+    const getCookie = (name) => {
+      const cookieMatch = document.cookie
+        .split('; ')
+        .find(row => row.startsWith(`${name}=`));
 
-  // Function to get VWO experiment details
-  const getVWOCookieDetails = () => {
-    const experimentDetails = [];
-    const cookies = document.cookie.split('; ');
-
-    cookies.forEach(cookie => {
-      const match = cookie.match(/_vis_opt_exp_(\d+)_combi=([^;]+)/);
-
-      if (match && match[1] && match[2]) {
-        const experimentNumber = match[1];
-        const experimentValue = parseInt(match[2], 10);
-        const label = experimentValue === 1 ? 'Control' : `Variation ${experimentValue - 1}`;
-        experimentDetails.push(`${experimentNumber} - ${label}`);
+      if (cookieMatch) {
+        try {
+          const cookieValue = cookieMatch.split('=')[1];
+          return JSON.parse(decodeURIComponent(cookieValue));
+        } catch (error) {
+          console.error('Error parsing cookie:', error);
+          return null;
+        }
       }
-    });    
+      return null;
+    };
 
-    return experimentDetails.join(' & '); // Format as "123 - Variation 1 & 456 - Control"
-  };
+    // Helper function to collect all URL parameters
+    const getAllUrlParameters = () => {
+      return Object.fromEntries(new URLSearchParams(window.location.search));
+    };
 
-  // Collect tracking data and update the cookie
-  const collectTrackingData = (config) => {
-    const existingData = getCookie(config.cookieName) || {};
-    const allUrlParams = getAllUrlParameters();
-    let dataUpdated = false;
+    // Function to get VWO experiment details
+    const getVWOCookieDetails = () => {
+      const experimentDetails = [];
+      const cookies = document.cookie.split('; ');
 
-    // Update data with explicitly defined parameters
-    config.parameters.forEach((param) => {
-      const value = allUrlParams[param];
-      if (value && existingData[param] !== value) {
-        existingData[param] = value;
+      cookies.forEach(cookie => {
+        const match = cookie.match(/_vis_opt_exp_(\d+)_combi=([^;]+)/);
+
+        if (match && match[1] && match[2]) {
+          const experimentNumber = match[1];
+          const experimentValue = parseInt(match[2], 10);
+          const label = experimentValue === 1 ? 'Control' : `Variation ${experimentValue - 1}`;
+          experimentDetails.push(`${experimentNumber} - ${label}`);
+        }
+      });
+
+      return experimentDetails.join(' & '); // Format as "123 - Variation 1 & 456 - Control"
+    };
+
+    // Collect tracking data and update the cookie
+    const collectTrackingData = (config) => {
+      const existingData = getCookie(config.cookieName) || {};
+      const allUrlParams = getAllUrlParameters();
+      let dataUpdated = false;
+
+      // Update data with explicitly defined parameters
+      config.parameters.forEach((param) => {
+        const value = allUrlParams[param];
+        if (value && existingData[param] !== value) {
+          existingData[param] = value;
+          dataUpdated = true;
+        }
+      });
+
+      // Dynamically include all parameters starting with the configured prefix
+      Object.keys(allUrlParams).forEach((param) => {
+        if (
+          param.startsWith(config.dynamicPrefix) &&
+          existingData[param] !== allUrlParams[param]
+        ) {
+          existingData[param] = allUrlParams[param];
+          dataUpdated = true;
+        }
+      });
+
+      // Add referrer if not already present
+      if (!existingData.referrer && document.referrer) {
+        existingData.referrer = document.referrer;
         dataUpdated = true;
       }
-    });
 
-    // Dynamically include all parameters starting with the configured prefix
-    Object.keys(allUrlParams).forEach((param) => {
-      if (
-        param.startsWith(config.dynamicPrefix) &&
-        existingData[param] !== allUrlParams[param]
-      ) {
-        existingData[param] = allUrlParams[param];
+      // Track user journey (array of visited URLs)
+      if (!Array.isArray(existingData.user_journey)) {
+        existingData.user_journey = [];
+      }
+
+      let currentUrl = window.location.href;
+      if (existingData.user_journey[existingData.user_journey.length - 1] !== currentUrl) {
+        existingData.user_journey.push(currentUrl);
         dataUpdated = true;
       }
-    });
 
-    // Add referrer if not already present
-    if (!existingData.referrer && document.referrer) {
-      existingData.referrer = document.referrer;
-      dataUpdated = true;
-    }
+      // Track VWO test version
+      const vwoTestVersion = getVWOCookieDetails();
+      if (vwoTestVersion && existingData.vwo_test_version !== vwoTestVersion) {
+        existingData.vwo_test_version = vwoTestVersion;
+        dataUpdated = true;
+      }
 
-    // Track user journey (array of visited URLs)
-    if (!Array.isArray(existingData.user_journey)) {
-      existingData.user_journey = [];
-    }
+      // Only set cookie if data has been updated
+      if (dataUpdated) {
+        setCookie(config.cookieName, existingData, config.expirationDays);
+      }
 
-    let currentUrl = window.location.href;
-    if (existingData.user_journey[existingData.user_journey.length - 1] !== currentUrl) {
-      existingData.user_journey.push(currentUrl);
-      dataUpdated = true;
-    }
+      return existingData;
+    };
 
-    // Track VWO test version
-    const vwoTestVersion = getVWOCookieDetails();
-    if (vwoTestVersion && existingData.vwo_test_version !== vwoTestVersion) {
-      existingData.vwo_test_version = vwoTestVersion;
-      dataUpdated = true;
-    }
+    // Function to initialize tracking
+    const initTracking = (config) => {
+      // Collect and log tracking data
+      const trackingData = collectTrackingData(config);
+      console.log('Tracking Data:', trackingData);
 
-    // Only set cookie if data has been updated
-    if (dataUpdated) {
-      setCookie(config.cookieName, existingData, config.expirationDays);
-    }
+      // Optional: Return tracking data for further use
+      return trackingData;
+    };
 
-    return existingData;
-  };
+    // Immediately initialize tracking when script loads
+    const initialTrackingData = initTracking(TRACKING_CONFIG);
 
-  // Get tracking data (decoded object)
-  const getTrackingData = (config) => {
-    return getCookie(config.cookieName) || {};
-  };
-
-  // Function to initialize tracking
-  const initTracking = (config) => {
-    // Collect and log tracking data
-    const trackingData = collectTrackingData(config);
-    console.log('Tracking Data:', trackingData);
-
-    // Optional: Return tracking data for further use
-    return trackingData;
-  };
-
-  // Immediately initialize tracking when script loads
-  const initialTrackingData = initTracking(TRACKING_CONFIG);
+  })();
 </script>
 <!-- CH Attribution END -->
