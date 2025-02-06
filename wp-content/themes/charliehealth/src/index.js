@@ -23,6 +23,7 @@ import stickyCTA from './modules/sticky-cta';
 import fadeUpIn from './modules/fade-up-in';
 import careersTracking from './modules/careers-tracking';
 import userPagesTracker from './modules/user-pages-tracker';
+import linkedInCTATracker from './modules/linkedin-cta-tracker';
 
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
@@ -84,18 +85,13 @@ document.addEventListener('DOMContentLoaded', () => {
   ) {
     fadeUpIn();
   }
-  // if (document.querySelector('meta[property="og:title"]').content === 'hp1') {
-  //   stickyCTA();
-  // }
   /**
    * needs to load last (or at least after TOC) in order for all links to be scrollable
    */
   anchorScroll();
 
   if (window.location.pathname.startsWith('/careers')) {
-    // if (!window.location.pathname.endsWith('openings')) {
     careersTracking();
-    // }
   }
 
   if (window.location.href.includes('#form')) {
@@ -104,5 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 1000);
   }
 
+  linkedInCTATracker();
   userPagesTracker();
 });

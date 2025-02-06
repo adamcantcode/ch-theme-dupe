@@ -1195,6 +1195,35 @@ function featuredBlogSlider() {
 
 /***/ }),
 
+/***/ "./src/modules/linkedin-cta-tracker.js":
+/*!*********************************************!*\
+  !*** ./src/modules/linkedin-cta-tracker.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ linkedInCTATracker)
+/* harmony export */ });
+function linkedInCTATracker() {
+  document.addEventListener('click', event => {
+    const link = event.target.closest('a');
+    if (!link || !link.href) return;
+    const {
+      hostname,
+      pathname
+    } = new URL(link.href);
+    if (hostname.includes('referrals.charliehealth') && (pathname.includes('/referrals') || pathname.includes('/referral-form'))) {
+      window.lintrk('track', {
+        conversion_id: 21227033
+      });
+    }
+  });
+}
+
+/***/ }),
+
 /***/ "./src/modules/mobile-cats.js":
 /*!************************************!*\
   !*** ./src/modules/mobile-cats.js ***!
@@ -23761,6 +23790,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_fade_up_in__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./modules/fade-up-in */ "./src/modules/fade-up-in.js");
 /* harmony import */ var _modules_careers_tracking__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./modules/careers-tracking */ "./src/modules/careers-tracking.js");
 /* harmony import */ var _modules_user_pages_tracker__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./modules/user-pages-tracker */ "./src/modules/user-pages-tracker.js");
+/* harmony import */ var _modules_linkedin_cta_tracker__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./modules/linkedin-cta-tracker */ "./src/modules/linkedin-cta-tracker.js");
+
 
 
 
@@ -23838,23 +23869,19 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.querySelector('section .acf-innerblocks-container .fade-up-in')) {
     (0,_modules_fade_up_in__WEBPACK_IMPORTED_MODULE_21__["default"])();
   }
-  // if (document.querySelector('meta[property="og:title"]').content === 'hp1') {
-  //   stickyCTA();
-  // }
   /**
    * needs to load last (or at least after TOC) in order for all links to be scrollable
    */
   (0,_modules_anchor_scroll__WEBPACK_IMPORTED_MODULE_4__["default"])();
   if (window.location.pathname.startsWith('/careers')) {
-    // if (!window.location.pathname.endsWith('openings')) {
     (0,_modules_careers_tracking__WEBPACK_IMPORTED_MODULE_22__["default"])();
-    // }
   }
   if (window.location.href.includes('#form')) {
     setTimeout(() => {
       document.getElementById('form').scrollIntoView();
     }, 1000);
   }
+  (0,_modules_linkedin_cta_tracker__WEBPACK_IMPORTED_MODULE_24__["default"])();
   (0,_modules_user_pages_tracker__WEBPACK_IMPORTED_MODULE_23__["default"])();
 });
 })();
