@@ -21,6 +21,7 @@
   <?php if (!is_admin()) : ?>
     <?php
     // Query for 'testimonial' posts
+    // Query for 'testimonial' posts
     $args_testimonial = array(
       'post_type'      => 'testimonial',
       'post_status'    => 'publish',
@@ -36,6 +37,7 @@
     );
     $query_partner_testimonial = new WP_Query($args_partner_testimonial);
 
+    $featured_rows = array();
     $testimonial_rows = array();
     $partner_testimonial_rows = array();
 
@@ -43,13 +45,19 @@
     if ($query_testimonial->have_posts()) :
       while ($query_testimonial->have_posts()) : $query_testimonial->the_post();
         $id = get_the_ID();
-        $testimonial_rows[] = array(
+        $data = array(
           'name'       => get_field('attribution', $id) ?: get_the_title($id),
           'title'      => get_field('title', $id),
           'pull-quote' => get_field('pull-quote', $id),
           'full_quote' => get_field('full_quote', $id),
           'type'       => get_post_type($id),
         );
+
+        if (get_field('feature_on_reviews_page', $id)) {
+          $featured_rows[] = $data;
+        } else {
+          $testimonial_rows[] = $data;
+        }
       endwhile;
     endif;
 
@@ -57,17 +65,23 @@
     if ($query_partner_testimonial->have_posts()) :
       while ($query_partner_testimonial->have_posts()) : $query_partner_testimonial->the_post();
         $id = get_the_ID();
-        $partner_testimonial_rows[] = array(
+        $data = array(
           'name'       => get_field('attribution', $id) ?: get_the_title($id),
           'title'      => get_field('title', $id),
           'pull-quote' => get_field('pull-quote', $id),
           'full_quote' => get_field('full_quote', $id),
           'type'       => get_post_type($id),
         );
+
+        if (get_field('feature_on_reviews_page', $id)) {
+          $featured_rows[] = $data;
+        } else {
+          $partner_testimonial_rows[] = $data;
+        }
       endwhile;
     endif;
 
-    // Shuffle both arrays to randomize order within each post type
+    // Shuffle the non-featured arrays
     shuffle($testimonial_rows);
     shuffle($partner_testimonial_rows);
 
@@ -78,7 +92,6 @@
     $max_count = max($testimonial_count, $partner_count);
 
     for ($i = 0; $i < $max_count; $i++) {
-      // Alternate between the two arrays if there's an item available in either
       if (isset($testimonial_rows[$i])) {
         $merged_rows[] = $testimonial_rows[$i];
       }
@@ -87,15 +100,16 @@
       }
     }
 
-    // Shuffle the merged array to randomize final order
-    shuffle($merged_rows);
+    // Final output: Featured testimonials first, then shuffled non-featured
+    $final_rows = array_merge($featured_rows, $merged_rows);
+
     ?>
 
-    <?php if (!empty($merged_rows)) : ?>
+    <?php if (!empty($final_rows)) : ?>
       <div class="masonry-js">
         <div class="lg:w-[calc(50%-16px)] opacity-0 scale-95 w-full grid-sizer"></div>
         <?php $count = 0; ?>
-        <?php foreach ($merged_rows as $row) : ?>
+        <?php foreach ($final_rows as $row) : ?>
           <?php
           $count++;
 
