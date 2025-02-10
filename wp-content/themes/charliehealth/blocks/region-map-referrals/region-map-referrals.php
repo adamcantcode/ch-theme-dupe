@@ -42,7 +42,7 @@
             $altText = 'Headshot of ' . get_the_title($id);
           } ?>
           <div class="border-2 border-primary rounded-md justify-items-start gap-sp-1 p-base5-2 outreach-member-js<?= $director ? ' is-director-js' : ''; ?> hover:shadow-lg duration-300 noshow" data-state="<?= $state; ?>">
-            <div class="cursor-pointer" data-modal-id="<?= $id; ?>">
+            <div data-modal-id="<?= $id; ?>">
               <img src="<?= $headshot['url'] ?? site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="w-full mx-auto rounded-circle mb-sp-4">
               <h4 id="repName" class="underline"><?= get_the_title($id); ?></h4>
             </div>
@@ -59,75 +59,9 @@
       <?php
         endwhile;
         wp_reset_postdata();
-      else :
-        echo 'No posts found.';
       endif; ?>
     </div>
   </div>
-  <?php
-  $modalQuery = new WP_Query($args);
-
-  if ($modalQuery->have_posts()) : while ($modalQuery->have_posts()) : $modalQuery->the_post();
-      $id       = get_the_ID();
-      $title    = get_field('title', $id);
-      $state    = get_field('state', $id);
-      $phone    = get_field('phone', $id);
-      $email    = get_field('email', $id);
-      $calendly = get_field('calendly_link', $id);
-      $why      = get_field('why_statement', $id);
-      $fact     = get_field('fun_fact', $id);
-      $headshot = get_field('headshot', $id);
-      if ($headshot) {
-        $altText = $headshot['alt'];
-      } else {
-        $altText = 'Headshot of ' . get_the_title($id);
-      }
-  ?>
-      <div class="bg-[rgba(0,0,0,.5)] fixed top-0 left-0 w-full h-full z-50 grid items-center justify-center center transition-all duration-300 modal-fade" data-modal="<?= $id; ?>">
-        <div class="transition-all duration-300 m-sp-4">
-          <div class="grid lg:grid-cols-[1.5fr,1fr] gap-sp-8 section-xs bg-cream container max-h-[66vh] overflow-auto rounded-md items-center relative">
-            <div class="absolute top-0 right-0 cursor-pointer">
-              <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/close-x.svg'); ?>" alt="close button" class="w-full duration-300 modal-close p-sp-4 hover:brightness-0">
-            </div>
-            <div class="grid order-2 gap-sp-8 lg:order-1">
-              <div class="grid justify-items-start gap-sp-1">
-                <h4 class="mb-0"><?= get_the_title($id); ?></h4>
-                <passthru class="mb-0"><?= $title; ?></passthru>
-                <?php if ($phone) : ?>
-                  <a href="tel:+<?= $phone; ?>" class="no-underline break-all">
-                    <passthru class="mb-0"><?= $phone; ?></passthru>
-                  </a>
-                <?php endif; ?>
-                <a href="mailto:<?= $email; ?>" class="no-underline break-all">
-                  <passthru class="mb-0"><?= $email; ?></passthru>
-                </a>
-                <?php if ($calendly) : ?>
-                  <a href="<?= $calendly; ?>" target="_blank" class="">
-                    <passthru class="mb-0">Let's chat</passthru>
-                  </a>
-                <?php endif; ?>
-              </div>
-              <?php if ($fact) : ?>
-                <h3 class="mb-0">“<?= $why; ?>”</h3>
-              <?php endif; ?>
-              <?php if ($fact) : ?>
-                <div>
-                  <passthru>Fun Fact</passthru>
-                  <p class="mb-0 text-h5"><?= $fact; ?></p>
-                </div>
-              <?php endif; ?>
-            </div>
-            <div class="grid items-center justify-center order-1 lg:order-2">
-              <img src="<?= $headshot['url'] ?? site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png');; ?>" alt="<?= $altText ?>" class="rounded-circle">
-            </div>
-          </div>
-        </div>
-      </div>
-  <?php
-    endwhile;
-    wp_reset_postdata();
-  endif;
-  ?>
   <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', () => {
       // Order all
@@ -194,31 +128,6 @@
           behavior: 'smooth'
         });
       };
-
-      // Modal logic
-      const members = document.querySelectorAll('div[data-modal-id]');
-      const modals = document.querySelectorAll('div[data-modal]');
-
-      members.forEach(member => {
-        const id = member.getAttribute('data-modal-id');
-        member.addEventListener('click', () => {
-          const modal = document.querySelector(`div[data-modal="${id}"]`);
-          modal.classList.toggle('modal-fade');
-        });
-      });
-
-      modals.forEach(modal => {
-        modal.addEventListener('click', event => {
-          if (event.target.getAttribute('data-modal')) {
-            modal.classList.toggle('modal-fade');
-          }
-        });
-
-        const closeButton = modal.querySelector('.modal-close');
-        closeButton.addEventListener('click', () => {
-          modal.classList.toggle('modal-fade');
-        });
-      });
     });
   </script>
 <?php else : ?>
