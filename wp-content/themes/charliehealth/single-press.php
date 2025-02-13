@@ -31,7 +31,6 @@ $tags      = get_the_terms(get_the_ID(), 'post_tag');
 
 $wordCount      = str_word_count(strip_tags(get_the_content()));
 $wordsPerMinute = 238;
-$readingTime    = ceil($wordCount / $wordsPerMinute);
 ?>
 
 <div id="progressBar" class="fixed z-20 transition-all duration-700 rounded-r-sm bg-purple-gradient-end h-[5px] left-0"></div>
@@ -44,12 +43,6 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
         </div>
         <div>
           <h1 class="text-h2-base"><?= get_the_title(); ?></h1>
-          <div class="flex items-center mb-sp-6">
-            <svg xmlns="http://www.w3.org/2000/svg" height="22" viewBox="0 -960 960 960" width="22" fill="#46496D" class="inline-block">
-              <path d="M352.587-840v-87.413h254.826V-840H352.587Zm83.826 446.696h87.174v-240.718h-87.174v240.718ZM480-65.413q-75.913 0-142.849-29.071-66.937-29.072-117.011-79.055-50.075-49.982-79.173-116.917t-29.098-142.848q0-75.913 29.12-142.837 29.12-66.924 79.185-116.989 50.065-50.066 116.989-79.185 66.924-29.12 142.837-29.12 62.478 0 120.435 20 57.956 20 108.195 58.239l58.87-58.869 61.5 61.5-58.869 58.869q38.239 50.24 58.119 108.077 19.881 57.837 19.881 120.315 0 75.913-29.098 142.848-29.098 66.935-79.173 116.917-50.074 49.983-117.011 79.055Q555.913-65.413 480-65.413Zm0-91q115.043 0 196.087-80.924 81.043-80.924 81.043-195.967 0-115.044-81.043-196.087Q595.043-710.435 480-710.435q-115.043 0-196.087 81.044-81.043 81.043-81.043 196.087 0 115.043 81.043 195.967Q364.957-156.413 480-156.413Zm0-276.891Z" />
-            </svg>
-            <p class="mb-0 font-bold ml-sp-2"> <?= $readingTime; ?> min.</p>
-          </div>
           <?php if (get_the_excerpt()) : ?>
             <p><?= get_the_excerpt(); ?></p>
           <?php endif; ?>
@@ -58,48 +51,10 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
           <?php elseif ($updatedDate) : ?>
             <p>Updated: <?= $date; ?></p>
           <?php endif; ?>
-          <div class="flex items-start">
-            <p class="font-heading-serif">Share:</p>
-            <a role="button" class="js-share-button ml-sp-4"><img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/share.svg'); ?>" alt="share icon"></a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=<?= $fullUrl; ?>" onclick="window.open(this.href,'targetWindow','resizable=yes,width=600,height=300'); return false;" class="ml-sp-4"><img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/facebook.svg'); ?>" alt="Facebook logo">
-            </a>
-            <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?= $fullUrl; ?>" class="ml-sp-4"><img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/linkedin.svg'); ?>" alt="LinkedIn logo"></a>
-          </div>
-          <div class="grid gap-sp-4">
-            <div class="grid items-end justify-start grid-flow-col gap-sp-4">
-              <?php if ($tags) : foreach ($tags as $tag) : ?>
-                  <a href="<?= get_term_link($tag->slug, 'post_tag'); ?>" class="px-4 py-3 no-underline rounded-lg text-h6 bg-tag-gray hover:bg-bright-teal"><?= $tag->name; ?></a>
-              <?php endforeach;
-              endif; ?>
-            </div>
-          </div>
         </div>
       </div>
     </div>
   </section>
-  <div class="invisible opacity-0 noshow back-to-top top-[100px] left-sp-10 mb-sp-16 w-fit translate-y-sp-2">
-    <a href="#mainArticleContent" class="no-underline lg:text-h3-lg text-h3-lg font-heading-serif">Back to top</a>
-  </div>
-  <?php if ($toc) : ?>
-    <section class="section-xs">
-      <div class="container-sm">
-        <div class="rounded-md toc-container bg-light-purple">
-          <div class="flex cursor-pointer toc-heading lg:p-sp-8 p-sp-4">
-            <p class="mb-0 text-h3 lg:text-h3-lg font-heading-serif">Table of Contents</p>
-            <div class="flex items-center ml-auto toggle">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="none" viewBox="8 8 8 8" height="12px" width="12px">
-                <path d="M9 12H15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                <path d="M12 9L12 15" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
-            </div>
-          </div>
-          <div class="overflow-hidden transition-all duration-500 ease-in-out toc-content max-h-0">
-            <div id="toc" class="flex flex-col items-start pt-0 lg:pt-0 lg:p-sp-8 p-sp-4 gap-sp-1"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-  <?php endif; ?>
   <section class="section-horizontal">
     <div class="container">
       <div class="divider"></div>
