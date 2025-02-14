@@ -171,7 +171,11 @@
   a {
     @apply underline transition-colors duration-300 text-p text-dark-blue hover:text-dark-blue;
     @screen lg {
-      @apply text-p-lg;
+      /* @apply text-p-lg; */
+      font-size: inherit;
+      line-height: inherit;
+      letter-spacing: inherit;
+      font-weight: inherit;
     }
     &.text-white {
       &:hover {

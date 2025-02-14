@@ -856,11 +856,12 @@ a:hover{
 }
 
 @media (min-width: 1024px) {
-  a{
-    font-size: 16px;
-    line-height: 160%;
-    letter-spacing: 0;
-    font-weight: 400;
+  a {
+      /* @apply text-p-lg; */
+      font-size: inherit;
+      line-height: inherit;
+      letter-spacing: inherit;
+      font-weight: inherit
   }
     }
 
