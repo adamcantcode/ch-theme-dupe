@@ -7,26 +7,10 @@ Template Post Type: locations
 
 <?php get_header(); ?>
 
-<?php
-$insurer = get_field('insurer');
-$logos = [
-  "Aetna" => "https://www.charliehealth.com/wp-content/uploads/2023/12/Aetna_Logo_ss_Violet_RGB_Coated.svg",
-  "Anthem" => "https://www.charliehealth.com/wp-content/uploads/2024/08/anthem-white_crop.svg",
-  "Blue Cross Blue Shield" => "https://www.charliehealth.com/wp-content/uploads/2024/08/bcbs-white.svg",
-  "Cigna" => "https://www.charliehealth.com/wp-content/uploads/2023/12/cigna-3-1.svg",
-  "Humana" => "https://www.charliehealth.com/wp-content/uploads/2023/12/Humana_logo.svg",
-  "Medicaid" => "https://www.charliehealth.com/wp-content/uploads/2023/06/Medicare-Logo-Vector_white-3.svg",
-  "TriCare" => "https://www.charliehealth.com/wp-content/uploads/2023/12/US-TRICARE-Logo.svg",
-  "UnitedHealthcare" => "https://www.charliehealth.com/wp-content/uploads/2023/12/UnitedHealthcare_logo.svg"
-];
-
-$logo = isset($logos[$insurer]) ? $logos[$insurer] : "";
-?>
-
-<section class="bg-gradient-to-b from-primary-100 to-primary-200 section">
+<section class="section">
   <div class="container">
-    <div class="breadcrumbs mb-sp-5 lg:mb-sp-6 [&_*]:!text-white">
-      <p class="inline-block mb-0 text-primary"> <a href="<?= home_url('/locations'); ?>">Locations</a></p>
+    <div class="breadcrumbs mb-sp-5 lg:mb-sp-6">
+      <p class="inline-block text-primary"> <a href="<?= home_url('/locations'); ?>">Locations</a></p>
       <?php
       $currentID = get_the_ID();
       $parentPages = get_post_ancestors($currentID);
@@ -40,112 +24,34 @@ $logo = isset($logos[$insurer]) ? $logos[$insurer] : "";
       <span><?= get_the_title(); ?></span>
     </div>
   </div>
-  <div class="container pb-base5-8">
-    <div class="grid items-end lg:grid-cols-[9fr_1fr_2fr] gap-base5-4">
-      <div>
-        <h1 class="text-white"><span class="text-lavender-300"><?= get_field('insurer'); ?></span> in <?= get_field('state'); ?><?= get_field('lob') === 'Medicaid' ? ' Medicaid' : ''; ?></h1>
-        <h3 class="text-white mb-base5-10">Comprehensive virtual mental health treatment with Charlie Health, covered by insurance</h3>
-        <div class="grid items-center grid-cols-[1fr_0.75fr_1.5fr] justify-items-center lg:noshow w-1/2 mb-base5-8 mt-base5-8">
-          <svg width="66" height="65" viewBox="0 0 66 65" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-1/2">
-            <path d="M64.8859 7.82136C64.5073 3.71078 61.1342 0.455708 57.0401 0.237419C51.5734 -0.053098 13.7609 -0.053098 8.28945 0.237419C4.20008 0.455708 0.826974 3.71078 0.44675 7.82457C-1.31395 27.1303 2.13488 42.0285 10.7017 52.1019C19.9139 62.9393 31.685 63.9489 32.3713 63.9987L32.6285 64.0195L32.944 64.0051C33.3779 63.9746 42.3691 63.27 50.8082 55.9653L51.3636 55.4742C52.523 54.4245 53.6134 53.2986 54.6278 52.1035C63.1994 42.0398 66.6482 27.1447 64.8859 7.82136ZM4.59923 20.243C4.46975 16.2424 4.59412 12.2374 4.97157 8.25312C5.06325 7.31757 5.50087 6.45239 6.19585 5.83268L28.7142 21.3777L17.8566 28.9216L4.59923 20.243ZM13.7845 31.7513L7.21504 36.3145C6.15713 32.9676 5.42732 29.5224 5.03625 26.0292L13.7845 31.7513ZM32.7579 24.1673L43.401 31.5137L32.5796 38.5407L22.009 31.6293L32.7579 24.1673ZM36.792 21.3665L59.1447 5.83749C59.8347 6.45501 60.2697 7.315 60.3627 8.24509C60.7425 12.2319 60.869 16.2395 60.7413 20.243L47.5755 28.7996L36.792 21.3665ZM60.2996 26.0212C59.915 29.4535 59.2049 32.84 58.1792 36.1331L51.6602 31.6389L60.2996 26.0212ZM52.6573 4.74765L32.75 18.5753L12.7133 4.74605C17.4543 4.67382 25.0587 4.6369 32.6648 4.6369C40.2708 4.6369 47.9179 4.67382 52.6573 4.74765ZM8.91264 40.7332L17.9354 34.4735L28.3656 41.2934L14.9552 50.0089C14.6807 49.7104 14.4077 49.4038 14.1379 49.086C12.0157 46.5679 10.2563 43.7555 8.91264 40.7332ZM32.7026 59.3889H32.69C32.3382 59.3648 25.3758 58.8175 18.4119 53.2399L32.5717 44.0381L46.7993 53.3475C40.113 58.6394 33.4631 59.3263 32.7026 59.3889ZM51.1963 49.0828C50.8923 49.4413 50.5858 49.7863 50.2765 50.1181L36.7857 41.2902L47.4887 34.3387L56.5005 40.5583C55.1457 43.6451 53.3591 46.5163 51.1963 49.0828Z" fill="#ffffff"></path>
-          </svg>
-          <?php if ($logo) : ?>
-            <div class="h-full w-[1.5px] bg-white"></div>
-            <img src="<?= $logo; ?>" alt="Logo for <?= get_field('insurer'); ?>" class="object-cover object-top nolazy">
-          <?php endif; ?>
-        </div>
-        <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-start">
-          <a href="/form" class="ch-button button-primary-ch inverted" target="_self">Get Started</a>
-          <a href="tel:+18664848218" class="ch-button button-secondary-ch inverted" target="_self">1 (866) 484-8218</a>
-        </div>
-      </div>
-      <div></div>
-      <div class="items-center grid-cols-[1fr_0.75fr_1.5fr] justify-items-center lg:grid noshow">
-        <svg width="45" height="44" viewBox="0 0 66 65" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M64.8859 7.82136C64.5073 3.71078 61.1342 0.455708 57.0401 0.237419C51.5734 -0.053098 13.7609 -0.053098 8.28945 0.237419C4.20008 0.455708 0.826974 3.71078 0.44675 7.82457C-1.31395 27.1303 2.13488 42.0285 10.7017 52.1019C19.9139 62.9393 31.685 63.9489 32.3713 63.9987L32.6285 64.0195L32.944 64.0051C33.3779 63.9746 42.3691 63.27 50.8082 55.9653L51.3636 55.4742C52.523 54.4245 53.6134 53.2986 54.6278 52.1035C63.1994 42.0398 66.6482 27.1447 64.8859 7.82136ZM4.59923 20.243C4.46975 16.2424 4.59412 12.2374 4.97157 8.25312C5.06325 7.31757 5.50087 6.45239 6.19585 5.83268L28.7142 21.3777L17.8566 28.9216L4.59923 20.243ZM13.7845 31.7513L7.21504 36.3145C6.15713 32.9676 5.42732 29.5224 5.03625 26.0292L13.7845 31.7513ZM32.7579 24.1673L43.401 31.5137L32.5796 38.5407L22.009 31.6293L32.7579 24.1673ZM36.792 21.3665L59.1447 5.83749C59.8347 6.45501 60.2697 7.315 60.3627 8.24509C60.7425 12.2319 60.869 16.2395 60.7413 20.243L47.5755 28.7996L36.792 21.3665ZM60.2996 26.0212C59.915 29.4535 59.2049 32.84 58.1792 36.1331L51.6602 31.6389L60.2996 26.0212ZM52.6573 4.74765L32.75 18.5753L12.7133 4.74605C17.4543 4.67382 25.0587 4.6369 32.6648 4.6369C40.2708 4.6369 47.9179 4.67382 52.6573 4.74765ZM8.91264 40.7332L17.9354 34.4735L28.3656 41.2934L14.9552 50.0089C14.6807 49.7104 14.4077 49.4038 14.1379 49.086C12.0157 46.5679 10.2563 43.7555 8.91264 40.7332ZM32.7026 59.3889H32.69C32.3382 59.3648 25.3758 58.8175 18.4119 53.2399L32.5717 44.0381L46.7993 53.3475C40.113 58.6394 33.4631 59.3263 32.7026 59.3889ZM51.1963 49.0828C50.8923 49.4413 50.5858 49.7863 50.2765 50.1181L36.7857 41.2902L47.4887 34.3387L56.5005 40.5583C55.1457 43.6451 53.3591 46.5163 51.1963 49.0828Z" fill="#ffffff"></path>
-        </svg>
-        <?php if ($logo) : ?>
-          <div class="h-full w-[1.5px] bg-white"></div>
-          <img src="<?= $logo; ?>" alt="Logo for <?= get_field('insurer'); ?>"class="object-cover object-top nolazy">
-        <?php endif; ?>
-      </div>
+  <div class="container-md">
+    <h1 class="text-center">Family therapy in <mark style="background-color:#DAC1FB"><?= $location; ?></mark></h1>
+    <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
+      <a href="/form" class="ch-button button-primary-ch" target="_self">Get Started</a>
+      <a href="tel:+18668052001" class="ch-button button-secondary-ch" target="_self">1 (866) 805-2001</a>
     </div>
   </div>
 </section>
-<section class="bg-gradient-to-b from-primary-200 to-primary section-bottom">
-  <div class="container-md pt-base5-8">
-    <div class="grid items-start lg:grid-cols-[4fr_6fr] gap-sp-16">
-      <div class="flex flex-col rounded-md md:max-w-[300px] p-base5-6 gap-base5-2 mx-auto bg-lavender-200">
-        <div class="flex items-center gap-base5-4">
-          <p class="flex-1 text-h4-base">Your cost per session could be as low as</p>
-          <p class="text-h2-base"><span class="text-[50%] align-super">$</span><?= get_field('copay'); ?></p>
-        </div>
-        <div class="flex items-center gap-base5-4">
-          <p class="flex-1 text-p-base">Average <?= get_field('insurer'); ?> member cost per session</p>
-          <p class="text-h3-base font-heading-serif"><span class="text-[50%] align-super">$</span><?= get_field('average_copay'); ?></p>
-        </div>
-        <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full">
-          <a href="/form" class="ch-button button-primary-ch">Get started</a>
-        </div>
-        <p class="text-mini">Enter your insurance details to verify your coverage today</p>
-      </div>
-      <div class="[&_*]:text-white">
-        <h2>How we work with <?= get_the_title(); ?></h2>
-        <?= get_field('insurer_copy'); ?>
-    </div>
-  </div>
-</section>
-<section class="section bg-grey-warm">
+<section class="bg-gradient-to-r from-[#ADB0E1] to-[#E7D3FF] section">
   <div class="container">
-    <div class="grid lg:grid-cols-[6fr_1fr_5fr] gap-base5-4 items-center">
-      <div>
-        <?php
-        $args = array(
-          'post_type'      => 'testimonial',
-          'posts_per_page' => 1,
-          'orderby'        => 'rand'
-        );
-
-        $random_testimonial = new WP_Query($args);
-        $heading = '';
-        $subhead = '';
-
-        if ($random_testimonial->have_posts()) {
-          while ($random_testimonial->have_posts()) {
-            $random_testimonial->the_post();
-            $heading = get_field('pull-quote');
-            $subhead = get_field('full_quote');
-            $attribution = get_field('attribution');
-          }
-          wp_reset_postdata();
-        }
-        ?>
-
-        <h4>In their words</h4>
-
-        <?php if (!empty($heading)) : ?>
-          <h2>“<?= esc_html($heading); ?>”</h2>
-        <?php endif; ?>
-
-        <?php if (!empty($subhead)) : ?>
-          <p><?= esc_html($subhead); ?></p>
-        <?php endif; ?>
-
-        <?php if (!empty($attribution)) : ?>
-          <p>— <?= esc_html($attribution); ?></p>
-        <?php endif; ?>
+    <div class="grid lg:grid-cols-2 gap-base5-10 mb-base5-10">
+      <div class="grid lg:grid-flow-col gap-base5-4">
+        <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M43.9192 38.7888L41.1423 29.0078V7.71094C41.1423 6.89854 40.486 6.24219 39.6736 6.24219H7.36107C6.54867 6.24219 5.89232 6.89854 5.89232 7.71094V29.0078L3.11546 38.7888C2.77122 39.748 3.47806 40.7578 4.49701 40.7578H42.5376C43.5566 40.7578 44.2634 39.748 43.9192 38.7888ZM9.19701 9.54688H37.8376V27.6768H9.19701V9.54688ZM19.6756 37.4531L20.0474 35.7549H26.9459L27.3177 37.4531H19.6756ZM29.9569 37.4531L29.0802 33.4737C29.0435 33.3039 28.892 33.1846 28.7222 33.1846H18.2757C18.1013 33.1846 17.9544 33.3039 17.9177 33.4737L17.041 37.4531H6.92962L8.87113 30.6143H38.1635L40.105 37.4531H29.9569Z" fill="#161A3D" />
+        </svg>
+        <p class="text-h4-base">Research shows that family therapy significantly improves engagement and treatment completion. At Charlie Health, our expert-led, online sessions help families strengthen relationships, improve communication, and work through challenges—all from the comfort of home.</p>
       </div>
-      <div class="h-full lg:mx-auto">
-        <div class="lg:h-full h-[2px] lg:w-[2px] w-full bg-primary my-base5-1 lg:my-0"></div>
+      <div class="grid lg:grid-flow-col gap-base5-4">
+        <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M34.6273 17.7893L32.4589 15.6208L20.5936 27.4861L15.4381 22.3305L13.2696 24.499L20.5963 31.8257L22.7648 29.6572L22.7621 29.6545L34.6273 17.7893Z" fill="#161A3D" />
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M44.6504 22.9141C44.6504 34.2704 35.4442 43.4766 24.0879 43.4766C12.7315 43.4766 3.52539 34.2704 3.52539 22.9141C3.52539 11.5577 12.7315 2.35156 24.0879 2.35156C35.4442 2.35156 44.6504 11.5577 44.6504 22.9141ZM41.7129 22.9141C41.7129 32.6481 33.8219 40.5391 24.0879 40.5391C14.3539 40.5391 6.46289 32.6481 6.46289 22.9141C6.46289 13.18 14.3539 5.28906 24.0879 5.28906C33.8219 5.28906 41.7129 13.18 41.7129 22.9141Z" fill="#161A3D" />
+        </svg>
+        <p class="text-h4-base">Finding the right family therapy in [Location] can be challenging, but with Charlie Health’s virtual intensive treatment programs, you can access comprehensive family therapy (plus group and individual sessions) each week, from home.</p>
       </div>
-      <div>
-        <h3>Reach out to start your healing journey today</h3>
-        <p>Fill out our form or call us directly to learn if Charlie Health is right for you or a loved one. We’re available 24/7.</p>
-        <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-start">
-          <a href="/form" class="ch-button button-primary-ch" target="_self">Get Started</a>
-          <a href="tel:+18664848218" class="ch-button button-secondary-ch" target="_self">1 (866) 484-8218</a>
-        </div>
-      </div>
+    </div>
+    <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
+      <a href="/form" class="ch-button button-primary-ch" target="_self">Get Started</a>
+      <a href="tel:+18668052001" class="ch-button button-secondary-ch" target="_self">1 (866) 805-2001</a>
     </div>
   </div>
 </section>
@@ -154,7 +60,7 @@ $logo = isset($logos[$insurer]) ? $logos[$insurer] : "";
     <div class="border-2 border-white rounded-[1rem] lg:p-sp-12 p-sp-4 grid lg:grid-cols-[4fr_8fr] gap-x-sp-5 approach-grid-js">
       <div class="grid content-between">
         <div class="order-2 lg:order-1 [&_*]:text-white">
-          <h2 class="font-heading-serif mb-sp-8">Types of virtual mental health treatment covered by <?= get_the_title(); ?></h2>
+          <h2 class="font-heading-serif mb-sp-8">Our online therapy in [location] can help with:</h2>
           <div></div>
         </div>
         <div class="order-1 lg:order-2 mb-sp-10 lg:mb-0">
@@ -165,18 +71,21 @@ $logo = isset($logos[$insurer]) ? $logos[$insurer] : "";
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 gap-sp-2 grid-approach-items-js ">
         <div class="relative text-center opacity-0 invisible bg-lavender-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center ">
-          <p><a href="/intensive-outpatient-iop/groups" class="no-underline text-primary stretched-link text-h4-base">Group sessions</a></p>
+          <p><a href="/intensive-outpatient-iop/groups" class="no-underline text-primary stretched-link text-h4-base">Improving family communication</a></p>
         </div>
         <div class="relative text-center opacity-0 invisible bg-orange-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center ">
-          <p><a href="/intensive-outpatient-iop/individual-therapy" class="no-underline text-primary stretched-link text-h4-base">Individual therapy sessions</a></p>
+          <p><a href="/intensive-outpatient-iop/individual-therapy" class="no-underline text-primary stretched-link text-h4-base">Strengthening relationships and trust</a></p>
         </div>
-        <div class="relative text-center opacity-0 invisible bg-pale-blue-200 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center lg:col-start-1 lg:row-start-2">
-          <p><a href="/intensive-outpatient-iop/psychiatry-and-medication-management" class="no-underline text-primary stretched-link text-h4-base">Psychiatry sessions</a></p>
+        <div class="relative text-center opacity-0 invisible bg-pale-blue-200 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
+          <p><a href="/intensive-outpatient-iop/psychiatry-and-medication-management" class="no-underline text-primary stretched-link text-h4-base">Coping with serious mental health challenges as a family</a></p>
         </div>
-        <div class="relative text-center opacity-0 invisible bg-yellow-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center lg:col-start-2 lg:row-start-2">
-          <p><a href="/intensive-outpatient-iop/family-therapy" class="no-underline text-primary stretched-link text-h4-base">Family therapy sessions</a></p>
+        <div class="relative text-center opacity-0 invisible bg-pale-blue-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
+          <p><a href="/intensive-outpatient-iop/family-therapy" class="no-underline text-primary stretched-link text-h4-base">Strengthening relationships during major life changes</a></p>
         </div>
-        <div class="text-center bg-white opacity-0 invisible rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center relative group lg:row-span-2 lg:col-start-3 lg:row-start-1 col-span-2 lg:col-span-1">
+        <div class="relative text-center opacity-0 invisible bg-yellow-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
+          <p><a href="/intensive-outpatient-iop/family-therapy" class="no-underline text-primary stretched-link text-h4-base">Creating a supportive environment for healing</a></p>
+        </div>
+        <div class="text-center opacity-0 invisible bg-white rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center relative group ">
           <svg width="27" height="22" viewBox="0 0 27 22" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all mb-sp-2 group-hover:translate-x-[5px] duration-300">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M22.054 9.3431L14.3818 1.67092L16.0527 0L26.6686 10.6159L16.0527 21.2319L14.3818 19.561L22.2366 11.7061L2.08616e-07 11.7061L0 9.34311L22.054 9.3431Z" fill="#161A3D"></path>
           </svg><a href="/intensive-outpatient-iop" class="mb-0 no-underline stretched-link text-h4-base">Learn more</a>
