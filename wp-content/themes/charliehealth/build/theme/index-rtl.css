@@ -1923,6 +1923,11 @@ a.insurance-tabs.active:hover {
   margin-bottom: 2rem;
 }
 
+.my-base5-6{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
 .\!mb-base5-4{
   margin-bottom: 20px !important;
 }
@@ -4145,6 +4150,10 @@ a.insurance-tabs.active:hover {
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-\[86px\]{
+  font-size: 86px;
 }
 
 .font-bold{
@@ -6740,6 +6749,10 @@ section.bg-shield > div {
     margin-top: 2rem;
   }
 
+  .lg\:mb-base5-6{
+    margin-bottom: 30px;
+  }
+
   .lg\:block{
     display: block;
   }
@@ -7127,6 +7140,10 @@ section.bg-shield > div {
 
   .lg\:grid-cols-\[unset\]{
     grid-template-columns: unset;
+  }
+
+  .lg\:grid-cols-\[2fr_6fr_4fr\]{
+    grid-template-columns: 2fr 6fr 4fr;
   }
 
   .lg\:grid-rows-1{
