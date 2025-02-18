@@ -109,7 +109,7 @@ Template Post Type: locations
 <?= do_blocks('<!-- wp:block {"ref":17594} /-->'); ?>
 <section class="bg-grey-warm section">
   <div class="container">
-    <div class="grid lg:grid-cols-[4fr_8fr] gap-base5-4">
+    <div class="grid lg:grid-cols-[4fr_5fr_3fr] gap-base5-4">
       <h2>Meet your Care Team in [Location]</h2>
       <h4>Our expert therapists in [Location] will support your family’s healing journey every step of the way.</h4>
     </div>
@@ -187,6 +187,33 @@ Template Post Type: locations
       </div>
     </div>
   </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="grid lg:grid-cols-[5fr_1fr_6fr] gap-base5-4 items-center">
+      <img src="https://www.charliehealth.com/wp-content/uploads/2025/02/UPDATE_11-1.png.webp" alt="portrait of Charlie Health client named Quin">
+      <div></div>
+      <div>
+        <h2>Clients & families can get started with treatment in as little as 24 hours.</h2>
+        <h3>No matter where you live in [Location], our therapist-led online sessions ensure families in [Location] get the support they need for serious mental health issues – without the hassle of commuting.</h3>
+        <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full">
+          <a href="/form" class="ch-button button-primary-ch" target="_self">Get Started</a>
+          <a href="tel:+18668052001" class="ch-button button-secondary-ch" target="_self">1 (866) 805-2001</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="bg-primary-100 section">
+  <div class="container">
+    <div class="acf-innerblocks-container">
+      <?= do_blocks('<!-- wp:block {"ref":12496} /-->'); ?>
+      <p class="has-text-align-center mt-sp-8 mb-sp-8 !text-[20px] has-white-color has-text-color has-link-color wp-elements-0244d5b506b018eae908e0511a0b87bd">We proudly partner with many major insurance providers, including commercial, Medicaid, and TRICARE</p>
+      <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
+        <a href="https://www.charliehealth.com/insurance" class="ch-button button-secondary-ch inverted" target="_self" aria-label="We proudly partner with many major insurance providers, including commercial, Medicaid, and TRICARE Learn more" uw-rm-vague-link-id="https://www.charliehealth.com/insurance$learn more" data-uw-rm-vglnk="" data-uw-rm-brl="PR" data-uw-original-href="https://www.charliehealth.com/insurance">Learn more</a>
+      </div>
+    </div>
   </div>
 </section>
 <script>

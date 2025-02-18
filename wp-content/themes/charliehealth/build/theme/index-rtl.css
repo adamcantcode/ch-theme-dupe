@@ -7146,6 +7146,22 @@ section.bg-shield > div {
     grid-template-columns: 2fr 6fr 4fr;
   }
 
+  .lg\:grid-cols-\[4fr_1fr_\]{
+    grid-template-columns: 4fr 1fr;
+  }
+
+  .lg\:grid-cols-\[5fr_1fr_6fr\]{
+    grid-template-columns: 5fr 1fr 6fr;
+  }
+
+  .lg\:grid-cols-\[4fr_5fr\]{
+    grid-template-columns: 4fr 5fr;
+  }
+
+  .lg\:grid-cols-\[4fr_5fr_3fr\]{
+    grid-template-columns: 4fr 5fr 3fr;
+  }
+
   .lg\:grid-rows-1{
     grid-template-rows: repeat(1, minmax(0, 1fr));
   }
