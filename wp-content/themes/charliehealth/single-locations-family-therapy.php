@@ -107,6 +107,60 @@ Template Post Type: locations
   </div>
 </section>
 <?= do_blocks('<!-- wp:block {"ref":17594} /-->'); ?>
+<section class="bg-grey-warm section">
+  <div class="container">
+    <div class="grid lg:grid-cols-[4fr_8fr] gap-base5-4">
+      <h2>Meet your Care Team in [Location]</h2>
+      <h4>Our expert therapists in [Location] will support your family’s healing journey every step of the way.</h4>
+    </div>
+  </div>
+  <div class="container">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-base5-6 lg:gap-y-base5-10">
+      <?php
+      // Get the parent page's slug
+      $parent_slug = get_post_field('post_name', wp_get_post_parent_id(get_queried_object_id()));
+
+      // Query arguments
+      $args = array(
+        'post_type'      => 'care-team-member',
+        'numberposts'    => -1,
+        'posts_per_page' => -1,
+        'order'          => 'ASC',
+      );
+
+      $query = new WP_Query($args);
+
+      if ($query->have_posts()) :
+        while ($query->have_posts()) :
+          $query->the_post();
+          $id = get_the_ID();
+          $title = get_field('title', $id);
+          $headshot = get_field('headshot', $id);
+          $states = get_field('states', $id);
+          $show = null;
+          foreach ($states as $state) {
+            if (str_contains(strtolower($parent_slug), strtolower($state['label']))) {
+              $show = true;
+              break;
+            }
+          }
+          if ($headshot) {
+            $altText = $headshot['alt'];
+          } else {
+            $altText = 'Headshot of ' . get_the_title($id);
+          } ?>
+          <div class="border-2 rounded-md border-primary justify-items-start gap-sp-1 p-base5-2 <?= $show ? '' : 'noshow'; ?> ">
+            <img src="<?= $headshot['url'] ?? site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="w-full mx-auto rounded-circle mb-sp-4">
+            <h4 id="repName" class="underline"><?= get_the_title($id); ?></h4>
+            <p><?= $title; ?></p>
+          </div>
+      <?php
+        endwhile;
+        wp_reset_postdata();
+      endif; ?>
+    </div>
+  </div>
+</section>
 <section class="bg-darker-blue section">
   <div class="container">
     <p class="text-white lg:text-h1-lg text-h2-lg lg:mb-sp-16 mb-sp-12 font-heading-serif max-w-[850px]">Comprehensive, personalized therapy from home.</p>
