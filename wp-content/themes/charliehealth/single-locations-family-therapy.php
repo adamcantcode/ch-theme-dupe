@@ -95,8 +95,8 @@ Template Post Type: locations
   </div>
 </section>
 <section class="section-bottom bg-darker-blue">
-  <div class="container-md">
-    <h2 class="text-center text-white">How to get started with <mark class="text-white bg-primary-100"><?= get_field('insurer'); ?>-covered</mark> treatment with Charlie Health in <mark class="text-white bg-primary-100"><?= get_field('state'); ?><?= get_field('lob') === 'Medicaid' ? ' Medicaid' : ''; ?></mark></h2>
+  <div class="container-sm">
+    <h2 class="text-center text-white">Getting started with Charlie Health in <mark class="text-white bg-primary-100"><?= get_field('insurer'); ?>[location]</mark> is simple.</mark></h2>
   </div>
 </section>
 <section class="bg-darker-blue section-horizontal">
@@ -106,7 +106,7 @@ Template Post Type: locations
     </svg>
   </div>
 </section>
-<?= do_blocks('<!-- wp:block {"ref":13621} /-->'); ?>
+<?= do_blocks('<!-- wp:block {"ref":17594} /-->'); ?>
 <section class="bg-darker-blue section">
   <div class="container">
     <p class="text-white lg:text-h1-lg text-h2-lg lg:mb-sp-16 mb-sp-12 font-heading-serif max-w-[850px]">Comprehensive, personalized therapy from home.</p>
