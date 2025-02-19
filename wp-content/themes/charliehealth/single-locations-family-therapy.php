@@ -48,7 +48,7 @@ Template Post Type: locations
           <path d="M34.6273 17.7893L32.4589 15.6208L20.5936 27.4861L15.4381 22.3305L13.2696 24.499L20.5963 31.8257L22.7648 29.6572L22.7621 29.6545L34.6273 17.7893Z" fill="#161A3D" />
           <path fill-rule="evenodd" clip-rule="evenodd" d="M44.6504 22.9141C44.6504 34.2704 35.4442 43.4766 24.0879 43.4766C12.7315 43.4766 3.52539 34.2704 3.52539 22.9141C3.52539 11.5577 12.7315 2.35156 24.0879 2.35156C35.4442 2.35156 44.6504 11.5577 44.6504 22.9141ZM41.7129 22.9141C41.7129 32.6481 33.8219 40.5391 24.0879 40.5391C14.3539 40.5391 6.46289 32.6481 6.46289 22.9141C6.46289 13.18 14.3539 5.28906 24.0879 5.28906C33.8219 5.28906 41.7129 13.18 41.7129 22.9141Z" fill="#161A3D" />
         </svg>
-        <p class="text-h4-base">Finding the right family therapy in [Location] can be challenging, but with Charlie Health’s virtual intensive treatment programs, you can access comprehensive family therapy (plus group and individual sessions) each week, from home.</p>
+        <p class="text-h4-base">Finding the right family therapy in <?= $location; ?> can be challenging, but with Charlie Health’s virtual intensive treatment programs, you can access comprehensive family therapy (plus group and individual sessions) each week, from home.</p>
       </div>
     </div>
     <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
@@ -62,7 +62,7 @@ Template Post Type: locations
     <div class="border-2 border-white rounded-[1rem] lg:p-sp-12 p-sp-4 grid lg:grid-cols-[4fr_8fr] gap-x-sp-5 approach-grid-js">
       <div class="grid content-between">
         <div class="order-2 lg:order-1 [&_*]:text-white">
-          <h2 class="font-heading-serif mb-sp-8">Our online therapy in [location] can help with:</h2>
+          <h2 class="font-heading-serif mb-sp-8">Our online therapy in <?= $location; ?> can help with:</h2>
           <div></div>
         </div>
         <div class="order-1 lg:order-2 mb-sp-10 lg:mb-0">
@@ -120,8 +120,8 @@ echo $modified_content;
 <section class="bg-grey-warm section">
   <div class="container">
     <div class="grid lg:grid-cols-[4fr_5fr_3fr] gap-base5-4">
-      <h2>Meet your Care Team in [Location]</h2>
-      <h4>Our expert therapists in [Location] will support your family’s healing journey every step of the way.</h4>
+      <h2>Meet your Care Team in <?= $location; ?></h2>
+      <h4>Our expert therapists in <?= $location; ?> will support your family’s healing journey every step of the way.</h4>
     </div>
   </div>
   <div class="container">
