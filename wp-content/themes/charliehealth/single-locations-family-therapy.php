@@ -7,6 +7,8 @@ Template Post Type: locations
 
 <?php get_header(); ?>
 
+<?php $location =  get_the_title(); ?>
+
 <section class="section">
   <div class="container">
     <div class="breadcrumbs mb-sp-5 lg:mb-sp-6">
@@ -21,7 +23,7 @@ Template Post Type: locations
       <?php endforeach; ?>
 
       <span>/</span>
-      <span><?= get_the_title(); ?></span>
+      <span>Family Therapy in <?= $location; ?></span>
     </div>
   </div>
   <div class="container-md">
@@ -106,7 +108,15 @@ Template Post Type: locations
     </svg>
   </div>
 </section>
-<?= do_blocks('<!-- wp:block {"ref":17594} /-->'); ?>
+<?php
+// HIW Block pattern, dynamic update
+$block_content = do_blocks('<!-- wp:block {"ref":17594} /-->');
+
+// Modify the block content dynamically
+$modified_content = str_replace('[Location]', $location, $block_content);
+
+echo $modified_content;
+?>
 <section class="bg-grey-warm section">
   <div class="container">
     <div class="grid lg:grid-cols-[4fr_5fr_3fr] gap-base5-4">
@@ -216,6 +226,15 @@ Template Post Type: locations
     </div>
   </div>
 </section>
+<?php
+// HIW Block pattern, dynamic update
+$block_content = do_blocks('<!-- wp:block {"ref":17615} /-->');
+
+// Modify the block content dynamically
+$modified_content = str_replace('[Location]', $location, $block_content);;
+
+echo $modified_content;
+?>
 <script>
   /******/
   (() => { // webpackBootstrap
