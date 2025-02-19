@@ -73,24 +73,24 @@ Template Post Type: locations
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 gap-sp-2 grid-approach-items-js ">
         <div class="relative text-center opacity-0 invisible bg-lavender-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center ">
-          <p><a href="/intensive-outpatient-iop/groups" class="no-underline text-primary stretched-link text-h4-base">Improving family communication</a></p>
+          <p class="text-primary text-h4-base">Improving family communication</p>
         </div>
         <div class="relative text-center opacity-0 invisible bg-orange-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center ">
-          <p><a href="/intensive-outpatient-iop/individual-therapy" class="no-underline text-primary stretched-link text-h4-base">Strengthening relationships and trust</a></p>
+          <p class="text-primary text-h4-base">Strengthening relationships and trust</p>
         </div>
         <div class="relative text-center opacity-0 invisible bg-pale-blue-200 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
-          <p><a href="/intensive-outpatient-iop/psychiatry-and-medication-management" class="no-underline text-primary stretched-link text-h4-base">Coping with serious mental health challenges as a family</a></p>
+          <p class="text-primary text-h4-base">Coping with serious mental health challenges as a family</p>
         </div>
         <div class="relative text-center opacity-0 invisible bg-pale-blue-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
-          <p><a href="/intensive-outpatient-iop/family-therapy" class="no-underline text-primary stretched-link text-h4-base">Strengthening relationships during major life changes</a></p>
+          <p class="text-primary text-h4-base">Strengthening relationships during major life changes</p>
         </div>
         <div class="relative text-center opacity-0 invisible bg-yellow-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
-          <p><a href="/intensive-outpatient-iop/family-therapy" class="no-underline text-primary stretched-link text-h4-base">Creating a supportive environment for healing</a></p>
+          <p class="text-primary text-h4-base">Creating a supportive environment for healing</p>
         </div>
         <div class="text-center opacity-0 invisible bg-white rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center relative group ">
           <svg width="27" height="22" viewBox="0 0 27 22" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all mb-sp-2 group-hover:translate-x-[5px] duration-300">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M22.054 9.3431L14.3818 1.67092L16.0527 0L26.6686 10.6159L16.0527 21.2319L14.3818 19.561L22.2366 11.7061L2.08616e-07 11.7061L0 9.34311L22.054 9.3431Z" fill="#161A3D"></path>
-          </svg><a href="/intensive-outpatient-iop" class="mb-0 no-underline stretched-link text-h4-base">Learn more</a>
+          </svg><a href="/form" class="mb-0 no-underline stretched-link text-h4-base">Get started</a>
         </div>
       </div>
     </div>
