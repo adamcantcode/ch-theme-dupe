@@ -160,11 +160,10 @@ echo $modified_content;
           } else {
             $altText = 'Headshot of ' . get_the_title($id);
           } ?>
-          <div class="border-2 rounded-md border-primary justify-items-start gap-sp-1 p-base5-2 <?= $show ? '' : 'noshow'; ?> ">
+          <div class="rounded-md bg-white lg:p-base5-5 p-base5-2 text-center <?= $show ? '' : 'noshow'; ?> ">
             <img src="<?= $headshot['url'] ?? site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="w-full mx-auto rounded-circle mb-sp-4">
-            <h4><?= get_the_title($id); ?></h4>
-            <p class="mb-0"><?= $title; ?></p>
-            <p><?= implode(', ', $certifications); ?></p>
+            <h4 class="mb-0"><?= get_the_title($id); ?></h4>
+            <p><?= $title; ?> - <?= implode(', ', $certifications); ?></p>
           </div>
       <?php
         endwhile;
