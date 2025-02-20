@@ -62,7 +62,7 @@ Template Post Type: locations
     <div class="border-2 border-white rounded-[1rem] lg:p-sp-12 p-sp-4 grid lg:grid-cols-[4fr_8fr] gap-x-sp-5 approach-grid-js">
       <div class="grid content-between">
         <div class="order-2 lg:order-1 [&_*]:text-white">
-          <h2 class="font-heading-serif mb-sp-8">Our online therapy in <?= $location; ?> can help with:</h2>
+          <h2 class="font-heading-serif mb-sp-8">Our online family therapy in <?= $location; ?> can help with:</h2>
           <div></div>
         </div>
         <div class="order-1 lg:order-2 mb-sp-10 lg:mb-0">
