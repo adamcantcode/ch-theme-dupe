@@ -149,10 +149,12 @@ echo $modified_content;
           $headshot = get_field('headshot', $id);
           $states = get_field('states', $id);
           $show = null;
-          foreach ($states as $state) {
-            if (str_contains(strtolower($parent_slug), strtolower($state['label']))) {
-              $show = true;
-              break;
+          if($states) {
+            foreach ($states as $state) {
+              if (str_contains(strtolower($parent_slug), strtolower($state['label']))) {
+                $show = true;
+                break;
+              }
             }
           }
           if ($headshot) {
