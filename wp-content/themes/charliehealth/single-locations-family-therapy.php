@@ -207,7 +207,7 @@ echo $modified_content;
       <div></div>
       <div>
         <h2>Clients & families can get started with treatment in as little as 24 hours.</h2>
-        <h3>No matter where you live in <?= $location; ?>, our therapist-led online sessions ensure families in <?= $location; ?> get the support they need for serious mental health issues – without the hassle of commuting.</h3>
+        <h3>No matter where you live in <?= $location; ?>, our therapist-led online family therapy sessions ensure families in <?= $location; ?> get the support they need for serious mental health issues – without the hassle of commuting.</h3>
         <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full">
           <a href="/form" class="ch-button button-primary-ch" target="_self">Get Started</a>
           <a href="tel:+18668052001" class="ch-button button-secondary-ch" target="_self">1 (866) 805-2001</a>
