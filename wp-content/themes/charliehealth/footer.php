@@ -296,34 +296,6 @@ if (wp_get_environment_type() === 'production') {
 <!-- END Rocket Excludes Delay JS -->
 <?php wp_footer(); ?>
 <!-- <pre class="fixed left-0 right-0 w-full text-xs text-center text-[#87889A] bottom-4 -z-50">Better care, from anywhere ❤️ Carter Barnhart</pre> -->
-<!-- Start LinkedIn -->
-<?php if (get_current_blog_id() === 3) : ?>
-	<script type="text/javascript">
-		_linkedin_partner_id = "6850418";
-		window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
-		window._linkedin_data_partner_ids.push(_linkedin_partner_id);
-	</script>
-	<script type="text/javascript">
-		(function(l) {
-			if (!l) {
-				window.lintrk = function(a, b) {
-					window.lintrk.q.push([a, b])
-				};
-				window.lintrk.q = []
-			}
-			var s = document.getElementsByTagName("script")[0];
-			var b = document.createElement("script");
-			b.type = "text/javascript";
-			b.async = true;
-			b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
-			s.parentNode.insertBefore(b, s);
-		})(window.lintrk);
-	</script>
-	<noscript>
-		<img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=6850418&fmt=gif" />
-	</noscript>
-	<!-- END LinkedIn -->
-<?php endif; ?>
 </body>
 
 </html>
