@@ -1923,11 +1923,6 @@ a.insurance-tabs.active:hover {
   margin-bottom: 2rem;
 }
 
-.my-base5-6{
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
 .\!mb-base5-4{
   margin-bottom: 20px !important;
 }
@@ -4056,6 +4051,10 @@ a.insurance-tabs.active:hover {
   font-size: 50%;
 }
 
+.text-\[86px\]{
+  font-size: 86px;
+}
+
 .text-h1{
   font-size: 50px;
   line-height: 110%;
@@ -4150,10 +4149,6 @@ a.insurance-tabs.active:hover {
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-\[86px\]{
-  font-size: 86px;
 }
 
 .font-bold{
@@ -6661,6 +6656,10 @@ section.bg-shield > div {
     margin-bottom: 25px;
   }
 
+  .lg\:mb-base5-6{
+    margin-bottom: 30px;
+  }
+
   .lg\:mb-sp-12{
     margin-bottom: 3rem;
   }
@@ -6747,10 +6746,6 @@ section.bg-shield > div {
 
   .lg\:mt-sp-8{
     margin-top: 2rem;
-  }
-
-  .lg\:mb-base5-6{
-    margin-bottom: 30px;
   }
 
   .lg\:block{
@@ -7058,6 +7053,10 @@ section.bg-shield > div {
     grid-template-columns: 2fr 5fr;
   }
 
+  .lg\:grid-cols-\[2fr_6fr_4fr\]{
+    grid-template-columns: 2fr 6fr 4fr;
+  }
+
   .lg\:grid-cols-\[3fr_1fr_8fr\]{
     grid-template-columns: 3fr 1fr 8fr;
   }
@@ -7098,12 +7097,20 @@ section.bg-shield > div {
     grid-template-columns: 4fr 3fr;
   }
 
+  .lg\:grid-cols-\[4fr_5fr_3fr\]{
+    grid-template-columns: 4fr 5fr 3fr;
+  }
+
   .lg\:grid-cols-\[4fr_6fr\]{
     grid-template-columns: 4fr 6fr;
   }
 
   .lg\:grid-cols-\[4fr_8fr\]{
     grid-template-columns: 4fr 8fr;
+  }
+
+  .lg\:grid-cols-\[5fr_1fr_6fr\]{
+    grid-template-columns: 5fr 1fr 6fr;
   }
 
   .lg\:grid-cols-\[5fr_7fr\]{
@@ -7140,26 +7147,6 @@ section.bg-shield > div {
 
   .lg\:grid-cols-\[unset\]{
     grid-template-columns: unset;
-  }
-
-  .lg\:grid-cols-\[2fr_6fr_4fr\]{
-    grid-template-columns: 2fr 6fr 4fr;
-  }
-
-  .lg\:grid-cols-\[4fr_1fr_\]{
-    grid-template-columns: 4fr 1fr;
-  }
-
-  .lg\:grid-cols-\[5fr_1fr_6fr\]{
-    grid-template-columns: 5fr 1fr 6fr;
-  }
-
-  .lg\:grid-cols-\[4fr_5fr\]{
-    grid-template-columns: 4fr 5fr;
-  }
-
-  .lg\:grid-cols-\[4fr_5fr_3fr\]{
-    grid-template-columns: 4fr 5fr 3fr;
   }
 
   .lg\:grid-rows-1{
