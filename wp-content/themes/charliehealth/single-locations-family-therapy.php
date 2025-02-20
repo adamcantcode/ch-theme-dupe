@@ -98,7 +98,7 @@ Template Post Type: locations
 </section>
 <section class="section-bottom bg-darker-blue">
   <div class="container-sm">
-    <h2 class="text-center text-white">Getting started with Charlie Health in <mark class="text-white bg-primary-100"><?= $location ?></mark> is simple.</mark></h2>
+    <h2 class="text-center text-white">Getting started with Charlie Health in <mark class="text-white bg-primary-100"><?= $location ?></mark> is simple</mark></h2>
   </div>
 </section>
 <section class="bg-darker-blue section-horizontal">
@@ -206,7 +206,7 @@ echo $modified_content;
       <img src="https://www.charliehealth.com/wp-content/uploads/2025/02/UPDATE_11-1.png.webp" alt="portrait of Charlie Health client named Quin">
       <div></div>
       <div>
-        <h2>Clients & families can get started with treatment in as little as 24 hours.</h2>
+        <h2>Clients & families can get started with treatment in as little as 24 hours</h2>
         <h3>No matter where you live in <?= $location; ?>, our therapist-led online family therapy sessions ensure families in <?= $location; ?> get the support they need for serious mental health issues – without the hassle of commuting.</h3>
         <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full">
           <a href="/form" class="ch-button button-primary-ch" target="_self">Get Started</a>
