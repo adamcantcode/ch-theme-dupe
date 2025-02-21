@@ -45,7 +45,6 @@ $group = get_field('group')
         $pullQuote = get_field('pull-quote', get_the_ID());
         $fullQuote = get_field('full_quote', get_the_ID());
         $title     = get_field('title', get_the_ID());
-        $location  = get_field('location', get_the_ID());
 
         ?>
         <div class="w-full rounded-[1rem] lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col">
@@ -56,9 +55,6 @@ $group = get_field('group')
           <p class="mb-0 text-p-base">—<?= $attribution; ?></p>
           <?php if ($title) : ?>
             <p class="mb-0 text-p-base"><?= $title; ?></p>
-          <?php endif; ?>
-          <?php if ($location) : ?>
-            <p class="mb-0 text-p-base"><?= $location; ?></p>
           <?php endif; ?>
         </div>
       <?php endwhile; ?>
@@ -86,7 +82,6 @@ $group = get_field('group')
             $pullQuote     = get_field('pull-quote', $postID);
             $fullQuote     = get_field('full_quote', $postID);
             $title         = get_field('title', $postID);
-            $location      = get_field('location', $postID);
             $insurance     = get_field('insurance', $postID);
 
             ?>
@@ -108,9 +103,6 @@ $group = get_field('group')
               <?php endif; ?>
               <?php if ($title) : ?>
                 <p class="mb-0 text-p-base"><?= $title; ?></p>
-              <?php endif; ?>
-              <?php if ($location) : ?>
-                <p class="mb-0 text-p-base"><?= $location; ?></p>
               <?php endif; ?>
             </div>
           <?php endforeach; ?>
@@ -134,8 +126,6 @@ $group = get_field('group')
                 $pullQuote = get_field('pull-quote', $postID);
                 $fullQuote = get_field('full_quote', $postID);
                 $title     = get_field('title', $postID);
-                $location  = get_field('location', $postID);
-
                 ?>
                 <div class="!h-auto swiper-slide">
                   <div class="w-full rounded-[1rem] lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col <?= is_admin() && $slideNum > 3 ? 'noshow' : ''; ?>">
@@ -146,9 +136,6 @@ $group = get_field('group')
                     <p class="mb-0 text-p-base">—<?= $attribution; ?></p>
                     <?php if ($title) : ?>
                       <p class="mb-0 text-p-base"><?= $title; ?></p>
-                    <?php endif; ?>
-                    <?php if ($location) : ?>
-                      <p class="mb-0 text-p-base"><?= $location; ?></p>
                     <?php endif; ?>
                   </div>
                 </div>
