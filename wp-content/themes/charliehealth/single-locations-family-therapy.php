@@ -151,7 +151,11 @@ echo $modified_content;
           $show = null;
           if (is_array($states)) {
             foreach ($states as $state) {
-              if (str_contains(strtolower($parent_slug), strtolower($state['label']))) {
+              // Replace dashes with spaces in the slug and convert both to lowercase for case-insensitive comparison
+              $slug = str_replace('-', ' ', strtolower($parent_slug));
+              $state_label = strtolower($state['label']);
+
+              if (str_contains($slug, $state_label)) {
                 $show = true;
                 break;
               }
