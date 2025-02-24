@@ -30,7 +30,7 @@ Template Post Type: locations
     <h1 class="text-center">Family therapy in <mark style="background-color:#DAC1FB"><?= $location; ?></mark></h1>
     <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
       <a href="/form" class="ch-button button-primary-ch" target="_self">Get Started</a>
-      <a href="tel:+18668052001" class="ch-button button-secondary-ch" target="_self">1 (866) 805-2001</a>
+      <a href="tel:+18664848218" class="ch-button button-secondary-ch" target="_self">1 (866) 484-8218</a>
     </div>
   </div>
 </section>
@@ -53,7 +53,7 @@ Template Post Type: locations
     </div>
     <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
       <a href="/form" class="ch-button button-primary-ch" target="_self">Get Started</a>
-      <a href="tel:+18668052001" class="ch-button button-secondary-ch" target="_self">1 (866) 805-2001</a>
+      <a href="tel:+18664848218" class="ch-button button-secondary-ch" target="_self">1 (866) 484-8218</a>
     </div>
   </div>
 </section>
@@ -214,7 +214,7 @@ echo $modified_content;
         <h3>No matter where you live in <?= $location; ?>, our therapist-led online family therapy sessions ensure families in <?= $location; ?> get the support they need for serious mental health issues – without the hassle of commuting.</h3>
         <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full">
           <a href="/form" class="ch-button button-primary-ch" target="_self">Get Started</a>
-          <a href="tel:+18668052001" class="ch-button button-secondary-ch" target="_self">1 (866) 805-2001</a>
+          <a href="tel:+18664848218" class="ch-button button-secondary-ch" target="_self">1 (866) 484-8218</a>
         </div>
       </div>
     </div>
