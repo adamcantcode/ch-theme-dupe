@@ -46,7 +46,7 @@
       <h3 id="notCovered" class="text-center text-white mb-base5-10">Contact us directly to further verify your insurance coverage.</h3>
       <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
         <a href="/form" class="ch-button button-primary-ch inverted">Get started</a>
-        <a href="tel:+18664848218" class="ch-button button-secondary-ch inverted">1 (866) 484-8218</a>
+        <a href="tel:+19862060414" class="ch-button button-secondary-ch inverted">1 (986) 206-0414</a>
       </div>
     </div>
     <h5 class="text-mini"></h5>
