@@ -99,7 +99,7 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
               <p>Ready to start healing?</p>
               <div class="flex flex-col lg:flex-wrap lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full">
                 <a href="/form" class="ch-button button-primary-ch">Get Started</a>
-                <a href="tel:+18664848218" class="ch-button button-secondary-ch">1 (866) 484-8218</a>
+                <a href="tel:+19862060414" class="ch-button button-secondary-ch">1 (986) 206-0414</a>
               </div>
             </div>
           </div>
@@ -173,7 +173,7 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
                   <p>Ready to start healing?</p>
                   <div class="flex flex-col lg:flex-wrap lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full">
                     <a href="/form" class="ch-button button-primary-ch">Get Started</a>
-                    <a href="tel:+18664848218" class="ch-button button-secondary-ch">1 (866) 484-8218</a>
+                    <a href="tel:+19862060414" class="ch-button button-secondary-ch">1 (986) 206-0414</a>
                   </div>
                 </div>
               </div>

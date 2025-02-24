@@ -133,7 +133,7 @@ Template Post Type: page
             }
           });
         </script>
-        <p class="mt-base5-4">If you’d prefer to speak with our team directly, please call <a href="tel:+18664848218">1 (866) 484-8218</a></p>
+        <p class="mt-base5-4">If you’d prefer to speak with our team directly, please call <a href="tel:+19862060414">1 (986) 206-0414</a></p>
       </div>
       <div class="grid items-center">
         <img src="https://www.charliehealth.com/wp-content/uploads/2023/11/Device_Laptop.png.webp" alt="Illustration of Charlie Health client using laptop for Virtual IOP Therapy">

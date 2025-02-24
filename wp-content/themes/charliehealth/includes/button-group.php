@@ -50,7 +50,7 @@ if (isset($style)) {
     <?php if ($buttons === 'double') : ?>
       <div class="flex flex-col lg:flex-wrap lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full<?= ' ' . $align ?>">
         <a href="<?= $linkOneLink ?: '/form'; ?>" class="ch-button button-primary-ch<?= $invert ? ' inverted' : '' ?>" target="<?= $linkOneTarget ?: '_self'; ?>"><?= $linkOneTitle ?: 'Get Started'; ?></a>
-        <a href="<?= $linkTwoLink ?: 'tel:+18664848218'; ?>" class="ch-button button-secondary-ch<?= $invert ? ' inverted' : '' ?>" target="<?= $linkTwoTarget ?: '_self'; ?>"><?= $linkTwoTitle ?: '1 (866) 484-8218'; ?></a>
+        <a href="<?= $linkTwoLink ?: 'tel:+19862060414'; ?>" class="ch-button button-secondary-ch<?= $invert ? ' inverted' : '' ?>" target="<?= $linkTwoTarget ?: '_self'; ?>"><?= $linkTwoTitle ?: '1 (986) 206-0414'; ?></a>
       </div>
     <?php endif; ?>
     <?php if ($buttons === 'primary') : ?>
@@ -60,7 +60,7 @@ if (isset($style)) {
     <?php endif; ?>
     <?php if ($buttons === 'secondary') : ?>
       <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full<?= ' ' . $align ?>">
-        <a href="<?= $linkOneLink ?: 'tel:+18664848218'; ?>" class="ch-button button-secondary-ch<?= $invert ? ' inverted' : '' ?>" target="<?= $linkOneTarget ?: '_self'; ?>"><?= $linkOneTitle ?: '1 (866) 484-8218'; ?></a>
+        <a href="<?= $linkOneLink ?: 'tel:+19862060414'; ?>" class="ch-button button-secondary-ch<?= $invert ? ' inverted' : '' ?>" target="<?= $linkOneTarget ?: '_self'; ?>"><?= $linkOneTitle ?: '1 (986) 206-0414'; ?></a>
       </div>
     <?php endif; ?>
   <?php endif; ?>
@@ -69,7 +69,7 @@ if (isset($style)) {
     <?php if ($buttons === 'double') : ?>
       <div class="flex flex-col lg:flex-wrap lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full<?= ' ' . $align ?>">
         <a href="<?= $linkOneLink ?: '/referral-form'; ?>" class="ch-button button-primary-ch<?= $invert ? ' inverted' : '' ?>" target="<?= $linkOneTarget ?: '_self'; ?>"><?= $linkOneTitle ?: 'Refer now'; ?></a>
-        <a href="<?= $linkTwoLink ?: 'tel:+18664848218'; ?>" class="ch-button button-secondary-ch<?= $invert ? ' inverted' : '' ?>" target="<?= $linkTwoTarget ?: '_self'; ?>"><?= $linkTwoTitle ?: '1 (866) 484-8218'; ?></a>
+        <a href="<?= $linkTwoLink ?: 'tel:+19862060414'; ?>" class="ch-button button-secondary-ch<?= $invert ? ' inverted' : '' ?>" target="<?= $linkTwoTarget ?: '_self'; ?>"><?= $linkTwoTitle ?: '1 (986) 206-0414'; ?></a>
       </div>
     <?php endif; ?>
     <?php if ($buttons === 'primary') : ?>
@@ -79,7 +79,7 @@ if (isset($style)) {
     <?php endif; ?>
     <?php if ($buttons === 'secondary') : ?>
       <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full<?= ' ' . $align ?>">
-        <a href="<?= $linkOneLink ?: 'tel:+18664848218'; ?>" class="ch-button button-secondary-ch<?= $invert ? ' inverted' : '' ?>" target="<?= $linkOneTarget ?: '_self'; ?>"><?= $linkOneTitle ?: '1 (866) 484-8218'; ?></a>
+        <a href="<?= $linkOneLink ?: 'tel:+19862060414'; ?>" class="ch-button button-secondary-ch<?= $invert ? ' inverted' : '' ?>" target="<?= $linkOneTarget ?: '_self'; ?>"><?= $linkOneTitle ?: '1 (986) 206-0414'; ?></a>
       </div>
     <?php endif; ?>
   <?php endif; ?>

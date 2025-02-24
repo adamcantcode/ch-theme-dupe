@@ -27,7 +27,7 @@ if (!empty($linkTwo)) {
   <?php if ($buttons === 'double') : ?>
     <div class="flex gap-x-4">
       <a href="<?= $linkOneLink ?: '/form'; ?>" class="ch-button button-primary-ch" target="<?= $linkOneTarget ?: '_self'; ?>"><?= $linkOneTitle ?: 'Get Started'; ?></a>
-      <a href="<?= $linkTwoLink ?: 'tel:+18664848218'; ?>" class="ch-button button-secondary-ch" target="<?= $linkTwoTarget ?: '_self'; ?>"><?= $linkTwoTitle ?: '1 (866) 484-8218'; ?></a>
+      <a href="<?= $linkTwoLink ?: 'tel:+19862060414'; ?>" class="ch-button button-secondary-ch" target="<?= $linkTwoTarget ?: '_self'; ?>"><?= $linkTwoTitle ?: '1 (986) 206-0414'; ?></a>
     </div>
   <?php endif; ?>
   <?php if ($buttons === 'primary') : ?>
@@ -37,7 +37,7 @@ if (!empty($linkTwo)) {
   <?php endif; ?>
   <?php if ($buttons === 'secondary') : ?>
     <div class="flex gap-x-4">
-      <a href="<?= $linkTwoLink ?: 'tel:+18664848218'; ?>" class="ch-button button-secondary-ch" target="<?= $linkOneTarget ?: '_self'; ?>"><?= $linkTwoTitle ?: '1 (866) 484-8218'; ?></a>
+      <a href="<?= $linkTwoLink ?: 'tel:+19862060414'; ?>" class="ch-button button-secondary-ch" target="<?= $linkOneTarget ?: '_self'; ?>"><?= $linkTwoTitle ?: '1 (986) 206-0414'; ?></a>
     </div>
   <?php endif; ?>
 <?php endif; ?>
