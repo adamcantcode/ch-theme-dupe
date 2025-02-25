@@ -127,51 +127,31 @@ echo $modified_content;
   <div class="container">
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-base5-6 lg:gap-y-base5-10 mt-base5-5">
       <?php
-      // Function to get ancestor slug
-      function get_ancestor_slug($post_id, $level = 1)
-      {
-        for ($i = 0; $i < $level; $i++) {
-          $post_id = wp_get_post_parent_id($post_id);
-          if (!$post_id) {
-            return '';
-          }
-        }
-        return get_post_field('post_name', $post_id);
-      }
+      // Get the parent page's slug
+      $parent_slug = get_post_field('post_name', wp_get_post_parent_id(get_queried_object_id()));
 
-      $post_id = get_queried_object_id();
-      $parent_slug = get_ancestor_slug($post_id, 1); // Get parent slug
+      // Query arguments
+      $args = array(
+        'post_type'      => 'care-team-member',
+        'numberposts'    => -1,
+        'posts_per_page' => -1,
+        'order'          => 'ASC',
+      );
 
-      // Query function
-      function get_care_team_members()
-      {
-        return new WP_Query([
-          'post_type'      => 'care-team-member',
-          'numberposts'    => -1,
-          'posts_per_page' => -1,
-          'order'          => 'ASC',
-        ]);
-      }
-
-      $query = get_care_team_members();
-
-      // If no posts found, try with grandparent slug
-      if (!$query->have_posts()) {
-        $parent_slug = get_ancestor_slug($post_id, 2); // Get grandparent slug
-        $query = get_care_team_members();
-      }
+      $query = new WP_Query($args);
 
       if ($query->have_posts()) :
-        while ($query->have_posts()) : $query->the_post();
+        while ($query->have_posts()) :
+          $query->the_post();
           $id = get_the_ID();
           $title = get_field('title', $id);
           $certifications = get_field('certifications', $id);
           $headshot = get_field('headshot', $id);
           $states = get_field('states', $id);
           $show = null;
-
           if (is_array($states)) {
             foreach ($states as $state) {
+              // Replace dashes with spaces in the slug and convert both to lowercase for case-insensitive comparison
               $slug = str_replace('-', ' ', strtolower($parent_slug));
               $state_label = strtolower($state['label']);
 
@@ -181,10 +161,12 @@ echo $modified_content;
               }
             }
           }
-
-          $altText = $headshot ? $headshot['alt'] : 'Headshot of ' . get_the_title($id);
-      ?>
-          <div class="rounded-md bg-white lg:p-base5-5 p-base5-2 text-center <?= $show ? '' : 'noshow'; ?>">
+          if ($headshot) {
+            $altText = $headshot['alt'];
+          } else {
+            $altText = 'Headshot of ' . get_the_title($id);
+          } ?>
+          <div class="rounded-md bg-white lg:p-base5-5 p-base5-2 text-center <?= $show ? '' : 'noshow'; ?> ">
             <img src="<?= $headshot['url'] ?? site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="w-full mx-auto rounded-circle mb-sp-4">
             <h4 class="mb-0"><?= get_the_title($id); ?></h4>
             <p><?= $title; ?> - <?= implode(', ', $certifications); ?></p>
@@ -192,8 +174,7 @@ echo $modified_content;
       <?php
         endwhile;
         wp_reset_postdata();
-      endif;
-      ?>
+      endif; ?>
     </div>
   </div>
 </section>
