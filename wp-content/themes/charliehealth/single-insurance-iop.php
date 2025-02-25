@@ -131,7 +131,7 @@ if ($parent_post && strpos($parent_post->post_content, 'acf/insurance-cost-block
   </div>
 </section>
 <!-- What is IOP -->
-<?= do_blocks('<!-- wp:block {"ref":17594} /-->'); ?>
+<?= do_blocks('<!-- wp:block {"ref":18197} /-->'); ?>
 <?php
 $args = [
   'post_type'      => 'testimonial',
