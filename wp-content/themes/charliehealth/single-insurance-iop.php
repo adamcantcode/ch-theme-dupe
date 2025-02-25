@@ -43,6 +43,7 @@ $logo = isset($logos[$insurance]) ? $logos[$insurance] : "";
   </div>
   <div class="container-md">
     <h1 class="text-center">IOP Covered by <mark style="background-color:#DAC1FB"><?= $insurance; ?></mark></h1>
+    <h2 class="text-center text-h4-base font-heading mb-base5-6">In-network virtual mental health treatment for lasting healing</h2>
     <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
       <a href="/form" class="ch-button button-primary-ch" target="_self">Get Started</a>
       <a href="tel:+18664848218" class="ch-button button-secondary-ch" target="_self">1 (986) 206-0414</a>
@@ -75,6 +76,32 @@ $logo = isset($logos[$insurance]) ? $logos[$insurance] : "";
     </div>
   </div>
 </section>
+<?php
+function find_insurance_cost_block($blocks, $block_name = 'acf/insurance-cost-block')
+{
+  foreach ($blocks as $block) {
+    if ($block['blockName'] === $block_name) {
+      return $block;
+    }
+    if (!empty($block['innerBlocks'])) {
+      $found_block = find_insurance_cost_block($block['innerBlocks'], $block_name);
+      if ($found_block) {
+        return $found_block;
+      }
+    }
+  }
+  return null;
+}
+$parent_post = get_post($parent);
+if ($parent_post && strpos($parent_post->post_content, 'acf/insurance-cost-block') !== false) {
+  $blocks = parse_blocks($parent_post->post_content);
+  $insurance_block = find_insurance_cost_block($blocks);
+  if ($insurance_block) {
+    $low_copay = $insurance_block['attrs']['data']['low_copay'] ?? '';
+    $average_copay = $insurance_block['attrs']['data']['average_copay'] ?? '';
+  }
+}
+?>
 <section class="bg-gradient-to-b from-primary-200 to-primary section">
   <div class="container">
     <div class="acf-innerblocks-container">
@@ -83,11 +110,11 @@ $logo = isset($logos[$insurance]) ? $logos[$insurance] : "";
           <div class="flex flex-col bg-lavender-200 rounded-md md:max-w-[300px] p-base5-6 gap-base5-2 mx-auto">
             <div class="flex items-center gap-base5-4">
               <p class="flex-1 text-h4-base">Your per session cost for IOP as low as</p>
-              <p class="text-h2-base"><span class="text-[50%] align-super">$</span>0</p>
+              <p class="text-h2-base"><span class="text-[50%] align-super">$</span><?= $low_copay; ?></p>
             </div>
             <div class="flex items-center gap-base5-4">
               <p class="flex-1 text-h4-base"><?= $insurance; ?> average cost per session</p>
-              <p class="text-h2-base"><span class="text-[50%] align-super">$</span>19</p>
+              <p class="text-h2-base"><span class="text-[50%] align-super">$</span><?= $average_copay; ?></p>
             </div>
             <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full">
               <a href="/form" class="ch-button button-primary-ch">Get started</a>
