@@ -127,54 +127,59 @@ echo $modified_content;
   <div class="container">
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-base5-6 lg:gap-y-base5-10 mt-base5-5">
       <?php
-      // Get the parent page's slug
-      $parent_slug = get_post_field('post_name', wp_get_post_parent_id(get_queried_object_id()));
+      // Get the queried object ID once
+      $queried_id = get_queried_object_id();
 
-      // Query arguments
-      $args = array(
+      // Get parent and grandparent slugs efficiently
+      $parent_id = wp_get_post_parent_id($queried_id);
+      $parent_slug = $parent_id ? get_post_field('post_name', $parent_id) : '';
+      $grandparent_id = $parent_id ? wp_get_post_parent_id($parent_id) : 0;
+      $grandparent_slug = $grandparent_id ? get_post_field('post_name', $grandparent_id) : '';
+
+      // Convert slugs to lowercase once
+      $slug = str_replace('-', ' ', strtolower($parent_slug));
+      $slugGrand = str_replace('-', ' ', strtolower($grandparent_slug));
+
+      // Query care team members using get_posts()
+      $care_team_members = get_posts([
         'post_type'      => 'care-team-member',
         'numberposts'    => -1,
-        'posts_per_page' => -1,
         'order'          => 'ASC',
-      );
+      ]);
 
-      $query = new WP_Query($args);
-
-      if ($query->have_posts()) :
-        while ($query->have_posts()) :
-          $query->the_post();
+      if ($care_team_members) :
+        foreach ($care_team_members as $post) :
+          setup_postdata($post);
           $id = get_the_ID();
           $title = get_field('title', $id);
-          $certifications = get_field('certifications', $id);
+          $certifications = get_field('certifications', $id) ?? [];
           $headshot = get_field('headshot', $id);
-          $states = get_field('states', $id);
-          $show = null;
-          if (is_array($states)) {
-            foreach ($states as $state) {
-              // Replace dashes with spaces in the slug and convert both to lowercase for case-insensitive comparison
-              $slug = str_replace('-', ' ', strtolower($parent_slug));
-              $state_label = strtolower($state['label']);
+          $states = get_field('states', $id) ?? [];
+          $show = false; // Default to false
 
-              if (str_contains($slug, $state_label)) {
-                $show = true;
-                break;
-              }
+          // Check if any state label matches
+          foreach ($states as $state) {
+            $state_label = strtolower($state['label']);
+            if (str_contains($slug, $state_label) || str_contains($slugGrand, $state_label)) {
+              $show = true;
+              break;
             }
           }
-          if ($headshot) {
-            $altText = $headshot['alt'];
-          } else {
-            $altText = 'Headshot of ' . get_the_title($id);
-          } ?>
-          <div class="rounded-md bg-white lg:p-base5-5 p-base5-2 text-center <?= $show ? '' : 'noshow'; ?> ">
-            <img src="<?= $headshot['url'] ?? site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>" alt="<?= $altText; ?>" class="w-full mx-auto rounded-circle mb-sp-4">
-            <h4 class="mb-0"><?= get_the_title($id); ?></h4>
-            <p><?= $title; ?> - <?= implode(', ', $certifications); ?></p>
+
+          $altText = $headshot ? ($headshot['alt'] ?? 'Headshot of ' . get_the_title($id)) : 'Headshot of ' . get_the_title($id);
+      ?>
+          <div class="rounded-md bg-white lg:p-base5-5 p-base5-2 text-center <?= $show ? '' : 'noshow'; ?>">
+            <img src="<?= $headshot['url'] ?? site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>"
+              alt="<?= esc_attr($altText); ?>"
+              class="w-full mx-auto rounded-circle mb-sp-4">
+            <h4 class="mb-0"><?= esc_html(get_the_title($id)); ?></h4>
+            <p><?= esc_html($title); ?> - <?= esc_html(implode(', ', $certifications)); ?></p>
           </div>
       <?php
-        endwhile;
+        endforeach;
         wp_reset_postdata();
-      endif; ?>
+      endif;
+      ?>
     </div>
   </div>
 </section>
