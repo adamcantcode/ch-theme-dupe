@@ -146,7 +146,14 @@ if ($query->have_posts()) : ?>
   </section>
 <?php endif; ?>
 <!-- HIW -->
-<?= do_blocks('<!-- wp:block {"ref":18198} /-->'); ?>
+<?php 
+$block_content = do_blocks('<!-- wp:block {"ref":18198} /-->');
+
+// Modify the block content dynamically
+$modified_content = str_replace('[Insurance Plan]', $insurance, $block_content);
+
+echo $modified_content;
+?>
 <section class="section bg-primary">
   <div class="container">
     <div class="grid lg:grid-cols-[4fr_7fr_1fr] gap-base5-8">
@@ -193,7 +200,7 @@ if ($query->have_posts()) : ?>
 </section>
 <?php
 // FAQ Block pattern, dynamic update
-$block_content = do_blocks('<!-- wp:block {"ref":###} /-->');
+$block_content = do_blocks('<!-- wp:block {"ref18201 /-->');
 
 // Modify the block content dynamically
 $modified_content = str_replace('[Insurance Plan]', $insurance, $block_content);
