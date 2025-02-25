@@ -67,7 +67,7 @@ $logo = isset($logos[$insurance]) ? $logos[$insurance] : "";
           <?php endif; ?>
         </div>
         <h2>Accessing quality mental healthcare shouldn’t be complicated</h2>
-        <h3>If you have <?= $insurance; ?>, you may be covered for Charlie Health’s intensive outpatient program (IOP)—a flexible, online program designed to provide structured support for teens and adults.</h3>
+        <h3>If you have <?= $insurance; ?>, you may be covered for Charlie Health’s virtual intensive outpatient program (IOP)—a flexible, online program designed to provide structured support for teens and adults.</h3>
         <div class="flex flex-col lg:flex-wrap lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-start">
           <a href="/form" class="ch-button button-primary-ch" target="_self">Get Started</a>
           <a href="tel:+19862060414" class="ch-button button-secondary-ch" target="_self">1 (986) 206-0414</a>
@@ -149,7 +149,7 @@ $args = [
 $query = new WP_Query($args);
 
 if ($query->have_posts()) : ?>
-  <section class="section">
+  <section class="section-top">
     <div class="container">
       <div class="flex flex-col h-full lg:grid lg:grid-cols-2 lg:gap-[10rem]">
         <?php while ($query->have_posts()) : $query->the_post();
@@ -162,10 +162,11 @@ if ($query->have_posts()) : ?>
             <p class="text-h4-base mb-base5-6">In their words</p>
             <p class="text-h1-base font-heading-serif">“<?= $pull_quote; ?>”</p>
             <p><?= $full_quote; ?></p>
+            <p>— Charlie Health Alum, <?= $insurance; ?> Member</p>
           </div>
         <?php endwhile;
         wp_reset_postdata(); ?>
-        <div class="relative order-1 lg:order-2 mt-sp-14 lg:mt-auto mb-sp-8 lg:mb-0">
+        <div class="relative order-1 lg:order-2 mt-base5-6 lg:mt-0 mb-base5-4 lg:mb-0">
           <img src="https://www.charliehealth.com/wp-content/uploads/2023/10/Portrait_Matt-1.png.webp" alt="Illustration of Charlie Health Client" class="object-cover">
         </div>
       </div>
@@ -185,7 +186,7 @@ echo $modified_content;
   <div class="container">
     <div class="grid lg:grid-cols-[4fr_7fr_1fr] gap-base5-8">
       <div>
-        <h2 class="text-white">Why Choose Charlie Health’s IOP?</h2>
+        <h2 class="text-white">Why choose Charlie Health’s IOP?</h2>
         <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full">
           <a href="/form" class="ch-button button-primary-ch inverted" target="_self">Get Started</a>
           <a href="tel:+18664848218" class="ch-button button-secondary-ch inverted" target="_self">1 (986) 206-0414</a>
