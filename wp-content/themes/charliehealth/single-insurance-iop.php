@@ -227,7 +227,7 @@ echo $modified_content;
 </section>
 <?php
 // FAQ Block pattern, dynamic update
-$block_content = do_blocks('<!-- wp:block {"ref18201 /-->');
+$block_content = do_blocks('<!-- wp:block {"ref":18201} /-->');
 
 // Modify the block content dynamically
 $modified_content = str_replace('[Insurance Plan]', $insurance, $block_content);
