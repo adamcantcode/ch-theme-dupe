@@ -234,7 +234,7 @@ $modified_content = str_replace('[Insurance Plan]', $insurance, $block_content);
 
 echo $modified_content;
 ?>
-<section class="section bg-primary">
+<section class="section-xs-bottom bg-secondary-soft">
   <div class="container">
     <p class="text-white text-mini">Please note that insurance coverage varies based on your plan and residence. <a href="tel:+19862060414" class="text-current">Contact our Admissions Team</a> to learn more about your specific coverage and benefits.</p>
   </div>
