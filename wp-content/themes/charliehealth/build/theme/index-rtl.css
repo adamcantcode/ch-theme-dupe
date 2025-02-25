@@ -1837,14 +1837,6 @@ a.insurance-tabs.active:hover {
   grid-column: span 2 / span 2;
 }
 
-.col-span-4{
-  grid-column: span 4 / span 4;
-}
-
-.col-span-8{
-  grid-column: span 8 / span 8;
-}
-
 .float-right{
   float: left;
 }
@@ -2835,10 +2827,6 @@ a.insurance-tabs.active:hover {
 
 .grid-cols-\[3fr_1fr\]{
   grid-template-columns: 3fr 1fr;
-}
-
-.grid-cols-\[4fr_7fr_1fr\]{
-  grid-template-columns: 4fr 7fr 1fr;
 }
 
 .flex-row{
@@ -4293,6 +4281,10 @@ a.insurance-tabs.active:hover {
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.text-current{
+  color: currentColor;
 }
 
 .underline{

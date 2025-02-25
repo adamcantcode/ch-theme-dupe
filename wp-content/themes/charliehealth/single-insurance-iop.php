@@ -53,7 +53,7 @@ $logo = isset($logos[$insurance]) ? $logos[$insurance] : "";
   <div class="container">
     <div class="grid lg:grid-cols-2 gap-base5-10">
       <div>
-        <img src="#" alt="#">
+        <img src="https://www.charliehealth.com/wp-content/uploads/2025/02/UPDATE_D2-1.png.webp" alt="Illustration of virtual therapy clients on laptop">
       </div>
       <div class="grid gap-base5-4">
         <div class="flex flex-row items-center justify-items-center gap-base5-6">
@@ -146,7 +146,7 @@ if ($query->have_posts()) : ?>
   </section>
 <?php endif; ?>
 <!-- HIW -->
-<?php 
+<?php
 $block_content = do_blocks('<!-- wp:block {"ref":18198} /-->');
 
 // Modify the block content dynamically
@@ -207,6 +207,11 @@ $modified_content = str_replace('[Insurance Plan]', $insurance, $block_content);
 
 echo $modified_content;
 ?>
+<section class="section bg-primary">
+  <div class="container">
+    <p class="text-white text-mini">Please note that insurance coverage varies based on your plan and residence. <a href="tel:+19862060414" class="text-current">Contact our Admissions Team</a> to learn more about your specific coverage and benefits.</p>
+  </div>
+</section>
 <script>
   /******/
   (() => { // webpackBootstrap
