@@ -103,7 +103,50 @@ $logo = isset($logos[$insurance]) ? $logos[$insurance] : "";
     </div>
   </div>
 </section>
+<!-- What is IOP -->
 <?= do_blocks('<!-- wp:block {"ref":17594} /-->'); ?>
+<?php
+$args = [
+  'post_type'      => 'testimonial',
+  'posts_per_page' => 1,
+  'orderby'        => 'rand',
+  'meta_query'     => [
+    [
+      'key'     => 'insurance',
+      'value'   => get_the_title($parent),
+      'compare' => 'LIKE',
+    ],
+  ],
+];
+
+$query = new WP_Query($args);
+
+if ($query->have_posts()) : ?>
+  <section class="section">
+    <div class="container">
+      <div class="flex flex-col h-full lg:grid lg:grid-cols-2 lg:gap-[10rem]">
+        <?php while ($query->have_posts()) : $query->the_post();
+
+          $pull_quote = get_field('pull-quote');
+          $full_quote = get_field('full_quote');
+          $insurance  = get_field('insurance');
+        ?>
+          <div class="order-2 lg:order-1 lg:mb-sp-16 mb-sp-8">
+            <p class="text-h4-base mb-base5-6">In their words</p>
+            <p class="text-h1-base font-heading-serif">“<?= $pull_quote; ?>”</p>
+            <p><?= $full_quote; ?></p>
+          </div>
+        <?php endwhile;
+        wp_reset_postdata(); ?>
+        <div class="relative order-1 lg:order-2 mt-sp-14 lg:mt-auto mb-sp-8 lg:mb-0">
+          <img src="https://www.charliehealth.com/wp-content/uploads/2023/10/Portrait_Matt-1.png.webp" alt="Illustration of Charlie Health Client" class="object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+<?php endif; ?>
+<!-- HIW -->
+<?= do_blocks('<!-- wp:block {"ref":18198} /-->'); ?>
 <section class="bg-gradient-to-r from-[#ADB0E1] to-[#E7D3FF] section">
   <div class="container">
     <div class="grid lg:grid-cols-2 gap-base5-10 mb-base5-10">
