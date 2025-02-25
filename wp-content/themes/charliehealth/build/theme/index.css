@@ -1837,6 +1837,14 @@ a.insurance-tabs.active:hover {
   grid-column: span 2 / span 2;
 }
 
+.col-span-4{
+  grid-column: span 4 / span 4;
+}
+
+.col-span-8{
+  grid-column: span 8 / span 8;
+}
+
 .float-right{
   float: right;
 }
@@ -7103,6 +7111,10 @@ section.bg-shield > div {
 
   .lg\:grid-cols-\[4fr_6fr\]{
     grid-template-columns: 4fr 6fr;
+  }
+
+  .lg\:grid-cols-\[4fr_7fr_1fr\]{
+    grid-template-columns: 4fr 7fr 1fr;
   }
 
   .lg\:grid-cols-\[4fr_8fr\]{

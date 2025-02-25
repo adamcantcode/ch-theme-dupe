@@ -78,8 +78,8 @@ $logo = isset($logos[$insurance]) ? $logos[$insurance] : "";
 <section class="bg-gradient-to-b from-primary-200 to-primary section">
   <div class="container">
     <div class="acf-innerblocks-container">
-      <div class="wp-block-columns are-vertically-aligned-center is-layout-flex wp-container-core-columns-is-layout-1 wp-block-columns-is-layout-flex">
-        <div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:42rem">
+      <div class="grid lg:grid-cols-[4fr_7fr_1fr] gap-base5-10 items-center">
+        <div>
           <div class="flex flex-col bg-lavender-200 rounded-md md:max-w-[300px] p-base5-6 gap-base5-2 mx-auto">
             <div class="flex items-center gap-base5-4">
               <p class="flex-1 text-h4-base">Your per session cost for IOP as low as</p>
@@ -95,7 +95,7 @@ $logo = isset($logos[$insurance]) ? $logos[$insurance] : "";
             <p class="text-mini">Reach out to our team to verify your coverage today</p>
           </div>
         </div>
-        <div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:58rem">
+        <div class="lg:col-span-1">
           <h2 class="text-white wp-block-heading">How we work with <?= $insurance; ?></h2>
           <p class="text-white">Cigna provides comprehensive mental health benefits with many of their plans, encompassing therapy services tailored to individual needs. With coverage extending to virtual behavioral healthcare, including Charlie Health's virtual Intensive Outpatient Program, individuals receive the treatment necessary for their mental well-being. Cigna's commitment to mental health ensures that therapy is not only accessible but also an integral part of their healthcare experience. Through their insurance policies, Cigna prioritizes coverage for therapy, recognizing its significance in fostering mental wellness.</p>
         </div>
@@ -103,6 +103,7 @@ $logo = isset($logos[$insurance]) ? $logos[$insurance] : "";
     </div>
   </div>
 </section>
+<?= do_blocks('<!-- wp:block {"ref":17594} /-->'); ?>
 <section class="bg-gradient-to-r from-[#ADB0E1] to-[#E7D3FF] section">
   <div class="container">
     <div class="grid lg:grid-cols-2 gap-base5-10 mb-base5-10">
