@@ -26,6 +26,14 @@
   </noscript>
   <!-- END LinkedIn -->
 <?php endif; ?>
+<!-- dont swap phone number on home page -->
+<?php if (is_front_page()) : ?>
+  <script>
+    document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+      link.setAttribute("data-calltrk-noswap", "true");
+    });
+  </script>
+<?php endif; ?>
 <!-- Start CallRail -->
 <script type="text/javascript" src="//cdn.callrail.com/companies/653726723/9849fbbb05a43db6100e/12/swap.js"></script>
 <!-- END CallRail -->
