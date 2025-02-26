@@ -1,7 +1,10 @@
-<?php $rand = random_int(1, 10000); ?>
+<?php
+$rand = random_int(1, 10000);
+$buttonColor = $buttonColor ?? 'button-primary-ch';
+?>
 <form id="iterable_optin_<?= $rand; ?>" action="///links.iterable.com/lists/publicAddSubscriberForm?publicIdString=7c60cf0b-e283-4dee-95c4-b4e88518b178" method="POST" class="flex flex-col w-full lg:flex-row gap-base5-2 email">
   <input type="email" name="email" onfocus="if(this.value===this.defaultValue){this.value='';}" onblur="if(this.value===''){this.value=this.defaultValue;}" placeholder="Email" class="w-full bg-white rounded-md px-base5-3 py-base5-2 text-primary placeholder:text-grey-deactivated">
-  <input type="submit" value="Sign Up" class="cursor-pointer ch-button button-primary-ch px-base5-3 py-base5-2 text-[16px]">
+  <input type="submit" value="Sign Up" class="cursor-pointer ch-button <?= $buttonColor; ?> px-base5-3 py-base5-2 text-[16px]">
 </form>
 <h4 id="responseMessage_<?= $rand; ?>" class="noshow">Thank you for signing up!</h4>
 <script>

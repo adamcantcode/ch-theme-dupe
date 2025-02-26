@@ -2909,6 +2909,10 @@ a.insurance-tabs.active:hover {
   gap: 1rem;
 }
 
+.gap-base5-1{
+  gap: 5px;
+}
+
 .gap-base5-10{
   gap: 50px;
 }
@@ -4197,10 +4201,6 @@ a.insurance-tabs.active:hover {
 
 .leading-\[1\.8rem\]{
   line-height: 1.8rem;
-}
-
-.leading-\[130\%\]{
-  line-height: 130%;
 }
 
 .leading-\[140\%\]{

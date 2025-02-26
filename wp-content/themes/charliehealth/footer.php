@@ -145,7 +145,7 @@
 
 $blog = get_current_blog_id();
 if ($blog === 1) {
-	$nlBG      = 'bg-lavender-300';
+	$nlBG      = 'bg-primary';
 	$nlBGLight = 'bg-lavender-100';
 } else {
 	$nlBG      = 'bg-referrals-green-300';
@@ -153,9 +153,9 @@ if ($blog === 1) {
 }
 ?>
 <footer id="footer" class="grid bg-secondary-soft relatve">
-	<div class="section-sm-top section-lg-bottom ">
+	<div class="section-sm-top section-lg-bottom bg-secondary-soft">
 		<div class="container">
-			<div class="rounded-sm lg:flex <?= $nlBG; ?> p-sp-8 mb-sp-12">
+			<div class="rounded-sm lg:flex <?= $nlBG; ?> p-base5-6 mb-base5-10">
 				<?php
 				$removeNewsletterPages = get_field('footer_removal_pages', 'options');
 				$removeNewsletter = false;
@@ -168,29 +168,34 @@ if ($blog === 1) {
 				?>
 				<?php if (!$removeNewsletter) : ?>
 					<div class="flex-grow">
-						<p class="font-heading !text-[28px]">Sign up for our email newsletter</p>
-						<p class="text-[14px] leading-[130%] noshow">Get mental health updates, research, insights, and resources directly to your inbox.</p>
+						<h3 class="text-white mb-base5-6">Sign up for our email newsletter</h3>
 						<div id="newsletterFooter" class="w-full lg:w-2/5">
-							<?php include('wp-content/themes/charliehealth/includes/newsletter-form.php'); ?>
+							<?php
+							$buttonColor = 'bg-lavender-300 rounded-sm';
+							include('wp-content/themes/charliehealth/includes/newsletter-form.php');
+							?>
 						</div>
 					</div>
 				<?php endif; ?>
 				<div>
-					<div class="flex gap-sp-1 mt-base5-2 lg:mt-0">
+					<div class="flex gap-base5-1 mt-base5-2 lg:mt-0">
 						<a href="https://www.facebook.com/charliehealth" target="_blank">
-							<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/facebook.svg'); ?>" alt="Facebook logo" class="w-[42px] h-[42px] p-[10px]" />
+							<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/facebook-white.svg'); ?>" alt="Facebook logo" class="w-[42px] h-[42px] p-[10px]" />
 						</a>
 						<a href="https://www.linkedin.com/company/charlie-health/" target="_blank">
-							<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/linkedin.svg'); ?>" alt="LinkedIn logo" class="w-[42px] h-[42px] p-[10px]" />
-						</a>
-						<a href="https://twitter.com/charliehealth" target="_blank">
-							<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/x-blue.svg'); ?>" alt="Twitter (X) logo" class="w-[42px] h-[42px] p-[10px]" />
+							<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/linkedin-white.svg'); ?>" alt="LinkedIn logo" class="w-[42px] h-[42px] p-[10px]" />
 						</a>
 						<a href="https://www.instagram.com/charliehealth/" target="_blank">
-							<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/instagram.svg'); ?>" alt="Instagram logo" class="w-[42px] h-[42px] p-[10px]" />
+							<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/instagram-white.svg'); ?>" alt="Instagram logo" class="w-[42px] h-[42px] p-[10px]" />
 						</a>
 						<a href="https://www.tiktok.com/@charliehealth" target="_blank">
-							<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/tik-tok.svg'); ?>" alt="TikTok logo" class="w-[42px] h-[42px] p-[10px]" />
+							<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/tiktok-white.svg'); ?>" alt="TikTok logo" class="w-[42px] h-[42px] p-[10px]" />
+						</a>
+						<a href="https://www.youtube.com/@charliehealth" target="_blank">
+							<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/youtube-white.svg'); ?>" alt="Twitter (X) logo" class="w-[42px] h-[42px] p-[10px]" />
+						</a>
+						<a href="https://x.com/charliehealth" target="_blank">
+							<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/x-white.svg'); ?>" alt="Twitter (X) logo" class="w-[42px] h-[42px] p-[10px]" />
 						</a>
 					</div>
 				</div>
@@ -221,13 +226,13 @@ if ($blog === 1) {
 		</div>
 		<div class="container ">
 			<div class="flex flex-col justify-between lg:flex-row">
-				<div class="w-full rounded-t-sm lg:rounded-l-sm lg:rounded-r-none py-sp-5 px-sp-6 <?= $nlBGLight; ?>">
-					<p class="mb-0 text-[14px] leading-none">If this is a life-threatening emergency, please call 911 or the <a href="https://988lifeline.org/" target="_blank" class="text-darker-blue text-[14px]">National Suicide Prevention Lifeline</a></p>
+				<div class="w-full rounded-t-sm lg:rounded-l-sm lg:rounded-r-none py-base5-4 px-base5-5 flex items-center <?= $nlBGLight; ?>">
+					<p class="mb-0 leading-none text-h5-base">If this is a life-threatening emergency, please call 911 or the <a href="https://988lifeline.org/" target="_blank" class="text-darker-blue text-h5-base">National Suicide Prevention Lifeline</a></p>
 				</div>
-				<div class="rounded-b-sm <?= $nlBG; ?> lg:rounded-r-sm lg:rounded-l-none py-sp-5 px-sp-6">
-					<a href="tel:+988" class="flex items-center no-underline gap-sp-2 text-darker-blue">
+				<div class="rounded-b-sm <?= $nlBG; ?> lg:rounded-r-sm lg:rounded-l-none py-base5-4 px-base5-5">
+					<a href="tel:+988" class="flex items-center no-underline gap-base5-2 text-darker-blue">
 						<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/phone.svg'); ?>" width="25" alt="phone call icon">
-						<div class="text-[14px]">988</div>
+						<p class="text-h5-base">988</p>
 					</a>
 				</div>
 			</div>
