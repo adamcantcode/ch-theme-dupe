@@ -1123,3 +1123,19 @@ function function_name($roles)
 //     unset($wp_taxonomies['category']);
 //   unregister_taxonomy('category');
 // });
+
+// STOP block-specific js in the editor
+function prevent_acf_block_js_in_editor()
+{
+  if (is_admin()) {
+    global $wp_scripts;
+
+    foreach ($wp_scripts->queue as $handle) {
+      if (strpos($handle, 'acf-') === 0 && strpos($handle, '-block-script') !== false) {
+        wp_dequeue_script($handle);
+        wp_deregister_script($handle);
+      }
+    }
+  }
+}
+add_action('enqueue_block_assets', 'prevent_acf_block_js_in_editor', 20);
