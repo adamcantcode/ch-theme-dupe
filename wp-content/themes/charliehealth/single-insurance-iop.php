@@ -17,7 +17,7 @@ $logos = [
   "Cigna" => "https://www.charliehealth.com/wp-content/uploads/2024/03/cigna.svg",
   // "Humana" => "https://www.charliehealth.com/wp-content/uploads/2023/12/Humana_logo.svg",
   "Medicaid" => "https://www.charliehealth.com/wp-content/uploads/2024/08/Medicaid-Cropped-300x115-1.png.webp",
-  "TriCare" => "https://www.charliehealth.com/wp-content/uploads/2024/03/US-TRICARE-Logo-1.svg",
+  "TRICARE" => "https://www.charliehealth.com/wp-content/uploads/2024/03/US-TRICARE-Logo-1.svg",
   // "UnitedHealthcare" => "https://www.charliehealth.com/wp-content/uploads/2023/12/UnitedHealthcare_logo.svg"
 ];
 
