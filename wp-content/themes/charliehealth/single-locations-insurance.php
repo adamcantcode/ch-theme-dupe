@@ -51,7 +51,7 @@ $logo = isset($logos[$insurer]) ? $logos[$insurer] : "";
           </svg>
           <?php if ($logo) : ?>
             <div class="h-full w-[1.5px] bg-white"></div>
-            <img src="<?= $logo; ?>" alt="Logo for <?= get_field('insurer'); ?>" class="object-cover object-top nolazy">
+            <img src="<?= $logo; ?>" alt="Logo for <?= get_field('insurer'); ?>" class="object-cover object-top nolazy max-w-[200px] max-h-base5-10">
           <?php endif; ?>
         </div>
         <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-start">
@@ -66,7 +66,7 @@ $logo = isset($logos[$insurer]) ? $logos[$insurer] : "";
         </svg>
         <?php if ($logo) : ?>
           <div class="h-full w-[1.5px] bg-white"></div>
-          <img src="<?= $logo; ?>" alt="Logo for <?= get_field('insurer'); ?>"class="object-cover object-top nolazy">
+          <img src="<?= $logo; ?>" alt="Logo for <?= get_field('insurer'); ?>"class="object-cover object-top nolazy max-w-[200px] max-h-base5-10">
         <?php endif; ?>
       </div>
     </div>

@@ -63,7 +63,7 @@ $logo = isset($logos[$insurance]) ? $logos[$insurance] : "";
           </svg>
           <?php if ($logo) : ?>
             <div class="h-full w-[1.5px] bg-primary"></div>
-            <img src="<?= $logo; ?>" alt="Logo for <?= $insurance; ?>" class="object-cover object-top nolazy">
+            <img src="<?= $logo; ?>" alt="Logo for <?= $insurance; ?>" class="object-cover object-top nolazy max-w-[200px] max-h-base5-10">
           <?php endif; ?>
         </div>
         <h2>Accessing quality mental healthcare shouldn’t be complicated</h2>

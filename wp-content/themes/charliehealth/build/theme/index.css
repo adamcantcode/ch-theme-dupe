@@ -2406,6 +2406,10 @@ a.insurance-tabs.active:hover {
   max-height: 80vh;
 }
 
+.max-h-base5-10{
+  max-height: 50px;
+}
+
 .min-h-\[100px\]{
   min-height: 100px;
 }
