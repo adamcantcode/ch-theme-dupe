@@ -335,7 +335,7 @@ $conditions = get_field('conditions');
                 $pullQuote = get_field('pull-quote', get_the_ID());
                 $fullQuote = get_field('full_quote', get_the_ID());
                 $title     = get_field('title', get_the_ID());
-                $location  = get_field('location', get_the_ID());
+                $state  = get_field('location', get_the_ID());
 
                 ?>
                 <div class="w-full rounded-[1rem] lg:p-sp-8 p-sp-6 testimonial-item bg-white flex flex-col">
@@ -347,9 +347,7 @@ $conditions = get_field('conditions');
                   <?php if ($title) : ?>
                     <p class="mb-0 text-p-base"><?= $title; ?></p>
                   <?php endif; ?>
-                  <?php if ($location) : ?>
-                    <p class="mb-0 text-p-base"><?= $location; ?></p>
-                  <?php endif; ?>
+                  
                 </div>
               <?php endwhile; ?>
             <?php endif; ?>
