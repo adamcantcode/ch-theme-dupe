@@ -369,7 +369,7 @@ $conditions = get_field('conditions');
               <img decoding="async" src="https://www.charliehealth.com/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg" alt="Charlie Health shield logo" class="w-[3rem] mb-sp-5" data-uw-rm-alt-original="Charlie Health shield logo" role="img" data-uw-rm-alt="ALT">
               <p class="text-h2-base">Get started with Charlie Health</p>
               <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full ">
-                <a href="https://www.charliehealth.com/talkspace" class="ch-button button-primary-ch" target="_self" data-uw-rm-brl="PR" data-uw-original-href="https://www.charliehealth.com/talkspace">Get started</a>
+                <a href="https://www.charliehealth.com/form" class="ch-button button-primary-ch" target="_self" data-uw-rm-brl="PR" data-uw-original-href="https://www.charliehealth.com/form">Get started</a>
                 <a href="tel:+18664848218" class="ch-button button-secondary-ch" target="_self">1 (986) 206-0414</a>
               </div>
             </div>
