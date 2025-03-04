@@ -47,35 +47,14 @@ $updatedDate           = get_field('select_updated_date') ?: '';
 $relatedPosts          = get_field('related_posts') ?: '';
 $prefooter             = get_field('prefooter_cta') ?: '';
 $references            = get_field('references') ?: '';
-
-// $audiences = get_the_terms(get_the_ID(), 'category');
-$tags      = get_the_terms(get_the_ID(), 'post_tag');
-
-$wordCount      = str_word_count(strip_tags(get_the_content()));
-$wordsPerMinute = 238;
-$readingTime    = ceil($wordCount / $wordsPerMinute);
 ?>
 
 <div id="progressBar" class="fixed z-20 transition-all duration-700 rounded-r-sm bg-purple-gradient-end h-[5px] left-0"></div>
 <div id="mainArticleContent" class="relative z-10 main-article-content">
-
-  <section class="section-top">
-    <div class="container">
-      <div class="breadcrumbs mb-sp-5 lg:mb-sp-6">
-        <?php if (!is_singular('research')) : ?>
-          <a href="/blog">The Library</a>
-        <?php endif; ?>
-        <?php if (isset($tags[0]) && $tags[0]->name): ?>
-          <span>/</span>
-          <a href="<?= get_term_link($tags[0]->term_id, 'post_tag'); ?>"><?= $tags[0]->name; ?></a>
-        <?php endif; ?>
-      </div>
-    </div>
-  </section>
   <section class="section-bottom section-xs-top">
     <div class="container">
       <div class="grid lg:grid-cols-[5fr_7fr] gap-base5-4">
-        <div>
+        <div class="min-w-0">
           <div>
             <h1 class="font-heading-serif text-h2 lg:text-h2-lg"><?= get_the_title(); ?></h1>
             <div class="grid gap-base5-2 mb-base5-5">
@@ -108,14 +87,15 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
               <?php endif; ?>
             </div>
             <p><?= get_the_excerpt(); ?></p>
+            <div id="mobileTheContent"></div>
             <p><a href="https://www.charliehealth.com/clinical-content-advisory-council">Learn more about our Clinical Review Process</a></p>
             <div class="lg:noshow">
               <div class="rounded-md bg-grey-cool mt-base5-6 lg:p-base5-6 p-base5-3">
                 <h3 class="font-heading-serif">Ready to start your journey?</p>
-                <div class="flex flex-col lg:flex-wrap lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full">
-                  <a href="/form" class="ch-button button-primary-ch">Get Started</a>
-                  <a href="tel:+19862060414" class="ch-button button-secondary-ch">1 (986) 206-0414</a>
-                </div>
+                  <div class="flex flex-col lg:flex-wrap lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full">
+                    <a href="/form" class="ch-button button-primary-ch">Get Started</a>
+                    <a href="tel:+19862060414" class="ch-button button-secondary-ch">1 (986) 206-0414</a>
+                  </div>
               </div>
             </div>
           </div>
@@ -129,12 +109,11 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
             </div>
           </div>
         </div>
-        <div>
+        <div class="min-w-0">
           <article id="articleContent">
             <div id="theContent">
               <?php the_content(); ?>
               <?php if ($references) : ?>
-                <div class="divider mb-sp-4"></div>
                 <div class="rounded-md references-container">
                   <div class="flex duration-300 rounded-md cursor-pointer references-heading lg:p-sp-8 p-sp-4 hover:bg-lightest-purple">
                     <p class="mb-0 text-h3-base">References</p>
@@ -208,4 +187,30 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
     </div>
   </section>
 <?php endif; ?>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const theContent = document.getElementById("theContent");
+    const mobileContainer = document.getElementById("mobileTheContent");
+    const desktopContainer = document.getElementById("articleContent");
+
+    function moveContent() {
+      if (window.innerWidth < 1024) {
+        if (mobileContainer && theContent && theContent.parentNode !== mobileContainer) {
+          mobileContainer.appendChild(theContent);
+        }
+      } else {
+        if (desktopContainer && theContent && theContent.parentNode !== desktopContainer) {
+          desktopContainer.appendChild(theContent);
+        }
+      }
+    }
+
+    // Run on load
+    moveContent();
+
+    // Run on resize
+    window.addEventListener("resize", moveContent);
+  });
+</script>
+
 <?php get_footer(); ?>
