@@ -1753,10 +1753,6 @@ a.insurance-tabs.active:hover {
   top: 100px;
 }
 
-.top-\[150px\]{
-  top: 150px;
-}
-
 .top-\[46px\]{
   top: 46px;
 }
@@ -2625,6 +2621,10 @@ a.insurance-tabs.active:hover {
 
 .max-w-\[72px\]{
   max-width: 72px;
+}
+
+.max-w-\[80\%\]{
+  max-width: 80%;
 }
 
 .max-w-\[850px\]{
