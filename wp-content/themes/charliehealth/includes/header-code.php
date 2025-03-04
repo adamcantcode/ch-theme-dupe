@@ -265,6 +265,40 @@
 </script>
 <!-- Formstack END -->
 
+<!-- Formstack Cookie -->
+<script>
+  function setCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+      var date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+  }
+
+  function getParam(p) {
+    var match = RegExp('[?&]' + p + '=([^&]*)').exec(window.location.search);
+    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+  }
+
+  function assignTrackingParameterToCookie(fieldParam) {
+    var field = getParam(fieldParam),
+      inputs;
+    if (field) {
+      setCookie(fieldParam, field, 365);
+    }
+  }
+  assignTrackingParameterToCookie('gclid');
+  assignTrackingParameterToCookie('fbclid');
+  assignTrackingParameterToCookie('ttclid');
+  assignTrackingParameterToCookie('utm_campaign');
+  assignTrackingParameterToCookie('keyword');
+  assignTrackingParameterToCookie('msclkid');
+</script>
+<!-- Formstack Cookie END -->
+
+
 <!-- FS + Off-label -->
 <script>
   document.addEventListener('DOMContentLoaded', function() {
