@@ -139,9 +139,8 @@ $references            = get_field('references') ?: '';
   </section>
 </div>
 </section>
-<?php if (!$prefooter) : ?>
-  <?= do_blocks('<!-- wp:block {"ref":12} /-->'); ?>
-<?php endif; ?>
+<?= do_blocks('<!-- wp:block {"ref":17792} /-->'); ?>
+<?= do_blocks('<!-- wp:block {"ref":18197} /-->'); ?>
 <?php if ($relatedPosts) : ?>
   <section class="section bg-grey-cool">
     <div class="container">
