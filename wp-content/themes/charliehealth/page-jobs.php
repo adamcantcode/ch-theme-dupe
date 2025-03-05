@@ -262,7 +262,7 @@ Template Post Type: page
         `).join('');
             const markup = `
           <div class="job-departments-js">
-            <h3 class="text-h2-base font-heading">${department.name}</h3>
+            <h3 class="text-h2-base font-heading">${department.name == 'Clinical Outreach' ? 'Outreach' : department.name}</h3>
           </div>
           <div class="job-list-js mt-sp-5 lg:mt-0">
             ${jobMarkup}
