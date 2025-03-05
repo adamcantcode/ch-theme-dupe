@@ -28,11 +28,6 @@
     }
   }
 }
-.single-areas-of-care {
-  h1 {
-    @apply text-h2-base font-heading;
-  }
-}
 
 /* BLOG */
 #theContent {
