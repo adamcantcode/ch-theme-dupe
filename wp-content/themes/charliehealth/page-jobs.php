@@ -424,9 +424,7 @@ Template Post Type: page
 
         // Start observing the target node for configured mutations
         observer.observe(iframe, config);
-      } else {
-        console.error('Iframe with id "grnhse_iframe" not found.');
-      }
+      } 
     }, 5000);
   });
 </script>
