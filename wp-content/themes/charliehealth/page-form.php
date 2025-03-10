@@ -122,12 +122,21 @@ Template Post Type: page
           form.registerFormEventListener({
             type: 'submit',
             onFormEvent: function(event) {
+              // Former form submission metric
               window.VWO = window.VWO || [];
               VWO.event = VWO.event || function() {
                 VWO.push(["event"].concat([].slice.call(arguments)))
               };
 
               VWO.event("formstackFormSubmission");
+
+              // Native Testing event
+              window.VWO = window.VWO || [];
+              VWO.event = VWO.event || function() {
+                VWO.push(["event"].concat([].slice.call(arguments)))
+              };
+
+              VWO.event("intakeFormSubmission");
 
               return Promise.resolve(event);
             }
