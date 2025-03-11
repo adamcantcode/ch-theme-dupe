@@ -16,7 +16,7 @@ Template Post Type: page
           $formID = 6125398;
 
           echo '<script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/self_serve_admissions_copy_10"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/self_serve_admissions_copy_10" title="Online Form">Online Form - [PROD] Charlie Health Intake Form - ADOL Expansion</a></noscript>';
-        } else if (wp_get_environment_type() === 'staging') {
+        } else if (wp_get_environment_type() === 'staging' || wp_get_environment_type() === 'local') {
           $formID = 6127780;
 
           echo '<script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/self_serve_admissions_copy_10_copy"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/self_serve_admissions_copy_10_copy" title="Online Form">Online Form - [STAGING] Charlie Health Intake Form - ADOL Expansion</a></noscript>';

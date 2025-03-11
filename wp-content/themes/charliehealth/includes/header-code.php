@@ -302,7 +302,7 @@
 <!-- FS + Off-label -->
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    
+
     const existingCookies = ['gclid', 'fbclid', 'utm_campaign', 'keyword', 'msclkid', 'ttclid'];
     const searchEngines = ['google.com', 'bing.com', 'yahoo.com', 'duckduckgo.com', 'ecosia.org'];
 
@@ -432,7 +432,7 @@
       'userJourney' => '181222012'
     ];
 
-    if ($template == 'page-form-adol.php' && $env_type == 'staging') {
+    if ($template == 'page-form-adol.php' && ($env_type == 'staging' || $env_type == 'local')) {
       $formID = '6127780';
       $form_values = [
         'organicLP' => '181302855',
