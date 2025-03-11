@@ -11,12 +11,23 @@ Template Post Type: page
   <div class="container">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-sp-8">
       <div>
-        <script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/self_serve_admissions"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/self_serve_admissions" title="Online Form">Online Form - [PROD] Charlie Health Intake Form</a></noscript>
+        <?php
+        if (wp_get_environment_type() === 'production') {
+          $formID = 6125398;
+
+          echo '<script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/self_serve_admissions_copy_10"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/self_serve_admissions_copy_10" title="Online Form">Online Form - [PROD] Charlie Health Intake Form - ADOL Expansion</a></noscript>';
+        } else if (wp_get_environment_type() === 'staging') {
+          $formID = 5773507;
+
+          echo '<script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/charlie_health_pre_admission_expanded_access_stage"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/charlie_health_pre_admission_expanded_access_stage" title="Online Form">Online Form - [Staging] Charlie Health Intake Form - expanded access</a></noscript>';
+        }
+        ?>
+        <!-- <script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/self_serve_admissions"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/self_serve_admissions" title="Online Form">Online Form - [PROD] Charlie Health Intake Form</a></noscript> -->
         <script>
           'use strict';
 
           // Constants
-          const FORM_ID = 5700521;
+          const FORM_ID = <?= $formID; ?>;
           const DISCLAIMER_TEXT = 'We may employ third-party tools to analyze usage data on our website, including your submission of this form. We make reasonable efforts to obscure or de-identify protected health information from our analytics providers whenever feasible.';
           const CONSENT_TEXT = 'By entering your phone number and email address in this form, you agree to receive automated text messages and emails from us. Standard message and data rates may apply.';
 
