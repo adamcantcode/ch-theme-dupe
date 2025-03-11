@@ -3028,6 +3028,15 @@ a.insurance-tabs.active:hover {
   row-gap: 2rem;
 }
 
+.gap-x-base5-4{
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+
+.gap-y-base5-6{
+  row-gap: 30px;
+}
+
 .self-start{
   align-self: flex-start;
 }
