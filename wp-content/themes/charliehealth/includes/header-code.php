@@ -421,18 +421,57 @@
       });
     }
 
-    // If form page
+    <?php
+    // Get the current page template
+    $template = get_page_template_slug();
+
+    // Get the environment type (staging or production)
+    $env_type = wp_get_environment_type();
+
+    // Set default values (PROD)
+    $formID = '6125398';
+    $form_values = array(
+      'organicLP' => '162592063',
+      'fbclid' => '162592064',
+      'ttclid' => '175898270',
+      'msclkid' => '163156163',
+      'userIP' => '163080837',
+      'fbp' => '162592065',
+      'userAgent' => '163080841',
+      'vwoTestVersion' => '166107526',
+      'userJourney' => '174755950'
+    );
+
+    // Check the template and environment to update values
+    if ($template == 'page-form-adol.php') {
+      if ($env_type == 'staging') {
+        $formID = '6127780';
+        $form_values = array(
+          'organicLP' => '165946796',
+          'fbclid' => '165946797',
+          'ttclid' => 'STAGING_NUMBER_3',
+          'msclkid' => 'STAGING_NUMBER_4',
+          'userIP' => 'STAGING_NUMBER_5',
+          'fbp' => '165946798',
+          'userAgent' => 'STAGING_NUMBER_7',
+          'vwoTestVersion' => 'STAGING_NUMBER_8',
+          'userJourney' => 'STAGING_NUMBER_9'
+        );
+      }
+    }
+    ?>
+
     if (window.location.href.indexOf('/form') > -1) {
-      initializeForm('5700521', {
-        organicLP: '162592063',
-        fbclid: '162592064',
-        ttclid: '175898270',
-        msclkid: '163156163',
-        userIP: '163080837',
-        fbp: '162592065',
-        userAgent: '163080841',
-        vwoTestVersion: '166107526',
-        userJourney: '174755950'
+      initializeForm(<?= $formID; ?>, {
+        organicLP: '<?php echo $form_values['organicLP']; ?>',
+        fbclid: '<?php echo $form_values['fbclid']; ?>',
+        ttclid: '<?php echo $form_values['ttclid']; ?>',
+        msclkid: '<?php echo $form_values['msclkid']; ?>',
+        userIP: '<?php echo $form_values['userIP']; ?>',
+        fbp: '<?php echo $form_values['fbp']; ?>',
+        userAgent: '<?php echo $form_values['userAgent']; ?>',
+        vwoTestVersion: '<?php echo $form_values['vwoTestVersion']; ?>',
+        userJourney: '<?php echo $form_values['userJourney']; ?>'
       });
     }
   });
