@@ -431,15 +431,15 @@
     // Set default values (PROD)
     $formID = '6125398';
     $form_values = array(
-      'organicLP' => '162592063',
-      'fbclid' => '162592064',
-      'ttclid' => '175898270',
-      'msclkid' => '163156163',
-      'userIP' => '163080837',
-      'fbp' => '162592065',
-      'userAgent' => '163080841',
-      'vwoTestVersion' => '166107526',
-      'userJourney' => '174755950'
+      'organicLP' => '181222004',
+      'fbclid' => '181222006',
+      'ttclid' => '181222007',
+      'msclkid' => '181222008',
+      'userIP' => '181222005',
+      'fbp' => '181222009',
+      'userAgent' => '181222010',
+      'vwoTestVersion' => '181222011',
+      'userJourney' => '181222012'
     );
 
     // Check the template and environment to update values
@@ -447,15 +447,15 @@
       if ($env_type == 'staging') {
         $formID = '6127780';
         $form_values = array(
-          'organicLP' => '165946796',
-          'fbclid' => '165946797',
-          'ttclid' => 'STAGING_NUMBER_3',
-          'msclkid' => 'STAGING_NUMBER_4',
-          'userIP' => 'STAGING_NUMBER_5',
-          'fbp' => '165946798',
-          'userAgent' => 'STAGING_NUMBER_7',
-          'vwoTestVersion' => 'STAGING_NUMBER_8',
-          'userJourney' => 'STAGING_NUMBER_9'
+          'organicLP' => '181302855',
+          'fbclid' => '181302857',
+          'ttclid' => '181302858',
+          'msclkid' => '181302859',
+          'userIP' => '181302856',
+          'fbp' => '181302860',
+          'userAgent' => '181302861',
+          'vwoTestVersion' => '181302862',
+          'userJourney' => '181302863'
         );
       }
     }
