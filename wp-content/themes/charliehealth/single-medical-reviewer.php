@@ -2,15 +2,18 @@
 get_header();
 
 $name      = get_the_title();
+$pronouns  = get_field('pronouns');
 $title     = get_field('title');
-$creds     = get_field('certifications');
-$states     = get_field('states');
+$creds     = get_field('credentials');
 $bio       = get_field('author_page_bio');
-$image       = get_field('image');
+$expertise = get_field('areas_of_expertise');
+
+$image = get_the_post_thumbnail_url();
 
 if ($image) {
   $imageID = get_post_thumbnail_id();
-  $imageAlt = $image['alt'];
+  $imageSrcset = wp_get_attachment_image_srcset($imageID, 'featured-large');
+  $imageAlt = get_post_meta($imageID, '_wp_attachment_image_alt', true);
 } else {
   $image = site_url('/wp-content/uploads/2023/06/charlie-health_find-your-group.png.webp');
   $imageAlt = 'Charlie Health Logo';
