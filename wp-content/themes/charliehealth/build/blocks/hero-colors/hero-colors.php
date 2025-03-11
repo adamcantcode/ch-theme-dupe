@@ -18,11 +18,11 @@
   </div>
   <div class="relative container-md z-1">
     <div class="grid lg:grid-cols-3 gap-base5-4">
-      <div id="teenIOP" class="relative grid lg:items-end items-center grid-cols-[1fr_2fr] lg:grid-rows-1 rounded-md gap-base5-2 lg:text-center lg:p-base5-5 p-base5-2 color-hover-item-js bg-yellow-100 lg:grid-cols-1">
-        <img src="https://www.charliehealth.com/wp-content/uploads/2024/10/module1.png" alt="alt" class="self-center lg:mb-base5-5 object-contain lg:block max-h-[170px] mx-auto">
+      <div id="AdultIOP" class="relative grid lg:items-end items-center grid-cols-[1fr_2fr] lg:grid-rows-1 rounded-md gap-base5-2 lg:text-center lg:p-base5-5 p-base5-2 color-hover-item-js bg-pale-blue-100 lg:grid-cols-1">
+        <img src="https://www.charliehealth.com/wp-content/uploads/2024/10/Jen-1-2.png" alt="alt" class="self-center lg:mb-base5-5 object-contain lg:block max-h-[170px] mx-auto">
         <div>
-          <h2 class="mb-base5-1">Teens</h2>
-          <h4>11 - 17</h4>
+          <h2 class="mb-base5-1">Adults</h2>
+          <h4>34+</h4>
         </div>
         <div class="col-span-2 text-center lg:col-span-1 lg:justify-self-auto">
           <a href="/form" class="w-full stretched-link lg:w-auto ch-button button-primary-ch">Get started</a>
@@ -38,11 +38,11 @@
           <a href="/form" class="w-full stretched-link lg:w-auto ch-button button-primary-ch">Get started</a>
         </div>
       </div>
-      <div id="AdultIOP" class="relative grid lg:items-end items-center grid-cols-[1fr_2fr] lg:grid-rows-1 rounded-md gap-base5-2 lg:text-center lg:p-base5-5 p-base5-2 color-hover-item-js bg-pale-blue-100 lg:grid-cols-1">
-        <img src="https://www.charliehealth.com/wp-content/uploads/2024/10/Jen-1-2.png" alt="alt" class="self-center lg:mb-base5-5 object-contain lg:block max-h-[170px] mx-auto">
+      <div id="teenIOP" class="relative grid lg:items-end items-center grid-cols-[1fr_2fr] lg:grid-rows-1 rounded-md gap-base5-2 lg:text-center lg:p-base5-5 p-base5-2 color-hover-item-js bg-yellow-100 lg:grid-cols-1">
+        <img src="https://www.charliehealth.com/wp-content/uploads/2024/10/module1.png" alt="alt" class="self-center lg:mb-base5-5 object-contain lg:block max-h-[170px] mx-auto">
         <div>
-          <h2 class="mb-base5-1">Adults</h2>
-          <h4>34+</h4>
+          <h2 class="mb-base5-1">Teens</h2>
+          <h4>11 - 17</h4>
         </div>
         <div class="col-span-2 text-center lg:col-span-1 lg:justify-self-auto">
           <a href="/form" class="w-full stretched-link lg:w-auto ch-button button-primary-ch">Get started</a>
