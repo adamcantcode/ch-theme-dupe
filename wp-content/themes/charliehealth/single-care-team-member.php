@@ -58,7 +58,7 @@ $imageAlt = $image['alt'] ?? 'Charlie Health Logo';
           <?php if (!empty($states)) : ?>
             <?php foreach ($states as $state) : ?>
               <li>
-                <a href="/locations/<?= esc_attr(strtolower($state['value'])); ?>">
+                <a href="/locations/<?= esc_attr(strtolower($state['label'])); ?>">
                   <?= esc_html($state['label']); ?>
                 </a>
               </li>
