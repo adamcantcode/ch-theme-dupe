@@ -33,10 +33,9 @@ $imageAlt = $image['alt'] ?? 'Charlie Health Logo';
       </div>
       <div>
         <h1 class="text-h2-base font-heading-serif">
-          <?= esc_html($name); ?> (<?= esc_html($creds); ?>)
+          <?= esc_html($name); ?>, (<?= esc_html($creds); ?>)
         </h1>
         <h3><?= esc_html($title); ?></h3>
-        <h5>Licensed in: <?= esc_html($state_links); ?></h5>
         <div><?= $bio; ?></div>
       </div>
     </div>
@@ -54,6 +53,7 @@ $imageAlt = $image['alt'] ?? 'Charlie Health Logo';
         </div>
       </div>
       <div>
+        <h4><?= $name; ?> is licensed in the following states:</h4>
         <ul>
           <?php if (!empty($states)) : ?>
             <?php foreach ($states as $state) : ?>
