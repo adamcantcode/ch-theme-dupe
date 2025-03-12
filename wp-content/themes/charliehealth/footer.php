@@ -147,9 +147,11 @@ $blog = get_current_blog_id();
 if ($blog === 1) {
 	$nlBG      = 'bg-primary';
 	$nlBGLight = 'bg-lavender-100';
+	$phoneIcon = '/wp-content/themes/charliehealth/resources/images/icons/phone-white.svg';
 } else {
 	$nlBG      = 'bg-referrals-green-300';
 	$nlBGLight = 'bg-referrals-green-100';
+	$phoneIcon = '/wp-content/themes/charliehealth/resources/images/icons/phone.svg';
 }
 ?>
 <footer id="footer" class="grid bg-secondary-soft relatve">
@@ -231,7 +233,7 @@ if ($blog === 1) {
 				</div>
 				<div class="rounded-b-sm <?= $nlBG; ?> lg:rounded-r-sm lg:rounded-l-none py-base5-4 px-base5-5">
 					<a href="tel:+988" class="flex items-center no-underline gap-base5-2 text-darker-blue">
-						<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/phone.svg'); ?>" width="25" alt="phone call icon">
+						<img src="<?= site_url($phoneIcon); ?>" width="25" alt="phone call icon">
 						<p class="text-h5-base">988</p>
 					</a>
 				</div>
