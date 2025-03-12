@@ -30,7 +30,7 @@ Template Post Type: locations
     <h1 class="text-center">Family therapy in <mark style="background-color:#DAC1FB"><?= $location; ?></mark></h1>
     <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
       <a href="/form" class="ch-button button-primary-ch" target="_self">Get Started</a>
-      <a href="tel:+18664848218" class="ch-button button-secondary-ch" target="_self">1 (986) 206-0414</a>
+      <a href="tel:+19862060414" class="ch-button button-secondary-ch" target="_self">1 (986) 206-0414</a>
     </div>
   </div>
 </section>
@@ -53,7 +53,7 @@ Template Post Type: locations
     </div>
     <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
       <a href="/form" class="ch-button button-primary-ch" target="_self">Get Started</a>
-      <a href="tel:+18664848218" class="ch-button button-secondary-ch" target="_self">1 (986) 206-0414</a>
+      <a href="tel:+19862060414" class="ch-button button-secondary-ch" target="_self">1 (986) 206-0414</a>
     </div>
   </div>
 </section>
@@ -219,7 +219,7 @@ echo $modified_content;
         <h3>No matter where you live in <?= $location; ?>, our therapist-led online family therapy sessions ensure families in <?= $location; ?> get the support they need for serious mental health issues – without the hassle of commuting.</h3>
         <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full">
           <a href="/form" class="ch-button button-primary-ch" target="_self">Get Started</a>
-          <a href="tel:+18664848218" class="ch-button button-secondary-ch" target="_self">1 (986) 206-0414</a>
+          <a href="tel:+19862060414" class="ch-button button-secondary-ch" target="_self">1 (986) 206-0414</a>
         </div>
       </div>
     </div>
@@ -231,7 +231,7 @@ echo $modified_content;
       <?= do_blocks('<!-- wp:block {"ref":12496} /-->'); ?>
       <p class="has-text-align-center mt-sp-8 mb-sp-8 !text-[20px] has-white-color has-text-color has-link-color wp-elements-0244d5b506b018eae908e0511a0b87bd">We proudly partner with many major insurance providers, including commercial, Medicaid, and TRICARE</p>
       <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
-        <a href="https://www.charliehealth.com/insurance" class="ch-button button-secondary-ch inverted" target="_self" aria-label="We proudly partner with many major insurance providers, including commercial, Medicaid, and TRICARE Learn more" uw-rm-vague-link-id="https://www.charliehealth.com/insurance$learn more" data-uw-rm-vglnk="" data-uw-rm-brl="PR" data-uw-original-href="https://www.charliehealth.com/insurance">Learn more</a>
+        <a href="https://www.charliehealth.com/insurance" class="ch-button button-secondary-ch inverted" target="_self">Learn more</a>
       </div>
     </div>
   </div>

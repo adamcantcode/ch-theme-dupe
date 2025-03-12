@@ -29,7 +29,7 @@ $conditions = get_field('conditions');
     <h1 class="text-center">Online therapy in <mark style="background-color:#DAC1FB"><?= $location; ?></mark></h1>
     <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
       <a href="/form" class="ch-button button-primary-ch" target="_self">Get Started</a>
-      <a href="tel:+18664848218" class="ch-button button-secondary-ch" target="_self">1 (986) 206-0414</a>
+      <a href="tel:+19862060414" class="ch-button button-secondary-ch" target="_self">1 (986) 206-0414</a>
     </div>
   </div>
 </section>
@@ -57,7 +57,7 @@ $conditions = get_field('conditions');
     </div>
     <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
       <a href="/form" class="ch-button button-primary-ch" target="_self">Get Started</a>
-      <a href="tel:+18664848218" class="ch-button button-secondary-ch" target="_self">1 (986) 206-0414</a>
+      <a href="tel:+19862060414" class="ch-button button-secondary-ch" target="_self">1 (986) 206-0414</a>
     </div>
   </div>
   </div>
@@ -368,7 +368,7 @@ $conditions = get_field('conditions');
               <p class="text-h2-base">Get started with Charlie Health</p>
               <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full ">
                 <a href="https://www.charliehealth.com/form" class="ch-button button-primary-ch" target="_self" data-uw-rm-brl="PR" data-uw-original-href="https://www.charliehealth.com/form">Get started</a>
-                <a href="tel:+18664848218" class="ch-button button-secondary-ch" target="_self">1 (986) 206-0414</a>
+                <a href="tel:+19862060414" class="ch-button button-secondary-ch" target="_self">1 (986) 206-0414</a>
               </div>
             </div>
           </div>
