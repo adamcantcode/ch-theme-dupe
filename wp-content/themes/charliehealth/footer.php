@@ -144,20 +144,11 @@
 <?php
 
 $blog = get_current_blog_id();
-if ($blog === 1) {
-	$nlBG      = 'bg-primary';
-	$nlBGLight = 'bg-lavender-100';
-	$phoneIcon = '/wp-content/themes/charliehealth/resources/images/icons/phone-white.svg';
-} else {
-	$nlBG      = 'bg-referrals-green-300';
-	$nlBGLight = 'bg-referrals-green-100';
-	$phoneIcon = '/wp-content/themes/charliehealth/resources/images/icons/phone.svg';
-}
 ?>
 <footer id="footer" class="grid bg-secondary-soft relatve">
 	<div class="section-sm-top section-lg-bottom bg-secondary-soft">
 		<div class="container">
-			<div class="rounded-sm lg:flex <?= $nlBG; ?> p-base5-6 mb-base5-10">
+			<div class="rounded-sm lg:flex bg-primary p-base5-6 mb-base5-10">
 				<?php
 				$removeNewsletterPages = get_field('footer_removal_pages', 'options');
 				$removeNewsletter = false;
@@ -228,13 +219,13 @@ if ($blog === 1) {
 		</div>
 		<div class="container ">
 			<div class="flex flex-col justify-between lg:flex-row">
-				<div class="w-full rounded-t-sm lg:rounded-l-sm lg:rounded-r-none py-base5-4 px-base5-5 flex items-center <?= $nlBGLight; ?>">
+				<div class="flex items-center w-full rounded-t-sm lg:rounded-l-sm lg:rounded-r-none py-base5-4 px-base5-5 bg-lavender-100">
 					<p class="mb-0 leading-none text-h5-base">If this is a life-threatening emergency, please call 911 or the <a href="https://988lifeline.org/" target="_blank" class="text-darker-blue text-h5-base">National Suicide Prevention Lifeline</a></p>
 				</div>
-				<div class="rounded-b-sm <?= $nlBG; ?> lg:rounded-r-sm lg:rounded-l-none py-base5-4 px-base5-5">
+				<div class="rounded-b-sm bg-primary lg:rounded-r-sm lg:rounded-l-none py-base5-4 px-base5-5">
 					<a href="tel:+988" class="flex items-center no-underline gap-base5-2 text-darker-blue">
-						<img src="<?= site_url($phoneIcon); ?>" width="25" alt="phone call icon">
-						<p class="text-h5-base">988</p>
+						<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/icons/phone-white.svg'); ?>" width="25" alt="phone call icon">
+						<p class="text-white text-h5-base">988</p>
 					</a>
 				</div>
 			</div>
