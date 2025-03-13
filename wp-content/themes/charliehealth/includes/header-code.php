@@ -305,18 +305,9 @@
 
     const existingCookies = ['gclid', 'fbclid', 'utm_campaign', 'keyword', 'msclkid', 'ttclid'];
     const searchEngines = ['google.com', 'bing.com', 'yahoo.com', 'duckduckgo.com', 'ecosia.org'];
-    let cookies = false;
-    let params = false;
 
-    if (window.location.search !== '') {
-      params = true;
-    }
-
-    existingCookies.forEach(cookie => {
-      if (document.cookie.indexOf(cookie + '=') > -1) {
-        cookies = true;
-      }
-    });
+    let cookies = existingCookies.some(cookie => document.cookie.indexOf(cookie + '=') > -1);
+    let params = window.location.search !== '';
 
     function waitForCookie(name, callback) {
       const intervalId = setInterval(() => {
@@ -335,107 +326,151 @@
 
     waitForCookie('FSAC', cookieValue => {
       if (!cookies && !params) {
-        searchEngines.forEach(engine => {
-          if (document.referrer.includes(engine)) {
-            var niceName = engine.split('.');
-            var myCookieValue = getCookie('FSAC');
-            var values = myCookieValue.split('utm');
-            document.cookie = 'FSAC=' + values[0] + 'utmcsr%3D' + niceName[0] + ' organic' + '%7Cutmccn%3D(not set)%7Cutmcmd%3Dorganic; path=/; domain=charliehealth.com';
-            document.cookie = 'organicLP=' + window.location + ';path=/;domain=charliehealth.com';
-            return;
-          }
-        });
-        if (!searchEngines.some(searchEngine => document.referrer.includes(searchEngine))) {
-          if (document.referrer !== '' && !document.referrer.includes('charliehealth.com')) {
-            var source = document.referrer;
-            var myCookieValue = getCookie('FSAC');
-            var values = myCookieValue.split('utm');
-            document.cookie = 'FSAC=' + values[0] + 'utmcsr%3D' + source + '%7Cutmccn%3D(not set)%7Cutmcmd%3Dreferral; path=/; domain=charliehealth.com';
-          }
+        const referrerEngine = searchEngines.find(engine => document.referrer.includes(engine));
+        if (referrerEngine) {
+          var niceName = referrerEngine.split('.');
+          var myCookieValue = getCookie('FSAC');
+          var values = myCookieValue.split('utm');
+          document.cookie = `FSAC=${values[0]}utmcsr%3D${niceName[0]} organic%7Cutmccn%3D(not set)%7Cutmcmd%3Dorganic; path=/; domain=charliehealth.com`;
+          document.cookie = `organicLP=${window.location}; path=/; domain=charliehealth.com`;
+        } else if (document.referrer && !document.referrer.includes('charliehealth.com')) {
+          var source = document.referrer;
+          var myCookieValue = getCookie('FSAC');
+          var values = myCookieValue.split('utm');
+          document.cookie = `FSAC=${values[0]}utmcsr%3D${source}%7Cutmccn%3D(not set)%7Cutmcmd%3Dreferral; path=/; domain=charliehealth.com`;
         }
       }
     });
 
     function setHiddenFields(form, fieldIds) {
-      if (document.cookie.indexOf('organicLP=') > -1 && !params) {
-        form.getField(fieldIds.organicLP).setValue(getCookie('organicLP'));
-      }
-      if (document.cookie.indexOf('fbclid=') > -1) {
-        form.getField(fieldIds.fbclid).setValue(getCookie('fbclid'));
-      }
-      if (document.cookie.indexOf('msclkid=') > -1) {
-        form.getField(fieldIds.msclkid).setValue(getCookie('msclkid'));
-      }
-      if (document.cookie.indexOf('ttclid=') > -1) {
-        form.getField(fieldIds.ttclid).setValue(getCookie('ttclid'));
-      }
+      const cookiesToSet = [{
+          name: 'organicLP',
+          cookieName: 'organicLP'
+        },
+        {
+          name: 'fbclid',
+          cookieName: 'fbclid'
+        },
+        {
+          name: 'msclkid',
+          cookieName: 'msclkid'
+        },
+        {
+          name: 'ttclid',
+          cookieName: 'ttclid'
+        },
+        {
+          name: 'fbp',
+          cookieName: '_fbp'
+        }
+      ];
+
+      cookiesToSet.forEach(({
+        name,
+        cookieName
+      }) => {
+        if (document.cookie.indexOf(cookieName + '=') > -1) {
+          form.getField(fieldIds[name]).setValue(getCookie(cookieName));
+        }
+      });
+
       fetch('https://api.ipify.org/?format=json')
         .then(results => results.json())
-        .then(data => {
-          form.getField(fieldIds.userIP).setValue(data.ip);
-        });
-      form.getField(fieldIds.fbp).setValue(getCookie('_fbp'));
+        .then(data => form.getField(fieldIds.userIP).setValue(data.ip));
+
       form.getField(fieldIds.userAgent).setValue(window.navigator.userAgent);
       form.getField(fieldIds.userJourney).setValue(sessionStorage.getItem('user_journey_'));
 
       // VWO Test Version
       waitForCookie('_vis_opt_test_cookie', cookieValue => {
-        // Function to get experiment details from cookies
-        function getExperimentDetailsFromCookies() {
-          const experimentDetails = [];
-          const cookies = document.cookie.split('; '); // Split the cookie string into individual cookies
-
-          cookies.forEach(cookie => {
-            const match = cookie.match(/_vis_opt_exp_(\d+)_combi=([^;]+)/);
-            if (match && match[1] && match[2]) {
-              const experimentNumber = match[1];
-              const experimentValue = parseInt(match[2], 10); // Convert to integer for comparison
-              const label = experimentValue === 1 ? 'Control' : `Variation ${experimentValue - 1}`; // Adjust label for variations
-              experimentDetails.push(`${experimentNumber} - ${label}`); // Format as "number - label"
-            }
-          });
-
-          return experimentDetails;
-        }
-
-        const experimentDetails = getExperimentDetailsFromCookies(); // Get experiment details
-
-        // Convert the array to a string
-        const detailsString = experimentDetails.join(' & ');
-
-        form.getField(fieldIds.vwoTestVersion).setValue(detailsString);
+        const experimentDetails = getExperimentDetailsFromCookies();
+        form.getField(fieldIds.vwoTestVersion).setValue(experimentDetails.join(' & '));
       });
+    }
 
+    function getExperimentDetailsFromCookies() {
+      const cookies = document.cookie.split('; ');
+      return cookies
+        .map(cookie => {
+          const match = cookie.match(/_vis_opt_exp_(\d+)_combi=([^;]+)/);
+          if (match) {
+            const experimentNumber = match[1];
+            const experimentValue = parseInt(match[2], 10);
+            const label = experimentValue === 1 ? 'Control' : `Variation ${experimentValue - 1}`;
+            return `${experimentNumber} - ${label}`;
+          }
+        })
+        .filter(Boolean);
     }
 
     function initializeForm(formId, fieldIds) {
-      formId = document.querySelector('form').id.replace(/^fsForm/, '');
-      var form = window.fsApi().getForm(formId);
+      const form = window.fsApi().getForm(formId);
       form.registerFormEventListener({
         type: 'change-page',
         onFormEvent: function(event) {
           setHiddenFields(form, fieldIds);
-
           return Promise.resolve(event);
         }
       });
     }
 
-    // If form page
+    <?php
+    // Get the current page template
+    $template = get_page_template_slug();
+    // Get the environment type (staging or production)
+    $env_type = wp_get_environment_type();
+
+    // Old form
+    $formID = '5700521';
+    $form_values = [
+      'organicLP' => '162592063',
+      'fbclid' => '162592064',
+      'ttclid' => '175898270',
+      'msclkid' => '163156163',
+      'userIP' => '163080837',
+      'fbp' => '162592065',
+      'userAgent' => '163080841',
+      'vwoTestVersion' => '166107526',
+      'userJourney' => '174755950'
+    ];
+    // New form
+    if ($template == 'page-form-adol.php') {
+      $formID = '6125398';
+      $form_values = [
+        'organicLP' => '181222004',
+        'fbclid' => '181222006',
+        'ttclid' => '181222007',
+        'msclkid' => '181222008',
+        'userIP' => '181222005',
+        'fbp' => '181222009',
+        'userAgent' => '181222010',
+        'vwoTestVersion' => '181222011',
+        'userJourney' => '181222012'
+      ];
+      // Staging form
+      if ($env_type == 'staging' || $env_type == 'local') {
+        $formID = '6127780';
+        $form_values = [
+          'organicLP' => '181302855',
+          'fbclid' => '181302857',
+          'ttclid' => '181302858',
+          'msclkid' => '181302859',
+          'userIP' => '181302856',
+          'fbp' => '181302860',
+          'userAgent' => '181302861',
+          'vwoTestVersion' => '181302862',
+          'userJourney' => '181302863'
+        ];
+      }
+    }
+    ?>
+
     if (window.location.href.indexOf('/form') > -1) {
-      initializeForm('5700521', {
-        organicLP: '162592063',
-        fbclid: '162592064',
-        ttclid: '175898270',
-        msclkid: '163156163',
-        userIP: '163080837',
-        fbp: '162592065',
-        userAgent: '163080841',
-        vwoTestVersion: '166107526',
-        userJourney: '174755950'
-      });
+      initializeForm(<?= $formID; ?>, <?php echo json_encode($form_values); ?>);
     }
   });
+</script>
+
 </script>
 <!-- FS + Off-label END -->
 <!-- CH Attribution-->
