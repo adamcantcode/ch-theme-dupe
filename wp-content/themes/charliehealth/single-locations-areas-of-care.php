@@ -9,8 +9,9 @@ Template Post Type: locations
 
 <?php 
 $location =  get_the_title(); 
-$condition =  get_field('condition'); 
-$treatmentTherapay =  get_field('treatment_therapy'); 
+$condition =  get_field('area_of_care'); 
+$conditionLabel =  get_the_title($condition); 
+$type =  get_field('type'); 
 $definition =  get_field('definition'); 
 $importance =  get_field('importance'); 
 ?>
@@ -29,11 +30,11 @@ $importance =  get_field('importance');
       <?php endforeach; ?>
 
       <span>/</span>
-      <span><?= $condition; ?> <?= $treatmentTherapay; ?> in <?= $location; ?></span>
+      <span><?= $conditionLabel; ?> <?= $type; ?> in <?= $location; ?></span>
     </div>
   </div>
   <div class="container-md">
-    <h1 class="text-center"><?= $condition; ?> <?= $treatmentTherapay; ?> in <?= $location; ?> <mark style="background-color:#DAC1FB"><?= $location; ?></mark></h1>
+    <h1 class="text-center"><?= $conditionLabel; ?> <?= $type; ?> in <mark style="background-color:#DAC1FB"><?= $location; ?></mark></h1>
     <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
       <a href="/form" class="ch-button button-primary-ch" target="_self">Get Started</a>
       <a href="tel:+18664848218" class="ch-button button-secondary-ch" target="_self">1 (986) 206-0414</a>
@@ -47,7 +48,7 @@ $importance =  get_field('importance');
         <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M43.9192 38.7888L41.1423 29.0078V7.71094C41.1423 6.89854 40.486 6.24219 39.6736 6.24219H7.36107C6.54867 6.24219 5.89232 6.89854 5.89232 7.71094V29.0078L3.11546 38.7888C2.77122 39.748 3.47806 40.7578 4.49701 40.7578H42.5376C43.5566 40.7578 44.2634 39.748 43.9192 38.7888ZM9.19701 9.54688H37.8376V27.6768H9.19701V9.54688ZM19.6756 37.4531L20.0474 35.7549H26.9459L27.3177 37.4531H19.6756ZM29.9569 37.4531L29.0802 33.4737C29.0435 33.3039 28.892 33.1846 28.7222 33.1846H18.2757C18.1013 33.1846 17.9544 33.3039 17.9177 33.4737L17.041 37.4531H6.92962L8.87113 30.6143H38.1635L40.105 37.4531H29.9569Z" fill="#161A3D" />
         </svg>
-        <p class="text-h4-base"><?= $condition; ?></p>
+        <p class="text-h4-base"><?= $conditionLabel; ?></p>
         <p class="text-h4-base"><?= $importance; ?></p>
       </div>
       <div class="grid lg:grid-flow-col gap-base5-4">
@@ -55,7 +56,7 @@ $importance =  get_field('importance');
           <path d="M34.6273 17.7893L32.4589 15.6208L20.5936 27.4861L15.4381 22.3305L13.2696 24.499L20.5963 31.8257L22.7648 29.6572L22.7621 29.6545L34.6273 17.7893Z" fill="#161A3D" />
           <path fill-rule="evenodd" clip-rule="evenodd" d="M44.6504 22.9141C44.6504 34.2704 35.4442 43.4766 24.0879 43.4766C12.7315 43.4766 3.52539 34.2704 3.52539 22.9141C3.52539 11.5577 12.7315 2.35156 24.0879 2.35156C35.4442 2.35156 44.6504 11.5577 44.6504 22.9141ZM41.7129 22.9141C41.7129 32.6481 33.8219 40.5391 24.0879 40.5391C14.3539 40.5391 6.46289 32.6481 6.46289 22.9141C6.46289 13.18 14.3539 5.28906 24.0879 5.28906C33.8219 5.28906 41.7129 13.18 41.7129 22.9141Z" fill="#161A3D" />
         </svg>
-        <p class="text-h4-base">Mention that Charlie Health provides specialized care for <?= $condition; ?> in <?= $location; ?> through personalized, evidence-based treatment programs.</p>
+        <p class="text-h4-base">Mention that Charlie Health provides specialized care for <?= $conditionLabel; ?> in <?= $location; ?> through personalized, evidence-based treatment programs.</p>
       </div>
     </div>
     <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
