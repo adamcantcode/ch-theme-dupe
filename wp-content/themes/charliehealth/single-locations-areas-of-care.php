@@ -15,6 +15,13 @@ $type =  get_field('type');
 $definition =  get_field('definition');
 $importance =  get_field('importance');
 $completeDefinition =  get_field('complete_definition');
+$physicalSymptoms =  get_field('physical_symptoms');
+$mentalSymptoms =  get_field('mental_symptoms');
+$emotionalSymptoms =  get_field('emotional_symptoms');
+$keySymptoms =  get_field('key_symptoms');
+$causes =  get_field('causes');
+$treatment =  get_field('treatment');
+$whatIsCondtion =  get_field('what_is_condition');
 ?>
 
 <section class="section">
@@ -71,6 +78,12 @@ $completeDefinition =  get_field('complete_definition');
       <div>
         <h2>What is <?= $conditionLabel; ?>?</h2>
         <p><?= $completeDefinition; ?></p>
+        <h3>Common symptoms include:</h3>
+        <ul>
+          <li><?= $physicalSymptoms; ?></li>
+          <li><?= $mentalSymptoms; ?></li>
+          <li><?= $emotionalSymptoms; ?></li>
+        </ul>
       </div>
       <div></div>
     </div>
@@ -89,6 +102,131 @@ $completeDefinition =  get_field('complete_definition');
       </div>
     </div>
   </div>
+</section>
+<section class="bg-darker-blue section [&_*]:text-white">
+  <div class="container">
+    <div class="acf-innerblocks-container">
+      <div class="grid lg:grid-cols-[4fr_1fr_7fr] gap-x-sp-5 iop-overview">
+        <div>
+          <h2><mark class="bg-primary-100"><?= $conditionLabel; ?></mark> symptoms, causes, and treatment options</h2>
+          <p><?= $whatIsCondtion; ?></p>
+        </div>
+        <div></div>
+        <div class="mt-sp-5 lg:mt-0">
+          <div class="iop-overview-accordion">
+            <div class="accordion">
+              <div class="wrapper">
+                <div class="accordion-item-iop bg-primary-100 rounded-[6px] mb-sp-2 lg:mb-sp-4">
+                  <div class="flex justify-between cursor-pointer accordion-header-iop py-[11px] px-sp-6">
+                    <h3 class="mb-0">Key signs of <?= $conditionLabel; ?></h3>
+                    <div class="flex items-center ml-sp-5 toggle">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M1 11.0001H22.9984V13.0001H1V11.0001Z" fill="white"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.999 23.0001V1.00171H12.999V23.0001H10.999Z" fill="white" class="vertical"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="overflow-hidden transition-all duration-500 ease-in-out accordion-content max-h-0" style="">
+                    <div class="px-base5-5 pb-base5-2">
+                      <p><?= $keySymptoms; ?></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item-iop bg-primary-100 rounded-[6px] mb-sp-2 lg:mb-sp-4">
+                  <div class="flex justify-between cursor-pointer accordion-header-iop py-[11px] px-sp-6">
+                    <h3 class="mb-0">Primary causes of <?= $conditionLabel; ?></h3>
+                    <div class="flex items-center ml-sp-5 toggle">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M1 11.0001H22.9984V13.0001H1V11.0001Z" fill="white"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.999 23.0001V1.00171H12.999V23.0001H10.999Z" fill="white" class="vertical"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="overflow-hidden transition-all duration-500 ease-in-out accordion-content max-h-0">
+                    <div class="px-base5-5 pb-base5-2">
+                      <p><?= $causes; ?></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item-iop bg-primary-100 rounded-[6px] mb-sp-2 lg:mb-sp-4">
+                  <div class="flex justify-between cursor-pointer accordion-header-iop py-[11px] px-sp-6">
+                    <h3 class="mb-0">Treatment options for <?= $conditionLabel; ?></h3>
+                    <div class="flex items-center ml-sp-5 toggle">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M1 11.0001H22.9984V13.0001H1V11.0001Z" fill="white"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.999 23.0001V1.00171H12.999V23.0001H10.999Z" fill="white" class="vertical"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="overflow-hidden transition-all duration-500 ease-in-out accordion-content max-h-0">
+                    <div class="px-base5-5 pb-base5-2">
+                      <p><?= $treatment; ?></p>
+                      <p>
+                        <a href="https://www.charliehealth.com/intensive-outpatient-iop" class="no-underline hover:text-white">Learn More<span class="inline-block align-middle ml-sp-2">
+                            <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3431 0.278417L16.7071 6.32784C17.0976 6.69906 17.0976 7.30094 16.7071 7.67216L10.3431 13.7216C9.95262 14.0928 9.31946 14.0928 8.92893 13.7216C8.53841 13.3504 8.53841 12.7485 8.92893 12.3773L13.5858 7.95058H0V6.04942H13.5858L8.92893 1.62273C8.53841 1.25151 8.53841 0.64964 8.92893 0.278417C9.31946 -0.0928058 9.95262 -0.0928058 10.3431 0.278417Z" fill="white"></path>
+                            </svg>
+                          </span>
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const accordionItems = document.querySelectorAll('.accordion-item-iop');
+      let openAccordionItem = null;
+
+      function closeAccordion() {
+        if (openAccordionItem) {
+          openAccordionItem.classList.remove('active');
+          const accordionContent = openAccordionItem.nextElementSibling;
+          accordionContent.style.maxHeight = null;
+          openAccordionItem = null;
+        }
+      }
+
+      function toggleAccordion() {
+        if (this === openAccordionItem) {
+          closeAccordion();
+        } else {
+          closeAccordion();
+          this.classList.add('active');
+          const accordionContent = this.nextElementSibling;
+          accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+          openAccordionItem = this;
+        }
+      }
+
+      accordionItems.forEach((item) => {
+        const accordionHeader = item.querySelector('.accordion-header-iop');
+        accordionHeader.addEventListener('click', toggleAccordion);
+      });
+
+      const triggerAccordion = () => {
+        if (window.innerWidth > 1024) {
+          document.querySelector('.accordion-header-iop').click();
+        }
+      };
+
+      window.addEventListener('resize', function() {
+        if (!openAccordionItem) {
+          triggerAccordion();
+        } else {
+          closeAccordion();
+        }
+      });
+
+      triggerAccordion();
+    });
+  </script>
 </section>
 <section class="section bg-primary">
   <div class="container">
