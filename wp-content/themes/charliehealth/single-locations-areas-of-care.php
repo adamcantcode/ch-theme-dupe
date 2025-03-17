@@ -7,14 +7,14 @@ Template Post Type: locations
 
 <?php get_header(); ?>
 
-<?php 
-$location =  get_the_title(); 
-$condition =  get_field('area_of_care'); 
-$conditionLabel =  get_the_title($condition); 
-$type =  get_field('type'); 
-$definition =  get_field('definition'); 
-$importance =  get_field('importance'); 
-$completeDefinition =  get_field('complete_definition'); 
+<?php
+$location =  get_the_title();
+$condition =  get_field('area_of_care');
+$conditionLabel =  get_the_title($condition);
+$type =  get_field('type');
+$definition =  get_field('definition');
+$importance =  get_field('importance');
+$completeDefinition =  get_field('complete_definition');
 ?>
 
 <section class="section">
@@ -67,7 +67,7 @@ $completeDefinition =  get_field('complete_definition');
 </section>
 <div class="section bg-grey-cool">
   <div class="container">
-    <div class="lg:grid-cols-2 gap-base5-4">
+    <div class="grid lg:grid-cols-2 gap-base5-4">
       <div>
         <h2>What is <?= $conditionLabel; ?>?</h2>
         <p><?= $completeDefinition; ?></p>
@@ -76,6 +76,20 @@ $completeDefinition =  get_field('complete_definition');
     </div>
   </div>
 </div>
+<section class="bg-primary-200 section ">
+  <div class="container">
+    <div class="grid lg:grid-cols-[9fr_3fr] gap-base5-4 items-center">
+      <div>
+        <p class="text-white font-heading-serif text-h2-base">Over 30% of people will experience an anxiety disorder at some point in their lives. We’re changing that. (Source: National Institute of Mental Health)</p>
+      </div>
+      <div>
+        <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-end">
+          <a href="/form" class="ch-button button-secondary-ch inverted" target="_self">Get started</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="section bg-primary">
   <div class="container">
     <div class="border-2 border-white rounded-[1rem] lg:p-sp-12 p-sp-4 grid lg:grid-cols-[4fr_8fr] gap-x-sp-5 approach-grid-js">

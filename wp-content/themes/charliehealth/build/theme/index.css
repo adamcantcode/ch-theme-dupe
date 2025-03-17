@@ -3453,11 +3453,6 @@ a.insurance-tabs.active:hover {
   background-color: rgb(232 240 230 / var(--tw-bg-opacity, 1));
 }
 
-.bg-referrals-green-300{
-  --tw-bg-opacity: 1;
-  background-color: rgb(188 215 183 / var(--tw-bg-opacity, 1));
-}
-
 .bg-referrals-green-400{
   --tw-bg-opacity: 1;
   background-color: rgb(138 182 130 / var(--tw-bg-opacity, 1));
