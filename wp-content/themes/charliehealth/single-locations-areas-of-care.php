@@ -233,7 +233,7 @@ $whatIsCondtion =  get_field('what_is_condition');
     <div class="border-2 border-white rounded-[1rem] lg:p-sp-12 p-sp-4 grid lg:grid-cols-[4fr_8fr] gap-x-sp-5 approach-grid-js">
       <div class="grid content-between">
         <div class="order-2 lg:order-1 [&_*]:text-white">
-          <h2 class="font-heading-serif mb-sp-8">Our online family therapy in <?= $location; ?> can help with:</h2>
+          <h2 class="font-heading-serif mb-sp-8">How Charlie Health treats <?= $conditionLabel; ?> in <?= $location; ?></h2>
           <div></div>
         </div>
         <div class="order-1 lg:order-2 mb-sp-10 lg:mb-0">
@@ -244,24 +244,24 @@ $whatIsCondtion =  get_field('what_is_condition');
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 gap-sp-2 grid-approach-items-js ">
         <div class="relative text-center opacity-0 invisible bg-lavender-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center ">
-          <p class="text-primary text-h4-base">Improving family communication</p>
+          <p class="text-primary text-h4-base">Individualized treatment plans</p>
         </div>
         <div class="relative text-center opacity-0 invisible bg-orange-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center ">
-          <p class="text-primary text-h4-base">Strengthening relationships and trust</p>
+          <p class="text-primary text-h4-base">Evidence-based modalities</p>
         </div>
         <div class="relative text-center opacity-0 invisible bg-pale-blue-200 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
-          <p class="text-primary text-h4-base">Coping with serious mental health challenges as a family</p>
+          <p class="text-primary text-h4-base">Multidisciplinary support</p>
         </div>
         <div class="relative text-center opacity-0 invisible bg-pale-blue-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
-          <p class="text-primary text-h4-base">Strengthening relationships during major life changes</p>
+          <p class="text-primary text-h4-base">Immediate availability</p>
         </div>
         <div class="relative text-center opacity-0 invisible bg-yellow-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
-          <p class="text-primary text-h4-base">Creating a supportive environment for healing</p>
+          <p class="text-primary text-h4-base">Virtual access</p>
         </div>
         <div class="text-center opacity-0 invisible bg-white rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center relative group ">
           <svg width="27" height="22" viewBox="0 0 27 22" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all mb-sp-2 group-hover:translate-x-[5px] duration-300">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M22.054 9.3431L14.3818 1.67092L16.0527 0L26.6686 10.6159L16.0527 21.2319L14.3818 19.561L22.2366 11.7061L2.08616e-07 11.7061L0 9.34311L22.054 9.3431Z" fill="#161A3D"></path>
-          </svg><a href="/form" class="mb-0 no-underline stretched-link text-h4-base">Get started</a>
+          </svg><a href="<?= get_the_permalink($condition); ?>" class="mb-0 no-underline stretched-link text-h4-base">Learn more</a>
         </div>
       </div>
     </div>
