@@ -103,7 +103,7 @@ $whatIsCondtion =  get_field('what_is_condition');
     </div>
   </div>
 </section>
-<section class="bg-darker-blue section [&_*]:text-white">
+<section class="bg-primary section [&_*]:text-white">
   <div class="container">
     <div class="acf-innerblocks-container">
       <div class="grid lg:grid-cols-[4fr_1fr_7fr] gap-x-sp-5 iop-overview">
@@ -228,7 +228,7 @@ $whatIsCondtion =  get_field('what_is_condition');
     });
   </script>
 </section>
-<section class="section bg-primary">
+<section class="bg-primary section-horizontal">
   <div class="container">
     <div class="border-2 border-white rounded-[1rem] lg:p-sp-12 p-sp-4 grid lg:grid-cols-[4fr_8fr] gap-x-sp-5 approach-grid-js">
       <div class="grid content-between">
@@ -262,6 +262,22 @@ $whatIsCondtion =  get_field('what_is_condition');
           <svg width="27" height="22" viewBox="0 0 27 22" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all mb-sp-2 group-hover:translate-x-[5px] duration-300">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M22.054 9.3431L14.3818 1.67092L16.0527 0L26.6686 10.6159L16.0527 21.2319L14.3818 19.561L22.2366 11.7061L2.08616e-07 11.7061L0 9.34311L22.054 9.3431Z" fill="#161A3D"></path>
           </svg><a href="<?= get_the_permalink($condition); ?>" class="mb-0 no-underline stretched-link text-h4-base">Learn more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="bg-primary section">
+  <div class="container">
+    <div class="grid lg:grid-cols-[3fr_9fr]">
+      <div>
+        <h2 class="text-lavender-300">In their words</h2>
+      </div>
+      <div>
+        <p class="text-white text-h4-base">“Having an individual therapist on top of group helped with my extra needs that I was unable to cover in group. I am confident that Charlie Health is the primary reason I have been able to make positive changes in my life and continue living every day to its fullest.”</p>
+        <p class="text-white">-Sydney C., Charlie Health Alum</p>
+        <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-start">
+          <a href="https://www.charliehealth.com/reviews" class="ch-button button-primary-ch inverted" target="_self">Read More</a>
         </div>
       </div>
     </div>
