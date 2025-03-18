@@ -14,6 +14,7 @@ $conditionLabel =  get_the_title($condition);
 $type =  get_field('type');
 $definition =  get_field('definition');
 $importance =  get_field('importance');
+$statistic =  get_field('statistic');
 $completeDefinition =  get_field('complete_definition');
 $physicalSymptoms =  get_field('physical_symptoms');
 $mentalSymptoms =  get_field('mental_symptoms');
@@ -95,7 +96,7 @@ $whatIsCondtion =  get_field('what_is_condition');
   <div class="container">
     <div class="grid lg:grid-cols-[9fr_3fr] gap-base5-4 items-center">
       <div>
-        <p class="text-white font-heading-serif text-h2-base">Over 30% of people will experience an anxiety disorder at some point in their lives. We’re changing that. (Source: National Institute of Mental Health)</p>
+        <p class="text-white font-heading-serif text-h2-base"><?= preg_replace('/^(\S+\s+\S+)/', '<mark style="background-color:#DAC1FB">$1</mark>', $statistic, 1); ?></p>
       </div>
       <div>
         <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-end">
