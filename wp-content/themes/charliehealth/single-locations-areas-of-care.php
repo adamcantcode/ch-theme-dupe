@@ -74,7 +74,7 @@ $whatIsCondtion =  get_field('what_is_condition');
 </section>
 <div class="section bg-grey-cool">
   <div class="container">
-    <div class="grid lg:grid-cols-2 gap-base5-4">
+    <div class="grid items-center lg:grid-cols-2 gap-base5-10">
       <div>
         <h2>What is <?= $conditionLabel; ?>?</h2>
         <p><?= $completeDefinition; ?></p>
@@ -85,7 +85,9 @@ $whatIsCondtion =  get_field('what_is_condition');
           <li><?= $emotionalSymptoms; ?></li>
         </ul>
       </div>
-      <div></div>
+      <div>
+        <img src="https://www.charliehealth.com/wp-content/uploads/2024/02/Device_Zoom02.png.webp" alt="Illustration of Charlie Health virtual <?= $conditionLabel; ?> <?= $type; ?>">
+      </div>
     </div>
   </div>
 </div>
@@ -285,7 +287,7 @@ $whatIsCondtion =  get_field('what_is_condition');
 </section>
 <section class="section-bottom bg-darker-blue">
   <div class="container-sm">
-    <h2 class="text-center text-white">Getting started with Charlie Health in <mark class="text-white bg-primary-100"><?= $location ?></mark> is simple</mark></h2>
+    <h2 class="text-center text-white">Getting started with <?= $conditionLabel; ?> <?= $type; ?> <mark class="text-white bg-primary-100"><?= $location ?></mark> is simple</mark></h2>
   </div>
 </section>
 <section class="bg-darker-blue section-horizontal">
