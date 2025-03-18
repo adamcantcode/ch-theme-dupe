@@ -8,21 +8,24 @@ Template Post Type: locations
 <?php get_header(); ?>
 
 <?php
-$location =  get_the_title();
-$condition =  get_field('area_of_care');
-$conditionLabel =  get_the_title($condition);
-$type =  get_field('type');
-$definition =  get_field('definition');
-$importance =  get_field('importance');
-$statistic =  get_field('statistic');
-$completeDefinition =  get_field('complete_definition');
-$physicalSymptoms =  get_field('physical_symptoms');
-$mentalSymptoms =  get_field('mental_symptoms');
-$emotionalSymptoms =  get_field('emotional_symptoms');
-$keySymptoms =  get_field('key_symptoms');
-$causes =  get_field('causes');
-$treatment =  get_field('treatment');
-$whatIsCondtion =  get_field('what_is_condition');
+$location                                      = get_the_title();
+$condition                                     = get_field('area_of_care');
+$conditionLabel                                = get_the_title($condition);
+$type                                          = get_field('type');
+$definition                                    = get_field('definition');
+$importance                                    = get_field('importance');
+$statistic                                     = get_field('statistic');
+$completeDefinition                            = get_field('complete_definition');
+$physicalSymptoms                              = get_field('physical_symptoms');
+$mentalSymptoms                                = get_field('mental_symptoms');
+$emotionalSymptoms                             = get_field('emotional_symptoms');
+$keySymptoms                                   = get_field('key_symptoms');
+$causes                                        = get_field('causes');
+$treatment                                     = get_field('treatment');
+$whatIsCondtion                                = get_field('what_is_condition');
+$faq_what_is_condition                         = get_field('faq_what_is_condition');
+$faq_what_are_the_common_symptoms_of_condition = get_field('faq_what_are_the_common_symptoms_of_condition');
+$faq_how_is_condition_treated                  = get_field('faq_how_is_condition_treated');
 ?>
 
 <section class="section">
@@ -301,29 +304,156 @@ echo $modified_content;
 ?>
 <section class="section">
   <div class="container">
-    <div class="grid lg:grid-cols-[5fr_1fr_6fr] gap-base5-4 items-center">
-      <img src="https://www.charliehealth.com/wp-content/uploads/2025/02/UPDATE_11-1.png.webp" alt="portrait of Charlie Health client named Quin">
-      <div></div>
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] lg:gap-sp-12 gap-sp-8">
+      <div class="grid lg:block">
+        <h2>FAQs about our virtual teen IOP at Charlie Health</h2>
+        <a href="https://www.charliehealth.com/faqs" class="ch-button button-secondary-ch" data-uw-rm-brl="PR" data-uw-original-href="https://www.charliehealth.com/faqs">See All FAQs</a>
+      </div>
       <div>
-        <h2>Clients & families can get started with treatment in as little as 24 hours</h2>
-        <h3>No matter where you live in <?= $location; ?>, our therapist-led online family therapy sessions ensure families in <?= $location; ?> get the support they need for serious mental health issues – without the hassle of commuting.</h3>
-        <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full">
-          <a href="/form" class="ch-button button-primary-ch" target="_self">Get Started</a>
-          <a href="tel:+18664848218" class="ch-button button-secondary-ch" target="_self">1 (986) 206-0414</a>
+        <div class="faq-block ">
+          <div class="accordion">
+            <div class="wrapper">
+              <div class="border-b-2 first:border-t-2 first:pt-sp-6 border-primary accordion-item mb-sp-6">
+                <div class="flex items-center justify-between cursor-pointer accordion-header pb-sp-6">
+                  <h3 class="mb-0 text-h4-base">What is <?= $conditionLabel; ?></h3>
+                  <span class="ml-sp-4">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M1 10.9999H22.9984V12.9999H1V10.9999Z" fill="#161A3D"></path>
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M10.999 22.9999V1.00146H12.999V22.9999H10.999Z" fill="#161A3D" class="vertical"></path>
+                    </svg>
+                  </span>
+                </div>
+                <div class="overflow-hidden transition-all duration-500 ease-in-out accordion-content max-h-0">
+                  <div class="lg:pr-sp-14 pr-sp-6 lg:mb-sp-8 mb-sp-6">
+                    <div class="[&_*]:text-h5">
+                      <p><?= $faq_what_is_condition; ?></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="border-b-2 first:border-t-2 first:pt-sp-6 border-primary accordion-item mb-sp-6">
+                <div class="flex items-center justify-between cursor-pointer accordion-header pb-sp-6">
+                  <h3 class="mb-0 text-h4-base">What are the common symptoms of <?= $conditionLabel; ?></h3>
+                  <span class="ml-sp-4">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M1 10.9999H22.9984V12.9999H1V10.9999Z" fill="#161A3D"></path>
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M10.999 22.9999V1.00146H12.999V22.9999H10.999Z" fill="#161A3D" class="vertical"></path>
+                    </svg>
+                  </span>
+                </div>
+                <div class="overflow-hidden transition-all duration-500 ease-in-out accordion-content max-h-0">
+                  <div class="lg:pr-sp-14 pr-sp-6 lg:mb-sp-8 mb-sp-6">
+                    <div class="[&_*]:text-h5">
+                      <p><?= $faq_what_are_the_common_symptoms_of_condition; ?></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="border-b-2 first:border-t-2 first:pt-sp-6 border-primary accordion-item mb-sp-6">
+                <div class="flex items-center justify-between cursor-pointer accordion-header pb-sp-6">
+                  <h3 class="mb-0 text-h4-base">How is <?= $conditionLabel; ?> treated</h3>
+                  <span class="ml-sp-4">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M1 10.9999H22.9984V12.9999H1V10.9999Z" fill="#161A3D"></path>
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M10.999 22.9999V1.00146H12.999V22.9999H10.999Z" fill="#161A3D" class="vertical"></path>
+                    </svg>
+                  </span>
+                </div>
+                <div class="overflow-hidden transition-all duration-500 ease-in-out accordion-content max-h-0">
+                  <div class="lg:pr-sp-14 pr-sp-6 lg:mb-sp-8 mb-sp-6">
+                    <div class="[&_*]:text-h5">
+                      <p><?= $faq_how_is_condition_treated; ?></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="border-b-2 first:border-t-2 first:pt-sp-6 border-primary accordion-item mb-sp-6">
+                <div class="flex items-center justify-between cursor-pointer accordion-header pb-sp-6">
+                  <h3 class="mb-0 text-h4-base">Is <?= $conditionLabel; ?> treatment available in <?= $location; ?> treated</h3>
+                  <span class="ml-sp-4">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M1 10.9999H22.9984V12.9999H1V10.9999Z" fill="#161A3D"></path>
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M10.999 22.9999V1.00146H12.999V22.9999H10.999Z" fill="#161A3D" class="vertical"></path>
+                    </svg>
+                  </span>
+                </div>
+                <div class="overflow-hidden transition-all duration-500 ease-in-out accordion-content max-h-0">
+                  <div class="lg:pr-sp-14 pr-sp-6 lg:mb-sp-8 mb-sp-6">
+                    <div class="[&_*]:text-h5">
+                      <p>Charlie Health provides comprehensive anxiety treatment in <?= $location; ?> through virtual Intensive Outpatient Programs (IOP), allowing clients to receive personalized care from the comfort of home.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="border-b-2 first:border-t-2 first:pt-sp-6 border-primary accordion-item mb-sp-6">
+                <div class="flex items-center justify-between cursor-pointer accordion-header pb-sp-6">
+                  <h3 class="mb-0 text-h4-base">How do I start therapy for <?= $conditionLabel; ?> at Charlie Health</h3>
+                  <span class="ml-sp-4">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M1 10.9999H22.9984V12.9999H1V10.9999Z" fill="#161A3D"></path>
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M10.999 22.9999V1.00146H12.999V22.9999H10.999Z" fill="#161A3D" class="vertical"></path>
+                    </svg>
+                  </span>
+                </div>
+                <div class="overflow-hidden transition-all duration-500 ease-in-out accordion-content max-h-0">
+                  <div class="lg:pr-sp-14 pr-sp-6 lg:mb-sp-8 mb-sp-6">
+                    <div class="[&_*]:text-h5">
+                      <p>If you or a loved one are struggling with <?= $conditionLabel; ?>, Charlie Health is here to help. Charlie Health’s virtual Intensive Outpatient Program (IOP) provides mental health treatment for people dealing with serious mental health conditions, including both the emotional and physical symptoms of <?= $conditionLabel; ?>. Our expert clinicians incorporate evidence-based therapies into individual counseling, family therapy, and group sessions. With support, managing your mental health and healing from <?= $conditionLabel; ?> is possible.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<section class="bg-primary-100 section">
-  <div class="container">
-    <div class="acf-innerblocks-container">
-      <?= do_blocks('<!-- wp:block {"ref":12496} /-->'); ?>
-      <p class="has-text-align-center mt-sp-8 mb-sp-8 !text-[20px] has-white-color has-text-color has-link-color wp-elements-0244d5b506b018eae908e0511a0b87bd">We proudly partner with many major insurance providers, including commercial, Medicaid, and TRICARE</p>
-      <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
-        <a href="https://www.charliehealth.com/insurance" class="ch-button button-secondary-ch inverted" target="_self" aria-label="We proudly partner with many major insurance providers, including commercial, Medicaid, and TRICARE Learn more" uw-rm-vague-link-id="https://www.charliehealth.com/insurance$learn more" data-uw-rm-vglnk="" data-uw-rm-brl="PR" data-uw-original-href="https://www.charliehealth.com/insurance">Learn more</a>
-      </div>
-    </div>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const accordionItems = document.querySelectorAll('.accordion-item');
+        let openAccordionItem = null;
+
+        function closeAccordion() {
+          if (openAccordionItem) {
+            openAccordionItem.classList.remove('active');
+            const accordionContent = openAccordionItem.nextElementSibling;
+            accordionContent.style.maxHeight = null;
+            openAccordionItem = null;
+          }
+        }
+
+        function toggleAccordion() {
+          if (this === openAccordionItem) {
+            closeAccordion();
+          } else {
+            closeAccordion();
+            this.classList.add('active');
+            const accordionContent = this.nextElementSibling;
+            accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+            openAccordionItem = this;
+          }
+        }
+
+        accordionItems.forEach((item) => {
+          const accordionHeader = item.querySelector('.accordion-header');
+          accordionHeader.addEventListener('click', toggleAccordion);
+        });
+
+        const triggerAccordion = () => {
+          if (window.innerWidth > 1024) {
+            document.querySelector('.accordion-header').click();
+          }
+        };
+
+        window.addEventListener('resize', function() {
+          if (!openAccordionItem) {
+            triggerAccordion();
+          } else {
+            closeAccordion();
+          }
+        });
+      });
+    </script>
   </div>
 </section>
 <?php
