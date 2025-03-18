@@ -407,7 +407,7 @@ Template Post Type: page
           mutationsList.forEach((mutation) => {
             if (mutation.attributeName === 'height') {
               const newHeight = parseInt(mutation.target.getAttribute('height'), 10);
-              if (newHeight < 500) {
+              if (newHeight < 1500) {
                 window.location.href = 'https://www.charliehealth.com/job-application-thank-you';
               }
             }
