@@ -399,32 +399,31 @@ Template Post Type: page
 <?php get_footer(); ?>
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    setTimeout(() => {
-      const iframe = document.querySelector('#grnhse_iframe');
-      if (iframe) {
-        // Function to handle changes in iframe attributes
-        const handleAttributeChange = (mutationsList, observer) => {
-          mutationsList.forEach((mutation) => {
-            if (mutation.attributeName === 'height') {
-              const newHeight = parseInt(mutation.target.getAttribute('height'), 10);
-              if (newHeight < 1500) {
-                window.location.href = 'https://www.charliehealth.com/job-application-thank-you';
-              }
+    const checkIframe = () => {
+      const iframe = document.querySelector("#grnhse_iframe");
+      if (!iframe) {
+        requestAnimationFrame(checkIframe);
+
+        return;
+      }
+
+      const observer = new MutationObserver((mutationsList) => {
+        for (let mutation of mutationsList) {
+          if (mutation.attributeName === "height") {
+            const newHeight = parseFloat(mutation.target.getAttribute("height"));
+            if (newHeight && newHeight < 1500) {
+              window.location.href = "https://www.charliehealth.com/job-application-thank-you";
             }
-          });
-        };
+          }
+        }
+      });
 
-        // Options for the observer (which attributes to observe)
-        const config = {
-          attributes: true
-        };
+      observer.observe(iframe, {
+        attributes: true,
+        attributeFilter: ["height"]
+      });
+    };
 
-        // Create a new observer
-        const observer = new MutationObserver(handleAttributeChange);
-
-        // Start observing the target node for configured mutations
-        observer.observe(iframe, config);
-      } 
-    }, 5000);
+    requestAnimationFrame(checkIframe);
   });
 </script>
