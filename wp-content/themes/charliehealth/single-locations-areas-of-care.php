@@ -295,8 +295,8 @@ $block_content = do_blocks('<!-- wp:block {"ref":18411} /-->');
 
 // Modify the block content dynamically
 $modified_content = str_replace(
-  ['[condition]', '[type]', '[location]'],  // Placeholders
-  [$conditionLabel, $type, $location],          // Replacement values
+  ['[condition]', '[type]', '[location]'],
+  [$conditionLabel, $type, $location],
   $block_content
 );
 
@@ -457,12 +457,15 @@ echo $modified_content;
   </div>
 </section>
 <?php
-// HIW Block pattern, dynamic update
-$block_content = do_blocks('<!-- wp:block {"ref":17615} /-->');
+// Get started block, dynamic update
+$block_content = do_blocks('<!-- wp:block {"ref":18415} /-->');
 
 // Modify the block content dynamically
-$modified_content = str_replace('[Location]', $location, $block_content);
-
+$modified_content = str_replace(
+  ['[condition]', '[type]', '[location]'],
+  [$conditionLabel, $type, $location],
+  $block_content
+);
 echo $modified_content;
 ?>
 <script>
