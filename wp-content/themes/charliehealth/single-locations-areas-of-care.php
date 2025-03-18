@@ -112,17 +112,16 @@ $faq_how_is_condition_treated                  = get_field('faq_how_is_condition
 <section class="bg-primary section [&_*]:text-white">
   <div class="container">
     <div class="acf-innerblocks-container">
-      <div class="grid lg:grid-cols-[4fr_1fr_7fr] gap-x-sp-5 iop-overview">
+      <div class="grid lg:grid-cols-[4fr_1fr_7fr] gap-x-base5-4 iop-overview">
         <div>
           <h2><mark class="bg-primary-100"><?= $conditionLabel; ?></mark> symptoms, causes, and treatment options</h2>
-          <p><?= $whatIsCondtion; ?></p>
         </div>
         <div></div>
         <div class="mt-sp-5 lg:mt-0">
           <div class="iop-overview-accordion">
             <div class="accordion">
               <div class="wrapper">
-                <div class="accordion-item-iop bg-primary-100 rounded-[6px] mb-sp-2 lg:mb-sp-4">
+                <div class="rounded-sm accordion-item-iop bg-primary-100 mb-base5-2 lg:mb-base5-3">
                   <div class="flex justify-between cursor-pointer accordion-header-iop py-[11px] px-sp-6">
                     <h3 class="mb-0">Key signs of <?= $conditionLabel; ?></h3>
                     <div class="flex items-center ml-sp-5 toggle">
@@ -138,7 +137,7 @@ $faq_how_is_condition_treated                  = get_field('faq_how_is_condition
                     </div>
                   </div>
                 </div>
-                <div class="accordion-item-iop bg-primary-100 rounded-[6px] mb-sp-2 lg:mb-sp-4">
+                <div class="rounded-sm accordion-item-iop bg-primary-100 mb-base5-2 lg:mb-base5-3">
                   <div class="flex justify-between cursor-pointer accordion-header-iop py-[11px] px-sp-6">
                     <h3 class="mb-0">Primary causes of <?= $conditionLabel; ?></h3>
                     <div class="flex items-center ml-sp-5 toggle">
@@ -154,7 +153,7 @@ $faq_how_is_condition_treated                  = get_field('faq_how_is_condition
                     </div>
                   </div>
                 </div>
-                <div class="accordion-item-iop bg-primary-100 rounded-[6px] mb-sp-2 lg:mb-sp-4">
+                <div class="rounded-sm accordion-item-iop bg-primary-100 mb-base5-2 lg:mb-base5-3">
                   <div class="flex justify-between cursor-pointer accordion-header-iop py-[11px] px-sp-6">
                     <h3 class="mb-0">Treatment options for <?= $conditionLabel; ?></h3>
                     <div class="flex items-center ml-sp-5 toggle">
@@ -236,7 +235,7 @@ $faq_how_is_condition_treated                  = get_field('faq_how_is_condition
 </section>
 <section class="bg-primary section-horizontal">
   <div class="container">
-    <div class="border-2 border-white rounded-[1rem] lg:p-sp-12 p-sp-4 grid lg:grid-cols-[4fr_8fr] gap-x-sp-5 approach-grid-js">
+    <div class="border-2 border-white rounded-[1rem] lg:p-sp-12 p-sp-4 grid lg:grid-cols-[4fr_8fr] gap-x-base5-4 approach-grid-js">
       <div class="grid content-between">
         <div class="order-2 lg:order-1 [&_*]:text-white">
           <h2 class="font-heading-serif mb-sp-8">How Charlie Health treats <?= $conditionLabel; ?> in <?= $location; ?></h2>
@@ -249,23 +248,23 @@ $faq_how_is_condition_treated                  = get_field('faq_how_is_condition
         </div>
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 gap-sp-2 grid-approach-items-js ">
-        <div class="relative text-center opacity-0 invisible bg-lavender-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center ">
+        <div class="relative flex flex-col items-center justify-center invisible text-center rounded-sm opacity-0 bg-lavender-300 py-sp-10 px-sp-7 ">
           <p class="text-primary text-h4-base">Individualized treatment plans</p>
         </div>
-        <div class="relative text-center opacity-0 invisible bg-orange-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center ">
+        <div class="relative flex flex-col items-center justify-center invisible text-center bg-orange-300 rounded-sm opacity-0 py-sp-10 px-sp-7 ">
           <p class="text-primary text-h4-base">Evidence-based modalities</p>
         </div>
-        <div class="relative text-center opacity-0 invisible bg-pale-blue-200 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
+        <div class="relative flex flex-col items-center justify-center invisible text-center rounded-sm opacity-0 bg-pale-blue-200 py-sp-10 px-sp-7">
           <p class="text-primary text-h4-base">Multidisciplinary support</p>
         </div>
-        <div class="relative text-center opacity-0 invisible bg-pale-blue-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
+        <div class="relative flex flex-col items-center justify-center invisible text-center rounded-sm opacity-0 bg-pale-blue-300 py-sp-10 px-sp-7">
           <p class="text-primary text-h4-base">Immediate availability</p>
         </div>
-        <div class="relative text-center opacity-0 invisible bg-yellow-300 rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center">
+        <div class="relative flex flex-col items-center justify-center invisible text-center bg-yellow-300 rounded-sm opacity-0 py-sp-10 px-sp-7">
           <p class="text-primary text-h4-base">Virtual access</p>
         </div>
-        <div class="text-center opacity-0 invisible bg-white rounded-[6px] py-sp-10 px-sp-7 flex flex-col items-center justify-center relative group ">
-          <svg width="27" height="22" viewBox="0 0 27 22" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all mb-sp-2 group-hover:translate-x-[5px] duration-300">
+        <div class="relative flex flex-col items-center justify-center invisible text-center bg-white rounded-sm opacity-0 py-sp-10 px-sp-7 group ">
+          <svg width="27" height="22" viewBox="0 0 27 22" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all mb-base5-2 group-hover:translate-x-[5px] duration-300">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M22.054 9.3431L14.3818 1.67092L16.0527 0L26.6686 10.6159L16.0527 21.2319L14.3818 19.561L22.2366 11.7061L2.08616e-07 11.7061L0 9.34311L22.054 9.3431Z" fill="#161A3D"></path>
           </svg><a href="<?= get_the_permalink($condition); ?>" class="mb-0 no-underline stretched-link text-h4-base">Learn more</a>
         </div>
@@ -273,7 +272,7 @@ $faq_how_is_condition_treated                  = get_field('faq_how_is_condition
     </div>
   </div>
 </section>
-<section class="bg-primary section">
+<section class="bg-primary section-top">
   <div class="container">
     <div class="grid lg:grid-cols-[3fr_9fr]">
       <div>
