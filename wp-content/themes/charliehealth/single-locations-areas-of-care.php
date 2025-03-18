@@ -286,24 +286,16 @@ $whatIsCondtion =  get_field('what_is_condition');
     </div>
   </div>
 </section>
-<section class="section-bottom bg-darker-blue">
-  <div class="container-sm">
-    <h2 class="text-center text-white">Getting started with <?= $conditionLabel; ?> <?= $type; ?> <mark class="text-white bg-primary-100"><?= $location ?></mark> is simple</mark></h2>
-  </div>
-</section>
-<section class="bg-darker-blue section-horizontal">
-  <div class="container">
-    <svg width="2" height="114" viewBox="0 0 2 114" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto">
-      <line x1="1" y1="4.37114e-08" x2="0.999995" y2="114" stroke="white" stroke-width="2"></line>
-    </svg>
-  </div>
-</section>
 <?php
 // HIW Block pattern, dynamic update
-$block_content = do_blocks('<!-- wp:block {"ref":17594} /-->');
+$block_content = do_blocks('<!-- wp:block {"ref":18411} /-->');
 
 // Modify the block content dynamically
-$modified_content = str_replace('[Location]', $location, $block_content);
+$modified_content = str_replace(
+  ['[condition]', '[type]', '[location]'],  // Placeholders
+  [$conditionLabel, $type, $location],          // Replacement values
+  $block_content
+);
 
 echo $modified_content;
 ?>
