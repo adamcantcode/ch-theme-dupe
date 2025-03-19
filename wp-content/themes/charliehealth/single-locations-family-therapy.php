@@ -168,11 +168,11 @@ echo $modified_content;
 
           $altText = $headshot ? ($headshot['alt'] ?? 'Headshot of ' . get_the_title($id)) : 'Headshot of ' . get_the_title($id);
       ?>
-          <div class="rounded-md bg-white lg:p-base5-5 p-base5-2 text-center <?= $show ? '' : 'noshow'; ?>">
+          <div class="rounded-md bg-white lg:p-base5-5 p-base5-2 text-center relative <?= $show ? '' : 'noshow'; ?>">
             <img src="<?= $headshot['url'] ?? site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>"
               alt="<?= esc_attr($altText); ?>"
               class="w-full mx-auto rounded-circle mb-sp-4">
-            <h4 class="mb-0"><?= esc_html(get_the_title($id)); ?></h4>
+            <h4 class="mb-0"><a href="<?= get_the_permalink($id); ?>" class="stretched-link"><?= esc_html(get_the_title($id)); ?></a></h4>
             <p><?= esc_html($title); ?> - <?= esc_html(implode(', ', $certifications)); ?></p>
           </div>
       <?php
