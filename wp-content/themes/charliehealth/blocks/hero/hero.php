@@ -22,7 +22,7 @@ $icon           = get_field('hero_icon');
 // }
 ?>
 
-<?php if ($breadcrumbs && !$style === 'multicolor') : ?>
+<?php if ($breadcrumbs && $style !== 'multicolor') : ?>
   <?php include('includes/breadcrumbs.php'); ?>
 <?php endif; ?>
 <?php if ($style === 'image') : ?>
