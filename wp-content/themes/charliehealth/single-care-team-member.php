@@ -46,8 +46,8 @@ $imageAlt = $image['alt'] ?? 'Charlie Health Logo';
   <div class="container">
     <div class="grid lg:grid-cols-[4fr_8fr] gap-x-base5-4 gap-y-base5-6">
       <div>
-        <h4>Charlie Health Locations</h4>
-        <h2>View More Locations with This Care Team Member</h2>
+        <h4>Charlie Health locations</h4>
+        <h2>View more locations with this Care Team member</h2>
         <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full">
           <a href="/locations" class="ch-button button-secondary-ch">All Locations</a>
         </div>
