@@ -5,7 +5,7 @@ $name    = get_the_title();
 $title   = get_field('title');
 $creds   = get_field('certifications');
 $states  = get_field('states');
-$bio     = get_field('author_page_bio');
+$bio     = get_field('bio');
 $image   = get_field('headshot');
 
 // Process certifications
@@ -33,7 +33,7 @@ $imageAlt = $image['alt'] ?? 'Charlie Health Logo';
       </div>
       <div>
         <h1 class="text-h2-base font-heading-serif">
-          <?= esc_html($name); ?>, (<?= esc_html($creds); ?>)
+          <?= esc_html($name); ?>, <?= esc_html($creds); ?>
         </h1>
         <h3><?= esc_html($title); ?></h3>
         <div><?= $bio; ?></div>
