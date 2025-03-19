@@ -15,6 +15,7 @@ $type                                          = get_field('type');
 $definition                                    = get_field('definition');
 $importance                                    = get_field('importance');
 $statistic                                     = get_field('statistic');
+$source                                     = get_field('source');
 $completeDefinition                            = get_field('complete_definition');
 $physicalSymptoms                              = get_field('physical_symptoms');
 $mentalSymptoms                                = get_field('mental_symptoms');
@@ -42,11 +43,11 @@ $faq_how_is_condition_treated                  = get_field('faq_how_is_condition
       <?php endforeach; ?>
 
       <span>/</span>
-      <span><?= $conditionLabel; ?> <?= $type; ?> in <?= $location; ?></span>
+      <span><?= $conditionLabel; ?> <?= strtolower($type); ?> in <?= $location; ?></span>
     </div>
   </div>
   <div class="container-md">
-    <h1 class="text-center"><?= $conditionLabel; ?> <?= $type; ?> in <mark style="background-color:#DAC1FB"><?= $location; ?></mark></h1>
+    <h1 class="text-center"><?= $conditionLabel; ?> <?= strtolower($type); ?> in <mark style="background-color:#DAC1FB"><?= $location; ?></mark></h1>
     <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
       <a href="/form" class="ch-button button-primary-ch" target="_self">Get Started</a>
       <a href="tel:+18664848218" class="ch-button button-secondary-ch" target="_self">1 (986) 206-0414</a>
@@ -80,7 +81,7 @@ $faq_how_is_condition_treated                  = get_field('faq_how_is_condition
   <div class="container">
     <div class="grid items-center lg:grid-cols-2 gap-base5-10">
       <div>
-        <h2>What is <?= $conditionLabel; ?>?</h2>
+        <h2>What is <?= strtolower($conditionLabel); ?>?</h2>
         <p><?= $completeDefinition; ?></p>
         <h3>Common symptoms include:</h3>
         <ul>
@@ -99,7 +100,8 @@ $faq_how_is_condition_treated                  = get_field('faq_how_is_condition
   <div class="container">
     <div class="grid lg:grid-cols-[9fr_3fr] gap-base5-4 items-center">
       <div>
-        <p class="text-white font-heading-serif text-h2-base"><?= preg_replace('/^(\S+\s+\S+)/', '<mark style="background-color:#DAC1FB">$1</mark>', $statistic, 1); ?></p>
+        <p class="text-white font-heading-serif text-h2-base"><?= preg_replace('/^(\S+\s+\S+)/', '<mark style="background-color:#DAC1FB">$1</mark>', $statistic, 1); ?>*</p>
+        <p>We’re changing that.</p>
       </div>
       <div>
         <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-end">
@@ -123,7 +125,7 @@ $faq_how_is_condition_treated                  = get_field('faq_how_is_condition
               <div class="wrapper">
                 <div class="rounded-sm accordion-item-iop bg-primary-100 mb-base5-2 lg:mb-base5-3">
                   <div class="flex justify-between cursor-pointer accordion-header-iop py-[11px] px-sp-6">
-                    <h3 class="mb-0">Key signs of <?= $conditionLabel; ?></h3>
+                    <h3 class="mb-0">Key signs of <?= strtolower($conditionLabel); ?></h3>
                     <div class="flex items-center ml-sp-5 toggle">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M1 11.0001H22.9984V13.0001H1V11.0001Z" fill="white"></path>
@@ -155,7 +157,7 @@ $faq_how_is_condition_treated                  = get_field('faq_how_is_condition
                 </div>
                 <div class="rounded-sm accordion-item-iop bg-primary-100 mb-base5-2 lg:mb-base5-3">
                   <div class="flex justify-between cursor-pointer accordion-header-iop py-[11px] px-sp-6">
-                    <h3 class="mb-0">Treatment options for <?= $conditionLabel; ?></h3>
+                    <h3 class="mb-0">Treatment options for <?= strtolower($conditionLabel); ?></h3>
                     <div class="flex items-center ml-sp-5 toggle">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M1 11.0001H22.9984V13.0001H1V11.0001Z" fill="white"></path>
@@ -238,7 +240,7 @@ $faq_how_is_condition_treated                  = get_field('faq_how_is_condition
     <div class="border-2 border-white rounded-[1rem] lg:p-sp-12 p-sp-4 grid lg:grid-cols-[4fr_8fr] gap-x-base5-4 approach-grid-js">
       <div class="grid content-between">
         <div class="order-2 lg:order-1 [&_*]:text-white">
-          <h2 class="font-heading-serif mb-sp-8">How Charlie Health treats <?= $conditionLabel; ?> in <?= $location; ?></h2>
+          <h2 class="font-heading-serif mb-sp-8">How Charlie Health treats <?= strtolower($conditionLabel); ?> in <?= $location; ?></h2>
           <div></div>
         </div>
         <div class="order-1 lg:order-2 mb-sp-10 lg:mb-0">
@@ -10260,4 +10262,9 @@ echo $modified_content;
   })();
   //# sourceMappingURL=index.js.map
 </script>
+<section class="section-top">
+  <div class="container">
+    <p class="text-white text-mini">*<?= $source; ?></p>
+  </div>
+</section>
 <?php get_footer(); ?>
