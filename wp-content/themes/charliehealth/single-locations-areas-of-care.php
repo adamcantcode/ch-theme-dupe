@@ -95,7 +95,7 @@ $faq_how_is_condition_treated                  = get_field('faq_how_is_condition
     </div>
   </div>
 </div>
-<section class="bg-primary-200 section ">
+<section class="bg-primary section ">
   <div class="container">
     <div class="grid lg:grid-cols-[9fr_3fr] gap-base5-4 items-center">
       <div>
@@ -110,6 +110,19 @@ $faq_how_is_condition_treated                  = get_field('faq_how_is_condition
     </div>
   </div>
 </section>
+<?php
+// HIW Block pattern, dynamic update
+$block_content = do_blocks('<!-- wp:block {"ref":18411} /-->');
+
+// Modify the block content dynamically
+$modified_content = str_replace(
+  ['[condition]', '[type]', '[location]'],
+  [$conditionLabel, $type, $location],
+  $block_content
+);
+
+echo $modified_content;
+?>
 <section class="bg-primary section [&_*]:text-white">
   <div class="container">
     <div class="acf-innerblocks-container">
@@ -289,19 +302,6 @@ $faq_how_is_condition_treated                  = get_field('faq_how_is_condition
     </div>
   </div>
 </section>
-<?php
-// HIW Block pattern, dynamic update
-$block_content = do_blocks('<!-- wp:block {"ref":18411} /-->');
-
-// Modify the block content dynamically
-$modified_content = str_replace(
-  ['[condition]', '[type]', '[location]'],
-  [$conditionLabel, $type, $location],
-  $block_content
-);
-
-echo $modified_content;
-?>
 <section class="section">
   <div class="container">
     <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] lg:gap-sp-12 gap-sp-8">
