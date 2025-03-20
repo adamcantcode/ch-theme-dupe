@@ -306,7 +306,7 @@ echo $modified_content;
   <div class="container">
     <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] lg:gap-sp-12 gap-sp-8">
       <div class="grid lg:block">
-        <h2>FAQS about <?= strtolower($conditionLabel); ?> in <?= $location; ?> at Charlie Health" not about "our virtual IOP</h2>
+        <h2>FAQS about <?= strtolower($conditionLabel); ?> in <?= $location; ?> at Charlie Health</h2>
         <a href="https://www.charliehealth.com/faqs" class="ch-button button-secondary-ch" data-uw-rm-brl="PR" data-uw-original-href="https://www.charliehealth.com/faqs">See All FAQs</a>
       </div>
       <div>
