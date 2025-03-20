@@ -463,7 +463,7 @@ $block_content = do_blocks('<!-- wp:block {"ref":18415} /-->');
 // Modify the block content dynamically
 $modified_content = str_replace(
   ['[condition]', '[type]', '[location]'],
-  [$conditionLabel, $type, $location],
+  [strtolower($conditionLabel), strtolower($type), $location],
   $block_content
 );
 echo $modified_content;
