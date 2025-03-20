@@ -58,15 +58,14 @@ $faq_how_is_condition_treated                  = get_field('faq_how_is_condition
   <div class="container">
     <div class="grid lg:grid-cols-2 gap-base5-10 mb-base5-10">
       <div class="grid lg:grid-flow-col gap-base5-4">
-        <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M43.9192 38.7888L41.1423 29.0078V7.71094C41.1423 6.89854 40.486 6.24219 39.6736 6.24219H7.36107C6.54867 6.24219 5.89232 6.89854 5.89232 7.71094V29.0078L3.11546 38.7888C2.77122 39.748 3.47806 40.7578 4.49701 40.7578H42.5376C43.5566 40.7578 44.2634 39.748 43.9192 38.7888ZM9.19701 9.54688H37.8376V27.6768H9.19701V9.54688ZM19.6756 37.4531L20.0474 35.7549H26.9459L27.3177 37.4531H19.6756ZM29.9569 37.4531L29.0802 33.4737C29.0435 33.3039 28.892 33.1846 28.7222 33.1846H18.2757C18.1013 33.1846 17.9544 33.3039 17.9177 33.4737L17.041 37.4531H6.92962L8.87113 30.6143H38.1635L40.105 37.4531H29.9569Z" fill="#161A3D" />
+        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="31" fill="none" viewBox="0 0 27 25" class="mt-base5-1">
+          <path stroke="#161A3D" stroke-width="3" d="M19.0196 10.1186c0 4.641-3.8818 8.4748-8.7598 8.4748-4.87801 0-8.7598-3.8338-8.7598-8.4748 0-4.64095 3.88179-8.4748 8.7598-8.4748 4.878 0 8.7598 3.83385 8.7598 8.4748ZM16.5703 15.6602l8.4306 8.1963" />
         </svg>
         <p class="text-h4-base"><?= $definition; ?></p>
       </div>
       <div class="grid lg:grid-flow-col gap-base5-4">
-        <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M34.6273 17.7893L32.4589 15.6208L20.5936 27.4861L15.4381 22.3305L13.2696 24.499L20.5963 31.8257L22.7648 29.6572L22.7621 29.6545L34.6273 17.7893Z" fill="#161A3D" />
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M44.6504 22.9141C44.6504 34.2704 35.4442 43.4766 24.0879 43.4766C12.7315 43.4766 3.52539 34.2704 3.52539 22.9141C3.52539 11.5577 12.7315 2.35156 24.0879 2.35156C35.4442 2.35156 44.6504 11.5577 44.6504 22.9141ZM41.7129 22.9141C41.7129 32.6481 33.8219 40.5391 24.0879 40.5391C14.3539 40.5391 6.46289 32.6481 6.46289 22.9141C6.46289 13.18 14.3539 5.28906 24.0879 5.28906C33.8219 5.28906 41.7129 13.18 41.7129 22.9141Z" fill="#161A3D" />
+        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="none" viewBox="0 0 45 45">
+          <path stroke="#161A3D" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M33.75 39.375h-22.5c-1.2426 0-2.25-1.0074-2.25-2.25v-.7517c0-3.2696 2.0285-6.1961 5.0901-7.3435 5.4224-2.0324 11.3974-2.0324 16.8198 0C33.9715 30.1772 36 33.1037 36 36.3733v.7517c0 1.2426-1.0074 2.25-2.25 2.25ZM19.0696 21.8629c2.1532 1.106 4.7076 1.106 6.8608 0 2.004-1.0294 3.4397-2.9043 3.9111-5.1073l.1258-.5879c.4821-2.2528-.0328-4.604-1.4123-6.44918l-.202-.2702c-1.3797-1.84539-3.5489-2.93204-5.853-2.93204-2.3041 0-4.4733 1.08665-5.853 2.93205l-.202.27019c-1.3795 1.84518-1.8944 4.19638-1.4123 6.44918l.1258.5879c.4714 2.203 1.9071 4.0779 3.9111 5.1073Z" />
         </svg>
         <p class="text-h4-base"><?= $importance; ?></p>
       </div>
@@ -100,8 +99,8 @@ $faq_how_is_condition_treated                  = get_field('faq_how_is_condition
   <div class="container">
     <div class="grid lg:grid-cols-[9fr_3fr] gap-base5-4 items-center">
       <div>
-        <p class="text-white font-heading-serif text-h2-base"><?= preg_replace('/^(\S+\s+\S+)/', '<mark style="background-color:#DAC1FB">$1</mark>', $statistic, 1); ?>*</p>
-        <p>We’re changing that.</p>
+        <h2 class="text-white"><?= preg_replace('/^(\S+\s+\S+)/', '<mark style="background-color:#DAC1FB">$1</mark>', $statistic, 1); ?>*</h2>
+        <p class="text-white text-h2-base">We’re changing that.</p>
       </div>
       <div>
         <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-end">
@@ -307,7 +306,7 @@ echo $modified_content;
   <div class="container">
     <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] lg:gap-sp-12 gap-sp-8">
       <div class="grid lg:block">
-        <h2>FAQs about our virtual teen IOP at Charlie Health</h2>
+        <h2>FAQs about our virtual IOP at Charlie Health</h2>
         <a href="https://www.charliehealth.com/faqs" class="ch-button button-secondary-ch" data-uw-rm-brl="PR" data-uw-original-href="https://www.charliehealth.com/faqs">See All FAQs</a>
       </div>
       <div>
@@ -10262,7 +10261,7 @@ echo $modified_content;
   })();
   //# sourceMappingURL=index.js.map
 </script>
-<section class="section-top">
+<section class="section-xs-top bg-secondary-soft">
   <div class="container">
     <p class="text-white text-mini">*<?= $source; ?></p>
   </div>

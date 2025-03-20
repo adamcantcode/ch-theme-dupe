@@ -109,6 +109,26 @@
             "append": ""
         },
         {
+            "key": "field_67dc60bea0416",
+            "label": "Source",
+            "name": "source",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_67d83c785c2ae",
             "label": "Complete Definition",
             "name": "complete_definition",
@@ -347,5 +367,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1742314718
+    "modified": 1742495959
 }
