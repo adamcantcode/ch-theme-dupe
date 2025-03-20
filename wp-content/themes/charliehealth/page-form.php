@@ -18,7 +18,7 @@ Template Post Type: page
           // Constants
           const FORM_ID = 5700521;
           const DISCLAIMER_TEXT = 'We may employ third-party tools to analyze usage data on our website, including your submission of this form. We make reasonable efforts to obscure or de-identify protected health information from our analytics providers whenever feasible.';
-          const CONSENT_TEXT = 'By entering your phone number and email address in this form, you agree to receive automated text messages and emails from us. Standard message and data rates may apply.<br><br>By providing a telephone number and submitting this form, you are consenting to be contacted by SMS text message. Message & data rates may apply. You can reply STOP to opt-out of further messaging.';
+          const CONSENT_TEXT = 'By providing an email address and telephone number and submitting this form you are consenting to be contacted by email and SMS text message. Message & data rates may apply. You can reply STOP to opt-out of further messaging.';
 
           // Initialize form using Formstack API
           const form = window.fsApi().getForm(FORM_ID);
@@ -49,7 +49,7 @@ Template Post Type: page
             const messageText = clonedElement.querySelector('.field-auto-capture__message__text');
             if (messageText) {
               messageText.className = '';
-              messageText.innerHTML = CONSENT_TEXT;
+              messageText.innerText = CONSENT_TEXT;
             }
 
             return clonedElement;
