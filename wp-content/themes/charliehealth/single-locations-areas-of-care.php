@@ -100,7 +100,7 @@ $faq_how_is_condition_treated                  = get_field('faq_how_is_condition
     <div class="grid lg:grid-cols-[9fr_3fr] gap-base5-4 items-center">
       <div>
         <h2 class="text-white"><?= preg_replace('/^(\S+\s+\S+)/', '<mark style="background-color:#DAC1FB">$1</mark>', $statistic, 1); ?>*</h2>
-        <p class="text-white text-h2-base">We’re changing that.</p>
+        <p class="text-white text-h2-base">We’re here to help.</p>
       </div>
       <div>
         <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-end">
