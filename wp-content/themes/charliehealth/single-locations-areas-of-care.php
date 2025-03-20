@@ -286,7 +286,7 @@ echo $modified_content;
     </div>
   </div>
 </section>
-<section class="bg-primary section-top">
+<section class="bg-primary section">
   <div class="container">
     <div class="grid lg:grid-cols-[3fr_9fr]">
       <div>
