@@ -153,7 +153,7 @@ echo $modified_content;
                 </div>
                 <div class="rounded-sm accordion-item-iop bg-primary-100 mb-base5-2 lg:mb-base5-3">
                   <div class="flex justify-between cursor-pointer accordion-header-iop py-[11px] px-sp-6">
-                    <h3 class="mb-0">Primary causes of <?= $conditionLabel; ?></h3>
+                    <h3 class="mb-0">Primary causes of <?= strtolower($conditionLabel); ?></h3>
                     <div class="flex items-center ml-sp-5 toggle">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M1 11.0001H22.9984V13.0001H1V11.0001Z" fill="white"></path>
@@ -315,7 +315,7 @@ echo $modified_content;
             <div class="wrapper">
               <div class="border-b-2 first:border-t-2 first:pt-sp-6 border-primary accordion-item mb-sp-6">
                 <div class="flex items-center justify-between cursor-pointer accordion-header pb-sp-6">
-                  <h3 class="mb-0 text-h4-base">What is <?= $conditionLabel; ?></h3>
+                  <h3 class="mb-0 text-h4-base">What is <?= strtolower($conditionLabel); ?></h3>
                   <span class="ml-sp-4">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M1 10.9999H22.9984V12.9999H1V10.9999Z" fill="#161A3D"></path>
@@ -333,7 +333,7 @@ echo $modified_content;
               </div>
               <div class="border-b-2 first:border-t-2 first:pt-sp-6 border-primary accordion-item mb-sp-6">
                 <div class="flex items-center justify-between cursor-pointer accordion-header pb-sp-6">
-                  <h3 class="mb-0 text-h4-base">What are the common symptoms of <?= $conditionLabel; ?></h3>
+                  <h3 class="mb-0 text-h4-base">What are the common symptoms of <?= strtolower($conditionLabel); ?></h3>
                   <span class="ml-sp-4">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M1 10.9999H22.9984V12.9999H1V10.9999Z" fill="#161A3D"></path>
@@ -351,7 +351,7 @@ echo $modified_content;
               </div>
               <div class="border-b-2 first:border-t-2 first:pt-sp-6 border-primary accordion-item mb-sp-6">
                 <div class="flex items-center justify-between cursor-pointer accordion-header pb-sp-6">
-                  <h3 class="mb-0 text-h4-base">How is <?= $conditionLabel; ?> treated</h3>
+                  <h3 class="mb-0 text-h4-base">How is <?= strtolower($conditionLabel); ?> treated</h3>
                   <span class="ml-sp-4">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M1 10.9999H22.9984V12.9999H1V10.9999Z" fill="#161A3D"></path>
@@ -369,7 +369,7 @@ echo $modified_content;
               </div>
               <div class="border-b-2 first:border-t-2 first:pt-sp-6 border-primary accordion-item mb-sp-6">
                 <div class="flex items-center justify-between cursor-pointer accordion-header pb-sp-6">
-                  <h3 class="mb-0 text-h4-base">Is <?= $conditionLabel; ?> treatment available in <?= $location; ?> treated</h3>
+                  <h3 class="mb-0 text-h4-base">Is <?= strtolower($conditionLabel); ?> treatment available in <?= $location; ?> treated</h3>
                   <span class="ml-sp-4">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M1 10.9999H22.9984V12.9999H1V10.9999Z" fill="#161A3D"></path>
@@ -387,7 +387,7 @@ echo $modified_content;
               </div>
               <div class="border-b-2 first:border-t-2 first:pt-sp-6 border-primary accordion-item mb-sp-6">
                 <div class="flex items-center justify-between cursor-pointer accordion-header pb-sp-6">
-                  <h3 class="mb-0 text-h4-base">How do I start therapy for <?= $conditionLabel; ?> at Charlie Health</h3>
+                  <h3 class="mb-0 text-h4-base">How do I start therapy for <?= strtolower($conditionLabel); ?> at Charlie Health</h3>
                   <span class="ml-sp-4">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M1 10.9999H22.9984V12.9999H1V10.9999Z" fill="#161A3D"></path>
@@ -398,7 +398,7 @@ echo $modified_content;
                 <div class="overflow-hidden transition-all duration-500 ease-in-out accordion-content max-h-0">
                   <div class="lg:pr-sp-14 pr-sp-6 lg:mb-sp-8 mb-sp-6">
                     <div class="[&_*]:text-h5">
-                      <p>If you or a loved one are struggling with <?= $conditionLabel; ?>, Charlie Health is here to help. Charlie Health’s virtual Intensive Outpatient Program (IOP) provides mental health treatment for people dealing with serious mental health conditions, including both the emotional and physical symptoms of <?= $conditionLabel; ?>. Our expert clinicians incorporate evidence-based therapies into individual counseling, family therapy, and group sessions. With support, managing your mental health and healing from <?= $conditionLabel; ?> is possible.</p>
+                      <p>If you or a loved one are struggling with <?= strtolower($conditionLabel); ?>, Charlie Health is here to help. Charlie Health’s virtual Intensive Outpatient Program (IOP) provides mental health treatment for people dealing with serious mental health conditions, including both the emotional and physical symptoms of <?= strtolower($conditionLabel); ?>. Our expert clinicians incorporate evidence-based therapies into individual counseling, family therapy, and group sessions. With support, managing your mental health and healing from <?= strtolower($conditionLabel); ?> is possible.</p>
                     </div>
                   </div>
                 </div>
