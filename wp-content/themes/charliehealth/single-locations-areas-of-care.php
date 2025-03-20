@@ -315,7 +315,7 @@ echo $modified_content;
             <div class="wrapper">
               <div class="border-b-2 first:border-t-2 first:pt-sp-6 border-primary accordion-item mb-sp-6">
                 <div class="flex items-center justify-between cursor-pointer accordion-header pb-sp-6">
-                  <h3 class="mb-0 text-h4-base">What is <?= strtolower($conditionLabel); ?></h3>
+                  <h3 class="mb-0 text-h4-base">What is <?= strtolower($conditionLabel); ?>?</h3>
                   <span class="ml-sp-4">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M1 10.9999H22.9984V12.9999H1V10.9999Z" fill="#161A3D"></path>
@@ -333,7 +333,7 @@ echo $modified_content;
               </div>
               <div class="border-b-2 first:border-t-2 first:pt-sp-6 border-primary accordion-item mb-sp-6">
                 <div class="flex items-center justify-between cursor-pointer accordion-header pb-sp-6">
-                  <h3 class="mb-0 text-h4-base">What are the common symptoms of <?= strtolower($conditionLabel); ?></h3>
+                  <h3 class="mb-0 text-h4-base">What are the common symptoms of <?= strtolower($conditionLabel); ?>?</h3>
                   <span class="ml-sp-4">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M1 10.9999H22.9984V12.9999H1V10.9999Z" fill="#161A3D"></path>
@@ -351,7 +351,7 @@ echo $modified_content;
               </div>
               <div class="border-b-2 first:border-t-2 first:pt-sp-6 border-primary accordion-item mb-sp-6">
                 <div class="flex items-center justify-between cursor-pointer accordion-header pb-sp-6">
-                  <h3 class="mb-0 text-h4-base">How is <?= strtolower($conditionLabel); ?> treated</h3>
+                  <h3 class="mb-0 text-h4-base">How is <?= strtolower($conditionLabel); ?> treated?</h3>
                   <span class="ml-sp-4">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M1 10.9999H22.9984V12.9999H1V10.9999Z" fill="#161A3D"></path>
@@ -369,7 +369,7 @@ echo $modified_content;
               </div>
               <div class="border-b-2 first:border-t-2 first:pt-sp-6 border-primary accordion-item mb-sp-6">
                 <div class="flex items-center justify-between cursor-pointer accordion-header pb-sp-6">
-                  <h3 class="mb-0 text-h4-base">Is <?= strtolower($conditionLabel); ?> treatment available in <?= $location; ?> treated</h3>
+                  <h3 class="mb-0 text-h4-base">Is <?= strtolower($conditionLabel); ?> treatment available in <?= $location; ?> treated?</h3>
                   <span class="ml-sp-4">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M1 10.9999H22.9984V12.9999H1V10.9999Z" fill="#161A3D"></path>
@@ -387,7 +387,7 @@ echo $modified_content;
               </div>
               <div class="border-b-2 first:border-t-2 first:pt-sp-6 border-primary accordion-item mb-sp-6">
                 <div class="flex items-center justify-between cursor-pointer accordion-header pb-sp-6">
-                  <h3 class="mb-0 text-h4-base">How do I start therapy for <?= strtolower($conditionLabel); ?> at Charlie Health</h3>
+                  <h3 class="mb-0 text-h4-base">How do I start therapy for <?= strtolower($conditionLabel); ?> at Charlie Health?</h3>
                   <span class="ml-sp-4">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M1 10.9999H22.9984V12.9999H1V10.9999Z" fill="#161A3D"></path>
