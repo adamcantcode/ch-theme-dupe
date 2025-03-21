@@ -24,7 +24,8 @@
                 "details": "Details",
                 "container": "Container",
                 "insurance": "Insurance",
-                "treatment": "Treatment Modalities"
+                "treatment": "Treatment Modalities",
+                "multicolor": "Multicolor"
             },
             "default_value": false,
             "return_format": "value",
@@ -492,5 +493,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1726172746
+    "modified": 1742393303
 }
