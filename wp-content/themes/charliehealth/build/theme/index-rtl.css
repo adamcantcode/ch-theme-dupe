@@ -3045,6 +3045,10 @@ a.insurance-tabs.active:hover {
   align-self: center;
 }
 
+.justify-self-end{
+  justify-self: end;
+}
+
 .justify-self-center{
   justify-self: center;
 }
@@ -3451,11 +3455,6 @@ a.insurance-tabs.active:hover {
 .bg-referrals-green-200{
   --tw-bg-opacity: 1;
   background-color: rgb(232 240 230 / var(--tw-bg-opacity, 1));
-}
-
-.bg-referrals-green-300{
-  --tw-bg-opacity: 1;
-  background-color: rgb(188 215 183 / var(--tw-bg-opacity, 1));
 }
 
 .bg-referrals-green-400{
@@ -6836,10 +6835,6 @@ section.bg-shield > div {
 
   .lg\:w-2\/3{
     width: 66.666667%;
-  }
-
-  .lg\:w-2\/5{
-    width: 40%;
   }
 
   .lg\:w-\[130px\]{

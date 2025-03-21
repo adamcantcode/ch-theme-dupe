@@ -148,7 +148,7 @@ $blog = get_current_blog_id();
 <footer id="footer" class="grid bg-secondary-soft relatve">
 	<div class="section-sm-top section-lg-bottom bg-secondary-soft">
 		<div class="container">
-			<div class="rounded-sm lg:flex bg-primary p-base5-6 mb-base5-10">
+			<div class="grid rounded-sm lg:grid-cols-2 bg-primary p-base5-6 mb-base5-10">
 				<?php
 				$removeNewsletterPages = get_field('footer_removal_pages', 'options');
 				$removeNewsletter = false;
@@ -160,17 +160,19 @@ $blog = get_current_blog_id();
 				}
 				?>
 				<?php if (!$removeNewsletter) : ?>
-					<div class="flex-grow">
-						<h3 class="text-white mb-base5-6">Sign up for our email newsletter</h3>
-						<div id="newsletterFooter" class="w-full lg:w-2/5">
+					<div>
+						<h3 class="text-white">Sign up for our email newsletter</h3>
+						<p class="text-white mb-base5-6">Sign up for free and stay up to date on research advancements, mental health tips, mental health in the news, and expertise on managing mental health.</p>
+						<div id="newsletterFooter" class="w-full">
 							<?php
 							$buttonColor = 'bg-lavender-300 rounded-sm';
 							include('wp-content/themes/charliehealth/includes/newsletter-form.php');
 							?>
 						</div>
+						<h5 class="text-white mt-base5-2 text-mini">You can unsubscribe anytime.</h5>
 					</div>
 				<?php endif; ?>
-				<div>
+				<div class="justify-self-end">
 					<div class="flex gap-base5-1 mt-base5-2 lg:mt-0">
 						<a href="https://www.facebook.com/charliehealth" target="_blank">
 							<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/facebook-white.svg'); ?>" alt="Facebook logo" class="w-[42px] h-[42px] p-[10px]" />
