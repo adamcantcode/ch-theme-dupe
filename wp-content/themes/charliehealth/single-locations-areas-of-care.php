@@ -65,7 +65,7 @@ if (isset($condition_map[$condition])) {
     </div>
   </div>
   <div class="container-md">
-    <h1 class="text-center"><?= smartStrToLower($condition); ?> <?= strtolower($type); ?> in <mark style="background-color:#DAC1FB"><?= $location; ?></mark> <?= smartStrToLower("This is a TEST with NASA and PHP."); ?></h1>
+    <h1 class="text-center"><?= smartStrToLower($condition); ?> <?= strtolower($type); ?> in <mark style="background-color:#DAC1FB"><?= $location; ?></mark></h1>
     <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
       <a href="/form" class="ch-button button-primary-ch" target="_self">Get Started</a>
       <a href="tel:+18664848218" class="ch-button button-secondary-ch" target="_self">1 (986) 206-0414</a>
