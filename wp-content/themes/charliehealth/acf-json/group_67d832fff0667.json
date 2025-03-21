@@ -7,7 +7,7 @@
             "label": "Area of Care",
             "name": "area_of_care",
             "aria-label": "",
-            "type": "post_object",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,17 +16,11 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "areas-of-care"
-            ],
-            "post_status": [
-                "publish"
-            ],
-            "taxonomy": "",
-            "return_format": "object",
-            "multiple": 0,
-            "allow_null": 0,
-            "ui": 1
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_67d8362bba9f1",
@@ -367,5 +361,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1742495959
+    "modified": 1742520327
 }

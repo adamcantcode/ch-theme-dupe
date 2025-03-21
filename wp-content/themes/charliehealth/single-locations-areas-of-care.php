@@ -8,9 +8,14 @@ Template Post Type: locations
 <?php get_header(); ?>
 
 <?php
+function smartStrToLower($string) {
+  return preg_replace_callback('/\b[A-Z]{2,}\b/', function ($match) {
+      return $match[0]; // Keep acronyms unchanged
+  }, strtolower($string));
+}
+
 $location                                      = get_the_title();
 $condition                                     = get_field('area_of_care');
-$conditionLabel                                = get_the_title($condition);
 $type                                          = get_field('type');
 $definition                                    = get_field('definition');
 $importance                                    = get_field('importance');
@@ -43,11 +48,11 @@ $faq_how_is_condition_treated                  = get_field('faq_how_is_condition
       <?php endforeach; ?>
 
       <span>/</span>
-      <span><?= $conditionLabel; ?> <?= strtolower($type); ?> in <?= $location; ?></span>
+      <span><?= $condition; ?> <?= strtolower($type); ?> in <?= $location; ?></span>
     </div>
   </div>
   <div class="container-md">
-    <h1 class="text-center"><?= $conditionLabel; ?> <?= strtolower($type); ?> in <mark style="background-color:#DAC1FB"><?= $location; ?></mark></h1>
+    <h1 class="text-center"><?= $condition; ?> <?= strtolower($type); ?> in <mark style="background-color:#DAC1FB"><?= $location; ?></mark></h1>
     <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
       <a href="/form" class="ch-button button-primary-ch" target="_self">Get Started</a>
       <a href="tel:+18664848218" class="ch-button button-secondary-ch" target="_self">1 (986) 206-0414</a>
@@ -80,7 +85,7 @@ $faq_how_is_condition_treated                  = get_field('faq_how_is_condition
   <div class="container">
     <div class="grid items-center lg:grid-cols-2 gap-base5-10">
       <div>
-        <h2>What is <?= strtolower($conditionLabel); ?>?</h2>
+        <h2>What is <?= smartStrToLower($condition); ?>?</h2>
         <p><?= $completeDefinition; ?></p>
         <h3>Common symptoms include:</h3>
         <ul>
@@ -90,7 +95,7 @@ $faq_how_is_condition_treated                  = get_field('faq_how_is_condition
         </ul>
       </div>
       <div>
-        <img src="https://www.charliehealth.com/wp-content/uploads/2024/02/Device_Zoom02.png.webp" alt="Illustration of Charlie Health virtual <?= $conditionLabel; ?> <?= $type; ?>">
+        <img src="https://www.charliehealth.com/wp-content/uploads/2024/02/Device_Zoom02.png.webp" alt="Illustration of Charlie Health virtual <?= $condition; ?> <?= $type; ?>">
       </div>
     </div>
   </div>
@@ -128,7 +133,7 @@ echo $modified_content;
     <div class="acf-innerblocks-container">
       <div class="grid lg:grid-cols-[4fr_1fr_7fr] gap-x-base5-4 iop-overview">
         <div>
-          <h2><mark class="bg-primary-100"><?= $conditionLabel; ?></mark> symptoms, causes, and treatment options</h2>
+          <h2><mark class="bg-primary-100"><?= $condition; ?></mark> symptoms, causes, and treatment options</h2>
         </div>
         <div></div>
         <div class="mt-sp-5 lg:mt-0">
@@ -137,7 +142,7 @@ echo $modified_content;
               <div class="wrapper">
                 <div class="rounded-sm accordion-item-iop bg-primary-100 mb-base5-2 lg:mb-base5-3">
                   <div class="flex justify-between cursor-pointer accordion-header-iop py-[11px] px-sp-6">
-                    <h3 class="mb-0">Key signs of <?= strtolower($conditionLabel); ?></h3>
+                    <h3 class="mb-0">Key signs of <?= smartStrToLower($condition); ?></h3>
                     <div class="flex items-center ml-sp-5 toggle">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M1 11.0001H22.9984V13.0001H1V11.0001Z" fill="white"></path>
@@ -153,7 +158,7 @@ echo $modified_content;
                 </div>
                 <div class="rounded-sm accordion-item-iop bg-primary-100 mb-base5-2 lg:mb-base5-3">
                   <div class="flex justify-between cursor-pointer accordion-header-iop py-[11px] px-sp-6">
-                    <h3 class="mb-0">Primary causes of <?= strtolower($conditionLabel); ?></h3>
+                    <h3 class="mb-0">Primary causes of <?= smartStrToLower($condition); ?></h3>
                     <div class="flex items-center ml-sp-5 toggle">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M1 11.0001H22.9984V13.0001H1V11.0001Z" fill="white"></path>
@@ -169,7 +174,7 @@ echo $modified_content;
                 </div>
                 <div class="rounded-sm accordion-item-iop bg-primary-100 mb-base5-2 lg:mb-base5-3">
                   <div class="flex justify-between cursor-pointer accordion-header-iop py-[11px] px-sp-6">
-                    <h3 class="mb-0">Treatment options for <?= strtolower($conditionLabel); ?></h3>
+                    <h3 class="mb-0">Treatment options for <?= smartStrToLower($condition); ?></h3>
                     <div class="flex items-center ml-sp-5 toggle">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M1 11.0001H22.9984V13.0001H1V11.0001Z" fill="white"></path>
@@ -252,7 +257,7 @@ echo $modified_content;
     <div class="border-2 border-white rounded-[1rem] lg:p-sp-12 p-sp-4 grid lg:grid-cols-[4fr_8fr] gap-x-base5-4 approach-grid-js">
       <div class="grid content-between">
         <div class="order-2 lg:order-1 [&_*]:text-white">
-          <h2 class="font-heading-serif mb-sp-8">How Charlie Health treats <?= strtolower($conditionLabel); ?> in <?= $location; ?></h2>
+          <h2 class="font-heading-serif mb-sp-8">How Charlie Health treats <?= smartStrToLower($condition); ?> in <?= $location; ?></h2>
           <div></div>
         </div>
         <div class="order-1 lg:order-2 mb-sp-10 lg:mb-0">
@@ -306,7 +311,7 @@ echo $modified_content;
   <div class="container">
     <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] lg:gap-sp-12 gap-sp-8">
       <div class="grid lg:block">
-        <h2>FAQS about <?= strtolower($conditionLabel); ?> in <?= $location; ?> at Charlie Health</h2>
+        <h2>FAQS about <?= smartStrToLower($condition); ?> in <?= $location; ?> at Charlie Health</h2>
         <a href="https://www.charliehealth.com/faqs" class="ch-button button-secondary-ch" data-uw-rm-brl="PR" data-uw-original-href="https://www.charliehealth.com/faqs">See All FAQs</a>
       </div>
       <div>
@@ -315,7 +320,7 @@ echo $modified_content;
             <div class="wrapper">
               <div class="border-b-2 first:border-t-2 first:pt-sp-6 border-primary accordion-item mb-sp-6">
                 <div class="flex items-center justify-between cursor-pointer accordion-header pb-sp-6">
-                  <h3 class="mb-0 text-h4-base">What is <?= strtolower($conditionLabel); ?>?</h3>
+                  <h3 class="mb-0 text-h4-base">What is <?= smartStrToLower($condition); ?>?</h3>
                   <span class="ml-sp-4">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M1 10.9999H22.9984V12.9999H1V10.9999Z" fill="#161A3D"></path>
@@ -333,7 +338,7 @@ echo $modified_content;
               </div>
               <div class="border-b-2 first:border-t-2 first:pt-sp-6 border-primary accordion-item mb-sp-6">
                 <div class="flex items-center justify-between cursor-pointer accordion-header pb-sp-6">
-                  <h3 class="mb-0 text-h4-base">What are the common symptoms of <?= strtolower($conditionLabel); ?>?</h3>
+                  <h3 class="mb-0 text-h4-base">What are the common symptoms of <?= smartStrToLower($condition); ?>?</h3>
                   <span class="ml-sp-4">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M1 10.9999H22.9984V12.9999H1V10.9999Z" fill="#161A3D"></path>
@@ -351,7 +356,7 @@ echo $modified_content;
               </div>
               <div class="border-b-2 first:border-t-2 first:pt-sp-6 border-primary accordion-item mb-sp-6">
                 <div class="flex items-center justify-between cursor-pointer accordion-header pb-sp-6">
-                  <h3 class="mb-0 text-h4-base">How is <?= strtolower($conditionLabel); ?> treated?</h3>
+                  <h3 class="mb-0 text-h4-base">How is <?= smartStrToLower($condition); ?> treated?</h3>
                   <span class="ml-sp-4">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M1 10.9999H22.9984V12.9999H1V10.9999Z" fill="#161A3D"></path>
@@ -369,7 +374,7 @@ echo $modified_content;
               </div>
               <div class="border-b-2 first:border-t-2 first:pt-sp-6 border-primary accordion-item mb-sp-6">
                 <div class="flex items-center justify-between cursor-pointer accordion-header pb-sp-6">
-                  <h3 class="mb-0 text-h4-base">Is <?= strtolower($conditionLabel); ?> treatment available in <?= $location; ?> treated?</h3>
+                  <h3 class="mb-0 text-h4-base">Is <?= smartStrToLower($condition); ?> treatment available in <?= $location; ?> treated?</h3>
                   <span class="ml-sp-4">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M1 10.9999H22.9984V12.9999H1V10.9999Z" fill="#161A3D"></path>
@@ -387,7 +392,7 @@ echo $modified_content;
               </div>
               <div class="border-b-2 first:border-t-2 first:pt-sp-6 border-primary accordion-item mb-sp-6">
                 <div class="flex items-center justify-between cursor-pointer accordion-header pb-sp-6">
-                  <h3 class="mb-0 text-h4-base">How do I start therapy for <?= strtolower($conditionLabel); ?> at Charlie Health?</h3>
+                  <h3 class="mb-0 text-h4-base">How do I start therapy for <?= smartStrToLower($condition); ?> at Charlie Health?</h3>
                   <span class="ml-sp-4">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M1 10.9999H22.9984V12.9999H1V10.9999Z" fill="#161A3D"></path>
@@ -398,7 +403,7 @@ echo $modified_content;
                 <div class="overflow-hidden transition-all duration-500 ease-in-out accordion-content max-h-0">
                   <div class="lg:pr-sp-14 pr-sp-6 lg:mb-sp-8 mb-sp-6">
                     <div class="[&_*]:text-h5">
-                      <p>If you or a loved one are struggling with <?= strtolower($conditionLabel); ?>, Charlie Health is here to help. Charlie Health’s virtual Intensive Outpatient Program (IOP) provides mental health treatment for people dealing with serious mental health conditions, including both the emotional and physical symptoms of <?= strtolower($conditionLabel); ?>. Our expert clinicians incorporate evidence-based therapies into individual counseling, family therapy, and group sessions. With support, managing your mental health and healing from <?= strtolower($conditionLabel); ?> is possible.</p>
+                      <p>If you or a loved one are struggling with <?= smartStrToLower($condition); ?>, Charlie Health is here to help. Charlie Health’s virtual Intensive Outpatient Program (IOP) provides mental health treatment for people dealing with serious mental health conditions, including both the emotional and physical symptoms of <?= smartStrToLower($condition); ?>. Our expert clinicians incorporate evidence-based therapies into individual counseling, family therapy, and group sessions. With support, managing your mental health and healing from <?= smartStrToLower($condition); ?> is possible.</p>
                     </div>
                   </div>
                 </div>
