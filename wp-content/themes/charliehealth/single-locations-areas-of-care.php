@@ -8,10 +8,12 @@ Template Post Type: locations
 <?php get_header(); ?>
 
 <?php
-function smartStrToLower($string) {
-  return preg_replace_callback('/\b[A-Z]{2,}\b/', function ($match) {
-      return $match[0]; // Keep acronyms unchanged
-  }, strtolower($string));
+function smartStrToLower($sentence)
+{
+  return preg_replace_callback('/\b\w+\b/', function ($matches) {
+    $word = $matches[0];
+    return (preg_match('/^[A-Z]{2,}$/', $word)) ? $word : strtolower($word);
+  }, $sentence);
 }
 
 $location                                      = get_the_title();
@@ -32,6 +34,17 @@ $whatIsCondtion                                = get_field('what_is_condition');
 $faq_what_is_condition                         = get_field('faq_what_is_condition');
 $faq_what_are_the_common_symptoms_of_condition = get_field('faq_what_are_the_common_symptoms_of_condition');
 $faq_how_is_condition_treated                  = get_field('faq_how_is_condition_treated');
+
+$condition_map = [
+  'OCD' => 'obsessive-compulsive-disorder',
+  'ADHD' => 'attention-deficit-hyperactivity-disorder',
+];
+
+if (isset($condition_map[$condition])) {
+  $conditionLink = $condition_map[$condition];
+} else {
+  $conditionLink = sanitize_title($condition);
+}
 ?>
 
 <section class="section">
@@ -48,11 +61,11 @@ $faq_how_is_condition_treated                  = get_field('faq_how_is_condition
       <?php endforeach; ?>
 
       <span>/</span>
-      <span><?= $condition; ?> <?= strtolower($type); ?> in <?= $location; ?></span>
+      <span><?= smartStrToLower($condition); ?> <?= strtolower($type); ?> in <?= $location; ?></span>
     </div>
   </div>
   <div class="container-md">
-    <h1 class="text-center"><?= $condition; ?> <?= strtolower($type); ?> in <mark style="background-color:#DAC1FB"><?= $location; ?></mark></h1>
+    <h1 class="text-center"><?= smartStrToLower($condition); ?> <?= strtolower($type); ?> in <mark style="background-color:#DAC1FB"><?= $location; ?></mark> <?= smartStrToLower("This is a TEST with NASA and PHP."); ?></h1>
     <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
       <a href="/form" class="ch-button button-primary-ch" target="_self">Get Started</a>
       <a href="tel:+18664848218" class="ch-button button-secondary-ch" target="_self">1 (986) 206-0414</a>
@@ -95,7 +108,7 @@ $faq_how_is_condition_treated                  = get_field('faq_how_is_condition
         </ul>
       </div>
       <div>
-        <img src="https://www.charliehealth.com/wp-content/uploads/2024/02/Device_Zoom02.png.webp" alt="Illustration of Charlie Health virtual <?= $condition; ?> <?= $type; ?>">
+        <img src="https://www.charliehealth.com/wp-content/uploads/2024/02/Device_Zoom02.png.webp" alt="Illustration of Charlie Health virtual <?= smartStrToLower($condition); ?> <?= $type; ?>">
       </div>
     </div>
   </div>
@@ -122,7 +135,7 @@ $block_content = do_blocks('<!-- wp:block {"ref":18411} /-->');
 // Modify the block content dynamically
 $modified_content = str_replace(
   ['[condition]', '[type]', '[location]'],
-  [strtolower($conditionLabel), strtolower($type), $location],
+  [smartStrToLower($conditionLabel), strtolower($type), $location],
   $block_content
 );
 
@@ -133,7 +146,7 @@ echo $modified_content;
     <div class="acf-innerblocks-container">
       <div class="grid lg:grid-cols-[4fr_1fr_7fr] gap-x-base5-4 iop-overview">
         <div>
-          <h2><mark class="bg-primary-100"><?= $condition; ?></mark> symptoms, causes, and treatment options</h2>
+          <h2><mark class="bg-primary-100"><?= smartStrToLower($condition); ?></mark> symptoms, causes, and treatment options</h2>
         </div>
         <div></div>
         <div class="mt-sp-5 lg:mt-0">
@@ -285,7 +298,7 @@ echo $modified_content;
         <div class="relative flex flex-col items-center justify-center invisible text-center bg-white rounded-sm opacity-0 py-sp-10 px-sp-7 group ">
           <svg width="27" height="22" viewBox="0 0 27 22" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all mb-base5-2 group-hover:translate-x-[5px] duration-300">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M22.054 9.3431L14.3818 1.67092L16.0527 0L26.6686 10.6159L16.0527 21.2319L14.3818 19.561L22.2366 11.7061L2.08616e-07 11.7061L0 9.34311L22.054 9.3431Z" fill="#161A3D"></path>
-          </svg><a href="<?= get_the_permalink($condition); ?>" class="mb-0 no-underline stretched-link text-h4-base">Learn more</a>
+          </svg><a href="<?= get_the_permalink($conditionLink); ?>" class="mb-0 no-underline stretched-link text-h4-base">Learn more</a>
         </div>
       </div>
     </div>
@@ -468,7 +481,7 @@ $block_content = do_blocks('<!-- wp:block {"ref":18415} /-->');
 // Modify the block content dynamically
 $modified_content = str_replace(
   ['[condition]', '[type]', '[location]'],
-  [strtolower($conditionLabel), strtolower($type), $location],
+  [smartStrToLower($conditionLabel), strtolower($type), $location],
   $block_content
 );
 echo $modified_content;
