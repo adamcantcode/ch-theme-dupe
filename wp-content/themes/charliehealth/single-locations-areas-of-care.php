@@ -136,7 +136,7 @@ $block_content = do_blocks('<!-- wp:block {"ref":18411} /-->');
 // Modify the block content dynamically
 $modified_content = str_replace(
   ['[condition]', '[type]', '[location]'],
-  [smartStrToLower($conditionLabel), strtolower($type), $location],
+  [smartStrToLower($condition), strtolower($type), $location],
   $block_content
 );
 
@@ -482,7 +482,7 @@ $block_content = do_blocks('<!-- wp:block {"ref":18415} /-->');
 // Modify the block content dynamically
 $modified_content = str_replace(
   ['[condition]', '[type]', '[location]'],
-  [smartStrToLower($conditionLabel), strtolower($type), $location],
+  [smartStrToLower($condition), strtolower($type), $location],
   $block_content
 );
 echo $modified_content;
