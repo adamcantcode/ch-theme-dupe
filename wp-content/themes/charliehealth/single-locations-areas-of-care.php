@@ -266,7 +266,7 @@ echo $modified_content;
     });
   </script>
 </section>
-<section class="bg-primary section-horizontal">
+<section class="bg-primary section-bottom">
   <div class="container">
     <div class="border-2 border-white rounded-[1rem] lg:p-sp-12 p-sp-4 grid lg:grid-cols-[4fr_8fr] gap-x-base5-4 approach-grid-js">
       <div class="grid content-between">
