@@ -140,7 +140,10 @@ echo $modified_content;
     <div class="acf-innerblocks-container">
       <div class="grid lg:grid-cols-[4fr_1fr_7fr] gap-x-base5-4 iop-overview">
         <div>
-          <h2><mark class="bg-primary-100"><?= $condition; ?></mark> symptoms, causes, and treatment options</h2>
+          <h2>How does <mark class="bg-primary-100"><?= $condition; ?></mark> work?</h2>
+          <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-start">
+            <a href="/form" class="ch-button button-secondary-ch inverted" target="_self">Get started</a>
+          </div>
         </div>
         <div></div>
         <div class="mt-sp-5 lg:mt-0">
@@ -264,7 +267,7 @@ echo $modified_content;
     <div class="border-2 border-white rounded-[1rem] lg:p-sp-12 p-sp-4 grid lg:grid-cols-[4fr_8fr] gap-x-base5-4 approach-grid-js">
       <div class="grid content-between">
         <div class="order-2 lg:order-1 [&_*]:text-white">
-          <h2 class="font-heading-serif mb-sp-8">How Charlie Health treats <?= smartStrToLower($condition); ?> in <?= $location; ?></h2>
+          <h2 class="font-heading-serif mb-sp-8">Our unique approach to <?= smartStrToLower($condition); ?> in <?= $location; ?> at Charlie Health</h2>
           <div></div>
         </div>
         <div class="order-1 lg:order-2 mb-sp-10 lg:mb-0">
@@ -275,24 +278,40 @@ echo $modified_content;
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 gap-sp-2 grid-approach-items-js ">
         <div class="relative flex flex-col items-center justify-center invisible text-center rounded-sm opacity-0 bg-lavender-300 py-sp-10 px-sp-7 ">
-          <p class="text-primary text-h4-base">Individualized treatment plans</p>
+          <p class="text-primary text-h4-base">Available in <?= $location; ?></p>
         </div>
         <div class="relative flex flex-col items-center justify-center invisible text-center bg-orange-300 rounded-sm opacity-0 py-sp-10 px-sp-7 ">
-          <p class="text-primary text-h4-base">Evidence-based modalities</p>
+          <p class="text-primary text-h4-base">In-network with insurance</p>
         </div>
         <div class="relative flex flex-col items-center justify-center invisible text-center rounded-sm opacity-0 bg-pale-blue-200 py-sp-10 px-sp-7">
-          <p class="text-primary text-h4-base">Multidisciplinary support</p>
+          <p class="text-primary text-h4-base">Personalized treatment</p>
         </div>
         <div class="relative flex flex-col items-center justify-center invisible text-center rounded-sm opacity-0 bg-pale-blue-300 py-sp-10 px-sp-7">
-          <p class="text-primary text-h4-base">Immediate availability</p>
+          <p class="text-primary text-h4-base">Virtual access</p>
         </div>
         <div class="relative flex flex-col items-center justify-center invisible text-center bg-yellow-300 rounded-sm opacity-0 py-sp-10 px-sp-7">
-          <p class="text-primary text-h4-base">Virtual access</p>
+          <p class="text-primary text-h4-base">Flexible scheduling</p>
         </div>
         <div class="relative flex flex-col items-center justify-center invisible text-center bg-white rounded-sm opacity-0 py-sp-10 px-sp-7 group ">
           <svg width="27" height="22" viewBox="0 0 27 22" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all mb-base5-2 group-hover:translate-x-[5px] duration-300">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M22.054 9.3431L14.3818 1.67092L16.0527 0L26.6686 10.6159L16.0527 21.2319L14.3818 19.561L22.2366 11.7061L2.08616e-07 11.7061L0 9.34311L22.054 9.3431Z" fill="#161A3D"></path>
-          </svg><a href="<?= get_the_permalink(get_page_by_path($conditionLink, OBJECT, 'areas-of-care')); ?>" class="mb-0 no-underline stretched-link text-h4-base">Learn more</a>
+          </svg><a href="https://www.charliehealth.com/form" class="mb-0 no-underline stretched-link text-h4-base">Get started</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="grid lg:grid-cols-[5fr_1fr_6fr] gap-base5-4 items-center">
+      <img src="https://www.charliehealth.com/wp-content/uploads/2025/02/UPDATE_11-1.png.webp" alt="portrait of Charlie Health client named Quin">
+      <div></div>
+      <div>
+        <h2><?= smartStrToLower($condition); ?> made for you.</h2>
+        <h3>Charlie Health clients in <?= $location; ?> with [top 3 conditions], and more can start virtual intensive therapy within 24 hours. <?= smartStrToLower($condition); ?> is one of many therapies used in each personalized plan.</h3>
+        <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full">
+          <a href="/form" class="ch-button button-primary-ch" target="_self">Get Started</a>
+          <a href="tel:+19862060414" class="ch-button button-secondary-ch" target="_self">1 (986) 206-0414</a>
         </div>
       </div>
     </div>
@@ -395,7 +414,7 @@ echo $modified_content;
               </div>
               <div class="border-b-2 first:border-t-2 first:pt-sp-6 border-primary accordion-item mb-sp-6">
                 <div class="flex items-center justify-between cursor-pointer accordion-header pb-sp-6">
-                  <h3 class="mb-0 text-h4-base">What are the common symptoms of <?= smartStrToLower($condition); ?>?</h3>
+                  <h3 class="mb-0 text-h4-base">Who can benefit from <?= smartStrToLower($condition); ?>?</h3>
                   <span class="ml-sp-4">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M1 10.9999H22.9984V12.9999H1V10.9999Z" fill="#161A3D"></path>
@@ -413,7 +432,7 @@ echo $modified_content;
               </div>
               <div class="border-b-2 first:border-t-2 first:pt-sp-6 border-primary accordion-item mb-sp-6">
                 <div class="flex items-center justify-between cursor-pointer accordion-header pb-sp-6">
-                  <h3 class="mb-0 text-h4-base">How is <?= smartStrToLower($condition); ?> treated?</h3>
+                  <h3 class="mb-0 text-h4-base">How long does <?= smartStrToLower($condition); ?> take?</h3>
                   <span class="ml-sp-4">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M1 10.9999H22.9984V12.9999H1V10.9999Z" fill="#161A3D"></path>
@@ -431,7 +450,7 @@ echo $modified_content;
               </div>
               <div class="border-b-2 first:border-t-2 first:pt-sp-6 border-primary accordion-item mb-sp-6">
                 <div class="flex items-center justify-between cursor-pointer accordion-header pb-sp-6">
-                  <h3 class="mb-0 text-h4-base">Is <?= smartStrToLower($condition); ?> treatment available in <?= $location; ?> treated?</h3>
+                  <h3 class="mb-0 text-h4-base">Is <?= smartStrToLower($condition); ?> available in <?= $location; ?></h3>
                   <span class="ml-sp-4">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M1 10.9999H22.9984V12.9999H1V10.9999Z" fill="#161A3D"></path>
@@ -449,7 +468,7 @@ echo $modified_content;
               </div>
               <div class="border-b-2 first:border-t-2 first:pt-sp-6 border-primary accordion-item mb-sp-6">
                 <div class="flex items-center justify-between cursor-pointer accordion-header pb-sp-6">
-                  <h3 class="mb-0 text-h4-base">How do I start therapy for <?= smartStrToLower($condition); ?> at Charlie Health?</h3>
+                  <h3 class="mb-0 text-h4-base">How do I start therapy at Charlie Health?</h3>
                   <span class="ml-sp-4">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M1 10.9999H22.9984V12.9999H1V10.9999Z" fill="#161A3D"></path>
