@@ -172,7 +172,7 @@ $blog = get_current_blog_id();
 						<h6 class="text-white mt-base5-2 text-mini">You can unsubscribe anytime.</h6>
 					</div>
 				<?php endif; ?>
-				<div class="justify-self-end">
+				<div class="<?= !$removeNewsletter ? 'justify-self-end' : '' ; ?>">
 					<div class="flex gap-base5-1 mt-base5-2 lg:mt-0">
 						<a href="https://www.facebook.com/charliehealth" target="_blank">
 							<img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/social-logos/facebook-white.svg'); ?>" alt="Facebook logo" class="w-[42px] h-[42px] p-[10px]" />
