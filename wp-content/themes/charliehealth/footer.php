@@ -169,7 +169,7 @@ $blog = get_current_blog_id();
 							include('wp-content/themes/charliehealth/includes/newsletter-form.php');
 							?>
 						</div>
-						<h5 class="text-white mt-base5-2 text-mini">You can unsubscribe anytime.</h5>
+						<h6 class="text-white mt-base5-2 text-mini">You can unsubscribe anytime.</h6>
 					</div>
 				<?php endif; ?>
 				<div class="justify-self-end">
