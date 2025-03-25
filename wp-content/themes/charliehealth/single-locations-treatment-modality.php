@@ -67,9 +67,10 @@ if (isset($condition_map[$condition])) {
   </div>
   <div class="container-md">
     <h1 class="text-center"><?= strtolower($type); ?> in <mark style="background-color:#DAC1FB"><?= $location; ?></mark></h1>
+    <h3 class="text-center">Virtual care, delivered at home, made for you.</h3>
     <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
       <a href="/form" class="ch-button button-primary-ch" target="_self">Get Started</a>
-      <a href="tel:+18664848218" class="ch-button button-secondary-ch" target="_self">1 (986) 206-0414</a>
+      <a href="tel:+19862060414" class="ch-button button-secondary-ch" target="_self">1 (986) 206-0414</a>
     </div>
   </div>
 </section>
