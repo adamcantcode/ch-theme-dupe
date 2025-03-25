@@ -73,14 +73,14 @@ if (isset($condition_map[$condition])) {
     </div>
   </div>
 </section>
-<section class="section">
+<section class="section-bottom">
   <div class="container">
     <div class="rounded-md bg-primary grid lg:grid-cols-[2fr_6fr_4fr] lg:p-base5-10 p-base5-3 gap-base5-4 relative hover:bg-primary-200 group transition-all duration-300 mb-base5-2 lg:mb-0 [&_*]:text-white items-center">
       <div>
-        <p class="font-heading-serif text-[86px] leading-none">1.4x</p>
+        <p class="font-heading-serif text-[86px] leading-none">$statNumber</p>
       </div>
       <div>
-        <h4>Charlie Health clients who attend family therapy are 1.4 times more likely to complete treatment than those who do not.</h4>
+        <h4>$stat</h4>
       </div>
       <div class="grid">
         <div class="order-2 mb-0 ml-auto lg:order-1 mt-base5-6 lg:mt-0 lg:mb-base5-6">
@@ -89,7 +89,7 @@ if (isset($condition_map[$condition])) {
           </svg>
         </div>
         <div class="flex items-center order-1 lg:justify-end lg:order-2">
-          <p class="mb-0 "><a <?php if (!is_admin()) :; ?> href="https://www.charliehealth.com/intensive-outpatient-iop/outcomes" <?php endif; ?> class="!no-underline stretched-link text-h4-base !text-white hover:text-white">Explore our Outcomes</a></p>
+          <p class="mb-0 "><a href="https://www.charliehealth.com/form" class="!no-underline stretched-link text-h4-base !text-white hover:text-white">Get Started</a></p>
           <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-sp-4 group-hover:translate-x-[5px] transition-all duration-300">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3431 0.278417L16.7071 6.32784C17.0976 6.69906 17.0976 7.30094 16.7071 7.67216L10.3431 13.7216C9.95262 14.0928 9.31946 14.0928 8.92893 13.7216C8.53841 13.3504 8.53841 12.7485 8.92893 12.3773L13.5858 7.95058H0V6.04942H13.5858L8.92893 1.62273C8.53841 1.25151 8.53841 0.64964 8.92893 0.278417C9.31946 -0.0928058 9.95262 -0.0928058 10.3431 0.278417Z" fill="white" />
           </svg>
@@ -121,25 +121,6 @@ if (isset($condition_map[$condition])) {
     </div>
   </div>
 </section>
-<div class="section bg-grey-cool">
-  <div class="container">
-    <div class="grid items-center lg:grid-cols-2 gap-base5-10">
-      <div>
-        <h2>What is <?= smartStrToLower($condition); ?>?</h2>
-        <p><?= $completeDefinition; ?></p>
-        <h3>Common symptoms include:</h3>
-        <ul>
-          <li><?= $physicalSymptoms; ?></li>
-          <li><?= $mentalSymptoms; ?></li>
-          <li><?= $emotionalSymptoms; ?></li>
-        </ul>
-      </div>
-      <div>
-        <img src="https://www.charliehealth.com/wp-content/uploads/2024/02/Device_Zoom02.png.webp" alt="Illustration of Charlie Health virtual <?= smartStrToLower($condition); ?> <?= $type; ?>">
-      </div>
-    </div>
-  </div>
-</div>
 <?php
 // HIW Block pattern, dynamic update
 $block_content = do_blocks('<!-- wp:block {"ref":18411} /-->');
@@ -277,7 +258,7 @@ echo $modified_content;
     });
   </script>
 </section>
-<section class="bg-primary section-horizontal">
+<section class="bg-primary section-bottom">
   <div class="container">
     <div class="border-2 border-white rounded-[1rem] lg:p-sp-12 p-sp-4 grid lg:grid-cols-[4fr_8fr] gap-x-base5-4 approach-grid-js">
       <div class="grid content-between">
@@ -316,19 +297,69 @@ echo $modified_content;
     </div>
   </div>
 </section>
-<section class="bg-primary section">
+<section class="bg-grey-warm section">
   <div class="container">
-    <div class="grid lg:grid-cols-[3fr_9fr]">
-      <div>
-        <h2 class="text-lavender-300">In their words</h2>
-      </div>
-      <div>
-        <p class="text-white text-h4-base">“Having an individual therapist on top of group helped with my extra needs that I was unable to cover in group. I am confident that Charlie Health is the primary reason I have been able to make positive changes in my life and continue living every day to its fullest.”</p>
-        <p class="text-white">-Sydney C., Charlie Health Alum</p>
-        <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-start">
-          <a href="https://www.charliehealth.com/reviews" class="ch-button button-primary-ch inverted" target="_self">Read More</a>
-        </div>
-      </div>
+    <div class="grid lg:grid-cols-[4fr_5fr_3fr] gap-base5-4">
+      <h2>Meet your Care Team in <?= $location; ?></h2>
+      <h4>Our expert therapists in <?= $location; ?> will support your family’s healing journey every step of the way.</h4>
+    </div>
+  </div>
+  <div class="container">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-base5-6 lg:gap-y-base5-10 mt-base5-5">
+      <?php
+      // Get the queried object ID once
+      $queried_id = get_queried_object_id();
+
+      // Get parent and grandparent slugs efficiently
+      $parent_id = wp_get_post_parent_id($queried_id);
+      $parent_slug = $parent_id ? get_post_field('post_name', $parent_id) : '';
+      $grandparent_id = $parent_id ? wp_get_post_parent_id($parent_id) : 0;
+      $grandparent_slug = $grandparent_id ? get_post_field('post_name', $grandparent_id) : '';
+
+      // Convert slugs to lowercase once
+      $slug = str_replace('-', ' ', strtolower($parent_slug));
+      $slugGrand = str_replace('-', ' ', strtolower($grandparent_slug));
+
+      // Query care team members using get_posts()
+      $care_team_members = get_posts([
+        'post_type'      => 'care-team-member',
+        'numberposts'    => -1,
+        'order'          => 'ASC',
+      ]);
+
+      if ($care_team_members) :
+        foreach ($care_team_members as $post) :
+          setup_postdata($post);
+          $id = get_the_ID();
+          $title = get_field('title', $id);
+          $certifications = get_field('certifications', $id) ?? [];
+          $headshot = get_field('headshot', $id);
+          $states = get_field('states', $id) ?? [];
+          $show = false; // Default to false
+
+          // Check if any state label matches
+          foreach ($states as $state) {
+            $state_label = strtolower($state['label']);
+            if (str_contains($slug, $state_label) || str_contains($slugGrand, $state_label)) {
+              $show = true;
+              break;
+            }
+          }
+
+          $altText = $headshot ? ($headshot['alt'] ?? 'Headshot of ' . get_the_title($id)) : 'Headshot of ' . get_the_title($id);
+      ?>
+          <div class="rounded-md bg-white lg:p-base5-5 p-base5-2 text-center relative <?= $show ? '' : 'noshow'; ?>">
+            <img src="<?= $headshot['url'] ?? site_url('/wp-content/themes/charliehealth/resources/images/placeholder/outreach-shield.png'); ?>"
+              alt="<?= esc_attr($altText); ?>"
+              class="w-full mx-auto rounded-circle mb-sp-4">
+            <h4 class="mb-0"><a href="<?= get_the_permalink($id); ?>" class="stretched-link"><?= esc_html(get_the_title($id)); ?></a></h4>
+            <p><?= esc_html($title); ?> - <?= esc_html(implode(', ', $certifications)); ?></p>
+          </div>
+      <?php
+        endforeach;
+        wp_reset_postdata();
+      endif;
+      ?>
     </div>
   </div>
 </section>
@@ -486,18 +517,11 @@ echo $modified_content;
     </script>
   </div>
 </section>
-<?php
-// Get started block, dynamic update
-$block_content = do_blocks('<!-- wp:block {"ref":18415} /-->');
-
-// Modify the block content dynamically
-$modified_content = str_replace(
-  ['[condition]', '[type]', '[location]'],
-  [smartStrToLower($condition), strtolower($type), $location],
-  $block_content
-);
-echo $modified_content;
-?>
+<section class="section-xs-top bg-secondary-soft">
+  <div class="container">
+    <p class="text-white text-mini">*<?= $source; ?></p>
+  </div>
+</section>
 <script>
   /******/
   (() => { // webpackBootstrap
@@ -10291,9 +10315,4 @@ echo $modified_content;
   })();
   //# sourceMappingURL=index.js.map
 </script>
-<section class="section-xs-top bg-secondary-soft">
-  <div class="container">
-    <p class="text-white text-mini">*<?= $source; ?></p>
-  </div>
-</section>
 <?php get_footer(); ?>
