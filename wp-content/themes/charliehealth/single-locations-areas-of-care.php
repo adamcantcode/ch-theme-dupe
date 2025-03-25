@@ -73,6 +73,21 @@ if (isset($condition_map[$condition])) {
     </div>
   </div>
 </section>
+<section class="bg-primary section ">
+  <div class="container">
+    <div class="grid lg:grid-cols-[9fr_3fr] gap-base5-4 items-center">
+      <div>
+        <h2 class="text-white"><?= preg_replace('/^(\S+\s+\S+)/', '<mark style="background-color:#DAC1FB">$1</mark>', $statistic, 1); ?>*</h2>
+        <p class="text-white text-h2-base">We’re here to help.</p>
+      </div>
+      <div>
+        <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-end">
+          <a href="/form" class="ch-button button-secondary-ch inverted" target="_self">Get started</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="bg-gradient-to-r from-[#ADB0E1] to-[#E7D3FF] section">
   <div class="container">
     <div class="grid lg:grid-cols-2 gap-base5-10 mb-base5-10">
@@ -114,21 +129,6 @@ if (isset($condition_map[$condition])) {
     </div>
   </div>
 </div>
-<section class="bg-primary section ">
-  <div class="container">
-    <div class="grid lg:grid-cols-[9fr_3fr] gap-base5-4 items-center">
-      <div>
-        <h2 class="text-white"><?= preg_replace('/^(\S+\s+\S+)/', '<mark style="background-color:#DAC1FB">$1</mark>', $statistic, 1); ?>*</h2>
-        <p class="text-white text-h2-base">We’re here to help.</p>
-      </div>
-      <div>
-        <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-end">
-          <a href="/form" class="ch-button button-secondary-ch inverted" target="_self">Get started</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 <?php
 // HIW Block pattern, dynamic update
 $block_content = do_blocks('<!-- wp:block {"ref":18411} /-->');
