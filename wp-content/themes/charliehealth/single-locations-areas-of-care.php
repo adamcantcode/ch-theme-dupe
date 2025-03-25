@@ -305,22 +305,44 @@ echo $modified_content;
     </div>
   </div>
 </section>
-<section class="bg-primary section">
-  <div class="container">
-    <div class="grid lg:grid-cols-[3fr_9fr]">
-      <div>
-        <h2 class="text-lavender-300">In their words</h2>
-      </div>
-      <div>
-        <p class="text-white text-h4-base">“Having an individual therapist on top of group helped with my extra needs that I was unable to cover in group. I am confident that Charlie Health is the primary reason I have been able to make positive changes in my life and continue living every day to its fullest.”</p>
-        <p class="text-white">-Sydney C., Charlie Health Alum</p>
-        <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-start">
-          <a href="https://www.charliehealth.com/reviews" class="ch-button button-primary-ch inverted" target="_self">Read More</a>
+<?php
+$args = array(
+  'post_type'      => 'testimonial',
+  'posts_per_page' => 1,
+  'orderby'        => 'rand'
+);
+
+$query = new WP_Query($args);
+if ($query->have_posts()) :
+  while ($query->have_posts()) : $query->the_post();
+    $full_quote  = get_field('full_quote');
+    $attribution = get_field('attribution');
+    if ($full_quote && $attribution) :
+?>
+      <section class="bg-primary section">
+        <div class="container">
+          <div class="grid lg:grid-cols-[3fr_9fr]">
+            <div>
+              <h2 class="text-lavender-300">In their words</h2>
+            </div>
+            <div>
+
+              <p class="text-white text-h4-base">“<?= $full_quote; ?>”</p>
+              <p class="text-white">-<?= $attribution; ?>, Charlie Health Alum</p>
+
+              <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-start">
+                <a href="https://www.charliehealth.com/reviews" class="ch-button button-primary-ch inverted" target="_self">Read More</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
+<?php
+    endif;
+  endwhile;
+  wp_reset_postdata();
+endif;
+?>
 <section class="section">
   <div class="container">
     <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] lg:gap-sp-12 gap-sp-8">
