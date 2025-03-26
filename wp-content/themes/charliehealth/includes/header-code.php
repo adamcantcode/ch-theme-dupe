@@ -117,7 +117,7 @@
 
 <!-- Start VWO Async SmartCode -->
 <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
-<script data-cfasync="false" type='text/javascript' id='vwoCode'>
+<script type='text/javascript' data-cfasync="false" id='vwoCode'>
   window._vwo_code || (function() {
     var account_id = 775354,
       version = 2.1,
