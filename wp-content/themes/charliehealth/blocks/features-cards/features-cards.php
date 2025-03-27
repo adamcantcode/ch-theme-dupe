@@ -9,6 +9,8 @@ $features = get_field('features');
       'phone' => site_url('/wp-content/themes/charliehealth/resources/images/icons/phone.svg'),
       'rainbow' => site_url('/wp-content/themes/charliehealth/resources/images/icons/rainbow.svg'),
       'person' => site_url('/wp-content/themes/charliehealth/resources/images/icons/person-blue.svg'),
+      'clipboard' => site_url('/wp-content/themes/charliehealth/resources/images/icons/clipboard.svg'),
+      'alert' => site_url('/wp-content/themes/charliehealth/resources/images/icons/warning.svg'),
       'default' => site_url('/wp-content/themes/charliehealth/resources/images/icons/warning.svg')
     ];
 

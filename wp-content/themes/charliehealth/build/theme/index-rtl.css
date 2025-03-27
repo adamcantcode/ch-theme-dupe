@@ -7619,11 +7619,6 @@ section.bg-shield > div {
   font-weight: 500;
 }
 
-.\[\&_\*\]\:\!text-primary *{
-  --tw-text-opacity: 1 !important;
-  color: rgb(22 26 61 / var(--tw-text-opacity, 1)) !important;
-}
-
 .\[\&_\*\]\:\!text-white *{
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1)) !important;
