@@ -14,7 +14,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="#212984">
   <!-- CUSTOM HEADER CODE -->
   <?php
-  if (wp_get_environment_type() === 'production' || wp_get_environment_type() === 'local' || wp_get_environment_type() === 'staging') {
+  if (wp_get_environment_type() === 'production') {
     include('wp-content/themes/charliehealth/includes/header-code.php');
   }
   ?>
@@ -412,11 +412,43 @@
         }
       }
 
+      function wrapCallout() {
+        const topLevel = document.querySelector('.topLevelNavItem');
+        if (!topLevel) return;
+
+        const secondLevel = topLevel.querySelector('.secondLevelNav');
+        if (!secondLevel) return;
+
+        const allLinks = Array.from(secondLevel.querySelectorAll('a'));
+        const nonIndentedLinks = allLinks.filter(a => !a.classList.contains('ml-base5-3'));
+
+        if (nonIndentedLinks.length < 2) return;
+
+        const first = nonIndentedLinks[0];
+        const second = nonIndentedLinks[1];
+
+        const wrapper = document.createElement('div');
+        wrapper.className = 'bg-primary-100 flex flex-col max-h-[70vh] overflow-y-auto px-base5-4 py-base5-2 rounded-md mb-base5-2';
+
+        // Insert wrapper before the first element
+        first.parentNode.insertBefore(wrapper, first);
+
+        // Move all nodes from first to second (inclusive) into wrapper
+        let node = first;
+        while (node) {
+          const next = node.nextSibling;
+          wrapper.appendChild(node);
+          if (node === second) break;
+          node = next;
+        }
+      }
+
       // Initial setup
       checkBannerVisibility();
       setHeaderMargin();
       setMainMargin();
       setPanelHeight();
+      wrapCallout();
 
       // Recalculate on load and resize
       window.addEventListener('load', () => {
