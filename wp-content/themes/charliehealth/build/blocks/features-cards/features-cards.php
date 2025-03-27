@@ -22,7 +22,7 @@ $features = get_field('features');
         <h3><?= get_sub_field('heading'); ?></h3>
         <p><?= get_sub_field('subheading'); ?></p>
         <?php if (get_sub_field('link')) : ?>
-          <a href="<?= $link['url']; ?>" class="ch-button button-primary-ch"><?= get_sub_field('link')['title']; ?></a>
+          <a href="<?= get_sub_field('link')['url']; ?>" class="ch-button button-primary-ch"><?= get_sub_field('link')['title']; ?></a>
         <?php endif; ?>
       </div>
     <?php endwhile; ?>
