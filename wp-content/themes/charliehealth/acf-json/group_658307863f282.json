@@ -105,7 +105,8 @@
                         "rainbow": "Rainbow",
                         "phone": "Phone",
                         "alert": "Alert",
-                        "clipboard": "Clipboard"
+                        "clipboard": "Clipboard",
+                        "sun": "Sun"
                     },
                     "default_value": "person",
                     "return_format": "value",
@@ -196,5 +197,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1743087695
+    "modified": 1743117374
 }
