@@ -16,35 +16,27 @@ function smartStrToLower($sentence)
   }, $sentence);
 }
 
-$location                                      = get_the_title();
-$condition                                     = get_field('area_of_care');
-$type                                          = get_field('type');
-$definition                                    = get_field('definition');
-$importance                                    = get_field('importance');
-$statistic                                     = get_field('statistic');
-$source                                     = get_field('source');
-$completeDefinition                            = get_field('complete_definition');
-$physicalSymptoms                              = get_field('physical_symptoms');
-$mentalSymptoms                                = get_field('mental_symptoms');
-$emotionalSymptoms                             = get_field('emotional_symptoms');
-$keySymptoms                                   = get_field('key_symptoms');
-$causes                                        = get_field('causes');
-$treatment                                     = get_field('treatment');
-$whatIsCondtion                                = get_field('what_is_condition');
-$faq_what_is_condition                         = get_field('faq_what_is_condition');
-$faq_what_are_the_common_symptoms_of_condition = get_field('faq_what_are_the_common_symptoms_of_condition');
-$faq_how_is_condition_treated                  = get_field('faq_how_is_condition_treated');
+$location             = get_the_title();
+$condition            = get_field('treatment_modality');
+$statistic_number     = get_field('statistic_number');
+$statistic            = get_field('statistic');
+$source               = get_field('source');
+$definition           = get_field('brief_definition');
+$keyTechniques        = get_field('key_techniques');
+$primaryGoals         = get_field('primary_goals');
+$keyBenefits          = get_field('key_benefits');
+$faq_brief_definition = get_field('faq_brief_definition');
+$faq_ideal_candidats  = get_field('faq_ideal_candidats');
+$faq_timeline         = get_field('faq_timeline');
 
-$condition_map = [
-  'OCD' => 'obsessive-compulsive-disorder',
-  'ADHD' => 'attention-deficit-hyperactivity-disorder',
-];
+// $condition_map = [
+//   'OCD' => 'obsessive-compulsive-disorder',
+//   'ADHD' => 'attention-deficit-hyperactivity-disorder',
+// ];
 
-if (isset($condition_map[$condition])) {
-  $conditionLink = $condition_map[$condition];
-} else {
-  $conditionLink = sanitize_title($condition);
-}
+
+$conditionLink = sanitize_title($condition);
+
 
 ?>
 
@@ -62,11 +54,11 @@ if (isset($condition_map[$condition])) {
       <?php endforeach; ?>
 
       <span>/</span>
-      <span><?= strtolower($type); ?> in <?= $location; ?></span>
+      <span><?= $condition; ?> in <?= $location; ?></span>
     </div>
   </div>
   <div class="container-md">
-    <h1 class="text-center"><?= strtolower($type); ?> in <mark style="background-color:#DAC1FB"><?= $location; ?></mark></h1>
+    <h1 class="text-center"><?= $condition; ?> in <mark style="background-color:#DAC1FB"><?= $location; ?></mark></h1>
     <h3 class="text-center">Virtual care, delivered at home, made for you.</h3>
     <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
       <a href="/form" class="ch-button button-primary-ch" target="_self">Get Started</a>
@@ -81,7 +73,7 @@ if (isset($condition_map[$condition])) {
         <p class="font-heading-serif text-[86px] leading-none">$statNumber</p>
       </div>
       <div>
-        <h4>$stat</h4>
+        <h4>$statistic</h4>
       </div>
       <div class="grid">
         <div class="order-2 mb-0 ml-auto lg:order-1 mt-base5-6 lg:mt-0 lg:mb-base5-6">
@@ -113,7 +105,7 @@ if (isset($condition_map[$condition])) {
         <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="none" viewBox="0 0 45 45">
           <path stroke="#161A3D" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M33.75 39.375h-22.5c-1.2426 0-2.25-1.0074-2.25-2.25v-.7517c0-3.2696 2.0285-6.1961 5.0901-7.3435 5.4224-2.0324 11.3974-2.0324 16.8198 0C33.9715 30.1772 36 33.1037 36 36.3733v.7517c0 1.2426-1.0074 2.25-2.25 2.25ZM19.0696 21.8629c2.1532 1.106 4.7076 1.106 6.8608 0 2.004-1.0294 3.4397-2.9043 3.9111-5.1073l.1258-.5879c.4821-2.2528-.0328-4.604-1.4123-6.44918l-.202-.2702c-1.3797-1.84539-3.5489-2.93204-5.853-2.93204-2.3041 0-4.4733 1.08665-5.853 2.93205l-.202.27019c-1.3795 1.84518-1.8944 4.19638-1.4123 6.44918l.1258.5879c.4714 2.203 1.9071 4.0779 3.9111 5.1073Z" />
         </svg>
-        <p class="text-h4-base"><?= $importance; ?></p>
+        <p class="text-h4-base"><?= ucfirst(smartStrToLower($condition)); ?> is just one element of Charlie Health’s comprehensive treatment program offered virtually in <?= ($location); ?>. Fill in with another sentence about the program, boilerplate, mention serious mental health .</p>
       </div>
     </div>
     <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
@@ -128,8 +120,8 @@ $block_content = do_blocks('<!-- wp:block {"ref":18411} /-->');
 
 // Modify the block content dynamically
 $modified_content = str_replace(
-  ['[condition]', '[type]', '[location]'],
-  [smartStrToLower($condition), strtolower($type), $location],
+  ['[condition]', '[location]'],
+  [smartStrToLower($condition), $location],
   $block_content
 );
 
@@ -140,7 +132,7 @@ echo $modified_content;
     <div class="acf-innerblocks-container">
       <div class="grid lg:grid-cols-[4fr_1fr_7fr] gap-x-base5-4 iop-overview">
         <div>
-          <h2>How does <mark class="bg-primary-100"><?= $condition; ?></mark> work?</h2>
+          <h2>How does <mark class="bg-primary-100"><?= smartStrToLower($condition); ?></mark> work?</h2>
           <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-start">
             <a href="/form" class="ch-button button-secondary-ch inverted" target="_self">Get started</a>
           </div>
@@ -152,7 +144,7 @@ echo $modified_content;
               <div class="wrapper">
                 <div class="rounded-sm accordion-item-iop bg-primary-100 mb-base5-2 lg:mb-base5-3">
                   <div class="flex justify-between cursor-pointer accordion-header-iop py-[11px] px-sp-6">
-                    <h3 class="mb-0">Key signs of <?= smartStrToLower($condition); ?></h3>
+                    <h3 class="mb-0">Key techniques of <?= smartStrToLower($condition); ?></h3>
                     <div class="flex items-center ml-sp-5 toggle">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M1 11.0001H22.9984V13.0001H1V11.0001Z" fill="white"></path>
@@ -162,13 +154,13 @@ echo $modified_content;
                   </div>
                   <div class="overflow-hidden transition-all duration-500 ease-in-out accordion-content max-h-0" style="">
                     <div class="px-base5-5 pb-base5-2">
-                      <p><?= $keySymptoms; ?></p>
+                      <p><?= $keyTechniques; ?></p>
                     </div>
                   </div>
                 </div>
                 <div class="rounded-sm accordion-item-iop bg-primary-100 mb-base5-2 lg:mb-base5-3">
                   <div class="flex justify-between cursor-pointer accordion-header-iop py-[11px] px-sp-6">
-                    <h3 class="mb-0">Primary causes of <?= smartStrToLower($condition); ?></h3>
+                    <h3 class="mb-0">Primary goals of <?= smartStrToLower($condition); ?></h3>
                     <div class="flex items-center ml-sp-5 toggle">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M1 11.0001H22.9984V13.0001H1V11.0001Z" fill="white"></path>
@@ -178,13 +170,13 @@ echo $modified_content;
                   </div>
                   <div class="overflow-hidden transition-all duration-500 ease-in-out accordion-content max-h-0">
                     <div class="px-base5-5 pb-base5-2">
-                      <p><?= $causes; ?></p>
+                      <p><?= $primaryGoals; ?></p>
                     </div>
                   </div>
                 </div>
                 <div class="rounded-sm accordion-item-iop bg-primary-100 mb-base5-2 lg:mb-base5-3">
                   <div class="flex justify-between cursor-pointer accordion-header-iop py-[11px] px-sp-6">
-                    <h3 class="mb-0">Treatment options for <?= smartStrToLower($condition); ?></h3>
+                    <h3 class="mb-0">Key benefits of <?= smartStrToLower($condition); ?></h3>
                     <div class="flex items-center ml-sp-5 toggle">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M1 11.0001H22.9984V13.0001H1V11.0001Z" fill="white"></path>
@@ -194,15 +186,7 @@ echo $modified_content;
                   </div>
                   <div class="overflow-hidden transition-all duration-500 ease-in-out accordion-content max-h-0">
                     <div class="px-base5-5 pb-base5-2">
-                      <p><?= $treatment; ?></p>
-                      <p>
-                        <a href="https://www.charliehealth.com/intensive-outpatient-iop" class="no-underline hover:text-white">Learn More<span class="inline-block align-middle ml-sp-2">
-                            <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3431 0.278417L16.7071 6.32784C17.0976 6.69906 17.0976 7.30094 16.7071 7.67216L10.3431 13.7216C9.95262 14.0928 9.31946 14.0928 8.92893 13.7216C8.53841 13.3504 8.53841 12.7485 8.92893 12.3773L13.5858 7.95058H0V6.04942H13.5858L8.92893 1.62273C8.53841 1.25151 8.53841 0.64964 8.92893 0.278417C9.31946 -0.0928058 9.95262 -0.0928058 10.3431 0.278417Z" fill="white"></path>
-                            </svg>
-                          </span>
-                        </a>
-                      </p>
+                      <p><?= $keyBenefits; ?></p>
                     </div>
                   </div>
                 </div>
@@ -307,7 +291,7 @@ echo $modified_content;
       <img src="https://www.charliehealth.com/wp-content/uploads/2025/02/UPDATE_11-1.png.webp" alt="portrait of Charlie Health client named Quin">
       <div></div>
       <div>
-        <h2><?= smartStrToLower($condition); ?> made for you.</h2>
+        <h2><?= ucfirst(smartStrToLower($condition)); ?> made for you.</h2>
         <h3>Charlie Health clients in <?= $location; ?> with [top 3 conditions], and more can start virtual intensive therapy within 24 hours. <?= smartStrToLower($condition); ?> is one of many therapies used in each personalized plan.</h3>
         <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full">
           <a href="/form" class="ch-button button-primary-ch" target="_self">Get Started</a>
@@ -407,7 +391,7 @@ echo $modified_content;
                 <div class="overflow-hidden transition-all duration-500 ease-in-out accordion-content max-h-0">
                   <div class="lg:pr-sp-14 pr-sp-6 lg:mb-sp-8 mb-sp-6">
                     <div class="[&_*]:text-h5">
-                      <p><?= $faq_what_is_condition; ?></p>
+                      <p><?= $faq_brief_definition; ?></p>
                     </div>
                   </div>
                 </div>
@@ -425,7 +409,7 @@ echo $modified_content;
                 <div class="overflow-hidden transition-all duration-500 ease-in-out accordion-content max-h-0">
                   <div class="lg:pr-sp-14 pr-sp-6 lg:mb-sp-8 mb-sp-6">
                     <div class="[&_*]:text-h5">
-                      <p><?= $faq_what_are_the_common_symptoms_of_condition; ?></p>
+                      <p><?= $faq_ideal_candidats; ?></p>
                     </div>
                   </div>
                 </div>
@@ -443,7 +427,7 @@ echo $modified_content;
                 <div class="overflow-hidden transition-all duration-500 ease-in-out accordion-content max-h-0">
                   <div class="lg:pr-sp-14 pr-sp-6 lg:mb-sp-8 mb-sp-6">
                     <div class="[&_*]:text-h5">
-                      <p><?= $faq_how_is_condition_treated; ?></p>
+                      <p><?= $faq_timeline; ?></p>
                     </div>
                   </div>
                 </div>

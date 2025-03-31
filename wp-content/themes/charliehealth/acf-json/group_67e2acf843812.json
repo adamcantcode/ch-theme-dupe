@@ -144,8 +144,8 @@
         },
         {
             "key": "field_67e2ae7d14349",
-            "label": "Complete Definition",
-            "name": "complete_definition",
+            "label": "FAQ Brief Definition",
+            "name": "faq_brief_definition",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -164,8 +164,8 @@
         },
         {
             "key": "field_67e2aea11434a",
-            "label": "Ideal Candidates",
-            "name": "ideal_candidats",
+            "label": "FAQ Ideal Candidates",
+            "name": "faq_ideal_candidats",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -184,28 +184,8 @@
         },
         {
             "key": "field_67e2aea91434b",
-            "label": "Timeline",
-            "name": "timeline",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_67e2aebd1434c",
-            "label": "Steps",
-            "name": "steps",
+            "label": "FAQ Timeline",
+            "name": "faq_timeline",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -241,5 +221,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1742909276
+    "modified": 1743456271
 }
