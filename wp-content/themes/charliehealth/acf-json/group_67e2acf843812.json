@@ -23,6 +23,46 @@
             "append": ""
         },
         {
+            "key": "field_67e2ae1414347",
+            "label": "Statistic",
+            "name": "statistic",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_67eb0b1a8b3b3",
+            "label": "Source",
+            "name": "source",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_67e2adbd14343",
             "label": "Brief Definition",
             "name": "brief_definition",
@@ -86,26 +126,6 @@
             "key": "field_67e2ae0514346",
             "label": "Key Benefits",
             "name": "key_benefits",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_67e2ae1414347",
-            "label": "Statistic",
-            "name": "statistic",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -221,5 +241,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1743456271
+    "modified": 1743457079
 }

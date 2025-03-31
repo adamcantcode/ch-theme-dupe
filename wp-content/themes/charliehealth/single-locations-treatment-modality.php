@@ -33,11 +33,6 @@ $faq_timeline         = get_field('faq_timeline');
 //   'OCD' => 'obsessive-compulsive-disorder',
 //   'ADHD' => 'attention-deficit-hyperactivity-disorder',
 // ];
-
-
-$conditionLink = sanitize_title($condition);
-
-
 ?>
 
 <section class="section">
@@ -105,7 +100,7 @@ $conditionLink = sanitize_title($condition);
         <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="none" viewBox="0 0 45 45">
           <path stroke="#161A3D" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M33.75 39.375h-22.5c-1.2426 0-2.25-1.0074-2.25-2.25v-.7517c0-3.2696 2.0285-6.1961 5.0901-7.3435 5.4224-2.0324 11.3974-2.0324 16.8198 0C33.9715 30.1772 36 33.1037 36 36.3733v.7517c0 1.2426-1.0074 2.25-2.25 2.25ZM19.0696 21.8629c2.1532 1.106 4.7076 1.106 6.8608 0 2.004-1.0294 3.4397-2.9043 3.9111-5.1073l.1258-.5879c.4821-2.2528-.0328-4.604-1.4123-6.44918l-.202-.2702c-1.3797-1.84539-3.5489-2.93204-5.853-2.93204-2.3041 0-4.4733 1.08665-5.853 2.93205l-.202.27019c-1.3795 1.84518-1.8944 4.19638-1.4123 6.44918l.1258.5879c.4714 2.203 1.9071 4.0779 3.9111 5.1073Z" />
         </svg>
-        <p class="text-h4-base"><?= ucfirst(smartStrToLower($condition)); ?> is just one element of Charlie Health’s comprehensive treatment program offered virtually in <?= ($location); ?>. Fill in with another sentence about the program, boilerplate, mention serious mental health .</p>
+        <p class="text-h4-base"><?= ucfirst(smartStrToLower($condition)); ?> is just one element of Charlie Health’s comprehensive treatment program offered virtually in <?= ($location); ?>. We provide personalized intensive therapy designed for people struggling with serious mental health conditions, combining expert care with peer connection to foster long-term healing.</p>
       </div>
     </div>
     <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
