@@ -45,7 +45,7 @@ Template Post Type: page
             <div class="flex justify-center rounded-sm lg:px-sp-14 lg:pt-sp-14 pb-sp-6 px-sp-6">
               <div class="flex flex-col items-center justify-center text-center max-w-[700px]">
                 <img src="<?= site_url('/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg'); ?>" alt="Charlie Health shield logo" class="w-[3rem] mb-sp-5">
-                <h2>Let’s build the solution to the youth mental health crisis together</h2>
+                <h2>Let’s build the solution to the mental health and substance use crisis together</h2>
                 <div class="flex gap-x-sp-4 items-center md:w-[unset] w-full">
                   <a href="<?= $link['url']; ?>" class="ch-button button-primary-ch"><?= $link['title']; ?></a>
                 </div>
