@@ -24,6 +24,7 @@ $features = get_field('features');
           'person' => site_url('/wp-content/themes/charliehealth/resources/images/icons/person-blue.svg'),
           'clipboard' => site_url('/wp-content/themes/charliehealth/resources/images/icons/clipboard.svg'),
           'alert' => site_url('/wp-content/themes/charliehealth/resources/images/icons/warning.svg'),
+          'sun' => site_url('/wp-content/themes/charliehealth/resources/images/icons/sun.svg'),
           'default' => site_url('/wp-content/themes/charliehealth/resources/images/icons/warning.svg')
         ];
 
