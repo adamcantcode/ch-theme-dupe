@@ -6,6 +6,7 @@
       $image    = get_sub_field('image');
       $headline = get_sub_field('headline');
       $subhead  = get_sub_field('subhead');
+      $link     = get_sub_field('link');
       $bg       = 'transparent';
 
       switch (get_row_index()) {
@@ -28,12 +29,18 @@
           <img src="<?= site_url("/wp-content/themes/charliehealth/resources/images/icons/$icon"); ?>" alt="icon" class="mb-base5-5 w-base5-8">
           <h3 class="font-heading-serif"><?= $headline; ?></h3>
           <p><?= $subhead; ?></p>
+          <?php if (get_sub_field('link')) : ?>
+            <a href="<?= get_sub_field('link')['url']; ?>" class="mt-auto ch-button button-primary-ch"><?= get_sub_field('link')['title']; ?></a>
+          <?php endif; ?>
         </div>
       <?php else: ?>
         <div class="<?= $bg; ?> rounded-sm p-base5-4 flex flex-col border border-primary text-center referrals-feature-card <?= !is_admin() ? 'opacity-0' : ''; ?>">
           <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="w-full mb-base5-2">
           <h3 class="font-heading-serif mb-base5-2"><?= $headline; ?></h3>
           <p><?= $subhead; ?></p>
+          <?php if (get_sub_field('link')) : ?>
+            <a href="<?= get_sub_field('link')['url']; ?>" class="mt-auto ch-button button-primary-ch"><?= get_sub_field('link')['title']; ?></a>
+          <?php endif; ?>
         </div>
       <?php endif; ?>
     <?php endwhile; ?>

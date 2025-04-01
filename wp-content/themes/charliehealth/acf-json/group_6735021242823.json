@@ -123,6 +123,23 @@
                     "prepend": "",
                     "append": "",
                     "parent_repeater": "field_67350242563b6"
+                },
+                {
+                    "key": "field_67eb680811aee",
+                    "label": "Link",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "parent_repeater": "field_67350242563b6"
                 }
             ]
         }
@@ -145,5 +162,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1734971031
+    "modified": 1743480854
 }
