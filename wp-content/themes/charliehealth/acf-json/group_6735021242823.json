@@ -72,7 +72,7 @@
                         "warning.svg": "Warning",
                         "clipboard.svg": "Clipboard",
                         "rainbow.svg": "Rainbow",
-                        "sun.svg: Sun": "sun.svg: Sun"
+                        "sun.svg": "Sun"
                     },
                     "default_value": "check.svg",
                     "return_format": "value",
@@ -163,5 +163,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1743481315
+    "modified": 1743481559
 }
