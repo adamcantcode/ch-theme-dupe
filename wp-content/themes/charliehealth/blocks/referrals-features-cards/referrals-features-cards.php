@@ -25,21 +25,21 @@
       }
       ?>
       <?php if (!$image) : ?>
-        <div class="<?= $bg; ?> rounded-sm p-base5-4 flex flex-col border border-primary referrals-feature-card <?= !is_admin() ? 'opacity-0' : ''; ?>">
+        <div class="<?= $bg; ?> relative rounded-sm p-base5-4 flex flex-col border border-primary referrals-feature-card <?= !is_admin() ? 'opacity-0' : ''; ?>">
           <img src="<?= site_url("/wp-content/themes/charliehealth/resources/images/icons/$icon"); ?>" alt="icon" class="mb-base5-5 w-base5-8">
           <h3 class="font-heading-serif"><?= $headline; ?></h3>
           <p><?= $subhead; ?></p>
           <?php if (get_sub_field('link')) : ?>
-            <a href="<?= get_sub_field('link')['url']; ?>" class="mt-auto ch-button button-primary-ch"><?= get_sub_field('link')['title']; ?></a>
+            <a href="<?= get_sub_field('link')['url']; ?>" class="mt-auto ch-button button-primary-ch stretched-link"><?= get_sub_field('link')['title']; ?></a>
           <?php endif; ?>
         </div>
       <?php else: ?>
-        <div class="<?= $bg; ?> rounded-sm p-base5-4 flex flex-col border border-primary text-center referrals-feature-card <?= !is_admin() ? 'opacity-0' : ''; ?>">
+        <div class="<?= $bg; ?> relative rounded-sm p-base5-4 flex flex-col border border-primary text-center referrals-feature-card <?= !is_admin() ? 'opacity-0' : ''; ?>">
           <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="w-full mb-base5-2">
           <h3 class="font-heading-serif mb-base5-2"><?= $headline; ?></h3>
           <p><?= $subhead; ?></p>
           <?php if (get_sub_field('link')) : ?>
-            <a href="<?= get_sub_field('link')['url']; ?>" class="mt-auto ch-button button-primary-ch"><?= get_sub_field('link')['title']; ?></a>
+            <a href="<?= get_sub_field('link')['url']; ?>" class="mt-auto ch-button button-primary-ch stretched-link"><?= get_sub_field('link')['title']; ?></a>
           <?php endif; ?>
         </div>
       <?php endif; ?>
