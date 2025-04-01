@@ -2,7 +2,7 @@
 $style = get_field('style');
 ?>
 <?php if (have_rows('cards')): ?>
-  <div class="grid lg:auto-cols-fr lg:grid-flow-col lg:gap-base5-5 gap-base5-3 lg:mt-base5-6 mt-base5-9">
+  <div class="grid lg:grid-cols-3 gap-base5-4" style="grid-auto-rows: minmax(0, 1fr);">
     <?php while (have_rows('cards')): the_row(); ?>
       <?php
       $headline = get_sub_field('headline');
