@@ -53,4 +53,5 @@
 // $icon = site_url('/wp-content/themes/charliehealth/resources/images/icons/warning.svg');
 // $icon = site_url('/wp-content/themes/charliehealth/resources/images/icons/clipboard.svg');
 // $icon = site_url('/wp-content/themes/charliehealth/resources/images/icons/rainbow.svg');
+// $icon = site_url('/wp-content/themes/charliehealth/resources/images/icons/sun.svg');
 ?>

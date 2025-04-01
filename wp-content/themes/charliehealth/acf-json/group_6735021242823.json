@@ -71,7 +71,8 @@
                         "chat.svg": "Chat",
                         "warning.svg": "Warning",
                         "clipboard.svg": "Clipboard",
-                        "rainbow.svg": "Rainbow"
+                        "rainbow.svg": "Rainbow",
+                        "sun.svg: Sun": "sun.svg: Sun"
                     },
                     "default_value": "check.svg",
                     "return_format": "value",
@@ -162,5 +163,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1743480854
+    "modified": 1743481199
 }
