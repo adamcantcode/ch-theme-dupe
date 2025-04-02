@@ -77,8 +77,7 @@ if (isset($condition_map[$condition])) {
   <div class="container">
     <div class="grid lg:grid-cols-[9fr_3fr] gap-base5-4 items-center">
       <div>
-        <h2 class="text-white"><?= preg_replace('/(\b\d{1,3}(?:,\d{3})*\b|\b\d+\s+in\s+\d+\b|\b\d+%?\b)/', '<mark style="background-color:#DAC1FB">$1</mark>', $statistic); ?>
-        </h2>
+        <h2 class="text-white"><?= preg_replace('/(\b\d+(?:,\d+)*\.?\d*\s*(?:million|billion|thousand|x|times)?\b|\b\d+\s+in\s+\d+\b|\b\d+%?\b)/i', '<mark style="background-color:#DAC1FB">$1</mark>', $statistic); ?>*</h2>
         <p class="text-white text-h2-base">We’re here to help.</p>
       </div>
       <div>
