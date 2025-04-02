@@ -348,11 +348,9 @@ $subhead = get_field('subhead', 'option');
   </script>
 
 </div>
-<?php //if (get_field('show_mobile_sticky_button')) : 
-?>
-<div id="stickyCTA">
-  <div class="sticky-cta-js border-t border-lavender-300 px-base5-4 py-base5-2 fixed bottom-[-100%] w-full opacity-0 invisible transition-all duration-500 z-50 lg:noshow bg-primary">
-    <h4 class="mb-base5-1 text-lavender-300">Personalized intensive therapy from home.</h4>
+<div id="stickyMobileCTA" class="noshow">
+  <div class="sticky-cta-js border-t border-lavender-300 px-base5-4 pt-base5-2 pb-base5-6 fixed bottom-[-100%] w-full opacity-0 invisible transition-all duration-500 z-50 lg:noshow bg-primary">
+    <h4 class="mb-base5-2 text-lavender-300">Personalized intensive therapy from home.</h4>
     <div class="flex gap-base5-3 items-stretch lg:w-[unset] w-full">
       <a href="tel:+19862060414" class="w-full ch-button button-tertiary-lavender inverted text-h6-base" target="_self">1 (986) 206-0414</a>
       <a href="/form" class="ch-button button-tertiary-lavender text-h6-base">Get Started</a>
@@ -382,6 +380,4 @@ $subhead = get_field('subhead', 'option');
     });
   });
 </script>
-<?php //endif; 
-?>
 <?php get_footer(); ?>
