@@ -612,10 +612,7 @@
 
       // Dynamically include all parameters starting with the configured prefix
       Object.keys(allUrlParams).forEach((param) => {
-        if (
-          param.startsWith(config.dynamicPrefix) &&
-          existingData[param] !== allUrlParams[param]
-        ) {
+        if (param.startsWith(config.dynamicPrefix) && existingData[param] !== allUrlParams[param]) {
           existingData[param] = allUrlParams[param];
           dataUpdated = true;
         }
@@ -627,14 +624,24 @@
         dataUpdated = true;
       }
 
-      // Track user journey (array of visited URLs)
+      // Initialize user_journey array if not already set
       if (!Array.isArray(existingData.user_journey)) {
         existingData.user_journey = [];
       }
 
       let currentUrl = window.location.href;
-      if (existingData.user_journey[existingData.user_journey.length - 1] !== currentUrl) {
+
+      // Prevent duplicate consecutive entries
+      if (existingData.user_journey.length === 0 || existingData.user_journey[existingData.user_journey.length - 1] !== currentUrl) {
         existingData.user_journey.push(currentUrl);
+        dataUpdated = true;
+      }
+
+      // Enforce limit of 10 pages, then add "x more pages"
+      if (existingData.user_journey.length > 10) {
+        let excessCount = existingData.user_journey.length - 10;
+        existingData.user_journey = existingData.user_journey.slice(0, 10);
+        existingData.user_journey.push(`${excessCount} more pages`);
         dataUpdated = true;
       }
 
