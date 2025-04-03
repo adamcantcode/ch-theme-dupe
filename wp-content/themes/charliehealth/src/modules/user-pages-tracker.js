@@ -6,10 +6,12 @@ export default function userPagesTracker() {
 
     let currentUrl = new URL(window.location.href);
 
+    // Remove 'user_journey' parameter from URL if it exists
     if (currentUrl.searchParams.has('user_journey')) {
       currentUrl.search = '';
     }
 
+    // Add the current URL to the user_journey array if not already the last entry
     if (
       user_journey.length === 0 ||
       user_journey[user_journey.length - 1] !== currentUrl.href
@@ -17,14 +19,24 @@ export default function userPagesTracker() {
       user_journey.push(currentUrl.href);
     }
 
+    // Check if user_journey length exceeds the limit (10 in this case)
     if (user_journey.length > 10) {
       let excessCount = user_journey.length - 10;
+
+      // Remove excess pages
       user_journey = user_journey.slice(0, 10);
-      user_journey.push(`${excessCount + prior_count} more pages`);
+
+      // Add dynamic "X more pages" messages
+      for (let i = 1; i <= excessCount; i++) {
+        user_journey.push(`${i + prior_count} more page${i > 1 ? 's' : ''}`);
+      }
+
+      // Update the prior_count to reflect how many pages were added
       prior_count += excessCount;
       sessionStorage.setItem('prior_count', prior_count);
     }
 
+    // Store the updated user_journey in sessionStorage
     sessionStorage.setItem('user_journey_', JSON.stringify(user_journey));
   };
 

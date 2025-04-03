@@ -637,11 +637,25 @@
         dataUpdated = true;
       }
 
-      // Enforce limit of 10 pages, then add "x more pages"
-      if (existingData.user_journey.length > 10) {
-        let excessCount = existingData.user_journey.length - 10;
-        existingData.user_journey = existingData.user_journey.slice(0, 10);
-        existingData.user_journey.push(`${excessCount} more pages`);
+      // Convert user_journey to a JSON string and check its character length
+      const userJourneyJson = JSON.stringify(existingData.user_journey);
+
+      // If the character count exceeds 131,072, modify the user_journey
+      if (userJourneyJson.length > 131072) {
+        // Start counting how many pages exceed the limit
+        let excessPagesCount = 0;
+        while (userJourneyJson.length > 131072) {
+          existingData.user_journey.pop(); // Remove the last entry
+          excessPagesCount++; // Count the excess pages
+          const newUserJourneyJson = JSON.stringify(existingData.user_journey);
+          if (newUserJourneyJson.length <= 131072) break; // If we are below the limit, stop
+        }
+
+        // Add "X more pages" dynamically for each excess page
+        for (let i = 1; i <= excessPagesCount; i++) {
+          existingData.user_journey.push(`${i} more page${i > 1 ? 's' : ''}`);
+        }
+
         dataUpdated = true;
       }
 
