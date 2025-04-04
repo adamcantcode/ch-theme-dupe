@@ -187,7 +187,7 @@
             </div>
         <?php endwhile;
         endif; ?>
-        <div class="relative topLevelNavItem">
+        <div class="relative topLevelNavItem noshow">
           <a href="https://referrals.charliehealth.com/referral-form" target="_blank" class="flex items-center text-white no-underline px-sp-3 py-sp-6 font-heading hover:text-lavender-200 text-nav-normal ml-sp-4">
             Refer a Client
             <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 36 36" style="height:20px;width:20px;margin-left:10px">
@@ -300,7 +300,7 @@
             </div>
         <?php endwhile;
         endif; ?>
-        <div class="">
+        <div class="noshow">
           <div class="relative flex items-center justify-between w-full px-sp-5 dropdown-item-js">
             <a href="https://referrals.charliehealth.com/referral-form" target="_blank" class="w-full leading-snug text-white no-underline py-sp-4 font-heading text-[1.25rem] dropdown-select-js"> Refer a Client</a>
             <div class="relative">
