@@ -349,7 +349,7 @@ $subhead = get_field('subhead', 'option');
 
 </div>
 <div id="stickyMobileCTA" class="noshow">
-  <div class="sticky-cta-js border-t border-lavender-300 px-base5-4 pt-base5-2 pb-base5-6 fixed bottom-[-100%] w-full opacity-0 invisible transition-all duration-500 z-50 lg:noshow bg-primary">
+  <div class="sticky-mobile-cta-js border-t border-lavender-300 px-base5-4 pt-base5-2 pb-base5-6 fixed bottom-[-100%] w-full opacity-0 invisible transition-all duration-500 z-50 lg:noshow bg-primary">
     <h4 class="mb-base5-2 text-lavender-300">Personalized intensive therapy from home.</h4>
     <div class="flex gap-base5-3 items-stretch lg:w-[unset] w-full">
       <a href="tel:+19862060414" class="w-full ch-button button-tertiary-lavender inverted text-h6-base" target="_self">1 (986) 206-0414</a>
@@ -359,7 +359,7 @@ $subhead = get_field('subhead', 'option');
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    var stickyCTA = document.querySelector('.sticky-cta-js');
+    var stickyCTA = document.querySelector('.sticky-mobile-cta-js');
     var footer = document.querySelector('footer');
     var triggerOffset = window.innerHeight;
 
