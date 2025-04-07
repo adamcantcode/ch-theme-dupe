@@ -612,10 +612,7 @@
 
       // Dynamically include all parameters starting with the configured prefix
       Object.keys(allUrlParams).forEach((param) => {
-        if (
-          param.startsWith(config.dynamicPrefix) &&
-          existingData[param] !== allUrlParams[param]
-        ) {
+        if (param.startsWith(config.dynamicPrefix) && existingData[param] !== allUrlParams[param]) {
           existingData[param] = allUrlParams[param];
           dataUpdated = true;
         }
@@ -627,14 +624,38 @@
         dataUpdated = true;
       }
 
-      // Track user journey (array of visited URLs)
+      // Initialize user_journey array if not already set
       if (!Array.isArray(existingData.user_journey)) {
         existingData.user_journey = [];
       }
 
       let currentUrl = window.location.href;
-      if (existingData.user_journey[existingData.user_journey.length - 1] !== currentUrl) {
+
+      // Prevent duplicate consecutive entries
+      if (existingData.user_journey.length === 0 || existingData.user_journey[existingData.user_journey.length - 1] !== currentUrl) {
         existingData.user_journey.push(currentUrl);
+        dataUpdated = true;
+      }
+
+      // Convert user_journey to a JSON string and check its character length
+      const userJourneyJson = JSON.stringify(existingData.user_journey);
+
+      // If the character count exceeds 131,072, modify the user_journey
+      if (userJourneyJson.length > 131072) {
+        // Start counting how many pages exceed the limit
+        let excessPagesCount = 0;
+        while (userJourneyJson.length > 131072) {
+          existingData.user_journey.pop(); // Remove the last entry
+          excessPagesCount++; // Count the excess pages
+          const newUserJourneyJson = JSON.stringify(existingData.user_journey);
+          if (newUserJourneyJson.length <= 131072) break; // If we are below the limit, stop
+        }
+
+        // Add "X more pages" dynamically for each excess page
+        for (let i = 1; i <= excessPagesCount; i++) {
+          existingData.user_journey.push(`${i} more page${i > 1 ? 's' : ''}`);
+        }
+
         dataUpdated = true;
       }
 

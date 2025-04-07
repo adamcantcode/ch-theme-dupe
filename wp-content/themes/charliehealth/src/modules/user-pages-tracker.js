@@ -4,26 +4,40 @@ export default function userPagesTracker() {
       JSON.parse(sessionStorage.getItem('user_journey_')) || [];
     let prior_count = parseInt(sessionStorage.getItem('prior_count')) || 1;
 
-    // Get the current URL
     let currentUrl = new URL(window.location.href);
 
-    // Check if "user_journey" is a URL parameter
+    // Remove 'user_journey' parameter from URL if it exists
     if (currentUrl.searchParams.has('user_journey')) {
-      // Strip all search params
       currentUrl.search = '';
     }
 
-    // Check if user_journey has more than 10 pages
-    if (user_journey.length >= 10) {
-      user_journey.shift(); // Remove the first page
-      user_journey[0] = `${prior_count} prior pages`; // Add the "x prior pages"
-      prior_count++; // Increment the counter for next time
-      sessionStorage.setItem('prior_count', prior_count); // Save the new count
+    // Add the current URL to the user_journey array if not already the last entry
+    if (
+      user_journey.length === 0 ||
+      user_journey[user_journey.length - 1] !== currentUrl.href
+    ) {
+      user_journey.push(currentUrl.href);
     }
 
-    // Add the stripped URL (without search params) to user_journey
-    user_journey.push(currentUrl.href);
-    sessionStorage.setItem('user_journey_', JSON.stringify(user_journey)); // Save the updated user_journey
+    // Check if user_journey length exceeds the limit (10 in this case)
+    if (user_journey.length > 10) {
+      let excessCount = user_journey.length - 10;
+
+      // Remove excess pages
+      user_journey = user_journey.slice(0, 10);
+
+      // Add dynamic "X more pages" messages
+      for (let i = 1; i <= excessCount; i++) {
+        user_journey.push(`${i + prior_count} more page${i > 1 ? 's' : ''}`);
+      }
+
+      // Update the prior_count to reflect how many pages were added
+      prior_count += excessCount;
+      sessionStorage.setItem('prior_count', prior_count);
+    }
+
+    // Store the updated user_journey in sessionStorage
+    sessionStorage.setItem('user_journey_', JSON.stringify(user_journey));
   };
 
   const gh_src = () => {
