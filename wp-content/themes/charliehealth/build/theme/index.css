@@ -3231,6 +3231,10 @@ a.insurance-tabs.active:hover {
   border-left-width: 1px;
 }
 
+.border-t{
+  border-top-width: 1px;
+}
+
 .border-none{
   border-style: none;
 }
@@ -3940,6 +3944,10 @@ a.insurance-tabs.active:hover {
 
 .pt-\[26px\]{
   padding-top: 26px;
+}
+
+.pt-base5-2{
+  padding-top: 10px;
 }
 
 .pt-base5-6{
