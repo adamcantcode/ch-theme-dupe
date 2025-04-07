@@ -57,7 +57,7 @@ $wordsPerMinute = 238;
 $readingTime    = ceil($wordCount / $wordsPerMinute);
 
 // Cusotm CTA
-$headlineCTA = get_field('headline') ?? 'Personalized intensive therapy from home';
+$headlineCTA = get_field('headline') ?? 'Personalized intensive treatment from home';
 $subheadCTA = get_field('subhead') ?? 'Ready to start healing?';
 ?>
 
@@ -279,7 +279,7 @@ $subhead = get_field('subhead', 'option');
         <div class="lg:p-base5-10 p-base5-3">
           <div class="flex flex-col justify-center">
             <p class="text-h1-base lg:text-h1-lg text-h2">Get the mental health treatment you <mark class="bg-yellow-100 rounded-lg">deserve</mark></p>
-            <p class="text-h4-base lg:mb-base5-10 mb-base5-5">Need additional mental health support? Charlie Health can help. Get started with virtual intensive therapy now.</p>
+            <p class="text-h4-base lg:mb-base5-10 mb-base5-5">Need additional mental health or substance use support? Charlie Health can help. Get started with virtual intensive treatment now.</p>
             <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full ">
               <a href="https://www.charliehealth.com/form" class="ch-button button-primary-ch">Get Started</a>
               <a href="https://www.charliehealth.com/intensive-outpatient-iop" class="ch-button button-secondary-ch">Learn More</a>
@@ -354,7 +354,7 @@ $subhead = get_field('subhead', 'option');
 </div>
 <div id="stickyMobileCTA" class="noshow">
   <div class="sticky-mobile-cta-js border-t border-lavender-300 px-base5-4 pt-base5-2 pb-base5-6 fixed bottom-[-100%] w-full opacity-0 invisible transition-all duration-500 z-50 lg:noshow bg-primary">
-    <h4 class="mb-base5-2 text-lavender-300">Personalized intensive therapy from home.</h4>
+    <h4 class="mb-base5-2 text-lavender-300">Personalized intensive treatment from home.</h4>
     <div class="flex gap-base5-3 items-stretch lg:w-[unset] w-full">
       <a href="tel:+19862060414" class="w-full ch-button button-tertiary-lavender inverted text-h6-base" target="_self">1 (986) 206-0414</a>
       <a href="/form" class="ch-button button-tertiary-lavender text-h6-base">Get Started</a>
