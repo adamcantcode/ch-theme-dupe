@@ -1139,3 +1139,12 @@ function prevent_acf_block_js_in_editor()
   }
 }
 add_action('enqueue_block_assets', 'prevent_acf_block_js_in_editor', 20);
+
+// Add canonical header for PDF files
+function add_canonical_header_for_pdfs()
+{
+  if (strpos($_SERVER['REQUEST_URI'], '.pdf') !== false) {
+    header('Link: <' . esc_url(home_url($_SERVER['REQUEST_URI'])) . '>; rel="canonical"', false);
+  }
+}
+add_action('template_redirect', 'add_canonical_header_for_pdfs');
