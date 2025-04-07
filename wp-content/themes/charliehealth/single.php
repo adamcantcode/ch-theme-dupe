@@ -55,6 +55,10 @@ $tags      = get_the_terms(get_the_ID(), 'post_tag');
 $wordCount      = str_word_count(strip_tags(get_the_content()));
 $wordsPerMinute = 238;
 $readingTime    = ceil($wordCount / $wordsPerMinute);
+
+// Cusotm CTA
+$headlineCTA = get_field('headline') ?? 'Personalized intensive therapy from home';
+$subheadCTA = get_field('subhead') ?? 'Ready to start healing?';
 ?>
 
 <div id="progressBar" class="fixed z-20 transition-all duration-700 rounded-r-sm bg-purple-gradient-end h-[5px] left-0"></div>
@@ -95,8 +99,8 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
               </div>
             <?php endif; ?>
             <div class="rounded-md bg-grey-cool mt-base5-6 lg:p-base5-6 p-base5-3">
-              <h3 class="font-heading-serif">Personalized intensive therapy from home</h3>
-              <p>Ready to start healing?</p>
+              <h3 class="font-heading-serif"><?= $headlineCTA; ?></h3>
+              <p><?= $subheadCTA; ?></p>
               <div class="flex flex-col lg:flex-wrap lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full">
                 <a href="/form" class="ch-button button-primary-ch">Get Started</a>
                 <a href="tel:+19862060414" class="ch-button button-secondary-ch">1 (986) 206-0414</a>
@@ -169,8 +173,8 @@ $readingTime    = ceil($wordCount / $wordsPerMinute);
                   </div>
                 <?php endif; ?>
                 <div class="rounded-md bg-grey-cool mt-base5-6 lg:p-base5-6 p-base5-3">
-                  <h3 class="font-heading-serif">Personalized intensive therapy from home</h3>
-                  <p>Ready to start healing?</p>
+                  <h3 class="font-heading-serif"><?= $headlineCTA; ?></h3>
+                  <p><?= $subheadCTA; ?></p>
                   <div class="flex flex-col lg:flex-wrap lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full">
                     <a href="/form" class="ch-button button-primary-ch">Get Started</a>
                     <a href="tel:+19862060414" class="ch-button button-secondary-ch">1 (986) 206-0414</a>
