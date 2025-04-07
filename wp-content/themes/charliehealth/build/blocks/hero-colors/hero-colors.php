@@ -27,6 +27,10 @@
         <div class="col-span-2 text-center lg:col-span-1 lg:justify-self-auto">
           <a href="/form" class="w-full stretched-link lg:w-auto ch-button button-primary-ch">Get started</a>
         </div>
+        <div class="flex flex-col gap-sp-4 items-stretch md:w-[unset] w-full col-span-2 lg:col-span-1 noshow">
+          <a href="https://www.charliehealth.com/form" class="ch-button button-primary-ch">Get Started</a>
+          <p class="text-center">Could IOP help? <a href="#screener">Take our quiz</a></p>
+        </div>
       </div>
       <div id="youngAdultIOP" class="relative grid lg:items-end items-center grid-cols-[1fr_2fr] lg:grid-rows-1 rounded-md gap-base5-2 lg:text-center lg:p-base5-5 p-base5-2 color-hover-item-js bg-lavender-100 lg:grid-cols-1">
         <img src="https://www.charliehealth.com/wp-content/uploads/2024/10/module2.png" alt="alt" class="self-center lg:mb-base5-5 object-contain lg:block max-h-[170px] mx-auto">
@@ -37,6 +41,10 @@
         <div class="col-span-2 text-center lg:col-span-1 lg:justify-self-auto">
           <a href="/form" class="w-full stretched-link lg:w-auto ch-button button-primary-ch">Get started</a>
         </div>
+        <div class="flex flex-col gap-sp-4 items-stretch md:w-[unset] w-full col-span-2 lg:col-span-1 noshow">
+          <a href="https://www.charliehealth.com/form" class="ch-button button-primary-ch">Get Started</a>
+          <p class="text-center">Could IOP help? <a href="#screener">Take our quiz</a></p>
+        </div>
       </div>
       <div id="teenIOP" class="relative grid lg:items-end items-center grid-cols-[1fr_2fr] lg:grid-rows-1 rounded-md gap-base5-2 lg:text-center lg:p-base5-5 p-base5-2 color-hover-item-js bg-yellow-100 lg:grid-cols-1">
         <img src="https://www.charliehealth.com/wp-content/uploads/2024/10/module1.png" alt="alt" class="self-center lg:mb-base5-5 object-contain lg:block max-h-[170px] mx-auto">
@@ -46,6 +54,10 @@
         </div>
         <div class="col-span-2 text-center lg:col-span-1 lg:justify-self-auto">
           <a href="/form" class="w-full stretched-link lg:w-auto ch-button button-primary-ch">Get started</a>
+        </div>
+        <div class="flex flex-col gap-sp-4 items-stretch md:w-[unset] w-full col-span-2 lg:col-span-1 noshow">
+          <a href="https://www.charliehealth.com/form" class="ch-button button-primary-ch">Get Started</a>
+          <p class="text-center">Could IOP help? <a href="#screener">Take our quiz</a></p>
         </div>
       </div>
     </div>
