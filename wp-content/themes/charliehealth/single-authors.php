@@ -21,11 +21,10 @@ if ($image) {
 
 <section class="section">
   <div class="container">
-    <h1 class="mb-sp-12">Authors</h1>
+    <h1 class="mb-sp-12">Author: <?= get_the_title(); ?></h1>
     <div class="grid lg:grid-cols-[4.25fr_5fr] lg:gap-[10rem] gap-sp-8">
       <img src="<?= $image; ?>" srcset="<?= $imageSrcset; ?>" alt="<?= $imageAlt; ?>" class="object-cover w-full rounded-md aspect-square nolazy">
       <div>
-        <h2><?= get_the_title(); ?></h2>
         <?= $bio; ?>
         <div class="social">
           <?php if ($twitter) : ?>

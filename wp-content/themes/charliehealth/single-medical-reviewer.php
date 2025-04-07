@@ -24,15 +24,14 @@ if ($image) {
   <div class="container">
     <div class="inline-block mb-base5-4">
       <h4><a href="/clinical-content-advisory-council" class="underline">Clinical Content Advisory Council</a></h4>
-      <h1>Clinical reviewers</h1>
+      <h1>Clinical Reviewer: <?= $name; ?>, <?= $creds; ?> <span class="text-h4-base"><?= $pronouns; ?></span></h1>
     </div>
     <div class="grid lg:grid-cols-[3fr_9fr] gap-base5-8 mb-base5-8 mt-base5-10">
       <div>
         <img src="<?= $image; ?>" srcset="<?= $imageSrcset ?? ''; ?>" alt="<?= $imageAlt; ?>" class="object-cover w-full rounded-circle aspect-square">
       </div>
       <div>
-        <h2><?= $name; ?>, <?= $creds; ?> <span class="text-h4-base"><?= $pronouns; ?></span></h2>
-        <h3><?= $title; ?></h3>
+        <h2><?= $title; ?></h2>
         <div>
           <?= $bio; ?>
         </div>
