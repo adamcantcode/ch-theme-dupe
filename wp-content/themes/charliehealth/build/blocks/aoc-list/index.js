@@ -69,7 +69,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const setMaxHeight = () => {
     if (!revealedContent) {
       const listItems = aocContent.querySelectorAll('.list-item-height-js');
-      const first5ListItems = Array.from(listItems).slice(0, 5);
+      const first5ListItems = Array.from(listItems).slice(0, 6);
       const combinedHeight = first5ListItems.reduce((totalHeight, listItem) => {
         return totalHeight + listItem.offsetHeight + 27;
       }, 0);
