@@ -20,9 +20,9 @@
   <?php if (get_current_blog_id() === 3) : ?>
     <script>
       // Remove SUD notice on referrals
-      document.querySelector("#primary > section:nth-child(7) > div > div > div.wp-block-columns.\\!gap-\\[100px\\].is-layout-flex.wp-container-core-columns-is-layout-4.wp-block-columns-is-layout-flex > div:nth-child(1) > div > div.lg\\:mt-base5-8.mt-base5-6.overflow-hidden.transition-all.duration-500.ease-in-out.view-all-js-605825253 > div:nth-child(5) > a > p > span").remove();
+      document.querySelector("#primary > section:nth-child(7) > div > div > div.wp-block-columns.\\!gap-\\[100px\\].is-layout-flex.wp-container-core-columns-is-layout-4.wp-block-columns-is-layout-flex > div:nth-child(1) > div > div.lg\\:mt-base5-8.mt-base5-6.overflow-hidden.transition-all.duration-500.ease-in-out > div:nth-child(5) > a > p > span").remove();
 
-      document.querySelector("#primary > section:nth-child(7) > div > div > div.wp-block-columns.\\!gap-\\[100px\\].is-layout-flex.wp-container-core-columns-is-layout-4.wp-block-columns-is-layout-flex > div:nth-child(1) > div > div.lg\\:mt-base5-8.mt-base5-6.overflow-hidden.transition-all.duration-500.ease-in-out.view-all-js-605825253 > div:nth-child(5) > a > div > h3").innerText = "Substance use disorders"
+      document.querySelector("#primary > section:nth-child(7) > div > div > div.wp-block-columns.\\!gap-\\[100px\\].is-layout-flex.wp-container-core-columns-is-layout-4.wp-block-columns-is-layout-flex > div:nth-child(1) > div > div.lg\\:mt-base5-8.mt-base5-6.overflow-hidden.transition-all.duration-500.ease-in-out > div:nth-child(5) > a > div > h3").innerText = "Substance use disorders"
     </script>
   <?php endif; ?>
 <?php endif; ?>
