@@ -2,6 +2,30 @@
 
 <?= the_content(); ?>
 
+<?php if (is_front_page()) : ?>
+  <?php if (get_current_blog_id() === 1) : ?>
+    <script>
+      // Remove SUD notice
+      // Select the element using the query selector
+      let element = document.querySelector("#primary > section:nth-child(12) > div > div > div > div:nth-child(3) > div > div:nth-child(3) > a > div > h3");
+
+      // Check if the element exists to avoid errors
+      if (element) {
+        // Perform the replacement on the text content of the element
+        element.textContent = element.textContent.replace("Substance use disorders*", "Substance use disorders");
+      }
+      document.querySelector("#primary > section:nth-child(12) > div > div > div > div:nth-child(3) > div > div:nth-child(3) > a > h6").remove();
+    </script>
+  <?php endif; ?>
+  <?php if (get_current_blog_id() === 3) : ?>
+    <script>
+      // Remove SUD notice on referrals
+      document.querySelector("#primary > section:nth-child(7) > div > div > div.wp-block-columns.\\!gap-\\[100px\\].is-layout-flex.wp-container-core-columns-is-layout-4.wp-block-columns-is-layout-flex > div:nth-child(1) > div > div.lg\\:mt-base5-8.mt-base5-6.overflow-hidden.transition-all.duration-500.ease-in-out.view-all-js-605825253 > div:nth-child(5) > a > p > span").remove();
+
+      document.querySelector("#primary > section:nth-child(7) > div > div > div.wp-block-columns.\\!gap-\\[100px\\].is-layout-flex.wp-container-core-columns-is-layout-4.wp-block-columns-is-layout-flex > div:nth-child(1) > div > div.lg\\:mt-base5-8.mt-base5-6.overflow-hidden.transition-all.duration-500.ease-in-out.view-all-js-605825253 > div:nth-child(5) > a > div > h3").innerText = "Substance use disorders"
+    </script>
+  <?php endif; ?>
+<?php endif; ?>
 <?php if (is_front_page() && get_current_blog_id() === 1) : ?>
   <div class="homepagepopup">
     <div id="homepagePopup" class="bg-[rgba(0,0,0,.7)] fixed top-0 left-0 w-full h-full z-50 grid items-center justify-center center transition-all duration-300 modal-fade">
@@ -83,7 +107,7 @@
 
                   // Trigger close event
                   if (event.target.classList.contains('modal-fade')) {
-                    
+
                     window.VWO = window.VWO || [];
                     VWO.event = VWO.event || function() {
                       VWO.push(['event'].concat([].slice.call(arguments)))
@@ -201,7 +225,7 @@
 
                   // Trigger close event
                   if (event.target.classList.contains('modal-fade')) {
-                    
+
                     window.VWO = window.VWO || [];
                     VWO.event = VWO.event || function() {
                       VWO.push(['event'].concat([].slice.call(arguments)))
