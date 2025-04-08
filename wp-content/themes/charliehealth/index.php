@@ -11,8 +11,11 @@
 
       // Check if the element exists to avoid errors
       if (element) {
-        // Perform the replacement on the text content of the element
-        element.textContent = element.textContent.replace("Substance use disorders*", "Substance use disorders");
+        // Get the text content of the element, excluding the SVG part
+        let textContent = element.firstChild.textContent;
+
+        // Replace the specific text within the element, keeping the SVG intact
+        element.firstChild.textContent = textContent.replace("Substance use disorders*", "Substance use disorders");
       }
       document.querySelector("#primary > section:nth-child(12) > div > div > div > div:nth-child(3) > div > div:nth-child(3) > a > h6").remove();
     </script>
