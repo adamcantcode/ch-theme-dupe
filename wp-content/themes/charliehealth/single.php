@@ -352,7 +352,7 @@ $subhead = get_field('subhead', 'option');
   </script>
 
 </div>
-<div id="stickyMobileCTA" class="noshow">
+<div id="stickyMobileCTA">
   <div class="sticky-mobile-cta-js border-t border-lavender-300 px-base5-4 pt-base5-2 pb-base5-6 fixed bottom-[-100%] w-full opacity-0 invisible transition-all duration-500 z-50 lg:noshow bg-primary">
     <h4 class="mb-base5-2 text-lavender-300">Personalized intensive treatment from home.</h4>
     <div class="flex gap-base5-3 items-stretch lg:w-[unset] w-full">
