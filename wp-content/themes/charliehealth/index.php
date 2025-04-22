@@ -23,9 +23,26 @@
   <?php if (get_current_blog_id() === 3) : ?>
     <script>
       // Remove SUD notice on referrals
-      document.querySelector("#primary > section:nth-child(7) > div > div > div.wp-block-columns.\\!gap-\\[100px\\].is-layout-flex.wp-container-core-columns-is-layout-4.wp-block-columns-is-layout-flex > div:nth-child(1) > div > div.lg\\:mt-base5-8.mt-base5-6.overflow-hidden.transition-all.duration-500.ease-in-out > div:nth-child(5) > a > p > span").remove();
+      const container = document.querySelector('#primary .view-all-js');
 
-      document.querySelector("#primary > section:nth-child(7) > div > div > div.wp-block-columns.\\!gap-\\[100px\\].is-layout-flex.wp-container-core-columns-is-layout-4.wp-block-columns-is-layout-flex > div:nth-child(1) > div > div.lg\\:mt-base5-8.mt-base5-6.overflow-hidden.transition-all.duration-500.ease-in-out > div:nth-child(5) > a > div > h3").innerText = "Substance use disorders"
+      if (container) {
+        const headings = container.querySelectorAll('h3');
+        headings.forEach(h3 => {
+          if (h3.textContent.trim().startsWith('Substance use disorders')) {
+            // Remove the asterisk if it exists
+            h3.textContent = h3.textContent.replace('*', '').trim();
+
+            const parent = h3.parentNode;
+            if (parent) {
+              // Look for the next sibling h6 and remove it
+              const siblingH6 = [...parent.children].find(
+                el => el.tagName === 'H6'
+              );
+              if (siblingH6) siblingH6.remove();
+            }
+          }
+        });
+      }
     </script>
   <?php endif; ?>
 <?php endif; ?>
