@@ -6,42 +6,46 @@
   <?php if (get_current_blog_id() === 1) : ?>
     <script>
       // Remove SUD notice
-      // Select the element using the query selector
-      let element = document.querySelector("#primary > section:nth-child(12) > div > div > div > div:nth-child(3) > div > div:nth-child(3) > a > div > h3");
+      const container = document.querySelector('#primary .view-all-js');
 
-      // Check if the element exists to avoid errors
-      if (element) {
-        // Get the text content of the element, excluding the SVG part
-        let textContent = element.firstChild.textContent;
+      if (container) {
+        const h3 = Array.from(container.querySelectorAll('h3')).find(el =>
+          el.textContent.trim().startsWith('Substance use disorders')
+        );
 
-        // Replace the specific text within the element, keeping the SVG intact
-        element.firstChild.textContent = textContent.replace("Substance use disorders*", "Substance use disorders");
+        if (h3) {
+          h3.textContent = h3.textContent.replace('*', '').trim();
+
+          const link = h3.closest('a');
+          const h6 = link?.querySelector('h6');
+          if (h6) h6.remove();
+        }
       }
-      document.querySelector("#primary > section:nth-child(12) > div > div > div > div:nth-child(3) > div > div:nth-child(3) > a > h6").remove();
     </script>
   <?php endif; ?>
   <?php if (get_current_blog_id() === 3) : ?>
     <script>
       // Remove SUD notice on referrals
-      const container = document.querySelector('#primary .view-all-js');
+      const section = document.querySelector('.mt-base5-6.transition-all.duration-500.ease-in-out');
 
-      if (container) {
-        const headings = container.querySelectorAll('h3');
-        headings.forEach(h3 => {
-          if (h3.textContent.trim().startsWith('Substance use disorders')) {
-            // Remove the asterisk if it exists
-            h3.textContent = h3.textContent.replace('*', '').trim();
+      if (section) {
+        const h3 = Array.from(section.querySelectorAll('h3')).find(el =>
+          el.textContent.trim().startsWith('Substance use disorders')
+        );
 
-            const parent = h3.parentNode;
-            if (parent) {
-              // Look for the next sibling h6 and remove it
-              const siblingH6 = [...parent.children].find(
-                el => el.tagName === 'H6'
-              );
-              if (siblingH6) siblingH6.remove();
-            }
+        if (h3) {
+          h3.textContent = h3.textContent.replace('*', '').trim();
+
+          const p = h3.closest('a')?.querySelector('p');
+          if (p) {
+            const brs = p.querySelectorAll('br');
+            if (brs.length > 0) brs[0].remove();
+            if (brs.length > 1) brs[1].remove();
+
+            const span = p.querySelector('span');
+            if (span) span.remove();
           }
-        });
+        }
       }
     </script>
   <?php endif; ?>
