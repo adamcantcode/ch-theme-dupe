@@ -6,7 +6,7 @@
     <h1 class="text-white font-heading-serif mb-base5-10">Connecting the world to life-saving behavioral health treatment.</h1>
     <div class="flex flex-col lg:flex-wrap lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full">
       <a href="/form" class="ch-button button-primary-ch">Get Started</a>
-      <a href="tel:+19862060414" class="ch-button button-secondary-ch invert">1 (986) 206-0414</a>
+      <a href="tel:+19862060414" class="ch-button button-secondary-ch inverted">1 (986) 206-0414</a>
     </div>
   </div>
 </section>
