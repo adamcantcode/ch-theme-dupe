@@ -2342,6 +2342,10 @@ a.insurance-tabs.active:hover {
   height: 100%;
 }
 
+.h-screen{
+  height: 100vh;
+}
+
 .h-sp-12{
   height: 3rem;
 }
