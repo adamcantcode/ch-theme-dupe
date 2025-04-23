@@ -1,4 +1,4 @@
-<section class="relative w-screen h-screen overflow-hidden" style="height:calc(100vh - 70px); margin-top:70px">
+<section class="relative w-screen h-screen overflow-hidden  section hero-bg-vid">
   <video autoplay muted loop playsinline poster="/wp-content/themes/charliehealth/resources/videos/background/poster.png" class="absolute top-0 left-0 z-0 object-cover w-full h-full">
     <source src="/wp-content/themes/charliehealth/resources/videos/background/charlie-health-iop.mp4" type="video/mp4" />
   </video>
@@ -10,3 +10,23 @@
     </div>
   </div>
 </section>
+
+<script>
+  function adjustHeroHeight() {
+  const header = document.querySelector('header');
+  const section = document.querySelector('.hero-bg-vid');
+
+  if (header && section) {
+    const headerHeight = header.offsetHeight;
+    section.style.height = `calc(100vh - ${headerHeight}px)`;
+    section.style.marginTop = `${headerHeight}px`;
+  }
+}
+
+// Run on DOM ready
+document.addEventListener('DOMContentLoaded', adjustHeroHeight);
+// Run again on full page load (fallback for any layout shifts)
+window.addEventListener('load', adjustHeroHeight);
+// Recalculate on resize
+window.addEventListener('resize', adjustHeroHeight);
+</script>
