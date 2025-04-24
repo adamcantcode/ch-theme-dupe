@@ -6275,7 +6275,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 
 function cycleImages(selector, {
-  interval = 3000,
+  interval = 5000,
   duration = 1,
   ease = 'power4.inOut',
   offset = 0
@@ -6312,10 +6312,10 @@ window.addEventListener('DOMContentLoaded', () => {
     offset: 0
   });
   cycleImages('image.secondary', {
-    offset: 1000
+    offset: 1500
   }); // starts 1s later
   cycleImages('image.tertiary', {
-    offset: 2000
+    offset: 2500
   }); // starts 2s later
 });
 })();

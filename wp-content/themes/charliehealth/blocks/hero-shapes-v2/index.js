@@ -2,7 +2,7 @@ import { gsap } from 'gsap';
 
 function cycleImages(
   selector,
-  { interval = 3000, duration = 1, ease = 'power4.inOut', offset = 0 } = {}
+  { interval = 5000, duration = 1, ease = 'power4.inOut', offset = 0 } = {}
 ) {
   const images = document.querySelectorAll(selector);
   if (images.length < 2) return;
@@ -30,6 +30,6 @@ function cycleImages(
 
 window.addEventListener('DOMContentLoaded', () => {
   cycleImages('image.main', { offset: 0 });
-  cycleImages('image.secondary', { offset: 1000 }); // starts 1s later
-  cycleImages('image.tertiary', { offset: 2000 }); // starts 2s later
+  cycleImages('image.secondary', { offset: 1500 }); // starts 1s later
+  cycleImages('image.tertiary', { offset: 2500 }); // starts 2s later
 });
