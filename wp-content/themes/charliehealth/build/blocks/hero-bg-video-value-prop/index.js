@@ -9661,46 +9661,44 @@ __webpack_require__.r(__webpack_exports__);
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
 window.addEventListener('DOMContentLoaded', () => {
   const phrases = [{
-    text: 'mental health treatment',
+    text: 'behavioral health treatment',
     color: 'text-lavender-300'
   }, {
-    text: 'substance use disorder treatment',
+    text: 'mental health treatment',
     color: 'text-yellow-300'
   }, {
-    text: 'medication-assisted therapy',
+    text: 'substance use disorder treatment',
     color: 'text-pale-blue-300'
   }, {
-    text: 'cognitive behavioral therapy',
+    text: 'medication-assisted therapy',
     color: 'text-lavender-300'
+  }, {
+    text: 'cognitive behavioral therapy',
+    color: 'text-yellow-300'
   }];
   const textEl = document.querySelector('.value-props-js');
   let index = 0;
 
-  // Init
+  // Hardcoded initial phrase (this avoids blank space on load)
   textEl.textContent = phrases[index].text;
   textEl.classList.add(phrases[index].color);
   setInterval(() => {
     // Animate out
     gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(textEl, {
-      y: 30,
+      scale: 1,
       opacity: 0,
       duration: 0.4,
       ease: 'power4.in',
       onComplete: () => {
-        // Remove old color, update index
         textEl.classList.remove(phrases[index].color);
         index = (index + 1) % phrases.length;
-
-        // Update text + color
         textEl.textContent = phrases[index].text;
         textEl.classList.add(phrases[index].color);
-
-        // Animate in
         gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.fromTo(textEl, {
-          y: -30,
+          scale: 0.9,
           opacity: 0
         }, {
-          y: 0,
+          scale: 1,
           opacity: 1,
           duration: 0.4,
           ease: 'power4.out'
