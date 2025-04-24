@@ -612,7 +612,7 @@ function hide_menus_on_multisite()
 {
   global $pagenow;
   // Check if it's the admin area and site ID is 3
-  if (is_admin() && get_current_blog_id() === 3) {
+  if (is_admin() && get_current_blog_id() === 3 && get_current_blog_id() === 4) {
     // Remove specific menus
     remove_menu_page('edit.php');
     remove_menu_page('edit.php?post_type=areas-of-care');
