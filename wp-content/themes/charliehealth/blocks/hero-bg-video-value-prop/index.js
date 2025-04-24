@@ -24,7 +24,7 @@ window.addEventListener('DOMContentLoaded', () => {
       y: 30,
       opacity: 0,
       duration: 0.4,
-      ease: 'power1.in',
+      ease: 'power4.in',
       onComplete: () => {
         // Remove old color, update index
         textEl.classList.remove(phrases[index].color);
@@ -38,7 +38,7 @@ window.addEventListener('DOMContentLoaded', () => {
         gsap.fromTo(
           textEl,
           { y: -30, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.4, ease: 'power1.out' }
+          { y: 0, opacity: 1, duration: 0.4, ease: 'power4.out' }
         );
       },
     });
