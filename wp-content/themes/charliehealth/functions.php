@@ -172,6 +172,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/basic-checklist');
   register_block_type(__DIR__ . '/build/blocks/hero-bg-video');
   register_block_type(__DIR__ . '/build/blocks/hero-bg-video-value-prop');
+  register_block_type(__DIR__ . '/build/blocks/hero-shapes-v2');
   // Referrals
   register_block_type(__DIR__ . '/build/blocks/hero-shapes');
   register_block_type(__DIR__ . '/build/blocks/static-positioned-image');

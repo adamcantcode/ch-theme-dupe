@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "acf/hero-shapes-v2-block",
+  "title": "Hero Shapes Block v2",
+  "description": "Hero section meant for ATF page title, subtitle and details",
+  "style": "file:./index.css",
+  "script": "file:./index.js",
+  "category": "custom",
+  "icon": "star-empty",
+  "apiVersion": 2,
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "hero-shapes-v2.php"
+  },
+  "supports": {}
+}
