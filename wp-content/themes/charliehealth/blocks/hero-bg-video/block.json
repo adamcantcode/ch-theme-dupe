@@ -1,8 +1,8 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "name": "acf/hero-bg-video-block",
-  "title": "Hero Background ",
-  "description": "Section emphasis",
+  "title": "Hero Background Video",
+  "description": "",
   "style": "file:./index.css",
   "script": "file:./index.js",
   "category": "custom",
