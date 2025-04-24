@@ -6275,18 +6275,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 
 function cycleImages(selector, {
-  interval = 5000,
+  interval = 4000,
   duration = 1,
   ease = 'power4.inOut',
-  offset = 0
+  offset = 0,
+  scaleAmount = 1
 } = {}) {
   const images = document.querySelectorAll(selector);
   if (images.length < 2) return;
   let currentIndex = 0;
 
-  // Initialize visibility
+  // Initial setup
   images.forEach((img, i) => {
-    img.style.opacity = i === 0 ? 1 : 0;
+    gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.set(img, {
+      opacity: i === 0 ? 1 : 0,
+      scale: i === 0 ? 1 : scaleAmount,
+      transformOrigin: '50% 50%',
+      position: 'absolute',
+      top: 0,
+      left: 0
+    });
   });
   setTimeout(() => {
     setInterval(() => {
@@ -6295,11 +6303,13 @@ function cycleImages(selector, {
       const next = images[nextIndex];
       gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(current, {
         opacity: 0,
+        scale: gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.utils.random(0.9, scaleAmount),
         duration,
         ease
       });
       gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(next, {
         opacity: 1,
+        scale: 1,
         duration,
         ease
       });
@@ -6309,14 +6319,20 @@ function cycleImages(selector, {
 }
 window.addEventListener('DOMContentLoaded', () => {
   cycleImages('image.main', {
-    offset: 0
+    interval: 5000,
+    offset: 0,
+    scaleAmount: 0.95
   });
   cycleImages('image.secondary', {
-    offset: 1500
-  }); // starts 1s later
+    interval: 6200,
+    offset: 1000,
+    scaleAmount: 0.95
+  });
   cycleImages('image.tertiary', {
-    offset: 2500
-  }); // starts 2s later
+    interval: 7400,
+    offset: 2000,
+    scaleAmount: 0.95
+  });
 });
 })();
 
