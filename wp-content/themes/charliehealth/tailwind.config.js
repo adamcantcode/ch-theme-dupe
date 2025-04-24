@@ -279,6 +279,7 @@ module.exports = {
       },
     },
   },
+  safelist: ['text-lavender-300', 'text-yellow-300', 'text-pale-blue-300'],
   plugins: [],
   corePlugins: {
     container: false,

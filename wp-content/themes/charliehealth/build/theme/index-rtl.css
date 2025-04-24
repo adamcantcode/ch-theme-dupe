@@ -2422,6 +2422,10 @@ a.insurance-tabs.active:hover {
   min-height: 100vh;
 }
 
+.min-h-\[1em\]{
+  min-height: 1em;
+}
+
 .min-h-\[1px\]{
   min-height: 1px;
 }
@@ -4295,6 +4299,11 @@ a.insurance-tabs.active:hover {
   color: rgb(218 193 251 / var(--tw-text-opacity, 1));
 }
 
+.text-pale-blue-300{
+  --tw-text-opacity: 1;
+  color: rgb(143 146 205 / var(--tw-text-opacity, 1));
+}
+
 .text-primary{
   --tw-text-opacity: 1;
   color: rgb(22 26 61 / var(--tw-text-opacity, 1));
@@ -4313,6 +4322,11 @@ a.insurance-tabs.active:hover {
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.text-yellow-300{
+  --tw-text-opacity: 1;
+  color: rgb(253 191 124 / var(--tw-text-opacity, 1));
 }
 
 .underline{
