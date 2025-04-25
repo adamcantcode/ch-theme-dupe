@@ -28,12 +28,12 @@
       <rect x="250" y="0" width="350" height="350" fill="#161A3D" mask="url(#mask2)"></rect>
       <image href="https://www.charliehealth.com/wp-content/uploads/2025/04/GettyImages-2194197262.png" alt="TERTIARY_IMAGE_ALT" class="tertiary" x="0" y="158" width="130" height="130" mask="url(#mask3)"></image>
       <image href="https://www.charliehealth.com/wp-content/uploads/2025/04/GettyImages-1809449467.png" alt="TERTIARY_IMAGE_ALT" class="tertiary" x="0" y="158" width="130" height="130" mask="url(#mask3)"></image>
-      <image href="https://www.charliehealth.com/wp-content/uploads/2025/04/GettyImages-1355684320.png" alt="TERTIARY_IMAGE_ALT" class="tertiary" x="0" y="158" width="130" height="130" mask="url(#mask3)"></image>
+      <image href="https://www.charliehealth.com/wp-content/uploads/2025/04/GettyImages-1995176568.png" alt="TERTIARY_IMAGE_ALT" class="tertiary" x="0" y="158" width="130" height="130" mask="url(#mask3)"></image>
       <image href="https://www.charliehealth.com/wp-content/uploads/2025/04/GettyImages-2150804490.png" alt="SECONDARY_IMAGE_ALT" class="secondary" x="104" y="456" width="130" height="130" mask="url(#mask4)"></image>
       <image href="https://www.charliehealth.com/wp-content/uploads/2025/04/GettyImages-1147066751.png" alt="SECONDARY_IMAGE_ALT" class="secondary" x="104" y="456" width="130" height="130" mask="url(#mask4)"></image>
       <image href="https://www.charliehealth.com/wp-content/uploads/2025/04/GettyImages-1139559852.png" alt="SECONDARY_IMAGE_ALT" class="secondary" x="104" y="456" width="130" height="130" mask="url(#mask4)"></image>
-      <image href="https://www.charliehealth.com/wp-content/uploads/2025/04/GettyImages-1995176568.png" alt="MAIN_IMAGE_ALT" class="main" x="180" y="70" width="500" height="500" mask="url(#mask5)"></image>
-      <image href="https://www.charliehealth.com/wp-content/uploads/2025/04/GettyImages-2199655035.png" alt="MAIN_IMAGE_ALT" class="main" x="180" y="70" width="500" height="500" mask="url(#mask5)"></image>
+      <image href="https://www.charliehealth.com/wp-content/uploads/2025/04/GettyImages-1355684320.png" alt="MAIN_IMAGE_ALT" class="main" x="180" y="70" width="500" height="500" mask="url(#mask5)"></image>
+      <image href="https://www.charliehealth.com/wp-content/uploads/2025/04/GettyImages-2199655035-1.png" alt="MAIN_IMAGE_ALT" class="main" x="180" y="70" width="500" height="500" mask="url(#mask5)"></image>
       <image href="https://www.charliehealth.com/wp-content/uploads/2025/04/GettyImages-1330959204.png" alt="MAIN_IMAGE_ALT" class="main" x="180" y="70" width="500" height="500" mask="url(#mask5)"></image>
     </svg>
   </div>
