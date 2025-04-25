@@ -47,7 +47,7 @@ $heading = get_field('heading');
         <div class="swiper-wrapper">
           <?php while (have_rows('illustrations')) : the_row(); ?>
             <div class="!flex items-center swiper-slide">
-              <img src="<?= get_sub_field('image')['sizes']['featured-large']; ?>" alt="<?= get_sub_field('image')['alt']; ?>" class="w-full">
+              <img src="<?= get_sub_field('image')['sizes']['featured-large']; ?>" alt="<?= get_sub_field('image')['alt']; ?>" class="w-full rounded-md">
             </div>
           <?php endwhile; ?>
         </div>
