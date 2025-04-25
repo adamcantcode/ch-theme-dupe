@@ -7164,6 +7164,10 @@ section.bg-shield > div {
     grid-template-columns: 7fr 5fr;
   }
 
+  .lg\:grid-cols-\[7fr_5fr_\]{
+    grid-template-columns: 7fr 5fr;
+  }
+
   .lg\:grid-cols-\[8fr_4fr\]{
     grid-template-columns: 8fr 4fr;
   }
@@ -7174,10 +7178,6 @@ section.bg-shield > div {
 
   .lg\:grid-cols-\[9fr_3fr\]{
     grid-template-columns: 9fr 3fr;
-  }
-
-  .lg\:grid-cols-\[minmax\(0\2c _7fr\)_minmax\(0\2c _1fr\)_minmax\(0\2c _4fr\)\]{
-    grid-template-columns: minmax(0, 7fr) minmax(0, 1fr) minmax(0, 4fr);
   }
 
   .lg\:grid-cols-\[unset\]{

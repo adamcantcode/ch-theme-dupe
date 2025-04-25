@@ -2,7 +2,7 @@
 $heading = get_field('heading');
 ?>
 
-<div class="grid grid-cols-1 lg:gap-sp-5 gap-0 lg:grid-cols-[minmax(0,_7fr)_minmax(0,_1fr)_minmax(0,_4fr)] home-testimonials relative">
+<div class="grid grid-cols-1 lg:gap-sp-5 gap-0 lg:grid-cols-[7fr_5fr] home-testimonials relative">
   <div class="min-w-0">
     <h2 class="lg:mb-sp-14 mb-sp-8"><?= $heading; ?></h2>
     <div class="grid gap-y-sp-8">
@@ -40,10 +40,9 @@ $heading = get_field('heading');
       <?php endif; ?>
     </div>
   </div>
-  <div class="min-w-0"></div>
   <?php if (have_rows('illustrations')) : ?>
     <!-- parent grid fix for swiper wrap -->
-    <div class="lg:absolute lg:top-[-120px] lg:left-[60%] w-full lg:min-w-0">
+    <div class="w-full lg:min-w-0">
       <div class="h-full swiper swiper-home-test">
         <div class="swiper-wrapper">
           <?php while (have_rows('illustrations')) : the_row(); ?>
