@@ -46,8 +46,8 @@ $heading = get_field('heading');
       <div class="h-full swiper swiper-home-test">
         <div class="swiper-wrapper">
           <?php while (have_rows('illustrations')) : the_row(); ?>
-            <div class="swiper-slide lg:!w-full">
-              <img src="<?= get_sub_field('image')['sizes']['featured-large']; ?>" alt="<?= get_sub_field('image')['alt']; ?>" class="lg:max-w-[670px]">
+            <div class="!flex items-center swiper-slide">
+              <img src="<?= get_sub_field('image')['sizes']['featured-large']; ?>" alt="<?= get_sub_field('image')['alt']; ?>" class="w-full">
             </div>
           <?php endwhile; ?>
         </div>

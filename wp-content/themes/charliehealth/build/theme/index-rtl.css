@@ -2214,6 +2214,10 @@ a.insurance-tabs.active:hover {
   display: flex;
 }
 
+.\!flex{
+  display: flex !important;
+}
+
 .table{
   display: table;
 }
