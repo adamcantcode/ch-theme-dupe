@@ -4,7 +4,7 @@ function cycleImages(
   selector,
   {
     interval = 4000,
-    duration = 1,
+    duration = 2,
     ease = 'power4.inOut',
     offset = 0,
     scaleAmount = 1,
@@ -45,18 +45,18 @@ window.addEventListener('DOMContentLoaded', () => {
   cycleImages('image.main', {
     interval: 5000,
     offset: 0,
-    scaleAmount: 0.95,
+    scaleAmount: 0.93,
   });
 
   cycleImages('image.secondary', {
     interval: 6200,
     offset: 1000,
-    scaleAmount: 0.95,
+    scaleAmount: 0.93,
   });
 
   cycleImages('image.tertiary', {
     interval: 7400,
     offset: 2000,
-    scaleAmount: 0.95,
+    scaleAmount: 0.93,
   });
 });
