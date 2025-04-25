@@ -1,55 +1,6 @@
 <?php get_header(); ?>
 
 <?= the_content(); ?>
-
-<?php if (is_front_page()) : ?>
-  <?php if (get_current_blog_id() === 1) : ?>
-    <script>
-      // Remove SUD notice
-      const container = document.querySelector('#primary .view-all-js');
-
-      if (container) {
-        const h3 = Array.from(container.querySelectorAll('h3')).find(el =>
-          el.textContent.trim().startsWith('Substance use disorders')
-        );
-
-        if (h3) {
-          h3.textContent = h3.textContent.replace('*', '').trim();
-
-          const link = h3.closest('a');
-          const h6 = link?.querySelector('h6');
-          if (h6) h6.remove();
-        }
-      }
-    </script>
-  <?php endif; ?>
-  <?php if (get_current_blog_id() === 3) : ?>
-    <script>
-      // Remove SUD notice on referrals
-      const section = document.querySelector('.mt-base5-6.transition-all.duration-500.ease-in-out');
-
-      if (section) {
-        const h3 = Array.from(section.querySelectorAll('h3')).find(el =>
-          el.textContent.trim().startsWith('Substance use disorders')
-        );
-
-        if (h3) {
-          h3.textContent = h3.textContent.replace('*', '').trim();
-
-          const p = h3.closest('a')?.querySelector('p');
-          if (p) {
-            const brs = p.querySelectorAll('br');
-            if (brs.length > 0) brs[0].remove();
-            if (brs.length > 1) brs[1].remove();
-
-            const span = p.querySelector('span');
-            if (span) span.remove();
-          }
-        }
-      }
-    </script>
-  <?php endif; ?>
-<?php endif; ?>
 <?php if (is_front_page() && get_current_blog_id() === 1) : ?>
   <div class="homepagepopup">
     <div id="homepagePopup" class="bg-[rgba(0,0,0,.7)] fixed top-0 left-0 w-full h-full z-50 grid items-center justify-center center transition-all duration-300 modal-fade">
