@@ -117,13 +117,13 @@
 
 <!-- Start VWO Async SmartCode -->
 <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
-<script type='text/javascript' id='vwoCode'>
+<script type='text/javascript' data-cfasync="false" id='vwoCode'>
   window._vwo_code || (function() {
     var account_id = 775354,
-      version = 2.0,
+      version = 2.1,
       settings_tolerance = 2000,
       hide_element = 'body',
-      hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important',
+      hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;transition:none !important;',
       /* DO NOT EDIT BELOW THIS LINE */
       f = false,
       w = window,
@@ -137,6 +137,7 @@
     } catch (e) {}
     var stT = cc.stT === 'session' ? w.sessionStorage : w.localStorage;
     code = {
+      nonce: v && v.nonce,
       use_existing_jquery: function() {
         return typeof use_existing_jquery !== 'undefined' ? use_existing_jquery : undefined
       },
@@ -150,40 +151,72 @@
         return '{' + (cc.hES || hide_element_style) + '}'
       },
       hide_element: function() {
+        if (performance.getEntriesByName('first-contentful-paint')[0]) {
+          return ''
+        }
         return typeof cc.hE === 'string' ? cc.hE : hide_element
       },
       getVersion: function() {
         return version
       },
-      finish: function() {
+      finish: function(e) {
         if (!f) {
           f = true;
-          var e = d.getElementById('_vis_opt_path_hides');
-          if (e) e.parentNode.removeChild(e)
+          var t = d.getElementById('_vis_opt_path_hides');
+          if (t) t.parentNode.removeChild(t);
+          if (e)(new Image).src = 'https://dev.visualwebsiteoptimizer.com/ee.gif?a=' + account_id + e
         }
       },
       finished: function() {
         return f
       },
-      load: function(e) {
-        var t = this.getSettings(),
-          n = d.createElement('script'),
-          i = this;
-        if (t) {
-          n.textContent = t;
-          d.getElementsByTagName('head')[0].appendChild(n);
+      addScript: function(e) {
+        var t = d.createElement('script');
+        t.type = 'text/javascript';
+        if (e.src) {
+          t.src = e.src
+        } else {
+          t.text = e.text
+        }
+        v && t.setAttribute('nonce', v.nonce);
+        d.getElementsByTagName('head')[0].appendChild(t)
+      },
+      load: function(e, t) {
+        var n = this.getSettings(),
+          i = d.createElement('script'),
+          r = this;
+        t = t || {};
+        if (n) {
+          i.textContent = n;
+          d.getElementsByTagName('head')[0].appendChild(i);
           if (!w.VWO || VWO.caE) {
             stT.removeItem(cK);
-            i.load(e)
+            r.load(e)
           }
         } else {
-          n.fetchPriority = 'high';
-          n.src = e;
-          n.type = 'text/javascript';
-          n.onerror = function() {
-            _vwo_code.finish()
+          var o = new XMLHttpRequest;
+          o.open('GET', e, true);
+          o.withCredentials = !t.dSC;
+          o.responseType = t.responseType || 'text';
+          o.onload = function() {
+            if (t.onloadCb) {
+              return t.onloadCb(o, e)
+            }
+            if (o.status === 200 || o.status === 304) {
+              _vwo_code.addScript({
+                text: o.responseText
+              })
+            } else {
+              _vwo_code.finish('&e=loading_failure:' + e)
+            }
           };
-          d.getElementsByTagName('head')[0].appendChild(n)
+          o.onerror = function() {
+            if (t.onerrorCb) {
+              return t.onerrorCb(e)
+            }
+            _vwo_code.finish('&e=loading_failure:' + e)
+          };
+          o.send()
         }
       },
       getSettings: function() {
@@ -209,18 +242,35 @@
           _vwo_code.finish();
           stT.removeItem(cK)
         }, e);
-        var t = d.currentScript,
-          n = d.createElement('style'),
-          i = this.hide_element(),
-          r = t && !t.async && i ? i + this.hide_element_style() : '',
-          c = d.getElementsByTagName('head')[0];
-        n.setAttribute('id', '_vis_opt_path_hides');
-        v && n.setAttribute('nonce', v.nonce);
-        n.setAttribute('type', 'text/css');
-        if (n.styleSheet) n.styleSheet.cssText = r;
-        else n.appendChild(d.createTextNode(r));
-        c.appendChild(n);
-        this.load('https://dev.visualwebsiteoptimizer.com/j.php?a=' + account_id + '&u=' + encodeURIComponent(d.URL) + '&vn=' + version)
+        var t;
+        if (this.hide_element() !== 'body') {
+          t = d.createElement('style');
+          var n = this.hide_element(),
+            i = n ? n + this.hide_element_style() : '',
+            r = d.getElementsByTagName('head')[0];
+          t.setAttribute('id', '_vis_opt_path_hides');
+          v && t.setAttribute('nonce', v.nonce);
+          t.setAttribute('type', 'text/css');
+          if (t.styleSheet) t.styleSheet.cssText = i;
+          else t.appendChild(d.createTextNode(i));
+          r.appendChild(t)
+        } else {
+          t = d.getElementsByTagName('head')[0];
+          var i = d.createElement('div');
+          i.style.cssText = 'z-index: 2147483647 !important;position: fixed !important;left: 0 !important;top: 0 !important;width: 100% !important;height: 100% !important;background: white !important;display: block !important;';
+          i.setAttribute('id', '_vis_opt_path_hides');
+          i.classList.add('_vis_hide_layer');
+          t.parentNode.insertBefore(i, t.nextSibling)
+        }
+        var o = window._vis_opt_url || d.URL,
+          s = 'https://dev.visualwebsiteoptimizer.com/j.php?a=' + account_id + '&u=' + encodeURIComponent(o) + '&vn=' + version;
+        if (w.location.search.indexOf('_vwo_xhr') !== -1) {
+          this.addScript({
+            src: s
+          })
+        } else {
+          this.load(s + '&x=true')
+        }
       }
     };
     w._vwo_code = code;
@@ -562,10 +612,7 @@
 
       // Dynamically include all parameters starting with the configured prefix
       Object.keys(allUrlParams).forEach((param) => {
-        if (
-          param.startsWith(config.dynamicPrefix) &&
-          existingData[param] !== allUrlParams[param]
-        ) {
+        if (param.startsWith(config.dynamicPrefix) && existingData[param] !== allUrlParams[param]) {
           existingData[param] = allUrlParams[param];
           dataUpdated = true;
         }
@@ -577,14 +624,38 @@
         dataUpdated = true;
       }
 
-      // Track user journey (array of visited URLs)
+      // Initialize user_journey array if not already set
       if (!Array.isArray(existingData.user_journey)) {
         existingData.user_journey = [];
       }
 
       let currentUrl = window.location.href;
-      if (existingData.user_journey[existingData.user_journey.length - 1] !== currentUrl) {
+
+      // Prevent duplicate consecutive entries
+      if (existingData.user_journey.length === 0 || existingData.user_journey[existingData.user_journey.length - 1] !== currentUrl) {
         existingData.user_journey.push(currentUrl);
+        dataUpdated = true;
+      }
+
+      // Convert user_journey to a JSON string and check its character length
+      const userJourneyJson = JSON.stringify(existingData.user_journey);
+
+      // If the character count exceeds 131,072, modify the user_journey
+      if (userJourneyJson.length > 131072) {
+        // Start counting how many pages exceed the limit
+        let excessPagesCount = 0;
+        while (userJourneyJson.length > 131072) {
+          existingData.user_journey.pop(); // Remove the last entry
+          excessPagesCount++; // Count the excess pages
+          const newUserJourneyJson = JSON.stringify(existingData.user_journey);
+          if (newUserJourneyJson.length <= 131072) break; // If we are below the limit, stop
+        }
+
+        // Add "X more pages" dynamically for each excess page
+        for (let i = 1; i <= excessPagesCount; i++) {
+          existingData.user_journey.push(`${i} more page${i > 1 ? 's' : ''}`);
+        }
+
         dataUpdated = true;
       }
 

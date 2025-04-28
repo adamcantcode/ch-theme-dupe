@@ -32,7 +32,7 @@
         echo '<div>';
         while ($subpages->have_posts()) {
           $subpages->the_post();
-          if (get_post_meta(get_the_ID(), '_wp_page_template', true) !== 'single-locations-insurance.php') {
+          if (get_post_meta(get_the_ID(), '_wp_page_template', true) !== 'single-locations-insurance.php' && get_post_meta(get_the_ID(), '_wp_page_template', true) !== 'single-locations-family-therapy.php' && get_post_meta(get_the_ID(), '_wp_page_template', true) !== 'single-locations-areas-of-care.php' && get_post_meta(get_the_ID(), '_wp_page_template', true) !== 'single-locations-ma.php') {
             echo '<h3 class="text-p-base mb-base5-2"><a href="' . esc_url(get_permalink()) . '" class="underline">' . esc_html(get_the_title()) . '</h3></a>';
           }
         }

@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 
 <?= the_content(); ?>
-
 <?php if (is_front_page() && get_current_blog_id() === 1) : ?>
   <div class="homepagepopup">
     <div id="homepagePopup" class="bg-[rgba(0,0,0,.7)] fixed top-0 left-0 w-full h-full z-50 grid items-center justify-center center transition-all duration-300 modal-fade">
@@ -83,7 +82,7 @@
 
                   // Trigger close event
                   if (event.target.classList.contains('modal-fade')) {
-                    
+
                     window.VWO = window.VWO || [];
                     VWO.event = VWO.event || function() {
                       VWO.push(['event'].concat([].slice.call(arguments)))
@@ -201,7 +200,7 @@
 
                   // Trigger close event
                   if (event.target.classList.contains('modal-fade')) {
-                    
+
                     window.VWO = window.VWO || [];
                     VWO.event = VWO.event || function() {
                       VWO.push(['event'].concat([].slice.call(arguments)))

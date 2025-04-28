@@ -80,7 +80,7 @@
             },
             "layout": "block",
             "pagination": 0,
-            "min": 3,
+            "min": 0,
             "max": 0,
             "collapsed": "field_658308a743263",
             "button_label": "Add Feature",
@@ -105,7 +105,8 @@
                         "rainbow": "Rainbow",
                         "phone": "Phone",
                         "alert": "Alert",
-                        "clipboard": "Clipboard"
+                        "clipboard": "Clipboard",
+                        "sun": "Sun"
                     },
                     "default_value": "person",
                     "return_format": "value",
@@ -157,6 +158,23 @@
                     "prepend": "",
                     "append": "",
                     "parent_repeater": "field_6583089a43262"
+                },
+                {
+                    "key": "field_67e5683ddb7e6",
+                    "label": "Link",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "parent_repeater": "field_6583089a43262"
                 }
             ]
         }
@@ -179,5 +197,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1712145578
+    "modified": 1743117374
 }

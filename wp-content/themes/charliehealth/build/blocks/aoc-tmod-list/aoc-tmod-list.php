@@ -27,44 +27,45 @@
   window.addEventListener('DOMContentLoaded', () => {
     const viewAllButton = document.querySelector('.view-all-button-js-<?= $rand ?>');
     const aocContent = document.querySelector('.view-all-js-<?= $rand ?>');
+    const listItems = Array.from(aocContent.querySelectorAll('.list-item-height-js-<?= $rand ?>'));
 
     let revealedContent = null;
+    let maxHeight = 0;
 
+    // Calculate the max height based on the first 6 list items
     const setMaxHeight = () => {
-      if (!revealedContent) {
-        const listItems = aocContent.querySelectorAll('.list-item-height-js-<?= $rand; ?> ');
-        const first5ListItems = Array.from(listItems).slice(0, 5);
-        const combinedHeight = first5ListItems.reduce((totalHeight, listItem) => {
-          return totalHeight + listItem.offsetHeight + 27;
-        }, 0);
-        aocContent.style.maxHeight = combinedHeight + 'px';
-      }
+      const first5ListItems = listItems.slice(0, 6);
+      maxHeight = first5ListItems.reduce((totalHeight, listItem) => {
+        return totalHeight + listItem.offsetHeight + 27; // adding padding
+      }, 0);
+      aocContent.style.maxHeight = `${maxHeight}px`;
     };
 
-    function closeAccordion() {
+    // Function to close the accordion
+    const closeAccordion = () => {
       if (revealedContent) {
-        aocContent.style.maxHeight = setMaxHeight();
+        aocContent.style.maxHeight = `${maxHeight}px`; // reset to the initial height
         revealedContent = null;
         viewAllButton.innerText = 'View All';
       }
-    }
+    };
 
-    function toggleAccordion() {
-      if (this === revealedContent) {
-        closeAccordion();
+    // Function to toggle the accordion
+    const toggleAccordion = () => {
+      if (revealedContent) {
+        closeAccordion(); // Close if it's already open
       } else {
-        closeAccordion();
-        aocContent.style.maxHeight = aocContent.scrollHeight + 'px';
-        revealedContent = this;
+        aocContent.style.maxHeight = `${aocContent.scrollHeight}px`; // open completely
+        revealedContent = aocContent;
         viewAllButton.remove();
       }
-    }
+    };
 
+    // Event listeners
     viewAllButton.addEventListener('click', toggleAccordion);
+    window.addEventListener('resize', setMaxHeight);
 
-    setMaxHeight();
-    window.addEventListener('resize', () => {
-      setMaxHeight();
-    });
+    // Initialize
+    setMaxHeight(); // Set initial height
   });
 </script>

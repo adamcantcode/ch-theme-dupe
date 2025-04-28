@@ -130,29 +130,58 @@
       panel.classList.add('opacity-0', 'pointer-events-none', 'invisible');
     };
 
+    // Target only the first dropdown-item-js and its direct next sibling
+    const firstDropdownItem = document.querySelector('.dropdown-item-js');
+    const accordionContainer = firstDropdownItem?.nextElementSibling;
+    const dropdown = accordionContainer?.querySelector('.dropdown');
+
+    if (dropdown && !dropdown.querySelector('.bg-primary-100')) {
+      const allLinks = Array.from(dropdown.querySelectorAll('a'));
+      const nonIndented = allLinks.filter(a => !a.classList.contains('ml-base5-3'));
+
+      if (nonIndented.length >= 2) {
+        const first = nonIndented[0];
+        const second = nonIndented[1];
+
+        const wrapper = document.createElement('div');
+        wrapper.className = 'bg-primary-100 flex flex-col max-h-[70vh] overflow-y-auto p-base5-4 rounded-md';
+
+        first.parentNode.insertBefore(wrapper, first);
+
+        let node = first;
+        while (node) {
+          const next = node.nextSibling;
+          wrapper.appendChild(node);
+          if (node === second) break;
+          node = next;
+        }
+      }
+    }
+
+    // Accordion logic (unchanged)
     const dropdownItems = document.querySelectorAll('.dropdown-item-js');
 
     dropdownItems.forEach((item) => {
       const accordionContent = item.nextElementSibling;
+
       item.addEventListener('click', () => {
-        // Close all other dropdowns before opening the clicked one
         dropdownItems.forEach((otherItem) => {
           if (otherItem !== item) {
             const otherAccordionContent = otherItem.nextElementSibling;
             if (otherAccordionContent) {
               otherAccordionContent.style.maxHeight = null;
-              otherItem.querySelector('.rotate-90').classList.remove('scale-0');
+              otherItem.querySelector('.rotate-90')?.classList.remove('scale-0');
             }
           }
         });
 
+        const icon = item.querySelector('.rotate-90');
         if (accordionContent.style.maxHeight) {
           accordionContent.style.maxHeight = null;
-          item.querySelector('.rotate-90').classList.remove('scale-0');
+          icon?.classList.remove('scale-0');
         } else {
-          accordionContent.style.maxHeight =
-            accordionContent.scrollHeight + 'px';
-          item.querySelector('.rotate-90').classList.add('scale-0');
+          accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+          icon?.classList.add('scale-0');
         }
       });
     });

@@ -69,7 +69,7 @@ if (isset($condition_map[$condition])) {
     <h1 class="text-center"><?= $condition; ?> <?= strtolower($type); ?> in <mark style="background-color:#DAC1FB"><?= $location; ?></mark></h1>
     <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-center">
       <a href="/form" class="ch-button button-primary-ch" target="_self">Get Started</a>
-      <a href="tel:+18664848218" class="ch-button button-secondary-ch" target="_self">1 (986) 206-0414</a>
+      <a href="tel:+19862060414" class="ch-button button-secondary-ch" target="_self">1 (986) 206-0414</a>
     </div>
   </div>
 </section>
@@ -77,7 +77,7 @@ if (isset($condition_map[$condition])) {
   <div class="container">
     <div class="grid lg:grid-cols-[9fr_3fr] gap-base5-4 items-center">
       <div>
-        <h2 class="text-white"><?= preg_replace('/^(\S+\s+\S+)/', '<mark style="background-color:#DAC1FB">$1</mark>', $statistic, 1); ?>*</h2>
+        <h2 class="text-white"><?= preg_replace('/(\b\d+(?:,\d+)*\.?\d*\s*(?:million|billion|thousand|x|times)?\b|\b\d+\s+in\s+\d+\b|\b\d+%?\b)/i', '<mark style="background-color:#DAC1FB">$1</mark>', $statistic); ?>*</h2>
         <p class="text-white text-h2-base">We’re here to help.</p>
       </div>
       <div>
@@ -266,7 +266,7 @@ echo $modified_content;
     });
   </script>
 </section>
-<section class="bg-primary section-horizontal">
+<section class="bg-primary section-bottom">
   <div class="container">
     <div class="border-2 border-white rounded-[1rem] lg:p-sp-12 p-sp-4 grid lg:grid-cols-[4fr_8fr] gap-x-base5-4 approach-grid-js">
       <div class="grid content-between">
@@ -305,22 +305,44 @@ echo $modified_content;
     </div>
   </div>
 </section>
-<section class="bg-primary section">
-  <div class="container">
-    <div class="grid lg:grid-cols-[3fr_9fr]">
-      <div>
-        <h2 class="text-lavender-300">In their words</h2>
-      </div>
-      <div>
-        <p class="text-white text-h4-base">“Having an individual therapist on top of group helped with my extra needs that I was unable to cover in group. I am confident that Charlie Health is the primary reason I have been able to make positive changes in my life and continue living every day to its fullest.”</p>
-        <p class="text-white">-Sydney C., Charlie Health Alum</p>
-        <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-start">
-          <a href="https://www.charliehealth.com/reviews" class="ch-button button-primary-ch inverted" target="_self">Read More</a>
+<?php
+$args = array(
+  'post_type'      => 'testimonial',
+  'posts_per_page' => 1,
+  'orderby'        => 'rand'
+);
+
+$query = new WP_Query($args);
+if ($query->have_posts()) :
+  while ($query->have_posts()) : $query->the_post();
+    $full_quote  = get_field('full_quote');
+    $attribution = get_field('attribution');
+    if ($full_quote && $attribution) :
+?>
+      <section class="bg-primary section">
+        <div class="container">
+          <div class="grid lg:grid-cols-[3fr_9fr]">
+            <div>
+              <h2 class="text-lavender-300">In their words</h2>
+            </div>
+            <div>
+
+              <p class="text-white text-h4-base">“<?= $full_quote; ?>”</p>
+              <p class="text-white">-<?= $attribution; ?>, Charlie Health Alum</p>
+
+              <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full justify-start">
+                <a href="https://www.charliehealth.com/reviews" class="ch-button button-primary-ch inverted" target="_self">Read More</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
+<?php
+    endif;
+  endwhile;
+  wp_reset_postdata();
+endif;
+?>
 <section class="section">
   <div class="container">
     <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] lg:gap-sp-12 gap-sp-8">
@@ -388,7 +410,7 @@ echo $modified_content;
               </div>
               <div class="border-b-2 first:border-t-2 first:pt-sp-6 border-primary accordion-item mb-sp-6">
                 <div class="flex items-center justify-between cursor-pointer accordion-header pb-sp-6">
-                  <h3 class="mb-0 text-h4-base">Is <?= smartStrToLower($condition); ?> treatment available in <?= $location; ?> treated?</h3>
+                  <h3 class="mb-0 text-h4-base">Is <?= smartStrToLower($condition); ?> treatment available in <?= $location; ?>?</h3>
                   <span class="ml-sp-4">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M1 10.9999H22.9984V12.9999H1V10.9999Z" fill="#161A3D"></path>

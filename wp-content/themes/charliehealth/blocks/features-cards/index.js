@@ -12,8 +12,8 @@ window.addEventListener('DOMContentLoaded', () => {
   });
   gridItemStagger.to('.feature-card', {
     autoAlpha: 1,
-    duration: 3,
-    stagger: 0.5,
+    duration: 1.5,
+    stagger: 0.3,
     ease: 'power4.out',
   });
 });
