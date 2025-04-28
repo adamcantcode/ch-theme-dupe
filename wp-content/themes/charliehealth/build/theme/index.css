@@ -2210,6 +2210,10 @@ a.insurance-tabs.active:hover {
   display: inline;
 }
 
+.\!flex{
+  display: flex !important;
+}
+
 .flex{
   display: flex;
 }
@@ -4295,6 +4299,11 @@ a.insurance-tabs.active:hover {
   color: rgb(218 193 251 / var(--tw-text-opacity, 1));
 }
 
+.text-pale-blue-300{
+  --tw-text-opacity: 1;
+  color: rgb(143 146 205 / var(--tw-text-opacity, 1));
+}
+
 .text-primary{
   --tw-text-opacity: 1;
   color: rgb(22 26 61 / var(--tw-text-opacity, 1));
@@ -4313,6 +4322,11 @@ a.insurance-tabs.active:hover {
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.text-yellow-300{
+  --tw-text-opacity: 1;
+  color: rgb(253 191 124 / var(--tw-text-opacity, 1));
 }
 
 .underline{
@@ -6520,10 +6534,6 @@ section.bg-shield > div {
     bottom: 25px;
   }
 
-  .lg\:left-\[60\%\]{
-    left: 60%;
-  }
-
   .lg\:left-base5-5{
     left: 25px;
   }
@@ -6542,10 +6552,6 @@ section.bg-shield > div {
 
   .lg\:top-1\/2{
     top: 50%;
-  }
-
-  .lg\:top-\[-120px\]{
-    top: -120px;
   }
 
   .lg\:top-\[125px\]{
@@ -6857,10 +6863,6 @@ section.bg-shield > div {
     max-height: none;
   }
 
-  .lg\:\!w-full{
-    width: 100% !important;
-  }
-
   .lg\:w-2\/3{
     width: 66.666667%;
   }
@@ -6947,10 +6949,6 @@ section.bg-shield > div {
 
   .lg\:max-w-\[425px\]{
     max-width: 425px;
-  }
-
-  .lg\:max-w-\[670px\]{
-    max-width: 670px;
   }
 
   .lg\:max-w-\[75\%\]{
@@ -7164,10 +7162,6 @@ section.bg-shield > div {
 
   .lg\:grid-cols-\[9fr_3fr\]{
     grid-template-columns: 9fr 3fr;
-  }
-
-  .lg\:grid-cols-\[minmax\(0\2c _7fr\)_minmax\(0\2c _1fr\)_minmax\(0\2c _4fr\)\]{
-    grid-template-columns: minmax(0, 7fr) minmax(0, 1fr) minmax(0, 4fr);
   }
 
   .lg\:grid-cols-\[unset\]{

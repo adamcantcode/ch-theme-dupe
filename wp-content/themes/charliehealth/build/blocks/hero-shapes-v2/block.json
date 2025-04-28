@@ -1,16 +1,16 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
-  "name": "acf/hero-bg-video-block",
-  "title": "Hero Background Video",
-  "description": "",
+  "name": "acf/hero-shapes-v2-block",
+  "title": "Hero Shapes Block v2",
+  "description": "Hero section meant for ATF page title, subtitle and details",
   "style": "file:./index.css",
   "script": "file:./index.js",
   "category": "custom",
-  "icon": "align-wide",
+  "icon": "star-empty",
   "apiVersion": 2,
   "acf": {
     "mode": "preview",
-    "renderTemplate": "hero-bg-video.php"
+    "renderTemplate": "hero-shapes-v2.php"
   },
   "supports": {}
 }
