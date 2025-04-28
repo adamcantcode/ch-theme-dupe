@@ -25,6 +25,7 @@ $definition           = get_field('brief_definition');
 $keyTechniques        = get_field('key_techniques');
 $primaryGoals         = get_field('primary_goals');
 $keyBenefits          = get_field('key_benefits');
+$top_3_conditions     = get_field('top_3_conditions');
 $faq_brief_definition = get_field('faq_brief_definition');
 $faq_ideal_candidats  = get_field('faq_ideal_candidats');
 $faq_timeline         = get_field('faq_timeline');
@@ -63,12 +64,10 @@ $faq_timeline         = get_field('faq_timeline');
 </section>
 <section class="section-bottom">
   <div class="container">
-    <div class="rounded-md bg-primary grid lg:grid-cols-[2fr_6fr_4fr] lg:p-base5-10 p-base5-3 gap-base5-4 relative hover:bg-primary-200 group transition-all duration-300 mb-base5-2 lg:mb-0 [&_*]:text-white items-center">
+    <div class="rounded-md bg-primary grid lg:grid-cols-[8fr_4fr] lg:p-base5-10 p-base5-3 gap-base5-4 relative hover:bg-primary-200 group transition-all duration-300 mb-base5-2 lg:mb-0 [&_*]:text-white items-center">
       <div>
-        <p class="font-heading-serif text-[86px] leading-none">$statNumber</p>
-      </div>
-      <div>
-        <h4>$statistic</h4>
+        <h2><?= $statistic; ?>*</h2>
+        <h4>We’re here to help.</p>
       </div>
       <div class="grid">
         <div class="order-2 mb-0 ml-auto lg:order-1 mt-base5-6 lg:mt-0 lg:mb-base5-6">
@@ -287,7 +286,8 @@ echo $modified_content;
       <div></div>
       <div>
         <h2><?= ucfirst(smartStrToLower($condition)); ?> made for you.</h2>
-        <h3>Charlie Health clients in <?= $location; ?> with [top 3 conditions], and more can start virtual intensive therapy within 24 hours. <?= smartStrToLower($condition); ?> is one of many therapies used in each personalized plan.</h3>
+        <h4 class="mb-base5-6"><?= str_replace('[Location]', $location, $top_3_conditions); ?>
+        </h4>
         <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full">
           <a href="/form" class="ch-button button-primary-ch" target="_self">Get Started</a>
           <a href="tel:+19862060414" class="ch-button button-secondary-ch" target="_self">1 (986) 206-0414</a>

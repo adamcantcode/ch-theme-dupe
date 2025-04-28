@@ -2210,12 +2210,12 @@ a.insurance-tabs.active:hover {
   display: inline;
 }
 
-.flex{
-  display: flex;
-}
-
 .\!flex{
   display: flex !important;
+}
+
+.flex{
+  display: flex;
 }
 
 .table{
@@ -6534,10 +6534,6 @@ section.bg-shield > div {
     bottom: 25px;
   }
 
-  .lg\:left-\[60\%\]{
-    left: 60%;
-  }
-
   .lg\:left-base5-5{
     left: 25px;
   }
@@ -6556,10 +6552,6 @@ section.bg-shield > div {
 
   .lg\:top-1\/2{
     top: 50%;
-  }
-
-  .lg\:top-\[-120px\]{
-    top: -120px;
   }
 
   .lg\:top-\[125px\]{
@@ -6871,10 +6863,6 @@ section.bg-shield > div {
     max-height: none;
   }
 
-  .lg\:\!w-full{
-    width: 100% !important;
-  }
-
   .lg\:w-2\/3{
     width: 66.666667%;
   }
@@ -6961,10 +6949,6 @@ section.bg-shield > div {
 
   .lg\:max-w-\[425px\]{
     max-width: 425px;
-  }
-
-  .lg\:max-w-\[670px\]{
-    max-width: 670px;
   }
 
   .lg\:max-w-\[75\%\]{
@@ -7165,10 +7149,6 @@ section.bg-shield > div {
   }
 
   .lg\:grid-cols-\[7fr_5fr\]{
-    grid-template-columns: 7fr 5fr;
-  }
-
-  .lg\:grid-cols-\[7fr_5fr_\]{
     grid-template-columns: 7fr 5fr;
   }
 
