@@ -288,10 +288,7 @@
       @apply opacity-20;
     }
     .swiper-slide {
-      @apply opacity-50 transition-all duration-300;
-      &.swiper-slide-active {
-        @apply opacity-100;
-      }
+      @apply transition-all duration-300;
     }
   }
   &.swiper-videos-testimonial {

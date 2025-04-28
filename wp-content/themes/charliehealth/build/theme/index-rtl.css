@@ -5202,14 +5202,9 @@ a.insurance-tabs.active:hover {
 }
 
 .swiper.swiper-careers-testimonial .swiper-slide{
-  opacity: 0.5;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
-}
-
-.swiper.swiper-careers-testimonial .swiper-slide.swiper-slide-active{
-  opacity: 1;
 }
 
 .swiper.swiper-videos-testimonial .swiper-button-disabled{

@@ -18,7 +18,7 @@ $defaults = [
   ],
   4 => [
     'primary' => ['url' => 'https://identity.app.charliehealth.com/u/login', 'label' => 'Register now', 'target' => '_self'],
-    'secondary' => ['url' => 'https://www.charliehealth.com/wp-content/uploads/2025/01/Alumni-Community-Standards-1-29-25.pdf', 'label' => 'View Community Standards', 'target' => '_self'],
+    'secondary' => ['url' => 'tel:+9862042446', 'label' => '(640) 206-0799', 'target' => '_self'],
   ],
 ];
 
