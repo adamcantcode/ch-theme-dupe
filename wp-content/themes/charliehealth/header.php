@@ -57,7 +57,7 @@
   }
 
   // Nav button
-  if (is_main_site()) {
+  if (get_current_blog_id() === 1) {
     if (!empty(get_field('get_started', get_the_ID()))) {
       $getStarted = get_field('get_started', get_the_ID());
     } else {
@@ -68,7 +68,7 @@
     } else {
       $clientLogin = ['url' => 'https://app.charliehealth.com/', 'target' => '_blank', 'title' => 'Client login'];
     }
-  } else {
+  } elseif (get_current_blog_id() === 3) {
     if (!empty(get_field('get_started', get_the_ID()))) {
       $getStarted = get_field('get_started', get_the_ID());
     } else {
@@ -78,6 +78,17 @@
       $clientLogin = get_field('client_login', get_the_ID());
     } else {
       $clientLogin = ['url' => 'mailto:referrals@charliehealth.com', 'target' => '_self', 'title' => 'Email Us'];
+    }
+  } elseif (get_current_blog_id() === 4) {
+    if (!empty(get_field('get_started', get_the_ID()))) {
+      $getStarted = get_field('get_started', get_the_ID());
+    } else {
+      $getStarted = ['url' => 'https://identity.app.charliehealth.com/u/login', 'target' => '_blank', 'title' => 'Login'];
+    }
+    if (!empty(get_field('client_login', get_the_ID()))) {
+      $clientLogin = get_field('client_login', get_the_ID());
+    } else {
+      $clientLogin = [];
     }
   }
   ?>
@@ -205,7 +216,9 @@
         </div>
         <div class="flex ml-auto content gap-x-sp-2">
           <a href="<?= $getStarted['url'] ?>" target="<?= $getStarted['target']; ?>" class="ch-button button-tertiary-lavender !rounded-[6px]"><?= $getStarted['title'] ?></a>
-          <a href="<?= $clientLogin['url']; ?>" target="<?= $clientLogin['target']; ?>" class="ch-button button-tertiary-lavender inverted !rounded-[6px]"><?= $clientLogin['title']; ?></a>
+          <?php if (!empty($clientLogin)) : ?>
+            <a href="<?= $clientLogin['url']; ?>" target="<?= $clientLogin['target']; ?>" class="ch-button button-tertiary-lavender inverted !rounded-[6px]"><?= $clientLogin['title']; ?></a>
+          <?php endif; ?>
         </div>
       </div>
       <div class="container flex justify-between lg:noshow py-sp-5">
@@ -320,10 +333,8 @@
         </div>
         <div>
           <div class="flex justify-center py-8 gap-x-sp-4 px-sp-5">
-            <?php if (is_main_site()) : ?>
-              <a href="<?= $clientLogin['url']; ?>" target="<?= $clientLogin['target']; ?>" class="ch-button button-tertiary-lavender inverted !text-[1rem] !rounded-[6px]"><?= $clientLogin['title']; ?></a>
-            <?php endif; ?>
             <a href="<?= $getStarted['url']; ?>" target="<?= $getStarted['target']; ?>" class="ch-button button-tertiary-lavender !text-[1rem] !rounded-[6px]"><?= $getStarted['title']; ?></a>
+            <a href="<?= $clientLogin['url']; ?>" target="<?= $clientLogin['target']; ?>" class="ch-button button-tertiary-lavender inverted !text-[1rem] !rounded-[6px]"><?= $clientLogin['title']; ?></a>
           </div>
         </div>
       </div>
