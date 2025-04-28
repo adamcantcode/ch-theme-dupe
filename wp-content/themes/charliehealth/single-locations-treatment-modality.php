@@ -110,7 +110,7 @@ $faq_timeline         = get_field('faq_timeline');
 </section>
 <?php
 // HIW Block pattern, dynamic update
-$block_content = do_blocks('<!-- wp:block {"ref":18411} /-->');
+$block_content = do_blocks('<!-- wp:block {"ref":20446} /-->');
 
 // Modify the block content dynamically
 $modified_content = str_replace(
