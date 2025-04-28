@@ -334,7 +334,9 @@
         <div>
           <div class="flex justify-center py-8 gap-x-sp-4 px-sp-5">
             <a href="<?= $getStarted['url']; ?>" target="<?= $getStarted['target']; ?>" class="ch-button button-tertiary-lavender !text-[1rem] !rounded-[6px]"><?= $getStarted['title']; ?></a>
-            <a href="<?= $clientLogin['url']; ?>" target="<?= $clientLogin['target']; ?>" class="ch-button button-tertiary-lavender inverted !text-[1rem] !rounded-[6px]"><?= $clientLogin['title']; ?></a>
+            <?php if (!empty($clientLogin)) : ?>
+              <a href="<?= $clientLogin['url']; ?>" target="<?= $clientLogin['target']; ?>" class="ch-button button-tertiary-lavender inverted !text-[1rem] !rounded-[6px]"><?= $clientLogin['title']; ?></a>
+            <?php endif; ?>
           </div>
         </div>
       </div>
