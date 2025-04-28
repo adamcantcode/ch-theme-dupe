@@ -1,86 +1,81 @@
 <?php
+// Retrieve ACF fields
 $buttons = get_field('button_group_buttons');
 $invert = get_field('button_group_invert');
 $linkOne = get_field('button_group_link');
 $linkTwo = get_field('button_group_link_two');
+$blogId = get_current_blog_id();
 
-$linkOneLink = '';
-$linkOneTitle = '';
-$linkOneTarget = '';
-if (!empty($linkOne)) {
-  $linkOneLink = $linkOne['url'];
-  $linkOneTitle = $linkOne['title'];
-  $linkOneTarget = $linkOne['target'];
+// Centralized defaults per blog
+$defaults = [
+  1 => [
+    'primary' => ['url' => '/form', 'label' => 'Get Started', 'target' => '_self'],
+    'secondary' => ['url' => 'tel:+19862060414', 'label' => '1 (986) 206-0414', 'target' => '_self'],
+  ],
+  3 => [
+    'primary' => ['url' => '/referral-form', 'label' => 'Refer now', 'target' => '_self'],
+    'secondary' => ['url' => 'tel:+19862060414', 'label' => '1 (986) 206-0414', 'target' => '_self'],
+  ],
+  4 => [
+    'primary' => ['url' => 'https://identity.app.charliehealth.com/u/login', 'label' => 'Register now', 'target' => '_self'],
+    'secondary' => ['url' => 'https://www.charliehealth.com/wp-content/uploads/2025/01/Alumni-Community-Standards-1-29-25.pdf', 'label' => 'View Community Standards', 'target' => '_self'],
+  ],
+];
+
+// Fetch primary button details with fallback
+$primary = [
+  'url' => $linkOne['url'] ?? $defaults[$blogId]['primary']['url'] ?? '#',
+  'label' => $linkOne['title'] ?? $defaults[$blogId]['primary']['label'] ?? 'Primary',
+  'target' => $linkOne['target'] ?? $defaults[$blogId]['primary']['target'] ?? '_self',
+];
+
+// Fetch secondary button details with fallback
+$secondary = [
+  'url' => $linkTwo['url'] ?? $defaults[$blogId]['secondary']['url'] ?? '',
+  'label' => $linkTwo['title'] ?? $defaults[$blogId]['secondary']['label'] ?? '',
+  'target' => $linkTwo['target'] ?? $defaults[$blogId]['secondary']['target'] ?? '_self',
+];
+
+// Determine alignment class
+$alignClass = 'justify-start';
+if (!empty($block['align'])) {
+  $alignmentMap = ['left' => 'justify-start', 'center' => 'justify-center', 'right' => 'justify-end'];
+  $alignClass = $alignmentMap[$block['align']] ?? 'justify-start';
+}
+if (isset($style) && $style === 'full') {
+  $alignClass = 'justify-end';
 }
 
-$linkTwoLink = '';
-$linkTwoTitle = '';
-$linkTwoTarget = '';
-if (!empty($linkTwo)) {
-  $linkTwoLink = $linkTwo['url'];
-  $linkTwoTitle = $linkTwo['title'];
-  $linkTwoTarget = $linkTwo['target'];
-}
-$align = '';
-if (isset($block) && $block) {
-  if (isset($block['align'])) {
-    if ($block['align'] === 'left') {
-      $align = 'justify-start';
-    } elseif ($block['align'] === 'right') {
-      $align = 'justify-end';
-    } elseif (($block['align'] === 'center')) {
-      $align = 'justify-center';
-    } else {
-      $align = 'justify-start';
-    }
-  } else {
-    $align = 'justify-start';
-  }
-} else {
-  $align = 'justify-start';
-}
-if (isset($style)) {
-  if ($style === 'full') {
-    $align = 'justify-end';
-  }
-}
+// Determine button styling
+$primaryClass = 'ch-button button-primary-ch' . ($invert ? ' inverted' : '');
+$secondaryClass = 'ch-button button-secondary-ch' . ($invert ? ' inverted' : '');
 ?>
-<?php if (get_current_blog_id() !== 3) : ?>
-  <?php if ($buttons !== 'none') : ?>
+
+<?php if (in_array($blogId, [1, 3, 4], true) && $buttons !== 'none') : ?>
+  <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full <?= esc_attr($alignClass); ?>">
     <?php if ($buttons === 'double') : ?>
-      <div class="flex flex-col lg:flex-wrap lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full<?= ' ' . $align ?>">
-        <a href="<?= $linkOneLink ?: '/form'; ?>" class="ch-button button-primary-ch<?= $invert ? ' inverted' : '' ?>" target="<?= $linkOneTarget ?: '_self'; ?>"><?= $linkOneTitle ?: 'Get Started'; ?></a>
-        <a href="<?= $linkTwoLink ?: 'tel:+19862060414'; ?>" class="ch-button button-secondary-ch<?= $invert ? ' inverted' : '' ?>" target="<?= $linkTwoTarget ?: '_self'; ?>"><?= $linkTwoTitle ?: '1 (986) 206-0414'; ?></a>
-      </div>
+      <?php if (!empty($primary['url'])) : ?>
+        <a href="<?= esc_url($primary['url']); ?>" class="<?= esc_attr($primaryClass); ?>" target="<?= esc_attr($primary['target']); ?>">
+          <?= esc_html($primary['label']); ?>
+        </a>
+      <?php endif; ?>
+      <?php if (!empty($secondary['url'])) : ?>
+        <a href="<?= esc_url($secondary['url']); ?>" class="<?= esc_attr($secondaryClass); ?>" target="<?= esc_attr($secondary['target']); ?>">
+          <?= esc_html($secondary['label']); ?>
+        </a>
+      <?php endif; ?>
+    <?php elseif ($buttons === 'primary') : ?>
+      <?php if (!empty($primary['url'])) : ?>
+        <a href="<?= esc_url($primary['url']); ?>" class="<?= esc_attr($primaryClass); ?>" target="<?= esc_attr($primary['target']); ?>">
+          <?= esc_html($primary['label']); ?>
+        </a>
+      <?php endif; ?>
+    <?php elseif ($buttons === 'secondary') : ?>
+      <?php if (!empty($primary['url'])) : ?>
+        <a href="<?= esc_url($primary['url']); ?>" class="<?= esc_attr($secondaryClass); ?>" target="<?= esc_attr($primary['target']); ?>">
+          <?= esc_html($primary['label']); ?>
+        </a>
+      <?php endif; ?>
     <?php endif; ?>
-    <?php if ($buttons === 'primary') : ?>
-      <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full<?= ' ' . $align ?>">
-        <a href="<?= $linkOneLink ?: '/form'; ?>" class="ch-button button-primary-ch<?= $invert ? ' inverted' : '' ?>" target="<?= $linkOneTarget ?: '_self'; ?>"><?= $linkOneTitle ?: 'Get Started'; ?></a>
-      </div>
-    <?php endif; ?>
-    <?php if ($buttons === 'secondary') : ?>
-      <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full<?= ' ' . $align ?>">
-        <a href="<?= $linkOneLink ?: 'tel:+19862060414'; ?>" class="ch-button button-secondary-ch<?= $invert ? ' inverted' : '' ?>" target="<?= $linkOneTarget ?: '_self'; ?>"><?= $linkOneTitle ?: '1 (986) 206-0414'; ?></a>
-      </div>
-    <?php endif; ?>
-  <?php endif; ?>
-<?php else : ?>
-  <?php if ($buttons !== 'none') : ?>
-    <?php if ($buttons === 'double') : ?>
-      <div class="flex flex-col lg:flex-wrap lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full<?= ' ' . $align ?>">
-        <a href="<?= $linkOneLink ?: '/referral-form'; ?>" class="ch-button button-primary-ch<?= $invert ? ' inverted' : '' ?>" target="<?= $linkOneTarget ?: '_self'; ?>"><?= $linkOneTitle ?: 'Refer now'; ?></a>
-        <a href="<?= $linkTwoLink ?: 'tel:+19862060414'; ?>" class="ch-button button-secondary-ch<?= $invert ? ' inverted' : '' ?>" target="<?= $linkTwoTarget ?: '_self'; ?>"><?= $linkTwoTitle ?: '1 (986) 206-0414'; ?></a>
-      </div>
-    <?php endif; ?>
-    <?php if ($buttons === 'primary') : ?>
-      <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full<?= ' ' . $align ?>">
-        <a href="<?= $linkOneLink ?: '/referral-form'; ?>" class="ch-button button-primary-ch<?= $invert ? ' inverted' : '' ?>" target="<?= $linkOneTarget ?: '_self'; ?>"><?= $linkOneTitle ?: 'Refer now'; ?></a>
-      </div>
-    <?php endif; ?>
-    <?php if ($buttons === 'secondary') : ?>
-      <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full<?= ' ' . $align ?>">
-        <a href="<?= $linkOneLink ?: 'tel:+19862060414'; ?>" class="ch-button button-secondary-ch<?= $invert ? ' inverted' : '' ?>" target="<?= $linkOneTarget ?: '_self'; ?>"><?= $linkOneTitle ?: '1 (986) 206-0414'; ?></a>
-      </div>
-    <?php endif; ?>
-  <?php endif; ?>
+  </div>
 <?php endif; ?>
