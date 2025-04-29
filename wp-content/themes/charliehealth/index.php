@@ -134,7 +134,7 @@
             <div class="lg:p-base5-10 p-base5-3">
               <div class="flex flex-col justify-center">
                 <p class="text-h1-base lg:text-h1-lg text-h2">Refer a client to Charlie Health today</p>
-                <p class="text-h4-base lg:mb-base5-10 mb-base5-5">Virtual intensive mental health treatment for individuals in need of more than once-weekly therapy
+                <p class="text-h4-base lg:mb-base5-10 mb-base5-5">Virtual intensive treatment for individuals in need of more than once-weekly therapy
                 </p>
                 <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full ">
                   <a href="https://referrals.charliehealth.com/referral-form" class="ch-button button-primary-ch">Refer now</a>
