@@ -508,4 +508,27 @@
         setMainMargin();
         setPanelHeight();
       });
+
+      // A/B Test - Header Nav
+      window.addEventListener('DOMContentLoaded', () => {
+        // Desktop
+        document.querySelectorAll('.topLevelNavItem').forEach(item => {
+          const link = item.querySelector('a');
+          if (link && link.textContent.toLowerCase().includes('for providers')) {
+            const secondLevel = item.querySelector('.secondLevelNav');
+            if (secondLevel) {
+              secondLevel.classList.add('noshow');
+            }
+          }
+        });
+        // Mobile
+        document.querySelectorAll('.dropdown-item-js a').forEach(link => {
+          if (link.textContent.toLowerCase().includes('for providers')) {
+            const sibling = link.parentElement.nextElementSibling;
+            if (sibling) {
+              sibling.classList.add('noshow');
+            }
+          }
+        });
+      });
     </script>
