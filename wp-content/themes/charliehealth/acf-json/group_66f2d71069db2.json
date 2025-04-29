@@ -79,7 +79,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Get the mental health treatment you <mark class=\"bg-yellow-100 rounded-lg\">deserve<\/mark>",
+            "default_value": "Get the treatment you <mark class=\"bg-yellow-100 rounded-lg\">deserve<\/mark>",
             "maxlength": "",
             "allow_in_bindings": 1,
             "placeholder": "",
@@ -108,7 +108,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Need additional mental health support? Charlie Health can help. Get started with virtual intensive therapy now.",
+            "default_value": "Need additional support? Charlie Health can help. Get started with virtual intensive treatment now",
             "maxlength": "",
             "allow_in_bindings": 0,
             "placeholder": "",
