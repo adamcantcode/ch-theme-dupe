@@ -1138,13 +1138,11 @@ function prevent_acf_block_js_in_editor()
 add_action('enqueue_block_assets', 'prevent_acf_block_js_in_editor', 20);
 
 
-add_filter('acf/fields/relationship/query/key=field_648c788a8929d', function ($args, $field, $post_id) {
-  // Only switch if we're *not* already on blog 1
+add_filter('acf/fields/relationship/query/name=related_posts', function ($args, $field, $post_id) {
   if (get_current_blog_id() === 4) {
     switch_to_blog(1);
 
-    // Set up your query params — adjust post_type as needed
-    $args['post_type'] = ['post'];
+    $args['post_type'] = ['post']; // Customize as needed
     $args['posts_per_page'] = -1;
 
     restore_current_blog();
