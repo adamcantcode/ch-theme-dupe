@@ -1137,16 +1137,34 @@ function prevent_acf_block_js_in_editor()
 }
 add_action('enqueue_block_assets', 'prevent_acf_block_js_in_editor', 20);
 
+/**
+ * On site 4, override the Relationship field
+ * so it queries blog 1’s posts.
+ */
+add_filter(
+  'acf/fields/relationship/query/key=field_670dc72ef7b2f',
+  'my_acf_relationship_query_blog1',
+  10,
+  3
+);
+function my_acf_relationship_query_blog1($args, $field, $post_id)
+{
 
-add_filter('acf/fields/relationship/query/name=related_posts', function ($args, $field, $post_id) {
-  if (get_current_blog_id() === 4) {
-    switch_to_blog(1);
-
-    $args['post_type'] = ['post']; // Customize as needed
-    $args['posts_per_page'] = -1;
-
-    restore_current_blog();
+  // only on site 4
+  if (get_current_blog_id() !== 4) {
+    return $args;
   }
 
+  // switch context to blog 1
+  switch_to_blog(1);
+
+  // now modify the query to pull blog 1 posts
+  $args['post_type']      = ['post'];
+  $args['post_status']    = 'publish';
+  $args['posts_per_page'] = -1;
+
+  // return to blog 4 so ACF’s WP_Query runs against blog 1
+  restore_current_blog();
+
   return $args;
-}, 10, 3);
+}
