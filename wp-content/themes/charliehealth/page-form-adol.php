@@ -77,38 +77,54 @@ Template Post Type: page
             }, 300);
           }
 
-          // Register event listener for form ready event
+          // Retry until the disclaimerContainer and progressBar are found
+          function waitForElements(selectors, callback, timeout = 3000, interval = 100) {
+            const start = Date.now();
+            const check = () => {
+              console.log('Checking for elements:', selectors);
+              const elements = selectors.map(sel => document.querySelector(sel));
+              if (elements.every(el => el)) {
+                console.log('Elements found:', elements);
+                callback(...elements);
+              } else if (Date.now() - start < timeout) {
+                console.log('Elements not found, retrying...');
+                setTimeout(check, interval);
+              } else {
+                console.warn('Timed out waiting for elements:', selectors);
+              }
+            };
+            check();
+          }
+
           form.registerFormEventListener({
             type: 'ready',
             onFormEvent: function(event) {
+              console.log('Form is ready');
 
-              // Select elements
-              const disclaimerContainer = document.querySelector('.field-auto-capture');
-              const progressBar = document.querySelector('#fsSubmit' + FORM_ID);
-              const originalElement = disclaimerContainer;
+              waitForElements(
+                ['.field-auto-capture', '#fsSubmit' + FORM_ID],
+                (disclaimerContainer, progressBar) => {
+                  const originalElement = disclaimerContainer;
 
-              // Insert disclaimer after the progress bar
-              if (progressBar && disclaimerContainer) {
-                progressBar.insertAdjacentElement('afterend', disclaimerContainer);
-                updateDisclaimerStyles(disclaimerContainer);
-              }
+                  progressBar.insertAdjacentElement('afterend', disclaimerContainer);
+                  updateDisclaimerStyles(disclaimerContainer);
 
-              // Create and insert consent text element
-              const consentElement = createConsentElement(originalElement);
-              if (consentElement && originalElement) {
-                originalElement.parentNode.insertBefore(consentElement, originalElement.nextSibling);
-              }
+                  const consentElement = createConsentElement(originalElement);
+                  if (consentElement && originalElement) {
+                    originalElement.parentNode.insertBefore(consentElement, originalElement.nextSibling);
+                  }
 
-              // Add page navigation listeners for visibility control
-              const pagination = document.querySelector('.fsPagination');
-              if (pagination) {
-                handlePageVisibility(disclaimerContainer, '#fsPage' + FORM_ID + '-1', true);
-                handlePageVisibility(consentElement, '#fsPage' + FORM_ID + '-2', true);
-                pagination.addEventListener('click', function() {
-                  handlePageVisibility(disclaimerContainer, '#fsPage' + FORM_ID + '-1', true);
-                  handlePageVisibility(consentElement, '#fsPage' + FORM_ID + '-2', true);
-                });
-              }
+                  const pagination = document.querySelector('.fsPagination');
+                  if (pagination) {
+                    handlePageVisibility(disclaimerContainer, '#fsPage' + FORM_ID + '-1', true);
+                    handlePageVisibility(consentElement, '#fsPage' + FORM_ID + '-2', true);
+                    pagination.addEventListener('click', function() {
+                      handlePageVisibility(disclaimerContainer, '#fsPage' + FORM_ID + '-1', true);
+                      handlePageVisibility(consentElement, '#fsPage' + FORM_ID + '-2', true);
+                    });
+                  }
+                }
+              );
 
               return Promise.resolve(event);
             }
