@@ -1137,40 +1137,45 @@ function prevent_acf_block_js_in_editor()
 }
 add_action('enqueue_block_assets', 'prevent_acf_block_js_in_editor', 20);
 
-// …other code…
+add_action('acf/init', function () {
 
-// 1) Hook the query filter on your relationship field
-add_filter(
-  'acf/fields/relationship/query/key=field_670dc72ef7b2f',
-  'myprefix_acf_rel_query_blog1',
-  10,
-  3
-);
-function myprefix_acf_rel_query_blog1($args, $field, $post_id)
-{
+  // only on site 4
   if (get_current_blog_id() !== 4) {
-    return $args;
+    return;
   }
-  switch_to_blog(1);
-  add_filter(
-    'acf/fields/relationship/result/key=field_670dc72ef7b2f',
-    'myprefix_acf_rel_restore_blog',
-    10,
-    4
-  );
-  $args['post_type']      = ['post', 'your_custom_post_type'];
-  $args['post_status']    = 'publish';
-  $args['posts_per_page'] = -1;
-  return $args;
-}
 
-function myprefix_acf_rel_restore_blog($title, $post, $field, $post_id)
-{
-  restore_current_blog();
-  remove_filter(
-    'acf/fields/relationship/result/key=field_670dc72ef7b2f',
-    'myprefix_acf_rel_restore_blog',
-    10
+  add_filter(
+    'acf/fields/relationship/query/key=field_670dc72ef7b2f',
+    function ($args, $field, $post_id) {
+
+      // 1) switch into blog 1 for the upcoming WP_Query
+      switch_to_blog(1);
+
+      // 2) hook a one-off restore on the very first result
+      add_filter(
+        'acf/fields/relationship/result/key=field_670dc72ef7b2f',
+        function ($title, $post, $field, $post_id) {
+          // unhook ourselves so we only restore once
+          remove_filter(
+            'acf/fields/relationship/result/key=field_670dc72ef7b2f',
+            __FUNCTION__,
+            10
+          );
+          restore_current_blog();
+          return $title;
+        },
+        10,
+        4
+      );
+
+      // 3) now force blog 1’s posts
+      $args['post_type']      = ['post'];
+      $args['post_status']    = 'publish';
+      $args['posts_per_page'] = -1;
+
+      return $args;
+    },
+    10,
+    3
   );
-  return $title;
-}
+});
