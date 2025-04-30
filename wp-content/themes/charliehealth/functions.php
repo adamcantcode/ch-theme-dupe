@@ -1137,34 +1137,40 @@ function prevent_acf_block_js_in_editor()
 }
 add_action('enqueue_block_assets', 'prevent_acf_block_js_in_editor', 20);
 
-/**
- * On site 4, override the Relationship field
- * so it queries blog 1’s posts.
- */
+// …other code…
+
+// 1) Hook the query filter on your relationship field
 add_filter(
   'acf/fields/relationship/query/key=field_670dc72ef7b2f',
-  'my_acf_relationship_query_blog1',
+  'myprefix_acf_rel_query_blog1',
   10,
   3
 );
-function my_acf_relationship_query_blog1($args, $field, $post_id)
+function myprefix_acf_rel_query_blog1($args, $field, $post_id)
 {
-
-  // only on site 4
   if (get_current_blog_id() !== 4) {
     return $args;
   }
-
-  // switch context to blog 1
   switch_to_blog(1);
-
-  // now modify the query to pull blog 1 posts
-  $args['post_type']      = ['post'];
+  add_filter(
+    'acf/fields/relationship/result/key=field_670dc72ef7b2f',
+    'myprefix_acf_rel_restore_blog',
+    10,
+    4
+  );
+  $args['post_type']      = ['post', 'your_custom_post_type'];
   $args['post_status']    = 'publish';
   $args['posts_per_page'] = -1;
-
-  // return to blog 4 so ACF’s WP_Query runs against blog 1
-  restore_current_blog();
-
   return $args;
+}
+
+function myprefix_acf_rel_restore_blog($title, $post, $field, $post_id)
+{
+  restore_current_blog();
+  remove_filter(
+    'acf/fields/relationship/result/key=field_670dc72ef7b2f',
+    'myprefix_acf_rel_restore_blog',
+    10
+  );
+  return $title;
 }
