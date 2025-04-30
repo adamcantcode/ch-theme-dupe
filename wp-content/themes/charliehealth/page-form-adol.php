@@ -23,6 +23,19 @@ Template Post Type: page
         }
         ?>
         <script>
+          function waitForElements(selectors, callback, attempt = 0) {
+            const elements = selectors.map(sel => document.querySelector(sel));
+            if (elements.every(Boolean)) {
+              callback(...elements);
+            } else if (attempt < 20) {
+              setTimeout(() => waitForElements(selectors, callback, attempt + 1), 150);
+            } else {
+              console.warn('Elements not found:', selectors);
+            }
+          }
+        </script>
+
+        <script>
           'use strict';
 
           // Constants
@@ -102,19 +115,20 @@ Template Post Type: page
               console.log('Form is ready');
 
               waitForElements(
-                ['.field-auto-capture', '#fsSubmit' + FORM_ID],
-                (disclaimerContainer, progressBar) => {
+                ['.field-auto-capture', '#fsSubmit' + FORM_ID, '.fsPagination'],
+                (disclaimerContainer, progressBar, pagination) => {
                   const originalElement = disclaimerContainer;
 
-                  progressBar.insertAdjacentElement('afterend', disclaimerContainer);
-                  updateDisclaimerStyles(disclaimerContainer);
+                  if (progressBar && disclaimerContainer) {
+                    progressBar.insertAdjacentElement('afterend', disclaimerContainer);
+                    updateDisclaimerStyles(disclaimerContainer);
+                  }
 
                   const consentElement = createConsentElement(originalElement);
                   if (consentElement && originalElement) {
                     originalElement.parentNode.insertBefore(consentElement, originalElement.nextSibling);
                   }
 
-                  const pagination = document.querySelector('.fsPagination');
                   if (pagination) {
                     handlePageVisibility(disclaimerContainer, '#fsPage' + FORM_ID + '-1', true);
                     handlePageVisibility(consentElement, '#fsPage' + FORM_ID + '-2', true);
@@ -167,6 +181,65 @@ Template Post Type: page
               return Promise.resolve(event);
             }
           });
+        </script>
+        <script>
+          (function() {
+            const REQUIRED_SELECTORS = [
+              '.field-auto-capture',
+              '#fsSubmit' + <?= $formID; ?>,
+              '.fsPagination',
+              '#fsPage' + <?= $formID; ?> + '-1',
+              '#fsPage' + <?= $formID; ?> + '-2'
+            ];
+
+            function allExist() {
+              return REQUIRED_SELECTORS.every(sel => document.querySelector(sel));
+            }
+
+            function runOnceWhenReady(callback) {
+              if (allExist()) {
+                callback();
+                return;
+              }
+
+              const observer = new MutationObserver(() => {
+                if (allExist()) {
+                  observer.disconnect();
+                  callback();
+                }
+              });
+
+              observer.observe(document.body, {
+                childList: true,
+                subtree: true
+              });
+            }
+
+            runOnceWhenReady(() => {
+              const disclaimerContainer = document.querySelector('.field-auto-capture');
+              const progressBar = document.querySelector('#fsSubmit' + <?= $formID; ?>);
+              const pagination = document.querySelector('.fsPagination');
+              const originalElement = disclaimerContainer;
+
+              progressBar.insertAdjacentElement('afterend', disclaimerContainer);
+              updateDisclaimerStyles(disclaimerContainer);
+
+              const consentElement = createConsentElement(originalElement);
+              if (consentElement && originalElement) {
+                originalElement.parentNode.insertBefore(consentElement, originalElement.nextSibling);
+              }
+
+              handlePageVisibility(disclaimerContainer, '#fsPage' + <?= $formID; ?> + '-1', true);
+              handlePageVisibility(consentElement, '#fsPage' + <?= $formID; ?> + '-2', true);
+
+              pagination.addEventListener('click', function() {
+                handlePageVisibility(disclaimerContainer, '#fsPage' + <?= $formID; ?> + '-1', true);
+                handlePageVisibility(consentElement, '#fsPage' + <?= $formID; ?> + '-2', true);
+              });
+
+              console.log('Injected disclaimer/consent successfully after DOM observed.');
+            });
+          })();
         </script>
         <p class="mt-base5-4">If you’d prefer to speak with our team directly, please call <a href="tel:+19862060414">1 (986) 206-0414</a></p>
       </div>
