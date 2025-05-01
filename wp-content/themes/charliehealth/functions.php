@@ -173,6 +173,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/hero-bg-video');
   register_block_type(__DIR__ . '/build/blocks/hero-bg-video-value-prop');
   register_block_type(__DIR__ . '/build/blocks/hero-shapes-v2');
+  register_block_type(__DIR__ . '/build/blocks/alumni-schedules');
   // Referrals
   register_block_type(__DIR__ . '/build/blocks/hero-shapes');
   register_block_type(__DIR__ . '/build/blocks/static-positioned-image');
