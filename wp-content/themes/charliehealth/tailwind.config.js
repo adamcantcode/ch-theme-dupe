@@ -285,6 +285,7 @@ module.exports = {
     'text-pale-blue-300',
     'bg-referrals-blue',
     'text-white',
+    'max-w-[66%]',
   ],
   plugins: [],
   corePlugins: {

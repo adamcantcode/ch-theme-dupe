@@ -14,15 +14,17 @@
 </div>
 
 <div class="mb-base5-5">
-  <input id="searchInput" type="text" placeholder="Search events..." class="w-full border p-base5-3 border-primary mb-base5-5" />
-  <div id="tagFilters" class="flex flex-wrap gap-base5-2 mb-base5-5"></div>
-  <div class="flex gap-base5-2">
-    <select id="dayFilter" class="border rounded-md border-primary p-base5-2">
-      <option value="">Filter by day</option>
-    </select>
-    <select id="timeFilter" class="border rounded-md border-primary p-base5-2">
-      <option value="">Filter by time</option>
-    </select>
+  <input id="searchInput" type="text" placeholder="Search events..." class="w-full border-2 rounded-sm outline-none border-primary h-base5-10 text-h4-base py-base5-3 px-base5-5 mb-base5-5" />
+  <div>
+    <div id="tagFilters" class="flex flex-wrap gap-base5-2 mb-base5-5"></div>
+    <div class="flex gap-base5-2">
+      <select id="dayFilter" class="border rounded-md border-primary p-base5-2">
+        <option value="">Day of the week</option>
+      </select>
+      <select id="timeFilter" class="border rounded-md border-primary p-base5-2">
+        <option value="">Time of the day</option>
+      </select>
+    </div>
   </div>
 </div>
 
@@ -798,14 +800,14 @@
 
     const uniqueDays = [...new Set(events.map(e => e.day))]
       .filter(day => weekdays.includes(day));
-    dayFilter.innerHTML = `<option value="">Filter by day</option>` +
+    dayFilter.innerHTML = `<option value="">Day of the week</option>` +
       uniqueDays.map(day => `<option value="${day}">${day}</option>`).join('');
   }
 
   function updateTimeOptions() {
     const times = [...new Set(getActiveEvents().map(e => e.time))];
     timeFilter.disabled = false;
-    timeFilter.innerHTML = `<option value="">Filter by time</option>` +
+    timeFilter.innerHTML = `<option value="">Time of the day</option>` +
       times.map(t => `<option value="${t}">${t}</option>`).join('');
   }
 
@@ -847,20 +849,20 @@
     const grouped = groupEvents(events);
     Object.entries(grouped).forEach(([day, times]) => {
       const dayBlock = document.createElement('div');
-      dayBlock.innerHTML = `<h3 class="text-2xl font-semibold">${day}</h3>`;
+      dayBlock.innerHTML = `<h2 class="">${day}</h2>`;
       Object.entries(times).forEach(([time, evs]) => {
         const timeBlock = document.createElement('div');
-        timeBlock.className = "mb-6";
+        timeBlock.className = "mb-base5-10";
         timeBlock.innerHTML = `
-          <h5 class="bg-[#fbd4c9] text-[#7c2d12] px-4 py-1 rounded-md inline-block">${time}</h5>
+          <h4 class="bg-[#fbd4c9] text-[#7c2d12] px-4 py-1 rounded-md inline-block">${time}</h4>
           <div class="space-y-6">
             ${evs.map(e => `
-              <div class="p-6 bg-white border border-gray-200 rounded-md shadow-sm">
+              <div class="border rounded-md p-base5-5 border-primary">
                 <div class="flex items-center justify-between">
-                  <h3 class="font-semibold">${e.title}</h3>
-                  <h6 class="text-xs px-3 py-1 rounded-md ${getTagStyle(e.tag)}">${e.tag}</h6>
+                  <h3 class="">${e.title}</h3>
+                  <h5 class="px-base5-3 py-base5-1 rounded-md ${getTagStyle(e.tag)}">${e.tag}</h6>
                 </div>
-                <p class="mt-2 text-sm text-gray-700">${e.description}</p>
+                <p class="max-w-[75%]">${e.description}</p>
               </div>
             `).join('')}
           </div>
