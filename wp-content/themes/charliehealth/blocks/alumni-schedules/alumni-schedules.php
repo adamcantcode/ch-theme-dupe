@@ -1,4 +1,23 @@
 <h1 class="mb-8 text-4xl font-bold">Charlie Health Alumni Schedule</h1>
+
+<!-- Filters -->
+<div class="mb-10 space-y-4">
+  <input id="searchInput" type="text" placeholder="Search events..." class="w-full p-2 border rounded" />
+
+  <div id="tagFilters" class="flex flex-wrap gap-2"></div>
+
+  <div class="flex gap-4">
+    <select id="dayFilter" class="p-2 border rounded">
+      <option value="">Filter by day</option>
+    </select>
+
+    <select id="timeFilter" class="p-2 border rounded" disabled>
+      <option value="">Filter by time</option>
+    </select>
+  </div>
+</div>
+
+<!-- Schedule Container -->
 <div id="schedule" class="space-y-12"></div>
 
 <script>
@@ -45,57 +64,132 @@
     }]
   };
 
-  function getTagStyle(tag) {
-    const map = {
-      "Peer Process": "bg-[#e6e8ff] text-[#5a67d8]",
-      "Skills and Well-Being": "bg-[#e6e8ff] text-[#5a67d8]",
-      "Skills and Well-Being & Identity": "bg-[#ffe4cc] text-[#b45309]",
-      "Interests and Workshops": "bg-[#e0f2fe] text-[#0284c7]"
-    };
-    return map[tag] || "bg-gray-100 text-gray-700";
+  const getTagStyle = (tag) => ({
+    "Peer Process": "bg-[#e6e8ff] text-[#5a67d8]",
+    "Skills and Well-Being": "bg-[#e6e8ff] text-[#5a67d8]",
+    "Skills and Well-Being & Identity": "bg-[#ffe4cc] text-[#b45309]",
+    "Interests and Workshops": "bg-[#e0f2fe] text-[#0284c7]"
+  }[tag] || "bg-gray-100 text-gray-700");
+
+  const scheduleContainer = document.getElementById('schedule');
+  const searchInput = document.getElementById('searchInput');
+  const tagFilters = document.getElementById('tagFilters');
+  const dayFilter = document.getElementById('dayFilter');
+  const timeFilter = document.getElementById('timeFilter');
+
+  let allEvents = [];
+
+  function extractEvents(data) {
+    return Object.entries(data).flatMap(([group, days]) =>
+      days.flatMap(dayBlock =>
+        dayBlock.events.map(event => ({
+          ...event,
+          group,
+          day: dayBlock.day
+        }))
+      )
+    );
   }
 
-  function createSchedule(schedule) {
-    const container = document.getElementById('schedule');
+  function renderFilters(events) {
+    // Populate tag filters
+    const uniqueTags = [...new Set(events.map(e => e.tag))];
+    tagFilters.innerHTML = uniqueTags.map(tag => `
+      <label class="inline-flex items-center gap-1 text-sm cursor-pointer">
+        <input type="checkbox" class="tag-filter" value="${tag}" />
+        ${tag}
+      </label>
+    `).join('');
 
-    Object.entries(schedule).forEach(([group, days]) => {
-      days.forEach(dayBlock => {
-        const groupEl = document.createElement('div');
-        groupEl.innerHTML = `
-            <h3>${dayBlock.day}</h3>
-          `;
+    // Populate day dropdown
+    const uniqueDays = [...new Set(events.map(e => e.day))];
+    dayFilter.innerHTML += uniqueDays.map(day => `<option value="${day}">${day}</option>`).join('');
+  }
 
-        const groupedByTime = {};
-        dayBlock.events.forEach(event => {
-          if (!groupedByTime[event.time]) groupedByTime[event.time] = [];
-          groupedByTime[event.time].push(event);
-        });
+  function updateTimeOptions(selectedDay) {
+    const timesForDay = [...new Set(allEvents
+      .filter(e => e.day === selectedDay)
+      .map(e => e.time))];
 
-        Object.entries(groupedByTime).forEach(([time, events]) => {
-          const timeBlock = document.createElement('div');
-          timeBlock.className = "mb-6";
+    timeFilter.disabled = !selectedDay;
+    timeFilter.innerHTML = `<option value="">Filter by time</option>` +
+      timesForDay.map(t => `<option value="${t}">${t}</option>`).join('');
+  }
 
-          timeBlock.innerHTML = `
-              <h5 class="bg-[#fbd4c9] text-[#7c2d12] px-4 py-1 rounded-md inline-block">${time}</h5>
-              <div class="space-y-6">
-                ${events.map(event => `
-                  <div class="p-6 bg-white border border-gray-200 rounded-md shadow-sm">
-                    <div class="flex items-center justify-between">
-                      <h3>${event.title}</h3>
-                      <h6 class="text-mini px-3 py-1 rounded-md ${getTagStyle(event.tag)}">${event.tag}</h6>
-                    </div>
-                    <p class="text-gray-700">${event.description}</p>
-                  </div>
-                `).join('')}
-              </div>
-            `;
-          groupEl.appendChild(timeBlock);
-        });
+  function filterEvents() {
+    const search = searchInput.value.toLowerCase();
+    const selectedTags = Array.from(document.querySelectorAll('.tag-filter:checked')).map(cb => cb.value);
+    const selectedDay = dayFilter.value;
+    const selectedTime = timeFilter.value;
 
-        container.appendChild(groupEl);
-      });
+    return allEvents.filter(event => {
+      const matchesSearch = event.title.toLowerCase().includes(search) || event.description.toLowerCase().includes(search);
+      const matchesTag = selectedTags.length === 0 || selectedTags.includes(event.tag);
+      const matchesDay = !selectedDay || event.day === selectedDay;
+      const matchesTime = !selectedTime || event.time === selectedTime;
+
+      return matchesSearch && matchesTag && matchesDay && matchesTime;
     });
   }
 
-  createSchedule(scheduleData);
+  function groupEvents(events) {
+    const byDay = {};
+    events.forEach(event => {
+      if (!byDay[event.day]) byDay[event.day] = {};
+      if (!byDay[event.day][event.time]) byDay[event.day][event.time] = [];
+      byDay[event.day][event.time].push(event);
+    });
+    return byDay;
+  }
+
+  function renderSchedule(events) {
+    scheduleContainer.innerHTML = '';
+    const grouped = groupEvents(events);
+
+    Object.entries(grouped).forEach(([day, times]) => {
+      const dayBlock = document.createElement('div');
+      dayBlock.innerHTML = `<h3 class="text-2xl font-semibold">${day}</h3>`;
+
+      Object.entries(times).forEach(([time, eventsAtTime]) => {
+        const timeBlock = document.createElement('div');
+        timeBlock.className = "mb-6";
+        timeBlock.innerHTML = `
+          <h5 class="bg-[#fbd4c9] text-[#7c2d12] px-4 py-1 rounded-md inline-block">${time}</h5>
+          <div class="space-y-6">
+            ${eventsAtTime.map(event => `
+              <div class="p-6 bg-white border border-gray-200 rounded-md shadow-sm">
+                <div class="flex items-center justify-between">
+                  <h3 class="font-semibold">${event.title}</h3>
+                  <h6 class="text-xs px-3 py-1 rounded-md ${getTagStyle(event.tag)}">${event.tag}</h6>
+                </div>
+                <p class="mt-2 text-sm text-gray-700">${event.description}</p>
+              </div>
+            `).join('')}
+          </div>
+        `;
+        dayBlock.appendChild(timeBlock);
+      });
+
+      scheduleContainer.appendChild(dayBlock);
+    });
+  }
+
+  function applyFilters() {
+    const filtered = filterEvents();
+    renderSchedule(filtered);
+  }
+
+  // Event bindings
+  searchInput.addEventListener('input', applyFilters);
+  tagFilters.addEventListener('change', applyFilters);
+  dayFilter.addEventListener('change', e => {
+    updateTimeOptions(e.target.value);
+    applyFilters();
+  });
+  timeFilter.addEventListener('change', applyFilters);
+
+  // Init
+  allEvents = extractEvents(scheduleData);
+  renderFilters(allEvents);
+  renderSchedule(allEvents);
 </script>
