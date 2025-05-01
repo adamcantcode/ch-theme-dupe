@@ -1,51 +1,44 @@
-<h1 class="mb-8 text-4xl font-bold">Charlie Health Alumni Schedule</h1>
-
 <style>
-  .tag-badge {
-    @apply text-xs px-3 py-1 rounded-md cursor-pointer transition-opacity duration-200;
-  }
-
   .tag-badge.inactive {
-    @apply opacity-40;
+    opacity: .5;
   }
 
-  .tab-button {
-    @apply px-4 py-2 text-sm font-medium border rounded-md cursor-pointer;
-  }
-
-  .tab-button.active {
-    @apply bg-blue-600 text-white border-blue-600;
+  .tab-button:not(.active) {
+    opacity: .5;
   }
 </style>
 
-<div class="flex gap-4 mb-6" id="tabs">
-  <button class="tab-button active" data-group="teen">Teen</button>
-  <button class="tab-button" data-group="adult">Adult</button>
+<div class="grid grid-cols-2 gap-base5-10 mb-base5-5" id="tabs">
+  <button class="ch-button button-primary-ch tab-button active" data-group="teen">Teen</button>
+  <button class="ch-button button-secondary-ch tab-button" data-group="adult">Adult</button>
 </div>
 
-<div class="mb-10 space-y-4">
-  <input id="searchInput" type="text" placeholder="Search events..." class="w-full p-2 border rounded" />
-  <div id="tagFilters" class="flex flex-wrap gap-2"></div>
-  <div class="flex gap-4">
-    <select id="dayFilter" class="p-2 border rounded">
+<div class="mb-base5-5">
+  <input id="searchInput" type="text" placeholder="Search events..." class="w-full border p-base5-3 border-primary mb-base5-5" />
+  <div id="tagFilters" class="flex flex-wrap gap-base5-2 mb-base5-5"></div>
+  <div class="flex gap-base5-2">
+    <select id="dayFilter" class="border rounded-md border-primary p-base5-2">
       <option value="">Filter by day</option>
     </select>
-    <select id="timeFilter" class="p-2 border rounded" disabled>
+    <select id="timeFilter" class="border rounded-md border-primary p-base5-2" disabled>
       <option value="">Filter by time</option>
     </select>
   </div>
 </div>
 
-<div id="schedule" class="space-y-12"></div>
+<div id="schedule" class="my-base5-10"></div>
 
 <script>
   const weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
   const getTagStyle = (tag) => ({
-    "Peer Process": "bg-[#e6e8ff] text-[#5a67d8]",
-    "Skills and Well-Being": "bg-[#e6e8ff] text-[#5a67d8]",
-    "Skills and Well-Being & Identity": "bg-[#ffe4cc] text-[#b45309]",
-    "Interests and Workshops": "bg-[#e0f2fe] text-[#0284c7]"
+    "Peer Process": "bg-referrals-blue text-white",
+    "Peer Process & Identity": "bg-referrals-blue text-white",
+    "Skills and Well-Being": "bg-lavender-300 text-primary",
+    "Skills and Wellbeing": "bg-lavender-300 text-primary",
+    "Skills and Well-Being & Identity": "bg-yellow-300 text-primary",
+    "Skills and Wellbeing & Identity": "bg-yellow-300 text-primary",
+    "Interests and Workshops": "bg-pale-blue-300 text-primary"
   } [tag] || "bg-gray-100 text-gray-700");
 
   const tabs = document.querySelectorAll('#tabs .tab-button');
