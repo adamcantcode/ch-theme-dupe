@@ -20,7 +20,7 @@
     <select id="dayFilter" class="border rounded-md border-primary p-base5-2">
       <option value="">Filter by day</option>
     </select>
-    <select id="timeFilter" class="border rounded-md border-primary p-base5-2" disabled>
+    <select id="timeFilter" class="border rounded-md border-primary p-base5-2">
       <option value="">Filter by time</option>
     </select>
   </div>
@@ -257,7 +257,7 @@
           {
             "time": "6pm MST",
             "title": "YA 18+ DID Social Hour (6pm MST)",
-            "tag": "Interests and Workshops & Identity",
+            "tag": "Interests and Workshops",
             "description": "A welcoming social group for individuals with dissociative disorders and systems to come together, express themselves, and have fun in a supportive environment. This space encourages creativity through art, writing, and collaborative projects while also offering the chance to play games, share stories, and build meaningful connections with others who understand the unique experiences of being a system."
           }
         ]
@@ -802,11 +802,9 @@
       uniqueDays.map(day => `<option value="${day}">${day}</option>`).join('');
   }
 
-  function updateTimeOptions(selectedDay) {
-    const times = [...new Set(getActiveEvents()
-      .filter(e => e.day === selectedDay)
-      .map(e => e.time))];
-    timeFilter.disabled = !selectedDay;
+  function updateTimeOptions() {
+    const times = [...new Set(getActiveEvents().map(e => e.time))];
+    timeFilter.disabled = false;
     timeFilter.innerHTML = `<option value="">Filter by time</option>` +
       times.map(t => `<option value="${t}">${t}</option>`).join('');
   }
@@ -888,18 +886,16 @@
     tabs.forEach(tab => tab.classList.toggle('active', tab.dataset.group === group));
     searchInput.value = '';
     dayFilter.value = '';
-    timeFilter.innerHTML = '<option value="">Filter by time</option>';
-    timeFilter.disabled = true;
+    timeFilter.value = '';
     document.querySelectorAll('.tag-badge').forEach(el => el.classList.remove('selected'));
     renderFilters(getActiveEvents());
+    updateTimeOptions();
+    updateTimeOptions();
     applyFilters();
   }
 
   searchInput.addEventListener('input', debounce(applyFilters, 300));
-  dayFilter.addEventListener('change', e => {
-    updateTimeOptions(e.target.value);
-    applyFilters();
-  });
+  dayFilter.addEventListener('change', applyFilters);
   timeFilter.addEventListener('change', applyFilters);
 
   tagFilters.addEventListener('click', e => {
@@ -924,5 +920,6 @@
   // INIT
   allEvents = extractEvents(scheduleData);
   renderFilters(getActiveEvents());
+  updateTimeOptions();
   renderSchedule(getActiveEvents());
 </script>
