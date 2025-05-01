@@ -32,8 +32,8 @@
   const weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
   const getTagStyle = (tag) => ({
-    "Peer Process": "bg-referrals-blue text-white",
-    "Peer Process & Identity": "bg-referrals-blue text-white",
+    "Peer Process": "bg-referrals-blue-300 text-white",
+    "Peer Process & Identity": "bg-referrals-blue-300 text-white",
     "Skills and Well-Being": "bg-lavender-300 text-primary",
     "Skills and Wellbeing": "bg-lavender-300 text-primary",
     "Skills and Well-Being & Identity": "bg-yellow-300 text-primary",
@@ -793,7 +793,7 @@
   function renderFilters(events) {
     const uniqueTags = [...new Set(events.map(e => e.tag))];
     tagFilters.innerHTML = uniqueTags.map(tag => `
-      <span class="tag-badge ${getTagStyle(tag)}" data-tag="${tag}">${tag}</span>
+      <span class="tag-badge rounded-md px-base5-4 py-base5-2 cursor-pointer ${getTagStyle(tag)}" data-tag="${tag}">${tag}</span>
     `).join('');
 
     const uniqueDays = [...new Set(events.map(e => e.day))]
