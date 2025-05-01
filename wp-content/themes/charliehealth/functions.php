@@ -808,6 +808,8 @@ add_filter('should_load_separate_core_block_assets', '__return_true');
 //     panel.classList.add('opacity-0', 'pointer-events-none', 'invisible');
 //   };
 */
+// {
+// }
 
 // Allow editor access to privacy policy page
 add_action('map_meta_cap', 'custom_manage_privacy_options', 1, 4);
