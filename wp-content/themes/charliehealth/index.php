@@ -16,7 +16,7 @@
             </div>
             <div class="lg:p-base5-10 p-base5-3">
               <div class="flex flex-col justify-center">
-                <p class="text-h1-base lg:text-h1-lg text-h2">Get the treatment you <mark class="bg-yellow-100 rounded-lg">deserve</mark></p>
+                <p class="text-h1-base lg:text-h1-lg text-h2">Get the care you <mark class="bg-yellow-100 rounded-lg">deserve</mark></p>
                 <p class="text-h4-base lg:mb-base5-8 mb-base5-5">Need additional support? Charlie Health can help. Get started with virtual intensive treatment now.</p>
                 <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full ">
                   <a href="https://www.charliehealth.com/form" class="ch-button button-primary-ch">Get Started</a>
