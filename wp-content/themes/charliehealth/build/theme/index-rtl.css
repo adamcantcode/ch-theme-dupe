@@ -1833,10 +1833,6 @@ a.insurance-tabs.active:hover {
   grid-column: span 2 / span 2;
 }
 
-.col-span-1{
-  grid-column: span 1 / span 1;
-}
-
 .float-right{
   float: left;
 }
@@ -1945,6 +1941,10 @@ a.insurance-tabs.active:hover {
 
 .mb-0{
   margin-bottom: 0px;
+}
+
+.mb-10{
+  margin-bottom: 2.5rem;
 }
 
 .mb-5{
@@ -2107,6 +2107,10 @@ a.insurance-tabs.active:hover {
   margin-top: 0px;
 }
 
+.mt-2{
+  margin-top: 0.5rem;
+}
+
 .mt-\[-1px\]{
   margin-top: -1px;
 }
@@ -2201,22 +2205,6 @@ a.insurance-tabs.active:hover {
 
 .mt-sp-8{
   margin-top: 2rem;
-}
-
-.mb-4{
-  margin-bottom: 1rem;
-}
-
-.mt-3{
-  margin-top: 0.75rem;
-}
-
-.mb-10{
-  margin-bottom: 2.5rem;
-}
-
-.mt-2{
-  margin-top: 0.5rem;
 }
 
 .line-clamp-3{
@@ -2957,6 +2945,14 @@ a.insurance-tabs.active:hover {
   gap: 0px;
 }
 
+.gap-1{
+  gap: 0.25rem;
+}
+
+.gap-2{
+  gap: 0.5rem;
+}
+
 .gap-4{
   gap: 1rem;
 }
@@ -3029,14 +3025,6 @@ a.insurance-tabs.active:hover {
   gap: 2rem;
 }
 
-.gap-2{
-  gap: 0.5rem;
-}
-
-.gap-1{
-  gap: 0.25rem;
-}
-
 .gap-x-4{
   -moz-column-gap: 1rem;
        column-gap: 1rem;
@@ -3099,16 +3087,16 @@ a.insurance-tabs.active:hover {
   margin-bottom: calc(3rem * var(--tw-space-y-reverse));
 }
 
-.space-y-6 > :not([hidden]) ~ :not([hidden]){
-  --tw-space-y-reverse: 0;
-  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
-}
-
 .space-y-4 > :not([hidden]) ~ :not([hidden]){
   --tw-space-y-reverse: 0;
   margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+
+.space-y-6 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
 }
 
 .self-start{
@@ -3749,6 +3737,10 @@ a.insurance-tabs.active:hover {
   padding: 2.5rem;
 }
 
+.p-2{
+  padding: 0.5rem;
+}
+
 .p-6{
   padding: 1.5rem;
 }
@@ -3799,10 +3791,6 @@ a.insurance-tabs.active:hover {
 
 .p-sp-8{
   padding: 2rem;
-}
-
-.p-2{
-  padding: 0.5rem;
 }
 
 .\!px-\[20px\]{
@@ -4138,6 +4126,11 @@ a.insurance-tabs.active:hover {
   font-weight: 500 !important;
 }
 
+.text-2xl{
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 .text-4xl{
   font-size: 2.25rem;
   line-height: 2.5rem;
@@ -4282,37 +4275,18 @@ a.insurance-tabs.active:hover {
   font-weight: 400;
 }
 
-.text-xs{
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
-
-.text-3xl{
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
-.text-lg{
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
 .text-sm{
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
 
-.text-2xl{
-  font-size: 1.5rem;
-  line-height: 2rem;
+.text-xs{
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .font-bold{
   font-weight: 700;
-}
-
-.font-medium{
-  font-weight: 500;
 }
 
 .font-semibold{
@@ -4477,11 +4451,6 @@ a.insurance-tabs.active:hover {
   color: rgb(253 191 124 / var(--tw-text-opacity, 1));
 }
 
-.text-\[\#1f2937\]{
-  --tw-text-opacity: 1;
-  color: rgb(31 41 55 / var(--tw-text-opacity, 1));
-}
-
 .underline{
   text-decoration-line: underline;
 }
@@ -4583,6 +4552,12 @@ a.insurance-tabs.active:hover {
 
 .transition-colors{
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-opacity{
+  transition-property: opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -6612,10 +6587,6 @@ section.bg-shield > div {
 
 @media (min-width: 480px){
 
-  .md\:col-span-2{
-    grid-column: span 2 / span 2;
-  }
-
   .md\:mb-sp-14{
     margin-bottom: 4rem;
   }
@@ -6638,10 +6609,6 @@ section.bg-shield > div {
 
   .md\:grid-cols-\[1fr_2fr_2fr_1fr\]{
     grid-template-columns: 1fr 2fr 2fr 1fr;
-  }
-
-  .md\:grid-cols-4{
-    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .md\:gap-32{

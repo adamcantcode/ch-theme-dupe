@@ -19,7 +19,15 @@
 
 <!-- Schedule Container -->
 <div id="schedule" class="space-y-12"></div>
+<style>
+  .tag-badge {
+    @apply text-xs px-3 py-1 rounded-md cursor-pointer transition-opacity duration-200;
+  }
 
+  .tag-badge.inactive {
+    @apply opacity-40;
+  }
+</style>
 <script>
   const scheduleData = {
     "adult": [{
@@ -741,6 +749,8 @@
     ]
   };
 
+  const weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
   const getTagStyle = (tag) => ({
     "Peer Process": "bg-[#e6e8ff] text-[#5a67d8]",
     "Skills and Well-Being": "bg-[#e6e8ff] text-[#5a67d8]",
@@ -762,40 +772,42 @@
         dayBlock.events.map(event => ({
           ...event,
           group,
-          day: dayBlock.day
+          day: dayBlock.day.trim().replace(/s$/, '') // Normalize day
         }))
       )
     );
   }
 
   function renderFilters(events) {
-    // Populate tag filters
     const uniqueTags = [...new Set(events.map(e => e.tag))];
-    tagFilters.innerHTML = uniqueTags.map(tag => `
-      <label class="inline-flex items-center gap-1 text-sm cursor-pointer">
-        <input type="checkbox" class="tag-filter" value="${tag}" />
-        ${tag}
-      </label>
-    `).join('');
+    const tagHtml = uniqueTags.map(tag => {
+      const tagClass = getTagStyle(tag);
+      return `<span class="tag-badge ${tagClass}" data-tag="${tag}">${tag}</span>`;
+    }).join('');
+    tagFilters.innerHTML = tagHtml;
 
-    // Populate day dropdown
-    const uniqueDays = [...new Set(events.map(e => e.day))];
-    dayFilter.innerHTML += uniqueDays.map(day => `<option value="${day}">${day}</option>`).join('');
+    // Days filter only includes valid weekdays
+    const dayOptions = weekdays.map(day => `<option value="${day}">${day}</option>`).join('');
+    dayFilter.innerHTML = `<option value="">Filter by day</option>${dayOptions}`;
   }
 
   function updateTimeOptions(selectedDay) {
-    const timesForDay = [...new Set(allEvents
+    const times = [...new Set(allEvents
       .filter(e => e.day === selectedDay)
-      .map(e => e.time))];
+      .map(e => e.time.trim()))];
 
     timeFilter.disabled = !selectedDay;
     timeFilter.innerHTML = `<option value="">Filter by time</option>` +
-      timesForDay.map(t => `<option value="${t}">${t}</option>`).join('');
+      times.map(t => `<option value="${t}">${t}</option>`).join('');
+  }
+
+  function getSelectedTags() {
+    return Array.from(document.querySelectorAll('.tag-badge.selected')).map(el => el.dataset.tag);
   }
 
   function filterEvents() {
     const search = searchInput.value.toLowerCase();
-    const selectedTags = Array.from(document.querySelectorAll('.tag-filter:checked')).map(cb => cb.value);
+    const selectedTags = getSelectedTags();
     const selectedDay = dayFilter.value;
     const selectedTime = timeFilter.value;
 
@@ -803,7 +815,7 @@
       const matchesSearch = event.title.toLowerCase().includes(search) || event.description.toLowerCase().includes(search);
       const matchesTag = selectedTags.length === 0 || selectedTags.includes(event.tag);
       const matchesDay = !selectedDay || event.day === selectedDay;
-      const matchesTime = !selectedTime || event.time === selectedTime;
+      const matchesTime = !selectedTime || event.time.trim() === selectedTime;
 
       return matchesSearch && matchesTag && matchesDay && matchesTime;
     });
@@ -854,16 +866,36 @@
   function applyFilters() {
     const filtered = filterEvents();
     renderSchedule(filtered);
+
+    // Tag fade logic
+    const selectedTags = getSelectedTags();
+    document.querySelectorAll('.tag-badge').forEach(tagEl => {
+      tagEl.classList.toggle('inactive', selectedTags.length && !tagEl.classList.contains('selected'));
+    });
   }
 
   // Event bindings
-  searchInput.addEventListener('input', applyFilters);
-  tagFilters.addEventListener('change', applyFilters);
+  searchInput.addEventListener('input', debounce(applyFilters, 300));
   dayFilter.addEventListener('change', e => {
     updateTimeOptions(e.target.value);
     applyFilters();
   });
   timeFilter.addEventListener('change', applyFilters);
+
+  tagFilters.addEventListener('click', e => {
+    if (e.target.matches('.tag-badge')) {
+      e.target.classList.toggle('selected');
+      applyFilters();
+    }
+  });
+
+  function debounce(fn, delay = 200) {
+    let timeout;
+    return (...args) => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => fn(...args), delay);
+    };
+  }
 
   // Init
   allEvents = extractEvents(scheduleData);
