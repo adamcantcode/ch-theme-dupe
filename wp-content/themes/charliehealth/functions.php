@@ -1140,45 +1140,53 @@ function prevent_acf_block_js_in_editor()
 }
 add_action('enqueue_block_assets', 'prevent_acf_block_js_in_editor', 20);
 
+/**
+ * ACF Relationship Multisite (blog 4 → blog 1)
+ */
 add_action('acf/init', function () {
 
   // only on site 4
-  if (get_current_blog_id() !== 4) {
-    return;
-  }
+  if (get_current_blog_id() !== 4) return;
 
+  // 1) Normal dropdown query
   add_filter(
     'acf/fields/relationship/query/key=field_670dc72ef7b2f',
-    function ($args, $field, $post_id) {
-
-      // 1) switch into blog 1 for the upcoming WP_Query
-      switch_to_blog(1);
-
-      // 2) hook a one-off restore on the very first result
-      add_filter(
-        'acf/fields/relationship/result/key=field_670dc72ef7b2f',
-        function ($title, $post, $field, $post_id) {
-          // unhook ourselves so we only restore once
-          remove_filter(
-            'acf/fields/relationship/result/key=field_670dc72ef7b2f',
-            __FUNCTION__,
-            10
-          );
-          restore_current_blog();
-          return $title;
-        },
-        10,
-        4
-      );
-
-      // 3) now force blog 1’s posts
-      $args['post_type']      = ['post'];
-      $args['post_status']    = 'publish';
-      $args['posts_per_page'] = -1;
-
-      return $args;
-    },
+    'ms_acf_rel_query_blog1',
     10,
     3
+  );
+
+  // 2) AJAX search query (when you type in “Search…”)
+  add_filter(
+    'acf/fields/relationship/ajax/query/key=field_670dc72ef7b2f',
+    'ms_acf_rel_query_blog1_ajax',
+    10,
+    3
+  );
+
+  // shared callback to switch context + args
+  function ms_acf_rel_query_blog1($args, $field, $post_id)
+  {
+    switch_to_blog(1);
+    $args['post_type']      = ['post'];
+    $args['post_status']    = 'publish';
+    $args['posts_per_page'] = -1;
+    return $args;
+  }
+  // AJAX version just hands off to the same logic
+  function ms_acf_rel_query_blog1_ajax($args, $field, $post_id)
+  {
+    return ms_acf_rel_query_blog1($args, $field, $post_id);
+  }
+
+  // 3) Once results start coming back, restore to blog 4
+  add_filter(
+    'acf/fields/relationship/result/key=field_670dc72ef7b2f',
+    function ($title, $post, $field, $post_id) {
+      restore_current_blog();
+      return $title;
+    },
+    20,
+    4
   );
 });
