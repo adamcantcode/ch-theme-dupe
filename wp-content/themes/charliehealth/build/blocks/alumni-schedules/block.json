@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "acf/alumni-schedules-block",
+  "title": "Alumni Schedules",
+  "description": "Alumni schedules block",
+  "style": "file:./index.css",
+  "script": "file:./index.js",
+  "category": "custom",
+  "icon": "align-wide",
+  "apiVersion": 2,
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "alumni-schedules.php"
+  },
+  "supports": {}
+}

@@ -279,7 +279,13 @@ module.exports = {
       },
     },
   },
-  safelist: ['text-lavender-300', 'text-yellow-300', 'text-pale-blue-300'],
+  safelist: [
+    'text-lavender-300',
+    'text-yellow-300',
+    'text-pale-blue-300',
+    'bg-referrals-blue',
+    'text-white',
+  ],
   plugins: [],
   corePlugins: {
     container: false,

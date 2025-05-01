@@ -173,6 +173,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/build/blocks/hero-bg-video');
   register_block_type(__DIR__ . '/build/blocks/hero-bg-video-value-prop');
   register_block_type(__DIR__ . '/build/blocks/hero-shapes-v2');
+  register_block_type(__DIR__ . '/build/blocks/alumni-schedules');
   // Referrals
   register_block_type(__DIR__ . '/build/blocks/hero-shapes');
   register_block_type(__DIR__ . '/build/blocks/static-positioned-image');
@@ -614,7 +615,7 @@ function hide_menus_on_multisite()
 {
   global $pagenow;
   // Check if it's the admin area and site ID is 3
-  if (is_admin() && get_current_blog_id() === 3 && get_current_blog_id() === 4) {
+  if (is_admin() && (get_current_blog_id() === 3 || get_current_blog_id() === 4)) {
     // Remove specific menus
     remove_menu_page('edit.php');
     remove_menu_page('edit.php?post_type=areas-of-care');
@@ -626,19 +627,13 @@ function hide_menus_on_multisite()
     remove_menu_page('edit.php?post_type=team-members');
     remove_menu_page('edit.php?post_type=treatment-modalities');
     remove_menu_page('edit.php?post_type=activities');
-    // remove_menu_page('edit.php?post_type=testimonial');
     remove_menu_page('edit.php?post_type=employee-testimonial');
     remove_menu_page('edit.php?post_type=care-team-member');
-    // remove_menu_page('edit.php?post_type=partner-testimonial');
     remove_menu_page('edit.php?post_type=outreach-team-member');
     remove_menu_page('edit.php?post_type=insurance');
     remove_menu_page('edit.php?post_type=locations');
     remove_menu_page('edit.php?post_type=event');
     remove_menu_page('edit.php?post_type=region');
-  } else {
-    remove_menu_page('edit.php?post_type=region');
-    // remove_menu_page('edit.php?post_type=outreach-team-member');
-    remove_menu_page('edit.php?post_type=event');
   }
 }
 add_action('admin_menu', 'hide_menus_on_multisite', 999);
@@ -813,6 +808,8 @@ add_filter('should_load_separate_core_block_assets', '__return_true');
 //     panel.classList.add('opacity-0', 'pointer-events-none', 'invisible');
 //   };
 */
+// {
+// }
 
 // Allow editor access to privacy policy page
 add_action('map_meta_cap', 'custom_manage_privacy_options', 1, 4);
@@ -1142,3 +1139,46 @@ function prevent_acf_block_js_in_editor()
   }
 }
 add_action('enqueue_block_assets', 'prevent_acf_block_js_in_editor', 20);
+
+add_action('acf/init', function () {
+
+  // only on site 4
+  if (get_current_blog_id() !== 4) {
+    return;
+  }
+
+  add_filter(
+    'acf/fields/relationship/query/key=field_670dc72ef7b2f',
+    function ($args, $field, $post_id) {
+
+      // 1) switch into blog 1 for the upcoming WP_Query
+      switch_to_blog(1);
+
+      // 2) hook a one-off restore on the very first result
+      add_filter(
+        'acf/fields/relationship/result/key=field_670dc72ef7b2f',
+        function ($title, $post, $field, $post_id) {
+          // unhook ourselves so we only restore once
+          remove_filter(
+            'acf/fields/relationship/result/key=field_670dc72ef7b2f',
+            __FUNCTION__,
+            10
+          );
+          restore_current_blog();
+          return $title;
+        },
+        10,
+        4
+      );
+
+      // 3) now force blog 1’s posts
+      $args['post_type']      = ['post'];
+      $args['post_status']    = 'publish';
+      $args['posts_per_page'] = -1;
+
+      return $args;
+    },
+    10,
+    3
+  );
+});
