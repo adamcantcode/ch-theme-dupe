@@ -1143,7 +1143,7 @@ add_action('enqueue_block_assets', 'prevent_acf_block_js_in_editor', 20);
 add_action('acf/init', function () {
 
   // only on site 4
-  if (get_current_blog_id() !== 4) {
+  if (get_current_blog_id() !== 3) {
     return;
   }
 
