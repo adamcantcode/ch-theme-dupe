@@ -34,7 +34,9 @@
   <?php include('wp-content/themes/charliehealth/includes/schema.php'); ?>
   <!-- END CUSTOM SCHEMA -->
 </head>
-<?php $blog = 'blog-' . get_current_blog_id(); ?>
+<?php 
+$currentBlog = get_current_blog_id();
+$blog = 'blog-' . $currentBlog; ?>
 
 <body <?php body_class('bg-white ' . $blog); ?>>
   <!-- Google Tag Manager (noscript) -->
@@ -57,7 +59,7 @@
   }
 
   // Nav button
-  if (get_current_blog_id() === 1) {
+  if ($currentBlog === 1) {
     if (!empty(get_field('get_started', get_the_ID()))) {
       $getStarted = get_field('get_started', get_the_ID());
     } else {
@@ -68,7 +70,7 @@
     } else {
       $clientLogin = ['url' => 'https://app.charliehealth.com/', 'target' => '_blank', 'title' => 'Client login'];
     }
-  } elseif (get_current_blog_id() === 3) {
+  } elseif ($currentBlog === 3) {
     if (!empty(get_field('get_started', get_the_ID()))) {
       $getStarted = get_field('get_started', get_the_ID());
     } else {
@@ -79,11 +81,11 @@
     } else {
       $clientLogin = ['url' => 'mailto:referrals@charliehealth.com', 'target' => '_self', 'title' => 'Email Us'];
     }
-  } elseif (get_current_blog_id() === 4) {
+  } elseif ($currentBlog === 4) {
     if (!empty(get_field('get_started', get_the_ID()))) {
       $getStarted = get_field('get_started', get_the_ID());
     } else {
-      $getStarted = ['url' => 'https://identity.app.charliehealth.com/u/login', 'target' => '_blank', 'title' => 'Login'];
+      $getStarted = ['url' => 'https://identity.app.charliehealth.com/u/login', 'target' => '_blank', 'title' => 'Alumni Login'];
     }
     if (!empty(get_field('client_login', get_the_ID()))) {
       $clientLogin = get_field('client_login', get_the_ID());
@@ -143,10 +145,12 @@
                 <?php if (get_row_index() == count(get_field('navigation_item_new', 'option'))) : ?>
                   <a <?= $url; ?> target="<?= $target; ?>" class="flex items-center text-white no-underline px-sp-3 py-sp-6 font-heading hover:text-lavender-200 text-nav-normal ml-sp-4">
                     <?= $title; ?>
+                    <?php if($currentBlog === 1) :  ?>
                     <svg width="464" height="464" viewBox="0 0 464 464" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:15px;width:15px;margin-left:10px">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M19.25 463.25L444.75 463.25C454.983 463.25 463.25 454.983 463.25 444.75L463.25 236.625C463.25 234.081 461.169 232 458.625 232L426.25 232C423.706 232 421.625 234.081 421.625 236.625L421.625 421.625L42.375 421.625L42.375 42.375L227.375 42.375C229.919 42.375 232 40.2938 232 37.75L232 5.37502C232 2.83126 229.919 0.75002 227.375 0.75002L19.25 0.750002C9.01723 0.750001 0.75004 9.01718 0.750039 19.25L0.750002 444.75C0.750001 454.983 9.01719 463.25 19.25 463.25Z" fill="white"></path>
                       <path d="M351.481 20.9447L381.659 51.1229L307.63 125.21L233.601 199.296C231.809 201.088 231.809 204.037 233.601 205.829L258.114 230.342C259.906 232.134 262.855 232.134 264.647 230.342L338.705 156.284L412.762 82.226L443.056 112.52C445.773 115.237 450.456 113.618 450.919 109.803L463.059 6.08691C463.406 3.08066 460.862 0.594712 457.914 0.941587L354.198 13.0822C353.338 13.188 352.525 13.5331 351.851 14.0783C351.177 14.6234 350.67 15.3466 350.387 16.1658C350.104 16.985 350.056 17.8671 350.25 18.7119C350.443 19.5568 350.87 20.3304 351.481 20.9447Z" fill="white"></path>
                     </svg>
+                    <?php endif; ?>
                   </a>
                 <?php endif; ?>
               <?php else : ?>
