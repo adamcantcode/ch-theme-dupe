@@ -615,9 +615,11 @@ function hide_menus_on_multisite()
 {
   global $pagenow;
   // Check if it's the admin area and site ID is 3
+  if (is_admin() && (get_current_blog_id() === 3)) {
+    remove_menu_page('edit.php');
+  }
   if (is_admin() && (get_current_blog_id() === 3 || get_current_blog_id() === 4)) {
     // Remove specific menus
-    remove_menu_page('edit.php');
     remove_menu_page('edit.php?post_type=areas-of-care');
     remove_menu_page('edit.php?post_type=authors');
     remove_menu_page('edit.php?post_type=medical-reviewer');
@@ -634,6 +636,11 @@ function hide_menus_on_multisite()
     remove_menu_page('edit.php?post_type=locations');
     remove_menu_page('edit.php?post_type=event');
     remove_menu_page('edit.php?post_type=region');
+  }
+  if (is_admin() && (get_current_blog_id() === 4)) { {
+      remove_menu_page('edit.php?post_type=testimonial');
+      remove_menu_page('edit.php?post_type=partner-testimonial');
+    }
   }
 }
 add_action('admin_menu', 'hide_menus_on_multisite', 999);
