@@ -20,7 +20,7 @@
                 <p class="text-h4-base lg:mb-base5-8 mb-base5-5">Need additional support? Charlie Health can help. Get started with virtual intensive treatment now.</p>
                 <div class="flex flex-col lg:flex-row gap-sp-4 lg:items-start items-stretch md:w-[unset] w-full ">
                   <a href="https://www.charliehealth.com/form" class="ch-button button-primary-ch">Get Started</a>
-                  <a href="https://referrals.charliehealth.com/referral-form" class="ch-button button-secondary-ch">Make a Client</a>
+                  <a href="https://referrals.charliehealth.com/referral-form" class="ch-button button-secondary-ch">Refer a Client</a>
                 </div>
               </div>
             </div>
