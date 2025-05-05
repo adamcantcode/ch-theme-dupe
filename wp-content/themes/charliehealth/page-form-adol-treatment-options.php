@@ -122,7 +122,8 @@ Template Post Type: page
                   }
 
                   const consentElement = createConsentElement(originalElement);
-                  if (consentElement && originalElement) {
+                  if (consentElement && originalElement && !document.querySelector('.custom-consent-text')) {
+                    consentElement.classList.add('custom-consent-text');
                     originalElement.parentNode.insertBefore(consentElement, originalElement.nextSibling);
                   }
 
@@ -222,7 +223,8 @@ Template Post Type: page
               updateDisclaimerStyles(disclaimerContainer);
 
               const consentElement = createConsentElement(originalElement);
-              if (consentElement && originalElement) {
+              if (consentElement && originalElement && !document.querySelector('.custom-consent-text')) {
+                consentElement.classList.add('custom-consent-text');
                 originalElement.parentNode.insertBefore(consentElement, originalElement.nextSibling);
               }
 
