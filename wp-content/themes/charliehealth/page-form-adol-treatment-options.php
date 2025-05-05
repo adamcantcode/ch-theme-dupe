@@ -12,17 +12,12 @@ Template Post Type: page
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-sp-8">
       <div>
         <?php
-        if (wp_get_environment_type() === 'production') {
-          // Current ADOL
-          $formID = 6125398;
+        // if (wp_get_environment_type() === 'production') {
+        // Current staging
+        $formID = 6183447;
 
-          echo '<script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/self_serve_admissions_copy_10"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/self_serve_admissions_copy_10" title="Online Form">Online Form - [PROD] Charlie Health Intake Form - ADOL Expansion</a></noscript>';
-        } else if (wp_get_environment_type() === 'staging' || wp_get_environment_type() === 'local') {
-          // Staging ADOL - Treatment Options
-          $formID = 6183447;
-
-          echo '<script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/self_serve_admissions_copy_10_copy_1"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/self_serve_admissions_copy_10_copy_1" title="Online Form">Online Form - [STAGING] Charlie Health Intake Form - ADOL Expansion - Treatment Options</a></noscript>';
-        }
+        echo '<script type="text/javascript" src="https://charliehealth-nrkok.formstack.com/forms/js.php/self_serve_admissions_copy_10_copy_1"></script><noscript><a href="https://charliehealth-nrkok.formstack.com/forms/self_serve_admissions_copy_10_copy_1" title="Online Form">Online Form - [STAGING] Charlie Health Intake Form - ADOL Expansion - Treatment Options</a></noscript>';
+        // } 
         ?>
         <script>
           function waitForElements(selectors, callback, attempt = 0) {
