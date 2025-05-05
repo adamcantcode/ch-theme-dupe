@@ -3,8 +3,8 @@ $heading = get_field('heading');
 $calloutCopy = get_field('callout_copy');
 $features = get_field('features');
 ?>
-
-<div class="features-block grid grid-cols-1 lg:gap-sp-5 gap-sp-4 lg:grid-cols-[4fr_1fr_7fr] items-start">
+<!-- Modified grid items for spacing -->
+<div class="features-block grid grid-cols-1 lg:gap-base5-4 gap-base5-3 lg:grid-cols-[4fr_0fr_8fr] items-start">
   <div class="features-block-intro [&_*]:text-white">
     <h2><?= $heading; ?></h2>
     <?php include(get_template_directory() . '/includes/button-group.php'); ?>

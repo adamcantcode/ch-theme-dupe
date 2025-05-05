@@ -7141,6 +7141,10 @@ section.bg-shield > div {
     grid-template-columns: 4.25fr 5fr;
   }
 
+  .lg\:grid-cols-\[4fr_0fr_8fr\]{
+    grid-template-columns: 4fr 0fr 8fr;
+  }
+
   .lg\:grid-cols-\[4fr_1fr_7fr\]{
     grid-template-columns: 4fr 1fr 7fr;
   }
