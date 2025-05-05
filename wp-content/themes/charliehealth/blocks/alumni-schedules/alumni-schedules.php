@@ -38,9 +38,7 @@
       "Peer Process": "bg-referrals-blue-300 text-white",
       "Peer Process & Identity": "bg-referrals-blue-300 text-white",
       "Skills and Well-Being": "bg-lavender-300 text-primary",
-      "Skills and Wellbeing": "bg-lavender-300 text-primary",
       "Skills and Well-Being & Identity": "bg-yellow-300 text-primary",
-      "Skills and Wellbeing & Identity": "bg-yellow-300 text-primary",
       "Interests and Workshops": "bg-pale-blue-300 text-primary"
     } [tag] || "bg-gray-100 text-gray-700");
 
@@ -66,19 +64,19 @@
             {
               "time": "12pm MST",
               "title": "YA 18+ Monday Body Doubling (12pm MST)",
-              "tag": "Skills and Wellbeing",
+              "tag": "Skills and Well-Being",
               "description": "Are you neurodivergent and/or do you have trouble staying focused to finish big tasks or detailed projects? Join us for our body doubling support group which offers guidance and accountability to assist you in completing your tasks and achieving your goals. Body doubling can increase focus, reduce anxiety, and provide you with the motivation you need to take on and complete tasks or projects."
             },
             {
               "time": "12pm MST",
               "title": "YA 18+ Mindful Monday (12pm MST)",
-              "tag": "Skills and Wellbeing",
+              "tag": "Skills and Well-Being",
               "description": "Join for a weekly pause to become present and chill out for a moment."
             },
             {
               "time": "3pm MST",
               "title": "YA 18+ Monday Self Compassion (3pm MST)",
-              "tag": "Skills and Wellbeing",
+              "tag": "Skills and Well-Being",
               "description": "The Mindful Self Compassion group is based on the research and work of Kristen Neff, PhD. Kristen Neff has created a workbook and program that she describes as, \u201ca proven way to accept yourself, build inner strength, and thrive.\u201d Join us to learn to embrace yourself and your imperfections and grow the resilience you need to thrive! You do not need to own the Self-Compassion Workbook to attend. Each week we will review different pillars of the Mindful Self Compassion program and practice exercises from the Mindful Self Compassion Workbook together as a group."
             },
             {
@@ -90,7 +88,7 @@
             {
               "time": "3pm MST",
               "title": "YA 30+ Navigating Workplace Challenges (3pm MST)",
-              "tag": "Skills and Wellbeing & Identity",
+              "tag": "Skills and Well-Being & Identity",
               "description": "Feeling stuck in workplace conflicts? Struggling with toxic bosses, challenging coworkers, or unclear boundaries? This group provides a safe space to process your workplace experiences, build skills to navigate tough dynamics, and learn strategies for professional growth\u2014all while gaining a sense of community and support.\n\nParticipants will discuss successes and struggles in managing workplace challenges and explore themes such as effective communication, setting boundaries, dealing with toxic environments, handling burnout, and advocating for your needs at work. Each session will offer practical tools and strategies to help you thrive in your career.\n\nJoin us for a supportive and skill-building space where you can process workplace struggles, celebrate successes, and learn strategies to overcome obstacles and build a fulfilling career.\" This group is open to alumni who are 30 years of age or older."
             },
             {
@@ -132,7 +130,7 @@
             {
               "time": "7pm MST",
               "title": "YA 18+ Monday Non-Clinical DBT (7pm MST)",
-              "tag": "Skills and Wellbeing",
+              "tag": "Skills and Well-Being",
               "description": "This group offers a setting for attendees to discuss and navigate their DBT skill use in a warm and supportive non-clinical community. DBT skills, including but not limited to skills from the mindfulness, emotion regulation, distress tolerance and interpersonal effectiveness modules are open for discussion and practice in this group. It is required that participants have a basic understanding and/or familiarity of DBT skills prior to attending this group."
             },
             {
@@ -220,7 +218,7 @@
             {
               "time": "6pm MST",
               "title": "YA 18+ Tuesday Body Doubling (6pm MST)",
-              "tag": "Skills and Wellbeing",
+              "tag": "Skills and Well-Being",
               "description": "Are you neurodivergent and/or do you have trouble staying focused to finish big tasks or detailed projects? Join us for our body doubling support group which offers guidance and accountability to assist you in completing your tasks and achieving your goals. Body doubling can increase focus, reduce anxiety, and provide you with the motivation you need to take on and complete tasks or projects."
             },
             {
@@ -254,7 +252,7 @@
           "events": [{
               "time": "3pm MST",
               "title": "YA 18+ Healthy Relationships (3pm MST)",
-              "tag": "Skills and Wellbeing",
+              "tag": "Skills and Well-Being",
               "description": "Join us in strengthening and improving our relationships! This will be a space to explore our relationships, their healthy and unhealthy characteristics, and ways to engage in positive relationship dynamics. We will explore our own relationships (with our friends, family, partners, and self) using attachment theory and non-violent communication to promote deep understanding and effective problem solving. Each week, we will engage in an interactive learning environment on a relevant topic, and then open it up to work on applying topics to our own relationship needs. We are here to offer support in navigating the challenges that come with our connections!"
             },
             {
@@ -276,25 +274,25 @@
             {
               "time": "12pm MST",
               "title": "YA 18+ Wednesday Neurodivergent Wellness (12pm MST)",
-              "tag": "Skills and Wellbeing",
+              "tag": "Skills and Well-Being",
               "description": "This wellness space will involve engaging in activities and the practice/coaching of exercises to enhance overall wellness for the neurodivergent brain. Prior knowledge of the \u201cclinical skills\u201d from the treatment program is not necessary. The activities and coaching practices given in the group will be from many different approaches such as but not limited to: expressive arts, executive functioning coaching, sensory integration, relaxation-based (basically mindfulness and grounding exercises in clinical terms), Autism meltdown/shutdown coaching, body-brain connection."
             },
             {
               "time": "12pm MST",
               "title": "YA 18+ Walk and Talk to Connect (12pm MST)",
-              "tag": "Skills and Wellbeing",
+              "tag": "Skills and Well-Being",
               "description": "Walk & Talk To Connect: This group is open to 18-24 year olds to join the group call on their phone (with headphones) while walking outside. Sessions will include discussion topics, self-reflection prompts, and mindfulness practices."
             },
             {
               "time": "3pm MST",
               "title": "YA 18+ Inner Child Check In (3pm MST)",
-              "tag": "Skills and Wellbeing",
+              "tag": "Skills and Well-Being",
               "description": "Each week you will explore things such as laughter, improv, drawing, and play to get in touch with your inner child and deepen your relationship with JOY. Learn how playfulness impacts your healing and capacity to cope with life's demands."
             },
             {
               "time": "3pm MST",
               "title": "YA 18+ Mindfulness Moments (3pm MST)",
-              "tag": "Skills and Wellbeing",
+              "tag": "Skills and Well-Being",
               "description": "Welcome to the non-clinical Mindful Moments Clubhouse! This is a non-clinical space where alumni can come together to get a reset before their busy week. We will listen to guided meditations either by our group facilitator or by recording. We will also practice deep breathing and grounding techniques. We are so excited to gather, breathe, and reset with you all!"
             },
             {
@@ -312,7 +310,7 @@
             {
               "time": "4pm MST",
               "title": "YA 18+ Wednesday Body Doubling (4pm MST)",
-              "tag": "Skills and Wellbeing",
+              "tag": "Skills and Well-Being",
               "description": "Are you neurodivergent and/or do you have trouble staying focused to finish big tasks or detailed projects? Join us for our body doubling support group which offers guidance and accountability to assist you in completing your tasks and achieving your goals. Body doubling can increase focus, reduce anxiety, and provide you with the motivation you need to take on and complete tasks or projects."
             },
             {
@@ -330,7 +328,7 @@
             {
               "time": "6pm MST",
               "title": "YA 18+ Wednesday Self Compassion (6pm MST)",
-              "tag": "Skills and Wellbeing",
+              "tag": "Skills and Well-Being",
               "description": "The Mindful Self Compassion group is based on the research and work of Kristen Neff, PhD. Kristen Neff has created a workbook and program that she describes as, \u201ca proven way to accept yourself, build inner strength, and thrive.\u201d Join us to learn to embrace yourself and your imperfections and grow the resilience you need to thrive! You do not need to own the Self-Compassion Workbook to attend. Each week we will review different pillars of the Mindful Self Compassion program and practice exercises from the Mindful Self Compassion Workbook together as a group."
             },
             {
@@ -354,7 +352,7 @@
             {
               "time": "7pm MST",
               "title": "YA 18+ Yoga (7pm MST)",
-              "tag": "Skills and Wellbeing",
+              "tag": "Skills and Well-Being",
               "description": "Let's Decolonize Yoga. Join us for an hour of yoga as it was intended. All movement led by a Charlie Health facilitator is gentle, accessible, and trauma informed. Participants may expect a combination of the following in any given session: Discussions on yoga philosophy, Dinachary\u0101 ( daily routines), \u0100sana (movement), Pr\u0101\u1e47\u0101y\u0101ma (breath work), Dhy\u0101na (Meditation)"
             }
           ]
@@ -442,7 +440,7 @@
             {
               "time": "6pm MST",
               "title": "YA 18+ Thursday Body Doubling (6pm MST)",
-              "tag": "Skills and Wellbeing",
+              "tag": "Skills and Well-Being",
               "description": "Are you neurodivergent and/or do you have trouble staying focused to finish big tasks or detailed projects? Join us for our body doubling support group which offers guidance and accountability to assist you in completing your tasks and achieving your goals. Body doubling can increase focus, reduce anxiety, and provide you with the motivation you need to take on and complete tasks or projects."
             },
             {
@@ -485,13 +483,13 @@
             {
               "time": "12pm MST",
               "title": "YA 18+ Friday Body Doubling (12pm MST)",
-              "tag": "Skills and Wellbeing",
+              "tag": "Skills and Well-Being",
               "description": "Are you neurodivergent and/or do you have trouble staying focused to finish big tasks or detailed projects? Join us for our body doubling support group which offers guidance and accountability to assist you in completing your tasks and achieving your goals. Body doubling can increase focus, reduce anxiety, and provide you with the motivation you need to take on and complete tasks or projects."
             },
             {
               "time": "12pm MST",
               "title": "YA 18+ Progress Not Perfection (12pm MST)",
-              "tag": "Skills and Wellbeing",
+              "tag": "Skills and Well-Being",
               "description": "Join your peers to receive support and encouragement as you continue your mental health journey and apply skills learned at Charlie Health to your daily life."
             },
             {
@@ -527,7 +525,7 @@
             {
               "time": "4pm MST",
               "title": "YA 18+ Neurodivergent Life Skills- Cooking (4pm MST)",
-              "tag": "Skills and Wellbeing",
+              "tag": "Skills and Well-Being",
               "description": "Do you think that cooking is scary?  Does using the stove top intimidate you? Are you spending too much money on take out? Come learn how to cook with me!  Learn the life skill of cooking and how to create simple, inexpensive, and healthy recipes utilizing various kitchen tools like the microwave, air fryer, stove top, and a crock pot.  The goal of the program is to increase the comfort of using your kitchen space and learning easy recipes to practice at home.  The program will produce a month's worth of recipes ahead so that you can prepare to cook with me each week using a different piece of equipment to cook with.  If you want to cook with me or watch how it's made and then practice at home, it doesn't matter.  Come join us in the kitchen today!"
             },
             {
@@ -573,7 +571,7 @@
           "events": [{
               "time": "12pm MST",
               "title": "YA 18+ Body Doubling (12pm MST)",
-              "tag": "Skills and Wellbeing",
+              "tag": "Skills and Well-Being",
               "description": "Are you neurodivergent and/or do you have trouble staying focused to finish big tasks or detailed projects? Join us for our body doubling support group which offers guidance and accountability to assist you in completing your tasks and achieving your goals. Body doubling can increase focus, reduce anxiety, and provide you with the motivation you need to take on and complete tasks or projects."
             },
             {
@@ -597,13 +595,13 @@
             {
               "time": "2pm MST",
               "title": "YA 18+ Self Compassion (2pm MST)",
-              "tag": "Skills and Wellbeing",
+              "tag": "Skills and Well-Being",
               "description": "The Mindful Self Compassion group is based on the research and work of Kristen Neff, PhD. Kristen Neff has created a workbook and program that she describes as, \u201ca proven way to accept yourself, build inner strength, and thrive.\u201d Join us to learn to embrace yourself and your imperfections and grow the resilience you need to thrive! You do not need to own the Self-Compassion Workbook to attend. Each week we will review different pillars of the Mindful Self Compassion program and practice exercises from the Mindful Self Compassion Workbook together as a group."
             },
             {
               "time": "2pm MST",
               "title": "YA 18+ Building Resilience Group  (2pm MST)",
-              "tag": "Skills and Wellbeing",
+              "tag": "Skills and Well-Being",
               "description": "Discover the strength within you to navigate life's challenges in our 'Building Resilience' group therapy. Learn effective coping mechanisms, gain support from peers facing similar struggles, and develop the tools to bounce back from setbacks, managing stress and building resilience to thrive in the face of adversity"
             }
           ]
@@ -660,13 +658,13 @@
             {
               "time": "6pm MST",
               "title": "Bullet Journal Together",
-              "tag": "Skills and Wellbeing",
+              "tag": "Skills and Well-Being",
               "description": "A space to work on your bullet journal, learn about bullet journaling, and share ideas with one another."
             },
             {
               "time": "7pm MST",
               "title": "13 years + Real Talk: Building Healthy Relationships & Communication Skills",
-              "tag": "Skills and Wellbeing & Identity",
+              "tag": "Skills and Well-Being & Identity",
               "description": "This group helps teens  13 years and older explore and strengthen their communication and relationship skills in a safe, supportive space. Through group conversations and activities, alumni will learn how to express themselves, set boundaries, and build healthy connections with friends, family, and peers."
             }
           ]
@@ -710,7 +708,7 @@
             {
               "time": "4pm MST",
               "title": "Teen Body Doubling",
-              "tag": "Skills and Wellbeing",
+              "tag": "Skills and Well-Being",
               "description": "Are you neurodivergent and/or do you have trouble staying focused to finish big tasks or detailed projects? Join us for our body doubling support group which offers guidance and accountability to assist you in completing your tasks and achieving your goals. Body doubling can increase focus, reduce anxiety, and provide you with the motivation you need to take on and complete tasks or projects."
             },
             {
