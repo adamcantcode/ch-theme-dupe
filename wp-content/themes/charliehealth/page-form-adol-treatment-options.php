@@ -64,7 +64,7 @@ Template Post Type: page
             if (!originalElement) return null;
 
             const clonedElement = originalElement.cloneNode(true);
-            clonedElement.className = 'custom-consent-text';
+            clonedElement.className = '';
 
             const messageText = clonedElement.querySelector('.field-auto-capture__message__text');
             if (messageText) {
@@ -121,11 +121,9 @@ Template Post Type: page
                     updateDisclaimerStyles(disclaimerContainer);
                   }
 
-                  if (!document.querySelector('.custom-consent-text')) {
-                    const consentElement = createConsentElement(originalElement);
-                    if (consentElement && originalElement) {
-                      originalElement.parentNode.insertBefore(consentElement, originalElement.nextSibling);
-                    }
+                  const consentElement = createConsentElement(originalElement);
+                  if (consentElement && originalElement) {
+                    originalElement.parentNode.insertBefore(consentElement, originalElement.nextSibling);
                   }
 
                   if (pagination) {
@@ -223,11 +221,9 @@ Template Post Type: page
               progressBar.insertAdjacentElement('afterend', disclaimerContainer);
               updateDisclaimerStyles(disclaimerContainer);
 
-              if (!document.querySelector('.custom-consent-text')) {
-                const consentElement = createConsentElement(originalElement);
-                if (consentElement && originalElement) {
-                  originalElement.parentNode.insertBefore(consentElement, originalElement.nextSibling);
-                }
+              const consentElement = createConsentElement(originalElement);
+              if (consentElement && originalElement) {
+                originalElement.parentNode.insertBefore(consentElement, originalElement.nextSibling);
               }
 
               handlePageVisibility(disclaimerContainer, '#fsPage' + <?= $formID; ?> + '-1', true);
