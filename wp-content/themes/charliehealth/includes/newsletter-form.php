@@ -6,7 +6,7 @@ $buttonColor = $buttonColor ?? 'button-primary-ch';
   <input type="email" name="email" onfocus="if(this.value===this.defaultValue){this.value='';}" onblur="if(this.value===''){this.value=this.defaultValue;}" placeholder="Email" class="w-full bg-white rounded-md px-base5-3 py-base5-2 text-primary placeholder:text-grey-deactivated">
   <input type="submit" value="Sign Up" class="cursor-pointer ch-button <?= $buttonColor; ?> px-base5-3 py-base5-2 text-[16px]">
 </form>
-<h4 id="responseMessage_<?= $rand; ?>" class="noshow">Thank you for signing up!</h4>
+<h4 id="responseMessage_<?= $rand; ?>" class="text-white noshow">Thank you for signing up!</h4>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     var form = document.getElementById('iterable_optin_<?= $rand; ?>');
