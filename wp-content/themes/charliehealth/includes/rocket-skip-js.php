@@ -142,6 +142,7 @@
       if (nonIndented.length >= 2) {
         const first = nonIndented[0];
         const second = nonIndented[1];
+        const third = nonIndented[2];
 
         const wrapper = document.createElement('div');
         wrapper.className = 'bg-primary-100 flex flex-col max-h-[70vh] overflow-y-auto p-base5-4 rounded-md';
@@ -152,7 +153,7 @@
         while (node) {
           const next = node.nextSibling;
           wrapper.appendChild(node);
-          if (node === second) break;
+          if (node === third) break;
           node = next;
         }
       }
