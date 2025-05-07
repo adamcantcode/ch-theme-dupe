@@ -4,6 +4,9 @@
 .sm_state {
   transition: fill 0.3s ease;
 }
+#map_access {
+  display: none !important;
+}
 
 
 /*# sourceMappingURL=index.css.map*/

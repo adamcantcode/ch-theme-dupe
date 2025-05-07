@@ -98,16 +98,28 @@ window.addEventListener('DOMContentLoaded', () => {
         document.getElementById('map').classList.remove('opacity-0');
 
         const statePaths = document.querySelectorAll('.sm_state');
-        gsap.set('.sm_state', { opacity: 0 }); // start hidden
 
-        gsap.to('.sm_state', {
+        statePaths.forEach((path) => {
+          const classMatch =
+            path.className.baseVal.match(/sm_state_([A-Z]{2})/);
+          if (classMatch) {
+            const abbrev = classMatch[1];
+            if (activeStates.has(abbrev)) {
+              path.classList.add('active-state');
+            }
+          }
+        });
+
+        gsap.set('.sm_state.active-state', { opacity: 0 }); // start hidden
+
+        gsap.to('.sm_state.active-state', {
           opacity: 1,
-          duration: 0.4,
+          duration: 1,
           stagger: {
-            amount: .5, // total time for all
+            amount: 0.5, // total time for all
             from: 'start', // or 'start', 'end', 'edges', etc.
           },
-          ease: 'power2.out',
+          ease: 'power2.inOut',
           scrollTrigger: {
             trigger: '#map-wrapper', // or whatever container wraps the map
             start: 'top 80%',

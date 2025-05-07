@@ -1,4 +1,5 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./node_modules/gsap/CSSPlugin.js":
@@ -7,7 +8,6 @@
   \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   CSSPlugin: () => (/* binding */ CSSPlugin),
@@ -1602,7 +1602,6 @@ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(CSSPlugin);
   \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Observer: () => (/* binding */ Observer),
@@ -2312,7 +2311,6 @@ _getGSAP() && gsap.registerPlugin(Observer);
   \********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ScrollTrigger: () => (/* binding */ ScrollTrigger),
@@ -4986,7 +4984,6 @@ _getGSAP() && gsap.registerPlugin(ScrollTrigger);
   \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Animation: () => (/* binding */ Animation),
@@ -9555,7 +9552,6 @@ var Power0 = _easeMap.Power0,
   \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Back: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Back),
@@ -9599,9 +9595,11 @@ TweenMaxWithCSS = gsapWithCSS.core.Tween;
 /*!********************************************!*\
   !*** ./blocks/locations-hub-map/index.css ***!
   \********************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nHookWebpackError: Module build failed (from ./node_modules/@wordpress/scripts/node_modules/postcss-loader/dist/cjs.js):\nSyntaxError\n\n(5:16) /Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/blocks/locations-hub-map/index.css Missed semicolon\n\n \u001b[90m 3 | \u001b[39m\u001b[33m}\u001b[39m\n \u001b[90m 4 | \u001b[39m\u001b[35m#map_access\u001b[39m \u001b[33m{\u001b[39m\n\u001b[1m\u001b[31m>\u001b[39m\u001b[22m\u001b[90m 5 | \u001b[39m  display\u001b[33m:\u001b[39m none\u001b[33m:\u001b[39m !important\u001b[33m;\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m   | \u001b[39m               \u001b[1m\u001b[31m^\u001b[39m\u001b[22m\n \u001b[90m 6 | \u001b[39m\u001b[33m}\u001b[39m\n\n    at tryRunOrWebpackError (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/HookWebpackError.js:86:9)\n    at __webpack_require_module__ (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/Compilation.js:5299:12)\n    at __webpack_require__ (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/Compilation.js:5256:18)\n    at /Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/Compilation.js:5328:20\n    at symbolIterator (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/neo-async/async.js:3485:9)\n    at done (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/neo-async/async.js:3527:9)\n    at Hook.eval [as callAsync] (eval at create (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:15:1)\n    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/tapable/lib/Hook.js:18:14)\n    at /Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/Compilation.js:5234:43\n    at symbolIterator (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/neo-async/async.js:3482:9)\n    at timesSync (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/neo-async/async.js:2297:7)\n    at Object.eachLimit (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/neo-async/async.js:3463:5)\n    at /Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/Compilation.js:5196:16\n    at symbolIterator (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/neo-async/async.js:3485:9)\n    at timesSync (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/neo-async/async.js:2297:7)\n    at Object.eachLimit (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/neo-async/async.js:3463:5)\n    at /Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/Compilation.js:5164:15\n    at symbolIterator (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/neo-async/async.js:3485:9)\n    at done (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/neo-async/async.js:3527:9)\n    at /Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/Compilation.js:5110:8\n    at /Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/Compilation.js:3531:6\n    at /Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/HookWebpackError.js:67:2\n    at Hook.eval [as callAsync] (eval at create (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:15:1)\n    at Cache.store (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/Cache.js:111:20)\n    at ItemCacheFacade.store (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/CacheFacade.js:141:15)\n    at /Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/Compilation.js:3530:11\n    at /Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/Cache.js:97:5\n    at Hook.eval [as callAsync] (eval at create (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:16:1)\n    at Cache.get (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/Cache.js:79:18)\n    at ItemCacheFacade.get (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/CacheFacade.js:115:15)\n    at Compilation._codeGenerationModule (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/Compilation.js:3498:9)\n    at codeGen (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/Compilation.js:5098:11)\n    at symbolIterator (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/neo-async/async.js:3482:9)\n    at timesSync (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/neo-async/async.js:2297:7)\n    at Object.eachLimit (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/neo-async/async.js:3463:5)\n    at /Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/Compilation.js:5128:14\n    at processQueue (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/util/processAsyncTree.js:61:4)\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)\n-- inner error --\nError: Module build failed (from ./node_modules/@wordpress/scripts/node_modules/postcss-loader/dist/cjs.js):\nSyntaxError\n\n(5:16) /Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/blocks/locations-hub-map/index.css Missed semicolon\n\n \u001b[90m 3 | \u001b[39m\u001b[33m}\u001b[39m\n \u001b[90m 4 | \u001b[39m\u001b[35m#map_access\u001b[39m \u001b[33m{\u001b[39m\n\u001b[1m\u001b[31m>\u001b[39m\u001b[22m\u001b[90m 5 | \u001b[39m  display\u001b[33m:\u001b[39m none\u001b[33m:\u001b[39m !important\u001b[33m;\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m   | \u001b[39m               \u001b[1m\u001b[31m^\u001b[39m\u001b[22m\n \u001b[90m 6 | \u001b[39m\u001b[33m}\u001b[39m\n\n    at Object.<anonymous> (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/@wordpress/scripts/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/blocks/locations-hub-map/index.css:1:7)\n    at /Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/javascript/JavascriptModulesPlugin.js:494:10\n    at Hook.eval [as call] (eval at create (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/tapable/lib/HookCodeFactory.js:19:10), <anonymous>:7:1)\n    at Hook.CALL_DELEGATE [as _call] (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/tapable/lib/Hook.js:14:14)\n    at /Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/Compilation.js:5301:39\n    at tryRunOrWebpackError (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/HookWebpackError.js:81:7)\n    at __webpack_require_module__ (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/Compilation.js:5299:12)\n    at __webpack_require__ (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/Compilation.js:5256:18)\n    at /Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/Compilation.js:5328:20\n    at symbolIterator (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/neo-async/async.js:3485:9)\n    at done (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/neo-async/async.js:3527:9)\n    at Hook.eval [as callAsync] (eval at create (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:15:1)\n    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/tapable/lib/Hook.js:18:14)\n    at /Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/Compilation.js:5234:43\n    at symbolIterator (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/neo-async/async.js:3482:9)\n    at timesSync (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/neo-async/async.js:2297:7)\n    at Object.eachLimit (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/neo-async/async.js:3463:5)\n    at /Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/Compilation.js:5196:16\n    at symbolIterator (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/neo-async/async.js:3485:9)\n    at timesSync (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/neo-async/async.js:2297:7)\n    at Object.eachLimit (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/neo-async/async.js:3463:5)\n    at /Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/Compilation.js:5164:15\n    at symbolIterator (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/neo-async/async.js:3485:9)\n    at done (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/neo-async/async.js:3527:9)\n    at /Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/Compilation.js:5110:8\n    at /Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/Compilation.js:3531:6\n    at /Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/HookWebpackError.js:67:2\n    at Hook.eval [as callAsync] (eval at create (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:15:1)\n    at Cache.store (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/Cache.js:111:20)\n    at ItemCacheFacade.store (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/CacheFacade.js:141:15)\n    at /Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/Compilation.js:3530:11\n    at /Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/Cache.js:97:5\n    at Hook.eval [as callAsync] (eval at create (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:16:1)\n    at Cache.get (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/Cache.js:79:18)\n    at ItemCacheFacade.get (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/CacheFacade.js:115:15)\n    at Compilation._codeGenerationModule (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/Compilation.js:3498:9)\n    at codeGen (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/Compilation.js:5098:11)\n    at symbolIterator (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/neo-async/async.js:3482:9)\n    at timesSync (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/neo-async/async.js:2297:7)\n    at Object.eachLimit (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/neo-async/async.js:3463:5)\n    at /Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/Compilation.js:5128:14\n    at processQueue (/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/webpack/lib/util/processAsyncTree.js:61:4)\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)\n\nGenerated code for /Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/node_modules/@wordpress/scripts/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!/Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/blocks/locations-hub-map/index.css\n1 | throw new Error(\"Module build failed (from ./node_modules/@wordpress/scripts/node_modules/postcss-loader/dist/cjs.js):\\nSyntaxError\\n\\n(5:16) /Users/amacaulay/Sites/charlie-health/wp-content/themes/charliehealth/blocks/locations-hub-map/index.css Missed semicolon\\n\\n \\u001b[90m 3 | \\u001b[39m\\u001b[33m}\\u001b[39m\\n \\u001b[90m 4 | \\u001b[39m\\u001b[35m#map_access\\u001b[39m \\u001b[33m{\\u001b[39m\\n\\u001b[1m\\u001b[31m>\\u001b[39m\\u001b[22m\\u001b[90m 5 | \\u001b[39m  display\\u001b[33m:\\u001b[39m none\\u001b[33m:\\u001b[39m !important\\u001b[33m;\\u001b[39m\\u001b[33m;\\u001b[39m\\n \\u001b[90m   | \\u001b[39m               \\u001b[1m\\u001b[31m^\\u001b[39m\\u001b[22m\\n \\u001b[90m 6 | \\u001b[39m\\u001b[33m}\\u001b[39m\\n\");");
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
 
 /***/ })
 
@@ -9662,9 +9660,8 @@ throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugi
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
+// This entry needs to be wrapped in an IIFE because it needs to be isolated against other modules in the chunk.
 (() => {
-"use strict";
 /*!*******************************************!*\
   !*** ./blocks/locations-hub-map/index.js ***!
   \*******************************************/
@@ -9760,19 +9757,28 @@ window.addEventListener('DOMContentLoaded', () => {
       document.getElementById('map-loader').style.display = 'none';
       document.getElementById('map').classList.remove('opacity-0');
       const statePaths = document.querySelectorAll('.sm_state');
-      gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.set('.sm_state', {
+      statePaths.forEach(path => {
+        const classMatch = path.className.baseVal.match(/sm_state_([A-Z]{2})/);
+        if (classMatch) {
+          const abbrev = classMatch[1];
+          if (activeStates.has(abbrev)) {
+            path.classList.add('active-state');
+          }
+        }
+      });
+      gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.set('.sm_state.active-state', {
         opacity: 0
       }); // start hidden
 
-      gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.to('.sm_state', {
+      gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.to('.sm_state.active-state', {
         opacity: 1,
-        duration: 0.4,
+        duration: 1,
         stagger: {
-          amount: .5,
+          amount: 0.5,
           // total time for all
           from: 'start' // or 'start', 'end', 'edges', etc.
         },
-        ease: 'power2.out',
+        ease: 'power2.inOut',
         scrollTrigger: {
           trigger: '#map-wrapper',
           // or whatever container wraps the map

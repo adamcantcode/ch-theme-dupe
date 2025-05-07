@@ -4,4 +4,7 @@
 .sm_state {
   transition: fill 0.3s ease;
 }
+#map_access {
+  display: none !important;
+}
 
