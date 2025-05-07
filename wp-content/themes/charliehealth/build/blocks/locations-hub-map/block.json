@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "acf/locations-hub-map-block",
+  "title": "Locations Hub",
+  "description": "Locations and such.",
+  "style": "file:./index.css",
+  "script": "file:./index.js",
+  "category": "custom",
+  "icon": "align-wide",
+  "apiVersion": 2,
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "locations-hub-map.php"
+  },
+  "supports": {}
+}
