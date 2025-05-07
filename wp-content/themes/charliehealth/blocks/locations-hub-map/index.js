@@ -106,22 +106,25 @@ window.addEventListener('DOMContentLoaded', () => {
             const abbrev = classMatch[1];
             if (activeStates.has(abbrev)) {
               path.classList.add('active-state');
+            } else {
+              path.classList.add('inactive-state');
             }
           }
         });
 
-        gsap.set('.sm_state.active-state', { opacity: 0 }); // start hidden
+        gsap.set('.sm_state', { opacity: 0 }); // start hidden
 
-        gsap.to('.sm_state.active-state', {
-          opacity: 1,
+        gsap.to('.sm_state', {
+          opacity: (i, target) =>
+            target.classList.contains('active-state') ? 1 : 0.3,
           duration: 1,
           stagger: {
-            amount: 0.5, // total time for all
-            from: 'start', // or 'start', 'end', 'edges', etc.
+            amount: 0.5,
+            from: 'start',
           },
-          ease: 'power2.inOut',
+          ease: 'power2.out',
           scrollTrigger: {
-            trigger: '#map-wrapper', // or whatever container wraps the map
+            trigger: '#map-wrapper',
             start: 'top 80%',
             once: true,
           },
