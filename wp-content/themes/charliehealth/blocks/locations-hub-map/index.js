@@ -1,3 +1,10 @@
+import './index.css';
+
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
 window.addEventListener('DOMContentLoaded', () => {
   // 1. Define the state name → abbreviation map
   function getStateAbbreviationByName(name) {
@@ -87,7 +94,45 @@ window.addEventListener('DOMContentLoaded', () => {
 
       if (typeof simplemaps_usmap.refresh === 'function') {
         simplemaps_usmap.refresh();
+        document.getElementById('map-loader').style.display = 'none';
+        document.getElementById('map').classList.remove('opacity-0');
+
+        const statePaths = document.querySelectorAll('.sm_state');
+        gsap.set('.sm_state', { opacity: 0 }); // start hidden
+
+        gsap.to('.sm_state', {
+          opacity: 1,
+          duration: 0.4,
+          stagger: {
+            amount: .5, // total time for all
+            from: 'start', // or 'start', 'end', 'edges', etc.
+          },
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: '#map-wrapper', // or whatever container wraps the map
+            start: 'top 80%',
+            once: true,
+          },
+        });
       }
     })
     .catch((err) => console.error('Error fetching locations:', err));
+
+  // Hide the SimpleMaps link
+  const selector = 'a[href="https://simplemaps.com"]';
+
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      mutation.addedNodes.forEach((node) => {
+        if (node.nodeType === Node.ELEMENT_NODE && node.matches(selector)) {
+          node.remove();
+        }
+      });
+    });
+  });
+
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true,
+  });
 });
