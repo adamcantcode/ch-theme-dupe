@@ -74,123 +74,25 @@ if (function_exists('acf_add_options_page')) {
 // Register all ACF blocks via block.json 
 function register_acf_blocks()
 {
-  register_block_type(__DIR__ . '/build/blocks/hero');
-  register_block_type(__DIR__ . '/build/blocks/fifty-fifty');
-  register_block_type(__DIR__ . '/build/blocks/card-grid');
-  register_block_type(__DIR__ . '/build/blocks/buttons');
-  register_block_type(__DIR__ . '/build/blocks/testimonial');
-  register_block_type(__DIR__ . '/build/blocks/sticky-split');
-  register_block_type(__DIR__ . '/build/blocks/faq');
-  register_block_type(__DIR__ . '/build/blocks/jump-buttons');
-  register_block_type(__DIR__ . '/build/blocks/section-container');
-  register_block_type(__DIR__ . '/build/blocks/stats');
-  register_block_type(__DIR__ . '/build/blocks/divider');
-  register_block_type(__DIR__ . '/build/blocks/cta');
-  register_block_type(__DIR__ . '/build/blocks/pre-footer-cta');
-  register_block_type(__DIR__ . '/build/blocks/large-quote');
-  register_block_type(__DIR__ . '/build/blocks/tabs');
-  register_block_type(__DIR__ . '/build/blocks/carousel');
-  register_block_type(__DIR__ . '/build/blocks/posts-list');
-  register_block_type(__DIR__ . '/build/blocks/teams');
-  register_block_type(__DIR__ . '/build/blocks/region-map');
-  register_block_type(__DIR__ . '/build/blocks/iop-chart');
-  register_block_type(__DIR__ . '/build/blocks/iop-schedule');
-  register_block_type(__DIR__ . '/build/blocks/callout');
-  register_block_type(__DIR__ . '/build/blocks/check-list');
-  register_block_type(__DIR__ . '/build/blocks/stats-table');
-  register_block_type(__DIR__ . '/build/blocks/image-grid');
-  register_block_type(__DIR__ . '/build/blocks/outcomes-chart');
-  register_block_type(__DIR__ . '/build/blocks/outcomes-infographic');
-  register_block_type(__DIR__ . '/build/blocks/card-hiring');
-  register_block_type(__DIR__ . '/build/blocks/collapsible-content');
-  register_block_type(__DIR__ . '/build/blocks/testimonial-review');
-  // register_block_type(__DIR__ . '/build/blocks/review-testimonial-review');
-  register_block_type(__DIR__ . '/build/blocks/testimonial-list');
-  register_block_type(__DIR__ . '/build/blocks/posts-list-in-content');
-  register_block_type(__DIR__ . '/build/blocks/testimonial-carousel');
-  register_block_type(__DIR__ . '/build/blocks/research-list');
-  register_block_type(__DIR__ . '/build/blocks/fifty-fifty-grid');
-  register_block_type(__DIR__ . '/build/blocks/card-link');
-  register_block_type(__DIR__ . '/build/blocks/scrolling-steps');
-  register_block_type(__DIR__ . '/build/blocks/approach-grid');
-  register_block_type(__DIR__ . '/build/blocks/outcomes-block');
-  register_block_type(__DIR__ . '/build/blocks/iop-overview');
-  register_block_type(__DIR__ . '/build/blocks/aoc-list');
-  register_block_type(__DIR__ . '/build/blocks/fifty-fifty-grid-graph');
-  register_block_type(__DIR__ . '/build/blocks/tri-grid');
-  register_block_type(__DIR__ . '/build/blocks/features');
-  register_block_type(__DIR__ . '/build/blocks/features-cards');
-  register_block_type(__DIR__ . '/build/blocks/home-testimonials');
-  register_block_type(__DIR__ . '/build/blocks/card-link-home');
-  register_block_type(__DIR__ . '/build/blocks/how-it-works');
-  register_block_type(__DIR__ . '/build/blocks/our-providers');
-  register_block_type(__DIR__ . '/build/blocks/grid-eight-four');
-  register_block_type(__DIR__ . '/build/blocks/home-cta');
-  register_block_type(__DIR__ . '/build/blocks/values');
-  register_block_type(__DIR__ . '/build/blocks/testimonials-careers');
-  register_block_type(__DIR__ . '/build/blocks/top-startup');
-  register_block_type(__DIR__ . '/build/blocks/comparison-table');
-  register_block_type(__DIR__ . '/build/blocks/crisis-resources');
-  register_block_type(__DIR__ . '/build/blocks/scrolling-cta');
-  register_block_type(__DIR__ . '/build/blocks/steps-list');
-  register_block_type(__DIR__ . '/build/blocks/depression-anxiety-graph');
-  register_block_type(__DIR__ . '/build/blocks/full-cards');
-  register_block_type(__DIR__ . '/build/blocks/job-board-peek');
-  register_block_type(__DIR__ . '/build/blocks/check-list-items');
-  register_block_type(__DIR__ . '/build/blocks/blue-full-cards');
-  register_block_type(__DIR__ . '/build/blocks/child-pages');
-  register_block_type(__DIR__ . '/build/blocks/activities');
-  register_block_type(__DIR__ . '/build/blocks/gated-content');
-  register_block_type(__DIR__ . '/build/blocks/insurance-cost');
-  register_block_type(__DIR__ . '/build/blocks/testimonials-slider');
-  register_block_type(__DIR__ . '/build/blocks/therapists');
-  register_block_type(__DIR__ . '/build/blocks/people-testimonials');
-  register_block_type(__DIR__ . '/build/blocks/story');
-  register_block_type(__DIR__ . '/build/blocks/bubble-quote');
-  register_block_type(__DIR__ . '/build/blocks/press-posts');
-  register_block_type(__DIR__ . '/build/blocks/info-accordion');
-  register_block_type(__DIR__ . '/build/blocks/conditions');
-  register_block_type(__DIR__ . '/build/blocks/partner-testimonial-review');
-  register_block_type(__DIR__ . '/build/blocks/gradient-section');
-  register_block_type(__DIR__ . '/build/blocks/testimonials-videos');
-  register_block_type(__DIR__ . '/build/blocks/testimonials-council-members');
-  register_block_type(__DIR__ . '/build/blocks/single-card');
-  register_block_type(__DIR__ . '/build/blocks/insurance-providers');
-  register_block_type(__DIR__ . '/build/blocks/insurance-tabs');
-  register_block_type(__DIR__ . '/build/blocks/bg-text-overlay');
-  register_block_type(__DIR__ . '/build/blocks/testimonial-review-employee');
-  register_block_type(__DIR__ . '/build/blocks/contact-us');
-  register_block_type(__DIR__ . '/build/blocks/locations-hub');
-  register_block_type(__DIR__ . '/build/blocks/posts-list-slider');
-  register_block_type(__DIR__ . '/build/blocks/pill-list');
-  register_block_type(__DIR__ . '/build/blocks/testimonials-videos-no-quote');
-  register_block_type(__DIR__ . '/build/blocks/hero-colors');
-  register_block_type(__DIR__ . '/build/blocks/testimonials-videos-quotes');
-  register_block_type(__DIR__ . '/build/blocks/posts-list-blog');
-  register_block_type(__DIR__ . '/build/blocks/blog-hero');
-  register_block_type(__DIR__ . '/build/blocks/orbit-image');
-  register_block_type(__DIR__ . '/build/blocks/basic-checklist');
-  register_block_type(__DIR__ . '/build/blocks/hero-bg-video');
-  register_block_type(__DIR__ . '/build/blocks/hero-bg-video-value-prop');
-  register_block_type(__DIR__ . '/build/blocks/hero-shapes-v2');
-  register_block_type(__DIR__ . '/build/blocks/alumni-schedules');
-  // Referrals
-  register_block_type(__DIR__ . '/build/blocks/hero-shapes');
-  register_block_type(__DIR__ . '/build/blocks/static-positioned-image');
-  register_block_type(__DIR__ . '/build/blocks/referrals-features-cards');
-  register_block_type(__DIR__ . '/build/blocks/referrals-testimonials');
-  register_block_type(__DIR__ . '/build/blocks/aoc-tmod-list');
-  register_block_type(__DIR__ . '/build/blocks/referrals-dropdowns');
-  register_block_type(__DIR__ . '/build/blocks/bg-video-bleed');
-  register_block_type(__DIR__ . '/build/blocks/continuum-graph');
-  register_block_type(__DIR__ . '/build/blocks/referrals-cards');
-  register_block_type(__DIR__ . '/build/blocks/referrals-outcomes');
-  register_block_type(__DIR__ . '/build/blocks/testimonial-review-provider');
-  register_block_type(__DIR__ . '/build/blocks/referrals-testimonials-again');
-  register_block_type(__DIR__ . '/build/blocks/region-map-referrals');
-  register_block_type(__DIR__ . '/build/blocks/team-members-static');
+  $blocks_dir = __DIR__ . '/build/blocks/';
+  if (!is_dir($blocks_dir)) {
+    return;
+  }
+
+  $block_folders = scandir($blocks_dir);
+
+  foreach ($block_folders as $folder) {
+    if ($folder === '.' || $folder === '..') {
+      continue;
+    }
+
+    $block_path = $blocks_dir . $folder;
+    if (is_dir($block_path) && file_exists($block_path . '/block.json')) {
+      register_block_type($block_path);
+    }
+  }
 }
-add_action('init', 'register_acf_blocks', 5);
+add_action('init', 'register_acf_blocks');
 
 add_filter('block_categories_all', function ($categories) {
 
