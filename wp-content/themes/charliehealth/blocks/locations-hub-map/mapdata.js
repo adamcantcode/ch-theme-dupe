@@ -7,8 +7,8 @@ var simplemaps_usmap_mapdata = {
     border_color: '#ADB0E1',
     popups: 'detect',
     state_description: '',
-    state_color: '#272D6C',
-    state_hover_color: '#1E225B',
+    state_color: '#12142A',
+    state_hover_color: '#272D6C',
     state_url: '',
     border_size: '1',
     all_states_inactive: 'no',
@@ -70,7 +70,6 @@ var simplemaps_usmap_mapdata = {
   state_specific: {
     HI: {
       name: 'Hawaii',
-      opacity: .5
     },
     AK: {
       name: 'Alaska',
