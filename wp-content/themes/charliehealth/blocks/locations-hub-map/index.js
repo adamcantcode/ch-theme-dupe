@@ -116,7 +116,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         gsap.to('.sm_state', {
           opacity: (i, target) =>
-            target.classList.contains('active-state') ? 1 : 0.3,
+            target.classList.contains('active-state') ? 1 : 0.5,
           duration: 1,
           stagger: {
             amount: 0.5,

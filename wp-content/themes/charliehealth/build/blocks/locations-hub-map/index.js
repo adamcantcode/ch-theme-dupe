@@ -9773,7 +9773,7 @@ window.addEventListener('DOMContentLoaded', () => {
       }); // start hidden
 
       gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.to('.sm_state', {
-        opacity: (i, target) => target.classList.contains('active-state') ? 1 : 0.3,
+        opacity: (i, target) => target.classList.contains('active-state') ? 1 : 0.5,
         duration: 1,
         stagger: {
           amount: 0.5,
