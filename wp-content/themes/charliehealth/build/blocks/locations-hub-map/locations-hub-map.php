@@ -1,5 +1,5 @@
-<div id="map-wrapper" class="relative">
-  <div id="map-loader" class="absolute inset-0 z-10 flex flex-col items-center justify-center bg-white">
+<div id="map-wrapper" class="relative min-h-screen">
+  <div id="map-loader" class="absolute inset-0 z-10 flex flex-col items-center justify-center">
     <!-- Your custom SVG loader -->
      <img src="/wp-content/themes/charliehealth/resources/images/logos/shield-darkest-blue.svg" class="">
     <!-- Styled text -->
