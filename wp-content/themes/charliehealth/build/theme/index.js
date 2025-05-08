@@ -1,6 +1,198 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./node_modules/@intercom/messenger-js-sdk/dist/constants.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@intercom/messenger-js-sdk/dist/constants.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.regionAPIs = void 0;
+exports.regionAPIs = new Map([
+    ["us", "https://api-iam.intercom.io"],
+    ["eu", "https://api-iam.eu.intercom.io"],
+    ["ap", "https://api-iam.au.intercom.io"]
+]);
+
+
+/***/ }),
+
+/***/ "./node_modules/@intercom/messenger-js-sdk/dist/index.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@intercom/messenger-js-sdk/dist/index.js ***!
+  \***************************************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.onUserEmailSupplied = exports.showConversation = exports.showTicket = exports.startChecklist = exports.startSurvey = exports.showNews = exports.showArticle = exports.startTour = exports.getVisitorId = exports.trackEvent = exports.onUnreadCountChange = exports.onShow = exports.onHide = exports.showNewMessage = exports.showMessages = exports.showSpace = exports.show = exports.hide = exports.update = exports.shutdown = exports.boot = exports.Intercom = void 0;
+const constants_1 = __webpack_require__(/*! ./constants */ "./node_modules/@intercom/messenger-js-sdk/dist/constants.js");
+const instance_manager_1 = __webpack_require__(/*! ./instance-manager */ "./node_modules/@intercom/messenger-js-sdk/dist/instance-manager.js");
+const callIntercomMethod = (method, ...args) => {
+    // window is undefined on server-side and this breaks our widget
+    if (typeof window !== undefined && window.Intercom) {
+        window.Intercom(method, ...args);
+    }
+    else {
+        console.warn("Please ensure Intercom is setup and running on client-side!");
+    }
+};
+const Intercom = (props) => {
+    if (typeof props !== "object") {
+        console.warn("Intercom initialiser called with invalid parameters.");
+        return;
+    }
+    const { region = "us" } = props, args = __rest(props, ["region"]);
+    if (typeof window !== "undefined" && !instance_manager_1.ref) {
+        window.intercomSettings = Object.assign(Object.assign({}, args), { api_base: constants_1.regionAPIs.get(region) });
+        (0, instance_manager_1.init)();
+    }
+};
+exports.Intercom = Intercom;
+// Public functions that can be called from outside the module
+exports["default"] = exports.Intercom;
+const boot = (arg) => callIntercomMethod("boot", arg);
+exports.boot = boot;
+const shutdown = () => callIntercomMethod("shutdown");
+exports.shutdown = shutdown;
+const update = (arg) => callIntercomMethod("update", arg);
+exports.update = update;
+const hide = () => callIntercomMethod("hide");
+exports.hide = hide;
+const show = () => callIntercomMethod("show");
+exports.show = show;
+const showSpace = (spaceName) => callIntercomMethod("showSpace", spaceName);
+exports.showSpace = showSpace;
+const showMessages = () => callIntercomMethod("showMessages");
+exports.showMessages = showMessages;
+const showNewMessage = (prePopulatedContent) => callIntercomMethod("showNewMessage", prePopulatedContent);
+exports.showNewMessage = showNewMessage;
+const onHide = (callback) => callIntercomMethod("onHide", callback);
+exports.onHide = onHide;
+const onShow = (callback) => callIntercomMethod("onShow", callback);
+exports.onShow = onShow;
+const onUnreadCountChange = (callback) => callIntercomMethod("onUnreadCountChange", callback);
+exports.onUnreadCountChange = onUnreadCountChange;
+const trackEvent = (...args) => callIntercomMethod("trackEvent", ...args);
+exports.trackEvent = trackEvent;
+const getVisitorId = () => callIntercomMethod("getVisitorId");
+exports.getVisitorId = getVisitorId;
+const startTour = (tourId) => callIntercomMethod("startTour", tourId);
+exports.startTour = startTour;
+const showArticle = (articleId) => callIntercomMethod("showArticle", articleId);
+exports.showArticle = showArticle;
+const showNews = (newsItemId) => callIntercomMethod("showNews", newsItemId);
+exports.showNews = showNews;
+const startSurvey = (surveyId) => callIntercomMethod("startSurvey", surveyId);
+exports.startSurvey = startSurvey;
+const startChecklist = (checklistId) => callIntercomMethod("startChecklist", checklistId);
+exports.startChecklist = startChecklist;
+const showTicket = (ticketId) => callIntercomMethod("showTicket", ticketId);
+exports.showTicket = showTicket;
+const showConversation = (conversationId) => callIntercomMethod("showConversation", conversationId);
+exports.showConversation = showConversation;
+const onUserEmailSupplied = (callback) => callIntercomMethod("onUserEmailSupplied", callback);
+exports.onUserEmailSupplied = onUserEmailSupplied;
+
+
+/***/ }),
+
+/***/ "./node_modules/@intercom/messenger-js-sdk/dist/instance-manager.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@intercom/messenger-js-sdk/dist/instance-manager.js ***!
+  \**************************************************************************/
+/***/ (function(__unused_webpack_module, exports) {
+
+"use strict";
+
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.ref = exports.init = void 0;
+const scriptElementId = "_intercom_npm_loader";
+// This holds a queue of commands to be passed to the messenger widget API after it is added to the page
+const queueHolder = function () {
+    queueHolder.loaderQueue(arguments);
+};
+queueHolder.q = [];
+queueHolder.loaderQueue = function (args) {
+    queueHolder.q.push(args);
+};
+const addWidgetToPage = function () {
+    var _a, _b;
+    var d = document;
+    if (d.getElementById(scriptElementId)) {
+        // script is already in DOM
+        return;
+    }
+    var s = d.createElement("script");
+    s.type = "text/javascript";
+    s.async = true;
+    s.id = scriptElementId;
+    s.src =
+        "https://widget.intercom.io/widget/" + ((_a = window.intercomSettings) === null || _a === void 0 ? void 0 : _a.app_id);
+    var x = d.getElementsByTagName("script")[0];
+    (_b = x.parentNode) === null || _b === void 0 ? void 0 : _b.insertBefore(s, x);
+};
+const isDocumentReady = () => document.readyState === "complete" || document.readyState === "interactive";
+const init = () => __awaiter(void 0, void 0, void 0, function* () {
+    var w = window;
+    var ic = w.Intercom;
+    if (w.intercomSettings) {
+        w.intercomSettings.installation_type = "npm-package";
+    }
+    if (typeof ic === "function") {
+        ic("reattach_activator");
+        ic("update", w.intercomSettings);
+    }
+    else {
+        w.Intercom = queueHolder;
+        if (isDocumentReady()) {
+            addWidgetToPage();
+        }
+        else {
+            document.addEventListener("readystatechange", function () {
+                if (isDocumentReady()) {
+                    addWidgetToPage();
+                }
+            });
+            if (w.attachEvent) {
+                w.attachEvent("onload", addWidgetToPage);
+            }
+            else {
+                w.addEventListener("load", addWidgetToPage, false);
+            }
+        }
+    }
+});
+exports.init = init;
+exports.ref = undefined;
+
+
+/***/ }),
+
 /***/ "./src/modules/ajax-pagination-authors.js":
 /*!************************************************!*\
   !*** ./src/modules/ajax-pagination-authors.js ***!
@@ -1190,6 +1382,32 @@ function featuredBlogSlider() {
       //   },
       // },
     });
+  });
+}
+
+/***/ }),
+
+/***/ "./src/modules/intercom.js":
+/*!*********************************!*\
+  !*** ./src/modules/intercom.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ intercom)
+/* harmony export */ });
+/* harmony import */ var _intercom_messenger_js_sdk__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @intercom/messenger-js-sdk */ "./node_modules/@intercom/messenger-js-sdk/dist/index.js");
+/* harmony import */ var _intercom_messenger_js_sdk__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_intercom_messenger_js_sdk__WEBPACK_IMPORTED_MODULE_0__);
+
+function intercom() {
+  _intercom_messenger_js_sdk__WEBPACK_IMPORTED_MODULE_0___default()({
+    app_id: 'q67n063r'
+    // user_id: user.id, // IMPORTANT: Replace "user.id" with the variable you use to capture the user's ID
+    // name: user.name, // IMPORTANT: Replace "user.name" with the variable you use to capture the user's name
+    // email: user.email, // IMPORTANT: Replace "user.email" with the variable you use to capture the user's email
+    // created_at: user.createdAt, // IMPORTANT: Replace "user.createdAt" with the variable you use to capture the user's sign-up date in a Unix timestamp (in seconds) e.g. 1704067200
   });
 }
 
@@ -23807,6 +24025,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_careers_tracking__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./modules/careers-tracking */ "./src/modules/careers-tracking.js");
 /* harmony import */ var _modules_user_pages_tracker__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./modules/user-pages-tracker */ "./src/modules/user-pages-tracker.js");
 /* harmony import */ var _modules_linkedin_cta_tracker__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./modules/linkedin-cta-tracker */ "./src/modules/linkedin-cta-tracker.js");
+/* harmony import */ var _modules_intercom__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./modules/intercom */ "./src/modules/intercom.js");
+
 
 
 
@@ -23899,6 +24119,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   (0,_modules_linkedin_cta_tracker__WEBPACK_IMPORTED_MODULE_24__["default"])();
   (0,_modules_user_pages_tracker__WEBPACK_IMPORTED_MODULE_23__["default"])();
+
+  // NOTE: Intercom is loaded on all pages.
+  (0,_modules_intercom__WEBPACK_IMPORTED_MODULE_25__["default"])();
 });
 })();
 
