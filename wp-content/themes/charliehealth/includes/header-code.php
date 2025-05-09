@@ -513,6 +513,20 @@
         ];
       }
     }
+    if ($template == 'page-form-adol-treatment-options.php') {
+      $formID = '6183447';
+      $form_values = [
+        'organicLP' => '183334423',
+        'fbclid' => '183334425',
+        'ttclid' => '183334426',
+        'msclkid' => '183334427',
+        'userIP' => '183334424',
+        'fbp' => '183334428',
+        'userAgent' => '183334429',
+        'vwoTestVersion' => '183334430',
+        'userJourney' => '183334431'
+      ];
+    }
     ?>
 
     if (window.location.href.indexOf('/form') > -1) {
