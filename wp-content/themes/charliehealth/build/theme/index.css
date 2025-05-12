@@ -2191,10 +2191,6 @@ a.insurance-tabs.active:hover {
   margin-top: 2rem;
 }
 
-.mb-4{
-  margin-bottom: 1rem;
-}
-
 .line-clamp-3{
   overflow: hidden;
   display: -webkit-box;
@@ -2371,10 +2367,6 @@ a.insurance-tabs.active:hover {
 }
 
 .h-sp-8{
-  height: 2rem;
-}
-
-.h-8{
   height: 2rem;
 }
 
@@ -2556,10 +2548,6 @@ a.insurance-tabs.active:hover {
 }
 
 .w-sp-8{
-  width: 2rem;
-}
-
-.w-8{
   width: 2rem;
 }
 
@@ -2811,17 +2799,6 @@ a.insurance-tabs.active:hover {
 
 .transform{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-@keyframes spin{
-
-  to{
-    transform: rotate(360deg);
-  }
-}
-
-.animate-spin{
-  animation: spin 1s linear infinite;
 }
 
 .cursor-default{

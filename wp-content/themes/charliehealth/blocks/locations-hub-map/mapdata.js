@@ -15,7 +15,7 @@ var simplemaps_usmap_mapdata = {
     all_states_zoomable: 'no',
 
     //Location defaults
-    location_description: 'Add location markers using latitude and longitude!',
+    location_description: '',
     location_color: '#2041D4',
     location_opacity: 0.8,
     location_hover_opacity: 1,
@@ -49,18 +49,18 @@ var simplemaps_usmap_mapdata = {
 
     //Popup settings
     popup_color: 'white',
-    popup_opacity: 0.9,
-    popup_shadow: 1,
-    popup_corners: 5,
+    popup_opacity: 1,
+    popup_shadow: 0,
+    popup_corners: 10,
     popup_font: '12px/1.5 Verdana, Arial, Helvetica, sans-serif',
     popup_nocss: 'no',
 
     //Advanced settings
     div: 'map',
     auto_load: 'yes',
-    url_new_tab: 'yes',
+    url_new_tab: 'no',
     images_directory: '/static/lib/simplemaps/map_images/',
-    fade_time: 0.1,
+    fade_time: 0,
     import_labels: 'no',
     link_text: 'View Website',
     state_image_url: '',
