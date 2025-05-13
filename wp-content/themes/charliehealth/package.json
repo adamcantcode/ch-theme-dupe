@@ -30,6 +30,7 @@
     "test": "npm-run-all --parallel blocks-start theme-start sync"
   },
   "dependencies": {
+    "@intercom/messenger-js-sdk": "^0.0.14",
     "gsap": "^3.11.5",
     "masonry-layout": "^4.2.2",
     "paginationjs": "^2.6.0",

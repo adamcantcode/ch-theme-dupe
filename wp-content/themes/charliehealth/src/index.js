@@ -24,6 +24,7 @@ import fadeUpIn from './modules/fade-up-in';
 import careersTracking from './modules/careers-tracking';
 import userPagesTracker from './modules/user-pages-tracker';
 import linkedInCTATracker from './modules/linkedin-cta-tracker';
+import intercom from './modules/intercom';
 
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
@@ -102,4 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   linkedInCTATracker();
   userPagesTracker();
+
+  // NOTE: Intercom is loaded on all pages.
+  intercom();
 });
