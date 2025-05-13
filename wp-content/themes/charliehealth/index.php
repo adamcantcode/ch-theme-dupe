@@ -149,11 +149,6 @@
       });
     });
   </script>
-  <script>
-    setTimeout(function() {
-      Intercom('startSurvey', 48140095);
-    }, 15000);
-  </script>
 <?php endif; ?>
 <?php if (is_front_page() && get_current_blog_id() === 3) : ?>
   <div class="homepagepopup">
